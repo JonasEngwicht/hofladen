@@ -33,7 +33,7 @@ async function holen(url, opts, versuche, name) {
     } catch (e) {
       console.error(`${name}: Versuch ${i}/${versuche} fehlgeschlagen: ${e.message}`);
       if (i === versuche) throw e;
-      await new Promise((res) => setTimeout(res, 15_000 * i));
+      await new Promise((res) => setTimeout(res, 45_000 * i));
     }
   }
 }
@@ -44,7 +44,7 @@ const KEY = OSM + 'wiki/Key:';
 // Quelle 1: QLever (schnell). GET-Variante, weil manche Netze POST blockieren.
 async function ausQlever() {
   const q = async (sparql) => (await holen(`${ENDPUNKT}?query=${encodeURIComponent(PREFIX + sparql)}`,
-    { headers: { Accept: 'application/sparql-results+json' } }, 2, 'QLever')).results.bindings;
+    { headers: { Accept: 'application/sparql-results+json' } }, 3, 'QLever')).results.bindings;
   const tags = await q(`SELECT ?osm ?k ?v WHERE { ${AUSWAHL} ?osm ?k ?v . FILTER(STRSTARTS(STR(?k), "${KEY}")) }`);
   const geo = await q(`SELECT ?osm ?wkt WHERE { ${AUSWAHL} ?osm geo:hasGeometry/geo:asWKT ?wkt }`);
   const el = new Map();
@@ -65,11 +65,11 @@ async function ausQlever() {
 }
 
 // Quelle 2: Overpass API (langsamer, aber unabhängig).
-const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
+const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
 const OVERPASS_Q = `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;(nwr["shop"="farm"](area.de);nwr["amenity"="vending_machine"]["vending"~"milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable"](area.de););out center tags;`;
 async function ausOverpass(url) {
   const j = await holen(url, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: 'data=' + encodeURIComponent(OVERPASS_Q) }, 2, 'Overpass ' + new URL(url).host);
+    body: 'data=' + encodeURIComponent(OVERPASS_Q) }, 3, 'Overpass ' + new URL(url).host);
   const elements = j.elements.map((e) => ({ type: e.type, id: e.id, lat: e.lat ?? e.center?.lat, lon: e.lon ?? e.center?.lon, tags: e.tags || {} }));
   return { quelle: 'Overpass ' + new URL(url).host, elements };
 }
