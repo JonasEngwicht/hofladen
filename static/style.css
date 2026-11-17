@@ -267,6 +267,11 @@ main { display: block; }
 .eintrag-liste { list-style: none; padding: 0; margin: 0; columns: 2 20rem; column-gap: 2.5rem; }
 .eintrag-liste li { break-inside: avoid; padding: .25rem 0; display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid var(--linie); }
 .mehr-links { display: flex; flex-wrap: wrap; gap: .6rem 2rem; }
+.hof-art a { color: var(--raps); }
+.saison-suche { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin: 1rem 0 1.2rem; }
+.saison-suche input[name="plz"] { width: 7rem; font: 600 1rem var(--schrift); padding: .6rem .7rem; border: 1.5px solid var(--linie); border-radius: var(--r-klein); letter-spacing: .06em; }
+.haken { display: inline-flex; align-items: center; gap: .35rem; font-weight: 600; }
+.sprung-liste h2 { font-size: 1.3rem; }
 
 /* Textseiten */
 .text { max-width: 44rem; margin: 2rem auto 0; padding: 0 1.25rem; }
