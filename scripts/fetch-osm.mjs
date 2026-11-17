@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Holt alle Hofläden (shop=farm) und Hofautomaten in Deutschland aus OpenStreetMap
-// über QLever (Universität Freiburg), ersatzweise über die Overpass API.
+// über die Overpass API, ersatzweise über QLever (Universität Freiburg).
 // Ausgabe im Overpass-Format: {elements:[{type,id,lat,lon,tags}]}.
 //
 // Aufruf: node scripts/fetch-osm.mjs [ausgabe.json]   (Standard: data/quellen/osm-roh.json)
@@ -75,7 +75,8 @@ async function ausOverpass(url) {
 }
 
 let ergebnis = null;
-for (const quelle of [ausQlever, ...OVERPASS.map((u) => () => ausOverpass(u))]) {
+// Overpass zuerst (tagesaktuell), QLever als Ausweichquelle (Datenstand kann einige Monate alt sein)
+for (const quelle of [...OVERPASS.map((u) => () => ausOverpass(u)), ausQlever]) {
   try {
     const r = await quelle();
     if (r.elements.length >= 1000) { ergebnis = r; break; }
