@@ -60,6 +60,21 @@ for (const m of manuell) {
   eintraege.push(e);
 }
 
+// Ergänzungen aus den Websites der Höfe (data/ergaenzungen.json): füllen nur leere Felder,
+// damit spätere Angaben in OpenStreetMap immer Vorrang haben.
+const ergaenzungen = existsSync(join(ROOT, 'data', 'ergaenzungen.json'))
+  ? JSON.parse(readFileSync(join(ROOT, 'data', 'ergaenzungen.json'), 'utf8')) : {};
+let ergaenztAnzahl = 0;
+for (const e of eintraege) {
+  const z = ergaenzungen[e.osm || e.id];
+  if (!z || !z.quelle) continue;
+  const felder = [];
+  for (const f of ['website', 'oeffnungszeiten', 'telefon', 'email', 'facebook', 'instagram']) {
+    if (z[f] && !e[f]) { e[f] = z[f]; felder.push(f); }
+  }
+  if (felder.length) { e.ergaenzt = { felder, quelle: z.quelle, stand: z.stand }; ergaenztAnzahl++; }
+}
+
 // Anzeige-Felder und eindeutige Slugs
 for (const e of eintraege) {
   e.ortAnzeige = e.ort || e.ortNah;
@@ -801,6 +816,7 @@ for (const e of eintraege) {
     ${e.kat.length ? `<section><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${e.quelle === 'osm' ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
     <section><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     <section><h2>Kontakt</h2>${kontakt.length ? `<ul class="kontakt">${kontakt.join('')}</ul>` : '<p class="leise">Keine Kontaktdaten hinterlegt.</p>'}${e.betreiber && e.betreiber !== e.name ? `<p class="leise">Betreiber: ${esc(e.betreiber)}</p>` : ''}</section>
+    ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram' })[f]).join(', ')} ergänzt aus <a href="${esc(e.ergaenzt.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.ergaenzt.quelle).split('/')[0])}</a>${e.ergaenzt.stand ? ` (Stand ${esc(e.ergaenzt.stand.split('-').reverse().join('.'))})` : ''}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
     <p class="hinweis">Angaben ohne Gewähr. ${e.quelle === 'osm'
       ? `Quelle: <a href="https://www.openstreetmap.org/${e.osm}" rel="nofollow noopener" target="_blank">OpenStreetMap</a>. Etwas stimmt nicht? <a href="https://www.openstreetmap.org/edit?${e.osm.replace('/', '=')}" rel="nofollow noopener" target="_blank">In OpenStreetMap korrigieren</a> oder <a href="/mitmachen/?hof=${esc(e.slug)}">uns Bescheid geben</a>.`
       : `${e.quelleUrl ? `Quelle: <a href="${esc(e.quelleUrl)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.quelleUrl).split('/')[0])}</a>. ` : ''}Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>`}</p>
@@ -950,5 +966,5 @@ writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;
 const mitKat = eintraege.filter((e) => e.kat.length).length;
-console.log(`Build fertig: ${eintraege.length} Einträge (${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
+console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Ergänzungen, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
 if (impFehlt) console.warn('WARNUNG: Impressum in site.config.json ist unvollständig.');
