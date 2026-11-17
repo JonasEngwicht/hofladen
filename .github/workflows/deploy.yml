@@ -1,0 +1,13 @@
+# Löst nur den Cloudflare-Build aus – ohne die (langsame) OSM-Abfrage.
+# Für Code- oder Textänderungen: gh workflow run deploy.yml
+name: Nur deployen
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloudflare-Deploy auslösen
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgelöst."
