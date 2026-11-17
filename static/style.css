@@ -76,6 +76,7 @@ main { display: block; }
 
 /* Startseite */
 .held { background: var(--fichte); color: var(--weiss); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 2rem; align-items: center; padding: clamp(2rem, 5vw, 4rem) max(1.25rem, calc((100vw - var(--breite)) / 2 + 1.25rem)); overflow: hidden; }
+.held-text { min-width: 0; }
 .held h1 { color: var(--weiss); font-size: clamp(2.6rem, 6.2vw, 4.8rem); line-height: 1; max-width: 11ch; }
 .held-lead { font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: #CFE0D5; max-width: 30rem; margin: 1.1rem 0 1.8rem; }
 .plz-gross label { display: block; font-weight: 700; margin-bottom: .45rem; color: var(--raps); }
@@ -306,7 +307,7 @@ main { display: block; }
 .fuss-quelle { color: #A9C2B3; }
 
 @media (max-width: 960px) {
-  .held { grid-template-columns: 1fr; }
+  .held { grid-template-columns: minmax(0, 1fr); }
   .held-karte { width: min(78%, 380px); }
   .arten-liste { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .geteilt { grid-template-columns: 1fr; }
@@ -322,7 +323,8 @@ main { display: block; }
   .kopf-nav { order: 3; width: 100%; margin-left: 0; gap: 1.1rem; overflow-x: auto; }
   .kopf-suche { margin-left: auto; }
   .held h1 { max-width: none; }
-  .plz-zeile input { font-size: 1.35rem; }
+  .plz-zeile input { font-size: 1.35rem; width: 100%; padding: .5rem .6rem; letter-spacing: .1em; }
+  .held h1 { font-size: clamp(2.3rem, 11vw, 3rem); }
   .plz-zeile button { padding: 0 .9rem; font-size: .98rem; }
   .arten-liste { grid-template-columns: 1fr; }
   .werkzeug { position: static; }
@@ -333,3 +335,9 @@ main { display: block; }
   .karten-reihe { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+/* Mobil: nichts darf seitlich überstehen; Sortenspalte im Saisonkalender bleibt beim Wischen stehen */
+html { overflow-x: clip; }
+@media (max-width: 760px) {
+  .saison-tabelle th[scope="row"], .saison-tabelle thead th:first-child { position: sticky; left: 0; z-index: 1; background: var(--kalk); padding-right: .8rem; }
+}

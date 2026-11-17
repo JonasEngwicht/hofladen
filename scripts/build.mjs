@@ -516,7 +516,7 @@ schreibe('/', seite({
     <form class="plz-gross" action="/suche" method="get">
       <label for="plz">Deine Postleitzahl</label>
       <div class="plz-zeile">
-        <input id="plz" name="plz" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="03149" required autocomplete="postal-code">
+        <input id="plz" name="plz" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="88069" required autocomplete="postal-code">
         <button type="submit">Hofläden finden</button>
       </div>
       <p class="fehler" id="plz-fehler" hidden>Diese Postleitzahl kennen wir nicht. Bitte prüfe die fünf Ziffern.</p>
