@@ -36,6 +36,7 @@ jobs:
       - name: Testbuild
         run: node scripts/build.mjs
       - name: Commit, falls sich etwas geändert hat
+        id: commit
         run: |
           git config user.name "hofladenliste-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -45,4 +46,14 @@ jobs:
           else
             git commit -m "Daten aus OpenStreetMap aktualisiert"
             git push
+            echo "geaendert=ja" >> "$GITHUB_OUTPUT"
           fi
+      # Cloudflare baut bei Pushes derzeit nicht automatisch; daher den Deploy Hook aufrufen.
+      # Die Hook-URL liegt als Repository-Secret CF_DEPLOY_HOOK (Settings > Secrets and variables > Actions).
+      - name: Cloudflare-Deploy ausloesen
+        if: steps.commit.outputs.geaendert == 'ja' || github.event_name == 'workflow_dispatch'
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "Secret CF_DEPLOY_HOOK fehlt, Deploy bitte manuell ausloesen."; exit 0; fi
+          curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgeloest."

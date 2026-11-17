@@ -29,7 +29,9 @@ Nur Node-Bordmittel, keine Abhängigkeiten.
 
 ## Deploy
 
-Cloudflare Workers Builds ist mit diesem Repo verbunden. Jeder Push auf `main` führt `npx wrangler deploy` aus; davor läuft automatisch `node scripts/build.mjs` (siehe `wrangler.jsonc`). Die Custom Domains `hofladenliste.de` und `www.hofladenliste.de` sind in `wrangler.jsonc` eingetragen.
+Cloudflare Workers Builds (Worker `hofladen`, Production-Branch `main`) führt `npx wrangler deploy` aus; davor läuft automatisch `node scripts/build.mjs` (siehe `wrangler.jsonc`). Die Custom Domains `hofladenliste.de` und `www.hofladenliste.de` stehen in `wrangler.jsonc`.
+
+Ausgelöst wird der Build über den Deploy Hook „datenaktualisierung“ (Cloudflare → Worker → Settings → Builds → Deploy Hooks). Die GitHub Action ruft ihn nach jedem Datenupdate auf, wenn das Repository-Secret `CF_DEPLOY_HOOK` gesetzt ist. Manuell: *Actions → Daten aktualisieren → Run workflow* oder `curl -X POST <Hook-URL>`.
 
 ## Daten aktualisieren
 
