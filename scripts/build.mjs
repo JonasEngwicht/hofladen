@@ -24,7 +24,7 @@ const eintraege = osm.filter((e) => !ersetzt.has(e.osm)).map((e) => ({ ...e, que
 for (const m of manuell) {
   const e = { ...m, quelle: 'manuell', quelleUrl: m.quelle };
   if (e.lat == null) {
-    const rows = plz.get(e.plz) || [];
+    const rows = (plz.get(e.plz) || []).filter((r) => !r.org);
     const row = rows.find((r) => r.ort === e.ort) || rows[0];
     if (!row) { console.warn(`Manueller Eintrag ${m.id}: PLZ ${m.plz} unbekannt, übersprungen`); continue; }
     e.lat = row.lat; e.lon = row.lon; e.lageUngefaehr = true;
@@ -398,7 +398,7 @@ for (const [p, rows] of plz) {
   const lat = rows.reduce((s, r) => s + r.lat, 0) / rows.length;
   const lon = rows.reduce((s, r) => s + r.lon, 0) / rows.length;
   // Ortsname nur, wenn die PLZ eindeutig zu einem Ort gehört; sonst Name des Kreises
-  const orte = [...new Set(rows.map((r) => r.ort))];
+  const orte = [...new Set(rows.filter((r) => !r.org).map((r) => r.ort))];
   const name = orte.length === 1 ? orte[0] : kreise.get(kreis).titel;
   plzIndex[p] = [+lat.toFixed(4), +lon.toFixed(4), kreise.get(kreis).pfad, name];
 }

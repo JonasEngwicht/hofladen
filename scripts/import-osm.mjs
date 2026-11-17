@@ -72,8 +72,8 @@ for (const [osm, el] of elemente) {
   } else { verwirf('anderer Typ'); continue; }
 
   const pc = (t['addr:postcode'] || '').trim();
-  const kand = /^\d{5}$/.test(pc) ? plz.get(pc) : null;
-  const treffer = naechsterOrt(raster, lat, lon, kand) || naechsterOrt(raster, lat, lon);
+  const kand = /^\d{5}$/.test(pc) ? (plz.get(pc) || []).filter((o) => !o.org) : null;
+  const treffer = (kand && kand.length ? naechsterOrt(raster, lat, lon, kand) : null) || naechsterOrt(raster, lat, lon);
   // Die Abfrage liefert nur Objekte innerhalb Deutschlands; ohne PLZ-Ort im Umkreis von ca. 30 km verwerfen.
   if (!treffer) { verwirf('kein PLZ-Ort in der Nähe'); continue; }
   const kreis = kreise.get(treffer.ort.kreis);

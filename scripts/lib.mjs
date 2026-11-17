@@ -18,6 +18,27 @@ export function slugify(s) {
     .replace(/^-+|-+$/g, '');
 }
 
+// GeoNames enthält auch Großkunden-Postleitzahlen von Firmen und Behörden ("Finanzamt", "AOK", "… GmbH").
+// Solche Einträge sind keine Orte und werden für Ortsnamen und die Kreiszuordnung ignoriert.
+const ORG = new RegExp([
+  'GmbH', '\\bAG\\b', '\\bKG\\b', '\\bSE\\b', 'a\\.G\\.', 'mbH', '\\bOHG\\b', '\\beG\\b', '\\bPLC\\b', 'e\\.\\s?V\\.',
+  '\\bAmt\\b', 'amt\\b', '[Kk]asse\\b', 'Bank\\b', '[Vv]ersicherung', '[Vv]erwaltung', 'Universit', 'Hochschule',
+  'Bibliothek', '[Gg]ericht\\b', 'Ministerium', 'Staatsminist', 'Behörde', 'Agentur', '\\bBundes[a-zäöü]', '\\bLandes[a-zäöü]',
+  'Statistisch', 'Deutsche[rsn]? ', 'Post\\b', 'Postbank', 'Telekom', 'Rundfunk', 'Radio', 'Generali', 'Allianz', '\\bWerke\\b',
+  'Rathaus', 'Polizei', 'Bundeswehr', 'Army', 'Kaserne', 'Rechtsanw', 'Studio', 'Redaktion', 'Centrum', 'Institut', 'Lotterie',
+  '[Vv]erband', '[Gg]enossenschaft', 'Gesellschaft', 'Aktiengesellschaft', 'Anstalt', 'Informationssystem', 'Niederlassung',
+  'Filiale', 'Logistik', 'Marketing', 'Service', 'Versand', 'Zustell', 'Schadenausgleich', 'Gesundheit', 'Flughafen', 'Konzern',
+  'Holding', 'Zentrale', '[Dd]irektion', 'Kaufhof', 'Karstadt', 'Siemens', 'Daimler', 'Bosch', 'Amazon', 'Philatelie', 'Abt\\.',
+  'Hauptverwaltung', 'Geschäftsstelle', '[Kk]ammer', 'Krankenhaus', 'Klinik', 'Verlag', 'Druckerei', 'Archiv', 'Landtag',
+  'Regierung', 'Senat', 'Finanz', 'Steuer', 'Medien', 'Bahn\\b', 'Commerz', 'Handel\\b', 'Vertrieb', 'Stiftung', 'Vertretung',
+  'Bevollmächtigt', 'Museum', 'Präsidium', 'Sekretariat', 'Büro', 'Arbeitskreis', 'Arbeitsring', 'Rat für', 'Staatsanwalt',
+  'Oberbürgermeister', 'Laboratorium', 'Facharzt', 'Beratungsstelle', 'Team\\b', 'Konzerthaus', 'Oper\\b', 'Bereich',
+  'Deutschland\\b', '\\b(BKK|IKK|AOK|BARMER|DAK|HUK|BVG|GEMA|SWR|ZDF|ARD|RBB|DRK|VIT|AVM|AVG|OVAG|KSA|MDC|IMS|HDE|EDW|AKAD|LLP|ABB|EMBL)\\b',
+  '\\b[A-ZÄÖÜ]{4,}\\b', '^"', '\\.[A-Za-z]', '\\d',
+].join('|'));
+const KEINE_ORG = /^(Freiamt|Hohenkammer|Kammerstein|Kammerforst|Maikammer|Freigericht|Linsengericht|Landesbergen)$/;
+export const istOrganisation = (name) => ORG.test(name) && !KEINE_ORG.test(name);
+
 // Minimaler CSV-Parser (Felder ohne Zeilenumbrüche, mit Anführungszeichen).
 function parseCsvLine(line) {
   const out = []; let cur = ''; let q = false;
@@ -65,6 +86,7 @@ export function ladePlz(pfad) {
       plz: f[idx.zipcode], ort: f[idx.place], land, kreis: code,
       lat: +f[idx.latitude], lon: +f[idx.longitude],
     };
+    o.org = istOrganisation(o.ort);
     orte.push(o);
     if (!kreisVarianten.has(code)) kreisVarianten.set(code, { land, v: new Map() });
     const kv = kreisVarianten.get(code).v;
@@ -100,7 +122,7 @@ export function ladePlz(pfad) {
     if (!plz.has(o.plz)) plz.set(o.plz, []);
     plz.get(o.plz).push(o);
   }
-  return { orte, kreise, plz, raster: baueRaster(orte) };
+  return { orte, kreise, plz, raster: baueRaster(orte.filter((o) => !o.org)) };
 }
 
 function baueRaster(orte) {
