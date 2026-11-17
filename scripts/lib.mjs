@@ -33,8 +33,16 @@ const ORG = new RegExp([
   'Regierung', 'Senat', 'Finanz', 'Steuer', 'Medien', 'Bahn\\b', 'Commerz', 'Handel\\b', 'Vertrieb', 'Stiftung', 'Vertretung',
   'Bevollmächtigt', 'Museum', 'Präsidium', 'Sekretariat', 'Büro', 'Arbeitskreis', 'Arbeitsring', 'Rat für', 'Staatsanwalt',
   'Oberbürgermeister', 'Laboratorium', 'Facharzt', 'Beratungsstelle', 'Team\\b', 'Konzerthaus', 'Oper\\b', 'Bereich',
-  'Deutschland\\b', '\\b(BKK|IKK|AOK|BARMER|DAK|HUK|BVG|GEMA|SWR|ZDF|ARD|RBB|DRK|VIT|AVM|AVG|OVAG|KSA|MDC|IMS|HDE|EDW|AKAD|LLP|ABB|EMBL)\\b',
-  '\\b[A-ZÄÖÜ]{4,}\\b', '^"', '\\.[A-Za-z]', '\\d',
+  'Deutschland\\b', '[Kk]assen\\b', 'Sparkasse', '[Bb]üro', 'Zentrum', 'Jobcenter', 'Apotheke', 'Leasing', 'Finance',
+  'Distribution', 'Akademie', 'Großannahme', 'Aktion ', 'Teleshopping', '[Vv]ersorgung', 'Versicherer', 'Express', 'Brauerei',
+  '&', ' u\\. ', 'Dr\\.', 'Fachbereich', 'Fachklinik', 'klinik', 'Ordinariat', 'Diözese', 'GbR', 'oHG', 'Pharma', 'Group',
+  'Partner', 'Labor', '[Bb]etrieb\\b', 'management', 'wirtschaft', 'Bezirksstelle', 'Förderkreis', 'Center', 'Infrastruktur',
+  'Rechnungswesen', 'Koordination', 'Kreditanstalt', 'Überwachung', 'Kunden', 'Solar', '[Ss]taatsanwalt',
+  '[Gg]erichtshof', 'Mineralöl', 'Rehabilitation', 'Fachinformation', 'Motor', 'Taxis', 'Staatsbibliothek',
+  'Kreisausschu', 'Landrat', '[Mm]inister', 'Staatskanzlei', 'Justizvollzug', 'Senate', 'Verrechnung', 'Buchhandlung', 'Dipl\\.',
+  'Ltd\\.', 'Senioren', 'Dienst\\b', '^Haus ', '^Gemeinde ', 'Club\\b', 'Vorstand', 'Fachhochschule', 'Bauaktien', 'Volksbank',
+  '[Zz]eitung', 'SpreeBo', 'Diven', '\\b(BKK|IKK|AOK|BARMER|DAK|HUK|BVG|GEMA|SWR|ZDF|ARD|RBB|DRK|VIT|AVM|AVG|OVAG|KSA|MDC|IMS|HDE|EDW|AKAD|LLP|ABB|EMBL)\\b',
+  '\\b[A-ZÄÖÜ]{3,}\\b', '^"', '\\.[A-Za-z]', '\\d',
 ].join('|'));
 const KEINE_ORG = /^(Freiamt|Hohenkammer|Kammerstein|Kammerforst|Maikammer|Freigericht|Linsengericht|Landesbergen)$/;
 export const istOrganisation = (name) => ORG.test(name) && !KEINE_ORG.test(name);
