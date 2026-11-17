@@ -273,6 +273,26 @@ main { display: block; }
 .haken { display: inline-flex; align-items: center; gap: .35rem; font-weight: 600; }
 .sprung-liste h2 { font-size: 1.3rem; }
 
+/* Regionsprofil */
+.region { background: var(--fichte); color: #DCE8E0; margin-top: 3.5rem; padding: 3rem max(1.25rem, calc((100vw - var(--breite)) / 2 + 1.25rem)); }
+.region-innen { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+.region h2 { color: var(--weiss); font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 1rem; max-width: 22ch; }
+.region-text p { font-size: 1.08rem; line-height: 1.65; max-width: 40rem; }
+.region-text p:first-of-type::first-letter { font: 700 3.1em/.85 var(--titel); float: left; margin: .08em .1em 0 0; color: var(--raps); }
+.region-hinweis { font-size: .95rem !important; }
+.region a { color: var(--raps); }
+.region-highlights { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.region-highlights li { background: var(--fichte-2); border-left: 4px solid var(--raps); border-radius: 0 var(--r) var(--r) 0; padding: 1rem 1.2rem; }
+.region-highlights h3 { color: var(--weiss); font-size: 1.2rem; margin: 0; }
+.region-highlights .zeit { color: var(--raps); font-weight: 700; font-size: .92rem; margin: .2rem 0 .4rem; }
+.region-highlights p { margin: 0; }
+.region-teaser { background: var(--raps-hell); border-radius: var(--r-klein); padding: .7rem 1rem; }
+.quellen ol { padding-left: 1.3rem; font-size: .88rem; color: var(--grau); max-width: 60rem; }
+.quellen li { margin: .25rem 0; }
+.quellen a { color: var(--grau); }
+.quellen h2 { font-size: 1.1rem; }
+@media (max-width: 960px) { .region-innen { grid-template-columns: 1fr; } }
+
 /* Textseiten */
 .text { max-width: 44rem; margin: 2rem auto 0; padding: 0 1.25rem; }
 .text h1 { margin-bottom: 1rem; }

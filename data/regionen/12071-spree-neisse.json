@@ -1,0 +1,24 @@
+{
+  "kreis": "12071",
+  "ueberschrift": "Spree-Neiße: Karpfenteiche, Gurkenfelder und Wein an der Neiße",
+  "teaser": "Karpfen aus Peitz, Gurken aus dem Spreewald, Wein von der Neiße – entdecke die Genussregion Spree-Neiße.",
+  "absaetze": [
+    "Zwischen dem Oberspreewald im Nordwesten und der Neiße im Osten liegt eine Landschaft, die man schmecken kann. Rund ein Drittel des Landkreises wird landwirtschaftlich genutzt, 367 Betriebe bewirtschaften hier Felder, Wiesen und Gärten – und viele von ihnen öffnen dir ihre Hoftüren: im Hofladen, bei der Brandenburger Landpartie oder am Tag des offenen Hofes.",
+    "Das kulinarische Herz schlägt in Peitz. Das Peitzer Teichgebiet ist das größte zusammenhängende Teichgebiet Deutschlands – eine Kulturlandschaft, deren Geschichte bis ins 16. Jahrhundert zurückreicht. Allein der Neuendorfer Oberteich misst 222 Hektar. Hier wächst der Peitzer Karpfen heran: zart, fettarm, mit festem, hellem Fleisch und seit 2022 von der EU als geschützte geografische Angabe ausgezeichnet. Unvergesslich ist das Abfischen im Herbst, wenn der Fisch fangfrisch vom Netz auf den Teller kommt.",
+    "Im Westen des Kreises, rund um Burg im Spreewald, beginnt das Reich der Spreewälder Gurke. Der Spreewald ist das zweitgrößte Gurkenanbaugebiet Deutschlands, und der Name „Spreewälder Gurken“ ist seit 1999 EU-weit geschützt. Auf den Feldern des Kreises reifen außerdem Erdbeeren und Spargel – im Frühsommer lohnt sich der Ausflug zum Hof also gleich doppelt.",
+    "Und die Genussregion hat noch viel mehr zu bieten: Ziegenkäse aus Jerischke und Drehnow, Honig aus Guben und Groß Döbbern, Säfte und Brände aus Burg und Kunersdorf, Mehl aus der Spreewaldmühle – und sogar Wein und Sekt aus Guben, Jerischke, Schorbus und Welzow. Wer einmal hier einkauft, schmeckt den Unterschied."
+  ],
+  "highlights": [
+    { "titel": "Peitzer Karpfen", "zeit": "Anfischen im August, Abfischen im Oktober", "text": "Geschützte geografische Angabe seit 2022 – aus dem größten zusammenhängenden Teichgebiet Deutschlands." },
+    { "titel": "Spreewälder Gurken", "zeit": "Ernte im Hochsommer", "text": "Seit 1999 EU-weit geschützt, angebaut im zweitgrößten Gurkengebiet Deutschlands." },
+    { "titel": "Spargel und Erdbeeren", "zeit": "April bis Juli", "text": "Zwei der Hauptkulturen im Landkreis – frisch vom Feld schmecken sie am besten." },
+    { "titel": "Gubener Appelfest", "zeit": "jedes Jahr im September", "text": "Seit 1995 feiert Guben die Apfelernte – mit der Wahl der Gubener Apfelkönigin." }
+  ],
+  "quellen": [
+    { "titel": "Landkreis Spree-Neiße: Broschüre „Wirtschaftsstandort Landkreis Spree-Neiße“, Kapitel Landwirtschaft und Fischerei (2022)", "url": "https://www.lkspn.de/media/file/broschuere/2022/broschuerecit_de_.pdf" },
+    { "titel": "Stadt Cottbus, Landkreis Spree-Neiße, CMT Cottbus: „Genussregion Cottbus & Spree-Neiße“ (2026)", "url": "https://www.lkspn.de/media/file/broschuere/2026/Genuss_web.pdf" },
+    { "titel": "Reiseland Brandenburg: Große Peitzer Teichtour", "url": "https://www.reiseland-brandenburg.de/poi/spreewald/radtouren/grosse-peitzer-teichtour-oder-vom-wandel-einer-landschaft/" },
+    { "titel": "Europäische Kommission, Vertretung in Deutschland: „Peitzer Karpfen erhält geografisches Schutzsiegel“ (5. Oktober 2022)", "url": "https://germany.representation.ec.europa.eu/news/peitzer-karpfen-erhalt-geografisches-schutzsiegel-2022-10-05_de" },
+    { "titel": "Lebensmittel Praxis: Spreewald-Gurken – schlechte Ernte 2020 (zweitgrößtes Anbaugebiet, Schutz seit 1999)", "url": "https://lebensmittelpraxis.de/industrie-aktuell/29025-spreewald-gurken-schlechte-ernte-2020-11-10-10-45-06.html" }
+  ]
+}

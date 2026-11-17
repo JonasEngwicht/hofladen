@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Baut die statische Website nach public/ und die Daten für den Worker nach src/generated/.
 // Läuft automatisch vor jedem "wrangler deploy" (siehe wrangler.jsonc → build.command).
-import { mkdirSync, writeFileSync, readFileSync, rmSync, cpSync, existsSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync, rmSync, cpSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, domainToUnicode } from 'node:url';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
@@ -404,6 +404,22 @@ function fragenHtml(f, titel) {
   return { html, ld };
 }
 
+// ---------- Regionsprofile (recherchiert, mit Quellen) ----------
+const REGIONEN = new Map();
+const regionDir = join(ROOT, 'data', 'regionen');
+if (existsSync(regionDir)) for (const f of readdirSync(regionDir).filter((x) => x.endsWith('.json'))) {
+  const r = JSON.parse(readFileSync(join(regionDir, f), 'utf8'));
+  REGIONEN.set(r.kreis, r);
+}
+function regionHtml(r) {
+  return `<section class="region" id="region"><div class="region-innen">
+  <div class="region-text"><h2>${esc(r.ueberschrift)}</h2>${r.absaetze.map((a) => `<p>${esc(a)}</p>`).join('')}<p class="region-hinweis"><a href="/saisonkalender/">Was gerade Saison hat</a> · <a href="#quellen">Quellen</a></p></div>
+  <ul class="region-highlights">${r.highlights.map((h) => `<li><h3>${esc(h.titel)}</h3><p class="zeit">${esc(h.zeit)}</p><p>${esc(h.text)}</p></li>`).join('')}</ul>
+</div></section>`;
+}
+const quellenHtml = (r) => `<section class="abschnitt quellen" id="quellen"><h2>Quellen</h2><ol>${r.quellen.map((q) => `<li><a href="${esc(q.url)}" rel="nofollow noopener" target="_blank">${esc(q.titel)}</a></li>`).join('')}</ol></section>`;
+const regionTeaser = (k) => { const r = REGIONEN.get(k.code); return r ? `<p class="region-teaser">${esc(r.teaser)} <a href="${k.pfad}#region">Mehr über die Region</a></p>` : ''; };
+
 // ---------- Orte ----------
 const ORTE = new Map(); // kreis-Code → Map(ort → { ort, pfad, liste })
 for (const [code, liste] of proKreis) {
@@ -655,6 +671,7 @@ ${liste.length ? filterLeiste(liste) : ''}
   </div>
   <aside class="karten-spalte">${kartenPanel({ titel: `Karte: Hofläden ${im}` })}</aside>
 </div>
+${REGIONEN.has(k.code) ? regionHtml(REGIONEN.get(k.code)) : ''}
 ${ortLinks.length > 1 ? `<section class="abschnitt">
   <h2>Hofläden nach Ort ${esc(im)}</h2>
   <ul class="kreis-liste">${orte.filter((o) => o.pfad !== k.pfad).map((o) => `<li><a href="${o.pfad}"><span>${esc(o.ort)}</span><span class="zahl">${zahl(o.liste.length)}</span></a></li>`).join('')}</ul>
@@ -664,7 +681,8 @@ ${f.html}
 <section class="abschnitt nachbarn">
   <h2>Hofläden in der Umgebung</h2>
   <ul class="kreis-liste">${nachbarn.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.titel)}</span><span class="zahl">${zahl(proKreis.get(x.code)?.length || 0)}</span></a></li>`).join('')}</ul>
-</section>`,
+</section>
+${REGIONEN.has(k.code) ? quellenHtml(REGIONEN.get(k.code)) : ''}`,
     }), liste.length > 0);
   }
 }
@@ -712,7 +730,7 @@ ${liste.length >= 6 ? filterLeiste(liste) : ''}
   <aside class="karten-spalte">${kartenPanel({ titel: `Karte: ${h1}` })}</aside>
 </div>
 <section class="abschnitt seo-text"><h2>${esc(h1)}: Überblick</h2>${gebietsText(liste, wo, { orteNennen: false, anker: k.landSlug })}${typLinks(liste, k.landSlug)}
-<p>Alle Einträge im Kreis findest du unter <a href="${k.pfad}">Hofläden ${esc(k.im)}</a>.</p></section>
+<p>Alle Einträge im Kreis findest du unter <a href="${k.pfad}">Hofläden ${esc(k.im)}</a>.</p>${regionTeaser(k)}</section>
 ${f.html}
 ${ortListe(naheOrte(o.lat, o.lon, 9, new Set([o, ...andereOrte])), `Hofläden in Orten in der Nähe von ${o.ort}`)}
 ${andereOrte.length ? `<section class="abschnitt"><h2>Hofläden in anderen Orten ${esc(k.im)}</h2><ul class="kreis-liste">${andereOrte.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.ort)}</span><span class="zahl">${zahl(x.liste.length)}</span></a></li>`).join('')}</ul></section>` : ''}`,
@@ -780,7 +798,7 @@ for (const e of eintraege) {
   <div class="hof-info">
     <section><h2>Öffnungszeiten</h2>${ohTabelle}</section>
     ${e.kat.length ? `<section><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${e.quelle === 'osm' ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
-    <section><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p></section>
+    <section><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     <section><h2>Kontakt</h2>${kontakt.length ? `<ul class="kontakt">${kontakt.join('')}</ul>` : '<p class="leise">Keine Kontaktdaten hinterlegt.</p>'}${e.betreiber && e.betreiber !== e.name ? `<p class="leise">Betreiber: ${esc(e.betreiber)}</p>` : ''}</section>
     <p class="hinweis">Angaben ohne Gewähr. ${e.quelle === 'osm'
       ? `Quelle: <a href="https://www.openstreetmap.org/${e.osm}" rel="nofollow noopener" target="_blank">OpenStreetMap</a>. Etwas stimmt nicht? <a href="https://www.openstreetmap.org/edit?${e.osm.replace('/', '=')}" rel="nofollow noopener" target="_blank">In OpenStreetMap korrigieren</a> oder <a href="/mitmachen/?hof=${esc(e.slug)}">uns Bescheid geben</a>.`
