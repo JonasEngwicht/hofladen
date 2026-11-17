@@ -72,8 +72,8 @@ function kreisName(variants) {
   if ((m = best.match(/^(.*), kreisfreie Stadt$/))) return { name: m[1], art: 'Stadt' };
   if ((m = best.match(/^(.*), (Freie und Hansestadt|Stadt|Hansestadt)$/))) return { name: m[1], art: 'Stadt' };
   if ((m = best.match(/^(Kreisfreie Stadt|Stadtkreis) (.*)$/))) return { name: m[2], art: 'Stadt' };
-  if ((m = best.match(/^(Landkreis|Kreis) (.*)$/))) return { name: m[2], art: 'Landkreis' };
-  return { name: best, art: 'Landkreis' };
+  if ((m = best.match(/^(Landkreis|Kreis) (.*)$/))) return { name: m[2], art: 'Landkreis', praefix: m[1] };
+  return { name: best, art: 'Landkreis', praefix: 'Landkreis' };
   function score(v) {
     return (/^(Landkreis|Kreisfreie Stadt|Stadtkreis|Kreis) /.test(v) ? 10 : 0) + variants.get(v) / 1000;
   }
@@ -105,8 +105,8 @@ export function ladePlz(pfad) {
   // Kreise mit Slugs; Stadt und gleichnamiger Landkreis im selben Land bekommen eindeutige Slugs.
   const kreise = new Map();
   for (const [code, { land, v }] of kreisVarianten) {
-    const { name, art } = kreisName(v);
-    kreise.set(code, { code, land, name, art, slug: slugify(name) });
+    const { name, art, praefix } = kreisName(v);
+    kreise.set(code, { code, land, name, art, praefix, slug: slugify(name) });
   }
   const seen = new Map();
   for (const k of kreise.values()) {
@@ -122,7 +122,7 @@ export function ladePlz(pfad) {
     k.landName = BUNDESLAENDER[k.land];
     k.landSlug = slugify(k.landName);
     k.pfad = `/${k.landSlug}/${k.slug}/`;
-    k.titel = k.art === 'Stadt' ? k.name : `Landkreis ${k.name}`;
+    k.titel = k.art === 'Stadt' || /kreis$/i.test(k.name) ? k.name : `${k.praefix} ${k.name}`;
     if (k.land === 'BE' || k.land === 'HH') k.titel = k.name;
   }
 

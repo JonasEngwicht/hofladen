@@ -5,6 +5,9 @@
 // Alles andere liefert die statischen Seiten aus public/ (über env.ASSETS).
 import PLZ from './generated/plz.json';
 import EINTRAEGE from './generated/eintraege.json';
+import KATEGORIEN from './generated/kategorien.json';
+
+const KAT_BUCHSTABEN = 'abcdefghijklmnop';
 
 function distanzKm(aLat, aLon, bLat, bLon) {
   const rad = Math.PI / 180;
@@ -24,11 +27,12 @@ function json(daten, status = 200) {
   });
 }
 
-function sucheWeiterleitung(plz) {
+function sucheWeiterleitung(plz, produkte = []) {
   const p = (plz || '').replace(/\D/g, '');
   const eintrag = /^\d{5}$/.test(p) ? PLZ[p] : null;
   if (!eintrag) return weiter(`/?fehler=plz&plz=${encodeURIComponent(p)}`);
-  return weiter(`${eintrag[2]}?plz=${p}#naehe`);
+  const prod = produkte.filter((x) => KATEGORIEN.includes(x));
+  return weiter(`${eintrag[2]}?plz=${p}${prod.length ? `&produkt=${prod.join(',')}` : ''}`);
 }
 
 function umkreis(url) {
@@ -39,7 +43,7 @@ function umkreis(url) {
   if (plz) {
     const e = PLZ[plz];
     if (!e) return json({ fehler: 'PLZ unbekannt' }, 404);
-    [lat, lon] = e; ort = { plz, name: e[3], kreisPfad: e[2] };
+    [lat, lon] = e; ort = { plz, name: e[3], kreisPfad: e[2], lat, lon };
   } else if (!(lat >= 47 && lat <= 56 && lon >= 5 && lon <= 16)) {
     return json({ fehler: 'plz oder lat/lon angeben' }, 400);
   } else {
@@ -47,16 +51,18 @@ function umkreis(url) {
     let best = Infinity;
     for (const [p, e] of Object.entries(PLZ)) {
       const d = distanzKm(lat, lon, e[0], e[1]);
-      if (d < best) { best = d; ort = { plz: p, name: e[3], kreisPfad: e[2] }; }
+      if (d < best) { best = d; ort = { plz: p, name: e[3], kreisPfad: e[2], lat, lon }; }
     }
   }
   const limit = Math.min(50, Math.max(1, parseInt(url.searchParams.get('limit') || '12', 10)));
   const radius = Math.min(100, Math.max(1, parseFloat(url.searchParams.get('radius') || '40')));
   const typ = url.searchParams.get('typ');
+  const produkte = (url.searchParams.get('produkt') || '').split(',').map((x) => KAT_BUCHSTABEN[KATEGORIEN.indexOf(x)]).filter(Boolean);
   const treffer = [];
   for (const e of EINTRAEGE) {
     if (typ === 'hofladen' && !e[7]) continue;
     if (typ === 'automat' && e[7]) continue;
+    if (produkte.length && !produkte.every((b) => e[11].includes(b))) continue;
     if (Math.abs(e[0] - lat) > radius / 100 || Math.abs(e[1] - lon) > radius / 60) continue;
     const km = distanzKm(lat, lon, e[0], e[1]);
     if (km <= radius) treffer.push([km, e]);
@@ -66,7 +72,9 @@ function umkreis(url) {
     ort,
     anzahl: treffer.length,
     ergebnisse: treffer.slice(0, limit).map(([km, e]) => ({
-      km: Math.round(km * 10) / 10, pfad: `/hof/${e[2]}/`, titel: e[3], art: e[4], ort: e[5], oeffnungszeiten: e[6] || null,
+      km: Math.round(km * 10) / 10, pfad: `/hof/${e[2]}/`, slug: e[2], titel: e[3], art: e[4], ort: e[5],
+      oh: e[6] || null, typ: e[7] ? 'hofladen' : 'automat', adresse: e[8], telefon: e[9] || null, website: e[10] || null,
+      kat: [...e[11]].map((b) => KATEGORIEN[KAT_BUCHSTABEN.indexOf(b)]), bio: !!e[12], ohText: e[13] || null, lat: e[0], lon: e[1],
     })),
   });
 }
@@ -78,7 +86,7 @@ export default {
       url.hostname = url.hostname.slice(4);
       return weiter(url.toString(), 301);
     }
-    if (url.pathname === '/suche') return sucheWeiterleitung(url.searchParams.get('plz'));
+    if (url.pathname === '/suche') return sucheWeiterleitung(url.searchParams.get('plz'), url.searchParams.getAll('produkt').flatMap((x) => x.split(',')));
     const m = url.pathname.match(/^\/plz\/(\d{5})\/?$/);
     if (m) return sucheWeiterleitung(m[1]);
     if (url.pathname === '/api/umkreis') return umkreis(url);

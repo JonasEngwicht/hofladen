@@ -94,18 +94,37 @@ export function uebersetze(oh) {
     .replace(/(\d)-(\d)/g, '$1–$2').replace(/;\s*/g, '; ');
 }
 
-// true/false = jetzt geöffnet/geschlossen, null = unbekannt. Zeit in deutscher Ortszeit.
-export function jetztOffen(oh, datum = new Date()) {
-  const w = parse(oh);
-  if (!w) return null;
+// Wochentag (0 = Montag) und Minute in deutscher Ortszeit
+export function berlinZeit(datum = new Date()) {
   const teile = new Intl.DateTimeFormat('en-GB', {
     timeZone: 'Europe/Berlin', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
   }).formatToParts(datum);
   const get = (t) => teile.find((p) => p.type === t).value;
-  const tag = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(get('weekday'));
-  const jetzt = +get('hour') * 60 + +get('minute');
-  if (w[tag].some(([a, b]) => jetzt >= a && jetzt < b)) return true;
+  return { tag: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(get('weekday')), min: +get('hour') * 60 + +get('minute') };
+}
+
+// true/false = jetzt geöffnet/geschlossen, null = unbekannt.
+export function jetztOffen(oh, datum = new Date()) {
+  const s = status(oh, datum);
+  return s ? s.offen : null;
+}
+
+// Status für die Anzeige: { offen, kurz: "Geöffnet bis 18:00" | "Öffnet um 14:00" | "Öffnet Do 15:00" | "Geschlossen", heute: "08:00–18:00" | "geschlossen" }
+export function status(oh, datum = new Date()) {
+  const w = parse(oh);
+  if (!w) return null;
+  const { tag, min } = berlinZeit(datum);
+  const heute = w[tag].length ? w[tag].map(([a, b]) => `${uhr(a)}–${uhr(b)}`).join(', ') : 'geschlossen';
+  const ganz = w.every((iv) => iv.length === 1 && iv[0][0] === 0 && iv[0][1] >= 1440);
+  if (ganz) return { offen: true, kurz: 'Rund um die Uhr geöffnet', heute: 'durchgehend' };
+  for (const [a, b] of w[tag]) if (min >= a && min < b) return { offen: true, kurz: b >= 1440 && a === 0 ? 'Heute durchgehend geöffnet' : `Geöffnet bis ${uhr(b % 1440 || 1440)}`, heute };
   const vortag = (tag + 6) % 7;
-  if (w[vortag].some(([a, b]) => b > 1440 && jetzt + 1440 < b)) return true;
-  return false;
+  for (const [, b] of w[vortag]) if (b > 1440 && min + 1440 < b) return { offen: true, kurz: `Geöffnet bis ${uhr(b - 1440)}`, heute };
+  const spaeter = w[tag].filter(([a]) => a > min).sort((x, y) => x[0] - y[0])[0];
+  if (spaeter) return { offen: false, kurz: `Öffnet um ${uhr(spaeter[0])}`, heute };
+  for (let i = 1; i <= 7; i++) {
+    const t = (tag + i) % 7;
+    if (w[t].length) return { offen: false, kurz: `Öffnet ${i === 1 ? 'morgen' : TAGE_DE[t]} ${uhr(w[t][0][0])}`, heute };
+  }
+  return { offen: false, kurz: 'Geschlossen', heute };
 }
