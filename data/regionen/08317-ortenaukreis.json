@@ -1,0 +1,57 @@
+{
+  "kreis": "08317",
+  "ueberschrift": "Ortenau: Kirschwasser, Riesling und Erdbeeren am Schwarzwaldrand",
+  "teaser": "Edelbrände aus Oberkirch, Wein von der Badischen Weinstraße und Erdbeeren aus dem Renchtal – entdecke die Ortenau.",
+  "absaetze": [
+    "Fruchtbare Böden und mildes Klima machen den Ortenaukreis, den flächengrößten Landkreis Baden-Württembergs, zum Paradies für Obst und Wein. Entlang der Badischen Weinstraße reihen sich Rebhänge an Erdbeerfelder, Kirsch- und Apfelanlagen. In Oberkirch heißt der Riesling übrigens „Klingenberger“ – nach dem Hang, an dem er hier heimisch wurde.",
+    "Und dann die Brände: Mit rund 7.000 Brennern ist die Ortenau europaweit einzigartig, allein in Oberkirch sind knapp 800 Hausbrennereien registriert. Probier unbedingt ein Schwarzwälder Kirschwasser – EU-geschützt und nur aus Kirschen der Region gebrannt."
+  ],
+  "highlights": [
+    {
+      "titel": "Erdbeeren aus dem Renchtal",
+      "zeit": "Frühsommer"
+    },
+    {
+      "titel": "Schwarzwälder Kirschwasser",
+      "zeit": "ganzjährig ab Hof"
+    },
+    {
+      "titel": "Oberkircher Weinfest",
+      "zeit": "erstes September-Wochenende"
+    },
+    {
+      "titel": "Oberkircher Brennersteig",
+      "zeit": "am schönsten zur Blütezeit"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Staatsministerium Baden-Württemberg: Starke und zukunftsfähige Land- und Forstwirtschaft (Ortenaukreis)",
+      "url": "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/starke-und-zukunftsfaehige-land-und-forstwirtschaft"
+    },
+    {
+      "titel": "Renchtal Tourismus: Wandern im Renchtal 2024",
+      "url": "https://www.renchtalsteig.de/media/wandern_im_renchtal_2024_komprimiert.pdf"
+    },
+    {
+      "titel": "Renchtal Tourismus: Viticulture in the Rench valley",
+      "url": "https://www.renchtal-tourismus.de/en/enjoy/regional-products/wine/"
+    },
+    {
+      "titel": "Netzwerk Südbaden: Kulinarische Vielfalt der Ortenau",
+      "url": "https://netzwerk-suedbaden.de/?p=21788"
+    },
+    {
+      "titel": "Schwarzwald Tourismus: Oberkircher Brennersteig",
+      "url": "https://www.schwarzwald-tourismus.info/touren/oberkircher-brennersteig-e9c09f9644"
+    },
+    {
+      "titel": "Regierungspräsidium Karlsruhe: Spirituosen mit Herkunftsschutz aus Baden-Württemberg",
+      "url": "https://rp.baden-wuerttemberg.de/themen/landwirtschaft/markenrecht/seiten/spirituosen-mit-herkunftsschutz/"
+    },
+    {
+      "titel": "Festivals in Deutschland: Oberkircher Weinfest",
+      "url": "https://www.festivalsindeutschland.de/festival/oberkircher-weinfest"
+    }
+  ]
+}

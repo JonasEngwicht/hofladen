@@ -1,0 +1,49 @@
+{
+  "kreis": "05166",
+  "ueberschrift": "Kreis Viersen: Spargel, Erdbeeren und Gemüse vom Niederrhein",
+  "teaser": "Frisch gestochener Spargel, Erdbeeren und Gemüse aus Nettetal – entdecke den Kreis Viersen.",
+  "absaetze": [
+    "Zwischen Rhein und Maas liegt eines der wichtigsten Gartenbaugebiete Deutschlands: Mehr als die Hälfte der Gewächshausflächen Nordrhein-Westfalens steht am Niederrhein. Rund um Nettetal prägen Sonderkulturen und Gartenbau die Landschaft, im Freiland wachsen Kohl, Porree, Spargel, Erdbeeren und Salate.",
+    "Am besten schmeckt der Spargel ganz frisch gestochen vom Hofladen – unschlagbar mit Erdbeeren dazu. Und weil rund ein Drittel der Kreisfläche unter Naturschutz steht, verbindest du den Einkauf am schönsten mit einer Radtour durch den Naturpark Schwalm-Nette."
+  ],
+  "highlights": [
+    {
+      "titel": "Spargel",
+      "zeit": "April bis Juni"
+    },
+    {
+      "titel": "Erdbeeren",
+      "zeit": "Mai bis Juli"
+    },
+    {
+      "titel": "Feldgemüse",
+      "zeit": "Frühjahr bis Herbst"
+    },
+    {
+      "titel": "Naturpark Schwalm-Nette",
+      "zeit": "per Rad zum Hofladen"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "IHK: Agrobusiness Niederrhein – Ein starkes Stück Niederrhein",
+      "url": "https://www.ihk.de/blueprint/servlet/resource/blob/4013934/b25adee207e8ec415d55a33104301f51/agrobusiness-broschuere-2015-data.pdf"
+    },
+    {
+      "titel": "Stadt Straelen: LEADER Regionales Entwicklungskonzept Leistende Landschaft",
+      "url": "https://www.straelen.de/bauen-wirtschaft/umwelt-klimaschutz/vernetzung-und-kooperationen/leader-leistende-landschaft-e-v/leader-regionales-entwicklungskonzept.pdf?cid=ebg"
+    },
+    {
+      "titel": "Niederrhein Tourismus: Stadt, Land, Fluss (Faltblatt)",
+      "url": "https://www.straelen.de/freizeit-tourismus/stadtinformation/tourismus-information/info-material/faltblatt-nt-stadt-land-fluss.pdf?cid=mr4"
+    },
+    {
+      "titel": "Kreis Viersen: Hereinspaziert!",
+      "url": "https://e-pflicht.ub.uni-duesseldorf.de/download/pdf/157259"
+    },
+    {
+      "titel": "Naturpark Schwalm-Nette: Brüggen",
+      "url": "https://Npsn.de/download/1/9_Brueggen_2012.pdf"
+    }
+  ]
+}

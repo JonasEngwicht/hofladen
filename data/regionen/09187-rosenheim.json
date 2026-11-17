@@ -1,0 +1,45 @@
+{
+  "kreis": "09187",
+  "ueberschrift": "Landkreis Rosenheim: Almen, Milch und Streuobst im Voralpenland",
+  "teaser": "Almbrotzeit im Chiemsee-Alpenland, Milch vom Bergbauernhof und Äpfel aus Bad Feilnbach – entdecke den Landkreis Rosenheim.",
+  "absaetze": [
+    "Zwischen Inntal, Mangfallgebirge und Chiemgauer Alpen ist der Landkreis Rosenheim echtes Grünland: Die Milchviehhaltung ist für die Höfe hier die wichtigste Einkommensquelle. Rund 60 Almen warten im Chiemsee-Alpenland auf dich – mit Brotzeiten, die nach Bergsommer schmecken.",
+    "Ganz typisch fürs oberbayerische Voralpenland sind auch die Streuobstwiesen – der Apfelmarkt in Bad Feilnbach feierte schon 2016 sein 25-jähriges Jubiläum. Und rund um Kampenwand, Hochries und Wendelstein hat sich eine eigene Öko-Modellregion gebildet."
+  ],
+  "highlights": [
+    {
+      "titel": "Almsommer",
+      "zeit": "Juni bis September"
+    },
+    {
+      "titel": "Milch & Käse vom Hof",
+      "zeit": "ganzjährig"
+    },
+    {
+      "titel": "Apfelmarkt Bad Feilnbach",
+      "zeit": "jährlich im Herbst"
+    },
+    {
+      "titel": "Streuobst",
+      "zeit": "Erntezeit im Herbst"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Bayerische Landesanstalt für Landwirtschaft: Streuobstanbau im Landkreis Rosenheim",
+      "url": "https://lfl.bayern.de/mam/cms07/publikationen/daten/informationen/streuobstanbau-rosenheim_lfl-information.pdf"
+    },
+    {
+      "titel": "Chiemsee-Alpenland Tourismus: Genusskarte",
+      "url": "https://www.chiemsee-alpenland.de/_Resources/Persistent/700c58a5251c9c4f8c4920cebc8daffe1547292d/03_hiemsee-Alpenland_2307_Genusskarte.pdf"
+    },
+    {
+      "titel": "Chiemsee-Alpenland: Auf da Alm dahoam",
+      "url": "https://www.seeon-seebruck.de/fileadmin/seeon-seebruck/Tourist-Information/-Dateien/Auf_da_Alm_dahoam_Chiemsee-Alpenland.pdf"
+    },
+    {
+      "titel": "Öko-Modellregion Hochries-Kampenwand-Wendelstein",
+      "url": "https://oekomodellregionen.bayern/file/2ea94971-11e5-fee0-d63f-01418c4e416c.pdf/flyer-oeko-modellregion-hochries-kampenwand-wendelstein"
+    }
+  ]
+}

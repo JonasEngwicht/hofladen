@@ -1,0 +1,49 @@
+{
+  "kreis": "09771",
+  "ueberschrift": "Wittelsbacher Land: Schrobenhausener Spargel und Bio aus dem Paartal",
+  "teaser": "EU-geschützter Spargel, Kartoffeln und Kürbiskerne aus dem Paartal – entdecke das Wittelsbacher Land.",
+  "absaetze": [
+    "Der Landkreis Aichach-Friedberg ist das Stammland der Wittelsbacher, die Bayern über 700 Jahre regierten. Rund um Aichach, Inchenhofen, Kühbach und Pöttmes wächst der Schrobenhausener Spargel – EU-geschützt und Teil des größten Spargelanbaugebiets Bayerns.",
+    "Seit 2019 ist das Wittelsbacher Land Öko-Modellregion Paartal. Kartoffeln, Kürbiskerne, Sojabohnen und Spargel machen die Gegend reich an „Bodenschätzen“ – und über 800 Kilometer ausgeschilderte Radwege bringen dich bequem zum nächsten Hofladen."
+  ],
+  "highlights": [
+    {
+      "titel": "Schrobenhausener Spargel",
+      "zeit": "April bis Juni"
+    },
+    {
+      "titel": "Kartoffeln",
+      "zeit": "Sommer bis Herbst"
+    },
+    {
+      "titel": "Kürbiskerne",
+      "zeit": "Ernte im Herbst"
+    },
+    {
+      "titel": "Biergärten im Wittelsbacher Land",
+      "zeit": "im Sommer"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Ich geh wandern: Landkreis Aichach-Friedberg",
+      "url": "https://www.ich-geh-wandern.de/landkreis-aichach-friedberg"
+    },
+    {
+      "titel": "Bayerische Landesanstalt für Landwirtschaft: Steckbrief Schrobenhausener Spargel g.g.A.",
+      "url": "https://www.lfl.bayern.de/mam/cms07/iem/dateien/2022_02_17_bf-steckbrief_bayerische-originale-herkunftsschutz_barrierefrei_schrobenhausen.pdf"
+    },
+    {
+      "titel": "inFranken: Beginn der Spargelsaison in Bayern",
+      "url": "https://www.infranken.de/bayern/beginn-der-spargelsaison-in-bayern-starke-preissenkung-erwartet-art-5853562,PRINT"
+    },
+    {
+      "titel": "Öko-Modellregion Paartal: Bio-regionaler Einkaufsführer",
+      "url": "https://oekomodellregionen.bayern/file/9ac9bf85-1c41-4952-83ed-cd885c2b67ca.pdf/bio-regionaler-einkaufsfuehrer-webansicht"
+    },
+    {
+      "titel": "Wittelsbacher Land: Bier- & Wirtsgärten",
+      "url": "https://www.augsburg-tourismus.de/files/augsburgtourismus/media/thema-des-monats/Biergarten_2018_Endversion.pdf"
+    }
+  ]
+}

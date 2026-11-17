@@ -1,0 +1,49 @@
+{
+  "kreis": "08416",
+  "ueberschrift": "Landkreis Tübingen: Genuss am Früchtetrauf",
+  "teaser": "Streuobst am Albtrauf, Wein aus dem Ammertal und Dinkel aus der Region – entdecke den Landkreis Tübingen.",
+  "absaetze": [
+    "Der Landkreis Tübingen ist Teil der größten zusammenhängenden Streuobstlandschaft Mitteleuropas. Zwischen Albtrauf, Neckar- und Ammertal und dem Schönbuchrand wechseln Streuobstwiesen mit Wäldern und sonnigen Weinbergen – nicht umsonst heißen die Wanderwege hier „Premiumwege am Früchtetrauf“.",
+    "Auch der Wein hat Tradition: Schon vor der Universitätsgründung 1477 spielte er in Tübingen eine große Rolle. Und beim Projekt TÜKORN bauen Landwirte aus dem Kreis zusammen mit einem Müller und einem Bäcker eine alte Dinkelsorte an."
+  ],
+  "highlights": [
+    {
+      "titel": "Streuobst",
+      "zeit": "Erntezeit im Herbst"
+    },
+    {
+      "titel": "Wildling von Einsiedel",
+      "zeit": "alte Birnensorte aus Pfrondorf"
+    },
+    {
+      "titel": "Wein aus Unterjesingen",
+      "zeit": "Weinlese im Herbst"
+    },
+    {
+      "titel": "TÜKORN-Dinkel",
+      "zeit": "ganzjährig beim Bäcker"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Bergwelten: Premiumwege am Früchtetrauf",
+      "url": "https://www.bergwelten.com/a/premiumwege-am-fruechtetrauf"
+    },
+    {
+      "titel": "Hochschule Rottenburg: Premiumwanderwege im Landkreis Tübingen",
+      "url": "https://www.hs-rottenburg.net/fileadmin/user_upload/Studiengaenge/NaRem/Projekte/Premiumwanderwege-Lkr-Tue.pdf"
+    },
+    {
+      "titel": "Schwäbische Heimat: Der Weinbau in Tübingen (Albert Füger)",
+      "url": "https://journals.wlb-stuttgart.de/index.php/sh/article/download/11605/11474/21988"
+    },
+    {
+      "titel": "Universitätsstadt Tübingen: Radgenuss am Früchtetrauf",
+      "url": "https://tuebingen.de/radfahren/31476/41007.html"
+    },
+    {
+      "titel": "KOB Bavendorf: Streuobst-Patenschaften Landkreis Tübingen",
+      "url": "https://www.kob-bavendorf.de/files/bereiche/Streuobst/Projekte%20Streuobst/Sortenpatenschaften/SP_Tuebingen.pdf"
+    }
+  ]
+}

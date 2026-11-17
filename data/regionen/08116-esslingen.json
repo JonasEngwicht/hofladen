@@ -1,0 +1,53 @@
+{
+  "kreis": "08116",
+  "ueberschrift": "Landkreis Esslingen: Filderkraut, Kirschen und Streuobst",
+  "teaser": "Spitzes Filderkraut, Kirschen aus Weilheim und Streuobst am Albtrauf – entdecke den Landkreis Esslingen.",
+  "absaetze": [
+    "Auf der Filderebene wächst ein Kraut wie kein anderes: Das spitze Filderkraut ist mild, besonders feinrippig und seit 2012 EU-geschützt. Ein Muss für Sauerkraut-Fans – und jedes Jahr Anlass für das Krautfest in Leinfelden-Echterdingen mit Krauthobeln und Spitzkraut-Classics.",
+    "Rund 9.600 Hektar Streuobstwiesen machen den Landkreis zu einem der größten Streuobstgebiete Europas. Um Weilheim an der Teck und Neidlingen liegt Deutschlands größtes Kirschenanbaugebiet, und im Neuffener Tal reifen sogar Trauben."
+  ],
+  "highlights": [
+    {
+      "titel": "Filderkraut",
+      "zeit": "Ernte ab Spätsommer"
+    },
+    {
+      "titel": "Krautfest Leinfelden-Echterdingen",
+      "zeit": "im Oktober"
+    },
+    {
+      "titel": "Kirschen aus Weilheim",
+      "zeit": "Frühsommer"
+    },
+    {
+      "titel": "Streuobst",
+      "zeit": "Erntezeit im Herbst"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Staatsministerium Baden-Württemberg: Filderkrautfest Leinfelden-Echterdingen",
+      "url": "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/filderkrautfest-leinfelden-echterdingen"
+    },
+    {
+      "titel": "Landesvertretung Baden-Württemberg: Rezeptsammlung mit Filderspitzkraut",
+      "url": "https://stm.baden-wuerttemberg.de/fileadmin/redaktion/m-stm/intern/dateien/lv_berlin/Rezepte_LVB/Rezeptsammlung_der_Hausk%C3%BCche_LVBW_112021.pdf"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Was kommt beim Krautfest auf den Teller?",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/esslingen/krautfest-in-leinfelden-echterdingen-was-kommt-beim-krautfest-auf-den-teller-78929581.html"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Mit „Stückle-Glück“ Streuobstwiesen retten",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/esslingen/kurs-im-kreis-esslingen-mit-stueckle-glueck-streuobstwiesen-retten-78990146.html"
+    },
+    {
+      "titel": "Landkreis Esslingen: Freizeitglück",
+      "url": "https://www.landkreis-esslingen.de/site/LRA-Esslingen-ROOT/get/params_E604970505/18383649/xLKR-ES-freizeitglueck-21x21cm-2024-Auflage5-web-2.pdf"
+    },
+    {
+      "titel": "Staatsministerium Baden-Württemberg: Kurtz besucht Weingut Dolde in Frickenhausen-Linsenhofen",
+      "url": "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/kurtz-besucht-weingut-dolde-in-frickenhausen-linsenhofen"
+    }
+  ]
+}

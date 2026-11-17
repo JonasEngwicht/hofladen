@@ -1,0 +1,45 @@
+{
+  "kreis": "03353",
+  "ueberschrift": "Landkreis Harburg: Elbmarsch-Gemüse und Heidegenuss",
+  "teaser": "Spargel und Erdbeeren aus der Winsener Elbmarsch, Heidehonig und Heidschnucke aus der Nordheide – entdecke den Landkreis Harburg.",
+  "absaetze": [
+    "In der Winsener Elbmarsch hat der Gemüseanbau eine lange Tradition – früher holten sogar Feldbahnen die Ernte vom Feld, damit sie per Fähre auf den Hamburger Markt kam. Rhabarber war einst eine Hauptkultur, Spargel und Erdbeeren gehören seit Jahrzehnten dazu, und Maiblumen werden hier seit rund 100 Jahren gezogen.",
+    "Im Süden beginnt mit Hanstedt, Salzhausen und Buchholz der Naturpark Lüneburger Heide. Hier kommen Heidehonig, Heidekartoffeln, Heidespargel und Heidschnuckenfleisch auf den Tisch – am schönsten, wenn im Spätsommer die Heide lila blüht."
+  ],
+  "highlights": [
+    {
+      "titel": "Spargel & Erdbeeren",
+      "zeit": "Mai bis Juli"
+    },
+    {
+      "titel": "Heideblüte",
+      "zeit": "August bis September"
+    },
+    {
+      "titel": "Heidehonig",
+      "zeit": "nach der Heideblüte"
+    },
+    {
+      "titel": "Heidschnucke",
+      "zeit": "Spezialität der Heide"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Tiefgang: Gemüse aus dem Landkreis!",
+      "url": "https://www.tiefgang.net/gemuese-aus-dem-landkreis/"
+    },
+    {
+      "titel": "Naturpark Lüneburger Heide: Einkaufsführer",
+      "url": "https://naturpark-lueneburger-heide.de/fileadmin/user_upload/documents/Einkaufsfuehrer_NPLH_Aenderungen_final3.pdf"
+    },
+    {
+      "titel": "Naturpark Lüneburger Heide: Pressemitteilung Januar 2026",
+      "url": "https://naturpark-lueneburger-heide.de/fileadmin/pdf-presse-und-aktuelles/Pressemitteilungen/2026/260113__01_PM_Natupark-_Premiere_auf_der_IGW_.pdf"
+    },
+    {
+      "titel": "hamburg.de: Lüneburger Heide",
+      "url": "https://www.hamburg.de/freizeit/ausfluege/region/lueneburger-heide-340342"
+    }
+  ]
+}

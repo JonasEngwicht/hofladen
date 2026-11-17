@@ -1,0 +1,49 @@
+{
+  "kreis": "08215",
+  "ueberschrift": "Landkreis Karlsruhe: Spargel, Kraichgau-Wein und Streuobst",
+  "teaser": "Spargel rund um Bruchsal, Wein aus dem Kraichgau und Streuobstsaft – entdecke den Landkreis Karlsruhe.",
+  "absaetze": [
+    "Rund um Bruchsal dreht sich im Frühjahr alles um Spargel: Hier sitzt der Verband Süddeutscher Spargel- und Erdbeeranbauer, und die ersten Stangen sind oft schon ab Hof verkauft, bevor sie den Großmarkt erreichen. In Karlsruhe trifft sich die Branche sogar zu Europas Leitmesse für Spargel und Beeren.",
+    "Östlich beginnt der Kraichgau, das „Land der 1000 Hügel“ mit fruchtbaren Lössböden und jahrhundertealter Weinkultur. Streuobstwiesen etwa in Zaisenhausen und Sulzfeld liefern Äpfel für Saft aus der Region."
+  ],
+  "highlights": [
+    {
+      "titel": "Spargel",
+      "zeit": "April bis Juni"
+    },
+    {
+      "titel": "Erdbeeren",
+      "zeit": "Mai bis Juli"
+    },
+    {
+      "titel": "Wein aus dem Kraichgau",
+      "zeit": "Weinlese im Herbst"
+    },
+    {
+      "titel": "Streuobstsaft",
+      "zeit": "ganzjährig"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Tageskarte: Die ersten Spargelstangen vom beheizten Feld sind da",
+      "url": "https://www.tageskarte.io/industrie/detail/die-ersten-spargelstangen-vom-beheizten-feld-sind-da.html"
+    },
+    {
+      "titel": "Regierungspräsidium Karlsruhe: 34. Spargeltag in Karlsruhe",
+      "url": "https://rp.baden-wuerttemberg.de/rpk/presse/pressemitteilungen-aktuelle-meldungen/artikel/34-spargeltag-in-karlsruhe/"
+    },
+    {
+      "titel": "Kraichgau-Stromberg Tourismus: Handverlesen – Wein & Genuss",
+      "url": "https://bruchsal-erleben.de/dokumente/pdf/KST_Handverlesen_Magazin_2021_web_ES_min.pdf"
+    },
+    {
+      "titel": "Badische Heimat: Landschaft aus Löss (Alberti)",
+      "url": "https://regionalia.blb-karlsruhe.de/files/16147/BLB_Alberti_Landschaft_Loess.pdf"
+    },
+    {
+      "titel": "Staatsministerium Baden-Württemberg: Streuobstbestände erhalten",
+      "url": "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/streuobstbestaende-in-baden-wuerttemberg-erhalten"
+    }
+  ]
+}

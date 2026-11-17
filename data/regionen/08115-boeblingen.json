@@ -1,0 +1,45 @@
+{
+  "kreis": "08115",
+  "ueberschrift": "Landkreis Böblingen: Streuobst zwischen Schönbuch und Heckengäu",
+  "teaser": "Alte Apfelsorten, Streuobstsaft und Hofläden zwischen Schönbuch und Heckengäu – entdecke den Landkreis Böblingen.",
+  "absaetze": [
+    "Gleich vor den Toren Stuttgarts wird es ländlich: Zwischen dem Schönbuch und dem Heckengäu mit seinen trockenen Muschelkalkböden prägen Äcker, Hecken und Streuobstwiesen die Landschaft. Der Landkreis kürt sogar eigene Streuobst-Majestäten, die für seine Wiesen und Produkte werben.",
+    "Hier wachsen Lokalsorten wie der Böblinger Straßenapfel, der Rosenapfel vom Schönbuch oder der Weilemer Sämling – ein Saft- und Mostapfel, um 1900 in Weil im Schönbuch entdeckt. Und beim „Lernort Bauernhof im Heckengäu“ erleben Schulklassen seit 20 Jahren, wo ihr Essen herkommt."
+  ],
+  "highlights": [
+    {
+      "titel": "Mostobst-Ernte",
+      "zeit": "September bis Oktober"
+    },
+    {
+      "titel": "Rosenapfel vom Schönbuch",
+      "zeit": "Lokalsorte im Herbst"
+    },
+    {
+      "titel": "Streuobstsaft",
+      "zeit": "ganzjährig"
+    },
+    {
+      "titel": "Lernort Bauernhof",
+      "zeit": "für Schulklassen"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Wikipedia: Heckengäu",
+      "url": "https://en.wikipedia.org/wiki/Heckeng%C3%A4u"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Kreis Böblingen – neue Streuobstroyals gesucht",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/boeblingen/kreis-boeblingen-neue-streuobstroyals-gesucht-79015339.html"
+    },
+    {
+      "titel": "KOB Bavendorf: Streuobst-Patenschaften Landkreis Böblingen",
+      "url": "https://www.kob-bavendorf.de/files/bereiche/Streuobst/Projekte%20Streuobst/Sortenpatenschaften/SP_Boeblingen_oA.pdf"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Lernen auf dem Bauernhof im Heckengäu",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/boeblingen/lernen-auf-dem-bauernhof-warum-sind-die-kartoffeln-dieses-jahr-so-klein-78953172.html"
+    }
+  ]
+}

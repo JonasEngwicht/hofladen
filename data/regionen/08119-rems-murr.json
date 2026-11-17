@@ -1,0 +1,49 @@
+{
+  "kreis": "08119",
+  "ueberschrift": "Rems-Murr-Kreis: Remstal-Wein und Streuobstwiesen",
+  "teaser": "Wein aus dem Remstal, Äpfel von der Streuobstwiese und Wengerter mit Herzblut – entdecke den Rems-Murr-Kreis.",
+  "absaetze": [
+    "Im Remstal prägen Weinberge seit Generationen das Landschaftsbild. Rund 1.250 Hektar Reben stehen im Rems-Murr-Kreis, die größten Weinbaugemeinden sind Weinstadt und Fellbach mit seinem Kappelberg. Wer direkt beim Wengerter kauft, hilft mit, die oft steilen Lagen zu erhalten – denn viele davon sind in Gefahr.",
+    "Dazu kommen Streuobstwiesen voller unterschiedlichster Sorten, deren Äpfel im Herbst zu Saft gepresst werden. Weinstadt feiert dann seinen Streuobsttag, und nördlich der Rems beginnt mit dem Schwäbischen Wald eine ganz andere, waldreiche Landschaft."
+  ],
+  "highlights": [
+    {
+      "titel": "Remstal-Wein",
+      "zeit": "Weinlese im Herbst"
+    },
+    {
+      "titel": "Streuobst-Äpfel",
+      "zeit": "September bis Oktober"
+    },
+    {
+      "titel": "Weinstädter Streuobsttag",
+      "zeit": "im Oktober"
+    },
+    {
+      "titel": "Wein vom Wengerter",
+      "zeit": "das ganze Jahr"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Statistisches Landesamt Baden-Württemberg: Weinbau in Fellbach (Rebflächenerhebung 2023)",
+      "url": "https://www.Agrar-Presseportal.de/landwirtschaft/pflanze/weinbau-in-fellbach-6-7-8239-des-gemeindegebiets-mit-reben-bepflanzt-39082.pdf"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Projekt ILEK – Remstal kämpft gegen das große Rebensterben",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/rems-murr-kreis/projekt-ilek-startet-remstal-kaempft-gegen-das-grosse-rebensterben-79010124.html"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Apfelernte im Remstal",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/rems-murr-kreis/apfelernte-im-remstal-so-lief-die-streuobsternte-wir-haben-alles-zusammengekratzt-79042867.html"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Zukunftsstiftung Remstal",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/rems-murr-kreis/konzept-fuer-brachflaechen-nutzung-zukunftsstiftung-will-im-remstal-eine-gruene-revolution-starten-79040463.html"
+    },
+    {
+      "titel": "Thorbecke: Rems-Murr-Kreis – Vielfalt eines liebenswerten Landkreises (Leseprobe)",
+      "url": "https://shop.verlagsgruppe-patmos.de/media/pdf/978-3-7995-0182-8.pdf"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "kreis": "05558",
+  "ueberschrift": "Kreis Coesfeld: Baumberge, Pättkes und Münsterländer Höfe",
+  "teaser": "Hofläden, Deelencafés und Radeln auf Pättkes rund um die Baumberge – entdecke den Kreis Coesfeld.",
+  "absaetze": [
+    "In den Baumbergen erreicht das Münsterland am Longinusturm mit 187 Metern seinen höchsten Punkt. An ihrem Südwesthang zwischen Coesfeld, Rosendahl und Nottuln liegt eine der wenigen Lössinseln des Münsterlandes – mit ungewöhnlich fruchtbaren Böden.",
+    "Rund 1.450 landwirtschaftliche Betriebe bewirtschaften den Kreis. Viele laden zum Einkaufen direkt beim Landwirt oder zu Kaffee und Kuchen in umgebauten Deelencafés ein – am schönsten mit dem Rad über die typischen Pättkes."
+  ],
+  "highlights": [
+    {
+      "titel": "Spargel & Beeren",
+      "zeit": "Frühsommer"
+    },
+    {
+      "titel": "Hofläden & Deelencafés",
+      "zeit": "das ganze Jahr"
+    },
+    {
+      "titel": "Radeln auf Pättkes",
+      "zeit": "Frühling bis Herbst"
+    },
+    {
+      "titel": "Baumberge",
+      "zeit": "rund um den Longinusturm"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Ich geh wandern: Kreis Coesfeld",
+      "url": "https://www.ich-geh-wandern.de/kreis-coesfeld"
+    },
+    {
+      "titel": "KuLaDig: Kulturlandschaftsbereich Baumberge",
+      "url": "https://www.kuladig.de/Objektansicht/A-EK-20080730-0041"
+    },
+    {
+      "titel": "WLV: Zahlen zur Landwirtschaft im Kreis Coesfeld",
+      "url": "https://wlv.de/storage/133542/Kennzahlen_KV_Coesfeld.pdf"
+    },
+    {
+      "titel": "Landwirtschaftskammer NRW: Landerlebnisse im westlichen Münsterland (Borken & Coesfeld)",
+      "url": "https://epflicht.ulb.uni-muenster.de/download/pdf/144859"
+    },
+    {
+      "titel": "Landwirtschaftskammer NRW: Landerlebnisse im östlichen Münsterland",
+      "url": "https://epflicht.ulb.uni-muenster.de/download/pdf/143982"
+    },
+    {
+      "titel": "WLV: Übersicht zur Landwirtschaft in Westfalen",
+      "url": "https://wlv.de/storage/83922/Übersicht_zur_Landwirtschaft_in_Westfalen.pdf"
+    }
+  ]
+}

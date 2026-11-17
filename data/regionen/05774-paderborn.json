@@ -1,0 +1,49 @@
+{
+  "kreis": "05774",
+  "ueberschrift": "Kreis Paderborn: Delbrücker Spargel und Senne-Heidschnucke",
+  "teaser": "Spargel aus dem Delbrücker Land, Heidschnucken aus der Senne, Brot und Bier vom Land – entdecke den Kreis Paderborn.",
+  "absaetze": [
+    "In den warmen Sandböden rund um Delbrück liegt eine der wichtigsten Spargelregionen Nordrhein-Westfalens. Sieben Spargelhöfe machen das Delbrücker Land jedes Jahr von etwa Mitte April bis zum 24. Juni zum Paradies für Spargelfans – am schönsten erradelt auf der Delbrücker Spargelroute.",
+    "Zwischen der Heidelandschaft der Senne, der karstreichen Paderborner Hochfläche und den Wäldern des Eggegebirges wird kräftig geackert. In der Senne grasen Heidschnucken auf Naturschutzwiesen, und in den Ausflugslokalen kommen Spargel, Wild, Brot und Bier aus der Region auf den Tisch."
+  ],
+  "highlights": [
+    {
+      "titel": "Delbrücker Spargel",
+      "zeit": "Mitte April bis 24. Juni"
+    },
+    {
+      "titel": "Stadt- und Spargelfest Delbrück",
+      "zeit": "im Mai"
+    },
+    {
+      "titel": "Heidschnucke aus der Senne",
+      "zeit": "Spezialität der Region"
+    },
+    {
+      "titel": "Delbrücker Spargelroute",
+      "zeit": "per Rad von Hof zu Hof"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Touristikzentrale Paderborner Land: Die Delbrücker Spargelroute",
+      "url": "https://www.paderborner-land.de/pbl-wAssets/docs/radflyer/7_Delbruecker-Spargelroute.pdf"
+    },
+    {
+      "titel": "Festivals in Deutschland: Stadt- und Spargelfest Delbrück",
+      "url": "https://www.festivalsindeutschland.de/festival/stadt-spargelfest-delbrueck"
+    },
+    {
+      "titel": "Gemeinde Hövelhof: Paderborner Land Route (Faltblatt)",
+      "url": "https://hoevelhof.de/de-wAssets/docs/hoevelhof/gemeindeportrait/broschueren/PaderbornerLandRoute_Faltblatt.pdf"
+    },
+    {
+      "titel": "KuLaDig: Kulturlandschaft Paderborn – Delbrücker Land",
+      "url": "https://www.kuladig.de/Objektansicht/A-EK-20080619-0007"
+    },
+    {
+      "titel": "Paderborner Land: Heidschnucken-Schäferei Senne",
+      "url": "https://www.paderborner-land.de/pbl-wAssets/docs/Weitere-Flyer/Faltblatt_HeidSchaeferei_2024_kl.pdf"
+    }
+  ]
+}

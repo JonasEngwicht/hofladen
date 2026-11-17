@@ -1,0 +1,49 @@
+{
+  "kreis": "08117",
+  "ueberschrift": "Landkreis Göppingen: Streuobst am doppelten Albtrauf",
+  "teaser": "Champagnerbratbirne aus Schlat, Hägenmark aus Auendorf und Streuobst bis zum Edelbrand – entdecke den Landkreis Göppingen.",
+  "absaetze": [
+    "Vor der Kulisse des doppelten Albtraufs breitet sich im Landkreis Göppingen eine einzigartige Streuobstlandschaft aus – und aus dem Obst wird alles gemacht, vom Saft bis zum Edelbrand. In Schlat dreht sich alles um die Champagnerbratbirne, und das Auendorfer „Hägenmark“ ist weit über den Ort hinaus bekannt.",
+    "Auf der Alb wachsen inzwischen sogar Kichererbsen, und an Automaten gibt es Eier, Wurst und Nudeln direkt vom Hof. Wer es gemütlich mag, radelt auf der Filstal- oder Voralbroute von Hof zu Hof."
+  ],
+  "highlights": [
+    {
+      "titel": "Champagnerbratbirne",
+      "zeit": "Ernte im Herbst"
+    },
+    {
+      "titel": "Hägenmark aus Auendorf",
+      "zeit": "ganzjährig"
+    },
+    {
+      "titel": "Streuobst-Edelbrände",
+      "zeit": "ganzjährig"
+    },
+    {
+      "titel": "Hofautomaten",
+      "zeit": "rund um die Uhr"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Landkreis Göppingen: Barrierefreie Radrouten",
+      "url": "https://www.vanraam.com/assets/img/92379/1695036057-barrierefreie-mobilitaet-goeppingen.pdf"
+    },
+    {
+      "titel": "Landkreis Göppingen: Regionale Produkte – Busse willkommen",
+      "url": "https://www.geislingen.de/fileadmin/Dateien/Dateien/PDF-Dateien/Tourismus/busse_regionaleprodukte.pdf"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Auf der Alb wachsen auch Kichererbsen",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/goeppingen/landwirtschaft-im-kreis-goeppingen-auf-der-alb-wachsen-auch-kichererbsen-78898819.html"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Eier, Wurst und Nudeln aus dem Automaten",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/goeppingen/landkreis-goeppingen-eier-wurst-und-nudeln-aus-dem-automaten-78964539.html"
+    },
+    {
+      "titel": "Landkreis Göppingen: Radtouren im Landkreis Göppingen",
+      "url": "https://www.rechberghausen.de/fileadmin/Dateien/Dateien/Radbroschuere_Goeppingen_2018.pdf"
+    }
+  ]
+}

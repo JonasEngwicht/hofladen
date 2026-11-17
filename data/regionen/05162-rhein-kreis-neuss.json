@@ -1,0 +1,41 @@
+{
+  "kreis": "05162",
+  "ueberschrift": "Rhein-Kreis Neuss: Bördeböden, Obst und Feldgemüse",
+  "teaser": "Gemüse von fruchtbaren Lössböden, Obstblüte bei Jüchen und Erdbeeren vom Feld – entdecke den Rhein-Kreis Neuss.",
+  "absaetze": [
+    "Ertragreiche Lösslehmböden und ein mildes Klima mit Niederschlägen übers ganze Jahr machen den Rhein-Kreis Neuss zum Paradies für den Ackerbau. Auf den fruchtbaren Bördeböden zwischen Rhein und Erft wächst fast alles – von A wie Apfel bis Z wie Zuckerrübe.",
+    "Im Frühjahr taucht die Obstbaumblüte die Felder bei Jüchen in Weiß und Rosa, und am Niederrhein kommen Kohl, Porree, Spargel, Erdbeeren und Salate frisch aus dem Freiland. Viele Höfe verkaufen ihre Ernte direkt im eigenen Hofladen."
+  ],
+  "highlights": [
+    {
+      "titel": "Spargel & Erdbeeren",
+      "zeit": "Frühsommer"
+    },
+    {
+      "titel": "Obstblüte bei Jüchen",
+      "zeit": "im Frühjahr"
+    },
+    {
+      "titel": "Feldgemüse",
+      "zeit": "Sommer bis Herbst"
+    },
+    {
+      "titel": "Äpfel",
+      "zeit": "Erntezeit im Herbst"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Rhein-Kreis Neuss: Gut leben im Rhein-Kreis Neuss",
+      "url": "https://e-pflicht.ub.uni-duesseldorf.de/download/pdf/126811"
+    },
+    {
+      "titel": "Landwirtschaftskammer NRW: Die schönsten Landerlebnisse im Rhein-Kreis Neuss & Mönchengladbach",
+      "url": "https://epflicht.ulb.uni-muenster.de/download/pdf/145901"
+    },
+    {
+      "titel": "IHK: Agrobusiness Niederrhein – Ein starkes Stück Niederrhein",
+      "url": "https://www.ihk.de/blueprint/servlet/resource/blob/4013934/b25adee207e8ec415d55a33104301f51/agrobusiness-broschuere-2015-data.pdf"
+    }
+  ]
+}

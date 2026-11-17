@@ -1,0 +1,49 @@
+{
+  "kreis": "03241",
+  "ueberschrift": "Region Hannover: Spargel, Heidelbeeren und Hofladenrouten",
+  "teaser": "Burgdorfer Spargel, Heidelbeeren und ausgeschilderte Hofladenrouten – entdecke die Region Hannover.",
+  "absaetze": [
+    "Auf den leichten Böden rund um Hannover wächst der Spargel, der Niedersachsen zum Spargelland macht – jede vierte bis fünfte Stange in Deutschland kommt von hier. In Burgdorf wurde der Spargelanbau schon 1750 erstmals erwähnt, dazu kommen Kartoffeln, Erdbeeren und Heidelbeeren frisch vom Feld.",
+    "Die Region hat sogar eigene Hofladenrouten aufgelegt: Allein rund um das Burgdorfer Holz zwischen Burgdorf, Lehrte und Uetze liegen 16 Höfe an Rad- und Wanderwegen. Weitere Touren führen durch das Calenberger Land, die Wedemark und ans Steinhuder Meer."
+  ],
+  "highlights": [
+    {
+      "titel": "Burgdorfer Spargel",
+      "zeit": "April bis Juni"
+    },
+    {
+      "titel": "Heidelbeeren",
+      "zeit": "Hochsommer"
+    },
+    {
+      "titel": "Kartoffelmarkt Otze",
+      "zeit": "jährlich in Burgdorf"
+    },
+    {
+      "titel": "Hofladenrouten",
+      "zeit": "per Rad, das ganze Jahr"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Niedersächsischer Landtag: Drucksache 18/6530 – Spargelanbau in Niedersachsen",
+      "url": "https://www.landtag-niedersachsen.de/drucksachen/drucksachen_18_07500/06501-07000/18-06530.pdf"
+    },
+    {
+      "titel": "leinetal24: Niedersachsens Spargel ist deutschlandweit bekannt",
+      "url": "https://www.leinetal24.de/niedersachsen/start-saison-niedersachsen-spargel-deutschland-spargelparadies-spargelsaison-92870489.html"
+    },
+    {
+      "titel": "Niedersächsische Spargelstraße: Spargelkarte",
+      "url": "https://www.niedersaechsische-spargelstrasse.de/medien/dokumente/spargelkarte_2020_105x200mm_k2.pdf"
+    },
+    {
+      "titel": "Region Hannover: Von Hof zu Hof – Burgdorfer Holz (2026)",
+      "url": "https://www.hannover.de/content/download/664064/file/_61.04_FB_VonHofzuHof_Burgdorfer%20Holz_2026_Internet.pdf"
+    },
+    {
+      "titel": "Region Hannover: Die Hofladenrouten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Naherholung/Raus-in-die-Natur/Radfahren/Die-Hofladenrouten"
+    }
+  ]
+}

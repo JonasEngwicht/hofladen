@@ -1,0 +1,49 @@
+{
+  "kreis": "05170",
+  "ueberschrift": "Kreis Wesel: Bauernhöfe zwischen Rhein, Lippe und Issel",
+  "teaser": "Fast 190 Bauernhöfe mit Landerlebnissen, Bio aus der Öko-Modellregion und Gutes vom Niederrhein – entdecke den Kreis Wesel.",
+  "absaetze": [
+    "Im Kreis Wesel bist du auf den Spuren der Römer unterwegs, in einer Landschaft, die Rhein, Lippe und Issel geformt haben. Ganze 187 Bauernhöfe laden hier zu rund 290 Landerlebnissen ein, und auf den Feldern wachsen Kartoffeln, Kohl, Spargel und Erdbeeren.",
+    "Unter dem Motto „Gutes vom Niederrhein“ bündelt die Genussregion Niederrhein Spezialitäten, Hofläden und Manufakturen – bis hin zu Back- und Braugetreide aus der Region. Gemeinsam mit Kleve bildet der Kreis außerdem die Öko-Modellregion Niederrhein."
+  ],
+  "highlights": [
+    {
+      "titel": "Spargel & Erdbeeren",
+      "zeit": "Frühsommer"
+    },
+    {
+      "titel": "Back- & Braugetreide",
+      "zeit": "vom Niederrhein"
+    },
+    {
+      "titel": "Bio aus der Öko-Modellregion",
+      "zeit": "ganzjährig"
+    },
+    {
+      "titel": "Landerlebnisse",
+      "zeit": "auf 187 Höfen"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Landwirtschaftskammer NRW: Die schönsten Landerlebnisse am nördlichen Niederrhein im Kreis Wesel",
+      "url": "https://epflicht.ulb.uni-muenster.de/download/pdf/237022"
+    },
+    {
+      "titel": "IHK: Agrobusiness Niederrhein – Ein starkes Stück Niederrhein",
+      "url": "https://www.ihk.de/blueprint/servlet/resource/blob/4013934/b25adee207e8ec415d55a33104301f51/agrobusiness-broschuere-2015-data.pdf"
+    },
+    {
+      "titel": "Genussregion Niederrhein: Gutes vom Niederrhein (Faltblatt)",
+      "url": "https://kreis-wesel.de/system/files/2024-11/190-010_Faltblatt_Genussregion_K4_DRUCK.pdf"
+    },
+    {
+      "titel": "Kreis Wesel: Projekte zur Regionalvermarktung (DVS-Workshop 2020)",
+      "url": "https://www.dvs-gap-netzwerk.de/fileadmin/Redaktion/Seiten/Service/Veranstaltungen/2020/Foerderung_Regionalvermarktung/Stallknecht_DVS_WS_Regionalvermarktung_2020.pdf"
+    },
+    {
+      "titel": "Öko-Modellregion Niederrhein: Bio-Kistenanbieter aus den Kreisen Kleve und Wesel",
+      "url": "https://www.oekolandbau.nrw.de/system/files/media/document/file/flyer_bio-kistenanbieter_aus_den_kreisen_kleve_und_wesel_webversion.pdf"
+    }
+  ]
+}

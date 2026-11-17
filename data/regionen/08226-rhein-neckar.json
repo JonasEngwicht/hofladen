@@ -1,0 +1,37 @@
+{
+  "kreis": "08226",
+  "ueberschrift": "Rhein-Neckar-Kreis: Spargel, Bergstraßen-Wein und Streuobst",
+  "teaser": "Schwetzinger Spargel, Wein von der Badischen Bergstraße und Streuobst aus Kraichgau und Odenwald – entdecke den Rhein-Neckar-Kreis.",
+  "absaetze": [
+    "Schon ab 1668 ließ Kurfürst Carl Ludwig im Schwetzinger Schlossgarten Spargel anbauen. Heute sprießt er in der Rheinebene rund um Schwetzingen, Walldorf und St. Leon-Rot auf etwa 400 Hektar – von Mai bis Anfang Juni ist Hochsaison. Daneben gedeihen Sonderkulturen wie Tabak.",
+    "An der Badischen Bergstraße reifen die Trauben zwischen Rheinebene und Odenwald, in Kraichgau und Odenwald prägen Streuobstwiesen die Dörfer. Wein, Spargel und sogar Hopfen: Vielfältiger kann ein Landkreis kaum schmecken."
+  ],
+  "highlights": [
+    {
+      "titel": "Schwetzinger Spargel",
+      "zeit": "Mai bis Anfang Juni"
+    },
+    {
+      "titel": "Sorte „Meisterschuss“",
+      "zeit": "Schwetzinger Klassiker seit etwa 1910"
+    },
+    {
+      "titel": "Wein von der Bergstraße",
+      "zeit": "Weinlese im Herbst"
+    },
+    {
+      "titel": "Streuobst",
+      "zeit": "Erntezeit im Herbst"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Rhein-Neckar-Kreis: Entdecken Sie unsere Region! (Freizeitbroschüre)",
+      "url": "https://cms.eppelheim.de/site/Eppelheim2019/get/params_E-748007460_Dattachment/3012727/Freizeitbroschuere%20RNK.pdf"
+    },
+    {
+      "titel": "Im Süden ganz oben: 350 Jahre Spargelanbau in Schwetzingen",
+      "url": "https://www.imsuedenganzoben.de/en/350-years-of-cultivating-asparagus_mt13147"
+    }
+  ]
+}

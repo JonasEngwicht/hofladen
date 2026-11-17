@@ -1,0 +1,49 @@
+{
+  "kreis": "09274",
+  "ueberschrift": "Landkreis Landshut: Hopfenland Hallertau und Isartal",
+  "teaser": "Hopfen aus der Hallertau, Spargel und Kartoffeln von sandigen Böden und Gemüse aus Niederbayern – entdecke den Landkreis Landshut.",
+  "absaetze": [
+    "Im Nordwesten des Landkreises beginnt die Hallertau, das größte zusammenhängende Hopfenanbaugebiet der Welt – 45 Prozent seiner Fläche liegen in den Landkreisen Landshut und Kelheim. Bis zu sieben Meter hoch ragen die Hopfengärten, und auf den sandigen Böden gedeihen Spargel und Kartoffeln.",
+    "Entlang von Isar und Vils prägen Äcker und Wiesen die Täler. Und Niederbayern ist Bayerns Gemüsegarten: Rund 45 Prozent der bayerischen Freilandfläche für Gemüse liegen hier."
+  ],
+  "highlights": [
+    {
+      "titel": "Hallertauer Hopfen",
+      "zeit": "Hopfenernte im Spätsommer"
+    },
+    {
+      "titel": "Spargel",
+      "zeit": "April bis Juni"
+    },
+    {
+      "titel": "Kartoffeln",
+      "zeit": "Sommer bis Herbst"
+    },
+    {
+      "titel": "Gemüse aus Niederbayern",
+      "zeit": "Hochsaison im Sommer"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Regierung von Niederbayern: Zahlen und Fakten 2024",
+      "url": "https://regierung.niederbayern.bayern.de/mam/service/veroeffentlichungen/sonstige/zahlen_fakten_rnb_b6_2024.pdf"
+    },
+    {
+      "titel": "Bayerisches Landesamt für Umwelt: Kulturlandschaft Hallertau",
+      "url": "https://www.lfu.bayern.de/natur/kulturlandschaft/gliederung/doc/49.pdf"
+    },
+    {
+      "titel": "Hopfenland Hallertau: Übernachten & Entdecken",
+      "url": "https://www.landkreis-pfaffenhofen.de/media/7544/hht_unterkunftsverzeichnis_2019_web.pdf"
+    },
+    {
+      "titel": "Bayerisches Landesamt für Umwelt: Kulturlandschaft Unteres Isartal",
+      "url": "https://www.lfu.bayern.de/natur/kulturlandschaft/gliederung/doc/35.pdf"
+    },
+    {
+      "titel": "Lehmanns: Umgebungskarte UK50-35 Landshut",
+      "url": "https://www.lehmanns.ch/media/91080962"
+    }
+  ]
+}

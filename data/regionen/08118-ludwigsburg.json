@@ -1,0 +1,49 @@
+{
+  "kreis": "08118",
+  "ueberschrift": "Landkreis Ludwigsburg: Kornkammer, Steillagen und Gemüse",
+  "teaser": "Wein aus den Terrassen-Steillagen, Gemüse aus dem Unterland und Korn aus dem Strohgäu – entdecke den Landkreis Ludwigsburg.",
+  "absaetze": [
+    "Die fruchtbaren Lössböden des Strohgäus und des Langen Felds zwischen Markgröningen und Kornwestheim galten über Jahrhunderte als Kornkammer Württembergs – Ortsnamen wie Kornwestheim und Pflugfelden erzählen noch davon. Dazu kommt kräftiger Gemüsebau, auch unter Glas.",
+    "Gut 2.200 Hektar Reben wachsen im Kreis, rund 305 Hektar davon in spektakulären Terrassen-Steillagen. Wer dort Wein kauft, hält eine einzigartige Kulturlandschaft am Leben. Gemeinsam mit Stuttgart ist der Landkreis außerdem Bio-Musterregion."
+  ],
+  "highlights": [
+    {
+      "titel": "Wein aus den Steillagen",
+      "zeit": "Weinlese im Herbst"
+    },
+    {
+      "titel": "Gemüse vom Hof",
+      "zeit": "Frühjahr bis Herbst"
+    },
+    {
+      "titel": "Getreide aus dem Strohgäu",
+      "zeit": "Ernte im Hochsommer"
+    },
+    {
+      "titel": "Bio-Musterregion",
+      "zeit": "Bio vom Hof, ganzjährig"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Landkreis Ludwigsburg: Landschaft und Natur",
+      "url": "https://www.landkreis-ludwigsburg.de/en/landratsamt-landkreis/ueber-den-landkreis/landschaft-und-natur/"
+    },
+    {
+      "titel": "Klaus Herrmann: Zur Entwicklung der Landwirtschaft in Ludwigsburg",
+      "url": "https://regionalia.blb-karlsruhe.de/files/20183/BLB_Herrmann_Landwirtschaft_Ludwigsburg.pdf"
+    },
+    {
+      "titel": "Statistisches Landesamt Baden-Württemberg: Gemüseanbau (Monatsheft 8/2017)",
+      "url": "https://www.statistik-bw.de/Service/Veroeff/Monatshefte/PDF/Beitrag17_08_09.pdf"
+    },
+    {
+      "titel": "Stuttgarter Zeitung: Kulturlandschaft Terrassenweinbau bedroht",
+      "url": "https://www.stuttgarter-zeitung.de/lokales/ludwigsburg/kulturlandschaft-terrassenweinbau-bedroht-koennen-die-steillagen-gerettet-werden-landkreis-ludwigsburg-foerdert-winzerprojekt-79017882.html"
+    },
+    {
+      "titel": "Staatsministerium Baden-Württemberg: Auftakt zu fünf neuen Bio-Musterregionen",
+      "url": "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/auftaktveranstaltung-zu-fuenf-neuen-bio-musterregionen"
+    }
+  ]
+}

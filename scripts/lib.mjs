@@ -133,7 +133,7 @@ export function ladePlz(pfad) {
     k.landName = BUNDESLAENDER[k.land];
     k.landSlug = slugify(k.landName);
     k.pfad = `/${k.landSlug}/${k.slug}/`;
-    k.titel = k.art === 'Stadt' || !k.praefix || /kreis$/i.test(k.name) ? k.name : `${k.praefix} ${k.name}`;
+    k.titel = k.art === 'Stadt' || !k.praefix || /kreis/i.test(k.name) ? k.name : `${k.praefix} ${k.name}`;
     if (k.land === 'BE' || k.land === 'HH') k.titel = k.name;
     k.im = `${k.art === 'Stadt' ? 'in' : /^(Region|Städteregion) /.test(k.titel) ? 'in der' : 'im'} ${k.titel}`;
   }

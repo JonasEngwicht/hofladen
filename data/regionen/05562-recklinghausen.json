@@ -1,0 +1,49 @@
+{
+  "kreis": "05562",
+  "ueberschrift": "Kreis Recklinghausen: Wo das Ruhrgebiet ins Münsterland übergeht",
+  "teaser": "Spargel, Erdbeeren und Deelencafés zwischen Emscher, Lippe und Haard – entdecke den Kreis Recklinghausen.",
+  "absaetze": [
+    "Der Kreis Recklinghausen verbindet das Ruhrgebiet mit dem ländlichen Münsterland – je weiter nördlich, desto grüner. Im Vest zwischen Emscher und Lippe hat die Direktvermarktung eine lange Tradition: Erdbeeren, Äpfel, Birnen und Spargel kommen hier frisch vom Hof.",
+    "Dazu gibt es restaurierte Deelencafés, Hoffeste und Weihnachtsmärkte auf den Höfen. Und rund um die Haard laden Hofcafés und Höfe entlang der Münsterland-Reitroute zur Pause ein."
+  ],
+  "highlights": [
+    {
+      "titel": "Spargel",
+      "zeit": "April bis Juni"
+    },
+    {
+      "titel": "Erdbeeren",
+      "zeit": "ab Mai"
+    },
+    {
+      "titel": "Äpfel & Birnen",
+      "zeit": "Erntezeit im Herbst"
+    },
+    {
+      "titel": "Hoffeste & Weihnachtsmärkte",
+      "zeit": "auf den Höfen der Region"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Landwirtschaftskammer NRW: Die schönsten Landerlebnisse in der Emscher-Lippe-Region",
+      "url": "https://epflicht.ulb.uni-muenster.de/download/pdf/145613"
+    },
+    {
+      "titel": "Kreis Recklinghausen: Faltplan 2024",
+      "url": "https://kreis-re.de/Inhalte/Freizeit/KreisRE_Faltplan_2024_digital.pdf"
+    },
+    {
+      "titel": "LWL Geographische Kommission: Tourismus fördern zwischen Lippe und Emscher",
+      "url": "https://www.lwl.org/westfalen-regional-download/PDF/S186_LippeEmscher.pdf"
+    },
+    {
+      "titel": "Kreis Recklinghausen: Münsterland-Reitroute, Abschnitt Die Haard",
+      "url": "https://www.kreis-re.de/dok/geoatlas/geofachdaten/freizeit/reiten/muensterland_reitroute_haard.pdf"
+    },
+    {
+      "titel": "Stadt Datteln: Mitmachen lohnt sich – Klima im Vest",
+      "url": "https://www.datteln.de/sites/default/files/2023-11/Mitmachen%20lohnt%20sich.pdf"
+    }
+  ]
+}

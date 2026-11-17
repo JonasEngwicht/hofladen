@@ -1,0 +1,57 @@
+{
+  "kreis": "08425",
+  "ueberschrift": "Alb-Donau-Kreis: Alb-Linsen, Bio und Landgenuss",
+  "teaser": "Alb-Leisa aus Lauterach, Bio aus dem Biosphärengebiet und Angus-Rind von der Alb – entdecke den Alb-Donau-Kreis.",
+  "absaetze": [
+    "Auf der Schwäbischen Alb wurden einst in großem Stil Linsen angebaut – bis sie Mitte des 20. Jahrhunderts von den Feldern verschwanden. In Lauterach im Alb-Donau-Kreis begann ihre Wiederentdeckung: 2001 gründete Biobauer Woldemar Mammel die Öko-Erzeugergemeinschaft Alb-Leisa.",
+    "Heute ist der Kreis Teil der Bio-Musterregion Biosphärengebiet Schwäbische Alb, aus der Saft, Getreide, Hülsenfrüchte, Honig, Fleisch, Eier und Käse kommen. Bei der Gläsernen Produktion öffnen Bio-Höfe ihre Türen, etwa mit Hofführung und Käseprobe."
+  ],
+  "highlights": [
+    {
+      "titel": "Alb-Leisa",
+      "zeit": "ganzjährig im Hofladen"
+    },
+    {
+      "titel": "Angus-Rind aus Söglingen",
+      "zeit": "direkt vom Erzeuger"
+    },
+    {
+      "titel": "Freilandeier aus Altheim",
+      "zeit": "ganzjährig"
+    },
+    {
+      "titel": "Gläserne Produktion",
+      "zeit": "ab April"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "DAV: Schwäbische Alb – Lautertal",
+      "url": "https://www.alpenverein.de/artikel/schwaebische-alb_10bd371c-9987-4359-8a83-2a541fa68772"
+    },
+    {
+      "titel": "Woldemar Mammel und die Alb-Leisa",
+      "url": "https://www.bessarabien.de/upload/Woldemar_Mammel_und_die_Alb.pdf"
+    },
+    {
+      "titel": "Schwäbische Zeitung: Das Wachstum der Linsen liegt in Gottes Hand",
+      "url": "https://www.schwaebische.de/regional/ulm-alb-donau/lauterach/das-wachstum-der-linsen-liegt-in-gottes-hand-882587"
+    },
+    {
+      "titel": "Biosphärengebiet Schwäbische Alb: Bio-Musterregion (Kochbuch)",
+      "url": "https://biosphaerengebiet-alb.de/fileadmin/page_images/foerdern_mitmachen/Biomusterregion/Kochbuch_Biomusterregion_Lesezeichen.pdf"
+    },
+    {
+      "titel": "Biosphärengebiet Schwäbische Alb: Veranstaltungshinweise Juni 2026",
+      "url": "https://www.biosphaerengebiet-alb.de/fileadmin/page_images/foerdern_mitmachen/Biomusterregion/Aktuelles_und_Veranstaltungshinweise_BMR_Stand_Juni_2026.pdf"
+    },
+    {
+      "titel": "Bio-Musterregion: Bio-Betriebe auf der Schwäbischen Alb erleben",
+      "url": "https://bergbier.de/media/1098/download"
+    },
+    {
+      "titel": "Alb-Donau-Kreis Tourismus: Landgenuss 2024",
+      "url": "https://www.tourismus.alb-donau-kreis.de/wp-content/uploads/2024/07/adk_landgenuss_2024_web_rz.pdf"
+    }
+  ]
+}

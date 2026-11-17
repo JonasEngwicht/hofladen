@@ -1,0 +1,45 @@
+{
+  "kreis": "08125",
+  "ueberschrift": "Landkreis Heilbronn: Württembergs Weinland am Neckar",
+  "teaser": "Trollinger aus Brackenheim, Obst aus dem Unterland und das Heilbronner Weindorf – entdecke den Landkreis Heilbronn.",
+  "absaetze": [
+    "Im Württembergischen Unterland schlägt das Herz des Weinbaugebiets Württemberg, Deutschlands größtem Rotweinproduzenten. Brackenheim ist mit fast 800 Hektar Reben die größte württembergische Weinbaugemeinde, und der Trollinger ist ein echtes Unikat – kaum ein Rebstock dieser Sorte wächst außerhalb Württembergs.",
+    "In Weinsberg forscht die Staatliche Lehr- und Versuchsanstalt für Wein- und Obstbau, mit eigenem Obstversuchsgut in Heuchlingen. Viele Weingüter und Obsthöfe verkaufen direkt ab Hof – und jedes Jahr lockt das Heilbronner Weindorf rund um den Marktplatz."
+  ],
+  "highlights": [
+    {
+      "titel": "Trollinger",
+      "zeit": "Weinlese im Herbst"
+    },
+    {
+      "titel": "Heilbronner Weindorf",
+      "zeit": "jährlich auf dem Marktplatz"
+    },
+    {
+      "titel": "Obst aus dem Unterland",
+      "zeit": "Sommer bis Herbst"
+    },
+    {
+      "titel": "Weinprobe beim Winzer",
+      "zeit": "das ganze Jahr"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "ALDI SÜD Weinwissen: Weinregion Württemberg",
+      "url": "https://aldi-sued.de/de/tipps-trends/weinwissen/weinlagen-grosslagen-einzellagen/wuerttemberg.html"
+    },
+    {
+      "titel": "Unser Stadtplan: Brackenheim",
+      "url": "https://m.unser-stadtplan.de/stadtplan/brackenheim/kartenstartpunkt/stadtplan-brackenheim.map"
+    },
+    {
+      "titel": "service-bw: Staatliche Lehr- und Versuchsanstalt für Wein- und Obstbau Weinsberg",
+      "url": "https://www.heidelberg.de/-/Behoerdenwegweiser/staatliche-lehr--und-versuchsanstalt-fuer-wein--und-obstbau-weinsberg-lvwo/oe6008734"
+    },
+    {
+      "titel": "echo24: Weinfeste in Heilbronn und der Region",
+      "url": "https://www.echo24.de/baden-wuerttemberg/weinfeste-heilbronn-region-wein-baden-wuerttemberg-infos-termine-12886577.html"
+    }
+  ]
+}

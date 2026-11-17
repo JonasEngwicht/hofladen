@@ -1,0 +1,49 @@
+{
+  "kreis": "08435",
+  "ueberschrift": "Bodenseekreis: Äpfel, Hopfen und Obstgärten am See",
+  "teaser": "Bodensee-Äpfel, Tettnanger Hopfen und Beeren vom Seeufer – entdecke die Obstkammer am Bodensee.",
+  "absaetze": [
+    "Der Bodensee zählt zu den klimatisch besten Anbaugebieten der Welt für aromatisches Obst. Rund um den See stehen etwa 6.500 Hektar Apfelanlagen – und knapp die Hälfte der gesamten Apfelfläche Baden-Württembergs liegt allein im Bodenseekreis. Wenn im Herbst die Ernte beginnt, duften die Hofläden zwischen Salem und Kressbronn nach frisch gepflückten Äpfeln.",
+    "Dazu kommen Erdbeeren, Kirschen, Himbeeren, Zwetschgen und Trauben. Und rund um Tettnang ranken sich die Reben des Tettnanger Hopfens in die Höhe – seit 2010 EU-geschützt und von Braumeistern in aller Welt für sein feines Aroma geschätzt."
+  ],
+  "highlights": [
+    {
+      "titel": "Bodensee-Äpfel",
+      "zeit": "Erntezeit im Herbst"
+    },
+    {
+      "titel": "Tettnanger Hopfen",
+      "zeit": "Hopfenernte im Spätsommer"
+    },
+    {
+      "titel": "Erdbeeren & Kirschen",
+      "zeit": "Frühsommer"
+    },
+    {
+      "titel": "Salemer Klosterapfel",
+      "zeit": "alte Lokalsorte"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Staatsministerium Baden-Württemberg: Eröffnung der Bodensee-Apfelsaison",
+      "url": "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/eroeffnung-der-bodensee-apfelsaison-1"
+    },
+    {
+      "titel": "Statistisches Landesamt Baden-Württemberg: Baumobstanbau 2012 (Monatsheft 10/2012)",
+      "url": "https://www.statistik-bw.de/Service/Veroeff/Monatshefte/PDF/Beitrag12_10_08.pdf"
+    },
+    {
+      "titel": "Bodensee.de: Obst vom Bodensee",
+      "url": "https://www.bodensee.de/erleben/genuss/obst-vom-bodensee"
+    },
+    {
+      "titel": "Staatsministerium Baden-Württemberg: Hauk besucht Tettnanger Hopfenbauern",
+      "url": "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/hauk-besucht-tettnanger-hopfenbauern-am-bodensee"
+    },
+    {
+      "titel": "KOB Bavendorf: Sortenpatenschaften der Landkreise",
+      "url": "https://www.kob-bavendorf.de/files/bereiche/Streuobst/Projekte%20Streuobst/Sortenpatenschaften/FLyer-Sortenpaten.pdf"
+    }
+  ]
+}

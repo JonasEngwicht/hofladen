@@ -1,0 +1,53 @@
+{
+  "kreis": "05154",
+  "ueberschrift": "Kreis Kleve: Walbecker Spargel und Gemüse vom Niederrhein",
+  "teaser": "Walbecker Spargel, frisches Gemüse aus Straelen und Käse vom Niederrhein – entdecke den Kreis Kleve.",
+  "absaetze": [
+    "Am Niederrhein leben die Menschen seit Generationen von Landwirtschaft und Gartenbau – und der Kreis Kleve ist mittendrin. Rund um Geldern, Kevelaer und Straelen hat sich ein Schwerpunkt für Sonderkulturen entwickelt, und fast die Hälfte der Gemüse-Gewächshäuser Nordrhein-Westfalens steht am Niederrhein.",
+    "Berühmt ist der Walbecker Spargel, vermarktet von der Walbecker Spargelgenossenschaft und gefeiert mit eigener Spargelprinzessin. Dazu kommen Kartoffeln, Obst, Bio-Käse aus Kranenburg – und neuerdings sogar Wein vom Niederrhein."
+  ],
+  "highlights": [
+    {
+      "titel": "Walbecker Spargel",
+      "zeit": "April bis Juni"
+    },
+    {
+      "titel": "Gemüse aus Straelen",
+      "zeit": "fast das ganze Jahr"
+    },
+    {
+      "titel": "Käse vom Niederrhein",
+      "zeit": "ganzjährig"
+    },
+    {
+      "titel": "Kartoffeln",
+      "zeit": "Spätsommer bis Herbst"
+    }
+  ],
+  "quellen": [
+    {
+      "titel": "Agrobusiness Niederrhein: Natürlich Niederrhein",
+      "url": "https://www.kreis-wesel.de/system/files/C1257D23004C5410/documents/flyer_natuerlich_niederrhein.pdf"
+    },
+    {
+      "titel": "Stadt Straelen: LEADER Regionales Entwicklungskonzept Leistende Landschaft",
+      "url": "https://www.straelen.de/bauen-wirtschaft/umwelt-klimaschutz/vernetzung-und-kooperationen/leader-leistende-landschaft-e-v/leader-regionales-entwicklungskonzept.pdf?cid=ebg"
+    },
+    {
+      "titel": "Umweltwirtschaft NRW: Agrobusiness Niederrhein",
+      "url": "https://www.umweltwirtschaft.nrw.de/fileadmin/Daten/Aktuelles/Veranstaltungen/Region_Niederrhein/2016_08_25_Umweltwirtschaft_Agrobusiness_2.pdf"
+    },
+    {
+      "titel": "Kevelaerer Blatt: Erfolgreicher Messeauftritt des Kreises Kleve",
+      "url": "https://www.kevelaerer-blatt.de/erfolgreicher-messeauftritt/"
+    },
+    {
+      "titel": "IHK: Agrobusiness Niederrhein – Ein starkes Stück Niederrhein",
+      "url": "https://www.ihk.de/blueprint/servlet/resource/blob/4013934/b25adee207e8ec415d55a33104301f51/agrobusiness-broschuere-2015-data.pdf"
+    },
+    {
+      "titel": "Land NRW: Weinanbau in Nordrhein-Westfalen auf dem Vormarsch",
+      "url": "https://www.land.nrw/pressemitteilung/weinanbau-nordrhein-westfalen-auf-dem-vormarsch-ministerin-gorissen-besucht-winzer"
+    }
+  ]
+}
