@@ -413,8 +413,9 @@ if (existsSync(regionDir)) for (const f of readdirSync(regionDir).filter((x) => 
 }
 function regionHtml(r) {
   return `<section class="region" id="region"><div class="region-innen">
-  <div class="region-text"><h2>${esc(r.ueberschrift)}</h2>${r.absaetze.map((a) => `<p>${esc(a)}</p>`).join('')}<p class="region-hinweis"><a href="/saisonkalender/">Was gerade Saison hat</a> · <a href="#quellen">Quellen</a></p></div>
-  <ul class="region-highlights">${r.highlights.map((h) => `<li><h3>${esc(h.titel)}</h3><p class="zeit">${esc(h.zeit)}</p><p>${esc(h.text)}</p></li>`).join('')}</ul>
+  <h2>${esc(r.ueberschrift)}</h2>${r.absaetze.map((a) => `<p>${esc(a)}</p>`).join('')}
+  <ul class="region-highlights">${r.highlights.map((h) => `<li><b>${esc(h.titel)}</b><span>${esc(h.zeit)}</span></li>`).join('')}</ul>
+  <p class="region-hinweis"><a href="/saisonkalender/">Was gerade Saison hat</a> · <a href="#quellen">Quellen</a></p>
 </div></section>`;
 }
 const quellenHtml = (r) => `<section class="abschnitt quellen" id="quellen"><h2>Quellen</h2><ol>${r.quellen.map((q) => `<li><a href="${esc(q.url)}" rel="nofollow noopener" target="_blank">${esc(q.titel)}</a></li>`).join('')}</ol></section>`;
