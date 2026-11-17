@@ -23,10 +23,8 @@
   "geprueft": "2026-11-17"
  },
  "node/10033321625": {
-  "oeffnungszeiten": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-17:00",
-  "methode": "schema.org",
-  "quelle": "https://ziegenalm.de/",
-  "stand": "2026-11-17"
+  "geprueft": "2026-11-17",
+  "hinweis": "zeiten-unsicher"
  },
  "node/10050621160": {
   "geprueft": "2026-11-17",
@@ -158,10 +156,8 @@
   "stand": "2026-11-17"
  },
  "node/10298016957": {
-  "oeffnungszeiten": "Fr 12:00-17:00; Sa 07:30-12:30",
-  "methode": "text",
-  "quelle": "https://hofmetzger-siegle.de/",
-  "stand": "2026-11-17"
+  "geprueft": "2026-11-17",
+  "hinweis": "zeiten-unsicher"
  },
  "node/10298267687": {
   "email": "info@riedlbergers.de",
@@ -406,8 +402,6 @@
   "stand": "2026-11-17"
  },
  "node/11056177071": {
-  "oeffnungszeiten": "Mo-Su 00:00-23:59",
-  "methode": "schema.org",
   "email": "info@proviantomat.de",
   "quelle": "https://proviantomat.de/",
   "stand": "2026-11-17"
@@ -467,8 +461,6 @@
   "fehler": "HTTP 403"
  },
  "node/11178435925": {
-  "oeffnungszeiten": "Mo-Su 08:00-18:00",
-  "methode": "text",
   "telefon": "09325 766",
   "email": "info@udos-spitzenspargel.de",
   "quelle": "https://www.udos-spitzenspargel.de/hofladen.html",
@@ -563,8 +555,6 @@
   "fehler": "HTTP 403"
  },
  "node/11337883696": {
-  "oeffnungszeiten": "Mo-We 08:00-12:30; Th-Fr 14:00-18:00; Sa 08:00-12:30",
-  "methode": "text",
   "email": "info@moehler-eiprodukte.de",
   "quelle": "https://muthof.de/",
   "stand": "2026-11-17"
@@ -643,8 +633,6 @@
   "fehler": "HTTP 403"
  },
  "node/11640133877": {
-  "oeffnungszeiten": "Tu-Su 08:00-21:00",
-  "methode": "text",
   "email": "info@festsaal-permeshof.de",
   "quelle": "https://www.festsaal-permeshof.de/Kontakt/Oeffnungszeiten/",
   "stand": "2026-11-17"
@@ -751,10 +739,8 @@
   "geprueft": "2026-11-17"
  },
  "node/11895154146": {
-  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-14:00",
-  "methode": "text",
-  "quelle": "https://www.obsthof-korn.de/maerkte-verkaufsstaende.php",
-  "stand": "2026-11-17"
+  "geprueft": "2026-11-17",
+  "hinweis": "zeiten-unsicher"
  },
  "node/11896780682": {
   "oeffnungszeiten": "Th 16:00-19:00",
@@ -791,8 +777,6 @@
   "stand": "2026-11-17"
  },
  "node/11945097569": {
-  "oeffnungszeiten": "Th-Sa 11:00-14:30,16:30-20:30",
-  "methode": "text",
   "telefon": "09871368",
   "email": "info@landgasthaus-zwick.de",
   "quelle": "https://landgasthaus-zwick.de/",
@@ -1035,8 +1019,6 @@
   "geprueft": "2026-11-17"
  },
  "node/12744515645": {
-  "oeffnungszeiten": "Mo-Fr 06:30-18:00; Sa 06:30-12:30",
-  "methode": "text",
   "email": "metzgerei.partheymueller@gmail.com",
   "quelle": "https://traditionsmetzgerei.de/produkte/",
   "stand": "2026-11-17"
@@ -1072,8 +1054,6 @@
   "stand": "2026-11-17"
  },
  "node/12863250997": {
-  "oeffnungszeiten": "Mo-Su 00:00-23:59",
-  "methode": "schema.org",
   "email": "info@proviantomat.de",
   "quelle": "https://proviantomat.de/",
   "stand": "2026-11-17"
@@ -1796,10 +1776,8 @@
   "fehler": "HTTP 404"
  },
  "node/2940207252": {
-  "oeffnungszeiten": "Mo 07:00-13:00; Tu-Fr 07:00-18:00",
-  "methode": "text",
-  "quelle": "https://www.metzgerei-hack-freising.de/",
-  "stand": "2026-11-17"
+  "geprueft": "2026-11-17",
+  "hinweis": "zeiten-unsicher"
  },
  "node/2973015556": {
   "telefon": "+4963915744",
@@ -1876,10 +1854,8 @@
   "stand": "2026-11-17"
  },
  "node/3348342351": {
-  "oeffnungszeiten": "Mo-Fr 08:00-12:00,14:00-17:00; Sa 09:00-12:00",
-  "methode": "text",
-  "quelle": "https://oelmuehle-garting.de/pages/ueber-uns-verkaufsstelle-hofladen",
-  "stand": "2026-11-17"
+  "geprueft": "2026-11-17",
+  "hinweis": "zeiten-unsicher"
  },
  "node/3364693866": {
   "geprueft": "2026-11-17"
@@ -2042,8 +2018,6 @@
   "fehler": "HTTP 403"
  },
  "node/3894666522": {
-  "oeffnungszeiten": "Mo 07:00 - 16:00; Tu 07:00 - 16:00; We 07:00 - 16:00; Th 07:00 - 16:00; Fr 07:00 - 16:00",
-  "methode": "schema.org",
   "telefon": "034203 433 50",
   "quelle": "https://www.agrarprodukte-kitzen.de/milchautomaten",
   "stand": "2026-11-17"
@@ -2472,10 +2446,8 @@
   "fehler": "HTTP 403"
  },
  "node/5570894265": {
-  "oeffnungszeiten": "Mo 07:30-13:00; Tu-Fr 07:30-13:00,15:00-18:00; Sa 07:00-12:30",
-  "methode": "text",
-  "quelle": "https://www.metzgerei-feisst.de/",
-  "stand": "2026-11-17"
+  "geprueft": "2026-11-17",
+  "hinweis": "zeiten-unsicher"
  },
  "node/5578970477": {
   "geprueft": "2026-11-17"
@@ -2868,10 +2840,8 @@
   "fehler": "fetch failed"
  },
  "node/6640044098": {
-  "oeffnungszeiten": "Mo 08:00-13:00; Tu 10:00-16:00; We 14:00-16:00; Th 10:00-16:00; Fr 08:00-18:00; Sa 08:00-13:00",
-  "methode": "text",
-  "quelle": "https://hof-domanja.de/hofladen-marktverkauf-domanja-wittichenau/",
-  "stand": "2026-11-17"
+  "geprueft": "2026-11-17",
+  "hinweis": "zeiten-unsicher"
  },
  "node/6672532591": {
   "geprueft": "2026-11-17"
@@ -3337,8 +3307,6 @@
   "stand": "2026-11-17"
  },
  "node/8118937631": {
-  "oeffnungszeiten": "Mo 07:30-12:30,14:30-18:00; Tu 07:30-12:30,14:30-18:00; We 07:30-12:30; Th 07:30-12:30,14:30-18:00; Fr 07:30-12:30,14:30-18:00; Sa 07:30-12:30; Su ",
-  "methode": "schema.org",
   "telefon": "07333 5539",
   "email": "mail@kronenmetzgerei.de",
   "quelle": "https://www.kronenmetzgerei-laichingen.de/",
@@ -3420,8 +3388,6 @@
   "stand": "2026-11-17"
  },
  "node/8328261401": {
-  "oeffnungszeiten": "Mo-Fr 08:00-18:30; Sa 08:00-18:00; Su 09:00-17:00",
-  "methode": "schema.org",
   "telefon": "+492225 28 86",
   "email": "info@obsthof-cremerius.de",
   "quelle": "https://www.obsthof-cremerius.de/",
@@ -3533,8 +3499,6 @@
   "stand": "2026-11-17"
  },
  "node/8605906805": {
-  "oeffnungszeiten": "We-Fr 08:00-13:00,15:00-18:00; Sa 08:00-11:00",
-  "methode": "text",
   "telefon": "+493418613606",
   "email": "leipziger-party-service@web.de",
   "quelle": "https://fleischerei-moellmer.de/impressum/",
@@ -4422,8 +4386,6 @@
   "geprueft": "2026-11-17"
  },
  "way/1363626141": {
-  "oeffnungszeiten": "Mo 07:00-13:00; Tu-Fr 07:00-18:00; Sa 07:00-12:00",
-  "methode": "schema.org",
   "telefon": "08465 1068",
   "email": "info@metzgerei-gehr.de",
   "quelle": "https://www.metzgerei-gehr.de/",

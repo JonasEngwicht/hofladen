@@ -272,6 +272,10 @@ async function arbeiter() {
       const r = await pruefeWebsite(e.website);
       const domain = e.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/.*$/, '').toLowerCase();
       if (r.oeffnungszeiten && r.methode === 'text' && proSeite.get(domain) > 1) { delete r.oeffnungszeiten; stat.geteilt = (stat.geteilt || 0) + 1; }
+      // Automaten: Website-Zeiten gelten meist für den Laden, nicht für den Automaten
+      if (r.oeffnungszeiten && e.typ === 'automat') { delete r.oeffnungszeiten; stat.automat = (stat.automat || 0) + 1; }
+      // Seiten über Marktstände/Filialen: Zuordnung zum Standort unsicher
+      if (r.oeffnungszeiten && r.methode === 'text' && /markt|maerkt|märkt|verkaufsst|filial|standort/i.test(r.quelle || '')) { delete r.oeffnungszeiten; stat.standorte = (stat.standorte || 0) + 1; }
       const eintrag = {};
       if (r.oeffnungszeiten) { eintrag.oeffnungszeiten = r.oeffnungszeiten; eintrag.methode = r.methode; stat.zeiten++; stat[r.methode === 'schema.org' ? 'schema' : 'text']++; }
       if (r.telefon && !e.telefon) eintrag.telefon = r.telefon;
