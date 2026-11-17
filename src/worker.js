@@ -27,15 +27,27 @@ function json(daten, status = 200) {
   });
 }
 
-function sucheWeiterleitung(plz, produkte = []) {
+// Suchstatistik: nur Tageszähler je PLZ/Kreis/Produkt in D1 – keine IP, kein Gerät, keine Uhrzeit.
+const BOT = /bot|crawl|spider|slurp|preview|fetch|monitor|curl|wget|python|headless/i;
+function zaehle(env, ctx, request, { plz, kreis = '', art, produkt = '' }) {
+  if (!env.STATS || !ctx || BOT.test(request.headers.get('user-agent') || '')) return;
+  const tag = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' });
+  ctx.waitUntil(env.STATS.prepare(
+    `INSERT INTO suchen (tag, plz, kreis, art, produkt, anzahl) VALUES (?1, ?2, ?3, ?4, ?5, 1)
+     ON CONFLICT (tag, plz, art, produkt) DO UPDATE SET anzahl = anzahl + 1`,
+  ).bind(tag, String(plz).slice(0, 5), kreis, art, produkt).run().catch(() => {}));
+}
+
+function sucheWeiterleitung(plz, produkte = [], env, ctx, request) {
   const p = (plz || '').replace(/\D/g, '');
   const eintrag = /^\d{5}$/.test(p) ? PLZ[p] : null;
-  if (!eintrag) return weiter(`/?fehler=plz&plz=${encodeURIComponent(p)}`);
   const prod = produkte.filter((x) => KATEGORIEN.includes(x));
+  if (/^\d{5}$/.test(p)) zaehle(env, ctx, request, { plz: p, kreis: eintrag ? eintrag[2] : '', art: eintrag ? 'plz' : 'unbekannt', produkt: prod.sort().join(',') });
+  if (!eintrag) return weiter(`/?fehler=plz&plz=${encodeURIComponent(p)}`);
   return weiter(`${eintrag[2]}?plz=${p}${prod.length ? `&produkt=${prod.join(',')}` : ''}`);
 }
 
-function umkreis(url) {
+function umkreis(url, env, ctx, request) {
   const plz = (url.searchParams.get('plz') || '').replace(/\D/g, '');
   let lat = parseFloat(url.searchParams.get('lat'));
   let lon = parseFloat(url.searchParams.get('lon'));
@@ -53,6 +65,8 @@ function umkreis(url) {
       const d = distanzKm(lat, lon, e[0], e[1]);
       if (d < best) { best = d; ort = { plz: p, name: e[3], kreisPfad: e[2], lat, lon }; }
     }
+    const prodStat = (url.searchParams.get('produkt') || '').split(',').filter((x) => KATEGORIEN.includes(x)).sort().join(',');
+    zaehle(env, ctx, request, { plz: ort.plz, kreis: ort.kreisPfad, art: 'standort', produkt: prodStat });
   }
   const limit = Math.min(50, Math.max(1, parseInt(url.searchParams.get('limit') || '12', 10)));
   const radius = Math.min(100, Math.max(1, parseFloat(url.searchParams.get('radius') || '40')));
@@ -80,16 +94,16 @@ function umkreis(url) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.hostname.startsWith('www.')) {
       url.hostname = url.hostname.slice(4);
       return weiter(url.toString(), 301);
     }
-    if (url.pathname === '/suche') return sucheWeiterleitung(url.searchParams.get('plz'), url.searchParams.getAll('produkt').flatMap((x) => x.split(',')));
+    if (url.pathname === '/suche') return sucheWeiterleitung(url.searchParams.get('plz'), url.searchParams.getAll('produkt').flatMap((x) => x.split(',')), env, ctx, request);
     const m = url.pathname.match(/^\/plz\/(\d{5})\/?$/);
-    if (m) return sucheWeiterleitung(m[1]);
-    if (url.pathname === '/api/umkreis') return umkreis(url);
+    if (m) return sucheWeiterleitung(m[1], [], env, ctx, request);
+    if (url.pathname === '/api/umkreis') return umkreis(url, env, ctx, request);
     return env.ASSETS.fetch(request);
   },
 };

@@ -18,5 +18,9 @@
     { "pattern": "hofladenliste.de", "custom_domain": true },
     { "pattern": "www.hofladenliste.de", "custom_domain": true }
   ],
+  // Anonyme Suchstatistik (Tageszähler je PLZ), siehe src/worker.js
+  "d1_databases": [
+    { "binding": "STATS", "database_name": "hofladen-statistik", "database_id": "e601de06-1b61-47ff-a636-137e5e306312" }
+  ],
   "observability": { "enabled": true }
 }
