@@ -1,0 +1,107 @@
+:root {
+  --gruen: #2f5d3a;
+  --gruen-hell: #e7efe3;
+  --creme: #faf7f0;
+  --sand: #f1ead9;
+  --text: #24261f;
+  --grau: #5f6457;
+  --linie: #ddd5c2;
+  --akzent: #b8691f;
+  --rot: #a33b2b;
+  --radius: 10px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--creme);
+  line-height: 1.55;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+a { color: var(--gruen); text-underline-offset: 2px; }
+a:hover { color: var(--akzent); }
+h1, h2, h3 { line-height: 1.25; color: #1d2a1f; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); margin: .4em 0 .3em; }
+h2 { font-size: 1.3rem; margin: 1.6em 0 .6em; }
+h3 { font-size: 1.05rem; margin: 0 0 .3em; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 1rem; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.klein { font-size: .88rem; color: var(--grau); }
+.leer { color: var(--grau); }
+.fehler { color: var(--rot); font-weight: 600; }
+
+/* Kopf und Fuß */
+.kopf { background: var(--gruen); color: #fff; }
+.kopf .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .7rem; padding-bottom: .7rem; }
+.logo { color: #fff; font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+.logo:hover { color: #fff; }
+.kopf-suche { display: flex; gap: .4rem; }
+.kopf-suche input { width: 6.5rem; padding: .45rem .6rem; border: 0; border-radius: 6px; font-size: 1rem; }
+.kopf-suche button { padding: .45rem .8rem; border: 0; border-radius: 6px; background: var(--akzent); color: #fff; font-weight: 600; cursor: pointer; }
+.krumen { font-size: .88rem; color: var(--grau); padding-top: .8rem; }
+.fuss { margin-top: 3rem; padding: 1.5rem 0 2rem; background: var(--sand); border-top: 1px solid var(--linie); }
+.fuss p { margin: .4em 0; }
+
+/* Startseite */
+.held { background: var(--gruen-hell); border-radius: var(--radius); padding: 2rem 1.5rem; margin-top: 1.5rem; }
+.held p { max-width: 46rem; }
+.plz-form label { display: block; font-weight: 600; margin-bottom: .3rem; }
+.plz-form .zeile { display: flex; gap: .5rem; flex-wrap: wrap; }
+.plz-form input { font-size: 1.3rem; padding: .6rem .8rem; width: 10rem; border: 2px solid var(--gruen); border-radius: 8px; letter-spacing: .08em; }
+.plz-form button, .knopf { font-size: 1.1rem; padding: .65rem 1.2rem; border: 0; border-radius: 8px; background: var(--gruen); color: #fff; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; }
+.plz-form button:hover, .knopf:hover { background: #24492d; color: #fff; }
+.link-knopf { background: none; border: 0; padding: .6rem 0; color: var(--gruen); text-decoration: underline; cursor: pointer; font-size: 1rem; }
+.text { max-width: 48rem; }
+
+/* Raster für Länder/Kreise */
+.raster { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: .6rem; }
+.raster a { display: flex; flex-direction: column; padding: .8rem 1rem; background: #fff; border: 1px solid var(--linie); border-radius: var(--radius); text-decoration: none; color: var(--text); height: 100%; }
+.raster a:hover { border-color: var(--gruen); }
+.raster a span { font-size: .88rem; color: var(--grau); }
+.raster a.leer strong { color: var(--grau); font-weight: 500; }
+.raster.klein { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+
+/* Kreisseite */
+.intro { font-size: 1.05rem; max-width: 48rem; }
+.filter { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0; }
+.filter button { padding: .4rem .8rem; border: 1px solid var(--linie); background: #fff; border-radius: 999px; cursor: pointer; font-size: .95rem; }
+.filter button[aria-pressed="true"] { background: var(--gruen); color: #fff; border-color: var(--gruen); }
+.ort h2 { border-bottom: 2px solid var(--linie); padding-bottom: .2rem; }
+.karten { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: .8rem; }
+.karte { background: #fff; border: 1px solid var(--linie); border-radius: var(--radius); padding: .9rem 1rem; }
+.karte p { margin: .25em 0; }
+.karte .adr { color: var(--grau); }
+.karte .oh-text { font-size: .9rem; }
+.karte .kontakt { font-size: .9rem; overflow-wrap: anywhere; }
+.badges { margin: .2em 0 .4em; }
+.badge { display: inline-block; font-size: .78rem; font-weight: 600; padding: .12rem .5rem; border-radius: 999px; background: var(--sand); color: #5a4a2a; }
+.badge.hofladen { background: var(--gruen-hell); color: var(--gruen); }
+.badge.automat { background: #e8eef5; color: #2c4a6b; }
+.badge.bio { background: #eaf3d4; color: #3d5a12; }
+.badge.offen { background: #dff0dd; color: #1f6b2a; }
+.badge.offen.zu { background: #f6e3df; color: var(--rot); }
+
+/* Umkreis */
+.naehe { background: #fff; border: 2px solid var(--gruen); border-radius: var(--radius); padding: .5rem 1.2rem 1rem; margin: 1rem 0; }
+.naehe h2 { margin-top: .6em; }
+.naehe-liste { padding-left: 1.3rem; margin: 0; }
+.naehe-liste li { margin: .35em 0; }
+.naehe-liste .klein { display: inline-block; margin-left: .3rem; }
+.laden { color: var(--grau); }
+
+/* Detailseite */
+.detail { background: #fff; border: 1px solid var(--linie); border-radius: var(--radius); padding: 1rem 1.5rem 1.2rem; margin-top: 1rem; }
+.detail h2 { font-size: 1.05rem; margin: 1.2em 0 .3em; color: var(--gruen); }
+.spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+.oh { border-collapse: collapse; }
+.oh th { text-align: left; padding: .15rem 1rem .15rem 0; font-weight: 600; white-space: nowrap; }
+.oh td { padding: .15rem 0; }
+.hinweis { margin-top: 1.5rem; font-size: .88rem; color: var(--grau); border-top: 1px solid var(--linie); padding-top: .8rem; }
+.liste { padding-left: 1.2rem; }
+.liste li { margin: .3em 0; }
+
+@media (max-width: 640px) {
+  .spalten { grid-template-columns: 1fr; }
+  .kopf .wrap { flex-wrap: wrap; }
+  .held { padding: 1.4rem 1rem; }
+  .karten { grid-template-columns: 1fr; }
+}

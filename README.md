@@ -1,54 +1,50 @@
-# hofladenliste.de – Verzeichnis für Hofläden und Hofautomaten
+# hofladenliste.de
 
-Ziel: Bundesweites Verzeichnis für Hofläden und Hofautomaten (Milchtankstellen, Eier-, Fleisch- und Regiomaten) in Deutschland.
+Verzeichnis für Hofläden und Hofautomaten (Milchtankstellen, Eierautomaten, Regiomaten) in Deutschland.
+Statische Seiten plus ein kleiner Cloudflare Worker für PLZ-Suche und Umkreissuche.
 
-## Routing-Konzept
+## So funktioniert die Seite
 
-Empfehlung: **PLZ-Abfrage auf der Startseite, aber keine Subdomain pro PLZ.**
+- **Startseite** `/`: PLZ-Eingabe (oder „Standort verwenden“), Übersicht nach Bundesland.
+- **PLZ-Suche** `/suche?plz=03149` bzw. `/plz/03149`: Der Worker leitet per 302 auf die Seite des passenden Landkreises weiter, z. B. `/brandenburg/spree-neisse/?plz=03149`. Dort erscheinen oben die nächstgelegenen Einträge (auch aus Nachbarkreisen), darunter alle Einträge des Kreises nach Ort.
+- **Bundesland** `/brandenburg/`, **Kreis** `/brandenburg/spree-neisse/`, **Detailseite** `/hof/<name-ort>/` mit Adresse, Öffnungszeiten, Kontakt, Route und Hinweisen in der Nähe.
+- **API** `/api/umkreis?plz=03149` oder `?lat=..&lon=..` (Parameter `limit`, `radius`, `typ=hofladen|automat`).
+- „Jetzt geöffnet“ wird im Browser aus den OSM-Öffnungszeiten berechnet (deutsche Ortszeit).
 
-Warum keine Subdomain pro PLZ:
-- Deutschland hat rund 8.200 PLZ. Die meisten Subdomains wären dünne oder leere Seiten, die Suchmaschinen schlecht bewerten.
-- Die Autorität der Hauptdomain würde auf viele Subdomains verteilt statt gebündelt.
-- Mit Subdomains pro PLZ ist die Pflege deutlich aufwendiger.
+## Aufbau
 
-Besser:
-- Pfadstruktur auf der Hauptdomain: `/brandenburg/spree-neisse/`, `/brandenburg/spree-neisse/forst/`, `/plz/03149`.
-- PLZ-Eingabe auf der Startseite leitet per Cloudflare Worker (serverseitig, `302`) auf die passende Seite weiter. Suchmaschinen sehen so statische, indexierbare Seiten.
-- Die gewählte Region im Cookie merken, damit die Abfrage nicht bei jedem Besuch erscheint.
-- Subdomains nur dann, wenn du sie für ein Produkt brauchst (z. B. `bayern.hofladenliste.de`), nicht als Routing-Schicht.
+| Pfad | Inhalt |
+|---|---|
+| `data/osm-eintraege.json` | Aufbereitete Einträge aus OpenStreetMap (wird automatisch aktualisiert) |
+| `data/manuell.json` | Eigene Einträge und Korrekturen (Feld `ersetztOsm: "node/123"` ersetzt einen OSM-Eintrag) |
+| `data/quellen/plz-de.csv` | PLZ → Ort, Kreis, Koordinaten (GeoNames, CC BY 4.0) |
+| `scripts/fetch-osm.mjs` | Holt Hofläden/Automaten aus OSM über QLever (Uni Freiburg) |
+| `scripts/import-osm.mjs` | Filtert, ordnet Kreise zu, schreibt `data/osm-eintraege.json` |
+| `scripts/build.mjs` | Erzeugt `public/` (HTML, Sitemap) und `src/generated/` (Daten für den Worker) |
+| `static/` | CSS, Browser-JavaScript, Öffnungszeiten-Parser, Favicon |
+| `src/worker.js` | Worker: Weiterleitung, Umkreis-API, sonst statische Dateien |
+| `site.config.json` | Domain, Impressum, Kontaktadresse |
 
-Für die PLZ-Zuordnung (PLZ → Ort → Landkreis) brauchst du eine Postleitzahlen-Tabelle, z. B. GeoNames (CC-BY 4.0) oder die offenen Daten der Bundesnetzagentur. Lizenz vor der Nutzung prüfen.
+Nur Node-Bordmittel, keine Abhängigkeiten.
 
-## Datenformat
+## Deploy
 
-Eine JSON-Datei je Landkreis: `data/<bundesland>/<landkreis>.json`. Jeder Eintrag:
+Cloudflare Workers Builds ist mit diesem Repo verbunden. Jeder Push auf `main` führt `npx wrangler deploy` aus; davor läuft automatisch `node scripts/build.mjs` (siehe `wrangler.jsonc`). Die Custom Domains `hofladenliste.de` und `www.hofladenliste.de` sind in `wrangler.jsonc` eingetragen.
 
-```json
-{
-  "id": "forst-gut-neu-sacro",
-  "typ": "hofladen",            // hofladen | automat
-  "automat_art": null,          // milk | eggs | meat | food (nur bei automat)
-  "name": "Hofladen Gut Neu Sacro",
-  "adresse": { "strasse": "Neu Sacro 13", "plz": "03149", "ort": "Forst (Lausitz)", "landkreis": "Spree-Neiße", "bundesland": "Brandenburg" },
-  "koordinaten": null,          // { "lat", "lon" } oder null
-  "oeffnungszeiten": "09:00–17:00 (…)",
-  "kontakt": { "telefon": "…", "email": "…", "website": "…" },
-  "quellen": ["https://…"],
-  "verifiziert": false          // true erst nach Prüfung auf der Hof-Website oder durch den Hof
-}
+## Daten aktualisieren
+
+Die GitHub Action „Daten aktualisieren“ läuft jeden Montag (und manuell über *Actions → Daten aktualisieren → Run workflow*). Sie holt die Daten neu, committet bei Änderungen, und Cloudflare deployt danach automatisch.
+
+Lokal:
+
+```sh
+node scripts/fetch-osm.mjs          # -> data/quellen/osm-roh.json
+node scripts/import-osm.mjs data/quellen/osm-roh.json
+node scripts/build.mjs
 ```
 
-Regel: `verifiziert` bleibt `false`, bis Adresse und Öffnungszeiten direkt auf der Website des Hofes oder im Verband bestätigt sind. Unverifizierte Einträge sollten auf der Seite als „Angaben ohne Gewähr“ erscheinen.
+## Lizenzen der Daten
 
-## Datenquellen
-
-1. **OpenStreetMap** (ODbL, Quellenangabe Pflicht). Import mit `scripts/osm_to_json.py`. Overpass-Abfrage steht im Skript-Kopf. Die Abfrage läuft nicht aus dem Repo heraus, sondern über overpass-turbo.eu (Export als JSON).
-2. **Verbände, Kammern, Tourismusverbände** als Lead-Liste. Keine Massenkopie (Datenbankschutz, § 87b UrhG). Einträge einzeln prüfen.
-3. **Selbsteintragung durch Höfe** (kostenloser Basiseintrag).
-
-## Stand
-
-- `data/brandenburg/spree-neisse.json`: 1 Eintrag (Forst, Gut Neu Sacro), Angaben aus Websuche, nicht verifiziert.
-- `scripts/osm_to_json.py`: Import aus Overpass-JSON, getestet mit Beispieldaten.
-
-Offen: OSM-Export für Deutschland (lokal), Pipeline für Seitenbau, Cloudflare-Worker für PLZ-Weiterleitung.
+- Einträge: © OpenStreetMap-Mitwirkende, [ODbL](https://opendatacommons.org/licenses/odbl/). `data/osm-eintraege.json` ist eine abgeleitete Datenbank und steht ebenfalls unter ODbL. Die Quellenangabe steht im Footer jeder Seite.
+- PLZ-Daten: [GeoNames](https://www.geonames.org/), CC BY 4.0 (über zauberware/postal-codes-json-xml-csv).
+- Verbandslisten (z. B. Landwirtschaftskammern) nur als Hinweisquelle nutzen und Einträge einzeln prüfen, nicht komplett übernehmen (Datenbankschutz, § 87b UrhG).

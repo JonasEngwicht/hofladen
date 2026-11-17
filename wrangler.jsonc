@@ -1,0 +1,22 @@
+{
+  // Worker "hofladen" für hofladenliste.de
+  "name": "hofladen",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-01",
+  // Erzeugt public/ und src/generated/ aus den Daten in data/ (läuft vor jedem Deploy)
+  "build": {
+    "command": "node scripts/build.mjs"
+  },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/suche", "/plz/*", "/api/*"]
+  },
+  "routes": [
+    { "pattern": "hofladenliste.de", "custom_domain": true },
+    { "pattern": "www.hofladenliste.de", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}

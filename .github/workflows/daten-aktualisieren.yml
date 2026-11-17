@@ -1,0 +1,48 @@
+name: Daten aktualisieren
+
+# Holt die Hofläden aus OpenStreetMap (über QLever) und committet data/osm-eintraege.json.
+# Jeder Commit löst bei Cloudflare automatisch einen neuen Deploy aus.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * 1' # montags 03:17 UTC
+  push:
+    branches: [main]
+    paths:
+      - scripts/fetch-osm.mjs
+      - scripts/import-osm.mjs
+      - scripts/lib.mjs
+      - .github/workflows/daten-aktualisieren.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daten
+  cancel-in-progress: false
+
+jobs:
+  aktualisieren:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Daten von QLever holen
+        run: node scripts/fetch-osm.mjs data/quellen/osm-roh.json
+      - name: Einträge aufbereiten
+        run: node scripts/import-osm.mjs data/quellen/osm-roh.json
+      - name: Testbuild
+        run: node scripts/build.mjs
+      - name: Commit, falls sich etwas geändert hat
+        run: |
+          git config user.name "hofladenliste-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/osm-eintraege.json
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Daten aus OpenStreetMap aktualisiert"
+            git push
+          fi

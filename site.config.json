@@ -1,0 +1,12 @@
+{
+  "domain": "https://hofladenliste.de",
+  "name": "Hofladenliste",
+  "kontaktEmail": "",
+  "impressum": {
+    "name": "",
+    "strasse": "",
+    "plzOrt": "",
+    "email": "",
+    "telefon": ""
+  }
+}
