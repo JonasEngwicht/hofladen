@@ -541,7 +541,7 @@ schreibe('/404.html', seite({
 }), false);
 
 // ---------- Robots, Sitemap ----------
-writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
+writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /impressum/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
 const urls = sitemap.filter((p) => !p.endsWith('.html'));
 writeFileSync(join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((p) => `<url><loc>${cfg.domain}${p}</loc><lastmod>${BUILD_DATUM}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 
