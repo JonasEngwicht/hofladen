@@ -12,13 +12,6 @@
  "node/10033208923": {
   "geprueft": "2026-11-17"
  },
- "node/10033208924": {
-  "oeffnungszeiten": "Mo-Su 07:00-20:00",
-  "methode": "text",
-  "telefon": "08461/606993",
-  "quelle": "https://www.hofladen-applbauer.de/Oeffnungszeiten",
-  "stand": "2026-11-17"
- },
  "node/10033208925": {
   "geprueft": "2026-11-17"
  },
@@ -47,20 +40,6 @@
   "quelle": "https://www.natur-verliebt.de/pages/marktstaende",
   "stand": "2026-11-17"
  },
- "node/10065892333": {
-  "oeffnungszeiten": "Mo-Su 06:00-21:00",
-  "methode": "text",
-  "telefon": "0176-24695466",
-  "email": "info@charlottenhof-frankfurt.de",
-  "quelle": "https://www.charlottenhof-frankfurt.de/leistungen",
-  "stand": "2026-11-17"
- },
- "node/10090634821": {
-  "oeffnungszeiten": "Mo-Sa 08:00-20:00",
-  "methode": "text",
-  "quelle": "https://www.habeker-hof.de/",
-  "stand": "2026-11-17"
- },
  "node/10107049029": {
   "geprueft": "2026-11-17"
  },
@@ -78,13 +57,6 @@
  "node/10125155210": {
   "email": "info@heidehof-albshausen.de",
   "quelle": "https://heidehof-albshausen.de/kontakt/",
-  "stand": "2026-11-17"
- },
- "node/10129926523": {
-  "oeffnungszeiten": "Mo-Fr 08:00-18:30",
-  "methode": "text",
-  "email": "info@landhof-birmes.de",
-  "quelle": "https://www.landhof-birmes.de/",
   "stand": "2026-11-17"
  },
  "node/10138366790": {
@@ -106,19 +78,6 @@
  },
  "node/10221527650": {
   "geprueft": "2026-11-17"
- },
- "node/10235685142": {
-  "oeffnungszeiten": "Tu 15:00-18:00; Th 10:00-12:00; Fr 15:00-18:00; Sa 10:00-12:00",
-  "methode": "text",
-  "telefon": "+493636701641",
-  "quelle": "https://www.ziegen-peter.de/",
-  "stand": "2026-11-17"
- },
- "node/10235944249": {
-  "oeffnungszeiten": "We-Fr 12:00-14:00,17:00-21:00; Sa-Su 12:00-21:00",
-  "methode": "text",
-  "quelle": "https://hof-kindervatter.de/oeffnungszeiten",
-  "stand": "2026-11-17"
  },
  "node/10242145911": {
   "geprueft": "2026-11-17"
@@ -143,24 +102,12 @@
   "quelle": "https://www.obstbau-schneider.de/",
   "stand": "2026-11-17"
  },
- "node/10287668021": {
-  "oeffnungszeiten": "Tu 09:00-17:00; We 09:00-13:00; Th 09:00-17:00; Fr 09:00-13:00; Sa 09:00-12:00",
-  "methode": "text",
-  "quelle": "https://www.munds-muehle.de/",
-  "stand": "2026-11-17"
- },
  "node/10295682502": {
   "geprueft": "2026-11-17"
  },
  "node/10296868996": {
   "email": "buero@hartmann-fleischerei.de",
   "quelle": "http://www.hartmann-fleischerei.de/impressum/",
-  "stand": "2026-11-17"
- },
- "node/10298016957": {
-  "oeffnungszeiten": "Fr 12:00-17:00; Sa 07:30-12:30",
-  "methode": "text",
-  "quelle": "https://hofmetzger-siegle.de/",
   "stand": "2026-11-17"
  },
  "node/10298267687": {
@@ -174,12 +121,6 @@
  "node/10315701154": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
- },
- "node/10540099232": {
-  "oeffnungszeiten": "Th-Fr 09:00-13:00; Sa 09:00-15:00",
-  "methode": "text",
-  "quelle": "http://www.hof-ontrup.de/Hofladen/",
-  "stand": "2026-11-17"
  },
  "node/10543065191": {
   "geprueft": "2026-11-17",
@@ -209,12 +150,6 @@
  "node/10606372887": {
   "geprueft": "2026-11-17"
  },
- "node/1065182174": {
-  "oeffnungszeiten": "Tu 07:30-12:00; Th 12:45-15:00",
-  "methode": "text",
-  "quelle": "https://www.urkraft-leinmanufaktur.de/Kontakt-_-7.html",
-  "stand": "2026-11-17"
- },
  "node/10655473173": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
@@ -234,24 +169,9 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
  },
- "node/10746854713": {
-  "oeffnungszeiten": "We 08:00-12:00,16:00-18:00; Fr 08:00-12:00,14:00-18:00; Sa 08:00-12:00",
-  "methode": "text",
-  "telefon": "+49813183568",
-  "email": "schneiderhofmitterndorf@gmail.com",
-  "quelle": "https://www.schneiderhof-mitterndorf.de/",
-  "stand": "2026-11-17"
- },
  "node/10777426522": {
   "geprueft": "2026-11-17",
   "fehler": "fetch failed"
- },
- "node/10778341819": {
-  "oeffnungszeiten": "Mo-Sa 10:00-17:00",
-  "methode": "text",
-  "email": "info@knaup-roethlein.de",
-  "quelle": "https://genusshofknaup.de/",
-  "stand": "2026-11-17"
  },
  "node/10788616157": {
   "telefon": "+491723091047",
@@ -319,22 +239,9 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
  },
- "node/10901252772": {
-  "oeffnungszeiten": "Tu 10:00-18:00; Th-Fr 08:00-12:00,13:30-18:00; Sa 08:00-13:00",
-  "methode": "text",
-  "quelle": "https://www.fischbeck-gemuesehof.de/",
-  "stand": "2026-11-17"
- },
  "node/10916186292": {
   "telefon": "+493436351220",
   "quelle": "https://www.gutshof-klingenhain.de/",
-  "stand": "2026-11-17"
- },
- "node/10917591360": {
-  "oeffnungszeiten": "Mo 08:00-13:00; We 07:00-13:00; Th 08:00-13:00; Fr 11:00-17:00; Sa 07:00-13:00",
-  "methode": "text",
-  "email": "dpo-google@google.com",
-  "quelle": "https://www.hofladen-bannick.de/",
   "stand": "2026-11-17"
  },
  "node/10922289033": {
@@ -392,12 +299,6 @@
   "quelle": "https://www.fewo-hueckeswagen.de/kontakt/",
   "stand": "2026-11-17"
  },
- "node/11028068235": {
-  "oeffnungszeiten": "Mo-Su 08:00-20:00",
-  "methode": "text",
-  "quelle": "https://www.altenhof-horst.de/kontakt/",
-  "stand": "2026-11-17"
- },
  "node/11033371168": {
   "email": "info@biohof-am-kolk.de",
   "quelle": "https://biohof-am-kolk.de/",
@@ -406,12 +307,6 @@
  "node/11039904830": {
   "geprueft": "2026-11-17",
   "hinweis": "saisonal"
- },
- "node/11049862105": {
-  "oeffnungszeiten": "Sa-Su 13:00-18:00",
-  "methode": "text",
-  "quelle": "https://www.klosterhof-brunshausen.de/haus-hofladen/",
-  "stand": "2026-11-17"
  },
  "node/11056177071": {
   "oeffnungszeiten": "Mo-Su 00:00-23:59",
@@ -456,12 +351,6 @@
  "node/11113360143": {
   "geprueft": "2026-11-17"
  },
- "node/11156488254": {
-  "oeffnungszeiten": "Fr 15:00-19:00; Sa 09:00-14:00",
-  "methode": "text",
-  "quelle": "https://www.hofladenschaake.de/",
-  "stand": "2026-11-17"
- },
  "node/11169406886": {
   "geprueft": "2026-11-17"
  },
@@ -474,14 +363,6 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
  },
- "node/11178435925": {
-  "oeffnungszeiten": "Mo-Su 08:00-18:00",
-  "methode": "text",
-  "telefon": "09325 766",
-  "email": "info@udos-spitzenspargel.de",
-  "quelle": "https://www.udos-spitzenspargel.de/hofladen.html",
-  "stand": "2026-11-17"
- },
  "node/11182496437": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
@@ -489,12 +370,6 @@
  "node/11197412785": {
   "geprueft": "2026-11-17",
   "fehler": "robots.txt"
- },
- "node/11202307929": {
-  "oeffnungszeiten": "Tu-Th 15:00-18:00; Fr 10:00-14:00,15:00-18:00; Sa 10:00-14:00",
-  "methode": "text",
-  "quelle": "https://www.biohofnau.de/formulare/index.php?form_id=10003755",
-  "stand": "2026-11-17"
  },
  "node/11206003658": {
   "geprueft": "2026-11-17",
@@ -507,13 +382,6 @@
  },
  "node/11225246805": {
   "geprueft": "2026-11-17"
- },
- "node/11230916291": {
-  "oeffnungszeiten": "Tu-Th 09:00-13:00; Fr 09:00-18:00; Sa 09:00-13:00",
-  "methode": "text",
-  "email": "info@hofladen-purucker.de",
-  "quelle": "https://www.hofladen-purucker.de/",
-  "stand": "2026-11-17"
  },
  "node/11244380989": {
   "geprueft": "2026-11-17",
@@ -538,8 +406,6 @@
   "stand": "2026-11-17"
  },
  "node/11281835243": {
-  "oeffnungszeiten": "Mo 00:00-00:00, Tu 00:00-00:00, We 00:00-00:00, Th 00:00-00:00, Fr 00:00-00:00, Sa 00:00-00:00, Su 00:00-00:00",
-  "methode": "schema.org",
   "telefon": "+498207 958302",
   "email": "info@biohof-moll.de",
   "quelle": "https://www.biohof-moll.de/",
@@ -571,21 +437,6 @@
  "node/11336920835": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
- },
- "node/11337883696": {
-  "oeffnungszeiten": "Mo-We 08:00-12:30; Th-Fr 14:00-18:00; Sa 08:00-12:30",
-  "methode": "text",
-  "email": "info@moehler-eiprodukte.de",
-  "quelle": "https://muthof.de/",
-  "stand": "2026-11-17"
- },
- "node/11367947811": {
-  "oeffnungszeiten": "Tu-Fr 08:30-13:00,14:30-18:00; Sa 08:30-13:00",
-  "methode": "text",
-  "telefon": "+49 5244 901200",
-  "email": "info@mertens-wiesbrock.de",
-  "quelle": "https://www.mertens-wiesbrock.de/bio-hofladen",
-  "stand": "2026-11-17"
  },
  "node/11373976934": {
   "telefon": "+49 176 325 301 10",
@@ -652,13 +503,6 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
  },
- "node/11640133877": {
-  "oeffnungszeiten": "Tu-Su 08:00-21:00",
-  "methode": "text",
-  "email": "info@festsaal-permeshof.de",
-  "quelle": "https://www.festsaal-permeshof.de/Kontakt/Oeffnungszeiten/",
-  "stand": "2026-11-17"
- },
  "node/11640715576": {
   "geprueft": "2026-11-17"
  },
@@ -717,13 +561,6 @@
   "quelle": "https://www.familiebantle-lambrechtshof.de/hofautomat",
   "stand": "2026-11-17"
  },
- "node/11769093771": {
-  "oeffnungszeiten": "Tu 08:00-13:00; We 07:30-12:30; Th-Fr 08:00-13:00; Sa 07:30-13:00",
-  "methode": "text",
-  "email": "info@gemuese-rapp.de",
-  "quelle": "https://www.gemuese-rapp.de/",
-  "stand": "2026-11-17"
- },
  "node/11801943576": {
   "geprueft": "2026-11-17",
   "fehler": "fetch failed"
@@ -762,19 +599,6 @@
  "node/11882277840": {
   "geprueft": "2026-11-17"
  },
- "node/11895154146": {
-  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-14:00",
-  "methode": "text",
-  "quelle": "https://www.obsthof-korn.de/maerkte-verkaufsstaende.php",
-  "stand": "2026-11-17"
- },
- "node/11896780682": {
-  "oeffnungszeiten": "Th 16:00-19:00",
-  "methode": "text",
-  "email": "scheuerhof@t-online.de",
-  "quelle": "https://www.permakultur-scheuerhof.de/",
-  "stand": "2026-11-17"
- },
  "node/11897180997": {
   "geprueft": "2026-11-17"
  },
@@ -802,14 +626,6 @@
   "quelle": "https://www.obstbrennerei-ritter.de/",
   "stand": "2026-11-17"
  },
- "node/11945097569": {
-  "oeffnungszeiten": "Th-Sa 11:00-14:30,16:30-20:30",
-  "methode": "text",
-  "telefon": "09871368",
-  "email": "info@landgasthaus-zwick.de",
-  "quelle": "https://landgasthaus-zwick.de/",
-  "stand": "2026-11-17"
- },
  "node/11968719805": {
   "email": "info@erlebniswanderungen-odenwald.de",
   "quelle": "https://www.erlebniswanderungen-odenwald.de/",
@@ -824,13 +640,6 @@
  },
  "node/12008989988": {
   "geprueft": "2026-11-17"
- },
- "node/12022541926": {
-  "oeffnungszeiten": "Mo-Su 06:00-20:00",
-  "methode": "text",
-  "email": "petraspicher@t-online.de",
-  "quelle": "https://www.spicher-altenlinderstall.de/kontakt/",
-  "stand": "2026-11-17"
  },
  "node/12035168508": {
   "geprueft": "2026-11-17",
@@ -851,13 +660,6 @@
  "node/12083615822": {
   "geprueft": "2026-11-17"
  },
- "node/12084020975": {
-  "oeffnungszeiten": "Tu 09:00-18:00; We 09:00-14:00; Th-Fr 09:00-18:00; Sa 07:30-14:00",
-  "methode": "text",
-  "email": "info@kronshorster-lindenhof.de",
-  "quelle": "https://www.kronshorster-lindenhof.de/",
-  "stand": "2026-11-17"
- },
  "node/12100915218": {
   "telefon": "05852 958302",
   "email": "info@hofsteinberg.de",
@@ -868,12 +670,6 @@
   "telefon": "+491707261047",
   "email": "info@brenneis-regional.de",
   "quelle": "https://www.brenneis-regional.de/",
-  "stand": "2026-11-17"
- },
- "node/12118451782": {
-  "oeffnungszeiten": "Mo-Fr 10:00-16:00",
-  "methode": "text",
-  "quelle": "https://holundergut.de/",
   "stand": "2026-11-17"
  },
  "node/12133528301": {
@@ -919,13 +715,6 @@
   "quelle": "http://marmelade.ieits.eu/",
   "stand": "2026-11-17"
  },
- "node/12258459434": {
-  "oeffnungszeiten": "Mo-Tu 08:00-13:00,17:00-18:00; We 08:00-13:00; Th 08:00-13:00,17:00-18:00; Fr 08:00-13:00,15:00-18:00; Sa 08:00-12:30",
-  "methode": "text",
-  "telefon": "06103 86875",
-  "quelle": "https://sehrings-landlaedchen.de/kontakt/",
-  "stand": "2026-11-17"
- },
  "node/12278474620": {
   "email": "landwirtschaft@solawiaachen.de",
   "quelle": "https://admin.solawiaachen.de/?page_id=54",
@@ -955,12 +744,6 @@
   "geprueft": "2026-11-17",
   "hinweis": "saisonal"
  },
- "node/12381022958": {
-  "oeffnungszeiten": "Mo-Sa 07:30-20:00",
-  "methode": "text",
-  "quelle": "https://www.xn--glcks-ei-75a.de/",
-  "stand": "2026-11-17"
- },
  "node/12387837148": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
@@ -971,13 +754,6 @@
  "node/12459811934": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 404"
- },
- "node/12497593023": {
-  "oeffnungszeiten": "Mo-Sa 10:00-19:00; Su 08:00-20:00",
-  "methode": "text",
-  "email": "spargelhof-zein@t-online.de",
-  "quelle": "http://spargelhof-zein.de/",
-  "stand": "2026-11-17"
  },
  "node/12512683067": {
   "geprueft": "2026-11-17"
@@ -1007,12 +783,6 @@
  "node/12593641842": {
   "email": "info@hof-fockenbrock.de",
   "quelle": "https://www.hof-fockenbrock.de/kontakt/",
-  "stand": "2026-11-17"
- },
- "node/12593826307": {
-  "oeffnungszeiten": "Mo 09:00-13:00; We 09:00-13:00,15:00-18:30; Fr 09:00-13:00,15:00-18:30; Sa 09:00-14:00",
-  "methode": "text",
-  "quelle": "http://www.hofladen-paulinenhof.de/",
   "stand": "2026-11-17"
  },
  "node/12626367647": {
@@ -1046,13 +816,6 @@
  "node/12703491061": {
   "geprueft": "2026-11-17"
  },
- "node/12744515645": {
-  "oeffnungszeiten": "Mo-Fr 06:30-18:00; Sa 06:30-12:30",
-  "methode": "text",
-  "email": "metzgerei.partheymueller@gmail.com",
-  "quelle": "https://traditionsmetzgerei.de/produkte/",
-  "stand": "2026-11-17"
- },
  "node/12750038973": {
   "geprueft": "2026-11-17"
  },
@@ -1076,12 +839,6 @@
  "node/12839320930": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
- },
- "node/12839806614": {
-  "oeffnungszeiten": "We-Fr 10:00-19:00; Sa 09:00-14:00",
-  "methode": "text",
-  "quelle": "https://www.biohof-wietler.de/",
-  "stand": "2026-11-17"
  },
  "node/12863250997": {
   "oeffnungszeiten": "Mo-Su 00:00-23:59",
@@ -1377,12 +1134,6 @@
   "quelle": "https://josephines-feinkost.de/",
   "stand": "2026-11-17"
  },
- "node/13703344172": {
-  "oeffnungszeiten": "Fr 15:00-18:00",
-  "methode": "text",
-  "quelle": "https://salnerhof.de/hofladen.html",
-  "stand": "2026-11-17"
- },
  "node/13704050602": {
   "oeffnungszeiten": "Mo,Tu,We,Th,Fr,Sa,Su 06:00-23:00",
   "methode": "schema.org",
@@ -1426,13 +1177,6 @@
  "node/13786882547": {
   "email": "hofladen@bei-seifers.de",
   "quelle": "https://bei-seifers.de/hofladen/",
-  "stand": "2026-11-17"
- },
- "node/13816216138": {
-  "oeffnungszeiten": "Mo-Fr 08:00-12:00",
-  "methode": "text",
-  "email": "muehlenladen@ammerndorfer-muehle.de",
-  "quelle": "https://ammerndorfer-muehle.de/hofladen",
   "stand": "2026-11-17"
  },
  "node/13816854372": {
@@ -1524,12 +1268,6 @@
  "node/14184662367": {
   "geprueft": "2026-11-17"
  },
- "node/14185748001": {
-  "oeffnungszeiten": "Tu 09:00-12:00; We 14:30-18:00; Th 09:00-12:00; Fr 14:30-18:00; Sa 09:00-12:00",
-  "methode": "text",
-  "quelle": "http://hofladen-hoerger.de/produkte",
-  "stand": "2026-11-17"
- },
  "node/14195484214": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
@@ -1606,12 +1344,6 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
  },
- "node/14331909258": {
-  "oeffnungszeiten": "We 09:00-18:00; Th 14:00-18:00; Fr 09:00-18:00; Sa 09:00-13:00",
-  "methode": "text",
-  "quelle": "https://hofladen-wiesner.de/",
-  "stand": "2026-11-17"
- },
  "node/14379905805": {
   "geprueft": "2026-11-17"
  },
@@ -1672,12 +1404,6 @@
   "telefon": "07157/20893",
   "email": "info@buchenhofer.de",
   "quelle": "https://buchenhofer.de/",
-  "stand": "2026-11-17"
- },
- "node/1893919945": {
-  "oeffnungszeiten": "Th 09:00-18:00; Fr 09:00-16:00",
-  "methode": "text",
-  "quelle": "https://www.hofmarkt-ziegs.de/",
   "stand": "2026-11-17"
  },
  "node/1941040866": {
@@ -1810,12 +1536,6 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 404"
  },
- "node/2940207252": {
-  "oeffnungszeiten": "Mo 07:00-13:00; Tu-Fr 07:00-18:00",
-  "methode": "text",
-  "quelle": "https://www.metzgerei-hack-freising.de/",
-  "stand": "2026-11-17"
- },
  "node/2973015556": {
   "telefon": "+4963915744",
   "email": "bio-gasthof@baerenbrunnerhof.de",
@@ -1854,13 +1574,6 @@
  "node/311100254": {
   "geprueft": "2026-11-17"
  },
- "node/3122954860": {
-  "oeffnungszeiten": "We-Th 11:00-15:00; Fr 11:00-15:00,17:00-21:00",
-  "methode": "text",
-  "telefon": "0366915748110",
-  "quelle": "https://www.etzdorferhof.de/",
-  "stand": "2026-11-17"
- },
  "node/3151301273": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
@@ -1894,21 +1607,8 @@
   "quelle": "https://www.biohof-schmidt.de/",
   "stand": "2026-11-17"
  },
- "node/3348342351": {
-  "oeffnungszeiten": "Mo-Fr 08:00-12:00,14:00-17:00; Sa 09:00-12:00",
-  "methode": "text",
-  "quelle": "https://oelmuehle-garting.de/pages/ueber-uns-verkaufsstelle-hofladen",
-  "stand": "2026-11-17"
- },
  "node/3364693866": {
   "geprueft": "2026-11-17"
- },
- "node/3390830108": {
-  "oeffnungszeiten": "Th-Fr 09:00-12:30,14:30-18:00; Sa 09:00-14:00",
-  "methode": "text",
-  "email": "sabine@hofladen-landverliebt.de",
-  "quelle": "https://www.hofladen-landverliebt.de/",
-  "stand": "2026-11-17"
  },
  "node/340254979": {
   "telefon": "004925944471",
@@ -1940,14 +1640,6 @@
  "node/3568925993": {
   "email": "info@spargel-wendel.de",
   "quelle": "https://spargelhof-wendel.de/",
-  "stand": "2026-11-17"
- },
- "node/3578132893": {
-  "oeffnungszeiten": "Tu-We 07:00-13:00; Fr-Sa 07:00-13:00",
-  "methode": "text",
-  "telefon": "062178953833",
-  "email": "karin@frische-kiste.de",
-  "quelle": "https://www.frische-kiste.de/kontakt/",
   "stand": "2026-11-17"
  },
  "node/3580317456": {
@@ -1996,13 +1688,6 @@
  "node/366542945": {
   "geprueft": "2026-11-17",
   "hinweis": "saisonal"
- },
- "node/3682829863": {
-  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-15:00",
-  "methode": "text",
-  "email": "info@seemost.de",
-  "quelle": "https://seemost.de/hofladen/",
-  "stand": "2026-11-17"
  },
  "node/3693580253": {
   "telefon": "+49 1633784671",
@@ -2134,12 +1819,6 @@
  "node/4142327931": {
   "geprueft": "2026-11-17"
  },
- "node/4157495980": {
-  "oeffnungszeiten": "Tu-Su 11:30-15:00,18:00-21:00",
-  "methode": "text",
-  "quelle": "https://www.hof-nuttelmann.de/",
-  "stand": "2026-11-17"
- },
  "node/4173051189": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
@@ -2165,27 +1844,12 @@
  "node/4193600326": {
   "geprueft": "2026-11-17"
  },
- "node/4230180294": {
-  "oeffnungszeiten": "Fr 08:00-18:00; Sa 08:00-13:00",
-  "methode": "text",
-  "telefon": "+499120-6300",
-  "email": "info@scherauerhof.de",
-  "quelle": "https://www.scherauerhof.de/kontakt/",
-  "stand": "2026-11-17"
- },
  "node/4230982297": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
  },
  "node/4258220393": {
   "geprueft": "2026-11-17"
- },
- "node/427081943": {
-  "oeffnungszeiten": "Mo-Tu 08:00-12:00,13:00-17:00; Th-Fr 08:00-12:00,13:00-17:00; Sa 08:00-12:00",
-  "methode": "text",
-  "email": "info@hainmuehle-gmbh.de",
-  "quelle": "https://www.hainmuehle.shop/",
-  "stand": "2026-11-17"
  },
  "node/427965988": {
   "geprueft": "2026-11-17",
@@ -2194,12 +1858,6 @@
  "node/4279741486": {
   "email": "info@eiei-nestler.de",
   "quelle": "https://eiei-nestler.de/kontakt/",
-  "stand": "2026-11-17"
- },
- "node/4287271307": {
-  "oeffnungszeiten": "Mo 09:00-17:00; Tu 09:00-12:30; We-Fr 09:00-17:00; Sa 09:00-12:30",
-  "methode": "text",
-  "quelle": "https://www.gemuesehof-brueckner.de/unser-hofladen/%C3%B6ffnungszeiten/",
   "stand": "2026-11-17"
  },
  "node/4294016478": {
@@ -2274,13 +1932,6 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 410"
  },
- "node/4581640045": {
-  "oeffnungszeiten": "Mo-Tu 08:30-13:00; We 09:30-16:00; Th 08:30-13:00; Fr 08:30-17:00; Sa 09:30-16:00",
-  "methode": "text",
-  "email": "info@auhof.de",
-  "quelle": "https://www.auhof.de/",
-  "stand": "2026-11-17"
- },
  "node/4600265583": {
   "geprueft": "2026-11-17"
  },
@@ -2315,12 +1966,6 @@
  "node/4717130586": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 404"
- },
- "node/4717140982": {
-  "oeffnungszeiten": "Tu 10:00-12:00,15:00-18:30; Th-Fr 10:00-12:00,15:00-18:30; Sa 08:00-12:00",
-  "methode": "text",
-  "quelle": "https://www.xn--vlzgen-wxa.de/",
-  "stand": "2026-11-17"
  },
  "node/4740518921": {
   "geprueft": "2026-11-17",
@@ -2362,12 +2007,6 @@
  },
  "node/4935111047": {
   "geprueft": "2026-11-17"
- },
- "node/4975955237": {
-  "oeffnungszeiten": "Mo-We 16:00-19:00; Fr 16:00-19:00; Sa 10:00-14:00",
-  "methode": "text",
-  "quelle": "https://fohrenberghof.com/kontakt%20%26%20%C3%B6ffnungszeiten/",
-  "stand": "2026-11-17"
  },
  "node/4982831158": {
   "geprueft": "2026-11-17"
@@ -2429,13 +2068,6 @@
   "geprueft": "2026-11-17",
   "fehler": "fetch failed"
  },
- "node/5238549110": {
-  "oeffnungszeiten": "Mo-Fr 09:00-13:00,14:00-18:00; Sa 09:00-13:00",
-  "methode": "text",
-  "email": "info@kartoffelhof-moeller.de",
-  "quelle": "https://kartoffelhof-moeller.de/",
-  "stand": "2026-11-17"
- },
  "node/5245960790": {
   "email": "kontakt@kunsttherapie-dresden.de",
   "quelle": "https://kunsttherapie-dresden.de/impressum-datenschutz-daten/",
@@ -2495,21 +2127,8 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
  },
- "node/5570894265": {
-  "oeffnungszeiten": "Mo 07:30-13:00; Tu-Fr 07:30-13:00,15:00-18:00; Sa 07:00-12:30",
-  "methode": "text",
-  "quelle": "https://www.metzgerei-feisst.de/",
-  "stand": "2026-11-17"
- },
  "node/5578970477": {
   "geprueft": "2026-11-17"
- },
- "node/5586351195": {
-  "oeffnungszeiten": "Mo-Fr 13:00-18:00; Sa 07:00-12:00",
-  "methode": "text",
-  "email": "info@hof-burmeister.de",
-  "quelle": "https://hof-burmeister.de/",
-  "stand": "2026-11-17"
  },
  "node/5599003269": {
   "email": "info@milch-to-go.de",
@@ -2558,13 +2177,6 @@
   "quelle": "https://biohof-mahlstedt.de/kontakt/",
   "stand": "2026-11-17"
  },
- "node/5637004835": {
-  "oeffnungszeiten": "Mo-Tu 08:00-12:00,13:30-17:00; Th-Fr 08:00-12:00,13:30-17:00",
-  "methode": "text",
-  "email": "shop@dehner-bienen.de",
-  "quelle": "https://www.dehner-imkereibedarf.de/",
-  "stand": "2026-11-17"
- },
  "node/5637609941": {
   "geprueft": "2026-11-17"
  },
@@ -2591,13 +2203,6 @@
   "quelle": "https://www.hopfgarten-honig.de/",
   "stand": "2026-11-17"
  },
- "node/5648802854": {
-  "oeffnungszeiten": "Mo-Fr 09:00-12:30,14:00-18:00; Sa 09:00-12:30",
-  "methode": "text",
-  "email": "info@bildgarten.com",
-  "quelle": "https://winzerhof-bildgarten.de/",
-  "stand": "2026-11-17"
- },
  "node/5649530940": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
@@ -2621,12 +2226,6 @@
  "node/5690453376": {
   "geprueft": "2026-11-17",
   "fehler": "robots.txt"
- },
- "node/5698707283": {
-  "oeffnungszeiten": "Mo-Su 10:00-18:00",
-  "methode": "text",
-  "quelle": "https://www.straussenfarm-lohsa.de/",
-  "stand": "2026-11-17"
  },
  "node/570112989": {
   "geprueft": "2026-11-17",
@@ -2691,14 +2290,6 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
  },
- "node/5907980377": {
-  "oeffnungszeiten": "Fr 14:00-17:00; Su 10:00-12:00",
-  "methode": "text",
-  "telefon": "01797412866",
-  "email": "info@ziegenhof-friedrich.de",
-  "quelle": "https://ziegenhof-friedrich.de/kontakt-und-anfahrt/",
-  "stand": "2026-11-17"
- },
  "node/5908445300": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 410"
@@ -2710,12 +2301,6 @@
  "node/5920754146": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
- },
- "node/5941329417": {
-  "oeffnungszeiten": "Fr 09:00-17:00",
-  "methode": "text",
-  "quelle": "https://hainichs-hofladen.de/kontakt",
-  "stand": "2026-11-17"
  },
  "node/5943302362": {
   "geprueft": "2026-11-17",
@@ -2760,12 +2345,6 @@
   "telefon": "004959217124028",
   "email": "info@hof-loenink.de",
   "quelle": "https://hof-loenink.de/",
-  "stand": "2026-11-17"
- },
- "node/6071483065": {
-  "oeffnungszeiten": "Fr 09:00-12:00,14:00-18:00; Sa 09:00-12:00",
-  "methode": "text",
-  "quelle": "https://www.gutmann-hof.de/sale/__Verkauf.html",
   "stand": "2026-11-17"
  },
  "node/6170783237": {
@@ -2818,13 +2397,6 @@
   "telefon": "015255775410",
   "email": "mariasedlmeier@protonmail.com",
   "quelle": "https://www.eichstetter-hochlandrinder.de/",
-  "stand": "2026-11-17"
- },
- "node/6388317268": {
-  "oeffnungszeiten": "Mo-Fr 08:00-18:00; Sa 09:00-13:00",
-  "methode": "text",
-  "email": "info@aigner-bio-logisch.de",
-  "quelle": "https://www.aigner-bio-logisch.de/",
   "stand": "2026-11-17"
  },
  "node/639173391": {
@@ -2902,12 +2474,6 @@
   "geprueft": "2026-11-17",
   "fehler": "fetch failed"
  },
- "node/6640044098": {
-  "oeffnungszeiten": "Mo 08:00-13:00; Tu 10:00-16:00; We 14:00-16:00; Th 10:00-16:00; Fr 08:00-18:00; Sa 08:00-13:00",
-  "methode": "text",
-  "quelle": "https://hof-domanja.de/hofladen-marktverkauf-domanja-wittichenau/",
-  "stand": "2026-11-17"
- },
  "node/6672532591": {
   "geprueft": "2026-11-17"
  },
@@ -2928,12 +2494,6 @@
  "node/6705677929": {
   "geprueft": "2026-11-17"
  },
- "node/6718187965": {
-  "oeffnungszeiten": "Th-Fr 09:00-11:00,17:00-19:00; Sa 09:00-12:00",
-  "methode": "text",
-  "quelle": "https://martinshof-karlsbad.de/",
-  "stand": "2026-11-17"
- },
  "node/6747097191": {
   "geprueft": "2026-11-17"
  },
@@ -2947,13 +2507,6 @@
  "node/6767159629": {
   "geprueft": "2026-11-17",
   "fehler": "robots.txt"
- },
- "node/6775752278": {
-  "oeffnungszeiten": "Mo-Sa 08:00-20:00",
-  "methode": "text",
-  "telefon": "06222-71248",
-  "quelle": "https://www.obstwiesen-filsinger.de/S%C3%A4fte.php/Verkaufsstellen",
-  "stand": "2026-11-17"
  },
  "node/6789254879": {
   "geprueft": "2026-11-17",
@@ -3016,14 +2569,6 @@
  "node/7031873522": {
   "email": "info@landvolk-goe.de",
   "quelle": "https://land-direkt.de/?page_id=296",
-  "stand": "2026-11-17"
- },
- "node/7043562496": {
-  "oeffnungszeiten": "Mo-Sa 09:00-18:00",
-  "methode": "text",
-  "telefon": "+492546531",
-  "email": "info@familie-wigger.de",
-  "quelle": "https://familie-wigger.de/hofladen/",
   "stand": "2026-11-17"
  },
  "node/7062603112": {
@@ -3140,13 +2685,6 @@
  "node/7446785039": {
   "geprueft": "2026-11-17"
  },
- "node/7477929868": {
-  "oeffnungszeiten": "Sa 08:00-13:00",
-  "methode": "text",
-  "email": "hofladen@obstbau-winkler.de",
-  "quelle": "https://www.obstbau-winkler.de/kontakt",
-  "stand": "2026-11-17"
- },
  "node/7477929869": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
@@ -3178,12 +2716,6 @@
  "node/7574935351": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
- },
- "node/7575641673": {
-  "oeffnungszeiten": "Mo-Su 08:00-18:00",
-  "methode": "text",
-  "quelle": "https://spargelhof-huber.de/oeffnungszeiten.html",
-  "stand": "2026-11-17"
  },
  "node/7577976709": {
   "geprueft": "2026-11-17",
@@ -3394,12 +2926,6 @@
   "quelle": "https://www.evershof.de/",
   "stand": "2026-11-17"
  },
- "node/813189278": {
-  "oeffnungszeiten": "Th 09:00-18:00",
-  "methode": "text",
-  "quelle": "https://www.hof-thorn.de/",
-  "stand": "2026-11-17"
- },
  "node/8132429526": {
   "geprueft": "2026-11-17",
   "hinweis": "saisonal"
@@ -3407,13 +2933,6 @@
  "node/8151205503": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
- },
- "node/8154281887": {
-  "oeffnungszeiten": "Mo-Fr 09:00-12:00; Sa 09:00-11:00",
-  "methode": "text",
-  "email": "email@igels-leinoel.de",
-  "quelle": "https://www.igels-leinoel.de/magento/oeffnungszeiten/",
-  "stand": "2026-11-17"
  },
  "node/8245069954": {
   "email": "info@hofjunge.de",
@@ -3569,14 +3088,6 @@
   "quelle": "http://www.goglhof.de/",
   "stand": "2026-11-17"
  },
- "node/8605906805": {
-  "oeffnungszeiten": "We-Fr 08:00-13:00,15:00-18:00; Sa 08:00-11:00",
-  "methode": "text",
-  "telefon": "+493418613606",
-  "email": "leipziger-party-service@web.de",
-  "quelle": "https://fleischerei-moellmer.de/",
-  "stand": "2026-11-17"
- },
  "node/8612572377": {
   "geprueft": "2026-11-17"
  },
@@ -3595,36 +3106,13 @@
   "geprueft": "2026-11-17",
   "hinweis": "saisonal"
  },
- "node/8691434560": {
-  "oeffnungszeiten": "Mo-Tu 09:00-12:00,14:00-18:00; Th-Fr 09:00-12:00,14:00-18:00; Sa 08:00-12:00",
-  "methode": "text",
-  "telefon": "0049715327405",
-  "email": "info@berghof-deizisau.de",
-  "quelle": "https://www.berghof-deizisau.de/kontakt/",
-  "stand": "2026-11-17"
- },
  "node/8691434562": {
   "email": "info@spargel-wendel.de",
   "quelle": "https://spargelhof-wendel.de/",
   "stand": "2026-11-17"
  },
- "node/8695287937": {
-  "oeffnungszeiten": "Mo-Fr 09:00-19:00",
-  "methode": "text",
-  "email": "wendelin.jelowik@t-online.de",
-  "quelle": "http://www.hofjelowik.de/",
-  "stand": "2026-11-17"
- },
  "node/8708894328": {
   "geprueft": "2026-11-17"
- },
- "node/8709032574": {
-  "oeffnungszeiten": "Mo-Su 07:00-21:00",
-  "methode": "text",
-  "telefon": "+496293385",
-  "email": "baier.GbR@freenet.de",
-  "quelle": "https://bergfelder-hofladen.de/startseite",
-  "stand": "2026-11-17"
  },
  "node/8715432925": {
   "geprueft": "2026-11-17",
@@ -3666,29 +3154,9 @@
  "node/8757847692": {
   "geprueft": "2026-11-17"
  },
- "node/8771362366": {
-  "oeffnungszeiten": "Sa-Su 13:00-18:00",
-  "methode": "text",
-  "quelle": "https://hof-mougin.de/hofcafe-hofladen/holsteiner-hofladen/",
-  "stand": "2026-11-17"
- },
  "node/8776931839": {
   "email": "info@wallners-bioputen.de",
   "quelle": "https://www.wallners-bioputen.de/hofverkauf/",
-  "stand": "2026-11-17"
- },
- "node/8777045435": {
-  "oeffnungszeiten": "Th-Fr 09:00-12:00,14:00-18:00; Sa 09:00-12:00",
-  "methode": "text",
-  "email": "email@example.com",
-  "quelle": "https://www.hagenmuehle-willanzheim.de/",
-  "stand": "2026-11-17"
- },
- "node/8777548037": {
-  "oeffnungszeiten": "Mo-Sa 09:30-17:30",
-  "methode": "text",
-  "email": "post@bauernhof-schulze-elberg.de",
-  "quelle": "http://www.bauernhof-schulze-elberg.de/angebote.htm",
   "stand": "2026-11-17"
  },
  "node/8780713030": {
@@ -3747,12 +3215,6 @@
  "node/8865095597": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
- },
- "node/8869417800": {
-  "oeffnungszeiten": "Th-Fr 08:00-18:00; Sa 08:30-18:00; Su 08:00-18:00",
-  "methode": "text",
-  "quelle": "https://www.hof-wilken.de/",
-  "stand": "2026-11-17"
  },
  "node/8889292302": {
   "geprueft": "2026-11-17",
@@ -3896,13 +3358,6 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
  },
- "node/9118176933": {
-  "oeffnungszeiten": "Mo-Fr 07:00-09:00,09:30-12:00,12:30-16:00",
-  "methode": "text",
-  "email": "info@ruegener-rapsoel.de",
-  "quelle": "https://ruegener-rapsoel.de/ruegener-landhandel/",
-  "stand": "2026-11-17"
- },
  "node/9118344087": {
   "geprueft": "2026-11-17"
  },
@@ -4017,12 +3472,6 @@
   "quelle": "https://www.peeneland-agrar.de/impressum/impressum/",
   "stand": "2026-11-17"
  },
- "node/9397017598": {
-  "oeffnungszeiten": "Mo-Fr 08:00-16:00",
-  "methode": "text",
-  "quelle": "https://www.seemann-landmaschinen.de/",
-  "stand": "2026-11-17"
- },
  "node/9397057520": {
   "telefon": "+491721023008",
   "email": "someone@example.com",
@@ -4035,12 +3484,6 @@
  },
  "node/9397068403": {
   "geprueft": "2026-11-17"
- },
- "node/9403792951": {
-  "oeffnungszeiten": "Tu-Fr 09:00-13:00,14:00-18:00; Sa 09:00-16:00",
-  "methode": "text",
-  "quelle": "https://www.feldkiosk.de/",
-  "stand": "2026-11-17"
  },
  "node/9420281466": {
   "email": "info@ziegenhof-gebauer.de",
@@ -4099,12 +3542,6 @@
  },
  "node/9578053417": {
   "geprueft": "2026-11-17"
- },
- "node/9603621331": {
-  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-13:00",
-  "methode": "text",
-  "quelle": "https://www.bioladen-meissen.de/portfolio/obst-und-gemuese/",
-  "stand": "2026-11-17"
  },
  "node/9604274919": {
   "geprueft": "2026-11-17"
@@ -4200,14 +3637,6 @@
  "node/9757697422": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
- },
- "node/9761052193": {
-  "oeffnungszeiten": "Mo-Sa 08:00-19:00",
-  "methode": "text",
-  "telefon": "07423 3584",
-  "email": "euaknoepfle@t-online.de",
-  "quelle": "https://vom-bauern-sbh.de/hoefe/demeterhof-knoepfle/",
-  "stand": "2026-11-17"
  },
  "node/9764807450": {
   "telefon": "+494191909436",
@@ -4365,13 +3794,6 @@
  "way/110452517": {
   "geprueft": "2026-11-17"
  },
- "way/1106820606": {
-  "oeffnungszeiten": "Mo 08:00-13:00; Tu-Fr 08:00-18:00; Sa 07:00-12:30",
-  "methode": "text",
-  "email": "schaffer@schafferhof.de",
-  "quelle": "https://www.schafferhof.de/",
-  "stand": "2026-11-17"
- },
  "way/111573549": {
   "email": "info@schneiderspargel.de",
   "quelle": "https://www.schneiderspargel.de/",
@@ -4384,12 +3806,6 @@
  "way/1128051515": {
   "email": "brandeshof@gmail.com",
   "quelle": "https://brandeshof.de/kontaktieren-sie-uns/",
-  "stand": "2026-11-17"
- },
- "way/113737251": {
-  "oeffnungszeiten": "Mo-We 09:00-12:30; Th-Fr 09:00-12:30,14:30-18:00; Sa 08:00-13:00",
-  "methode": "text",
-  "quelle": "https://www.hofladen-wuertenberger.de/",
   "stand": "2026-11-17"
  },
  "way/115880316": {
@@ -4405,12 +3821,6 @@
  "way/117424090": {
   "geprueft": "2026-11-17"
  },
- "way/1195526353": {
-  "oeffnungszeiten": "We-Su 09:00-17:00",
-  "methode": "text",
-  "quelle": "https://www.miermanns-scheune.de/hofladen/",
-  "stand": "2026-11-17"
- },
  "way/121660266": {
   "geprueft": "2026-11-17",
   "fehler": "fetch failed"
@@ -4420,12 +3830,6 @@
  },
  "way/1259519959": {
   "geprueft": "2026-11-17"
- },
- "way/129537040": {
-  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-14:00",
-  "methode": "text",
-  "quelle": "https://www.flarichsmuehle.de/page4.html",
-  "stand": "2026-11-17"
  },
  "way/131298755": {
   "geprueft": "2026-11-17"
@@ -4472,30 +3876,9 @@
   "quelle": "https://www.metzgerei-gehr.de/",
   "stand": "2026-11-17"
  },
- "way/139438511": {
-  "oeffnungszeiten": "Tu 17:00-18:30; Fr 10:00-18:30",
-  "methode": "text",
-  "email": "hofladen@biohof-vogel.de",
-  "quelle": "https://biohof-vogel.de/hofladen-und-automaten/",
-  "stand": "2026-11-17"
- },
- "way/141210707": {
-  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-14:00",
-  "methode": "text",
-  "telefon": "02175 4282",
-  "email": "info@leichlinger-champignonzucht.de",
-  "quelle": "https://www.leichlinger-champignonzucht.de/kontakt.html",
-  "stand": "2026-11-17"
- },
  "way/144284866": {
   "geprueft": "2026-11-17",
   "fehler": "robots.txt"
- },
- "way/1448303206": {
-  "oeffnungszeiten": "Tu 13:00-18:00; Fr-Sa 13:00-18:00",
-  "methode": "text",
-  "quelle": "https://mitmachbauernhof.de/hofladen-2/",
-  "stand": "2026-11-17"
  },
  "way/145409653": {
   "geprueft": "2026-11-17"
@@ -4551,12 +3934,6 @@
   "geprueft": "2026-11-17",
   "fehler": "fetch failed"
  },
- "way/174023748": {
-  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-13:00",
-  "methode": "text",
-  "quelle": "https://hof-storck.de/hofladen/",
-  "stand": "2026-11-17"
- },
  "way/178354856": {
   "geprueft": "2026-11-17"
  },
@@ -4569,14 +3946,6 @@
  "way/189804335": {
   "geprueft": "2026-11-17",
   "fehler": "fetch failed"
- },
- "way/191382154": {
-  "oeffnungszeiten": "Fr 08:00-18:00; Sa 08:00-13:00",
-  "methode": "text",
-  "telefon": "+4979715444",
-  "email": "schupp.steinaeckerhof@t-online.de",
-  "quelle": "https://www.steinaeckerhof-schupp.de/",
-  "stand": "2026-11-17"
  },
  "way/196480721": {
   "email": "info@hof-sallach.de",
@@ -4640,14 +4009,6 @@
  "way/249639170": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 403"
- },
- "way/250694549": {
-  "oeffnungszeiten": "Mo 08:00-13:00; We 08:00-13:00; Th-Fr 08:00-18:00; Sa 08:00-13:00",
-  "methode": "text",
-  "telefon": "+4962053068855",
-  "email": "hofladen@gemuesehof-schmitt.de",
-  "quelle": "https://gemuesehof-schmitt.de/hofladen-automat/",
-  "stand": "2026-11-17"
  },
  "way/251221262": {
   "geprueft": "2026-11-17",
@@ -4739,13 +4100,6 @@
   "geprueft": "2026-11-17",
   "fehler": "robots.txt"
  },
- "way/325068670": {
-  "oeffnungszeiten": "Mo 10:00-18:00; We-Th 10:00-18:00; Fr-Sa 10:00-14:00; Su 12:00-17:00",
-  "methode": "text",
-  "email": "info@bluhmsdelikat.de",
-  "quelle": "https://bluhmsdelikat.de/laden",
-  "stand": "2026-11-17"
- },
  "way/326453753": {
   "geprueft": "2026-11-17"
  },
@@ -4799,12 +4153,6 @@
  "way/408660425": {
   "geprueft": "2026-11-17"
  },
- "way/412829584": {
-  "oeffnungszeiten": "Fr 15:00-18:00; Sa 09:00-12:30",
-  "methode": "text",
-  "quelle": "https://www.seebodenhof.de/kontakt",
-  "stand": "2026-11-17"
- },
  "way/414956555": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 404"
@@ -4839,21 +4187,9 @@
   "geprueft": "2026-11-17",
   "fehler": "HTTP 404"
  },
- "way/48173536": {
-  "oeffnungszeiten": "Mo-Tu 08:30-14:00; We 08:30-18:00; Th-Fr 08:30-14:00; Sa 09:30-13:00",
-  "methode": "text",
-  "quelle": "http://www.obsthof-nodop.de/",
-  "stand": "2026-11-17"
- },
  "way/481833830": {
   "geprueft": "2026-11-17",
   "fehler": "HTTP 400"
- },
- "way/484823212": {
-  "oeffnungszeiten": "Fr 14:00-17:00",
-  "methode": "text",
-  "quelle": "https://www.biohof-kreitmair.de/Seiten/Hofladen/",
-  "stand": "2026-11-17"
  },
  "way/49265181": {
   "geprueft": "2026-11-17"
@@ -4894,12 +4230,6 @@
  "way/553041869": {
   "geprueft": "2026-11-17",
   "hinweis": "saisonal"
- },
- "way/556440121": {
-  "oeffnungszeiten": "Th-Su 09:30-15:00,17:00-22:00",
-  "methode": "text",
-  "quelle": "https://hoehenhof-siedelsbrunn.de/",
-  "stand": "2026-11-17"
  },
  "way/630782811": {
   "email": "info@hofahlers.de",
@@ -4966,26 +4296,12 @@
   "quelle": "https://biobauers.de/",
   "stand": "2026-11-17"
  },
- "way/841870019": {
-  "oeffnungszeiten": "Mo-Fr 08:00-13:30,14:00-18:30; Sa 08:00-13:00",
-  "methode": "text",
-  "email": "info@muehle-niewind.de",
-  "quelle": "https://www.muehle-niewind.de/",
-  "stand": "2026-11-17"
- },
  "way/88580414": {
   "geprueft": "2026-11-17"
  },
  "way/903434617": {
   "email": "info@diebiohennen.de",
   "quelle": "https://www.diebiohennen.de/",
-  "stand": "2026-11-17"
- },
- "way/912393073": {
-  "oeffnungszeiten": "Fr 07:00-13:00,15:00-18:00; Sa 07:00-12:00; Su 07:00-11:00",
-  "methode": "text",
-  "email": "moin@landladen-rullstorf.de",
-  "quelle": "http://www.landladen-rullstorf.de/",
   "stand": "2026-11-17"
  },
  "way/936921583": {

@@ -81,7 +81,17 @@ export function textZuOsm(text) {
     i = j + 1;
   }
   const oh = regeln.join('; ');
-  return ohParse(oh) ? oh : null;
+  return plausibel(oh) ? oh : null;
+}
+
+// Leere oder unsinnige Spannen (z. B. 00:00-00:00 aus Website-Baukästen) verwerfen
+export function plausibel(oh) {
+  if (!oh || !ohParse(oh)) return false;
+  for (const m of oh.matchAll(/(\d{2}):(\d{2})-(\d{2}):(\d{2})/g)) {
+    const von = +m[1] * 60 + +m[2], bis = +m[3] * 60 + +m[4];
+    if (bis <= von && !(bis === 0 && von > 0)) return false;
+  }
+  return true;
 }
 
 // ---------- HTML-Auswertung ----------
@@ -107,7 +117,7 @@ function ausJsonLd(html) {
       if (Array.isArray(o)) { stapel.push(...o); continue; }
       if (o.openingHours && !ergebnis.oeffnungszeiten) {
         const oh = (Array.isArray(o.openingHours) ? o.openingHours : [o.openingHours]).join('; ');
-        if (ohParse(oh)) ergebnis.oeffnungszeiten = oh;
+        if (plausibel(oh)) ergebnis.oeffnungszeiten = oh;
       }
       if (o.openingHoursSpecification && !ergebnis.oeffnungszeiten) {
         const woche = Array.from({ length: 7 }, () => []);
@@ -135,6 +145,9 @@ function ausJsonLd(html) {
 
 function ausText(html) {
   const text = htmlZuText(html);
+  // Seiten mit mehreren Adressen (Marktstände, Filialen): Zeiten gehören evtl. zu einem anderen Standort
+  const plzSet = new Set([...text.matchAll(/\b(\d{5})\s+[A-ZÄÖÜ][a-zäöüß]/g)].map((m) => m[1]));
+  if (plzSet.size > 1) return { mehrereStandorte: true };
   const i = text.search(/öffnungszeit|oeffnungszeit|geöffnet|verkaufszeit|ladenöffnung/i);
   if (i < 0) return {};
   const fenster = text.slice(i, i + 700);
