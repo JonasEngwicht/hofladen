@@ -41,7 +41,7 @@ const ORG = new RegExp([
   '[Gg]erichtshof', 'Mineralöl', 'Rehabilitation', 'Fachinformation', 'Motor', 'Taxis', 'Staatsbibliothek',
   'Kreisausschu', 'Landrat', '[Mm]inister', 'Staatskanzlei', 'Justizvollzug', 'Senate', 'Verrechnung', 'Buchhandlung', 'Dipl\\.',
   'Ltd\\.', 'Senioren', 'Dienst\\b', '^Haus ', '^Gemeinde ', 'Club\\b', 'Vorstand', 'Fachhochschule', 'Bauaktien', 'Volksbank',
-  '[Zz]eitung', 'SpreeBo', 'Diven',
+  '[Zz]eitung', 'SpreeBo', 'Diven', 'mhplus', '\\bBKK\\b', '/', 'Arbeitsgemeinschaft', 'bekämpfung', 'Layout', 'Produktion',
   '[Ff]örderung', 'Bürgermeister', 'e\\.\\s?G\\.', '^Licht im Osten$', '\\b(BKK|IKK|AOK|BARMER|DAK|HUK|BVG|GEMA|SWR|ZDF|ARD|RBB|DRK|VIT|AVM|AVG|OVAG|KSA|MDC|IMS|HDE|EDW|AKAD|LLP|ABB|EMBL)\\b',
   '\\b[A-ZÄÖÜ]{3,}\\b', '^"', '\\.[A-Za-z]', '\\d',
 ].join('|'));
@@ -73,7 +73,9 @@ function kreisName(variants) {
   if ((m = best.match(/^(.*), (Freie und Hansestadt|Stadt|Hansestadt)$/))) return { name: m[1], art: 'Stadt' };
   if ((m = best.match(/^(Kreisfreie Stadt|Stadtkreis) (.*)$/))) return { name: m[2], art: 'Stadt' };
   if ((m = best.match(/^(Landkreis|Kreis) (.*)$/))) return { name: m[2], art: 'Landkreis', praefix: m[1] };
-  return { name: best, art: 'Landkreis', praefix: 'Landkreis' };
+  // Ohne Zusatz: Regionsverbände und "…kreis" sind Kreise; sonst entscheidet die Zahl der Ortsnamen (siehe ladePlz)
+  if (/^(Region|Städteregion|Regionalverband) |kreis$/i.test(best)) return { name: best, art: 'Landkreis', praefix: '' };
+  return { name: best, art: 'unklar', praefix: 'Landkreis' };
   function score(v) {
     return (/^(Landkreis|Kreisfreie Stadt|Stadtkreis|Kreis) /.test(v) ? 10 : 0) + variants.get(v) / 1000;
   }
@@ -105,7 +107,16 @@ export function ladePlz(pfad) {
   // Kreise mit Slugs; Stadt und gleichnamiger Landkreis im selben Land bekommen eindeutige Slugs.
   const kreise = new Map();
   for (const [code, { land, v }] of kreisVarianten) {
-    const { name, art, praefix } = kreisName(v);
+    let { name, art, praefix } = kreisName(v);
+    if (art === 'unklar') {
+      if (name === 'Landeshauptstadt Magdeburg') name = 'Magdeburg';
+      if (name === 'Nuremberg') name = 'Nürnberg';
+      // Kreisfreie Städte: die meisten Postleitzahlen lauten auf den Stadtnamen selbst
+      const zeilen = orte.filter((o) => o.kreis === code && !o.org);
+      const stamm = name.split(/[ -]/)[0];
+      const treffer = zeilen.filter((o) => o.ort === name || o.ort.startsWith(stamm)).length;
+      art = zeilen.length && treffer / zeilen.length >= 0.5 ? 'Stadt' : 'Landkreis';
+    }
     kreise.set(code, { code, land, name, art, praefix, slug: slugify(name) });
   }
   const seen = new Map();
@@ -122,8 +133,9 @@ export function ladePlz(pfad) {
     k.landName = BUNDESLAENDER[k.land];
     k.landSlug = slugify(k.landName);
     k.pfad = `/${k.landSlug}/${k.slug}/`;
-    k.titel = k.art === 'Stadt' || /kreis$/i.test(k.name) ? k.name : `${k.praefix} ${k.name}`;
+    k.titel = k.art === 'Stadt' || !k.praefix || /kreis$/i.test(k.name) ? k.name : `${k.praefix} ${k.name}`;
     if (k.land === 'BE' || k.land === 'HH') k.titel = k.name;
+    k.im = `${k.art === 'Stadt' ? 'in' : /^(Region|Städteregion) /.test(k.titel) ? 'in der' : 'im'} ${k.titel}`;
   }
 
   const plz = new Map();
