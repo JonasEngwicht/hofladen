@@ -1,32 +1,5028 @@
 {
+ "node/10010501366": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10023825130": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10030012037": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10033208923": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10033208924": {
+  "oeffnungszeiten": "Mo-Su 07:00-20:00",
+  "methode": "text",
+  "telefon": "08461/606993",
+  "quelle": "https://www.hofladen-applbauer.de/Oeffnungszeiten",
+  "stand": "2026-11-17"
+ },
+ "node/10033208925": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10033321625": {
+  "oeffnungszeiten": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-17:00",
+  "methode": "schema.org",
+  "quelle": "https://ziegenalm.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10050621160": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10051056763": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10061682656": {
+  "email": "kontakt@wrogemanns-hofladen.de",
+  "quelle": "https://wrogemanns-hofladen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10061823570": {
+  "telefon": "04188899744",
+  "email": "juh@natur-verliebt.de",
+  "quelle": "https://www.natur-verliebt.de/pages/marktstaende",
+  "stand": "2026-11-17"
+ },
+ "node/10065892333": {
+  "oeffnungszeiten": "Mo-Su 06:00-21:00",
+  "methode": "text",
+  "telefon": "0176-24695466",
+  "email": "info@charlottenhof-frankfurt.de",
+  "quelle": "https://www.charlottenhof-frankfurt.de/leistungen",
+  "stand": "2026-11-17"
+ },
+ "node/10090634821": {
+  "oeffnungszeiten": "Mo-Sa 08:00-20:00",
+  "methode": "text",
+  "quelle": "https://www.habeker-hof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10107049029": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10118768548": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10119406194": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 500"
+ },
+ "node/10124869619": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/10125155210": {
+  "email": "info@heidehof-albshausen.de",
+  "quelle": "https://heidehof-albshausen.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/10129926523": {
+  "oeffnungszeiten": "Mo-Fr 08:00-18:30",
+  "methode": "text",
+  "email": "info@landhof-birmes.de",
+  "quelle": "https://www.landhof-birmes.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10138366790": {
+  "telefon": "+49 5542 503 7400",
+  "email": "info@bio-roth.de",
+  "quelle": "https://bio-frischgefluegel-roth.de/verkaufsautomat/",
+  "stand": "2026-11-17"
+ },
+ "node/10143310490": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10198635796": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10207746966": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/10221527650": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10235685142": {
+  "oeffnungszeiten": "Tu 15:00-18:00; Th 10:00-12:00; Fr 15:00-18:00; Sa 10:00-12:00",
+  "methode": "text",
+  "telefon": "+493636701641",
+  "quelle": "https://www.ziegen-peter.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10235944249": {
+  "oeffnungszeiten": "We-Fr 12:00-14:00,17:00-21:00; Sa-Su 12:00-21:00",
+  "methode": "text",
+  "quelle": "https://hof-kindervatter.de/oeffnungszeiten",
+  "stand": "2026-11-17"
+ },
+ "node/10242145911": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10242145912": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10242145915": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/10244371210": {
+  "email": "vb-design@gmx.de",
+  "quelle": "https://duelmener-welsh-black-farm.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/10274810826": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10276895787": {
+  "email": "info@obstbau-schneider.de",
+  "quelle": "https://www.obstbau-schneider.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10287668021": {
+  "oeffnungszeiten": "Tu 09:00-17:00; We 09:00-13:00; Th 09:00-17:00; Fr 09:00-13:00; Sa 09:00-12:00",
+  "methode": "text",
+  "quelle": "https://www.munds-muehle.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10295682502": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10296868996": {
+  "email": "buero@hartmann-fleischerei.de",
+  "quelle": "http://www.hartmann-fleischerei.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/10298016957": {
+  "oeffnungszeiten": "Fr 12:00-17:00; Sa 07:30-12:30",
+  "methode": "text",
+  "quelle": "https://hofmetzger-siegle.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10298267687": {
+  "email": "info@riedlbergers.de",
+  "quelle": "https://riedlbergers.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10303500671": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10315701154": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10540099232": {
+  "oeffnungszeiten": "Th-Fr 09:00-13:00; Sa 09:00-15:00",
+  "methode": "text",
+  "quelle": "http://www.hof-ontrup.de/Hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/10543065191": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/10564437947": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10577813706": {
+  "email": "info@alpenhain.de",
+  "quelle": "https://www.alpenhain.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10598754008": {
+  "telefon": "+49283791420",
+  "email": "mmaassen@petrusheim.de",
+  "quelle": "https://rhein-verein.de/einrichtungen/petrusheim/",
+  "stand": "2026-11-17"
+ },
+ "node/10606372885": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10606372886": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10606372887": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1065182174": {
+  "oeffnungszeiten": "Tu 07:30-12:00; Th 12:45-15:00",
+  "methode": "text",
+  "quelle": "https://www.urkraft-leinmanufaktur.de/Kontakt-_-7.html",
+  "stand": "2026-11-17"
+ },
+ "node/10655473173": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10656210170": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 401"
+ },
+ "node/10701722912": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10721270647": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/10734185314": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10746854713": {
+  "oeffnungszeiten": "We 08:00-12:00,16:00-18:00; Fr 08:00-12:00,14:00-18:00; Sa 08:00-12:00",
+  "methode": "text",
+  "telefon": "+49813183568",
+  "email": "schneiderhofmitterndorf@gmail.com",
+  "quelle": "https://www.schneiderhof-mitterndorf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10777426522": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/10778341819": {
+  "oeffnungszeiten": "Mo-Sa 10:00-17:00",
+  "methode": "text",
+  "email": "info@knaup-roethlein.de",
+  "quelle": "https://genusshofknaup.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10788616157": {
+  "telefon": "+491723091047",
+  "email": "heringmartin@web.de",
+  "quelle": "https://www.hofladen-hellendorf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10793767690": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10797193167": {
+  "email": "mail@rothbauernhof.de",
+  "quelle": "http://daberger.bayern/Impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/10799114462": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10813982602": {
+  "email": "biolandhof@hasselholz.de",
+  "quelle": "https://www.hasselholz.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10815886623": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10815911999": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10816659833": {
+  "email": "info@kelterei-steden.de",
+  "quelle": "https://www.kelterei-steden.de/altstadtomat",
+  "stand": "2026-11-17"
+ },
+ "node/10820268100": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10831728257": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10837143948": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10848252401": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10853123120": {
+  "telefon": "+49 7973 912955",
+  "quelle": "https://hofladen.info//hofladen/biolandhof-guthei%C3%9F",
+  "stand": "2026-11-17"
+ },
+ "node/10873558052": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10876053152": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10879530535": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10879530542": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10901252772": {
+  "oeffnungszeiten": "Tu 10:00-18:00; Th-Fr 08:00-12:00,13:30-18:00; Sa 08:00-13:00",
+  "methode": "text",
+  "quelle": "https://www.fischbeck-gemuesehof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10916186292": {
+  "telefon": "+493436351220",
+  "quelle": "https://www.gutshof-klingenhain.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10917591360": {
+  "oeffnungszeiten": "Mo 08:00-13:00; We 07:00-13:00; Th 08:00-13:00; Fr 11:00-17:00; Sa 07:00-13:00",
+  "methode": "text",
+  "email": "dpo-google@google.com",
+  "quelle": "https://www.hofladen-bannick.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10922289033": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10937965934": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/10963107791": {
+  "telefon": "+49605192710",
+  "email": "info@bauer-wuerfl.de",
+  "quelle": "https://www.bauer-wuerfl.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/10964238695": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/10968753402": {
+  "telefon": "+4915159159215",
+  "quelle": "https://www.wildling-von-hei.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10972180366": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10976801831": {
+  "email": "info@hofneubert.de",
+  "quelle": "https://hofneubert.de/",
+  "stand": "2026-11-17"
+ },
+ "node/10977113346": {
+  "geprueft": "2026-11-17"
+ },
+ "node/10977411300": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11003365517": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/1100452835": {
+  "telefon": "06150 53516",
+  "email": "info@reitz-gartenbau.de",
+  "quelle": "https://www.reitz-gartenbau.de/",
+  "stand": "2026-11-17"
+ },
  "node/11008635497": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11017367344": {
+  "email": "info@fewo-hueckeswagen.de",
+  "quelle": "https://www.fewo-hueckeswagen.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/11028068235": {
+  "oeffnungszeiten": "Mo-Su 08:00-20:00",
+  "methode": "text",
+  "quelle": "https://www.altenhof-horst.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/11033371168": {
+  "email": "info@biohof-am-kolk.de",
+  "quelle": "https://biohof-am-kolk.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11039904830": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/11049862105": {
+  "oeffnungszeiten": "Sa-Su 13:00-18:00",
+  "methode": "text",
+  "quelle": "https://www.klosterhof-brunshausen.de/haus-hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/11056177071": {
+  "oeffnungszeiten": "Mo-Su 00:00-23:59",
+  "methode": "schema.org",
+  "email": "info@proviantomat.de",
+  "quelle": "https://proviantomat.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11058044529": {
+  "telefon": "+493418613606",
+  "email": "leipziger-party-service@web.de",
+  "quelle": "https://wurstkiste.com/",
+  "stand": "2026-11-17"
+ },
+ "node/11059909566": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11065600418": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11071554306": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11076412760": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11077270453": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11091454130": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11096772013": {
+  "telefon": "+493934995880",
+  "email": "rezeption@lieblingsplatz-parey.de",
+  "quelle": "https://www.lieblingsplatz-parey.de/gastronomie/regiobox/",
+  "stand": "2026-11-17"
+ },
+ "node/11113360143": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11156488254": {
+  "oeffnungszeiten": "Fr 15:00-19:00; Sa 09:00-14:00",
+  "methode": "text",
+  "quelle": "https://www.hofladenschaake.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11169406886": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11178315494": {
+  "email": "info@apis-brausse.de",
+  "quelle": "https://www.apis-brausse.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11178356846": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11178435925": {
+  "oeffnungszeiten": "Mo-Su 08:00-18:00",
+  "methode": "text",
+  "telefon": "09325 766",
+  "email": "info@udos-spitzenspargel.de",
+  "quelle": "https://www.udos-spitzenspargel.de/hofladen.html",
+  "stand": "2026-11-17"
+ },
+ "node/11182496437": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11197412785": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/11202307929": {
+  "oeffnungszeiten": "Tu-Th 15:00-18:00; Fr 10:00-14:00,15:00-18:00; Sa 10:00-14:00",
+  "methode": "text",
+  "quelle": "https://www.biohofnau.de/formulare/index.php?form_id=10003755",
+  "stand": "2026-11-17"
+ },
+ "node/11206003658": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/11215350003": {
+  "email": "info@quellwiesenhof.de",
+  "quelle": "https://www.quellwiesenhof.de/muehlenstuebchen/muehlenstuebchen.html",
+  "stand": "2026-11-17"
+ },
+ "node/11225246805": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11230916291": {
+  "oeffnungszeiten": "Tu-Th 09:00-13:00; Fr 09:00-18:00; Sa 09:00-13:00",
+  "methode": "text",
+  "email": "info@hofladen-purucker.de",
+  "quelle": "https://www.hofladen-purucker.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11244380989": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11252290480": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11262977654": {
+  "email": "info@bernhard-obst.de",
+  "quelle": "https://www.bernhard-obst.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11267075956": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11281624143": {
+  "telefon": "09103 8919",
+  "email": "info@pleikershof.de",
+  "quelle": "https://pleikershof.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/11281835243": {
+  "oeffnungszeiten": "Mo 00:00-00:00, Tu 00:00-00:00, We 00:00-00:00, Th 00:00-00:00, Fr 00:00-00:00, Sa 00:00-00:00, Su 00:00-00:00",
+  "methode": "schema.org",
+  "telefon": "+498207 958302",
+  "email": "info@biohof-moll.de",
+  "quelle": "https://www.biohof-moll.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11282159419": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11308534768": {
+  "email": "info@hitscherhof.com",
+  "quelle": "https://www.hitscherhof.com/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/11309767300": {
+  "telefon": "+4908782979577",
+  "email": "imker@bio-honig.com",
+  "quelle": "https://bio-honig.com/",
+  "stand": "2026-11-17"
+ },
+ "node/11327879035": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11336917994": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11336920835": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11337883696": {
+  "oeffnungszeiten": "Mo-We 08:00-12:30; Th-Fr 14:00-18:00; Sa 08:00-12:30",
+  "methode": "text",
+  "email": "info@moehler-eiprodukte.de",
+  "quelle": "https://muthof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11367947811": {
+  "oeffnungszeiten": "Tu-Fr 08:30-13:00,14:30-18:00; Sa 08:30-13:00",
+  "methode": "text",
+  "telefon": "+49 5244 901200",
+  "email": "info@mertens-wiesbrock.de",
+  "quelle": "https://www.mertens-wiesbrock.de/bio-hofladen",
+  "stand": "2026-11-17"
+ },
+ "node/11373976934": {
+  "telefon": "+49 176 325 301 10",
+  "quelle": "https://www.obstfee.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11407914101": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/11435845336": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11444090950": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/11459115187": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11461075127": {
+  "email": "info@meierslandladen.de",
+  "quelle": "https://meierslandladen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11463616976": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11472863490": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/11476970445": {
+  "telefon": "+49 163 5718518",
+  "email": "heidingsfelder.tobs@gmail.com",
+  "quelle": "https://www.hofladen-viehbach.net/",
+  "stand": "2026-11-17"
+ },
+ "node/11492135609": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/11498384849": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11521721973": {
+  "telefon": "07345 92 82 0 98",
+  "email": "kontakt@hilenta.de",
+  "quelle": "https://hilenta.eu/",
+  "stand": "2026-11-17"
+ },
+ "node/11553409730": {
+  "email": "bestellung@direkt-vom-jaeger.de",
+  "quelle": "https://www.direkt-vom-jaeger.de/verkaufsautomaten.htm",
+  "stand": "2026-11-17"
+ },
+ "node/11597568861": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/11622020507": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11640133877": {
+  "oeffnungszeiten": "Tu-Su 08:00-21:00",
+  "methode": "text",
+  "email": "info@festsaal-permeshof.de",
+  "quelle": "https://www.festsaal-permeshof.de/Kontakt/Oeffnungszeiten/",
+  "stand": "2026-11-17"
+ },
+ "node/11640715576": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11648725335": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/11662907881": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11670046381": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11672922717": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11711969772": {
+  "email": "bestellung@beim-hoga.de",
+  "quelle": "http://beim-hoga.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11740795366": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11745985474": {
+  "email": "info@proels-genuss.de",
+  "quelle": "https://www.proels-genuss.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11752312423": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11752583623": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11758625698": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/11758787178": {
+  "telefon": "+4915120188400",
+  "email": "info@hofladen-bayern.de",
+  "quelle": "https://www.hofladen-bayern.de/collections/schachnerhof",
+  "stand": "2026-11-17"
+ },
+ "node/11758813393": {
+  "telefon": "01751667422",
+  "email": "kontakt@hofladen-simmerl.de",
+  "quelle": "https://hofladen-simmerl.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11763400688": {
+  "email": "info@familiebantle-lambrechtshof.de",
+  "quelle": "https://www.familiebantle-lambrechtshof.de/hofautomat",
+  "stand": "2026-11-17"
+ },
+ "node/11769093771": {
+  "oeffnungszeiten": "Tu 08:00-13:00; We 07:30-12:30; Th-Fr 08:00-13:00; Sa 07:30-13:00",
+  "methode": "text",
+  "email": "info@gemuese-rapp.de",
+  "quelle": "https://www.gemuese-rapp.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11801943576": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/11804923345": {
+  "telefon": "+49984596896",
+  "email": "hochreuther.r@t-online.de",
+  "quelle": "https://www.hochreuthers-hof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11807709481": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/11830232176": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/11834861654": {
+  "telefon": "+498862980117",
+  "email": "versand@schoenegger.com",
+  "quelle": "https://shop.schoenegger.com/kaese-schmankerl.html",
+  "stand": "2026-11-17"
+ },
+ "node/11865619975": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11869433685": {
+  "telefon": "023034321",
+  "quelle": "https://www.milchhof-muehlhausen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11873794879": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11882277840": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11895154146": {
+  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-14:00",
+  "methode": "text",
+  "quelle": "https://www.obsthof-korn.de/maerkte-verkaufsstaende.php",
+  "stand": "2026-11-17"
+ },
+ "node/11896780682": {
+  "oeffnungszeiten": "Th 16:00-19:00",
+  "methode": "text",
+  "email": "scheuerhof@t-online.de",
+  "quelle": "https://www.permakultur-scheuerhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11897180997": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11910870280": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11916450370": {
+  "email": "info@brandenburger-bio-ei.de",
+  "quelle": "https://das-bewegte-bio-ei.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/11917229269": {
+  "email": "info@alpakahof-kaut.de",
+  "quelle": "https://www.alpakahof-kaut.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11920470850": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11920486879": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11933286661": {
+  "email": "info@obstbrennerei-ritter.de",
+  "quelle": "https://www.obstbrennerei-ritter.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11945097569": {
+  "oeffnungszeiten": "Th-Sa 11:00-14:30,16:30-20:30",
+  "methode": "text",
+  "telefon": "09871368",
+  "email": "info@landgasthaus-zwick.de",
+  "quelle": "https://landgasthaus-zwick.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11968719805": {
+  "email": "info@erlebniswanderungen-odenwald.de",
+  "quelle": "https://www.erlebniswanderungen-odenwald.de/",
+  "stand": "2026-11-17"
+ },
+ "node/11984907526": {
+  "geprueft": "2026-11-17"
+ },
+ "node/11999398704": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/12008989988": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12022541926": {
+  "oeffnungszeiten": "Mo-Su 06:00-20:00",
+  "methode": "text",
+  "email": "petraspicher@t-online.de",
+  "quelle": "https://www.spicher-altenlinderstall.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/12035168508": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12043052830": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12047139799": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/12079863526": {
+  "email": "kontakt@obsthof-bosse.de",
+  "quelle": "https://obsthof-bosse.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12083615822": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12084020975": {
+  "oeffnungszeiten": "Tu 09:00-18:00; We 09:00-14:00; Th-Fr 09:00-18:00; Sa 07:30-14:00",
+  "methode": "text",
+  "email": "info@kronshorster-lindenhof.de",
+  "quelle": "https://www.kronshorster-lindenhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12100915218": {
+  "telefon": "05852 958302",
+  "email": "info@hofsteinberg.de",
+  "quelle": "https://www.hofsteinberg.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12110338136": {
+  "telefon": "+491707261047",
+  "email": "info@brenneis-regional.de",
+  "quelle": "https://www.brenneis-regional.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12118451782": {
+  "oeffnungszeiten": "Mo-Fr 10:00-16:00",
+  "methode": "text",
+  "quelle": "https://holundergut.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12133528301": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/12149681165": {
+  "email": "info@biohof-aufmuth.de",
+  "quelle": "https://www.biohof-aufmuth.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12151684074": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12160962708": {
+  "email": "info@tofumanufaktur-haaf.de",
+  "quelle": "https://tofumanufaktur-haaf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12161794524": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/12162228286": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12170039582": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1219282134": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12219408569": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12251291732": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12252899358": {
+  "email": "stezis@yahoo.de",
+  "quelle": "http://marmelade.ieits.eu/",
+  "stand": "2026-11-17"
+ },
+ "node/12258459434": {
+  "oeffnungszeiten": "Mo-Tu 08:00-13:00,17:00-18:00; We 08:00-13:00; Th 08:00-13:00,17:00-18:00; Fr 08:00-13:00,15:00-18:00; Sa 08:00-12:30",
+  "methode": "text",
+  "telefon": "06103 86875",
+  "quelle": "https://sehrings-landlaedchen.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/12278474620": {
+  "email": "landwirtschaft@solawiaachen.de",
+  "quelle": "https://admin.solawiaachen.de/?page_id=54",
+  "stand": "2026-11-17"
+ },
+ "node/12288958991": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/12290573824": {
+  "telefon": "+4994319904866",
+  "email": "info@mulzer.bayern",
+  "quelle": "https://www.mulzer.bayern/",
+  "stand": "2026-11-17"
+ },
+ "node/12296973250": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12309237243": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12344802071": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12346362458": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/12381022958": {
+  "oeffnungszeiten": "Mo-Sa 07:30-20:00",
+  "methode": "text",
+  "quelle": "https://www.xn--glcks-ei-75a.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12387837148": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12458721768": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12459811934": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/12497593023": {
+  "oeffnungszeiten": "Mo-Sa 10:00-19:00; Su 08:00-20:00",
+  "methode": "text",
+  "email": "spargelhof-zein@t-online.de",
+  "quelle": "http://spargelhof-zein.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12512683067": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12516893045": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/12519332885": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12547672308": {
   "geprueft": "2026-11-17"
  },
  "node/12551286440": {
   "geprueft": "2026-11-17"
  },
+ "node/12569300468": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12579603237": {
+  "email": "info@zurueck-z-natur.de",
+  "quelle": "https://zurueck-z-natur.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12593641842": {
+  "email": "info@hof-fockenbrock.de",
+  "quelle": "https://www.hof-fockenbrock.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/12593826307": {
+  "oeffnungszeiten": "Mo 09:00-13:00; We 09:00-13:00,15:00-18:30; Fr 09:00-13:00,15:00-18:30; Sa 09:00-14:00",
+  "methode": "text",
+  "quelle": "http://www.hofladen-paulinenhof.de/",
+  "stand": "2026-11-17"
+ },
  "node/12626367647": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12647051132": {
+  "email": "abo@blattlaus-maxdorf.de",
+  "quelle": "https://www.blattlaus-maxdorf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12651902492": {
+  "email": "info@zimmermann-muehle.de",
+  "quelle": "https://zimmermann-muehle.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12656690469": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/12657658701": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12682198342": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/12692681201": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/12703491061": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12744515645": {
+  "oeffnungszeiten": "Mo-Fr 06:30-18:00; Sa 06:30-12:30",
+  "methode": "text",
+  "email": "metzgerei.partheymueller@gmail.com",
+  "quelle": "https://traditionsmetzgerei.de/produkte/",
+  "stand": "2026-11-17"
+ },
+ "node/12750038973": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12816323934": {
+  "email": "info@koenigsgarten.org",
+  "quelle": "https://koenigsgarten.org/",
+  "stand": "2026-11-17"
+ },
+ "node/12818761321": {
+  "email": "cmustert@mail.de",
+  "quelle": "https://www.gut-schenkelieck.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/12830362292": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12834899402": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12839320930": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12839806614": {
+  "oeffnungszeiten": "We-Fr 10:00-19:00; Sa 09:00-14:00",
+  "methode": "text",
+  "quelle": "https://www.biohof-wietler.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12863250997": {
+  "oeffnungszeiten": "Mo-Su 00:00-23:59",
+  "methode": "schema.org",
+  "email": "info@proviantomat.de",
+  "quelle": "https://proviantomat.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12881802090": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12887297655": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/12899401595": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/12905338203": {
+  "email": "info@frucht-janssen.de",
+  "quelle": "https://edelrot.eu/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/12905338204": {
+  "email": "info@frucht-janssen.de",
+  "quelle": "https://edelrot.eu/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/12913344448": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12917334257": {
+  "telefon": "+491716228871",
+  "quelle": "https://grohmis-orangen.shop/",
+  "stand": "2026-11-17"
+ },
+ "node/12920625552": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12922200738": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12922893635": {
+  "telefon": "+4915226781119",
+  "email": "info@solawi-langendorf.de",
+  "quelle": "https://solawi-langendorf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/12923077079": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12925134757": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12941908726": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/12945314521": {
+  "geprueft": "2026-11-17"
+ },
+ "node/12986140940": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/12998481151": {
+  "telefon": "0417580290",
+  "email": "info@degenhof.de",
+  "quelle": "https://www.degenhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13017158183": {
   "geprueft": "2026-11-17"
  },
  "node/13019669643": {
   "geprueft": "2026-11-17"
  },
+ "node/13039780480": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13049870500": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/13050659432": {
+  "email": "angus@freerksen.de",
+  "quelle": "https://www.freerksen.de/content/ueber-uns/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/13061884010": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/13072189953": {
+  "telefon": "+4915254074304",
+  "email": "office@schafhof-haby.de",
+  "quelle": "https://www.schafhof-haby.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13074874977": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13081911541": {
+  "email": "info@eversberger-landmilch.de",
+  "quelle": "http://www.schreibers-hof.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/13081917674": {
+  "email": "info@eversberger-landmilch.de",
+  "quelle": "http://www.schreibers-hof.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/13091371411": {
+  "email": "armsenerwiesenei@web.de",
+  "quelle": "https://www.armsenerwiesenei.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13108399017": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13108399018": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13110988828": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/13114288673": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13123096196": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/13140599663": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13149031690": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/13174866997": {
+  "telefon": "+496054908705",
+  "email": "info@franzehof.de",
+  "quelle": "https://www.franzehof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13189444891": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13195448466": {
+  "email": "freiland@supergans.de",
+  "quelle": "https://supergans.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13195448467": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/13197972631": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13227672001": {
+  "email": "info@pauls-bauernhof.de",
+  "quelle": "https://www.pauls-bauernhof.de/pauls-bauernhof-kuerbiserlebniswelt-maislabyrinth/",
+  "stand": "2026-11-17"
+ },
+ "node/13239556305": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13285208585": {
+  "telefon": "+49152 05277013",
+  "email": "team@odenwaelder-bioinsel.de",
+  "quelle": "https://odenwaelder-bioinsel.de/automatenverkauf/",
+  "stand": "2026-11-17"
+ },
+ "node/13289336036": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13313263012": {
+  "email": "naturwek@samhof.de",
+  "quelle": "https://www.samhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13319087505": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13374414401": {
+  "email": "info@hofgut-silva.de",
+  "quelle": "https://hofgut-silva.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/13377629082": {
+  "email": "info@kaemena-blockland.de",
+  "quelle": "https://www.snuten-lekker.de/bio/bremermilchhandwerk/milch.php",
+  "stand": "2026-11-17"
+ },
+ "node/13393138035": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/13401759537": {
+  "email": "winfried.rehberg@web.de",
+  "quelle": "https://www.oelmuehle-rehberg.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13404376901": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/13420651345": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1342152258": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/13446196259": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13504475591": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/13507577039": {
+  "email": "hofladen@hof-kauke.de",
+  "quelle": "https://www.hof-kauke.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13533034982": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13584387357": {
+  "geprueft": "2026-11-17"
+ },
  "node/13595387672": {
   "geprueft": "2026-11-17"
+ },
+ "node/13602057576": {
+  "telefon": "+49813492991",
+  "quelle": "https://www.erdbeeren-wolf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13602096983": {
+  "telefon": "+49813492991",
+  "quelle": "https://www.erdbeeren-wolf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13624803931": {
+  "telefon": "07135/5343",
+  "quelle": "https://regionales-vom-schusterhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/1363832801": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13650594327": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13650594328": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13651631835": {
+  "telefon": "+49813492991",
+  "quelle": "https://www.erdbeeren-wolf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13651656822": {
+  "telefon": "+49813492991",
+  "quelle": "https://www.erdbeeren-wolf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13651704570": {
+  "telefon": "+49813492991",
+  "quelle": "https://www.erdbeeren-wolf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13660380688": {
+  "email": "info@heissenerhof.de",
+  "quelle": "https://www.heissenerhof.de/sb",
+  "stand": "2026-11-17"
+ },
+ "node/13678952634": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/13700513399": {
+  "telefon": "+4915111669957",
+  "email": "info@josephines-feinkost.de",
+  "quelle": "https://josephines-feinkost.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13703344172": {
+  "oeffnungszeiten": "Fr 15:00-18:00",
+  "methode": "text",
+  "quelle": "https://salnerhof.de/hofladen.html",
+  "stand": "2026-11-17"
+ },
+ "node/13704050602": {
+  "oeffnungszeiten": "Mo,Tu,We,Th,Fr,Sa,Su 06:00-23:00",
+  "methode": "schema.org",
+  "telefon": "+4915121230049",
+  "email": "milchgenuss@webermilch.de",
+  "quelle": "https://www.webermilch.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13704418436": {
+  "telefon": "+492572962300",
+  "email": "anfragen@automatisch-dh.de",
+  "quelle": "https://www.herr-anton.com/",
+  "stand": "2026-11-17"
+ },
+ "node/13721019550": {
+  "oeffnungszeiten": "Mo-Sa 08:00-18:00",
+  "methode": "schema.org",
+  "telefon": "+491608461320",
+  "email": "susanne.holter@t-online.de",
+  "quelle": "https://lwb-holter.de/angebot/",
+  "stand": "2026-11-17"
+ },
+ "node/13721039871": {
+  "telefon": "034607 303-24",
+  "email": "info@stadtmission-halle.de",
+  "quelle": "https://www.stadtmission-halle.de/produkte-und-dienstleistungen/floristik-werkstattladen",
+  "stand": "2026-11-17"
+ },
+ "node/13725555727": {
+  "email": "info@diekamps-fietzenstop.de",
+  "quelle": "https://diekamps-fietzenstop.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13746838252": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/13784748028": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13786882547": {
+  "email": "hofladen@bei-seifers.de",
+  "quelle": "https://bei-seifers.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/13816216138": {
+  "oeffnungszeiten": "Mo-Fr 08:00-12:00",
+  "methode": "text",
+  "email": "muehlenladen@ammerndorfer-muehle.de",
+  "quelle": "https://ammerndorfer-muehle.de/hofladen",
+  "stand": "2026-11-17"
+ },
+ "node/13816854372": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/13858838679": {
+  "email": "hello@heimarkt-regional.de",
+  "quelle": "https://heimarkt-regional.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13860323947": {
+  "oeffnungszeiten": "Mo-Fr 08:00-19:00; Sa 09:00-18:00",
+  "methode": "schema.org",
+  "email": "kontakt@obsthofscholzdoebelin.de",
+  "quelle": "https://obsthofscholzdoebelin.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13861076982": {
+  "email": "info@buendhof.de",
+  "quelle": "https://www.buendhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13924211689": {
+  "email": "einkaufen@schellers-hofladen.de",
+  "quelle": "https://schellers-hofladen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/13927285736": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13942774696": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13943661507": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13951902118": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/1395245407": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13955556529": {
+  "geprueft": "2026-11-17"
+ },
+ "node/13957542280": {
+  "telefon": "+49 8664 410",
+  "email": "info@urlaubshof-kirchmaier.de",
+  "quelle": "https://www.urlaubshof-kirchmaier.de/hofladen-direkt-am-chiemsee/",
+  "stand": "2026-11-17"
+ },
+ "node/13977612507": {
+  "telefon": "+493418613606",
+  "email": "leipziger-party-service@web.de",
+  "quelle": "https://wurstkiste.com/",
+  "stand": "2026-11-17"
+ },
+ "node/14113251776": {
+  "geprueft": "2026-11-17"
+ },
+ "node/14118657123": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 503"
+ },
+ "node/14134453399": {
+  "geprueft": "2026-11-17"
+ },
+ "node/14144947092": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/14162134288": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/14170651322": {
+  "geprueft": "2026-11-17"
+ },
+ "node/14177696538": {
+  "telefon": "+4926849481455",
+  "quelle": "https://kaautomaten.de/",
+  "stand": "2026-11-17"
+ },
+ "node/14178739686": {
+  "geprueft": "2026-11-17"
+ },
+ "node/14184662367": {
+  "geprueft": "2026-11-17"
+ },
+ "node/14185748001": {
+  "oeffnungszeiten": "Tu 09:00-12:00; We 14:30-18:00; Th 09:00-12:00; Fr 14:30-18:00; Sa 09:00-12:00",
+  "methode": "text",
+  "quelle": "http://hofladen-hoerger.de/produkte",
+  "stand": "2026-11-17"
+ },
+ "node/14195484214": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/1420148261": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/14213777523": {
+  "telefon": "+4926849481455",
+  "quelle": "https://kaautomaten.de/",
+  "stand": "2026-11-17"
+ },
+ "node/14231473852": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/14234069183": {
+  "geprueft": "2026-11-17"
+ },
+ "node/14234353867": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/14246249201": {
+  "geprueft": "2026-11-17",
+  "fehler": "The operation was aborted due to timeout"
+ },
+ "node/14246825607": {
+  "geprueft": "2026-11-17"
+ },
+ "node/14253132920": {
+  "email": "contact@elements-nature.com",
+  "quelle": "https://elements-nature.com/portfolio/bauernhof-kintra/",
+  "stand": "2026-11-17"
+ },
+ "node/14273295995": {
+  "oeffnungszeiten": "Mo-Su 00:00-23:59",
+  "methode": "schema.org",
+  "telefon": "+4915732552387",
+  "quelle": "https://ludgerusblick.de/",
+  "stand": "2026-11-17"
+ },
+ "node/14274269177": {
+  "geprueft": "2026-11-17"
+ },
+ "node/14285910707": {
+  "email": "info@weimar-gbr.de",
+  "quelle": "https://weimar-gbr.de/",
+  "stand": "2026-11-17"
+ },
+ "node/1429152963": {
+  "telefon": "+4965739148",
+  "email": "info@vulkanhof.de",
+  "quelle": "https://www.vulkanhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/14299975070": {
+  "oeffnungszeiten": "Fr 15:00-18:00",
+  "methode": "schema.org",
+  "email": "info@frima-regional.de",
+  "quelle": "https://frima24.de/",
+  "stand": "2026-11-17"
+ },
+ "node/14316029500": {
+  "telefon": "+4975438450",
+  "quelle": "https://www.ferienhof-bentele.de/",
+  "stand": "2026-11-17"
  },
  "node/14318296583": {
   "geprueft": "2026-11-17"
  },
+ "node/14325093301": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/14331909258": {
+  "oeffnungszeiten": "We 09:00-18:00; Th 14:00-18:00; Fr 09:00-18:00; Sa 09:00-13:00",
+  "methode": "text",
+  "quelle": "https://hofladen-wiesner.de/",
+  "stand": "2026-11-17"
+ },
+ "node/14379905805": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1469313944": {
+  "geprueft": "2026-11-17",
+  "fehler": "The operation was aborted due to timeout"
+ },
+ "node/1503354759": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1514367098": {
+  "email": "info@milchhof-soonwald.de",
+  "quelle": "https://www.milchhof-soonwald.de/",
+  "stand": "2026-11-17"
+ },
+ "node/1519953791": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1598972643": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1629675436": {
+  "telefon": "025042947",
+  "email": "info@luetkezutelgte.de",
+  "quelle": "https://luetkezutelgte.de/",
+  "stand": "2026-11-17"
+ },
+ "node/1648560678": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/1685893984": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/1790359043": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/1794190670": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/180488643": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1806101454": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1833301434": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
  "node/1838266065": {
   "geprueft": "2026-11-17"
+ },
+ "node/1882979535": {
+  "telefon": "07157/20893",
+  "email": "info@buchenhofer.de",
+  "quelle": "https://buchenhofer.de/",
+  "stand": "2026-11-17"
+ },
+ "node/1893919945": {
+  "oeffnungszeiten": "Th 09:00-18:00; Fr 09:00-16:00",
+  "methode": "text",
+  "quelle": "https://www.hofmarkt-ziegs.de/",
+  "stand": "2026-11-17"
+ },
+ "node/1941040866": {
+  "geprueft": "2026-11-17"
+ },
+ "node/1948182685": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/1950460849": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2013110831": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2207530981": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2292858488": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2297072868": {
+  "telefon": "+49 33234 60432",
+  "email": "info@spargelland.de",
+  "quelle": "https://www.spargelland-hoppenrade.de/hof",
+  "stand": "2026-11-17"
+ },
+ "node/2300491448": {
+  "email": "info@schultebockholt.de",
+  "quelle": "https://www.schultebockholt.de/",
+  "stand": "2026-11-17"
+ },
+ "node/2314027803": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/2338080685": {
+  "email": "rainer.eckershof@gmail.com",
+  "quelle": "https://www.direktvermarktung-masel.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/2366947834": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2418889584": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2438805371": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/2440719309": {
+  "telefon": "+4974735558",
+  "email": "info@leukhardt-waldhof.de",
+  "quelle": "http://www.leukhardt-waldhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/2514198083": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2516096408": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2519192877": {
+  "geprueft": "2026-11-17"
+ },
+ "node/254306464": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/2544990469": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2564085684": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2595999075": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/2642589874": {
+  "email": "Hanns-Josef@t-online.de",
+  "quelle": "http://www.bisons.de/tierverkauf.htm",
+  "stand": "2026-11-17"
+ },
+ "node/2689801281": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/276246945": {
+  "email": "info@pauls-bauernhof.de",
+  "quelle": "https://www.pauls-bauernhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/2779154453": {
+  "geprueft": "2026-11-17"
+ },
+ "node/279164257": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2791977284": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/2797956774": {
+  "telefon": "053041293",
+  "quelle": "https://emmerich-fleischerei.de/",
+  "stand": "2026-11-17"
+ },
+ "node/2812801681": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2814162686": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2814248337": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2819360959": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2821220171": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/2917014497": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2932971463": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/2940207252": {
+  "oeffnungszeiten": "Mo 07:00-13:00; Tu-Fr 07:00-18:00",
+  "methode": "text",
+  "quelle": "https://www.metzgerei-hack-freising.de/",
+  "stand": "2026-11-17"
+ },
+ "node/2973015556": {
+  "telefon": "+4963915744",
+  "email": "bio-gasthof@baerenbrunnerhof.de",
+  "quelle": "https://baerenbrunnerhof.de/gastro-kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/297353359": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/2984819279": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 400"
+ },
+ "node/2992881051": {
+  "geprueft": "2026-11-17"
+ },
+ "node/2997543968": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/3036598981": {
+  "email": "info@florafarm.de",
+  "quelle": "https://www.florafarm.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3057110957": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3087367899": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3097204663": {
+  "geprueft": "2026-11-17"
+ },
+ "node/311100254": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3122954860": {
+  "oeffnungszeiten": "We-Th 11:00-15:00; Fr 11:00-15:00,17:00-21:00",
+  "methode": "text",
+  "telefon": "0366915748110",
+  "quelle": "https://www.etzdorferhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3151301273": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/3151893406": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3236261613": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/324241431": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/3298547035": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/3319812314": {
+  "email": "info@preuschens.de",
+  "quelle": "https://brennerei-fraenkische-schweiz.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3319884874": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/3320028712": {
+  "email": "info@biohof-schmidt.de",
+  "quelle": "https://www.biohof-schmidt.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3348342351": {
+  "oeffnungszeiten": "Mo-Fr 08:00-12:00,14:00-17:00; Sa 09:00-12:00",
+  "methode": "text",
+  "quelle": "https://oelmuehle-garting.de/pages/ueber-uns-verkaufsstelle-hofladen",
+  "stand": "2026-11-17"
+ },
+ "node/3364693866": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3390830108": {
+  "oeffnungszeiten": "Th-Fr 09:00-12:30,14:30-18:00; Sa 09:00-14:00",
+  "methode": "text",
+  "email": "sabine@hofladen-landverliebt.de",
+  "quelle": "https://www.hofladen-landverliebt.de/",
+  "stand": "2026-11-17"
+ },
+ "node/340254979": {
+  "telefon": "004925944471",
+  "quelle": "https://www.spargelhofausterschulte.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3421746797": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/3456220402": {
+  "email": "info@stefan-fischer-weingut.de",
+  "quelle": "https://stefan-fischer-weingut.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/3468739991": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/3499070638": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3525046748": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3560336465": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3568925993": {
+  "email": "info@spargel-wendel.de",
+  "quelle": "https://spargelhof-wendel.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3578132893": {
+  "oeffnungszeiten": "Tu-We 07:00-13:00; Fr-Sa 07:00-13:00",
+  "methode": "text",
+  "telefon": "062178953833",
+  "email": "karin@frische-kiste.de",
+  "quelle": "https://www.frische-kiste.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/3580317456": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/3581050813": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/3591938475": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/3594909156": {
+  "telefon": "+497117800844",
+  "quelle": "https://www.beeren-brodbeck.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3602727564": {
+  "telefon": "+497117800844",
+  "quelle": "https://www.beeren-brodbeck.de/",
+  "stand": "2026-11-17"
+ },
+ "node/360435339": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3606569195": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3611737540": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/3642859045": {
+  "email": "bentloh@web.de",
+  "quelle": "https://www.bentloh.de/",
+  "stand": "2026-11-17"
  },
  "node/3649410178": {
   "geprueft": "2026-11-17"
  },
+ "node/366542944": {
+  "geprueft": "2026-11-17"
+ },
+ "node/366542945": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/3682829863": {
+  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-15:00",
+  "methode": "text",
+  "email": "info@seemost.de",
+  "quelle": "https://seemost.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/3693580253": {
+  "telefon": "+49 1633784671",
+  "email": "info@lauehof.de",
+  "quelle": "https://www.lauehof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3698866501": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/3702593128": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/3721695252": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3726589167": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3741467266": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3751508510": {
+  "email": "KarstenWesselohInsel@t-online.de",
+  "quelle": "https://www.anjas-marmeladeninsel.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3760689143": {
+  "telefon": "02590915818",
+  "email": "info@hof-pelkum.de",
+  "quelle": "https://hof-pelkum.de/",
+  "stand": "2026-11-17"
+ },
+ "node/3770591848": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/3801988111": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/3817874062": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 503"
+ },
+ "node/3839654853": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3840461615": {
+  "geprueft": "2026-11-17"
+ },
+ "node/3862397448": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/3894666522": {
+  "oeffnungszeiten": "Mo 07:00 - 16:00; Tu 07:00 - 16:00; We 07:00 - 16:00; Th 07:00 - 16:00; Fr 07:00 - 16:00",
+  "methode": "schema.org",
+  "telefon": "034203 433 50",
+  "quelle": "https://www.agrarprodukte-kitzen.de/milchautomaten",
+  "stand": "2026-11-17"
+ },
+ "node/3902532766": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/3912828999": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/3940288714": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4011573291": {
+  "email": "info@zoells.de",
+  "quelle": "https://zoells.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4024302251": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4031827138": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4045773449": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4055063692": {
+  "email": "info@lorenzhof.de",
+  "quelle": "https://www.lorenzhof.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/4071278202": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/4091087473": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4095108791": {
+  "telefon": "+4915120188400",
+  "email": "info@hofladen-bayern.de",
+  "quelle": "https://www.hofladen-bayern.de/collections/schachnerhof",
+  "stand": "2026-11-17"
+ },
+ "node/411315533": {
+  "email": "mail@hofzandershagen.de",
+  "quelle": "https://www.hofzandershagen.de/so-erreichen-sie-uns/",
+  "stand": "2026-11-17"
+ },
+ "node/4113559049": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4118840101": {
+  "telefon": "+0049 05943-4488",
+  "email": "kontakt@fleischwaren-warsen.de",
+  "quelle": "https://www.fleischwaren-warsen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4141866023": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4142327931": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4157495980": {
+  "oeffnungszeiten": "Tu-Su 11:30-15:00,18:00-21:00",
+  "methode": "text",
+  "quelle": "https://www.hof-nuttelmann.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4173051189": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/4173420820": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/4185844558": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/4186995803": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4193070655": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/4193583864": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4193600326": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4230180294": {
+  "oeffnungszeiten": "Fr 08:00-18:00; Sa 08:00-13:00",
+  "methode": "text",
+  "telefon": "+499120-6300",
+  "email": "info@scherauerhof.de",
+  "quelle": "https://www.scherauerhof.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/4230982297": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/4258220393": {
+  "geprueft": "2026-11-17"
+ },
+ "node/427081943": {
+  "oeffnungszeiten": "Mo-Tu 08:00-12:00,13:00-17:00; Th-Fr 08:00-12:00,13:00-17:00; Sa 08:00-12:00",
+  "methode": "text",
+  "email": "info@hainmuehle-gmbh.de",
+  "quelle": "https://www.hainmuehle.shop/",
+  "stand": "2026-11-17"
+ },
+ "node/427965988": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/4279741486": {
+  "email": "info@eiei-nestler.de",
+  "quelle": "https://eiei-nestler.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/4287271307": {
+  "oeffnungszeiten": "Mo 09:00-17:00; Tu 09:00-12:30; We-Fr 09:00-17:00; Sa 09:00-12:30",
+  "methode": "text",
+  "quelle": "https://www.gemuesehof-brueckner.de/unser-hofladen/%C3%B6ffnungszeiten/",
+  "stand": "2026-11-17"
+ },
+ "node/4294016478": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/4303406114": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4314012737": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/4314012767": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/4353908195": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4357190270": {
+  "email": "info@bosch-lindenhof.de",
+  "quelle": "https://www.bosch-lindenhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4361439078": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4361758854": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4392841983": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4417754385": {
+  "email": "info@biohof-jocher.de",
+  "quelle": "https://biohof-jocher.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4426842438": {
+  "email": "m.gelowicz@gmx.de.de",
+  "quelle": "http://www.obstkelterei-gelowicz.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/4433786198": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/4436874218": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
  "node/4438118788": {
   "geprueft": "2026-11-17"
  },
+ "node/4504132414": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4519535950": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4520493449": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/4539361183": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 410"
+ },
+ "node/4581640045": {
+  "oeffnungszeiten": "Mo-Tu 08:30-13:00; We 09:30-16:00; Th 08:30-13:00; Fr 08:30-17:00; Sa 09:30-16:00",
+  "methode": "text",
+  "email": "info@auhof.de",
+  "quelle": "https://www.auhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4600265583": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4658196818": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4685905039": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/4686041749": {
+  "email": "service@amla.de",
+  "quelle": "https://www.amla.com/de-de/",
+  "stand": "2026-11-17"
+ },
+ "node/4691308848": {
+  "email": "info@sanddorn-hofladen.de",
+  "quelle": "https://sanddorn-hofladen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4702475978": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/4703298288": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4705308992": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/4717130586": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/4717140982": {
+  "oeffnungszeiten": "Tu 10:00-12:00,15:00-18:30; Th-Fr 10:00-12:00,15:00-18:30; Sa 08:00-12:00",
+  "methode": "text",
+  "quelle": "https://www.xn--vlzgen-wxa.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4740518921": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/4760516727": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/4774270127": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/4813009532": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4835322522": {
+  "email": "info@tannenhof-spargel.de",
+  "quelle": "https://www.tannenhof-spargel.de/Kontakt",
+  "stand": "2026-11-17"
+ },
+ "node/4841649248": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/4858121663": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/4894992189": {
+  "email": "info@landeier-mohrkirch.de",
+  "quelle": "https://www.landeier-mohrkirch.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4927177904": {
+  "email": "kontakt@spargelhof-brink.de",
+  "quelle": "https://www.spargelhof-brink.de/",
+  "stand": "2026-11-17"
+ },
+ "node/4935111047": {
+  "geprueft": "2026-11-17"
+ },
+ "node/4975955237": {
+  "oeffnungszeiten": "Mo-We 16:00-19:00; Fr 16:00-19:00; Sa 10:00-14:00",
+  "methode": "text",
+  "quelle": "https://fohrenberghof.com/kontakt%20%26%20%C3%B6ffnungszeiten/",
+  "stand": "2026-11-17"
+ },
+ "node/4982831158": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5041496187": {
+  "email": "info@alztaler-hofmolkerei.de",
+  "quelle": "https://www.alztaler-hofmolkerei.de/",
+  "stand": "2026-11-17"
+ },
+ "node/506995708": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5076773389": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5077676581": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/5091600916": {
+  "telefon": "07344922805",
+  "email": "hallo@haefeles-hofeis.de",
+  "quelle": "https://haefeles-hofeis.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5128751318": {
+  "email": "bestellung@perger.de",
+  "quelle": "https://www.perger.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5157852930": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/5174923519": {
+  "email": "mosterei@riekelnhof.de",
+  "quelle": "https://mosterei-riekelnhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5176928094": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/5182334055": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5196923205": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5212884857": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/5223359764": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/5225484355": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/5238549110": {
+  "oeffnungszeiten": "Mo-Fr 09:00-13:00,14:00-18:00; Sa 09:00-13:00",
+  "methode": "text",
+  "email": "info@kartoffelhof-moeller.de",
+  "quelle": "https://kartoffelhof-moeller.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5245960790": {
+  "email": "kontakt@kunsttherapie-dresden.de",
+  "quelle": "https://kunsttherapie-dresden.de/impressum-datenschutz-daten/",
+  "stand": "2026-11-17"
+ },
+ "node/5252531377": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5274194560": {
+  "email": "p.will@milchhessen.de",
+  "quelle": "https://www.milchhessen.de/pressekontakt",
+  "stand": "2026-11-17"
+ },
+ "node/5281719692": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/5290002622": {
+  "email": "servus@bueffelhof-beuerbach.de",
+  "quelle": "https://www.bueffelhof-beuerbach.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5318100322": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5358775163": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5370861213": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5384277403": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5462633357": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5502553623": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5512262763": {
+  "email": "info@lindenhof-obstplantagen.de",
+  "quelle": "https://lindenhof-obstplantagen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5523302031": {
+  "telefon": "+497684909114",
+  "quelle": "https://www.mattenhof-glottertal.de/p/hofladen",
+  "stand": "2026-11-17"
+ },
+ "node/5526891805": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5553135033": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5570894265": {
+  "oeffnungszeiten": "Mo 07:30-13:00; Tu-Fr 07:30-13:00,15:00-18:00; Sa 07:00-12:30",
+  "methode": "text",
+  "quelle": "https://www.metzgerei-feisst.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5578970477": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5586351195": {
+  "oeffnungszeiten": "Mo-Fr 13:00-18:00; Sa 07:00-12:00",
+  "methode": "text",
+  "email": "info@hof-burmeister.de",
+  "quelle": "https://hof-burmeister.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5599003269": {
+  "email": "info@milch-to-go.de",
+  "quelle": "https://milch-to-go.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5603039056": {
+  "email": "info@essers-hofladen.de",
+  "quelle": "https://essers-hofladen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5608926313": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/5630513748": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5630833151": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5632910425": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5632914972": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5633438495": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/5634109961": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5634109962": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 410"
+ },
+ "node/5634841624": {
+  "email": "info@spargelhof-strass.de",
+  "quelle": "https://spargelhof-strass.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/5635663145": {
+  "email": "andremahlstedt@web.de",
+  "quelle": "https://biohof-mahlstedt.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/5637004835": {
+  "oeffnungszeiten": "Mo-Tu 08:00-12:00,13:30-17:00; Th-Fr 08:00-12:00,13:30-17:00",
+  "methode": "text",
+  "email": "shop@dehner-bienen.de",
+  "quelle": "https://www.dehner-imkereibedarf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5637609941": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5638001165": {
+  "email": "info@franken-syderhof.de",
+  "quelle": "https://franken-syderhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5639528031": {
+  "email": "info@ferienhof-witzigmann.de",
+  "quelle": "https://www.ferienhof-witzigmann.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5641496311": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5643625610": {
+  "geprueft": "2026-11-17",
+  "fehler": "The operation was aborted due to timeout"
+ },
+ "node/5647476301": {
+  "telefon": "+49 1573 8888 183",
+  "email": "Hopfgarten-Honig@t-online.de",
+  "quelle": "https://www.hopfgarten-honig.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5648802854": {
+  "oeffnungszeiten": "Mo-Fr 09:00-12:30,14:00-18:00; Sa 09:00-12:30",
+  "methode": "text",
+  "email": "info@bildgarten.com",
+  "quelle": "https://winzerhof-bildgarten.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5649530940": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5651157043": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5652859879": {
+  "email": "info@hofladenkirsch.de",
+  "quelle": "https://hofladenkirsch.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5653962756": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5663864639": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/5690453376": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/5698707283": {
+  "oeffnungszeiten": "Mo-Su 10:00-18:00",
+  "methode": "text",
+  "quelle": "https://www.straussenfarm-lohsa.de/",
+  "stand": "2026-11-17"
+ },
+ "node/570112989": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5706758463": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/5730451226": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5735395461": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/5737554966": {
+  "email": "info@hofladen-hundertmark.de",
+  "quelle": "https://hofladen-hundertmark.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5737566234": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/5746620855": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5758280959": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5770188516": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5779996108": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/5780127842": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5812243133": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/5812971636": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5833905985": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/5839634368": {
+  "geprueft": "2026-11-17"
+ },
+ "node/5843631970": {
+  "geprueft": "2026-11-17"
+ },
+ "node/590379055": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5907980377": {
+  "oeffnungszeiten": "Fr 14:00-17:00; Su 10:00-12:00",
+  "methode": "text",
+  "telefon": "01797412866",
+  "email": "info@ziegenhof-friedrich.de",
+  "quelle": "https://ziegenhof-friedrich.de/kontakt-und-anfahrt/",
+  "stand": "2026-11-17"
+ },
+ "node/5908445300": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 410"
+ },
+ "node/5919391546": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5920754146": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5941329417": {
+  "oeffnungszeiten": "Fr 09:00-17:00",
+  "methode": "text",
+  "quelle": "https://hainichs-hofladen.de/kontakt",
+  "stand": "2026-11-17"
+ },
+ "node/5943302362": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/5955358830": {
+  "email": "kontakt@biolandhof-bodemer.de",
+  "quelle": "https://biolandhof-bodemer.de/",
+  "stand": "2026-11-17"
+ },
+ "node/5956938754": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 444"
+ },
+ "node/5972597829": {
+  "geprueft": "2026-11-17"
+ },
+ "node/598602196": {
+  "geprueft": "2026-11-17"
+ },
+ "node/601408635": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/601408636": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 503"
+ },
+ "node/601624037": {
+  "email": "info@vorwerker-diakonie.de",
+  "quelle": "https://www.diakonie-nordnordost.de/",
+  "stand": "2026-11-17"
+ },
+ "node/601666171": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6030637841": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6041843809": {
+  "telefon": "004959217124028",
+  "email": "info@hof-loenink.de",
+  "quelle": "https://hof-loenink.de/",
+  "stand": "2026-11-17"
+ },
+ "node/6071483065": {
+  "oeffnungszeiten": "Fr 09:00-12:00,14:00-18:00; Sa 09:00-12:00",
+  "methode": "text",
+  "quelle": "https://www.gutmann-hof.de/sale/__Verkauf.html",
+  "stand": "2026-11-17"
+ },
+ "node/6170783237": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6189018063": {
+  "email": "info@biohof-endrass.de",
+  "quelle": "https://biohof-endrass.de/",
+  "stand": "2026-11-17"
+ },
+ "node/6262558784": {
+  "telefon": "05052-913276",
+  "quelle": "https://bauer-tewes.de/",
+  "stand": "2026-11-17"
+ },
+ "node/6263550097": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/6270016682": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6326281265": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/6327145866": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6362183983": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6371585645": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6371589554": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/6379354135": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6388025244": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6388292842": {
+  "telefon": "015255775410",
+  "email": "mariasedlmeier@protonmail.com",
+  "quelle": "https://www.eichstetter-hochlandrinder.de/",
+  "stand": "2026-11-17"
+ },
+ "node/6388317268": {
+  "oeffnungszeiten": "Mo-Fr 08:00-18:00; Sa 09:00-13:00",
+  "methode": "text",
+  "email": "info@aigner-bio-logisch.de",
+  "quelle": "https://www.aigner-bio-logisch.de/",
+  "stand": "2026-11-17"
+ },
+ "node/639173391": {
+  "telefon": "0251 / 92 77 858 77",
+  "email": "kontakt@oekullus.de",
+  "quelle": "https://www.oekullus.de/",
+  "stand": "2026-11-17"
+ },
+ "node/6405671511": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6417498351": {
+  "oeffnungszeiten": "Mo-Fr 08:00-18:00; Sa 08:00-16:00",
+  "methode": "schema.org",
+  "quelle": "https://derwitzer-hofladen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/6479108386": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/6484314481": {
+  "email": "info@rohrgrundhof.de",
+  "quelle": "https://www.rohrgrundhof.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/6499572364": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6501683618": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/6514766146": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6536589261": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6536669457": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6540573272": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/6552018743": {
+  "telefon": "+491728208594",
+  "quelle": "https://www.homemade4us.de/",
+  "stand": "2026-11-17"
+ },
+ "node/6572440049": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/6603965584": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6604001231": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6605266055": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/660654654": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6610272996": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6640044098": {
+  "oeffnungszeiten": "Mo 08:00-13:00; Tu 10:00-16:00; We 14:00-16:00; Th 10:00-16:00; Fr 08:00-18:00; Sa 08:00-13:00",
+  "methode": "text",
+  "quelle": "https://hof-domanja.de/hofladen-marktverkauf-domanja-wittichenau/",
+  "stand": "2026-11-17"
+ },
+ "node/6672532591": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6680388079": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6681561573": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6687616248": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/6698033776": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6705677929": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6718187965": {
+  "oeffnungszeiten": "Th-Fr 09:00-11:00,17:00-19:00; Sa 09:00-12:00",
+  "methode": "text",
+  "quelle": "https://martinshof-karlsbad.de/",
+  "stand": "2026-11-17"
+ },
+ "node/6747097191": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6753191979": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6763539725": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/6767159629": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/6775752278": {
+  "oeffnungszeiten": "Mo-Sa 08:00-20:00",
+  "methode": "text",
+  "telefon": "06222-71248",
+  "quelle": "https://www.obstwiesen-filsinger.de/S%C3%A4fte.php/Verkaufsstellen",
+  "stand": "2026-11-17"
+ },
+ "node/6789254879": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/6804056940": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/6807924785": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6881254394": {
+  "email": "info@obstbau-brennerei-lupberger.de",
+  "quelle": "https://www.obstbau-brennerei-lupberger.de/site/kontakt.html",
+  "stand": "2026-11-17"
+ },
+ "node/6893750713": {
+  "email": "info@heimatapfel.de",
+  "quelle": "https://derheimatapfel.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/6897415985": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/6900239363": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/691214613": {
+  "email": "b.bellingroehr@t-online.de",
+  "quelle": "https://www.xn--bellingrhr-lcb.de/",
+  "stand": "2026-11-17"
+ },
+ "node/6925454418": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/6949252514": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/6985852663": {
+  "geprueft": "2026-11-17"
+ },
+ "node/6990558249": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/6990559980": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/7017691165": {
+  "email": "goetzimail@gmx.de",
+  "quelle": "https://xn--gtzberger-eierei-mwb.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7031873522": {
+  "email": "info@landvolk-goe.de",
+  "quelle": "https://land-direkt.de/?page_id=296",
+  "stand": "2026-11-17"
+ },
+ "node/7043562496": {
+  "oeffnungszeiten": "Mo-Sa 09:00-18:00",
+  "methode": "text",
+  "telefon": "+492546531",
+  "email": "info@familie-wigger.de",
+  "quelle": "https://familie-wigger.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/7062603112": {
+  "telefon": "+4939877000888",
+  "email": "wfbm-templin@stephanus.org",
+  "quelle": "https://www.stephanus.org/waldhof-laden",
+  "stand": "2026-11-17"
+ },
+ "node/7083033849": {
+  "telefon": "+4915117763827",
+  "email": "info@linderskamp.de",
+  "quelle": "https://linderskamp.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7108020113": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7108032387": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7108032388": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7108032389": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7108032390": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7108032394": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7112359176": {
+  "email": "info@vetterhof-soelden.de",
+  "quelle": "https://vetterhof-soelden.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7191522991": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7221532749": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/7223053984": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/7247701000": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7273388030": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/7273388212": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 503"
+ },
+ "node/7300553810": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7339946583": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7357058242": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/7359899347": {
+  "telefon": "+49813492991",
+  "quelle": "https://www.erdbeeren-wolf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7359899351": {
+  "telefon": "+49813492991",
+  "quelle": "https://www.erdbeeren-wolf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7359899358": {
+  "telefon": "+49813492991",
+  "quelle": "https://www.erdbeeren-wolf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7390773336": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/7434220096": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7437044197": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7437766673": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/7437879947": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/7438209000": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7446785039": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7477929868": {
+  "oeffnungszeiten": "Sa 08:00-13:00",
+  "methode": "text",
+  "email": "hofladen@obstbau-winkler.de",
+  "quelle": "https://www.obstbau-winkler.de/kontakt",
+  "stand": "2026-11-17"
+ },
+ "node/7477929869": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7528507385": {
+  "oeffnungszeiten": "Mo-Su 00:00-23:59",
+  "methode": "schema.org",
+  "email": "info@yourdomain.com",
+  "quelle": "https://www.streuobsthof-stoeckl.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7529069234": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7550199320": {
+  "email": "info@klostergut-dibbesdorf.de",
+  "quelle": "https://www.klostergut-dibbesdorf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7553232334": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 503"
+ },
+ "node/7555546605": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/7574935351": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7575641673": {
+  "oeffnungszeiten": "Mo-Su 08:00-18:00",
+  "methode": "text",
+  "quelle": "https://spargelhof-huber.de/oeffnungszeiten.html",
+  "stand": "2026-11-17"
+ },
+ "node/7577976709": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/7579899391": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/7602792906": {
+  "email": "info@gemuesehof-pohl.de",
+  "quelle": "https://gemuesehof-pohl.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7613447204": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7628101589": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
  "node/7641111714": {
   "geprueft": "2026-11-17"
+ },
+ "node/7647693918": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/7648871754": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7667717327": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7667894986": {
+  "email": "info@niehaus-ehren.de",
+  "quelle": "https://www.niehaus-ehren.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7698877519": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7699913478": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7728301241": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/7750307749": {
+  "geprueft": "2026-11-17"
+ },
+ "node/775155526": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/7751937024": {
+  "telefon": "+4970736764",
+  "email": "info@haischt.de",
+  "quelle": "https://haischt.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7778151861": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/7787089416": {
+  "email": "info@bielenhof-alm.de",
+  "quelle": "http://bielenhof-alm.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7792021389": {
+  "email": "b.k.scherer@gmx.de",
+  "quelle": "http://www.jakobshof-scherer.de/Kontakt.html",
+  "stand": "2026-11-17"
+ },
+ "node/7797421755": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7817692854": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/7820709985": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7856188281": {
+  "email": "info@weimar-gbr.de",
+  "quelle": "https://www.weimar-gbr.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7862887980": {
+  "telefon": "0177 / 181 68 15",
+  "email": "info@wunder-milch.de",
+  "quelle": "https://wunder-milch.com/",
+  "stand": "2026-11-17"
+ },
+ "node/7864879138": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7881325570": {
+  "email": "info@halder-macht-bio.de",
+  "quelle": "https://www.halder-macht-bio.de/impressum.html",
+  "stand": "2026-11-17"
+ },
+ "node/7890819178": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/7921291968": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7921291970": {
+  "telefon": "Tel. & Fax: 08636 66398",
+  "email": "milchschafhof@gmx.de",
+  "quelle": "https://www.milchschafhof-perlesham.de/kontakt",
+  "stand": "2026-11-17"
+ },
+ "node/7924764740": {
+  "email": "arkenberg2@t-online.de",
+  "quelle": "http://www.arkenberger-spargelhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7925111928": {
+  "email": "info@sl-gartenbau.de",
+  "quelle": "https://www.sl-gartenbau.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/7926113219": {
+  "geprueft": "2026-11-17"
+ },
+ "node/7939966284": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/796395224": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/7973401773": {
+  "email": "info@zimmermann-biohof.de",
+  "quelle": "https://zimmermann-biohof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/7990223038": {
+  "telefon": "+0371 335622666",
+  "email": "info@cookintheboxx.de",
+  "quelle": "https://thecookfamily.de/cook-in-the-boxx",
+  "stand": "2026-11-17"
+ },
+ "node/7991210178": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/7999115303": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/8038175197": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8039836406": {
+  "email": "kugelsuedhanghof@t-online.de",
+  "quelle": "https://xn--kugelsdhanghof-lsb.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8046311508": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8051209933": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8059620463": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8074081009": {
+  "email": "pefoha@t-online.de",
+  "quelle": "https://www.petersplaats.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8080905887": {
+  "email": "info@erdbeeren-aus-wendenborstel.de",
+  "quelle": "https://www.erdbeeren-aus-wendenborstel.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8118937631": {
+  "oeffnungszeiten": "Mo 07:30-12:30,14:30-18:00; Tu 07:30-12:30,14:30-18:00; We 07:30-12:30; Th 07:30-12:30,14:30-18:00; Fr 07:30-12:30,14:30-18:00; Sa 07:30-12:30; Su ",
+  "methode": "schema.org",
+  "telefon": "07333 5539",
+  "email": "mail@kronenmetzgerei.de",
+  "quelle": "https://www.kronenmetzgerei-laichingen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8120842231": {
+  "email": "nicole.von.staden@hotmail.de",
+  "quelle": "https://kayhof.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/8129668088": {
+  "geprueft": "2026-11-17"
+ },
+ "node/813189274": {
+  "email": "info@evershof.de",
+  "quelle": "https://www.evershof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/813189278": {
+  "oeffnungszeiten": "Th 09:00-18:00",
+  "methode": "text",
+  "quelle": "https://www.hof-thorn.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8132429526": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/8151205503": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/8154281887": {
+  "oeffnungszeiten": "Mo-Fr 09:00-12:00; Sa 09:00-11:00",
+  "methode": "text",
+  "email": "email@igels-leinoel.de",
+  "quelle": "https://www.igels-leinoel.de/magento/oeffnungszeiten/",
+  "stand": "2026-11-17"
+ },
+ "node/8245069954": {
+  "email": "info@hofjunge.de",
+  "quelle": "https://hofjunge.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8245569750": {
+  "email": "friedhofsverwaltung@kirche-lauenburg.de",
+  "quelle": "https://www.friedhof-lauenburg.de/oeffnungszeiten",
+  "stand": "2026-11-17"
+ },
+ "node/8267107762": {
+  "email": "info@eier-ell.de",
+  "quelle": "https://www.eier-ell.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/8275647768": {
+  "email": "julia@et-hoeffken.de",
+  "quelle": "https://www.et-hoeffken.de/hofladen-kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/8287719489": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8296421879": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8296474264": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8296763248": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/8312340587": {
+  "telefon": "004915730676301",
+  "email": "email@yoursite.com",
+  "quelle": "https://landeigemuese.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8328261401": {
+  "oeffnungszeiten": "Mo-Fr 08:00-18:30; Sa 08:00-18:00; Su 09:00-17:00",
+  "methode": "schema.org",
+  "telefon": "+492225 28 86",
+  "email": "info@obsthof-cremerius.de",
+  "quelle": "https://www.obsthof-cremerius.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8365488431": {
+  "email": "spam@spam.de",
+  "quelle": "https://www.guelzer-geissen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8371001647": {
+  "email": "info@hof-immensitz.de",
+  "quelle": "https://hof-immensitz.de/de/impressum.html",
+  "stand": "2026-11-17"
+ },
+ "node/8371394121": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/8383867592": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/8392095806": {
+  "email": "hagenesterhofladen@yahoo.de",
+  "quelle": "http://www.hagenesterhofladen.de/kontakt.htm",
+  "stand": "2026-11-17"
+ },
+ "node/8393211030": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/8400942817": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8402183734": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8413047491": {
+  "telefon": "08707205",
+  "email": "mail@obstbau-deutenkofen.de",
+  "quelle": "https://www.obstbau-deutenkofen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8423097664": {
+  "email": "info@voglhof.de",
+  "quelle": "https://www.voglhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8426416117": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8443358674": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/845263652": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/8479151270": {
+  "email": "info@gut-buestedt.de",
+  "quelle": "https://gut-buestedt.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8494603005": {
+  "email": "ro.moll@gmx.de",
+  "quelle": "https://www.schuttertaler-hofmolkerei.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8511793554": {
+  "telefon": "+4915150437734",
+  "email": "samuel@obstbau-schmelzle.de",
+  "quelle": "https://www.obstbau-schmelzle.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8522011149": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/8524919926": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8528697040": {
+  "telefon": "0175 9837177",
+  "email": "info@solawi-landlmuehle.de",
+  "quelle": "https://www.solawi-landlmuehle.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8546963600": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/8566504280": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/8569006107": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/8579418505": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8596962485": {
+  "email": "info@goglhof.de",
+  "quelle": "http://www.goglhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8605906805": {
+  "oeffnungszeiten": "We-Fr 08:00-13:00,15:00-18:00; Sa 08:00-11:00",
+  "methode": "text",
+  "telefon": "+493418613606",
+  "email": "leipziger-party-service@web.de",
+  "quelle": "https://fleischerei-moellmer.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8612572377": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8637908063": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8643220635": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8684480978": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8687825529": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/8691434560": {
+  "oeffnungszeiten": "Mo-Tu 09:00-12:00,14:00-18:00; Th-Fr 09:00-12:00,14:00-18:00; Sa 08:00-12:00",
+  "methode": "text",
+  "telefon": "0049715327405",
+  "email": "info@berghof-deizisau.de",
+  "quelle": "https://www.berghof-deizisau.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/8691434562": {
+  "email": "info@spargel-wendel.de",
+  "quelle": "https://spargelhof-wendel.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8695287937": {
+  "oeffnungszeiten": "Mo-Fr 09:00-19:00",
+  "methode": "text",
+  "email": "wendelin.jelowik@t-online.de",
+  "quelle": "http://www.hofjelowik.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8708894328": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8709032574": {
+  "oeffnungszeiten": "Mo-Su 07:00-21:00",
+  "methode": "text",
+  "telefon": "+496293385",
+  "email": "baier.GbR@freenet.de",
+  "quelle": "https://bergfelder-hofladen.de/startseite",
+  "stand": "2026-11-17"
+ },
+ "node/8715432925": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8715518126": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/8715838402": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8717139622": {
+  "email": "willkommen@ackers-biohof.de",
+  "quelle": "http://www.ackers-biohof.de/Impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/8727731389": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/8728726731": {
+  "telefon": "01752312288",
+  "quelle": "https://gut-hermannsdorf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8736442957": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/8750936168": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/8757847691": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8757847692": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8771362366": {
+  "oeffnungszeiten": "Sa-Su 13:00-18:00",
+  "methode": "text",
+  "quelle": "https://hof-mougin.de/hofcafe-hofladen/holsteiner-hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/8776931839": {
+  "email": "info@wallners-bioputen.de",
+  "quelle": "https://www.wallners-bioputen.de/hofverkauf/",
+  "stand": "2026-11-17"
+ },
+ "node/8777045435": {
+  "oeffnungszeiten": "Th-Fr 09:00-12:00,14:00-18:00; Sa 09:00-12:00",
+  "methode": "text",
+  "email": "email@example.com",
+  "quelle": "https://www.hagenmuehle-willanzheim.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8777548037": {
+  "oeffnungszeiten": "Mo-Sa 09:30-17:30",
+  "methode": "text",
+  "email": "post@bauernhof-schulze-elberg.de",
+  "quelle": "http://www.bauernhof-schulze-elberg.de/angebote.htm",
+  "stand": "2026-11-17"
+ },
+ "node/8780713030": {
+  "email": "markuswoehl@web.de",
+  "quelle": "https://landpartie.de/einkaufen/hoflaeden/rueckers-hofladen/53/",
+  "stand": "2026-11-17"
+ },
+ "node/8796215124": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 500"
+ },
+ "node/8798933842": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8804091796": {
+  "telefon": "0170 9218 205",
+  "email": "kh.albersmeier@kartoffelpower.de",
+  "quelle": "https://www.kartoffelpower.de/Kontakt/ansprechpartner.html",
+  "stand": "2026-11-17"
+ },
+ "node/8811323908": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8814799095": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8835866943": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8849137205": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/8855748798": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8863022251": {
+  "email": "info@frucht-janssen.de",
+  "quelle": "https://edelrot.eu/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/8865061535": {
+  "telefon": "+0371 335622666",
+  "email": "info@cookintheboxx.de",
+  "quelle": "https://thecookfamily.de/cook-in-the-boxx",
+  "stand": "2026-11-17"
+ },
+ "node/8865092198": {
+  "telefon": "+0371 335622666",
+  "email": "info@cookintheboxx.de",
+  "quelle": "https://thecookfamily.de/cook-in-the-boxx",
+  "stand": "2026-11-17"
+ },
+ "node/8865095597": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/8869417800": {
+  "oeffnungszeiten": "Th-Fr 08:00-18:00; Sa 08:30-18:00; Su 08:00-18:00",
+  "methode": "text",
+  "quelle": "https://www.hof-wilken.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8889292302": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/8892549081": {
+  "telefon": "096029399962",
+  "quelle": "http://www.fischzucht-siller.de/formulare/index.php?form_id=10004714",
+  "stand": "2026-11-17"
+ },
+ "node/8892874044": {
+  "email": "imonika.steurer86@gmail.com",
+  "quelle": "https://www.annis-hofladen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8893381462": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8899003039": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/8907231506": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8916489719": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/8933858833": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/8938699024": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8948068901": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8950642987": {
+  "oeffnungszeiten": "Mo 08:00-12:30; Sa 08:00-12:30",
+  "methode": "schema.org",
+  "telefon": "+496206710873",
+  "email": "Bauernladen-kuehn@t-online.de",
+  "quelle": "https://bauernladen-kuehn.metro.bar/?lang=en",
+  "stand": "2026-11-17"
+ },
+ "node/8951667818": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/8958193347": {
+  "email": "info@adlstrass.de",
+  "quelle": "https://www.adlstrass.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8969164008": {
+  "email": "info@kdk-aronia.de",
+  "quelle": "https://www.kdk-aronia.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8972342319": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8979054174": {
+  "email": "info@marienhof-fecher.de",
+  "quelle": "https://marienhof-fecher.de/",
+  "stand": "2026-11-17"
+ },
+ "node/8993116885": {
+  "geprueft": "2026-11-17"
+ },
+ "node/8997716247": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9031434524": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9037924993": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/9044824494": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9054512229": {
+  "email": "info@huberhof-kronast.de",
+  "quelle": "https://huberhof-kronast.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9064659049": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9074740696": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9076435869": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9080967023": {
+  "email": "info@weidelandschaften.de",
+  "quelle": "https://www.weidelandschaften.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9084738119": {
+  "email": "info@hofladen-heeger.de",
+  "quelle": "https://www.hofladen-heeger.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9094171737": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/9101977324": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9105670781": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9106130202": {
+  "telefon": "+049-38205-65660",
+  "quelle": "https://www.hof-prangendorf.de/hofcaf%C3%A9/%C3%B6ffnungszeiten-kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/9106146891": {
+  "telefon": "+4915734700860",
+  "email": "//info@hof-walden.de",
+  "quelle": "http://hof-walden.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9106174379": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9106196102": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/9114883215": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9118176933": {
+  "oeffnungszeiten": "Mo-Fr 07:00-09:00,09:30-12:00,12:30-16:00",
+  "methode": "text",
+  "email": "info@ruegener-rapsoel.de",
+  "quelle": "https://ruegener-rapsoel.de/ruegener-landhandel/",
+  "stand": "2026-11-17"
+ },
+ "node/9118344087": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9122867089": {
+  "telefon": "00499737284",
+  "email": "info@voglers-hofprodukte.com",
+  "quelle": "https://www.voglers-hofprodukte.com/impressum",
+  "stand": "2026-11-17"
+ },
+ "node/9123556962": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9125184134": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9135987441": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9147693892": {
+  "email": "info@kapellchenhof.de",
+  "quelle": "https://www.natuerliches-fleisch.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9156351523": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9168792184": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9171379842": {
+  "telefon": "+491717113018",
+  "email": "cora@bison-wermsdorf.de",
+  "quelle": "https://bison-wermsdorf.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9178945658": {
+  "geprueft": "2026-11-17",
+  "fehler": "The operation was aborted due to timeout"
+ },
+ "node/9198177662": {
+  "email": "info@biohof-laurer.de",
+  "quelle": "https://biohof-laurer.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9214901634": {
+  "telefon": "+49807691970",
+  "email": "kontakt@ziegenmeierei.bayern",
+  "quelle": "https://ziegenmeierei.bayern/kontakt.html",
+  "stand": "2026-11-17"
+ },
+ "node/9216453682": {
+  "email": "info@landgut-pimmenich.de",
+  "quelle": "https://www.landgut-pimmenich.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/9218515123": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9222042968": {
+  "email": "thomas@obsthof-gierer.de",
+  "quelle": "https://www.obsthof-gierer.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "node/923970581": {
+  "email": "info@obstundurlaub.de",
+  "quelle": "https://sporraedles-obsthof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9247792623": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9271769468": {
+  "email": "info@digitale-konzepte.de",
+  "quelle": "http://www.huferhof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9283887768": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9286540735": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9291660017": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9297260436": {
+  "geprueft": "2026-11-17"
+ },
+ "node/930908303": {
+  "telefon": "+4904268505",
+  "quelle": "https://schloms-hof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9316373036": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/9329469030": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9353094313": {
+  "telefon": "0177 / 181 68 15",
+  "email": "info@wunder-milch.de",
+  "quelle": "https://wunder-milch.com/",
+  "stand": "2026-11-17"
+ },
+ "node/9396876974": {
+  "email": "peeneland-hohendorf@t-online.de",
+  "quelle": "https://www.peeneland-agrar.de/impressum/impressum/",
+  "stand": "2026-11-17"
+ },
+ "node/9397017598": {
+  "oeffnungszeiten": "Mo-Fr 08:00-16:00",
+  "methode": "text",
+  "quelle": "https://www.seemann-landmaschinen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9397057520": {
+  "telefon": "+491721023008",
+  "email": "someone@example.com",
+  "quelle": "https://www.mueritzhof-knust.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9397063375": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9397068403": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9403792951": {
+  "oeffnungszeiten": "Tu-Fr 09:00-13:00,14:00-18:00; Sa 09:00-16:00",
+  "methode": "text",
+  "quelle": "https://www.feldkiosk.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9420281466": {
+  "email": "info@ziegenhof-gebauer.de",
+  "quelle": "https://www.ziegenhof-gebauer.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9421121352": {
+  "telefon": "01724210487",
+  "email": "h.steinke@t-online.de",
+  "quelle": "https://wildverkauf-helvesiek.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9434021847": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/9456697545": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9459019285": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9459034532": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9469377923": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9480363523": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9504523086": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/9512005671": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9512059892": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9529209929": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9530838583": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9571362960": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9577981917": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/9578053417": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9603621331": {
+  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-13:00",
+  "methode": "text",
+  "quelle": "https://www.bioladen-meissen.de/portfolio/obst-und-gemuese/",
+  "stand": "2026-11-17"
+ },
+ "node/9604274919": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9612854159": {
+  "email": "info@federleinsfarm.de",
+  "quelle": "https://www.federleinsfarm.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9624467563": {
+  "telefon": "023034321",
+  "quelle": "https://www.milchhof-muehlhausen.de/",
+  "stand": "2026-11-17"
+ },
+ "node/963046046": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9655818710": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9659565645": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/9668544190": {
+  "telefon": "+49232531609",
+  "quelle": "https://www.schmitz-muehle.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9669616895": {
+  "oeffnungszeiten": "We 14:00-18:00; Fr 14:00-18:00; Sa 08:00-13:00",
+  "methode": "schema.org",
+  "telefon": "0171 76 09 549",
+  "quelle": "https://www.stahls-gemuesetheke.de/hoflaedchen.php",
+  "stand": "2026-11-17"
+ },
+ "node/9674402431": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/9675044425": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9675329332": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9675467129": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9687347590": {
+  "telefon": "+4982382961",
+  "email": "info@strausser-hof.de",
+  "quelle": "https://strausser-hof.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "node/9693239956": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "node/9697322927": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9697522120": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9707399610": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9731978863": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/9735201518": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/9746541996": {
+  "email": "info@federleinsfarm.de",
+  "quelle": "https://www.federleinsfarm.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9748347810": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9757428608": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9757697422": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9761052193": {
+  "oeffnungszeiten": "Mo-Sa 08:00-19:00",
+  "methode": "text",
+  "telefon": "07423 3584",
+  "email": "euaknoepfle@t-online.de",
+  "quelle": "https://vom-bauern-sbh.de/hoefe/demeterhof-knoepfle/",
+  "stand": "2026-11-17"
+ },
+ "node/9764807450": {
+  "telefon": "+494191909436",
+  "email": "solawi@kattendorfer-hof.de",
+  "quelle": "https://www.kattendorfer-hof.de/project/hofladen-pergolenviertel/",
+  "stand": "2026-11-17"
+ },
+ "node/976727347": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9776461712": {
+  "email": "tihe31@gmail.com",
+  "quelle": "https://angusvombackenberg.friedhold.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9782139579": {
+  "email": "info@windmuehle-schwensby.com",
+  "quelle": "https://shop.windmuehle-schwensby.com/impressum",
+  "stand": "2026-11-17"
+ },
+ "node/9789934492": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/9801306056": {
+  "telefon": "+495157327",
+  "quelle": "https://www.hof-struever.de/index.php/einkaufsmoeglichkeiten/",
+  "stand": "2026-11-17"
+ },
+ "node/9808151914": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9814962705": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/9825466282": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "node/9830893152": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9837794118": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9863993434": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9874014636": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9880395930": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9881486968": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "node/9885770798": {
+  "telefon": "09103 8919",
+  "email": "info@pleikershof.de",
+  "quelle": "https://pleikershof.de/",
+  "stand": "2026-11-17"
+ },
+ "node/9890272794": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9901316198": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9902344321": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9918937083": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9929647857": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9937119483": {
+  "telefon": "+49",
+  "quelle": "https://weidefleisch-tiefel.de/direktvermarktung/tiefels-farmbox-24-7/",
+  "stand": "2026-11-17"
+ },
+ "node/9938299863": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9941815436": {
+  "geprueft": "2026-11-17"
+ },
+ "node/9972555703": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/998192145": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "node/9982908440": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "node/9988003559": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "relation/15435087": {
+  "geprueft": "2026-11-17"
+ },
+ "way/100066123": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/1037877513": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1040487487": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/1043757857": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/105068603": {
+  "email": "info@kirchthanner-biohof.de",
+  "quelle": "https://www.kirchthanner-biohof.de/",
+  "stand": "2026-11-17"
+ },
+ "way/105253020": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/1071959212": {
+  "email": "info@eier-ell.de",
+  "quelle": "https://www.eier-ell.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "way/1088344130": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/109447792": {
+  "email": "reservierung@obstbauer-wedeking.de",
+  "quelle": "https://www.obstbauer-wedeking.de/de/",
+  "stand": "2026-11-17"
+ },
+ "way/110452517": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1106820606": {
+  "oeffnungszeiten": "Mo 08:00-13:00; Tu-Fr 08:00-18:00; Sa 07:00-12:30",
+  "methode": "text",
+  "email": "schaffer@schafferhof.de",
+  "quelle": "https://www.schafferhof.de/",
+  "stand": "2026-11-17"
+ },
+ "way/111573549": {
+  "email": "info@schneiderspargel.de",
+  "quelle": "https://www.schneiderspargel.de/",
+  "stand": "2026-11-17"
+ },
+ "way/1124814985": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "way/1128051515": {
+  "email": "brandeshof@gmail.com",
+  "quelle": "https://brandeshof.de/kontaktieren-sie-uns/",
+  "stand": "2026-11-17"
+ },
+ "way/113737251": {
+  "oeffnungszeiten": "Mo-We 09:00-12:30; Th-Fr 09:00-12:30,14:30-18:00; Sa 08:00-13:00",
+  "methode": "text",
+  "quelle": "https://www.hofladen-wuertenberger.de/",
+  "stand": "2026-11-17"
+ },
+ "way/115880316": {
+  "email": "info@gaetschenberger.de",
+  "quelle": "https://www.gaetschenberger.de/kontakt/ansprechpartner/",
+  "stand": "2026-11-17"
+ },
+ "way/116684596": {
+  "email": "landgut-naundorf@gmx.de",
+  "quelle": "https://www.landgutnaundorf.de/",
+  "stand": "2026-11-17"
+ },
+ "way/117424090": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1195526353": {
+  "oeffnungszeiten": "We-Su 09:00-17:00",
+  "methode": "text",
+  "quelle": "https://www.miermanns-scheune.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "way/121660266": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/1234729813": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1259519959": {
+  "geprueft": "2026-11-17"
+ },
+ "way/129537040": {
+  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-14:00",
+  "methode": "text",
+  "quelle": "https://www.flarichsmuehle.de/page4.html",
+  "stand": "2026-11-17"
+ },
+ "way/131298755": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1328831212": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1330493383": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1330493384": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1330493385": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1330493386": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1330493387": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1330493388": {
+  "geprueft": "2026-11-17"
+ },
+ "way/133269163": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1349819839": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1355125638": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/1361550350": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1363626141": {
+  "oeffnungszeiten": "Mo 07:00-13:00; Tu-Fr 07:00-18:00; Sa 07:00-12:00",
+  "methode": "schema.org",
+  "telefon": "08465 1068",
+  "email": "info@metzgerei-gehr.de",
+  "quelle": "https://www.metzgerei-gehr.de/",
+  "stand": "2026-11-17"
+ },
+ "way/139438511": {
+  "oeffnungszeiten": "Tu 17:00-18:30; Fr 10:00-18:30",
+  "methode": "text",
+  "email": "hofladen@biohof-vogel.de",
+  "quelle": "https://biohof-vogel.de/hofladen-und-automaten/",
+  "stand": "2026-11-17"
+ },
+ "way/141210707": {
+  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-14:00",
+  "methode": "text",
+  "telefon": "02175 4282",
+  "email": "info@leichlinger-champignonzucht.de",
+  "quelle": "https://www.leichlinger-champignonzucht.de/kontakt.html",
+  "stand": "2026-11-17"
+ },
+ "way/144284866": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "way/1448303206": {
+  "oeffnungszeiten": "Tu 13:00-18:00; Fr-Sa 13:00-18:00",
+  "methode": "text",
+  "quelle": "https://mitmachbauernhof.de/hofladen-2/",
+  "stand": "2026-11-17"
+ },
+ "way/145409653": {
+  "geprueft": "2026-11-17"
+ },
+ "way/153735518": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "way/154962524": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/1553582453": {
+  "email": "hofalteburg@gmail.com",
+  "quelle": "https://obsthof-schaefer.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "way/156312022": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1564672089": {
+  "email": "info@hartenauer-hof.de",
+  "quelle": "https://hartenauer-hof.de/",
+  "stand": "2026-11-17"
+ },
+ "way/156596661": {
+  "geprueft": "2026-11-17"
+ },
+ "way/1576330662": {
+  "geprueft": "2026-11-17"
+ },
+ "way/158670786": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/165768584": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "way/165819870": {
+  "email": "info@warleberg.de",
+  "quelle": "https://warleberg.de/",
+  "stand": "2026-11-17"
+ },
+ "way/170729569": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "way/171750842": {
+  "geprueft": "2026-11-17"
+ },
+ "way/173523517": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/174023748": {
+  "oeffnungszeiten": "Mo-Fr 09:00-18:00; Sa 09:00-13:00",
+  "methode": "text",
+  "quelle": "https://hof-storck.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "way/178354856": {
+  "geprueft": "2026-11-17"
+ },
+ "way/179450816": {
+  "telefon": "01737238096",
+  "email": "info@kraeuter-heidi.de",
+  "quelle": "https://www.kraeuter-heidi.de/Die-Kraeuterwerkstatt/",
+  "stand": "2026-11-17"
+ },
+ "way/189804335": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/191382154": {
+  "oeffnungszeiten": "Fr 08:00-18:00; Sa 08:00-13:00",
+  "methode": "text",
+  "telefon": "+4979715444",
+  "email": "schupp.steinaeckerhof@t-online.de",
+  "quelle": "https://www.steinaeckerhof-schupp.de/",
+  "stand": "2026-11-17"
+ },
+ "way/196480721": {
+  "email": "info@hof-sallach.de",
+  "quelle": "https://hof-sallach.de/impressum/",
+  "stand": "2026-11-17"
+ },
+ "way/196746053": {
+  "telefon": "+491606364657",
+  "email": "rheingau@kisselmuehle.de",
+  "quelle": "https://kisselmuehle.de/",
+  "stand": "2026-11-17"
+ },
+ "way/199346248": {
+  "email": "info@pfaender-hof.de",
+  "quelle": "https://www.pfaender-hof.de/",
+  "stand": "2026-11-17"
+ },
+ "way/207708911": {
+  "geprueft": "2026-11-17"
+ },
+ "way/209117768": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "way/220789520": {
+  "geprueft": "2026-11-17"
+ },
+ "way/222276596": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "way/223978090": {
+  "oeffnungszeiten": "Mo-Tu 09:00-18:00; We-Th 08:00-18:00; Fr-Sa 09:00-19:00,17:00-20:00; Su 09:00-19:00",
+  "methode": "schema.org",
+  "email": "info@bauer-reinhart.de",
+  "quelle": "https://www.bauer-reinhart.de/",
+  "stand": "2026-11-17"
+ },
+ "way/225021543": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/225800427": {
+  "telefon": "+494642 2949",
+  "quelle": "https://www.biohof-spannbrueck.de/",
+  "stand": "2026-11-17"
+ },
+ "way/235119820": {
+  "geprueft": "2026-11-17"
+ },
+ "way/235299449": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "way/247050892": {
+  "telefon": "+49073477405",
+  "email": "info@biogefluegel-unterweger.de",
+  "quelle": "https://www.biogefluegel-unterweger.de/",
+  "stand": "2026-11-17"
+ },
+ "way/249639170": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/250694549": {
+  "oeffnungszeiten": "Mo 08:00-13:00; We 08:00-13:00; Th-Fr 08:00-18:00; Sa 08:00-13:00",
+  "methode": "text",
+  "telefon": "+4962053068855",
+  "email": "hofladen@gemuesehof-schmitt.de",
+  "quelle": "https://gemuesehof-schmitt.de/hofladen-automat/",
+  "stand": "2026-11-17"
+ },
+ "way/251221262": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/252979971": {
+  "telefon": "01729809828",
+  "quelle": "http://www.kleinerhof-doerry.de/impressum/index.php",
+  "stand": "2026-11-17"
+ },
+ "way/255261864": {
+  "geprueft": "2026-11-17"
+ },
+ "way/265048027": {
+  "geprueft": "2026-11-17"
+ },
+ "way/265752091": {
+  "geprueft": "2026-11-17"
+ },
+ "way/266522091": {
+  "geprueft": "2026-11-17"
+ },
+ "way/278685920": {
+  "geprueft": "2026-11-17"
+ },
+ "way/283214759": {
+  "geprueft": "2026-11-17"
+ },
+ "way/284974476": {
+  "telefon": "+497117800844",
+  "quelle": "https://www.beeren-brodbeck.de/",
+  "stand": "2026-11-17"
+ },
+ "way/285767850": {
+  "telefon": "+497117800844",
+  "quelle": "https://www.beeren-brodbeck.de/",
+  "stand": "2026-11-17"
+ },
+ "way/29282209": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/293197992": {
+  "email": "info@gut-hirschaue.de",
+  "quelle": "https://www.gut-hirschaue.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "way/300527109": {
+  "oeffnungszeiten": "Tu 09:00 - 13:00; We 09:00 - 17:00; Th 09:00 - 17:00; Fr 09:00 - 17:00; Sa 08:00 - 13:00",
+  "methode": "schema.org",
+  "telefon": "0231 29752, 0170 6543833",
+  "quelle": "https://www.xn--hof-lning-u9a.de/",
+  "stand": "2026-11-17"
+ },
+ "way/305917909": {
+  "geprueft": "2026-11-17"
+ },
+ "way/307566686": {
+  "geprueft": "2026-11-17"
+ },
+ "way/309850523": {
+  "geprueft": "2026-11-17"
+ },
+ "way/310622854": {
+  "geprueft": "2026-11-17"
+ },
+ "way/314264435": {
+  "geprueft": "2026-11-17"
+ },
+ "way/314726540": {
+  "geprueft": "2026-11-17"
+ },
+ "way/318797169": {
+  "telefon": "+4991032296",
+  "email": "info@biohof-decker.de",
+  "quelle": "https://www.biohof-decker.de/",
+  "stand": "2026-11-17"
+ },
+ "way/319723992": {
+  "email": "milchdirekt@lenzbauer.de",
+  "quelle": "http://www.lenzbauer.de/kontakt.html",
+  "stand": "2026-11-17"
+ },
+ "way/322320429": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/322897826": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "way/325068670": {
+  "oeffnungszeiten": "Mo 10:00-18:00; We-Th 10:00-18:00; Fr-Sa 10:00-14:00; Su 12:00-17:00",
+  "methode": "text",
+  "email": "info@bluhmsdelikat.de",
+  "quelle": "https://bluhmsdelikat.de/laden",
+  "stand": "2026-11-17"
+ },
+ "way/326453753": {
+  "geprueft": "2026-11-17"
+ },
+ "way/330683740": {
+  "geprueft": "2026-11-17"
+ },
+ "way/332249074": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/335068426": {
+  "geprueft": "2026-11-17"
+ },
+ "way/338463864": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/349443117": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/350210290": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "way/370360942": {
+  "geprueft": "2026-11-17"
+ },
+ "way/382518864": {
+  "email": "info@kaeserei-reissler.de",
+  "quelle": "https://www.kaeserei-reissler.de/",
+  "stand": "2026-11-17"
+ },
+ "way/385683576": {
+  "email": "info@trostmuehle.com",
+  "quelle": "https://www.trostmuehle.com/",
+  "stand": "2026-11-17"
+ },
+ "way/394982446": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/396502245": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/403695538": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "way/408660425": {
+  "geprueft": "2026-11-17"
+ },
+ "way/412829584": {
+  "oeffnungszeiten": "Fr 15:00-18:00; Sa 09:00-12:30",
+  "methode": "text",
+  "quelle": "https://www.seebodenhof.de/kontakt",
+  "stand": "2026-11-17"
+ },
+ "way/414956555": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/439479201": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/441880878": {
+  "geprueft": "2026-11-17"
+ },
+ "way/444837118": {
+  "geprueft": "2026-11-17"
+ },
+ "way/446551896": {
+  "email": "info@landfrucht.de",
+  "quelle": "https://www.landfrucht.de/index.php/impressum",
+  "stand": "2026-11-17"
+ },
+ "way/464947268": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/47236168": {
+  "geprueft": "2026-11-17"
+ },
+ "way/473941346": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/479010033": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/48173536": {
+  "oeffnungszeiten": "Mo-Tu 08:30-14:00; We 08:30-18:00; Th-Fr 08:30-14:00; Sa 09:30-13:00",
+  "methode": "text",
+  "quelle": "http://www.obsthof-nodop.de/",
+  "stand": "2026-11-17"
+ },
+ "way/481833830": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 400"
+ },
+ "way/484823212": {
+  "oeffnungszeiten": "Fr 14:00-17:00",
+  "methode": "text",
+  "quelle": "https://www.biohof-kreitmair.de/Seiten/Hofladen/",
+  "stand": "2026-11-17"
+ },
+ "way/49265181": {
+  "geprueft": "2026-11-17"
+ },
+ "way/50155810": {
+  "telefon": "+4960339278967",
+  "quelle": "https://www.bienenhof-rockenberg.de/",
+  "stand": "2026-11-17"
+ },
+ "way/513026783": {
+  "geprueft": "2026-11-17"
+ },
+ "way/514886804": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/520299242": {
+  "telefon": "+493960328623",
+  "email": "info@obstbau-henneberg.de",
+  "quelle": "https://www.ciderwirtschaft.de/hofladen/",
+  "stand": "2026-11-17"
+ },
+ "way/524464602": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/53188077": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 503"
+ },
+ "way/53378250": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "way/54185628": {
+  "geprueft": "2026-11-17"
+ },
+ "way/553041869": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "way/556440121": {
+  "oeffnungszeiten": "Th-Su 09:30-15:00,17:00-22:00",
+  "methode": "text",
+  "quelle": "https://hoehenhof-siedelsbrunn.de/",
+  "stand": "2026-11-17"
+ },
+ "way/630782811": {
+  "email": "info@hofahlers.de",
+  "quelle": "https://hofahlers.de/kontakt/",
+  "stand": "2026-11-17"
+ },
+ "way/649571484": {
+  "email": "info@griesels-milchhof.de",
+  "quelle": "https://www.griesels-milchhof.de/rechtliche-angaben/impressum/",
+  "stand": "2026-11-17"
+ },
+ "way/664812666": {
+  "geprueft": "2026-11-17",
+  "hinweis": "saisonal"
+ },
+ "way/667920664": {
+  "geprueft": "2026-11-17"
+ },
+ "way/67175819": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/693109174": {
+  "geprueft": "2026-11-17"
+ },
+ "way/716823415": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/740255545": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/740830956": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/760029970": {
+  "telefon": "+49 35341 2009",
+  "email": "info@landhotel-biberburg.de",
+  "quelle": "https://landhotel-biberburg.de/",
+  "stand": "2026-11-17"
+ },
+ "way/764062814": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/790955264": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/791892794": {
+  "email": "info@chiemgauhof-locking.de",
+  "quelle": "https://www.chiemgauhof-locking.de/",
+  "stand": "2026-11-17"
+ },
+ "way/795767500": {
+  "email": "info@thueringer-spargel.de",
+  "quelle": "https://www.thueringer-spargel.de/verkauf/",
+  "stand": "2026-11-17"
+ },
+ "way/83918224": {
+  "email": "biobauers@gmail.com",
+  "quelle": "https://biobauers.de/",
+  "stand": "2026-11-17"
+ },
+ "way/841870019": {
+  "oeffnungszeiten": "Mo-Fr 08:00-13:30,14:00-18:30; Sa 08:00-13:00",
+  "methode": "text",
+  "email": "info@muehle-niewind.de",
+  "quelle": "https://www.muehle-niewind.de/",
+  "stand": "2026-11-17"
+ },
+ "way/88580414": {
+  "geprueft": "2026-11-17"
+ },
+ "way/903434617": {
+  "email": "info@diebiohennen.de",
+  "quelle": "https://www.diebiohennen.de/",
+  "stand": "2026-11-17"
+ },
+ "way/912393073": {
+  "oeffnungszeiten": "Fr 07:00-13:00,15:00-18:00; Sa 07:00-12:00; Su 07:00-11:00",
+  "methode": "text",
+  "email": "moin@landladen-rullstorf.de",
+  "quelle": "http://www.landladen-rullstorf.de/",
+  "stand": "2026-11-17"
+ },
+ "way/936921583": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/940161044": {
+  "geprueft": "2026-11-17"
+ },
+ "way/941914515": {
+  "geprueft": "2026-11-17",
+  "fehler": "fetch failed"
+ },
+ "way/949500300": {
+  "geprueft": "2026-11-17"
+ },
+ "way/959744986": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 403"
+ },
+ "way/97076168": {
+  "geprueft": "2026-11-17",
+  "fehler": "HTTP 404"
+ },
+ "way/972624194": {
+  "geprueft": "2026-11-17"
+ },
+ "way/97535954": {
+  "geprueft": "2026-11-17"
+ },
+ "way/98100210": {
+  "geprueft": "2026-11-17",
+  "fehler": "robots.txt"
+ },
+ "way/99794890": {
+  "telefon": "01735127994",
+  "quelle": "https://www.biohof-ruhlengut.de/",
+  "stand": "2026-11-17"
  }
 }
