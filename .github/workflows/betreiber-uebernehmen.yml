@@ -49,6 +49,7 @@ jobs:
             echo "Keine Änderungen."
           else
             git commit -m "Betreiberdaten übernommen"
+            git pull --rebase -X theirs -q
             git push
             echo "geaendert=ja" >> "$GITHUB_OUTPUT"
           fi

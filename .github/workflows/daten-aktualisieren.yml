@@ -56,6 +56,7 @@ jobs:
             echo "Keine Änderungen."
           else
             git commit -m "Daten aus OpenStreetMap aktualisiert"
+            git pull --rebase -X theirs -q
             git push
             echo "geaendert=ja" >> "$GITHUB_OUTPUT"
           fi
