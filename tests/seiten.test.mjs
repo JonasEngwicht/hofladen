@@ -18,7 +18,9 @@ const info = new Map(alle.map(([p, html]) => [p, {
 }]));
 const sm = sitemapUrls();
 const inSitemap = new Set(sm.map((x) => x.loc));
-const art = (p) => p.startsWith('/hof/') ? 'hof' : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) ? 'unterseite' : /^\/[^/]+\/[^/]+\/$/.test(p) ? 'kreis' : 'sonstige';
+// Listenseiten mit Karten; kompakte Kategorieseiten (Bundesland) zeigen Linklisten statt Karten
+const art = (p) => p.startsWith('/hof/') ? 'hof' : /<body class="kompakt"/.test(info.get(p)?.html || '') ? 'kompakt'
+  : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) && !p.startsWith('/angebot/') ? 'unterseite' : /^\/[^/]+\/[^/]+\/$/.test(p) && !p.startsWith('/angebot/') ? 'kreis' : 'sonstige';
 
 test('jede Seite: genau eine H1, ein Canonical auf sich selbst, Title und Description', () => {
   const fehler = [];
@@ -66,7 +68,7 @@ test('JSON-LD ist gültig und passt zum sichtbaren Inhalt', () => {
     if (p.startsWith('/hof/') && !typen.some((t) => t === 'Store' || t === 'LocalBusiness')) fehler.push(`${p}: Store fehlt`);
     if ((art(p) === 'kreis' || art(p) === 'unterseite') && s.karten && !typen.includes('ItemList')) fehler.push(`${p}: ItemList fehlt`);
     const il = s.ld.find((x) => x['@type'] === 'ItemList');
-    if (il && art(p) !== 'sonstige' && il.numberOfItems !== s.karten)
+    if (il && (art(p) === 'kreis' || art(p) === 'unterseite') && il.numberOfItems !== s.karten)
       fehler.push(`${p}: ItemList ${il.numberOfItems} ≠ ${s.karten} Karten`);
     const faq = s.ld.find((x) => x['@type'] === 'FAQPage');
     if (faq) {
@@ -119,4 +121,18 @@ test('Hofseiten zeigen Aktualität, Korrektur und Übernahme', () => {
   assert.match(s.html, /Seite aktualisiert: \d{2}\.\d{2}\.\d{4}/);
   assert.match(s.html, /thema=uebernahme/);
   assert.doesNotMatch(s.html, /%%SEITENSTAND%%/);
+});
+
+test('Kategorieseiten auf Bundes-, Landes- und Kreisebene', () => {
+  for (const p of ['/hofladen-automaten/', '/bio-hofladen/', '/angebot/eier/', '/bayern/bio-hofladen/', '/bayern/hofladen-automaten/', '/bayern/milchtankstellen/']) {
+    const s = info.get(p);
+    assert.ok(s && !s.noindex, p);
+    assert.match(s.html, /data-naehe=/, `${p}: Nähe-Suche`);
+  }
+  const kompakt = info.get('/bayern/bio-hofladen/');
+  assert.ok((kompakt.html.match(/<ul class="eintrag-liste">/g) || []).length >= 3, 'Einträge nach Kreis');
+  // mindestens eine Kreis-Seite je neuer Kategorie
+  const pfade = [...info.keys()];
+  assert.ok(pfade.some((p) => /^\/[^/]+\/[^/]+\/bio-hofladen\/$/.test(p)), 'Bio je Kreis');
+  assert.ok(pfade.some((p) => /^\/[^/]+\/[^/]+\/hofladen-automaten\/$/.test(p)), 'Automaten je Kreis');
 });

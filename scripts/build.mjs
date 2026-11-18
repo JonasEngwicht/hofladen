@@ -236,6 +236,8 @@ ${inhalt}
     <li><a href="/milchtankstelle/">Milchtankstellen</a></li>
     <li><a href="/eierautomat/">Eierautomaten</a></li>
     <li><a href="/regiomat/">Regiomaten</a></li>
+    <li><a href="/hofladen-automaten/">Hofladen-Automaten</a></li>
+    <li><a href="/angebot/">Angebot vom Hof</a></li>
     <li><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a></li>
     <li><a href="/bio-hofladen/">Bio-Hofläden</a></li>
     <li><a href="/saisonkalender/">Saisonkalender</a></li>
@@ -670,25 +672,56 @@ const TYPEN = [
     text: ['Regiomaten sind Verkaufsautomaten mit Fächern für regionale Lebensmittel: Wurst und Fleisch, Käse, Kartoffeln, Nudeln, Honig, Marmelade oder Getränke. Sie stehen meist direkt am Hof oder an gut erreichbaren Stellen im Ort.',
       'Die Fächer werden regelmäßig vom Betrieb aufgefüllt, Kühlware ist gekühlt. Damit kannst du regional einkaufen, auch wenn der Hofladen geschlossen ist – abends, sonntags und an Feiertagen.'] },
 ];
-for (const t of TYPEN) t.liste = eintraege.filter((e) => t.arten.includes(e.art));
+for (const t of TYPEN) { t.liste = eintraege.filter((e) => t.arten.includes(e.art)); t.pfadSlug = slugify(t.plural); }
+// Weitere Kategorien mit Seiten auf Bundesland- und Kreisebene
+const AUTOMATEN = { slug: 'hofladen-automaten', pfadSlug: 'hofladen-automaten', name: 'Hofladen-Automat', plural: 'Hofladen-Automaten', icon: ICON.automat,
+  liste: eintraege.filter((e) => e.typ === 'automat'),
+  kurz: 'Alle Hofautomaten: Milchtankstellen, Eierautomaten, Regiomaten, Fleisch- und Kartoffelautomaten.',
+  text: ['Hofladen-Automaten verkaufen Lebensmittel direkt vom Hof – auch dann, wenn der Hofladen geschlossen hat. Dazu gehören Milchtankstellen, Eierautomaten, Regiomaten mit gemischtem Sortiment sowie Fleisch-, Wurst- und Kartoffelautomaten.',
+    'Viele Automaten sind rund um die Uhr zugänglich. Bezahlt wird meist mit Münzen oder Scheinen, immer öfter auch mit Karte. Mit dem Filter „Jetzt geöffnet“ siehst du, welche Automaten gerade erreichbar sind.'] };
+const BIO = { slug: 'bio-hofladen', pfadSlug: 'bio-hofladen', name: 'Bio-Hofladen', plural: 'Bio-Hofläden', icon: ICON.blatt,
+  liste: eintraege.filter((e) => e.bio),
+  kurz: 'Hofläden und Automaten mit Bio-Angebot.',
+  text: ['Als Bio gekennzeichnet sind Höfe, die laut OpenStreetMap ausschließlich oder teilweise Bio-Produkte verkaufen.',
+    'Ob ein Betrieb zertifiziert ist, erkennst du am EU-Bio-Logo und an der Öko-Kontrollstellennummer (z. B. DE-ÖKO-006) auf der Ware oder am Hof.'] };
+const KAT_TYPEN = [...TYPEN, AUTOMATEN, BIO];
+const ANGEBOT = { eier: ['Eier vom Hof', 'Eiern'], milch: ['Milch vom Hof', 'Milch'], kaese: ['Käse vom Hof', 'Käse'], fleisch: ['Fleisch & Wurst vom Hof', 'Fleisch und Wurst'],
+  gemuese: ['Gemüse vom Hof', 'Gemüse'], obst: ['Obst vom Hof', 'Obst'], kartoffeln: ['Kartoffeln vom Hof', 'Kartoffeln'], honig: ['Honig vom Hof', 'Honig'],
+  brot: ['Brot vom Hof', 'Brot'], getraenke: ['Saft & Wein vom Hof', 'Saft und Wein'], blumen: ['Blumen vom Feld', 'Blumen'] };
+const ANGEBOT_SEITEN = Object.keys(ANGEBOT).filter((kat) => eintraege.filter((e) => e.kat.includes(kat)).length >= 30);
+
+const akkusativ = (t) => t.name === 'Milchtankstelle' ? 'eine Milchtankstelle' : `einen ${t.name}${/mat$/.test(t.name) ? 'en' : ''}`;
 // Seiten je Automatentyp und Kreis (ab zwei Einträgen), z. B. /bayern/landkreis-x/milchtankstellen/
 const TYP_KREIS = new Map(); // `${t.slug}|${kreis-Code}` → { t, k, liste, pfad }
 {
   const belegt = new Set([...ORTE.values()].flatMap((m) => [...m.values()].map((o) => o.pfad)));
-  for (const t of TYPEN) {
+  for (const t of KAT_TYPEN) {
     const proK = new Map();
     for (const e of t.liste) { if (!proK.has(e.kreis)) proK.set(e.kreis, []); proK.get(e.kreis).push(e); }
     for (const [code, liste] of proK) {
       if (liste.length < MIN_SEITE) continue;
       const k = kreise.get(code);
-      const pfad = `${k.pfad}${slugify(t.plural)}/`;
+      // keine Doppelungen: Automaten-Seite nur, wenn sie mehr zeigt als eine Typ-Seite; Bio nur, wenn nicht alle Bio sind
+      if (t === AUTOMATEN && TYPEN.some((x) => TYP_KREIS.get(`${x.slug}|${code}`)?.liste.length === liste.length)) continue;
+      if (t === BIO && liste.length === (proKreis.get(code) || []).length) continue;
+      const pfad = `${k.pfad}${t.pfadSlug}/`;
       if (belegt.has(pfad)) continue;
       TYP_KREIS.set(`${t.slug}|${code}`, { t, k, liste, pfad });
     }
   }
 }
 const typKreis = (t, k) => TYP_KREIS.get(`${t.slug}|${k.code}`);
-const typKreisLinks = (k, ausser) => TYPEN.map((t) => typKreis(t, k)).filter((x) => x && x.t !== ausser);
+const typKreisLinks = (k, ausser) => KAT_TYPEN.map((t) => typKreis(t, k)).filter((x) => x && x.t !== ausser);
+// Kategorieseiten je Bundesland, z. B. /bayern/milchtankstellen/
+const LAND_KAT = new Map(); // `${t.slug}|${land-Code}` → { t, l, liste, pfad }
+for (const t of KAT_TYPEN) for (const l of laender) {
+  const liste = t.liste.filter((e) => e.k.land === l.code);
+  // Liegen alle Einträge in einem Kreis (z. B. Stadtstaaten), genügt die Kreisseite
+  if (new Set(liste.map((e) => e.kreis)).size === 1 && typKreis(t, liste[0].k)) continue;
+  if (liste.length >= MIN_SEITE) LAND_KAT.set(`${t.slug}|${l.code}`, { t, l, liste, pfad: `/${l.slug}/${t.pfadSlug}/` });
+}
+const landKat = (t, l) => LAND_KAT.get(`${t.slug}|${l.code}`);
+const KATEGORIE_PFADE = new Set([...TYP_KREIS.values(), ...LAND_KAT.values()].map((x) => x.pfad));
 
 schreibe('/', seite({
   titel: 'Hofladen in der Nähe finden – Hofläden, Milchtankstellen & Eierautomaten',
@@ -731,6 +764,7 @@ schreibe('/', seite({
     <li>${ICON.hofladen}<div><h3>Hofläden</h3><p>Verkauf direkt auf dem Hof: Gemüse, Obst, Eier, Fleisch, Käse und was die Saison hergibt.</p><p class="anzahl">${zahl(anzHof)} Einträge</p></div></li>
     ${TYPEN.map((t) => `<li>${t.icon}<div><h3><a href="/${t.slug}/">${t.plural}</a></h3><p>${t.kurz}</p><p class="anzahl">${zahl(t.liste.length)} Einträge</p></div></li>`).join('\n    ')}
   </ul>
+  <p class="typ-chips start-kategorien"><a href="/hofladen-automaten/">${ICON.automat}Alle Hofladen-Automaten <span>${zahl(AUTOMATEN.liste.length)}</span></a><a href="/bio-hofladen/">${ICON.blatt}Bio-Hofläden <span>${zahl(BIO.liste.length)}</span></a><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a>${ANGEBOT_SEITEN.slice(0, 6).map((k) => `<a href="/angebot/${k}/">${esc(KATEGORIEN[k])}</a>`).join('')}</p>
 </section>
 <section class="abschnitt saison-jetzt" data-saison='${esc(saisonJetzt)}'>
   <h2>Gerade frisch vom Feld</h2>
@@ -826,6 +860,7 @@ ${topOrte.length ? `<section class="abschnitt">
   <h2>Orte mit den meisten Hofläden in ${esc(l.name)}</h2>
   <ul class="kreis-liste">${topOrte.map((o) => `<li><a href="${o.pfad}"><span>${esc(ortUeberschrift(o).replace(/ in .*/, ''))} in ${esc(o.ort)}</span><span class="zahl">${zahl(o.liste.length)}</span></a></li>`).join('')}</ul>
 </section>` : ''}
+${KAT_TYPEN.some((t) => landKat(t, l)) ? `<section class="abschnitt"><h2>Nach Kategorie in ${esc(l.name)}</h2><p class="typ-chips">${KAT_TYPEN.map((t) => landKat(t, l)).filter(Boolean).map((x) => `<a href="${x.pfad}">${x.t.icon}${x.t.plural} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p></section>` : ''}
 <section class="abschnitt seo-text">
   <h2>Hofladen in ${esc(l.name)}: Überblick</h2>
   ${gebietsText(alle, `in ${l.name}`, { orteNennen: false })}
@@ -902,7 +937,7 @@ ${REGIONEN.has(k.code) ? quellenHtml(REGIONEN.get(k.code)) : ''}`,
   }
 }
 
-// ---------- Automatentyp je Kreis ----------
+// ---------- Kategorie je Kreis (Automatentypen, alle Automaten, Bio) ----------
 for (const { t, k, liste: roh, pfad } of TYP_KREIS.values()) {
   const liste = roh.slice().sort((a, b) => a.ortAnzeige.localeCompare(b.ortAnzeige, 'de') || a.titel.localeCompare(b.titel, 'de'));
   const n = liste.length;
@@ -916,7 +951,7 @@ for (const { t, k, liste: roh, pfad } of TYP_KREIS.values()) {
     .map((x) => [distanzKm(mitte.lat, mitte.lon, kreisMitte.get(x.k.code).lat, kreisMitte.get(x.k.code).lon), x])
     .sort((a, b) => a[0] - b[0]).slice(0, 8);
   const andere = typKreisLinks(k, t);
-  const einzahl = t.name === 'Milchtankstelle' ? 'eine Milchtankstelle' : `einen ${t.name}`;
+  const einzahl = akkusativ(t);
   schreibe(pfad, seite({
     titel: passend(`${t.plural} ${k.im} – ${zahl(n)} Standorte mit Öffnungszeiten`, `${t.plural} ${k.im} – ${zahl(n)} Standorte`, `${t.plural} ${k.im}`),
     beschreibung: `${t.plural} ${k.im}: ${zahl(n)} Standorte${ortNamen.length > 1 ? `, u. a. in ${ortNamen.slice(0, 3).join(', ')}` : ` in ${ortNamen[0]}`}. Adresse, Öffnungszeiten, Angebot und Route – plus ${t.plural} in den Nachbarkreisen.`,
@@ -944,11 +979,116 @@ for (const { t, k, liste: roh, pfad } of TYP_KREIS.values()) {
   <h2>${t.name} ${esc(k.im)} finden</h2>
   <p>${esc(gross(k.im))} gibt es ${zahl(n)} ${t.plural}: ${nennung(ortNamen.slice(0, 8).map((o) => orte.get(o) > 1 ? `${zahl(orte.get(o))} in ${esc(o)}` : esc(o)))}${ortNamen.length > 8 ? ' und weitere Orte' : ''}.${rund ? ` ${rund === n ? 'Alle sind' : `${zahl(rund)} davon sind`} laut Angabe rund um die Uhr zugänglich.` : ''}${sonntag && sonntag !== rund ? ` Sonntags geöffnet: ${zahl(sonntag)}.` : ''} Gib oben deine Postleitzahl ein, um ${einzahl} in deiner Nähe nach Entfernung sortiert zu sehen.</p>
   ${t.text.map((x) => `<p>${x}</p>`).join('')}
-  <p>Mehr aus der Region: <a href="${k.pfad}">alle Hofläden ${esc(k.im)}</a>, <a href="/${t.slug}/#${k.landSlug}">${t.plural} in ${esc(k.landName)}</a> und alle <a href="/${t.slug}/">${t.plural} in Deutschland</a>.</p>
+  <p>Mehr aus der Region: <a href="${k.pfad}">alle Hofläden ${esc(k.im)}</a>, <a href="${landKat(t, laender.find((l) => l.code === k.land))?.pfad || `/${t.slug}/#${k.landSlug}`}">${t.plural} in ${esc(k.landName)}</a> und alle <a href="/${t.slug}/">${t.plural} in Deutschland</a>.</p>
 </section>
 ${nachbarn.length ? `<section class="abschnitt nachbarn"><h2>${t.plural} in der Umgebung</h2><ul class="kreis-liste">${nachbarn.map(([, x]) => `<li><a href="${x.pfad}"><span>${esc(x.k.titel)}</span><span class="zahl">${zahl(x.liste.length)}</span></a></li>`).join('')}</ul></section>` : ''}`,
   }));
 }
+
+// ---------- „In meiner Nähe“: Standortsuche mit optionalem Filter (Ergebnis per API, Seite bleibt ohne JS vollständig) ----------
+const naeheSuche = (filter = {}, text = 'In meiner Nähe suchen') => `<div class="naehe-suche" data-naehe='${esc(JSON.stringify(filter))}'>
+  <button type="button" class="knopf knopf-dunkel" data-naehe-start>${ICON.standort}${esc(text)}</button>
+  <label class="naehe-offen"><input type="checkbox" data-naehe-offen> nur jetzt geöffnet</label>
+  <p class="leise" data-naehe-status hidden></p>
+  <div class="karten-reihe" data-naehe-liste></div>
+</div>`;
+const NAEHE_FILTER = (t) => t === BIO ? { bio: 1 } : t === AUTOMATEN ? { typ: 'automat' } : { art: t.arten.join(',') };
+
+// ---------- Kategorie je Bundesland (kompakte Liste nach Kreis) ----------
+for (const { t, l, liste, pfad } of LAND_KAT.values()) {
+  const proK = new Map();
+  for (const e of liste) { if (!proK.has(e.k)) proK.set(e.k, []); proK.get(e.k).push(e); }
+  const kreisListe = [...proK].sort((a, b) => a[0].titel.localeCompare(b[0].titel, 'de'));
+  for (const [, es] of kreisListe) es.sort((a, b) => a.ortAnzeige.localeCompare(b.ortAnzeige, 'de') || a.titel.localeCompare(b.titel, 'de'));
+  const geordnet = kreisListe.flatMap(([, es]) => es);
+  const rund = liste.filter((e) => istRund(wocheVon(e))).length;
+  const andere = KAT_TYPEN.filter((x) => x !== t).map((x) => landKat(x, l)).filter(Boolean);
+  const top = [...proK].sort((a, b) => b[1].length - a[1].length).slice(0, 3).map(([k]) => k.titel);
+  schreibe(pfad, seite({
+    titel: passend(`${t.plural} in ${l.name} – ${zahl(liste.length)} Standorte nach Kreis`, `${t.plural} in ${l.name} – ${zahl(liste.length)} Standorte`, `${t.plural} in ${l.name}`),
+    beschreibung: `${t.plural} in ${l.name}: ${zahl(liste.length)} Standorte in ${plural(proK.size, 'Kreis', 'Kreisen')}, die meisten ${nennung(top.map((x) => x.replace(/^Landkreis /, 'im Landkreis ')))}. Mit Adresse, Öffnungszeiten und Route.`.slice(0, 300),
+    pfad,
+    klasse: 'kompakt',
+    jsonld: [itemList(`${t.plural} in ${l.name}`, hofItems(geordnet))],
+    krumen: [[l.name, `/${l.slug}/`], [t.plural, pfad]],
+    inhalt: `
+<section class="seitenkopf">
+  <p class="hof-art typ-icon">${t.icon}</p>
+  <h1>${esc(t.plural)} in ${esc(l.name)}</h1>
+  <p>${zahl(liste.length)} ${esc(t.plural)} in ${plural(proK.size, 'Kreis', 'Kreisen')}${rund ? `, davon ${zahl(rund)} rund um die Uhr zugänglich` : ''}. Wähle deinen Kreis oder suche ${esc(akkusativ(t))} in deiner Nähe.</p>
+  ${naeheSuche(NAEHE_FILTER(t), `${t.plural} in meiner Nähe`)}
+  ${andere.length ? `<p class="typ-chips">${andere.map((x) => `<a href="${x.pfad}">${x.t.icon}${x.t.plural} <span>${zahl(x.liste.length)}</span></a>`).join('')}<a href="/${l.slug}/">Alle Hofläden <span>${zahl(l.anzahl)}</span></a></p>` : ''}
+</section>
+<nav class="abschnitt sprung-liste" aria-label="Kreise"><h2>${esc(t.plural)} nach Kreis</h2><ul class="kreis-liste">${kreisListe.map(([k, es]) => `<li><a href="#k-${k.slug}"><span>${esc(k.titel)}</span><span class="zahl">${zahl(es.length)}</span></a></li>`).join('')}</ul></nav>
+${kreisListe.map(([k, es]) => { const tk = typKreis(t, k); return `<section class="abschnitt typ-land" id="k-${k.slug}"><h2>${tk ? `<a href="${tk.pfad}">${esc(t.plural)} ${esc(k.im)}</a>` : `${esc(t.plural)} ${esc(k.im)}`}</h2><ul class="eintrag-liste">${es.map((e) => `<li><a href="${e.pfad}">${esc(e.titelSeite)}</a> <span class="zahl">${esc(e.ortAnzeige)}</span></li>`).join('')}</ul></section>`; }).join('\n')}
+<section class="abschnitt seo-text"><h2>${esc(t.name)} in ${esc(l.name)} finden</h2>${t.text.map((x) => `<p>${x}</p>`).join('')}
+<p>Alle ${esc(t.plural)} in Deutschland findest du unter <a href="/${t.slug}/">${esc(t.plural)}</a>; alle Höfe in ${esc(l.name)} unter <a href="/${l.slug}/">Hofläden in ${esc(l.name)}</a>.</p></section>`,
+  }));
+}
+
+// ---------- Alle Hofladen-Automaten (bundesweit) ----------
+{
+  const t = AUTOMATEN;
+  const proLand = laender.map((l) => ({ l, liste: t.liste.filter((e) => e.k.land === l.code) })).filter((x) => x.liste.length);
+  const rund = t.liste.filter((e) => istRund(wocheVon(e))).length;
+  schreibe('/hofladen-automaten/', seite({
+    titel: `Hofladen-Automaten in der Nähe – ${zahl(t.liste.length)} Automaten in Deutschland`,
+    beschreibung: `Hofladen-Automat in der Nähe finden: ${zahl(t.liste.length)} Milchtankstellen, Eierautomaten und Regiomaten, ${zahl(rund)} davon rund um die Uhr – mit Öffnungszeiten, Route und „jetzt geöffnet“.`,
+    pfad: '/hofladen-automaten/',
+    krumen: [['Hofladen-Automaten', '/hofladen-automaten/']],
+    jsonld: [itemList('Hofladen-Automaten nach Bundesland', proLand.map(({ l }) => [`Hofladen-Automaten in ${l.name}`, landKat(t, l)?.pfad || `/${l.slug}/`]))],
+    inhalt: `
+<section class="seitenkopf">
+  <p class="hof-art typ-icon">${t.icon}</p>
+  <h1>Hofladen-Automaten in Deutschland</h1>
+  <p>${zahl(t.liste.length)} Automaten mit Lebensmitteln vom Hof, ${zahl(rund)} davon rund um die Uhr zugänglich. Finde den nächsten – auch nur die, die gerade geöffnet sind.</p>
+  ${naeheSuche({ typ: 'automat' }, 'Automaten in meiner Nähe')}
+  <p class="typ-chips">${TYPEN.map((x) => `<a href="/${x.slug}/">${x.icon}${x.plural} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p>
+</section>
+<section class="abschnitt seo-text">${t.text.map((x) => `<p>${x}</p>`).join('')}</section>
+<section class="abschnitt"><h2>Hofladen-Automaten nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, liste }) => `<li><a href="${landKat(t, l)?.pfad || `/${l.slug}/`}"><span>${esc(l.name)}</span><span class="zahl">${zahl(liste.length)}</span></a></li>`).join('')}</ul></section>`,
+  }));
+}
+
+// ---------- Angebot: Produkte vom Hof (bundesweit nach Bundesland und Kreis) ----------
+for (const kat of ANGEBOT_SEITEN) {
+  const [titelKurz, mit] = ANGEBOT[kat];
+  const alle = eintraege.filter((e) => e.kat.includes(kat));
+  const nHof = alle.filter((e) => e.typ === 'hofladen').length;
+  const proLand = laender.map((l) => ({ l, ks: l.kreise.map((k) => [k, (proKreis.get(k.code) || []).filter((e) => e.kat.includes(kat)).length]).filter(([, n]) => n) })).filter((x) => x.ks.length);
+  const pfad = `/angebot/${kat}/`;
+  schreibe(pfad, seite({
+    titel: passend(`${titelKurz} – ${zahl(alle.length)} Hofläden & Automaten mit ${mit}`, `${titelKurz} – ${zahl(alle.length)} Höfe in Deutschland`, titelKurz),
+    beschreibung: `${titelKurz} in deiner Nähe: ${zahl(nHof)} Hofläden und ${zahl(alle.length - nHof)} Hofautomaten mit ${mit} – nach Bundesland und Landkreis, mit Öffnungszeiten und Route.`,
+    pfad,
+    krumen: [['Angebot', '/angebot/'], [titelKurz, pfad]],
+    jsonld: [itemList(`${titelKurz} nach Kreis`, proLand.flatMap(({ ks }) => ks.map(([k]) => [k.titel, k.pfad])))],
+    inhalt: `
+<section class="seitenkopf">
+  <h1>${esc(titelKurz)}</h1>
+  <p>${zahl(alle.length)} Hofläden und Hofautomaten mit ${esc(mit)}${alle.length - nHof ? `, davon ${zahl(alle.length - nHof)} Automaten` : ''}. Wähle deinen Kreis – die Liste ist dann schon auf ${esc(KATEGORIEN[kat])} gefiltert.</p>
+  ${naeheSuche({ produkt: kat }, `${KATEGORIEN[kat]} in meiner Nähe`)}
+  <p class="typ-chips">${ANGEBOT_SEITEN.filter((x) => x !== kat).map((x) => `<a href="/angebot/${x}/">${esc(KATEGORIEN[x])}</a>`).join('')}</p>
+</section>
+<section class="abschnitt seo-text"><p>Welche Höfe ${esc(mit)} anbieten, leiten wir aus den Angaben in OpenStreetMap und aus dem Namen des Hofs ab – das Sortiment kann je nach Saison abweichen.${['obst', 'gemuese', 'kartoffeln'].includes(kat) ? ' Was gerade Saison hat, zeigt der <a href="/saisonkalender/">Saisonkalender</a>.' : ''}</p></section>
+<nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>Nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, ks }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(ks.reduce((x, [, n]) => x + n, 0))}</span></a></li>`).join('')}</ul></nav>
+${proLand.map(({ l, ks }) => `<section class="abschnitt" id="${l.slug}"><h2>${esc(titelKurz)} in ${esc(l.name)}</h2><ul class="kreis-liste">${ks.sort((a, b) => b[1] - a[1] || a[0].titel.localeCompare(b[0].titel, 'de')).map(([k, n]) => `<li><a href="${k.pfad}?produkt=${kat}"><span>${esc(k.titel)}</span><span class="zahl">${zahl(n)}</span></a></li>`).join('')}</ul></section>`).join('\n')}`,
+  }));
+}
+schreibe('/angebot/', seite({
+  titel: 'Angebot im Hofladen – Eier, Milch, Fleisch, Obst und Gemüse vom Hof',
+  beschreibung: 'Was gibt es im Hofladen? Höfe mit Eiern, Milch, Käse, Fleisch und Wurst, Obst, Gemüse, Kartoffeln, Honig und mehr – nach Angebot sortiert, bundesweit.',
+  pfad: '/angebot/',
+  krumen: [['Angebot', '/angebot/']],
+  jsonld: [itemList('Angebot vom Hof', ANGEBOT_SEITEN.map((k) => [ANGEBOT[k][0], `/angebot/${k}/`]))],
+  inhalt: `
+<section class="seitenkopf">
+  <h1>Angebot vom Hof</h1>
+  <p>Finde Hofläden und Automaten nach dem, was du suchst.</p>
+</section>
+<section class="abschnitt"><ul class="kreis-liste">${ANGEBOT_SEITEN.map((k) => `<li><a href="/angebot/${k}/"><span>${esc(ANGEBOT[k][0])}</span><span class="zahl">${zahl(eintraege.filter((e) => e.kat.includes(k)).length)}</span></a></li>`).join('')}</ul></section>`,
+}));
+for (const k of ANGEBOT_SEITEN) KATEGORIE_PFADE.add(`/angebot/${k}/`);
 
 // ---------- Übersichten: sonntags geöffnet, Bio ----------
 for (const u of [
@@ -981,10 +1121,13 @@ for (const u of [
   <h1>${esc(u.h1)}</h1>
   <p>${plural(alle.length, 'Eintrag', 'Einträge')} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}, davon ${plural(nHof, 'Hofladen', 'Hofläden')}.</p>
   <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="ueb-q">Postleitzahl oder Ort</label><input id="ueb-q" name="q" ${SUCHFELD} placeholder="PLZ oder Ort" required><button type="submit">Suchen</button></form>
+  ${naeheSuche(u.filter === 'bio' ? { bio: 1 } : { sonntag: 1 }, u.filter === 'bio' ? 'Bio-Höfe in meiner Nähe' : 'Sonntags offene in meiner Nähe')}
 </section>
 <section class="abschnitt seo-text">${u.text(alle.length, nHof).map((x) => `<p>${x}</p>`).join('')}<p>Auch interessant: ${andere}, die <a href="/karte/">Hofladen-Karte</a> und der <a href="/saisonkalender/">Saisonkalender</a>.</p></section>
 <nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>Nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, ks }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(ks.reduce((x, [, n]) => x + n, 0))}</span></a></li>`).join('')}</ul></nav>
-${proLand.map(({ l, ks }) => `<section class="abschnitt" id="${l.slug}"><h2>${esc(u.h1.replace(' in Deutschland', ''))} in ${esc(l.name)}</h2><ul class="kreis-liste">${ks.sort((a, b) => b[1] - a[1] || a[0].titel.localeCompare(b[0].titel, 'de')).map(([k, n]) => `<li><a href="${k.pfad}?filter=${u.filter}"><span>${esc(k.titel)}</span><span class="zahl">${zahl(n)}</span></a></li>`).join('')}</ul></section>`).join('\n')}`,
+${proLand.map(({ l, ks }) => { const lk = u.filter === 'bio' && landKat(BIO, l);
+  return `<section class="abschnitt" id="${l.slug}"><h2>${lk ? `<a href="${lk.pfad}">${esc(u.h1.replace(' in Deutschland', ''))} in ${esc(l.name)}</a>` : `${esc(u.h1.replace(' in Deutschland', ''))} in ${esc(l.name)}`}</h2><ul class="kreis-liste">${ks.sort((a, b) => b[1] - a[1] || a[0].titel.localeCompare(b[0].titel, 'de')).map(([k, n]) => { const tk = u.filter === 'bio' && typKreis(BIO, k);
+    return `<li><a href="${tk ? tk.pfad : `${k.pfad}?filter=${u.filter}`}"><span>${esc(k.titel)}</span><span class="zahl">${zahl(n)}</span></a></li>`; }).join('')}</ul></section>`; }).join('\n')}`,
   }));
 }
 
@@ -1340,9 +1483,8 @@ writeFileSync(join(GEN, 'routen.json'), JSON.stringify({ umleitungen, entfernt }
 console.log(`Seitenarchiv: ${Object.keys(stand.seiten).length} Seiten, ${Object.keys(umleitungen).length} Weiterleitungen, ${entfernt.length} entfernte Höfe (410)`);
 
 // Sitemaps nach Seitentyp mit Sitemap-Index
-const TYP_KREIS_PFADE = new Set([...TYP_KREIS.values()].map((x) => x.pfad));
 const sitemapTyp = (p) => p.startsWith('/hof/') ? 'hoefe'
-  : TYP_KREIS_PFADE.has(p) ? 'kategorien'
+  : KATEGORIE_PFADE.has(p) || p.startsWith('/angebot/') ? 'kategorien'
   : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) ? 'orte'
   : /^\/[^/]+\/[^/]+\/$/.test(p) && laender.some((l) => p.startsWith(`/${l.slug}/`)) ? 'kreise'
   : 'seiten';
@@ -1430,7 +1572,7 @@ const KAT_CODES = Object.keys(KATEGORIEN);
 writeFileSync(join(GEN, 'eintraege.json'), JSON.stringify(eintraege.map((e) => [
   +e.lat.toFixed(5), +e.lon.toFixed(5), e.slug, e.titel, e.art, e.ortAnzeige, e.oeffnungszeiten || '', e.typ === 'hofladen' ? 1 : 0,
   e.adresse, e.telefon || '', e.website || '', e.kat.map((x) => 'abcdefghijklmnop'[KAT_CODES.indexOf(x)]).join(''), e.bio ? 1 : 0,
-  e.oeffnungszeiten_text || ''])));
+  e.oeffnungszeiten_text || '', e.sonntag ? 1 : 0])));
 writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;

@@ -418,3 +418,11 @@ html { overflow-x: clip; }
 
 /* Umkreis-Auswahl */
 .segment.umkreis button span { color: var(--grau); }
+
+/* Nähe-Suche auf Kategorieseiten */
+.naehe-suche { margin-top: 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; }
+.naehe-suche .knopf svg { width: 20px; height: 20px; }
+.naehe-offen { font-size: .95rem; display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; }
+.naehe-suche [data-naehe-status], .naehe-suche [data-naehe-liste] { flex-basis: 100%; }
+.naehe-suche [data-naehe-liste]:empty { display: none; }
+.start-kategorien { margin-top: 1.4rem; }

@@ -82,6 +82,12 @@ test('Suche und API', async () => {
   r = await anfrage('/api/umkreis?plz=03149&limit=3');
   assert.equal(r.status, 200);
   assert.equal((await r.json()).ergebnisse.length, 3);
+  r = await anfrage('/api/umkreis?plz=88069&bio=1&limit=10');
+  assert.ok((await r.json()).ergebnisse.every((e) => e.bio), 'Bio-Filter');
+  r = await anfrage('/api/umkreis?plz=88069&typ=automat&limit=10');
+  assert.ok((await r.json()).ergebnisse.every((e) => e.typ === 'automat'), 'Automaten-Filter');
+  r = await anfrage('/api/umkreis?plz=88069&art=Milchtankstelle&limit=5');
+  assert.ok((await r.json()).ergebnisse.every((e) => e.art === 'Milchtankstelle'), 'Art-Filter');
   r = await anfrage('/api/orte?q=Cottb');
   assert.ok((await r.json()).treffer.some((t) => t.name === 'Cottbus'));
 });

@@ -208,7 +208,8 @@ $('[data-filter-zuruecksetzen]')?.addEventListener('click', () => {
   for (const x of $$('[data-kat-filter], [data-offen-filter], [data-sonntag-filter], [data-bio-filter], [data-rund-filter]')) x.setAttribute('aria-pressed', 'false');
   wendeFilterAn();
 });
-// Vorauswahl über die Adresse, z. B. ?filter=sonntag oder ?filter=bio (Links von den Übersichtsseiten)
+// Vorauswahl über die Adresse, z. B. ?filter=sonntag, ?filter=bio oder ?produkt=eier (Links von den Übersichtsseiten)
+for (const p of (params.get('produkt') || '').split(',').filter(Boolean)) $(`[data-kat-filter="${p}"]`)?.click();
 for (const f of (params.get('filter') || '').split(',')) {
   if (f === 'sonntag') $('[data-sonntag-filter]')?.click();
   if (f === 'bio') $('[data-bio-filter]')?.click();
@@ -223,7 +224,6 @@ async function plzModus() {
   const liste = $('[data-liste]');
   if (!liste || !/^\d{5}$/.test(plz || '')) return;
   speicher.set('letztePlz', plz);
-  for (const p of produkte) $(`[data-kat-filter="${p}"]`)?.click();
   try {
     const r = await fetch(`/api/umkreis?plz=${plz}&limit=40&radius=30${produkte.length ? `&produkt=${produkte.join(',')}` : ''}`);
     const d = await r.json();
@@ -253,6 +253,34 @@ async function plzModus() {
       zeigeStatus($('[data-umgebung]'));
     }
   } catch {}
+}
+
+// ---------- „In meiner Nähe“ auf Kategorieseiten ----------
+for (const box of $$('[data-naehe]')) {
+  const start = $('[data-naehe-start]', box), meldung = $('[data-naehe-status]', box), liste = $('[data-naehe-liste]', box);
+  const nurOffen = $('[data-naehe-offen]', box);
+  if (!('geolocation' in navigator)) { start.hidden = true; nurOffen.parentElement.hidden = true; continue; }
+  const filterAnwenden = () => {
+    let n = 0;
+    for (const k of $$('.laden', liste)) { k.hidden = nurOffen.checked && !(k.dataset.oh && status(k.dataset.oh)?.offen); if (!k.hidden) n++; }
+    if (liste.children.length) { meldung.textContent = n ? `${n} Treffer im Umkreis von 40 km.` : 'Gerade ist hier in der Nähe nichts geöffnet.'; meldung.hidden = false; }
+  };
+  nurOffen.addEventListener('change', filterAnwenden);
+  start.addEventListener('click', () => {
+    start.disabled = true; meldung.hidden = false; meldung.textContent = 'Standort wird ermittelt …';
+    navigator.geolocation.getCurrentPosition(async (pos) => {
+      try {
+        const f = JSON.parse(box.dataset.naehe || '{}');
+        const q = new URLSearchParams({ lat: pos.coords.latitude.toFixed(4), lon: pos.coords.longitude.toFixed(4), limit: 24, radius: 40, ...f });
+        const d = await (await fetch(`/api/umkreis?${q}`)).json();
+        liste.innerHTML = (d.ergebnisse || []).map((e) => karteHtml(e)).join('');
+        zeigeStatus(liste);
+        if (!d.ergebnisse?.length) meldung.textContent = 'Im Umkreis von 40 km haben wir dazu noch keine Einträge.';
+        else filterAnwenden();
+      } catch { meldung.textContent = 'Die Suche hat gerade nicht geklappt.'; }
+      start.disabled = false;
+    }, () => { start.disabled = false; meldung.textContent = 'Standort nicht verfügbar – bitte oben die Postleitzahl eingeben.'; }, { timeout: 10000, maximumAge: 600000 });
+  });
 }
 
 // ---------- Startseite ----------

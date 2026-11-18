@@ -150,11 +150,17 @@ function umkreis(url, env, ctx, request) {
   const limit = Math.min(50, Math.max(1, parseInt(url.searchParams.get('limit') || '12', 10)));
   const radius = Math.min(100, Math.max(1, parseFloat(url.searchParams.get('radius') || '40')));
   const typ = url.searchParams.get('typ');
+  const bio = url.searchParams.get('bio') === '1';
+  const sonntag = url.searchParams.get('sonntag') === '1';
+  const arten = (url.searchParams.get('art') || '').split(',').filter(Boolean);
   const produkte = (url.searchParams.get('produkt') || '').split(',').map((x) => KAT_BUCHSTABEN[KATEGORIEN.indexOf(x)]).filter(Boolean);
   const treffer = [];
   for (const e of EINTRAEGE) {
     if (typ === 'hofladen' && !e[7]) continue;
     if (typ === 'automat' && e[7]) continue;
+    if (bio && !e[12]) continue;
+    if (arten.length && !arten.includes(e[4])) continue;
+    if (sonntag && !e[14]) continue;
     if (produkte.length && !produkte.every((b) => e[11].includes(b))) continue;
     if (Math.abs(e[0] - lat) > radius / 100 || Math.abs(e[1] - lon) > radius / 60) continue;
     const km = distanzKm(lat, lon, e[0], e[1]);
