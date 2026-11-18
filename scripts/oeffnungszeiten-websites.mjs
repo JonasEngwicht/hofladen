@@ -7,6 +7,7 @@
 // Test des Parsers ohne Netz: node scripts/oeffnungszeiten-websites.mjs --test
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { parse as ohParse } from '../static/oh.js';
+import { pathToFileURL } from 'node:url';
 
 const UA = 'HofladenlisteBot/1.0 (+https://hofladenliste.de/mitmachen/; Öffnungszeiten für das Hofladen-Verzeichnis)';
 const ERG = 'data/ergaenzungen.json';
@@ -226,6 +227,8 @@ async function pruefeWebsite(website) {
   return ergebnis;
 }
 
+// Selbsttest und Hauptlauf nur beim direkten Aufruf (nicht beim Import von textZuOsm)
+if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
 // ---------- Selbsttest ----------
 if (process.argv[2] === '--test') {
   const faelle = [
@@ -298,3 +301,4 @@ async function arbeiter() {
 await Promise.all(Array.from({ length: 8 }, arbeiter));
 writeFileSync(ERG, JSON.stringify(Object.fromEntries(Object.entries(erg).sort(([a], [b]) => a.localeCompare(b))), null, 1) + '\n');
 console.log('Fertig:', JSON.stringify(stat));
+}

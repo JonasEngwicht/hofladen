@@ -89,7 +89,28 @@ for (const e of eintraege) {
   for (const f of ['website', 'oeffnungszeiten', 'telefon', 'email', 'facebook', 'instagram']) {
     if (z[f] && !e[f]) { e[f] = z[f]; felder.push(f); }
   }
-  if (felder.length) { e.ergaenzt = { felder, quelle: z.quelle, stand: z.stand }; ergaenztAnzahl++; }
+  if (felder.length) { e.ergaenzt = { felder, quellen: [{ felder, quelle: z.quelle, stand: z.stand }] }; ergaenztAnzahl++; }
+}
+
+// Recherche-Funde aus öffentlichen Quellen der Höfe, Gemeinden und Tourismusverbände (data/recherche.json,
+// siehe scripts/recherche-uebernehmen.mjs): füllen ebenfalls nur leere Felder, je Feld mit eigener Quelle.
+const recherche = existsSync(join(ROOT, 'data', 'recherche.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'recherche.json'), 'utf8')) : {};
+let rechercheAnzahl = 0;
+for (const e of eintraege) {
+  const r = recherche[e.osm || e.id];
+  if (!r) continue;
+  const neu = new Map(); // Quelle → { felder, stand }
+  for (const [f, v] of Object.entries(r.felder)) {
+    if (f === 'oeffnungszeiten_text' ? (e.oeffnungszeiten || e.oeffnungszeiten_text) : e[f]) continue;
+    e[f] = v.wert;
+    const q = neu.get(v.quelle) || { felder: [], quelle: v.quelle, stand: v.stand };
+    q.felder.push(f === 'oeffnungszeiten_text' ? 'oeffnungszeiten' : f);
+    neu.set(v.quelle, q);
+  }
+  if (!neu.size) continue;
+  e.ergaenzt ??= { felder: [], quellen: [] };
+  for (const q of neu.values()) { e.ergaenzt.felder.push(...q.felder); e.ergaenzt.quellen.push(q); }
+  rechercheAnzahl++;
 }
 
 // Angaben von Betreibern und geprüften Korrekturen haben Vorrang vor OSM
@@ -109,7 +130,12 @@ for (const e of eintraege) {
     if (m.fotos?.length) e.fotos = [...(e.fotos || []), ...m.fotos];
     e.gepflegt = { art: m.art, stand: m.stand };
     e.geprueft = m.stand > (e.geprueft || '') ? m.stand : e.geprueft;
-    if (e.ergaenzt) e.ergaenzt.felder = e.ergaenzt.felder.filter((f) => !d[f]);
+    if (e.ergaenzt) {
+      e.ergaenzt.felder = e.ergaenzt.felder.filter((f) => !d[f]);
+      for (const q of e.ergaenzt.quellen) q.felder = q.felder.filter((f) => !d[f]);
+      e.ergaenzt.quellen = e.ergaenzt.quellen.filter((q) => q.felder.length);
+      if (!e.ergaenzt.felder.length) e.ergaenzt = null;
+    }
   }
 }
 
@@ -1376,7 +1402,7 @@ for (const e of eintraege) {
     ${e.saisonHinweis ? `<section class="block saison-hinweis"><h2>Aktuell und saisonal</h2><p>${esc(e.saisonHinweis)}</p><p class="leise">Angabe des Betriebs, Stand ${esc(datumDe(e.gepflegt.stand))}</p></section>` : ''}
     ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
-    ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram' })[f]).join(', ')} ergänzt aus <a href="${esc(e.ergaenzt.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.ergaenzt.quelle).split('/')[0])}</a>${e.ergaenzt.stand ? ` (Stand ${esc(e.ergaenzt.stand.split('-').reverse().join('.'))})` : ''}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
+    ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.quellen.map((q) => `${q.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram' })[f]).join(', ')} ergänzt aus <a href="${esc(q.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(q.quelle).split('/')[0])}</a>${q.stand ? ` (Stand ${esc(datumDe(q.stand))})` : ''}`).join('; ')}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
     <p class="hinweis">Angaben ohne Gewähr. ${e.gepflegt ? `${e.gepflegt.art === 'uebernahme' ? 'Der Betrieb pflegt diesen Eintrag selbst' : 'Angaben geprüft und ergänzt'} (Stand ${esc(datumDe(e.gepflegt.stand))}). ` : ''}${e.quelle === 'betreiber' ? `Eingetragen vom Betrieb. Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>` : e.quelle === 'osm'
       ? `Quelle: <a href="https://www.openstreetmap.org/${e.osm}" rel="nofollow noopener" target="_blank">OpenStreetMap</a>. Etwas stimmt nicht? <a href="https://www.openstreetmap.org/edit?${e.osm.replace('/', '=')}" rel="nofollow noopener" target="_blank">In OpenStreetMap korrigieren</a> oder <a href="/mitmachen/?hof=${esc(e.slug)}">uns Bescheid geben</a>.`
       : `${e.quelleUrl ? `Quelle: <a href="${esc(e.quelleUrl)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.quelleUrl).split('/')[0])}</a>. ` : ''}Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>`}</p>
@@ -1790,5 +1816,5 @@ writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;
 const mitKat = eintraege.filter((e) => e.kat.length).length;
-console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Ergänzungen, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
+console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
 if (impFehlt) console.warn('WARNUNG: Impressum in site.config.json ist unvollständig.');
