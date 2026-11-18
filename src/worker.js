@@ -16,7 +16,7 @@ import ROUTEN from './generated/routen.json';
 import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
 import { wasWoTrennen } from './waswo.js';
-import { BETRIEB_SCHEMA, betriebApi, neuigkeitenApi, nachrichtAnnehmen, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
+import { BETRIEB_SCHEMA, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
@@ -654,6 +654,10 @@ async function seiteAusliefern(request, env, url) {
 }
 
 export default {
+  // Täglicher Cron (wrangler.jsonc): Erinnerungen an Betriebe, nur mit ERINNERUNGEN_AKTIV = "ja"
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(erinnerungenSenden(env, H).then((r) => console.log('Erinnerungen', JSON.stringify(r))).catch((e) => console.error('Erinnerungen', e.message)));
+  },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.hostname.startsWith('www.')) {

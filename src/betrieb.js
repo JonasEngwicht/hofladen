@@ -316,3 +316,43 @@ export async function nachrichtAnnehmen(request, env, ctx, h) {
   ctx.waitUntil(hofZaehlen(env, h, e[15], 'nachricht').catch(() => {}));
   return antwortJson({ ok: true });
 }
+
+// ---------- Erinnerungen: „Stimmt noch alles?“ nach 6 Monaten ohne Bestätigung ----------
+// Läuft täglich über den Cron-Trigger des Workers, aber nur wenn ERINNERUNGEN_AKTIV = "ja" gesetzt ist.
+// Höchstens eine Erinnerung pro Konto alle 180 Tage, höchstens 50 Mails pro Lauf.
+export async function erinnerungenSenden(env, h, { jetzt = new Date(), maxMails = 50 } = {}) {
+  if (env.ERINNERUNGEN_AKTIV !== 'ja' || !env.STATS || !env.RESEND_API_KEY) return { gesendet: 0, aus: true };
+  await h.schema(env);
+  const grenzeIso = new Date(jetzt.getTime() - 180 * 864e5).toISOString();
+  const { results } = await env.STATS.prepare(`SELECT k.id, k.email, h.sid, h.seit,
+      (SELECT max(m.geaendert) FROM meldungen m WHERE m.art = 'uebernahme' AND m.status IN ('freigegeben', 'erledigt') AND json_extract(m.daten, '$.eintrag') = h.sid) AS bestaetigt
+    FROM konten k JOIN konto_hoefe h ON h.konto = k.id WHERE k.erinnert IS NULL OR k.erinnert < ?1`).bind(grenzeIso).all();
+  const idx = h.eintragIndex();
+  let gesendet = 0;
+  const erledigt = new Set();
+  for (const r of results) {
+    if (gesendet >= maxMails || erledigt.has(r.id)) continue;
+    if ((r.bestaetigt || r.seit) > grenzeIso) continue;
+    const e = h.aufloesen(r.sid, idx);
+    if (!e) continue;
+    const ja = await linkErstellen(env, h, { email: r.email, zweck: 'alles-stimmt', sid: r.sid, minuten: 14 * 24 * 60 });
+    await mailSenden(env, { an: r.email, betreff: `Stimmt noch alles bei „${e[3]}“?`, text: `Hallo,
+
+seit einem halben Jahr hast du die Angaben zu „${e[3]}“ auf Hofladenliste nicht mehr bestätigt.
+Aktuell steht dort: ${e[6] ? `Öffnungszeiten ${e[6]}` : 'keine Öffnungszeiten'}${e[9] ? `, Telefon ${e[9]}` : ''}.
+
+Alles noch richtig? Ein Klick genügt (gültig 14 Tage):
+${ja}
+
+Etwas hat sich geändert? Melde dich an und pass es an:
+${h.DOMAIN}/betrieb/
+
+Viele Grüße
+Hofladenliste – ${h.DOMAIN}
+Du bekommst diese Erinnerung höchstens zweimal im Jahr.` });
+    await env.STATS.prepare('UPDATE konten SET erinnert = ?1 WHERE id = ?2').bind(jetzt.toISOString(), r.id).run();
+    erledigt.add(r.id);
+    gesendet++;
+  }
+  return { gesendet };
+}
