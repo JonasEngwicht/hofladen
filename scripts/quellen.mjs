@@ -46,10 +46,14 @@ export function hofTyp(name) {
 }
 
 // Auswahl für neue Einträge: eindeutiger Name, passende Kategorie, ausreichende Konfidenz
+// Solawi aus der Karte von morgen: oft Verein oder Genossenschaft, deshalb eigene Namensregeln.
+// Nicht aufnehmen: Initiativen, Räte, Schulen, Läden, Depots und Verteilpunkte (keine Höfe).
+const SOLAWI_KEIN = /ernährungsrat|ernaehrungsrat|runder tisch|schule|forschung|whitepaper|weltladen|wochenmarkt|transition|zukunft|küche|kueche|foodhub|leihladen|im wandel|wandel\.|marktschw|kaffee|teikei|naturkost|netzwerk|bundesverband|beratung|themenpark|werkstatt|mundraub|ernte-teilen|salon|nachhaltig in|regionalkollektiv|genussgemeinschaft|laden ums|vegutopia|vegan|depot|deopt|verteilpunkt|abholstelle|verteilstelle|\.org\b|gmbh|whitepaper|förderkreis|foerderkreis/i;
+const SOLAWI_NAME = /solawi|solavie|solidarisch|\bcsa\b|hof\b|höfe|hof[a-zäöü]|gärtner|gaertner|garten|acker|landbau|landwirtschaft|kooperative|koop\b|kollektiv|kombinat|gemüse|gemuese|farm|\bgut\b|mühle|muehle/i;
+export const solawiOk = (name) => !!name && !/^\s*solawi\s*$/i.test(name) && SOLAWI_NAME.test(name) && !SOLAWI_KEIN.test(name);
 export function istHofladen(o) {
   const name = o.name || '';
-  // Solawi aus der Karte von morgen: oft Verein oder Genossenschaft, deshalb ohne die Namensregeln
-  if (o.solawi) return !!name && o.konf >= MIN_KONF_STARK && !/netzwerk|bundesverband|beratung/i.test(name);
+  if (o.solawi) return o.konf >= MIN_KONF_STARK && solawiOk(name);
   if (!name || KEIN_HOF.test(name)) return false;
   const kat = o.kat || null, hier = o.hier || '';
   const katHof = KAT_HOF.has(kat) || HIER_HOF.test(hier);
