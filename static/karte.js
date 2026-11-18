@@ -2,8 +2,9 @@
 import { status, zeilen, uebersetze } from './oh.js';
 
 export const KATEGORIEN = {
-  eier: 'Eier', milch: 'Milch', kaese: 'Käse', fleisch: 'Fleisch & Wurst', gemuese: 'Gemüse', obst: 'Obst',
-  kartoffeln: 'Kartoffeln', honig: 'Honig', brot: 'Brot', getraenke: 'Saft & Wein', blumen: 'Blumen', weihnachtsbaeume: 'Weihnachtsbäume',
+  eier: 'Eier', milch: 'Milch', kaese: 'Käse', fleisch: 'Fleisch & Wurst', gefluegel: 'Geflügel', wild: 'Wild', fisch: 'Fisch',
+  gemuese: 'Gemüse', obst: 'Obst', kartoffeln: 'Kartoffeln', honig: 'Honig', brot: 'Brot', nudeln: 'Nudeln', marmelade: 'Marmelade',
+  getraenke: 'Saft & Wein', blumen: 'Blumen', weihnachtsbaeume: 'Weihnachtsbäume', tierfutter: 'Tierfutter',
 };
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -58,11 +59,11 @@ export function statusHtml(oh, ohText, datum) {
 export function karteHtml(d, { datum = null, ueberschrift = 'h3' } = {}) {
   const kat = (d.kat || []).slice(0, 5);
   const H = ueberschrift;
-  return `<article class="laden laden-${d.typ}" data-typ="${d.typ}" data-kat="${esc((d.kat || []).join(' '))}" data-lat="${d.lat}" data-lon="${d.lon}" data-slug="${esc(d.slug)}"${d.land ? ` data-land="${esc(d.land)}"` : ''}${d.oh ? ` data-oh="${esc(d.oh)}"` : ''}${d.bio ? ' data-bio="1"' : ''}${d.karte ? ' data-karte-zahlung="1"' : ''}${d.km != null ? ` data-km="${d.km}"` : ''}>
+  return `<article class="laden laden-${d.typ}" data-typ="${d.typ}" data-kat="${esc((d.kat || []).join(' '))}" data-lat="${d.lat}" data-lon="${d.lon}" data-slug="${esc(d.slug)}"${d.land ? ` data-land="${esc(d.land)}"` : ''}${d.oh ? ` data-oh="${esc(d.oh)}"` : ''}${d.bio ? ' data-bio="1"' : ''}${d.karte ? ' data-karte-zahlung="1"' : ''}${d.kinder ? ' data-kinder="1"' : ''}${d.km != null ? ` data-km="${d.km}"` : ''}>
   <div class="laden-symbol" title="${esc(d.art)}">${typIcon(d.art)}</div>
   <button class="merken-mini" type="button" data-merken="${esc(d.slug)}" aria-pressed="false" aria-label="${esc(d.titel)} merken">${ICON.herz}</button>
   <div class="laden-text">
-    <p class="laden-art">${esc(d.art)}${d.bio ? ' <span class="bio">Bio</span>' : ''}${d.km != null ? ` <span class="km">${kmAnzeige(d.km)}</span>` : ''}</p>
+    <p class="laden-art">${esc(d.art)}${d.bio || d.verband ? ` <span class="bio">${esc(d.verband || 'Bio')}</span>` : ''}${d.km != null ? ` <span class="km">${kmAnzeige(d.km)}</span>` : ''}</p>
     <${H} class="laden-name"><a href="${esc(d.pfad)}">${esc(d.titel)}</a></${H}>
     <p class="laden-adr">${esc(d.adresse)}</p>
     ${statusHtml(d.oh, d.ohText, datum)}

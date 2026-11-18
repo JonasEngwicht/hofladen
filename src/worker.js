@@ -16,7 +16,7 @@ import ROUTEN from './generated/routen.json';
 import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
-const KAT_BUCHSTABEN = 'abcdefghijklmnop';
+const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
 
 function distanzKm(aLat, aLon, bLat, bLon) {
   const rad = Math.PI / 180;
@@ -226,7 +226,7 @@ function aufbereiten(e, km = null) {
   return {
     km, pfad: `/hof/${e[2]}/`, slug: e[2], id: e[15], titel: e[3], art: e[4], ort: e[5],
     oh: e[6] || null, typ: e[7] ? 'hofladen' : 'automat', adresse: e[8], telefon: e[9] || null, website: e[10] || null,
-    kat: [...e[11]].map((b) => KATEGORIEN[KAT_BUCHSTABEN.indexOf(b)]), bio: !!e[12], ohText: e[13] || null, lat: e[0], lon: e[1], land: e[26] || null, karte: /girocard|kreditkarte|kontaktlos/.test(e[21] || ''),
+    kat: [...e[11]].map((b) => KATEGORIEN[KAT_BUCHSTABEN.indexOf(b)]), bio: !!e[12], ohText: e[13] || null, lat: e[0], lon: e[1], land: e[26] || null, kinder: !!e[27], verband: (e[28] || '').split(',')[0] || null, karte: /girocard|kreditkarte|kontaktlos/.test(e[21] || ''),
   };
 }
 

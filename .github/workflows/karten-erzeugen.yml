@@ -8,7 +8,7 @@ on:
     inputs:
       maxzoom:
         description: Höchste Zoomstufe der Kacheln
-        default: '15'
+        default: '14'
   schedule:
     - cron: '23 2 4 */3 *' # vierteljährlich
 
@@ -46,14 +46,14 @@ jobs:
       - name: Deutschland ausschneiden
         env:
           D: ${{ steps.quelle.outputs.datum }}
-          Z: ${{ inputs.maxzoom || '15' }}
+          Z: ${{ inputs.maxzoom || '14' }}
         run: |
           ./pmtiles extract "https://build.protomaps.com/$D.pmtiles" de.pmtiles --bbox=5.5,47.0,15.6,55.2 --maxzoom="$Z" --download-threads=8
           ls -la de.pmtiles
           ./pmtiles show de.pmtiles | head -40
           groesse=$(stat -c %s de.pmtiles)
           # Free-Tier R2: 10 GB, während der Umstellung liegen zwei Versionen im Bucket
-          if [ "$groesse" -gt 4500000000 ]; then echo "Datei zu groß ($groesse Bytes) – mit maxzoom 14 neu starten"; exit 1; fi
+          if [ "$groesse" -gt 4500000000 ]; then echo "Datei zu groß ($groesse Bytes) – mit kleinerer maxzoom neu starten"; exit 1; fi
       - name: Hochladen
         env:
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
@@ -64,7 +64,7 @@ jobs:
           D: ${{ steps.quelle.outputs.datum }}
         run: |
           # Leipzig, Zoom 12 und 14: Kachel über den Worker muss der Kachel aus der Datei entsprechen
-          for zxy in "12 2188 1365" "14 8755 5460" "8 136 85"; do
+          for zxy in "12 2188 1365" "14 8755 5460" "8 136 85" "10 547 341"; do
             set -- $zxy
             ./pmtiles tile de.pmtiles $1 $2 $3 > lokal.bin || { echo "pmtiles tile nicht verfügbar"; break; }
             (gzip -dc lokal.bin 2>/dev/null || cat lokal.bin) > lokal.mvt
@@ -86,8 +86,9 @@ jobs:
       - name: Version eintragen und Testbuild
         env:
           D: ${{ steps.quelle.outputs.datum }}
+          Z: ${{ inputs.maxzoom || '14' }}
         run: |
-          node -e "require('fs').writeFileSync('data/karten.json', JSON.stringify({version: process.env.D, quelle: 'Protomaps-Build ' + process.env.D + ' (OpenStreetMap, ODbL)', groesse: require('fs').statSync('de.pmtiles').size}, null, 1) + '\n')"
+          node -e "require('fs').writeFileSync('data/karten.json', JSON.stringify({version: process.env.D, maxzoom: +process.env.Z, quelle: 'Protomaps-Build ' + process.env.D + ' (OpenStreetMap, ODbL)', groesse: require('fs').statSync('de.pmtiles').size}, null, 1) + '\n')"
           node scripts/build.mjs > /dev/null
           npm test
       - name: Commit und Deploy

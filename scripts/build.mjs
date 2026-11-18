@@ -310,8 +310,23 @@ const KAT_REGELN = [
   ['getraenke', /juice|saft|\bwein|weingut|winzer|\bmost\b|wine|cider/i],
   ['blumen', /flower|blumen|tulpen|sonnenblume/i],
   ['weihnachtsbaeume', /christmas.?trees?|weihnachtsb(a|ä)um|christb(a|ä)um|tannenb(a|ä)um|nordmanntanne|weihnachtstanne|christbaummarkt/i],
+  ['gefluegel', /geflügel|gefluegel|poultry|chicken|hähnchen|haehnchen|hühnchen|puten|\bgans\b|gänse|gaense|\benten\b|wachtel/i],
+  ['wild', /\bwild\b|wildfleisch|wildhandel|wildbret|venison|\bgame\b|hirsch|\breh\b|wildschwein/i],
+  ['fisch', /\bfish\b|\bfisch\b|fischzucht|fischerei|fischhof|räucherfisch|raeucherfisch|forelle|karpfen|saibling|teichwirtschaft|aquakultur/i],
+  ['nudeln', /nudel|noodle|\bpasta\b|teigwaren|spätzle|spaetzle/i],
+  ['marmelade', /marmelade|konfitüre|konfituere|\bjam\b|fruchtaufstrich|\bgelee/i],
+  ['tierfutter', /tierfutter|pferdefutter|futtermittel|hundefutter|animal.?feed|\bheu\b|\bhay\b|\bstroh\b/i],
 ];
-const ART_KAT = { Milchtankstelle: ['milch'], Eierautomat: ['eier'], Fleischautomat: ['fleisch'], Kartoffelautomat: ['kartoffeln'] };
+// Ausflugs-Merkmale (aus OSM-Tags oder vom Betrieb) als kurze Texte
+const AUSSTATTUNG = [
+  ['rollstuhl', (v) => ({ yes: 'rollstuhlgerecht', limited: 'teilweise rollstuhlgerecht', no: 'nicht rollstuhlgerecht' }[v])],
+  ['hofcafe', () => 'Hofcafé'], ['selbstpfluecken', () => 'Selbstpflücken'], ['spielplatz', () => 'Spielplatz'], ['tiere', () => 'Tiere zum Anschauen'],
+  ['sitzen', () => 'Sitzplätze'], ['toilette', () => 'Toilette'], ['parkplatz', () => 'Parkplatz'],
+  ['hunde', (v) => (v === 'no' ? 'keine Hunde' : 'Hunde erlaubt')], ['lieferung', () => 'Lieferung oder Online-Shop'],
+];
+const ausstattung = (e) => AUSSTATTUNG.map(([k, f]) => e.merkmale?.[k] != null && f(e.merkmale[k])).filter(Boolean);
+const mitKindern = (e) => !!(e.merkmale?.spielplatz || e.merkmale?.tiere || e.merkmale?.hofcafe || e.merkmale?.selbstpfluecken);
+const ART_KAT = { Milchtankstelle: ['milch'], Eierautomat: ['eier'], Fleischautomat: ['fleisch'], Kartoffelautomat: ['kartoffeln'], Honigautomat: ['honig'], Nudelautomat: ['nudeln'], Imkerei: ['honig'] };
 for (const e of eintraege) {
   const text = [e.name, e.betreiber, e.beschreibung, ...(e.produkte || [])].filter(Boolean).join(' ');
   const kat = new Set(ART_KAT[e.art] || []);
@@ -352,7 +367,7 @@ const KAT_CODES_KARTE = Object.keys(KATEGORIEN);
 const kartenDaten = (e, km) => ({ pfad: e.pfad, slug: e.slug, titel: e.titel, art: e.art, typ: e.typ, adresse: e.adresse, land: e.k?.land,
   karte: !!e.zahlung?.some((z) => KARTENZAHLUNG.includes(z)),
   oh: e.oeffnungszeiten, ohText: e.oeffnungszeiten_text, telefon: e.telefon, website: e.website, kat: e.kat,
-  lat: e.lat, lon: e.lon, bio: e.bio, km });
+  lat: e.lat, lon: e.lon, bio: e.bio, verband: e.verband?.[0] || null, kinder: mitKindern(e), km });
 
 const SUCHFELD = 'type="search" maxlength="60" autocomplete="off" list="orte-vorschlaege" enterkeyhint="search"';
 const LOGO = `<svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><path d="M32 3C19 3 8.5 13.3 8.5 26.2 8.5 43.4 32 61 32 61s23.5-17.6 23.5-34.8C55.5 13.3 45 3 32 3z" fill="#F4C430"/><g fill="#173B2C"><rect x="30.4" y="21" width="3.2" height="27" rx="1.6"/><ellipse cx="32" cy="15.6" rx="3.5" ry="6"/><ellipse cx="25.9" cy="25.4" rx="3.2" ry="5.8" transform="rotate(-38 25.9 25.4)"/><ellipse cx="38.1" cy="25.4" rx="3.2" ry="5.8" transform="rotate(38 38.1 25.4)"/><ellipse cx="25.9" cy="35.4" rx="3.2" ry="5.8" transform="rotate(-38 25.9 35.4)"/><ellipse cx="38.1" cy="35.4" rx="3.2" ry="5.8" transform="rotate(38 38.1 35.4)"/></g></svg>`;
@@ -377,7 +392,7 @@ function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = []
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [['Start', '/'], ...krumen].map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: cfg.domain + p })) }] : [];
   return `<!doctype html>
-<html lang="de"${KACHELN ? ` data-kacheln="${KACHELN.version}"` : ''}>
+<html lang="de"${KACHELN ? ` data-kacheln="${KACHELN.version}" data-kacheln-z="${KACHELN.maxzoom || 14}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -473,6 +488,7 @@ function filterLeiste(liste, { umkreis = null } = {}) {
   const nSo = liste.filter((e) => e.sonntag).length;
   const nBio = liste.filter((e) => e.bio).length;
   const nKarte = liste.filter((e) => e.zahlung?.some((z) => KARTENZAHLUNG.includes(z))).length;
+  const nKinder = liste.filter(mitKindern).length;
   const katZahl = new Map();
   for (const e of liste) for (const k of e.kat) katZahl.set(k, (katZahl.get(k) || 0) + 1);
   const kats = Object.keys(KATEGORIEN).filter((k) => katZahl.get(k));
@@ -488,6 +504,7 @@ function filterLeiste(liste, { umkreis = null } = {}) {
   ${nBio ? `<button type="button" class="umschalter" data-bio-filter aria-pressed="false">Bio <span>${nBio}</span></button>` : ''}
   ${nRund ? `<button type="button" class="umschalter" data-rund-filter aria-pressed="false">24/7 <span>${nRund}</span></button>` : ''}
   ${nKarte ? `<button type="button" class="umschalter" data-karte-filter aria-pressed="false">Kartenzahlung <span>${nKarte}</span></button>` : ''}
+  ${nKinder ? `<button type="button" class="umschalter" data-kinder-filter aria-pressed="false">Ausflug mit Kindern <span>${nKinder}</span></button>` : ''}
   ${kats.length ? `<div class="kat-filter" aria-label="Angebot">${kats.map((k) => `<button type="button" data-kat-filter="${k}" aria-pressed="false">${esc(KATEGORIEN[k])}</button>`).join('')}</div>` : ''}
   <p class="treffer" aria-live="polite"><span data-trefferzahl>${liste.length}</span> ${liste.length === 1 ? 'Eintrag' : 'Einträge'}</p>
 </div>`;
@@ -546,7 +563,8 @@ const anzArt = (a) => eintraege.filter((e) => e.art === a).length;
 }
 
 // ---------- SEO-Hilfen: Texte aus den Daten ----------
-const PLURAL_ART = { Hofladen: 'Hofläden', Milchtankstelle: 'Milchtankstellen', Eierautomat: 'Eierautomaten', Regiomat: 'Regiomaten', Fleischautomat: 'Fleischautomaten', Kartoffelautomat: 'Kartoffelautomaten' };
+const PLURAL_ART = { Hofladen: 'Hofläden', Milchtankstelle: 'Milchtankstellen', Eierautomat: 'Eierautomaten', Regiomat: 'Regiomaten', Fleischautomat: 'Fleischautomaten', Kartoffelautomat: 'Kartoffelautomaten',
+  Honigautomat: 'Honigautomaten', Nudelautomat: 'Nudelautomaten', Imkerei: 'Imkereien', Solawi: 'Solawis', 'Selbstpflücken': 'Selbstpflückfelder', 'Hofcafé': 'Hofcafés' };
 const nennung = (arr) => arr.length <= 1 ? (arr[0] || '') : `${arr.slice(0, -1).join(', ')} und ${arr[arr.length - 1]}`;
 const gross = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const link = (e) => `<a href="${e.pfad}">${esc(e.titel)}</a>`;
@@ -564,7 +582,8 @@ function zaehlung(liste) {
 }
 
 // Automatenart → Themenseite
-const ART_TYP = { Milchtankstelle: 'milchtankstelle', Eierautomat: 'eierautomat', Regiomat: 'regiomat', Fleischautomat: 'regiomat', Kartoffelautomat: 'regiomat' };
+const ART_TYP = { Milchtankstelle: 'milchtankstelle', Eierautomat: 'eierautomat', Regiomat: 'regiomat', Fleischautomat: 'regiomat', Kartoffelautomat: 'regiomat', Honigautomat: 'regiomat', Nudelautomat: 'regiomat',
+  Imkerei: 'imker', Solawi: 'solawi', 'Selbstpflücken': 'selbstpfluecken', 'Hofcafé': 'hofcafe' };
 function zaehlungLinks(liste, anker = '') {
   const nHof = liste.filter((e) => e.typ === 'hofladen').length;
   const arten = new Map();
@@ -884,12 +903,37 @@ const TYPEN = [
     kurz: 'Eier vom Hof, oft aus Freilandhaltung, auch abends und am Wochenende.',
     text: ['Am Eierautomaten bekommst du frische Eier direkt vom Hof – häufig aus Freiland- oder Bodenhaltung, manchmal auch Bio-Eier. Viele Automaten sind rund um die Uhr zugänglich.',
       'Oft gibt es nebenbei Nudeln, Eierlikör oder Kartoffeln. Eier aus dem Automaten müssen genauso gekennzeichnet sein wie im Laden; den Erzeugercode findest du auf jedem Ei.'] },
-  { slug: 'regiomat', arten: ['Regiomat', 'Fleischautomat', 'Kartoffelautomat'], name: 'Regiomat', plural: 'Regiomaten', icon: ICON.automat,
+  { slug: 'regiomat', arten: ['Regiomat', 'Fleischautomat', 'Kartoffelautomat', 'Honigautomat', 'Nudelautomat'], name: 'Regiomat', plural: 'Regiomaten', icon: ICON.automat,
     kurz: 'Verkaufsautomaten mit Wurst, Kartoffeln, Nudeln, Honig und mehr aus der Region.',
     text: ['Regiomaten sind Verkaufsautomaten mit Fächern für regionale Lebensmittel: Wurst und Fleisch, Käse, Kartoffeln, Nudeln, Honig, Marmelade oder Getränke. Sie stehen meist direkt am Hof oder an gut erreichbaren Stellen im Ort.',
       'Die Fächer werden regelmäßig vom Betrieb aufgefüllt, Kühlware ist gekühlt. Damit kannst du regional einkaufen, auch wenn der Hofladen geschlossen ist – abends, sonntags und an Feiertagen.'] },
 ];
+// Weitere Einstiegstypen (Phase 3): eigene Seiten nur, wenn es genug Einträge gibt (siehe MIN_SEITE in den Land- und Kreisseiten)
+const WEITERE_TYPEN = [
+  { slug: 'imker', name: 'Imkerei', plural: 'Imkereien', h1: 'Imker und Honig ab Hof', icon: ICON.hofladen,
+    naechste: 'die nächste Imkerei', passt: (e) => e.art === 'Imkerei' || e.art === 'Honigautomat',
+    kurz: 'Imkereien mit Honigverkauf ab Hof und Honigautomaten.',
+    text: ['Bei der Imkerei um die Ecke bekommst du Honig aus deiner Gegend – oft mit Sorten, die es im Supermarkt nicht gibt, etwa Raps-, Linden- oder Waldhonig. Manche Imker verkaufen auch Wachskerzen, Propolis oder Met.',
+      'Viele Imkereien verkaufen nebenbei aus dem Haus oder über einen kleinen Automaten. Ruf vorher an, wenn keine Öffnungszeiten angegeben sind.'] },
+  { slug: 'selbstpfluecken', name: 'Feld zum Selbstpflücken', plural: 'Felder zum Selbstpflücken', h1: 'Selbstpflücken und Selbsternte', icon: ICON.blatt,
+    naechste: 'das nächste Feld zum Selbstpflücken', passt: (e) => e.art === 'Selbstpflücken' || !!e.merkmale?.selbstpfluecken,
+    kurz: 'Erdbeeren, Äpfel, Blumen und Kürbisse selbst pflücken – saisonal direkt am Feld.',
+    text: ['Beim Selbstpflücken erntest du Erdbeeren, Himbeeren, Äpfel, Blumen oder Kürbisse selbst und zahlst nach Gewicht oder Stück. Die Saison beginnt meist im Juni mit Erdbeeren und endet im Oktober mit Kürbissen.',
+      'Ob das Feld gerade geöffnet ist, hängt vom Wetter und der Ernte ab. Schau vorher in die Öffnungszeiten oder ruf kurz an.'] },
+  { slug: 'hofcafe', name: 'Hofcafé', plural: 'Hofcafés', h1: 'Hofcafés', icon: ICON.hofladen,
+    naechste: 'das nächste Hofcafé', passt: (e) => e.art === 'Hofcafé' || !!e.merkmale?.hofcafe,
+    kurz: 'Kuchen, Kaffee und regionale Küche direkt auf dem Hof.',
+    text: ['Ein Hofcafé ist ein Café auf einem Bauernhof: Kuchen aus eigenen Eiern und Milch, oft mit Blick auf Felder und Tiere. Viele haben nur am Wochenende oder in der Saison geöffnet.',
+      'Häufig gehört ein Hofladen dazu, in dem du nach dem Kaffee noch einkaufen kannst.'] },
+  { slug: 'solawi', name: 'Solawi', plural: 'Solawis', h1: 'Solidarische Landwirtschaft (Solawi)', icon: ICON.blatt,
+    naechste: 'die nächste Solawi', passt: (e) => e.art === 'Solawi',
+    kurz: 'Höfe, bei denen du mit einem Monatsbeitrag Ernteanteile bekommst.',
+    text: ['Bei einer Solidarischen Landwirtschaft (Solawi) teilen sich Mitglieder die Kosten eines Hofs und bekommen dafür regelmäßig einen Anteil der Ernte – meist Gemüse, manchmal auch Brot, Eier oder Milch.',
+      'Abgeholt wird an festen Tagen am Hof oder an Verteilstellen. Einen Laden mit Öffnungszeiten gibt es meist nicht; frag beim Hof nach freien Anteilen.'] },
+];
+for (const t of WEITERE_TYPEN) t.arten = [];
 for (const t of TYPEN) { t.liste = eintraege.filter((e) => t.arten.includes(e.art)); t.pfadSlug = slugify(t.plural); }
+for (const t of WEITERE_TYPEN) { t.liste = eintraege.filter(t.passt); t.pfadSlug = t.slug; }
 // Weitere Kategorien mit Seiten auf Bundesland- und Kreisebene
 const AUTOMATEN = { slug: 'hofladen-automaten', pfadSlug: 'hofladen-automaten', name: 'Hofladen-Automat', plural: 'Hofladen-Automaten', icon: ICON.automat,
   liste: eintraege.filter((e) => e.typ === 'automat'),
@@ -901,7 +945,8 @@ const BIO = { slug: 'bio-hofladen', pfadSlug: 'bio-hofladen', name: 'Bio-Hoflade
   kurz: 'Hofläden und Automaten mit Bio-Angebot.',
   text: ['Als Bio gekennzeichnet sind Höfe, die laut OpenStreetMap ausschließlich oder teilweise Bio-Produkte verkaufen.',
     'Ob ein Betrieb zertifiziert ist, erkennst du am EU-Bio-Logo und an der Öko-Kontrollstellennummer (z. B. DE-ÖKO-006) auf der Ware oder am Hof.'] };
-const KAT_TYPEN = [...TYPEN, AUTOMATEN, BIO];
+const WEITERE_AKTIV = WEITERE_TYPEN.filter((t) => t.liste.length >= MIN_SEITE);
+const KAT_TYPEN = [...TYPEN, AUTOMATEN, BIO, ...WEITERE_AKTIV];
 // Saisonprodukte mit eigener Seite: Höfe, die das Produkt im Namen, in der Beschreibung oder im Angebot (OSM) nennen
 const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 // Eine Seite je Sorte aus dem Saisonkalender. Höfe gehören dazu, wenn Name, Beschreibung oder OSM-Produkte die Sorte nennen.
@@ -1094,8 +1139,8 @@ schreibe('/', seite({
 </section>`,
 }));
 
-// ---------- Typseiten (Milchtankstelle, Eierautomat, Regiomat) ----------
-for (const t of TYPEN) {
+// ---------- Typseiten (Milchtankstelle, Eierautomat, Regiomat; Imker, Selbstpflücken, Hofcafés, Solawi) ----------
+for (const t of [...TYPEN, ...WEITERE_AKTIV]) {
   const proLand = laender.map((l) => ({ l, liste: t.liste.filter((e) => e.k.land === l.code) })).filter((x) => x.liste.length);
   const vollListe = t.liste.length <= 800;
   schreibe(`/${t.slug}/`, seite({
@@ -1110,12 +1155,12 @@ for (const t of TYPEN) {
     inhalt: `
 <section class="seitenkopf">
   <p class="hof-art typ-icon">${t.icon}</p>
-  <h1>${t.plural} in Deutschland</h1>
-  <p>${zahl(t.liste.length)} ${t.plural} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}. Gib deine Postleitzahl ein, um ${t.name === 'Milchtankstelle' ? 'die nächste Milchtankstelle' : `den nächsten ${t.name}`} in deiner Nähe zu finden.</p>
+  <h1>${t.h1 || t.plural} in Deutschland</h1>
+  <p>${zahl(t.liste.length)} ${t.plural} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}. Gib deine Postleitzahl ein, um ${t.naechste || (t.name === 'Milchtankstelle' ? 'die nächste Milchtankstelle' : `den nächsten ${t.name}`)} in deiner Nähe zu finden.</p>
   <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="typ-plz">Postleitzahl, Ort oder Name des Hofs</label><input id="typ-plz" name="q" ${SUCHFELD} placeholder="PLZ, Ort oder Hof" required><button type="submit">Suchen</button></form>
 </section>
 <section class="abschnitt seo-text">${t.text.map((x) => `<p>${x}</p>`).join('')}
-  <p>Auch interessant: ${TYPEN.filter((x) => x !== t).map((x) => `<a href="/${x.slug}/">${x.plural}</a>`).join(', ')}, die <a href="/karte/">Hofladen-Karte</a> mit allen Standorten und der <a href="/saisonkalender/">Saisonkalender</a> für Obst und Gemüse.</p></section>
+  <p>Auch interessant: ${[...TYPEN, ...WEITERE_AKTIV].filter((x) => x !== t).map((x) => `<a href="/${x.slug}/">${x.plural}</a>`).join(', ')}, die <a href="/karte/">Hofladen-Karte</a> mit allen Standorten und der <a href="/saisonkalender/">Saisonkalender</a> für Obst und Gemüse.</p></section>
 <nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>${t.plural} nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, liste }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(liste.length)}</span></a></li>`).join('')}</ul></nav>
 ${proLand.map(({ l, liste }) => {
   const proK = new Map();
@@ -1556,10 +1601,12 @@ for (const e of eintraege) {
   const merkmale = [
     e.gepflegt?.art === 'uebernahme' && ['Vom Betrieb gepflegt', `Angaben vom Betrieb selbst, Stand ${datumDe(e.gepflegt.stand)}.`],
     e.bio && ['Bio', 'Laut Eintrag verkauft der Hof Bio-Produkte.'],
+    e.verband?.length && [e.verband.length > 1 ? 'Bio-Verbände' : 'Bio-Verband', `${esc(nennung(e.verband))} – so steht es im Eintrag. Das Siegel auf der Ware ist maßgeblich.`],
     rund && ['Rund um die Uhr', e.typ === 'automat' ? 'Der Automat ist jederzeit zugänglich.' : 'Laut Öffnungszeiten jederzeit geöffnet.'],
     !rund && e.sonntag && ['Sonntags geöffnet', `Sonntag: ${(woche[6] || []).map(([a, b]) => `${uhr(a)}–${uhr(b)}`).join(', ')}`],
     e.typ === 'automat' ? ['Automat', `${e.art} mit Selbstbedienung.`] : e.selbstbedienung && ['Selbstbedienung', 'Einkauf in Selbstbedienung, meist mit Kasse des Vertrauens.'],
     e.zahlung && ['Bezahlen', e.zahlung.map((z) => ZAHLUNG_TEXT[z]).join(', ')],
+    ausstattung(e).length && ['Vor Ort', ausstattung(e).join(', ')],
   ].filter(Boolean);
   const saisonProdukte = SAISON_SEITEN.filter((sp) => sp.liste.includes(e));
   // FAQ nur aus Angaben, die auf der Seite stehen
@@ -1665,7 +1712,7 @@ ${ortListe(naheOrte(e.lat, e.lon, 6, new Set(o?.eigen ? [o] : [])), `Hofläden i
 const KARTE_TYP = (e) => (e.typ === 'hofladen' ? 'h' : e.art === 'Milchtankstelle' ? 'm' : e.art === 'Eierautomat' ? 'e' : 'r');
 writeFileSync(join(OUT, 'punkte.json'), JSON.stringify({
   h: eintraege.map((e) => [+e.lat.toFixed(5), +e.lon.toFixed(5), KARTE_TYP(e), e.slug, e.titel, e.art, e.oeffnungszeiten || '',
-    e.kat.map((x) => 'abcdefghijklmnop'[KAT_CODES_KARTE.indexOf(x)]).join(''), e.bio ? 1 : 0, e.zahlung?.some((z) => KARTENZAHLUNG.includes(z)) ? 1 : 0, e.k?.land || '']),
+    e.kat.map((x) => 'abcdefghijklmnopqrstuvwxyz'[KAT_CODES_KARTE.indexOf(x)]).join(''), e.bio ? 1 : 0, e.zahlung?.some((z) => KARTENZAHLUNG.includes(z)) ? 1 : 0, e.k?.land || '']),
   m: MAERKTE.map((m) => { const k = kreise.get(m.kreis); const viele = (maerkteProKreis.get(m.kreis) || []).length >= MARKT_SEITE_AB;
     return [+m.lat.toFixed(5), +m.lon.toFixed(5), m.titel, m.oeffnungszeiten || '', `${viele ? marktPfad(k) : `/wochenmaerkte/${k.landSlug}/`}#${m.anker}`, k.land]; }),
   k: KAT_CODES_KARTE,
@@ -2175,11 +2222,11 @@ writeFileSync(join(GEN, 'plz.json'), JSON.stringify(plzIndex));
 const KAT_CODES = Object.keys(KATEGORIEN);
 writeFileSync(join(GEN, 'eintraege.json'), JSON.stringify(eintraege.map((e) => [
   +e.lat.toFixed(5), +e.lon.toFixed(5), e.slug, e.titel, e.art, e.ortAnzeige, e.oeffnungszeiten || '', e.typ === 'hofladen' ? 1 : 0,
-  e.adresse, e.telefon || '', e.website || '', e.kat.map((x) => 'abcdefghijklmnop'[KAT_CODES.indexOf(x)]).join(''), e.bio ? 1 : 0,
+  e.adresse, e.telefon || '', e.website || '', e.kat.map((x) => 'abcdefghijklmnopqrstuvwxyz'[KAT_CODES.indexOf(x)]).join(''), e.bio ? 1 : 0,
   e.oeffnungszeiten_text || '', e.sonntag ? 1 : 0,
   // ab hier: Daten für das Bearbeiten-Formular und den Outreach-Export
   e.sid, e.name || '', e.strasse || '', e.plz || '', e.ort || e.ortAnzeige || '', e.email || '', (e.zahlung || []).join(','),
-  (e.beschreibung || '').slice(0, 600), e.fotos?.length || 0, e.vollst.prozent, e.vollst.fehlt.join(','), e.k?.land || ''])));
+  (e.beschreibung || '').slice(0, 600), e.fotos?.length || 0, e.vollst.prozent, e.vollst.fehlt.join(','), e.k?.land || '', mitKindern(e) ? 1 : 0, (e.verband || []).join(',')])));
 writeFileSync(join(GEN, 'vollstaendigkeit.json'), JSON.stringify(VOLLSTAENDIGKEIT.map(([k, label]) => [k, label])));
 writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 

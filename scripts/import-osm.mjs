@@ -7,6 +7,7 @@
 // Daten: © OpenStreetMap-Mitwirkende, ODbL.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { ladePlz, naechsterOrt, slugify } from './lib.mjs';
+import { automatArt, verbandAus, merkmaleAus } from './osm-merkmale.mjs';
 
 const VENDING = {
   milk: 'Milch', eggs: 'Eier', meat: 'Fleisch', sausages: 'Wurst', cheese: 'Käse',
@@ -17,14 +18,6 @@ const VENDING = {
 };
 const HOF_HINWEIS = /hof|bauer|regio|milch|landw|farm|\bgut\b|direkt|eier|bio|metzg|fleisch|imker|honig|obst|kartoffel|käse|kaese|molkerei|schäferei|gärtnerei|ziegen/i;
 
-function automatArt(sorten) {
-  const s = new Set(sorten);
-  if (s.size === 1 && s.has('milk')) return 'Milchtankstelle';
-  if (s.size === 1 && s.has('eggs')) return 'Eierautomat';
-  if ([...s].every((x) => ['meat', 'sausages'].includes(x))) return 'Fleischautomat';
-  if (s.size === 1 && s.has('potatoes')) return 'Kartoffelautomat';
-  return 'Regiomat';
-}
 
 function sauberUrl(u) {
   if (!u) return null;
@@ -89,7 +82,10 @@ for (const [osm, el] of elemente) {
     const nurFood = sorten.every((s) => ['food', 'drinks', 'sweets', 'snacks', 'ice_cream', 'cigarettes', 'coffee'].includes(s));
     const text = [t.name, t.operator, t.brand, t.description].filter(Boolean).join(' ');
     if (nurFood && !HOF_HINWEIS.test(text)) { verwirf('Automat ohne Hofbezug'); continue; }
-  } else { verwirf('anderer Typ'); continue; }
+  } else if (t.craft === 'beekeeper') typ = 'hofladen';
+  else if (t.pick_your_own === 'yes') typ = 'hofladen';
+  else if (t.amenity === 'cafe') typ = 'hofladen';
+  else { verwirf('anderer Typ'); continue; }
 
   const pc = (t['addr:postcode'] || '').trim();
   const kand = /^\d{5}$/.test(pc) ? (plz.get(pc) || []).filter((o) => !o.org) : null;
@@ -100,7 +96,8 @@ for (const [osm, el] of elemente) {
 
   const strasse = [t['addr:street'] || t['addr:place'], t['addr:housenumber']].filter(Boolean).join(' ') || null;
   const ort = t['addr:city'] || t['addr:suburb'] || null;
-  const art = typ === 'automat' ? automatArt(sorten) : 'Hofladen';
+  const art = typ === 'automat' ? automatArt(sorten) : t.shop === 'farm' ? 'Hofladen'
+    : t.craft === 'beekeeper' ? 'Imkerei' : t.pick_your_own === 'yes' ? 'Selbstpflücken' : 'Hofcafé';
   const produkte = typ === 'automat'
     ? [...new Set(sorten.map((s) => VENDING[s]).filter(Boolean))]
     : [...new Set((t.produce || t.product || '').split(';').map((s) => s.trim()).filter(Boolean))];
@@ -131,6 +128,8 @@ for (const [osm, el] of elemente) {
     selbstbedienung: t.self_service === 'yes' || typ === 'automat' ? true : null,
     zahlung: zahlungsarten(t),
     geprueft: pruefDatum(t),
+    verband: verbandAus(t),
+    merkmale: merkmaleAus(t),
   });
   stat[typ]++;
 }
