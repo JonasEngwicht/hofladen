@@ -1467,6 +1467,7 @@ for (const e of eintraege) {
   <h1>${esc(e.titelSeite)}</h1>
   <p class="hof-adr">${ICON.route}${esc(e.adresse)}</p>
   ${statusHtml(e.oeffnungszeiten, e.oeffnungszeiten_text)}
+  <p class="hof-entfernung"><span data-entfernung hidden></span><button type="button" class="link" data-entfernung-start hidden>Wie weit ist das von mir?</button></p>
 </section>
 <div class="hof-inhalt">
   <aside class="hof-seite">
