@@ -72,7 +72,8 @@ async function ausQlever() {
 }
 
 // Quelle 2: Overpass API (langsamer, aber unabhängig).
-const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
+// maps.mail.ru war zuletzt am zuverlässigsten, wenn overpass-api.de ausgelastet ist
+const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
 const OVERPASS_Q = MAERKTE
   ? `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;nwr["amenity"="marketplace"](area.de);out center tags;`
   : `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;(nwr["shop"="farm"](area.de);nwr["amenity"="vending_machine"]["vending"~"milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable|noodles|pasta"](area.de);nwr["craft"="beekeeper"]["name"](area.de);nwr["self_harvesting"="yes"](area.de);nwr["pick_your_own"="yes"](area.de);nwr["amenity"="cafe"]["name"~"hofcaf|bauerncaf|hof-caf|bauernhofcaf|landcaf",i](area.de););out center tags;`;

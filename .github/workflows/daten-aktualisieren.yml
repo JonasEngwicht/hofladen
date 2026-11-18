@@ -5,6 +5,11 @@ name: Daten aktualisieren
 # Jeder Commit löst bei Cloudflare automatisch einen neuen Deploy aus.
 on:
   workflow_dispatch:
+    inputs:
+      schwund_erlauben:
+        description: Mehr entfallene Einträge zulassen (nach gewollten Regeländerungen)
+        type: boolean
+        default: false
   schedule:
     - cron: '17 3 * * 1' # montags 03:17 UTC
     - cron: '43 2 * * 4' # donnerstags 02:43 UTC
@@ -35,6 +40,8 @@ jobs:
       - name: Hofläden und Automaten holen und aufbereiten
         id: hoefe
         continue-on-error: true
+        env:
+          ERLAUBE_SCHWUND: ${{ inputs.schwund_erlauben && '1' || '' }}
         run: node scripts/fetch-osm.mjs data/quellen/osm-roh.json && node scripts/import-osm.mjs data/quellen/osm-roh.json
       - name: Wochenmärkte holen und aufbereiten
         id: maerkte
