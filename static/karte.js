@@ -51,7 +51,7 @@ export function statusHtml(oh, ohText, datum) {
 export function karteHtml(d, { datum = null, ueberschrift = 'h3' } = {}) {
   const kat = (d.kat || []).slice(0, 5);
   const H = ueberschrift;
-  return `<article class="laden laden-${d.typ}" data-typ="${d.typ}" data-kat="${esc((d.kat || []).join(' '))}" data-lat="${d.lat}" data-lon="${d.lon}" data-slug="${esc(d.slug)}"${d.oh ? ` data-oh="${esc(d.oh)}"` : ''}>
+  return `<article class="laden laden-${d.typ}" data-typ="${d.typ}" data-kat="${esc((d.kat || []).join(' '))}" data-lat="${d.lat}" data-lon="${d.lon}" data-slug="${esc(d.slug)}"${d.oh ? ` data-oh="${esc(d.oh)}"` : ''}${d.bio ? ' data-bio="1"' : ''}>
   <div class="laden-symbol" title="${esc(d.art)}">${typIcon(d.art)}</div>
   <button class="merken-mini" type="button" data-merken="${esc(d.slug)}" aria-pressed="false" aria-label="${esc(d.titel)} merken">${ICON.herz}</button>
   <div class="laden-text">

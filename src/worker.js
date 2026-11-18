@@ -1,11 +1,14 @@
 // Cloudflare Worker für hofladenliste.de
 //  /suche?plz=12345  → 302 auf die Seite des passenden Landkreises
+//  /suche?q=Tettnang → 302 auf die Ortsseite (oder Kreisseite), bei mehreren gleichnamigen Orten zur Auswahl
 //  /plz/12345        → wie oben (kurze, teilbare URL)
+//  /api/orte?q=Tet   → Vorschläge für Ortsnamen
 //  /api/umkreis?plz=12345 oder ?lat=..&lon=..  → nächste Einträge als JSON
 // Alles andere liefert die statischen Seiten aus public/ (über env.ASSETS).
 import PLZ from './generated/plz.json';
 import EINTRAEGE from './generated/eintraege.json';
 import KATEGORIEN from './generated/kategorien.json';
+import ORTE from './generated/orte.json';
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnop';
 
@@ -45,6 +48,79 @@ function sucheWeiterleitung(plz, produkte = [], env, ctx, request) {
   if (/^\d{5}$/.test(p)) zaehle(env, ctx, request, { plz: p, kreis: eintrag ? eintrag[2] : '', art: eintrag ? 'plz' : 'unbekannt', produkt: prod.sort().join(',') });
   if (!eintrag) return weiter(`/?fehler=plz&plz=${encodeURIComponent(p)}`);
   return weiter(`${eintrag[2]}?plz=${p}${prod.length ? `&produkt=${prod.join(',')}` : ''}`);
+}
+
+// ---------- Ortsnamen ----------
+const norm = (s) => String(s || '').toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
+  .replace(/\bst\.\s*/g, 'sankt ').replace(/[^a-z0-9]+/g, ' ').trim();
+let ORT_INDEX = null;
+function ortIndex() {
+  if (ORT_INDEX) return ORT_INDEX;
+  const zahl = new Map();
+  for (const o of ORTE.o) zahl.set(o[0], (zahl.get(o[0]) || 0) + 1);
+  ORT_INDEX = ORTE.o.map(([name, plz, ki, pfad, groesse]) => {
+    const [kreisPfad, kreis] = ORTE.k[ki];
+    return { name, plz, kreis, kreisPfad, pfad, groesse, n: norm(name), kern: norm(name.replace(/\s*\(.*\)\s*$/, '')), kn: norm(kreis), doppelt: zahl.get(name) > 1 };
+  });
+  return ORT_INDEX;
+}
+const ortZiel = (o) => `${o.pfad || o.kreisPfad}?plz=${o.plz}`;
+const ortAusgabe = (o) => ({ name: o.name, kreis: o.kreis, plz: o.plz, wert: o.doppelt ? `${o.name}, ${o.kreis}` : o.name });
+
+// Liefert alle passenden Orte; eindeutig = alle Treffer liegen im selben Kreis
+function ortSuche(q) {
+  // "Name, Kreis" (aus den Vorschlägen) eindeutig auflösen
+  const idx = ortIndex();
+  let name = q, kreis = '';
+  const komma = q.lastIndexOf(',');
+  if (komma > 0) {
+    const k = norm(q.slice(komma + 1));
+    // Nur abtrennen, wenn der Teil nach dem Komma ein Kreis ist (Ortsnamen enthalten selbst Kommas)
+    if (k && idx.some((o) => o.kn === k)) { name = q.slice(0, komma); kreis = k; }
+  }
+  const n = norm(name);
+  if (n.length < 2) return { treffer: [], eindeutig: false };
+  // Ganze Wörter: "Forst" findet Forst, Forst (Lausitz), Forst an der Weinstraße
+  let treffer = idx.filter((o) => o.n === n || o.kern === n || o.n.startsWith(n + ' '));
+  let wort = treffer.length > 0;
+  if (!wort) treffer = idx.filter((o) => o.n.startsWith(n));
+  if (kreis) { const k = treffer.filter((o) => o.kn === kreis); if (k.length) treffer = k; }
+  const voll = treffer.filter((o) => o.n === n);
+  if (kreis && voll.length) treffer = voll;
+  treffer.sort((a, b) => (b.n === n) - (a.n === n) || b.groesse - a.groesse || (b.pfad ? 1 : 0) - (a.pfad ? 1 : 0) || a.name.length - b.name.length || a.name.localeCompare(b.name, 'de') || a.kreis.localeCompare(b.kreis, 'de'));
+  let eindeutig = treffer.length > 0 && new Set(treffer.map((o) => o.kreisPfad)).size === 1;
+  // Eine Großstadt schlägt kleine Namensvettern: "Hamburg" → Hamburg, "Frankfurt" → Frankfurt am Main
+  if (!eindeutig && treffer.length > 1) {
+    const top = treffer.reduce((a, b) => (b.groesse > a.groesse ? b : a));
+    const zweit = Math.max(0, ...treffer.filter((o) => o.kreisPfad !== top.kreisPfad).map((o) => o.groesse));
+    if (top.groesse >= 10 && top.groesse >= 5 * zweit) { treffer = treffer.filter((o) => o.kreisPfad === top.kreisPfad); eindeutig = true; }
+  }
+  // Gleicher Name mehrfach im selben Kreis (Ortsteile): der Eintrag mit eigener Ortsseite gewinnt
+  if (eindeutig) treffer.sort((a, b) => (b.n === n) - (a.n === n) || (b.pfad ? 1 : 0) - (a.pfad ? 1 : 0) || b.groesse - a.groesse);
+  return { treffer, eindeutig };
+}
+
+function orteVorschlaege(url) {
+  const q = (url.searchParams.get('q') || '').slice(0, 60);
+  const { treffer } = ortSuche(q);
+  const alle = url.searchParams.get('alle') === '1';
+  return json({ treffer: treffer.slice(0, alle ? 40 : 8).map(ortAusgabe) });
+}
+
+function suche(url, env, ctx, request) {
+  const q = (url.searchParams.get('q') ?? url.searchParams.get('plz') ?? '').trim().slice(0, 60);
+  const produkte = url.searchParams.getAll('produkt').flatMap((x) => x.split(','));
+  const ziffern = q.match(/\b\d{5}\b/);
+  if (ziffern || /^[\d\s]+$/.test(q)) return sucheWeiterleitung(ziffern ? ziffern[0] : q, produkte, env, ctx, request);
+  const { treffer, eindeutig } = ortSuche(q);
+  if (eindeutig) {
+    const o = treffer[0];
+    const prod = produkte.filter((x) => KATEGORIEN.includes(x));
+    zaehle(env, ctx, request, { plz: o.plz, kreis: o.kreisPfad, art: 'ort', produkt: prod.sort().join(',') });
+    return weiter(`${ortZiel(o)}${prod.length ? `&produkt=${prod.join(',')}` : ''}`);
+  }
+  if (!treffer.length) zaehle(env, ctx, request, { plz: '', art: 'ort-unbekannt' });
+  return weiter(`/?fehler=${treffer.length ? 'ort' : 'ort-unbekannt'}&q=${encodeURIComponent(q)}`);
 }
 
 function umkreis(url, env, ctx, request) {
@@ -114,11 +190,12 @@ export default {
       url.hostname = url.hostname.slice(4);
       return weiter(url.toString(), 301);
     }
-    if (url.pathname === '/suche') return sucheWeiterleitung(url.searchParams.get('plz'), url.searchParams.getAll('produkt').flatMap((x) => x.split(',')), env, ctx, request);
+    if (url.pathname === '/suche') return suche(url, env, ctx, request);
     const m = url.pathname.match(/^\/plz\/(\d{5})\/?$/);
     if (m) return sucheWeiterleitung(m[1], [], env, ctx, request);
     if (url.pathname === '/api/umkreis') return umkreis(url, env, ctx, request);
     if (url.pathname === '/api/eintraege') return eintraegeNachSlug(url);
+    if (url.pathname === '/api/orte') return orteVorschlaege(url);
     return env.ASSETS.fetch(request);
   },
 };

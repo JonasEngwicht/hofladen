@@ -1,4 +1,4 @@
-import { status, berlinZeit } from './oh.js';
+import { status, berlinZeit, parse } from './oh.js';
 import { karteHtml } from './karte.js';
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -137,13 +137,16 @@ if (wz) {
 }
 
 // ---------- Filter auf Kreisseiten ----------
-const filter = { typ: 'alle', offen: false, kat: new Set() };
+const filter = { typ: 'alle', offen: false, sonntag: false, bio: false, kat: new Set() };
+const sonntagsOffen = (oh) => { try { return !!oh && !!parse(oh)?.[6]?.length; } catch { return false; } };
 function wendeFilterAn() {
   const karten = $$('[data-liste] > .laden');
   let n = 0;
   for (const k of karten) {
     let ok = filter.typ === 'alle' || k.dataset.typ === filter.typ;
     if (ok && filter.offen) ok = !!k.dataset.oh && status(k.dataset.oh)?.offen === true;
+    if (ok && filter.sonntag) ok = sonntagsOffen(k.dataset.oh);
+    if (ok && filter.bio) ok = k.dataset.bio === '1';
     if (ok && filter.kat.size) { const ks = k.dataset.kat.split(' '); ok = [...filter.kat].every((x) => ks.includes(x)); }
     k.hidden = !ok;
     if (ok) n++;
@@ -169,6 +172,11 @@ $('[data-offen-filter]')?.addEventListener('click', (ev) => {
   ev.currentTarget.setAttribute('aria-pressed', String(filter.offen));
   wendeFilterAn();
 });
+for (const [attr, key] of [['data-sonntag-filter', 'sonntag'], ['data-bio-filter', 'bio']]) $(`[${attr}]`)?.addEventListener('click', (ev) => {
+  filter[key] = !filter[key];
+  ev.currentTarget.setAttribute('aria-pressed', String(filter[key]));
+  wendeFilterAn();
+});
 for (const b of $$('[data-kat-filter]')) b.addEventListener('click', () => {
   const k = b.dataset.katFilter;
   if (filter.kat.has(k)) filter.kat.delete(k); else filter.kat.add(k);
@@ -176,11 +184,17 @@ for (const b of $$('[data-kat-filter]')) b.addEventListener('click', () => {
   wendeFilterAn();
 });
 $('[data-filter-zuruecksetzen]')?.addEventListener('click', () => {
-  filter.typ = 'alle'; filter.offen = false; filter.kat.clear();
+  filter.typ = 'alle'; filter.offen = false; filter.sonntag = false; filter.bio = false; filter.kat.clear();
   for (const x of $$('[data-typ-filter]')) x.setAttribute('aria-pressed', String(x.dataset.typFilter === 'alle'));
-  for (const x of $$('[data-kat-filter], [data-offen-filter]')) x.setAttribute('aria-pressed', 'false');
+  for (const x of $$('[data-kat-filter], [data-offen-filter], [data-sonntag-filter], [data-bio-filter]')) x.setAttribute('aria-pressed', 'false');
   wendeFilterAn();
 });
+// Vorauswahl über die Adresse, z. B. ?filter=sonntag oder ?filter=bio (Links von den Übersichtsseiten)
+for (const f of (params.get('filter') || '').split(',')) {
+  if (f === 'sonntag') $('[data-sonntag-filter]')?.click();
+  if (f === 'bio') $('[data-bio-filter]')?.click();
+  if (f === 'offen') $('[data-offen-filter]')?.click();
+}
 
 // ---------- PLZ-Suche: nach Entfernung sortieren ----------
 const plz = params.get('plz');
@@ -226,6 +240,21 @@ function startseite() {
   if (params.get('fehler') === 'plz') {
     $('#plz-fehler') && ($('#plz-fehler').hidden = false);
     if ($('#plz') && plz) $('#plz').value = plz;
+  }
+  const fehlerOrt = params.get('fehler');
+  const box = $('#ort-auswahl');
+  if (box && (fehlerOrt === 'ort' || fehlerOrt === 'ort-unbekannt')) {
+    const q = params.get('q') || '';
+    $('#plz').value = q;
+    box.hidden = false;
+    box.innerHTML = fehlerOrt === 'ort-unbekannt'
+      ? `<p class="fehler">Einen Ort „${esc(q)}“ kennen wir nicht. Prüf die Schreibweise oder gib die Postleitzahl ein.</p>`
+      : '<p>Suche läuft …</p>';
+    if (fehlerOrt === 'ort') fetch(`/api/orte?alle=1&q=${encodeURIComponent(q)}`).then((r) => r.json()).then((d) => {
+      box.innerHTML = d.treffer?.length
+        ? `<p class="ort-auswahl-titel">Welches ${esc(q)} meinst du?</p><ul>${d.treffer.map((t) => `<li><a href="/suche?q=${encodeURIComponent(`${t.name}, ${t.kreis}`)}"><b>${esc(t.name)}</b><span>${esc(t.kreis)} · ${esc(t.plz)}</span></a></li>`).join('')}</ul>`
+        : `<p class="fehler">Einen Ort „${esc(q)}“ kennen wir nicht. Gib am besten die Postleitzahl ein.</p>`;
+    }).catch(() => { box.innerHTML = '<p class="fehler">Die Ortssuche hat gerade nicht geklappt. Gib bitte die Postleitzahl ein.</p>'; });
   }
   const zuletzt = $('#zuletzt');
   const l = speicher.get('letztePlz');
@@ -273,13 +302,52 @@ function startseite() {
 const monat = new Date().getMonth() + 1;
 for (const c of $$(`.saison-tabelle [data-monat="${monat}"]`)) c.classList.add('aktuell');
 
-// Formulare: nur fünfstellige PLZ abschicken
+// Formulare: PLZ oder Ortsname; reine Ziffern müssen fünfstellig sein
 for (const form of $$('form[action="/suche"]')) {
   form.addEventListener('submit', (ev) => {
-    const i = $('input[name="plz"]', form);
-    i.value = i.value.replace(/\D/g, '');
-    if (!/^\d{5}$/.test(i.value)) { ev.preventDefault(); i.focus(); }
+    const i = $('input[name="q"]', form);
+    if (!i) return;
+    i.value = i.value.trim();
+    const nurZiffern = /^[\d\s]+$/.test(i.value);
+    if (nurZiffern) i.value = i.value.replace(/\D/g, '');
+    if (!i.value || (nurZiffern && !/^\d{5}$/.test(i.value)) || (!nurZiffern && i.value.length < 2)) {
+      ev.preventDefault();
+      i.setCustomValidity(nurZiffern ? 'Bitte eine fünfstellige Postleitzahl eingeben.' : 'Bitte einen Ortsnamen oder eine Postleitzahl eingeben.');
+      i.reportValidity();
+      i.focus();
+    }
   });
+}
+// Ortsvorschläge beim Tippen
+const vorschlagListe = $('#orte-vorschlaege');
+let vorschlagTimer = 0, vorschlagLetzt = '';
+for (const i of $$('input[list="orte-vorschlaege"]')) i.addEventListener('input', () => {
+  i.setCustomValidity('');
+  clearTimeout(vorschlagTimer);
+  const q = i.value.trim();
+  if (q.length < 2 || /^\d/.test(q) || q === vorschlagLetzt) return;
+  vorschlagTimer = setTimeout(async () => {
+    try {
+      const d = await (await fetch(`/api/orte?q=${encodeURIComponent(q)}`)).json();
+      vorschlagLetzt = q;
+      vorschlagListe.innerHTML = (d.treffer || []).map((t) => `<option value="${esc(t.wert)}">${esc(t.wert === t.name ? `${t.kreis} · ${t.plz}` : t.plz)}</option>`).join('');
+    } catch {}
+  }, 150);
+});
+
+// Mitmachen: Korrektur zu einem bestimmten Hof vorbereiten (?hof=slug&thema=zeiten)
+{
+  const mail = $('#mail-link');
+  const hof = params.get('hof');
+  if (mail && hof && /^[a-z0-9-]{1,120}$/.test(hof)) {
+    const zeiten = params.get('thema') === 'zeiten';
+    const adresse = mail.getAttribute('href').replace(/^mailto:/, '').split('?')[0];
+    const betreff = zeiten ? `Öffnungszeiten: ${hof}` : `Korrektur: ${hof}`;
+    const text = `Eintrag: ${location.origin}/hof/${hof}/\n\n${zeiten ? 'Die Öffnungszeiten sind:\nMo:\nDi:\nMi:\nDo:\nFr:\nSa:\nSo:\n\nWoher weißt du das (z. B. Schild am Hof, Website)?\n' : 'Was soll geändert werden?\n'}`;
+    mail.href = `mailto:${adresse}?subject=${encodeURIComponent(betreff)}&body=${encodeURIComponent(text)}`;
+    mail.textContent = zeiten ? 'Öffnungszeiten per E-Mail schicken' : 'Korrektur per E-Mail schicken';
+    $('#mitmachen-hinweis')?.removeAttribute('hidden');
+  }
 }
 
 // ---------- Merkliste & Teilen ----------
