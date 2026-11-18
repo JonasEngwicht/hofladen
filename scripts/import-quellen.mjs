@@ -125,7 +125,7 @@ for (const o of auswahl) {
   t ||= naechsterOrt(raster, o.lat, o.lon);
   if (!t) { stat.ohneOrt++; continue; }
   if (istOrganisation(t.ort.ort)) { const t2 = naechsterOrt(raster, o.lat, o.lon); if (t2) t = t2; }
-  const { typ, art } = hofTyp(o.name);
+  const { typ, art } = o.solawi ? { typ: 'hofladen', art: 'Solawi' } : hofTyp(o.name);
   let { strasse, plz: pc, ort } = o.a;
   if (ort && !ortImKreis.has(`${ort}|${t.ort.kreis}`)) {
     if (pc && pc === t.ort.plz) ort = t.ort.ort;
@@ -144,6 +144,7 @@ for (const o of auswahl) {
     telefon: o.k.telefon, email: o.k.email, website: o.k.website, facebook: o.k.facebook, instagram: o.k.instagram,
     betreiber: null, beschreibung: o.beschreibung || null,
     bio: o.bio || /\bbio|öko|demeter|bioland|naturland/i.test(o.name) ? true : null,
+    verband: o.verband || null,
     produkte: null, selbstbedienung: typ === 'automat' || /selbstbedienung/i.test(o.name) ? true : null, zahlung: null, geprueft: null,
   });
 }

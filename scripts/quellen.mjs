@@ -48,6 +48,8 @@ export function hofTyp(name) {
 // Auswahl für neue Einträge: eindeutiger Name, passende Kategorie, ausreichende Konfidenz
 export function istHofladen(o) {
   const name = o.name || '';
+  // Solawi aus der Karte von morgen: oft Verein oder Genossenschaft, deshalb ohne die Namensregeln
+  if (o.solawi) return !!name && o.konf >= MIN_KONF_STARK && !/netzwerk|bundesverband|beratung/i.test(name);
   if (!name || KEIN_HOF.test(name)) return false;
   const kat = o.kat || null, hier = o.hier || '';
   const katHof = KAT_HOF.has(kat) || HIER_HOF.test(hier);

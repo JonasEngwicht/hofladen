@@ -14,7 +14,7 @@ test('punkte.json: Höfe mit Typ, Slug, Zeiten, Angebot, Land; Märkte mit Link 
     assert.equal(z.length, 11);
     assert.ok(['h', 'm', 'e', 'r'].includes(z[2]), z[2]);
     assert.match(z[3], /^[a-z0-9-]+$/);
-    assert.match(z[7], /^[a-p]*$/);
+    assert.match(z[7], /^[a-z]*$/);
   }
   for (const z of daten.m.slice(0, 200)) assert.match(z[4], /^\/wochenmaerkte\/[a-z-]+\/([a-z0-9-]+\/)?#markt-/);
   assert.ok(punkte.some((p) => p.typ === 'markt') && punkte.some((p) => p.kat.includes('eier')));

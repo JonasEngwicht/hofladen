@@ -49,7 +49,7 @@ export function punkteLesen(d) {
   const kat = d.k || Object.keys(KATEGORIEN);
   const hoefe = d.h.map(([lat, lon, typ, slug, titel, art, oh, k, bio, karte, land]) => ({
     lat, lon, typ, titel, art, oh, land, bio: !!bio, karte: !!karte, url: `/hof/${slug}/`, slug,
-    kat: [...(k || '')].map((b) => kat['abcdefghijklmnop'.indexOf(b)]).filter(Boolean),
+    kat: [...(k || '')].map((b) => kat['abcdefghijklmnopqrstuvwxyz'.indexOf(b)]).filter(Boolean),
   }));
   const maerkte = (d.m || []).map(([lat, lon, titel, oh, url, land]) => ({ lat, lon, typ: 'markt', titel, art: 'Wochenmarkt', oh, land, url, kat: [] }));
   return [...hoefe, ...maerkte];

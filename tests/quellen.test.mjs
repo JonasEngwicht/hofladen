@@ -226,3 +226,22 @@ test('Offene Quellen: mehrere Quellen, stabile IDs, Website-Prüfung und fehlend
     assert.equal(z.neu.find((e) => e.qid === 'ov1')?.fehlt, erwartet);
   }
 });
+
+test('OSM-Merkmale: Automatenarten, Bio-Verband nur aus dem Eintrag, Ausflugs-Merkmale', async () => {
+  const { automatArt, verbandAus, merkmaleAus } = await import('../scripts/osm-merkmale.mjs');
+  assert.equal(automatArt(['honey']), 'Honigautomat');
+  assert.equal(automatArt(['noodles', 'pasta']), 'Nudelautomat');
+  assert.equal(automatArt(['eggs', 'noodles']), 'Regiomat');
+  assert.deepEqual(verbandAus({ name: 'Demeter-Hof Sonnenschein', description: 'Mitglied bei Bioland' }), ['Bioland', 'Demeter']);
+  assert.equal(verbandAus({ name: 'Biohof Meier', organic: 'only' }), null);
+  assert.deepEqual(merkmaleAus({ wheelchair: 'limited', dog: 'leashed', pick_your_own: 'yes', amenity: 'cafe' }),
+    { rollstuhl: 'limited', hunde: 'yes', sitzen: true, selbstpfluecken: true, hofcafe: true });
+  assert.equal(merkmaleAus({ shop: 'farm' }), null);
+});
+
+test('Solawi aus der Karte von morgen: Verein oder Genossenschaft ist erlaubt, Netzwerke nicht', async () => {
+  const { istHofladen } = await import('../scripts/quellen.mjs');
+  assert.ok(istHofladen({ name: 'Solawi Gemüsegarten e.V.', solawi: true, konf: 0.8 }));
+  assert.ok(!istHofladen({ name: 'Solawi-Netzwerk Sachsen', solawi: true, konf: 0.8 }));
+  assert.ok(!istHofladen({ name: 'Gemüsegarten e.V.', konf: 0.8 }));
+});
