@@ -25,7 +25,7 @@ const KACHELN = (() => {
     return /^\d{8}$/.test(k.version) && existsSync(join(ROOT, 'static', 'vendor', 'protomaps-leaflet.js')) ? k : null;
   } catch { return null; }
 })();
-const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
+const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js', 'betrieb.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
 const SAISON = [
@@ -72,6 +72,7 @@ for (const m of manuell) {
   eintraege.push(e);
 }
 
+const HEUTE = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' });
 // Freigegebene Meldungen aus dem Formular (data/betreiber.json, siehe scripts/betreiber-uebernehmen.mjs)
 const betreiber = existsSync(join(ROOT, 'data', 'betreiber.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'betreiber.json'), 'utf8')) : {};
 const AUTOMAT_ARTEN = ['Milchtankstelle', 'Eierautomat', 'Regiomat', 'Fleischautomat', 'Kartoffelautomat'];
@@ -191,6 +192,10 @@ const offenErgaenztSumme = Object.values(offenErgaenzt).reduce((a, b) => a + b, 
     if (d.bio) e.bio = true;
     if (d.zahlung) e.zahlung = d.zahlung;
     if (d.angebot) e.betreiberAngebot = d.angebot;
+    if (Array.isArray(d.urlaub)) e.urlaub = d.urlaub.filter((u) => u.bis >= HEUTE);
+    // Feld für Feld: welche Angabe stammt vom Betrieb, Stand wann
+    e.vomBetrieb ??= {};
+    for (const f of ['name', 'strasse', 'telefon', 'email', 'website', 'oeffnungszeiten', 'beschreibung', 'angebot', 'zahlung', 'saison']) if (d[f]) e.vomBetrieb[f] = m.stand;
     if (m.fotos?.length) e.fotos = [...(e.fotos || []), ...m.fotos];
     e.gepflegt = { art: m.art, stand: m.stand };
     e.geprueft = m.stand > (e.geprueft || '') ? m.stand : e.geprueft;
@@ -384,6 +389,7 @@ const KAT_CODES_KARTE = Object.keys(KATEGORIEN);
 const kartenDaten = (e, km) => ({ pfad: e.pfad, slug: e.slug, titel: e.titel, art: e.art, typ: e.typ, adresse: e.adresse, land: e.k?.land,
   karte: !!e.zahlung?.some((z) => KARTENZAHLUNG.includes(z)),
   oh: e.oeffnungszeiten, ohText: e.oeffnungszeiten_text, telefon: e.telefon, website: e.website, kat: e.kat,
+  urlaub: e.urlaub?.length ? e.urlaub.map((u) => `${u.von}/${u.bis}`).join(' ') : null,
   lat: e.lat, lon: e.lon, bio: e.bio, verband: e.verband?.[0] || null, kinder: mitKindern(e), oepnv: !!e.haltestelle, km });
 
 const SUCHFELD = 'type="search" maxlength="60" autocomplete="off" list="orte-vorschlaege" enterkeyhint="search"';
@@ -1127,6 +1133,7 @@ schreibe('/', seite({
   </ul>
   <p class="typ-chips start-kategorien">${MAERKTE.length ? `<a href="/wochenmaerkte/">${ICON.markt}Wochenmärkte <span>${zahl(MAERKTE.length)}</span></a>` : ''}${WEIHNACHT.length && [10, 11, 12].includes(new Date().getMonth() + 1) ? `<a href="/weihnachtsbaum-vom-hof/">${ICON.tanne}Weihnachtsbaum vom Hof <span>${zahl(WEIHNACHT.length)}</span></a>` : ''}<a href="/hofladen-automaten/">${ICON.automat}Alle Hofladen-Automaten <span>${zahl(AUTOMATEN.liste.length)}</span></a><a href="/bio-hofladen/">${ICON.blatt}Bio-Hofläden <span>${zahl(BIO.liste.length)}</span></a><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a>${ANGEBOT_SEITEN.slice(0, 6).map((k) => `<a href="/angebot/${k}/">${esc(KATEGORIEN[k])}</a>`).join('')}</p>
 </section>
+<section class="abschnitt news-start" data-news-start hidden><h2>Neu und frisch auf den Höfen</h2><ul class="news-liste" data-news-start-liste></ul><p class="leise">Meldungen der Betriebe. Du hast einen Hof? <a href="/betrieb/">Neuigkeiten selbst veröffentlichen</a>.</p></section>
 <section class="abschnitt saison-jetzt" data-saison='${esc(saisonJetzt)}' data-saison-stand="${MONAT_JETZT}">
   <h2>Gerade frisch vom Feld</h2>
   <div data-saison-inhalt>${saisonMonatHtml(MONAT_JETZT)}</div>
@@ -1604,6 +1611,23 @@ for (const o of ortSeiten) {
 
 // ---------- Detailseiten ----------
 // Bearbeiten-Link mit stabiler ID (bleibt gültig, auch wenn sich der Slug ändert)
+// ---------- Veranstaltungen der Betriebe (data/betrieb-export.json aus dem Betreiber-Bereich) ----------
+const BETRIEB_EXPORT = existsSync(join(ROOT, 'data', 'betrieb-export.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'betrieb-export.json'), 'utf8')) : { hoefeMitKonto: [], veranstaltungen: [] };
+const nachSid = new Map(eintraege.map((e) => [e.sid, e]));
+const TERMINE = BETRIEB_EXPORT.veranstaltungen.map((v) => ({ ...v, e: nachSid.get(v.sid) }))
+  .filter((v) => v.e && (v.ende || v.beginn).slice(0, 10) >= HEUTE).sort((a, b) => a.beginn.localeCompare(b.beginn));
+const terminZeit = (v) => {
+  const d = (x) => new Date(`${x.length === 10 ? `${x}T12:00` : x}:00`.slice(0, 19)).toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const u = (x) => (x.length > 10 ? `, ${x.slice(11, 16)} Uhr` : '');
+  return v.ende && v.ende.slice(0, 10) !== v.beginn.slice(0, 10) ? `${d(v.beginn)}${u(v.beginn)} bis ${d(v.ende)}${u(v.ende)}` : `${d(v.beginn)}${u(v.beginn)}${v.ende && v.ende.length > 10 ? ` bis ${v.ende.slice(11, 16)} Uhr` : ''}`;
+};
+const terminLd = (v) => ({ '@context': 'https://schema.org', '@type': 'Event', name: v.titel, startDate: v.beginn, ...(v.ende ? { endDate: v.ende } : {}),
+  eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  ...(v.beschreibung ? { description: v.beschreibung } : {}), url: `${cfg.domain}/veranstaltungen/#termin-${v.id}`,
+  location: { '@type': 'Place', name: v.e.titelSeite, address: { '@type': 'PostalAddress', streetAddress: v.e.strasse || undefined, postalCode: v.e.plz || undefined, addressLocality: v.e.ortAnzeige, addressCountry: 'DE' } },
+  organizer: { '@type': 'Organization', name: v.e.titelSeite, url: cfg.domain + v.e.pfad } });
+const terminHtml = (v, mitHof = true) => `<li class="termin" id="termin-${v.id}"><p class="termin-zeit">${esc(terminZeit(v))}</p><h3>${esc(v.titel)}</h3>${mitHof ? `<p><a href="${v.e.pfad}">${esc(v.e.titelSeite)}</a> · ${esc(v.e.ortAnzeige)}, ${esc(v.e.k.landName)}</p>` : ''}${v.beschreibung ? `<p>${esc(v.beschreibung)}</p>` : ''}</li>`;
+for (const v of TERMINE) (v.e.termine ??= []).push(v);
 const bearbeiten = (e, aktion) => `/mitmachen/?eintrag=${encodeURIComponent(e.sid)}&amp;aktion=${aktion}`;
 const TAGE = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
 const ZAHLUNG_TEXT = { bar: 'Bargeld', girocard: 'Girocard (EC-Karte)', kreditkarte: 'Kreditkarte', kontaktlos: 'kontaktlos (Karte/Handy)', paypal: 'PayPal', ueberweisung: 'Überweisung' };
@@ -1686,10 +1710,10 @@ for (const e of eintraege) {
     pfad: e.pfad,
     noindex: e.duenn,
     klasse: 'hof',
-    jsonld: [ld, ...hofFaq.ld],
+    jsonld: [ld, ...hofFaq.ld, ...(e.termine || []).map(terminLd)],
     krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], ...(o?.eigen ? [[o.ort, o.pfad]] : []), [e.titel, e.pfad]],
     inhalt: `
-<section class="hof-kopf laden-${e.typ}" data-land="${k.land}" data-lat="${e.lat}" data-lon="${e.lon}" data-titel="${esc(e.titel)}" data-typ="${e.typ}">
+<section class="hof-kopf laden-${e.typ}" data-land="${k.land}"${e.urlaub?.length ? ` data-urlaub="${esc(e.urlaub.map((u) => `${u.von}/${u.bis}`).join(' '))}"` : ''} data-lat="${e.lat}" data-lon="${e.lon}" data-titel="${esc(e.titel)}" data-typ="${e.typ}">
   <p class="hof-art">${typIcon(e.art)}<span>${artTyp(e) ? `<a href="/${artTyp(e).slug}/">${esc(e.art)}</a>` : esc(e.art)} in ${o?.eigen ? `<a href="${o.pfad}">${esc(e.ortAnzeige)}</a>` : esc(e.ortAnzeige)}${e.bio ? ' · Bio' : ''}</span></p>
   <h1>${esc(e.titelSeite)}</h1>
   <p class="hof-adr">${ICON.route}${esc(e.adresse)}</p>
@@ -1726,6 +1750,8 @@ for (const e of eintraege) {
   <div class="hof-info">
     ${e.kat.length ? `<section class="block"><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${(e.quelle === 'osm' || QUELLEN[e.quelle]) ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
     ${e.fotos?.length ? `<section class="block hof-fotos"><h2>Fotos</h2><div class="foto-reihe">${e.fotos.map((f, i) => `<img src="${esc(f)}" width="1200" height="900" alt="${esc(e.titel)} – Foto ${i + 1}" loading="lazy" decoding="async">`).join('')}</div><p class="leise">Fotos: ${esc(e.titel)}</p></section>` : ''}
+    ${e.termine?.length ? `<section class="block termine"><h2>Veranstaltungen</h2><ul class="termin-liste">${e.termine.map((v) => terminHtml(v, false)).join('')}</ul><p class="leise">Angabe des Betriebs · <a href="/veranstaltungen/">Alle Veranstaltungen</a></p></section>` : ''}
+    ${e.urlaub?.length ? `<section class="block saison-hinweis urlaub"><h2>Betriebsferien</h2>${e.urlaub.map((u) => `<p><b>${esc(datumDe(u.von))} bis ${esc(datumDe(u.bis))}</b>${u.text ? ` – ${esc(u.text)}` : ''}</p>`).join('')}<p class="leise">Angabe des Betriebs</p></section>` : ''}
     ${e.saisonHinweis ? `<section class="block saison-hinweis"><h2>Aktuell und saisonal</h2><p>${esc(e.saisonHinweis)}</p><p class="leise">Angabe des Betriebs, Stand ${esc(datumDe(e.gepflegt.stand))}</p></section>` : ''}
     ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
@@ -1896,6 +1922,25 @@ ${proLand.map(({ l, liste }) => `<section class="abschnitt typ-land" id="${l.slu
 const imp = cfg.impressum;
 const impFehlt = !imp.name || !imp.strasse || !imp.plzOrt || !imp.email;
 const kontaktMail = cfg.kontaktEmail || imp.email;
+// ---------- Seite /veranstaltungen/ (Daten siehe oben bei den Hofseiten) ----------
+{
+  const proLand = laender.map((l) => ({ l, liste: TERMINE.filter((v) => v.e.k.land === l.code) })).filter((x) => x.liste.length);
+  schreibe('/veranstaltungen/', seite({
+    titel: TERMINE.length ? `Hoffeste und Veranstaltungen auf Höfen – ${zahl(TERMINE.length)} Termine` : 'Hoffeste und Veranstaltungen auf Höfen',
+    beschreibung: 'Hoffeste, Tag des offenen Hofes, Schlachtfeste und Weihnachtsmärkte am Hof – Termine, die die Betriebe selbst eintragen, nach Bundesland sortiert.',
+    pfad: '/veranstaltungen/', noindex: TERMINE.length < MIN_SEITE, krumen: [['Veranstaltungen', '/veranstaltungen/']],
+    jsonld: TERMINE.slice(0, 100).map(terminLd),
+    inhalt: `
+<section class="seitenkopf">
+  <h1>Hoffeste und Veranstaltungen</h1>
+  <p>${TERMINE.length ? `${plural(TERMINE.length, 'Termin', 'Termine')} von Höfen in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}.` : 'Gerade sind keine Termine eingetragen.'} Die Termine tragen die Betriebe selbst ein – Hoffeste, Tag des offenen Hofes, Schlachtfeste oder Weihnachtsmärkte am Hof.</p>
+  ${proLand.length > 1 ? `<p class="typ-chips">${proLand.map(({ l, liste }) => `<a href="#${l.slug}">${esc(l.name)} <span>${liste.length}</span></a>`).join('')}</p>` : ''}
+</section>
+${proLand.map(({ l, liste }) => `<section class="abschnitt" id="${l.slug}"><h2>${esc(l.name)}</h2><ul class="termin-liste">${liste.map((v) => terminHtml(v)).join('')}</ul></section>`).join('\n')}
+<section class="abschnitt seo-text"><p>Du betreibst einen Hof und planst ein Fest? Im <a href="/betrieb/">Betreiber-Bereich</a> trägst du Termine selbst ein. Sie erscheinen hier und auf der Seite deines Hofs.</p></section>`,
+  }), TERMINE.length >= MIN_SEITE);
+}
+
 schreibe('/merkliste/', seite({
   titel: 'Deine Merkliste | Hofladenliste',
   beschreibung: 'Deine gemerkten Hofläden und Hofautomaten – gespeichert nur in deinem Browser.',
@@ -1911,6 +1956,31 @@ schreibe('/merkliste/', seite({
   <p class="leise" data-merkliste-status>Merkliste wird geladen …</p>
   <div class="karten-reihe" data-merkliste-liste></div>
   <p data-merkliste-leeren hidden><button type="button" class="knopf knopf-hell">Merkliste leeren</button></p>
+</section>`,
+}), false);
+
+// Betreiber-Bereich: Anmeldung per Link, danach Höfe, Neuigkeiten, Termine und Statistik (Inhalt per JavaScript)
+schreibe('/betrieb/', seite({
+  titel: 'Für Betriebe: Eintrag selbst pflegen | Hofladenliste',
+  beschreibung: 'Betreiber-Bereich von Hofladenliste: Öffnungszeiten, Angebot und Fotos selbst pflegen, Neuigkeiten wie „Spargel ist da!“ und Hoffeste veröffentlichen.',
+  pfad: '/betrieb/', noindex: true, klasse: 'textseite', krumen: [['Für Betriebe', '/betrieb/']],
+  inhalt: `
+<section class="seitenkopf kompakt">
+  <h1>Dein Hof auf Hofladenliste</h1>
+  <p>Öffnungszeiten, Angebot und Fotos selbst pflegen, Neuigkeiten und Termine veröffentlichen – ohne Passwort, mit einem Link per E-Mail.</p>
+</section>
+<section class="abschnitt betrieb" data-betrieb>
+  <div class="betrieb-anmelden" data-betrieb-anmelden>
+    <h2>Anmelden</h2>
+    <form data-anmelden-form>
+      <label for="betrieb-email">E-Mail-Adresse deines Betriebs</label>
+      <div class="plz-zeile"><input id="betrieb-email" name="email" type="email" autocomplete="email" required placeholder="info@dein-hof.de"><button type="submit" class="knopf">Anmeldelink schicken</button></div>
+      <p class="leise" data-anmelden-status aria-live="polite"></p>
+    </form>
+    <p>Noch kein Zugang? Such deinen Hof und wähle auf seiner Seite „Eintrag übernehmen“. Passt deine E-Mail-Adresse zur Website des Hofs, bekommst du sofort einen Bestätigungslink, sonst prüfen wir die Übernahme von Hand. Fragen: <a href="mailto:hofladenliste@gmail.com">hofladenliste@gmail.com</a></p>
+  </div>
+  <div data-betrieb-inhalt hidden></div>
+  <noscript><p>Der Betreiber-Bereich braucht JavaScript.</p></noscript>
 </section>`,
 }), false);
 
@@ -1942,12 +2012,14 @@ textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von h
 ${KACHELN ? '<p>Die Karten liefern wir von unserem eigenen Server aus (Kartendaten © OpenStreetMap-Mitwirkende, aufbereitet mit Protomaps). Dabei werden keine Daten an Dritte übertragen; es gelten die Angaben zu Cloudflare oben.</p>' : `<p>Karten werden erst geladen, wenn du auf „Karte laden“ klickst. Dann ruft dein Browser Kartenbilder von den Servern der OpenStreetMap Foundation (St John’s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Großbritannien) ab; dabei wird deine IP-Adresse übertragen (Art. 6 Abs. 1 lit. a DSGVO). Wenn du „Für diese Website merken“ auswählst, speichert dein Browser diese Entscheidung lokal (localStorage). Du kannst sie jederzeit über die Browsereinstellungen löschen. Datenschutzhinweise der OpenStreetMap Foundation: <a href="https://osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org/wiki/Privacy_Policy</a>.</p>`}
 <h2>Postleitzahl- und Standortsuche</h2>
 <p>Wenn du eine Postleitzahl eingibst, wird sie an unseren Server übermittelt, um passende Hofläden anzuzeigen. Wenn du „Meinen Standort verwenden“ wählst, fragt dein Browser zuerst um Erlaubnis; die Koordinaten werden nur für diese Suche übertragen und nicht gespeichert. Die zuletzt gesuchte Postleitzahl speichert dein Browser lokal (localStorage).</p>
+<h2>Betreiber-Bereich</h2>
+<p>Betriebe melden sich unter /betrieb/ mit einem Link per E-Mail an, ein Passwort gibt es nicht. Wir speichern dafür die E-Mail-Adresse, die zugeordneten Höfe und den Zeitpunkt der letzten Anmeldung. Nach der Anmeldung setzt dein Browser ein technisch notwendiges Sitzungs-Cookie („hl_sitzung“, 30 Tage), das nur der Anmeldung dient (§ 25 Abs. 2 TTDSG). E-Mails (Anmeldelinks, Bestätigungen) versenden wir über Resend (Resend, Inc., USA, EU-US Data Privacy Framework); übermittelt werden Empfängeradresse und Inhalt der Nachricht (Art. 6 Abs. 1 lit. b DSGVO).</p>
 <h2>Merkliste</h2>
 <p>Höfe, die du mit „Merken“ markierst, speichert nur dein Browser (localStorage) – wir haben darauf keinen Zugriff. Wenn du die Merkliste öffnest, lädt dein Browser die aktuellen Angaben zu diesen Höfen von unserem Server; dabei wird nichts gespeichert. Du kannst die Merkliste jederzeit dort leeren oder über die Browsereinstellungen löschen.</p>
 <h2>Suchstatistik</h2>
 <p>Damit wir sehen, in welchen Regionen Hofläden gesucht werden, zählen wir auf unserem Server, wie oft am Tag nach einer Postleitzahl gesucht wurde – zusammen mit dem zugehörigen Landkreis, dem gewählten Angebotsfilter und der Art der Suche (Postleitzahl, Ortsname oder Standort). Bei der Suche nach einem Ortsnamen zählen wir die Postleitzahl des gefundenen Orts; den eingegebenen Text speichern wir nicht. Bei der Standortsuche wird nur die nächstgelegene Postleitzahl gezählt, nicht die Koordinaten. IP-Adressen, Uhrzeiten, Geräte- oder Browserdaten speichern wir dabei nicht, und auf deinem Gerät wird nichts gespeichert oder ausgelesen. Ein Rückschluss auf einzelne Personen ist nicht möglich. Die Zähler liegen in einer Datenbank von Cloudflare (Cloudflare, Inc., Region Westeuropa); Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung des Angebots (Art. 6 Abs. 1 lit. f DSGVO).</p>
 <h2>Nutzungsstatistik</h2>
-<p>Um zu sehen, welche Funktionen genutzt werden, zählen wir auf unserem Server Klicks auf „Route“, „Anrufen“, „Website“, auf Filter und auf „In meiner Nähe“ – als reine Tageszähler je Seitentyp (z. B. „heute 12-mal Route auf Hofseiten“). Dabei speichern wir weder IP-Adressen noch Uhrzeiten, Geräte- oder Browserdaten; auf deinem Gerät wird nichts gespeichert oder ausgelesen. Ein Rückschluss auf einzelne Personen ist nicht möglich. Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung des Angebots (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<p>Um zu sehen, welche Funktionen genutzt werden, zählen wir auf unserem Server Klicks auf „Route“, „Anrufen“, „Website“, auf Filter und auf „In meiner Nähe“ – als reine Tageszähler je Seitentyp (z. B. „heute 12-mal Route auf Hofseiten“). Auf Hofseiten zählen wir zusätzlich Aufrufe und diese Klicks je Hof als Tagessumme, damit der Betrieb sieht, wie oft sein Eintrag genutzt wird. Dabei speichern wir weder IP-Adressen noch Uhrzeiten, Geräte- oder Browserdaten; auf deinem Gerät wird nichts gespeichert oder ausgelesen. Ein Rückschluss auf einzelne Personen ist nicht möglich. Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung des Angebots (Art. 6 Abs. 1 lit. f DSGVO).</p>
 <h2 id="formular">Formular „Mitmachen“</h2>
 <p>Wenn du über das Formular einen Hof einträgst, Angaben korrigierst oder einen Eintrag übernimmst, speichern wir deine Angaben in einer Datenbank von Cloudflare (Cloudflare, Inc., Region Westeuropa): die Angaben zum Betrieb, gegebenenfalls Fotos sowie – freiwillig, bei der Übernahme eines Eintrags erforderlich – deinen Namen und deine E-Mail-Adresse. Die Angaben zum Betrieb und freigegebene Fotos veröffentlichen wir nach Prüfung. Name und E-Mail-Adresse verwenden wir nur für Rückfragen und zur Bestätigung von Betreibern; sie werden nicht veröffentlicht und spätestens sechs Monate nach Bearbeitung gelöscht. Abgelehnte Fotos löschen wir sofort. Gegen Missbrauch zählen wir Meldungen je Absender und Tag über einen anonymisierten Tages-Hash der IP-Adresse; die IP-Adresse selbst speichern wir nicht. Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bzw. bei Betreibern die Durchführung der Eintragung (Art. 6 Abs. 1 lit. b DSGVO). Du kannst deine Angaben jederzeit über die Kontaktadresse löschen lassen.</p>
 <h2>Cookies und Tracking</h2>

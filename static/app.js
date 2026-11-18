@@ -6,6 +6,7 @@ const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const params = new URLSearchParams(location.search);
+const hofSlug = location.pathname.match(/^\/hof\/([a-z0-9-]+)\/$/)?.[1] || '';
 const speicher = {
   get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
   set: (k, v) => { try { localStorage.setItem(k, v); } catch {} },
@@ -44,6 +45,14 @@ function zeigeStatus(root = document) {
   for (const el of $$('.st[data-oh]', root)) {
     const s = status(el.dataset.oh, new Date(), el.closest('[data-land]')?.dataset.land || '');
     if (!s) continue;
+    // Betriebsferien (Angabe des Betriebs) gehen vor
+    const ymd = berlinZeit().ymd;
+    const ferien = (el.closest('[data-urlaub]')?.dataset.urlaub || '').split(' ').map((x) => x.split('/')).find(([a, b]) => a <= ymd && ymd <= b);
+    if (ferien) {
+      el.className = 'st st-zu';
+      el.innerHTML = `<b>Betriebsferien bis ${esc(new Date(`${ferien[1]}T12:00`).toLocaleDateString('de-DE', { day: 'numeric', month: 'long' }))}</b>`;
+      continue;
+    }
     el.className = `st ${s.offen === null ? 'st-unklar' : s.offen ? 'st-auf' : 'st-zu'}`;
     el.innerHTML = `<b>${esc(s.kurz)}</b><span>Heute ${esc(s.heute)}</span>`;
   }
@@ -154,6 +163,41 @@ function markiere(k) {
   k.classList.add('markiert');
   setTimeout(() => k.classList.remove('markiert'), 1600);
 }
+
+// Betreiber-Bereich (/betrieb/) als eigenes Modul
+if ($('[data-betrieb]')) import(new URL('./betrieb.js' + new URL(import.meta.url).search, import.meta.url)).then((m) => m.betrieb());
+
+// Hof-News der Betriebe („Spargel ist da!“): auf Hofseiten, an Karten in Listen und auf der Startseite
+async function neuigkeitenZeigen() {
+  const karten = $$('.laden[data-slug]');
+  const start = $('[data-news-start]');
+  if (!hofSlug && !karten.length && !start) return;
+  const sids = hofSlug ? [hofSlug] : karten.map((k) => k.dataset.slug).slice(0, 200);
+  let d;
+  try { d = await (await fetch(start && !karten.length ? '/api/neuigkeiten' : `/api/neuigkeiten?sids=${encodeURIComponent(sids.join(','))}`)).json(); } catch { return; }
+  const news = d.neuigkeiten || [];
+  if (!news.length) return;
+  const proHof = new Map();
+  for (const n of news) if (!proHof.has(n.pfad)) proHof.set(n.pfad, n);
+  for (const k of karten) {
+    const n = proHof.get(`/hof/${k.dataset.slug}/`);
+    if (n && !$('.news-badge', k)) $('.laden-name', k)?.insertAdjacentHTML('afterend', `<p class="news-badge news-${esc(n.art)}">${esc(n.text)}</p>`);
+  }
+  if (hofSlug) {
+    const n = news[0];
+    $('.hof-kopf h1')?.insertAdjacentHTML('afterend', `<p class="news-badge news-${esc(n.art)}">${esc(n.text)} <span>Meldung des Betriebs, bis ${esc(new Date(`${n.bis}T12:00`).toLocaleDateString('de-DE', { day: 'numeric', month: 'long' }))}</span></p>`);
+  }
+  if (start) {
+    const st = standortLesen();
+    const dist = (n) => (st ? Math.hypot(n.lat - st.lat, (n.lon - st.lon) * 0.63) : 0);
+    const liste = [...proHof.values()].filter((n) => !st || dist(n) < 0.9).sort((a, b) => dist(a) - dist(b)).slice(0, 6);
+    if (!liste.length) return;
+    $('[data-news-start-liste]', start).innerHTML = liste.map((n) => `<li><a href="${esc(n.pfad)}"><b>${esc(n.text)}</b><span>${esc(n.titel)} · ${esc(n.ort)}</span></a></li>`).join('');
+    $('h2', start).textContent = st ? 'Neu und frisch in deiner Region' : 'Neu und frisch auf den Höfen';
+    start.hidden = false;
+  }
+}
+neuigkeitenZeigen();
 
 // Die Vollkarte (Cluster, Filter, Liste) liegt in einem eigenen Modul und wird erst mit der Karte geladen
 async function vollkarte(ctx) {
@@ -682,9 +726,10 @@ karteAutomatisch();
 
 // ---------- Nutzungsstatistik: anonyme Tageszähler (siehe Datenschutz) ----------
 const seitenTyp = document.body.dataset.seite || 'sonstige';
+// Auf Hofseiten zählt jeder Klick auch für die Statistik des Betriebs (nur Tagessummen je Hof, hofSlug oben)
 function zaehle(e, d = '') {
   try {
-    const daten = JSON.stringify({ e, s: seitenTyp, d });
+    const daten = JSON.stringify({ e, s: seitenTyp, d, ...(hofSlug ? { h: hofSlug } : {}) });
     if (!navigator.sendBeacon?.('/api/ereignis', new Blob([daten], { type: 'application/json' }))) fetch('/api/ereignis', { method: 'POST', body: daten, keepalive: true });
   } catch {}
 }
@@ -706,6 +751,7 @@ document.addEventListener('click', (ev) => {
   else if (a.matches('[data-bio-filter]')) zaehle('filter', 'bio');
   else if (a.matches('[data-rund-filter]')) zaehle('filter', 'rund');
 }, { capture: true });
+if (hofSlug && !/bot|crawl|spider|lighthouse/i.test(navigator.userAgent)) zaehle('aufruf');
 for (const f of $$('form[action="/suche"]')) f.addEventListener('submit', () => zaehle('suche', /^\d/.test(f.elements.q?.value || '') ? 'plz' : 'ort'));
 
 // ---------- Entfernung auf Listen und Hofseiten ----------
