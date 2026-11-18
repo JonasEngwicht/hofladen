@@ -17,21 +17,31 @@ NAME = r'(?i)(hof|bauer|milch|eier|regiomat|regio-?box|automat|direktvermarkt|se
 KATS = ['farm', 'farmers_market', 'organic_grocery_store', 'dairy_farm', 'poultry_farm', 'orchard', 'agriculture',
         'agricultural_service', 'pick_your_own_farm', 'ranch', 'greengrocer', 'produce_store', 'dairy_store',
         'agritourism', 'livestock_breeder', 'cheese_shop', 'butcher_shop']
-SRC = f"read_parquet('s3://overturemaps-us-west-2/release/{rel}/theme=places/type=place/*', hive_partitioning=1)"
+# Erst nur die Orte in Deutschland lokal laden (offizielles overturemaps-Werkzeug, liest nur passende
+# Zeilengruppen und arbeitet parallel), dann lokal filtern. Direkt über DuckDB/S3 dauert das sehr lange.
+lokal = ziel + '.places.parquet'
+subprocess.run(['overturemaps', 'download', '--bbox=5.8,47.2,15.1,55.1', '-f', 'geoparquet', '--type=place',
+                '-o', lokal], check=True)
+SRC = f"read_parquet('{lokal}')"
 con = duckdb.connect()
-con.execute("INSTALL httpfs; LOAD httpfs; SET s3_region='us-west-2';")
 schema = {r[0] for r in con.execute(f"DESCRIBE SELECT * FROM {SRC}").fetchall()}
 KAT = 'taxonomy.primary' if 'taxonomy' in schema else 'categories.primary'
 HIER = "array_to_string(taxonomy.hierarchy, '>')" if 'taxonomy' in schema else "''"
+print('Spalten:', sorted(schema), file=sys.stderr)
+if 'bbox' in schema:
+    LAT, LON = 'round((bbox.ymin + bbox.ymax) / 2, 6)', 'round((bbox.xmin + bbox.xmax) / 2, 6)'
+else:
+    con.execute('INSTALL spatial; LOAD spatial;')
+    LAT, LON = 'round(ST_Y(ST_GeomFromWKB(geometry)), 6)', 'round(ST_X(ST_GeomFromWKB(geometry)), 6)'
+
 q = f"""
 SELECT id, names.primary AS name, {KAT} AS kat, {HIER} AS hier, confidence AS konf, operating_status AS status,
-  round((bbox.ymin + bbox.ymax) / 2, 6) AS lat, round((bbox.xmin + bbox.xmax) / 2, 6) AS lon,
+  {LAT} AS lat, {LON} AS lon,
   websites, phones, emails, socials,
   addresses[1].freeform AS strasse, addresses[1].postcode AS plz, addresses[1].locality AS ort,
   sources[1].dataset AS quelle, sources[1].license AS lizenz
 FROM {SRC}
-WHERE bbox.xmin BETWEEN 5.8 AND 15.1 AND bbox.ymin BETWEEN 47.2 AND 55.1
-  AND coalesce(addresses[1].country, 'DE') = 'DE'
+WHERE coalesce(addresses[1].country, 'DE') = 'DE'
   AND coalesce(operating_status, 'open') = 'open'
   AND confidence >= 0.5
   AND (regexp_matches(names.primary, '{NAME}') OR {KAT} IN ({','.join(repr(k) for k in KATS)}))
