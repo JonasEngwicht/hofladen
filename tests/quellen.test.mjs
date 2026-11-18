@@ -164,19 +164,22 @@ test('Offene Quellen: mehrere Quellen, stabile IDs, Website-Prüfung und fehlend
     ort('ov1', 'Hofladen Schulze', 51.70, 14.55, { phones: ['035621'] }),
     ort('ov2', 'Hofladen Lehmann', 51.65, 14.45, { konf: 0.55, websites: ['https://lehmann-hof.de'] }), // unsicher, Website bestätigt
     ort('ov3', 'Hofladen Krüger', 51.62, 14.40, { konf: 0.55, websites: ['https://krueger-hof.de'] }), // unsicher, Website nicht bestätigt
+    ort('ov4', 'Hofladen Pohl', 51.58, 14.35, { konf: 0.6 }), // schon veröffentlicht, Konfidenz gesunken → bleibt
   ] };
   const kvm = { quelle: 'kvm', orte: [
     ort('k1', 'Schulzes Hofladen', 51.7003, 14.5502, { kat: null, konf: 0.8, hofHinweis: true, oeffnungszeiten_text: 'Fr 14–18 Uhr', websites: ['https://schulze.de'] }),
     ort('k2', 'Gut Wiesengrund', 51.68, 14.50, { kat: null, konf: 0.8, hofHinweis: true }),
     ort('k3', 'Meyers Hof', 51.7403, 14.6302, { kat: null, konf: 0.8, hofHinweis: true, oeffnungszeiten_text: 'Sa 9–12 Uhr', phones: ['0356222'] }),
+    ort('k4', 'Wagners Hofladen', 51.5601, 14.3001, { kat: null, konf: 0.8, hofHinweis: true }), // früher als Overture ov9 veröffentlicht
   ] };
-  const fsq = { quelle: 'foursquare', orte: [ort('f1', 'Hofladen Bauer Zander', 51.66, 14.60, { konf: 0.75 })] };
+  const fsq = { quelle: 'foursquare', orte: [ort('f1', 'Hofladen Bauer Zander', 51.66, 14.60, { konf: 0.75, plz: '03149', phones: ['0493562123456'] })] };
   for (const [n, d] of Object.entries({ overture, kvm, fsq })) writeFileSync(join(dir, `${n}.json`), JSON.stringify(d));
   writeFileSync(join(dir, 'osm.json'), JSON.stringify(osm));
   writeFileSync(join(dir, 'pruefung.json'), JSON.stringify({ 'https://lehmann-hof.de/': { ok: true, status: 200, stand: new Date().toISOString().slice(0, 10) },
     'https://krueger-hof.de/': { ok: false, status: 200, stand: new Date().toISOString().slice(0, 10) } }));
   // bisheriger Stand: Schulze war schon als Overture-Eintrag veröffentlicht → ID bleibt, obwohl KVM vorrangig wäre
-  writeFileSync(join(dir, 'ziel.json'), JSON.stringify({ neu: [{ overture: 'ov1', name: 'Hofladen Schulze', lat: 51.70, lon: 14.55 }], ergaenzungen: {} }));
+  writeFileSync(join(dir, 'ziel.json'), JSON.stringify({ neu: [{ overture: 'ov1', name: 'Hofladen Schulze', lat: 51.70, lon: 14.55 },
+    { overture: 'ov4', name: 'Hofladen Pohl', lat: 51.58, lon: 14.35 }, { overture: 'ov9', name: 'Hofladen Wagner', lat: 51.56, lon: 14.30 }], ergaenzungen: {} }));
   const lauf = (...dateien) => execFileSync(process.execPath, ['scripts/import-quellen.mjs', ...dateien.map((d) => join(dir, d)),
     '--osm', join(dir, 'osm.json'), '--ziel', join(dir, 'ziel.json'), '--pruefung', join(dir, 'pruefung.json')], { env: { ...process.env, ERLAUBE_SCHWUND: '' } });
   // Prüfliste enthält nur noch nicht geprüfte unsichere Kandidaten
@@ -186,7 +189,9 @@ test('Offene Quellen: mehrere Quellen, stabile IDs, Website-Prüfung und fehlend
   lauf('overture.json', 'kvm.json', 'fsq.json');
   let z = JSON.parse(readFileSync(join(dir, 'ziel.json'), 'utf8'));
   const ids = z.neu.map((e) => `${e.quelle}/${e.qid}`).sort();
-  assert.deepEqual(ids, ['foursquare/f1', 'kvm/k2', 'overture/ov1', 'overture/ov2']);
+  assert.deepEqual(ids, ['foursquare/f1', 'kvm/k2', 'kvm/k4', 'overture/ov1', 'overture/ov2', 'overture/ov4']);
+  assert.deepEqual(z.neu.find((e) => e.qid === 'k4').alteIds, ['overture/ov9']);
+  assert.equal(z.neu.find((e) => e.qid === 'f1').telefon, '+49 3562123456');
   const schulze = z.neu.find((e) => e.qid === 'ov1');
   assert.equal(schulze.oeffnungszeiten_text, 'Fr 14–18 Uhr'); // aus KVM zusammengeführt
   assert.deepEqual(schulze.weitereQuellen, ['kvm']);

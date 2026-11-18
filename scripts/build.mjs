@@ -1816,6 +1816,9 @@ writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoef
 
 // Weiterleitungen für Seiten aus dem Archiv, die es nicht mehr gibt
 const slugNachId = new Map(eintraege.map((e) => [e.osm || e.id, e.slug]));
+// Einträge aus offenen Quellen, deren Hof früher unter einer anderen ID (anderer Quelle) veröffentlicht war
+const ersetztDurch = new Map();
+for (const e of eintraege) for (const alt of e.alteIds || []) if (!slugNachId.has(alt)) { slugNachId.set(alt, e.slug); ersetztDurch.set(alt, e.id); }
 const umleitungen = {}, entfernt = [];
 for (const pfad of Object.keys(stand.seiten)) {
   if (ALLE_SEITEN.has(pfad)) continue;
@@ -1831,7 +1834,8 @@ for (const pfad of Object.keys(stand.seiten)) {
   umleitungen[pfad] = ziel;
 }
 const alteSlugs = {};
-for (const [slug, roh] of Object.entries(stand.hoefe)) if (!ALLE_SEITEN.has(`/hof/${slug}/`)) alteSlugs[slug] = stabileIdAus(roh);
+for (const [slug, roh] of Object.entries(stand.hoefe)) if (!ALLE_SEITEN.has(`/hof/${slug}/`)) alteSlugs[slug] = stabileIdAus(ersetztDurch.get(roh) || roh);
+for (const [alt, neuId] of ersetztDurch) alteSlugs[stabileIdAus(alt)] = stabileIdAus(neuId); // alte stabile ID → neue
 writeFileSync(join(GEN, 'routen.json'), JSON.stringify({ umleitungen, entfernt, alteSlugs }));
 console.log(`Seitenarchiv: ${Object.keys(stand.seiten).length} Seiten, ${Object.keys(umleitungen).length} Weiterleitungen, ${entfernt.length} entfernte Höfe (410)`);
 

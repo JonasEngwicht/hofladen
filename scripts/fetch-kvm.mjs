@@ -12,8 +12,9 @@ const SUCHE = ['hofladen', '#hofladen', 'hofverkauf', '#hofverkauf', 'direktverm
   'milchtankstelle', '#milchtankstelle', 'regiomat', '#regiomat', 'bauernladen', '#abhof', 'ab hof', 'eierautomat', 'verkaufsautomat',
   'hofkäserei', 'selbstbedienung hof'];
 // Schlagwörter, mit denen die Karte von morgen einen Ort selbst als Direktverkauf einordnet
-const HOF_TAGS = new Set(['hofladen', 'hofverkauf', 'direktvermarktung', 'direktvermarkter', 'milchtankstelle', 'regiomat', 'bauernladen',
-  'abhof', 'ab-hof', 'eierautomat', 'milchautomat', 'hofkäserei', 'hofkaeserei', 'hofmarkt', 'verkaufsautomat']);
+// („direktvermarktung“ allein reicht nicht: so sind auch Verbände, Broschüren und Märkte verschlagwortet)
+const HOF_TAGS = new Set(['hofladen', 'hofverkauf', 'milchtankstelle', 'regiomat', 'bauernladen', 'abhof', 'ab-hof', 'eierautomat',
+  'milchautomat', 'hofkäserei', 'hofkaeserei', 'hofmarkt', 'verkaufsautomat', 'hofcafé-und-hofladen']);
 
 const json = async (url) => {
   for (let v = 0; v < 3; v++) {

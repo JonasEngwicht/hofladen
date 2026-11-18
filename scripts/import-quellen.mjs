@@ -32,6 +32,7 @@ const PRUEFUNG_TAGE = 180;
 const bisher = existsSync(zielPfad) ? JSON.parse(readFileSync(zielPfad, 'utf8')) : { neu: [], ergaenzungen: {} };
 for (const e of bisher.neu) if (!e.quelle && e.overture) { e.quelle = 'overture'; e.qid = e.overture; } // altes Format
 const bisherIds = new Set(bisher.neu.map((e) => `${e.quelle}/${e.qid}`));
+const bisherNach = new Map(bisher.neu.map((e) => [`${e.quelle}/${e.qid}`, e]));
 const pruefung = existsSync(pruefPfad) ? JSON.parse(readFileSync(pruefPfad, 'utf8')) : {};
 const frisch = (p) => p && (Date.now() - Date.parse(p.stand)) / 864e5 <= PRUEFUNG_TAGE;
 
@@ -50,11 +51,19 @@ for (const p of rohPfade) {
     const x = { ...o, quelle: q, qid: String(o.id), id: `${q}/${o.id}`, name: sauberName(o.name), k: kontakt(o), a: adresse(o),
       datensatz: o.datensatz ?? o.quelle_datensatz ?? null };
     if (q === 'overture') x.datensatz = o.quelle; // Overture: Teildatensatz (meta, BrightQuery …)
+    if (q === 'foursquare') x.k.telefon = kontakt({ phones: (o.phones || []).map((t) => fsqTelefon(t, o.plz)) }).telefon;
     // Über die Website des Hofs bestätigt?
     const w = x.k.website && pruefung[x.k.website];
     if (nurKonfidenzFehlt(x) && w?.ok && frisch(w)) { x.konf = Math.max(x.konf, MIN_KONF_SCHWACH); x.webGeprueft = w.stand; }
     orte.push(x);
   }
+}
+// Foursquare speichert manche Nummern als „049…“ (Landesvorwahl mit führender 0). Echte Vorwahlen 049xx gibt es
+// nur in Ostfriesland (PLZ 26…); dort nur bei überlanger Nummer umdeuten.
+function fsqTelefon(t, pc) {
+  const z = String(t || '').replace(/\D/g, '');
+  if (!/^049\d{7,}$/.test(z) || String(t).trim().startsWith('+')) return t;
+  return !String(pc || '').startsWith('26') || z.length >= 13 ? `+49${z.slice(3)}` : t;
 }
 const fehlend = Object.keys(QUELLEN).filter((q) => !quellenInfo[q] && bisher.neu.some((e) => e.quelle === q));
 
@@ -103,7 +112,9 @@ for (const [id, alt] of Object.entries(bisher.ergaenzungen || {})) {
 }
 
 // 2) Neue Einträge
-const auswahl = zusammenfuehren(orte.filter(istHofladen), rang);
+// Bestandsschutz: bereits veröffentlichte Einträge bleiben, solange die Quelle sie noch führt (Konfidenz ≥ 0,5)
+const bleibt = (o) => istHofladen(o) || (bisherIds.has(o.id) && o.konf >= 0.5 && istHofladen({ ...o, konf: 1 }));
+const auswahl = zusammenfuehren(orte.filter(bleibt), rang);
 const neu = [];
 const stat = { kandidaten: orte.length, auswahl: auswahl.length, inOsm: 0, ohneOrt: 0, webGeprueft: 0 };
 for (const o of auswahl) {
@@ -136,6 +147,28 @@ for (const o of auswahl) {
     produkte: null, selbstbedienung: typ === 'automat' || /selbstbedienung/i.test(o.name) ? true : null, zahlung: null, geprueft: null,
   });
 }
+// Bisher veröffentlichte Einträge, die die Quelle nicht mehr führt, aber derselbe Hof aus einer anderen Quelle
+// (oder mit neuer ID aus derselben Quelle) ist da: ID übernehmen bzw. alte ID vermerken (Weiterleitung im Build)
+{
+  const jetztIds = new Set(neu.map((e) => `${e.quelle}/${e.qid}`));
+  const frei = neu.filter((e) => !bisherIds.has(`${e.quelle}/${e.qid}`));
+  const freiIdx = rasterIndex(frei);
+  for (const d of bisher.neu) {
+    const did = `${d.quelle}/${d.qid}`;
+    if (jetztIds.has(did) || fehlend.includes(d.quelle)) continue;
+    const n = freiIdx.nahe(d.lat, d.lon).find((x) => !x.geerbt && gleicherHof(x, d));
+    if (!n) continue;
+    n.geerbt = true;
+    if (n.quelle === d.quelle) n.qid = d.qid;
+    else n.alteIds = [...new Set([...(n.alteIds || []), did, ...(d.alteIds || [])])];
+    stat.geerbt = (stat.geerbt || 0) + 1;
+  }
+  for (const n of neu) {
+    const alt = bisherNach.get(`${n.quelle}/${n.qid}`);
+    if (alt?.alteIds) n.alteIds = [...new Set([...(n.alteIds || []), ...alt.alteIds])];
+    delete n.geerbt;
+  }
+}
 // Neue Einträge aus Quellen, deren Abruf fehlgeschlagen ist, behalten (sofern weiter nicht in OSM und nicht doppelt)
 const neuIdx = rasterIndex(neu);
 for (const e of bisher.neu.filter((x) => fehlend.includes(x.quelle))) {
@@ -158,6 +191,6 @@ for (const q of fehlend) quellenInfo[q] = { ...(bisher.quellen?.[q] || {}), uebe
 writeFileSync(zielPfad, JSON.stringify({ stand, quellen: quellenInfo, neu, ergaenzungen }, null, 0).replace(/\},\{/g, '},\n{') + '\n');
 const felder = {};
 for (const z of Object.values(ergaenzungen)) for (const [f, q] of Object.entries(z.quellen)) felder[`${f}/${q}`] = (felder[`${f}/${q}`] || 0) + 1;
-console.log(`${stat.kandidaten} Kandidaten, ${stat.auswahl} eindeutige Hofläden/Automaten, davon ${stat.inOsm} schon in OSM, ${stat.ohneOrt} ohne Ort → ${neu.length} neue Einträge (${JSON.stringify(jetzt)}; ${stat.webGeprueft} über die Website bestätigt).`);
+console.log(`${stat.kandidaten} Kandidaten, ${stat.auswahl} eindeutige Hofläden/Automaten, davon ${stat.inOsm} schon in OSM, ${stat.ohneOrt} ohne Ort → ${neu.length} neue Einträge (${JSON.stringify(jetzt)}; ${stat.webGeprueft} über die Website bestätigt, ${stat.geerbt || 0} mit übernommener ID).`);
 if (fehlend.length) console.log(`Abruf fehlgeschlagen, bisherige Daten übernommen: ${fehlend.join(', ')}`);
 console.log(`Ergänzungen für ${Object.keys(ergaenzungen).length} OSM-Einträge: ${JSON.stringify(felder)}`);

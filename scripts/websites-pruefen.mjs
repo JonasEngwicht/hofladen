@@ -2,13 +2,13 @@
 // Prüft die Startseiten von Höfen aus der Prüfliste (scripts/import-quellen.mjs --pruefliste):
 // Erwähnt die eigene Website des Hofs einen Hofladen, Hofverkauf, Automaten o. ä., gilt der Kandidat als bestätigt.
 // Ergebnis je URL in data/website-pruefung.json ({ok, status, stand}); geprüft wird höchstens alle 180 Tage.
-// Aufruf: node scripts/websites-pruefen.mjs <pruefliste.json> [--max 1500]
+// Aufruf: node scripts/websites-pruefen.mjs <pruefliste.json> [--max 3000]
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { websiteBestaetigt } from './quellen.mjs';
 
 const args = process.argv.slice(2);
 const liste = JSON.parse(readFileSync(args[0], 'utf8'));
-const max = +(args[args.indexOf('--max') + 1] || 1500) || 1500;
+const max = +(args[args.indexOf('--max') + 1] || 3000) || 3000;
 const ziel = new URL('../data/website-pruefung.json', import.meta.url);
 const cache = existsSync(ziel) ? JSON.parse(readFileSync(ziel, 'utf8')) : {};
 const stand = new Date().toISOString().slice(0, 10);

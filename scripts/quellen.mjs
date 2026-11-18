@@ -20,7 +20,7 @@ export const STARK = /hof-?laden|hoflädchen|hofladl|hofverkauf|bauern-?laden|ho
 // Höfe, die oft direkt verkaufen – nur mit passender Kategorie und hoher Konfidenz
 export const SCHWACH = /bio-?hof|obst-?hof|spargel-?hof|erdbeer-?hof|gemüse-?hof|geflügel-?hof|eier-?hof|kartoffel-?hof/i;
 // Keine Höfe, auch wenn der Name passt
-const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten|online|versandhandel|transporte?\b|\.(de|com|net|eu|info)\b/i;
+const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten|online|versandhandel|transporte?\b|\.(de|com|net|eu|info)\b|^landkreis|^kreis |^stadt |^gemeinde |einkaufsf(ü|ue)hrer|regionale lebensmittel in|wochenmarkt|bauernmarkt|bio-?markt|markthalle|marktschw(ä|ae)rmer|food-?coop|initiative|netzwerk|verbund|arbeitsgemeinschaft|ernährungsrat|ernaehrungsrat/i;
 const KAT_HOF = new Set(['farm', 'poultry_farm', 'dairy_farm', 'orchard', 'pick_your_own_farm', 'ranch', 'agriculture',
   'agricultural_service', 'livestock_breeder', 'farmers_market', 'greengrocer', 'produce_store', 'grocery_store',
   'organic_grocery_store', 'food_and_beverage_store', 'specialty_foods_store', 'dairy_store', 'cheese_shop', 'butcher_shop',
@@ -136,7 +136,7 @@ function url(u) {
   try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; }
 }
 export function kontakt(o) {
-  const webs = (o.websites || []).map(url).filter(Boolean);
+  const webs = (o.websites || []).map(url).filter((u) => u && !/\.(pdf|docx?|xlsx?)(\?|#|$)/i.test(u));
   const socials = [...(o.socials || []), ...webs].map(url).filter(Boolean);
   const host = (u) => new URL(u).hostname.replace(/^www\./, '');
   const website = webs.find((u) => !FREMD.test(`.${host(u)}`) && !/(^|\.)(facebook|instagram|fb)\.com$/.test(host(u))) || null;
