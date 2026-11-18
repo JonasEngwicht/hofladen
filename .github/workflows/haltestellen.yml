@@ -1,0 +1,45 @@
+name: Haltestellen aktualisieren
+
+# Nächste Bus-, Straßenbahn- und Bahnhaltestelle für die Hofseiten (OpenStreetMap, ODbL).
+# Speichert nur Haltestellen im Umkreis der Einträge in data/haltestellen.json.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 4 12 * *' # monatlich
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daten
+  cancel-in-progress: false
+
+jobs:
+  haltestellen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Haltestellen holen
+        run: node scripts/fetch-haltestellen.mjs
+      - name: Testbuild
+        run: node scripts/build.mjs
+      - name: Commit, falls sich etwas geändert hat
+        id: commit
+        run: |
+          git config user.name "hofladenliste-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/haltestellen.json data/seiten-stand.json
+          if git diff --cached --quiet; then echo "Keine Änderungen."; else
+            git commit -m "Haltestellen aktualisiert"
+            git pull --rebase -q && git push
+            echo "geaendert=ja" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Cloudflare-Deploy auslösen
+        if: steps.commit.outputs.geaendert == 'ja'
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgelöst."

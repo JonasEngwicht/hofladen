@@ -92,6 +92,21 @@ test('Suche und API', async () => {
   assert.ok((await r.json()).treffer.some((t) => t.name === 'Cottbus'));
 });
 
+test('„Was + Wo“-Suche: Produkt und Ort in einem Feld', async () => {
+  let r = await anfrage('/suche?q=Eier%20in%20Tettnang');
+  assert.match(ziel(r), /\?plz=88069&produkt=eier$/);
+  r = await anfrage('/suche?q=Spargel%2088069');
+  assert.match(ziel(r), /\?plz=88069&produkt=gemuese$/);
+  r = await anfrage('/suche?q=frische%20Milch%20Forst%20(Lausitz)');
+  assert.equal(ziel(r), '/brandenburg/spree-neisse/forst-lausitz/?plz=03149&produkt=milch');
+  r = await anfrage('/suche?q=Spargel');
+  assert.equal(ziel(r), '/saisonkalender/spargel/');
+  r = await anfrage('/suche?q=Honig');
+  assert.equal(ziel(r), '/angebot/honig/');
+  r = await anfrage('/suche?q=Kittlers%20Hofladen'); // ohne Produktwort weiter Hofsuche
+  assert.equal(ziel(r), '/hof/kittlers-hofladen-riesa/');
+});
+
 test('Statische Dateien und Sitemaps', async () => {
   for (const p of ['/robots.txt', '/sitemap.xml', '/sitemaps/hoefe.xml', '/style.css', '/app.js']) assert.equal((await anfrage(p)).status, 200, p);
   assert.equal((await anfrage('/fehlt.css')).status, 404);

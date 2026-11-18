@@ -14,6 +14,8 @@ import { kachelAntwort, kartenHochladen } from './kacheln.js';
 import ORTE from './generated/orte.json';
 import ROUTEN from './generated/routen.json';
 import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
+import SUCHWOERTER from './generated/suchwoerter.json';
+import { wasWoTrennen } from './waswo.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
@@ -150,13 +152,27 @@ function suche(url, env, ctx, request) {
   const q = (url.searchParams.get('q') ?? url.searchParams.get('plz') ?? '').trim().slice(0, 60);
   const produkte = url.searchParams.getAll('produkt').flatMap((x) => x.split(','));
   const ziffern = q.match(/\b\d{5}\b/);
-  if (ziffern || /^[\d\s]+$/.test(q)) return sucheWeiterleitung(ziffern ? ziffern[0] : q, produkte, env, ctx, request);
-  const { treffer, eindeutig } = ortSuche(q);
-  if (eindeutig) {
-    const o = treffer[0];
-    const prod = produkte.filter((x) => KATEGORIEN.includes(x));
-    zaehle(env, ctx, request, { plz: o.plz, kreis: o.kreisPfad, art: 'ort', produkt: prod.sort().join(',') });
+  const ww = wasWoTrennen(q, SUCHWOERTER);
+  if (ziffern || /^[\d\s]+$/.test(q)) return sucheWeiterleitung(ziffern ? ziffern[0] : q, [...produkte, ...(ww?.kats || [])], env, ctx, request);
+  const zumOrt = (o, prod) => {
+    prod = [...new Set(prod.filter((x) => KATEGORIEN.includes(x)))];
+    zaehle(env, ctx, request, { plz: o.plz, kreis: o.kreisPfad, art: 'ort', produkt: [...prod].sort().join(',') });
     return weiter(`${ortZiel(o)}${prod.length ? `&produkt=${prod.join(',')}` : ''}`);
+  };
+  if (ww && !ww.rest && ww.exakt) {
+    zaehle(env, ctx, request, { plz: '', art: 'produkt', produkt: ww.kats.join(',') });
+    return weiter(ww.ziel || `/?produkt=${ww.kats[0]}`);
+  }
+  const { treffer, eindeutig } = ortSuche(q);
+  if (eindeutig) return zumOrt(treffer[0], produkte);
+  // „Was + Wo“: Produkt und Ort in einem Feld („Spargel Cottbus“, „Eier in Forst“)
+  if (ww) {
+    if (!ww.rest) {
+      zaehle(env, ctx, request, { plz: '', art: 'produkt', produkt: ww.kats.join(',') });
+      return weiter(ww.ziel || `/?produkt=${ww.kats[0]}`);
+    }
+    const o2 = ortSuche(ww.rest);
+    if (o2.eindeutig) return zumOrt(o2.treffer[0], [...produkte, ...ww.kats]);
   }
   // Kein Ort dieses Namens: Hofnamen suchen (ein klarer Treffer → Hofseite, mehrere → Ergebnisliste)
   if (!treffer.length) {
@@ -226,7 +242,7 @@ function aufbereiten(e, km = null) {
   return {
     km, pfad: `/hof/${e[2]}/`, slug: e[2], id: e[15], titel: e[3], art: e[4], ort: e[5],
     oh: e[6] || null, typ: e[7] ? 'hofladen' : 'automat', adresse: e[8], telefon: e[9] || null, website: e[10] || null,
-    kat: [...e[11]].map((b) => KATEGORIEN[KAT_BUCHSTABEN.indexOf(b)]), bio: !!e[12], ohText: e[13] || null, lat: e[0], lon: e[1], land: e[26] || null, kinder: !!e[27], verband: (e[28] || '').split(',')[0] || null, karte: /girocard|kreditkarte|kontaktlos/.test(e[21] || ''),
+    kat: [...e[11]].map((b) => KATEGORIEN[KAT_BUCHSTABEN.indexOf(b)]), bio: !!e[12], ohText: e[13] || null, lat: e[0], lon: e[1], land: e[26] || null, kinder: !!e[27], verband: (e[28] || '').split(',')[0] || null, oepnv: !!e[29], karte: /girocard|kreditkarte|kontaktlos/.test(e[21] || ''),
   };
 }
 
