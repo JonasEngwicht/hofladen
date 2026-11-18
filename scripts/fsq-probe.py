@@ -1,14 +1,21 @@
-import json, os, time, urllib.request, urllib.error
+import json, os, time, urllib.request, duckdb, collections
 tok = os.environ['HF_TOKEN']
-def get(url, rng=False):
-    req = urllib.request.Request(url, headers={'Authorization': f'Bearer {tok}', **({'Range': 'bytes=0-100'} if rng else {})})
-    try:
-        with urllib.request.urlopen(req) as r:
-            return r.status, r.read()[:3000]
-    except urllib.error.HTTPError as e:
-        return e.code, e.read()[:600]
-s, b = get('https://huggingface.co/api/whoami-v2')
-w = json.loads(b) if s == 200 else {}
-print('whoami', s, w.get('name'), json.dumps(w.get('auth', {}))[:600])
-print('dataset', get('https://huggingface.co/api/datasets/foursquare/fsq-os-places')[1][:300])
-print('datei', get('https://huggingface.co/datasets/foursquare/fsq-os-places/resolve/main/release/dt=2026-11-17/places/parquet/places_000000.parquet', True))
+req = urllib.request.Request('https://huggingface.co/api/datasets/foursquare/fsq-os-places/tree/main/release', headers={'Authorization': f'Bearer {tok}'})
+last = sorted(t['path'] for t in json.loads(urllib.request.urlopen(req).read()) if t['type'] == 'directory')[-1]
+print('Release', last)
+con = duckdb.connect()
+con.execute(f"CREATE SECRET hf (TYPE HUGGINGFACE, TOKEN '{tok}')")
+con.execute("SET threads=16")
+src = f"read_parquet('hf://datasets/foursquare/fsq-os-places/{last}/places/parquet/*.parquet')"
+print(con.execute(f"DESCRIBE SELECT * FROM {src}").fetchall())
+t = time.time()
+rows = con.execute(f"""SELECT name, fsq_category_labels, locality, postcode, address, website, tel, email, date_refreshed, date_closed, unresolved_flags
+  FROM {src} WHERE country = 'DE' AND (regexp_matches(name, '(?i)hof|bauer|milch|eier|regiomat|automat|direktvermarkt|obst|spargel|kartoffel')
+   OR array_to_string(fsq_category_labels, '|') ILIKE '%farm%')""").fetchall()
+print('Kandidaten DE:', len(rows), round(time.time() - t), 's')
+st = [r for r in rows if __import__('re').search('(?i)hofladen|hofverkauf|milchtankstelle|regiomat|bauernladen', r[0] or '')]
+print('davon eindeutige Namen:', len(st))
+for r in st[:12]: print(r)
+print(collections.Counter(str(r[1])[:90] for r in st).most_common(12))
+print(collections.Counter(str(r[8])[:4] for r in st).most_common(10))
+print(collections.Counter(str(r[10])[:60] for r in st).most_common(6))
