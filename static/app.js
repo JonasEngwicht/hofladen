@@ -336,10 +336,11 @@ function startseite() {
     box.innerHTML = fehlerOrt === 'ort-unbekannt'
       ? `<p class="fehler">Einen Ort „${esc(q)}“ kennen wir nicht. Prüf die Schreibweise oder gib die Postleitzahl ein.</p>`
       : '<p>Suche läuft …</p>';
-    if (fehlerOrt === 'ort') fetch(`/api/orte?alle=1&q=${encodeURIComponent(q)}`).then((r) => r.json()).then((d) => {
-      box.innerHTML = d.treffer?.length
+    if (fehlerOrt === 'ort') Promise.all([fetch(`/api/orte?alle=1&q=${encodeURIComponent(q)}`).then((r) => r.json()), fetch(`/api/hoefe?limit=6&q=${encodeURIComponent(q)}`).then((r) => r.json()).catch(() => ({}))]).then(([d, h]) => {
+      box.innerHTML = (d.treffer?.length
         ? `<p class="ort-auswahl-titel">Welches ${esc(q)} meinst du?</p><ul>${d.treffer.map((t) => `<li><a href="/suche?q=${encodeURIComponent(`${t.name}, ${t.kreis}`)}"><b>${esc(t.name)}</b><span>${esc(t.kreis)} · ${esc(t.plz)}</span></a></li>`).join('')}</ul>`
-        : `<p class="fehler">Einen Ort „${esc(q)}“ kennen wir nicht. Gib am besten die Postleitzahl ein.</p>`;
+        : `<p class="fehler">Einen Ort „${esc(q)}“ kennen wir nicht. Gib am besten die Postleitzahl ein.</p>`)
+        + (h.treffer?.length ? `<p class="ort-auswahl-titel">Oder meinst du einen Hof?</p><ul>${h.treffer.map((e) => `<li><a href="${esc(e.pfad)}"><b>${esc(e.titel)}</b><span>${esc(e.art)} · ${esc(e.ort)}</span></a></li>`).join('')}</ul>${h.gesamt > h.treffer.length ? `<p><a href="/hofsuche/?q=${encodeURIComponent(q)}">Alle ${h.gesamt} Höfe zu „${esc(q)}“</a></p>` : ''}` : '');
     }).catch(() => { box.innerHTML = '<p class="fehler">Die Ortssuche hat gerade nicht geklappt. Gib bitte die Postleitzahl ein.</p>'; });
   }
   const zuletzt = $('#zuletzt');
@@ -415,9 +416,10 @@ for (const i of $$('input[list="orte-vorschlaege"]')) i.addEventListener('input'
   if (q.length < 2 || /^\d/.test(q) || q === vorschlagLetzt) return;
   vorschlagTimer = setTimeout(async () => {
     try {
-      const d = await (await fetch(`/api/orte?q=${encodeURIComponent(q)}`)).json();
+      const d = await (await fetch(`/api/orte?hoefe=1&q=${encodeURIComponent(q)}`)).json();
       vorschlagLetzt = q;
-      vorschlagListe.innerHTML = (d.treffer || []).map((t) => `<option value="${esc(t.wert)}">${esc(t.wert === t.name ? `${t.kreis} · ${t.plz}` : t.plz)}</option>`).join('');
+      vorschlagListe.innerHTML = (d.treffer || []).map((t) => `<option value="${esc(t.wert)}">${esc(t.wert === t.name ? `${t.kreis} · ${t.plz}` : t.plz)}</option>`).join('')
+        + (d.hoefe || []).map((h) => `<option value="${esc(h.wert)}">${esc(`${h.art} · ${h.ort}`)}</option>`).join('');
     } catch {}
   }, 150);
 });
@@ -686,3 +688,21 @@ document.addEventListener('click', (ev) => {
     const h = $('[data-plz-hinweis]'); if (h) h.hidden = true;
   }
 });
+
+// ---------- Ergebnisseite der Hofsuche ----------
+{
+  const ziel = $('[data-hofsuche]');
+  if (ziel) {
+    const q = (params.get('q') || '').slice(0, 60);
+    const meldung = $('[data-hofsuche-status]');
+    if ($('#hs-q')) $('#hs-q').value = q;
+    if (q.length < 3) meldung.textContent = 'Gib mindestens drei Buchstaben ein, zum Beispiel einen Teil des Hofnamens.';
+    else fetch(`/api/hoefe?limit=40&q=${encodeURIComponent(q)}`).then((r) => r.json()).then((d) => {
+      const n = d.gesamt || 0;
+      meldung.textContent = n ? `${n} ${n === 1 ? 'Hof passt' : 'Höfe passen'} zu „${q}“${n > d.treffer.length ? ` – die ersten ${d.treffer.length}. Mit Ort oder PLZ wird die Liste kürzer, z. B. „${q} Forst“.` : '.'}` : `Zu „${q}“ haben wir keinen Hof gefunden. Prüf die Schreibweise oder such nach Ort oder PLZ.`;
+      ziel.innerHTML = d.treffer.map((e) => karteHtml(e)).join('');
+      zeigeStatus(ziel);
+      zeigeEntfernungen(ziel);
+    }).catch(() => { meldung.textContent = 'Die Suche hat gerade nicht geklappt. Bitte versuch es noch einmal.'; });
+  }
+}
