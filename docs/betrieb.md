@@ -5,6 +5,7 @@
 | Workflow | Wann | Was |
 | --- | --- | --- |
 | Daten aktualisieren | Mo und Do nachts, bei Änderungen am Import | OSM-Daten holen, `data/osm-eintraege.json` und `data/seiten-stand.json` committen, Deploy |
+| Overture-Daten aktualisieren | monatlich am 26., von Hand | Overture Maps Places für Deutschland laden (`scripts/fetch-overture.py`), auswählen und mit OSM abgleichen (`scripts/import-overture.mjs`): fehlende Hofläden/Automaten und Ergänzungen in `data/overture.json`, Deploy |
 | Website-Öffnungszeiten | monatlich | Öffnungszeiten von den Websites der Höfe ergänzen (`data/ergaenzungen.json`) |
 | Betreiberdaten übernehmen | täglich | freigegebene Meldungen aus `/verwaltung/` nach `data/betreiber.json` und `data/fotos/`, Deploy |
 | Nur deployen | von Hand | Cloudflare-Build auslösen |
@@ -38,6 +39,16 @@ In `/verwaltung/` → „Statistik“: Suchen (PLZ, Ort, Standort), meistgesucht
 - Listenseiten erst ab 3 Einträgen indexieren (`MIN_SEITE` in `scripts/build.mjs`).
 - URLs nicht ändern; wenn doch, leitet das Seitenarchiv (`data/seiten-stand.json`) automatisch per 301 weiter.
 - Keine `_redirects`-Regeln für `/…/index.html`: Cloudflare wendet sie auch auf die interne Abfrage des Workers an (alle Seiten wären 404).
+
+## Overture Maps
+
+Zweite Datenquelle neben OSM (Lizenz CDLA-Permissive-2.0 bzw. Apache-2.0 für Foursquare, keine OSM-Daten).
+
+- **Neue Einträge** nur mit eindeutigem Namen (Hofladen, Hofverkauf, Milchtankstelle …, Konfidenz ≥ 0,7) oder Hof-Namen wie Obsthof/Biohof mit Hof-Kategorie (Konfidenz ≥ 0,8). Regeln und Ausschlüsse: `scripts/overture.mjs`.
+- **Keine Doppelungen:** Ein Overture-Ort entfällt, wenn ein Eintrag weniger als 150 m entfernt ist oder bis 2 km mit ähnlichem Namen. Der Build prüft das bei jedem Lauf erneut, ein neu in OSM eingetragener Hof ersetzt also den Overture-Eintrag.
+- **Ergänzungen** für OSM-Einträge: Telefon, Website, E-Mail, Facebook/Instagram und Adresse, nur wenn das Feld leer ist und Name und Lage passen. Verzeichnisse und Branchenbücher als Website werden verworfen.
+- Stabile ID: `o-<GERS-ID>`. Auf der Hofseite steht „noch nicht vom Betrieb bestätigt“, bis der Betrieb den Eintrag übernimmt.
+- Schutz: Kommen auf einmal 30 % weniger neue Einträge, wird nichts überschrieben (`ERLAUBE_SCHWUND=1` erzwingt es).
 
 ## Recherche-Funde übernehmen
 
