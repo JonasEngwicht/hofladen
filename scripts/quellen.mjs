@@ -1,6 +1,19 @@
-// Auswahl und Abgleich der Overture-Kandidaten (reine Funktionen, siehe tests/overture.test.mjs).
-// Quelle: Overture Maps Foundation, Places-Theme (CDLA-Permissive-2.0, Apache-2.0, CC0; enthält keine OSM-Daten).
-import { distanzKm } from './lib.mjs';
+// Auswahl und Abgleich von Kandidaten aus offenen Quellen (reine Funktionen, siehe tests/quellen.test.mjs).
+// Quellen: Overture Maps, Karte von morgen, Foursquare Open Source Places, offene Verwaltungsdaten.
+import { distanzKm, slugify } from './lib.mjs';
+
+// Rang: kleiner = bevorzugt, wenn mehrere Quellen denselben Hof kennen (Verwaltung und Community-Karte vor Firmendaten)
+export const QUELLEN = {
+  kommunal: { praefix: 'g', name: 'offene Verwaltungsdaten', url: 'https://www.govdata.de/', rang: 0 },
+  kvm: { praefix: 'k', name: 'Karte von morgen', url: 'https://kartevonmorgen.org/', lizenz: 'CC0-1.0', rang: 1 },
+  overture: { praefix: 'o', name: 'Overture Maps Foundation', url: 'https://overturemaps.org/', rang: 2 },
+  foursquare: { praefix: 'f', name: 'Foursquare Open Source Places', url: 'https://opensource.foursquare.com/os-places/', lizenz: 'Apache-2.0', rang: 3 },
+};
+// Stabile ID für Einträge aus offenen Quellen, z. B. overture/<GERS-ID> → o-<GERS-ID>
+export function quellenId(quelle, id) {
+  const q = QUELLEN[quelle];
+  return q ? `${q.praefix}-${slugify(id)}` : null;
+}
 
 // Namen, die eindeutig auf Direktverkauf hinweisen
 export const STARK = /hof-?laden|hoflädchen|hofladl|hofverkauf|bauern-?laden|hofmarkt|hof-?käserei|hof-?shop|hof-?box|milch-?tankstelle|milch-?automat|frischmilch|milch-?häus|eier-?automat|eier-?häus|regio-?mat|regio-?box|direktvermarktung|direktverkauf|selbstbedienungs-?(hütte|häus|laden|stand)|verkaufs-?(hütte|häus|automat)|verkaufsstand/i;
@@ -36,6 +49,8 @@ export function istHofladen(o) {
   if (!name || KEIN_HOF.test(name)) return false;
   const kat = o.kat || null, hier = o.hier || '';
   const katHof = KAT_HOF.has(kat) || HIER_HOF.test(hier);
+  // Quelle ordnet den Ort selbst als Hofladen/Direktvermarkter ein (Schlagwort, Datensatz über Direktvermarkter)
+  if (o.hofHinweis) return o.konf >= MIN_KONF_STARK && (kat === null || katHof || KAT_NUR_STARK.has(kat));
   if (STARK.test(name)) {
     if (o.konf < MIN_KONF_STARK) return false;
     if (kat === null) return o.konf >= MIN_KONF_SCHWACH;
@@ -43,6 +58,17 @@ export function istHofladen(o) {
   }
   if (SCHWACH.test(name)) return o.konf >= MIN_KONF_SCHWACH && katHof;
   return false;
+}
+
+// Würde mit höherer Konfidenz aufgenommen: Kandidat für die Prüfung über die eigene Website des Hofs
+export const MIN_KONF_PRUEFUNG = 0.5;
+export function nurKonfidenzFehlt(o) {
+  return o.konf >= MIN_KONF_PRUEFUNG && !istHofladen(o) && istHofladen({ ...o, konf: 1 });
+}
+// Hinweise auf Direktverkauf auf der Startseite eines Hofs
+export const WEBSITE_HINWEIS = /hof-?laden|hofverkauf|ab[- ]hof|direktvermarktung|direktverkauf|verkaufsautomat|milch-?tankstelle|regio-?mat|selbstbedienung|bauern-?laden|hofl(ä|ae)dchen/i;
+export function websiteBestaetigt(html) {
+  return WEBSITE_HINWEIS.test(String(html || '').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' '));
 }
 
 // Namen vergleichbar machen: kennzeichnende Wörter ohne Gattungsbegriffe
@@ -144,16 +170,19 @@ export function adresse(o) {
   return { strasse, plz, ort: o.ort ? String(o.ort).trim() : null };
 }
 
-// Doppelte Overture-Datensätze (z. B. Meta und BrightQuery für denselben Hof) zusammenführen
-export function zusammenfuehren(liste) {
-  const sortiert = [...liste].sort((a, b) => b.konf - a.konf || String(a.id).localeCompare(String(b.id)));
+// Doppelte Datensätze (z. B. Meta und BrightQuery oder Overture und Karte von morgen für denselben Hof) zusammenführen.
+// vorrang(o): kleinere Zahl gewinnt (z. B. bereits veröffentlichte IDs, damit stabile IDs stabil bleiben).
+export function zusammenfuehren(liste, vorrang = () => 0) {
+  const sortiert = [...liste].sort((a, b) => vorrang(a) - vorrang(b) || b.konf - a.konf || String(a.id).localeCompare(String(b.id)));
   const idx = rasterIndex([]), behalten = [];
   for (const o of sortiert) {
     const gleich = idx.nahe(o.lat, o.lon).find((k) => gleicherHof(k, o));
     if (gleich) {
       gleich.weitere.push(o);
-      for (const f of ['website', 'facebook', 'instagram', 'telefon', 'email']) if (!gleich.k[f] && o.k[f]) gleich.k[f] = o.k[f];
+      for (const f of ['website', 'facebook', 'instagram', 'telefon', 'email']) if (!gleich.k[f] && o.k[f]) { gleich.k[f] = o.k[f]; (gleich.kq ||= {})[f] = o.quelle; }
       if (!gleich.a.strasse && o.a.strasse) gleich.a = o.a;
+      for (const f of ['oeffnungszeiten_text', 'beschreibung']) if (!gleich[f] && o[f]) gleich[f] = o[f];
+      if (o.bio) gleich.bio = true;
       continue;
     }
     const neu = { ...o, weitere: [] };

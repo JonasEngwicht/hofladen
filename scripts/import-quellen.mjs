@@ -1,52 +1,111 @@
 #!/usr/bin/env node
-// Wandelt die Overture-Kandidaten (scripts/fetch-overture.py) in data/overture.json um:
-//  - neu: Hofläden und Automaten, die in OpenStreetMap fehlen (eindeutiger Name, Konfidenz, keine Doppelungen)
-//  - ergaenzungen: Telefon, Website, E-Mail, Social Media und Adresse für bestehende OSM-Einträge (nur leere Felder)
-// Aufruf: node scripts/import-overture.mjs <roh.json> [--osm data/osm-eintraege.json] [--ziel data/overture.json]
-// Daten: Overture Maps Foundation (CDLA-Permissive-2.0 / Apache-2.0 / CC0), keine OSM-Daten.
-import { readFileSync, writeFileSync } from 'node:fs';
+// Führt die Kandidaten aus offenen Quellen zusammen und schreibt data/offene-quellen.json:
+//  - neu: Hofläden und Automaten, die in OpenStreetMap fehlen (eindeutiger Name oder Einordnung durch die Quelle,
+//    Konfidenz, keine Doppelungen – weder mit OSM noch zwischen den Quellen)
+//  - ergaenzungen: Telefon, Website, E-Mail, Social Media, Adresse und Öffnungszeiten (Text) für OSM-Einträge,
+//    nur für leere Felder, je Feld mit Quelle
+// Eingabe: Rohdateien der Abrufskripte ({quelle, release?, orte:[…]}), siehe scripts/fetch-*.{py,mjs}.
+// Kandidaten mit zu niedriger Konfidenz, aber eindeutigem Namen und Website kommen auf eine Prüfliste
+// (scripts/websites-pruefen.mjs); bestätigt die Website des Hofs den Direktverkauf, werden sie aufgenommen.
+//
+// Aufruf: node scripts/import-quellen.mjs <roh.json> [<roh2.json> …] [--osm data/osm-eintraege.json]
+//         [--ziel data/offene-quellen.json] [--pruefung data/website-pruefung.json] [--pruefliste <datei>]
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { ladePlz, naechsterOrt, istOrganisation, distanzKm } from './lib.mjs';
-import { istHofladen, hofTyp, sauberName, kontakt, adresse, zusammenfuehren, rasterIndex, gleicherHof, namenAehnlich, namenWoerter, STARK } from './overture.mjs';
+import { QUELLEN, istHofladen, nurKonfidenzFehlt, hofTyp, sauberName, kontakt, adresse, zusammenfuehren, rasterIndex,
+  gleicherHof, namenAehnlich, namenWoerter, STARK, MIN_KONF_SCHWACH } from './quellen.mjs';
 
 const args = process.argv.slice(2);
+const OPTIONEN = ['--osm', '--ziel', '--pruefung', '--pruefliste'];
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
-const rohPfad = args[0];
-if (!rohPfad || rohPfad.startsWith('--')) { console.error('Aufruf: node scripts/import-overture.mjs <roh.json>'); process.exit(1); }
-const roh = JSON.parse(readFileSync(rohPfad, 'utf8'));
+const rohPfade = args.filter((a, i) => !a.startsWith('--') && !OPTIONEN.includes(args[i - 1]));
+if (!rohPfade.length) { console.error('Aufruf: node scripts/import-quellen.mjs <roh.json> [...]'); process.exit(1); }
 const osm = JSON.parse(readFileSync(opt('--osm', new URL('../data/osm-eintraege.json', import.meta.url)), 'utf8'));
-const zielPfad = opt('--ziel', new URL('../data/overture.json', import.meta.url));
+const zielPfad = opt('--ziel', new URL('../data/offene-quellen.json', import.meta.url));
+const pruefPfad = opt('--pruefung', new URL('../data/website-pruefung.json', import.meta.url));
+const pruefliste = opt('--pruefliste', null);
 const { kreise, plz, raster } = ladePlz(new URL('../data/quellen/plz-de.csv', import.meta.url));
 const stand = new Date().toISOString().slice(0, 10);
+const PRUEFUNG_TAGE = 180;
+
+// Bisheriger Stand: stabile IDs behalten, fehlende Quellen (Abruf fehlgeschlagen) übernehmen
+const bisher = existsSync(zielPfad) ? JSON.parse(readFileSync(zielPfad, 'utf8')) : { neu: [], ergaenzungen: {} };
+for (const e of bisher.neu) if (!e.quelle && e.overture) { e.quelle = 'overture'; e.qid = e.overture; } // altes Format
+const bisherIds = new Set(bisher.neu.map((e) => `${e.quelle}/${e.qid}`));
+const pruefung = existsSync(pruefPfad) ? JSON.parse(readFileSync(pruefPfad, 'utf8')) : {};
+const frisch = (p) => p && (Date.now() - Date.parse(p.stand)) / 864e5 <= PRUEFUNG_TAGE;
+
 // Ortsname aus der Adresse nur übernehmen, wenn es ihn in diesem Kreis gibt (Firmendaten nennen oft den Postort)
 const ortImKreis = new Set();
 for (const rows of plz.values()) for (const r of rows) if (!r.org) ortImKreis.add(`${r.ort}|${r.kreis}`);
 
-const orte = roh.orte.filter((o) => o.lat && o.lon && o.name).map((o) => ({ ...o, name: sauberName(o.name), k: kontakt(o), a: adresse(o) }));
-const osmIdx = rasterIndex(osm);
+const quellenInfo = {}, orte = [];
+for (const p of rohPfade) {
+  const roh = JSON.parse(readFileSync(p, 'utf8'));
+  const q = roh.quelle || 'overture';
+  if (!QUELLEN[q]) { console.error(`Unbekannte Quelle ${q} in ${p}`); process.exit(1); }
+  quellenInfo[q] = { release: roh.release || null, stand, kandidaten: roh.orte.length };
+  for (const o of roh.orte) {
+    if (!o.lat || !o.lon || !o.name) continue;
+    const x = { ...o, quelle: q, qid: String(o.id), id: `${q}/${o.id}`, name: sauberName(o.name), k: kontakt(o), a: adresse(o),
+      datensatz: o.datensatz ?? o.quelle_datensatz ?? null };
+    if (q === 'overture') x.datensatz = o.quelle; // Overture: Teildatensatz (meta, BrightQuery …)
+    // Über die Website des Hofs bestätigt?
+    const w = x.k.website && pruefung[x.k.website];
+    if (nurKonfidenzFehlt(x) && w?.ok && frisch(w)) { x.konf = Math.max(x.konf, MIN_KONF_SCHWACH); x.webGeprueft = w.stand; }
+    orte.push(x);
+  }
+}
+const fehlend = Object.keys(QUELLEN).filter((q) => !quellenInfo[q] && bisher.neu.some((e) => e.quelle === q));
 
-// 1) Ergänzungen für OSM-Einträge: bester Overture-Treffer mit ähnlichem Namen in der Nähe
+// Prüfliste für die Website-Prüfung
+if (pruefliste) {
+  const liste = [...new Set(orte.filter((o) => nurKonfidenzFehlt(o) && o.k.website && !frisch(pruefung[o.k.website])).map((o) => o.k.website))];
+  writeFileSync(pruefliste, JSON.stringify(liste));
+  console.log(`Prüfliste: ${liste.length} Websites (Kandidaten mit eindeutigem Namen, aber zu niedriger Konfidenz).`);
+  process.exit(0);
+}
+
+const osmIdx = rasterIndex(osm);
+const rang = (o) => (bisherIds.has(o.id) ? -10 : 0) + QUELLEN[o.quelle].rang;
+
+// 1) Ergänzungen für OSM-Einträge: Treffer mit ähnlichem Namen in der Nähe, je Feld die beste Quelle
 const ergaenzungen = {};
 const ortIdx = rasterIndex(orte);
+const FELDER = ['telefon', 'website', 'email', 'facebook', 'instagram'];
 for (const e of osm) {
   if (!e.name) continue;
   const generisch = !namenWoerter(e.name).length;
   const kand = ortIdx.nahe(e.lat, e.lon).filter((o) => o.konf >= 0.6).map((o) => ({ o, d: distanzKm(e.lat, e.lon, o.lat, o.lon) }))
     .filter(({ o, d }) => generisch ? d <= 0.04 && STARK.test(o.name) : d <= 0.5 && namenAehnlich(e.name, o.name))
-    .sort((a, b) => b.o.konf - a.o.konf || a.d - b.d);
+    .sort((a, b) => QUELLEN[a.o.quelle].rang - QUELLEN[b.o.quelle].rang || b.o.konf - a.o.konf || a.d - b.d);
   if (!kand.length) continue;
-  const z = {};
+  const z = {}, quellen = {};
   for (const { o } of kand) {
-    for (const f of ['telefon', 'website', 'email', 'facebook', 'instagram']) if (!e[f] && !z[f] && o.k[f]) z[f] = o.k[f];
-    if (!e.strasse && !z.strasse && o.a.strasse && o.a.plz && (e.ort || ortImKreis.has(`${o.a.ort}|${e.kreis}`)))
-      Object.assign(z, { strasse: o.a.strasse, plz: e.plz || o.a.plz, ort: e.ort || o.a.ort });
+    for (const f of FELDER) if (!e[f] && !z[f] && o.k[f]) { z[f] = o.k[f]; quellen[f] = o.quelle; }
+    if (!e.strasse && !z.strasse && o.a.strasse && o.a.plz && (e.ort || ortImKreis.has(`${o.a.ort}|${e.kreis}`))) {
+      Object.assign(z, { strasse: o.a.strasse, plz: e.plz || o.a.plz, ort: e.ort || o.a.ort }); quellen.strasse = o.quelle;
+    }
+    if (!e.oeffnungszeiten && !z.oeffnungszeiten_text && o.oeffnungszeiten_text) { z.oeffnungszeiten_text = o.oeffnungszeiten_text; quellen.oeffnungszeiten_text = o.quelle; }
   }
-  if (Object.keys(z).length) ergaenzungen[e.osm] = { ...z, overture: kand[0].o.id, datensatz: kand[0].o.quelle, lizenz: kand[0].o.lizenz };
+  if (Object.keys(quellen).length) ergaenzungen[e.osm] = { ...z, quellen };
+}
+// Ergänzungen aus Quellen, deren Abruf diesmal fehlgeschlagen ist, behalten
+for (const [id, alt] of Object.entries(bisher.ergaenzungen || {})) {
+  const altQ = alt.quellen || (alt.datensatz ? Object.fromEntries(Object.keys(alt).filter((f) => !['overture', 'datensatz', 'lizenz', 'plz', 'ort'].includes(f)).map((f) => [f, 'overture'])) : {});
+  for (const [f, q] of Object.entries(altQ)) {
+    if (!fehlend.includes(q)) continue;
+    const z = (ergaenzungen[id] ||= { quellen: {} });
+    if (z[f]) continue;
+    z[f] = alt[f]; z.quellen[f] = q;
+    if (f === 'strasse') { z.plz = alt.plz; z.ort = alt.ort; }
+  }
 }
 
 // 2) Neue Einträge
-const auswahl = zusammenfuehren(orte.filter(istHofladen));
+const auswahl = zusammenfuehren(orte.filter(istHofladen), rang);
 const neu = [];
-const stat = { kandidaten: orte.length, auswahl: auswahl.length, inOsm: 0, ohneOrt: 0 };
+const stat = { kandidaten: orte.length, auswahl: auswahl.length, inOsm: 0, ohneOrt: 0, webGeprueft: 0 };
 for (const o of auswahl) {
   if (osmIdx.nahe(o.lat, o.lon).some((e) => gleicherHof(e, o))) { stat.inOsm++; continue; }
   const kand = o.a.plz ? (plz.get(o.a.plz) || []).filter((r) => !r.org) : null;
@@ -61,29 +120,44 @@ for (const o of auswahl) {
     if (pc && pc === t.ort.plz) ort = t.ort.ort;
     else { strasse = null; pc = null; ort = null; } // Adresse passt nicht zur Lage: lieber „bei <Ort>“ anzeigen
   }
+  if (o.webGeprueft) stat.webGeprueft++;
+  const quellenFelder = o.kq ? Object.fromEntries(Object.entries(o.kq).filter(([, q]) => q !== o.quelle)) : {};
   neu.push({
-    overture: o.id, datensatz: o.quelle, lizenz: o.lizenz, konfidenz: Math.round(o.konf * 100) / 100,
+    quelle: o.quelle, qid: o.qid, datensatz: o.datensatz || null, lizenz: o.lizenz || QUELLEN[o.quelle].lizenz || null,
+    quelleUrl: o.quelleUrl || null, urheber: o.urheber || null, konfidenz: Math.round(o.konf * 100) / 100,
+    webGeprueft: o.webGeprueft || null, weitereQuellen: [...new Set(o.weitere.map((w) => w.quelle).filter((q) => q !== o.quelle))],
+    feldQuellen: Object.keys(quellenFelder).length ? quellenFelder : undefined,
     typ, art, name: o.name, strasse, plz: pc, ort,
     ortNah: t.ort.ort, plzNah: t.ort.plz, kreis: kreise.get(t.ort.kreis).code,
-    lat: +(+o.lat).toFixed(6), lon: +(+o.lon).toFixed(6), oeffnungszeiten: null,
+    lat: +(+o.lat).toFixed(6), lon: +(+o.lon).toFixed(6), oeffnungszeiten: null, oeffnungszeiten_text: o.oeffnungszeiten_text || null,
     telefon: o.k.telefon, email: o.k.email, website: o.k.website, facebook: o.k.facebook, instagram: o.k.instagram,
-    betreiber: null, beschreibung: null, bio: /\bbio|öko|demeter|bioland|naturland/i.test(o.name) ? true : null,
+    betreiber: null, beschreibung: o.beschreibung || null,
+    bio: o.bio || /\bbio|öko|demeter|bioland|naturland/i.test(o.name) ? true : null,
     produkte: null, selbstbedienung: typ === 'automat' || /selbstbedienung/i.test(o.name) ? true : null, zahlung: null, geprueft: null,
   });
 }
-neu.sort((a, b) => a.overture.localeCompare(b.overture));
+// Neue Einträge aus Quellen, deren Abruf fehlgeschlagen ist, behalten (sofern weiter nicht in OSM und nicht doppelt)
+const neuIdx = rasterIndex(neu);
+for (const e of bisher.neu.filter((x) => fehlend.includes(x.quelle))) {
+  if (osmIdx.nahe(e.lat, e.lon).some((x) => gleicherHof(x, e)) || neuIdx.nahe(e.lat, e.lon).some((x) => gleicherHof(x, e))) continue;
+  neu.push(e); neuIdx.add(e);
+}
+neu.sort((a, b) => a.quelle.localeCompare(b.quelle) || a.qid.localeCompare(b.qid));
 
-// Schutz vor kaputten Läufen: nicht überschreiben, wenn auf einmal viel weniger Einträge kommen
-try {
-  const bisher = JSON.parse(readFileSync(zielPfad, 'utf8'));
-  if (neu.length < bisher.neu.length * 0.7 && process.env.ERLAUBE_SCHWUND !== '1') {
-    console.error(`Nur ${neu.length} statt bisher ${bisher.neu.length} neue Einträge – Daten werden nicht überschrieben.`);
+// Schutz vor kaputten Läufen: nicht überschreiben, wenn eine Quelle auf einmal viel weniger Einträge liefert
+const zaehl = (l) => l.reduce((m, e) => (m[e.quelle] = (m[e.quelle] || 0) + 1, m), {});
+const vorher = zaehl(bisher.neu), jetzt = zaehl(neu);
+for (const [q, n] of Object.entries(vorher)) {
+  if ((jetzt[q] || 0) < n * 0.7 && process.env.ERLAUBE_SCHWUND !== '1') {
+    console.error(`${q}: nur ${jetzt[q] || 0} statt bisher ${n} neue Einträge – Daten werden nicht überschrieben.`);
     process.exit(1);
   }
-} catch (err) { if (err.code !== 'ENOENT') throw err; }
+}
+for (const q of fehlend) quellenInfo[q] = { ...(bisher.quellen?.[q] || {}), uebernommen: true };
 
-writeFileSync(zielPfad, JSON.stringify({ release: roh.release, stand, neu, ergaenzungen }, null, 0).replace(/\},\{/g, '},\n{') + '\n');
+writeFileSync(zielPfad, JSON.stringify({ stand, quellen: quellenInfo, neu, ergaenzungen }, null, 0).replace(/\},\{/g, '},\n{') + '\n');
 const felder = {};
-for (const z of Object.values(ergaenzungen)) for (const f of Object.keys(z)) if (!['overture', 'datensatz', 'lizenz', 'plz', 'ort'].includes(f)) felder[f] = (felder[f] || 0) + 1;
-console.log(`Overture ${roh.release}: ${stat.kandidaten} Kandidaten, ${stat.auswahl} eindeutige Hofläden/Automaten, davon ${stat.inOsm} schon in OSM, ${stat.ohneOrt} ohne Ort → ${neu.length} neue Einträge.`);
+for (const z of Object.values(ergaenzungen)) for (const [f, q] of Object.entries(z.quellen)) felder[`${f}/${q}`] = (felder[`${f}/${q}`] || 0) + 1;
+console.log(`${stat.kandidaten} Kandidaten, ${stat.auswahl} eindeutige Hofläden/Automaten, davon ${stat.inOsm} schon in OSM, ${stat.ohneOrt} ohne Ort → ${neu.length} neue Einträge (${JSON.stringify(jetzt)}; ${stat.webGeprueft} über die Website bestätigt).`);
+if (fehlend.length) console.log(`Abruf fehlgeschlagen, bisherige Daten übernommen: ${fehlend.join(', ')}`);
 console.log(`Ergänzungen für ${Object.keys(ergaenzungen).length} OSM-Einträge: ${JSON.stringify(felder)}`);

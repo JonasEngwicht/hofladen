@@ -1,19 +1,14 @@
-import json, os, time, urllib.request, duckdb
+import json, os, time, urllib.request, urllib.error
 tok = os.environ['HF_TOKEN']
-req = urllib.request.Request('https://huggingface.co/api/datasets/foursquare/fsq-os-places/tree/main/release', headers={'Authorization': f'Bearer {tok}'})
-last = sorted(t['path'] for t in json.loads(urllib.request.urlopen(req).read()) if t['type'] == 'directory')[-1]
-print('Release', last)
-con = duckdb.connect()
-con.execute(f"CREATE SECRET hf (TYPE HUGGINGFACE, TOKEN '{tok}')")
-src = f"read_parquet('hf://datasets/foursquare/fsq-os-places/{last}/places/parquet/*.parquet')"
-print(con.execute(f"DESCRIBE SELECT * FROM {src}").fetchall())
-t = time.time()
-print(con.execute(f"SELECT count(*) FROM {src} WHERE country = 'DE'").fetchall(), round(time.time() - t), 's')
-t = time.time()
-rows = con.execute(f"""SELECT name, fsq_category_labels, locality, postcode, address, website, tel, email, date_refreshed, date_closed, unresolved_flags
-  FROM {src} WHERE country = 'DE' AND regexp_matches(name, '(?i)hofladen|hofverkauf|milchtankstelle|regiomat|bauernladen')""").fetchall()
-print('Namenstreffer DE:', len(rows), round(time.time() - t), 's')
-for r in rows[:15]: print(r)
-import collections
-print(collections.Counter(str(r[1])[:80] for r in rows).most_common(15))
-print(collections.Counter(str(r[8])[:4] for r in rows).most_common(10))
+def get(url):
+    req = urllib.request.Request(url, headers={'Authorization': f'Bearer {tok}', 'Range': 'bytes=0-100'})
+    try:
+        with urllib.request.urlopen(req) as r:
+            return r.status, r.read()[:300]
+    except urllib.error.HTTPError as e:
+        return e.code, e.read()[:600]
+s, b = get('https://huggingface.co/api/whoami-v2')
+w = json.loads(b) if s == 200 else {}
+print('whoami', s, w.get('name'), json.dumps(w.get('auth', {}))[:600])
+print('dataset', get('https://huggingface.co/api/datasets/foursquare/fsq-os-places')[1][:300])
+print('datei', get('https://huggingface.co/datasets/foursquare/fsq-os-places/resolve/main/release/dt=2026-11-17/places/parquet/places_000000.parquet'))
