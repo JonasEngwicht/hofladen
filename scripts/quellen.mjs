@@ -97,7 +97,11 @@ export function namenAehnlich(a, b) {
 export function gleicherHof(a, b) {
   const d = distanzKm(a.lat, a.lon, b.lat, b.lon);
   if (d <= 0.15) return true;
-  return d <= 2 && !!a.name && !!b.name && namenAehnlich(a.name, b.name);
+  if (!a.name || !b.name || d > 4) return false;
+  if (d <= 2) return namenAehnlich(a.name, b.name);
+  // 2–4 km: nur bei gleichem markantem Namensteil (z. B. „Clarenhof“), Firmendaten liegen oft am Ortsmittelpunkt
+  const wb = namenWoerter(b.name);
+  return namenWoerter(a.name).some((w) => w.length >= 8 && wb.includes(w));
 }
 
 // Räumlicher Index (0,02°-Raster ≈ 2 km)
@@ -111,7 +115,7 @@ export function rasterIndex(liste) {
   return {
     nahe(lat, lon) {
       const la = Math.floor(lat * 50), lo = Math.floor(lon * 50), out = [];
-      for (let i = la - 1; i <= la + 1; i++) for (let j = lo - 2; j <= lo + 2; j++) out.push(...(r.get(`${i}:${j}`) || []));
+      for (let i = la - 2; i <= la + 2; i++) for (let j = lo - 3; j <= lo + 3; j++) out.push(...(r.get(`${i}:${j}`) || []));
       return out;
     },
     add(e) {

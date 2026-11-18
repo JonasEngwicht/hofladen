@@ -57,6 +57,9 @@ test('Overture: gleicher Hof nach Abstand und Name', () => {
   assert.ok(gleicherHof(a, { name: 'Meyers Hofladen', lat: 52.51, lon: 13.4 })); // ca. 1,1 km, gleicher Name
   assert.ok(!gleicherHof(a, { name: 'Hofladen Schulze', lat: 52.51, lon: 13.4 }));
   assert.ok(!gleicherHof(a, { name: 'Hofladen Meyer', lat: 52.6, lon: 13.4 })); // 11 km
+  const claren = { name: 'Hofladen Gut Clarenhof', lat: 50.93, lon: 6.82 };
+  assert.ok(gleicherHof(claren, { name: 'Gut Clarenhof Hofladen Widdersdorf', lat: 50.957, lon: 6.83 })); // ca. 3 km, markanter Name
+  assert.ok(!gleicherHof(a, { name: 'Meyers Hofladen', lat: 52.53, lon: 13.4 })); // 3,3 km, kein markanter Name
 });
 
 test('Overture: Kontaktdaten ohne Verzeichnisse, Social Media getrennt', () => {

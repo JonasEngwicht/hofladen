@@ -96,12 +96,14 @@ function quellenHinweis(e) {
 // gegen den aktuellen Stand geprüft, damit ein neu in OSM eingetragener Hof den Eintrag aus der offenen Quelle ersetzt.
 const offen = existsSync(join(ROOT, 'data', 'offene-quellen.json'))
   ? JSON.parse(readFileSync(join(ROOT, 'data', 'offene-quellen.json'), 'utf8')) : { neu: [], ergaenzungen: {}, quellen: {} };
-const offenNeu = {}, offenErgaenzt = {};
+const offenNeu = {}, offenErgaenzt = {}, offenErsetzt = new Map();
 {
   const idx = rasterIndex(eintraege);
   for (const o of offen.neu) {
     const quelle = o.quelle || 'overture', qid = o.qid || o.overture;
-    if (idx.nahe(o.lat, o.lon).some((e) => gleicherHof(e, o))) continue;
+    const doppelt = idx.nahe(o.lat, o.lon).find((e) => gleicherHof(e, o));
+    // Hof ist inzwischen in OSM (oder einer vorrangigen Quelle): alte Seite leitet auf diesen Eintrag weiter
+    if (doppelt) { offenErsetzt.set(`${quelle}/${qid}`, doppelt.osm || doppelt.id); for (const a of o.alteIds || []) offenErsetzt.set(a, doppelt.osm || doppelt.id); continue; }
     const e = { ...o, quelle, qid, id: `${quelle}/${qid}`, quelleUrl: o.quelleUrl || QUELLEN[quelle].url };
     eintraege.push(e); idx.add(e); offenNeu[quelle] = (offenNeu[quelle] || 0) + 1;
   }
@@ -377,8 +379,8 @@ ${[...bc, ...jsonld].map((j) => `<script type="application/ld+json">${JSON.strin
     <a class="nav-optional" href="/mitmachen/"${pfad === '/mitmachen/' ? ' aria-current="page"' : ''}>Hof eintragen</a>
   </nav>
   ${kopfSuche ? `<form class="kopf-suche" action="/suche" method="get" role="search">
-    <label class="sr" for="kopf-plz">Postleitzahl oder Ort</label>
-    <input id="kopf-plz" name="q" ${SUCHFELD} placeholder="PLZ oder Ort" required>
+    <label class="sr" for="kopf-plz">Postleitzahl, Ort oder Name des Hofs</label>
+    <input id="kopf-plz" name="q" ${SUCHFELD} placeholder="PLZ, Ort oder Hof" required>
     <button type="submit">Suchen</button>
   </form>` : ''}
 </div></header>
@@ -920,9 +922,9 @@ schreibe('/', seite({
     <h1>Hofläden in deiner Nähe</h1>
     <p class="held-lead">${zahl(eintraege.length)} Hofläden und Hofautomaten in ganz Deutschland – mit Öffnungszeiten, Angebot und Weg dorthin.</p>
     <form class="plz-gross" action="/suche" method="get">
-      <label for="plz">Postleitzahl oder Ort</label>
+      <label for="plz">Postleitzahl, Ort oder Name des Hofs</label>
       <div class="plz-zeile">
-        <input id="plz" name="q" ${SUCHFELD} placeholder="z. B. Tettnang" required>
+        <input id="plz" name="q" ${SUCHFELD} placeholder="z. B. Tettnang oder Gut Clarenhof" required>
         <button type="submit">Hofläden finden</button>
       </div>
       <p class="fehler" id="plz-fehler" hidden>Diese Postleitzahl kennen wir nicht. Bitte prüfe die fünf Ziffern.</p>
@@ -1001,7 +1003,7 @@ for (const t of TYPEN) {
   <p class="hof-art typ-icon">${t.icon}</p>
   <h1>${t.plural} in Deutschland</h1>
   <p>${zahl(t.liste.length)} ${t.plural} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}. Gib deine Postleitzahl ein, um ${t.name === 'Milchtankstelle' ? 'die nächste Milchtankstelle' : `den nächsten ${t.name}`} in deiner Nähe zu finden.</p>
-  <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="typ-plz">Postleitzahl oder Ort</label><input id="typ-plz" name="q" ${SUCHFELD} placeholder="PLZ oder Ort" required><button type="submit">Suchen</button></form>
+  <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="typ-plz">Postleitzahl, Ort oder Name des Hofs</label><input id="typ-plz" name="q" ${SUCHFELD} placeholder="PLZ, Ort oder Hof" required><button type="submit">Suchen</button></form>
 </section>
 <section class="abschnitt seo-text">${t.text.map((x) => `<p>${x}</p>`).join('')}
   <p>Auch interessant: ${TYPEN.filter((x) => x !== t).map((x) => `<a href="/${x.slug}/">${x.plural}</a>`).join(', ')}, die <a href="/karte/">Hofladen-Karte</a> mit allen Standorten und der <a href="/saisonkalender/">Saisonkalender</a> für Obst und Gemüse.</p></section>
@@ -1305,7 +1307,7 @@ for (const u of [
 <section class="seitenkopf">
   <h1>${esc(u.h1)}</h1>
   <p>${plural(alle.length, 'Eintrag', 'Einträge')} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}, davon ${plural(nHof, 'Hofladen', 'Hofläden')}.</p>
-  <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="ueb-q">Postleitzahl oder Ort</label><input id="ueb-q" name="q" ${SUCHFELD} placeholder="PLZ oder Ort" required><button type="submit">Suchen</button></form>
+  <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="ueb-q">Postleitzahl, Ort oder Name des Hofs</label><input id="ueb-q" name="q" ${SUCHFELD} placeholder="PLZ, Ort oder Hof" required><button type="submit">Suchen</button></form>
   ${naeheSuche(u.filter === 'bio' ? { bio: 1 } : { sonntag: 1 }, u.filter === 'bio' ? 'Bio-Höfe in meiner Nähe' : 'Sonntags offene in meiner Nähe')}
 </section>
 <section class="abschnitt seo-text">${u.text(alle.length, nHof).map((x) => `<p>${x}</p>`).join('')}<p>Auch interessant: ${andere}, die <a href="/karte/">Hofladen-Karte</a> und der <a href="/saisonkalender/">Saisonkalender</a>.</p></section>
@@ -1576,7 +1578,7 @@ schreibe('/saisonkalender/', seite({
   <p>Am frischesten bekommst du die Ernte direkt vom Erzeuger. Gib deine Postleitzahl ein und wähle, was du suchst – wir zeigen dir Hofläden in deiner Nähe, sortiert nach Entfernung.</p>
   <form class="saison-suche" action="/suche" method="get">
     <label class="sr" for="saison-plz">Postleitzahl oder Ort</label>
-    <input id="saison-plz" name="q" ${SUCHFELD} placeholder="PLZ oder Ort" required>
+    <input id="saison-plz" name="q" ${SUCHFELD} placeholder="PLZ, Ort oder Hof" required>
     ${['obst', 'gemuese', 'kartoffeln', 'eier', 'honig'].map((k) => `<label class="haken"><input type="checkbox" name="produkt" value="${k}"> ${esc(KATEGORIEN[k])}</label>`).join('')}
     <button type="submit" class="knopf">Hofläden finden</button>
   </form>
@@ -1606,7 +1608,7 @@ for (const sp of SAISON_SEITEN) {
 <section class="seitenkopf">
   <h1>${esc(sp.name)} vom Hof</h1>
   <p>${zahl(sp.liste.length)} ${esc(sp.plural)}${nHof !== sp.liste.length ? ` (davon ${zahl(nHof)} Hofläden)` : ''} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}.${saison ? ` Frisch vom Feld gibt es ${esc(sp.name)} meist von ${esc(saison)}${lager ? `, aus dem Lager von ${esc(lager)}` : ''}.` : ''}</p>
-  <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="sp-q">Postleitzahl oder Ort</label><input id="sp-q" name="q" ${SUCHFELD} placeholder="PLZ oder Ort" required><button type="submit">Suchen</button></form>
+  <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="sp-q">Postleitzahl, Ort oder Name des Hofs</label><input id="sp-q" name="q" ${SUCHFELD} placeholder="PLZ, Ort oder Hof" required><button type="submit">Suchen</button></form>
 </section>
 <section class="abschnitt seo-text"><p>Welche Höfe ${esc(sp.name)} anbieten, erkennen wir am Namen des Hofs, an der Beschreibung und an den Angaben in OpenStreetMap. Gerade bei saisonaler Ware lohnt sich vor dem Besuch ein Anruf – Erntebeginn und Verkaufszeiten hängen vom Wetter ab. Wann welches Obst und Gemüse Saison hat, zeigt der <a href="/saisonkalender/">Saisonkalender</a>.</p></section>
 <nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>${esc(sp.plural)} nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, liste }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(liste.length)}</span></a></li>`).join('')}</ul></nav>
@@ -1639,6 +1641,12 @@ schreibe('/merkliste/', seite({
 }), false);
 
 const textSeite = (pfad, titel, beschreibung, html, noindex = true) => schreibe(pfad, seite({ titel: `${titel} | Hofladenliste`, beschreibung, pfad, noindex, klasse: 'textseite', krumen: [[titel.replace(/ – .*/, ''), pfad]], inhalt: `<article class="text">${html}</article>` }), !noindex);
+// Ergebnisseite der Hofsuche (/suche leitet bei mehreren Treffern hierher); Inhalt kommt per JavaScript aus /api/hoefe
+schreibe('/hofsuche/', seite({ titel: 'Hof suchen | Hofladenliste', beschreibung: 'Hofläden, Hofautomaten und Milchtankstellen nach Namen suchen: Ergebnisse mit Ort, Öffnungszeiten und Entfernung.', pfad: '/hofsuche/', noindex: true, klasse: 'textseite', krumen: [['Hof suchen', '/hofsuche/']],
+  inhalt: `<section class="seitenkopf"><h1>Hof suchen</h1>
+  <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="hs-q">Postleitzahl, Ort oder Name des Hofs</label><input id="hs-q" name="q" ${SUCHFELD} placeholder="PLZ, Ort oder Hof" required><button type="submit">Suchen</button></form>
+  <p class="plz-hinweis" data-hofsuche-status>Suche läuft …</p></section>
+<div class="liste" data-hofsuche><noscript><p>Die Ergebnisliste braucht JavaScript. Gib alternativ eine Postleitzahl ein.</p></noscript></div>` }), false);
 textSeite('/impressum/', 'Impressum', 'Impressum von hofladenliste.de: Anbieter, Kontakt und Verantwortlicher für das Verzeichnis der Hofläden und Hofautomaten.', `<h1>Impressum</h1>
 ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>' : ''}
 <p>Angaben gemäß § 5 DDG</p>
@@ -1820,6 +1828,7 @@ const slugNachId = new Map(eintraege.map((e) => [e.osm || e.id, e.slug]));
 // Einträge aus offenen Quellen, deren Hof früher unter einer anderen ID (anderer Quelle) veröffentlicht war
 const ersetztDurch = new Map();
 for (const e of eintraege) for (const alt of e.alteIds || []) if (!slugNachId.has(alt)) { slugNachId.set(alt, e.slug); ersetztDurch.set(alt, e.id); }
+for (const [alt, neu] of offenErsetzt) if (!slugNachId.has(alt) && slugNachId.has(neu)) { slugNachId.set(alt, slugNachId.get(neu)); ersetztDurch.set(alt, neu); }
 const umleitungen = {}, entfernt = [];
 for (const pfad of Object.keys(stand.seiten)) {
   if (ALLE_SEITEN.has(pfad)) continue;

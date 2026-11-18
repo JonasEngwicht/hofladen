@@ -96,3 +96,30 @@ test('Statische Dateien und Sitemaps', async () => {
   for (const p of ['/robots.txt', '/sitemap.xml', '/sitemaps/hoefe.xml', '/style.css', '/app.js']) assert.equal((await anfrage(p)).status, 200, p);
   assert.equal((await anfrage('/fehlt.css')).status, 404);
 });
+
+test('Suche nach Hofnamen', async () => {
+  let r = await anfrage('/suche?q=Kittlers%20Hofladen');
+  assert.equal(r.status, 302);
+  assert.equal(ziel(r), '/hof/kittlers-hofladen-riesa/');
+  r = await anfrage('/suche?q=gut%20clarenhof');
+  assert.equal(ziel(r), '/hof/hofladen-gut-clarenhof-frechen/');
+  r = await anfrage('/suche?q=Biohof');
+  assert.equal(ziel(r), '/hofsuche/?q=Biohof');
+  r = await anfrage('/suche?q=xyzunbekannt');
+  assert.match(ziel(r), /fehler=ort-unbekannt/);
+  r = await anfrage('/suche?q=Forst'); // Orte haben Vorrang
+  assert.match(ziel(r), /fehler=ort/);
+  let d = await (await anfrage('/api/hoefe?q=hofladen%20forst')).json();
+  assert.ok(d.treffer.some((e) => e.ort === 'Forst (Lausitz)'));
+  assert.ok(d.treffer.every((e) => /hofladen/i.test(e.titel) && /forst/i.test(`${e.titel} ${e.ort}`)));
+  d = await (await anfrage('/api/orte?hoefe=1&q=Kittl')).json();
+  assert.ok(d.hoefe.some((h) => h.wert === 'Kittlers Hofladen'));
+  r = await anfrage('/hofsuche/?q=Biohof');
+  assert.equal(r.status, 200);
+  assert.match(await r.text(), /noindex/);
+});
+
+test('Eintrag aus offener Quelle, der jetzt doppelt ist, leitet auf den bestehenden Eintrag weiter', async () => {
+  const ziele = Object.values(routen.umleitungen);
+  assert.ok(ziele.includes('/hof/hofladen-gut-clarenhof-frechen/'));
+});

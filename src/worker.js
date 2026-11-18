@@ -109,7 +109,40 @@ function orteVorschlaege(url) {
   const q = (url.searchParams.get('q') || '').slice(0, 60);
   const { treffer } = ortSuche(q);
   const alle = url.searchParams.get('alle') === '1';
-  return json({ treffer: treffer.slice(0, alle ? 40 : 8).map(ortAusgabe) });
+  const antwort = { treffer: treffer.slice(0, alle ? 40 : 8).map(ortAusgabe) };
+  // Vorschläge fürs Suchfeld: auch passende Höfe (Titel ist eindeutig genug, um direkt zur Hofseite zu führen)
+  if (url.searchParams.get('hoefe') === '1') antwort.hoefe = hofSuche(q, 5).treffer.map((e) => ({ wert: e[3], ort: e[5], art: e[4] }));
+  return json(antwort);
+}
+
+// ---------- Suche nach Hofnamen ----------
+// Jedes Suchwort muss ein Wortanfang im Titel oder Ort des Eintrags sein: „kittlers“, „gut claren“, „hofladen forst“.
+let HOF_INDEX = null;
+const hofIndex = () => (HOF_INDEX ??= EINTRAEGE.map((e) => {
+  const titel = norm(e[3]), name = norm(e[16] || ''), ort = norm(e[5]);
+  return { e, titel, name, woerter: [...new Set(`${titel} ${name} ${ort}`.split(' ').filter(Boolean))], titelWoerter: new Set(`${titel} ${name}`.split(' ')) };
+}));
+export function hofSuche(q, limit = 30) {
+  const n = norm(q);
+  const ws = n.split(' ').filter(Boolean);
+  if (n.length < 3 || !ws.length) return { treffer: [], gesamt: 0 };
+  const passend = [];
+  for (const h of hofIndex()) {
+    if (!ws.every((w) => h.woerter.some((x) => x.startsWith(w)))) continue;
+    const imTitel = ws.filter((w) => [...h.titelWoerter].some((x) => x.startsWith(w))).length;
+    const punkte = (h.titel === n || h.name === n ? 100 : 0) + (h.titel.startsWith(n) || h.name.startsWith(n) ? 40 : 0) + imTitel * 10 - h.titel.length / 100;
+    passend.push([punkte, h.e]);
+  }
+  passend.sort((a, b) => b[0] - a[0] || a[1][3].localeCompare(b[1][3], 'de'));
+  return { treffer: passend.slice(0, limit).map(([, e]) => e), gesamt: passend.length, exakt: passend.filter(([p]) => p >= 100).length };
+}
+function hoefeApi(url) {
+  const q = (url.searchParams.get('q') || '').slice(0, 60);
+  const limit = Math.min(50, Math.max(1, parseInt(url.searchParams.get('limit') || '30', 10)));
+  const { treffer, gesamt } = hofSuche(q, limit);
+  const r = json({ treffer: treffer.map((e) => aufbereiten(e)), gesamt });
+  r.headers.set('Cache-Control', 'public, max-age=300');
+  return r;
 }
 
 function suche(url, env, ctx, request) {
@@ -124,7 +157,19 @@ function suche(url, env, ctx, request) {
     zaehle(env, ctx, request, { plz: o.plz, kreis: o.kreisPfad, art: 'ort', produkt: prod.sort().join(',') });
     return weiter(`${ortZiel(o)}${prod.length ? `&produkt=${prod.join(',')}` : ''}`);
   }
-  if (!treffer.length) zaehle(env, ctx, request, { plz: '', art: 'ort-unbekannt' });
+  // Kein Ort dieses Namens: Hofnamen suchen (ein klarer Treffer → Hofseite, mehrere → Ergebnisliste)
+  if (!treffer.length) {
+    const h = hofSuche(q, 2);
+    if (h.gesamt === 1 || h.exakt === 1) {
+      zaehle(env, ctx, request, { plz: '', art: 'hof' });
+      return weiter(`/hof/${h.treffer[0][2]}/`);
+    }
+    if (h.gesamt > 1) {
+      zaehle(env, ctx, request, { plz: '', art: 'hof-liste' });
+      return weiter(`/hofsuche/?q=${encodeURIComponent(q)}`);
+    }
+    zaehle(env, ctx, request, { plz: '', art: 'ort-unbekannt' });
+  }
   return weiter(`/?fehler=${treffer.length ? 'ort' : 'ort-unbekannt'}&q=${encodeURIComponent(q)}`);
 }
 
@@ -474,6 +519,7 @@ export default {
     if (url.pathname === '/api/orte') return orteVorschlaege(url);
     if (url.pathname === '/api/meldung') return meldungAnnehmen(request, env);
     if (url.pathname === '/api/eintrag') return eintragApi(url);
+    if (url.pathname === '/api/hoefe') return hoefeApi(url);
     if (url.pathname === '/api/ereignis') return ereignisZaehlen(request, env, ctx);
     if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url);
     return seiteAusliefern(request, env, url);
