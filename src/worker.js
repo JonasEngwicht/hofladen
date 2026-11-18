@@ -16,6 +16,7 @@ import ROUTEN from './generated/routen.json';
 import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
 import { wasWoTrennen } from './waswo.js';
+import { BETRIEB_SCHEMA, betriebApi, neuigkeitenApi, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
@@ -270,6 +271,7 @@ const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS rueckmeldungen (id INTEGER PRIMARY KEY AUTOINCREMENT, tag TEXT NOT NULL, eintrag TEXT NOT NULL, art TEXT NOT NULL,
     status TEXT NOT NULL DEFAULT 'neu')`,
   'CREATE INDEX IF NOT EXISTS rueckmeldungen_eintrag ON rueckmeldungen (eintrag, art, status)',
+  ...BETRIEB_SCHEMA,
 ];
 let schemaOk = false;
 async function schema(env) {
@@ -318,6 +320,9 @@ async function meldungAnnehmen(request, env) {
   if (!MELDUNG_ARTEN.includes(art)) return antwort(request, 400, { fehler: 'Bitte wähle aus, was du tun möchtest.' });
   if (f.get('einwilligung') !== 'ja') return antwort(request, 400, { fehler: 'Bitte bestätige den Hinweis zum Datenschutz.' });
   const bestehend = art === 'neu' ? null : aufloesen(f.get('eintrag') || f.get('hof'), eintragIndex());
+  // Angemeldeter Betreiber, dem der Eintrag gehört: Änderung geht ohne Prüfung durch (Feld für Feld, mit Datum)
+  const konto = bestehend ? await kontoAusSitzung(request, env, H) : null;
+  const eigenerHof = konto && await kontoHatHof(env, konto, bestehend[15]);
   if (art !== 'neu' && !bestehend) return antwort(request, 400, { fehler: 'Der Eintrag wurde nicht gefunden. Öffne das Formular bitte über die Seite des Hofs.' });
   const hof = bestehend ? bestehend[2] : '';
   const daten = {};
@@ -335,7 +340,7 @@ async function meldungAnnehmen(request, env) {
   if (art === 'neu' && (!daten.name || !daten.plz)) return antwort(request, 400, { fehler: 'Für einen neuen Eintrag brauchen wir mindestens Name und Postleitzahl.' });
   const kontakt = String(f.get('kontakt_email') || '').trim().slice(0, 120);
   if (kontakt && !EMAIL_RE.test(kontakt)) return antwort(request, 400, { fehler: 'Deine E-Mail-Adresse sieht nicht richtig aus.' });
-  if (art === 'uebernahme' && !kontakt) return antwort(request, 400, { fehler: 'Für die Übernahme brauchen wir deine E-Mail-Adresse, damit wir dich als Betreiber bestätigen können.' });
+  if (art === 'uebernahme' && !kontakt && !eigenerHof) return antwort(request, 400, { fehler: 'Für die Übernahme brauchen wir deine E-Mail-Adresse, damit wir dich als Betreiber bestätigen können.' });
   const fotos = f.getAll('fotos').filter((x) => x && typeof x === 'object' && x.size > 0).slice(0, 3);
   for (const x of fotos) {
     if (!['image/jpeg', 'image/png', 'image/webp'].includes(x.type)) return antwort(request, 400, { fehler: 'Fotos bitte als JPG, PNG oder WebP.' });
@@ -369,14 +374,29 @@ async function meldungAnnehmen(request, env) {
     ON CONFLICT (schluessel) DO UPDATE SET anzahl = anzahl + 1 RETURNING anzahl`).bind(schluessel, tag).first();
   if (lim?.anzahl > 10) return antwort(request, 429, { fehler: 'Heute sind schon viele Meldungen von dir eingegangen. Bitte versuch es morgen wieder.' });
   const jetzt = new Date().toISOString();
-  const r = await env.STATS.prepare('INSERT INTO meldungen (erstellt, art, hof, daten, kontakt_email) VALUES (?1, ?2, ?3, ?4, ?5) RETURNING id')
-    .bind(jetzt, art, art === 'neu' ? null : hof, JSON.stringify(daten), kontakt || null).first();
+  // Betriebsferien (vom Betrieb): von, bis, kurzer Text
+  const uv = String(f.get('urlaub_von') || ''), ub = String(f.get('urlaub_bis') || '');
+  if (/^\d{4}-\d{2}-\d{2}$/.test(uv) && /^\d{4}-\d{2}-\d{2}$/.test(ub) && ub >= uv) daten.urlaub = [{ von: uv, bis: ub, text: String(f.get('urlaub_text') || '').trim().slice(0, 120) }];
+  if (f.get('urlaub_loeschen') === 'ja') daten.urlaub = [];
+  if (eigenerHof) daten.konto = konto.email;
+  const r = await env.STATS.prepare('INSERT INTO meldungen (erstellt, art, hof, daten, kontakt_email, status, geaendert) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7) RETURNING id')
+    .bind(jetzt, eigenerHof ? 'uebernahme' : art, art === 'neu' ? null : hof, JSON.stringify(daten), (eigenerHof ? konto.email : kontakt) || null,
+      eigenerHof ? 'freigegeben' : 'neu', eigenerHof ? jetzt : null).first();
   for (const x of fotos) {
     await env.STATS.prepare('INSERT INTO meldung_fotos (meldung, typ, daten) VALUES (?1, ?2, ?3)').bind(r.id, x.type, new Uint8Array(await x.arrayBuffer())).run();
   }
   // alte Zählerzeilen aufräumen
   await env.STATS.prepare('DELETE FROM meldung_limit WHERE tag < ?1').bind(tag).run();
-  return antwort(request, 200, { ok: true, id: r.id });
+  // Übernahme mit E-Mail-Adresse, die zur Website des Hofs passt: Bestätigungslink an diese Adresse
+  let bestaetigung = false;
+  if (!eigenerHof && art === 'uebernahme' && bestehend && emailPasstZuWebsite(kontakt, bestehend[10]) && env.RESEND_API_KEY) {
+    try {
+      const link = await linkErstellen(env, H, { email: kontakt, zweck: 'bestaetigen', sid: bestehend[15], meldung: r.id, minuten: 3 * 24 * 60 });
+      await mailSenden(env, { an: kontakt, betreff: `Bitte bestätige die Übernahme von „${bestehend[3]}“`, text: MAIL_BESTAETIGEN(bestehend[3], link) });
+      bestaetigung = true;
+    } catch (e) { console.error('Bestätigungsmail', e.message); }
+  }
+  return antwort(request, 200, { ok: true, id: r.id, sofort: !!eigenerHof, bestaetigung });
 }
 
 // ---------- Ein-Klick-Rückmeldung auf der Hofseite: „Stimmt das noch?“ / „Geschlossen melden“ ----------
@@ -415,6 +435,10 @@ async function ereignisZaehlen(request, env, ctx) {
   if (!env.STATS || BOT.test(request.headers.get('user-agent') || '')) return new Response(null, { status: 204 });
   let b;
   try { b = JSON.parse(await request.text()); } catch { return new Response(null, { status: 400 }); }
+  // Zähler je Hof (Seitenaufrufe und Klicks auf der Hofseite) für die Betreiber-Statistik
+  const hofEintrag = b.h ? aufloesen(String(b.h), eintragIndex()) : null;
+  if (hofEintrag && HOF_EREIGNISSE.includes(b.e)) ctx.waitUntil(hofZaehlen(env, H, hofEintrag[15], b.e).catch(() => {}));
+  if (b.e === 'aufruf') return new Response(null, { status: 204 });
   const e = EREIGNISSE.includes(b.e) ? b.e : null;
   if (!e) return new Response(null, { status: 400 });
   const seite = SEITEN.includes(b.s) ? b.s : 'sonstige';
@@ -436,13 +460,43 @@ function berechtigt(request, env) {
   for (let i = 0; i < soll.length; i++) d |= soll.charCodeAt(i) ^ ist.charCodeAt(i);
   return d === 0;
 }
-async function verwaltung(request, env, url) {
+async function verwaltung(request, env, url, ctx) {
   if (!env.ADMIN_TOKEN) return json({ fehler: 'Verwaltung ist noch nicht eingerichtet (Secret ADMIN_TOKEN fehlt).' }, 503);
   if (!berechtigt(request, env)) return json({ fehler: 'Nicht berechtigt' }, 401);
   await schema(env);
   const keinCache = (r) => { r.headers.set('Cache-Control', 'no-store'); return r; };
   const teil = url.pathname.replace('/api/verwaltung/', '');
   if (teil === 'karten') return kartenHochladen(request, env, url);
+  // Welche Secrets und Bindungen sind gesetzt? (nur ja/nein, nie Werte)
+  if (teil === 'einrichtung') {
+    return keinCache(json({ secrets: Object.fromEntries(['ADMIN_TOKEN', 'RESEND_API_KEY', 'TURNSTILE_SECRET', 'TURNSTILE_SITE_KEY', 'MAIL_ABSENDER'].map((k) => [k, !!env[k]])),
+      bindungen: { STATS: !!env.STATS, KARTEN: !!env.KARTEN, ASSETS: !!env.ASSETS }, andere: Object.keys(env).filter((k) => !['ADMIN_TOKEN', 'RESEND_API_KEY', 'TURNSTILE_SECRET', 'TURNSTILE_SITE_KEY', 'MAIL_ABSENDER', 'STATS', 'KARTEN', 'ASSETS'].includes(k)) }));
+  }
+  // Konto für einen Hof anlegen und Anmeldelink schicken (Freigabe durch die Verwaltung)
+  if (teil === 'konto' && request.method === 'POST') {
+    const b = await request.json().catch(() => ({}));
+    const e = aufloesen(b.eintrag, eintragIndex());
+    const email = String(b.email || '').trim().toLowerCase();
+    if (!e || !EMAIL_RE.test(email)) return json({ fehler: 'Eintrag oder E-Mail ungültig' }, 400);
+    await kontoAnlegen(env, email, e[15]);
+    let gesendet = false;
+    if (b.mail !== false) {
+      const link = await linkErstellen(env, H, { email, zweck: 'login', minuten: 7 * 24 * 60 });
+      await mailSenden(env, { an: email, betreff: `Dein Zugang für „${e[3]}“ auf Hofladenliste`, text: MAIL_WILLKOMMEN(e[3], link) });
+      gesendet = true;
+    }
+    return keinCache(json({ ok: true, sid: e[15], gesendet }));
+  }
+  if (teil === 'konten') {
+    const { results } = await env.STATS.prepare('SELECT k.id, k.email, k.erstellt, k.zuletzt, group_concat(h.sid) AS hoefe FROM konten k LEFT JOIN konto_hoefe h ON h.konto = k.id GROUP BY k.id ORDER BY k.id DESC LIMIT 500').all();
+    return keinCache(json({ konten: results }));
+  }
+  // Export für den Build: Höfe mit Konto (ohne E-Mail) und kommende Veranstaltungen
+  if (teil === 'build-export') {
+    const sids = (await env.STATS.prepare('SELECT DISTINCT sid FROM konto_hoefe').all()).results.map((r) => r.sid);
+    const termine = (await env.STATS.prepare("SELECT id, sid, titel, beginn, ende, beschreibung FROM veranstaltungen WHERE status = 'aktiv' AND substr(coalesce(ende, beginn), 1, 10) >= ?1 ORDER BY beginn").bind(tagHeute()).all()).results;
+    return keinCache(json({ hoefeMitKonto: sids.sort(), veranstaltungen: termine }));
+  }
   if (teil === 'meldungen') {
     const status = url.searchParams.get('status') || 'neu';
     const { results } = await env.STATS.prepare(`SELECT m.*, (SELECT group_concat(id) FROM meldung_fotos WHERE meldung = m.id) AS fotos
@@ -519,6 +573,18 @@ async function verwaltung(request, env, url) {
     const werte = [b.status, new Date().toISOString(), String(b.notiz || '').slice(0, 1000)];
     if (b.daten && typeof b.daten === 'object') { sets.push('daten = ?4'); werte.push(JSON.stringify(b.daten).slice(0, 20000)); }
     await env.STATS.prepare(`UPDATE meldungen SET ${sets.join(', ')} WHERE id = ?${werte.length + 1}`).bind(...werte, +m[1]).run();
+    // Freigegebene Übernahme: Konto anlegen und Anmeldelink an die Kontaktadresse schicken
+    if (b.status === 'freigegeben') {
+      const mz = await env.STATS.prepare('SELECT art, hof, daten, kontakt_email FROM meldungen WHERE id = ?1').bind(+m[1]).first();
+      const e = mz && aufloesen(JSON.parse(mz.daten).eintrag || mz.hof, eintragIndex());
+      if (mz?.art === 'uebernahme' && mz.kontakt_email && e && !await env.STATS.prepare('SELECT 1 FROM konto_hoefe h JOIN konten k ON k.id = h.konto WHERE k.email = ?1 AND h.sid = ?2').bind(mz.kontakt_email.toLowerCase(), e[15]).first()) {
+        await kontoAnlegen(env, mz.kontakt_email, e[15]);
+        if (env.RESEND_API_KEY) {
+          const link = await linkErstellen(env, H, { email: mz.kontakt_email, zweck: 'login', minuten: 7 * 24 * 60 });
+          ctx.waitUntil(mailSenden(env, { an: mz.kontakt_email, betreff: `Dein Zugang für „${e[3]}“ auf Hofladenliste`, text: MAIL_WILLKOMMEN(e[3], link) }).catch((x) => console.error('Mail', x.message)));
+        }
+      }
+    }
     if (b.status === 'abgelehnt') await env.STATS.prepare('DELETE FROM meldung_fotos WHERE meldung = ?1').bind(+m[1]).run();
     return json({ ok: true });
   }
@@ -529,6 +595,8 @@ async function verwaltung(request, env, url) {
 let IDX = null;
 const eintragIndex = () => (IDX ??= index(EINTRAEGE, ROUTEN.alteSlugs || {}));
 const DOMAIN = 'https://hofladenliste.de';
+// Hilfsfunktionen für src/betrieb.js
+const H = { schema: (env) => schema(env), sha256: (t) => sha256(t), eintragIndex, aufloesen, json: (d, s) => json(d, s), EMAIL_RE, DOMAIN };
 function eintragApi(url) {
   const e = aufloesen(url.searchParams.get('id') || url.searchParams.get('eintrag') || url.searchParams.get('hof'), eintragIndex());
   if (!e) return json({ fehler: 'Eintrag nicht gefunden' }, 404);
@@ -604,7 +672,9 @@ export default {
     if (url.pathname === '/api/rueckmeldung') return rueckmeldungAnnehmen(request, env);
     if (url.pathname === '/api/ereignis') return ereignisZaehlen(request, env, ctx);
     if (url.pathname.startsWith('/kacheln/')) return kachelAntwort(request, env, ctx, url);
-    if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url);
+    if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url, ctx);
+    if (url.pathname.startsWith('/api/betrieb/')) return betriebApi(request, env, url, ctx, H);
+    if (url.pathname === '/api/neuigkeiten') return neuigkeitenApi(url, env, H);
     return seiteAusliefern(request, env, url);
   },
 };

@@ -59,7 +59,7 @@ export function statusHtml(oh, ohText, datum) {
 export function karteHtml(d, { datum = null, ueberschrift = 'h3' } = {}) {
   const kat = (d.kat || []).slice(0, 5);
   const H = ueberschrift;
-  return `<article class="laden laden-${d.typ}" data-typ="${d.typ}" data-kat="${esc((d.kat || []).join(' '))}" data-lat="${d.lat}" data-lon="${d.lon}" data-slug="${esc(d.slug)}"${d.land ? ` data-land="${esc(d.land)}"` : ''}${d.oh ? ` data-oh="${esc(d.oh)}"` : ''}${d.bio ? ' data-bio="1"' : ''}${d.karte ? ' data-karte-zahlung="1"' : ''}${d.kinder ? ' data-kinder="1"' : ''}${d.oepnv ? ' data-oepnv="1"' : ''}${d.km != null ? ` data-km="${d.km}"` : ''}>
+  return `<article class="laden laden-${d.typ}" data-typ="${d.typ}" data-kat="${esc((d.kat || []).join(' '))}" data-lat="${d.lat}" data-lon="${d.lon}" data-slug="${esc(d.slug)}"${d.land ? ` data-land="${esc(d.land)}"` : ''}${d.oh ? ` data-oh="${esc(d.oh)}"` : ''}${d.bio ? ' data-bio="1"' : ''}${d.karte ? ' data-karte-zahlung="1"' : ''}${d.kinder ? ' data-kinder="1"' : ''}${d.oepnv ? ' data-oepnv="1"' : ''}${d.urlaub ? ` data-urlaub="${esc(d.urlaub)}"` : ''}${d.km != null ? ` data-km="${d.km}"` : ''}>
   <div class="laden-symbol" title="${esc(d.art)}">${typIcon(d.art)}</div>
   <button class="merken-mini" type="button" data-merken="${esc(d.slug)}" aria-pressed="false" aria-label="${esc(d.titel)} merken">${ICON.herz}</button>
   <div class="laden-text">

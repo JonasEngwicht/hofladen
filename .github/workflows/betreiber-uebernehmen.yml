@@ -6,7 +6,7 @@ name: Betreiberdaten übernehmen
 on:
   workflow_dispatch:
   schedule:
-    - cron: '41 5 * * *' # täglich 05:41 UTC
+    - cron: '41 */2 * * *' # alle zwei Stunden (Änderungen angemeldeter Betriebe)
 
 permissions:
   contents: write
@@ -23,6 +23,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Einrichtung prüfen (nur ja/nein, keine Werte)
+        continue-on-error: true
+        env:
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+        run: curl -fsS -H "Authorization: Bearer $ADMIN_TOKEN" https://hofladenliste.de/api/verwaltung/einrichtung
       - name: Freigaben holen
         env:
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
@@ -38,7 +43,7 @@ jobs:
         run: |
           git config user.name "hofladenliste-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/betreiber.json data/fotos data/rueckmeldungen.json data/seiten-stand.json
+          git add data/betreiber.json data/fotos data/rueckmeldungen.json data/seiten-stand.json $(ls data/betrieb-export.json 2>/dev/null)
           if git diff --cached --quiet; then
             echo "Keine Änderungen."
           else

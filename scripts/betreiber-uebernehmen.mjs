@@ -45,3 +45,11 @@ for (const m of freigaben) {
     body: JSON.stringify({ status: 'erledigt', notiz: 'übernommen', daten: m.daten }) });
 }
 console.log(`${freigaben.length} Freigabe(n) verarbeitet, ${Object.keys(daten).length} insgesamt in data/betreiber.json.`);
+
+// Höfe mit Betreiber-Konto (ohne E-Mail-Adressen) und kommende Veranstaltungen für den Build
+const ex = await fetch(`${BASIS}/api/verwaltung/build-export`, { headers: kopf });
+if (ex.ok) {
+  const d = await ex.json();
+  writeFileSync(new URL('../data/betrieb-export.json', import.meta.url), JSON.stringify({ hoefeMitKonto: d.hoefeMitKonto, veranstaltungen: d.veranstaltungen }, null, 1) + '\n');
+  console.log(`Export: ${d.hoefeMitKonto.length} Höfe mit Konto, ${d.veranstaltungen.length} Veranstaltungen.`);
+} else console.error(`Export nicht abrufbar: HTTP ${ex.status}`);

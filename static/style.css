@@ -575,3 +575,29 @@ html { overflow-x: clip; }
 .auswahl-menue button:not(.link):hover, .auswahl-menue button:not(.link):focus-visible { background: var(--raps); }
 .auswahl-merken { font-size: .9rem; margin: .2rem 0; }
 .auswahl-zu { justify-self: end; font-size: .9rem; }
+
+/* Betreiber-Bereich und Hof-News */
+.betrieb-hof { border: 1px solid var(--linie); border-radius: var(--r-klein); padding: 1rem 1.2rem; margin: 0 0 1.4rem; background: var(--weiss); }
+.betrieb-hof h2 { margin-top: 0; }
+.betrieb-aktionen { display: flex; flex-wrap: wrap; gap: .5rem; }
+.betrieb-block { border-top: 1px solid var(--linie); margin-top: 1rem; padding-top: .8rem; }
+.betrieb-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .6rem .9rem; align-items: end; }
+.betrieb-form label { display: grid; gap: .25rem; font-weight: 600; font-size: .95rem; }
+.betrieb-form .breit, .betrieb-form [data-status] { grid-column: 1 / -1; }
+.betrieb-form input, .betrieb-form select, .betrieb-form textarea { font: inherit; padding: .45rem .55rem; border: 1.5px solid var(--linie); border-radius: 6px; }
+.betrieb-liste { list-style: none; padding: 0; margin: .7rem 0 0; display: grid; gap: .35rem; }
+.betrieb-zahlen { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin: 0; }
+.betrieb-zahlen div { background: #F3F6F2; border-radius: 8px; padding: .6rem .8rem; }
+.betrieb-zahlen dt { font-size: .85rem; color: var(--grau); }
+.betrieb-zahlen dd { margin: 0; font: 700 1.4rem var(--schrift); }
+.hinweis-box.fehler { border-color: var(--bete); }
+.news-badge { display: inline-block; margin: .2rem 0 .3rem; padding: .2rem .65rem; border-radius: 999px; background: #FFF1C2; color: #5A4300; font-weight: 700; font-size: .9rem; }
+.news-badge span { font-weight: 400; color: var(--grau); margin-left: .3rem; }
+.news-ausverkauft, .news-geschlossen { background: #F7DCD8; color: #7A1E12; }
+.news-liste { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .6rem; }
+.news-liste a { display: grid; gap: .15rem; padding: .7rem .9rem; border-radius: 8px; background: #FFF6D6; color: var(--tinte); text-decoration: none; }
+.news-liste a span { color: var(--grau); font-size: .9rem; }
+.termin-liste { list-style: none; padding: 0; display: grid; gap: .8rem; }
+.termin { border-left: 4px solid var(--raps); padding: .3rem 0 .3rem .9rem; }
+.termin h3 { margin: .1rem 0 .3rem; }
+.termin-zeit { margin: 0; font-weight: 700; color: var(--fichte); }
