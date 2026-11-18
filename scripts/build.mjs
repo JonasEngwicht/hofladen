@@ -274,6 +274,14 @@ for (const e of eintraege) {
   if (!raster2.has(key)) raster2.set(key, []);
   raster2.get(key).push(e);
 }
+// Öffnungszeiten in einer Zeile, z. B. für „Am selben Hof“
+function zeitenKurz(x) {
+  const w = wocheVon(x);
+  if (w && istRund(w)) return 'rund um die Uhr';
+  const z = x.oeffnungszeiten && zeilen(x.oeffnungszeiten);
+  if (z) return z.map(([t, v]) => `${t} ${v}`).join(', ');
+  return x.oeffnungszeiten_text || (x.oeffnungszeiten ? uebersetze(x.oeffnungszeiten) : 'Zeiten nicht hinterlegt');
+}
 function inDerNaehe(e, n = 6) {
   const la = Math.floor(e.lat * 5), lo = Math.floor(e.lon * 5), kand = [];
   for (let i = la - 1; i <= la + 1; i++) for (let j = lo - 1; j <= lo + 1; j++)
@@ -331,7 +339,9 @@ const telHref = (t) => 'tel:' + t.replace(/[^\d+]/g, '').replace(/^00/, '+');
 const kurz = (u) => { let t = u; try { const x = new URL(u); t = domainToUnicode(x.hostname) + x.pathname + x.search; } catch {} return t.replace(/^www\./, '').replace(/\/$/, ''); };
 const zahl = (n) => n.toLocaleString('de-DE');
 const plural = (n, s, p) => `${zahl(n)} ${n === 1 ? s : p}`;
-const kartenDaten = (e, km) => ({ pfad: e.pfad, slug: e.slug, titel: e.titel, art: e.art, typ: e.typ, adresse: e.adresse,
+const KARTENZAHLUNG = ['girocard', 'kreditkarte', 'kontaktlos'];
+const kartenDaten = (e, km) => ({ pfad: e.pfad, slug: e.slug, titel: e.titel, art: e.art, typ: e.typ, adresse: e.adresse, land: e.k?.land,
+  karte: !!e.zahlung?.some((z) => KARTENZAHLUNG.includes(z)),
   oh: e.oeffnungszeiten, ohText: e.oeffnungszeiten_text, telefon: e.telefon, website: e.website, kat: e.kat,
   lat: e.lat, lon: e.lon, bio: e.bio, km });
 
@@ -453,6 +463,7 @@ function filterLeiste(liste, { umkreis = null } = {}) {
   const nAut = liste.length - nHof;
   const nSo = liste.filter((e) => e.sonntag).length;
   const nBio = liste.filter((e) => e.bio).length;
+  const nKarte = liste.filter((e) => e.zahlung?.some((z) => KARTENZAHLUNG.includes(z))).length;
   const katZahl = new Map();
   for (const e of liste) for (const k of e.kat) katZahl.set(k, (katZahl.get(k) || 0) + 1);
   const kats = Object.keys(KATEGORIEN).filter((k) => katZahl.get(k));
@@ -467,6 +478,7 @@ function filterLeiste(liste, { umkreis = null } = {}) {
   ${nSo ? `<button type="button" class="umschalter" data-sonntag-filter aria-pressed="false">Sonntags geöffnet <span>${nSo}</span></button>` : ''}
   ${nBio ? `<button type="button" class="umschalter" data-bio-filter aria-pressed="false">Bio <span>${nBio}</span></button>` : ''}
   ${nRund ? `<button type="button" class="umschalter" data-rund-filter aria-pressed="false">24/7 <span>${nRund}</span></button>` : ''}
+  ${nKarte ? `<button type="button" class="umschalter" data-karte-filter aria-pressed="false">Kartenzahlung <span>${nKarte}</span></button>` : ''}
   ${kats.length ? `<div class="kat-filter" aria-label="Angebot">${kats.map((k) => `<button type="button" data-kat-filter="${k}" aria-pressed="false">${esc(KATEGORIEN[k])}</button>`).join('')}</div>` : ''}
   <p class="treffer" aria-live="polite"><span data-trefferzahl>${liste.length}</span> ${liste.length === 1 ? 'Eintrag' : 'Einträge'}</p>
 </div>`;
@@ -599,7 +611,8 @@ function naechster(lat, lon, bedingung, ausser = new Set()) {
   }
   return best;
 }
-const km = (d) => `${d < 10 ? d.toFixed(1).replace('.', ',') : Math.round(d)} km`;
+// Entfernung: unter 1 km in Metern, unter 50 m „am selben Ort“
+const km = (d) => d < 0.05 ? 'am selben Ort' : d < 1 ? `${Math.max(50, Math.round(d * 20) * 50)} m` : `${d < 10 ? d.toFixed(1).replace('.', ',') : Math.round(d)} km`;
 
 function gebietsText(liste, wo, { orteNennen = true, anker = '' } = {}) {
   const a = analyse(liste);
@@ -845,7 +858,14 @@ const GROSSSTAEDTE = (() => {
 })();
 
 // ---------- Startseite ----------
-const saisonJetzt = JSON.stringify(SAISON.map(([n, frisch, lager]) => [n, frisch, lager || []]));
+// Sorten des Monats als Chips mit Link zur Sortenseite (frisch und aus dem Lager)
+function saisonMonatHtml(monat) {
+  const chip = ([n]) => `<li><a href="${SAISON_NACH_NAME.get(n)?.pfad || '/saisonkalender/'}">${esc(n)}</a></li>`;
+  const frisch = SAISON.filter(([, f]) => f.includes(monat)), lager = SAISON.filter(([, , l = []]) => l.includes(monat));
+  return `<p class="saison-monat">Im ${MONATSNAMEN[monat - 1]} frisch vom Feld${frisch.length ? ':' : ' kommt vor allem Lagerware.'}</p>
+  ${frisch.length ? `<ul class="saison-chips">${frisch.map(chip).join('')}</ul>` : ''}
+  ${lager.length ? `<p class="saison-monat lager-titel">Aus dem Lager:</p><ul class="saison-chips lager">${lager.map(chip).join('')}</ul>` : ''}`;
+}
 const TYPEN = [
   { slug: 'milchtankstelle', arten: ['Milchtankstelle'], name: 'Milchtankstelle', plural: 'Milchtankstellen', icon: ICON.milch,
     kurz: 'Frische Rohmilch zum Selbstzapfen, meist rund um die Uhr. Flasche mitbringen oder vor Ort kaufen.',
@@ -875,16 +895,36 @@ const BIO = { slug: 'bio-hofladen', pfadSlug: 'bio-hofladen', name: 'Bio-Hoflade
 const KAT_TYPEN = [...TYPEN, AUTOMATEN, BIO];
 // Saisonprodukte mit eigener Seite: Höfe, die das Produkt im Namen, in der Beschreibung oder im Angebot (OSM) nennen
 const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
-const SAISON_SEITEN = [
-  ['Spargel', 'spargel', /spargel/i, 'Spargelhöfe'], ['Erdbeeren', 'erdbeeren', /erdbeer/i, 'Erdbeerhöfe'], ['Kirschen', 'kirschen', /kirsch/i, 'Höfe mit Kirschen'],
-  ['Heidelbeeren', 'heidelbeeren', /heidelbeer|blaubeer/i, 'Höfe mit Heidelbeeren'], ['Äpfel', 'aepfel', /apfel|äpfel|obsthof/i, 'Obsthöfe mit Äpfeln'],
-  ['Kartoffeln', 'kartoffeln', /kartoffel/i, 'Höfe mit Kartoffeln'], ['Tomaten', 'tomaten', /tomate/i, 'Höfe mit Tomaten'], ['Kürbis', 'kuerbis', /kürbis|kuerbis/i, 'Kürbishöfe'],
-].map(([name, slug, re, plural]) => {
-  const zeile = SAISON.find(([n]) => n === name);
+// Eine Seite je Sorte aus dem Saisonkalender. Höfe gehören dazu, wenn Name, Beschreibung oder OSM-Produkte die Sorte nennen.
+// Unter drei passenden Höfen bleibt die Seite noindex und zeigt die Umkreissuche nach der Produktgruppe.
+const SORTEN = {
+  Spargel: ['spargel', /spargel/i, 'Spargelhöfe', 'gemuese'], Rhabarber: ['rhabarber', /rhabarber/i, 'Höfe mit Rhabarber', 'gemuese'],
+  Erdbeeren: ['erdbeeren', /erdbeer/i, 'Erdbeerhöfe', 'obst'], Kirschen: ['kirschen', /kirsch/i, 'Höfe mit Kirschen', 'obst'],
+  Himbeeren: ['himbeeren', /himbeer/i, 'Höfe mit Himbeeren', 'obst'], Heidelbeeren: ['heidelbeeren', /heidelbeer|blaubeer/i, 'Höfe mit Heidelbeeren', 'obst'],
+  'Pflaumen und Zwetschgen': ['pflaumen-zwetschgen', /pflaume|zwetsch|zwetschg/i, 'Höfe mit Pflaumen und Zwetschgen', 'obst'],
+  Äpfel: ['aepfel', /apfel|äpfel|obsthof/i, 'Obsthöfe mit Äpfeln', 'obst'], Birnen: ['birnen', /birne/i, 'Höfe mit Birnen', 'obst'],
+  Walnüsse: ['walnuesse', /walnuss|walnüss/i, 'Höfe mit Walnüssen', 'obst'], Kartoffeln: ['kartoffeln', /kartoffel/i, 'Höfe mit Kartoffeln', 'kartoffeln'],
+  Möhren: ['moehren', /möhre|moehre|karotte|mohrrübe/i, 'Höfe mit Möhren', 'gemuese'], Zwiebeln: ['zwiebeln', /zwiebel/i, 'Höfe mit Zwiebeln', 'gemuese'],
+  Kohlrabi: ['kohlrabi', /kohlrabi/i, 'Höfe mit Kohlrabi', 'gemuese'], Kopfsalat: ['kopfsalat', /kopfsalat|\bsalat/i, 'Höfe mit Salat', 'gemuese'],
+  Erbsen: ['erbsen', /erbse/i, 'Höfe mit Erbsen', 'gemuese'], Gurken: ['gurken', /gurke/i, 'Höfe mit Gurken', 'gemuese'],
+  Zucchini: ['zucchini', /zucchini/i, 'Höfe mit Zucchini', 'gemuese'], Tomaten: ['tomaten', /tomate/i, 'Höfe mit Tomaten', 'gemuese'],
+  'Grüne Bohnen': ['bohnen', /bohne/i, 'Höfe mit Bohnen', 'gemuese'], Zuckermais: ['zuckermais', /zuckermais|maiskolben|\bsweet ?corn/i, 'Höfe mit Zuckermais', 'gemuese'],
+  Blumenkohl: ['blumenkohl', /blumenkohl/i, 'Höfe mit Blumenkohl', 'gemuese'], Brokkoli: ['brokkoli', /brokkoli|broccoli/i, 'Höfe mit Brokkoli', 'gemuese'],
+  Spinat: ['spinat', /spinat/i, 'Höfe mit Spinat', 'gemuese'], Weißkohl: ['weisskohl', /weißkohl|weisskohl|sauerkraut/i, 'Höfe mit Weißkohl', 'gemuese'],
+  'Rote Bete': ['rote-bete', /rote be(e)?te/i, 'Höfe mit Roter Bete', 'gemuese'], Kürbis: ['kuerbis', /kürbis|kuerbis/i, 'Kürbishöfe', 'gemuese'],
+  Porree: ['porree', /porree|\blauch/i, 'Höfe mit Porree', 'gemuese'], Feldsalat: ['feldsalat', /feldsalat/i, 'Höfe mit Feldsalat', 'gemuese'],
+  Pastinaken: ['pastinaken', /pastinak/i, 'Höfe mit Pastinaken', 'gemuese'], Rosenkohl: ['rosenkohl', /rosenkohl/i, 'Höfe mit Rosenkohl', 'gemuese'],
+  Grünkohl: ['gruenkohl', /grünkohl|gruenkohl/i, 'Höfe mit Grünkohl', 'gemuese'],
+};
+const SAISON_SEITEN = SAISON.filter(([n]) => SORTEN[n]).map(([name, frisch, lager = []]) => {
+  const [slug, re, plural, gruppe] = SORTEN[name];
   const liste = eintraege.filter((e) => re.test([e.name, e.beschreibung, ...(e.produkte || [])].filter(Boolean).join(' ')));
-  return { name, slug, re, plural, frisch: zeile?.[1] || [], lager: zeile?.[2] || [], liste, pfad: `/saisonkalender/${slug}/` };
-}).filter((x) => x.liste.length >= 10);
+  return { name, slug, re, plural, gruppe, frisch, lager, liste, pfad: `/saisonkalender/${slug}/`, indexiert: liste.length >= MIN_SEITE };
+});
 const SAISON_NACH_NAME = new Map(SAISON_SEITEN.map((x) => [x.name, x]));
+const saisonJetzt = JSON.stringify(SAISON.map(([n, frisch, lager]) => [n, frisch, lager || [], SAISON_NACH_NAME.get(n)?.pfad || '/saisonkalender/']));
+// Monat beim Bauen; im Browser wird bei einem anderen Monat neu gerechnet (data-saison-stand)
+const MONAT_JETZT = +new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' }).slice(5, 7);
 const monatsSpanne = (ms) => { if (!ms.length) return ''; const s = [...ms]; // zusammenhängend, auch über den Jahreswechsel
   let start = s.findIndex((m, i) => !s.includes(((m + 10) % 12) + 1)); if (start < 0) start = 0;
   return `${MONATSNAMEN[s[start] - 1]} bis ${MONATSNAMEN[s[(start + s.length - 1) % s.length] - 1]}`; };
@@ -948,7 +988,7 @@ schreibe('/', seite({
       <p class="fehler" id="plz-fehler" hidden>Diese Postleitzahl kennen wir nicht. Bitte prüfe die fünf Ziffern.</p>
       <div class="ort-auswahl" id="ort-auswahl" hidden></div>
       <fieldset class="wunsch">
-        <legend>Bestimmtes Angebot? (optional)</legend>
+        <legend>Was suchst du? (optional – wir zeigen dann nur passende Höfe)</legend>
         ${['eier', 'milch', 'fleisch', 'gemuese', 'obst', 'kartoffeln', 'honig', 'kaese'].map((k) => `<label><input type="checkbox" name="produkt" value="${k}"><span>${esc(KATEGORIEN[k])}</span></label>`).join('\n        ')}
       </fieldset>
     </form>
@@ -969,10 +1009,10 @@ schreibe('/', seite({
   </ul>
   <p class="typ-chips start-kategorien"><a href="/hofladen-automaten/">${ICON.automat}Alle Hofladen-Automaten <span>${zahl(AUTOMATEN.liste.length)}</span></a><a href="/bio-hofladen/">${ICON.blatt}Bio-Hofläden <span>${zahl(BIO.liste.length)}</span></a><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a>${ANGEBOT_SEITEN.slice(0, 6).map((k) => `<a href="/angebot/${k}/">${esc(KATEGORIEN[k])}</a>`).join('')}</p>
 </section>
-<section class="abschnitt saison-jetzt" data-saison='${esc(saisonJetzt)}'>
+<section class="abschnitt saison-jetzt" data-saison='${esc(saisonJetzt)}' data-saison-stand="${MONAT_JETZT}">
   <h2>Gerade frisch vom Feld</h2>
-  <p class="saison-monat" data-saison-monat></p>
-  <ul class="saison-chips" data-saison-liste></ul>
+  <div data-saison-inhalt>${saisonMonatHtml(MONAT_JETZT)}</div>
+  <p class="saison-suche-links">Höfe in deiner Nähe finden: <a href="/?produkt=gemuese#plz">mit Gemüse</a> · <a href="/?produkt=obst#plz">mit Obst</a> · <a href="/?produkt=kartoffeln#plz">mit Kartoffeln</a></p>
   <p><a href="/saisonkalender/">Ganzen Saisonkalender ansehen</a></p>
 </section>
 <section class="abschnitt laender">
@@ -1337,40 +1377,52 @@ ${proLand.map(({ l, ks }) => { const lk = u.filter === 'bio' && landKat(BIO, l);
 }
 
 // ---------- Seiten "Hofläden in <Ort> und Umgebung" (Ortsseiten und kreisfreie Städte) ----------
-function umgebungsSeite(z, { extraOben = '', extraUnten = '', krumen, regionProfil = null }) {
-  const { name, k } = z;
-  const eigen = new Set(z.eigene);
-  const cap = Math.min(z.eigene.length + 40, 150);
-  const auswahl = z.umkreis.filter(([, e]) => eigen.has(e)).concat(z.umkreis.filter(([, e]) => !eigen.has(e)).slice(0, Math.max(0, cap - z.eigene.length)))
-    .sort((a, b) => a[0] - b[0]);
-  const liste = auswahl.map(([, e]) => e);
+// Eine Zählung für alle Angaben auf Orts- und Umgebungsseiten: Liste = alle Einträge im Umkreis R (25 km, bei
+// wenigen Treffern 50 km), höchstens 150, eigene Einträge des Orts immer dabei. Titel, Intro, Filter und Überblick nutzen sie.
+// höchstens 150 Einträge in der Liste
+function umkreisZahlen(z) {
   const n = (r) => z.umkreis.filter(([d]) => d <= r).length;
   const [n10, n25, n50] = UMKREISE.map(n);
-  const im25 = z.umkreis.filter(([d]) => d <= 25).map(([, e]) => e);
+  const R = n25 >= 10 ? 25 : 50;
+  const eigen = new Set(z.eigene);
+  const imR = z.umkreis.filter(([d, e]) => d <= R || eigen.has(e));
+  const auswahl = imR.filter(([, e]) => eigen.has(e)).concat(imR.filter(([, e]) => !eigen.has(e)).slice(0, Math.max(0, 150 - z.eigene.length)))
+    .sort((a, b) => a[0] - b[0]);
+  const liste = auswahl.map(([, e]) => e);
+  const hof = liste.filter((e) => e.typ === 'hofladen').length, aut = liste.length - hof;
+  const gekappt = auswahl.length < imR.length;
+  const satz = `${gekappt ? `Die ${zahl(liste.length)} nächsten von ${zahl(imR.length)} Einträgen` : `${zahl(liste.length)} ${liste.length === 1 ? 'Eintrag' : 'Einträge'}`} im Umkreis von ${R} km${hof && aut ? `, davon ${plural(hof, 'Hofladen', 'Hofläden')} und ${zahl(aut)} ${aut === 1 ? 'Automat' : 'Automaten'}` : ''}.`;
+  return { auswahl, liste, R, n10, n25, n50, hof, aut, satz, gekappt, gesamt: imR.length };
+}
+
+function umgebungsSeite(z, { extraOben = '', extraUnten = '', krumen, regionProfil = null }) {
+  const { name, k } = z;
+  const zl = umkreisZahlen(z);
+  const { auswahl, liste, R, n10, n50 } = zl;
   const wo = `in ${name} und Umgebung`;
   const h1 = `Hofläden in ${name} und Umgebung`;
   const nEigen = z.eigene.length;
-  const tn = z.titelName || name, nT = zahl(n25 >= 3 ? n25 : liste.length);
+  const tn = z.titelName || name, nT = zahl(zl.gesamt);
   const titel = passend(`Hofladen ${tn} und Umgebung – ${nT} Höfe mit Öffnungszeiten`, `Hofladen ${tn} und Umgebung – ${nT} Höfe`, `Hofladen ${tn} und Umgebung`, `Hofladen ${tn}`);
-  const beschreibung = `Hofläden in ${name} und Umgebung: ${nEigen ? `${zaehlung(z.eigene)} direkt in ${name}, ` : ''}${zahl(n10)} im Umkreis von 10 km, ${zahl(n25)} bis 25 km und ${zahl(n50)} bis 50 km – mit Entfernung, Öffnungszeiten und Route.`.slice(0, 300);
+  const beschreibung = `Hofläden in ${name} und Umgebung: ${zl.satz}${nEigen ? ` Direkt in ${name}: ${zaehlung(z.eigene)}.` : ''} Mit Entfernung, Öffnungszeiten und Route.`.slice(0, 300);
   // FAQ aus echten Zahlen
   const automatNah = z.umkreis.find(([, e]) => e.typ === 'automat');
   const f = [
-    [`Wie viele Hofläden gibt es in ${name}?`, `${nEigen ? `Direkt in ${esc(name)} sind ${zaehlung(z.eigene)} eingetragen.` : `Direkt in ${esc(name)} ist bisher kein Hofladen eingetragen.`} Im Umkreis von 10 km sind es ${zahl(n10)}, bis 25 km ${zahl(n25)} und bis 50 km ${zahl(n50)} Hofläden und Hofautomaten.`],
+    [`Wie viele Hofläden gibt es in ${name}?`, `${nEigen ? `Direkt in ${esc(name)} sind ${zaehlung(z.eigene)} eingetragen.` : `Direkt in ${esc(name)} ist bisher kein Hofladen eingetragen.`} ${esc(zl.satz)} Bis 10 km sind es ${zahl(n10)}, bis 50 km ${zahl(n50)} Hofläden und Hofautomaten.`],
     [`Welcher Hofladen liegt am nächsten an ${name}?`, `${link(z.umkreis[0][1])} in ${esc(z.umkreis[0][1].ortAnzeige)}, etwa ${km(z.umkreis[0][0])} vom Ortszentrum entfernt.${z.umkreis[1] ? ` Danach folgen ${nennung(z.umkreis.slice(1, 3).map(([d, e]) => `${link(e)} (${km(d)})`))}.` : ''}`],
     ...(automatNah ? [[`Gibt es einen Hofautomaten in der Nähe von ${name}?`, `Ja. Der nächste ist ${link(automatNah[1])} (${esc(automatNah[1].art)}) in ${esc(automatNah[1].ortAnzeige)}, etwa ${km(automatNah[0])} entfernt.`]] : []),
-    ...fragen(im25.length ? im25 : liste, wo, z).filter(([q]) => !q.startsWith('Wo finde ich')),
+    ...fragen(liste, wo, z).filter(([q]) => !q.startsWith('Wo finde ich')),
   ];
   const faq = fragenHtml(f, `Häufige Fragen: Hofläden in ${name}`);
   const inhalt = `
 <section class="seitenkopf">
   <h1>${esc(h1)}</h1>
-  <p>${nEigen ? `${zaehlung(z.eigene)} direkt in ${esc(name)}` : `Direkt in ${esc(name)} ist noch kein Hof eingetragen`}; im Umkreis von 10 km sind es ${zahl(n10)}, bis 25 km ${zahl(n25)} und bis 50 km ${zahl(n50)}. Sortiert nach Entfernung vom Ortszentrum, mit Öffnungszeiten und Route.</p>
+  <p>${esc(zl.satz)} ${nEigen ? `Direkt in ${esc(name)}: ${zaehlung(z.eigene)}.` : `Direkt in ${esc(name)} ist noch kein Hof eingetragen.`} Sortiert nach Entfernung vom Ortszentrum, mit Öffnungszeiten und Route.</p>
   ${typKreisLinks(k).length ? `<p class="typ-chips">${typKreisLinks(k).map((x) => `<a href="${x.pfad}">${x.t.icon}${x.t.plural} ${esc(k.im)} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p>` : ''}
   <p class="plz-hinweis" data-plz-hinweis hidden></p>
 </section>
 ${extraOben}
-${filterLeiste(liste, { umkreis: UMKREISE.map((r) => [r, auswahl.filter(([d]) => d <= r).length]) })}
+${filterLeiste(liste, { umkreis: UMKREISE.filter((r) => r <= R).map((r) => [r, auswahl.filter(([d]) => d <= r).length]) })}
 <div class="geteilt">
   <div class="liste" data-liste>
     <h2 class="sr">Einträge</h2>
@@ -1381,7 +1433,7 @@ ${filterLeiste(liste, { umkreis: UMKREISE.map((r) => [r, auswahl.filter(([d]) =>
   <aside class="karten-spalte">${kartenPanel({ titel: `Karte: ${h1}` })}</aside>
 </div>
 ${regionProfil ? regionHtml(regionProfil) : ''}
-<section class="abschnitt seo-text"><h2>Hofladen ${esc(name)}: Überblick</h2>${gebietsText(im25.length >= 3 ? im25 : liste, wo, { anker: k.landSlug })}${typLinks(z.eigene, k.landSlug, k)}
+<section class="abschnitt seo-text"><h2>Hofladen ${esc(name)}: Überblick</h2>${gebietsText(liste, `im Umkreis von ${R} km um ${name}`, { anker: k.landSlug })}${typLinks(z.eigene, k.landSlug, k)}
 <p>${z.kreisSeite ? '' : `Alle Einträge im Kreis findest du unter <a href="${k.pfad}">Hofläden ${esc(k.im)}</a>. `}Mehr aus der Region: <a href="/${k.landSlug}/">Hofläden in ${esc(k.landName)}</a>.</p>${z.kreisSeite ? '' : regionTeaser(k)}</section>
 ${faq.html}
 ${ortListe(naheOrte(z.lat, z.lon, 9, new Set(ortSeiten.filter((o) => o.pfad === z.pfad))), `Hofläden in Orten in der Nähe von ${name}`)}
@@ -1409,7 +1461,9 @@ const datumDe = (d) => d.split('-').reverse().join('.');
 for (const e of eintraege) {
   const k = e.k;
   const o = e.ortSeite;
-  const naehe = inDerNaehe(e, 4);
+  // Einträge am selben Hof (unter 50 m, z. B. Hofladen und Milchautomat) getrennt zeigen, nicht als „0 km“
+  const amSelbenHof = inDerNaehe(e, 10).filter(([d]) => d <= 0.05);
+  const naehe = inDerNaehe(e, 4 + amSelbenHof.length).filter(([d]) => d > 0.05).slice(0, 4);
   const ld = { '@context': 'https://schema.org', '@type': e.typ === 'hofladen' ? 'Store' : 'LocalBusiness', name: e.titelSeite,
     geo: { '@type': 'GeoCoordinates', latitude: e.lat, longitude: e.lon }, url: cfg.domain + e.pfad };
   ld.address = { '@type': 'PostalAddress', streetAddress: e.strasse || undefined, postalCode: e.plz || undefined,
@@ -1482,7 +1536,7 @@ for (const e of eintraege) {
     jsonld: [ld, ...hofFaq.ld],
     krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], ...(o?.eigen ? [[o.ort, o.pfad]] : []), [e.titel, e.pfad]],
     inhalt: `
-<section class="hof-kopf laden-${e.typ}" data-lat="${e.lat}" data-lon="${e.lon}" data-titel="${esc(e.titel)}" data-typ="${e.typ}">
+<section class="hof-kopf laden-${e.typ}" data-land="${k.land}" data-lat="${e.lat}" data-lon="${e.lon}" data-titel="${esc(e.titel)}" data-typ="${e.typ}">
   <p class="hof-art">${typIcon(e.art)}<span>${ART_TYP[e.art] ? `<a href="/${ART_TYP[e.art]}/">${esc(e.art)}</a>` : esc(e.art)} in ${o?.eigen ? `<a href="${o.pfad}">${esc(e.ortAnzeige)}</a>` : esc(e.ortAnzeige)}${e.bio ? ' · Bio' : ''}</span></p>
   <h1>${esc(e.titelSeite)}</h1>
   <p class="hof-adr">${ICON.route}${esc(e.adresse)}</p>
@@ -1493,13 +1547,16 @@ for (const e of eintraege) {
   <aside class="hof-seite">
     <section class="kontaktkarte" aria-labelledby="kk-titel">
       <h2 id="kk-titel">Kontakt &amp; Zeiten</h2>
-      <h3 class="kk-unter">Öffnungszeiten</h3>
+      <h3 class="kk-unter">Öffnungszeiten${amSelbenHof.length ? ` ${e.typ === 'hofladen' ? 'Hofladen' : esc(e.art)}` : ''}</h3>
       ${ohTabelle}
+      ${e.typ === 'hofladen' && istRund(woche) && amSelbenHof.some(([, x]) => x.typ === 'automat') ? `<p class="leise zeiten-hinweis">Laut OpenStreetMap ist der Hofladen rund um die Uhr geöffnet. Am selben Hof steht ein Automat – vermutlich gelten diese Zeiten für den Automaten. Kennst du die Ladenzeiten? <a href="${bearbeiten(e, 'ergaenzen')}&amp;fokus=zeiten">Bitte ergänzen</a>.</p>` : ''}
+      ${amSelbenHof.length ? `<h3 class="kk-unter">Am selben Hof</h3><ul class="am-selben-hof">${amSelbenHof.map(([, x]) => `<li><a href="${x.pfad}">${typIcon(x.art)}<span>${esc(x.titel)}</span></a><span class="leise">${esc(x.typ === 'hofladen' ? 'Hofladen' : x.art)}: ${esc(zeitenKurz(x))}</span></li>`).join('')}</ul>` : ''}
       <p class="kk-knoepfe">
         ${e.telefon ? `<a class="knopf knopf-gruen" href="${telHref(e.telefon)}">${ICON.telefon}Anrufen</a>` : ''}
         <a class="knopf knopf-dunkel" href="https://www.google.com/maps/dir/?api=1&amp;destination=${e.lat},${e.lon}" rel="nofollow noopener" target="_blank">${ICON.route}Route planen</a>
         ${e.website ? `<a class="knopf knopf-hell" href="${esc(e.website)}" rel="nofollow noopener" target="_blank">${ICON.web}Website</a>` : ''}
       </p>
+      <p class="leise navi-wechsel"><a href="#" data-navi-wechseln>Andere Navi-App wählen</a></p>
       ${kontakt.length ? `<ul class="kontakt">${kontakt.join('')}</ul>` : ''}
       ${e.betreiber && e.betreiber !== e.name ? `<p class="leise">Betreiber: ${esc(e.betreiber)}</p>` : ''}
     </section>
@@ -1591,11 +1648,17 @@ schreibe('/saisonkalender/', seite({
   <p>Was bei uns gerade wächst und was aus dem Lager kommt. Im Hofladen findest du vor allem, was Saison hat – frischer und oft günstiger.</p>
   <p class="legende-saison"><span class="frisch"></span>frisch vom Feld <span class="lager"></span>aus dem Lager</p>
 </section>
+<div class="abschnitt saison-werkzeug" data-saison-werkzeug>
+  <div class="segment" role="group" aria-label="Sorten filtern"><button type="button" data-saison-gruppe="alle" aria-pressed="true">Alle</button><button type="button" data-saison-gruppe="obst" aria-pressed="false">Obst</button><button type="button" data-saison-gruppe="gemuese" aria-pressed="false">Gemüse</button></div>
+  <label class="saison-suchfeld"><span class="sr">Sorte suchen</span><input type="search" data-saison-suche placeholder="Sorte suchen, z. B. Kürbis" autocomplete="off"></label>
+  <label class="saison-monatswahl"><span>Monat</span><select data-saison-monat-wahl>${MONATSNAMEN.map((m, i) => `<option value="${i + 1}"${i + 1 === MONAT_JETZT ? ' selected' : ''}>${m}</option>`).join('')}</select></label>
+</div>
+<section class="abschnitt saison-monatsansicht" data-saison-monatsansicht aria-live="polite">${saisonMonatHtml(MONAT_JETZT)}</section>
 <div class="abschnitt saison-tabelle-rahmen">
   <table class="saison-tabelle">
-    <thead><tr><th scope="col">Sorte</th>${MONATE.map((m, i) => `<th scope="col" data-monat="${i + 1}">${m}</th>`).join('')}</tr></thead>
+    <thead><tr><th scope="col">Sorte</th>${MONATE.map((m, i) => `<th scope="col" data-monat="${i + 1}"${i + 1 === MONAT_JETZT ? ' class="aktuell" aria-current="date"' : ''}>${m}</th>`).join('')}</tr></thead>
     <tbody>
-      ${SAISON.map(([n, frisch, lager = []]) => `<tr><th scope="row">${SAISON_NACH_NAME.has(n) ? `<a href="${SAISON_NACH_NAME.get(n).pfad}">${esc(n)}</a>` : esc(n)}</th>${MONATE.map((m, i) => { const mo = i + 1; const c = frisch.includes(mo) ? 'frisch' : lager.includes(mo) ? 'lager' : ''; return `<td data-monat="${mo}"${c ? ` class="${c}"` : ''}><span class="sr">${c === 'frisch' ? 'frisch' : c === 'lager' ? 'Lager' : '–'}</span></td>`; }).join('')}</tr>`).join('\n      ')}
+      ${SAISON.map(([n, frisch, lager = []]) => `<tr data-gruppe="${SAISON_NACH_NAME.get(n)?.gruppe === 'obst' ? 'obst' : 'gemuese'}" data-name="${esc(n.toLowerCase())}"><th scope="row">${SAISON_NACH_NAME.has(n) ? `<a href="${SAISON_NACH_NAME.get(n).pfad}">${esc(n)}</a>` : esc(n)}</th>${MONATE.map((m, i) => { const mo = i + 1; const c = frisch.includes(mo) ? 'frisch' : lager.includes(mo) ? 'lager' : ''; return `<td data-monat="${mo}"${c ? ` class="${c}"` : ''}><span class="sr">${c === 'frisch' ? 'frisch' : c === 'lager' ? 'Lager' : '–'}</span></td>`; }).join('')}</tr>`).join('\n      ')}
     </tbody>
   </table>
 </div>
@@ -1629,20 +1692,23 @@ for (const sp of SAISON_SEITEN) {
     beschreibung: `${sp.name} direkt vom Erzeuger: ${zahl(sp.liste.length)} ${sp.plural} und Hofläden${saison ? `. Saison: ${saison}` : ''}${lager ? `, aus dem Lager ${lager}` : ''}. Mit Öffnungszeiten, Adresse und Route.`,
     pfad: sp.pfad,
     klasse: 'kompakt',
+    noindex: !sp.indexiert,
     krumen: [['Saisonkalender', '/saisonkalender/'], [sp.name, sp.pfad]],
-    jsonld: [itemList(`${sp.plural} in Deutschland`, hofItems(geordnet))],
+    jsonld: geordnet.length ? [itemList(`${sp.plural} in Deutschland`, hofItems(geordnet))] : [],
     inhalt: `
 <section class="seitenkopf">
   <h1>${esc(sp.name)} vom Hof</h1>
-  <p>${zahl(sp.liste.length)} ${esc(sp.plural)}${nHof !== sp.liste.length ? ` (davon ${zahl(nHof)} Hofläden)` : ''} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}.${saison ? ` Frisch vom Feld gibt es ${esc(sp.name)} meist von ${esc(saison)}${lager ? `, aus dem Lager von ${esc(lager)}` : ''}.` : ''}</p>
+  <p>${sp.liste.length ? `${zahl(sp.liste.length)} ${esc(sp.plural)}${nHof !== sp.liste.length ? ` (davon ${zahl(nHof)} Hofläden)` : ''} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')} nennen ${esc(sp.name)} ausdrücklich.` : `Noch hat kein Hof ${esc(sp.name)} ausdrücklich im Eintrag – viele Höfe mit ${esc(KATEGORIEN[sp.gruppe])} verkaufen sie trotzdem in der Saison.`}${saison ? ` Frisch vom Feld gibt es ${esc(sp.name)} von ${esc(saison)}${lager ? `, aus dem Lager ${esc(lager)}` : ''}.` : ''}</p>
+  <h2 class="naehe-titel">Hier gibt’s ${esc(sp.name)} in deiner Nähe</h2>
+  ${naeheSuche({ produkt: sp.gruppe }, `Höfe mit ${KATEGORIEN[sp.gruppe]} in meiner Nähe`)}
   <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="sp-q">Postleitzahl, Ort oder Name des Hofs</label><input id="sp-q" name="q" ${SUCHFELD} placeholder="PLZ, Ort oder Hof" required><button type="submit">Suchen</button></form>
 </section>
 <section class="abschnitt seo-text"><p>Welche Höfe ${esc(sp.name)} anbieten, erkennen wir am Namen des Hofs, an der Beschreibung und an den Angaben in OpenStreetMap. Gerade bei saisonaler Ware lohnt sich vor dem Besuch ein Anruf – Erntebeginn und Verkaufszeiten hängen vom Wetter ab. Wann welches Obst und Gemüse Saison hat, zeigt der <a href="/saisonkalender/">Saisonkalender</a>.</p></section>
 <nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>${esc(sp.plural)} nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, liste }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(liste.length)}</span></a></li>`).join('')}</ul></nav>
 ${proLand.map(({ l, liste }) => `<section class="abschnitt typ-land" id="${l.slug}"><h2>${esc(sp.plural)} in ${esc(l.name)}</h2><ul class="eintrag-liste">${liste.map((e) => `<li><a href="${e.pfad}">${esc(e.titelSeite)}</a> <span class="zahl">${esc(e.ortAnzeige)} · ${esc(e.k.titel)}</span></li>`).join('')}</ul></section>`).join('\n')}
 <section class="abschnitt"><h2>Weitere Saisonprodukte</h2><p class="typ-chips">${andere.map((x) => `<a href="${x.pfad}">${esc(x.name)} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p></section>`,
-  }));
-  KATEGORIE_PFADE.add(sp.pfad);
+  }), sp.indexiert);
+  if (sp.indexiert) KATEGORIE_PFADE.add(sp.pfad);
 }
 
 // ---------- Infoseiten ----------
@@ -1971,7 +2037,7 @@ writeFileSync(join(GEN, 'eintraege.json'), JSON.stringify(eintraege.map((e) => [
   e.oeffnungszeiten_text || '', e.sonntag ? 1 : 0,
   // ab hier: Daten für das Bearbeiten-Formular und den Outreach-Export
   e.sid, e.name || '', e.strasse || '', e.plz || '', e.ort || e.ortAnzeige || '', e.email || '', (e.zahlung || []).join(','),
-  (e.beschreibung || '').slice(0, 600), e.fotos?.length || 0, e.vollst.prozent, e.vollst.fehlt.join(',')])));
+  (e.beschreibung || '').slice(0, 600), e.fotos?.length || 0, e.vollst.prozent, e.vollst.fehlt.join(','), e.k?.land || ''])));
 writeFileSync(join(GEN, 'vollstaendigkeit.json'), JSON.stringify(VOLLSTAENDIGKEIT.map(([k, label]) => [k, label])));
 writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 
