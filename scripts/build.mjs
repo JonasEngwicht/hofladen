@@ -457,6 +457,7 @@ const quellenHtml = (r) => `<section class="abschnitt quellen" id="quellen"><h2>
 const regionTeaser = (k) => { const r = REGIONEN.get(k.code); return r ? `<p class="region-teaser">${esc(r.teaser)} <a href="${k.pfad}#region">Mehr über die Region</a></p>` : ''; };
 
 // ---------- Orte ----------
+const MIN_SEITE = 3; // Listenseiten mit weniger Einträgen gelten als dünn
 const ORTE = new Map(); // kreis-Code → Map(ort → { ort, pfad, liste })
 for (const [code, liste] of proKreis) {
   const k = kreise.get(code);
@@ -470,9 +471,11 @@ for (const [code, liste] of proKreis) {
     let s = slugify(o.ort) || 'ort';
     while (slugs.has(s)) s += '-2';
     slugs.add(s);
-    // Eigene Ortsseite nur bei mindestens zwei Einträgen und wenn sie sich von der Kreisseite unterscheidet;
-    // bei einem Eintrag ist die Hofseite selbst die Seite für "Hofladen in <Ort>"
-    o.pfad = o.liste.length === liste.length ? k.pfad : o.liste.length === 1 ? null : `${k.pfad}${s}/`;
+    // Eigene Ortsseite erst ab MIN_SEITE Einträgen und nur, wenn sie sich von der Kreisseite unterscheidet
+    // (die gleichnamige kreisfreie Stadt ist die Kreisseite selbst). Bei einem Eintrag ist die Hofseite
+    // die Seite für "Hofladen in <Ort>", bei zwei die Kreisseite.
+    const istKreisStadt = k.art === 'Stadt' && (o.ort === k.name || o.ort === k.titel);
+    o.pfad = o.liste.length === liste.length || istKreisStadt ? k.pfad : o.liste.length === 1 ? null : o.liste.length < MIN_SEITE ? k.pfad : `${k.pfad}${s}/`;
     o.eigen = !!o.pfad && o.pfad !== k.pfad;
     o.lat = o.liste.reduce((x, e) => x + e.lat, 0) / o.liste.length;
     o.lon = o.liste.reduce((x, e) => x + e.lon, 0) / o.liste.length;
@@ -542,7 +545,7 @@ const TYP_KREIS = new Map(); // `${t.slug}|${kreis-Code}` → { t, k, liste, pfa
     const proK = new Map();
     for (const e of t.liste) { if (!proK.has(e.kreis)) proK.set(e.kreis, []); proK.get(e.kreis).push(e); }
     for (const [code, liste] of proK) {
-      if (liste.length < 2) continue;
+      if (liste.length < MIN_SEITE) continue;
       const k = kreise.get(code);
       const pfad = `${k.pfad}${slugify(t.plural)}/`;
       if (belegt.has(pfad)) continue;
@@ -710,7 +713,7 @@ ${topOrte.length ? `<section class="abschnitt">
         ? `Hofladen ${im} finden: ${zaehlung(liste)}${orte.length > 1 ? `, u. a. in ${orte.slice(0, 3).map((o) => o.ort).join(', ')}` : ''}. Öffnungszeiten, Angebot, Karte und Route.`
         : `Hofläden ${im}: noch keine Einträge – hier findest du Hofläden in der Umgebung.`,
       pfad: k.pfad,
-      noindex: liste.length === 0,
+      noindex: liste.length < MIN_SEITE,
       klasse: 'kreis',
       jsonld: f.ld,
       krumen: [[l.name, `/${l.slug}/`], [k.titel, k.pfad]],
@@ -742,7 +745,7 @@ ${f.html}
   <ul class="kreis-liste">${nachbarn.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.titel)}</span><span class="zahl">${zahl(proKreis.get(x.code)?.length || 0)}</span></a></li>`).join('')}</ul>
 </section>
 ${REGIONEN.has(k.code) ? quellenHtml(REGIONEN.get(k.code)) : ''}`,
-    }), liste.length > 0);
+    }), liste.length >= MIN_SEITE);
   }
 }
 
