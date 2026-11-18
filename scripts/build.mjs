@@ -2231,7 +2231,6 @@ writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /such
 // die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.
 for (const e of eintraege) stand.hoefe[e.slug] = e.osm || e.id;
 const sortiert = (o) => Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]]));
-writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe) }));
 
 // Weiterleitungen für Seiten aus dem Archiv, die es nicht mehr gibt
 const slugNachId = new Map(eintraege.map((e) => [e.osm || e.id, e.slug]));
@@ -2239,6 +2238,15 @@ const slugNachId = new Map(eintraege.map((e) => [e.osm || e.id, e.slug]));
 const ersetztDurch = new Map();
 for (const e of eintraege) for (const alt of e.alteIds || []) if (!slugNachId.has(alt)) { slugNachId.set(alt, e.slug); ersetztDurch.set(alt, e.id); }
 for (const [alt, neu] of offenErsetzt) if (!slugNachId.has(alt) && slugNachId.has(neu)) { slugNachId.set(alt, slugNachId.get(neu)); ersetztDurch.set(alt, neu); }
+// Einmal festgestellte Ersetzungen bleiben im Archiv (sonst würde eine 301 zur 410, sobald die Quelle das Duplikat nicht mehr führt)
+stand.ersetzt ??= {};
+for (const [alt, neu] of Object.entries(stand.ersetzt)) {
+  let ziel = neu, n = 0;
+  while (stand.ersetzt[ziel] && !slugNachId.has(ziel) && n++ < 5) ziel = stand.ersetzt[ziel];
+  if (!slugNachId.has(alt) && slugNachId.has(ziel)) { slugNachId.set(alt, slugNachId.get(ziel)); ersetztDurch.set(alt, ziel); }
+}
+for (const [alt, neu] of ersetztDurch) stand.ersetzt[alt] = neu;
+writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe), ersetzt: sortiert(stand.ersetzt) }));
 const umleitungen = {}, entfernt = [];
 for (const pfad of Object.keys(stand.seiten)) {
   if (ALLE_SEITEN.has(pfad)) continue;
