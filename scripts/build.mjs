@@ -18,7 +18,7 @@ const BUILD_DATUM = process.env.BUILD_DATUM || new Date().toLocaleDateString('sv
 // Version der CSS/JS-Dateien aus ihrem Inhalt: ändert sich nur, wenn sich die Dateien ändern
 // Version von Logo, Favicons und Vorschaubild (ändert sich nur, wenn sich die Dateien ändern)
 const ICON_VERSION = createHash('sha1').update(['favicon.svg', 'og-bild.png'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
-const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
+const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
 const SAISON = [
@@ -341,6 +341,7 @@ const kurz = (u) => { let t = u; try { const x = new URL(u); t = domainToUnicode
 const zahl = (n) => n.toLocaleString('de-DE');
 const plural = (n, s, p) => `${zahl(n)} ${n === 1 ? s : p}`;
 const KARTENZAHLUNG = ['girocard', 'kreditkarte', 'kontaktlos'];
+const KAT_CODES_KARTE = Object.keys(KATEGORIEN);
 const kartenDaten = (e, km) => ({ pfad: e.pfad, slug: e.slug, titel: e.titel, art: e.art, typ: e.typ, adresse: e.adresse, land: e.k?.land,
   karte: !!e.zahlung?.some((z) => KARTENZAHLUNG.includes(z)),
   oh: e.oeffnungszeiten, ohText: e.oeffnungszeiten_text, telefon: e.telefon, website: e.website, kat: e.kat,
@@ -1651,8 +1652,16 @@ ${ortListe(naheOrte(e.lat, e.lon, 6, new Set(o?.eigen ? [o] : [])), `Hofläden i
 }
 
 // ---------- Deutschlandkarte ----------
-writeFileSync(join(OUT, 'punkte.json'), JSON.stringify(eintraege.map((e) =>
-  [+e.lat.toFixed(4), +e.lon.toFixed(4), e.typ === 'hofladen' ? 1 : 0, e.slug, e.titel, e.art])));
+// Punkte für die Vollkarte: Höfe [lat, lon, Typ, Slug, Titel, Art, Öffnungszeiten, Angebots-Buchstaben, Bio, Kartenzahlung, Land]
+// und Wochenmärkte [lat, lon, Titel, Marktzeiten, Link, Land]. Typ: h Hofladen, m Milchtankstelle, e Eierautomat, r Regiomat u. a.
+const KARTE_TYP = (e) => (e.typ === 'hofladen' ? 'h' : e.art === 'Milchtankstelle' ? 'm' : e.art === 'Eierautomat' ? 'e' : 'r');
+writeFileSync(join(OUT, 'punkte.json'), JSON.stringify({
+  h: eintraege.map((e) => [+e.lat.toFixed(5), +e.lon.toFixed(5), KARTE_TYP(e), e.slug, e.titel, e.art, e.oeffnungszeiten || '',
+    e.kat.map((x) => 'abcdefghijklmnop'[KAT_CODES_KARTE.indexOf(x)]).join(''), e.bio ? 1 : 0, e.zahlung?.some((z) => KARTENZAHLUNG.includes(z)) ? 1 : 0, e.k?.land || '']),
+  m: MAERKTE.map((m) => { const k = kreise.get(m.kreis); const viele = (maerkteProKreis.get(m.kreis) || []).length >= MARKT_SEITE_AB;
+    return [+m.lat.toFixed(5), +m.lon.toFixed(5), m.titel, m.oeffnungszeiten || '', `${viele ? marktPfad(k) : `/wochenmaerkte/${k.landSlug}/`}#${m.anker}`, k.land]; }),
+  k: KAT_CODES_KARTE,
+}));
 schreibe('/karte/', seite({
   titel: 'Hofladen-Karte: alle Hofläden in Deutschland auf einer Karte',
   beschreibung: `Hofladen-Karte: alle ${zahl(eintraege.length)} Hofläden, Milchtankstellen, Eierautomaten und Regiomaten in Deutschland auf einer Karte – hineinzoomen, Hof antippen, Route planen.`,
@@ -1662,10 +1671,30 @@ schreibe('/karte/', seite({
   inhalt: `
 <section class="seitenkopf kompakt">
   <h1>Alle Hofläden auf der Karte</h1>
-  <p>${zahl(anzHof)} Hofläden und ${zahl(eintraege.length - anzHof)} Hofautomaten. Hineinzoomen und einen Punkt antippen.</p>
+  <p>${zahl(anzHof)} Hofläden, ${zahl(eintraege.length - anzHof)} Hofautomaten${MAERKTE.length ? ` und ${zahl(MAERKTE.length)} Wochenmärkte` : ''}. Filter wählen, hineinzoomen, Punkt antippen – die Liste zeigt, was im Kartenausschnitt liegt.</p>
 </section>
-<div class="vollkarte-rahmen" data-vollkarte>${kartenPanel({ titel: 'Karte aller Hofläden in Deutschland' })}
-  <div class="legende"><span class="punkt hofladen"></span>Hofladen <span class="punkt automat"></span>Automat</div>
+<div class="kartenseite" data-vollkarte>
+  <div class="kartenseite-werkzeug" data-kf role="group" aria-label="Filter für die Karte">
+    <div class="segment kf-typ" role="radiogroup" aria-label="Art">
+      ${[['alle', 'Alle'], ['h', 'Hofläden'], ['m', 'Milchtankstellen'], ['e', 'Eierautomaten'], ['r', 'Regiomaten'], ...(MAERKTE.length ? [['markt', 'Wochenmärkte']] : [])].map(([k, t], i) => `<button type="button" data-kf-typ="${k}" aria-pressed="${i === 0}">${t}</button>`).join('')}
+    </div>
+    <button type="button" class="umschalter" data-kf-schalter="offen" aria-pressed="false">Jetzt geöffnet</button>
+    <button type="button" class="umschalter" data-kf-schalter="bio" aria-pressed="false">Bio</button>
+    <button type="button" class="umschalter" data-kf-schalter="rund" aria-pressed="false">24/7</button>
+    <button type="button" class="umschalter" data-kf-schalter="karte" aria-pressed="false">Kartenzahlung</button>
+    <div class="kat-filter" aria-label="Angebot">${Object.entries(KATEGORIEN).map(([k, n]) => `<button type="button" data-kf-kat="${k}" aria-pressed="false">${esc(n)}</button>`).join('')}</div>
+  </div>
+  <div class="kartenseite-haupt">
+    <div class="kartenseite-karte">${kartenPanel({ titel: 'Karte aller Hofläden in Deutschland' })}
+      <button type="button" class="knopf knopf-dunkel kf-standort" data-mein-standort hidden>${ICON.standort}Mein Standort</button>
+      <div class="legende"><span class="punkt hofladen"></span>Hofladen <span class="punkt milch"></span>Milchtankstelle <span class="punkt eier"></span>Eierautomat <span class="punkt automat"></span>Regiomat${MAERKTE.length ? ' <span class="punkt markt"></span>Wochenmarkt' : ''}</div>
+    </div>
+    <aside class="kartenseite-liste" data-kl aria-label="Einträge im Kartenausschnitt">
+      <button type="button" class="kl-griff" data-kl-griff aria-expanded="false"><span class="sr">Liste ein- oder ausklappen</span></button>
+      <p class="kl-status" data-kl-status aria-live="polite">Lade die Karte, um die Einträge im Ausschnitt zu sehen. Ohne Karte findest du alle Höfe über die Bundesländer unten.</p>
+      <ol class="kl-liste" data-kl-liste></ol>
+    </aside>
+  </div>
 </div>
 <section class="abschnitt">
   <h2>Hofläden nach Bundesland</h2>

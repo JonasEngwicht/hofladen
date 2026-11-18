@@ -135,21 +135,10 @@ function markiere(k) {
   setTimeout(() => k.classList.remove('markiert'), 1600);
 }
 
+// Die Vollkarte (Cluster, Filter, Liste) liegt in einem eigenen Modul und wird erst mit der Karte geladen
 async function vollkarte(ctx) {
-  const { map, L } = ctx;
-  map.setView([51.2, 10.4], 6);
-  const daten = await (await fetch('/punkte.json')).json();
-  const renderer = L.canvas({ padding: 0.5 });
-  const groesse = () => { const z = map.getZoom(); return z < 7 ? 2.5 : z < 9 ? 3.5 : z < 11 ? 5 : 7; };
-  const gruppe = L.layerGroup().addTo(map);
-  for (const [lat, lon, hof, slug, titel, art] of daten) {
-    L.circleMarker([lat, lon], { ...punktStil(hof ? 'hofladen' : 'automat'), radius: groesse(), weight: 1, renderer })
-      .bindPopup(`<a href="/hof/${esc(slug)}/"><b>${esc(titel)}</b></a><br>${esc(art)}`).addTo(gruppe);
-  }
-  map.on('zoomend', () => { const r = groesse(); gruppe.eachLayer((m) => m.setRadius(r)); });
-  if ('geolocation' in navigator && params.get('standort') === '1') {
-    navigator.geolocation.getCurrentPosition((pos) => map.setView([pos.coords.latitude, pos.coords.longitude], 11));
-  }
+  const modul = await import(new URL('./vollkarte.js' + new URL(import.meta.url).search, import.meta.url));
+  await modul.vollkarte(ctx, { params, standortMerken, standortLesen, merkAnzeige });
 }
 
 for (const panel of $$('[data-karte]')) {
