@@ -149,6 +149,9 @@ test('Offene Quellen: Einordnung durch die Quelle, Prüfliste und Website-Bestä
   assert.ok(istHofladen({ name: 'Ziegenhof Haider', kat: null, konf: 0.8, hofHinweis: true }));
   assert.equal(kontakt({ websites: ['https://www.muensterland.de/branchenbuch/hoflaeden/'] }).website, null);
   assert.equal(kontakt({ websites: ['https://example.org/broschuere.pdf'] }).website, null);
+  assert.equal(kontakt({ websites: ['https://www.info@imkerei-keidel.de/'] }).website, 'https://imkerei-keidel.de/');
+  assert.equal(kontakt({ websites: ['https://www.t.me/s/lerchenhof'] }).website, null);
+  assert.ok(!istHofladen({ name: 'Markus Wasmeier Freilichtmuseum Schliersee', kat: null, konf: 0.85, hofHinweis: true }));
   // nur die Konfidenz fehlt → Kandidat für die Website-Prüfung
   assert.ok(nurKonfidenzFehlt({ name: 'Hofladen Konstanz', kat: 'farm', konf: 0.55 }));
   assert.ok(!nurKonfidenzFehlt({ name: 'Hofladen Konstanz', kat: 'farm', konf: 0.9 }));

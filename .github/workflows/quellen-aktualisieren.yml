@@ -8,7 +8,7 @@ name: Offene Quellen aktualisieren
 # Kandidaten mit eindeutigem Namen, aber niedriger Konfidenz werden über die eigene Website des Hofs geprüft
 # (scripts/websites-pruefen.mjs). Auswahl und Abgleich: scripts/quellen.mjs, scripts/import-quellen.mjs → data/offene-quellen.json.
 # Schlägt der Abruf einer Quelle fehl, bleiben deren bisherige Einträge erhalten. Veröffentlichte Einträge haben Bestandsschutz
-# und bleiben bis zu zwei Läufe, wenn ihre Quelle sie nicht mehr führt.
+# und bleiben bis zu zwei Läufe erhalten, wenn ihre Quelle sie nicht mehr führt.
 on:
   workflow_dispatch:
   schedule:

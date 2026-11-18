@@ -22,7 +22,7 @@ const HOF_NAME = /hof|bauer|\bgut\b|gut |m(ü|ue)hle|g(ä|ae)rtnerei|imkerei|k(�
 // Höfe, die oft direkt verkaufen – nur mit passender Kategorie und hoher Konfidenz
 export const SCHWACH = /bio-?hof|obst-?hof|spargel-?hof|erdbeer-?hof|gemüse-?hof|geflügel-?hof|eier-?hof|kartoffel-?hof/i;
 // Keine Höfe, auch wenn der Name passt
-const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten|online|versandhandel|transporte?\b|\.(de|com|net|eu|info)\b|^landkreis|^kreis |^stadt |^gemeinde |einkaufsf(ü|ue)hrer|regionale lebensmittel in|wochenmarkt|bauernmarkt|bio-?markt|markthalle|marktschw(ä|ae)rmer|food-?coop|initiative|netzwerk|verbund|arbeitsgemeinschaft|ernährungsrat|ernaehrungsrat|hofl(ä|ae)den\b|direktvermarktern?\b|erzeuger in|einkaufen in|einkaufserlebnis|einkaufsm(ö|oe)glichkeit|fairtrade|^fair,|\b(marktkauf|edeka|rewe|kaufland|netto|aldi|lidl|penny|tegut|globus|denns|alnatura)\b/i;
+const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten|online|versandhandel|transporte?\b|\.(de|com|net|eu|info)\b|^landkreis|^kreis |^stadt |^gemeinde |einkaufsf(ü|ue)hrer|regionale lebensmittel in|wochenmarkt|bauernmarkt|bio-?markt|markthalle|marktschw(ä|ae)rmer|food-?coop|initiative|netzwerk|verbund|arbeitsgemeinschaft|ernährungsrat|ernaehrungsrat|museum|hofl(ä|ae)den\b|direktvermarktern?\b|erzeuger in|einkaufen in|einkaufserlebnis|einkaufsm(ö|oe)glichkeit|fairtrade|^fair,|\b(marktkauf|edeka|rewe|kaufland|netto|aldi|lidl|penny|tegut|globus|denns|alnatura)\b/i;
 const KAT_HOF = new Set(['farm', 'poultry_farm', 'dairy_farm', 'orchard', 'pick_your_own_farm', 'ranch', 'agriculture',
   'agricultural_service', 'livestock_breeder', 'farmers_market', 'greengrocer', 'produce_store', 'grocery_store',
   'organic_grocery_store', 'food_and_beverage_store', 'specialty_foods_store', 'dairy_store', 'cheese_shop', 'butcher_shop',
@@ -35,7 +35,7 @@ export const MIN_KONF_STARK = 0.7;
 export const MIN_KONF_SCHWACH = 0.8;
 
 // Verzeichnisse, Branchenbücher und Plattformen sind keine Website des Hofs
-const FREMD = /(^|\.)(dasoertliche|gelbeseiten|11880|ortsdienst|oeffnungszeitenbuch|werkenntdenbesten|cylex|golocal|meinestadt|branchenbuch|yelp|tripadvisor|google|goo|freeontour|bauernhofurlaub|rausgegangen|hofladenfinder|heimischehoflaeden|hofladen-bauernladen|creditreform|northdata|wlw|firmenwissen|unternehmensregister|linktr|ebay|kleinanzeigen|hinterland)\./i;
+const FREMD = /(^|\.)(dasoertliche|gelbeseiten|11880|ortsdienst|oeffnungszeitenbuch|werkenntdenbesten|cylex|golocal|meinestadt|branchenbuch|yelp|tripadvisor|google|goo|freeontour|bauernhofurlaub|rausgegangen|hofladenfinder|heimischehoflaeden|hofladen-bauernladen|creditreform|northdata|wlw|firmenwissen|unternehmensregister|linktr|ebay|kleinanzeigen|hinterland|t|telegram|whatsapp|wa|regional-optimal)\./i;
 
 export function hofTyp(name) {
   const n = name || '';
@@ -137,7 +137,12 @@ function url(u) {
   if (!u) return null;
   u = String(u).trim();
   if (!/^https?:\/\//i.test(u)) u = 'https://' + u.replace(/^\/+/, '');
-  try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; }
+  try {
+    const x = new URL(u);
+    if (!/^https?:$/.test(x.protocol)) return null;
+    if (x.username || x.password) { x.username = ''; x.password = ''; } // „www.info@hof.de“ → hof.de
+    return x.href;
+  } catch { return null; }
 }
 export function kontakt(o) {
   const webs = (o.websites || []).map(url).filter((u) => u && !/\.(pdf|docx?|xlsx?)(\?|#|$)/i.test(u));
