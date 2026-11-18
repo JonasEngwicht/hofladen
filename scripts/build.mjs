@@ -292,9 +292,22 @@ mkdirSync(GEN, { recursive: true });
 cpSync(join(ROOT, 'static'), OUT, { recursive: true });
 const sitemap = [];
 const ALLE_SEITEN = new Set();
+// Seitenarchiv (data/seiten-stand.json): Inhalts-Hash und Änderungsdatum je Seite, auch für Seiten,
+// die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.
+const STAND_DATEI = join(ROOT, 'data', 'seiten-stand.json');
+const stand = existsSync(STAND_DATEI) ? JSON.parse(readFileSync(STAND_DATEI, 'utf8')) : { seiten: {}, hoefe: {} };
+const ARCHIV_AUSNAHMEN = new Set(['/merkliste/']);
+const STAND_PLATZHALTER = '%%SEITENSTAND%%'; // wird nach dem Hashen durch das Änderungsdatum ersetzt
 function schreibe(pfad, html, inSitemap = true) {
   const datei = join(OUT, pfad, pfad.endsWith('/') ? 'index.html' : '');
   mkdirSync(dirname(datei), { recursive: true });
+  if (pfad.endsWith('/') && !ARCHIV_AUSNAHMEN.has(pfad)) {
+    const h = SEITEN_HASH.get(pfad);
+    const alt = stand.seiten[pfad];
+    if (!alt) stand.seiten[pfad] = [h, BUILD_DATUM];
+    else if (alt[0] !== h) stand.seiten[pfad] = [h, alt[0] == null ? alt[1] : BUILD_DATUM];
+    html = html.replaceAll(STAND_PLATZHALTER, stand.seiten[pfad][1].split('-').reverse().join('.'));
+  }
   writeFileSync(datei, html);
   if (pfad.endsWith('/')) ALLE_SEITEN.add(pfad);
   if (inSitemap) sitemap.push(pfad);
@@ -1168,16 +1181,6 @@ writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /such
 
 // Seitenarchiv (data/seiten-stand.json): Inhalts-Hash und Änderungsdatum je Seite, auch für Seiten,
 // die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.
-const STAND_DATEI = join(ROOT, 'data', 'seiten-stand.json');
-const stand = existsSync(STAND_DATEI) ? JSON.parse(readFileSync(STAND_DATEI, 'utf8')) : { seiten: {}, hoefe: {} };
-const ARCHIV_AUSNAHMEN = new Set(['/merkliste/']);
-for (const pfad of ALLE_SEITEN) {
-  if (ARCHIV_AUSNAHMEN.has(pfad)) continue;
-  const h = SEITEN_HASH.get(pfad);
-  const alt = stand.seiten[pfad];
-  if (!alt) stand.seiten[pfad] = [h, BUILD_DATUM];
-  else if (alt[0] !== h) stand.seiten[pfad] = [h, alt[0] == null ? alt[1] : BUILD_DATUM];
-}
 for (const e of eintraege) stand.hoefe[e.slug] = e.osm || e.id;
 const sortiert = (o) => Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]]));
 writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe) }));
