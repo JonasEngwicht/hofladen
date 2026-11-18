@@ -15,6 +15,8 @@ const GEN = join(ROOT, 'src', 'generated');
 const cfg = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'));
 const BUILD_DATUM = process.env.BUILD_DATUM || new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' });
 // Version der CSS/JS-Dateien aus ihrem Inhalt: ändert sich nur, wenn sich die Dateien ändern
+// Version von Logo, Favicons und Vorschaubild (ändert sich nur, wenn sich die Dateien ändern)
+const ICON_VERSION = createHash('sha1').update(['favicon.svg', 'og-bild.png'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
 const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
@@ -231,7 +233,7 @@ const kartenDaten = (e, km) => ({ pfad: e.pfad, slug: e.slug, titel: e.titel, ar
   lat: e.lat, lon: e.lon, bio: e.bio, km });
 
 const SUCHFELD = 'type="search" maxlength="60" autocomplete="off" list="orte-vorschlaege" enterkeyhint="search"';
-const LOGO = `<svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#173B2C"/><path d="M15.5 34C15.5 18 48.5 18 48.5 34" fill="none" stroke="#F4C430" stroke-width="3.6" stroke-linecap="round"/><g fill="#F4C430" stroke="#173B2C" stroke-width="1.6" paint-order="stroke"><path d="M32 38V13" fill="none" stroke="#F4C430" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="32" cy="8.6" rx="2.4" ry="4.4"/><ellipse cx="28.6" cy="14.6" rx="2.3" ry="4.3" transform="rotate(-32 28.6 14.6)"/><ellipse cx="35.4" cy="14.6" rx="2.3" ry="4.3" transform="rotate(32 35.4 14.6)"/><ellipse cx="28.6" cy="21.2" rx="2.3" ry="4.3" transform="rotate(-32 28.6 21.2)"/><ellipse cx="35.4" cy="21.2" rx="2.3" ry="4.3" transform="rotate(32 35.4 21.2)"/><ellipse cx="28.6" cy="27.8" rx="2.3" ry="4.3" transform="rotate(-32 28.6 27.8)"/><ellipse cx="35.4" cy="27.8" rx="2.3" ry="4.3" transform="rotate(32 35.4 27.8)"/></g><path d="M8.5 34h47l-5 20.4A3.4 3.4 0 0 1 47.2 57H16.8a3.4 3.4 0 0 1-3.3-2.6z" fill="#F4C430"/><path d="M11.5 45h41" stroke="#173B2C" stroke-width="2.6"/><path d="M22.5 34.5 24 57M32 34.5V57M41.5 34.5 40 57" stroke="#173B2C" stroke-width="2.6"/></svg>`;
+const LOGO = `<svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><path d="M32 3C19 3 8.5 13.3 8.5 26.2 8.5 43.4 32 61 32 61s23.5-17.6 23.5-34.8C55.5 13.3 45 3 32 3z" fill="#F4C430"/><g fill="#173B2C"><rect x="30.4" y="21" width="3.2" height="27" rx="1.6"/><ellipse cx="32" cy="15.6" rx="3.5" ry="6"/><ellipse cx="25.9" cy="25.4" rx="3.2" ry="5.8" transform="rotate(-38 25.9 25.4)"/><ellipse cx="38.1" cy="25.4" rx="3.2" ry="5.8" transform="rotate(38 38.1 25.4)"/><ellipse cx="25.9" cy="35.4" rx="3.2" ry="5.8" transform="rotate(-38 25.9 35.4)"/><ellipse cx="38.1" cy="35.4" rx="3.2" ry="5.8" transform="rotate(38 38.1 35.4)"/></g></svg>`;
 
 // Seitentyp für die Nutzungsstatistik
 const NATIONALE_KATEGORIEN = new Set(['/milchtankstelle/', '/eierautomat/', '/regiomat/', '/hofladen-automaten/', '/bio-hofladen/', '/sonntags-geoeffnet/']);
@@ -266,12 +268,12 @@ ${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}<meta proper
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta name="theme-color" content="#173B2C">
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico?v=${ICON_VERSION}" sizes="48x48">
+<link rel="icon" href="/favicon.svg?v=${ICON_VERSION}" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png?v=${ICON_VERSION}" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=${ICON_VERSION}">
 <link rel="manifest" href="/site.webmanifest">
-<meta property="og:image" content="${cfg.domain}/og-bild.png">
+<meta property="og:image" content="${cfg.domain}/og-bild.png?v=${ICON_VERSION}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Hofladenliste">
