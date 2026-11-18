@@ -271,9 +271,61 @@ main { display: block; }
 .vollkarte-rahmen .kartenpanel { height: calc(100vh - 13rem); min-height: 460px; max-height: none; }
 .legende { margin-top: .6rem; color: var(--grau); font-size: .92rem; display: flex; gap: .4rem; align-items: center; }
 .punkt { display: inline-block; width: .8rem; height: .8rem; border-radius: 50%; border: 2px solid var(--fichte); }
-.punkt.automat { margin-left: .8rem; }
 .punkt.hofladen { background: var(--raps); }
 .punkt.automat { background: var(--kohl); }
+.punkt.milch { background: #7FB3D5; }
+.punkt.eier { background: #F2E2C4; }
+.punkt.markt { background: #C8553D; }
+.legende .punkt ~ .punkt { margin-left: .7rem; }
+
+/* Vollkarte mit Filtern, Clustern und Liste */
+.kartenseite { max-width: 1400px; margin: .6rem auto 0; padding: 0 1.25rem; }
+.kartenseite-werkzeug { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; margin-bottom: .7rem; }
+.kartenseite-werkzeug .segment { flex-wrap: wrap; }
+.kartenseite-werkzeug .kat-filter { flex-basis: 100%; }
+.kartenseite-haupt { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 1rem; align-items: start; }
+.kartenseite-karte { position: relative; }
+.kartenseite-karte .kartenpanel { height: calc(100vh - 15rem); min-height: 480px; max-height: none; }
+.kf-standort { position: absolute; top: .7rem; right: .7rem; z-index: 500; box-shadow: 0 2px 8px rgba(23,59,44,.25); }
+.kf-standort svg { width: 1.1em; height: 1.1em; margin-right: .35rem; vertical-align: -.15em; }
+.legende { flex-wrap: wrap; }
+.kartenseite-liste { background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--r-klein); padding: .8rem; max-height: calc(100vh - 15rem); min-height: 480px; overflow: auto; }
+.kl-griff { display: none; }
+.kl-status { font-size: .92rem; color: var(--grau); margin: 0 0 .6rem; }
+.kl-liste { list-style: none; margin: 0; padding: 0; }
+.kl-eintrag a { display: grid; gap: .1rem; padding: .55rem .5rem .55rem .9rem; border-radius: 6px; color: var(--tinte); text-decoration: none; border-left: 4px solid var(--raps); margin-bottom: .25rem; }
+.kl-eintrag a:hover, .kl-eintrag a:focus-visible { background: #F3F6F2; }
+.kl-m a { border-left-color: #7FB3D5; } .kl-e a { border-left-color: #E3CFA6; } .kl-r a { border-left-color: var(--kohl); } .kl-markt a { border-left-color: #C8553D; }
+.kl-name { font-weight: 700; }
+.kl-meta { font-size: .88rem; color: var(--grau); }
+.kl-st { font-size: .88rem; }
+.kl-st.st-auf { color: #1F6B32; } .kl-st.st-zu { color: var(--bete); } .kl-st.st-unklar { color: var(--grau); }
+.kp-pin { display: grid; place-items: center; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2px solid var(--fichte); background: var(--raps); box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+.kp-pin span { transform: rotate(45deg); font: 700 11px/1 var(--schrift); color: var(--fichte); }
+.kp-m { background: #7FB3D5; } .kp-e { background: #F2E2C4; } .kp-r { background: var(--kohl); } .kp-r span { color: #fff; }
+.kp-markt { background: #C8553D; border-color: #6E2617; } .kp-markt span { color: #fff; }
+.kp-cluster { display: grid; place-items: center; border-radius: 50%; background: rgba(23,59,44,.88); color: #fff; font: 700 13px/1 var(--schrift); box-shadow: 0 0 0 5px rgba(244,196,48,.55); cursor: pointer; }
+.kp { min-width: 200px; }
+.kp p { margin: 0 0 .35rem; }
+.kp-art { font-size: .85rem; color: var(--grau); }
+.kp-name { font-weight: 700; font-size: 1.02rem; }
+.kp-status.st-leer, .kp-status.st-unklar { color: var(--grau); }
+.kp-kat { display: flex; flex-wrap: wrap; gap: .25rem; }
+.kp-kat span { background: #F3F6F2; border-radius: 999px; padding: .1rem .5rem; font-size: .82rem; }
+.kp-aktionen { display: flex; gap: .35rem; flex-wrap: wrap; }
+.kp-aktionen .akt { border: 1.5px solid var(--linie); background: var(--weiss); border-radius: 999px; padding: .25rem .7rem; font: 600 .86rem var(--schrift); color: var(--fichte); text-decoration: none; cursor: pointer; }
+.kp-aktionen .akt[aria-pressed="true"] { background: var(--raps); border-color: var(--raps); }
+@media (max-width: 860px) {
+  .kartenseite { padding: 0 .6rem; }
+  .kartenseite-haupt { display: block; }
+  .kartenseite-karte .kartenpanel { height: calc(100vh - 12rem); min-height: 420px; }
+  .kartenseite-liste { position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; min-height: 0; max-height: 22vh; border-radius: 14px 14px 0 0; box-shadow: 0 -4px 18px rgba(23,59,44,.2); transition: max-height .25s ease; padding-top: 1.4rem; }
+  .kartenseite-liste.offen { max-height: 72vh; }
+  .kl-griff { display: block; position: absolute; top: 0; left: 0; right: 0; height: 1.3rem; border: 0; background: none; cursor: grab; touch-action: none; }
+  .kl-griff::before { content: ""; display: block; width: 44px; height: 5px; border-radius: 3px; background: var(--linie); margin: .45rem auto 0; }
+  .vollkarte .fuss { padding-bottom: 24vh; }
+}
+@media (prefers-reduced-motion: reduce) { .kartenseite-liste { transition: none; } }
 
 /* Saisonkalender */
 .legende-saison { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; font-size: .95rem !important; }
