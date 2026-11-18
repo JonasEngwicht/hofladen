@@ -1,12 +1,20 @@
-name: Overture-Daten aktualisieren
+name: Offene Quellen aktualisieren
 
-# Holt einmal im Monat Hofläden und Automaten aus Overture Maps Places (offene Lizenzen, keine OSM-Daten),
-# ergänzt fehlende Einträge und füllt Kontaktdaten bestehender Einträge auf (data/overture.json).
-# Auswahlregeln: scripts/overture.mjs, Abgleich mit OSM und Kreisen: scripts/import-overture.mjs.
+# Holt einmal im Monat Hofläden und Automaten aus offenen Quellen (keine OSM-Daten, keine Verzeichnisse von Wettbewerbern):
+#  - Overture Maps Places (CDLA-Permissive-2.0 / Apache-2.0), scripts/fetch-overture.py
+#  - Foursquare Open Source Places (Apache-2.0, Hugging Face, Secret HUGGINGFACE_KEY), scripts/fetch-foursquare.py
+#  - Karte von morgen (CC0-1.0), scripts/fetch-kvm.mjs
+#  - offene Verwaltungsdaten (CC0 / CC BY 4.0), scripts/fetch-kommunal.py
+# Kandidaten mit eindeutigem Namen, aber niedriger Konfidenz werden über die eigene Website des Hofs geprüft
+# (scripts/websites-pruefen.mjs). Auswahl und Abgleich: scripts/quellen.mjs, scripts/import-quellen.mjs → data/offene-quellen.json.
+# Schlägt der Abruf einer Quelle fehl, bleiben deren bisherige Einträge erhalten.
 on:
   workflow_dispatch:
   schedule:
-    - cron: '23 4 26 * *' # monatlich am 26. (Overture veröffentlicht etwa zur Monatsmitte)
+    - cron: '23 4 26 * *' # monatlich am 26.
+  push:
+    branches: [daten/weitere-quellen]
+    paths: [.github/workflows/quellen-aktualisieren.yml]
 
 permissions:
   contents: write
@@ -18,7 +26,7 @@ concurrency:
 jobs:
   aktualisieren:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,10 +36,27 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install duckdb==1.1.3 overturemaps
-      - name: Kandidaten aus Overture holen
-        run: python scripts/fetch-overture.py "$RUNNER_TEMP/overture-roh.json"
+      - name: Overture Maps
+        continue-on-error: true
+        run: python scripts/fetch-overture.py "$RUNNER_TEMP/roh-overture.json"
+      - name: Foursquare Open Source Places
+        continue-on-error: true
+        env:
+          HF_TOKEN: ${{ secrets.HUGGINGFACE_KEY }}
+        run: python scripts/fetch-foursquare.py "$RUNNER_TEMP/roh-foursquare.json"
+      - name: Karte von morgen
+        continue-on-error: true
+        run: node scripts/fetch-kvm.mjs "$RUNNER_TEMP/roh-kvm.json"
+      - name: Offene Verwaltungsdaten
+        continue-on-error: true
+        run: python scripts/fetch-kommunal.py "$RUNNER_TEMP/roh-kommunal.json"
+      - name: Websites unsicherer Kandidaten prüfen
+        run: |
+          ls "$RUNNER_TEMP"/roh-*.json
+          node scripts/import-quellen.mjs "$RUNNER_TEMP"/roh-*.json --pruefliste "$RUNNER_TEMP/pruefliste.json"
+          node scripts/websites-pruefen.mjs "$RUNNER_TEMP/pruefliste.json"
       - name: Auswählen und abgleichen
-        run: node scripts/import-overture.mjs "$RUNNER_TEMP/overture-roh.json"
+        run: node scripts/import-quellen.mjs "$RUNNER_TEMP"/roh-*.json
       - name: Testbuild
         run: node scripts/build.mjs
       - name: Commit, falls sich etwas geändert hat
@@ -39,11 +64,11 @@ jobs:
         run: |
           git config user.name "hofladenliste-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/overture.json data/seiten-stand.json
+          git add data/offene-quellen.json data/website-pruefung.json data/seiten-stand.json
           if git diff --cached --quiet; then
             echo "Keine Änderungen."
           else
-            git commit -m "Daten aus Overture Maps aktualisiert"
+            git commit -m "Daten aus offenen Quellen aktualisiert"
             git pull --rebase --autostash -X theirs || true
             git push
             echo "geaendert=ja" >> "$GITHUB_OUTPUT"
