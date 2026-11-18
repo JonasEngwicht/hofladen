@@ -110,7 +110,7 @@ export async function vollkarte(ctx, { params, standortMerken, standortLesen, me
     if (z >= 13 || sichtbar.length <= 60) {
       for (const p of sichtbar) L.marker([p.lat, p.lon], { icon: pin(p), title: p.titel, keyboard: true }).bindPopup(() => popupHtml(p)).addTo(ebene);
     } else {
-      for (const c of clustern(sichtbar, (p) => map.project([p.lat, p.lon], z))) {
+      for (const c of clustern(sichtbar, (p) => map.project([p.lat, p.lon], z), z < 11 ? 84 : 64)) {
         if (c.punkte.length === 1) { const p = c.punkte[0]; L.marker([p.lat, p.lon], { icon: pin(p), title: p.titel }).bindPopup(() => popupHtml(p)).addTo(ebene); continue; }
         const n = c.punkte.length, gr = n < 10 ? 34 : n < 100 ? 40 : 48;
         L.marker([c.lat, c.lon], { icon: L.divIcon({ className: 'kp-cluster', html: `<span>${n.toLocaleString('de-DE')}</span>`, iconSize: [gr, gr], iconAnchor: [gr / 2, gr / 2] }), title: `${n} Einträge`, keyboard: true })
