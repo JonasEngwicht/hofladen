@@ -528,3 +528,18 @@ startseite();
 await merklisteSeite();
 await plzModus();
 karteAutomatisch();
+
+// ---------- Badge-Seite: Code auf den eigenen Eintrag zuschneiden ----------
+{
+  const seite = $('[data-badge-seite]');
+  const hof = params.get('hof');
+  if (seite && hof && /^[a-z0-9-]{1,120}$/.test(hof)) {
+    fetch(`/api/eintraege?slugs=${hof}`).then((r) => r.json()).then((d) => {
+      const e = d.ergebnisse?.[0];
+      if (!e) return;
+      for (const t of $$('[data-badge-code]', seite)) t.value = `<a href="${location.origin}${e.pfad}" title="${esc(e.titel)} auf hofladenliste.de"><img src="${location.origin}/${t.dataset.badgeCode}" width="200" height="56" alt="Wir sind auf hofladenliste.de"></a>`;
+      $('[data-badge-uebernehmen]', seite).href = `/mitmachen/?hof=${hof}&thema=uebernahme`;
+    }).catch(() => {});
+  }
+  for (const t of $$('[data-badge-code]')) t.addEventListener('focus', () => t.select());
+}

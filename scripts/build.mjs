@@ -279,6 +279,8 @@ ${inhalt}
     <li><a href="/bio-hofladen/">Bio-Hofläden</a></li>
     <li><a href="/saisonkalender/">Saisonkalender</a></li>
     <li><a href="/mitmachen/">Hofladen eintragen</a></li>
+    <li><a href="/fuer-hoefe/">Für Höfe</a></li>
+    <li><a href="/quellen/">Quellen</a></li>
     <li><a href="/impressum/">Impressum</a></li>
     <li><a href="/datenschutz/">Datenschutz</a></li>
   </ul>
@@ -723,6 +725,21 @@ const BIO = { slug: 'bio-hofladen', pfadSlug: 'bio-hofladen', name: 'Bio-Hoflade
   text: ['Als Bio gekennzeichnet sind Höfe, die laut OpenStreetMap ausschließlich oder teilweise Bio-Produkte verkaufen.',
     'Ob ein Betrieb zertifiziert ist, erkennst du am EU-Bio-Logo und an der Öko-Kontrollstellennummer (z. B. DE-ÖKO-006) auf der Ware oder am Hof.'] };
 const KAT_TYPEN = [...TYPEN, AUTOMATEN, BIO];
+// Saisonprodukte mit eigener Seite: Höfe, die das Produkt im Namen, in der Beschreibung oder im Angebot (OSM) nennen
+const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+const SAISON_SEITEN = [
+  ['Spargel', 'spargel', /spargel/i, 'Spargelhöfe'], ['Erdbeeren', 'erdbeeren', /erdbeer/i, 'Erdbeerhöfe'], ['Kirschen', 'kirschen', /kirsch/i, 'Höfe mit Kirschen'],
+  ['Heidelbeeren', 'heidelbeeren', /heidelbeer|blaubeer/i, 'Höfe mit Heidelbeeren'], ['Äpfel', 'aepfel', /apfel|äpfel|obsthof/i, 'Obsthöfe mit Äpfeln'],
+  ['Kartoffeln', 'kartoffeln', /kartoffel/i, 'Höfe mit Kartoffeln'], ['Tomaten', 'tomaten', /tomate/i, 'Höfe mit Tomaten'], ['Kürbis', 'kuerbis', /kürbis|kuerbis/i, 'Kürbishöfe'],
+].map(([name, slug, re, plural]) => {
+  const zeile = SAISON.find(([n]) => n === name);
+  const liste = eintraege.filter((e) => re.test([e.name, e.beschreibung, ...(e.produkte || [])].filter(Boolean).join(' ')));
+  return { name, slug, re, plural, frisch: zeile?.[1] || [], lager: zeile?.[2] || [], liste, pfad: `/saisonkalender/${slug}/` };
+}).filter((x) => x.liste.length >= 10);
+const SAISON_NACH_NAME = new Map(SAISON_SEITEN.map((x) => [x.name, x]));
+const monatsSpanne = (ms) => { if (!ms.length) return ''; const s = [...ms]; // zusammenhängend, auch über den Jahreswechsel
+  let start = s.findIndex((m, i) => !s.includes(((m + 10) % 12) + 1)); if (start < 0) start = 0;
+  return `${MONATSNAMEN[s[start] - 1]} bis ${MONATSNAMEN[s[(start + s.length - 1) % s.length] - 1]}`; };
 const ANGEBOT = { eier: ['Eier vom Hof', 'Eiern'], milch: ['Milch vom Hof', 'Milch'], kaese: ['Käse vom Hof', 'Käse'], fleisch: ['Fleisch & Wurst vom Hof', 'Fleisch und Wurst'],
   gemuese: ['Gemüse vom Hof', 'Gemüse'], obst: ['Obst vom Hof', 'Obst'], kartoffeln: ['Kartoffeln vom Hof', 'Kartoffeln'], honig: ['Honig vom Hof', 'Honig'],
   brot: ['Brot vom Hof', 'Brot'], getraenke: ['Saft & Wein vom Hof', 'Saft und Wein'], blumen: ['Blumen vom Feld', 'Blumen'] };
@@ -1285,6 +1302,7 @@ for (const e of eintraege) {
     e.typ === 'automat' ? ['Automat', `${e.art} mit Selbstbedienung.`] : e.selbstbedienung && ['Selbstbedienung', 'Einkauf in Selbstbedienung, meist mit Kasse des Vertrauens.'],
     e.zahlung && ['Bezahlen', e.zahlung.map((z) => ZAHLUNG_TEXT[z]).join(', ')],
   ].filter(Boolean);
+  const saisonProdukte = SAISON_SEITEN.filter((sp) => sp.liste.includes(e));
   // FAQ nur aus Angaben, die auf der Seite stehen
   const naechsteDrei = naehe.slice(0, 3);
   const hofFragen = [
@@ -1345,7 +1363,7 @@ for (const e of eintraege) {
     ${e.kat.length ? `<section class="block"><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${e.quelle === 'osm' ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
     ${e.fotos?.length ? `<section class="block hof-fotos"><h2>Fotos</h2><div class="foto-reihe">${e.fotos.map((f, i) => `<img src="${esc(f)}" width="1200" height="900" alt="${esc(e.titel)} – Foto ${i + 1}" loading="lazy" decoding="async">`).join('')}</div><p class="leise">Fotos: ${esc(e.titel)}</p></section>` : ''}
     ${e.saisonHinweis ? `<section class="block saison-hinweis"><h2>Aktuell und saisonal</h2><p>${esc(e.saisonHinweis)}</p><p class="leise">Angabe des Betriebs, Stand ${esc(datumDe(e.gepflegt.stand))}</p></section>` : ''}
-    ${merkmale.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}</dl></section>` : ''}
+    ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram' })[f]).join(', ')} ergänzt aus <a href="${esc(e.ergaenzt.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.ergaenzt.quelle).split('/')[0])}</a>${e.ergaenzt.stand ? ` (Stand ${esc(e.ergaenzt.stand.split('-').reverse().join('.'))})` : ''}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
     <p class="hinweis">Angaben ohne Gewähr. ${e.gepflegt ? `${e.gepflegt.art === 'uebernahme' ? 'Der Betrieb pflegt diesen Eintrag selbst' : 'Angaben geprüft und ergänzt'} (Stand ${esc(datumDe(e.gepflegt.stand))}). ` : ''}${e.quelle === 'betreiber' ? `Eingetragen vom Betrieb. Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>` : e.quelle === 'osm'
@@ -1356,6 +1374,7 @@ for (const e of eintraege) {
       <h2>Ist das dein Hof?</h2>
       <p>Übernimm den Eintrag kostenlos und halte Öffnungszeiten, Angebot und saisonale Hinweise selbst aktuell.</p>
       <p class="kk-knoepfe"><a class="knopf knopf-dunkel" href="/mitmachen/?hof=${esc(e.slug)}&amp;thema=uebernahme">Eintrag übernehmen</a><a class="knopf knopf-hell" href="/mitmachen/?hof=${esc(e.slug)}">Eintrag korrigieren</a></p>
+      <p class="leise"><a href="/fuer-hoefe/?hof=${esc(e.slug)}">Badge „Wir sind auf hofladenliste.de“ für deine Website</a></p>
     </section>
   </div>
 </div>
@@ -1411,7 +1430,7 @@ schreibe('/saisonkalender/', seite({
   <table class="saison-tabelle">
     <thead><tr><th scope="col">Sorte</th>${MONATE.map((m, i) => `<th scope="col" data-monat="${i + 1}">${m}</th>`).join('')}</tr></thead>
     <tbody>
-      ${SAISON.map(([n, frisch, lager = []]) => `<tr><th scope="row">${esc(n)}</th>${MONATE.map((m, i) => { const mo = i + 1; const c = frisch.includes(mo) ? 'frisch' : lager.includes(mo) ? 'lager' : ''; return `<td data-monat="${mo}"${c ? ` class="${c}"` : ''}><span class="sr">${c === 'frisch' ? 'frisch' : c === 'lager' ? 'Lager' : '–'}</span></td>`; }).join('')}</tr>`).join('\n      ')}
+      ${SAISON.map(([n, frisch, lager = []]) => `<tr><th scope="row">${SAISON_NACH_NAME.has(n) ? `<a href="${SAISON_NACH_NAME.get(n).pfad}">${esc(n)}</a>` : esc(n)}</th>${MONATE.map((m, i) => { const mo = i + 1; const c = frisch.includes(mo) ? 'frisch' : lager.includes(mo) ? 'lager' : ''; return `<td data-monat="${mo}"${c ? ` class="${c}"` : ''}><span class="sr">${c === 'frisch' ? 'frisch' : c === 'lager' ? 'Lager' : '–'}</span></td>`; }).join('')}</tr>`).join('\n      ')}
     </tbody>
   </table>
 </div>
@@ -1432,6 +1451,34 @@ schreibe('/saisonkalender/', seite({
   <ul class="kreis-liste">${laender.map((l) => `<li><a href="/${l.slug}/"><span>${esc(l.name)}</span><span class="zahl">${zahl(l.anzahl)}</span></a></li>`).join('')}</ul>
 </section>`,
 }));
+
+// ---------- Saisonprodukte: Höfe mit Spargel, Erdbeeren, Äpfeln … ----------
+for (const sp of SAISON_SEITEN) {
+  const proLand = laender.map((l) => ({ l, liste: sp.liste.filter((e) => e.k.land === l.code).sort((a, b) => a.k.titel.localeCompare(b.k.titel, 'de') || a.ortAnzeige.localeCompare(b.ortAnzeige, 'de')) })).filter((x) => x.liste.length);
+  const geordnet = proLand.flatMap(({ liste }) => liste);
+  const nHof = sp.liste.filter((e) => e.typ === 'hofladen').length;
+  const saison = monatsSpanne(sp.frisch), lager = monatsSpanne(sp.lager);
+  const andere = SAISON_SEITEN.filter((x) => x !== sp);
+  schreibe(sp.pfad, seite({
+    titel: passend(`${sp.name} vom Hof – ${zahl(sp.liste.length)} ${sp.plural} in Deutschland`, `${sp.name} vom Hof – ${zahl(sp.liste.length)} Höfe`, `${sp.name} vom Hof`),
+    beschreibung: `${sp.name} direkt vom Erzeuger: ${zahl(sp.liste.length)} ${sp.plural} und Hofläden${saison ? `. Saison: ${saison}` : ''}${lager ? `, aus dem Lager ${lager}` : ''}. Mit Öffnungszeiten, Adresse und Route.`,
+    pfad: sp.pfad,
+    klasse: 'kompakt',
+    krumen: [['Saisonkalender', '/saisonkalender/'], [sp.name, sp.pfad]],
+    jsonld: [itemList(`${sp.plural} in Deutschland`, hofItems(geordnet))],
+    inhalt: `
+<section class="seitenkopf">
+  <h1>${esc(sp.name)} vom Hof</h1>
+  <p>${zahl(sp.liste.length)} ${esc(sp.plural)}${nHof !== sp.liste.length ? ` (davon ${zahl(nHof)} Hofläden)` : ''} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}.${saison ? ` Frisch vom Feld gibt es ${esc(sp.name)} meist von ${esc(saison)}${lager ? `, aus dem Lager von ${esc(lager)}` : ''}.` : ''}</p>
+  <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="sp-q">Postleitzahl oder Ort</label><input id="sp-q" name="q" ${SUCHFELD} placeholder="PLZ oder Ort" required><button type="submit">Suchen</button></form>
+</section>
+<section class="abschnitt seo-text"><p>Welche Höfe ${esc(sp.name)} anbieten, erkennen wir am Namen des Hofs, an der Beschreibung und an den Angaben in OpenStreetMap. Gerade bei saisonaler Ware lohnt sich vor dem Besuch ein Anruf – Erntebeginn und Verkaufszeiten hängen vom Wetter ab. Wann welches Obst und Gemüse Saison hat, zeigt der <a href="/saisonkalender/">Saisonkalender</a>.</p></section>
+<nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>${esc(sp.plural)} nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, liste }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(liste.length)}</span></a></li>`).join('')}</ul></nav>
+${proLand.map(({ l, liste }) => `<section class="abschnitt typ-land" id="${l.slug}"><h2>${esc(sp.plural)} in ${esc(l.name)}</h2><ul class="eintrag-liste">${liste.map((e) => `<li><a href="${e.pfad}">${esc(e.titelSeite)}</a> <span class="zahl">${esc(e.ortAnzeige)} · ${esc(e.k.titel)}</span></li>`).join('')}</ul></section>`).join('\n')}
+<section class="abschnitt"><h2>Weitere Saisonprodukte</h2><p class="typ-chips">${andere.map((x) => `<a href="${x.pfad}">${esc(x.name)} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p></section>`,
+  }));
+  KATEGORIE_PFADE.add(sp.pfad);
+}
 
 // ---------- Infoseiten ----------
 const imp = cfg.impressum;
@@ -1485,12 +1532,56 @@ textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von h
 <p>Diese Website setzt keine Cookies und nutzt kein Tracking. Links zu Routenplanern und zu Websites der Höfe öffnen externe Seiten; dort gelten deren Datenschutzbestimmungen.</p>
 <h2>Deine Rechte</h2>
 <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.</p>`);
+// ---------- Badge für Höfe (Backlink) ----------
+{
+  const innen = LOGO.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '');
+  const badge = (hell) => `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="56" viewBox="0 0 200 56" role="img" aria-label="Wir sind auf hofladenliste.de"><rect width="200" height="56" rx="10" fill="${hell ? '#FFFFFF' : '#173B2C'}" stroke="${hell ? '#D9E0DA' : '#173B2C'}"/><g transform="translate(10 10) scale(.5625)">${innen}</g><text x="56" y="24" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="${hell ? '#56635B' : '#CFE0D5'}">Wir sind auf</text><text x="56" y="41" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="${hell ? '#173B2C' : '#F4C430'}">hofladenliste.de</text></svg>`;
+  writeFileSync(join(OUT, 'badge.svg'), badge(true));
+  writeFileSync(join(OUT, 'badge-dunkel.svg'), badge(false));
+  const code = (bild) => esc(`<a href="${cfg.domain}/" title="Hofladen auf hofladenliste.de"><img src="${cfg.domain}/${bild}" width="200" height="56" alt="Wir sind auf hofladenliste.de"></a>`);
+  schreibe('/fuer-hoefe/', seite({
+    titel: 'Für Höfe: Eintrag übernehmen und Badge für die Website',
+    beschreibung: 'Für Hofläden und Automaten-Betreiber: Eintrag auf hofladenliste.de kostenlos übernehmen, Öffnungszeiten und Angebot selbst pflegen und das Badge „Wir sind auf hofladenliste.de“ einbinden.',
+    pfad: '/fuer-hoefe/',
+    klasse: 'textseite',
+    krumen: [['Für Höfe', '/fuer-hoefe/']],
+    inhalt: `<article class="text" data-badge-seite>
+<h1>Für Höfe und Direktvermarkter</h1>
+<p>hofladenliste.de ist kostenlos – für Besucher und für Betriebe. Wenn dein Hof schon eingetragen ist, kannst du den Eintrag übernehmen und selbst aktuell halten: Öffnungszeiten, Angebot, Zahlungsarten, Fotos und saisonale Hinweise wie „Spargel ab Mitte April“.</p>
+<p><a class="knopf knopf-dunkel" href="/mitmachen/" data-badge-uebernehmen>Eintrag übernehmen oder neu eintragen</a></p>
+<h2>Badge für deine Website</h2>
+<p>Zeig deinen Kundinnen und Kunden, dass sie dich auf hofladenliste.de mit Öffnungszeiten und Route finden. Kopiere einfach den Code in deine Website.</p>
+<p class="badge-vorschau"><img src="/badge.svg" width="200" height="56" alt="Wir sind auf hofladenliste.de"> <img src="/badge-dunkel.svg" width="200" height="56" alt="Wir sind auf hofladenliste.de (dunkel)"></p>
+<label for="badge-code-hell">Code (hell)</label>
+<textarea id="badge-code-hell" rows="3" readonly data-badge-code="badge.svg">${code('badge.svg')}</textarea>
+<label for="badge-code-dunkel">Code (dunkel)</label>
+<textarea id="badge-code-dunkel" rows="3" readonly data-badge-code="badge-dunkel.svg">${code('badge-dunkel.svg')}</textarea>
+<p class="leise">Öffnest du diese Seite über „Badge für deine Website“ auf der Seite deines Hofs, verlinkt der Code direkt auf deinen Eintrag.</p>
+<h2>Woher kommen die Daten?</h2>
+<p>Die meisten Einträge stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, ergänzt um Angaben von den Websites der Höfe und von Betrieben selbst. Angaben von Betrieben haben bei uns Vorrang. Mehr dazu unter <a href="/quellen/">Quellen</a>.</p>
+</article>`,
+  }));
+}
+
 // ---------- Verwaltung der Meldungen (nicht öffentlich verlinkt, noindex) ----------
 schreibe('/verwaltung/', seite({
   titel: 'Verwaltung | Hofladenliste', beschreibung: 'Verwaltung der Meldungen zu Hofläden – nur für die Redaktion von hofladenliste.de.',
   pfad: '/verwaltung/', noindex: true, klasse: 'textseite', krumen: [['Verwaltung', '/verwaltung/']],
   inhalt: '<section class="abschnitt"><h1>Meldungen</h1><div id="verwaltung"></div></section><script type="module" src="/verwaltung.js"></script>',
 }), false);
+
+textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenliste.de stammen: OpenStreetMap (ODbL), Websites der Höfe, Angaben von Betrieben und PLZ-Daten von GeoNames.', `<h1>Quellen und Datenstand</h1>
+<h2>OpenStreetMap</h2>
+<p>Die meisten Einträge stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a>: Hofläden (<code>shop=farm</code>) und Hofautomaten (<code>amenity=vending_machine</code> mit Milch, Eiern, Fleisch, Kartoffeln usw.). Wir gleichen die Daten jeden Montag und Donnerstag ab. Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a>, verfügbar unter der <a href="https://opendatacommons.org/licenses/odbl/">Open Database License (ODbL)</a>.</p>
+<h2>Websites der Höfe</h2>
+<p>Fehlen in OpenStreetMap Öffnungszeiten oder Kontaktdaten, ergänzen wir sie aus der eigenen Website des Hofs. Auf der Seite des Eintrags steht dann, welche Angaben woher stammen und mit welchem Stand.</p>
+<h2>Angaben von Betrieben</h2>
+<p>Betriebe können ihren Eintrag über <a href="/mitmachen/">Mitmachen</a> übernehmen und pflegen. Diese Angaben prüfen wir und zeigen sie mit Stand an; sie haben Vorrang vor anderen Quellen.</p>
+<h2>Postleitzahlen und Orte</h2>
+<p>Postleitzahlen, Orte und Kreise: <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). Kartenbilder: OpenStreetMap, erst nach deiner Zustimmung geladen.</p>
+<h2>Keine Daten anderer Verzeichnisse</h2>
+<p>Wir übernehmen keine Daten, Texte oder Bilder aus anderen Hofladen-Verzeichnissen.</p>
+`, false);
 
 // ---------- Mitmachen: Formular für neue Einträge, Korrekturen und Übernahmen ----------
 {
@@ -1500,9 +1591,9 @@ schreibe('/verwaltung/', seite({
 <form class="melde-form" action="/api/meldung" method="post" enctype="multipart/form-data" data-meldeform>
   <fieldset class="melde-art">
     <legend>Was möchtest du tun?</legend>
-    <label><input type="radio" name="art" value="neu" checked> Neuen Hof oder Automaten eintragen</label>
-    <label><input type="radio" name="art" value="korrektur"> Bestehenden Eintrag korrigieren</label>
-    <label><input type="radio" name="art" value="uebernahme"> Ich betreibe den Hof und möchte den Eintrag übernehmen</label>
+    <label><input type="radio" name="art" value="neu" checked><span>Neuen Hof oder Automaten eintragen</span></label>
+    <label><input type="radio" name="art" value="korrektur"><span>Bestehenden Eintrag korrigieren</span></label>
+    <label><input type="radio" name="art" value="uebernahme"><span>Ich betreibe den Hof und möchte den Eintrag übernehmen</span></label>
   </fieldset>
   <input type="hidden" name="hof" value="">
   <p class="melde-hof" data-melde-hof hidden></p>
@@ -1517,23 +1608,23 @@ schreibe('/verwaltung/', seite({
   </div>
   <div class="feldgruppe">
     <h2>Öffnungszeiten</h2>
-    <label class="haken"><input type="checkbox" name="rund" value="ja"> Rund um die Uhr geöffnet (z. B. Automat)</label>
+    <label class="haken"><input type="checkbox" name="rund" value="ja"><span>Rund um die Uhr geöffnet (z. B. Automat)</span></label>
     <table class="zeiten-form"><thead><tr><th></th><th>Zeitfenster</th><th>Zweites Zeitfenster (optional)</th></tr></thead><tbody>${TAGE_FORM.map(zeitZeile).join('')}</tbody></table>
     <p class="leise">Leere Tage gelten als geschlossen.</p>
     <label>Saisonale Hinweise<textarea name="saison" maxlength="300" rows="2" placeholder="z. B. Spargel ab Mitte April, im Januar Betriebsferien"></textarea></label>
   </div>
   <div class="feldgruppe">
     <h2>Angebot</h2>
-    <div class="haken-liste">${Object.entries(KATEGORIEN).map(([k, n]) => `<label class="haken"><input type="checkbox" name="angebot" value="${k}"> ${esc(n)}</label>`).join('')}</div>
-    <label class="haken"><input type="checkbox" name="bio" value="ja"> Bio (zertifiziert)</label>
+    <div class="haken-liste">${Object.entries(KATEGORIEN).map(([k, n]) => `<label class="haken"><input type="checkbox" name="angebot" value="${k}"><span>${esc(n)}</span></label>`).join('')}</div>
+    <label class="haken"><input type="checkbox" name="bio" value="ja"><span>Bio (zertifiziert)</span></label>
     <h3>Bezahlen</h3>
-    <div class="haken-liste">${Object.entries(ZAHLUNG_TEXT).map(([k, n]) => `<label class="haken"><input type="checkbox" name="zahlung" value="${k}"> ${esc(n)}</label>`).join('')}</div>
+    <div class="haken-liste">${Object.entries(ZAHLUNG_TEXT).map(([k, n]) => `<label class="haken"><input type="checkbox" name="zahlung" value="${k}"><span>${esc(n)}</span></label>`).join('')}</div>
     <label>Kurze Beschreibung<textarea name="beschreibung" maxlength="600" rows="3"></textarea></label>
   </div>
   <div class="feldgruppe">
     <h2>Fotos (optional)</h2>
     <label>Bis zu 3 Fotos vom Hof oder Laden<input type="file" name="fotos" accept="image/jpeg,image/png,image/webp" multiple></label>
-    <label class="haken"><input type="checkbox" name="fotorechte" value="ja"> Ich habe die Rechte an den Fotos und erlaube die Veröffentlichung auf hofladenliste.de. Auf den Fotos sind keine erkennbaren Personen ohne deren Einverständnis.</label>
+    <label class="haken"><input type="checkbox" name="fotorechte" value="ja"><span>Ich habe die Rechte an den Fotos und erlaube die Veröffentlichung auf hofladenliste.de. Auf den Fotos sind keine erkennbaren Personen ohne deren Einverständnis.</span></label>
   </div>
   <div class="feldgruppe">
     <h2>Kontakt</h2>
@@ -1542,7 +1633,7 @@ schreibe('/verwaltung/', seite({
     <label>Anmerkungen<textarea name="hinweis" maxlength="2000" rows="3"></textarea></label>
     <label class="falle" aria-hidden="true">Firma<input name="firma" tabindex="-1" autocomplete="off"></label>
     <input type="hidden" name="t" value="">
-    <label class="haken"><input type="checkbox" name="einwilligung" value="ja" required> Ich habe den <a href="/datenschutz/#formular">Datenschutzhinweis</a> gelesen. Die Angaben zum Betrieb werden nach Prüfung veröffentlicht.</label>
+    <label class="haken"><input type="checkbox" name="einwilligung" value="ja" required><span>Ich habe den <a href="/datenschutz/#formular">Datenschutzhinweis</a> gelesen. Die Angaben zum Betrieb werden nach Prüfung veröffentlicht.</span></label>
   </div>
   <p><button type="submit" class="knopf knopf-dunkel">Absenden</button></p>
   <p class="fehler" data-melde-fehler hidden></p>

@@ -457,3 +457,6 @@ html { overflow-x: clip; }
 #verwaltung .meldung { margin: 1rem 0; }
 #verwaltung textarea { width: 100%; font: .9rem monospace; }
 #verwaltung .fotos img { margin: .4rem .4rem 0 0; border-radius: var(--r-klein); }
+[data-badge-seite] label { display: block; font-weight: 700; margin-top: 1rem; }
+[data-badge-seite] textarea { display: block; width: 100%; font: .85rem/1.4 monospace; padding: .6rem; border: 1.5px solid var(--linie); border-radius: var(--r-klein); margin-top: .3rem; }
+.badge-vorschau img { margin: 0 .6rem .6rem 0; vertical-align: middle; }
