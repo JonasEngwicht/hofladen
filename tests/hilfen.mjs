@@ -37,9 +37,6 @@ export async function anfrage(pfad, init = {}) {
   // Echte Cloudflare-Reihenfolge: exakt passende Datei zuerst, sonst Worker
   const url = new URL(pfad, 'https://hofladenliste.de');
   const vorab = ['/suche', '/plz/', '/api/'].some((x) => url.pathname === x || url.pathname.startsWith(x) && x.endsWith('/'));
-  // static/_redirects: /…/index.html → /…/
-  if (url.hostname === 'hofladenliste.de' && url.pathname.endsWith('/index.html'))
-    return new Response(null, { status: 301, headers: { Location: url.pathname.replace(/index\.html$/, '') + url.search } });
   if (!vorab && url.hostname === 'hofladenliste.de') {
     const datei = join(PUB, decodeURIComponent(url.pathname));
     if (datei.startsWith(PUB) && existsSync(datei) && statSync(datei).isFile()) return ASSETS.fetch(new Request(url, init));

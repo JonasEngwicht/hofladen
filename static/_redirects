@@ -1,3 +1,0 @@
-# Doppelte Adressen der Seiten (die HTML-Dateien liegen als /pfad/index.html vor)
-/index.html / 301
-/*/index.html /:splat/ 301

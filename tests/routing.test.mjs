@@ -19,7 +19,6 @@ test('Seiten mit Schrägstrich liefern 200 und HTML', async () => {
 test('Schreibvarianten leiten dauerhaft (301) um', async () => {
   const faelle = [
     ['/bayern', '/bayern/'],
-    ['/bayern/index.html', '/bayern/'],
     ['/Bayern/Landkreis-Rosenheim/', '/bayern/landkreis-rosenheim/'],
     ['/bayern/m%C3%BCnchen-stadt/', '/bayern/muenchen-stadt/'],
     ['/baden-w%C3%BCrttemberg/', '/baden-wuerttemberg/'],
@@ -50,6 +49,12 @@ test('Archivierte Seiten leiten auf ihr Ziel, das selbst existiert', async () =>
 
 test('Entfernte Höfe liefern 410', async () => {
   for (const p of routen.entfernt.slice(0, 50)) assert.equal((await anfrage(p)).status, 410, p);
+});
+
+test('Der Worker lädt Seiten über die interne Adresse /…/index.html (darf nicht umgeleitet werden)', async () => {
+  // Cloudflare wendet _redirects auch auf env.ASSETS.fetch an – eine Regel für index.html legt alle Seiten lahm
+  const { existsSync } = await import('node:fs');
+  assert.equal(existsSync(join(ROOT, 'static', '_redirects')), false);
 });
 
 test('Unbekannte Seiten liefern 404 mit Fehlerseite', async () => {
