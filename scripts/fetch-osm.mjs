@@ -22,7 +22,7 @@ const AUSWAHL = `{ SELECT DISTINCT ?osm WHERE { osmrel:51477 ogc:sfContains ?osm
   { ?osm osmkey:amenity "vending_machine" . ?osm osmkey:vending ?vd .
     FILTER(REGEX(?vd, "milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable")) } } }`;
 
-const UA = 'hofladenliste.de-datenimport (https://github.com/JonasEngwicht/hofladen)';
+const UA = 'hofladenliste.de-datenimport (https://github.com/JonasEngwicht/hofladen; hofladenliste@gmail.com)';
 
 async function holen(url, opts, versuche, name) {
   for (let i = 1; i <= versuche; i++) {

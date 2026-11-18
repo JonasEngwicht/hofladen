@@ -1,12 +1,12 @@
 {
   "domain": "https://hofladenliste.de",
   "name": "Hofladenliste",
-  "kontaktEmail": "contact@hofladenliste.de",
+  "kontaktEmail": "hofladenliste@gmail.com",
   "impressum": {
     "name": "Jonas Engwicht",
     "strasse": "Robert-Koch-Straße 50",
     "plzOrt": "03149 Forst (Lausitz)",
-    "email": "contact@hofladenliste.de",
+    "email": "hofladenliste@gmail.com",
     "telefon": ""
   }
 }
