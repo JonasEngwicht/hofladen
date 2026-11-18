@@ -40,14 +40,18 @@ for (const [pfad, status, ziel] of FAELLE) {
 // Overture-Einträge sind ausgerollt: erster Eintrag mit stabiler ID o-… und die Quellenseite
 {
   const roh = JSON.parse((await import('node:fs')).readFileSync(new URL('../src/generated/eintraege.json', import.meta.url), 'utf8'));
-  const o = (Array.isArray(roh) ? roh : roh.eintraege).find((e) => String(e[15]).startsWith('o-'));
-  if (o) {
+  const liste = Array.isArray(roh) ? roh : roh.eintraege;
+  // je Quelle ein Eintrag: o- Overture, f- Foursquare, k- Karte von morgen, g- Verwaltungsdaten
+  for (const [praefix, quelle, muster] of [['o-', 'Overture', /Overture Maps Foundation/], ['f-', 'Foursquare', /Foursquare Open Source Places/],
+    ['k-', 'Karte von morgen', /Karte von morgen/], ['g-', 'Verwaltungsdaten', /offene Verwaltungsdaten/]]) {
+    const o = liste.find((e) => String(e[15]).startsWith(praefix));
+    if (!o) continue;
     const d = await (await fetch(`${BASIS}/api/eintrag?id=${o[15]}`)).json().catch(() => ({}));
     const seite = await fetch(`${BASIS}/hof/${o[2]}/`);
     const text = seite.status === 200 ? await seite.text() : '';
-    const ok = d.eintrag?.slug === o[2] && /Overture Maps Foundation/.test(text);
+    const ok = d.eintrag?.slug === o[2] && muster.test(text);
     if (!ok) fehler++;
-    console.log(`${ok ? 'OK  ' : 'FEHL'} Overture-Eintrag ${o[3]} (/hof/${o[2]}/, ${seite.status})`);
+    console.log(`${ok ? 'OK  ' : 'FEHL'} ${quelle}-Eintrag ${o[3]} (/hof/${o[2]}/, ${seite.status})`);
   }
   const q = await (await fetch(`${BASIS}/quellen/`)).text();
   const ok = /Overture Maps/.test(q);
