@@ -12,6 +12,8 @@ import EINTRAEGE from './generated/eintraege.json';
 import KATEGORIEN from './generated/kategorien.json';
 import ORTE from './generated/orte.json';
 import ROUTEN from './generated/routen.json';
+import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
+import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnop';
 
@@ -176,7 +178,7 @@ function umkreis(url, env, ctx, request) {
 
 function aufbereiten(e, km = null) {
   return {
-    km, pfad: `/hof/${e[2]}/`, slug: e[2], titel: e[3], art: e[4], ort: e[5],
+    km, pfad: `/hof/${e[2]}/`, slug: e[2], id: e[15], titel: e[3], art: e[4], ort: e[5],
     oh: e[6] || null, typ: e[7] ? 'hofladen' : 'automat', adresse: e[8], telefon: e[9] || null, website: e[10] || null,
     kat: [...e[11]].map((b) => KATEGORIEN[KAT_BUCHSTABEN.indexOf(b)]), bio: !!e[12], ohText: e[13] || null, lat: e[0], lon: e[1],
   };
@@ -249,9 +251,9 @@ async function meldungAnnehmen(request, env) {
   const art = f.get('art');
   if (!MELDUNG_ARTEN.includes(art)) return antwort(request, 400, { fehler: 'Bitte wähle aus, was du tun möchtest.' });
   if (f.get('einwilligung') !== 'ja') return antwort(request, 400, { fehler: 'Bitte bestätige den Hinweis zum Datenschutz.' });
-  SLUG_INDEX ??= new Map(EINTRAEGE.map((e) => [e[2], e]));
-  const hof = (f.get('hof') || '').trim();
-  if (art !== 'neu' && !SLUG_INDEX.has(hof)) return antwort(request, 400, { fehler: 'Der Eintrag wurde nicht gefunden. Öffne das Formular bitte über die Seite des Hofs.' });
+  const bestehend = art === 'neu' ? null : aufloesen(f.get('eintrag') || f.get('hof'), eintragIndex());
+  if (art !== 'neu' && !bestehend) return antwort(request, 400, { fehler: 'Der Eintrag wurde nicht gefunden. Öffne das Formular bitte über die Seite des Hofs.' });
+  const hof = bestehend ? bestehend[2] : '';
   const daten = {};
   for (const [k, max] of Object.entries(TEXTFELDER)) { const v = String(f.get(k) || '').trim().slice(0, max); if (v) daten[k] = v; }
   if (daten.plz && !/^\d{5}$/.test(daten.plz)) return antwort(request, 400, { fehler: 'Die Postleitzahl muss fünf Ziffern haben.' });
@@ -275,6 +277,23 @@ async function meldungAnnehmen(request, env) {
   }
   if (fotos.length && f.get('fotorechte') !== 'ja') return antwort(request, 400, { fehler: 'Bitte bestätige, dass du die Rechte an den Fotos hast.' });
   if (!Object.keys(daten).length && !fotos.length) return antwort(request, 400, { fehler: 'Das Formular ist leer.' });
+  if (f.get('badge') === 'ja') daten.badge = true;
+  // Herkunft (z. B. Outreach-Mail) mitspeichern
+  const utm = {};
+  for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']) { const v = String(f.get(k) || '').trim().slice(0, 80); if (v) utm[k] = v; }
+  if (Object.keys(utm).length) daten.utm = utm;
+  // Bestehender Eintrag: stabile ID und Änderungen „alt → neu“ für die Moderation
+  if (bestehend) {
+    const alt = oeffentlich(bestehend, KATEGORIEN, VOLLSTAENDIGKEIT);
+    daten.eintrag = alt.id;
+    const vergleich = { name: alt.name, betriebsart: alt.art, strasse: alt.strasse, plz: alt.plz, ort: alt.ort, telefon: alt.telefon, email: alt.email,
+      website: alt.website, oeffnungszeiten: alt.oeffnungszeiten, angebot: alt.angebot, zahlung: alt.zahlung, bio: alt.bio, beschreibung: alt.beschreibung };
+    const norm = (v) => (Array.isArray(v) ? [...v].sort().join(', ') : v === true ? 'ja' : v === false ? '' : String(v ?? '').trim());
+    const diff = {};
+    for (const [k, a] of Object.entries(vergleich)) if (daten[k] !== undefined && norm(daten[k]) !== norm(a)) diff[k] = [norm(a), norm(daten[k])];
+    if (fotos.length) diff.fotos = [String(alt.fotos || 0), `+${fotos.length}`];
+    daten.diff = diff;
+  }
 
   await schema(env);
   // höchstens 10 Meldungen pro Tag und Absender (IP nur als Tages-Hash, nicht gespeichert)
@@ -355,6 +374,11 @@ async function verwaltung(request, env, url) {
       tage: await q(`SELECT tag, SUM(anzahl) AS anzahl FROM ereignisse WHERE tag >= ?1 GROUP BY tag ORDER BY tag`),
     }));
   }
+  if (teil === 'export') {
+    const liste = request.method === 'POST' ? await request.text() : (url.searchParams.get('liste') || '');
+    return new Response(outreachCsv(liste.split(/[\n,;\s]+/), eintragIndex(), DOMAIN, VOLLSTAENDIGKEIT), {
+      headers: { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': 'attachment; filename="outreach.csv"', 'Cache-Control': 'no-store' } });
+  }
   const foto = teil.match(/^foto\/(\d+)$/);
   if (foto) {
     const r = await env.STATS.prepare('SELECT typ, daten FROM meldung_fotos WHERE id = ?1').bind(+foto[1]).first();
@@ -373,6 +397,26 @@ async function verwaltung(request, env, url) {
     return json({ ok: true });
   }
   return json({ fehler: 'Unbekannt' }, 404);
+}
+
+// ---------- Bearbeiten-Links mit stabiler ID ----------
+let IDX = null;
+const eintragIndex = () => (IDX ??= index(EINTRAEGE, ROUTEN.alteSlugs || {}));
+const DOMAIN = 'https://hofladenliste.de';
+function eintragApi(url) {
+  const e = aufloesen(url.searchParams.get('id') || url.searchParams.get('eintrag') || url.searchParams.get('hof'), eintragIndex());
+  if (!e) return json({ fehler: 'Eintrag nicht gefunden' }, 404);
+  const r = json({ eintrag: oeffentlich(e, KATEGORIEN, VOLLSTAENDIGKEIT), links: links(DOMAIN, e) });
+  r.headers.set('Cache-Control', 'public, max-age=300');
+  return r;
+}
+// /hof/<stabile-id oder slug>/bearbeiten/ bzw. /uebernehmen/ → Formular (302, auch nach Slug-Änderung)
+export function bearbeitenZiel(teil, aktion, suche, idx) {
+  const e = aufloesen(teil, idx);
+  const p = new URLSearchParams(suche);
+  p.delete('eintrag'); p.delete('aktion');
+  const rest = p.toString();
+  return `/mitmachen/?eintrag=${encodeURIComponent(e ? e[15] : teil)}&aktion=${aktion === 'uebernehmen' ? 'uebernehmen' : 'ergaenzen'}${rest ? `&${rest}` : ''}`;
 }
 
 // ---------- HTML-Seiten, Weiterleitungen, 410/404 ----------
@@ -397,10 +441,14 @@ const dauerhaft = (url, pfad) => new Response(null, { status: 301, headers: { Lo
 
 async function seiteAusliefern(request, env, url) {
   const pfad = url.pathname;
+  const bearb = pfad.match(/^\/hof\/([^/]+)\/(bearbeiten|uebernehmen)\/?$/i);
+  if (bearb) return new Response(null, { status: 302, headers: { Location: bearbeitenZiel(bearb[1], bearb[2].toLowerCase(), url.search, eintragIndex()), 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' } });
   const n = normalisiere(pfad);
   // Exakt passende Seite in kanonischer Schreibweise
   if (n === pfad && pfad.endsWith('/') && !ROUTEN.umleitungen[pfad]) {
     const r = await seiteLaden(env, url, pfad, request);
+    // Formular mit Parametern (Bearbeiten-Links): nicht indexieren, Canonical zeigt auf /mitmachen/
+    if (r && pfad.startsWith('/mitmachen/') && url.search) { const k = new Response(r.body, r); k.headers.set('X-Robots-Tag', 'noindex'); return k; }
     if (r) return r;
   }
   // Abweichende Schreibweise (ohne Schrägstrich, index.html, Großbuchstaben, Umlaute …)
@@ -425,6 +473,7 @@ export default {
     if (url.pathname === '/api/eintraege') return eintraegeNachSlug(url);
     if (url.pathname === '/api/orte') return orteVorschlaege(url);
     if (url.pathname === '/api/meldung') return meldungAnnehmen(request, env);
+    if (url.pathname === '/api/eintrag') return eintragApi(url);
     if (url.pathname === '/api/ereignis') return ereignisZaehlen(request, env, ctx);
     if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url);
     return seiteAusliefern(request, env, url);
