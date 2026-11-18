@@ -608,7 +608,7 @@ html { overflow-x: clip; }
 [data-papier="A5"] .aushang { width: 148mm; min-height: 210mm; padding: 11mm 10mm; font-size: 80%; }
 .aushang-marke { display: flex; align-items: center; gap: .5rem; font: 700 1.2em var(--schrift-titel, inherit); margin: 0 0 8mm; }
 .aushang-marke svg { width: 2.2em; height: 2.2em; }
-.aushang-name { font-size: 2.6em; line-height: 1.1; margin: 0 0 .3em; }
+.aushang .aushang-name { font-size: 2.6em; line-height: 1.1; margin: 0 0 .3em; }
 .aushang-art { font-size: 1.15em; margin: 0 0 8mm; color: #3c5247; }
 .aushang-spalten { display: grid; grid-template-columns: 1fr 62mm; gap: 10mm; align-items: start; flex: 1; }
 [data-papier="A5"] .aushang-spalten { grid-template-columns: 1fr 46mm; gap: 6mm; }
