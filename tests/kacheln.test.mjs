@@ -70,3 +70,17 @@ for (const mitBlatt of [false, true]) {
     assert.equal(Buffer.from(await new Response(new Blob([(await kachelFinden(env, name, 6, 34, 21)).buf]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer()).toString(), 'sachsen');
   });
 }
+
+test('QR-Code für Aushänge: Größe passt zur Länge, Suchmuster in drei Ecken', async () => {
+  const { qrMatrix, qrSvg } = await import('../static/qr.js');
+  assert.equal(qrMatrix('HELLO').length, 21);
+  const m = qrMatrix('https://hofladenliste.de/hof/kittlers-hofladen-riesa/?utm_source=aushang');
+  const n = m.length;
+  assert.equal(n, 37);
+  for (const [x, y] of [[0, 0], [n - 7, 0], [0, n - 7]]) {
+    assert.ok(m[y][x] && m[y + 6][x + 6] && m[y + 3][x + 3], 'Suchmuster dunkel');
+    assert.ok(!m[y + 1][x + 1], 'Ring hell');
+  }
+  assert.match(qrSvg('x'), /^<svg[^>]+viewBox="0 0 29 29"/);
+  assert.throws(() => qrMatrix('x'.repeat(400)));
+});

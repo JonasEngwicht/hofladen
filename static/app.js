@@ -188,6 +188,8 @@ for (const box of $$('[data-nachricht]')) {
   });
 }
 
+if ($('[data-aushang]')) import(new URL('./aushang.js' + new URL(import.meta.url).search, import.meta.url)).then((m) => m.aushang());
+
 // Betreiber-Bereich (/betrieb/) als eigenes Modul
 if ($('[data-betrieb]')) import(new URL('./betrieb.js' + new URL(import.meta.url).search, import.meta.url)).then((m) => m.betrieb());
 
