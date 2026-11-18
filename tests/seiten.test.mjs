@@ -70,7 +70,7 @@ test('JSON-LD ist gültig und passt zum sichtbaren Inhalt', () => {
       fehler.push(`${p}: ItemList ${il.numberOfItems} ≠ ${s.karten} Karten`);
     const faq = s.ld.find((x) => x['@type'] === 'FAQPage');
     if (faq) {
-      const text = s.html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+      const text = s.html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&gt;/g, '>').replace(/&lt;/g, '<');
       for (const q of faq.mainEntity) if (!text.includes(q.name)) fehler.push(`${p}: FAQ-Frage nicht sichtbar: ${q.name}`);
     }
     if (s.ld.find((x) => x['@type'] === 'Store' || x['@type'] === 'LocalBusiness')?.openingHoursSpecification && !/<table class="woche">/.test(s.html))
@@ -99,4 +99,24 @@ test('dünne Listenseiten (unter 3 Einträgen) sind nicht indexierbar', () => {
   const fehler = [];
   for (const [p, s] of info) if (!s.noindex && (art(p) === 'kreis' || art(p) === 'unterseite') && s.karten < 3) fehler.push(p);
   assert.deepEqual(fehler, []);
+});
+
+test('Startorte haben Seiten "Hofläden in <Ort> und Umgebung" mit Entfernungen', () => {
+  for (const [p, name] of [['/berlin/berlin/', 'Berlin'], ['/brandenburg/cottbus/', 'Cottbus'], ['/sachsen/dresden/', 'Dresden'],
+    ['/sachsen/leipzig-stadt/', 'Leipzig'], ['/bayern/muenchen-stadt/', 'München'], ['/brandenburg/spree-neisse/forst-lausitz/', 'Forst (Lausitz)']]) {
+    const s = info.get(p);
+    assert.ok(s, p);
+    assert.match(s.html, new RegExp(`<h1>Hofläden in ${name.replace(/[()]/g, '\\$&')} und Umgebung</h1>`), p);
+    assert.ok(!s.noindex, `${p} indexierbar`);
+    assert.ok(s.karten >= 3, `${p}: ${s.karten} Einträge`);
+    assert.match(s.html, /data-radius-filter="10"/, `${p}: Umkreisfilter`);
+    assert.match(s.html, /<span class="km">/, `${p}: Entfernungen`);
+  }
+});
+
+test('Hofseiten zeigen Aktualität, Korrektur und Übernahme', () => {
+  const s = info.get('/hof/kittlers-hofladen-riesa/');
+  assert.match(s.html, /Seite aktualisiert: \d{2}\.\d{2}\.\d{4}/);
+  assert.match(s.html, /thema=uebernahme/);
+  assert.doesNotMatch(s.html, /%%SEITENSTAND%%/);
 });

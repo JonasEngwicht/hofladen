@@ -73,6 +73,8 @@ test('Suche und API', async () => {
   assert.match(ziel(r), /\?plz=88069$/);
   r = await anfrage('/suche?q=Forst');
   assert.match(ziel(r), /fehler=ort/);
+  r = await anfrage('/suche?q=Forst%20(Lausitz)');
+  assert.equal(ziel(r), '/brandenburg/spree-neisse/forst-lausitz/?plz=03149');
   r = await anfrage('/plz/03149');
   assert.equal(r.status, 302);
   r = await anfrage('/api/umkreis?plz=03149&limit=3');

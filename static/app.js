@@ -144,7 +144,8 @@ if (wz) {
 }
 
 // ---------- Filter auf Kreisseiten ----------
-const filter = { typ: 'alle', offen: false, sonntag: false, bio: false, kat: new Set() };
+const filter = { typ: 'alle', offen: false, sonntag: false, bio: false, rund: false, radius: null, kat: new Set() };
+const rundUmDieUhr = (oh) => { try { const w = oh && parse(oh); return !!w && w.every((iv) => iv.some(([a, b]) => a === 0 && b >= 1440)); } catch { return false; } };
 const sonntagsOffen = (oh) => { try { return !!oh && !!parse(oh)?.[6]?.length; } catch { return false; } };
 function wendeFilterAn() {
   const karten = $$('[data-liste] > .laden');
@@ -154,6 +155,8 @@ function wendeFilterAn() {
     if (ok && filter.offen) ok = !!k.dataset.oh && status(k.dataset.oh)?.offen === true;
     if (ok && filter.sonntag) ok = sonntagsOffen(k.dataset.oh);
     if (ok && filter.bio) ok = k.dataset.bio === '1';
+    if (ok && filter.rund) ok = rundUmDieUhr(k.dataset.oh);
+    if (ok && filter.radius) ok = +k.dataset.km <= filter.radius;
     if (ok && filter.kat.size) { const ks = k.dataset.kat.split(' '); ok = [...filter.kat].every((x) => ks.includes(x)); }
     k.hidden = !ok;
     if (ok) n++;
@@ -179,7 +182,14 @@ $('[data-offen-filter]')?.addEventListener('click', (ev) => {
   ev.currentTarget.setAttribute('aria-pressed', String(filter.offen));
   wendeFilterAn();
 });
-for (const [attr, key] of [['data-sonntag-filter', 'sonntag'], ['data-bio-filter', 'bio']]) $(`[${attr}]`)?.addEventListener('click', (ev) => {
+for (const b of $$('[data-radius-filter]')) b.addEventListener('click', () => {
+  const r = +b.dataset.radiusFilter;
+  const groesster = Math.max(...$$('[data-radius-filter]').map((x) => +x.dataset.radiusFilter));
+  filter.radius = r === groesster ? null : r;
+  for (const x of $$('[data-radius-filter]')) x.setAttribute('aria-pressed', String(x === b));
+  wendeFilterAn();
+});
+for (const [attr, key] of [['data-sonntag-filter', 'sonntag'], ['data-bio-filter', 'bio'], ['data-rund-filter', 'rund']]) $(`[${attr}]`)?.addEventListener('click', (ev) => {
   filter[key] = !filter[key];
   ev.currentTarget.setAttribute('aria-pressed', String(filter[key]));
   wendeFilterAn();
@@ -191,9 +201,11 @@ for (const b of $$('[data-kat-filter]')) b.addEventListener('click', () => {
   wendeFilterAn();
 });
 $('[data-filter-zuruecksetzen]')?.addEventListener('click', () => {
-  filter.typ = 'alle'; filter.offen = false; filter.sonntag = false; filter.bio = false; filter.kat.clear();
+  filter.typ = 'alle'; filter.offen = false; filter.sonntag = false; filter.bio = false; filter.rund = false; filter.radius = null; filter.kat.clear();
+  const radien = $$('[data-radius-filter]');
+  radien.forEach((x, i) => x.setAttribute('aria-pressed', String(i === radien.length - 1)));
   for (const x of $$('[data-typ-filter]')) x.setAttribute('aria-pressed', String(x.dataset.typFilter === 'alle'));
-  for (const x of $$('[data-kat-filter], [data-offen-filter], [data-sonntag-filter], [data-bio-filter]')) x.setAttribute('aria-pressed', 'false');
+  for (const x of $$('[data-kat-filter], [data-offen-filter], [data-sonntag-filter], [data-bio-filter], [data-rund-filter]')) x.setAttribute('aria-pressed', 'false');
   wendeFilterAn();
 });
 // Vorauswahl über die Adresse, z. B. ?filter=sonntag oder ?filter=bio (Links von den Übersichtsseiten)
@@ -201,6 +213,7 @@ for (const f of (params.get('filter') || '').split(',')) {
   if (f === 'sonntag') $('[data-sonntag-filter]')?.click();
   if (f === 'bio') $('[data-bio-filter]')?.click();
   if (f === 'offen') $('[data-offen-filter]')?.click();
+  if (f === 'rund') $('[data-rund-filter]')?.click();
 }
 
 // ---------- PLZ-Suche: nach Entfernung sortieren ----------
@@ -347,12 +360,15 @@ for (const i of $$('input[list="orte-vorschlaege"]')) i.addEventListener('input'
   const mail = $('#mail-link');
   const hof = params.get('hof');
   if (mail && hof && /^[a-z0-9-]{1,120}$/.test(hof)) {
-    const zeiten = params.get('thema') === 'zeiten';
+    const thema = params.get('thema');
+    const zeiten = thema === 'zeiten', uebernahme = thema === 'uebernahme';
     const adresse = mail.getAttribute('href').replace(/^mailto:/, '').split('?')[0];
-    const betreff = zeiten ? `Öffnungszeiten: ${hof}` : `Korrektur: ${hof}`;
-    const text = `Eintrag: ${location.origin}/hof/${hof}/\n\n${zeiten ? 'Die Öffnungszeiten sind:\nMo:\nDi:\nMi:\nDo:\nFr:\nSa:\nSo:\n\nWoher weißt du das (z. B. Schild am Hof, Website)?\n' : 'Was soll geändert werden?\n'}`;
+    const betreff = zeiten ? `Öffnungszeiten: ${hof}` : uebernahme ? `Eintrag übernehmen: ${hof}` : `Korrektur: ${hof}`;
+    const text = `Eintrag: ${location.origin}/hof/${hof}/\n\n${zeiten ? 'Die Öffnungszeiten sind:\nMo:\nDi:\nMi:\nDo:\nFr:\nSa:\nSo:\n\nWoher weißt du das (z. B. Schild am Hof, Website)?\n'
+      : uebernahme ? 'Ich betreibe diesen Hof und möchte den Eintrag selbst pflegen.\n\nName des Betriebs:\nAnsprechperson:\nTelefon:\nWebsite (falls vorhanden):\n\nÖffnungszeiten:\nAngebot:\n'
+      : 'Was soll geändert werden?\n'}`;
     mail.href = `mailto:${adresse}?subject=${encodeURIComponent(betreff)}&body=${encodeURIComponent(text)}`;
-    mail.textContent = zeiten ? 'Öffnungszeiten per E-Mail schicken' : 'Korrektur per E-Mail schicken';
+    mail.textContent = zeiten ? 'Öffnungszeiten per E-Mail schicken' : uebernahme ? 'Übernahme per E-Mail anfragen' : 'Korrektur per E-Mail schicken';
     $('#mitmachen-hinweis')?.removeAttribute('hidden');
   }
 }
