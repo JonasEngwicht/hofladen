@@ -475,3 +475,13 @@ html { overflow-x: clip; }
 .melde-form .fehlt::after { content: "fehlt"; position: absolute; top: 0; right: 0; font: 700 .72rem var(--schrift); color: #7A5B00; background: #FFE9A6; padding: .1rem .45rem; border-radius: 999px; }
 .melde-form .haken-liste.fehlt { background: #FFFBEA; border-radius: var(--r-klein); padding: .4rem .5rem; }
 .melde-form .feldgruppe.fehlt { border-color: #D9A800; }
+/* Ein-Klick-Rückmeldung „Stimmt das noch?“ */
+.pruefung { margin: 2rem 0 1rem; padding: 1.2rem 1.3rem; border: 1px solid var(--linie); border-left: 5px solid var(--raps); border-radius: var(--r); background: var(--weiss); }
+.pruefung h2 { font-size: 1.3rem; margin: 0 0 .4rem; }
+.pruef-stand { margin: 0 0 .8rem; }
+.pruef-knoepfe { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 .7rem; }
+.pruef-knoepfe[hidden] { display: none; }
+.pruef-frage { margin: 0 0 .7rem; font-weight: 600; }
+.pruef-danke { margin: 0 0 .7rem; font-weight: 700; color: var(--fichte); }
+.pruef-warnung { margin: 0 0 .7rem; padding: .5rem .7rem; border-radius: 8px; background: #FFF1D6; color: #6A4A00; font-weight: 600; }
+.pruefung .leise { margin: 0; }

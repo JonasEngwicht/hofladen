@@ -249,6 +249,10 @@ const SCHEMA = [
   'CREATE TABLE IF NOT EXISTS meldung_limit (schluessel TEXT PRIMARY KEY, tag TEXT NOT NULL, anzahl INTEGER NOT NULL)',
   `CREATE TABLE IF NOT EXISTS ereignisse (tag TEXT NOT NULL, ereignis TEXT NOT NULL, seite TEXT NOT NULL, detail TEXT NOT NULL,
     anzahl INTEGER NOT NULL, PRIMARY KEY (tag, ereignis, seite, detail))`,
+  // Ein-Klick-Rückmeldungen („Stimmt noch“, „Geschlossen“): nur Eintrag, Art und Tag, keine personenbezogenen Daten
+  `CREATE TABLE IF NOT EXISTS rueckmeldungen (id INTEGER PRIMARY KEY AUTOINCREMENT, tag TEXT NOT NULL, eintrag TEXT NOT NULL, art TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'neu')`,
+  'CREATE INDEX IF NOT EXISTS rueckmeldungen_eintrag ON rueckmeldungen (eintrag, art, status)',
 ];
 let schemaOk = false;
 async function schema(env) {
@@ -358,9 +362,36 @@ async function meldungAnnehmen(request, env) {
   return antwort(request, 200, { ok: true, id: r.id });
 }
 
+// ---------- Ein-Klick-Rückmeldung auf der Hofseite: „Stimmt das noch?“ / „Geschlossen melden“ ----------
+// Je Eintrag und Anschluss zählt pro Tag eine Rückmeldung (Schlüssel aus gehashter IP, Tag und Eintrag, nur für heute).
+const RUECKMELDUNG_ARTEN = ['stimmt', 'geschlossen'];
+async function rueckmeldungAnnehmen(request, env) {
+  if (request.method !== 'POST') return json({ fehler: 'Nur POST' }, 405);
+  if (!env.STATS) return json({ fehler: 'Rückmeldungen sind gerade nicht möglich.' }, 503);
+  if (BOT.test(request.headers.get('user-agent') || '')) return json({ ok: true });
+  let b;
+  try { b = await request.json(); } catch { return json({ fehler: 'Ungültige Anfrage' }, 400); }
+  const art = String(b?.art || '');
+  if (!RUECKMELDUNG_ARTEN.includes(art)) return json({ fehler: 'Unbekannte Rückmeldung' }, 400);
+  const e = aufloesen(b?.eintrag, eintragIndex());
+  if (!e) return json({ fehler: 'Eintrag nicht gefunden' }, 404);
+  await schema(env);
+  const tag = tagHeute(), ip = request.headers.get('cf-connecting-ip') || '';
+  const schluessel = await sha256(`r|${ip}|${tag}|${e[15]}`);
+  const neu = await env.STATS.prepare(`INSERT INTO meldung_limit (schluessel, tag, anzahl) VALUES (?1, ?2, 1)
+    ON CONFLICT (schluessel) DO UPDATE SET anzahl = anzahl + 1 RETURNING anzahl`).bind(schluessel, tag).first();
+  if (neu?.anzahl > 1) return json({ ok: true, doppelt: true }); // heute schon gemeldet: freundlich bestätigen, nicht zählen
+  const gesamt = await env.STATS.prepare(`INSERT INTO meldung_limit (schluessel, tag, anzahl) VALUES (?1, ?2, 1)
+    ON CONFLICT (schluessel) DO UPDATE SET anzahl = anzahl + 1 RETURNING anzahl`).bind(await sha256(`r|${ip}|${tag}`), tag).first();
+  if (gesamt?.anzahl > 40) return json({ fehler: 'Heute sind schon sehr viele Rückmeldungen von dir eingegangen.' }, 429);
+  await env.STATS.prepare('INSERT INTO rueckmeldungen (tag, eintrag, art, status) VALUES (?1, ?2, ?3, ?4)')
+    .bind(tag, e[15], art, art === 'geschlossen' ? 'neu' : 'ok').run();
+  return json({ ok: true });
+}
+
 // ---------- Nutzungsstatistik: Tageszähler für Klicks (Route, Telefon, Website, Filter, Nähe) ----------
 // Keine IP, kein Gerät, keine Uhrzeit – nur „heute X-mal Route auf Hofseiten“.
-const EREIGNISSE = ['route', 'telefon', 'website', 'filter', 'naehe', 'merken', 'teilen', 'suche'];
+const EREIGNISSE = ['route', 'telefon', 'website', 'filter', 'naehe', 'merken', 'teilen', 'suche', 'rueckmeldung'];
 const SEITEN = ['start', 'hof', 'kreis', 'ort', 'kategorie', 'saison', 'sonstige'];
 async function ereignisZaehlen(request, env, ctx) {
   if (request.method !== 'POST') return new Response(null, { status: 405 });
@@ -417,6 +448,38 @@ async function verwaltung(request, env, url) {
       produkte: await q(`SELECT produkt, SUM(anzahl) AS anzahl FROM suchen WHERE tag >= ?1 AND produkt != '' GROUP BY produkt ORDER BY anzahl DESC LIMIT 20`).catch(() => []),
       ereignisse: await q(`SELECT ereignis, seite, detail, SUM(anzahl) AS anzahl FROM ereignisse WHERE tag >= ?1 GROUP BY ereignis, seite, detail ORDER BY anzahl DESC LIMIT 100`),
       tage: await q(`SELECT tag, SUM(anzahl) AS anzahl FROM ereignisse WHERE tag >= ?1 GROUP BY tag ORDER BY tag`),
+    }));
+  }
+  // Gemeldete Schließungen zur Prüfung (gruppiert je Eintrag)
+  if (teil === 'rueckmeldungen') {
+    const { results } = await env.STATS.prepare(`SELECT eintrag, COUNT(*) AS anzahl, MIN(tag) AS erste, MAX(tag) AS letzte,
+      (SELECT MAX(tag) FROM rueckmeldungen s WHERE s.eintrag = r.eintrag AND s.art = 'stimmt') AS bestaetigt
+      FROM rueckmeldungen r WHERE art = 'geschlossen' AND status = 'neu' GROUP BY eintrag ORDER BY anzahl DESC, letzte DESC LIMIT 300`).all();
+    return keinCache(json({ rueckmeldungen: results.map((x) => {
+      const e = aufloesen(x.eintrag, eintragIndex());
+      return { ...x, titel: e?.[3] || x.eintrag, pfad: e ? `/hof/${e[2]}/` : null, ort: e?.[5] || '' };
+    }) }));
+  }
+  const rm = teil.match(/^rueckmeldung\/([a-z0-9-]{1,120})$/);
+  if (rm && request.method === 'POST') {
+    let b = {};
+    try { b = await request.json(); } catch {}
+    const status = b.aktion === 'geschlossen' ? 'bestaetigt' : b.aktion === 'verwerfen' ? 'verworfen' : null;
+    if (!status) return json({ fehler: 'aktion muss geschlossen oder verwerfen sein' }, 400);
+    await env.STATS.prepare(`UPDATE rueckmeldungen SET status = ?1 WHERE eintrag = ?2 AND art = 'geschlossen' AND status = 'neu'`).bind(status, rm[1]).run();
+    return keinCache(json({ ok: true }));
+  }
+  // Stand für den Build: letzte Bestätigung je Eintrag, bestätigte Schließungen, offene Schließungsmeldungen
+  if (teil === 'rueckmeldungen/stand') {
+    const q = async (sql) => (await env.STATS.prepare(sql).all()).results;
+    const bestaetigt = await q(`SELECT eintrag, MAX(tag) AS tag, COUNT(*) AS anzahl FROM rueckmeldungen WHERE art = 'stimmt' GROUP BY eintrag`);
+    const geschlossen = await q(`SELECT eintrag, MAX(tag) AS tag FROM rueckmeldungen WHERE art = 'geschlossen' AND status = 'bestaetigt' GROUP BY eintrag`);
+    const offen = await q(`SELECT eintrag, COUNT(*) AS anzahl, MAX(tag) AS tag FROM rueckmeldungen WHERE art = 'geschlossen' AND status = 'neu'
+      AND tag >= date('now', '-90 days') GROUP BY eintrag`);
+    return keinCache(json({
+      bestaetigt: Object.fromEntries(bestaetigt.map((x) => [x.eintrag, { tag: x.tag, anzahl: x.anzahl }])),
+      geschlossen: Object.fromEntries(geschlossen.map((x) => [x.eintrag, x.tag])),
+      gemeldet: Object.fromEntries(offen.map((x) => [x.eintrag, { anzahl: x.anzahl, tag: x.tag }])),
     }));
   }
   if (teil === 'export') {
@@ -520,6 +583,7 @@ export default {
     if (url.pathname === '/api/meldung') return meldungAnnehmen(request, env);
     if (url.pathname === '/api/eintrag') return eintragApi(url);
     if (url.pathname === '/api/hoefe') return hoefeApi(url);
+    if (url.pathname === '/api/rueckmeldung') return rueckmeldungAnnehmen(request, env);
     if (url.pathname === '/api/ereignis') return ereignisZaehlen(request, env, ctx);
     if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url);
     return seiteAusliefern(request, env, url);

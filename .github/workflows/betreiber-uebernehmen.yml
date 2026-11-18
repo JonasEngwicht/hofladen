@@ -1,7 +1,7 @@
 name: Betreiberdaten übernehmen
 
 # Holt freigegebene Meldungen aus der Verwaltung (/verwaltung/), speichert sie in data/betreiber.json
-# und data/fotos/ und rollt die Seite neu aus. Braucht das Repository-Secret ADMIN_TOKEN
+# und data/fotos/, übernimmt den Stand der Ein-Klick-Rückmeldungen (data/rueckmeldungen.json) und rollt die Seite neu aus. Braucht das Repository-Secret ADMIN_TOKEN
 # (derselbe Wert wie das Worker-Secret ADMIN_TOKEN).
 on:
   workflow_dispatch:
@@ -27,6 +27,10 @@ jobs:
         env:
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
         run: node scripts/betreiber-uebernehmen.mjs https://hofladenliste.de
+      - name: Rückmeldungen holen
+        env:
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+        run: node scripts/rueckmeldungen-uebernehmen.mjs https://hofladenliste.de
       - name: Testbuild
         run: node scripts/build.mjs
       - name: Commit, falls sich etwas geändert hat
@@ -34,7 +38,7 @@ jobs:
         run: |
           git config user.name "hofladenliste-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/betreiber.json data/fotos data/seiten-stand.json
+          git add data/betreiber.json data/fotos data/rueckmeldungen.json data/seiten-stand.json
           if git diff --cached --quiet; then
             echo "Keine Änderungen."
           else

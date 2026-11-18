@@ -145,3 +145,10 @@ test('Hofseiten haben Platz für die Entfernung, Listen den Schalter „Jetzt ge
   assert.ok(kreise.length > 100);
   for (const [p, html] of kreise) assert.match(html, /data-offen-filter/, p);
 });
+
+test('Hofseiten: Rückmeldung „Stimmt das noch?“ und Datum der letzten Prüfung, wo bekannt', () => {
+  const hoefe = alle.filter(([p]) => art(p) === 'hof');
+  for (const [p, html] of hoefe) assert.match(html, /data-rueckmeldung="[a-z0-9-]+"/, p);
+  const mitDatum = hoefe.filter(([, html]) => /Zuletzt geprüft: <time datetime="\d{4}-\d{2}-\d{2}">/.test(html));
+  assert.ok(mitDatum.length > 500, `nur ${mitDatum.length} Seiten mit Prüfdatum`);
+});
