@@ -14,16 +14,27 @@ KATS = ['farm', 'farmers_market', 'organic_grocery_store', 'dairy_farm', 'poultr
         'agricultural_service', 'fruits_and_vegetables', 'farm_equipment_and_supply', 'pick_your_own_farm', 'ranch']
 con = duckdb.connect()
 con.execute("INSTALL httpfs; LOAD httpfs; SET s3_region='us-west-2';")
+SRC = f"read_parquet('s3://overturemaps-us-west-2/release/{rel}/theme=places/type=place/*', hive_partitioning=1)"
+schema = {r[0]: r[1] for r in con.execute(f"DESCRIBE SELECT * FROM {SRC}").fetchall()}
+print('Spalten:', {k: v[:120] for k, v in schema.items()})
+if 'categories' in schema:
+    KAT, ALT = 'categories.primary', "array_to_string(categories.alternate, ',')"
+elif 'taxonomy' in schema:
+    KAT, ALT = 'taxonomy.primary', "array_to_string(taxonomy.hierarchy, '>')"
+else:
+    KAT, ALT = 'basic_category', "''"
+if 'basic_category' in schema:
+    ALT = f"coalesce(basic_category, '') || ' | ' || {ALT}"
 q = f"""
-SELECT id, names.primary AS name, categories.primary AS kat, array_to_string(categories.alternate, ',') AS alt,
+SELECT id, names.primary AS name, {KAT} AS kat, {ALT} AS alt,
   confidence, operating_status AS status, bbox.xmin AS lon, bbox.ymin AS lat,
   array_to_string(websites, ' ') AS website, array_to_string(phones, ' ') AS telefon,
   addresses[1].freeform AS strasse, addresses[1].postcode AS plz, addresses[1].locality AS ort,
   sources[1].dataset AS quelle, sources[1].license AS lizenz
-FROM read_parquet('s3://overturemaps-us-west-2/release/{rel}/theme=places/type=place/*', hive_partitioning=1)
+FROM {SRC}
 WHERE bbox.xmin BETWEEN 5.8 AND 15.1 AND bbox.ymin BETWEEN 47.2 AND 55.1
   AND (addresses[1].country = 'DE' OR addresses[1].country IS NULL)
-  AND (regexp_matches(names.primary, '{NAME}') OR categories.primary IN ({','.join(repr(k) for k in KATS)}))
+  AND (regexp_matches(names.primary, '{NAME}') OR {KAT} IN ({','.join(repr(k) for k in KATS)}))
 """
 rows = con.execute(q).fetchall()
 cols = [d[0] for d in con.description]
@@ -53,6 +64,7 @@ def zaehl(title, xs, key, n=25):
         print(f'{v:6d}  {k}')
 zaehl('Kategorien der Namenstreffer (alle)', [r for r in rows if r['name_treffer']], lambda r: r['kat'])
 zaehl('Kategorien (alle Kandidaten)', rows, lambda r: r['kat'])
+zaehl('Hierarchie der Namenstreffer', [r for r in rows if r['name_treffer']], lambda r: r['alt'], 15)
 print('\nNicht in unserer Liste (>150 m vom nächsten OSM-Eintrag, nicht geschlossen):', len(neu))
 streng = [r for r in neu if r['name_treffer']]
 print('  davon mit eindeutigem Namen (Hofladen, Milchtankstelle, …):', len(streng))
