@@ -1,5 +1,5 @@
 import { status, berlinZeit, parse } from './oh.js';
-import { karteHtml } from './karte.js';
+import { karteHtml, kmAnzeige } from './karte.js';
 import { felderAusEintrag } from './vorbelegung.js';
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -21,7 +21,7 @@ const standortLesen = () => {
   try { const s = JSON.parse(speicher.get('standort') || 'null'); return s && Date.now() - s.t < 30 * 864e5 ? s : null; } catch { return null; }
 };
 const standortMerken = (lat, lon, label) => speicher.set('standort', JSON.stringify({ lat: +lat, lon: +lon, label, t: Date.now() }));
-const kmText = (km) => `${String(km < 10 ? Math.round(km * 10) / 10 : Math.round(km)).replace('.', ',')} km`;
+const kmText = (km) => kmAnzeige(km);
 function zeigeEntfernungen(root = document) {
   const s = standortLesen();
   if (!s) return null;
@@ -42,9 +42,9 @@ function zeigeEntfernungen(root = document) {
 // ---------- Öffnungsstatus ----------
 function zeigeStatus(root = document) {
   for (const el of $$('.st[data-oh]', root)) {
-    const s = status(el.dataset.oh);
+    const s = status(el.dataset.oh, new Date(), el.closest('[data-land]')?.dataset.land || '');
     if (!s) continue;
-    el.className = `st ${s.offen ? 'st-auf' : 'st-zu'}`;
+    el.className = `st ${s.offen === null ? 'st-unklar' : s.offen ? 'st-auf' : 'st-zu'}`;
     el.innerHTML = `<b>${esc(s.kurz)}</b><span>Heute ${esc(s.heute)}</span>`;
   }
   const heute = berlinZeit().tag;
@@ -52,7 +52,7 @@ function zeigeStatus(root = document) {
   // „Jetzt geöffnet“-Schalter zeigt, wie viele Einträge in der Liste gerade offen haben
   const offenKnopf = $('[data-offen-filter]');
   if (offenKnopf && root === document) {
-    const n = $$('[data-liste] > .laden[data-oh]').filter((k) => status(k.dataset.oh)?.offen).length;
+    const n = $$('[data-liste] > .laden[data-oh]').filter((k) => status(k.dataset.oh, new Date(), k.dataset.land || '')?.offen === true).length;
     let z = $('span', offenKnopf);
     if (!z) { offenKnopf.insertAdjacentHTML('beforeend', ' <span></span>'); z = $('span', offenKnopf); }
     z.textContent = n;
@@ -178,7 +178,7 @@ if (wz) {
 }
 
 // ---------- Filter auf Kreisseiten ----------
-const filter = { typ: 'alle', offen: false, sonntag: false, bio: false, rund: false, radius: null, kat: new Set() };
+const filter = { typ: 'alle', offen: false, sonntag: false, bio: false, rund: false, karte: false, radius: null, kat: new Set() };
 const rundUmDieUhr = (oh) => { try { const w = oh && parse(oh); return !!w && w.every((iv) => iv.some(([a, b]) => a === 0 && b >= 1440)); } catch { return false; } };
 const sonntagsOffen = (oh) => { try { return !!oh && !!parse(oh)?.[6]?.length; } catch { return false; } };
 function wendeFilterAn() {
@@ -186,10 +186,11 @@ function wendeFilterAn() {
   let n = 0;
   for (const k of karten) {
     let ok = filter.typ === 'alle' || k.dataset.typ === filter.typ;
-    if (ok && filter.offen) ok = !!k.dataset.oh && status(k.dataset.oh)?.offen === true;
+    if (ok && filter.offen) ok = !!k.dataset.oh && status(k.dataset.oh, new Date(), k.dataset.land || '')?.offen === true;
     if (ok && filter.sonntag) ok = sonntagsOffen(k.dataset.oh);
     if (ok && filter.bio) ok = k.dataset.bio === '1';
     if (ok && filter.rund) ok = rundUmDieUhr(k.dataset.oh);
+    if (ok && filter.karte) ok = k.dataset.karteZahlung === '1';
     if (ok && filter.radius) ok = +k.dataset.km <= filter.radius;
     if (ok && filter.kat.size) { const ks = k.dataset.kat.split(' '); ok = [...filter.kat].every((x) => ks.includes(x)); }
     k.hidden = !ok;
@@ -234,16 +235,31 @@ for (const b of $$('[data-kat-filter]')) b.addEventListener('click', () => {
   b.setAttribute('aria-pressed', String(filter.kat.has(k)));
   wendeFilterAn();
 });
-$('[data-filter-zuruecksetzen]')?.addEventListener('click', () => {
-  filter.typ = 'alle'; filter.offen = false; filter.sonntag = false; filter.bio = false; filter.rund = false; filter.radius = null; filter.kat.clear();
+function filterZuruecksetzen() {
+  filter.typ = 'alle'; filter.offen = false; filter.sonntag = false; filter.bio = false; filter.rund = false; filter.karte = false; filter.radius = null; filter.kat.clear();
   const radien = $$('[data-radius-filter]');
   radien.forEach((x, i) => x.setAttribute('aria-pressed', String(i === radien.length - 1)));
   for (const x of $$('[data-typ-filter]')) x.setAttribute('aria-pressed', String(x.dataset.typFilter === 'alle'));
-  for (const x of $$('[data-kat-filter], [data-offen-filter], [data-sonntag-filter], [data-bio-filter], [data-rund-filter]')) x.setAttribute('aria-pressed', 'false');
+  for (const x of $$('[data-kat-filter], [data-offen-filter], [data-sonntag-filter], [data-bio-filter], [data-rund-filter], [data-karte-filter]')) x.setAttribute('aria-pressed', 'false');
+  wendeFilterAn();
+}
+$('[data-karte-filter]')?.addEventListener('click', (ev) => {
+  filter.karte = !filter.karte;
+  ev.currentTarget.setAttribute('aria-pressed', String(filter.karte));
   wendeFilterAn();
 });
+$('[data-filter-zuruecksetzen]')?.addEventListener('click', filterZuruecksetzen);
 // Vorauswahl über die Adresse, z. B. ?filter=sonntag, ?filter=bio oder ?produkt=eier (Links von den Übersichtsseiten)
-for (const p of (params.get('produkt') || '').split(',').filter(Boolean)) $(`[data-kat-filter="${p}"]`)?.click();
+{
+  // Angebot aus der Suche (Startseite „Was suchst du?“) als aktiven Filter setzen und sichtbar machen
+  const gewaehlt = params.getAll('produkt').flatMap((x) => x.split(',')).filter(Boolean).map((p) => $(`[data-kat-filter="${CSS.escape(p)}"]`)).filter(Boolean);
+  for (const b of gewaehlt) b.click();
+  const leiste = $('.werkzeug');
+  if (gewaehlt.length && leiste) {
+    leiste.insertAdjacentHTML('beforebegin', `<p class="filter-aktiv" role="status">Aktiver Filter aus deiner Suche: <b>${gewaehlt.map((b) => esc(b.textContent.trim())).join(', ')}</b> · <button type="button" class="link" data-filter-zuruecksetzen>Filter entfernen</button></p>`);
+    $('.filter-aktiv [data-filter-zuruecksetzen]').addEventListener('click', (ev) => { filterZuruecksetzen(); ev.target.closest('.filter-aktiv').remove(); });
+  }
+}
 for (const f of (params.get('filter') || '').split(',')) {
   if (f === 'sonntag') $('[data-sonntag-filter]')?.click();
   if (f === 'bio') $('[data-bio-filter]')?.click();
@@ -270,7 +286,7 @@ async function plzModus() {
       k.dataset.km = km;
       k.dataset.kmEigen = '1';
       const art = $('.laden-art', k);
-      if (!$('.km', art)) art.insertAdjacentHTML('beforeend', ` <span class="km">${String(km).replace('.', ',')} km</span>`);
+      if (!$('.km', art)) art.insertAdjacentHTML('beforeend', ` <span class="km">${kmAnzeige(km)}</span>`);
     }
     karten.sort((a, b) => a.dataset.km - b.dataset.km);
     const vor = $('[data-leer-filter]', liste);
@@ -374,21 +390,56 @@ function startseite() {
       }, { timeout: 10000, maximumAge: 600000 });
     });
   }
+  // Saison steht schon im HTML (Monat beim Bauen); nur bei einem anderen Monat neu rechnen
   const saison = $('[data-saison]');
-  if (saison) {
-    const monat = new Date().getMonth() + 1;
-    const namen = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
-    const daten = JSON.parse(saison.dataset.saison);
-    const frisch = daten.filter(([, f]) => f.includes(monat)).map(([n]) => n);
-    const lager = daten.filter(([, , l]) => l.includes(monat)).map(([n]) => n);
-    $('[data-saison-monat]').textContent = `Im ${namen[monat - 1]} frisch: ${frisch.length ? frisch.join(', ') : 'vor allem Lagerware'}.`;
-    $('[data-saison-liste]').innerHTML = lager.length ? `<li class="lager-titel">Aus dem Lager:</li>${lager.map((n) => `<li>${esc(n)}</li>`).join('')}` : '';
-  }
+  if (saison && +saison.dataset.saisonStand !== berlinMonat()) $('[data-saison-inhalt]', saison).innerHTML = saisonHtml(JSON.parse(saison.dataset.saison), berlinMonat());
+  // Angebotswahl aus Links wie /?produkt=gemuese#plz vorbelegen
+  for (const p of params.getAll('produkt').flatMap((x) => x.split(','))) { const i = $(`.wunsch input[value="${CSS.escape(p)}"]`); if (i) i.checked = true; }
 }
 
-// ---------- Saisonkalender ----------
-const monat = new Date().getMonth() + 1;
-for (const c of $$(`.saison-tabelle [data-monat="${monat}"]`)) c.classList.add('aktuell');
+// ---------- Saisonkalender: Monat hervorheben, Obst/Gemüse filtern, Sorte suchen, Monatsansicht ----------
+const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+function berlinMonat() { return +new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' }).slice(5, 7); }
+function saisonHtml(daten, monat, filter = () => true) {
+  const chip = ([n, , , pfad]) => `<li><a href="${esc(pfad)}">${esc(n)}</a></li>`;
+  const frisch = daten.filter((d) => d[1].includes(monat) && filter(d)), lager = daten.filter((d) => d[2].includes(monat) && filter(d));
+  return `<p class="saison-monat">Im ${MONATSNAMEN[monat - 1]} frisch vom Feld${frisch.length ? ':' : ' kommt vor allem Lagerware.'}</p>${frisch.length ? `<ul class="saison-chips">${frisch.map(chip).join('')}</ul>` : ''}${lager.length ? `<p class="saison-monat lager-titel">Aus dem Lager:</p><ul class="saison-chips lager">${lager.map(chip).join('')}</ul>` : ''}`;
+}
+{
+  const monat = berlinMonat();
+  for (const c of $$('.saison-tabelle .aktuell')) { c.classList.remove('aktuell'); c.removeAttribute('aria-current'); }
+  for (const c of $$(`.saison-tabelle [data-monat="${monat}"]`)) c.classList.add('aktuell');
+  const werkzeug = $('[data-saison-werkzeug]');
+  if (werkzeug) {
+    const zeilen = $$('.saison-tabelle tbody tr');
+    // Daten für die Monatsansicht aus der Tabelle lesen: [Name, frisch[], lager[], Pfad, Gruppe]
+    const daten = zeilen.map((tr) => [tr.querySelector('th').textContent.trim(),
+      $$('td.frisch', tr).map((td) => +td.dataset.monat), $$('td.lager', tr).map((td) => +td.dataset.monat),
+      tr.querySelector('th a')?.getAttribute('href') || '/saisonkalender/', tr.dataset.gruppe, tr.dataset.name]);
+    const wahl = $('[data-saison-monat-wahl]', werkzeug), suche = $('[data-saison-suche]', werkzeug), ansicht = $('[data-saison-monatsansicht]');
+    let gruppe = 'alle';
+    if (+wahl.value !== monat) wahl.value = String(monat);
+    const anwenden = () => {
+      const q = suche.value.trim().toLowerCase();
+      const passt = (d) => (gruppe === 'alle' || d[4] === gruppe) && (!q || d[5].includes(q));
+      for (const [i, tr] of zeilen.entries()) tr.hidden = !passt(daten[i]);
+      ansicht.innerHTML = saisonHtml(daten, +wahl.value, passt);
+      for (const c of $$('.saison-tabelle .gewaehlt')) c.classList.remove('gewaehlt');
+      for (const c of $$(`.saison-tabelle [data-monat="${wahl.value}"]`)) c.classList.add('gewaehlt');
+    };
+    werkzeug.addEventListener('click', (ev) => {
+      const b = ev.target.closest('[data-saison-gruppe]');
+      if (!b) return;
+      gruppe = b.dataset.saisonGruppe;
+      for (const x of $$('[data-saison-gruppe]', werkzeug)) x.setAttribute('aria-pressed', String(x === b));
+      anwenden();
+    });
+    suche.addEventListener('input', anwenden);
+    wahl.addEventListener('change', anwenden);
+    document.documentElement.classList.add('saison-js');
+    anwenden();
+  }
+}
 
 // Formulare: PLZ oder Ortsname; reine Ziffern müssen fünfstellig sein
 for (const form of $$('form[action="/suche"]')) {
@@ -558,10 +609,13 @@ document.addEventListener('click', async (ev) => {
   if (teilen) {
     ev.preventDefault();
     const daten = { title: teilen.dataset.titel || document.title, url: location.href.split('?')[0] };
-    try {
-      if (navigator.share) await navigator.share(daten);
-      else { await navigator.clipboard.writeText(daten.url); const t = $('span', teilen); const alt = t.textContent; t.textContent = 'Link kopiert'; setTimeout(() => { t.textContent = alt; }, 2000); }
-    } catch { /* abgebrochen */ }
+    if (navigator.share) { try { await navigator.share(daten); } catch { /* abgebrochen */ } return; }
+    // Ohne Web Share API: kleines Menü mit „Link kopieren“ und WhatsApp
+    auswahlMenue(teilen, 'Teilen', [
+      ['Link kopieren', async () => { try { await navigator.clipboard.writeText(daten.url); meldeKurz(teilen, 'Link kopiert'); } catch { prompt('Link kopieren:', daten.url); } }],
+      ['Per WhatsApp teilen', () => window.open(`https://wa.me/?text=${encodeURIComponent(`${daten.title} ${daten.url}`)}`, '_blank', 'noopener')],
+      ['Per E-Mail teilen', () => { location.href = `mailto:?subject=${encodeURIComponent(daten.title)}&body=${encodeURIComponent(daten.url)}`; }],
+    ]);
   }
 });
 // Nachgeladene Karten (Umkreissuche, Merkliste) bekommen den richtigen Herz-Zustand
@@ -741,3 +795,63 @@ for (const box of $$('[data-rueckmeldung]')) {
     else if (b.matches('[data-rm-nein]')) frage.hidden = true;
   });
 }
+
+// ---------- Kleines Auswahlmenü (Route, Teilen) ----------
+function meldeKurz(el, text) {
+  const t = $('span', el) || el; const alt = t.textContent; t.textContent = text; setTimeout(() => { t.textContent = alt; }, 2000);
+}
+function auswahlMenue(anker, titel, optionen, fuss = '') {
+  $('.auswahl-menue')?.remove();
+  const m = document.createElement('div');
+  m.className = 'auswahl-menue';
+  m.setAttribute('role', 'dialog');
+  m.setAttribute('aria-label', titel);
+  m.innerHTML = `<p class="auswahl-titel">${esc(titel)}</p>${optionen.map(([t], i) => `<button type="button" data-wahl="${i}">${esc(t)}</button>`).join('')}${fuss}<button type="button" class="link auswahl-zu">Schließen</button>`;
+  document.body.append(m);
+  const r = anker.getBoundingClientRect();
+  m.style.top = `${Math.min(window.scrollY + r.bottom + 6, window.scrollY + innerHeight - m.offsetHeight - 8)}px`;
+  m.style.left = `${Math.max(8, Math.min(window.scrollX + r.left, window.scrollX + innerWidth - m.offsetWidth - 8))}px`;
+  const zu = () => { m.remove(); document.removeEventListener('keydown', esc_); anker.focus?.(); };
+  const esc_ = (ev) => { if (ev.key === 'Escape') zu(); };
+  document.addEventListener('keydown', esc_);
+  m.addEventListener('click', (ev) => {
+    const b = ev.target.closest('button');
+    if (!b) return;
+    if (b.dataset.wahl != null) optionen[+b.dataset.wahl][1](m);
+    zu();
+  });
+  setTimeout(() => document.addEventListener('click', function weg(ev) { if (!m.contains(ev.target)) { m.remove(); document.removeEventListener('click', weg); } }), 0);
+  $('button', m).focus();
+}
+
+// ---------- Routen-Button: Navi-App wählen (Google Maps, Apple Karten, OpenStreetMap, OsmAnd, Komoot), Wahl wird gemerkt ----------
+const ios = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const NAVI = {
+  google: ['Google Maps', (la, lo) => `https://www.google.com/maps/dir/?api=1&destination=${la},${lo}`],
+  ...(ios ? { apple: ['Apple Karten', (la, lo) => `https://maps.apple.com/?daddr=${la},${lo}`] } : {}),
+  osm: ['OpenStreetMap', (la, lo) => `https://www.openstreetmap.org/directions?route=%3B${la}%2C${lo}#map=15/${la}/${lo}`],
+  osmand: ['OsmAnd', (la, lo) => `https://osmand.net/map?pin=${la},${lo}#15/${la}/${lo}`],
+  komoot: ['Komoot (Fahrrad)', (la, lo) => `https://www.komoot.com/plan/@${la},${lo},15z`],
+};
+document.addEventListener('click', (ev) => {
+  const a = ev.target.closest('a[href*="google.com/maps/dir/"]');
+  if (!a) return;
+  const m = (a.getAttribute('href') || '').match(/destination=(-?[\d.]+),(-?[\d.]+)/);
+  if (!m) return;
+  const [, la, lo] = m;
+  const gemerkt = speicher.get('navi');
+  if (gemerkt && NAVI[gemerkt] && !ev.altKey) { a.href = NAVI[gemerkt][1](la, lo); return; } // Link öffnet direkt die gemerkte App
+  ev.preventDefault();
+  const merken = '<label class="auswahl-merken"><input type="checkbox" data-navi-merken checked> Auswahl merken</label>';
+  auswahlMenue(a, 'Route planen mit …', Object.entries(NAVI).map(([k, [name, url]]) => [name, (menue) => {
+    if ($('[data-navi-merken]', menue)?.checked) speicher.set('navi', k);
+    window.open(url(la, lo), '_blank', 'noopener');
+  }]), merken);
+});
+// Gemerkte Navi-App vergessen (Link „Andere Navi-App“ unter dem Routen-Button)
+document.addEventListener('click', (ev) => {
+  if (!ev.target.closest('[data-navi-wechseln]')) return;
+  ev.preventDefault();
+  try { localStorage.removeItem('navi'); } catch {}
+  ev.target.closest('[data-navi-wechseln]').textContent = 'Beim nächsten Klick auf „Route“ wählst du die App neu.';
+});
