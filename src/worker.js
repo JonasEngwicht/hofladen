@@ -192,6 +192,152 @@ function eintraegeNachSlug(url) {
   return json({ ergebnisse: gefunden, unbekannt: slugs.filter((x) => !vorhanden.has(x)) });
 }
 
+// ---------- Meldungen: Eintragen, Korrigieren, Übernehmen (Formular auf /mitmachen/) ----------
+// Gespeichert in D1 (Binding STATS), Fotos als BLOB (max. 1,5 MB, im Browser verkleinert).
+// Moderation über /verwaltung/ mit dem Worker-Secret ADMIN_TOKEN.
+const SCHEMA = [
+  `CREATE TABLE IF NOT EXISTS meldungen (id INTEGER PRIMARY KEY AUTOINCREMENT, erstellt TEXT NOT NULL, art TEXT NOT NULL, hof TEXT,
+    daten TEXT NOT NULL, kontakt_email TEXT, status TEXT NOT NULL DEFAULT 'neu', notiz TEXT, geaendert TEXT)`,
+  'CREATE TABLE IF NOT EXISTS meldung_fotos (id INTEGER PRIMARY KEY AUTOINCREMENT, meldung INTEGER NOT NULL, typ TEXT NOT NULL, daten BLOB NOT NULL)',
+  'CREATE TABLE IF NOT EXISTS meldung_limit (schluessel TEXT PRIMARY KEY, tag TEXT NOT NULL, anzahl INTEGER NOT NULL)',
+];
+let schemaOk = false;
+async function schema(env) {
+  if (schemaOk) return;
+  await env.STATS.batch(SCHEMA.map((q) => env.STATS.prepare(q)));
+  schemaOk = true;
+}
+const MELDUNG_ARTEN = ['neu', 'korrektur', 'uebernahme'];
+const TAGE_KURZ = ['mo', 'di', 'mi', 'do', 'fr', 'sa', 'so'];
+const OSM_TAGE = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
+const TEXTFELDER = { name: 120, betriebsart: 40, strasse: 120, plz: 5, ort: 80, telefon: 40, email: 120, website: 200,
+  beschreibung: 600, saison: 300, hinweis: 2000, kontakt_name: 120 };
+const ZAHLUNGEN = ['bar', 'girocard', 'kreditkarte', 'kontaktlos', 'paypal', 'ueberweisung'];
+const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,}$/i;
+const ZEIT_RE = /^([01]\d|2[0-3]):[0-5]\d$/;
+const tagHeute = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' });
+async function sha256(text) {
+  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, '0')).join('');
+}
+// Öffnungszeiten aus den Zeitfeldern (mo_von1, mo_bis1, mo_von2, mo_bis2 …) im OSM-Format
+function oeffnungszeitenAusFormular(f) {
+  if (f.get('rund') === 'ja') return '24/7';
+  const teile = [];
+  TAGE_KURZ.forEach((t, i) => {
+    const iv = [1, 2].map((n) => [f.get(`${t}_von${n}`), f.get(`${t}_bis${n}`)]).filter(([a, b]) => ZEIT_RE.test(a || '') && ZEIT_RE.test(b || ''));
+    if (iv.length) teile.push(`${OSM_TAGE[i]} ${iv.map(([a, b]) => `${a}-${b}`).join(',')}`);
+  });
+  return teile.join('; ');
+}
+function antwort(request, status, daten) {
+  if ((request.headers.get('accept') || '').includes('application/json')) return json(daten, status);
+  if (status === 200) return weiter('/mitmachen/danke/', 303);
+  return new Response(`<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Fehler</title><p style="font:16px sans-serif;margin:2rem">${String(daten.fehler).replace(/</g, '&lt;')}</p><p style="font:16px sans-serif;margin:2rem"><a href="javascript:history.back()">Zurück zum Formular</a></p>`,
+    { status, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+}
+async function meldungAnnehmen(request, env) {
+  if (request.method !== 'POST') return json({ fehler: 'Nur POST' }, 405);
+  if (!env.STATS) return antwort(request, 503, { fehler: 'Das Formular ist gerade nicht verfügbar. Bitte schreib uns eine E-Mail.' });
+  let f;
+  try { f = await request.formData(); } catch { return antwort(request, 400, { fehler: 'Das Formular konnte nicht gelesen werden.' }); }
+  // Spam-Schutz: verstecktes Feld muss leer sein, Formular nicht schneller als 3 Sekunden ausgefüllt
+  const t = +f.get('t');
+  if (f.get('firma') || (t && Date.now() - t < 3000)) return antwort(request, 200, { ok: true });
+  const art = f.get('art');
+  if (!MELDUNG_ARTEN.includes(art)) return antwort(request, 400, { fehler: 'Bitte wähle aus, was du tun möchtest.' });
+  if (f.get('einwilligung') !== 'ja') return antwort(request, 400, { fehler: 'Bitte bestätige den Hinweis zum Datenschutz.' });
+  SLUG_INDEX ??= new Map(EINTRAEGE.map((e) => [e[2], e]));
+  const hof = (f.get('hof') || '').trim();
+  if (art !== 'neu' && !SLUG_INDEX.has(hof)) return antwort(request, 400, { fehler: 'Der Eintrag wurde nicht gefunden. Öffne das Formular bitte über die Seite des Hofs.' });
+  const daten = {};
+  for (const [k, max] of Object.entries(TEXTFELDER)) { const v = String(f.get(k) || '').trim().slice(0, max); if (v) daten[k] = v; }
+  if (daten.plz && !/^\d{5}$/.test(daten.plz)) return antwort(request, 400, { fehler: 'Die Postleitzahl muss fünf Ziffern haben.' });
+  if (daten.email && !EMAIL_RE.test(daten.email)) return antwort(request, 400, { fehler: 'Die E-Mail-Adresse des Betriebs sieht nicht richtig aus.' });
+  if (daten.website && !/^https?:\/\//.test(daten.website)) daten.website = 'https://' + daten.website;
+  const oh = oeffnungszeitenAusFormular(f);
+  if (oh) daten.oeffnungszeiten = oh;
+  const angebot = f.getAll('angebot').filter((x) => KATEGORIEN.includes(x));
+  if (angebot.length) daten.angebot = angebot;
+  const zahlung = f.getAll('zahlung').filter((x) => ZAHLUNGEN.includes(x));
+  if (zahlung.length) daten.zahlung = zahlung;
+  if (f.get('bio') === 'ja') daten.bio = true;
+  if (art === 'neu' && (!daten.name || !daten.plz)) return antwort(request, 400, { fehler: 'Für einen neuen Eintrag brauchen wir mindestens Name und Postleitzahl.' });
+  const kontakt = String(f.get('kontakt_email') || '').trim().slice(0, 120);
+  if (kontakt && !EMAIL_RE.test(kontakt)) return antwort(request, 400, { fehler: 'Deine E-Mail-Adresse sieht nicht richtig aus.' });
+  if (art === 'uebernahme' && !kontakt) return antwort(request, 400, { fehler: 'Für die Übernahme brauchen wir deine E-Mail-Adresse, damit wir dich als Betreiber bestätigen können.' });
+  const fotos = f.getAll('fotos').filter((x) => x && typeof x === 'object' && x.size > 0).slice(0, 3);
+  for (const x of fotos) {
+    if (!['image/jpeg', 'image/png', 'image/webp'].includes(x.type)) return antwort(request, 400, { fehler: 'Fotos bitte als JPG, PNG oder WebP.' });
+    if (x.size > 1_500_000) return antwort(request, 400, { fehler: 'Ein Foto ist zu groß (höchstens 1,5 MB).' });
+  }
+  if (fotos.length && f.get('fotorechte') !== 'ja') return antwort(request, 400, { fehler: 'Bitte bestätige, dass du die Rechte an den Fotos hast.' });
+  if (!Object.keys(daten).length && !fotos.length) return antwort(request, 400, { fehler: 'Das Formular ist leer.' });
+
+  await schema(env);
+  // höchstens 10 Meldungen pro Tag und Absender (IP nur als Tages-Hash, nicht gespeichert)
+  const tag = tagHeute();
+  const schluessel = await sha256(`${request.headers.get('cf-connecting-ip') || ''}|${tag}`);
+  const lim = await env.STATS.prepare(`INSERT INTO meldung_limit (schluessel, tag, anzahl) VALUES (?1, ?2, 1)
+    ON CONFLICT (schluessel) DO UPDATE SET anzahl = anzahl + 1 RETURNING anzahl`).bind(schluessel, tag).first();
+  if (lim?.anzahl > 10) return antwort(request, 429, { fehler: 'Heute sind schon viele Meldungen von dir eingegangen. Bitte versuch es morgen wieder.' });
+  const jetzt = new Date().toISOString();
+  const r = await env.STATS.prepare('INSERT INTO meldungen (erstellt, art, hof, daten, kontakt_email) VALUES (?1, ?2, ?3, ?4, ?5) RETURNING id')
+    .bind(jetzt, art, art === 'neu' ? null : hof, JSON.stringify(daten), kontakt || null).first();
+  for (const x of fotos) {
+    await env.STATS.prepare('INSERT INTO meldung_fotos (meldung, typ, daten) VALUES (?1, ?2, ?3)').bind(r.id, x.type, new Uint8Array(await x.arrayBuffer())).run();
+  }
+  // alte Zählerzeilen aufräumen
+  await env.STATS.prepare('DELETE FROM meldung_limit WHERE tag < ?1').bind(tag).run();
+  return antwort(request, 200, { ok: true, id: r.id });
+}
+
+// Verwaltung (nur mit ADMIN_TOKEN)
+function berechtigt(request, env) {
+  const soll = env.ADMIN_TOKEN;
+  const ist = (request.headers.get('authorization') || '').replace(/^Bearer\s+/i, '');
+  if (!soll || soll.length < 20 || ist.length !== soll.length) return false;
+  let d = 0;
+  for (let i = 0; i < soll.length; i++) d |= soll.charCodeAt(i) ^ ist.charCodeAt(i);
+  return d === 0;
+}
+async function verwaltung(request, env, url) {
+  if (!env.ADMIN_TOKEN) return json({ fehler: 'Verwaltung ist noch nicht eingerichtet (Secret ADMIN_TOKEN fehlt).' }, 503);
+  if (!berechtigt(request, env)) return json({ fehler: 'Nicht berechtigt' }, 401);
+  await schema(env);
+  const keinCache = (r) => { r.headers.set('Cache-Control', 'no-store'); return r; };
+  const teil = url.pathname.replace('/api/verwaltung/', '');
+  if (teil === 'meldungen') {
+    const status = url.searchParams.get('status') || 'neu';
+    const { results } = await env.STATS.prepare(`SELECT m.*, (SELECT group_concat(id) FROM meldung_fotos WHERE meldung = m.id) AS fotos
+      FROM meldungen m WHERE status = ?1 ORDER BY id DESC LIMIT 200`).bind(status).all();
+    return keinCache(json({ meldungen: results.map((m) => ({ ...m, daten: JSON.parse(m.daten), fotos: m.fotos ? String(m.fotos).split(',').map(Number) : [] })) }));
+  }
+  if (teil === 'freigaben') {
+    const { results } = await env.STATS.prepare(`SELECT m.id, m.art, m.hof, m.daten, m.geaendert, (SELECT group_concat(id) FROM meldung_fotos WHERE meldung = m.id) AS fotos
+      FROM meldungen m WHERE status = 'freigegeben' ORDER BY id`).all();
+    return keinCache(json({ freigaben: results.map((m) => ({ ...m, daten: JSON.parse(m.daten), fotos: m.fotos ? String(m.fotos).split(',').map(Number) : [] })) }));
+  }
+  const foto = teil.match(/^foto\/(\d+)$/);
+  if (foto) {
+    const r = await env.STATS.prepare('SELECT typ, daten FROM meldung_fotos WHERE id = ?1').bind(+foto[1]).first();
+    if (!r) return json({ fehler: 'Foto nicht gefunden' }, 404);
+    return new Response(new Uint8Array(r.daten), { headers: { 'Content-Type': r.typ, 'Cache-Control': 'no-store' } });
+  }
+  const m = teil.match(/^meldung\/(\d+)$/);
+  if (m && request.method === 'POST') {
+    const b = await request.json().catch(() => ({}));
+    if (!['neu', 'freigegeben', 'abgelehnt', 'erledigt'].includes(b.status)) return json({ fehler: 'Status ungültig' }, 400);
+    const sets = ['status = ?1', 'geaendert = ?2', 'notiz = ?3'];
+    const werte = [b.status, new Date().toISOString(), String(b.notiz || '').slice(0, 1000)];
+    if (b.daten && typeof b.daten === 'object') { sets.push('daten = ?4'); werte.push(JSON.stringify(b.daten).slice(0, 20000)); }
+    await env.STATS.prepare(`UPDATE meldungen SET ${sets.join(', ')} WHERE id = ?${werte.length + 1}`).bind(...werte, +m[1]).run();
+    if (b.status === 'abgelehnt') await env.STATS.prepare('DELETE FROM meldung_fotos WHERE meldung = ?1').bind(+m[1]).run();
+    return json({ ok: true });
+  }
+  return json({ fehler: 'Unbekannt' }, 404);
+}
+
 // ---------- HTML-Seiten, Weiterleitungen, 410/404 ----------
 const ENTFERNT = new Set(ROUTEN.entfernt);
 function normalisiere(pfad) {
@@ -241,6 +387,8 @@ export default {
     if (url.pathname === '/api/umkreis') return umkreis(url, env, ctx, request);
     if (url.pathname === '/api/eintraege') return eintraegeNachSlug(url);
     if (url.pathname === '/api/orte') return orteVorschlaege(url);
+    if (url.pathname === '/api/meldung') return meldungAnnehmen(request, env);
+    if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url);
     return seiteAusliefern(request, env, url);
   },
 };

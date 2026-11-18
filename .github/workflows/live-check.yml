@@ -4,7 +4,7 @@ name: Live-Prüfung
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ['Nur deployen', 'Daten aktualisieren']
+    workflows: ['Nur deployen', 'Daten aktualisieren', 'Betreiberdaten übernehmen']
     types: [completed]
 
 jobs:

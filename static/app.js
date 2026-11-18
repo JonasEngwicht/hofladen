@@ -397,8 +397,63 @@ for (const i of $$('input[list="orte-vorschlaege"]')) i.addEventListener('input'
       : 'Was soll geändert werden?\n'}`;
     mail.href = `mailto:${adresse}?subject=${encodeURIComponent(betreff)}&body=${encodeURIComponent(text)}`;
     mail.textContent = zeiten ? 'Öffnungszeiten per E-Mail schicken' : uebernahme ? 'Übernahme per E-Mail anfragen' : 'Korrektur per E-Mail schicken';
-    $('#mitmachen-hinweis')?.removeAttribute('hidden');
   }
+}
+
+// ---------- Formular „Mitmachen“: Vorbelegung, Fotos verkleinern, Absenden ----------
+const meldeForm = $('[data-meldeform]');
+if (meldeForm) {
+  meldeForm.elements.t.value = Date.now();
+  const hof = params.get('hof');
+  const thema = params.get('thema');
+  if (hof && /^[a-z0-9-]{1,120}$/.test(hof)) {
+    meldeForm.elements.hof.value = hof;
+    const art = thema === 'uebernahme' ? 'uebernahme' : 'korrektur';
+    meldeForm.querySelector(`input[name="art"][value="${art}"]`).checked = true;
+    fetch(`/api/eintraege?slugs=${hof}`).then((r) => r.json()).then((d) => {
+      const e = d.ergebnisse?.[0];
+      if (!e) return;
+      const box = $('[data-melde-hof]', meldeForm);
+      box.innerHTML = `Eintrag: <a href="${esc(e.pfad)}">${esc(e.titel)}</a>, ${esc(e.adresse)}`;
+      box.hidden = false;
+      for (const [feld, wert] of [['name', e.titel], ['telefon', e.telefon], ['website', e.website], ['betriebsart', e.art]]) if (wert && !meldeForm.elements[feld].value) meldeForm.elements[feld].value = wert;
+      if (thema === 'zeiten') meldeForm.querySelector('.zeiten-form')?.scrollIntoView({ block: 'center' });
+    }).catch(() => {});
+  }
+  for (const r of meldeForm.querySelectorAll('input[name="art"]')) r.addEventListener('change', () => {
+    if (r.checked && r.value === 'neu') { meldeForm.elements.hof.value = ''; $('[data-melde-hof]', meldeForm).hidden = true; }
+    meldeForm.elements.kontakt_email.required = r.checked && r.value === 'uebernahme';
+  });
+  const verkleinern = (datei) => new Promise((ok) => {
+    const img = new Image();
+    img.onload = () => {
+      const f = Math.min(1, 1600 / Math.max(img.width, img.height));
+      const c = document.createElement('canvas');
+      c.width = Math.round(img.width * f); c.height = Math.round(img.height * f);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      c.toBlob((b) => ok(b ? new File([b], datei.name.replace(/\.\w+$/, '') + '.jpg', { type: 'image/jpeg' }) : datei), 'image/jpeg', 0.82);
+      URL.revokeObjectURL(img.src);
+    };
+    img.onerror = () => ok(datei);
+    img.src = URL.createObjectURL(datei);
+  });
+  meldeForm.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const fehler = $('[data-melde-fehler]', meldeForm);
+    const knopf = meldeForm.querySelector('button[type="submit"]');
+    fehler.hidden = true; knopf.disabled = true; knopf.textContent = 'Wird gesendet …';
+    try {
+      const fd = new FormData(meldeForm);
+      const fotos = fd.getAll('fotos').filter((x) => x.size);
+      fd.delete('fotos');
+      for (const x of fotos.slice(0, 3)) fd.append('fotos', await verkleinern(x));
+      const r = await fetch('/api/meldung', { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
+      const d = await r.json().catch(() => ({}));
+      if (r.ok) { location.href = '/mitmachen/danke/'; return; }
+      fehler.textContent = d.fehler || 'Das hat nicht geklappt. Bitte versuch es noch einmal.';
+    } catch { fehler.textContent = 'Keine Verbindung. Bitte versuch es noch einmal.'; }
+    fehler.hidden = false; knopf.disabled = false; knopf.textContent = 'Absenden';
+  });
 }
 
 // ---------- Merkliste & Teilen ----------

@@ -426,3 +426,34 @@ html { overflow-x: clip; }
 .naehe-suche [data-naehe-status], .naehe-suche [data-naehe-liste] { flex-basis: 100%; }
 .naehe-suche [data-naehe-liste]:empty { display: none; }
 .start-kategorien { margin-top: 1.4rem; }
+
+/* Formular „Mitmachen“ */
+.melde-form { max-width: 46rem; margin-top: 1.5rem; }
+.melde-form fieldset, .melde-form .feldgruppe { border: 1px solid var(--linie); border-radius: var(--r); background: var(--weiss); padding: 1.1rem 1.2rem; margin: 0 0 1.2rem; }
+.melde-form legend, .melde-form h2 { font: 700 1.15rem var(--titel); color: var(--fichte); margin: 0 0 .6rem; padding: 0; }
+.melde-form h3 { font-size: 1rem; margin: 1rem 0 .4rem; }
+.melde-form label { display: block; font-weight: 600; margin: .7rem 0 0; }
+.melde-form input:not([type="checkbox"]):not([type="radio"]):not([type="time"]), .melde-form select, .melde-form textarea { display: block; width: 100%; margin-top: .3rem; font: 1rem var(--schrift); padding: .55rem .7rem; border: 1.5px solid var(--linie); border-radius: var(--r-klein); background: #fff; }
+.melde-form input:focus, .melde-form select:focus, .melde-form textarea:focus { outline: 3px solid var(--raps); outline-offset: 1px; }
+.melde-form .zeile { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+.melde-form .haken, .melde-art label { display: flex; gap: .55rem; align-items: flex-start; font-weight: 500; }
+.melde-form .haken input, .melde-art input { margin-top: .25rem; width: 1.15rem; height: 1.15rem; flex: none; }
+.melde-form .haken-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: 0 1rem; }
+.zeiten-form { border-collapse: collapse; margin-top: .6rem; font-size: .95rem; }
+.zeiten-form th, .zeiten-form td { padding: .3rem .5rem .3rem 0; text-align: left; white-space: nowrap; }
+.zeiten-form input[type="time"] { font: 1rem var(--schrift); padding: .3rem; border: 1.5px solid var(--linie); border-radius: var(--r-klein); }
+.melde-hof { background: #DDF0DF; padding: .7rem .9rem; border-radius: var(--r-klein); }
+.melde-form .falle { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 640px) {
+  .melde-form .zeile { grid-template-columns: 1fr; }
+  .zeiten-form thead { display: none; }
+  .zeiten-form tr { display: grid; grid-template-columns: 1fr; padding: .4rem 0; border-bottom: 1px solid var(--linie); }
+}
+/* Hofseite: Fotos und Saison */
+.foto-reihe { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: .6rem; margin-top: .6rem; }
+.foto-reihe img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r-klein); background: var(--kalk); }
+.saison-hinweis { border-left: 4px solid var(--raps); }
+/* Verwaltung */
+#verwaltung .meldung { margin: 1rem 0; }
+#verwaltung textarea { width: 100%; font: .9rem monospace; }
+#verwaltung .fotos img { margin: .4rem .4rem 0 0; border-radius: var(--r-klein); }

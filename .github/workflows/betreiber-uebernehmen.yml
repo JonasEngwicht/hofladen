@@ -1,0 +1,49 @@
+name: Betreiberdaten übernehmen
+
+# Holt freigegebene Meldungen aus der Verwaltung (/verwaltung/), speichert sie in data/betreiber.json
+# und data/fotos/ und rollt die Seite neu aus. Braucht das Repository-Secret ADMIN_TOKEN
+# (derselbe Wert wie das Worker-Secret ADMIN_TOKEN).
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 5 * * *' # täglich 05:41 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daten
+  cancel-in-progress: false
+
+jobs:
+  uebernehmen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Freigaben holen
+        env:
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+        run: node scripts/betreiber-uebernehmen.mjs https://hofladenliste.de
+      - name: Testbuild
+        run: node scripts/build.mjs
+      - name: Commit, falls sich etwas geändert hat
+        id: commit
+        run: |
+          git config user.name "hofladenliste-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/betreiber.json data/fotos data/seiten-stand.json
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Betreiberdaten übernommen"
+            git push
+            echo "geaendert=ja" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Cloudflare-Deploy auslösen
+        if: steps.commit.outputs.geaendert == 'ja'
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgelöst."

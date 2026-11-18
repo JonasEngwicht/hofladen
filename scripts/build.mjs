@@ -61,6 +61,22 @@ for (const m of manuell) {
   eintraege.push(e);
 }
 
+// Freigegebene Meldungen aus dem Formular (data/betreiber.json, siehe scripts/betreiber-uebernehmen.mjs)
+const betreiber = existsSync(join(ROOT, 'data', 'betreiber.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'betreiber.json'), 'utf8')) : {};
+const AUTOMAT_ARTEN = ['Milchtankstelle', 'Eierautomat', 'Regiomat', 'Fleischautomat', 'Kartoffelautomat'];
+for (const [id, m] of Object.entries(betreiber)) {
+  if (m.art !== 'neu') continue;
+  const d = m.daten;
+  const rows = (plz.get(d.plz) || []).filter((r) => !r.org);
+  const row = rows.find((r) => r.ort === d.ort) || rows[0];
+  if (!row) { console.warn(`Betreiber-Meldung ${id}: PLZ ${d.plz} unbekannt, übersprungen`); continue; }
+  const automat = d.betriebsart && d.betriebsart !== 'Hofladen';
+  eintraege.push({ id: `betreiber/${id}`, quelle: 'betreiber', typ: automat ? 'automat' : 'hofladen',
+    art: automat ? (AUTOMAT_ARTEN.includes(d.betriebsart) ? d.betriebsart : 'Regiomat') : 'Hofladen',
+    name: d.name, strasse: d.strasse || null, plz: d.plz, ort: d.ort || row.ort, ortNah: row.ort, plzNah: row.plz, kreis: row.kreis,
+    lat: row.lat, lon: row.lon, lageUngefaehr: true, selbstbedienung: automat || null });
+}
+
 // Ergänzungen aus den Websites der Höfe (data/ergaenzungen.json): füllen nur leere Felder,
 // damit spätere Angaben in OpenStreetMap immer Vorrang haben.
 const ergaenzungen = existsSync(join(ROOT, 'data', 'ergaenzungen.json'))
@@ -74,6 +90,27 @@ for (const e of eintraege) {
     if (z[f] && !e[f]) { e[f] = z[f]; felder.push(f); }
   }
   if (felder.length) { e.ergaenzt = { felder, quelle: z.quelle, stand: z.stand }; ergaenztAnzahl++; }
+}
+
+// Angaben von Betreibern und geprüften Korrekturen haben Vorrang vor OSM
+{
+  const hoefeIds = existsSync(join(ROOT, 'data', 'seiten-stand.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'seiten-stand.json'), 'utf8')).hoefe : {};
+  const nachId = new Map(eintraege.map((e) => [e.osm || e.id, e]));
+  for (const [id, m] of Object.entries(betreiber)) {
+    const e = m.art === 'neu' ? nachId.get(`betreiber/${id}`) : nachId.get(hoefeIds[m.hof]);
+    if (!e) { if (m.art !== 'neu') console.warn(`Betreiber-Meldung ${id}: Eintrag ${m.hof} nicht gefunden`); continue; }
+    const d = m.daten;
+    for (const f of ['name', 'strasse', 'plz', 'ort', 'telefon', 'email', 'website', 'oeffnungszeiten', 'beschreibung']) if (d[f]) e[f] = d[f];
+    if (d.oeffnungszeiten) e.oeffnungszeiten_text = null;
+    if (d.saison) e.saisonHinweis = d.saison;
+    if (d.bio) e.bio = true;
+    if (d.zahlung) e.zahlung = d.zahlung;
+    if (d.angebot) e.betreiberAngebot = d.angebot;
+    if (m.fotos?.length) e.fotos = [...(e.fotos || []), ...m.fotos];
+    e.gepflegt = { art: m.art, stand: m.stand };
+    e.geprueft = m.stand > (e.geprueft || '') ? m.stand : e.geprueft;
+    if (e.ergaenzt) e.ergaenzt.felder = e.ergaenzt.felder.filter((f) => !d[f]);
+  }
 }
 
 // Anzeige-Felder und eindeutige Slugs
@@ -148,7 +185,7 @@ for (const e of eintraege) {
   const text = [e.name, e.betreiber, e.beschreibung, ...(e.produkte || [])].filter(Boolean).join(' ');
   const kat = new Set(ART_KAT[e.art] || []);
   for (const [k, re] of KAT_REGELN) if (re.test(text)) kat.add(k);
-  e.kat = Object.keys(KATEGORIEN).filter((k) => kat.has(k));
+  e.kat = Object.keys(KATEGORIEN).filter((k) => (e.betreiberAngebot ? e.betreiberAngebot.includes(k) : kat.has(k)));
   e.adresse = [e.strasse, [e.plz, e.ort].filter(Boolean).join(' ')].filter(Boolean).join(', ') || `bei ${e.ortNah} (${e.plzNah})`;
   const w = e.oeffnungszeiten ? parse(e.oeffnungszeiten) : null;
   e.sonntag = !!(w && w[6].length);
@@ -295,13 +332,14 @@ rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 mkdirSync(GEN, { recursive: true });
 cpSync(join(ROOT, 'static'), OUT, { recursive: true });
+if (existsSync(join(ROOT, 'data', 'fotos'))) cpSync(join(ROOT, 'data', 'fotos'), join(OUT, 'fotos'), { recursive: true, filter: (q) => !q.endsWith('.gitkeep') });
 const sitemap = [];
 const ALLE_SEITEN = new Set();
 // Seitenarchiv (data/seiten-stand.json): Inhalts-Hash und Änderungsdatum je Seite, auch für Seiten,
 // die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.
 const STAND_DATEI = join(ROOT, 'data', 'seiten-stand.json');
 const stand = existsSync(STAND_DATEI) ? JSON.parse(readFileSync(STAND_DATEI, 'utf8')) : { seiten: {}, hoefe: {} };
-const ARCHIV_AUSNAHMEN = new Set(['/merkliste/']);
+const ARCHIV_AUSNAHMEN = new Set(['/merkliste/', '/verwaltung/']);
 const STAND_PLATZHALTER = '%%SEITENSTAND%%'; // wird nach dem Hashen durch das Änderungsdatum ersetzt
 function schreibe(pfad, html, inSitemap = true) {
   const datei = join(OUT, pfad, pfad.endsWith('/') ? 'index.html' : '');
@@ -1211,6 +1249,7 @@ for (const e of eintraege) {
   const woche = e.oeffnungszeiten ? parse(e.oeffnungszeiten) : null;
   if (woche && woche.some((iv) => iv.length)) ld.openingHoursSpecification = oeffnungsSpezifikation(woche);
   ld['@id'] = cfg.domain + e.pfad + '#hof';
+  if (e.fotos?.length) ld.image = e.fotos.map((f) => cfg.domain + f);
   if (e.email) ld.email = e.email;
   const ohKurz = e.oeffnungszeiten ? (zeilen(e.oeffnungszeiten) || []).map(([t, v]) => `${t} ${v}`).join(', ') : '';
   const uhr = (m) => `${String(Math.floor(m / 60) % 24 || (m >= 1440 ? 24 : 0)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
@@ -1239,6 +1278,7 @@ for (const e of eintraege) {
   const titelEnthaeltOrt = e.titel.includes(e.ortAnzeige);
   const rund = istRund(woche);
   const merkmale = [
+    e.gepflegt?.art === 'uebernahme' && ['Vom Betrieb gepflegt', `Angaben vom Betrieb selbst, Stand ${datumDe(e.gepflegt.stand)}.`],
     e.bio && ['Bio', 'Laut Eintrag verkauft der Hof Bio-Produkte.'],
     rund && ['Rund um die Uhr', e.typ === 'automat' ? 'Der Automat ist jederzeit zugänglich.' : 'Laut Öffnungszeiten jederzeit geöffnet.'],
     !rund && e.sonntag && ['Sonntags geöffnet', `Sonntag: ${(woche[6] || []).map(([a, b]) => `${uhr(a)}–${uhr(b)}`).join(', ')}`],
@@ -1303,10 +1343,12 @@ for (const e of eintraege) {
   </aside>
   <div class="hof-info">
     ${e.kat.length ? `<section class="block"><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${e.quelle === 'osm' ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
+    ${e.fotos?.length ? `<section class="block hof-fotos"><h2>Fotos</h2><div class="foto-reihe">${e.fotos.map((f, i) => `<img src="${esc(f)}" width="1200" height="900" alt="${esc(e.titel)} – Foto ${i + 1}" loading="lazy" decoding="async">`).join('')}</div><p class="leise">Fotos: ${esc(e.titel)}</p></section>` : ''}
+    ${e.saisonHinweis ? `<section class="block saison-hinweis"><h2>Aktuell und saisonal</h2><p>${esc(e.saisonHinweis)}</p><p class="leise">Angabe des Betriebs, Stand ${esc(datumDe(e.gepflegt.stand))}</p></section>` : ''}
     ${merkmale.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram' })[f]).join(', ')} ergänzt aus <a href="${esc(e.ergaenzt.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.ergaenzt.quelle).split('/')[0])}</a>${e.ergaenzt.stand ? ` (Stand ${esc(e.ergaenzt.stand.split('-').reverse().join('.'))})` : ''}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
-    <p class="hinweis">Angaben ohne Gewähr. ${e.quelle === 'osm'
+    <p class="hinweis">Angaben ohne Gewähr. ${e.gepflegt ? `${e.gepflegt.art === 'uebernahme' ? 'Der Betrieb pflegt diesen Eintrag selbst' : 'Angaben geprüft und ergänzt'} (Stand ${esc(datumDe(e.gepflegt.stand))}). ` : ''}${e.quelle === 'betreiber' ? `Eingetragen vom Betrieb. Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>` : e.quelle === 'osm'
       ? `Quelle: <a href="https://www.openstreetmap.org/${e.osm}" rel="nofollow noopener" target="_blank">OpenStreetMap</a>. Etwas stimmt nicht? <a href="https://www.openstreetmap.org/edit?${e.osm.replace('/', '=')}" rel="nofollow noopener" target="_blank">In OpenStreetMap korrigieren</a> oder <a href="/mitmachen/?hof=${esc(e.slug)}">uns Bescheid geben</a>.`
       : `${e.quelleUrl ? `Quelle: <a href="${esc(e.quelleUrl)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.quelleUrl).split('/')[0])}</a>. ` : ''}Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>`}</p>
     <p class="aktualitaet">${e.geprueft ? `Zuletzt vor Ort geprüft: ${esc(datumDe(e.geprueft))} (laut OpenStreetMap) · ` : ''}Seite aktualisiert: ${STAND_PLATZHALTER}</p>
@@ -1437,25 +1479,92 @@ textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von h
 <p>Höfe, die du mit „Merken“ markierst, speichert nur dein Browser (localStorage) – wir haben darauf keinen Zugriff. Wenn du die Merkliste öffnest, lädt dein Browser die aktuellen Angaben zu diesen Höfen von unserem Server; dabei wird nichts gespeichert. Du kannst die Merkliste jederzeit dort leeren oder über die Browsereinstellungen löschen.</p>
 <h2>Suchstatistik</h2>
 <p>Damit wir sehen, in welchen Regionen Hofläden gesucht werden, zählen wir auf unserem Server, wie oft am Tag nach einer Postleitzahl gesucht wurde – zusammen mit dem zugehörigen Landkreis, dem gewählten Angebotsfilter und der Art der Suche (Postleitzahl, Ortsname oder Standort). Bei der Suche nach einem Ortsnamen zählen wir die Postleitzahl des gefundenen Orts; den eingegebenen Text speichern wir nicht. Bei der Standortsuche wird nur die nächstgelegene Postleitzahl gezählt, nicht die Koordinaten. IP-Adressen, Uhrzeiten, Geräte- oder Browserdaten speichern wir dabei nicht, und auf deinem Gerät wird nichts gespeichert oder ausgelesen. Ein Rückschluss auf einzelne Personen ist nicht möglich. Die Zähler liegen in einer Datenbank von Cloudflare (Cloudflare, Inc., Region Westeuropa); Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung des Angebots (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<h2 id="formular">Formular „Mitmachen“</h2>
+<p>Wenn du über das Formular einen Hof einträgst, Angaben korrigierst oder einen Eintrag übernimmst, speichern wir deine Angaben in einer Datenbank von Cloudflare (Cloudflare, Inc., Region Westeuropa): die Angaben zum Betrieb, gegebenenfalls Fotos sowie – freiwillig, bei der Übernahme eines Eintrags erforderlich – deinen Namen und deine E-Mail-Adresse. Die Angaben zum Betrieb und freigegebene Fotos veröffentlichen wir nach Prüfung. Name und E-Mail-Adresse verwenden wir nur für Rückfragen und zur Bestätigung von Betreibern; sie werden nicht veröffentlicht und spätestens sechs Monate nach Bearbeitung gelöscht. Abgelehnte Fotos löschen wir sofort. Gegen Missbrauch zählen wir Meldungen je Absender und Tag über einen anonymisierten Tages-Hash der IP-Adresse; die IP-Adresse selbst speichern wir nicht. Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bzw. bei Betreibern die Durchführung der Eintragung (Art. 6 Abs. 1 lit. b DSGVO). Du kannst deine Angaben jederzeit über die Kontaktadresse löschen lassen.</p>
 <h2>Cookies und Tracking</h2>
 <p>Diese Website setzt keine Cookies und nutzt kein Tracking. Links zu Routenplanern und zu Websites der Höfe öffnen externe Seiten; dort gelten deren Datenschutzbestimmungen.</p>
 <h2>Deine Rechte</h2>
 <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.</p>`);
-textSeite('/mitmachen/', 'Hofladen eintragen – kostenlos', 'Hofladen eintragen: Trage deinen Hofladen, deine Milchtankstelle, deinen Eierautomaten oder Regiomaten kostenlos ein oder korrigiere bestehende Angaben.', `<h1>Hofladen kostenlos eintragen</h1>
-<p class="hinweis-box" id="mitmachen-hinweis" hidden>Danke, dass du hilfst! Der Link unten öffnet eine vorbereitete E-Mail zu diesem Eintrag.</p>
-<p>Der Eintrag ist kostenlos. Schick uns diese Angaben, wir nehmen sie in der Regel innerhalb weniger Tage auf:</p>
-<ul><li>Name des Hofladens oder Automaten</li><li>Adresse</li><li>Öffnungszeiten</li><li>Telefon, E-Mail, Website</li><li>Angebot, z. B. Eier, Milch, Fleisch, Gemüse</li></ul>
-${kontaktMail ? `<p><a class="knopf" id="mail-link" href="mailto:${esc(kontaktMail)}?subject=${encodeURIComponent('Eintrag Hofladenliste')}">E-Mail schreiben</a></p>` : '<p class="fehler">Die Kontaktadresse folgt in Kürze.</p>'}
-<p>Willkommen sind alle, die direkt verkaufen: Hofläden und Bauernläden, <a href="/milchtankstelle/">Milchtankstellen</a>, <a href="/eierautomat/">Eierautomaten</a> und <a href="/regiomat/">Regiomaten</a>. Wie dein Eintrag später aussieht, siehst du auf der <a href="/karte/">Hofladen-Karte</a>.</p>
+// ---------- Verwaltung der Meldungen (nicht öffentlich verlinkt, noindex) ----------
+schreibe('/verwaltung/', seite({
+  titel: 'Verwaltung | Hofladenliste', beschreibung: 'Verwaltung der Meldungen zu Hofläden – nur für die Redaktion von hofladenliste.de.',
+  pfad: '/verwaltung/', noindex: true, klasse: 'textseite', krumen: [['Verwaltung', '/verwaltung/']],
+  inhalt: '<section class="abschnitt"><h1>Meldungen</h1><div id="verwaltung"></div></section><script type="module" src="/verwaltung.js"></script>',
+}), false);
+
+// ---------- Mitmachen: Formular für neue Einträge, Korrekturen und Übernahmen ----------
+{
+  const TAGE_FORM = [['mo', 'Montag'], ['di', 'Dienstag'], ['mi', 'Mittwoch'], ['do', 'Donnerstag'], ['fr', 'Freitag'], ['sa', 'Samstag'], ['so', 'Sonntag']];
+  const zeitZeile = ([k, n]) => `<tr><th scope="row">${n}</th><td><input type="time" name="${k}_von1" aria-label="${n} von"> – <input type="time" name="${k}_bis1" aria-label="${n} bis"></td><td><input type="time" name="${k}_von2" aria-label="${n} zweites Zeitfenster von"> – <input type="time" name="${k}_bis2" aria-label="${n} zweites Zeitfenster bis"></td></tr>`;
+  const formular = `
+<form class="melde-form" action="/api/meldung" method="post" enctype="multipart/form-data" data-meldeform>
+  <fieldset class="melde-art">
+    <legend>Was möchtest du tun?</legend>
+    <label><input type="radio" name="art" value="neu" checked> Neuen Hof oder Automaten eintragen</label>
+    <label><input type="radio" name="art" value="korrektur"> Bestehenden Eintrag korrigieren</label>
+    <label><input type="radio" name="art" value="uebernahme"> Ich betreibe den Hof und möchte den Eintrag übernehmen</label>
+  </fieldset>
+  <input type="hidden" name="hof" value="">
+  <p class="melde-hof" data-melde-hof hidden></p>
+  <div class="feldgruppe">
+    <h2>Betrieb</h2>
+    <label>Name<input name="name" maxlength="120" autocomplete="organization"></label>
+    <label>Art<select name="betriebsart"><option value="">bitte wählen</option><option>Hofladen</option><option>Milchtankstelle</option><option>Eierautomat</option><option>Regiomat</option><option>Fleischautomat</option><option>Kartoffelautomat</option><option>sonstiger Automat</option></select></label>
+    <label>Straße und Hausnummer<input name="strasse" maxlength="120" autocomplete="street-address"></label>
+    <div class="zeile"><label>PLZ<input name="plz" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code"></label><label>Ort<input name="ort" maxlength="80" autocomplete="address-level2"></label></div>
+    <div class="zeile"><label>Telefon<input name="telefon" type="tel" maxlength="40"></label><label>E-Mail des Betriebs<input name="email" type="email" maxlength="120"></label></div>
+    <label>Website<input name="website" type="url" maxlength="200" placeholder="https://"></label>
+  </div>
+  <div class="feldgruppe">
+    <h2>Öffnungszeiten</h2>
+    <label class="haken"><input type="checkbox" name="rund" value="ja"> Rund um die Uhr geöffnet (z. B. Automat)</label>
+    <table class="zeiten-form"><thead><tr><th></th><th>Zeitfenster</th><th>Zweites Zeitfenster (optional)</th></tr></thead><tbody>${TAGE_FORM.map(zeitZeile).join('')}</tbody></table>
+    <p class="leise">Leere Tage gelten als geschlossen.</p>
+    <label>Saisonale Hinweise<textarea name="saison" maxlength="300" rows="2" placeholder="z. B. Spargel ab Mitte April, im Januar Betriebsferien"></textarea></label>
+  </div>
+  <div class="feldgruppe">
+    <h2>Angebot</h2>
+    <div class="haken-liste">${Object.entries(KATEGORIEN).map(([k, n]) => `<label class="haken"><input type="checkbox" name="angebot" value="${k}"> ${esc(n)}</label>`).join('')}</div>
+    <label class="haken"><input type="checkbox" name="bio" value="ja"> Bio (zertifiziert)</label>
+    <h3>Bezahlen</h3>
+    <div class="haken-liste">${Object.entries(ZAHLUNG_TEXT).map(([k, n]) => `<label class="haken"><input type="checkbox" name="zahlung" value="${k}"> ${esc(n)}</label>`).join('')}</div>
+    <label>Kurze Beschreibung<textarea name="beschreibung" maxlength="600" rows="3"></textarea></label>
+  </div>
+  <div class="feldgruppe">
+    <h2>Fotos (optional)</h2>
+    <label>Bis zu 3 Fotos vom Hof oder Laden<input type="file" name="fotos" accept="image/jpeg,image/png,image/webp" multiple></label>
+    <label class="haken"><input type="checkbox" name="fotorechte" value="ja"> Ich habe die Rechte an den Fotos und erlaube die Veröffentlichung auf hofladenliste.de. Auf den Fotos sind keine erkennbaren Personen ohne deren Einverständnis.</label>
+  </div>
+  <div class="feldgruppe">
+    <h2>Kontakt</h2>
+    <div class="zeile"><label>Dein Name<input name="kontakt_name" maxlength="120" autocomplete="name"></label><label>Deine E-Mail<input name="kontakt_email" type="email" maxlength="120" autocomplete="email"></label></div>
+    <p class="leise">Für Rückfragen; bei der Übernahme eines Eintrags Pflicht. Wird nicht veröffentlicht.</p>
+    <label>Anmerkungen<textarea name="hinweis" maxlength="2000" rows="3"></textarea></label>
+    <label class="falle" aria-hidden="true">Firma<input name="firma" tabindex="-1" autocomplete="off"></label>
+    <input type="hidden" name="t" value="">
+    <label class="haken"><input type="checkbox" name="einwilligung" value="ja" required> Ich habe den <a href="/datenschutz/#formular">Datenschutzhinweis</a> gelesen. Die Angaben zum Betrieb werden nach Prüfung veröffentlicht.</label>
+  </div>
+  <p><button type="submit" class="knopf knopf-dunkel">Absenden</button></p>
+  <p class="fehler" data-melde-fehler hidden></p>
+</form>`;
+  textSeite('/mitmachen/', 'Hofladen eintragen – kostenlos', 'Hofladen eintragen: Trage deinen Hofladen, deine Milchtankstelle, deinen Eierautomaten oder Regiomaten kostenlos ein, korrigiere Angaben oder übernimm deinen Eintrag.', `<h1>Hofladen kostenlos eintragen</h1>
+<p>Der Eintrag ist kostenlos. Wir prüfen jede Meldung und veröffentlichen sie in der Regel innerhalb weniger Tage. Willkommen sind alle, die direkt verkaufen: Hofläden und Bauernläden, <a href="/milchtankstelle/">Milchtankstellen</a>, <a href="/eierautomat/">Eierautomaten</a> und <a href="/regiomat/">Regiomaten</a>.</p>
+<p>Betreibst du einen Hof, der schon eingetragen ist? Dann übernimm den Eintrag – du kannst Öffnungszeiten, Angebot, Fotos und saisonale Hinweise selbst aktuell halten. Danach gibt es auf Wunsch ein <a href="/fuer-hoefe/">Badge für deine Website</a>.</p>
+${formular}
+${kontaktMail ? `<p>Lieber per E-Mail? <a id="mail-link" href="mailto:${esc(kontaktMail)}?subject=${encodeURIComponent('Eintrag Hofladenliste')}">E-Mail schreiben</a></p>` : ''}
 <h2>Direkt in OpenStreetMap eintragen</h2>
-<p>Die Einträge stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a>. Wenn du deinen Hof dort einträgst (Kategorie „Hofladen“, Merkmal <code>shop=farm</code>; für Automaten <code>amenity=vending_machine</code> mit <code>vending=milk</code>, <code>eggs</code> usw.), erscheint er bei der nächsten wöchentlichen Aktualisierung auch hier – inklusive Öffnungszeiten.</p>`, false);
+<p>Die meisten Einträge stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a>. Wenn du deinen Hof dort einträgst (Kategorie „Hofladen“, Merkmal <code>shop=farm</code>; für Automaten <code>amenity=vending_machine</code> mit <code>vending=milk</code>, <code>eggs</code> usw.), erscheint er nach der nächsten Aktualisierung (montags und donnerstags) auch hier.</p>`, false);
+  textSeite('/mitmachen/danke/', 'Danke für deine Meldung', 'Deine Meldung ist bei uns angekommen. Wir prüfen sie und veröffentlichen die Angaben in der Regel innerhalb weniger Tage.', `<h1>Danke – deine Meldung ist angekommen</h1>
+<p>Wir prüfen die Angaben und veröffentlichen sie in der Regel innerhalb weniger Tage. Bei Rückfragen melden wir uns, falls du eine E-Mail-Adresse angegeben hast.</p>
+<p><a href="/">Zur Startseite</a> · <a href="/fuer-hoefe/">Badge für deine Website</a></p>`);
+}
 schreibe('/404.html', seite({
   titel: 'Seite nicht gefunden | Hofladenliste', beschreibung: 'Diese Seite gibt es nicht.', pfad: '/404.html', noindex: true, klasse: 'textseite',
   inhalt: '<article class="text"><h1>Diese Seite gibt es nicht</h1><p>Vielleicht wurde der Eintrag verschoben. Gib oben deine Postleitzahl ein oder starte auf der <a href="/">Startseite</a>.</p></article>',
 }), false);
 
 // ---------- Robots, Sitemap ----------
-writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
+writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\nDisallow: /verwaltung/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
 
 // Seitenarchiv (data/seiten-stand.json): Inhalts-Hash und Änderungsdatum je Seite, auch für Seiten,
 // die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.
