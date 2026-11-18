@@ -25,7 +25,7 @@ async function laden(status = 'neu') {
   box.innerHTML = '<p>Lade …</p>';
   let d;
   try { const r = await api(`meldungen?status=${status}`); d = await r.json(); if (!r.ok) { box.innerHTML = `<p class="fehler">${esc(d.fehler)}</p>`; return; } } catch { return; }
-  box.innerHTML = `<p class="segment">${['neu', 'freigegeben', 'erledigt', 'abgelehnt'].map((s) => `<button type="button" data-status="${s}" aria-pressed="${s === status}">${s}</button>`).join('')}</p>
+  box.innerHTML = `<p class="segment">${['neu', 'freigegeben', 'erledigt', 'abgelehnt'].map((s) => `<button type="button" data-status="${s}" aria-pressed="${s === status}">${s}</button>`).join('')}<button type="button" data-statistik>Statistik</button></p>
     ${d.meldungen.length ? '' : '<p>Keine Meldungen.</p>'}
     ${d.meldungen.map((m) => `<article class="block meldung" data-id="${m.id}">
       <h2>#${m.id} · ${esc(ART[m.art] || m.art)}${m.hof ? ` · <a href="/hof/${esc(m.hof)}/" target="_blank">${esc(m.hof)}</a>` : ''}</h2>
@@ -37,6 +37,7 @@ async function laden(status = 'neu') {
       <p class="kk-knoepfe"><button class="knopf knopf-gruen" data-setze="freigegeben">Freigeben</button><button class="knopf knopf-hell" data-setze="abgelehnt">Ablehnen</button><button class="knopf knopf-hell" data-setze="erledigt">Erledigt (ohne Veröffentlichung)</button></p>
     </article>`).join('')}`;
   for (const b of box.querySelectorAll('[data-status]')) b.addEventListener('click', () => laden(b.dataset.status));
+  box.querySelector('[data-statistik]').addEventListener('click', () => statistik());
   for (const f of box.querySelectorAll('[data-fotos]')) for (const id of f.dataset.fotos.split(',').filter(Boolean)) {
     const img = new Image(); img.alt = `Foto ${id}`; img.width = 240; bild(id).then((u) => { img.src = u; }); f.append(img);
   }
@@ -47,5 +48,22 @@ async function laden(status = 'neu') {
     await api(`meldung/${art.dataset.id}`, { method: 'POST', body: JSON.stringify({ status: b.dataset.setze, notiz: art.querySelector('[data-notiz]').value, daten }) });
     art.remove();
   });
+}
+const tabelle = (titel, zeilen, spalten) => `<h2>${esc(titel)}</h2>${zeilen.length ? `<table class="woche"><tbody>${zeilen.map((z) => `<tr>${spalten.map((k) => `<td>${esc(z[k] ?? '')}</td>`).join('')}</tr>`).join('')}</tbody></table>` : '<p class="leise">Noch keine Daten.</p>'}`;
+async function statistik(tage = 30) {
+  const box = $('#verwaltung');
+  box.innerHTML = '<p>Lade …</p>';
+  const r = await api(`statistik?tage=${tage}`);
+  const d = await r.json();
+  box.innerHTML = `<p class="segment"><button type="button" data-zurueck>Meldungen</button>${[7, 30, 90, 365].map((t) => `<button type="button" data-tage="${t}" aria-pressed="${t === tage}">${t} Tage</button>`).join('')}</p>
+    <p class="leise">Seit ${esc(d.ab)} – anonyme Tageszähler, ohne Bots.</p>
+    ${tabelle('Suchen nach Art', d.suchen, ['art', 'anzahl'])}
+    ${tabelle('Klicks und Filter', d.ereignisse, ['ereignis', 'seite', 'detail', 'anzahl'])}
+    ${tabelle('Meistgesuchte Kreise', d.kreise, ['kreis', 'anzahl'])}
+    ${tabelle('Meistgesuchte Postleitzahlen', d.plz, ['plz', 'kreis', 'anzahl'])}
+    ${tabelle('Gesuchte Produkte', d.produkte, ['produkt', 'anzahl'])}
+    ${tabelle('Klicks je Tag', d.tage, ['tag', 'anzahl'])}`;
+  box.querySelector('[data-zurueck]').addEventListener('click', () => laden());
+  for (const b of box.querySelectorAll('[data-tage]')) b.addEventListener('click', () => statistik(+b.dataset.tage));
 }
 token ? laden() : anmelden();

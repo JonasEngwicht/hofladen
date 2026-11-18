@@ -73,3 +73,19 @@ test('höchstens 10 Meldungen pro Tag und Absender', async () => {
   for (let i = 0; i < 12; i++) letzte = await sende({ art: 'neu', name: `Hof ${i}`, plz: '03149' });
   assert.equal(letzte.status, 429);
 });
+
+test('Nutzungsstatistik zählt Klicks anonym und ist nur in der Verwaltung lesbar', async () => {
+  const w = await ladeWorker();
+  const klick = (b, ua = 'Mozilla/5.0') => w.fetch(new Request('https://hofladenliste.de/api/ereignis', { method: 'POST', body: JSON.stringify(b), headers: { 'user-agent': ua } }), env, { waitUntil: (p) => p });
+  assert.equal((await klick({ e: 'route', s: 'hof' })).status, 204);
+  await klick({ e: 'route', s: 'hof' });
+  await klick({ e: 'filter', s: 'kreis', d: 'bio' });
+  assert.equal((await klick({ e: 'hack', s: 'hof' })).status, 400);
+  await klick({ e: 'route', s: 'hof' }, 'Googlebot/2.1');
+  await new Promise((r) => setTimeout(r, 50));
+  const d = await (await verwaltung('statistik?tage=7')).json();
+  const route = d.ereignisse.find((x) => x.ereignis === 'route' && x.seite === 'hof');
+  assert.equal(route.anzahl, 2, 'Bots werden nicht gezählt');
+  assert.ok(d.ereignisse.some((x) => x.ereignis === 'filter' && x.detail === 'bio'));
+  assert.equal((await verwaltung('statistik', {}, 'falsch')).status, 401);
+});

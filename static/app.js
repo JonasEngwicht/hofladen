@@ -543,3 +543,31 @@ karteAutomatisch();
   }
   for (const t of $$('[data-badge-code]')) t.addEventListener('focus', () => t.select());
 }
+
+// ---------- Nutzungsstatistik: anonyme Tageszähler (siehe Datenschutz) ----------
+const seitenTyp = document.body.dataset.seite || 'sonstige';
+function zaehle(e, d = '') {
+  try {
+    const daten = JSON.stringify({ e, s: seitenTyp, d });
+    if (!navigator.sendBeacon?.('/api/ereignis', new Blob([daten], { type: 'application/json' }))) fetch('/api/ereignis', { method: 'POST', body: daten, keepalive: true });
+  } catch {}
+}
+document.addEventListener('click', (ev) => {
+  const a = ev.target.closest('a, button');
+  if (!a) return;
+  const href = a.getAttribute('href') || '';
+  if (href.startsWith('tel:')) zaehle('telefon');
+  else if (href.includes('google.com/maps/dir')) zaehle('route');
+  else if (a.matches('.akt[href^="http"], .knopf-hell[href^="http"], .kontakt a[href^="http"]') && !href.includes('openstreetmap.org')) zaehle('website');
+  else if (a.matches('[data-naehe-start], #standort')) zaehle('naehe');
+  else if (a.matches('[data-merken]')) zaehle('merken');
+  else if (a.matches('[data-teilen]')) zaehle('teilen');
+  else if (a.matches('[data-typ-filter]')) zaehle('filter', `typ-${a.dataset.typFilter}`);
+  else if (a.matches('[data-kat-filter]')) zaehle('filter', a.dataset.katFilter);
+  else if (a.matches('[data-radius-filter]')) zaehle('filter', `umkreis-${a.dataset.radiusFilter}`);
+  else if (a.matches('[data-offen-filter]')) zaehle('filter', 'offen');
+  else if (a.matches('[data-sonntag-filter]')) zaehle('filter', 'sonntag');
+  else if (a.matches('[data-bio-filter]')) zaehle('filter', 'bio');
+  else if (a.matches('[data-rund-filter]')) zaehle('filter', 'rund');
+}, { capture: true });
+for (const f of $$('form[action="/suche"]')) f.addEventListener('submit', () => zaehle('suche', /^\d/.test(f.elements.q?.value || '') ? 'plz' : 'ort'));

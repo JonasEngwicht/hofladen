@@ -200,6 +200,8 @@ const SCHEMA = [
     daten TEXT NOT NULL, kontakt_email TEXT, status TEXT NOT NULL DEFAULT 'neu', notiz TEXT, geaendert TEXT)`,
   'CREATE TABLE IF NOT EXISTS meldung_fotos (id INTEGER PRIMARY KEY AUTOINCREMENT, meldung INTEGER NOT NULL, typ TEXT NOT NULL, daten BLOB NOT NULL)',
   'CREATE TABLE IF NOT EXISTS meldung_limit (schluessel TEXT PRIMARY KEY, tag TEXT NOT NULL, anzahl INTEGER NOT NULL)',
+  `CREATE TABLE IF NOT EXISTS ereignisse (tag TEXT NOT NULL, ereignis TEXT NOT NULL, seite TEXT NOT NULL, detail TEXT NOT NULL,
+    anzahl INTEGER NOT NULL, PRIMARY KEY (tag, ereignis, seite, detail))`,
 ];
 let schemaOk = false;
 async function schema(env) {
@@ -292,6 +294,27 @@ async function meldungAnnehmen(request, env) {
   return antwort(request, 200, { ok: true, id: r.id });
 }
 
+// ---------- Nutzungsstatistik: Tageszähler für Klicks (Route, Telefon, Website, Filter, Nähe) ----------
+// Keine IP, kein Gerät, keine Uhrzeit – nur „heute X-mal Route auf Hofseiten“.
+const EREIGNISSE = ['route', 'telefon', 'website', 'filter', 'naehe', 'merken', 'teilen', 'suche'];
+const SEITEN = ['start', 'hof', 'kreis', 'ort', 'kategorie', 'saison', 'sonstige'];
+async function ereignisZaehlen(request, env, ctx) {
+  if (request.method !== 'POST') return new Response(null, { status: 405 });
+  if (!env.STATS || BOT.test(request.headers.get('user-agent') || '')) return new Response(null, { status: 204 });
+  let b;
+  try { b = JSON.parse(await request.text()); } catch { return new Response(null, { status: 400 }); }
+  const e = EREIGNISSE.includes(b.e) ? b.e : null;
+  if (!e) return new Response(null, { status: 400 });
+  const seite = SEITEN.includes(b.s) ? b.s : 'sonstige';
+  const detail = String(b.d || '').toLowerCase().replace(/[^a-z0-9äöüß_-]/g, '').slice(0, 30);
+  ctx.waitUntil((async () => {
+    await schema(env);
+    await env.STATS.prepare(`INSERT INTO ereignisse (tag, ereignis, seite, detail, anzahl) VALUES (?1, ?2, ?3, ?4, 1)
+      ON CONFLICT (tag, ereignis, seite, detail) DO UPDATE SET anzahl = anzahl + 1`).bind(tagHeute(), e, seite, detail).run();
+  })().catch(() => {}));
+  return new Response(null, { status: 204 });
+}
+
 // Verwaltung (nur mit ADMIN_TOKEN)
 function berechtigt(request, env) {
   const soll = env.ADMIN_TOKEN;
@@ -317,6 +340,20 @@ async function verwaltung(request, env, url) {
     const { results } = await env.STATS.prepare(`SELECT m.id, m.art, m.hof, m.daten, m.geaendert, (SELECT group_concat(id) FROM meldung_fotos WHERE meldung = m.id) AS fotos
       FROM meldungen m WHERE status = 'freigegeben' ORDER BY id`).all();
     return keinCache(json({ freigaben: results.map((m) => ({ ...m, daten: JSON.parse(m.daten), fotos: m.fotos ? String(m.fotos).split(',').map(Number) : [] })) }));
+  }
+  if (teil === 'statistik') {
+    const tage = Math.min(365, Math.max(1, +url.searchParams.get('tage') || 30));
+    const ab = new Date(Date.now() - tage * 864e5).toISOString().slice(0, 10);
+    const q = async (sql) => (await env.STATS.prepare(sql).bind(ab).all()).results;
+    return keinCache(json({
+      ab,
+      suchen: await q(`SELECT art, SUM(anzahl) AS anzahl FROM suchen WHERE tag >= ?1 GROUP BY art ORDER BY anzahl DESC`).catch(() => []),
+      plz: await q(`SELECT plz, kreis, SUM(anzahl) AS anzahl FROM suchen WHERE tag >= ?1 AND plz != '' GROUP BY plz ORDER BY anzahl DESC LIMIT 50`).catch(() => []),
+      kreise: await q(`SELECT kreis, SUM(anzahl) AS anzahl FROM suchen WHERE tag >= ?1 AND kreis != '' GROUP BY kreis ORDER BY anzahl DESC LIMIT 50`).catch(() => []),
+      produkte: await q(`SELECT produkt, SUM(anzahl) AS anzahl FROM suchen WHERE tag >= ?1 AND produkt != '' GROUP BY produkt ORDER BY anzahl DESC LIMIT 20`).catch(() => []),
+      ereignisse: await q(`SELECT ereignis, seite, detail, SUM(anzahl) AS anzahl FROM ereignisse WHERE tag >= ?1 GROUP BY ereignis, seite, detail ORDER BY anzahl DESC LIMIT 100`),
+      tage: await q(`SELECT tag, SUM(anzahl) AS anzahl FROM ereignisse WHERE tag >= ?1 GROUP BY tag ORDER BY tag`),
+    }));
   }
   const foto = teil.match(/^foto\/(\d+)$/);
   if (foto) {
@@ -388,6 +425,7 @@ export default {
     if (url.pathname === '/api/eintraege') return eintraegeNachSlug(url);
     if (url.pathname === '/api/orte') return orteVorschlaege(url);
     if (url.pathname === '/api/meldung') return meldungAnnehmen(request, env);
+    if (url.pathname === '/api/ereignis') return ereignisZaehlen(request, env, ctx);
     if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url);
     return seiteAusliefern(request, env, url);
   },
