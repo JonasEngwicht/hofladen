@@ -13,9 +13,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '23 4 26 * *' # monatlich am 26.
-  push:
-    branches: [daten/weitere-quellen]
-    paths: [.github/workflows/quellen-aktualisieren.yml]
 
 permissions:
   contents: write
