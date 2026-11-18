@@ -601,3 +601,27 @@ html { overflow-x: clip; }
 .termin { border-left: 4px solid var(--raps); padding: .3rem 0 .3rem .9rem; }
 .termin h3 { margin: .1rem 0 .3rem; }
 .termin-zeit { margin: 0; font-weight: 700; color: var(--fichte); }
+
+/* Aushang und Flyer zum Ausdrucken (A4/A5) */
+.aushang-leiste { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin: .8rem 0; }
+.aushang { box-sizing: border-box; width: 210mm; min-height: 297mm; margin: 1rem auto 2rem; padding: 18mm 16mm; background: #fff; color: #173B2C; box-shadow: 0 2px 14px rgba(23,59,44,.15); display: flex; flex-direction: column; }
+[data-papier="A5"] .aushang { width: 148mm; min-height: 210mm; padding: 11mm 10mm; font-size: 80%; }
+.aushang-marke { display: flex; align-items: center; gap: .5rem; font: 700 1.2em var(--schrift-titel, inherit); margin: 0 0 8mm; }
+.aushang-marke svg { width: 2.2em; height: 2.2em; }
+.aushang-name { font-size: 2.6em; line-height: 1.1; margin: 0 0 .3em; }
+.aushang-art { font-size: 1.15em; margin: 0 0 8mm; color: #3c5247; }
+.aushang-spalten { display: grid; grid-template-columns: 1fr 62mm; gap: 10mm; align-items: start; flex: 1; }
+[data-papier="A5"] .aushang-spalten { grid-template-columns: 1fr 46mm; gap: 6mm; }
+.aushang h2 { font-size: 1.3em; margin: 0 0 .4em; }
+.aushang table { border-collapse: collapse; font-size: 1.15em; margin-bottom: 6mm; }
+.aushang th { text-align: left; padding: .2em 1em .2em 0; font-weight: 700; }
+.aushang-chips span { display: inline-block; border: 1.5px solid #173B2C; border-radius: 999px; padding: .15em .7em; margin: 0 .3em .4em 0; }
+.aushang-qr { margin: 0; text-align: center; }
+.aushang-qr svg { width: 100%; height: auto; display: block; }
+.aushang-qr figcaption { display: grid; gap: .2em; font-size: .95em; margin-top: 2mm; }
+.aushang-fuss { margin-top: auto; padding-top: 6mm; border-top: 3px solid #F4C430; font-size: .95em; }
+@media print {
+  body > *:not(main), .kein-druck, .krumen, .fuss, header { display: none !important; }
+  main, .aushang-seite main { margin: 0; padding: 0; }
+  .aushang { margin: 0; box-shadow: none; page-break-after: always; }
+}

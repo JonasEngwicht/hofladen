@@ -25,7 +25,7 @@ const KACHELN = (() => {
     return /^\d{8}$/.test(k.version) && existsSync(join(ROOT, 'static', 'vendor', 'protomaps-leaflet.js')) ? k : null;
   } catch { return null; }
 })();
-const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js', 'betrieb.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
+const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js', 'betrieb.js', 'aushang.js', 'qr.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
 const SAISON = [
@@ -2019,10 +2019,40 @@ schreibe('/betrieb/', seite({
       <p class="leise" data-anmelden-status aria-live="polite"></p>
     </form>
     <p>Noch kein Zugang? Such deinen Hof und wähle auf seiner Seite „Eintrag übernehmen“. Passt deine E-Mail-Adresse zur Website des Hofs, bekommst du sofort einen Bestätigungslink, sonst prüfen wir die Übernahme von Hand. Fragen: <a href="mailto:hofladenliste@gmail.com">hofladenliste@gmail.com</a></p>
+    <p>Du kaufst gern bei einem Hof ein, der hier noch fehlt? <a href="/aushang/empfehlen/">Flyer „Empfiehl deinen Lieblingshof“ ausdrucken</a>.</p>
   </div>
   <div data-betrieb-inhalt hidden></div>
   <noscript><p>Der Betreiber-Bereich braucht JavaScript.</p></noscript>
 </section>`,
+}), false);
+
+// Aushang zum Ausdrucken (A4/A5) mit QR-Code, und Flyer „Empfiehl deinen Lieblingshof“ (Inhalt per JavaScript, QR aus static/qr.js)
+const AUSHANG_LEISTE = `<div class="aushang-leiste"><div class="segment" role="radiogroup" aria-label="Papierformat"><button type="button" data-papier-wahl="A4" aria-pressed="true">A4</button><button type="button" data-papier-wahl="A5" aria-pressed="false">A5</button></div><button type="button" class="knopf" data-drucken>Drucken oder als PDF speichern</button></div>`;
+schreibe('/betrieb/aushang/', seite({
+  titel: 'Aushang mit QR-Code drucken | Hofladenliste', pfad: '/betrieb/aushang/', noindex: true, klasse: 'aushang-seite', kopfSuche: false, krumen: [['Für Betriebe', '/betrieb/'], ['Aushang', '/betrieb/aushang/']],
+  beschreibung: 'Aushang für deinen Hofladen zum Ausdrucken: Öffnungszeiten, Angebot und QR-Code zum Eintrag auf Hofladenliste, als A4 oder A5.',
+  inhalt: `<section class="abschnitt kein-druck"><h1>Aushang für deinen Hof</h1><p>Häng ihn an die Tür oder neben die Kasse. Der QR-Code führt zu deinem Eintrag – dort stehen Öffnungszeiten und Angebot immer aktuell.</p>${AUSHANG_LEISTE}<p class="leise" data-aushang-status>Wird geladen …</p></section>
+<article class="aushang" data-aushang="hof" hidden>
+  <p class="aushang-marke">${LOGO}<span>Hofladenliste</span></p>
+  <h2 class="aushang-name" data-hof-name></h2><p class="aushang-art" data-hof-art></p>
+  <div class="aushang-spalten"><div><div data-hof-zeiten></div><div data-hof-angebot></div><p data-hof-telefon></p></div>
+    <figure class="aushang-qr"><div data-qr></div><figcaption><b>Öffnungszeiten &amp; Angebot immer aktuell</b><span data-qr-url></span></figcaption></figure></div>
+  <p class="aushang-fuss">Hofläden, Milchtankstellen und Hofautomaten in ganz Deutschland: hofladenliste.de</p>
+</article>`,
+}), false);
+schreibe('/aushang/empfehlen/', seite({
+  titel: 'Flyer: Empfiehl deinen Lieblingshof | Hofladenliste', pfad: '/aushang/empfehlen/', noindex: true, klasse: 'aushang-seite', kopfSuche: false, krumen: [['Flyer: Hof empfehlen', '/aushang/empfehlen/']],
+  beschreibung: 'Flyer zum Ausdrucken: Gib ihn deinem Lieblingshof, damit er sich kostenlos auf Hofladenliste einträgt.',
+  inhalt: `<section class="abschnitt kein-druck"><h1>Empfiehl deinen Lieblingshof</h1><p>Druck den Flyer aus und gib ihn dem Hof, bei dem du gern einkaufst. Der Eintrag ist kostenlos.</p>${AUSHANG_LEISTE}</section>
+<article class="aushang" data-aushang="empfehlung">
+  <p class="aushang-marke">${LOGO}<span>Hofladenliste</span></p>
+  <h2 class="aushang-name">Wir kaufen gern bei Ihnen ein!</h2>
+  <p class="aushang-art">Damit noch mehr Menschen Ihren Hof finden: Tragen Sie ihn kostenlos auf hofladenliste.de ein.</p>
+  <div class="aushang-spalten"><div><h2>So geht’s</h2><ol><li>QR-Code scannen oder hofladenliste.de/mitmachen/ öffnen</li><li>Name, Adresse und Öffnungszeiten eintragen</li><li>Fertig – Neuigkeiten wie „Spargel ist da!“ können Sie danach selbst veröffentlichen</li></ol>
+    <p>Kostenlos, ohne Werbung im Eintrag. Fragen: hofladenliste@gmail.com</p></div>
+    <figure class="aushang-qr"><div data-qr></div><figcaption><b>Jetzt eintragen</b><span>hofladenliste.de/mitmachen/</span></figcaption></figure></div>
+  <p class="aushang-fuss">Empfohlen von einer Kundin oder einem Kunden.</p>
+</article>`,
 }), false);
 
 const textSeite = (pfad, titel, beschreibung, html, noindex = true) => schreibe(pfad, seite({ titel: `${titel} | Hofladenliste`, beschreibung, pfad, noindex, klasse: 'textseite', krumen: [[titel.replace(/ – .*/, ''), pfad]], inhalt: `<article class="text">${html}</article>` }), !noindex);
