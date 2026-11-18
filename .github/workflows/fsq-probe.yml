@@ -1,17 +1,17 @@
-name: Quellen-Probe
+name: FSQ-Probe
 on:
   push:
     branches: [daten/weitere-quellen]
-    paths: [scripts/quellen-probe.py]
+    paths: [scripts/fsq-probe.py]
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: pip install duckdb==1.1.3
-      - run: python scripts/quellen-probe.py
+      - run: python scripts/fsq-probe.py
         env:
           HF_TOKEN: ${{ secrets.HUGGINGFACE_KEY }}
