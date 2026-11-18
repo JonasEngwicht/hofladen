@@ -121,7 +121,8 @@ for (const e of eintraege) {
   const hoefeIds = existsSync(join(ROOT, 'data', 'seiten-stand.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'seiten-stand.json'), 'utf8')).hoefe : {};
   const nachId = new Map(eintraege.map((e) => [e.osm || e.id, e]));
   for (const [id, m] of Object.entries(betreiber)) {
-    const e = m.art === 'neu' ? nachId.get(`betreiber/${id}`) : nachId.get(hoefeIds[m.hof]);
+    const e = m.art === 'neu' ? nachId.get(`betreiber/${id}`)
+      : (m.daten?.eintrag && [...nachId.values()].find((x) => stabileIdAus(x.osm || x.id) === m.daten.eintrag)) || nachId.get(hoefeIds[m.hof]);
     if (!e) { if (m.art !== 'neu') console.warn(`Betreiber-Meldung ${id}: Eintrag ${m.hof} nicht gefunden`); continue; }
     const d = m.daten;
     for (const f of ['name', 'strasse', 'plz', 'ort', 'telefon', 'email', 'website', 'oeffnungszeiten', 'beschreibung']) if (d[f]) e[f] = d[f];
@@ -160,6 +161,17 @@ for (const e of eintraege.sort((a, b) => (a.osm || a.id).localeCompare(b.osm || 
   e.slug = n > 1 ? `${s}-${n}` : s;
   e.pfad = `/hof/${e.slug}/`;
 }
+
+// Stabile ID je Eintrag: ändert sich nie, auch wenn sich Name oder Slug ändern.
+// OSM: n123/w123/r123, Betreiber-Einträge: b<Meldung>, manuelle Einträge: m-<id>
+function stabileIdAus(roh) {
+  const osm = String(roh).match(/^(node|way|relation)\/(\d+)$/);
+  if (osm) return osm[1][0] + osm[2];
+  const b = String(roh).match(/^betreiber\/(\d+)$/);
+  if (b) return `b${b[1]}`;
+  return `m-${slugify(String(roh))}`;
+}
+for (const e of eintraege) e.sid = stabileIdAus(e.osm || e.id);
 
 // Gruppierung nach Kreis und Land
 const proKreis = new Map();
@@ -220,6 +232,23 @@ for (const e of eintraege) {
   e.sonntag = !!(w && w[6].length);
   // Dünne Einträge (kein Name, keine Zeiten, kein Kontakt, kein Angebot): Seite bleibt erreichbar, aber noindex
   e.duenn = !e.name && !e.oeffnungszeiten && !e.oeffnungszeiten_text && !e.telefon && !e.website && !e.email && !e.kat.length;
+}
+
+// ---------- Vollständigkeit eines Eintrags (für Formular, Outreach und Betreiber) ----------
+const VOLLSTAENDIGKEIT = [
+  ['name', 'Name', (e) => !!e.name],
+  ['adresse', 'Adresse', (e) => !!(e.strasse && e.plz)],
+  ['telefon', 'Telefon', (e) => !!e.telefon],
+  ['online', 'Website oder E-Mail', (e) => !!(e.website || e.email)],
+  ['zeiten', 'Öffnungszeiten', (e) => !!(e.oeffnungszeiten || e.oeffnungszeiten_text)],
+  ['angebot', 'Sortiment', (e) => !!e.kat.length],
+  ['bezahlen', 'Bezahlen', (e) => !!e.zahlung?.length],
+  ['beschreibung', 'Beschreibung', (e) => !!e.beschreibung],
+  ['fotos', 'Fotos', (e) => !!e.fotos?.length],
+];
+for (const e of eintraege) {
+  const fehlt = VOLLSTAENDIGKEIT.filter(([, , ok]) => !ok(e)).map(([k]) => k);
+  e.vollst = { prozent: Math.round(100 * (VOLLSTAENDIGKEIT.length - fehlt.length) / VOLLSTAENDIGKEIT.length), fehlt };
 }
 
 // ---------- HTML-Helfer ----------
@@ -1298,6 +1327,8 @@ for (const o of ortSeiten) {
 }
 
 // ---------- Detailseiten ----------
+// Bearbeiten-Link mit stabiler ID (bleibt gültig, auch wenn sich der Slug ändert)
+const bearbeiten = (e, aktion) => `/mitmachen/?eintrag=${encodeURIComponent(e.sid)}&amp;aktion=${aktion}`;
 const TAGE = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
 const ZAHLUNG_TEXT = { bar: 'Bargeld', girocard: 'Girocard (EC-Karte)', kreditkarte: 'Kreditkarte', kontaktlos: 'kontaktlos (Karte/Handy)', paypal: 'PayPal', ueberweisung: 'Überweisung' };
 const datumDe = (d) => d.split('-').reverse().join('.');
@@ -1323,7 +1354,7 @@ for (const e of eintraege) {
     : e.oeffnungszeiten_text ? `<p>${esc(e.oeffnungszeiten_text)}</p>`
     : e.oeffnungszeiten ? `<p>${esc(uebersetze(e.oeffnungszeiten))}</p>`
     : `<p class="leise">Keine Öffnungszeiten hinterlegt. ${e.typ === 'automat' ? 'Automaten sind meist rund um die Uhr zugänglich.' : 'Am besten vorher anrufen.'}</p>
-      <p class="zeiten-cta">Kennst du die Öffnungszeiten? <a href="/mitmachen/?hof=${esc(e.slug)}&amp;thema=zeiten">Sag uns Bescheid</a></p>`;
+      <p class="zeiten-cta">Kennst du die Öffnungszeiten? <a href="${bearbeiten(e, 'ergaenzen')}&amp;fokus=zeiten">Sag uns Bescheid</a></p>`;
   const kontakt = [
     e.telefon && `<li>${ICON.telefon}<a href="${telHref(e.telefon)}">${esc(e.telefon)}</a></li>`,
     e.email && `<li>${ICON.mail}<a href="mailto:${esc(e.email)}">${esc(e.email)}</a></li>`,
@@ -1400,7 +1431,7 @@ for (const e of eintraege) {
     <nav class="hof-werkzeuge" aria-label="Aktionen">
       <button type="button" data-merken="${esc(e.slug)}" aria-pressed="false">${ICON.herz}<span class="merken-text">Merken</span></button>
       <button type="button" data-teilen data-titel="${esc(e.titelSeite)}">${ICON.teilen}<span>Teilen</span></button>
-      <a href="/mitmachen/?hof=${esc(e.slug)}">${ICON.stift}<span>Korrigieren</span></a>
+      <a href="${bearbeiten(e, 'ergaenzen')}">${ICON.stift}<span>Ergänzen</span></a>
     </nav>
     <div class="hof-karte">
       ${e.lageUngefaehr ? '<p class="leise">Die genaue Lage ist noch nicht erfasst.</p>' : kartenPanel({ titel: `Karte: ${e.titel}` })}
@@ -1414,15 +1445,15 @@ for (const e of eintraege) {
     ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.quellen.map((q) => `${q.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram' })[f]).join(', ')} ergänzt aus <a href="${esc(q.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(q.quelle).split('/')[0])}</a>${q.stand ? ` (Stand ${esc(datumDe(q.stand))})` : ''}`).join('; ')}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
-    <p class="hinweis">Angaben ohne Gewähr. ${e.gepflegt ? `${e.gepflegt.art === 'uebernahme' ? 'Der Betrieb pflegt diesen Eintrag selbst' : 'Angaben geprüft und ergänzt'} (Stand ${esc(datumDe(e.gepflegt.stand))}). ` : ''}${e.quelle === 'betreiber' ? `Eingetragen vom Betrieb. Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>` : e.quelle === 'osm'
-      ? `Quelle: <a href="https://www.openstreetmap.org/${e.osm}" rel="nofollow noopener" target="_blank">OpenStreetMap</a>. Etwas stimmt nicht? <a href="https://www.openstreetmap.org/edit?${e.osm.replace('/', '=')}" rel="nofollow noopener" target="_blank">In OpenStreetMap korrigieren</a> oder <a href="/mitmachen/?hof=${esc(e.slug)}">uns Bescheid geben</a>.`
-      : `${e.quelleUrl ? `Quelle: <a href="${esc(e.quelleUrl)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.quelleUrl).split('/')[0])}</a>. ` : ''}Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>`}</p>
+    <p class="hinweis">Angaben ohne Gewähr. ${e.gepflegt ? `${e.gepflegt.art === 'uebernahme' ? 'Der Betrieb pflegt diesen Eintrag selbst' : 'Angaben geprüft und ergänzt'} (Stand ${esc(datumDe(e.gepflegt.stand))}). ` : ''}${e.quelle === 'betreiber' ? `Eingetragen vom Betrieb. Etwas stimmt nicht? <a href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a>.` : e.quelle === 'osm'
+      ? `Quelle: <a href="https://www.openstreetmap.org/${e.osm}" rel="nofollow noopener" target="_blank">OpenStreetMap</a>. Etwas stimmt nicht? <a href="https://www.openstreetmap.org/edit?${e.osm.replace('/', '=')}" rel="nofollow noopener" target="_blank">In OpenStreetMap korrigieren</a> oder <a href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a>.`
+      : `${e.quelleUrl ? `Quelle: <a href="${esc(e.quelleUrl)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.quelleUrl).split('/')[0])}</a>. ` : ''}Etwas stimmt nicht? <a href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a>.`}</p>
     <p class="aktualitaet">${e.geprueft ? `Zuletzt vor Ort geprüft: ${esc(datumDe(e.geprueft))} (laut OpenStreetMap) · ` : ''}Seite aktualisiert: ${STAND_PLATZHALTER}</p>
     <section class="block betreiber-box">
       <h2>Ist das dein Hof?</h2>
       <p>Übernimm den Eintrag kostenlos und halte Öffnungszeiten, Angebot und saisonale Hinweise selbst aktuell.</p>
-      <p class="kk-knoepfe"><a class="knopf knopf-dunkel" href="/mitmachen/?hof=${esc(e.slug)}&amp;thema=uebernahme">Eintrag übernehmen</a><a class="knopf knopf-hell" href="/mitmachen/?hof=${esc(e.slug)}">Eintrag korrigieren</a></p>
-      <p class="leise"><a href="/fuer-hoefe/?hof=${esc(e.slug)}">Badge „Wir sind auf hofladenliste.de“ für deine Website</a></p>
+      <p class="kk-knoepfe"><a class="knopf knopf-dunkel" href="${bearbeiten(e, 'uebernehmen')}">Betreiber? Eintrag kostenlos übernehmen</a><a class="knopf knopf-hell" href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a></p>
+      <p class="leise"><a href="/fuer-hoefe/?eintrag=${esc(e.sid)}">Badge „Wir sind auf hofladenliste.de“ für deine Website</a></p>
     </section>
   </div>
 </div>
@@ -1644,22 +1675,24 @@ textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenli
   <fieldset class="melde-art">
     <legend>Was möchtest du tun?</legend>
     <label><input type="radio" name="art" value="neu" checked><span>Neuen Hof oder Automaten eintragen</span></label>
-    <label><input type="radio" name="art" value="korrektur"><span>Bestehenden Eintrag korrigieren</span></label>
+    <label><input type="radio" name="art" value="korrektur"><span>Bestehenden Eintrag ergänzen oder korrigieren</span></label>
     <label><input type="radio" name="art" value="uebernahme"><span>Ich betreibe den Hof und möchte den Eintrag übernehmen</span></label>
   </fieldset>
-  <input type="hidden" name="hof" value="">
-  <p class="melde-hof" data-melde-hof hidden></p>
+  <input type="hidden" name="hof" value=""><input type="hidden" name="eintrag" value="">
+  ${["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].map((k) => `<input type="hidden" name="${k}" value="">`).join("")}
+
   <div class="feldgruppe">
     <h2>Betrieb</h2>
-    <label>Name<input name="name" maxlength="120" autocomplete="organization"></label>
+    <label data-feld="name">Name<input name="name" maxlength="120" autocomplete="organization"></label>
     <label>Art<select name="betriebsart"><option value="">bitte wählen</option><option>Hofladen</option><option>Milchtankstelle</option><option>Eierautomat</option><option>Regiomat</option><option>Fleischautomat</option><option>Kartoffelautomat</option><option>sonstiger Automat</option></select></label>
-    <label>Straße und Hausnummer<input name="strasse" maxlength="120" autocomplete="street-address"></label>
-    <div class="zeile"><label>PLZ<input name="plz" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code"></label><label>Ort<input name="ort" maxlength="80" autocomplete="address-level2"></label></div>
-    <div class="zeile"><label>Telefon<input name="telefon" type="tel" maxlength="40"></label><label>E-Mail des Betriebs<input name="email" type="email" maxlength="120"></label></div>
-    <label>Website<input name="website" type="url" maxlength="200" placeholder="https://"></label>
+    <label data-feld="adresse">Straße und Hausnummer<input name="strasse" maxlength="120" autocomplete="street-address"></label>
+    <div class="zeile"><label data-feld="adresse">PLZ<input name="plz" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code"></label><label>Ort<input name="ort" maxlength="80" autocomplete="address-level2"></label></div>
+    <div class="zeile"><label data-feld="telefon">Telefon<input name="telefon" type="tel" maxlength="40"></label><label data-feld="online">E-Mail des Betriebs<input name="email" type="email" maxlength="120"></label></div>
+    <label data-feld="online">Website<input name="website" type="url" maxlength="200" placeholder="https://"></label>
   </div>
-  <div class="feldgruppe">
+  <div class="feldgruppe" data-feld="zeiten" id="zeiten">
     <h2>Öffnungszeiten</h2>
+    <p class="leise" data-bisher-zeiten hidden></p>
     <label class="haken"><input type="checkbox" name="rund" value="ja"><span>Rund um die Uhr geöffnet (z. B. Automat)</span></label>
     <table class="zeiten-form"><thead><tr><th></th><th>Zeitfenster</th><th>Zweites Zeitfenster (optional)</th></tr></thead><tbody>${TAGE_FORM.map(zeitZeile).join('')}</tbody></table>
     <p class="leise">Leere Tage gelten als geschlossen.</p>
@@ -1667,21 +1700,22 @@ textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenli
   </div>
   <div class="feldgruppe">
     <h2>Angebot</h2>
-    <div class="haken-liste">${Object.entries(KATEGORIEN).map(([k, n]) => `<label class="haken"><input type="checkbox" name="angebot" value="${k}"><span>${esc(n)}</span></label>`).join('')}</div>
+    <div class="haken-liste" data-feld="angebot">${Object.entries(KATEGORIEN).map(([k, n]) => `<label class="haken"><input type="checkbox" name="angebot" value="${k}"><span>${esc(n)}</span></label>`).join('')}</div>
     <label class="haken"><input type="checkbox" name="bio" value="ja"><span>Bio (zertifiziert)</span></label>
     <h3>Bezahlen</h3>
-    <div class="haken-liste">${Object.entries(ZAHLUNG_TEXT).map(([k, n]) => `<label class="haken"><input type="checkbox" name="zahlung" value="${k}"><span>${esc(n)}</span></label>`).join('')}</div>
-    <label>Kurze Beschreibung<textarea name="beschreibung" maxlength="600" rows="3"></textarea></label>
+    <div class="haken-liste" data-feld="bezahlen">${Object.entries(ZAHLUNG_TEXT).map(([k, n]) => `<label class="haken"><input type="checkbox" name="zahlung" value="${k}"><span>${esc(n)}</span></label>`).join('')}</div>
+    <label data-feld="beschreibung">Kurze Beschreibung<textarea name="beschreibung" maxlength="600" rows="3"></textarea></label>
   </div>
   <div class="feldgruppe">
     <h2>Fotos (optional)</h2>
-    <label>Bis zu 3 Fotos vom Hof oder Laden<input type="file" name="fotos" accept="image/jpeg,image/png,image/webp" multiple></label>
+    <label data-feld="fotos">Bis zu 3 Fotos vom Hof oder Laden<input type="file" name="fotos" accept="image/jpeg,image/png,image/webp" multiple></label>
     <label class="haken"><input type="checkbox" name="fotorechte" value="ja"><span>Ich habe die Rechte an den Fotos und erlaube die Veröffentlichung auf hofladenliste.de. Auf den Fotos sind keine erkennbaren Personen ohne deren Einverständnis.</span></label>
   </div>
   <div class="feldgruppe">
     <h2>Kontakt</h2>
     <div class="zeile"><label>Dein Name<input name="kontakt_name" maxlength="120" autocomplete="name"></label><label>Deine E-Mail<input name="kontakt_email" type="email" maxlength="120" autocomplete="email"></label></div>
     <p class="leise">Für Rückfragen; bei der Übernahme eines Eintrags Pflicht. Wird nicht veröffentlicht.</p>
+    <label class="haken" data-nur-uebernahme hidden><input type="checkbox" name="badge" value="ja"><span>Schickt mir bitte das Badge „Wir sind auf hofladenliste.de“ für unsere Website.</span></label>
     <label>Anmerkungen<textarea name="hinweis" maxlength="2000" rows="3"></textarea></label>
     <label class="falle" aria-hidden="true">Firma<input name="firma" tabindex="-1" autocomplete="off"></label>
     <input type="hidden" name="t" value="">
@@ -1690,9 +1724,10 @@ textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenli
   <p><button type="submit" class="knopf knopf-dunkel">Absenden</button></p>
   <p class="fehler" data-melde-fehler hidden></p>
 </form>`;
-  textSeite('/mitmachen/', 'Hofladen eintragen – kostenlos', 'Hofladen eintragen: Trage deinen Hofladen, deine Milchtankstelle, deinen Eierautomaten oder Regiomaten kostenlos ein, korrigiere Angaben oder übernimm deinen Eintrag.', `<h1>Hofladen kostenlos eintragen</h1>
-<p>Der Eintrag ist kostenlos. Wir prüfen jede Meldung und veröffentlichen sie in der Regel innerhalb weniger Tage. Willkommen sind alle, die direkt verkaufen: Hofläden und Bauernläden, <a href="/milchtankstelle/">Milchtankstellen</a>, <a href="/eierautomat/">Eierautomaten</a> und <a href="/regiomat/">Regiomaten</a>.</p>
-<p>Betreibst du einen Hof, der schon eingetragen ist? Dann übernimm den Eintrag – du kannst Öffnungszeiten, Angebot, Fotos und saisonale Hinweise selbst aktuell halten. Danach gibt es auf Wunsch ein <a href="/fuer-hoefe/">Badge für deine Website</a>.</p>
+  textSeite('/mitmachen/', 'Hofladen eintragen – kostenlos', 'Hofladen eintragen: Trage deinen Hofladen, deine Milchtankstelle, deinen Eierautomaten oder Regiomaten kostenlos ein, korrigiere Angaben oder übernimm deinen Eintrag.', `<h1 data-melde-titel>Hofladen kostenlos eintragen</h1>
+<div class="melde-hof" data-melde-hof hidden></div>
+<p data-intro>Der Eintrag ist kostenlos. Wir prüfen jede Meldung und veröffentlichen sie in der Regel innerhalb weniger Tage. Willkommen sind alle, die direkt verkaufen: Hofläden und Bauernläden, <a href="/milchtankstelle/">Milchtankstellen</a>, <a href="/eierautomat/">Eierautomaten</a> und <a href="/regiomat/">Regiomaten</a>.</p>
+<p data-intro>Betreibst du einen Hof, der schon eingetragen ist? Dann übernimm den Eintrag – du kannst Öffnungszeiten, Angebot, Fotos und saisonale Hinweise selbst aktuell halten. Danach gibt es auf Wunsch ein <a href="/fuer-hoefe/">Badge für deine Website</a>.</p>
 ${formular}
 ${kontaktMail ? `<p>Lieber per E-Mail? <a id="mail-link" href="mailto:${esc(kontaktMail)}?subject=${encodeURIComponent('Eintrag Hofladenliste')}">E-Mail schreiben</a></p>` : ''}
 <h2>Direkt in OpenStreetMap eintragen</h2>
@@ -1731,7 +1766,9 @@ for (const pfad of Object.keys(stand.seiten)) {
   do ziel = ziel.replace(/[^/]+\/$/, ''); while (ziel !== '/' && !ALLE_SEITEN.has(ziel));
   umleitungen[pfad] = ziel;
 }
-writeFileSync(join(GEN, 'routen.json'), JSON.stringify({ umleitungen, entfernt }));
+const alteSlugs = {};
+for (const [slug, roh] of Object.entries(stand.hoefe)) if (!ALLE_SEITEN.has(`/hof/${slug}/`)) alteSlugs[slug] = stabileIdAus(roh);
+writeFileSync(join(GEN, 'routen.json'), JSON.stringify({ umleitungen, entfernt, alteSlugs }));
 console.log(`Seitenarchiv: ${Object.keys(stand.seiten).length} Seiten, ${Object.keys(umleitungen).length} Weiterleitungen, ${entfernt.length} entfernte Höfe (410)`);
 
 // Sitemaps nach Seitentyp mit Sitemap-Index
@@ -1824,7 +1861,11 @@ const KAT_CODES = Object.keys(KATEGORIEN);
 writeFileSync(join(GEN, 'eintraege.json'), JSON.stringify(eintraege.map((e) => [
   +e.lat.toFixed(5), +e.lon.toFixed(5), e.slug, e.titel, e.art, e.ortAnzeige, e.oeffnungszeiten || '', e.typ === 'hofladen' ? 1 : 0,
   e.adresse, e.telefon || '', e.website || '', e.kat.map((x) => 'abcdefghijklmnop'[KAT_CODES.indexOf(x)]).join(''), e.bio ? 1 : 0,
-  e.oeffnungszeiten_text || '', e.sonntag ? 1 : 0])));
+  e.oeffnungszeiten_text || '', e.sonntag ? 1 : 0,
+  // ab hier: Daten für das Bearbeiten-Formular und den Outreach-Export
+  e.sid, e.name || '', e.strasse || '', e.plz || '', e.ort || e.ortAnzeige || '', e.email || '', (e.zahlung || []).join(','),
+  (e.beschreibung || '').slice(0, 600), e.fotos?.length || 0, e.vollst.prozent, e.vollst.fehlt.join(',')])));
+writeFileSync(join(GEN, 'vollstaendigkeit.json'), JSON.stringify(VOLLSTAENDIGKEIT.map(([k, label]) => [k, label])));
 writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;

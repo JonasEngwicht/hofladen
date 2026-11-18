@@ -119,7 +119,7 @@ test('Startorte haben Seiten "Hofläden in <Ort> und Umgebung" mit Entfernungen'
 test('Hofseiten zeigen Aktualität, Korrektur und Übernahme', () => {
   const s = info.get('/hof/kittlers-hofladen-riesa/');
   assert.match(s.html, /Seite aktualisiert: \d{2}\.\d{2}\.\d{4}/);
-  assert.match(s.html, /thema=uebernahme/);
+  assert.match(s.html, /eintrag=n[0-9]+&amp;aktion=uebernehmen/);
   assert.doesNotMatch(s.html, /%%SEITENSTAND%%/);
 });
 

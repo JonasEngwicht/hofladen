@@ -12,6 +12,10 @@ const FAELLE = [
   ...(ersteUmleitung ? [[ersteUmleitung[0], 301, ersteUmleitung[1]]] : []),
   ...(routen.entfernt[0] ? [[routen.entfernt[0], 410]] : []),
   ['/gibt-es-nicht/', 404], ['/suche?q=Tettnang', 302], ['/api/orte?q=Cottbus', 200],
+  // Bearbeiten-Link für Gut Clarenhof (stabile ID w136216919)
+  ['/hof/w136216919/bearbeiten/?utm_source=outreach&utm_medium=email', 302, '/mitmachen/?eintrag=w136216919&aktion=ergaenzen&utm_source=outreach&utm_medium=email'],
+  ['/hof/hofladen-gut-clarenhof-frechen/uebernehmen/', 302, '/mitmachen/?eintrag=w136216919&aktion=uebernehmen'],
+  ['/mitmachen/?eintrag=w136216919&aktion=ergaenzen', 200], ['/api/eintrag?id=w136216919', 200], ['/api/eintrag?id=gibt-es-nicht', 404],
 ];
 let fehler = 0;
 for (const [pfad, status, ziel] of FAELLE) {
@@ -20,6 +24,17 @@ for (const [pfad, status, ziel] of FAELLE) {
   const ok = r.status === status && (!ziel || loc === ziel || loc === BASIS + ziel);
   if (!ok) fehler++;
   console.log(`${ok ? 'OK  ' : 'FEHL'} ${r.status} ${pfad}${loc ? ` → ${loc}` : ''}${ok ? '' : `  (erwartet ${status}${ziel ? ` → ${ziel}` : ''})`}`);
+}
+
+{
+  const r = await fetch(`${BASIS}/mitmachen/?eintrag=w136216919&aktion=ergaenzen`);
+  const ok = r.headers.get('x-robots-tag') === 'noindex';
+  if (!ok) fehler++;
+  console.log(`${ok ? 'OK  ' : 'FEHL'} noindex für /mitmachen/?eintrag=…`);
+  const d = await (await fetch(`${BASIS}/api/eintrag?id=w136216919`)).json().catch(() => ({}));
+  const ok2 = d.eintrag?.slug === 'hofladen-gut-clarenhof-frechen';
+  if (!ok2) fehler++;
+  console.log(`${ok2 ? 'OK  ' : 'FEHL'} /api/eintrag liefert Gut Clarenhof (${d.eintrag?.titel || '–'}, ${d.eintrag?.vollstaendigkeit?.prozent ?? '–'} %)`);
 }
 
 if (!process.argv.includes('--ohne-pagespeed')) {
