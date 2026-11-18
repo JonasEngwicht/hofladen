@@ -152,3 +152,44 @@ test('Hofseiten: Rückmeldung „Stimmt das noch?“ und Datum der letzten Prüf
   const mitDatum = hoefe.filter(([, html]) => /Zuletzt geprüft: <time datetime="\d{4}-\d{2}-\d{2}">/.test(html));
   assert.ok(mitDatum.length > 500, `nur ${mitDatum.length} Seiten mit Prüfdatum`);
 });
+
+test('Orts- und Umgebungsseiten: Titel, Intro, Filter und Liste nennen dieselbe Zahl', () => {
+  const zahl = (t) => +String(t).replace(/\./g, '');
+  let geprueft = 0;
+  for (const [p, html] of alle) {
+    if (!/data-radius-filter/.test(html)) continue;
+    const karten = info.get(p).karten;
+    const titel = info.get(p).titel.match(/– ([\d.]+) Höfe/)?.[1];
+    const alleKnopf = html.match(/data-typ-filter="alle" aria-pressed="true">Alle <span>([\d.]+)<\/span>/)?.[1];
+    const intro = html.match(/<section class="seitenkopf">[\s\S]*?<p>(?:Die ([\d.]+) nächsten|([\d.]+) Einträge?)/);
+    assert.equal(zahl(alleKnopf), karten, `${p}: Filter „Alle“ ≠ Liste`);
+    assert.ok(intro, `${p}: Intro ohne Zahl`);
+    assert.equal(zahl(intro[1] || intro[2]), karten, `${p}: Intro ≠ Liste`);
+    // Bei gekappter Liste („Die 150 nächsten von 412 Einträgen“) nennt der Titel die Gesamtzahl
+    const gesamt = intro[1] ? html.match(/nächsten von ([\d.]+) Einträgen/)?.[1] : null;
+    if (titel) assert.equal(zahl(titel), gesamt ? zahl(gesamt) : karten, `${p}: Titel ≠ Liste`);
+    geprueft++;
+  }
+  assert.ok(geprueft > 100, `nur ${geprueft} Seiten geprüft`);
+});
+
+test('Saison: alle Sorten haben eine Seite, dünne Seiten sind noindex; Startseite zeigt die Sorten im HTML', () => {
+  const sorten = alle.filter(([p]) => /^\/saisonkalender\/[^/]+\/$/.test(p));
+  assert.ok(sorten.length >= 30, `nur ${sorten.length} Sortenseiten`);
+  for (const [p, html] of sorten) {
+    const n = (html.match(/<li><a href="\/hof\//g) || []).length;
+    if (n < 3) assert.ok(info.get(p).noindex, `${p} hat ${n} Höfe, ist aber indexierbar`);
+    assert.match(html, /Hier gibt’s .* in deiner Nähe/, p);
+  }
+  const start = info.get('/').html;
+  assert.match(start, /data-saison-inhalt><p class="saison-monat">Im \w+ frisch vom Feld/);
+  assert.match(start, /<ul class="saison-chips"><li><a href="\/saisonkalender\//);
+});
+
+test('Hofseiten: Einträge am selben Hof getrennt, mit eigenen Zeiten', () => {
+  const html = info.get('/hof/waldhausener-hofladen-aachen/')?.html;
+  if (!html) return;
+  assert.match(html, /<h3 class="kk-unter">Am selben Hof<\/h3>/);
+  assert.match(html, /zeiten-hinweis/);
+  assert.doesNotMatch(html, />0,0 km</);
+});

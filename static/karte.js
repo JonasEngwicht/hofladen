@@ -34,6 +34,9 @@ export function typIcon(art) {
   return ICON.automat;
 }
 
+// Entfernung für Karten: unter 1 km in Metern, unter 50 m „am selben Ort“
+export const kmAnzeige = (km) => km < 0.05 ? 'am selben Ort' : km < 1 ? `${Math.max(50, Math.round(km * 20) * 50)} m` : `${String(km < 10 ? Math.round(km * 10) / 10 : Math.round(km)).replace('.', ',')} km`;
+
 export function kurzUrl(u) {
   try { const x = new URL(u); return (x.hostname.replace(/^www\./, '') + x.pathname).replace(/\/$/, ''); } catch { return u; }
 }
@@ -53,11 +56,11 @@ export function statusHtml(oh, ohText, datum) {
 export function karteHtml(d, { datum = null, ueberschrift = 'h3' } = {}) {
   const kat = (d.kat || []).slice(0, 5);
   const H = ueberschrift;
-  return `<article class="laden laden-${d.typ}" data-typ="${d.typ}" data-kat="${esc((d.kat || []).join(' '))}" data-lat="${d.lat}" data-lon="${d.lon}" data-slug="${esc(d.slug)}"${d.oh ? ` data-oh="${esc(d.oh)}"` : ''}${d.bio ? ' data-bio="1"' : ''}${d.km != null ? ` data-km="${d.km}"` : ''}>
+  return `<article class="laden laden-${d.typ}" data-typ="${d.typ}" data-kat="${esc((d.kat || []).join(' '))}" data-lat="${d.lat}" data-lon="${d.lon}" data-slug="${esc(d.slug)}"${d.land ? ` data-land="${esc(d.land)}"` : ''}${d.oh ? ` data-oh="${esc(d.oh)}"` : ''}${d.bio ? ' data-bio="1"' : ''}${d.karte ? ' data-karte-zahlung="1"' : ''}${d.km != null ? ` data-km="${d.km}"` : ''}>
   <div class="laden-symbol" title="${esc(d.art)}">${typIcon(d.art)}</div>
   <button class="merken-mini" type="button" data-merken="${esc(d.slug)}" aria-pressed="false" aria-label="${esc(d.titel)} merken">${ICON.herz}</button>
   <div class="laden-text">
-    <p class="laden-art">${esc(d.art)}${d.bio ? ' <span class="bio">Bio</span>' : ''}${d.km != null ? ` <span class="km">${String(d.km).replace('.', ',')} km</span>` : ''}</p>
+    <p class="laden-art">${esc(d.art)}${d.bio ? ' <span class="bio">Bio</span>' : ''}${d.km != null ? ` <span class="km">${kmAnzeige(d.km)}</span>` : ''}</p>
     <${H} class="laden-name"><a href="${esc(d.pfad)}">${esc(d.titel)}</a></${H}>
     <p class="laden-adr">${esc(d.adresse)}</p>
     ${statusHtml(d.oh, d.ohText, datum)}
