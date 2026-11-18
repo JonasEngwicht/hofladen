@@ -136,3 +136,12 @@ test('Kategorieseiten auf Bundes-, Landes- und Kreisebene', () => {
   assert.ok(pfade.some((p) => /^\/[^/]+\/[^/]+\/bio-hofladen\/$/.test(p)), 'Bio je Kreis');
   assert.ok(pfade.some((p) => /^\/[^/]+\/[^/]+\/hofladen-automaten\/$/.test(p)), 'Automaten je Kreis');
 });
+
+test('Hofseiten haben Platz für die Entfernung, Listen den Schalter „Jetzt geöffnet“', () => {
+  const hoefe = alle.filter(([p]) => art(p) === 'hof');
+  assert.ok(hoefe.length > 1000);
+  for (const [p, html] of hoefe) assert.match(html, /data-entfernung hidden/, p);
+  const kreise = alle.filter(([p]) => art(p) === 'kreis' && info.get(p).karten > 0);
+  assert.ok(kreise.length > 100);
+  for (const [p, html] of kreise) assert.match(html, /data-offen-filter/, p);
+});

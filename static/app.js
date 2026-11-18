@@ -16,6 +16,29 @@ const distanz = (aLat, aLon, bLat, bLon) => {
   return 12742 * Math.asin(Math.sqrt(h));
 };
 
+// ---------- Gemerkter Standort (PLZ-Suche oder Ortung, 30 Tage, nur in diesem Browser) ----------
+const standortLesen = () => {
+  try { const s = JSON.parse(speicher.get('standort') || 'null'); return s && Date.now() - s.t < 30 * 864e5 ? s : null; } catch { return null; }
+};
+const standortMerken = (lat, lon, label) => speicher.set('standort', JSON.stringify({ lat: +lat, lon: +lon, label, t: Date.now() }));
+const kmText = (km) => `${String(km < 10 ? Math.round(km * 10) / 10 : Math.round(km)).replace('.', ',')} km`;
+function zeigeEntfernungen(root = document) {
+  const s = standortLesen();
+  if (!s) return null;
+  for (const k of $$('.laden[data-lat]', root)) {
+    if (k.dataset.kmEigen) continue; // Entfernung kommt schon aus der Umkreissuche
+    const km = distanz(s.lat, s.lon, +k.dataset.lat, +k.dataset.lon);
+    k.dataset.km = Math.round(km * 10) / 10;
+    const art = $('.laden-art', k);
+    if (!art) continue;
+    let el = $('.km', art);
+    if (!el) { art.insertAdjacentHTML('beforeend', ' <span class="km"></span>'); el = $('.km', art); }
+    el.textContent = kmText(km);
+    el.title = `Luftlinie ab ${s.label}`;
+  }
+  return s;
+}
+
 // ---------- Öffnungsstatus ----------
 function zeigeStatus(root = document) {
   for (const el of $$('.st[data-oh]', root)) {
@@ -26,8 +49,18 @@ function zeigeStatus(root = document) {
   }
   const heute = berlinZeit().tag;
   for (const tr of $$('.woche tr[data-tag]', root)) tr.classList.toggle('heute', +tr.dataset.tag === heute);
+  // „Jetzt geöffnet“-Schalter zeigt, wie viele Einträge in der Liste gerade offen haben
+  const offenKnopf = $('[data-offen-filter]');
+  if (offenKnopf && root === document) {
+    const n = $$('[data-liste] > .laden[data-oh]').filter((k) => status(k.dataset.oh)?.offen).length;
+    let z = $('span', offenKnopf);
+    if (!z) { offenKnopf.insertAdjacentHTML('beforeend', ' <span></span>'); z = $('span', offenKnopf); }
+    z.textContent = n;
+  }
 }
 zeigeStatus();
+// Status jede Minute neu berechnen (Seite bleibt offen, Laden öffnet oder schließt)
+setInterval(() => zeigeStatus(), 60000);
 
 // ---------- Karten (Leaflet, erst nach Zustimmung) ----------
 let leafletLaden;
@@ -230,10 +263,12 @@ async function plzModus() {
     const d = await r.json();
     if (!r.ok) return;
     window.__plzOrt = d.ort;
+    standortMerken(d.ort.lat, d.ort.lon, `PLZ ${d.ort.plz} (${d.ort.name})`);
     const karten = $$('.laden', liste);
     for (const k of karten) {
       const km = Math.round(distanz(d.ort.lat, d.ort.lon, +k.dataset.lat, +k.dataset.lon) * 10) / 10;
       k.dataset.km = km;
+      k.dataset.kmEigen = '1';
       const art = $('.laden-art', k);
       if (!$('.km', art)) art.insertAdjacentHTML('beforeend', ` <span class="km">${String(km).replace('.', ',')} km</span>`);
     }
@@ -270,11 +305,13 @@ for (const box of $$('[data-naehe]')) {
   start.addEventListener('click', () => {
     start.disabled = true; meldung.hidden = false; meldung.textContent = 'Standort wird ermittelt …';
     navigator.geolocation.getCurrentPosition(async (pos) => {
+      standortMerken(pos.coords.latitude, pos.coords.longitude, 'deinem Standort');
       try {
         const f = JSON.parse(box.dataset.naehe || '{}');
         const q = new URLSearchParams({ lat: pos.coords.latitude.toFixed(4), lon: pos.coords.longitude.toFixed(4), limit: 24, radius: 40, ...f });
         const d = await (await fetch(`/api/umkreis?${q}`)).json();
         liste.innerHTML = (d.ergebnisse || []).map((e) => karteHtml(e)).join('');
+        for (const k of $$('.laden', liste)) k.dataset.kmEigen = '1';
         zeigeStatus(liste);
         if (!d.ergebnisse?.length) meldung.textContent = 'Im Umkreis von 40 km haben wir dazu noch keine Einträge.';
         else filterAnwenden();
@@ -318,6 +355,7 @@ function startseite() {
       standort.disabled = true;
       standort.lastChild.textContent = 'Standort wird ermittelt …';
       navigator.geolocation.getCurrentPosition(async (pos) => {
+        standortMerken(pos.coords.latitude, pos.coords.longitude, 'deinem Standort');
         const prod = $$('.wunsch input:checked').map((i) => i.value);
         const r = await fetch(`/api/umkreis?lat=${pos.coords.latitude.toFixed(4)}&lon=${pos.coords.longitude.toFixed(4)}&limit=9&radius=40${prod.length ? `&produkt=${prod.join(',')}` : ''}`);
         const d = await r.json();
@@ -598,3 +636,53 @@ document.addEventListener('click', (ev) => {
   else if (a.matches('[data-rund-filter]')) zaehle('filter', 'rund');
 }, { capture: true });
 for (const f of $$('form[action="/suche"]')) f.addEventListener('submit', () => zaehle('suche', /^\d/.test(f.elements.q?.value || '') ? 'plz' : 'ort'));
+
+// ---------- Entfernung auf Listen und Hofseiten ----------
+function entfernungAnzeigen() {
+  const s = plz ? null : zeigeEntfernungen();
+  const hinweis = $('[data-plz-hinweis]');
+  if (s && hinweis && hinweis.hidden && $$('[data-liste] > .laden').length > 1) {
+    hinweis.innerHTML = `Entfernungen (Luftlinie) ab ${esc(s.label)}. <button type="button" class="link" data-km-sortieren>Nach Entfernung sortieren</button> · <button type="button" class="link" data-standort-vergessen>Standort vergessen</button>`;
+    hinweis.hidden = false;
+  }
+  const kopf = $('.hof-kopf[data-lat]');
+  const ziel = $('[data-entfernung]');
+  if (kopf && ziel) {
+    const zeige = (st) => {
+      ziel.innerHTML = `<b>${kmText(distanz(st.lat, st.lon, +kopf.dataset.lat, +kopf.dataset.lon))}</b> Luftlinie ab ${esc(st.label)}`;
+      ziel.hidden = false;
+      const knopf = $('[data-entfernung-start]');
+      if (knopf) knopf.hidden = true;
+    };
+    const st = standortLesen();
+    if (st) zeige(st);
+    else if ('geolocation' in navigator) {
+      const knopf = $('[data-entfernung-start]');
+      if (knopf) {
+        knopf.hidden = false;
+        knopf.addEventListener('click', () => {
+          knopf.disabled = true; knopf.textContent = 'Standort wird ermittelt …';
+          navigator.geolocation.getCurrentPosition((pos) => {
+            standortMerken(pos.coords.latitude, pos.coords.longitude, 'deinem Standort');
+            zeige(standortLesen());
+          }, () => { knopf.disabled = false; knopf.textContent = 'Standort nicht verfügbar'; }, { timeout: 10000, maximumAge: 600000 });
+        });
+      }
+    }
+  }
+}
+entfernungAnzeigen();
+document.addEventListener('click', (ev) => {
+  if (ev.target.closest('[data-km-sortieren]')) {
+    const liste = $('[data-liste]');
+    const karten = $$('.laden', liste).sort((a, b) => a.dataset.km - b.dataset.km);
+    const vor = $('[data-leer-filter]', liste);
+    for (const k of karten) liste.insertBefore(k, vor);
+    ev.target.closest('[data-km-sortieren]').remove();
+  }
+  if (ev.target.closest('[data-standort-vergessen]')) {
+    try { localStorage.removeItem('standort'); } catch {}
+    for (const el of $$('.laden-art .km')) el.remove();
+    const h = $('[data-plz-hinweis]'); if (h) h.hidden = true;
+  }
+});

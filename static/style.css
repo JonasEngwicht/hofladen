@@ -206,6 +206,10 @@ main { display: block; }
 .hof-kopf .st b { color: var(--weiss); }
 .hof-kopf .st span, .hof-kopf .st-wochen span, .hof-kopf .st-info, .hof-kopf .st-leer { color: #CFE0D5; }
 .hof-kopf .st-zu b { color: #FFB4C6; }
+.hof-entfernung { margin: .4rem 0 0; color: #CFE0D5; font-size: 1rem; min-height: 1.5em; }
+.hof-entfernung b { color: var(--raps); font-variant-numeric: tabular-nums; }
+.hof-entfernung button.link { color: var(--raps); }
+.umschalter[data-offen-filter] span { font-variant-numeric: tabular-nums; }
 .aktionen.gross { margin-top: 1.1rem; gap: .6rem; }
 .aktionen.gross .akt { font-size: 1rem; padding: .65rem 1rem .65rem .8rem; background: var(--raps); border-color: var(--raps); }
 .aktionen.gross .akt:hover { background: #FFD24A; }
