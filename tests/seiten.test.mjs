@@ -204,3 +204,14 @@ test('Hofseiten: Einträge am selben Hof getrennt, mit eigenen Zeiten', () => {
   assert.match(html, /zeiten-hinweis/);
   assert.doesNotMatch(html, />0,0 km</);
 });
+
+test('Produkt-Land-Seiten: nur ab drei Einträgen, verlinkt von der Produktseite', () => {
+  const seitenPL = [...info.keys()].filter((p) => /^\/angebot\/[a-z]+\/[a-z-]+\/$/.test(p));
+  assert.ok(seitenPL.length > 20);
+  for (const p of seitenPL) {
+    const s = info.get(p);
+    assert.ok(!s.noindex, p);
+    assert.ok((s.html.match(/<ul class="eintrag-liste">[\s\S]*?<\/ul>/g) || []).join('').split('<li>').length - 1 >= 3, p);
+    assert.ok(info.get(p.replace(/[a-z-]+\/$/, '')).html.includes(`href="${p}"`), `${p} nicht verlinkt`);
+  }
+});

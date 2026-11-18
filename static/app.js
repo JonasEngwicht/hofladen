@@ -189,7 +189,7 @@ if (wz) {
 }
 
 // ---------- Filter auf Kreisseiten ----------
-const filter = { typ: 'alle', offen: false, sonntag: false, bio: false, rund: false, karte: false, kinder: false, radius: null, kat: new Set() };
+const filter = { typ: 'alle', offen: false, sonntag: false, bio: false, rund: false, karte: false, kinder: false, oepnv: false, radius: null, kat: new Set() };
 const rundUmDieUhr = (oh) => { try { const w = oh && parse(oh); return !!w && w.every((iv) => iv.some(([a, b]) => a === 0 && b >= 1440)); } catch { return false; } };
 const sonntagsOffen = (oh) => { try { return !!oh && !!parse(oh)?.[6]?.length; } catch { return false; } };
 function wendeFilterAn() {
@@ -203,6 +203,7 @@ function wendeFilterAn() {
     if (ok && filter.rund) ok = rundUmDieUhr(k.dataset.oh);
     if (ok && filter.karte) ok = k.dataset.karteZahlung === '1';
     if (ok && filter.kinder) ok = k.dataset.kinder === '1';
+    if (ok && filter.oepnv) ok = k.dataset.oepnv === '1';
     if (ok && filter.radius) ok = +k.dataset.km <= filter.radius;
     if (ok && filter.kat.size) { const ks = k.dataset.kat.split(' '); ok = [...filter.kat].every((x) => ks.includes(x)); }
     k.hidden = !ok;
@@ -236,7 +237,7 @@ for (const b of $$('[data-radius-filter]')) b.addEventListener('click', () => {
   for (const x of $$('[data-radius-filter]')) x.setAttribute('aria-pressed', String(x === b));
   wendeFilterAn();
 });
-for (const [attr, key] of [['data-sonntag-filter', 'sonntag'], ['data-bio-filter', 'bio'], ['data-rund-filter', 'rund'], ['data-kinder-filter', 'kinder']]) $(`[${attr}]`)?.addEventListener('click', (ev) => {
+for (const [attr, key] of [['data-sonntag-filter', 'sonntag'], ['data-bio-filter', 'bio'], ['data-rund-filter', 'rund'], ['data-kinder-filter', 'kinder'], ['data-oepnv-filter', 'oepnv']]) $(`[${attr}]`)?.addEventListener('click', (ev) => {
   filter[key] = !filter[key];
   ev.currentTarget.setAttribute('aria-pressed', String(filter[key]));
   wendeFilterAn();
@@ -248,11 +249,11 @@ for (const b of $$('[data-kat-filter]')) b.addEventListener('click', () => {
   wendeFilterAn();
 });
 function filterZuruecksetzen() {
-  filter.typ = 'alle'; filter.offen = false; filter.sonntag = false; filter.bio = false; filter.rund = false; filter.karte = false; filter.kinder = false; filter.radius = null; filter.kat.clear();
+  filter.typ = 'alle'; filter.offen = false; filter.sonntag = false; filter.bio = false; filter.rund = false; filter.karte = false; filter.kinder = false; filter.oepnv = false; filter.radius = null; filter.kat.clear();
   const radien = $$('[data-radius-filter]');
   radien.forEach((x, i) => x.setAttribute('aria-pressed', String(i === radien.length - 1)));
   for (const x of $$('[data-typ-filter]')) x.setAttribute('aria-pressed', String(x.dataset.typFilter === 'alle'));
-  for (const x of $$('[data-kat-filter], [data-offen-filter], [data-sonntag-filter], [data-bio-filter], [data-rund-filter], [data-karte-filter], [data-kinder-filter]')) x.setAttribute('aria-pressed', 'false');
+  for (const x of $$('[data-kat-filter], [data-offen-filter], [data-sonntag-filter], [data-bio-filter], [data-rund-filter], [data-karte-filter], [data-kinder-filter], [data-oepnv-filter]')) x.setAttribute('aria-pressed', 'false');
   wendeFilterAn();
 }
 $('[data-karte-filter]')?.addEventListener('click', (ev) => {
