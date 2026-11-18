@@ -7,9 +7,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '23 4 26 * *' # monatlich am 26. (Overture veröffentlicht etwa zur Monatsmitte)
-  push:
-    branches: [daten/overture]
-    paths: [.github/workflows/overture-aktualisieren.yml]
 
 permissions:
   contents: write
