@@ -3,7 +3,7 @@ const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const SPEICHER = 'verwaltungToken';
 const ART = { neu: 'Neuer Eintrag', korrektur: 'Korrektur', uebernahme: 'Übernahme durch Betreiber' };
-const FELDER = { name: 'Name', betriebsart: 'Art', strasse: 'Straße', plz: 'PLZ', ort: 'Ort', telefon: 'Telefon', email: 'E-Mail', website: 'Website',
+const FELDER = { fotos: 'Fotos', name: 'Name', betriebsart: 'Art', strasse: 'Straße', plz: 'PLZ', ort: 'Ort', telefon: 'Telefon', email: 'E-Mail', website: 'Website',
   oeffnungszeiten: 'Öffnungszeiten (OSM)', saison: 'Saison', angebot: 'Angebot', bio: 'Bio', zahlung: 'Bezahlen', beschreibung: 'Beschreibung', hinweis: 'Anmerkung', kontakt_name: 'Kontakt' };
 let token = sessionStorage.getItem(SPEICHER) || '';
 
@@ -30,7 +30,9 @@ async function laden(status = 'neu') {
     ${d.meldungen.map((m) => `<article class="block meldung" data-id="${m.id}">
       <h2>#${m.id} · ${esc(ART[m.art] || m.art)}${m.hof ? ` · <a href="/hof/${esc(m.hof)}/" target="_blank">${esc(m.hof)}</a>` : ''}</h2>
       <p class="leise">${esc(new Date(m.erstellt).toLocaleString('de-DE'))}${m.kontakt_email ? ` · <a href="mailto:${esc(m.kontakt_email)}">${esc(m.kontakt_email)}</a>` : ''}</p>
-      <dl class="merkmale">${Object.entries(m.daten).map(([k, v]) => `<div><dt>${esc(FELDER[k] || k)}</dt><dd>${esc(Array.isArray(v) ? v.join(', ') : v === true ? 'ja' : v)}</dd></div>`).join('')}</dl>
+      ${m.daten.eintrag ? `<p>Stabile ID: <code>${esc(m.daten.eintrag)}</code>${m.daten.badge ? ' · <b>möchte das Badge</b>' : ''}${m.daten.utm ? ` · Herkunft: ${esc(Object.values(m.daten.utm).join(' / '))}` : ''}</p>` : (m.daten.utm ? `<p>Herkunft: ${esc(Object.values(m.daten.utm).join(' / '))}</p>` : '')}
+      ${m.daten.diff ? (Object.keys(m.daten.diff).length ? `<table class="woche diff"><thead><tr><th>Feld</th><th>alt</th><th>neu</th></tr></thead><tbody>${Object.entries(m.daten.diff).map(([k, [a, n]]) => `<tr><th>${esc(FELDER[k] || k)}</th><td>${esc(a) || '–'}</td><td><b>${esc(n) || '–'}</b></td></tr>`).join('')}</tbody></table>` : '<p class="leise">Keine Änderungen gegenüber dem bisherigen Eintrag.</p>') : ''}
+      <details${m.daten.diff ? '' : ' open'}><summary>Alle Angaben</summary><dl class="merkmale">${Object.entries(m.daten).filter(([k]) => !['diff', 'utm', 'eintrag', 'badge'].includes(k)).map(([k, v]) => `<div><dt>${esc(FELDER[k] || k)}</dt><dd>${esc(Array.isArray(v) ? v.join(', ') : v === true ? 'ja' : v)}</dd></div>`).join('')}</dl></details>
       <details><summary>Angaben bearbeiten (JSON)</summary><textarea rows="8" data-json>${esc(JSON.stringify(m.daten, null, 2))}</textarea></details>
       <div class="fotos" data-fotos="${m.fotos.join(',')}"></div>
       <label>Notiz<input data-notiz value="${esc(m.notiz || '')}"></label>

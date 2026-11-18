@@ -1,5 +1,6 @@
 import { status, berlinZeit, parse } from './oh.js';
 import { karteHtml } from './karte.js';
+import { felderAusEintrag } from './vorbelegung.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -386,13 +387,13 @@ for (const i of $$('input[list="orte-vorschlaege"]')) i.addEventListener('input'
 // Mitmachen: Korrektur zu einem bestimmten Hof vorbereiten (?hof=slug&thema=zeiten)
 {
   const mail = $('#mail-link');
-  const hof = params.get('hof');
-  if (mail && hof && /^[a-z0-9-]{1,120}$/.test(hof)) {
+  const hof = params.get('eintrag') || params.get('hof');
+  if (mail && hof && /^[a-z0-9-]{1,120}$/i.test(hof)) {
     const thema = params.get('thema');
-    const zeiten = thema === 'zeiten', uebernahme = thema === 'uebernahme';
+    const zeiten = thema === 'zeiten' || params.get('fokus') === 'zeiten', uebernahme = thema === 'uebernahme' || params.get('aktion') === 'uebernehmen';
     const adresse = mail.getAttribute('href').replace(/^mailto:/, '').split('?')[0];
     const betreff = zeiten ? `Öffnungszeiten: ${hof}` : uebernahme ? `Eintrag übernehmen: ${hof}` : `Korrektur: ${hof}`;
-    const text = `Eintrag: ${location.origin}/hof/${hof}/\n\n${zeiten ? 'Die Öffnungszeiten sind:\nMo:\nDi:\nMi:\nDo:\nFr:\nSa:\nSo:\n\nWoher weißt du das (z. B. Schild am Hof, Website)?\n'
+    const text = `Eintrag: ${location.origin}/hof/${hof}/bearbeiten/\n\n${zeiten ? 'Die Öffnungszeiten sind:\nMo:\nDi:\nMi:\nDo:\nFr:\nSa:\nSo:\n\nWoher weißt du das (z. B. Schild am Hof, Website)?\n'
       : uebernahme ? 'Ich betreibe diesen Hof und möchte den Eintrag selbst pflegen.\n\nName des Betriebs:\nAnsprechperson:\nTelefon:\nWebsite (falls vorhanden):\n\nÖffnungszeiten:\nAngebot:\n'
       : 'Was soll geändert werden?\n'}`;
     mail.href = `mailto:${adresse}?subject=${encodeURIComponent(betreff)}&body=${encodeURIComponent(text)}`;
@@ -404,26 +405,52 @@ for (const i of $$('input[list="orte-vorschlaege"]')) i.addEventListener('input'
 const meldeForm = $('[data-meldeform]');
 if (meldeForm) {
   meldeForm.elements.t.value = Date.now();
-  const hof = params.get('hof');
-  const thema = params.get('thema');
-  if (hof && /^[a-z0-9-]{1,120}$/.test(hof)) {
-    meldeForm.elements.hof.value = hof;
-    const art = thema === 'uebernahme' ? 'uebernahme' : 'korrektur';
-    meldeForm.querySelector(`input[name="art"][value="${art}"]`).checked = true;
-    fetch(`/api/eintraege?slugs=${hof}`).then((r) => r.json()).then((d) => {
-      const e = d.ergebnisse?.[0];
-      if (!e) return;
-      const box = $('[data-melde-hof]', meldeForm);
-      box.innerHTML = `Eintrag: <a href="${esc(e.pfad)}">${esc(e.titel)}</a>, ${esc(e.adresse)}`;
+  // Bearbeiten-Link: ?eintrag=<stabile ID>&aktion=ergaenzen|uebernehmen (alt: ?hof=<slug>&thema=…)
+  const eintragId = params.get('eintrag') || params.get('hof');
+  const aktion = params.get('aktion') || (params.get('thema') === 'uebernahme' ? 'uebernehmen' : eintragId ? 'ergaenzen' : '');
+  for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']) if (params.get(k)) meldeForm.elements[k].value = params.get(k).slice(0, 80);
+  const box = $('[data-melde-hof]');
+  const artWaehlen = (wert) => {
+    const r = meldeForm.querySelector(`input[name="art"][value="${wert}"]`);
+    if (r) { r.checked = true; r.dispatchEvent(new Event('change')); }
+  };
+  const modus = () => {
+    const art = meldeForm.querySelector('input[name="art"]:checked')?.value;
+    meldeForm.elements.kontakt_email.required = art === 'uebernahme';
+    for (const x of $$('[data-nur-uebernahme]', meldeForm)) x.hidden = art !== 'uebernahme';
+    if (art === 'neu' && meldeForm.elements.eintrag.value) { meldeForm.elements.hof.value = ''; meldeForm.elements.eintrag.value = ''; box.hidden = true; $('[data-melde-titel]').textContent = 'Hofladen kostenlos eintragen'; for (const x of $$('[data-intro]')) x.hidden = false; for (const x of $$('.fehlt', meldeForm)) x.classList.remove('fehlt'); }
+  };
+  for (const r of meldeForm.querySelectorAll('input[name="art"]')) r.addEventListener('change', modus);
+  if (eintragId && /^[a-z0-9-]{1,120}$/i.test(eintragId)) {
+    artWaehlen(aktion === 'uebernehmen' ? 'uebernahme' : 'korrektur');
+    fetch(`/api/eintrag?id=${encodeURIComponent(eintragId)}`).then((r) => (r.ok ? r.json() : null)).then((d) => {
+      const e = d?.eintrag;
+      if (!e) {
+        artWaehlen('neu');
+        box.innerHTML = '<p><b>Diesen Eintrag haben wir nicht gefunden.</b> Vielleicht ist der Link veraltet. Du kannst den Hof hier neu eintragen – oder ihn über die Suche oben finden und dort auf „Eintrag ergänzen“ gehen.</p>';
+        box.hidden = false;
+        return;
+      }
+      meldeForm.elements.hof.value = e.slug;
+      meldeForm.elements.eintrag.value = e.id;
+      const v = felderAusEintrag(e);
+      for (const [k, w] of Object.entries(v.werte)) if (meldeForm.elements[k] && !meldeForm.elements[k].value) meldeForm.elements[k].value = w;
+      for (const [k, liste] of Object.entries(v.haken)) for (const x of meldeForm.querySelectorAll(`input[name="${k}"]`)) x.checked = liste.includes(x.value);
+      if (v.zeiten?.rund) meldeForm.elements.rund.checked = true;
+      for (const [k, w] of Object.entries(v.zeiten?.felder || {})) if (meldeForm.elements[k]) meldeForm.elements[k].value = w;
+      if (v.bisher) { const b = $('[data-bisher-zeiten]', meldeForm); b.textContent = `Bisher hinterlegt: ${v.bisher}`; b.hidden = false; }
+      for (const f of v.fehlt) for (const x of $$(`[data-feld="${f}"]`, meldeForm)) x.classList.add('fehlt');
+      const fehlt = e.vollstaendigkeit.fehlt.map((x) => x.label);
+      box.innerHTML = `<p class="melde-hof-titel">Du bearbeitest: <a href="${esc(e.pfad)}">${esc(e.titel)}</a>, ${esc(e.ortAnzeige)}</p>
+        <p class="vollst"><span class="vollst-balken" style="--p:${e.vollstaendigkeit.prozent}%"></span>Profil zu ${e.vollstaendigkeit.prozent} % vollständig${fehlt.length ? ` – es fehlen: ${esc(fehlt.join(', '))}` : ''}</p>
+        <p class="leise">Ändere oder ergänze einfach die Felder. Wir prüfen jede Einsendung, bevor sie erscheint.</p>`;
       box.hidden = false;
-      for (const [feld, wert] of [['name', e.titel], ['telefon', e.telefon], ['website', e.website], ['betriebsart', e.art]]) if (wert && !meldeForm.elements[feld].value) meldeForm.elements[feld].value = wert;
-      if (thema === 'zeiten') meldeForm.querySelector('.zeiten-form')?.scrollIntoView({ block: 'center' });
+      $('[data-melde-titel]').textContent = aktion === 'uebernehmen' ? 'Eintrag kostenlos übernehmen' : 'Eintrag ergänzen';
+      for (const x of $$('[data-intro]')) x.hidden = true;
+      if (params.get('fokus') === 'zeiten') $('#zeiten')?.scrollIntoView({ block: 'start' });
     }).catch(() => {});
   }
-  for (const r of meldeForm.querySelectorAll('input[name="art"]')) r.addEventListener('change', () => {
-    if (r.checked && r.value === 'neu') { meldeForm.elements.hof.value = ''; $('[data-melde-hof]', meldeForm).hidden = true; }
-    meldeForm.elements.kontakt_email.required = r.checked && r.value === 'uebernahme';
-  });
+  modus();
   const verkleinern = (datei) => new Promise((ok) => {
     const img = new Image();
     img.onload = () => {
@@ -532,13 +559,13 @@ karteAutomatisch();
 // ---------- Badge-Seite: Code auf den eigenen Eintrag zuschneiden ----------
 {
   const seite = $('[data-badge-seite]');
-  const hof = params.get('hof');
-  if (seite && hof && /^[a-z0-9-]{1,120}$/.test(hof)) {
-    fetch(`/api/eintraege?slugs=${hof}`).then((r) => r.json()).then((d) => {
-      const e = d.ergebnisse?.[0];
+  const hof = params.get('eintrag') || params.get('hof');
+  if (seite && hof && /^[a-z0-9-]{1,120}$/i.test(hof)) {
+    fetch(`/api/eintrag?id=${encodeURIComponent(hof)}`).then((r) => r.json()).then((d) => {
+      const e = d.eintrag;
       if (!e) return;
       for (const t of $$('[data-badge-code]', seite)) t.value = `<a href="${location.origin}${e.pfad}" title="${esc(e.titel)} auf hofladenliste.de"><img src="${location.origin}/${t.dataset.badgeCode}" width="200" height="56" alt="Wir sind auf hofladenliste.de"></a>`;
-      $('[data-badge-uebernehmen]', seite).href = `/mitmachen/?hof=${hof}&thema=uebernahme`;
+      $('[data-badge-uebernehmen]', seite).href = `/mitmachen/?eintrag=${e.id}&aktion=uebernehmen`;
     }).catch(() => {});
   }
   for (const t of $$('[data-badge-code]')) t.addEventListener('focus', () => t.select());

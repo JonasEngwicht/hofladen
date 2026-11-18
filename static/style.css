@@ -459,3 +459,15 @@ html { overflow-x: clip; }
 [data-badge-seite] label { display: block; font-weight: 700; margin-top: 1rem; }
 [data-badge-seite] textarea { display: block; width: 100%; font: .85rem/1.4 monospace; padding: .6rem; border: 1.5px solid var(--linie); border-radius: var(--r-klein); margin-top: .3rem; }
 .badge-vorschau img { margin: 0 .6rem .6rem 0; vertical-align: middle; }
+
+/* Bearbeiten-Link: Hof, Vollständigkeit, fehlende Felder */
+.melde-hof { background: #EEF4EF; border: 1px solid #CFE0D5; padding: .9rem 1rem; border-radius: var(--r); margin-bottom: 1.2rem; }
+.melde-hof p { margin: .2rem 0; }
+.melde-hof-titel { font-weight: 700; font-size: 1.05rem; }
+.vollst { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.vollst-balken { width: 8rem; height: .55rem; border-radius: 999px; background: linear-gradient(90deg, var(--fichte-3) var(--p), #D9E0DA var(--p)); }
+.melde-form .fehlt { position: relative; }
+.melde-form label.fehlt input, .melde-form label.fehlt textarea, .melde-form label.fehlt select { border-color: #D9A800; background: #FFFBEA; }
+.melde-form .fehlt::after { content: "fehlt"; position: absolute; top: 0; right: 0; font: 700 .72rem var(--schrift); color: #7A5B00; background: #FFE9A6; padding: .1rem .45rem; border-radius: 999px; }
+.melde-form .haken-liste.fehlt { background: #FFFBEA; border-radius: var(--r-klein); padding: .4rem .5rem; }
+.melde-form .feldgruppe.fehlt { border-color: #D9A800; }

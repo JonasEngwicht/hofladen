@@ -27,11 +27,15 @@ export async function ladeWorker() {
   if (worker) return worker;
   const dir = mkdtempSync(join(tmpdir(), 'hofladen-worker-'));
   const code = readFileSync(join(ROOT, 'src', 'worker.js'), 'utf8').replace(/from '\.\/generated\/(.*?)\.json';/g,
-    (_, n) => `from ${JSON.stringify(pathToFileURL(join(ROOT, 'src', 'generated', `${n}.json`)).href)} with { type: 'json' };`);
+    (_, n) => `from ${JSON.stringify(pathToFileURL(join(ROOT, 'src', 'generated', `${n}.json`)).href)} with { type: 'json' };`)
+    .replace(/from '\.\/([a-z-]+\.js)';/g, (_, n) => `from ${JSON.stringify(pathToFileURL(join(ROOT, 'src', n)).href)};`);
   writeFileSync(join(dir, 'worker.mjs'), code);
-  worker = (await import(pathToFileURL(join(dir, 'worker.mjs')).href)).default;
+  workerModul = await import(pathToFileURL(join(dir, 'worker.mjs')).href);
+  worker = workerModul.default;
   return worker;
 }
+let workerModul;
+export async function ladeWorkerModul() { await ladeWorker(); return workerModul; }
 export async function anfrage(pfad, init = {}) {
   const w = await ladeWorker();
   // Echte Cloudflare-Reihenfolge: exakt passende Datei zuerst, sonst Worker
