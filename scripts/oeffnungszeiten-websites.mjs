@@ -9,7 +9,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { parse as ohParse } from '../static/oh.js';
 import { pathToFileURL } from 'node:url';
 
-const UA = 'HofladenlisteBot/1.0 (+https://hofladenliste.de/mitmachen/; Öffnungszeiten für das Hofladen-Verzeichnis)';
+const UA = 'HofladenlisteBot/1.0 (+https://hofladenliste.de/mitmachen/; hofladenliste@gmail.com; Öffnungszeiten für das Hofladen-Verzeichnis)';
 const ERG = 'data/ergaenzungen.json';
 const NEU_PRUEFEN_TAGE = 90;
 // Verzeichnisse und soziale Netzwerke: dort stehen keine Betreiberangaben bzw. Abruf nicht erlaubt

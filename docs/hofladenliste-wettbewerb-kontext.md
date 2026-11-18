@@ -8,7 +8,7 @@ Stand: 18.11.2026
 - Repo: JonasEngwicht/hofladen. Hosting über einen Cloudflare Worker namens "hofladen".
 - URL-Struktur: Pfade nach dem Muster /bundesland/kreis/. Keine Subdomains.
 - Die Startseite hat eine PLZ-Abfrage, die auf die passende lokale Seite weiterleitet.
-- Kontakt: contact@hofladenliste.de
+- Kontakt: hofladenliste@gmail.com
 - Ziel: Jede Seite soll für „Hofladen“ und verwandte Begriffe ranken, besonders für „Hofladen in <Ort>“.
 
 ## 2. Wettbewerber

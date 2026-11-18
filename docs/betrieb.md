@@ -47,3 +47,7 @@ Funde aus einer Recherche-Datenbank (SQLite mit Tabelle `anreicherung`) übernim
 Verzeichnisse. Die Funde füllen im Build nur leere Felder und werden auf der Hofseite mit Quelle
 und Stand genannt. Öffnungszeiten werden nur strukturiert übernommen, wenn sie eindeutig lesbar
 sind (`--test` prüft den Parser), sonst als Text.
+
+## Kontakt
+
+Für alles, wo eine E-Mail-Adresse gebraucht wird (Impressum, Datenschutz, Formular, Bots, Dienste): **hofladenliste@gmail.com**. Die Adresse steht zentral in `site.config.json`.
