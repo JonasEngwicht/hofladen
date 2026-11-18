@@ -7,7 +7,7 @@ import { fakeD1 } from './d1.mjs';
 import { emailPasstZuWebsite, hostVon } from '../src/betrieb.js';
 
 const TOKEN = 'b'.repeat(32);
-const env = { ASSETS, STATS: fakeD1(), ADMIN_TOKEN: TOKEN, RESEND_API_KEY: 're_test' };
+const env = { ASSETS, STATS: fakeD1(), ADMIN_TOKEN: TOKEN, RESEND_API_KEY: 're_test', TURNSTILE_SECRET_KEY: 'ts_test', TURNSTILE_SITE_KEY: 'site' };
 const warten = [];
 const ctx = { waitUntil(p) { warten.push(p); } };
 const EINTRAEGE = JSON.parse(readFileSync(new URL('../src/generated/eintraege.json', import.meta.url)));
@@ -21,6 +21,7 @@ const mails = [];
 const echtesFetch = globalThis.fetch;
 globalThis.fetch = async (u, init) => {
   if (String(u).startsWith('https://api.resend.com/')) { mails.push(JSON.parse(init.body)); return new Response(JSON.stringify({ id: 'm1' })); }
+  if (String(u).startsWith('https://challenges.cloudflare.com/')) return new Response(JSON.stringify({ success: init.body.get('response') === 'gut' && init.body.get('secret') === 'ts_test' }));
   return echtesFetch(u, init);
 };
 const linkAus = (m) => m.text.match(/\/betrieb\/\?anmelden=([A-Za-z0-9_%-]+)/)[1];
@@ -127,6 +128,21 @@ test('Freigabe einer Übernahme in der Verwaltung legt ein Konto an und schickt 
   assert.equal(ein.secrets.RESEND_API_KEY, true);
   assert.equal(ein.secrets.TURNSTILE_SECRET, false);
   assert.ok(!JSON.stringify(ein).includes('re_test'));
+});
+
+test('Nachricht an den Hof: nur mit Turnstile, Antwort geht an den Absender, Adresse des Hofs bleibt verborgen', async () => {
+  cookie = '';
+  const text = 'Habt ihr am Samstag noch Spargel?';
+  assert.equal((await api('/api/nachricht', { methode: 'POST', body: { eintrag: HOF[15], email: 'kundin@example.org', text, turnstile: 'schlecht' } })).status, 400);
+  const vorher = mails.length;
+  const r = await api('/api/nachricht', { methode: 'POST', body: { eintrag: HOF[15], name: 'Kundin', email: 'kundin@example.org', text, turnstile: 'gut' } });
+  assert.equal(r.status, 200);
+  assert.equal(mails.length, vorher + 1);
+  assert.equal(mails.at(-1).to[0], `info@${DOMAIN}`);
+  assert.equal(mails.at(-1).reply_to, 'kundin@example.org');
+  assert.ok(!JSON.stringify(await r.json()).includes(DOMAIN));
+  assert.equal((await api('/api/nachricht', { methode: 'POST', body: { eintrag: EINTRAEGE.find((e) => e !== HOF && e !== ANDERER)[15], email: 'kundin@example.org', text, turnstile: 'gut' } })).status, 400, 'Hof ohne Konto');
+  assert.equal((await (await api('/api/turnstile')).json()).siteKey, 'site');
 });
 
 test('Ohne Anmeldung kein Zugriff auf den Betreiber-Bereich', async () => {

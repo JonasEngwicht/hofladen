@@ -164,6 +164,30 @@ function markiere(k) {
   setTimeout(() => k.classList.remove('markiert'), 1600);
 }
 
+// „Nachricht an den Hof“: Turnstile erst nach dem Klick laden (Drittanbieter)
+for (const box of $$('[data-nachricht]')) {
+  const form = $('[data-nachricht-form]', box);
+  let token = '';
+  $('[data-nachricht-oeffnen]', box)?.addEventListener('click', async (ev) => {
+    ev.currentTarget.hidden = true; form.hidden = false;
+    try {
+      const { siteKey } = await (await fetch('/api/turnstile')).json();
+      await new Promise((ok, fehler) => { const s = document.createElement('script'); s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'; s.onload = ok; s.onerror = fehler; document.head.append(s); });
+      window.turnstile.render($('[data-turnstile]', form), { sitekey: siteKey, language: 'de', callback: (t) => { token = t; } });
+    } catch { $('[data-status]', form).textContent = 'Der Spam-Schutz konnte nicht geladen werden. Schreib dem Hof bitte direkt.'; }
+  });
+  form?.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const st = $('[data-status]', form);
+    if (!token) { st.textContent = 'Bitte warte kurz, bis die Spam-Prüfung fertig ist.'; return; }
+    st.textContent = 'Wird gesendet …';
+    const r = await fetch('/api/nachricht', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ eintrag: box.dataset.nachricht, turnstile: token, ...Object.fromEntries(new FormData(form)) }) });
+    const d = await r.json().catch(() => ({}));
+    if (r.ok) form.innerHTML = '<p class="hinweis-box">Danke! Deine Nachricht ist beim Hof. Die Antwort kommt an deine E-Mail-Adresse.</p>';
+    else { st.textContent = d.fehler || 'Senden fehlgeschlagen.'; window.turnstile?.reset(); token = ''; }
+  });
+}
+
 // Betreiber-Bereich (/betrieb/) als eigenes Modul
 if ($('[data-betrieb]')) import(new URL('./betrieb.js' + new URL(import.meta.url).search, import.meta.url)).then((m) => m.betrieb());
 
