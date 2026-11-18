@@ -218,7 +218,7 @@ main { display: block; }
 .hof-adr svg { width: 18px; height: 18px; vertical-align: -3px; margin-right: .3rem; color: var(--raps); }
 .kontaktkarte { background: var(--weiss); border: 1px solid var(--linie); border-top: 5px solid var(--raps); border-radius: var(--r); padding: 1.3rem 1.3rem 1.1rem; box-shadow: 0 10px 30px rgba(23, 59, 44, .08); }
 .kontaktkarte h2 { font-size: 1.35rem; margin-bottom: .8rem; }
-.kk-unter { font: 700 .82rem var(--schrift); color: var(--kohl); margin: 0 0 .3rem; }
+.kk-unter { font: 700 .82rem var(--schrift); color: var(--fichte-3); margin: 0 0 .3rem; }
 .kontaktkarte .woche { max-width: none; font-size: .95rem; }
 .kontaktkarte .woche th { width: auto; }
 .kontaktkarte .woche td { text-align: right; font-weight: 600; }
@@ -417,7 +417,6 @@ html { overflow-x: clip; }
 .betreiber-box .kk-knoepfe { margin-top: .8rem; }
 
 /* Umkreis-Auswahl */
-.segment.umkreis button span { color: var(--grau); }
 
 /* Nähe-Suche auf Kategorieseiten */
 .naehe-suche { margin-top: 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; }

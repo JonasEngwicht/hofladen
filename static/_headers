@@ -4,7 +4,7 @@
 /vendor/*
   Cache-Control: public, max-age=2592000
 /img/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=31536000, immutable
 /og-bild.png
   Cache-Control: public, max-age=604800
 /icon-*
