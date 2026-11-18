@@ -124,8 +124,15 @@ for (const panel of $$('[data-karte]')) {
     starteKarte(panel);
   });
 }
+// Mit gespeicherter Zustimmung lädt die Karte erst, wenn sie in den sichtbaren Bereich kommt
 function karteAutomatisch() {
-  if (speicher.get('karteOk') === '1') for (const p of $$('[data-karte]')) starteKarte(p);
+  if (speicher.get('karteOk') !== '1') return;
+  const panels = $$('[data-karte]');
+  if (!('IntersectionObserver' in window)) return panels.forEach((p) => starteKarte(p));
+  const io = new IntersectionObserver((eintraege) => {
+    for (const e of eintraege) if (e.isIntersecting) { io.unobserve(e.target); starteKarte(e.target); }
+  }, { rootMargin: '200px 0px' });
+  for (const p of panels) io.observe(p);
 }
 
 // Höhe der klebenden Filterleiste für die Kartenspalte

@@ -542,6 +542,24 @@ const hofItems = (liste) => liste.map((e) => [e.titelSeite, e.pfad]);
 // Längste Titelvariante, die (mit Marke) in ~65 Zeichen passt
 const passend = (...varianten) => varianten.find((v) => v.length + 16 <= 65) || varianten[varianten.length - 1];
 
+// Große Städte (gemessen an der Zahl ihrer Postleitzahlen) mit ihrer Seite – für die Startseite
+const GROSSSTAEDTE = (() => {
+  const plzJeOrt = new Map();
+  for (const rows of plz.values()) for (const r of rows) if (!r.org) {
+    const key = r.ort + '|' + r.kreis;
+    if (!plzJeOrt.has(key)) plzJeOrt.set(key, new Set());
+    plzJeOrt.get(key).add(r.plz);
+  }
+  return [...plzJeOrt].sort((a, b) => b[1].size - a[1].size).map(([key]) => {
+    const [name, code] = key.split('|');
+    const k = kreise.get(code);
+    const stadtKreis = k.art === 'Stadt' && (k.name === name || k.titel === name);
+    const o = ORTE.get(code)?.get(name);
+    const ziel = stadtKreis ? { pfad: k.pfad, n: proKreis.get(code)?.length || 0 } : o?.eigen ? { pfad: o.pfad, n: o.liste.length } : null;
+    return ziel && ziel.n >= MIN_SEITE ? { name, ...ziel } : null;
+  }).filter(Boolean).filter((x, i, a) => a.findIndex((y) => y.pfad === x.pfad) === i).slice(0, 20);
+})();
+
 // ---------- Startseite ----------
 const saisonJetzt = JSON.stringify(SAISON.map(([n, frisch, lager]) => [n, frisch, lager || []]));
 const TYPEN = [
@@ -632,6 +650,10 @@ schreibe('/', seite({
   <ul class="laender-liste">
     ${laender.map((l) => `<li><a href="/${l.slug}/"><span>${esc(l.name)}</span><span class="zahl">${zahl(l.anzahl)}</span></a></li>`).join('\n    ')}
   </ul>
+</section>
+<section class="abschnitt">
+  <h2>Hofläden in großen Städten</h2>
+  <ul class="kreis-liste">${GROSSSTAEDTE.map((x) => `<li><a href="${x.pfad}"><span>Hofläden in ${esc(x.name)}</span><span class="zahl">${zahl(x.n)}</span></a></li>`).join('')}</ul>
 </section>
 <section class="abschnitt">
   <h2>Beliebte Orte für Hofläden</h2>
