@@ -449,6 +449,8 @@ if (meldeForm) {
   const eintragId = params.get('eintrag') || params.get('hof');
   const aktion = params.get('aktion') || (params.get('thema') === 'uebernahme' ? 'uebernehmen' : eintragId ? 'ergaenzen' : '');
   for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']) if (params.get(k)) meldeForm.elements[k].value = params.get(k).slice(0, 80);
+  // ?angebot=weihnachtsbaeume (z. B. von der Saisonseite): Angebot vorauswählen
+  for (const i of meldeForm.querySelectorAll('input[name="angebot"]')) if (params.getAll('angebot').includes(i.value)) i.checked = true;
   const box = $('[data-melde-hof]');
   const artWaehlen = (wert) => {
     const r = meldeForm.querySelector(`input[name="art"][value="${wert}"]`);

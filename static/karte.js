@@ -3,7 +3,7 @@ import { status, zeilen, uebersetze } from './oh.js';
 
 export const KATEGORIEN = {
   eier: 'Eier', milch: 'Milch', kaese: 'Käse', fleisch: 'Fleisch & Wurst', gemuese: 'Gemüse', obst: 'Obst',
-  kartoffeln: 'Kartoffeln', honig: 'Honig', brot: 'Brot', getraenke: 'Saft & Wein', blumen: 'Blumen',
+  kartoffeln: 'Kartoffeln', honig: 'Honig', brot: 'Brot', getraenke: 'Saft & Wein', blumen: 'Blumen', weihnachtsbaeume: 'Weihnachtsbäume',
 };
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -26,6 +26,8 @@ export const ICON = {
   blatt: S('<path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/>'),
   standort: S('<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/>'),
   stift: S('<path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="m13.5 6.5 4 4"/>'),
+  markt: S('<path d="M3 9h18l-1.5-4.5h-15z"/><path d="M3 9c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/>'),
+  tanne: S('<path d="M12 3 7 10h3l-4 6h4l-3 4h10l-3-4h4l-4-6h3z"/><path d="M12 20v1.5"/>'),
 };
 export function typIcon(art) {
   if (art === 'Milchtankstelle') return ICON.milch;

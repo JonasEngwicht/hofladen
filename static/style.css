@@ -485,3 +485,8 @@ html { overflow-x: clip; }
 .pruef-danke { margin: 0 0 .7rem; font-weight: 700; color: var(--fichte); }
 .pruef-warnung { margin: 0 0 .7rem; padding: .5rem .7rem; border-radius: 8px; background: #FFF1D6; color: #6A4A00; font-weight: 600; }
 .pruefung .leise { margin: 0; }
+/* Wochenmärkte und Saisonseite Weihnachtsbäume */
+.laden-markt .laden-symbol { background: #E7EFE9; color: var(--fichte); }
+.maerkte-kurz .karten-reihe { margin-top: .6rem; }
+.hinweis-box { background: #FFF8E1; border: 1px solid #F1DFA6; border-radius: var(--r); padding: 1.1rem 1.3rem; }
+.hinweis-box h2 { font-size: 1.25rem; margin: 0 0 .4rem; }

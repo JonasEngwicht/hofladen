@@ -32,17 +32,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Daten von QLever holen
-        run: node scripts/fetch-osm.mjs data/quellen/osm-roh.json
-      - name: Einträge aufbereiten
-        run: node scripts/import-osm.mjs data/quellen/osm-roh.json
+      - name: Hofläden und Automaten holen und aufbereiten
+        id: hoefe
+        continue-on-error: true
+        run: node scripts/fetch-osm.mjs data/quellen/osm-roh.json && node scripts/import-osm.mjs data/quellen/osm-roh.json
       - name: Wochenmärkte holen und aufbereiten
+        id: maerkte
         continue-on-error: true
         run: node scripts/fetch-osm.mjs --maerkte data/quellen/maerkte-roh.json && node scripts/import-maerkte.mjs data/quellen/maerkte-roh.json
       - name: Testbuild
+        id: build
         run: node scripts/build.mjs
+      # Ein fehlgeschlagener Abruf lässt die bisherigen Daten unverändert; der andere Teil wird trotzdem übernommen.
       - name: Commit, falls sich etwas geändert hat
         id: commit
+        if: steps.build.outcome == 'success'
         run: |
           git config user.name "hofladenliste-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -64,3 +68,8 @@ jobs:
         run: |
           if [ -z "$HOOK" ]; then echo "Secret CF_DEPLOY_HOOK fehlt, Deploy bitte manuell ausloesen."; exit 0; fi
           curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgeloest."
+      - name: Fehlgeschlagenen Abruf anzeigen
+        if: steps.hoefe.outcome == 'failure' || steps.maerkte.outcome == 'failure'
+        run: |
+          echo "Hofläden: ${{ steps.hoefe.outcome }}, Wochenmärkte: ${{ steps.maerkte.outcome }} – bisherige Daten bleiben, nächster Lauf versucht es erneut."
+          exit 1
