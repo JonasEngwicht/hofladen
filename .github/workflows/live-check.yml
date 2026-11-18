@@ -4,7 +4,7 @@ name: Live-Prüfung
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ['Nur deployen', 'Daten aktualisieren']
+    workflows: ['Nur deployen', 'Daten aktualisieren', 'Betreiberdaten übernehmen']
     types: [completed]
 
 jobs:
@@ -21,4 +21,6 @@ jobs:
         if: github.event_name == 'workflow_run'
         run: sleep 240
       - name: Live-Prüfung
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
         run: node scripts/live-check.mjs https://hofladenliste.de

@@ -36,7 +36,8 @@ export async function anfrage(pfad, init = {}) {
   const w = await ladeWorker();
   // Echte Cloudflare-Reihenfolge: exakt passende Datei zuerst, sonst Worker
   const url = new URL(pfad, 'https://hofladenliste.de');
-  const vorab = ['/suche', '/plz/', '/api/'].some((x) => url.pathname === x || url.pathname.startsWith(x) && x.endsWith('/'));
+  // wie run_worker_first in wrangler.jsonc
+  const vorab = ['/suche', '/plz/', '/api/'].some((x) => url.pathname === x || url.pathname.startsWith(x) && x.endsWith('/')) || url.pathname.endsWith('/index.html');
   if (!vorab && url.hostname === 'hofladenliste.de') {
     const datei = join(PUB, decodeURIComponent(url.pathname));
     if (datei.startsWith(PUB) && existsSync(datei) && statSync(datei).isFile()) return ASSETS.fetch(new Request(url, init));

@@ -61,6 +61,22 @@ for (const m of manuell) {
   eintraege.push(e);
 }
 
+// Freigegebene Meldungen aus dem Formular (data/betreiber.json, siehe scripts/betreiber-uebernehmen.mjs)
+const betreiber = existsSync(join(ROOT, 'data', 'betreiber.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'betreiber.json'), 'utf8')) : {};
+const AUTOMAT_ARTEN = ['Milchtankstelle', 'Eierautomat', 'Regiomat', 'Fleischautomat', 'Kartoffelautomat'];
+for (const [id, m] of Object.entries(betreiber)) {
+  if (m.art !== 'neu') continue;
+  const d = m.daten;
+  const rows = (plz.get(d.plz) || []).filter((r) => !r.org);
+  const row = rows.find((r) => r.ort === d.ort) || rows[0];
+  if (!row) { console.warn(`Betreiber-Meldung ${id}: PLZ ${d.plz} unbekannt, übersprungen`); continue; }
+  const automat = d.betriebsart && d.betriebsart !== 'Hofladen';
+  eintraege.push({ id: `betreiber/${id}`, quelle: 'betreiber', typ: automat ? 'automat' : 'hofladen',
+    art: automat ? (AUTOMAT_ARTEN.includes(d.betriebsart) ? d.betriebsart : 'Regiomat') : 'Hofladen',
+    name: d.name, strasse: d.strasse || null, plz: d.plz, ort: d.ort || row.ort, ortNah: row.ort, plzNah: row.plz, kreis: row.kreis,
+    lat: row.lat, lon: row.lon, lageUngefaehr: true, selbstbedienung: automat || null });
+}
+
 // Ergänzungen aus den Websites der Höfe (data/ergaenzungen.json): füllen nur leere Felder,
 // damit spätere Angaben in OpenStreetMap immer Vorrang haben.
 const ergaenzungen = existsSync(join(ROOT, 'data', 'ergaenzungen.json'))
@@ -74,6 +90,27 @@ for (const e of eintraege) {
     if (z[f] && !e[f]) { e[f] = z[f]; felder.push(f); }
   }
   if (felder.length) { e.ergaenzt = { felder, quelle: z.quelle, stand: z.stand }; ergaenztAnzahl++; }
+}
+
+// Angaben von Betreibern und geprüften Korrekturen haben Vorrang vor OSM
+{
+  const hoefeIds = existsSync(join(ROOT, 'data', 'seiten-stand.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'seiten-stand.json'), 'utf8')).hoefe : {};
+  const nachId = new Map(eintraege.map((e) => [e.osm || e.id, e]));
+  for (const [id, m] of Object.entries(betreiber)) {
+    const e = m.art === 'neu' ? nachId.get(`betreiber/${id}`) : nachId.get(hoefeIds[m.hof]);
+    if (!e) { if (m.art !== 'neu') console.warn(`Betreiber-Meldung ${id}: Eintrag ${m.hof} nicht gefunden`); continue; }
+    const d = m.daten;
+    for (const f of ['name', 'strasse', 'plz', 'ort', 'telefon', 'email', 'website', 'oeffnungszeiten', 'beschreibung']) if (d[f]) e[f] = d[f];
+    if (d.oeffnungszeiten) e.oeffnungszeiten_text = null;
+    if (d.saison) e.saisonHinweis = d.saison;
+    if (d.bio) e.bio = true;
+    if (d.zahlung) e.zahlung = d.zahlung;
+    if (d.angebot) e.betreiberAngebot = d.angebot;
+    if (m.fotos?.length) e.fotos = [...(e.fotos || []), ...m.fotos];
+    e.gepflegt = { art: m.art, stand: m.stand };
+    e.geprueft = m.stand > (e.geprueft || '') ? m.stand : e.geprueft;
+    if (e.ergaenzt) e.ergaenzt.felder = e.ergaenzt.felder.filter((f) => !d[f]);
+  }
 }
 
 // Anzeige-Felder und eindeutige Slugs
@@ -148,7 +185,7 @@ for (const e of eintraege) {
   const text = [e.name, e.betreiber, e.beschreibung, ...(e.produkte || [])].filter(Boolean).join(' ');
   const kat = new Set(ART_KAT[e.art] || []);
   for (const [k, re] of KAT_REGELN) if (re.test(text)) kat.add(k);
-  e.kat = Object.keys(KATEGORIEN).filter((k) => kat.has(k));
+  e.kat = Object.keys(KATEGORIEN).filter((k) => (e.betreiberAngebot ? e.betreiberAngebot.includes(k) : kat.has(k)));
   e.adresse = [e.strasse, [e.plz, e.ort].filter(Boolean).join(' ')].filter(Boolean).join(', ') || `bei ${e.ortNah} (${e.plzNah})`;
   const w = e.oeffnungszeiten ? parse(e.oeffnungszeiten) : null;
   e.sonntag = !!(w && w[6].length);
@@ -169,6 +206,17 @@ const kartenDaten = (e, km) => ({ pfad: e.pfad, slug: e.slug, titel: e.titel, ar
 const SUCHFELD = 'type="search" maxlength="60" autocomplete="off" list="orte-vorschlaege" enterkeyhint="search"';
 const LOGO = `<svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#173B2C"/><path d="M15.5 34C15.5 18 48.5 18 48.5 34" fill="none" stroke="#F4C430" stroke-width="3.6" stroke-linecap="round"/><g fill="#F4C430" stroke="#173B2C" stroke-width="1.6" paint-order="stroke"><path d="M32 38V13" fill="none" stroke="#F4C430" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="32" cy="8.6" rx="2.4" ry="4.4"/><ellipse cx="28.6" cy="14.6" rx="2.3" ry="4.3" transform="rotate(-32 28.6 14.6)"/><ellipse cx="35.4" cy="14.6" rx="2.3" ry="4.3" transform="rotate(32 35.4 14.6)"/><ellipse cx="28.6" cy="21.2" rx="2.3" ry="4.3" transform="rotate(-32 28.6 21.2)"/><ellipse cx="35.4" cy="21.2" rx="2.3" ry="4.3" transform="rotate(32 35.4 21.2)"/><ellipse cx="28.6" cy="27.8" rx="2.3" ry="4.3" transform="rotate(-32 28.6 27.8)"/><ellipse cx="35.4" cy="27.8" rx="2.3" ry="4.3" transform="rotate(32 35.4 27.8)"/></g><path d="M8.5 34h47l-5 20.4A3.4 3.4 0 0 1 47.2 57H16.8a3.4 3.4 0 0 1-3.3-2.6z" fill="#F4C430"/><path d="M11.5 45h41" stroke="#173B2C" stroke-width="2.6"/><path d="M22.5 34.5 24 57M32 34.5V57M41.5 34.5 40 57" stroke="#173B2C" stroke-width="2.6"/></svg>`;
 
+// Seitentyp für die Nutzungsstatistik
+const NATIONALE_KATEGORIEN = new Set(['/milchtankstelle/', '/eierautomat/', '/regiomat/', '/hofladen-automaten/', '/bio-hofladen/', '/sonntags-geoeffnet/']);
+function seitenTyp(p) {
+  if (p === '/') return 'start';
+  if (p.startsWith('/hof/')) return 'hof';
+  if (p.startsWith('/saisonkalender/')) return 'saison';
+  if (p.startsWith('/angebot/') || NATIONALE_KATEGORIEN.has(p) || (typeof KATEGORIE_PFADE !== 'undefined' && KATEGORIE_PFADE.has(p))) return 'kategorie';
+  if (/^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p)) return 'ort';
+  if (/^\/[^/]+\/([^/]+\/)?$/.test(p) && laender.some((l) => p.startsWith(`/${l.slug}/`))) return 'kreis';
+  return 'sonstige';
+}
 // Inhalts-Hash je Seite (ohne Kopf/Fuß/Build-Version) – daraus entsteht das echte lastmod der Sitemap
 const SEITEN_HASH = new Map();
 const hash = (x) => createHash('sha1').update(x).digest('base64url').slice(0, 10);
@@ -206,7 +254,7 @@ ${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}<meta proper
 <link rel="stylesheet" href="/style.css?v=${VERSION}">
 ${[...bc, ...jsonld].map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
-<body class="${klasse}">
+<body class="${klasse}" data-seite="${seitenTyp(pfad)}">
 <a class="sprung" href="#inhalt">Zum Inhalt</a>
 <header class="kopf"><div class="kopf-innen">
   <a class="logo" href="/">${LOGO}<span>Hofladenliste</span></a>
@@ -236,10 +284,14 @@ ${inhalt}
     <li><a href="/milchtankstelle/">Milchtankstellen</a></li>
     <li><a href="/eierautomat/">Eierautomaten</a></li>
     <li><a href="/regiomat/">Regiomaten</a></li>
+    <li><a href="/hofladen-automaten/">Hofladen-Automaten</a></li>
+    <li><a href="/angebot/">Angebot vom Hof</a></li>
     <li><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a></li>
     <li><a href="/bio-hofladen/">Bio-Hofläden</a></li>
     <li><a href="/saisonkalender/">Saisonkalender</a></li>
     <li><a href="/mitmachen/">Hofladen eintragen</a></li>
+    <li><a href="/fuer-hoefe/">Für Höfe</a></li>
+    <li><a href="/quellen/">Quellen</a></li>
     <li><a href="/impressum/">Impressum</a></li>
     <li><a href="/datenschutz/">Datenschutz</a></li>
   </ul>
@@ -263,7 +315,8 @@ function kartenPanel({ titel = 'Karte', hinweis = 'Die Karte lädt Kartenbilder 
 </div>`;
 }
 
-function filterLeiste(liste) {
+function filterLeiste(liste, { umkreis = null } = {}) {
+  const nRund = liste.filter((e) => istRund(wocheVon(e))).length;
   const nHof = liste.filter((e) => e.typ === 'hofladen').length;
   const nAut = liste.length - nHof;
   const nSo = liste.filter((e) => e.sonntag).length;
@@ -272,6 +325,7 @@ function filterLeiste(liste) {
   for (const e of liste) for (const k of e.kat) katZahl.set(k, (katZahl.get(k) || 0) + 1);
   const kats = Object.keys(KATEGORIEN).filter((k) => katZahl.get(k));
   return `<div class="werkzeug" role="group" aria-label="Filter">
+  ${umkreis ? `<div class="segment umkreis" role="radiogroup" aria-label="Umkreis">${umkreis.map(([r, n], i) => `<button type="button" data-radius-filter="${r}" aria-pressed="${i === umkreis.length - 1}">${r} km <span>${n}</span></button>`).join('')}</div>` : ''}
   <div class="segment" role="radiogroup" aria-label="Art">
     <button type="button" data-typ-filter="alle" aria-pressed="true">Alle <span>${liste.length}</span></button>
     ${nHof ? `<button type="button" data-typ-filter="hofladen" aria-pressed="false">Hofläden <span>${nHof}</span></button>` : ''}
@@ -280,6 +334,7 @@ function filterLeiste(liste) {
   <button type="button" class="umschalter" data-offen-filter aria-pressed="false">Jetzt geöffnet</button>
   ${nSo ? `<button type="button" class="umschalter" data-sonntag-filter aria-pressed="false">Sonntags geöffnet <span>${nSo}</span></button>` : ''}
   ${nBio ? `<button type="button" class="umschalter" data-bio-filter aria-pressed="false">Bio <span>${nBio}</span></button>` : ''}
+  ${nRund ? `<button type="button" class="umschalter" data-rund-filter aria-pressed="false">24/7 <span>${nRund}</span></button>` : ''}
   ${kats.length ? `<div class="kat-filter" aria-label="Angebot">${kats.map((k) => `<button type="button" data-kat-filter="${k}" aria-pressed="false">${esc(KATEGORIEN[k])}</button>`).join('')}</div>` : ''}
   <p class="treffer" aria-live="polite"><span data-trefferzahl>${liste.length}</span> ${liste.length === 1 ? 'Eintrag' : 'Einträge'}</p>
 </div>`;
@@ -290,11 +345,25 @@ rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 mkdirSync(GEN, { recursive: true });
 cpSync(join(ROOT, 'static'), OUT, { recursive: true });
+if (existsSync(join(ROOT, 'data', 'fotos'))) cpSync(join(ROOT, 'data', 'fotos'), join(OUT, 'fotos'), { recursive: true, filter: (q) => !q.endsWith('.gitkeep') });
 const sitemap = [];
 const ALLE_SEITEN = new Set();
+// Seitenarchiv (data/seiten-stand.json): Inhalts-Hash und Änderungsdatum je Seite, auch für Seiten,
+// die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.
+const STAND_DATEI = join(ROOT, 'data', 'seiten-stand.json');
+const stand = existsSync(STAND_DATEI) ? JSON.parse(readFileSync(STAND_DATEI, 'utf8')) : { seiten: {}, hoefe: {} };
+const ARCHIV_AUSNAHMEN = new Set(['/merkliste/', '/verwaltung/']);
+const STAND_PLATZHALTER = '%%SEITENSTAND%%'; // wird nach dem Hashen durch das Änderungsdatum ersetzt
 function schreibe(pfad, html, inSitemap = true) {
   const datei = join(OUT, pfad, pfad.endsWith('/') ? 'index.html' : '');
   mkdirSync(dirname(datei), { recursive: true });
+  if (pfad.endsWith('/') && !ARCHIV_AUSNAHMEN.has(pfad)) {
+    const h = SEITEN_HASH.get(pfad);
+    const alt = stand.seiten[pfad];
+    if (!alt) stand.seiten[pfad] = [h, BUILD_DATUM];
+    else if (alt[0] !== h) stand.seiten[pfad] = [h, alt[0] == null ? alt[1] : BUILD_DATUM];
+    html = html.replaceAll(STAND_PLATZHALTER, stand.seiten[pfad][1].split('-').reverse().join('.'));
+  }
   writeFileSync(datei, html);
   if (pfad.endsWith('/')) ALLE_SEITEN.add(pfad);
   if (inSitemap) sitemap.push(pfad);
@@ -486,6 +555,82 @@ for (const [code, liste] of proKreis) {
 const ortSeiten = [...ORTE.values()].flatMap((m) => [...m.values()]).filter((o) => o.eigen);
 // Bei einem Eintrag verlinkt der Ort direkt auf die Hofseite (Pfad steht erst nach der Slug-Vergabe fest)
 for (const m of ORTE.values()) for (const o of m.values()) if (!o.pfad) o.pfad = o.liste[0].pfad;
+
+// ---------- Orte mit Umgebung: "Hofläden in <Ort> und Umgebung" ----------
+// Mittelpunkt eines Orts aus den PLZ-Daten (name|kreis) – das "Ortszentrum" für die Entfernungen
+const ORTSMITTE = new Map();
+for (const rows of plz.values()) for (const r of rows) {
+  if (r.org) continue;
+  const key = r.ort + '|' + r.kreis;
+  const m = ORTSMITTE.get(key) || { lat: 0, lon: 0, n: 0, plz: new Set() };
+  m.lat += r.lat; m.lon += r.lon; m.n++; m.plz.add(r.plz);
+  ORTSMITTE.set(key, m);
+}
+for (const m of ORTSMITTE.values()) { m.lat /= m.n; m.lon /= m.n; }
+const UMKREIS_MAX = 50;
+const UMKREISE = [10, 25, 50];
+function umkreis(lat, lon, maxKm = UMKREIS_MAX) {
+  const dLat = maxKm / 111, dLon = maxKm / (111 * Math.cos(lat * Math.PI / 180));
+  return eintraege.filter((e) => Math.abs(e.lat - lat) <= dLat && Math.abs(e.lon - lon) <= dLon)
+    .map((e) => [distanzKm(lat, lon, e.lat, e.lon), e]).filter(([d]) => d <= maxKm).sort((a, b) => a[0] - b[0]);
+}
+// Zusätzliche Zielorte ohne eigene Ortsseite: größere Städte (ab 3 Postleitzahlen) und die Städte rund um Forst (Lausitz)
+const LAUSITZ = ['Forst (Lausitz)', 'Guben', 'Spremberg', 'Peitz', 'Döbern', 'Drebkau', 'Welzow', 'Burg (Spreewald)', 'Kolkwitz',
+  'Senftenberg', 'Calau', 'Vetschau', 'Lübbenau/Spreewald', 'Lübben (Spreewald)', 'Finsterwalde', 'Lauchhammer', 'Großräschen',
+  'Eisenhüttenstadt', 'Weißwasser', 'Weißwasser/Oberlausitz', 'Bad Muskau', 'Niesky', 'Hoyerswerda', 'Bautzen', 'Görlitz'];
+const UMGEBUNG = []; // { name, k, pfad, lat, lon, eigene, umkreis, kreisSeite }
+{
+  const typKreisSlugs = new Set(['milchtankstellen', 'eierautomaten', 'regiomaten']);
+  const gesehen = new Set();
+  const ziel = (name, k, pfad, mitte, eigene, kreisSeite) => {
+    if (gesehen.has(pfad)) return null;
+    const um = umkreis(mitte.lat, mitte.lon);
+    if (um.length < MIN_SEITE) return null;
+    gesehen.add(pfad);
+    const z = { name, k, pfad, lat: mitte.lat, lon: mitte.lon, eigene, umkreis: um, kreisSeite };
+    UMGEBUNG.push(z);
+    return z;
+  };
+  // 1. Kreisfreie Städte: die Kreisseite wird zur Stadtseite mit Umgebung
+  for (const k of kreise.values()) if (k.art === 'Stadt') {
+    const m = ORTSMITTE.get(k.name + '|' + k.code) || kreisMitte.get(k.code);
+    if (m) ziel(k.name, k, k.pfad, m, proKreis.get(k.code) || [], true);
+  }
+  // 2. Bestehende Ortsseiten
+  for (const o of ortSeiten) {
+    const m = ORTSMITTE.get(o.ort + '|' + o.k.code) || o;
+    const z = ziel(o.ort, o.k, o.pfad, m, o.liste, false);
+    if (z) { o.umgebung = z; o.lat = m.lat; o.lon = m.lon; }
+  }
+  // 3. Größere Städte und Lausitz ohne eigene Seite
+  for (const [key, m] of ORTSMITTE) {
+    const [name, code] = key.split('|');
+    if (m.plz.size < 3 && !LAUSITZ.includes(name)) continue;
+    const k = kreise.get(code);
+    if (!k || (k.art === 'Stadt' && (k.name === name || k.titel === name))) continue;
+    const slug = slugify(name);
+    if (!slug || typKreisSlugs.has(slug)) continue;
+    let o = ORTE.get(code)?.get(name);
+    if (o?.eigen) continue;
+    const pfad = `${k.pfad}${slug}/`;
+    const z = ziel(name, k, pfad, m, o ? o.liste : [], false);
+    if (!z) continue;
+    if (!o) { o = { ort: name, liste: [], k }; if (!ORTE.has(code)) ORTE.set(code, new Map()); ORTE.get(code).set(name, o); }
+    Object.assign(o, { pfad, eigen: true, lat: m.lat, lon: m.lon, umgebung: z });
+    for (const e of o.liste) e.ortSeite = o;
+    ortSeiten.push(o);
+  }
+}
+const UMGEBUNG_PFAD = new Map(UMGEBUNG.map((z) => [z.pfad, z]));
+function naechsteUmgebungsSeite(e) {
+  let best = null, bd = 25;
+  for (const z of UMGEBUNG) {
+    if (Math.abs(z.lat - e.lat) > 0.3 || Math.abs(z.lon - e.lon) > 0.5) continue;
+    const d = distanzKm(e.lat, e.lon, z.lat, z.lon);
+    if (d < bd) { bd = d; best = z; }
+  }
+  return best;
+}
 // Nächstgelegene Ortsseiten (für die Verlinkung zwischen Orten, auch über Kreisgrenzen)
 function naheOrte(lat, lon, n, ausser = new Set()) {
   return ortSeiten.filter((o) => !ausser.has(o) && Math.abs(o.lat - lat) < 0.5 && Math.abs(o.lon - lon) < 0.8)
@@ -500,7 +645,9 @@ const typLinks = (liste, anker, kreis = null) => { const t = TYPEN.map((x) => [x
 const ortNamenZahl = new Map();
 for (const o of ortSeiten) ortNamenZahl.set(o.ort, (ortNamenZahl.get(o.ort) || 0) + 1);
 for (const o of ortSeiten) o.ortTitel = ortNamenZahl.get(o.ort) > 1 ? `${o.ort} (${o.k.titel})` : o.ort;
+for (const o of ortSeiten) if (o.umgebung) o.umgebung.titelName = o.ortTitel;
 function ortUeberschrift(o) {
+  if (o.umgebung) return `Hofläden in ${o.ort} und Umgebung`;
   const nHof = o.liste.filter((e) => e.typ === 'hofladen').length;
   if (nHof) return nHof === 1 ? `Hofladen in ${o.ort}` : `Hofläden in ${o.ort}`;
   const arten = [...new Set(o.liste.map((e) => e.art))];
@@ -576,25 +723,71 @@ const TYPEN = [
     text: ['Regiomaten sind Verkaufsautomaten mit Fächern für regionale Lebensmittel: Wurst und Fleisch, Käse, Kartoffeln, Nudeln, Honig, Marmelade oder Getränke. Sie stehen meist direkt am Hof oder an gut erreichbaren Stellen im Ort.',
       'Die Fächer werden regelmäßig vom Betrieb aufgefüllt, Kühlware ist gekühlt. Damit kannst du regional einkaufen, auch wenn der Hofladen geschlossen ist – abends, sonntags und an Feiertagen.'] },
 ];
-for (const t of TYPEN) t.liste = eintraege.filter((e) => t.arten.includes(e.art));
+for (const t of TYPEN) { t.liste = eintraege.filter((e) => t.arten.includes(e.art)); t.pfadSlug = slugify(t.plural); }
+// Weitere Kategorien mit Seiten auf Bundesland- und Kreisebene
+const AUTOMATEN = { slug: 'hofladen-automaten', pfadSlug: 'hofladen-automaten', name: 'Hofladen-Automat', plural: 'Hofladen-Automaten', icon: ICON.automat,
+  liste: eintraege.filter((e) => e.typ === 'automat'),
+  kurz: 'Alle Hofautomaten: Milchtankstellen, Eierautomaten, Regiomaten, Fleisch- und Kartoffelautomaten.',
+  text: ['Hofladen-Automaten verkaufen Lebensmittel direkt vom Hof – auch dann, wenn der Hofladen geschlossen hat. Dazu gehören Milchtankstellen, Eierautomaten, Regiomaten mit gemischtem Sortiment sowie Fleisch-, Wurst- und Kartoffelautomaten.',
+    'Viele Automaten sind rund um die Uhr zugänglich. Bezahlt wird meist mit Münzen oder Scheinen, immer öfter auch mit Karte. Mit dem Filter „Jetzt geöffnet“ siehst du, welche Automaten gerade erreichbar sind.'] };
+const BIO = { slug: 'bio-hofladen', pfadSlug: 'bio-hofladen', name: 'Bio-Hofladen', plural: 'Bio-Hofläden', icon: ICON.blatt,
+  liste: eintraege.filter((e) => e.bio),
+  kurz: 'Hofläden und Automaten mit Bio-Angebot.',
+  text: ['Als Bio gekennzeichnet sind Höfe, die laut OpenStreetMap ausschließlich oder teilweise Bio-Produkte verkaufen.',
+    'Ob ein Betrieb zertifiziert ist, erkennst du am EU-Bio-Logo und an der Öko-Kontrollstellennummer (z. B. DE-ÖKO-006) auf der Ware oder am Hof.'] };
+const KAT_TYPEN = [...TYPEN, AUTOMATEN, BIO];
+// Saisonprodukte mit eigener Seite: Höfe, die das Produkt im Namen, in der Beschreibung oder im Angebot (OSM) nennen
+const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+const SAISON_SEITEN = [
+  ['Spargel', 'spargel', /spargel/i, 'Spargelhöfe'], ['Erdbeeren', 'erdbeeren', /erdbeer/i, 'Erdbeerhöfe'], ['Kirschen', 'kirschen', /kirsch/i, 'Höfe mit Kirschen'],
+  ['Heidelbeeren', 'heidelbeeren', /heidelbeer|blaubeer/i, 'Höfe mit Heidelbeeren'], ['Äpfel', 'aepfel', /apfel|äpfel|obsthof/i, 'Obsthöfe mit Äpfeln'],
+  ['Kartoffeln', 'kartoffeln', /kartoffel/i, 'Höfe mit Kartoffeln'], ['Tomaten', 'tomaten', /tomate/i, 'Höfe mit Tomaten'], ['Kürbis', 'kuerbis', /kürbis|kuerbis/i, 'Kürbishöfe'],
+].map(([name, slug, re, plural]) => {
+  const zeile = SAISON.find(([n]) => n === name);
+  const liste = eintraege.filter((e) => re.test([e.name, e.beschreibung, ...(e.produkte || [])].filter(Boolean).join(' ')));
+  return { name, slug, re, plural, frisch: zeile?.[1] || [], lager: zeile?.[2] || [], liste, pfad: `/saisonkalender/${slug}/` };
+}).filter((x) => x.liste.length >= 10);
+const SAISON_NACH_NAME = new Map(SAISON_SEITEN.map((x) => [x.name, x]));
+const monatsSpanne = (ms) => { if (!ms.length) return ''; const s = [...ms]; // zusammenhängend, auch über den Jahreswechsel
+  let start = s.findIndex((m, i) => !s.includes(((m + 10) % 12) + 1)); if (start < 0) start = 0;
+  return `${MONATSNAMEN[s[start] - 1]} bis ${MONATSNAMEN[s[(start + s.length - 1) % s.length] - 1]}`; };
+const ANGEBOT = { eier: ['Eier vom Hof', 'Eiern'], milch: ['Milch vom Hof', 'Milch'], kaese: ['Käse vom Hof', 'Käse'], fleisch: ['Fleisch & Wurst vom Hof', 'Fleisch und Wurst'],
+  gemuese: ['Gemüse vom Hof', 'Gemüse'], obst: ['Obst vom Hof', 'Obst'], kartoffeln: ['Kartoffeln vom Hof', 'Kartoffeln'], honig: ['Honig vom Hof', 'Honig'],
+  brot: ['Brot vom Hof', 'Brot'], getraenke: ['Saft & Wein vom Hof', 'Saft und Wein'], blumen: ['Blumen vom Feld', 'Blumen'] };
+const ANGEBOT_SEITEN = Object.keys(ANGEBOT).filter((kat) => eintraege.filter((e) => e.kat.includes(kat)).length >= 30);
+
+const akkusativ = (t) => t.name === 'Milchtankstelle' ? 'eine Milchtankstelle' : `einen ${t.name}${/mat$/.test(t.name) ? 'en' : ''}`;
 // Seiten je Automatentyp und Kreis (ab zwei Einträgen), z. B. /bayern/landkreis-x/milchtankstellen/
 const TYP_KREIS = new Map(); // `${t.slug}|${kreis-Code}` → { t, k, liste, pfad }
 {
   const belegt = new Set([...ORTE.values()].flatMap((m) => [...m.values()].map((o) => o.pfad)));
-  for (const t of TYPEN) {
+  for (const t of KAT_TYPEN) {
     const proK = new Map();
     for (const e of t.liste) { if (!proK.has(e.kreis)) proK.set(e.kreis, []); proK.get(e.kreis).push(e); }
     for (const [code, liste] of proK) {
       if (liste.length < MIN_SEITE) continue;
       const k = kreise.get(code);
-      const pfad = `${k.pfad}${slugify(t.plural)}/`;
+      // keine Doppelungen: Automaten-Seite nur, wenn sie mehr zeigt als eine Typ-Seite; Bio nur, wenn nicht alle Bio sind
+      if (t === AUTOMATEN && TYPEN.some((x) => TYP_KREIS.get(`${x.slug}|${code}`)?.liste.length === liste.length)) continue;
+      if (t === BIO && liste.length === (proKreis.get(code) || []).length) continue;
+      const pfad = `${k.pfad}${t.pfadSlug}/`;
       if (belegt.has(pfad)) continue;
       TYP_KREIS.set(`${t.slug}|${code}`, { t, k, liste, pfad });
     }
   }
 }
 const typKreis = (t, k) => TYP_KREIS.get(`${t.slug}|${k.code}`);
-const typKreisLinks = (k, ausser) => TYPEN.map((t) => typKreis(t, k)).filter((x) => x && x.t !== ausser);
+const typKreisLinks = (k, ausser) => KAT_TYPEN.map((t) => typKreis(t, k)).filter((x) => x && x.t !== ausser);
+// Kategorieseiten je Bundesland, z. B. /bayern/milchtankstellen/
+const LAND_KAT = new Map(); // `${t.slug}|${land-Code}` → { t, l, liste, pfad }
+for (const t of KAT_TYPEN) for (const l of laender) {
+  const liste = t.liste.filter((e) => e.k.land === l.code);
+  // Liegen alle Einträge in einem Kreis (z. B. Stadtstaaten), genügt die Kreisseite
+  if (new Set(liste.map((e) => e.kreis)).size === 1 && typKreis(t, liste[0].k)) continue;
+  if (liste.length >= MIN_SEITE) LAND_KAT.set(`${t.slug}|${l.code}`, { t, l, liste, pfad: `/${l.slug}/${t.pfadSlug}/` });
+}
+const landKat = (t, l) => LAND_KAT.get(`${t.slug}|${l.code}`);
+const KATEGORIE_PFADE = new Set([...TYP_KREIS.values(), ...LAND_KAT.values()].map((x) => x.pfad));
 
 schreibe('/', seite({
   titel: 'Hofladen in der Nähe finden – Hofläden, Milchtankstellen & Eierautomaten',
@@ -637,6 +830,7 @@ schreibe('/', seite({
     <li>${ICON.hofladen}<div><h3>Hofläden</h3><p>Verkauf direkt auf dem Hof: Gemüse, Obst, Eier, Fleisch, Käse und was die Saison hergibt.</p><p class="anzahl">${zahl(anzHof)} Einträge</p></div></li>
     ${TYPEN.map((t) => `<li>${t.icon}<div><h3><a href="/${t.slug}/">${t.plural}</a></h3><p>${t.kurz}</p><p class="anzahl">${zahl(t.liste.length)} Einträge</p></div></li>`).join('\n    ')}
   </ul>
+  <p class="typ-chips start-kategorien"><a href="/hofladen-automaten/">${ICON.automat}Alle Hofladen-Automaten <span>${zahl(AUTOMATEN.liste.length)}</span></a><a href="/bio-hofladen/">${ICON.blatt}Bio-Hofläden <span>${zahl(BIO.liste.length)}</span></a><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a>${ANGEBOT_SEITEN.slice(0, 6).map((k) => `<a href="/angebot/${k}/">${esc(KATEGORIEN[k])}</a>`).join('')}</p>
 </section>
 <section class="abschnitt saison-jetzt" data-saison='${esc(saisonJetzt)}'>
   <h2>Gerade frisch vom Feld</h2>
@@ -732,6 +926,7 @@ ${topOrte.length ? `<section class="abschnitt">
   <h2>Orte mit den meisten Hofläden in ${esc(l.name)}</h2>
   <ul class="kreis-liste">${topOrte.map((o) => `<li><a href="${o.pfad}"><span>${esc(ortUeberschrift(o).replace(/ in .*/, ''))} in ${esc(o.ort)}</span><span class="zahl">${zahl(o.liste.length)}</span></a></li>`).join('')}</ul>
 </section>` : ''}
+${KAT_TYPEN.some((t) => landKat(t, l)) ? `<section class="abschnitt"><h2>Nach Kategorie in ${esc(l.name)}</h2><p class="typ-chips">${KAT_TYPEN.map((t) => landKat(t, l)).filter(Boolean).map((x) => `<a href="${x.pfad}">${x.t.icon}${x.t.plural} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p></section>` : ''}
 <section class="abschnitt seo-text">
   <h2>Hofladen in ${esc(l.name)}: Überblick</h2>
   ${gebietsText(alle, `in ${l.name}`, { orteNennen: false })}
@@ -753,6 +948,17 @@ ${topOrte.length ? `<section class="abschnitt">
     const im = k.im;
     const orte = [...(ORTE.get(k.code)?.values() || [])].sort((a, b) => b.liste.length - a.liste.length || a.ort.localeCompare(b.ort, 'de'));
     const ortLinks = orte.filter((o) => o.pfad !== k.pfad).map((o) => `<a href="${o.pfad}">${esc(o.ort)}</a>`);
+    const z = UMGEBUNG_PFAD.get(k.pfad);
+    if (z?.kreisSeite) {
+      // Kreisfreie Stadt: Stadtseite mit Umgebung
+      const ortListeHtml = ortLinks.length ? `<section class="abschnitt"><h2>Hofläden in Stadtteilen von ${esc(k.name)}</h2><ul class="kreis-liste">${orte.filter((o) => o.pfad !== k.pfad && o.eigen).map((o) => `<li><a href="${o.pfad}"><span>${esc(o.ort)}</span><span class="zahl">${o.liste.length ? zahl(o.liste.length) : ''}</span></a></li>`).join('')}</ul></section>` : '';
+      schreibe(k.pfad, umgebungsSeite(z, {
+        krumen: [[l.name, `/${l.slug}/`], [k.titel, k.pfad]],
+        regionProfil: REGIONEN.get(k.code) || null,
+        extraUnten: `${ortListeHtml}<section class="abschnitt nachbarn"><h2>Hofläden in benachbarten Kreisen</h2><ul class="kreis-liste">${nachbarn.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.titel)}</span><span class="zahl">${zahl(proKreis.get(x.code)?.length || 0)}</span></a></li>`).join('')}</ul></section>`,
+      }));
+      continue;
+    }
     const f = liste.length ? fragenHtml(fragen(liste, im, mitte, { orteLinks: ortLinks }), `Häufige Fragen zu Hofläden ${im}`) : { html: '', ld: [] };
     schreibe(k.pfad, seite({
       titel: liste.length > 1 ? passend(`Hofladen ${im} – ${zaehlungKurz(liste)} mit Öffnungszeiten`, `Hofladen ${im} – ${zaehlungKurz(liste)}`, `Hofladen ${im} – ${plural(liste.length, 'Eintrag', 'Einträge')}`, `Hofladen ${im}`)
@@ -784,7 +990,7 @@ ${liste.length ? filterLeiste(liste) : ''}
 ${REGIONEN.has(k.code) ? regionHtml(REGIONEN.get(k.code)) : ''}
 ${ortLinks.length > 1 ? `<section class="abschnitt">
   <h2>Hofläden nach Ort ${esc(im)}</h2>
-  <ul class="kreis-liste">${orte.filter((o) => o.pfad !== k.pfad).map((o) => `<li><a href="${o.pfad}"><span>${esc(o.ort)}</span><span class="zahl">${zahl(o.liste.length)}</span></a></li>`).join('')}</ul>
+  <ul class="kreis-liste">${orte.filter((o) => o.pfad !== k.pfad).map((o) => `<li><a href="${o.pfad}"><span>${esc(o.eigen ? ortUeberschrift(o).replace(/^Hofläden in /, '') : o.ort)}</span><span class="zahl">${o.liste.length ? zahl(o.liste.length) : ''}</span></a></li>`).join('')}</ul>
 </section>` : ''}
 ${liste.length ? `<section class="abschnitt seo-text"><h2>Hofladen ${esc(im)}: Überblick</h2>${gebietsText(liste, im, { anker: l.slug })}${typLinks(liste, l.slug, k)}<p>Mehr aus der Region: <a href="/${l.slug}/">alle Hofläden in ${esc(l.name)}</a>.</p></section>` : ''}
 ${f.html}
@@ -797,7 +1003,7 @@ ${REGIONEN.has(k.code) ? quellenHtml(REGIONEN.get(k.code)) : ''}`,
   }
 }
 
-// ---------- Automatentyp je Kreis ----------
+// ---------- Kategorie je Kreis (Automatentypen, alle Automaten, Bio) ----------
 for (const { t, k, liste: roh, pfad } of TYP_KREIS.values()) {
   const liste = roh.slice().sort((a, b) => a.ortAnzeige.localeCompare(b.ortAnzeige, 'de') || a.titel.localeCompare(b.titel, 'de'));
   const n = liste.length;
@@ -811,7 +1017,7 @@ for (const { t, k, liste: roh, pfad } of TYP_KREIS.values()) {
     .map((x) => [distanzKm(mitte.lat, mitte.lon, kreisMitte.get(x.k.code).lat, kreisMitte.get(x.k.code).lon), x])
     .sort((a, b) => a[0] - b[0]).slice(0, 8);
   const andere = typKreisLinks(k, t);
-  const einzahl = t.name === 'Milchtankstelle' ? 'eine Milchtankstelle' : `einen ${t.name}`;
+  const einzahl = akkusativ(t);
   schreibe(pfad, seite({
     titel: passend(`${t.plural} ${k.im} – ${zahl(n)} Standorte mit Öffnungszeiten`, `${t.plural} ${k.im} – ${zahl(n)} Standorte`, `${t.plural} ${k.im}`),
     beschreibung: `${t.plural} ${k.im}: ${zahl(n)} Standorte${ortNamen.length > 1 ? `, u. a. in ${ortNamen.slice(0, 3).join(', ')}` : ` in ${ortNamen[0]}`}. Adresse, Öffnungszeiten, Angebot und Route – plus ${t.plural} in den Nachbarkreisen.`,
@@ -839,11 +1045,116 @@ for (const { t, k, liste: roh, pfad } of TYP_KREIS.values()) {
   <h2>${t.name} ${esc(k.im)} finden</h2>
   <p>${esc(gross(k.im))} gibt es ${zahl(n)} ${t.plural}: ${nennung(ortNamen.slice(0, 8).map((o) => orte.get(o) > 1 ? `${zahl(orte.get(o))} in ${esc(o)}` : esc(o)))}${ortNamen.length > 8 ? ' und weitere Orte' : ''}.${rund ? ` ${rund === n ? 'Alle sind' : `${zahl(rund)} davon sind`} laut Angabe rund um die Uhr zugänglich.` : ''}${sonntag && sonntag !== rund ? ` Sonntags geöffnet: ${zahl(sonntag)}.` : ''} Gib oben deine Postleitzahl ein, um ${einzahl} in deiner Nähe nach Entfernung sortiert zu sehen.</p>
   ${t.text.map((x) => `<p>${x}</p>`).join('')}
-  <p>Mehr aus der Region: <a href="${k.pfad}">alle Hofläden ${esc(k.im)}</a>, <a href="/${t.slug}/#${k.landSlug}">${t.plural} in ${esc(k.landName)}</a> und alle <a href="/${t.slug}/">${t.plural} in Deutschland</a>.</p>
+  <p>Mehr aus der Region: <a href="${k.pfad}">alle Hofläden ${esc(k.im)}</a>, <a href="${landKat(t, laender.find((l) => l.code === k.land))?.pfad || `/${t.slug}/#${k.landSlug}`}">${t.plural} in ${esc(k.landName)}</a> und alle <a href="/${t.slug}/">${t.plural} in Deutschland</a>.</p>
 </section>
 ${nachbarn.length ? `<section class="abschnitt nachbarn"><h2>${t.plural} in der Umgebung</h2><ul class="kreis-liste">${nachbarn.map(([, x]) => `<li><a href="${x.pfad}"><span>${esc(x.k.titel)}</span><span class="zahl">${zahl(x.liste.length)}</span></a></li>`).join('')}</ul></section>` : ''}`,
   }));
 }
+
+// ---------- „In meiner Nähe“: Standortsuche mit optionalem Filter (Ergebnis per API, Seite bleibt ohne JS vollständig) ----------
+const naeheSuche = (filter = {}, text = 'In meiner Nähe suchen') => `<div class="naehe-suche" data-naehe='${esc(JSON.stringify(filter))}'>
+  <button type="button" class="knopf knopf-dunkel" data-naehe-start>${ICON.standort}${esc(text)}</button>
+  <label class="naehe-offen"><input type="checkbox" data-naehe-offen> nur jetzt geöffnet</label>
+  <p class="leise" data-naehe-status hidden></p>
+  <div class="karten-reihe" data-naehe-liste></div>
+</div>`;
+const NAEHE_FILTER = (t) => t === BIO ? { bio: 1 } : t === AUTOMATEN ? { typ: 'automat' } : { art: t.arten.join(',') };
+
+// ---------- Kategorie je Bundesland (kompakte Liste nach Kreis) ----------
+for (const { t, l, liste, pfad } of LAND_KAT.values()) {
+  const proK = new Map();
+  for (const e of liste) { if (!proK.has(e.k)) proK.set(e.k, []); proK.get(e.k).push(e); }
+  const kreisListe = [...proK].sort((a, b) => a[0].titel.localeCompare(b[0].titel, 'de'));
+  for (const [, es] of kreisListe) es.sort((a, b) => a.ortAnzeige.localeCompare(b.ortAnzeige, 'de') || a.titel.localeCompare(b.titel, 'de'));
+  const geordnet = kreisListe.flatMap(([, es]) => es);
+  const rund = liste.filter((e) => istRund(wocheVon(e))).length;
+  const andere = KAT_TYPEN.filter((x) => x !== t).map((x) => landKat(x, l)).filter(Boolean);
+  const top = [...proK].sort((a, b) => b[1].length - a[1].length).slice(0, 3).map(([k]) => k.titel);
+  schreibe(pfad, seite({
+    titel: passend(`${t.plural} in ${l.name} – ${zahl(liste.length)} Standorte nach Kreis`, `${t.plural} in ${l.name} – ${zahl(liste.length)} Standorte`, `${t.plural} in ${l.name}`),
+    beschreibung: `${t.plural} in ${l.name}: ${zahl(liste.length)} Standorte in ${plural(proK.size, 'Kreis', 'Kreisen')}, die meisten ${nennung(top.map((x) => x.replace(/^Landkreis /, 'im Landkreis ')))}. Mit Adresse, Öffnungszeiten und Route.`.slice(0, 300),
+    pfad,
+    klasse: 'kompakt',
+    jsonld: [itemList(`${t.plural} in ${l.name}`, hofItems(geordnet))],
+    krumen: [[l.name, `/${l.slug}/`], [t.plural, pfad]],
+    inhalt: `
+<section class="seitenkopf">
+  <p class="hof-art typ-icon">${t.icon}</p>
+  <h1>${esc(t.plural)} in ${esc(l.name)}</h1>
+  <p>${zahl(liste.length)} ${esc(t.plural)} in ${plural(proK.size, 'Kreis', 'Kreisen')}${rund ? `, davon ${zahl(rund)} rund um die Uhr zugänglich` : ''}. Wähle deinen Kreis oder suche ${esc(akkusativ(t))} in deiner Nähe.</p>
+  ${naeheSuche(NAEHE_FILTER(t), `${t.plural} in meiner Nähe`)}
+  ${andere.length ? `<p class="typ-chips">${andere.map((x) => `<a href="${x.pfad}">${x.t.icon}${x.t.plural} <span>${zahl(x.liste.length)}</span></a>`).join('')}<a href="/${l.slug}/">Alle Hofläden <span>${zahl(l.anzahl)}</span></a></p>` : ''}
+</section>
+<nav class="abschnitt sprung-liste" aria-label="Kreise"><h2>${esc(t.plural)} nach Kreis</h2><ul class="kreis-liste">${kreisListe.map(([k, es]) => `<li><a href="#k-${k.slug}"><span>${esc(k.titel)}</span><span class="zahl">${zahl(es.length)}</span></a></li>`).join('')}</ul></nav>
+${kreisListe.map(([k, es]) => { const tk = typKreis(t, k); return `<section class="abschnitt typ-land" id="k-${k.slug}"><h2>${tk ? `<a href="${tk.pfad}">${esc(t.plural)} ${esc(k.im)}</a>` : `${esc(t.plural)} ${esc(k.im)}`}</h2><ul class="eintrag-liste">${es.map((e) => `<li><a href="${e.pfad}">${esc(e.titelSeite)}</a> <span class="zahl">${esc(e.ortAnzeige)}</span></li>`).join('')}</ul></section>`; }).join('\n')}
+<section class="abschnitt seo-text"><h2>${esc(t.name)} in ${esc(l.name)} finden</h2>${t.text.map((x) => `<p>${x}</p>`).join('')}
+<p>Alle ${esc(t.plural)} in Deutschland findest du unter <a href="/${t.slug}/">${esc(t.plural)}</a>; alle Höfe in ${esc(l.name)} unter <a href="/${l.slug}/">Hofläden in ${esc(l.name)}</a>.</p></section>`,
+  }));
+}
+
+// ---------- Alle Hofladen-Automaten (bundesweit) ----------
+{
+  const t = AUTOMATEN;
+  const proLand = laender.map((l) => ({ l, liste: t.liste.filter((e) => e.k.land === l.code) })).filter((x) => x.liste.length);
+  const rund = t.liste.filter((e) => istRund(wocheVon(e))).length;
+  schreibe('/hofladen-automaten/', seite({
+    titel: `Hofladen-Automaten in der Nähe – ${zahl(t.liste.length)} Automaten in Deutschland`,
+    beschreibung: `Hofladen-Automat in der Nähe finden: ${zahl(t.liste.length)} Milchtankstellen, Eierautomaten und Regiomaten, ${zahl(rund)} davon rund um die Uhr – mit Öffnungszeiten, Route und „jetzt geöffnet“.`,
+    pfad: '/hofladen-automaten/',
+    krumen: [['Hofladen-Automaten', '/hofladen-automaten/']],
+    jsonld: [itemList('Hofladen-Automaten nach Bundesland', proLand.map(({ l }) => [`Hofladen-Automaten in ${l.name}`, landKat(t, l)?.pfad || `/${l.slug}/`]))],
+    inhalt: `
+<section class="seitenkopf">
+  <p class="hof-art typ-icon">${t.icon}</p>
+  <h1>Hofladen-Automaten in Deutschland</h1>
+  <p>${zahl(t.liste.length)} Automaten mit Lebensmitteln vom Hof, ${zahl(rund)} davon rund um die Uhr zugänglich. Finde den nächsten – auch nur die, die gerade geöffnet sind.</p>
+  ${naeheSuche({ typ: 'automat' }, 'Automaten in meiner Nähe')}
+  <p class="typ-chips">${TYPEN.map((x) => `<a href="/${x.slug}/">${x.icon}${x.plural} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p>
+</section>
+<section class="abschnitt seo-text">${t.text.map((x) => `<p>${x}</p>`).join('')}</section>
+<section class="abschnitt"><h2>Hofladen-Automaten nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, liste }) => `<li><a href="${landKat(t, l)?.pfad || `/${l.slug}/`}"><span>${esc(l.name)}</span><span class="zahl">${zahl(liste.length)}</span></a></li>`).join('')}</ul></section>`,
+  }));
+}
+
+// ---------- Angebot: Produkte vom Hof (bundesweit nach Bundesland und Kreis) ----------
+for (const kat of ANGEBOT_SEITEN) {
+  const [titelKurz, mit] = ANGEBOT[kat];
+  const alle = eintraege.filter((e) => e.kat.includes(kat));
+  const nHof = alle.filter((e) => e.typ === 'hofladen').length;
+  const proLand = laender.map((l) => ({ l, ks: l.kreise.map((k) => [k, (proKreis.get(k.code) || []).filter((e) => e.kat.includes(kat)).length]).filter(([, n]) => n) })).filter((x) => x.ks.length);
+  const pfad = `/angebot/${kat}/`;
+  schreibe(pfad, seite({
+    titel: passend(`${titelKurz} – ${zahl(alle.length)} Hofläden & Automaten mit ${mit}`, `${titelKurz} – ${zahl(alle.length)} Höfe in Deutschland`, titelKurz),
+    beschreibung: `${titelKurz} in deiner Nähe: ${zahl(nHof)} Hofläden und ${zahl(alle.length - nHof)} Hofautomaten mit ${mit} – nach Bundesland und Landkreis, mit Öffnungszeiten und Route.`,
+    pfad,
+    krumen: [['Angebot', '/angebot/'], [titelKurz, pfad]],
+    jsonld: [itemList(`${titelKurz} nach Kreis`, proLand.flatMap(({ ks }) => ks.map(([k]) => [k.titel, k.pfad])))],
+    inhalt: `
+<section class="seitenkopf">
+  <h1>${esc(titelKurz)}</h1>
+  <p>${zahl(alle.length)} Hofläden und Hofautomaten mit ${esc(mit)}${alle.length - nHof ? `, davon ${zahl(alle.length - nHof)} Automaten` : ''}. Wähle deinen Kreis – die Liste ist dann schon auf ${esc(KATEGORIEN[kat])} gefiltert.</p>
+  ${naeheSuche({ produkt: kat }, `${KATEGORIEN[kat]} in meiner Nähe`)}
+  <p class="typ-chips">${ANGEBOT_SEITEN.filter((x) => x !== kat).map((x) => `<a href="/angebot/${x}/">${esc(KATEGORIEN[x])}</a>`).join('')}</p>
+</section>
+<section class="abschnitt seo-text"><p>Welche Höfe ${esc(mit)} anbieten, leiten wir aus den Angaben in OpenStreetMap und aus dem Namen des Hofs ab – das Sortiment kann je nach Saison abweichen.${['obst', 'gemuese', 'kartoffeln'].includes(kat) ? ' Was gerade Saison hat, zeigt der <a href="/saisonkalender/">Saisonkalender</a>.' : ''}</p></section>
+<nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>Nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, ks }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(ks.reduce((x, [, n]) => x + n, 0))}</span></a></li>`).join('')}</ul></nav>
+${proLand.map(({ l, ks }) => `<section class="abschnitt" id="${l.slug}"><h2>${esc(titelKurz)} in ${esc(l.name)}</h2><ul class="kreis-liste">${ks.sort((a, b) => b[1] - a[1] || a[0].titel.localeCompare(b[0].titel, 'de')).map(([k, n]) => `<li><a href="${k.pfad}?produkt=${kat}"><span>${esc(k.titel)}</span><span class="zahl">${zahl(n)}</span></a></li>`).join('')}</ul></section>`).join('\n')}`,
+  }));
+}
+schreibe('/angebot/', seite({
+  titel: 'Angebot im Hofladen – Eier, Milch, Fleisch, Obst und Gemüse vom Hof',
+  beschreibung: 'Was gibt es im Hofladen? Höfe mit Eiern, Milch, Käse, Fleisch und Wurst, Obst, Gemüse, Kartoffeln, Honig und mehr – nach Angebot sortiert, bundesweit.',
+  pfad: '/angebot/',
+  krumen: [['Angebot', '/angebot/']],
+  jsonld: [itemList('Angebot vom Hof', ANGEBOT_SEITEN.map((k) => [ANGEBOT[k][0], `/angebot/${k}/`]))],
+  inhalt: `
+<section class="seitenkopf">
+  <h1>Angebot vom Hof</h1>
+  <p>Finde Hofläden und Automaten nach dem, was du suchst.</p>
+</section>
+<section class="abschnitt"><ul class="kreis-liste">${ANGEBOT_SEITEN.map((k) => `<li><a href="/angebot/${k}/"><span>${esc(ANGEBOT[k][0])}</span><span class="zahl">${zahl(eintraege.filter((e) => e.kat.includes(k)).length)}</span></a></li>`).join('')}</ul></section>`,
+}));
+for (const k of ANGEBOT_SEITEN) KATEGORIE_PFADE.add(`/angebot/${k}/`);
 
 // ---------- Übersichten: sonntags geöffnet, Bio ----------
 for (const u of [
@@ -876,65 +1187,83 @@ for (const u of [
   <h1>${esc(u.h1)}</h1>
   <p>${plural(alle.length, 'Eintrag', 'Einträge')} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}, davon ${plural(nHof, 'Hofladen', 'Hofläden')}.</p>
   <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="ueb-q">Postleitzahl oder Ort</label><input id="ueb-q" name="q" ${SUCHFELD} placeholder="PLZ oder Ort" required><button type="submit">Suchen</button></form>
+  ${naeheSuche(u.filter === 'bio' ? { bio: 1 } : { sonntag: 1 }, u.filter === 'bio' ? 'Bio-Höfe in meiner Nähe' : 'Sonntags offene in meiner Nähe')}
 </section>
 <section class="abschnitt seo-text">${u.text(alle.length, nHof).map((x) => `<p>${x}</p>`).join('')}<p>Auch interessant: ${andere}, die <a href="/karte/">Hofladen-Karte</a> und der <a href="/saisonkalender/">Saisonkalender</a>.</p></section>
 <nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>Nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, ks }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(ks.reduce((x, [, n]) => x + n, 0))}</span></a></li>`).join('')}</ul></nav>
-${proLand.map(({ l, ks }) => `<section class="abschnitt" id="${l.slug}"><h2>${esc(u.h1.replace(' in Deutschland', ''))} in ${esc(l.name)}</h2><ul class="kreis-liste">${ks.sort((a, b) => b[1] - a[1] || a[0].titel.localeCompare(b[0].titel, 'de')).map(([k, n]) => `<li><a href="${k.pfad}?filter=${u.filter}"><span>${esc(k.titel)}</span><span class="zahl">${zahl(n)}</span></a></li>`).join('')}</ul></section>`).join('\n')}`,
+${proLand.map(({ l, ks }) => { const lk = u.filter === 'bio' && landKat(BIO, l);
+  return `<section class="abschnitt" id="${l.slug}"><h2>${lk ? `<a href="${lk.pfad}">${esc(u.h1.replace(' in Deutschland', ''))} in ${esc(l.name)}</a>` : `${esc(u.h1.replace(' in Deutschland', ''))} in ${esc(l.name)}`}</h2><ul class="kreis-liste">${ks.sort((a, b) => b[1] - a[1] || a[0].titel.localeCompare(b[0].titel, 'de')).map(([k, n]) => { const tk = u.filter === 'bio' && typKreis(BIO, k);
+    return `<li><a href="${tk ? tk.pfad : `${k.pfad}?filter=${u.filter}`}"><span>${esc(k.titel)}</span><span class="zahl">${zahl(n)}</span></a></li>`; }).join('')}</ul></section>`; }).join('\n')}`,
   }));
 }
 
-// ---------- Ortsseiten ----------
-for (const o of ortSeiten) {
-  const k = o.k;
-  const liste = o.liste.slice().sort((a, b) => a.titel.localeCompare(b.titel, 'de'));
-  const drin = new Set(liste);
-  const umgebung = [];
-  const gesehen = new Set();
-  for (const e of liste) for (const [d, x] of inDerNaehe(e, 12)) {
-    if (drin.has(x) || gesehen.has(x)) continue;
-    gesehen.add(x);
-    umgebung.push([distanzKm(o.lat, o.lon, x.lat, x.lon), x]);
-  }
-  umgebung.sort((a, b) => a[0] - b[0]);
-  const naeheListe = umgebung.filter(([d]) => d <= 20).slice(0, 6);
-  const h1 = ortUeberschrift(o);
-  const wo = `in ${o.ort}`;
-  const andereOrte = [...ORTE.get(k.code).values()].filter((x) => x !== o && x.pfad !== k.pfad).sort((a, b) => b.liste.length - a.liste.length || a.ort.localeCompare(b.ort, 'de')).slice(0, 12);
-  const f = fragenHtml(fragen(liste, wo, o), `Häufige Fragen: ${h1}`);
-  schreibe(o.pfad, seite({
-    titel: (() => { const t = (h1.startsWith('Hofläden') ? `Hofladen in ${o.ort}` : h1).replace(o.ort, o.ortTitel);
-      return liste.length > 1 ? passend(`${t} – ${zaehlungKurz(liste)} mit Öffnungszeiten`, `${t} – ${zaehlungKurz(liste)}`, `${t} – ${plural(liste.length, 'Eintrag', 'Einträge')}`)
-        : passend(`${t} – Öffnungszeiten, Adresse & Route`, `${t} – Öffnungszeiten & Route`, `${t} – Öffnungszeiten`, t); })(),
-    beschreibung: `${h1} (${k.titel}): ${nennung(liste.slice(0, 3).map((e) => e.titel))}${liste.length > 3 ? ' und weitere' : ''}. Öffnungszeiten, Angebot und Route – plus Hofläden in der Umgebung.`.slice(0, 300),
-    pfad: o.pfad,
-    klasse: 'kreis',
-    jsonld: [itemList(h1, hofItems(liste)), ...f.ld],
-    krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], [o.ort, o.pfad]],
-    inhalt: `
+// ---------- Seiten "Hofläden in <Ort> und Umgebung" (Ortsseiten und kreisfreie Städte) ----------
+function umgebungsSeite(z, { extraOben = '', extraUnten = '', krumen, regionProfil = null }) {
+  const { name, k } = z;
+  const eigen = new Set(z.eigene);
+  const cap = Math.min(z.eigene.length + 40, 150);
+  const auswahl = z.umkreis.filter(([, e]) => eigen.has(e)).concat(z.umkreis.filter(([, e]) => !eigen.has(e)).slice(0, Math.max(0, cap - z.eigene.length)))
+    .sort((a, b) => a[0] - b[0]);
+  const liste = auswahl.map(([, e]) => e);
+  const n = (r) => z.umkreis.filter(([d]) => d <= r).length;
+  const [n10, n25, n50] = UMKREISE.map(n);
+  const im25 = z.umkreis.filter(([d]) => d <= 25).map(([, e]) => e);
+  const wo = `in ${name} und Umgebung`;
+  const h1 = `Hofläden in ${name} und Umgebung`;
+  const nEigen = z.eigene.length;
+  const tn = z.titelName || name, nT = zahl(n25 >= 3 ? n25 : liste.length);
+  const titel = passend(`Hofladen ${tn} und Umgebung – ${nT} Höfe mit Öffnungszeiten`, `Hofladen ${tn} und Umgebung – ${nT} Höfe`, `Hofladen ${tn} und Umgebung`, `Hofladen ${tn}`);
+  const beschreibung = `Hofläden in ${name} und Umgebung: ${nEigen ? `${zaehlung(z.eigene)} direkt in ${name}, ` : ''}${zahl(n10)} im Umkreis von 10 km, ${zahl(n25)} bis 25 km und ${zahl(n50)} bis 50 km – mit Entfernung, Öffnungszeiten und Route.`.slice(0, 300);
+  // FAQ aus echten Zahlen
+  const automatNah = z.umkreis.find(([, e]) => e.typ === 'automat');
+  const f = [
+    [`Wie viele Hofläden gibt es in ${name}?`, `${nEigen ? `Direkt in ${esc(name)} sind ${zaehlung(z.eigene)} eingetragen.` : `Direkt in ${esc(name)} ist bisher kein Hofladen eingetragen.`} Im Umkreis von 10 km sind es ${zahl(n10)}, bis 25 km ${zahl(n25)} und bis 50 km ${zahl(n50)} Hofläden und Hofautomaten.`],
+    [`Welcher Hofladen liegt am nächsten an ${name}?`, `${link(z.umkreis[0][1])} in ${esc(z.umkreis[0][1].ortAnzeige)}, etwa ${km(z.umkreis[0][0])} vom Ortszentrum entfernt.${z.umkreis[1] ? ` Danach folgen ${nennung(z.umkreis.slice(1, 3).map(([d, e]) => `${link(e)} (${km(d)})`))}.` : ''}`],
+    ...(automatNah ? [[`Gibt es einen Hofautomaten in der Nähe von ${name}?`, `Ja. Der nächste ist ${link(automatNah[1])} (${esc(automatNah[1].art)}) in ${esc(automatNah[1].ortAnzeige)}, etwa ${km(automatNah[0])} entfernt.`]] : []),
+    ...fragen(im25.length ? im25 : liste, wo, z).filter(([q]) => !q.startsWith('Wo finde ich')),
+  ];
+  const faq = fragenHtml(f, `Häufige Fragen: Hofläden in ${name}`);
+  const inhalt = `
 <section class="seitenkopf">
   <h1>${esc(h1)}</h1>
-  <p>${zaehlung(liste)} in ${esc(o.ort)} (${esc(k.titel)})${naeheListe.length ? ` und ${plural(naeheListe.length, 'weiterer Hof', 'weitere Höfe')} im Umkreis von 20 km` : ''} – mit Öffnungszeiten, Angebot und Route.</p>
+  <p>${nEigen ? `${zaehlung(z.eigene)} direkt in ${esc(name)}` : `Direkt in ${esc(name)} ist noch kein Hof eingetragen`}; im Umkreis von 10 km sind es ${zahl(n10)}, bis 25 km ${zahl(n25)} und bis 50 km ${zahl(n50)}. Sortiert nach Entfernung vom Ortszentrum, mit Öffnungszeiten und Route.</p>
+  ${typKreisLinks(k).length ? `<p class="typ-chips">${typKreisLinks(k).map((x) => `<a href="${x.pfad}">${x.t.icon}${x.t.plural} ${esc(k.im)} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p>` : ''}
   <p class="plz-hinweis" data-plz-hinweis hidden></p>
 </section>
-${liste.length >= 6 ? filterLeiste(liste) : ''}
+${extraOben}
+${filterLeiste(liste, { umkreis: UMKREISE.map((r) => [r, auswahl.filter(([d]) => d <= r).length]) })}
 <div class="geteilt">
   <div class="liste" data-liste>
-    ${liste.map((e) => karteHtml(kartenDaten(e))).join('\n    ')}
+    ${auswahl.map(([d, e]) => karteHtml(kartenDaten(e, Math.round(d * 10) / 10))).join('\n    ')}
     <p class="leer-filter" data-leer-filter hidden>Keine Einträge passen zu deinem Filter. <button type="button" class="link" data-filter-zuruecksetzen>Filter zurücksetzen</button></p>
-    ${naeheListe.length ? `<section class="umgebung"><h2>Weitere Hofläden in der Nähe von ${esc(o.ort)}</h2><div data-umgebung-liste>${naeheListe.map(([d, x]) => karteHtml(kartenDaten(x, Math.round(d * 10) / 10))).join('')}</div></section>` : ''}
+    <section class="umgebung" data-umgebung hidden><h2>Ganz in der Nähe</h2><div data-umgebung-liste></div></section>
   </div>
   <aside class="karten-spalte">${kartenPanel({ titel: `Karte: ${h1}` })}</aside>
 </div>
-<section class="abschnitt seo-text"><h2>${esc(h1)}: Überblick</h2>${gebietsText(liste, wo, { orteNennen: false, anker: k.landSlug })}${typLinks(liste, k.landSlug)}
-<p>Alle Einträge im Kreis findest du unter <a href="${k.pfad}">Hofläden ${esc(k.im)}</a>${typKreisLinks(k).length ? `, außerdem ${nennung(typKreisLinks(k).map((x) => `<a href="${x.pfad}">${x.t.plural} ${esc(k.im)}</a>`))}` : ''}.</p>${regionTeaser(k)}</section>
-${f.html}
-${ortListe(naheOrte(o.lat, o.lon, 9, new Set([o, ...andereOrte])), `Hofläden in Orten in der Nähe von ${o.ort}`)}
-${andereOrte.length ? `<section class="abschnitt"><h2>Hofläden in anderen Orten ${esc(k.im)}</h2><ul class="kreis-liste">${andereOrte.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.ort)}</span><span class="zahl">${zahl(x.liste.length)}</span></a></li>`).join('')}</ul></section>` : ''}`,
+${regionProfil ? regionHtml(regionProfil) : ''}
+<section class="abschnitt seo-text"><h2>Hofladen ${esc(name)}: Überblick</h2>${gebietsText(im25.length >= 3 ? im25 : liste, wo, { anker: k.landSlug })}${typLinks(z.eigene, k.landSlug, k)}
+<p>${z.kreisSeite ? '' : `Alle Einträge im Kreis findest du unter <a href="${k.pfad}">Hofläden ${esc(k.im)}</a>. `}Mehr aus der Region: <a href="/${k.landSlug}/">Hofläden in ${esc(k.landName)}</a>.</p>${z.kreisSeite ? '' : regionTeaser(k)}</section>
+${faq.html}
+${ortListe(naheOrte(z.lat, z.lon, 9, new Set(ortSeiten.filter((o) => o.pfad === z.pfad))), `Hofläden in Orten in der Nähe von ${name}`)}
+${extraUnten}
+${regionProfil ? quellenHtml(regionProfil) : ''}`;
+  return seite({ titel, beschreibung, pfad: z.pfad, klasse: 'kreis', krumen,
+    jsonld: [itemList(h1, hofItems(liste)), ...faq.ld], inhalt });
+}
+
+for (const o of ortSeiten) {
+  const k = o.k;
+  const andereOrte = [...ORTE.get(k.code).values()].filter((x) => x !== o && x.eigen).sort((a, b) => b.liste.length - a.liste.length || a.ort.localeCompare(b.ort, 'de')).slice(0, 12);
+  schreibe(o.pfad, umgebungsSeite(o.umgebung, {
+    krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], [o.ort, o.pfad]],
+    extraUnten: andereOrte.length ? `<section class="abschnitt"><h2>Hofläden in anderen Orten ${esc(k.im)}</h2><ul class="kreis-liste">${andereOrte.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.ort)}</span><span class="zahl">${x.liste.length ? zahl(x.liste.length) : ''}</span></a></li>`).join('')}</ul></section>` : '',
   }));
 }
 
 // ---------- Detailseiten ----------
 const TAGE = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
+const ZAHLUNG_TEXT = { bar: 'Bargeld', girocard: 'Girocard (EC-Karte)', kreditkarte: 'Kreditkarte', kontaktlos: 'kontaktlos (Karte/Handy)', paypal: 'PayPal', ueberweisung: 'Überweisung' };
+const datumDe = (d) => d.split('-').reverse().join('.');
 for (const e of eintraege) {
   const k = e.k;
   const o = e.ortSeite;
@@ -948,6 +1277,7 @@ for (const e of eintraege) {
   const woche = e.oeffnungszeiten ? parse(e.oeffnungszeiten) : null;
   if (woche && woche.some((iv) => iv.length)) ld.openingHoursSpecification = oeffnungsSpezifikation(woche);
   ld['@id'] = cfg.domain + e.pfad + '#hof';
+  if (e.fotos?.length) ld.image = e.fotos.map((f) => cfg.domain + f);
   if (e.email) ld.email = e.email;
   const ohKurz = e.oeffnungszeiten ? (zeilen(e.oeffnungszeiten) || []).map(([t, v]) => `${t} ${v}`).join(', ') : '';
   const uhr = (m) => `${String(Math.floor(m / 60) % 24 || (m >= 1440 ? 24 : 0)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
@@ -974,6 +1304,28 @@ for (const e of eintraege) {
     naechsterHof ? `Der nächste weitere Hofladen ist <a href="${naechsterHof[1].pfad}">${esc(naechsterHof[1].titelSeite)}</a> in ${esc(naechsterHof[1].ortAnzeige)}, etwa ${km(naechsterHof[0])} entfernt.` : '',
   ].filter(Boolean).join(' ');
   const titelEnthaeltOrt = e.titel.includes(e.ortAnzeige);
+  const rund = istRund(woche);
+  const merkmale = [
+    e.gepflegt?.art === 'uebernahme' && ['Vom Betrieb gepflegt', `Angaben vom Betrieb selbst, Stand ${datumDe(e.gepflegt.stand)}.`],
+    e.bio && ['Bio', 'Laut Eintrag verkauft der Hof Bio-Produkte.'],
+    rund && ['Rund um die Uhr', e.typ === 'automat' ? 'Der Automat ist jederzeit zugänglich.' : 'Laut Öffnungszeiten jederzeit geöffnet.'],
+    !rund && e.sonntag && ['Sonntags geöffnet', `Sonntag: ${(woche[6] || []).map(([a, b]) => `${uhr(a)}–${uhr(b)}`).join(', ')}`],
+    e.typ === 'automat' ? ['Automat', `${e.art} mit Selbstbedienung.`] : e.selbstbedienung && ['Selbstbedienung', 'Einkauf in Selbstbedienung, meist mit Kasse des Vertrauens.'],
+    e.zahlung && ['Bezahlen', e.zahlung.map((z) => ZAHLUNG_TEXT[z]).join(', ')],
+  ].filter(Boolean);
+  const saisonProdukte = SAISON_SEITEN.filter((sp) => sp.liste.includes(e));
+  // FAQ nur aus Angaben, die auf der Seite stehen
+  const naechsteDrei = naehe.slice(0, 3);
+  const hofFragen = [
+    woche && ohKurz && [`Wann hat ${e.titel} geöffnet?`, `Laut den hinterlegten Öffnungszeiten: ${esc(ohKurz)}. Gerade in der Saison können sich die Zeiten ändern – im Zweifel vorher anrufen.`],
+    woche && !rund && [`Hat ${e.titel} sonntags geöffnet?`, e.sonntag ? `Ja, sonntags ${(woche[6] || []).map(([a, b]) => `${uhr(a)}–${uhr(b)}`).join(' und ')} Uhr.` : 'Nein, laut den hinterlegten Öffnungszeiten ist sonntags geschlossen.'],
+    [`Wo befindet sich ${e.titel}?`, `${esc(e.titel)} liegt ${e.strasse ? `in der ${esc(e.adresse)}` : esc(e.adresse)} ${esc(imKreis)}. Über „Route planen“ startest du die Navigation.`],
+    e.kat.length && [`Was gibt es bei ${e.titel}?`, `Im Angebot: ${esc(nennung(e.kat.map((x) => KATEGORIEN[x])))}. Das Sortiment kann je nach Saison abweichen.`],
+    e.zahlung && [`Wie kann man bei ${e.titel} bezahlen?`, `Laut Eintrag: ${esc(nennung(e.zahlung.map((z) => ZAHLUNG_TEXT[z])))}.`],
+    naechsteDrei.length && [`Welche Hofläden gibt es in der Nähe von ${e.titel}?`, `${nennung(naechsteDrei.map(([d, x]) => `${link(x)} in ${esc(x.ortAnzeige)} (${km(d)})`))}.`],
+  ].filter(Boolean);
+  const hofFaq = hofFragen.length >= 3 ? fragenHtml(hofFragen, `Häufige Fragen zu ${e.titel}`) : { html: '', ld: [] };
+  const umgebungsSeite = naechsteUmgebungsSeite(e);
   // Sehr lange Namen (OSM-Freitext) im Title kürzen, die H1 bleibt vollständig
   const tn = e.titelSeite.length > 60 ? `${e.titelSeite.slice(0, 58).replace(/[\s,;–-]+\S*$/, '')} …` : e.titelSeite;
   schreibe(e.pfad, seite({
@@ -985,7 +1337,7 @@ for (const e of eintraege) {
     pfad: e.pfad,
     noindex: e.duenn,
     klasse: 'hof',
-    jsonld: [ld],
+    jsonld: [ld, ...hofFaq.ld],
     krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], ...(o?.eigen ? [[o.ort, o.pfad]] : []), [e.titel, e.pfad]],
     inhalt: `
 <section class="hof-kopf laden-${e.typ}" data-lat="${e.lat}" data-lon="${e.lon}" data-titel="${esc(e.titel)}" data-typ="${e.typ}">
@@ -1011,7 +1363,7 @@ for (const e of eintraege) {
     <nav class="hof-werkzeuge" aria-label="Aktionen">
       <button type="button" data-merken="${esc(e.slug)}" aria-pressed="false">${ICON.herz}<span class="merken-text">Merken</span></button>
       <button type="button" data-teilen data-titel="${esc(e.titelSeite)}">${ICON.teilen}<span>Teilen</span></button>
-      <a href="/mitmachen/?hof=${esc(e.slug)}">${ICON.stift}<span>Ändern</span></a>
+      <a href="/mitmachen/?hof=${esc(e.slug)}">${ICON.stift}<span>Korrigieren</span></a>
     </nav>
     <div class="hof-karte">
       ${e.lageUngefaehr ? '<p class="leise">Die genaue Lage ist noch nicht erfasst.</p>' : kartenPanel({ titel: `Karte: ${e.titel}` })}
@@ -1020,16 +1372,27 @@ for (const e of eintraege) {
   </aside>
   <div class="hof-info">
     ${e.kat.length ? `<section class="block"><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${e.quelle === 'osm' ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
+    ${e.fotos?.length ? `<section class="block hof-fotos"><h2>Fotos</h2><div class="foto-reihe">${e.fotos.map((f, i) => `<img src="${esc(f)}" width="1200" height="900" alt="${esc(e.titel)} – Foto ${i + 1}" loading="lazy" decoding="async">`).join('')}</div><p class="leise">Fotos: ${esc(e.titel)}</p></section>` : ''}
+    ${e.saisonHinweis ? `<section class="block saison-hinweis"><h2>Aktuell und saisonal</h2><p>${esc(e.saisonHinweis)}</p><p class="leise">Angabe des Betriebs, Stand ${esc(datumDe(e.gepflegt.stand))}</p></section>` : ''}
+    ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram' })[f]).join(', ')} ergänzt aus <a href="${esc(e.ergaenzt.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.ergaenzt.quelle).split('/')[0])}</a>${e.ergaenzt.stand ? ` (Stand ${esc(e.ergaenzt.stand.split('-').reverse().join('.'))})` : ''}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
-    <p class="hinweis">Angaben ohne Gewähr. ${e.quelle === 'osm'
+    <p class="hinweis">Angaben ohne Gewähr. ${e.gepflegt ? `${e.gepflegt.art === 'uebernahme' ? 'Der Betrieb pflegt diesen Eintrag selbst' : 'Angaben geprüft und ergänzt'} (Stand ${esc(datumDe(e.gepflegt.stand))}). ` : ''}${e.quelle === 'betreiber' ? `Eingetragen vom Betrieb. Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>` : e.quelle === 'osm'
       ? `Quelle: <a href="https://www.openstreetmap.org/${e.osm}" rel="nofollow noopener" target="_blank">OpenStreetMap</a>. Etwas stimmt nicht? <a href="https://www.openstreetmap.org/edit?${e.osm.replace('/', '=')}" rel="nofollow noopener" target="_blank">In OpenStreetMap korrigieren</a> oder <a href="/mitmachen/?hof=${esc(e.slug)}">uns Bescheid geben</a>.`
       : `${e.quelleUrl ? `Quelle: <a href="${esc(e.quelleUrl)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.quelleUrl).split('/')[0])}</a>. ` : ''}Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>`}</p>
+    <p class="aktualitaet">${e.geprueft ? `Zuletzt vor Ort geprüft: ${esc(datumDe(e.geprueft))} (laut OpenStreetMap) · ` : ''}Seite aktualisiert: ${STAND_PLATZHALTER}</p>
+    <section class="block betreiber-box">
+      <h2>Ist das dein Hof?</h2>
+      <p>Übernimm den Eintrag kostenlos und halte Öffnungszeiten, Angebot und saisonale Hinweise selbst aktuell.</p>
+      <p class="kk-knoepfe"><a class="knopf knopf-dunkel" href="/mitmachen/?hof=${esc(e.slug)}&amp;thema=uebernahme">Eintrag übernehmen</a><a class="knopf knopf-hell" href="/mitmachen/?hof=${esc(e.slug)}">Eintrag korrigieren</a></p>
+      <p class="leise"><a href="/fuer-hoefe/?hof=${esc(e.slug)}">Badge „Wir sind auf hofladenliste.de“ für deine Website</a></p>
+    </section>
   </div>
 </div>
 ${naehe.length ? `<section class="abschnitt"><h2>Weitere Hofläden in der Nähe</h2><div class="karten-reihe">${naehe.map(([d, x]) => karteHtml(kartenDaten(x, Math.round(d * 10) / 10))).join('')}</div></section>` : ''}
+${hofFaq.html}
 ${ortListe(naheOrte(e.lat, e.lon, 6, new Set(o?.eigen ? [o] : [])), `Hofläden in Orten in der Nähe`)}
-<p class="abschnitt mehr-links">${ART_TYP[e.art] ? `<a class="mehr" href="/${ART_TYP[e.art]}/#${k.landSlug}">${esc(PLURAL_ART[e.art] || e.art)} in ${esc(k.landName)}${ICON.pfeil}</a>` : ''}${o?.eigen ? `<a class="mehr" href="${o.pfad}">${esc(ortUeberschrift(o))}${ICON.pfeil}</a>` : ''}<a class="mehr" href="${k.pfad}">Alle Hofläden ${esc(imKreis)}${ICON.pfeil}</a></p>`,
+<p class="abschnitt mehr-links">${umgebungsSeite && umgebungsSeite.pfad !== o?.pfad ? `<a class="mehr" href="${umgebungsSeite.pfad}">Hofläden in ${esc(umgebungsSeite.name)} und Umgebung${ICON.pfeil}</a>` : ''}${ART_TYP[e.art] ? (() => { const tk = typKreis(TYPEN.find((t) => t.slug === ART_TYP[e.art]), k); return tk ? `<a class="mehr" href="${tk.pfad}">${tk.t.plural} ${esc(imKreis)}${ICON.pfeil}</a>` : `<a class="mehr" href="/${ART_TYP[e.art]}/#${k.landSlug}">${esc(PLURAL_ART[e.art] || e.art)} in ${esc(k.landName)}${ICON.pfeil}</a>`; })() : ''}${o?.eigen ? `<a class="mehr" href="${o.pfad}">${esc(ortUeberschrift(o))}${ICON.pfeil}</a>` : ''}<a class="mehr" href="${k.pfad}">Alle Hofläden ${esc(imKreis)}${ICON.pfeil}</a></p>`,
   }), !e.duenn);
 }
 
@@ -1078,7 +1441,7 @@ schreibe('/saisonkalender/', seite({
   <table class="saison-tabelle">
     <thead><tr><th scope="col">Sorte</th>${MONATE.map((m, i) => `<th scope="col" data-monat="${i + 1}">${m}</th>`).join('')}</tr></thead>
     <tbody>
-      ${SAISON.map(([n, frisch, lager = []]) => `<tr><th scope="row">${esc(n)}</th>${MONATE.map((m, i) => { const mo = i + 1; const c = frisch.includes(mo) ? 'frisch' : lager.includes(mo) ? 'lager' : ''; return `<td data-monat="${mo}"${c ? ` class="${c}"` : ''}><span class="sr">${c === 'frisch' ? 'frisch' : c === 'lager' ? 'Lager' : '–'}</span></td>`; }).join('')}</tr>`).join('\n      ')}
+      ${SAISON.map(([n, frisch, lager = []]) => `<tr><th scope="row">${SAISON_NACH_NAME.has(n) ? `<a href="${SAISON_NACH_NAME.get(n).pfad}">${esc(n)}</a>` : esc(n)}</th>${MONATE.map((m, i) => { const mo = i + 1; const c = frisch.includes(mo) ? 'frisch' : lager.includes(mo) ? 'lager' : ''; return `<td data-monat="${mo}"${c ? ` class="${c}"` : ''}><span class="sr">${c === 'frisch' ? 'frisch' : c === 'lager' ? 'Lager' : '–'}</span></td>`; }).join('')}</tr>`).join('\n      ')}
     </tbody>
   </table>
 </div>
@@ -1099,6 +1462,34 @@ schreibe('/saisonkalender/', seite({
   <ul class="kreis-liste">${laender.map((l) => `<li><a href="/${l.slug}/"><span>${esc(l.name)}</span><span class="zahl">${zahl(l.anzahl)}</span></a></li>`).join('')}</ul>
 </section>`,
 }));
+
+// ---------- Saisonprodukte: Höfe mit Spargel, Erdbeeren, Äpfeln … ----------
+for (const sp of SAISON_SEITEN) {
+  const proLand = laender.map((l) => ({ l, liste: sp.liste.filter((e) => e.k.land === l.code).sort((a, b) => a.k.titel.localeCompare(b.k.titel, 'de') || a.ortAnzeige.localeCompare(b.ortAnzeige, 'de')) })).filter((x) => x.liste.length);
+  const geordnet = proLand.flatMap(({ liste }) => liste);
+  const nHof = sp.liste.filter((e) => e.typ === 'hofladen').length;
+  const saison = monatsSpanne(sp.frisch), lager = monatsSpanne(sp.lager);
+  const andere = SAISON_SEITEN.filter((x) => x !== sp);
+  schreibe(sp.pfad, seite({
+    titel: passend(`${sp.name} vom Hof – ${zahl(sp.liste.length)} ${sp.plural} in Deutschland`, `${sp.name} vom Hof – ${zahl(sp.liste.length)} Höfe`, `${sp.name} vom Hof`),
+    beschreibung: `${sp.name} direkt vom Erzeuger: ${zahl(sp.liste.length)} ${sp.plural} und Hofläden${saison ? `. Saison: ${saison}` : ''}${lager ? `, aus dem Lager ${lager}` : ''}. Mit Öffnungszeiten, Adresse und Route.`,
+    pfad: sp.pfad,
+    klasse: 'kompakt',
+    krumen: [['Saisonkalender', '/saisonkalender/'], [sp.name, sp.pfad]],
+    jsonld: [itemList(`${sp.plural} in Deutschland`, hofItems(geordnet))],
+    inhalt: `
+<section class="seitenkopf">
+  <h1>${esc(sp.name)} vom Hof</h1>
+  <p>${zahl(sp.liste.length)} ${esc(sp.plural)}${nHof !== sp.liste.length ? ` (davon ${zahl(nHof)} Hofläden)` : ''} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')}.${saison ? ` Frisch vom Feld gibt es ${esc(sp.name)} meist von ${esc(saison)}${lager ? `, aus dem Lager von ${esc(lager)}` : ''}.` : ''}</p>
+  <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="sp-q">Postleitzahl oder Ort</label><input id="sp-q" name="q" ${SUCHFELD} placeholder="PLZ oder Ort" required><button type="submit">Suchen</button></form>
+</section>
+<section class="abschnitt seo-text"><p>Welche Höfe ${esc(sp.name)} anbieten, erkennen wir am Namen des Hofs, an der Beschreibung und an den Angaben in OpenStreetMap. Gerade bei saisonaler Ware lohnt sich vor dem Besuch ein Anruf – Erntebeginn und Verkaufszeiten hängen vom Wetter ab. Wann welches Obst und Gemüse Saison hat, zeigt der <a href="/saisonkalender/">Saisonkalender</a>.</p></section>
+<nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>${esc(sp.plural)} nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, liste }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(liste.length)}</span></a></li>`).join('')}</ul></nav>
+${proLand.map(({ l, liste }) => `<section class="abschnitt typ-land" id="${l.slug}"><h2>${esc(sp.plural)} in ${esc(l.name)}</h2><ul class="eintrag-liste">${liste.map((e) => `<li><a href="${e.pfad}">${esc(e.titelSeite)}</a> <span class="zahl">${esc(e.ortAnzeige)} · ${esc(e.k.titel)}</span></li>`).join('')}</ul></section>`).join('\n')}
+<section class="abschnitt"><h2>Weitere Saisonprodukte</h2><p class="typ-chips">${andere.map((x) => `<a href="${x.pfad}">${esc(x.name)} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p></section>`,
+  }));
+  KATEGORIE_PFADE.add(sp.pfad);
+}
 
 // ---------- Infoseiten ----------
 const imp = cfg.impressum;
@@ -1146,38 +1537,141 @@ textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von h
 <p>Höfe, die du mit „Merken“ markierst, speichert nur dein Browser (localStorage) – wir haben darauf keinen Zugriff. Wenn du die Merkliste öffnest, lädt dein Browser die aktuellen Angaben zu diesen Höfen von unserem Server; dabei wird nichts gespeichert. Du kannst die Merkliste jederzeit dort leeren oder über die Browsereinstellungen löschen.</p>
 <h2>Suchstatistik</h2>
 <p>Damit wir sehen, in welchen Regionen Hofläden gesucht werden, zählen wir auf unserem Server, wie oft am Tag nach einer Postleitzahl gesucht wurde – zusammen mit dem zugehörigen Landkreis, dem gewählten Angebotsfilter und der Art der Suche (Postleitzahl, Ortsname oder Standort). Bei der Suche nach einem Ortsnamen zählen wir die Postleitzahl des gefundenen Orts; den eingegebenen Text speichern wir nicht. Bei der Standortsuche wird nur die nächstgelegene Postleitzahl gezählt, nicht die Koordinaten. IP-Adressen, Uhrzeiten, Geräte- oder Browserdaten speichern wir dabei nicht, und auf deinem Gerät wird nichts gespeichert oder ausgelesen. Ein Rückschluss auf einzelne Personen ist nicht möglich. Die Zähler liegen in einer Datenbank von Cloudflare (Cloudflare, Inc., Region Westeuropa); Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung des Angebots (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<h2>Nutzungsstatistik</h2>
+<p>Um zu sehen, welche Funktionen genutzt werden, zählen wir auf unserem Server Klicks auf „Route“, „Anrufen“, „Website“, auf Filter und auf „In meiner Nähe“ – als reine Tageszähler je Seitentyp (z. B. „heute 12-mal Route auf Hofseiten“). Dabei speichern wir weder IP-Adressen noch Uhrzeiten, Geräte- oder Browserdaten; auf deinem Gerät wird nichts gespeichert oder ausgelesen. Ein Rückschluss auf einzelne Personen ist nicht möglich. Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung des Angebots (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<h2 id="formular">Formular „Mitmachen“</h2>
+<p>Wenn du über das Formular einen Hof einträgst, Angaben korrigierst oder einen Eintrag übernimmst, speichern wir deine Angaben in einer Datenbank von Cloudflare (Cloudflare, Inc., Region Westeuropa): die Angaben zum Betrieb, gegebenenfalls Fotos sowie – freiwillig, bei der Übernahme eines Eintrags erforderlich – deinen Namen und deine E-Mail-Adresse. Die Angaben zum Betrieb und freigegebene Fotos veröffentlichen wir nach Prüfung. Name und E-Mail-Adresse verwenden wir nur für Rückfragen und zur Bestätigung von Betreibern; sie werden nicht veröffentlicht und spätestens sechs Monate nach Bearbeitung gelöscht. Abgelehnte Fotos löschen wir sofort. Gegen Missbrauch zählen wir Meldungen je Absender und Tag über einen anonymisierten Tages-Hash der IP-Adresse; die IP-Adresse selbst speichern wir nicht. Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bzw. bei Betreibern die Durchführung der Eintragung (Art. 6 Abs. 1 lit. b DSGVO). Du kannst deine Angaben jederzeit über die Kontaktadresse löschen lassen.</p>
 <h2>Cookies und Tracking</h2>
 <p>Diese Website setzt keine Cookies und nutzt kein Tracking. Links zu Routenplanern und zu Websites der Höfe öffnen externe Seiten; dort gelten deren Datenschutzbestimmungen.</p>
 <h2>Deine Rechte</h2>
 <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.</p>`);
-textSeite('/mitmachen/', 'Hofladen eintragen – kostenlos', 'Hofladen eintragen: Trage deinen Hofladen, deine Milchtankstelle, deinen Eierautomaten oder Regiomaten kostenlos ein oder korrigiere bestehende Angaben.', `<h1>Hofladen kostenlos eintragen</h1>
-<p class="hinweis-box" id="mitmachen-hinweis" hidden>Danke, dass du hilfst! Der Link unten öffnet eine vorbereitete E-Mail zu diesem Eintrag.</p>
-<p>Der Eintrag ist kostenlos. Schick uns diese Angaben, wir nehmen sie in der Regel innerhalb weniger Tage auf:</p>
-<ul><li>Name des Hofladens oder Automaten</li><li>Adresse</li><li>Öffnungszeiten</li><li>Telefon, E-Mail, Website</li><li>Angebot, z. B. Eier, Milch, Fleisch, Gemüse</li></ul>
-${kontaktMail ? `<p><a class="knopf" id="mail-link" href="mailto:${esc(kontaktMail)}?subject=${encodeURIComponent('Eintrag Hofladenliste')}">E-Mail schreiben</a></p>` : '<p class="fehler">Die Kontaktadresse folgt in Kürze.</p>'}
-<p>Willkommen sind alle, die direkt verkaufen: Hofläden und Bauernläden, <a href="/milchtankstelle/">Milchtankstellen</a>, <a href="/eierautomat/">Eierautomaten</a> und <a href="/regiomat/">Regiomaten</a>. Wie dein Eintrag später aussieht, siehst du auf der <a href="/karte/">Hofladen-Karte</a>.</p>
+// ---------- Badge für Höfe (Backlink) ----------
+{
+  const innen = LOGO.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '');
+  const badge = (hell) => `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="56" viewBox="0 0 200 56" role="img" aria-label="Wir sind auf hofladenliste.de"><rect width="200" height="56" rx="10" fill="${hell ? '#FFFFFF' : '#173B2C'}" stroke="${hell ? '#D9E0DA' : '#173B2C'}"/><g transform="translate(10 10) scale(.5625)">${innen}</g><text x="56" y="24" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="${hell ? '#56635B' : '#CFE0D5'}">Wir sind auf</text><text x="56" y="41" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="${hell ? '#173B2C' : '#F4C430'}">hofladenliste.de</text></svg>`;
+  writeFileSync(join(OUT, 'badge.svg'), badge(true));
+  writeFileSync(join(OUT, 'badge-dunkel.svg'), badge(false));
+  const code = (bild) => esc(`<a href="${cfg.domain}/" title="Hofladen auf hofladenliste.de"><img src="${cfg.domain}/${bild}" width="200" height="56" alt="Wir sind auf hofladenliste.de"></a>`);
+  schreibe('/fuer-hoefe/', seite({
+    titel: 'Für Höfe: Eintrag übernehmen und Badge für die Website',
+    beschreibung: 'Für Hofläden und Automaten-Betreiber: Eintrag auf hofladenliste.de kostenlos übernehmen, Öffnungszeiten und Angebot selbst pflegen und das Badge „Wir sind auf hofladenliste.de“ einbinden.',
+    pfad: '/fuer-hoefe/',
+    klasse: 'textseite',
+    krumen: [['Für Höfe', '/fuer-hoefe/']],
+    inhalt: `<article class="text" data-badge-seite>
+<h1>Für Höfe und Direktvermarkter</h1>
+<p>hofladenliste.de ist kostenlos – für Besucher und für Betriebe. Wenn dein Hof schon eingetragen ist, kannst du den Eintrag übernehmen und selbst aktuell halten: Öffnungszeiten, Angebot, Zahlungsarten, Fotos und saisonale Hinweise wie „Spargel ab Mitte April“.</p>
+<p><a class="knopf knopf-dunkel" href="/mitmachen/" data-badge-uebernehmen>Eintrag übernehmen oder neu eintragen</a></p>
+<h2>Badge für deine Website</h2>
+<p>Zeig deinen Kundinnen und Kunden, dass sie dich auf hofladenliste.de mit Öffnungszeiten und Route finden. Kopiere einfach den Code in deine Website.</p>
+<p class="badge-vorschau"><img src="/badge.svg" width="200" height="56" alt="Wir sind auf hofladenliste.de"> <img src="/badge-dunkel.svg" width="200" height="56" alt="Wir sind auf hofladenliste.de (dunkel)"></p>
+<label for="badge-code-hell">Code (hell)</label>
+<textarea id="badge-code-hell" rows="3" readonly data-badge-code="badge.svg">${code('badge.svg')}</textarea>
+<label for="badge-code-dunkel">Code (dunkel)</label>
+<textarea id="badge-code-dunkel" rows="3" readonly data-badge-code="badge-dunkel.svg">${code('badge-dunkel.svg')}</textarea>
+<p class="leise">Öffnest du diese Seite über „Badge für deine Website“ auf der Seite deines Hofs, verlinkt der Code direkt auf deinen Eintrag.</p>
+<h2>Woher kommen die Daten?</h2>
+<p>Die meisten Einträge stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, ergänzt um Angaben von den Websites der Höfe und von Betrieben selbst. Angaben von Betrieben haben bei uns Vorrang. Mehr dazu unter <a href="/quellen/">Quellen</a>.</p>
+</article>`,
+  }));
+}
+
+// ---------- Verwaltung der Meldungen (nicht öffentlich verlinkt, noindex) ----------
+schreibe('/verwaltung/', seite({
+  titel: 'Verwaltung | Hofladenliste', beschreibung: 'Verwaltung der Meldungen zu Hofläden – nur für die Redaktion von hofladenliste.de.',
+  pfad: '/verwaltung/', noindex: true, klasse: 'textseite', krumen: [['Verwaltung', '/verwaltung/']],
+  inhalt: '<section class="abschnitt"><h1>Meldungen</h1><div id="verwaltung"></div></section><script type="module" src="/verwaltung.js"></script>',
+}), false);
+
+textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenliste.de stammen: OpenStreetMap (ODbL), Websites der Höfe, Angaben von Betrieben und PLZ-Daten von GeoNames.', `<h1>Quellen und Datenstand</h1>
+<h2>OpenStreetMap</h2>
+<p>Die meisten Einträge stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a>: Hofläden (<code>shop=farm</code>) und Hofautomaten (<code>amenity=vending_machine</code> mit Milch, Eiern, Fleisch, Kartoffeln usw.). Wir gleichen die Daten jeden Montag und Donnerstag ab. Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a>, verfügbar unter der <a href="https://opendatacommons.org/licenses/odbl/">Open Database License (ODbL)</a>.</p>
+<h2>Websites der Höfe</h2>
+<p>Fehlen in OpenStreetMap Öffnungszeiten oder Kontaktdaten, ergänzen wir sie aus der eigenen Website des Hofs. Auf der Seite des Eintrags steht dann, welche Angaben woher stammen und mit welchem Stand.</p>
+<h2>Angaben von Betrieben</h2>
+<p>Betriebe können ihren Eintrag über <a href="/mitmachen/">Mitmachen</a> übernehmen und pflegen. Diese Angaben prüfen wir und zeigen sie mit Stand an; sie haben Vorrang vor anderen Quellen.</p>
+<h2>Postleitzahlen und Orte</h2>
+<p>Postleitzahlen, Orte und Kreise: <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). Kartenbilder: OpenStreetMap, erst nach deiner Zustimmung geladen.</p>
+<h2>Keine Daten anderer Verzeichnisse</h2>
+<p>Wir übernehmen keine Daten, Texte oder Bilder aus anderen Hofladen-Verzeichnissen.</p>
+`, false);
+
+// ---------- Mitmachen: Formular für neue Einträge, Korrekturen und Übernahmen ----------
+{
+  const TAGE_FORM = [['mo', 'Montag'], ['di', 'Dienstag'], ['mi', 'Mittwoch'], ['do', 'Donnerstag'], ['fr', 'Freitag'], ['sa', 'Samstag'], ['so', 'Sonntag']];
+  const zeitZeile = ([k, n]) => `<tr><th scope="row">${n}</th><td><input type="time" name="${k}_von1" aria-label="${n} von"> – <input type="time" name="${k}_bis1" aria-label="${n} bis"></td><td><input type="time" name="${k}_von2" aria-label="${n} zweites Zeitfenster von"> – <input type="time" name="${k}_bis2" aria-label="${n} zweites Zeitfenster bis"></td></tr>`;
+  const formular = `
+<form class="melde-form" action="/api/meldung" method="post" enctype="multipart/form-data" data-meldeform>
+  <fieldset class="melde-art">
+    <legend>Was möchtest du tun?</legend>
+    <label><input type="radio" name="art" value="neu" checked><span>Neuen Hof oder Automaten eintragen</span></label>
+    <label><input type="radio" name="art" value="korrektur"><span>Bestehenden Eintrag korrigieren</span></label>
+    <label><input type="radio" name="art" value="uebernahme"><span>Ich betreibe den Hof und möchte den Eintrag übernehmen</span></label>
+  </fieldset>
+  <input type="hidden" name="hof" value="">
+  <p class="melde-hof" data-melde-hof hidden></p>
+  <div class="feldgruppe">
+    <h2>Betrieb</h2>
+    <label>Name<input name="name" maxlength="120" autocomplete="organization"></label>
+    <label>Art<select name="betriebsart"><option value="">bitte wählen</option><option>Hofladen</option><option>Milchtankstelle</option><option>Eierautomat</option><option>Regiomat</option><option>Fleischautomat</option><option>Kartoffelautomat</option><option>sonstiger Automat</option></select></label>
+    <label>Straße und Hausnummer<input name="strasse" maxlength="120" autocomplete="street-address"></label>
+    <div class="zeile"><label>PLZ<input name="plz" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code"></label><label>Ort<input name="ort" maxlength="80" autocomplete="address-level2"></label></div>
+    <div class="zeile"><label>Telefon<input name="telefon" type="tel" maxlength="40"></label><label>E-Mail des Betriebs<input name="email" type="email" maxlength="120"></label></div>
+    <label>Website<input name="website" type="url" maxlength="200" placeholder="https://"></label>
+  </div>
+  <div class="feldgruppe">
+    <h2>Öffnungszeiten</h2>
+    <label class="haken"><input type="checkbox" name="rund" value="ja"><span>Rund um die Uhr geöffnet (z. B. Automat)</span></label>
+    <table class="zeiten-form"><thead><tr><th></th><th>Zeitfenster</th><th>Zweites Zeitfenster (optional)</th></tr></thead><tbody>${TAGE_FORM.map(zeitZeile).join('')}</tbody></table>
+    <p class="leise">Leere Tage gelten als geschlossen.</p>
+    <label>Saisonale Hinweise<textarea name="saison" maxlength="300" rows="2" placeholder="z. B. Spargel ab Mitte April, im Januar Betriebsferien"></textarea></label>
+  </div>
+  <div class="feldgruppe">
+    <h2>Angebot</h2>
+    <div class="haken-liste">${Object.entries(KATEGORIEN).map(([k, n]) => `<label class="haken"><input type="checkbox" name="angebot" value="${k}"><span>${esc(n)}</span></label>`).join('')}</div>
+    <label class="haken"><input type="checkbox" name="bio" value="ja"><span>Bio (zertifiziert)</span></label>
+    <h3>Bezahlen</h3>
+    <div class="haken-liste">${Object.entries(ZAHLUNG_TEXT).map(([k, n]) => `<label class="haken"><input type="checkbox" name="zahlung" value="${k}"><span>${esc(n)}</span></label>`).join('')}</div>
+    <label>Kurze Beschreibung<textarea name="beschreibung" maxlength="600" rows="3"></textarea></label>
+  </div>
+  <div class="feldgruppe">
+    <h2>Fotos (optional)</h2>
+    <label>Bis zu 3 Fotos vom Hof oder Laden<input type="file" name="fotos" accept="image/jpeg,image/png,image/webp" multiple></label>
+    <label class="haken"><input type="checkbox" name="fotorechte" value="ja"><span>Ich habe die Rechte an den Fotos und erlaube die Veröffentlichung auf hofladenliste.de. Auf den Fotos sind keine erkennbaren Personen ohne deren Einverständnis.</span></label>
+  </div>
+  <div class="feldgruppe">
+    <h2>Kontakt</h2>
+    <div class="zeile"><label>Dein Name<input name="kontakt_name" maxlength="120" autocomplete="name"></label><label>Deine E-Mail<input name="kontakt_email" type="email" maxlength="120" autocomplete="email"></label></div>
+    <p class="leise">Für Rückfragen; bei der Übernahme eines Eintrags Pflicht. Wird nicht veröffentlicht.</p>
+    <label>Anmerkungen<textarea name="hinweis" maxlength="2000" rows="3"></textarea></label>
+    <label class="falle" aria-hidden="true">Firma<input name="firma" tabindex="-1" autocomplete="off"></label>
+    <input type="hidden" name="t" value="">
+    <label class="haken"><input type="checkbox" name="einwilligung" value="ja" required><span>Ich habe den <a href="/datenschutz/#formular">Datenschutzhinweis</a> gelesen. Die Angaben zum Betrieb werden nach Prüfung veröffentlicht.</span></label>
+  </div>
+  <p><button type="submit" class="knopf knopf-dunkel">Absenden</button></p>
+  <p class="fehler" data-melde-fehler hidden></p>
+</form>`;
+  textSeite('/mitmachen/', 'Hofladen eintragen – kostenlos', 'Hofladen eintragen: Trage deinen Hofladen, deine Milchtankstelle, deinen Eierautomaten oder Regiomaten kostenlos ein, korrigiere Angaben oder übernimm deinen Eintrag.', `<h1>Hofladen kostenlos eintragen</h1>
+<p>Der Eintrag ist kostenlos. Wir prüfen jede Meldung und veröffentlichen sie in der Regel innerhalb weniger Tage. Willkommen sind alle, die direkt verkaufen: Hofläden und Bauernläden, <a href="/milchtankstelle/">Milchtankstellen</a>, <a href="/eierautomat/">Eierautomaten</a> und <a href="/regiomat/">Regiomaten</a>.</p>
+<p>Betreibst du einen Hof, der schon eingetragen ist? Dann übernimm den Eintrag – du kannst Öffnungszeiten, Angebot, Fotos und saisonale Hinweise selbst aktuell halten. Danach gibt es auf Wunsch ein <a href="/fuer-hoefe/">Badge für deine Website</a>.</p>
+${formular}
+${kontaktMail ? `<p>Lieber per E-Mail? <a id="mail-link" href="mailto:${esc(kontaktMail)}?subject=${encodeURIComponent('Eintrag Hofladenliste')}">E-Mail schreiben</a></p>` : ''}
 <h2>Direkt in OpenStreetMap eintragen</h2>
-<p>Die Einträge stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a>. Wenn du deinen Hof dort einträgst (Kategorie „Hofladen“, Merkmal <code>shop=farm</code>; für Automaten <code>amenity=vending_machine</code> mit <code>vending=milk</code>, <code>eggs</code> usw.), erscheint er bei der nächsten wöchentlichen Aktualisierung auch hier – inklusive Öffnungszeiten.</p>`, false);
+<p>Die meisten Einträge stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a>. Wenn du deinen Hof dort einträgst (Kategorie „Hofladen“, Merkmal <code>shop=farm</code>; für Automaten <code>amenity=vending_machine</code> mit <code>vending=milk</code>, <code>eggs</code> usw.), erscheint er nach der nächsten Aktualisierung (montags und donnerstags) auch hier.</p>`, false);
+  textSeite('/mitmachen/danke/', 'Danke für deine Meldung', 'Deine Meldung ist bei uns angekommen. Wir prüfen sie und veröffentlichen die Angaben in der Regel innerhalb weniger Tage.', `<h1>Danke – deine Meldung ist angekommen</h1>
+<p>Wir prüfen die Angaben und veröffentlichen sie in der Regel innerhalb weniger Tage. Bei Rückfragen melden wir uns, falls du eine E-Mail-Adresse angegeben hast.</p>
+<p><a href="/">Zur Startseite</a> · <a href="/fuer-hoefe/">Badge für deine Website</a></p>`);
+}
 schreibe('/404.html', seite({
   titel: 'Seite nicht gefunden | Hofladenliste', beschreibung: 'Diese Seite gibt es nicht.', pfad: '/404.html', noindex: true, klasse: 'textseite',
   inhalt: '<article class="text"><h1>Diese Seite gibt es nicht</h1><p>Vielleicht wurde der Eintrag verschoben. Gib oben deine Postleitzahl ein oder starte auf der <a href="/">Startseite</a>.</p></article>',
 }), false);
 
 // ---------- Robots, Sitemap ----------
-writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
+writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\nDisallow: /verwaltung/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
 
 // Seitenarchiv (data/seiten-stand.json): Inhalts-Hash und Änderungsdatum je Seite, auch für Seiten,
 // die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.
-const STAND_DATEI = join(ROOT, 'data', 'seiten-stand.json');
-const stand = existsSync(STAND_DATEI) ? JSON.parse(readFileSync(STAND_DATEI, 'utf8')) : { seiten: {}, hoefe: {} };
-const ARCHIV_AUSNAHMEN = new Set(['/merkliste/']);
-for (const pfad of ALLE_SEITEN) {
-  if (ARCHIV_AUSNAHMEN.has(pfad)) continue;
-  const h = SEITEN_HASH.get(pfad);
-  const alt = stand.seiten[pfad];
-  if (!alt) stand.seiten[pfad] = [h, BUILD_DATUM];
-  else if (alt[0] !== h) stand.seiten[pfad] = [h, alt[0] == null ? alt[1] : BUILD_DATUM];
-}
 for (const e of eintraege) stand.hoefe[e.slug] = e.osm || e.id;
 const sortiert = (o) => Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]]));
 writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe) }));
@@ -1202,9 +1696,8 @@ writeFileSync(join(GEN, 'routen.json'), JSON.stringify({ umleitungen, entfernt }
 console.log(`Seitenarchiv: ${Object.keys(stand.seiten).length} Seiten, ${Object.keys(umleitungen).length} Weiterleitungen, ${entfernt.length} entfernte Höfe (410)`);
 
 // Sitemaps nach Seitentyp mit Sitemap-Index
-const TYP_KREIS_PFADE = new Set([...TYP_KREIS.values()].map((x) => x.pfad));
 const sitemapTyp = (p) => p.startsWith('/hof/') ? 'hoefe'
-  : TYP_KREIS_PFADE.has(p) ? 'kategorien'
+  : KATEGORIE_PFADE.has(p) || p.startsWith('/angebot/') ? 'kategorien'
   : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) ? 'orte'
   : /^\/[^/]+\/[^/]+\/$/.test(p) && laender.some((l) => p.startsWith(`/${l.slug}/`)) ? 'kreise'
   : 'seiten';
@@ -1227,6 +1720,20 @@ for (const t of ['seiten', 'kategorien', 'kreise', 'orte', 'hoefe']) {
   }
 }
 writeFileSync(join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexEintraege.map(([n, l]) => `<sitemap><loc>${cfg.domain}/sitemaps/${n}</loc><lastmod>${l}</lastmod></sitemap>`).join('\n')}\n</sitemapindex>\n`);
+
+// ---------- Optional: Gesamtliste als JSON (LISTE_EXPORT=pfad node scripts/build.mjs) ----------
+if (process.env.LISTE_EXPORT) {
+  writeFileSync(process.env.LISTE_EXPORT, JSON.stringify(eintraege.map((e) => ({
+    name: e.titelSeite, art: e.art, strasse: e.strasse || '', plz: e.plz || '', ort: e.ortAnzeige, adresse: e.adresse,
+    kreis: e.k.titel, bundesland: e.k.landName, telefon: e.telefon || '', email: e.email || '', website: e.website || '',
+    facebook: e.facebook || '', instagram: e.instagram || '', oeffnungszeiten: e.oeffnungszeiten ? ((zeilen(e.oeffnungszeiten) || []).map(([t, v]) => `${t} ${v}`).join(', ') || e.oeffnungszeiten) : (e.oeffnungszeiten_text || ''),
+    oeffnungszeitenOsm: e.oeffnungszeiten || '', bio: e.bio ? 'ja' : '', angebot: e.kat.map((x) => KATEGORIEN[x]).join(', '),
+    betreiber: e.betreiber || '', ergaenzt: e.ergaenzt ? e.ergaenzt.felder.join(', ') : '',
+    quelle: e.osm ? `https://www.openstreetmap.org/${e.osm}` : (e.quelleUrl || 'manuell'), seite: cfg.domain + e.pfad,
+    indexiert: e.duenn ? 'nein' : 'ja', lat: e.lat, lon: e.lon,
+  }))));
+  console.log(`Liste exportiert: ${process.env.LISTE_EXPORT}`);
+}
 
 // ---------- Daten für den Worker ----------
 const plzIndex = {};
@@ -1278,7 +1785,7 @@ const KAT_CODES = Object.keys(KATEGORIEN);
 writeFileSync(join(GEN, 'eintraege.json'), JSON.stringify(eintraege.map((e) => [
   +e.lat.toFixed(5), +e.lon.toFixed(5), e.slug, e.titel, e.art, e.ortAnzeige, e.oeffnungszeiten || '', e.typ === 'hofladen' ? 1 : 0,
   e.adresse, e.telefon || '', e.website || '', e.kat.map((x) => 'abcdefghijklmnop'[KAT_CODES.indexOf(x)]).join(''), e.bio ? 1 : 0,
-  e.oeffnungszeiten_text || ''])));
+  e.oeffnungszeiten_text || '', e.sonntag ? 1 : 0])));
 writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;

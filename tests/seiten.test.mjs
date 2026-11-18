@@ -18,7 +18,9 @@ const info = new Map(alle.map(([p, html]) => [p, {
 }]));
 const sm = sitemapUrls();
 const inSitemap = new Set(sm.map((x) => x.loc));
-const art = (p) => p.startsWith('/hof/') ? 'hof' : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) ? 'unterseite' : /^\/[^/]+\/[^/]+\/$/.test(p) ? 'kreis' : 'sonstige';
+// Listenseiten mit Karten; kompakte Kategorieseiten (Bundesland) zeigen Linklisten statt Karten
+const art = (p) => p.startsWith('/hof/') ? 'hof' : /<body class="kompakt"/.test(info.get(p)?.html || '') ? 'kompakt'
+  : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) && !p.startsWith('/angebot/') ? 'unterseite' : /^\/[^/]+\/[^/]+\/$/.test(p) && !p.startsWith('/angebot/') ? 'kreis' : 'sonstige';
 
 test('jede Seite: genau eine H1, ein Canonical auf sich selbst, Title und Description', () => {
   const fehler = [];
@@ -66,11 +68,11 @@ test('JSON-LD ist gültig und passt zum sichtbaren Inhalt', () => {
     if (p.startsWith('/hof/') && !typen.some((t) => t === 'Store' || t === 'LocalBusiness')) fehler.push(`${p}: Store fehlt`);
     if ((art(p) === 'kreis' || art(p) === 'unterseite') && s.karten && !typen.includes('ItemList')) fehler.push(`${p}: ItemList fehlt`);
     const il = s.ld.find((x) => x['@type'] === 'ItemList');
-    if (il && art(p) !== 'sonstige' && il.numberOfItems !== s.karten)
+    if (il && (art(p) === 'kreis' || art(p) === 'unterseite') && il.numberOfItems !== s.karten)
       fehler.push(`${p}: ItemList ${il.numberOfItems} ≠ ${s.karten} Karten`);
     const faq = s.ld.find((x) => x['@type'] === 'FAQPage');
     if (faq) {
-      const text = s.html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+      const text = s.html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&gt;/g, '>').replace(/&lt;/g, '<');
       for (const q of faq.mainEntity) if (!text.includes(q.name)) fehler.push(`${p}: FAQ-Frage nicht sichtbar: ${q.name}`);
     }
     if (s.ld.find((x) => x['@type'] === 'Store' || x['@type'] === 'LocalBusiness')?.openingHoursSpecification && !/<table class="woche">/.test(s.html))
@@ -99,4 +101,38 @@ test('dünne Listenseiten (unter 3 Einträgen) sind nicht indexierbar', () => {
   const fehler = [];
   for (const [p, s] of info) if (!s.noindex && (art(p) === 'kreis' || art(p) === 'unterseite') && s.karten < 3) fehler.push(p);
   assert.deepEqual(fehler, []);
+});
+
+test('Startorte haben Seiten "Hofläden in <Ort> und Umgebung" mit Entfernungen', () => {
+  for (const [p, name] of [['/berlin/berlin/', 'Berlin'], ['/brandenburg/cottbus/', 'Cottbus'], ['/sachsen/dresden/', 'Dresden'],
+    ['/sachsen/leipzig-stadt/', 'Leipzig'], ['/bayern/muenchen-stadt/', 'München'], ['/brandenburg/spree-neisse/forst-lausitz/', 'Forst (Lausitz)']]) {
+    const s = info.get(p);
+    assert.ok(s, p);
+    assert.match(s.html, new RegExp(`<h1>Hofläden in ${name.replace(/[()]/g, '\\$&')} und Umgebung</h1>`), p);
+    assert.ok(!s.noindex, `${p} indexierbar`);
+    assert.ok(s.karten >= 3, `${p}: ${s.karten} Einträge`);
+    assert.match(s.html, /data-radius-filter="10"/, `${p}: Umkreisfilter`);
+    assert.match(s.html, /<span class="km">/, `${p}: Entfernungen`);
+  }
+});
+
+test('Hofseiten zeigen Aktualität, Korrektur und Übernahme', () => {
+  const s = info.get('/hof/kittlers-hofladen-riesa/');
+  assert.match(s.html, /Seite aktualisiert: \d{2}\.\d{2}\.\d{4}/);
+  assert.match(s.html, /thema=uebernahme/);
+  assert.doesNotMatch(s.html, /%%SEITENSTAND%%/);
+});
+
+test('Kategorieseiten auf Bundes-, Landes- und Kreisebene', () => {
+  for (const p of ['/hofladen-automaten/', '/bio-hofladen/', '/angebot/eier/', '/bayern/bio-hofladen/', '/bayern/hofladen-automaten/', '/bayern/milchtankstellen/']) {
+    const s = info.get(p);
+    assert.ok(s && !s.noindex, p);
+    assert.match(s.html, /data-naehe=/, `${p}: Nähe-Suche`);
+  }
+  const kompakt = info.get('/bayern/bio-hofladen/');
+  assert.ok((kompakt.html.match(/<ul class="eintrag-liste">/g) || []).length >= 3, 'Einträge nach Kreis');
+  // mindestens eine Kreis-Seite je neuer Kategorie
+  const pfade = [...info.keys()];
+  assert.ok(pfade.some((p) => /^\/[^/]+\/[^/]+\/bio-hofladen\/$/.test(p)), 'Bio je Kreis');
+  assert.ok(pfade.some((p) => /^\/[^/]+\/[^/]+\/hofladen-automaten\/$/.test(p)), 'Automaten je Kreis');
 });

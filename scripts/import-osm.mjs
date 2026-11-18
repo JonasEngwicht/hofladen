@@ -54,6 +54,26 @@ const stat = { gesamt: elemente.size, verworfen: {}, hofladen: 0, automat: 0 };
 const verwirf = (g) => { stat.verworfen[g] = (stat.verworfen[g] || 0) + 1; };
 const eintraege = [];
 
+// Zahlungsarten aus payment:*=yes, zusammengefasst zu verständlichen Gruppen
+const ZAHLUNG = [
+  ['bar', ['cash', 'coins', 'notes']],
+  ['girocard', ['girocard', 'debit_cards', 'maestro', 'v_pay']],
+  ['kreditkarte', ['credit_cards', 'visa', 'mastercard', 'american_express']],
+  ['kontaktlos', ['contactless', 'apple_pay', 'google_pay']],
+  ['paypal', ['paypal']],
+  ['ueberweisung', ['wire_transfer', 'sepa', 'bank_transfer']],
+];
+function zahlungsarten(t) {
+  const ja = new Set(Object.entries(t).filter(([k, v]) => k.startsWith('payment:') && v === 'yes').map(([k]) => k.slice(8)));
+  const arten = ZAHLUNG.filter(([, keys]) => keys.some((k) => ja.has(k))).map(([name]) => name);
+  return arten.length ? arten : null;
+}
+// Letzte Prüfung vor Ort laut OSM (check_date bzw. survey:date), Format JJJJ-MM-TT
+function pruefDatum(t) {
+  const d = [t.check_date, t['check_date:opening_hours'], t['survey:date']].filter((x) => /^\d{4}-\d{2}(-\d{2})?$/.test(x || '')).sort().pop();
+  return d || null;
+}
+
 for (const [osm, el] of elemente) {
   const t = el.tags || {};
   const lat = el.lat ?? el.center?.lat;
@@ -109,6 +129,8 @@ for (const [osm, el] of elemente) {
     bio: t.organic === 'only' || t.organic === 'yes' ? true : null,
     produkte: produkte.length ? produkte : null,
     selbstbedienung: t.self_service === 'yes' || typ === 'automat' ? true : null,
+    zahlung: zahlungsarten(t),
+    geprueft: pruefDatum(t),
   });
   stat[typ]++;
 }
