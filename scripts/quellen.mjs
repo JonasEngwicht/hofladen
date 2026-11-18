@@ -1,13 +1,28 @@
-// Auswahl und Abgleich der Overture-Kandidaten (reine Funktionen, siehe tests/overture.test.mjs).
-// Quelle: Overture Maps Foundation, Places-Theme (CDLA-Permissive-2.0, Apache-2.0, CC0; enthält keine OSM-Daten).
-import { distanzKm } from './lib.mjs';
+// Auswahl und Abgleich von Kandidaten aus offenen Quellen (reine Funktionen, siehe tests/quellen.test.mjs).
+// Quellen: Overture Maps, Karte von morgen, Foursquare Open Source Places, offene Verwaltungsdaten.
+import { distanzKm, slugify } from './lib.mjs';
+
+// Rang: kleiner = bevorzugt, wenn mehrere Quellen denselben Hof kennen (Verwaltung und Community-Karte vor Firmendaten)
+export const QUELLEN = {
+  kommunal: { praefix: 'g', name: 'offene Verwaltungsdaten', url: 'https://www.govdata.de/', rang: 0 },
+  kvm: { praefix: 'k', name: 'Karte von morgen', url: 'https://kartevonmorgen.org/', lizenz: 'CC0-1.0', rang: 1 },
+  overture: { praefix: 'o', name: 'Overture Maps Foundation', url: 'https://overturemaps.org/', rang: 2 },
+  foursquare: { praefix: 'f', name: 'Foursquare Open Source Places', url: 'https://opensource.foursquare.com/os-places/', lizenz: 'Apache-2.0', rang: 3 },
+};
+// Stabile ID für Einträge aus offenen Quellen, z. B. overture/<GERS-ID> → o-<GERS-ID>
+export function quellenId(quelle, id) {
+  const q = QUELLEN[quelle];
+  return q ? `${q.praefix}-${slugify(id)}` : null;
+}
 
 // Namen, die eindeutig auf Direktverkauf hinweisen
 export const STARK = /hof-?laden|hoflädchen|hofladl|hofverkauf|bauern-?laden|hofmarkt|hof-?käserei|hof-?shop|hof-?box|milch-?tankstelle|milch-?automat|frischmilch|milch-?häus|eier-?automat|eier-?häus|regio-?mat|regio-?box|direktvermarktung|direktverkauf|selbstbedienungs-?(hütte|häus|laden|stand)|verkaufs-?(hütte|häus|automat)|verkaufsstand/i;
+// Namen, die nach einem Hof oder Erzeuger klingen
+const HOF_NAME = /hof|bauer|\bgut\b|gut |m(ü|ue)hle|g(ä|ae)rtnerei|imkerei|k(ä|ae)serei|milch|eier|obst|gem(ü|ue)se|spargel|erdbeer|kartoffel|ziegen|schaf|demeter|bioland|naturland|landwirt|farm|weide|alm\b|brennerei|winzer|metzgerei/i;
 // Höfe, die oft direkt verkaufen – nur mit passender Kategorie und hoher Konfidenz
 export const SCHWACH = /bio-?hof|obst-?hof|spargel-?hof|erdbeer-?hof|gemüse-?hof|geflügel-?hof|eier-?hof|kartoffel-?hof/i;
 // Keine Höfe, auch wenn der Name passt
-const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten|online|versandhandel|transporte?\b|\.(de|com|net|eu|info)\b/i;
+const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten|online|versandhandel|transporte?\b|\.(de|com|net|eu|info)\b|^landkreis|^kreis |^stadt |^gemeinde |einkaufsf(ü|ue)hrer|regionale lebensmittel in|wochenmarkt|bauernmarkt|bio-?markt|markthalle|marktschw(ä|ae)rmer|food-?coop|initiative|netzwerk|verbund|arbeitsgemeinschaft|ernährungsrat|ernaehrungsrat|museum|hofl(ä|ae)den\b|direktvermarktern?\b|erzeuger in|einkaufen in|einkaufserlebnis|einkaufsm(ö|oe)glichkeit|fairtrade|^fair,|\b(marktkauf|edeka|rewe|kaufland|netto|aldi|lidl|penny|tegut|globus|denns|alnatura)\b/i;
 const KAT_HOF = new Set(['farm', 'poultry_farm', 'dairy_farm', 'orchard', 'pick_your_own_farm', 'ranch', 'agriculture',
   'agricultural_service', 'livestock_breeder', 'farmers_market', 'greengrocer', 'produce_store', 'grocery_store',
   'organic_grocery_store', 'food_and_beverage_store', 'specialty_foods_store', 'dairy_store', 'cheese_shop', 'butcher_shop',
@@ -20,7 +35,7 @@ export const MIN_KONF_STARK = 0.7;
 export const MIN_KONF_SCHWACH = 0.8;
 
 // Verzeichnisse, Branchenbücher und Plattformen sind keine Website des Hofs
-const FREMD = /(^|\.)(dasoertliche|gelbeseiten|11880|ortsdienst|oeffnungszeitenbuch|werkenntdenbesten|cylex|golocal|meinestadt|branchenbuch|yelp|tripadvisor|google|goo|freeontour|bauernhofurlaub|rausgegangen|hofladenfinder|heimischehoflaeden|hofladen-bauernladen|creditreform|northdata|wlw|firmenwissen|unternehmensregister|linktr|ebay|kleinanzeigen)\./i;
+const FREMD = /(^|\.)(dasoertliche|gelbeseiten|11880|ortsdienst|oeffnungszeitenbuch|werkenntdenbesten|cylex|golocal|meinestadt|branchenbuch|yelp|tripadvisor|google|goo|freeontour|bauernhofurlaub|rausgegangen|hofladenfinder|heimischehoflaeden|hofladen-bauernladen|creditreform|northdata|wlw|firmenwissen|unternehmensregister|linktr|ebay|kleinanzeigen|hinterland|t|telegram|whatsapp|wa|regional-optimal)\./i;
 
 export function hofTyp(name) {
   const n = name || '';
@@ -36,6 +51,10 @@ export function istHofladen(o) {
   if (!name || KEIN_HOF.test(name)) return false;
   const kat = o.kat || null, hier = o.hier || '';
   const katHof = KAT_HOF.has(kat) || HIER_HOF.test(hier);
+  // Quelle ordnet den Ort selbst als Hofladen/Direktvermarkter ein (Schlagwort, Datensatz über Direktvermarkter);
+  // der Name muss trotzdem nach einem Hof oder Erzeuger klingen (keine Sammelseiten, Märkte, Läden ohne Hofbezug)
+  if (o.hofHinweis && !STARK.test(name) && !HOF_NAME.test(name)) return false;
+  if (o.hofHinweis) return o.konf >= MIN_KONF_STARK && (kat === null || katHof || KAT_NUR_STARK.has(kat));
   if (STARK.test(name)) {
     if (o.konf < MIN_KONF_STARK) return false;
     if (kat === null) return o.konf >= MIN_KONF_SCHWACH;
@@ -43,6 +62,17 @@ export function istHofladen(o) {
   }
   if (SCHWACH.test(name)) return o.konf >= MIN_KONF_SCHWACH && katHof;
   return false;
+}
+
+// Würde mit höherer Konfidenz aufgenommen: Kandidat für die Prüfung über die eigene Website des Hofs
+export const MIN_KONF_PRUEFUNG = 0.5;
+export function nurKonfidenzFehlt(o) {
+  return o.konf >= MIN_KONF_PRUEFUNG && !istHofladen(o) && istHofladen({ ...o, konf: 1 });
+}
+// Hinweise auf Direktverkauf auf der Startseite eines Hofs
+export const WEBSITE_HINWEIS = /hof-?laden|hofverkauf|ab[- ]hof|direktvermarktung|direktverkauf|verkaufsautomat|milch-?tankstelle|regio-?mat|selbstbedienung|bauern-?laden|hofl(ä|ae)dchen/i;
+export function websiteBestaetigt(html) {
+  return WEBSITE_HINWEIS.test(String(html || '').replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' '));
 }
 
 // Namen vergleichbar machen: kennzeichnende Wörter ohne Gattungsbegriffe
@@ -107,13 +137,18 @@ function url(u) {
   if (!u) return null;
   u = String(u).trim();
   if (!/^https?:\/\//i.test(u)) u = 'https://' + u.replace(/^\/+/, '');
-  try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; }
+  try {
+    const x = new URL(u);
+    if (!/^https?:$/.test(x.protocol)) return null;
+    if (x.username || x.password) { x.username = ''; x.password = ''; } // „www.info@hof.de“ → hof.de
+    return x.href;
+  } catch { return null; }
 }
 export function kontakt(o) {
-  const webs = (o.websites || []).map(url).filter(Boolean);
+  const webs = (o.websites || []).map(url).filter((u) => u && !/\.(pdf|docx?|xlsx?)(\?|#|$)/i.test(u));
   const socials = [...(o.socials || []), ...webs].map(url).filter(Boolean);
   const host = (u) => new URL(u).hostname.replace(/^www\./, '');
-  const website = webs.find((u) => !FREMD.test(`.${host(u)}`) && !/(^|\.)(facebook|instagram|fb)\.com$/.test(host(u))) || null;
+  const website = webs.find((u) => !FREMD.test(`.${host(u)}`) && !/(^|\.)(facebook|instagram|fb)\.com$/.test(host(u)) && !/\/branchenbuch\//i.test(u)) || null;
   const facebook = socials.find((u) => /(^|\.)(facebook|fb)\.com$/.test(host(u))) || null;
   const instagram = socials.find((u) => /(^|\.)instagram\.com$/.test(host(u))) || null;
   const tel = (o.phones || []).map(telefon).find(Boolean) || null;
@@ -144,16 +179,19 @@ export function adresse(o) {
   return { strasse, plz, ort: o.ort ? String(o.ort).trim() : null };
 }
 
-// Doppelte Overture-Datensätze (z. B. Meta und BrightQuery für denselben Hof) zusammenführen
-export function zusammenfuehren(liste) {
-  const sortiert = [...liste].sort((a, b) => b.konf - a.konf || String(a.id).localeCompare(String(b.id)));
+// Doppelte Datensätze (z. B. Meta und BrightQuery oder Overture und Karte von morgen für denselben Hof) zusammenführen.
+// vorrang(o): kleinere Zahl gewinnt (z. B. bereits veröffentlichte IDs, damit stabile IDs stabil bleiben).
+export function zusammenfuehren(liste, vorrang = () => 0) {
+  const sortiert = [...liste].sort((a, b) => vorrang(a) - vorrang(b) || b.konf - a.konf || String(a.id).localeCompare(String(b.id)));
   const idx = rasterIndex([]), behalten = [];
   for (const o of sortiert) {
     const gleich = idx.nahe(o.lat, o.lon).find((k) => gleicherHof(k, o));
     if (gleich) {
       gleich.weitere.push(o);
-      for (const f of ['website', 'facebook', 'instagram', 'telefon', 'email']) if (!gleich.k[f] && o.k[f]) gleich.k[f] = o.k[f];
+      for (const f of ['website', 'facebook', 'instagram', 'telefon', 'email']) if (!gleich.k[f] && o.k[f]) { gleich.k[f] = o.k[f]; (gleich.kq ||= {})[f] = o.quelle; }
       if (!gleich.a.strasse && o.a.strasse) gleich.a = o.a;
+      for (const f of ['oeffnungszeiten_text', 'beschreibung']) if (!gleich[f] && o[f]) gleich[f] = o[f];
+      if (o.bio) gleich.bio = true;
       continue;
     }
     const neu = { ...o, weitere: [] };

@@ -2,7 +2,7 @@
 """Holt Hofladen-Kandidaten in Deutschland aus Overture Maps Places (offene Lizenzen: CDLA-Permissive-2.0,
 Apache-2.0, CC0; keine OSM-Daten) und schreibt sie als JSON-Liste. Läuft in GitHub Actions.
 Aufruf: python scripts/fetch-overture.py <ziel.json>
-Die Auswahl (eindeutige Namen, Konfidenz, Doppelungen) macht scripts/import-overture.mjs."""
+Die Auswahl (eindeutige Namen, Konfidenz, Doppelungen) macht scripts/import-quellen.mjs."""
 import json, subprocess, sys
 import duckdb
 
@@ -53,4 +53,4 @@ print('Kandidaten:', len(rows), file=sys.stderr)
 if len(rows) < 5000:
     sys.exit('Zu wenige Kandidaten – Abfrage oder Schema prüfen.')
 with open(ziel, 'w', encoding='utf-8') as f:
-    json.dump({'release': rel, 'orte': rows}, f, ensure_ascii=False)
+    json.dump({'quelle': 'overture', 'release': rel, 'orte': rows}, f, ensure_ascii=False)

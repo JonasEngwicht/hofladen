@@ -6,7 +6,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath, domainToUnicode } from 'node:url';
 import { createHash } from 'node:crypto';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
-import { rasterIndex, gleicherHof } from './overture.mjs';
+import { rasterIndex, gleicherHof, QUELLEN, quellenId } from './quellen.mjs';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml } from '../static/karte.js';
 
@@ -82,20 +82,31 @@ for (const [id, m] of Object.entries(betreiber)) {
 }
 
 const OVERTURE_DATENSATZ = { meta: 'Daten von Meta', BrightQuery: 'Firmendaten von BrightQuery', Foursquare: 'Daten von Foursquare', Microsoft: 'Daten von Microsoft', AllThePlaces: 'AllThePlaces' };
-// Offene Daten aus Overture Maps (data/overture.json, siehe scripts/import-overture.mjs): Hofläden und Automaten,
-// die in OpenStreetMap fehlen. Doppelungen werden hier noch einmal gegen den aktuellen Stand geprüft,
-// damit ein neu in OSM eingetragener Hof den Overture-Eintrag ersetzt.
-const overture = existsSync(join(ROOT, 'data', 'overture.json'))
-  ? JSON.parse(readFileSync(join(ROOT, 'data', 'overture.json'), 'utf8')) : { neu: [], ergaenzungen: {} };
-let overtureNeu = 0, overtureErgaenzt = 0;
+// Quellenangabe auf der Hofseite für Einträge aus offenen Quellen (Lizenz und ggf. Urheber nennen)
+function quellenHinweis(e) {
+  const a = (url, text) => `<a href="${esc(url)}" rel="nofollow noopener" target="_blank">${esc(text)}</a>`;
+  const web = e.webGeprueft ? ` Den Direktverkauf haben wir auf der Website des Hofs geprüft (Stand ${esc(datumDe(e.webGeprueft))}).` : '';
+  if (e.quelle === 'overture') return `Quelle: offene Daten der ${a('https://overturemaps.org/', 'Overture Maps Foundation')} (${esc(OVERTURE_DATENSATZ[e.datensatz] || e.datensatz || 'Overture')}, ${esc(e.lizenz || 'CDLA-Permissive-2.0')}).${web}`;
+  if (e.quelle === 'foursquare') return `Quelle: ${a('https://opensource.foursquare.com/os-places/', 'Foursquare Open Source Places')} (Apache-2.0).${web}`;
+  if (e.quelle === 'kvm') return `Quelle: ${a(e.quelleUrl || 'https://kartevonmorgen.org/', 'Karte von morgen')} (CC0-1.0).${web}`;
+  return `Quelle: offene Verwaltungsdaten, ${a(e.quelleUrl || 'https://www.govdata.de/', e.datensatz || 'GovData')}${e.urheber ? `, ${esc(e.urheber)}` : ''} (${esc(e.lizenz || 'CC0-1.0')}).${web}`;
+}
+// Offene Quellen (data/offene-quellen.json, siehe scripts/import-quellen.mjs): Overture Maps, Foursquare, Karte von morgen
+// und offene Verwaltungsdaten. Neue Einträge für Höfe, die in OpenStreetMap fehlen; Doppelungen werden hier noch einmal
+// gegen den aktuellen Stand geprüft, damit ein neu in OSM eingetragener Hof den Eintrag aus der offenen Quelle ersetzt.
+const offen = existsSync(join(ROOT, 'data', 'offene-quellen.json'))
+  ? JSON.parse(readFileSync(join(ROOT, 'data', 'offene-quellen.json'), 'utf8')) : { neu: [], ergaenzungen: {}, quellen: {} };
+const offenNeu = {}, offenErgaenzt = {};
 {
   const idx = rasterIndex(eintraege);
-  for (const o of overture.neu) {
+  for (const o of offen.neu) {
+    const quelle = o.quelle || 'overture', qid = o.qid || o.overture;
     if (idx.nahe(o.lat, o.lon).some((e) => gleicherHof(e, o))) continue;
-    const e = { ...o, id: `overture/${o.overture}`, quelle: 'overture', quelleUrl: 'https://overturemaps.org/' };
-    eintraege.push(e); idx.add(e); overtureNeu++;
+    const e = { ...o, quelle, qid, id: `${quelle}/${qid}`, quelleUrl: o.quelleUrl || QUELLEN[quelle].url };
+    eintraege.push(e); idx.add(e); offenNeu[quelle] = (offenNeu[quelle] || 0) + 1;
   }
 }
+const offenNeuSumme = Object.values(offenNeu).reduce((a, b) => a + b, 0);
 
 // Ergänzungen aus den Websites der Höfe (data/ergaenzungen.json): füllen nur leere Felder,
 // damit spätere Angaben in OpenStreetMap immer Vorrang haben.
@@ -133,19 +144,28 @@ for (const e of eintraege) {
   rechercheAnzahl++;
 }
 
-// Kontaktdaten und Adressen aus Overture Maps für OSM-Einträge: ebenfalls nur leere Felder
+// Kontaktdaten, Adressen und Öffnungszeiten (Text) aus offenen Quellen für OSM-Einträge: ebenfalls nur leere Felder
 for (const e of eintraege) {
-  const z = e.osm && overture.ergaenzungen[e.osm];
+  const z = e.osm && offen.ergaenzungen[e.osm];
   if (!z) continue;
-  const felder = [];
-  for (const f of ['telefon', 'website', 'email', 'facebook', 'instagram']) if (z[f] && !e[f]) { e[f] = z[f]; felder.push(f); }
-  if (z.strasse && !e.strasse) { e.strasse = z.strasse; e.plz ||= z.plz; e.ort ||= z.ort; felder.push('strasse'); }
-  if (!felder.length) continue;
+  const quellen = z.quellen || Object.fromEntries(['telefon', 'website', 'email', 'facebook', 'instagram', 'strasse'].filter((f) => z[f]).map((f) => [f, 'overture']));
+  const proQuelle = new Map();
+  for (const [f, q] of Object.entries(quellen)) {
+    if (f === 'oeffnungszeiten_text' ? (e.oeffnungszeiten || e.oeffnungszeiten_text) : e[f]) continue;
+    e[f] = z[f];
+    if (f === 'strasse') { e.plz ||= z.plz; e.ort ||= z.ort; }
+    if (!proQuelle.has(q)) proQuelle.set(q, []);
+    proQuelle.get(q).push(f === 'oeffnungszeiten_text' ? 'oeffnungszeiten' : f);
+  }
+  if (!proQuelle.size) continue;
   e.ergaenzt ??= { felder: [], quellen: [] };
-  e.ergaenzt.felder.push(...felder);
-  e.ergaenzt.quellen.push({ felder, quelle: 'https://overturemaps.org/', stand: overture.stand });
-  overtureErgaenzt++;
+  for (const [q, felder] of proQuelle) {
+    e.ergaenzt.felder.push(...felder);
+    e.ergaenzt.quellen.push({ felder, quelle: QUELLEN[q].url, stand: offen.stand });
+    offenErgaenzt[q] = (offenErgaenzt[q] || 0) + 1;
+  }
 }
+const offenErgaenztSumme = Object.values(offenErgaenzt).reduce((a, b) => a + b, 0);
 
 // Angaben von Betreibern und geprüften Korrekturen haben Vorrang vor OSM
 {
@@ -194,14 +214,15 @@ for (const e of eintraege.sort((a, b) => (a.osm || a.id).localeCompare(b.osm || 
 }
 
 // Stabile ID je Eintrag: ändert sich nie, auch wenn sich Name oder Slug ändern.
-// OSM: n123/w123/r123, Betreiber-Einträge: b<Meldung>, Overture: o-<GERS-ID>, manuelle Einträge: m-<id>
+// OSM: n123/w123/r123, Betreiber-Einträge: b<Meldung>, offene Quellen: o-/f-/k-/g-<ID> (Overture, Foursquare,
+// Karte von morgen, Verwaltungsdaten), manuelle Einträge: m-<id>
 function stabileIdAus(roh) {
   const osm = String(roh).match(/^(node|way|relation)\/(\d+)$/);
   if (osm) return osm[1][0] + osm[2];
   const b = String(roh).match(/^betreiber\/(\d+)$/);
   if (b) return `b${b[1]}`;
-  const o = String(roh).match(/^overture\/(.+)$/);
-  if (o) return `o-${slugify(o[1])}`;
+  const o = String(roh).match(/^(overture|foursquare|kvm|kommunal)\/(.+)$/);
+  if (o) return quellenId(o[1], o[2]);
   return `m-${slugify(String(roh))}`;
 }
 for (const e of eintraege) e.sid = stabileIdAus(e.osm || e.id);
@@ -386,7 +407,7 @@ ${inhalt}
     <li><a href="/impressum/">Impressum</a></li>
     <li><a href="/datenschutz/">Datenschutz</a></li>
   </ul>
-  <p class="fuss-quelle">Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a> (ODbL) und <a href="/quellen/">Overture Maps Foundation</a>, PLZ-Daten <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). Stand ${BUILD_DATUM.split('-').reverse().join('.')}.</p>
+  <p class="fuss-quelle">Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a> (ODbL) und <a href="/quellen/">weitere offene Quellen</a>, PLZ-Daten <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). Stand ${BUILD_DATUM.split('-').reverse().join('.')}.</p>
 </div></footer>
 <datalist id="orte-vorschlaege"></datalist>
 <script type="module" src="/app.js?v=${VERSION}"></script>
@@ -1472,14 +1493,14 @@ for (const e of eintraege) {
     </div>
   </aside>
   <div class="hof-info">
-    ${e.kat.length ? `<section class="block"><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${['osm', 'overture'].includes(e.quelle) ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
+    ${e.kat.length ? `<section class="block"><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${(e.quelle === 'osm' || QUELLEN[e.quelle]) ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
     ${e.fotos?.length ? `<section class="block hof-fotos"><h2>Fotos</h2><div class="foto-reihe">${e.fotos.map((f, i) => `<img src="${esc(f)}" width="1200" height="900" alt="${esc(e.titel)} – Foto ${i + 1}" loading="lazy" decoding="async">`).join('')}</div><p class="leise">Fotos: ${esc(e.titel)}</p></section>` : ''}
     ${e.saisonHinweis ? `<section class="block saison-hinweis"><h2>Aktuell und saisonal</h2><p>${esc(e.saisonHinweis)}</p><p class="leise">Angabe des Betriebs, Stand ${esc(datumDe(e.gepflegt.stand))}</p></section>` : ''}
     ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.quellen.map((q) => `${q.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram', strasse: 'Adresse' })[f]).join(', ')} ergänzt aus <a href="${esc(q.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(q.quelle).split('/')[0])}</a>${q.stand ? ` (Stand ${esc(datumDe(q.stand))})` : ''}`).join('; ')}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
-    <p class="hinweis">Angaben ohne Gewähr. ${e.gepflegt ? `${e.gepflegt.art === 'uebernahme' ? 'Der Betrieb pflegt diesen Eintrag selbst' : 'Angaben geprüft und ergänzt'} (Stand ${esc(datumDe(e.gepflegt.stand))}). ` : ''}${e.quelle === 'betreiber' ? `Eingetragen vom Betrieb. Etwas stimmt nicht? <a href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a>.` : e.quelle === 'overture' && !e.gepflegt
-      ? `Quelle: offene Daten der <a href="https://overturemaps.org/" rel="nofollow noopener" target="_blank">Overture Maps Foundation</a> (${esc(OVERTURE_DATENSATZ[e.datensatz] || e.datensatz || 'Overture')}, ${esc(e.lizenz || 'CDLA-Permissive-2.0')}). Die Angaben sind noch nicht vom Betrieb bestätigt. Etwas stimmt nicht oder ist der Hof geschlossen? <a href="${bearbeiten(e, 'ergaenzen')}">Bitte melden</a>.`
+    <p class="hinweis">Angaben ohne Gewähr. ${e.gepflegt ? `${e.gepflegt.art === 'uebernahme' ? 'Der Betrieb pflegt diesen Eintrag selbst' : 'Angaben geprüft und ergänzt'} (Stand ${esc(datumDe(e.gepflegt.stand))}). ` : ''}${e.quelle === 'betreiber' ? `Eingetragen vom Betrieb. Etwas stimmt nicht? <a href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a>.` : QUELLEN[e.quelle] && !e.gepflegt
+      ? `${quellenHinweis(e)} Die Angaben sind noch nicht vom Betrieb bestätigt. Etwas stimmt nicht oder ist der Hof geschlossen? <a href="${bearbeiten(e, 'ergaenzen')}">Bitte melden</a>.`
       : e.quelle === 'osm'
       ? `Quelle: <a href="https://www.openstreetmap.org/${e.osm}" rel="nofollow noopener" target="_blank">OpenStreetMap</a>. Etwas stimmt nicht? <a href="https://www.openstreetmap.org/edit?${e.osm.replace('/', '=')}" rel="nofollow noopener" target="_blank">In OpenStreetMap korrigieren</a> oder <a href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a>.`
       : `${e.quelleUrl ? `Quelle: <a href="${esc(e.quelleUrl)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.quelleUrl).split('/')[0])}</a>. ` : ''}Etwas stimmt nicht? <a href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a>.`}</p>
@@ -1624,7 +1645,7 @@ ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>'
 <p>E-Mail: ${imp.email ? `<a href="mailto:${esc(imp.email)}">${esc(imp.email)}</a>` : ''}${imp.telefon ? `<br>Telefon: ${esc(imp.telefon)}` : ''}</p>
 <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: ${esc(imp.name)}, Anschrift wie oben.</p>
 <h2>Datenquellen und Lizenzen</h2>
-<p>Einträge: © OpenStreetMap-Mitwirkende, Open Database License (ODbL), <a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>. Ergänzende Einträge und Kontaktdaten: Overture Maps Foundation, <a href="https://overturemaps.org/">overturemaps.org</a> (CDLA-Permissive-2.0; Datensätze von Foursquare unter Apache-2.0). Postleitzahlen: GeoNames, CC BY 4.0. Umriss Deutschlands: Natural Earth (gemeinfrei). Karte: Leaflet (BSD-2-Clause). Schriften: Zilla Slab und Atkinson Hyperlegible Next (SIL Open Font License).</p>`);
+<p>Einträge: © OpenStreetMap-Mitwirkende, Open Database License (ODbL), <a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>. Ergänzende Einträge und Kontaktdaten: Overture Maps Foundation, <a href="https://overturemaps.org/">overturemaps.org</a> (CDLA-Permissive-2.0; Datensätze von Foursquare unter Apache-2.0); Foursquare Open Source Places (Apache-2.0); Karte von morgen (CC0-1.0); offene Verwaltungsdaten der Stadt Rothenburg ob der Tauber (CC0) und der BayernCloud Tourismus (CC0 bzw. CC BY 4.0, Urheber auf der jeweiligen Hofseite). Postleitzahlen: GeoNames, CC BY 4.0. Umriss Deutschlands: Natural Earth (gemeinfrei). Karte: Leaflet (BSD-2-Clause). Schriften: Zilla Slab und Atkinson Hyperlegible Next (SIL Open Font License).</p>`);
 textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von hofladenliste.de: keine Cookies, kein Tracking – welche Daten beim Besuch, bei Karte und Suche anfallen.', `<h1>Datenschutzerklärung</h1>
 <h2>Verantwortlicher</h2>
 <p>${esc(imp.name) || '[Name]'}, ${esc(imp.strasse) || '[Straße]'}, ${esc(imp.plzOrt) || '[PLZ Ort]'}, ${esc(imp.email) || '[E-Mail]'}</p>
@@ -1688,12 +1709,17 @@ schreibe('/verwaltung/', seite({
   inhalt: '<section class="abschnitt"><h1>Meldungen</h1><div id="verwaltung"></div></section><script type="module" src="/verwaltung.js"></script>',
 }), false);
 
-textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenliste.de stammen: OpenStreetMap (ODbL), Overture Maps, Websites der Höfe, Angaben von Betrieben und PLZ-Daten von GeoNames.', `<h1>Quellen und Datenstand</h1>
+textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenliste.de stammen: OpenStreetMap (ODbL), weitere offene Quellen wie Overture Maps, Foursquare und Karte von morgen, Websites der Höfe, Angaben von Betrieben und PLZ-Daten von GeoNames.', `<h1>Quellen und Datenstand</h1>
 <h2>OpenStreetMap</h2>
 <p>Die meisten Einträge stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a>: Hofläden (<code>shop=farm</code>) und Hofautomaten (<code>amenity=vending_machine</code> mit Milch, Eiern, Fleisch, Kartoffeln usw.). Wir gleichen die Daten jeden Montag und Donnerstag ab. Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a>, verfügbar unter der <a href="https://opendatacommons.org/licenses/odbl/">Open Database License (ODbL)</a>.</p>
-<h2>Overture Maps</h2>
-<p>Hofläden und Automaten, die in OpenStreetMap noch fehlen, ergänzen wir aus den offenen Ortsdaten der <a href="https://overturemaps.org/">Overture Maps Foundation</a> (aktuell ${overtureNeu.toLocaleString('de-DE')} Einträge). Daraus füllen wir außerdem fehlende Telefonnummern, Websites und Adressen bestehender Einträge auf. Wir übernehmen nur Orte mit eindeutigem Namen (zum Beispiel Hofladen, Hofverkauf oder Milchtankstelle) und hoher Konfidenz und gleichen sie mit OpenStreetMap ab, damit kein Hof doppelt erscheint. Diese Einträge sind auf ihrer Seite als „noch nicht vom Betrieb bestätigt“ gekennzeichnet. Wir gleichen die Daten einmal im Monat ab${overture.release ? ` (Stand: Overture-Release ${esc(overture.release)})` : ''}.</p>
-<p>Lizenz: <a href="https://cdla.dev/permissive-2-0/">CDLA-Permissive-2.0</a>, Datensätze von Foursquare unter <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a>. Quelle: Overture Maps Foundation, <a href="https://overturemaps.org/">overturemaps.org</a>. Das Overture-Places-Thema enthält keine OpenStreetMap-Daten.</p>
+<h2>Weitere offene Quellen</h2>
+<p>Hofläden und Automaten, die in OpenStreetMap noch fehlen, ergänzen wir aus weiteren offenen Datenquellen (aktuell ${offenNeuSumme.toLocaleString('de-DE')} Einträge). Daraus füllen wir außerdem fehlende Telefonnummern, Websites, Adressen und Öffnungszeiten bestehender Einträge auf. Wir übernehmen nur Orte mit eindeutigem Namen (zum Beispiel Hofladen, Hofverkauf oder Milchtankstelle) oder solche, die die Quelle selbst als Hofladen oder Direktvermarkter einordnet, und gleichen alles mit OpenStreetMap und untereinander ab, damit kein Hof doppelt erscheint. Ist eine Quelle unsicher, prüfen wir den Direktverkauf auf der eigenen Website des Hofs. Diese Einträge sind auf ihrer Seite als „noch nicht vom Betrieb bestätigt“ gekennzeichnet und nennen ihre Quelle. Wir gleichen die Daten einmal im Monat ab.</p>
+<ul>
+<li><a href="https://overturemaps.org/">Overture Maps Foundation</a>, Places (${(offenNeu.overture || 0).toLocaleString('de-DE')} Einträge): <a href="https://cdla.dev/permissive-2-0/">CDLA-Permissive-2.0</a>, Datensätze von Foursquare unter Apache-2.0. Das Overture-Places-Thema enthält keine OpenStreetMap-Daten.</li>
+<li><a href="https://opensource.foursquare.com/os-places/">Foursquare Open Source Places</a> (${(offenNeu.foursquare || 0).toLocaleString('de-DE')} Einträge): <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a>.</li>
+<li><a href="https://kartevonmorgen.org/">Karte von morgen</a> (${(offenNeu.kvm || 0).toLocaleString('de-DE')} Einträge): gemeinfrei (CC0-1.0).</li>
+<li>Offene Verwaltungsdaten über <a href="https://www.govdata.de/">GovData</a> und Open Data Bayern (${(offenNeu.kommunal || 0).toLocaleString('de-DE')} Einträge): Direktvermarkter der Stadt Rothenburg ob der Tauber (CC0) und Einkaufsangebote der BayernCloud Tourismus, nur Einträge unter CC0 oder CC BY 4.0. Urheber nennen wir auf der jeweiligen Hofseite.</li>
+</ul>
 <h2>Websites der Höfe</h2>
 <p>Fehlen in OpenStreetMap Öffnungszeiten oder Kontaktdaten, ergänzen wir sie aus der eigenen Website des Hofs. Auf der Seite des Eintrags steht dann, welche Angaben woher stammen und mit welchem Stand.</p>
 <h2>Angaben von Betrieben</h2>
@@ -1790,6 +1816,9 @@ writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoef
 
 // Weiterleitungen für Seiten aus dem Archiv, die es nicht mehr gibt
 const slugNachId = new Map(eintraege.map((e) => [e.osm || e.id, e.slug]));
+// Einträge aus offenen Quellen, deren Hof früher unter einer anderen ID (anderer Quelle) veröffentlicht war
+const ersetztDurch = new Map();
+for (const e of eintraege) for (const alt of e.alteIds || []) if (!slugNachId.has(alt)) { slugNachId.set(alt, e.slug); ersetztDurch.set(alt, e.id); }
 const umleitungen = {}, entfernt = [];
 for (const pfad of Object.keys(stand.seiten)) {
   if (ALLE_SEITEN.has(pfad)) continue;
@@ -1805,7 +1834,8 @@ for (const pfad of Object.keys(stand.seiten)) {
   umleitungen[pfad] = ziel;
 }
 const alteSlugs = {};
-for (const [slug, roh] of Object.entries(stand.hoefe)) if (!ALLE_SEITEN.has(`/hof/${slug}/`)) alteSlugs[slug] = stabileIdAus(roh);
+for (const [slug, roh] of Object.entries(stand.hoefe)) if (!ALLE_SEITEN.has(`/hof/${slug}/`)) alteSlugs[slug] = stabileIdAus(ersetztDurch.get(roh) || roh);
+for (const [alt, neuId] of ersetztDurch) alteSlugs[stabileIdAus(alt)] = stabileIdAus(neuId); // alte stabile ID → neue
 writeFileSync(join(GEN, 'routen.json'), JSON.stringify({ umleitungen, entfernt, alteSlugs }));
 console.log(`Seitenarchiv: ${Object.keys(stand.seiten).length} Seiten, ${Object.keys(umleitungen).length} Weiterleitungen, ${entfernt.length} entfernte Höfe (410)`);
 
@@ -1908,5 +1938,5 @@ writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;
 const mitKat = eintraege.filter((e) => e.kat.length).length;
-console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${overtureNeu} neu aus Overture, ${overtureErgaenzt} mit Overture-Ergänzungen, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
+console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
 if (impFehlt) console.warn('WARNUNG: Impressum in site.config.json ist unvollständig.');
