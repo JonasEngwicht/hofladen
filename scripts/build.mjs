@@ -603,8 +603,7 @@ schreibe('/', seite({
   klasse: 'start',
   kopfSuche: false,
   jsonld: [{ '@context': 'https://schema.org', '@type': 'Organization', name: cfg.name, url: cfg.domain + '/', logo: cfg.domain + '/icon-512.png' },
-    { '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.domain + '/',
-    potentialAction: { '@type': 'SearchAction', target: cfg.domain + '/suche?q={q}', 'query-input': 'required name=q' } }],
+    { '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.domain + '/', inLanguage: 'de-DE' }],
   inhalt: `
 <section class="held">
   <div class="held-text">
