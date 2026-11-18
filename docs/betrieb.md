@@ -38,3 +38,12 @@ In `/verwaltung/` → „Statistik“: Suchen (PLZ, Ort, Standort), meistgesucht
 - Listenseiten erst ab 3 Einträgen indexieren (`MIN_SEITE` in `scripts/build.mjs`).
 - URLs nicht ändern; wenn doch, leitet das Seitenarchiv (`data/seiten-stand.json`) automatisch per 301 weiter.
 - Keine `_redirects`-Regeln für `/…/index.html`: Cloudflare wendet sie auch auf die interne Abfrage des Workers an (alle Seiten wären 404).
+
+## Recherche-Funde übernehmen
+
+Funde aus einer Recherche-Datenbank (SQLite mit Tabelle `anreicherung`) übernimmt
+`node scripts/recherche-uebernehmen.mjs pfad/zur/hofladen.sqlite` nach `data/recherche.json`.
+Übernommen werden nur Konfidenz „hoch“ und „mittel“, keine Branchenbücher oder kommerziellen
+Verzeichnisse. Die Funde füllen im Build nur leere Felder und werden auf der Hofseite mit Quelle
+und Stand genannt. Öffnungszeiten werden nur strukturiert übernommen, wenn sie eindeutig lesbar
+sind (`--test` prüft den Parser), sonst als Text.

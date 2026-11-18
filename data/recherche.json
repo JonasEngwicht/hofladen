@@ -1,0 +1,735 @@
+{
+ "node/1055207446": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "24/7",
+    "text": "Hofshop rund um die Uhr (Automat)",
+    "quelle": "https://www.hemme-milch.de/unser-hof/unser-hof-hof-shop/",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.hemme-milch.de",
+    "quelle": "https://www.hannover.de/content/download/857261/file/_61.04_FB_VonHofzuHof_Wedemark%202026_Internet.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/10677159537": {
+  "felder": {
+   "email": {
+    "wert": "info@hofschroers.de",
+    "quelle": "https://web.destination.one/en/gastro/schroers-hofkontor-landcafe",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten_text": {
+    "wert": "Fr–So 14–18 oder nach Absprache",
+    "quelle": "https://web.destination.one/en/gastro/schroers-hofkontor-landcafe",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "+49 151 61454682",
+    "quelle": "https://web.destination.one/en/gastro/schroers-hofkontor-landcafe",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/10746284560": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "We-Sa 09:00-18:00; Su 10:00-18:00",
+    "text": "Mi–Sa 9–18, So 10–18 (Hofladen ganzjährig)",
+    "quelle": "https://web.destination.one/en/poi/bassens-bauernladen",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/12092466728": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "Fr 14:00-18:00; Sa 09:00-12:00",
+    "text": "Fr 14–18, Sa 9–12",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0871 32574",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://bio-biberger.de",
+    "quelle": "https://bio-biberger.de",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/13111789260": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "24/7",
+    "text": "Jederzeit (Selbstbedienung)",
+    "quelle": "https://www.landkreis-heidenheim.de/site/LRA-HDH-Internet/get/params_E434764898_Dattachment/19274922/Direktvermarkterbrosch%C3%BCre%20-%20Entdecke%20den%20Essgenuss%20in%20der%20Heimat%20%28PDF%29.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0176 20612754",
+    "quelle": "https://www.landkreis-heidenheim.de/site/LRA-HDH-Internet/get/params_E434764898_Dattachment/19274922/Direktvermarkterbrosch%C3%BCre%20-%20Entdecke%20den%20Essgenuss%20in%20der%20Heimat%20%28PDF%29.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/2406937506": {
+  "felder": {
+   "email": {
+    "wert": "lemper@t-online.de",
+    "quelle": "https://www.dormagen.de/fileadmin/Dokumente_Website/STDO_Regio-Fairer-Einkaufsfu__hrer_2023.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten": {
+    "wert": "Mo-Sa 09:00-18:30; Su 09:00-14:00",
+    "text": "Mo-Sa 09:00-18:30, So/Feiertage 09:00-14:00",
+    "quelle": "https://www.dormagen.de/fileadmin/Dokumente_Website/STDO_Regio-Fairer-Einkaufsfu__hrer_2023.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "02133 238088",
+    "quelle": "https://www.dormagen.de/fileadmin/Dokumente_Website/STDO_Regio-Fairer-Einkaufsfu__hrer_2023.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.spargel-conradshof.de",
+    "quelle": "https://www.dormagen.de/fileadmin/Dokumente_Website/STDO_Regio-Fairer-Einkaufsfu__hrer_2023.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/2478761710": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "Mo-Sa 08:00-18:00; Su 09:00-18:00",
+    "text": "Mo–Sa 8–18, So 9–18",
+    "quelle": "https://pages.destination.one/de/open-data-vorlage/streaming/detail/POI/p_100236035/hof-hinrichs",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/3454830037": {
+  "felder": {
+   "email": {
+    "wert": "hofpost.dollinger@posteo.de",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten": {
+    "wert": "Tu-Sa 09:00-19:00",
+    "text": "Selbstbedienung Di–Sa 9–19",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0152 51405459",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.solawidollinger.de",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/3751568620": {
+  "felder": {
+   "email": {
+    "wert": "brotens-hof@t-online.de",
+    "quelle": "https://dam.destination.one/2452430/5933bf2d004e4485af1f9f8e1bed4d4897f62d63f397fe12a7dd6aa13e9b50d1/brosch-re-h-fladen-im-heidekreis.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "+49 4265 1303",
+    "quelle": "https://dam.destination.one/2452430/5933bf2d004e4485af1f9f8e1bed4d4897f62d63f397fe12a7dd6aa13e9b50d1/brosch-re-h-fladen-im-heidekreis.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/4437723442": {
+  "felder": {
+   "email": {
+    "wert": "Info@schluckerhof.de",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten_text": {
+    "wert": "Ab Hof nach Vereinbarung",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "09173 793170",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.schluckerhof.de",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/5012372243": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "Mo-Su 07:00-19:00",
+    "text": "Hofladen täglich 7–19",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "08782 1073",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://naturlandhof-osterwind.de",
+    "quelle": "https://naturlandhof-osterwind.de",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/5049378064": {
+  "felder": {
+   "email": {
+    "wert": "hans-birgit-amann@web.de",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten_text": {
+    "wert": "nach Vereinbarung, telefonisch oder per Mail",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "08744 1052",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/5058210807": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "Mo-Su 08:00-19:00",
+    "text": "Hofladen täglich 8–19",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0151 55852500",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/5075185008": {
+  "felder": {
+   "email": {
+    "wert": "bernhard.pollner@googlemail.com",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten_text": {
+    "wert": "Nach Vereinbarung",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0178 3078925",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/5157872688": {
+  "felder": {
+   "email": {
+    "wert": "biohofmeier1@gmail.com",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten": {
+    "wert": "Mo-Fr 08:00-12:00,13:00-18:00; Sa 08:00-12:00",
+    "text": "Mo–Sa 8–12, Mo–Fr 13–18",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "08741 4233",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/5219914335": {
+  "felder": {
+   "oeffnungszeiten_text": {
+    "wert": "nur Vorbestellung per E-Mail, Abholung vor Ort",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0871 61099",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://biohof-berndorf.de",
+    "quelle": "https://biohof-berndorf.de",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/5298388623": {
+  "felder": {
+   "email": {
+    "wert": "apfelhof.biebesheimer@web.de",
+    "quelle": "https://www.kreis-bergstrasse.de/unser-buergerservice/umwelt-abfall-energie/landwirtschaft/direktvermarkterbroschuere.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "06241 80206",
+    "quelle": "https://www.kreis-bergstrasse.de/unser-buergerservice/umwelt-abfall-energie/landwirtschaft/direktvermarkterbroschuere.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/5645976192": {
+  "felder": {
+   "email": {
+    "wert": "info@grimkes-bauernladen.de",
+    "quelle": "https://web.destination.one/en/poi/grimkes-organic-and-farm-shop",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten_text": {
+    "wert": "Do–Sa (keine Uhrzeiten); SB-Laden 24 h",
+    "quelle": "https://web.destination.one/en/poi/grimkes-organic-and-farm-shop",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "+49 4282 1352",
+    "quelle": "https://web.destination.one/en/poi/grimkes-organic-and-farm-shop",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.grimkes-bauernladen.de/",
+    "quelle": "https://web.destination.one/en/poi/grimkes-organic-and-farm-shop",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/5740705845": {
+  "felder": {
+   "email": {
+    "wert": "info@biolandhof-gruel.de",
+    "quelle": "https://www.oekolandbau.de/fileadmin/redaktion/dokumente/demobetriebe/Betriebsflyer_2020ff/PDFs/104_Biolandhof_Gruel_FB_JW_II_0112_WEB.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten": {
+    "wert": "Tu 09:00-12:00,16:00-18:30; Fr 09:00-18:30; Sa 09:00-12:00",
+    "text": "Di 9–12 und 16–18:30, Fr 9–18:30, Sa 9–12",
+    "quelle": "https://www.oekolandbau.de/fileadmin/redaktion/dokumente/demobetriebe/Betriebsflyer_2020ff/PDFs/104_Biolandhof_Gruel_FB_JW_II_0112_WEB.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "07021 86 38 36",
+    "quelle": "https://www.oekolandbau.de/fileadmin/redaktion/dokumente/demobetriebe/Betriebsflyer_2020ff/PDFs/104_Biolandhof_Gruel_FB_JW_II_0112_WEB.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.biolandhof-gruel.de",
+    "quelle": "https://www.oekolandbau.de/fileadmin/redaktion/dokumente/demobetriebe/Betriebsflyer_2020ff/PDFs/104_Biolandhof_Gruel_FB_JW_II_0112_WEB.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/6860939732": {
+  "felder": {
+   "email": {
+    "wert": "regine.zimmer@gmx.de",
+    "quelle": "https://uz-ortenau.bund.net/fileadmin/ortenau/dokumente/einkaufsbroschuere/04_direkt_ab_hof_-_ortenau.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten_text": {
+    "wert": "nach telefonischer Vereinbarung",
+    "quelle": "https://uz-ortenau.bund.net/fileadmin/ortenau/dokumente/einkaufsbroschuere/04_direkt_ab_hof_-_ortenau.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "07227 991385",
+    "quelle": "https://uz-ortenau.bund.net/fileadmin/ortenau/dokumente/einkaufsbroschuere/04_direkt_ab_hof_-_ortenau.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/6875146181": {
+  "felder": {
+   "telefon": {
+    "wert": "0251 324372",
+    "quelle": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/67_umwelt/pdf/Hoflaeden-und-Maerkte_web.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.spargel-baecker.de",
+    "quelle": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/67_umwelt/pdf/Hoflaeden-und-Maerkte_web.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/6977761618": {
+  "felder": {
+   "email": {
+    "wert": "vorwerk-farm@t-online.de",
+    "quelle": "https://dam.destination.one/2452430/5933bf2d004e4485af1f9f8e1bed4d4897f62d63f397fe12a7dd6aa13e9b50d1/brosch-re-h-fladen-im-heidekreis.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "+49 5195 2072",
+    "quelle": "https://dam.destination.one/2452430/5933bf2d004e4485af1f9f8e1bed4d4897f62d63f397fe12a7dd6aa13e9b50d1/brosch-re-h-fladen-im-heidekreis.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/7921291969": {
+  "felder": {
+   "oeffnungszeiten_text": {
+    "wert": "Okt–Mär, nur nach telefonischer Absprache",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0160 7461493",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/8600007551": {
+  "felder": {
+   "oeffnungszeiten_text": {
+    "wert": "nach Vereinbarung",
+    "quelle": "https://rosenheim.bund-naturschutz.de/fileadmin/kreisgruppen/rosenheim/bilder/Oekotipps/BIOEinkaufsfuehrer_BNRosenheim_2019_web.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0172 8526313",
+    "quelle": "https://rosenheim.bund-naturschutz.de/fileadmin/kreisgruppen/rosenheim/bilder/Oekotipps/BIOEinkaufsfuehrer_BNRosenheim_2019_web.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/9027923841": {
+  "felder": {
+   "email": {
+    "wert": "frag-mich@odw-feine-spezialitaeten.eu",
+    "quelle": "https://www.kreis-bergstrasse.de/unser-buergerservice/umwelt-abfall-energie/landwirtschaft/direktvermarkterbroschuere.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "06253 938158",
+    "quelle": "https://www.kreis-bergstrasse.de/unser-buergerservice/umwelt-abfall-energie/landwirtschaft/direktvermarkterbroschuere.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.odw-feine-spezialitaeten.eu",
+    "quelle": "https://www.kreis-bergstrasse.de/unser-buergerservice/umwelt-abfall-energie/landwirtschaft/direktvermarkterbroschuere.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/9215716921": {
+  "felder": {
+   "email": {
+    "wert": "info@wurthgbr.de",
+    "quelle": "https://uz-ortenau.bund.net/fileadmin/ortenau/dokumente/einkaufsbroschuere/04_direkt_ab_hof_-_ortenau.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten": {
+    "wert": "Mo-Su 07:00-20:00",
+    "text": "täglich 7–20 (Selbstbedienung)",
+    "quelle": "https://uz-ortenau.bund.net/fileadmin/ortenau/dokumente/einkaufsbroschuere/04_direkt_ab_hof_-_ortenau.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0176 61152995",
+    "quelle": "https://uz-ortenau.bund.net/fileadmin/ortenau/dokumente/einkaufsbroschuere/04_direkt_ab_hof_-_ortenau.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "node/9251367227": {
+  "felder": {
+   "email": {
+    "wert": "info@derwitzer-vierlindenhof.de",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/havelland/hoflaeden/derwitzer-vierlindenhof/",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten": {
+    "wert": "Mo-Th 09:00-12:00; Fr 09:00-18:00; Sa 09:00-16:00; Su 09:00-14:00",
+    "text": "Mo–Do 9–12, Fr 9–18, Sa 9–16, So 9–14",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/havelland/hoflaeden/derwitzer-vierlindenhof/",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "033207 32443",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/havelland/hoflaeden/derwitzer-vierlindenhof/",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.derwitzer-vierlindenhof.de",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/havelland/hoflaeden/derwitzer-vierlindenhof/",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/115880505": {
+  "felder": {
+   "email": {
+    "wert": "info@havelland-weseram.de",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/havelland/hoflaeden/hofladen-roskow/",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten_text": {
+    "wert": "Mo–Sa 7–18, So/Feiertage 7–14 (saisonal)",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/havelland/hoflaeden/hofladen-roskow/",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "033831 30226",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/havelland/hoflaeden/hofladen-roskow/",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.havelland-weseram.de",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/havelland/hoflaeden/hofladen-roskow/",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/1306993726": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "Th-Su 12:00-18:00",
+    "text": "Do–So 12–18",
+    "quelle": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/67_umwelt/pdf/Hoflaeden-und-Maerkte_web.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0251 14 10 59 53",
+    "quelle": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/67_umwelt/pdf/Hoflaeden-und-Maerkte_web.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://shop.wagyu-muenster.de",
+    "quelle": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/67_umwelt/pdf/Hoflaeden-und-Maerkte_web.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/132107735": {
+  "felder": {
+   "email": {
+    "wert": "bestesvomlande@web.de",
+    "quelle": "https://naturpark-lueneburger-heide.de/fileadmin/user_upload/documents/Einkaufsfuehrer_NPLH_Aenderungen_final3.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten": {
+    "wert": "Mo-Fr 08:30-12:30,14:00-18:00; Sa 08:30-13:00",
+    "text": "Mo–Fr 8:30–12:30 und 14–18, Sa 8:30–13",
+    "quelle": "https://naturpark-lueneburger-heide.de/fileadmin/user_upload/documents/Einkaufsfuehrer_NPLH_Aenderungen_final3.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "04184 7116",
+    "quelle": "https://naturpark-lueneburger-heide.de/fileadmin/user_upload/documents/Einkaufsfuehrer_NPLH_Aenderungen_final3.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.bauernhof-menke.de",
+    "quelle": "https://naturpark-lueneburger-heide.de/fileadmin/user_upload/documents/Einkaufsfuehrer_NPLH_Aenderungen_final3.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/159698890": {
+  "felder": {
+   "email": {
+    "wert": "Spargelhof-Milsmann@web.de",
+    "quelle": "https://Rietberg.de/fileadmin/user_upload/WIRTSCHAFT/Einkaufen_in_Rietberg/Broschuere_Direktvermarkter_FINAL.pdf",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten_text": {
+    "wert": "April–August täglich 8–19; sonst nach Absprache",
+    "quelle": "https://Rietberg.de/fileadmin/user_upload/WIRTSCHAFT/Einkaufen_in_Rietberg/Broschuere_Direktvermarkter_FINAL.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "02944 2703",
+    "quelle": "https://Rietberg.de/fileadmin/user_upload/WIRTSCHAFT/Einkaufen_in_Rietberg/Broschuere_Direktvermarkter_FINAL.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.spargelhof-milsmann.de",
+    "quelle": "https://Rietberg.de/fileadmin/user_upload/WIRTSCHAFT/Einkaufen_in_Rietberg/Broschuere_Direktvermarkter_FINAL.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/201333535": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "24/7",
+    "text": "Selbstbedienung rund um die Uhr",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0871 1438497",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/223881842": {
+  "felder": {
+   "telefon": {
+    "wert": "07272 71336",
+    "quelle": "https://www.pfalz.de/sites/default/files/media/file/2022-12/spargelfyer2023_final.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "http://hoffmanns-hof.de.tl",
+    "quelle": "https://www.pfalz.de/sites/default/files/media/file/2022-12/spargelfyer2023_final.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/354324604": {
+  "felder": {
+   "email": {
+    "wert": "Info@rothauracher-baerenhof.de",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "0151 12119288",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.rothauracher-baerenhof.de",
+    "quelle": "https://www.landratsamt-roth.de/uwao-api/web/files/bypath/Themen/Original Regional/LR26030_A5_Brosch_Direktvermarkter_SCR.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/429364869": {
+  "felder": {
+   "telefon": {
+    "wert": "+49 7555 298",
+    "quelle": "https://www.deggenhausertal.de/fileadmin/Dateien/Dateien/Freizeit_und_Tourismus/Freizeitfuehrer.pdf",
+    "stand": "2026-11-18"
+   },
+   "website": {
+    "wert": "https://www.mosterei-kopp.de",
+    "quelle": "https://www.deggenhausertal.de/fileadmin/Dateien/Dateien/Freizeit_und_Tourismus/Freizeitfuehrer.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/517435852": {
+  "felder": {
+   "oeffnungszeiten_text": {
+    "wert": "nach telefonischer Vereinbarung",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "08744 8291",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/517439857": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "We 08:00-18:00; Sa 08:00-16:00",
+    "text": "Mi 8–18, Sa 8–16",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "08741 967471",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/517447400": {
+  "felder": {
+   "oeffnungszeiten": {
+    "wert": "Mo-Sa 08:00-19:00",
+    "text": "Hofladen Mo–Sa 8–19",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "08732 2937",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/536434934": {
+  "felder": {
+   "oeffnungszeiten_text": {
+    "wert": "Sep–Dez Do/Fr 13–17, Sa 9–13 und nach Vereinbarung",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "08744 8949",
+    "quelle": "https://erleben.landshut.de/wp-content/uploads/2026/08/Direktvermarkter_Broschuere_2026_3.Auflage.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/53771161": {
+  "felder": {
+   "telefon": {
+    "wert": "07272 73819",
+    "quelle": "https://www.pfalz.de/sites/default/files/media/file/2022-12/spargelfyer2023_final.pdf",
+    "stand": "2026-11-18"
+   }
+  }
+ },
+ "way/621540629": {
+  "felder": {
+   "email": {
+    "wert": "hof-rittgarten@web.de",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/uckermark/hoflaeden/demeterhof-rittgarten/",
+    "stand": "2026-11-18"
+   },
+   "oeffnungszeiten": {
+    "wert": "Mo-Sa 17:30-19:00",
+    "text": "Mo–Sa 17:30–19, So geschlossen",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/uckermark/hoflaeden/demeterhof-rittgarten/",
+    "stand": "2026-11-18"
+   },
+   "telefon": {
+    "wert": "039853 2376",
+    "quelle": "https://www.reiseland-brandenburg.de/poi/uckermark/hoflaeden/demeterhof-rittgarten/",
+    "stand": "2026-11-18"
+   }
+  }
+ }
+}
