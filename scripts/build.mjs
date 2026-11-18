@@ -517,6 +517,28 @@ for (const e of eintraege) e.titelSeite = titelZahl.get(e.titel + '|' + e.ortAnz
     const z = (n.get(e.titelSeite) || 0) + 1; n.set(e.titelSeite, z);
     if (z > 1) e.titelSeite = `${e.titelSeite} – Nr. ${z}`;
   } }
+// ---------- Strukturierte Daten ----------
+const SCHEMA_TAGE = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const hhmm = (m) => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+function oeffnungsSpezifikation(woche) {
+  const gruppen = new Map();
+  woche.forEach((iv, tag) => {
+    for (const [a, b] of iv) {
+      const key = `${a}-${b}`;
+      if (!gruppen.has(key)) gruppen.set(key, { a, b, tage: [] });
+      gruppen.get(key).tage.push(tag);
+    }
+  });
+  return [...gruppen.values()].map(({ a, b, tage }) => ({ '@type': 'OpeningHoursSpecification',
+    dayOfWeek: tage.map((t) => `https://schema.org/${SCHEMA_TAGE[t]}`),
+    opens: hhmm(a), closes: b === 1440 ? '23:59' : hhmm(b) }));
+}
+// ItemList für Listenseiten: Einträge [titel, pfad] in der angezeigten Reihenfolge
+const itemList = (name, eintraegeListe) => ({ '@context': 'https://schema.org', '@type': 'ItemList', name,
+  numberOfItems: eintraegeListe.length,
+  itemListElement: eintraegeListe.map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, url: cfg.domain + p })) });
+const hofItems = (liste) => liste.map((e) => [e.titelSeite, e.pfad]);
+
 // Längste Titelvariante, die (mit Marke) in ~65 Zeichen passt
 const passend = (...varianten) => varianten.find((v) => v.length + 16 <= 65) || varianten[varianten.length - 1];
 
@@ -637,6 +659,10 @@ for (const t of TYPEN) {
     titel: `${t.name} in der Nähe – alle ${zahl(t.liste.length)} ${t.plural} in Deutschland`,
     beschreibung: `${t.name} in der Nähe finden: ${zahl(t.liste.length)} ${t.plural} in ganz Deutschland mit Adresse, Öffnungszeiten und Route – nach Bundesland und Landkreis sortiert.`,
     pfad: `/${t.slug}/`,
+    jsonld: [itemList(`${t.plural} in Deutschland`, vollListe ? proLand.flatMap(({ liste }) => {
+      const proK = new Map(); for (const e of liste) { if (!proK.has(e.k)) proK.set(e.k, []); proK.get(e.k).push(e); }
+      return [...proK].sort((a, b) => a[0].titel.localeCompare(b[0].titel, 'de')).flatMap(([, es]) => hofItems(es)); })
+      : [...TYP_KREIS.values()].filter((x) => x.t === t).map((x) => [`${t.plural} ${x.k.im}`, x.pfad]))],
     krumen: [[t.plural, `/${t.slug}/`]],
     inhalt: `
 <section class="seitenkopf">
@@ -664,9 +690,10 @@ for (const l of laender) {
   const alle = mitDaten.flatMap((k) => proKreis.get(k.code));
   const topOrte = l.kreise.flatMap((k) => [...(ORTE.get(k.code)?.values() || [])]).filter((o) => o.eigen).sort((a, b) => b.liste.length - a.liste.length).slice(0, 24);
   schreibe(`/${l.slug}/`, seite({
-    titel: `Hofladen in ${l.name} – ${zahl(l.anzahl)} Hofläden & Hofautomaten nach Kreis`,
+    titel: passend(`Hofladen in ${l.name} – ${zahl(l.anzahl)} Hofläden & Hofautomaten nach Kreis`, `Hofladen in ${l.name} – ${zahl(l.anzahl)} Hofläden & Automaten`, `Hofläden in ${l.name} nach Kreis`),
     beschreibung: `Hofladen in ${l.name} finden: ${zaehlung(alle)} – nach Landkreis, Stadt und Ort sortiert, mit Öffnungszeiten, Angebot und Karte.`,
     pfad: `/${l.slug}/`,
+    jsonld: [itemList(`Landkreise und Städte in ${l.name}`, l.kreise.filter((k) => (proKreis.get(k.code)?.length || 0) >= MIN_SEITE).map((k) => [k.titel, k.pfad]))],
     krumen: [[l.name, `/${l.slug}/`]],
     inhalt: `
 <section class="seitenkopf">
@@ -715,7 +742,7 @@ ${topOrte.length ? `<section class="abschnitt">
       pfad: k.pfad,
       noindex: liste.length < MIN_SEITE,
       klasse: 'kreis',
-      jsonld: f.ld,
+      jsonld: [...(liste.length ? [itemList(`Hofläden ${im}`, hofItems(liste))] : []), ...f.ld],
       krumen: [[l.name, `/${l.slug}/`], [k.titel, k.pfad]],
       inhalt: `
 <section class="seitenkopf">
@@ -769,6 +796,7 @@ for (const { t, k, liste: roh, pfad } of TYP_KREIS.values()) {
     beschreibung: `${t.plural} ${k.im}: ${zahl(n)} Standorte${ortNamen.length > 1 ? `, u. a. in ${ortNamen.slice(0, 3).join(', ')}` : ` in ${ortNamen[0]}`}. Adresse, Öffnungszeiten, Angebot und Route – plus ${t.plural} in den Nachbarkreisen.`,
     pfad,
     klasse: 'kreis',
+    jsonld: [itemList(`${t.plural} ${k.im}`, hofItems(liste))],
     krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], [t.plural, pfad]],
     inhalt: `
 <section class="seitenkopf">
@@ -820,6 +848,7 @@ for (const u of [
     titel: u.titel(alle.length),
     beschreibung: u.beschreibung(alle.length, nHof),
     pfad: u.pfad,
+    jsonld: [itemList(u.h1, proLand.flatMap(({ ks }) => ks.map(([k]) => [k.titel, k.pfad])))],
     krumen: [[u.h1, u.pfad]],
     inhalt: `
 <section class="seitenkopf">
@@ -858,7 +887,7 @@ for (const o of ortSeiten) {
     beschreibung: `${h1} (${k.titel}): ${nennung(liste.slice(0, 3).map((e) => e.titel))}${liste.length > 3 ? ' und weitere' : ''}. Öffnungszeiten, Angebot und Route – plus Hofläden in der Umgebung.`.slice(0, 300),
     pfad: o.pfad,
     klasse: 'kreis',
-    jsonld: f.ld,
+    jsonld: [itemList(h1, hofItems(liste)), ...f.ld],
     krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], [o.ort, o.pfad]],
     inhalt: `
 <section class="seitenkopf">
@@ -891,12 +920,14 @@ for (const e of eintraege) {
   const naehe = inDerNaehe(e, 4);
   const ld = { '@context': 'https://schema.org', '@type': e.typ === 'hofladen' ? 'Store' : 'LocalBusiness', name: e.titelSeite,
     geo: { '@type': 'GeoCoordinates', latitude: e.lat, longitude: e.lon }, url: cfg.domain + e.pfad };
-  if (e.strasse || e.plz || e.ort) ld.address = { '@type': 'PostalAddress', streetAddress: e.strasse || undefined,
-    postalCode: e.plz || undefined, addressLocality: e.ort || undefined, addressCountry: 'DE' };
+  ld.address = { '@type': 'PostalAddress', streetAddress: e.strasse || undefined, postalCode: e.plz || undefined,
+    addressLocality: e.ortAnzeige, addressRegion: k.landName, addressCountry: 'DE' };
   if (e.telefon) ld.telephone = e.telefon;
   if (e.website) ld.sameAs = [e.website];
   const woche = e.oeffnungszeiten ? parse(e.oeffnungszeiten) : null;
-  if (woche) ld.openingHours = e.oeffnungszeiten.split(';').map((s) => s.trim()).filter((s) => s && !/off|PH/.test(s));
+  if (woche && woche.some((iv) => iv.length)) ld.openingHoursSpecification = oeffnungsSpezifikation(woche);
+  ld['@id'] = cfg.domain + e.pfad + '#hof';
+  if (e.email) ld.email = e.email;
   const ohKurz = e.oeffnungszeiten ? (zeilen(e.oeffnungszeiten) || []).map(([t, v]) => `${t} ${v}`).join(', ') : '';
   const uhr = (m) => `${String(Math.floor(m / 60) % 24 || (m >= 1440 ? 24 : 0)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
   const ohTabelle = woche
@@ -922,11 +953,14 @@ for (const e of eintraege) {
     naechsterHof ? `Der nächste weitere Hofladen ist <a href="${naechsterHof[1].pfad}">${esc(naechsterHof[1].titelSeite)}</a> in ${esc(naechsterHof[1].ortAnzeige)}, etwa ${km(naechsterHof[0])} entfernt.` : '',
   ].filter(Boolean).join(' ');
   const titelEnthaeltOrt = e.titel.includes(e.ortAnzeige);
+  // Sehr lange Namen (OSM-Freitext) im Title kürzen, die H1 bleibt vollständig
+  const tn = e.titelSeite.length > 60 ? `${e.titelSeite.slice(0, 58).replace(/[\s,;–-]+\S*$/, '')} …` : e.titelSeite;
   schreibe(e.pfad, seite({
     titel: titelEnthaeltOrt
-      ? passend(`${e.titelSeite} – Öffnungszeiten, Angebot & Route`, `${e.titelSeite} – Öffnungszeiten & Route`, `${e.titelSeite} – Öffnungszeiten`, e.titelSeite)
-      : passend(`${e.titelSeite} – ${e.art} in ${e.ortAnzeige}, Öffnungszeiten`, `${e.titelSeite} – ${e.art} in ${e.ortAnzeige}`, `${e.titelSeite} in ${e.ortAnzeige}`, e.titelSeite),
-    beschreibung: `${e.titelSeite}: ${e.art} in ${e.ortAnzeige} (${k.titel}).${e.kat.length ? ` Angebot: ${e.kat.map((x) => KATEGORIEN[x]).join(', ')}.` : ''}${ohKurz ? ` Öffnungszeiten: ${ohKurz}.` : ''}${e.telefon ? ` Telefon: ${e.telefon}.` : ''}`.slice(0, 300),
+      ? passend(`${tn} – Öffnungszeiten, Angebot & Route`, `${tn} – Öffnungszeiten & Route`, `${tn} – Öffnungszeiten`, tn)
+      : passend(`${tn} – ${e.art} in ${e.ortAnzeige}, Öffnungszeiten`, `${tn} – ${e.art} in ${e.ortAnzeige}`, `${tn} in ${e.ortAnzeige}`, tn),
+    beschreibung: (() => { const b = `${e.titelSeite}: ${e.art} in ${e.ortAnzeige} (${k.titel}).${e.kat.length ? ` Angebot: ${e.kat.map((x) => KATEGORIEN[x]).join(', ')}.` : ''}${ohKurz ? ` Öffnungszeiten: ${ohKurz}.` : ''}${e.telefon ? ` Telefon: ${e.telefon}.` : ''}`;
+      return (b.length < 110 ? `${b} Adresse, ${ohKurz ? '' : 'Kontakt, '}Karte und Route${naechsterHof ? ` – plus Hofläden in der Nähe von ${e.ortAnzeige}` : ''}.` : b).slice(0, 300); })(),
     pfad: e.pfad,
     noindex: e.duenn,
     klasse: 'hof',
@@ -985,6 +1019,7 @@ schreibe('/karte/', seite({
   titel: 'Hofladen-Karte: alle Hofläden in Deutschland auf einer Karte',
   beschreibung: `Hofladen-Karte: alle ${zahl(eintraege.length)} Hofläden, Milchtankstellen, Eierautomaten und Regiomaten in Deutschland auf einer Karte – hineinzoomen, Hof antippen, Route planen.`,
   pfad: '/karte/',
+  krumen: [['Karte', '/karte/']],
   klasse: 'vollkarte',
   inhalt: `
 <section class="seitenkopf kompakt">
@@ -1010,6 +1045,7 @@ schreibe('/saisonkalender/', seite({
   titel: 'Saisonkalender Obst & Gemüse: was gibt es wann im Hofladen?',
   beschreibung: 'Wann gibt es Spargel, Erdbeeren, Kürbis und Grünkohl aus der Region? Der Saisonkalender für Obst und Gemüse aus deutschem Anbau – Monat für Monat.',
   pfad: '/saisonkalender/',
+  krumen: [['Saisonkalender', '/saisonkalender/']],
   klasse: 'saison',
   inhalt: `
 <section class="seitenkopf">
@@ -1051,6 +1087,7 @@ schreibe('/merkliste/', seite({
   titel: 'Deine Merkliste | Hofladenliste',
   beschreibung: 'Deine gemerkten Hofläden und Hofautomaten – gespeichert nur in deinem Browser.',
   pfad: '/merkliste/',
+  krumen: [['Merkliste', '/merkliste/']],
   noindex: true,
   inhalt: `
 <section class="seitenkopf kompakt">
@@ -1064,8 +1101,8 @@ schreibe('/merkliste/', seite({
 </section>`,
 }), false);
 
-const textSeite = (pfad, titel, beschreibung, html, noindex = true) => schreibe(pfad, seite({ titel: `${titel} | Hofladenliste`, beschreibung, pfad, noindex, klasse: 'textseite', inhalt: `<article class="text">${html}</article>` }), !noindex);
-textSeite('/impressum/', 'Impressum', 'Impressum von hofladenliste.de', `<h1>Impressum</h1>
+const textSeite = (pfad, titel, beschreibung, html, noindex = true) => schreibe(pfad, seite({ titel: `${titel} | Hofladenliste`, beschreibung, pfad, noindex, klasse: 'textseite', krumen: [[titel.replace(/ – .*/, ''), pfad]], inhalt: `<article class="text">${html}</article>` }), !noindex);
+textSeite('/impressum/', 'Impressum', 'Impressum von hofladenliste.de: Anbieter, Kontakt und Verantwortlicher für das Verzeichnis der Hofläden und Hofautomaten.', `<h1>Impressum</h1>
 ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>' : ''}
 <p>Angaben gemäß § 5 DDG</p>
 <p>${esc(imp.name)}<br>${esc(imp.strasse)}<br>${esc(imp.plzOrt)}</p>
@@ -1073,7 +1110,7 @@ ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>'
 <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: ${esc(imp.name)}, Anschrift wie oben.</p>
 <h2>Datenquellen und Lizenzen</h2>
 <p>Einträge: © OpenStreetMap-Mitwirkende, Open Database License (ODbL), <a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>. Postleitzahlen: GeoNames, CC BY 4.0. Umriss Deutschlands: Natural Earth (gemeinfrei). Karte: Leaflet (BSD-2-Clause). Schriften: Zilla Slab und Atkinson Hyperlegible Next (SIL Open Font License).</p>`);
-textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von hofladenliste.de', `<h1>Datenschutzerklärung</h1>
+textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von hofladenliste.de: keine Cookies, kein Tracking – welche Daten beim Besuch, bei Karte und Suche anfallen.', `<h1>Datenschutzerklärung</h1>
 <h2>Verantwortlicher</h2>
 <p>${esc(imp.name) || '[Name]'}, ${esc(imp.strasse) || '[Straße]'}, ${esc(imp.plzOrt) || '[PLZ Ort]'}, ${esc(imp.email) || '[E-Mail]'}</p>
 <h2>Hosting</h2>

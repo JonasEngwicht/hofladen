@@ -1,0 +1,102 @@
+// Alle erzeugten HTML-Seiten: Meta-Angaben, Inhalt ohne JavaScript, JSON-LD und Sitemaps
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { seiten, sitemapUrls, DOMAIN } from './hilfen.mjs';
+import { pruefe, ladeVokabular } from './schema.mjs';
+
+const alle = [...seiten()].filter(([p]) => p !== '/404.html');
+const info = new Map(alle.map(([p, html]) => [p, {
+  html,
+  h1: (html.match(/<h1[\s>]/g) || []).length,
+  canonical: [...html.matchAll(/<link rel="canonical" href="([^"]+)">/g)].map((m) => m[1]),
+  titel: html.match(/<title>([^<]*)<\/title>/)?.[1] || '',
+  beschreibung: html.match(/<meta name="description" content="([^"]*)">/)?.[1] || '',
+  noindex: /<meta name="robots" content="noindex/.test(html),
+  ld: [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map((m) => JSON.parse(m[1])),
+  // Einträge der Liste selbst (ohne „in der Nähe“)
+  karten: ((html.match(/data-liste>([\s\S]*?)<p class="leer-filter"/) || [])[1]?.match(/<article class="laden /g) || []).length,
+}]));
+const sm = sitemapUrls();
+const inSitemap = new Set(sm.map((x) => x.loc));
+const art = (p) => p.startsWith('/hof/') ? 'hof' : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) ? 'unterseite' : /^\/[^/]+\/[^/]+\/$/.test(p) ? 'kreis' : 'sonstige';
+
+test('jede Seite: genau eine H1, ein Canonical auf sich selbst, Title und Description', () => {
+  const fehler = [];
+  for (const [p, s] of info) {
+    if (s.h1 !== 1) fehler.push(`${p}: ${s.h1} H1`);
+    if (s.canonical.length !== 1 || s.canonical[0] !== DOMAIN + p) fehler.push(`${p}: Canonical ${s.canonical}`);
+    if (s.titel.length < 10 || s.titel.length > 100) fehler.push(`${p}: Title-Länge ${s.titel.length}`);
+    if (s.beschreibung.length < 70 || s.beschreibung.length > 320) fehler.push(`${p}: Description-Länge ${s.beschreibung.length}`);
+  }
+  assert.deepEqual(fehler.slice(0, 20), []);
+});
+
+test('indexierbare Seiten haben eindeutige Titel und Beschreibungen', () => {
+  const titel = new Map(), beschr = new Map();
+  for (const [p, s] of info) if (!s.noindex) {
+    titel.set(s.titel, [...(titel.get(s.titel) || []), p]);
+    beschr.set(s.beschreibung, [...(beschr.get(s.beschreibung) || []), p]);
+  }
+  const doppelt = (m) => [...m].filter(([, ps]) => ps.length > 1).map(([t, ps]) => `${t}: ${ps.join(', ')}`);
+  assert.deepEqual(doppelt(titel).slice(0, 10), []);
+  assert.deepEqual(doppelt(beschr).slice(0, 10), []);
+});
+
+test('Inhalte stehen ohne JavaScript im HTML', () => {
+  const fehler = [];
+  for (const [p, s] of info) {
+    if (s.noindex) continue;
+    const a = art(p);
+    if ((a === 'kreis' || a === 'unterseite') && s.karten < 3) fehler.push(`${p}: nur ${s.karten} Einträge im HTML`);
+    if (a === 'hof' && !/class="kontaktkarte"/.test(s.html)) fehler.push(`${p}: Kontaktkarte fehlt`);
+    if (a === 'hof' && !/class="hof-adr"/.test(s.html)) fehler.push(`${p}: Adresse fehlt`);
+  }
+  assert.deepEqual(fehler.slice(0, 20), []);
+});
+
+test('JSON-LD ist gültig und passt zum sichtbaren Inhalt', () => {
+  if (ladeVokabular()) console.log('# Schema.org-Vokabular geladen: Eigenschaften werden gegen Typen geprüft');
+  const fehler = [];
+  for (const [p, s] of info) {
+    const typen = s.ld.map((x) => x['@type']);
+    for (const obj of s.ld) for (const m of pruefe(obj)) fehler.push(`${p}: ${m}`);
+    if (p !== '/' && !typen.includes('BreadcrumbList')) fehler.push(`${p}: BreadcrumbList fehlt`);
+    const bc = s.ld.find((x) => x['@type'] === 'BreadcrumbList');
+    if (bc && bc.itemListElement.at(-1).item !== DOMAIN + p) fehler.push(`${p}: letzter Brotkrümel ist nicht die Seite`);
+    if (p.startsWith('/hof/') && !typen.some((t) => t === 'Store' || t === 'LocalBusiness')) fehler.push(`${p}: Store fehlt`);
+    if ((art(p) === 'kreis' || art(p) === 'unterseite') && s.karten && !typen.includes('ItemList')) fehler.push(`${p}: ItemList fehlt`);
+    const il = s.ld.find((x) => x['@type'] === 'ItemList');
+    if (il && art(p) !== 'sonstige' && il.numberOfItems !== s.karten)
+      fehler.push(`${p}: ItemList ${il.numberOfItems} ≠ ${s.karten} Karten`);
+    const faq = s.ld.find((x) => x['@type'] === 'FAQPage');
+    if (faq) {
+      const text = s.html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+      for (const q of faq.mainEntity) if (!text.includes(q.name)) fehler.push(`${p}: FAQ-Frage nicht sichtbar: ${q.name}`);
+    }
+    if (s.ld.find((x) => x['@type'] === 'Store' || x['@type'] === 'LocalBusiness')?.openingHoursSpecification && !/<table class="woche">/.test(s.html))
+      fehler.push(`${p}: Öffnungszeiten im JSON-LD, aber nicht sichtbar`);
+  }
+  assert.deepEqual(fehler.slice(0, 25), []);
+});
+
+test('Sitemaps enthalten genau die indexierbaren Seiten mit gültigem lastmod', () => {
+  const fehler = [];
+  const gesehen = new Set();
+  for (const { loc, lastmod } of sm) {
+    if (gesehen.has(loc)) fehler.push(`doppelt: ${loc}`);
+    gesehen.add(loc);
+    const p = loc.replace(DOMAIN, '');
+    const s = info.get(p);
+    if (!s) fehler.push(`existiert nicht: ${loc}`);
+    else if (s.noindex) fehler.push(`noindex in Sitemap: ${loc}`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(lastmod)) fehler.push(`lastmod ${lastmod}: ${loc}`);
+  }
+  for (const [p, s] of info) if (!s.noindex && !inSitemap.has(DOMAIN + p)) fehler.push(`indexierbar, aber nicht in Sitemap: ${p}`);
+  assert.deepEqual(fehler.slice(0, 20), []);
+});
+
+test('dünne Listenseiten (unter 3 Einträgen) sind nicht indexierbar', () => {
+  const fehler = [];
+  for (const [p, s] of info) if (!s.noindex && (art(p) === 'kreis' || art(p) === 'unterseite') && s.karten < 3) fehler.push(p);
+  assert.deepEqual(fehler, []);
+});
