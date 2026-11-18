@@ -309,6 +309,7 @@ main { display: block; }
 @media (max-width: 960px) {
   .held { grid-template-columns: minmax(0, 1fr); }
   .held-karte { width: min(78%, 380px); }
+  .held-karte figcaption { text-align: center; }
   .arten-liste { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .geteilt { grid-template-columns: 1fr; }
   .karten-spalte { position: static; order: -1; }

@@ -115,6 +115,19 @@ for (const [osm, el] of elemente) {
 
 eintraege.sort((a, b) => a.osm.localeCompare(b.osm, 'en', { numeric: true }));
 const ziel = new URL('../data/osm-eintraege.json', import.meta.url);
+// Schutz vor unvollständigen Antworten einzelner Overpass-Server: Wenn viele bisherige Einträge
+// auf einmal fehlen, nichts überschreiben (Lauf schlägt fehl, nächster Lauf versucht es erneut).
+try {
+  const bisher = JSON.parse(readFileSync(ziel, 'utf8'));
+  const neuIds = new Set(eintraege.map((e) => e.osm));
+  const weg = bisher.filter((e) => !neuIds.has(e.osm)).length;
+  const grenze = Math.max(60, Math.round(bisher.length * 0.02));
+  console.error(`Abgleich: ${bisher.length} bisher, ${eintraege.length} neu, ${weg} entfallen (Grenze ${grenze}).`);
+  if (weg > grenze && process.env.ERLAUBE_SCHWUND !== '1') {
+    console.error('Zu viele Einträge entfallen – vermutlich unvollständige Antwort. Daten werden nicht überschrieben.');
+    process.exit(1);
+  }
+} catch (err) { if (err.code !== 'ENOENT' && !(err instanceof SyntaxError)) throw err; }
 writeFileSync(ziel, JSON.stringify(eintraege, null, 0).replace(/\},\{/g, '},\n{') + '\n');
 const mit = (f) => eintraege.filter((e) => e[f]).length;
 console.error(JSON.stringify({ ...stat, behalten: eintraege.length,
