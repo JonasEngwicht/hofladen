@@ -282,6 +282,75 @@ for (const form of $$('form[action="/suche"]')) {
   });
 }
 
+// ---------- Merkliste & Teilen ----------
+const MERK = 'merkliste';
+const merkliste = {
+  lesen() { try { const l = JSON.parse(speicher.get(MERK) || '[]'); return Array.isArray(l) ? l : []; } catch { return []; } },
+  schreiben(l) { speicher.set(MERK, JSON.stringify(l.slice(0, 100))); },
+};
+function merkAnzeige(root = document) {
+  const l = new Set(merkliste.lesen());
+  for (const b of $$('[data-merken]', root)) {
+    const an = l.has(b.dataset.merken);
+    if (b.getAttribute('aria-pressed') !== String(an)) b.setAttribute('aria-pressed', String(an));
+    const t = $('.merken-text', b), soll = an ? 'Gemerkt' : 'Merken';
+    if (t && t.textContent !== soll) t.textContent = soll;
+  }
+  for (const z of $$('.merk-zahl')) { const soll = String(l.size || ''); if (z.textContent !== soll) z.textContent = soll; z.hidden = !l.size; }
+}
+document.addEventListener('click', async (ev) => {
+  const merk = ev.target.closest('[data-merken]');
+  if (merk) {
+    ev.preventDefault();
+    const slug = merk.dataset.merken;
+    const l = merkliste.lesen();
+    const i = l.indexOf(slug);
+    if (i >= 0) l.splice(i, 1); else l.unshift(slug);
+    merkliste.schreiben(l);
+    merkAnzeige();
+    if (i >= 0 && merk.closest('[data-merkliste-liste]')) { merk.closest('.laden')?.remove(); merklisteStatus(); }
+    return;
+  }
+  const teilen = ev.target.closest('[data-teilen]');
+  if (teilen) {
+    ev.preventDefault();
+    const daten = { title: teilen.dataset.titel || document.title, url: location.href.split('?')[0] };
+    try {
+      if (navigator.share) await navigator.share(daten);
+      else { await navigator.clipboard.writeText(daten.url); const t = $('span', teilen); const alt = t.textContent; t.textContent = 'Link kopiert'; setTimeout(() => { t.textContent = alt; }, 2000); }
+    } catch { /* abgebrochen */ }
+  }
+});
+// Nachgeladene Karten (Umkreissuche, Merkliste) bekommen den richtigen Herz-Zustand
+new MutationObserver((liste) => {
+  if (liste.some((m) => [...m.addedNodes].some((n) => n.nodeType === 1 && (n.matches?.('[data-merken]') || n.querySelector?.('[data-merken]'))))) merkAnzeige();
+}).observe(document.body, { childList: true, subtree: true });
+merkAnzeige();
+
+function merklisteStatus() {
+  const n = $$('[data-merkliste-liste] .laden').length;
+  const st = $('[data-merkliste-status]');
+  if (st) st.textContent = n ? `${n} gemerkte${n === 1 ? 'r Eintrag' : ' Einträge'}.` : 'Noch nichts gemerkt. Tippe auf einer Hofseite auf „Merken“ oder in der Liste auf das Herz.';
+  const leeren = $('[data-merkliste-leeren]');
+  if (leeren) leeren.hidden = !n;
+}
+async function merklisteSeite() {
+  const box = $('[data-merkliste]');
+  if (!box) return;
+  const slugs = merkliste.lesen();
+  if (!slugs.length) { merklisteStatus(); return; }
+  try {
+    const r = await fetch(`/api/eintraege?slugs=${encodeURIComponent(slugs.join(','))}`);
+    const d = await r.json();
+    if (d.unbekannt?.length) merkliste.schreiben(slugs.filter((x) => !d.unbekannt.includes(x)));
+    $('[data-merkliste-liste]').innerHTML = d.ergebnisse.map((e) => karteHtml(e)).join('');
+    zeigeStatus($('[data-merkliste-liste]'));
+  } catch { $('[data-merkliste-status]').textContent = 'Die Merkliste konnte gerade nicht geladen werden.'; return; }
+  merklisteStatus();
+  $('[data-merkliste-leeren] button')?.addEventListener('click', () => { merkliste.schreiben([]); $('[data-merkliste-liste]').innerHTML = ''; merkAnzeige(); merklisteStatus(); });
+}
+
 startseite();
+await merklisteSeite();
 await plzModus();
 karteAutomatisch();

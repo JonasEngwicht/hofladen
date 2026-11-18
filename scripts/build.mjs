@@ -203,7 +203,8 @@ ${[...bc, ...jsonld].map((j) => `<script type="application/ld+json">${JSON.strin
   <nav class="kopf-nav" aria-label="Hauptnavigation">
     <a href="/karte/"${pfad === '/karte/' ? ' aria-current="page"' : ''}>Karte</a>
     <a href="/saisonkalender/"${pfad === '/saisonkalender/' ? ' aria-current="page"' : ''}>Saisonkalender</a>
-    <a href="/mitmachen/"${pfad === '/mitmachen/' ? ' aria-current="page"' : ''}>Hof eintragen</a>
+    <a href="/merkliste/"${pfad === '/merkliste/' ? ' aria-current="page"' : ''}>${ICON.herz}Merkliste<span class="merk-zahl" hidden></span></a>
+    <a class="nav-optional" href="/mitmachen/"${pfad === '/mitmachen/' ? ' aria-current="page"' : ''}>Hof eintragen</a>
   </nav>
   ${kopfSuche ? `<form class="kopf-suche" action="/suche" method="get" role="search">
     <label class="sr" for="kopf-plz">Postleitzahl</label>
@@ -776,7 +777,7 @@ for (const e of eintraege) {
     : `<p class="leise">Keine Öffnungszeiten hinterlegt. ${e.typ === 'automat' ? 'Automaten sind meist rund um die Uhr zugänglich.' : 'Am besten vorher anrufen.'}</p>`;
   const kontakt = [
     e.telefon && `<li>${ICON.telefon}<a href="${telHref(e.telefon)}">${esc(e.telefon)}</a></li>`,
-    e.email && `<li>${ICON.web}<a href="mailto:${esc(e.email)}">${esc(e.email)}</a></li>`,
+    e.email && `<li>${ICON.mail}<a href="mailto:${esc(e.email)}">${esc(e.email)}</a></li>`,
     e.website && `<li>${ICON.web}<a href="${esc(e.website)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.website))}</a></li>`,
     e.facebook && `<li>${ICON.web}<a href="${esc(e.facebook)}" rel="nofollow noopener" target="_blank">Facebook</a></li>`,
     e.instagram && `<li>${ICON.web}<a href="${esc(e.instagram)}" rel="nofollow noopener" target="_blank">Instagram</a></li>`,
@@ -804,27 +805,41 @@ for (const e of eintraege) {
 <section class="hof-kopf laden-${e.typ}" data-lat="${e.lat}" data-lon="${e.lon}" data-titel="${esc(e.titel)}" data-typ="${e.typ}">
   <p class="hof-art">${typIcon(e.art)}<span>${ART_TYP[e.art] ? `<a href="/${ART_TYP[e.art]}/">${esc(e.art)}</a>` : esc(e.art)} in ${o?.eigen ? `<a href="${o.pfad}">${esc(e.ortAnzeige)}</a>` : esc(e.ortAnzeige)}${e.bio ? ' · Bio' : ''}</span></p>
   <h1>${esc(e.titelSeite)}</h1>
-  <p class="hof-adr">${esc(e.adresse)}</p>
+  <p class="hof-adr">${ICON.route}${esc(e.adresse)}</p>
   ${statusHtml(e.oeffnungszeiten, e.oeffnungszeiten_text)}
-  <p class="aktionen gross">
-    <a class="akt" href="https://www.google.com/maps/dir/?api=1&amp;destination=${e.lat},${e.lon}" rel="nofollow noopener" target="_blank">${ICON.route}Route planen</a>${e.telefon ? `<a class="akt" href="${telHref(e.telefon)}">${ICON.telefon}Anrufen</a>` : ''}${e.website ? `<a class="akt" href="${esc(e.website)}" rel="nofollow noopener" target="_blank">${ICON.web}Website</a>` : ''}
-  </p>
 </section>
 <div class="hof-inhalt">
+  <aside class="hof-seite">
+    <section class="kontaktkarte" aria-labelledby="kk-titel">
+      <h2 id="kk-titel">Kontakt &amp; Zeiten</h2>
+      <h3 class="kk-unter">Öffnungszeiten</h3>
+      ${ohTabelle}
+      <p class="kk-knoepfe">
+        ${e.telefon ? `<a class="knopf knopf-gruen" href="${telHref(e.telefon)}">${ICON.telefon}Anrufen</a>` : ''}
+        <a class="knopf knopf-dunkel" href="https://www.google.com/maps/dir/?api=1&amp;destination=${e.lat},${e.lon}" rel="nofollow noopener" target="_blank">${ICON.route}Route planen</a>
+        ${e.website ? `<a class="knopf knopf-hell" href="${esc(e.website)}" rel="nofollow noopener" target="_blank">${ICON.web}Website</a>` : ''}
+      </p>
+      ${kontakt.length ? `<ul class="kontakt">${kontakt.join('')}</ul>` : ''}
+      ${e.betreiber && e.betreiber !== e.name ? `<p class="leise">Betreiber: ${esc(e.betreiber)}</p>` : ''}
+    </section>
+    <nav class="hof-werkzeuge" aria-label="Aktionen">
+      <button type="button" data-merken="${esc(e.slug)}" aria-pressed="false">${ICON.herz}<span class="merken-text">Merken</span></button>
+      <button type="button" data-teilen data-titel="${esc(e.titelSeite)}">${ICON.teilen}<span>Teilen</span></button>
+      <a href="/mitmachen/?hof=${esc(e.slug)}">${ICON.stift}<span>Ändern</span></a>
+    </nav>
+    <div class="hof-karte">
+      ${e.lageUngefaehr ? '<p class="leise">Die genaue Lage ist noch nicht erfasst.</p>' : kartenPanel({ titel: `Karte: ${e.titel}` })}
+      <p class="leise"><a href="https://www.openstreetmap.org/?mlat=${e.lat}&amp;mlon=${e.lon}#map=16/${e.lat}/${e.lon}" rel="nofollow noopener" target="_blank">Auf OpenStreetMap öffnen</a></p>
+    </div>
+  </aside>
   <div class="hof-info">
-    <section><h2>Öffnungszeiten</h2>${ohTabelle}</section>
-    ${e.kat.length ? `<section><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${e.quelle === 'osm' ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
-    <section><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
-    <section><h2>Kontakt</h2>${kontakt.length ? `<ul class="kontakt">${kontakt.join('')}</ul>` : '<p class="leise">Keine Kontaktdaten hinterlegt.</p>'}${e.betreiber && e.betreiber !== e.name ? `<p class="leise">Betreiber: ${esc(e.betreiber)}</p>` : ''}</section>
+    ${e.kat.length ? `<section class="block"><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${e.quelle === 'osm' ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
+    <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram' })[f]).join(', ')} ergänzt aus <a href="${esc(e.ergaenzt.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.ergaenzt.quelle).split('/')[0])}</a>${e.ergaenzt.stand ? ` (Stand ${esc(e.ergaenzt.stand.split('-').reverse().join('.'))})` : ''}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
     <p class="hinweis">Angaben ohne Gewähr. ${e.quelle === 'osm'
       ? `Quelle: <a href="https://www.openstreetmap.org/${e.osm}" rel="nofollow noopener" target="_blank">OpenStreetMap</a>. Etwas stimmt nicht? <a href="https://www.openstreetmap.org/edit?${e.osm.replace('/', '=')}" rel="nofollow noopener" target="_blank">In OpenStreetMap korrigieren</a> oder <a href="/mitmachen/?hof=${esc(e.slug)}">uns Bescheid geben</a>.`
       : `${e.quelleUrl ? `Quelle: <a href="${esc(e.quelleUrl)}" rel="nofollow noopener" target="_blank">${esc(kurz(e.quelleUrl).split('/')[0])}</a>. ` : ''}Etwas stimmt nicht? <a href="/mitmachen/?hof=${esc(e.slug)}">Gib uns Bescheid.</a>`}</p>
   </div>
-  <aside class="hof-karte">
-    ${e.lageUngefaehr ? '<p class="leise">Die genaue Lage ist noch nicht erfasst.</p>' : kartenPanel({ titel: `Karte: ${e.titel}` })}
-    <p class="leise"><a href="https://www.openstreetmap.org/?mlat=${e.lat}&amp;mlon=${e.lon}#map=16/${e.lat}/${e.lon}" rel="nofollow noopener" target="_blank">Auf OpenStreetMap öffnen</a></p>
-  </aside>
 </div>
 ${naehe.length ? `<section class="abschnitt"><h2>Weitere Hofläden in der Nähe</h2><div class="karten-reihe">${naehe.map(([d, x]) => karteHtml(kartenDaten(x, Math.round(d * 10) / 10))).join('')}</div></section>` : ''}
 ${ortListe(naheOrte(e.lat, e.lon, 6, new Set(o?.eigen ? [o] : [])), `Hofläden in Orten in der Nähe`)}
@@ -901,6 +916,23 @@ schreibe('/saisonkalender/', seite({
 const imp = cfg.impressum;
 const impFehlt = !imp.name || !imp.strasse || !imp.plzOrt || !imp.email;
 const kontaktMail = cfg.kontaktEmail || imp.email;
+schreibe('/merkliste/', seite({
+  titel: 'Deine Merkliste | Hofladenliste',
+  beschreibung: 'Deine gemerkten Hofläden und Hofautomaten – gespeichert nur in deinem Browser.',
+  pfad: '/merkliste/',
+  noindex: true,
+  inhalt: `
+<section class="seitenkopf kompakt">
+  <h1>Deine Merkliste</h1>
+  <p>Höfe, die du mit ${ICON.herz} merkst, landen hier. Gespeichert wird nur in deinem Browser.</p>
+</section>
+<section class="abschnitt" data-merkliste>
+  <p class="leise" data-merkliste-status>Merkliste wird geladen …</p>
+  <div class="karten-reihe" data-merkliste-liste></div>
+  <p data-merkliste-leeren hidden><button type="button" class="knopf knopf-hell">Merkliste leeren</button></p>
+</section>`,
+}), false);
+
 const textSeite = (pfad, titel, beschreibung, html, noindex = true) => schreibe(pfad, seite({ titel: `${titel} | Hofladenliste`, beschreibung, pfad, noindex, klasse: 'textseite', inhalt: `<article class="text">${html}</article>` }), !noindex);
 textSeite('/impressum/', 'Impressum', 'Impressum von hofladenliste.de', `<h1>Impressum</h1>
 ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>' : ''}
@@ -921,6 +953,8 @@ textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von h
 <p>Karten werden erst geladen, wenn du auf „Karte laden“ klickst. Dann ruft dein Browser Kartenbilder von den Servern der OpenStreetMap Foundation (St John’s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Großbritannien) ab; dabei wird deine IP-Adresse übertragen (Art. 6 Abs. 1 lit. a DSGVO). Wenn du „Für diese Website merken“ auswählst, speichert dein Browser diese Entscheidung lokal (localStorage). Du kannst sie jederzeit über die Browsereinstellungen löschen. Datenschutzhinweise der OpenStreetMap Foundation: <a href="https://osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org/wiki/Privacy_Policy</a>.</p>
 <h2>Postleitzahl- und Standortsuche</h2>
 <p>Wenn du eine Postleitzahl eingibst, wird sie an unseren Server übermittelt, um passende Hofläden anzuzeigen. Wenn du „Meinen Standort verwenden“ wählst, fragt dein Browser zuerst um Erlaubnis; die Koordinaten werden nur für diese Suche übertragen und nicht gespeichert. Die zuletzt gesuchte Postleitzahl speichert dein Browser lokal (localStorage).</p>
+<h2>Merkliste</h2>
+<p>Höfe, die du mit „Merken“ markierst, speichert nur dein Browser (localStorage) – wir haben darauf keinen Zugriff. Wenn du die Merkliste öffnest, lädt dein Browser die aktuellen Angaben zu diesen Höfen von unserem Server; dabei wird nichts gespeichert. Du kannst die Merkliste jederzeit dort leeren oder über die Browsereinstellungen löschen.</p>
 <h2>Suchstatistik</h2>
 <p>Damit wir sehen, in welchen Regionen Hofläden gesucht werden, zählen wir auf unserem Server, wie oft am Tag nach einer Postleitzahl gesucht wurde – zusammen mit dem zugehörigen Landkreis, dem gewählten Angebotsfilter und der Art der Suche (Postleitzahl oder Standort). Bei der Standortsuche wird nur die nächstgelegene Postleitzahl gezählt, nicht die Koordinaten. IP-Adressen, Uhrzeiten, Geräte- oder Browserdaten speichern wir dabei nicht, und auf deinem Gerät wird nichts gespeichert oder ausgelesen. Ein Rückschluss auf einzelne Personen ist nicht möglich. Die Zähler liegen in einer Datenbank von Cloudflare (Cloudflare, Inc., Region Westeuropa); Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung des Angebots (Art. 6 Abs. 1 lit. f DSGVO).</p>
 <h2>Cookies und Tracking</h2>

@@ -20,6 +20,10 @@ export const ICON = {
   telefon: S('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/>'),
   web: S('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>'),
   pfeil: S('<path d="M9 6l6 6-6 6"/>'),
+  mail: S('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>'),
+  herz: S('<path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6.4 5 5 0 0 1 21.2 11C19 15.6 12 20 12 20z"/>'),
+  teilen: S('<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"/>'),
+  stift: S('<path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="m13.5 6.5 4 4"/>'),
 };
 export function typIcon(art) {
   if (art === 'Milchtankstelle') return ICON.milch;
@@ -49,6 +53,7 @@ export function karteHtml(d, { datum = null, ueberschrift = 'h3' } = {}) {
   const H = ueberschrift;
   return `<article class="laden laden-${d.typ}" data-typ="${d.typ}" data-kat="${esc((d.kat || []).join(' '))}" data-lat="${d.lat}" data-lon="${d.lon}" data-slug="${esc(d.slug)}"${d.oh ? ` data-oh="${esc(d.oh)}"` : ''}>
   <div class="laden-symbol" title="${esc(d.art)}">${typIcon(d.art)}</div>
+  <button class="merken-mini" type="button" data-merken="${esc(d.slug)}" aria-pressed="false" aria-label="${esc(d.titel)} merken">${ICON.herz}</button>
   <div class="laden-text">
     <p class="laden-art">${esc(d.art)}${d.bio ? ' <span class="bio">Bio</span>' : ''}${d.km != null ? ` <span class="km">${String(d.km).replace('.', ',')} km</span>` : ''}</p>
     <${H} class="laden-name"><a href="${esc(d.pfad)}">${esc(d.titel)}</a></${H}>

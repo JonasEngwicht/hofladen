@@ -85,12 +85,26 @@ function umkreis(url, env, ctx, request) {
   return json({
     ort,
     anzahl: treffer.length,
-    ergebnisse: treffer.slice(0, limit).map(([km, e]) => ({
-      km: Math.round(km * 10) / 10, pfad: `/hof/${e[2]}/`, slug: e[2], titel: e[3], art: e[4], ort: e[5],
-      oh: e[6] || null, typ: e[7] ? 'hofladen' : 'automat', adresse: e[8], telefon: e[9] || null, website: e[10] || null,
-      kat: [...e[11]].map((b) => KATEGORIEN[KAT_BUCHSTABEN.indexOf(b)]), bio: !!e[12], ohText: e[13] || null, lat: e[0], lon: e[1],
-    })),
+    ergebnisse: treffer.slice(0, limit).map(([km, e]) => aufbereiten(e, Math.round(km * 10) / 10)),
   });
+}
+
+function aufbereiten(e, km = null) {
+  return {
+    km, pfad: `/hof/${e[2]}/`, slug: e[2], titel: e[3], art: e[4], ort: e[5],
+    oh: e[6] || null, typ: e[7] ? 'hofladen' : 'automat', adresse: e[8], telefon: e[9] || null, website: e[10] || null,
+    kat: [...e[11]].map((b) => KATEGORIEN[KAT_BUCHSTABEN.indexOf(b)]), bio: !!e[12], ohText: e[13] || null, lat: e[0], lon: e[1],
+  };
+}
+
+// Merkliste: Einträge zu gemerkten Slugs (max. 100), Reihenfolge wie angefragt
+let SLUG_INDEX = null;
+function eintraegeNachSlug(url) {
+  SLUG_INDEX ??= new Map(EINTRAEGE.map((e) => [e[2], e]));
+  const slugs = (url.searchParams.get('slugs') || '').split(',').map((x) => x.trim()).filter((x) => /^[a-z0-9-]{1,120}$/.test(x)).slice(0, 100);
+  const gefunden = slugs.map((x) => SLUG_INDEX.get(x)).filter(Boolean).map((e) => aufbereiten(e));
+  const vorhanden = new Set(gefunden.map((e) => e.slug));
+  return json({ ergebnisse: gefunden, unbekannt: slugs.filter((x) => !vorhanden.has(x)) });
 }
 
 export default {
@@ -104,6 +118,7 @@ export default {
     const m = url.pathname.match(/^\/plz\/(\d{5})\/?$/);
     if (m) return sucheWeiterleitung(m[1], [], env, ctx, request);
     if (url.pathname === '/api/umkreis') return umkreis(url, env, ctx, request);
+    if (url.pathname === '/api/eintraege') return eintraegeNachSlug(url);
     return env.ASSETS.fetch(request);
   },
 };

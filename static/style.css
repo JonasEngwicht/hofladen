@@ -211,7 +211,40 @@ main { display: block; }
 .aktionen.gross .akt + .akt { background: transparent; color: var(--weiss); border-color: var(--fichte-3); }
 .aktionen.gross .akt + .akt:hover { border-color: var(--raps); color: var(--raps); }
 .aktionen.gross .akt svg { width: 20px; height: 20px; }
-.hof-inhalt { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; margin-top: 2.2rem; }
+.hof-inhalt { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 23rem); gap: 2.5rem; margin-top: 2.2rem; align-items: start; }
+.hof-seite { grid-column: 2; grid-row: 1; display: grid; gap: 1rem; position: sticky; top: 1rem; }
+.hof-info { grid-column: 1; grid-row: 1; }
+.hof-adr svg { width: 18px; height: 18px; vertical-align: -3px; margin-right: .3rem; color: var(--raps); }
+.kontaktkarte { background: var(--weiss); border: 1px solid var(--linie); border-top: 5px solid var(--raps); border-radius: var(--r); padding: 1.3rem 1.3rem 1.1rem; box-shadow: 0 10px 30px rgba(23, 59, 44, .08); }
+.kontaktkarte h2 { font-size: 1.35rem; margin-bottom: .8rem; }
+.kk-unter { font: 700 .82rem var(--schrift); color: var(--kohl); margin: 0 0 .3rem; }
+.kontaktkarte .woche { max-width: none; font-size: .95rem; }
+.kontaktkarte .woche th { width: auto; }
+.kontaktkarte .woche td { text-align: right; font-weight: 600; }
+.kontaktkarte > p.leise { margin: .2rem 0 .4rem; }
+.kk-knoepfe { display: grid; gap: .55rem; margin: 1.1rem 0 .9rem; }
+.knopf { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .8rem 1rem; border-radius: var(--r-klein); font: 700 1rem var(--schrift); text-decoration: none; border: 1.5px solid transparent; cursor: pointer; }
+.knopf svg { width: 20px; height: 20px; }
+.knopf-gruen { background: var(--raps); color: var(--fichte); }
+.knopf-gruen:hover { background: #FFD24A; }
+.knopf-dunkel { background: var(--fichte); color: var(--weiss); }
+.knopf-dunkel:hover { background: #21503D; }
+.knopf-hell { background: var(--weiss); color: var(--fichte); border-color: var(--linie); }
+.knopf-hell:hover { border-color: var(--fichte); }
+.kontaktkarte .kontakt { border-top: 1px solid var(--linie); padding-top: .6rem; margin: 0; font-size: .95rem; }
+.hof-werkzeuge { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--r); padding: .7rem; }
+.hof-werkzeuge > * { display: grid; justify-items: center; gap: .3rem; padding: .55rem .3rem; border: 0; background: none; border-radius: var(--r-klein); font: 600 .85rem var(--schrift); color: var(--tinte); text-decoration: none; cursor: pointer; }
+.hof-werkzeuge > *:hover { background: var(--kalk); }
+.hof-werkzeuge svg { width: 40px; height: 40px; padding: 9px; border-radius: 10px; background: var(--kalk); color: var(--fichte); }
+[data-merken][aria-pressed="true"] svg { fill: var(--bete); color: var(--bete); }
+.merken-mini { position: absolute; top: .7rem; right: .7rem; width: 38px; height: 38px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--weiss); color: var(--grau); cursor: pointer; }
+.merken-mini:hover { color: var(--bete); background: var(--kalk); }
+.merken-mini svg { width: 21px; height: 21px; }
+.laden { position: relative; }
+.laden-art .km { margin-right: 2.4rem; }
+.kopf-nav svg { width: 17px; height: 17px; vertical-align: -3px; margin-right: .25rem; }
+.merk-zahl { display: inline-block; min-width: 1.25rem; margin-left: .3rem; padding: 0 .3rem; border-radius: 999px; background: var(--raps); color: var(--fichte); font-size: .78rem; text-align: center; line-height: 1.25rem; }
+.block { background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--r); padding: 1.3rem 1.4rem; }
 .hof-info section { margin-bottom: 2rem; }
 .hof-info h2 { font-size: 1.4rem; margin-bottom: .6rem; }
 .woche { border-collapse: collapse; width: 100%; max-width: 26rem; }
@@ -307,6 +340,8 @@ main { display: block; }
 .fuss-quelle { color: #A9C2B3; }
 
 @media (max-width: 960px) {
+  .hof-inhalt { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; margin-top: 1.25rem; }
+  .hof-seite, .hof-info { grid-column: 1; grid-row: auto; position: static; }
   .held { grid-template-columns: minmax(0, 1fr); }
   .held-karte { width: min(78%, 380px); }
   .held-karte figcaption { text-align: center; }
@@ -321,7 +356,8 @@ main { display: block; }
 @media (max-width: 640px) {
   :root { font-size: 16px; }
   .kopf-innen { flex-wrap: wrap; gap: .6rem 1rem; }
-  .kopf-nav { order: 3; width: 100%; margin-left: 0; gap: 1.1rem; overflow-x: auto; }
+  .kopf-nav { order: 3; width: 100%; margin-left: 0; gap: .9rem; overflow-x: auto; justify-content: space-between; }
+  .kopf-nav .nav-optional { display: none; }
   .kopf-suche { margin-left: auto; }
   .held h1 { max-width: none; }
   .plz-zeile input { font-size: 1.35rem; width: 100%; padding: .5rem .6rem; letter-spacing: .1em; }
@@ -342,3 +378,4 @@ html { overflow-x: clip; }
 @media (max-width: 760px) {
   .saison-tabelle th[scope="row"], .saison-tabelle thead th:first-child { position: sticky; left: 0; z-index: 1; background: var(--kalk); padding-right: .8rem; }
 }
+[data-merkliste-leeren] { margin-top: 1.5rem; }
