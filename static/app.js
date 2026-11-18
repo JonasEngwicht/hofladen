@@ -706,3 +706,36 @@ document.addEventListener('click', (ev) => {
     }).catch(() => { meldung.textContent = 'Die Suche hat gerade nicht geklappt. Bitte versuch es noch einmal.'; });
   }
 }
+
+// ---------- Ein-Klick-Rückmeldung „Stimmt das noch?“ ----------
+for (const box of $$('[data-rueckmeldung]')) {
+  const sid = box.dataset.rueckmeldung, danke = $('[data-rm-danke]', box), frage = $('[data-rm-frage]', box), knoepfe = $('.pruef-knoepfe', box);
+  const merkKey = `rm:${sid}`;
+  const zeigeDanke = (text) => { knoepfe.hidden = true; frage.hidden = true; danke.textContent = text; danke.hidden = false; };
+  const frueher = speicher.get(merkKey);
+  if (frueher) {
+    try { const f = JSON.parse(frueher); if (Date.now() - f.t < 30 * 864e5) zeigeDanke(f.art === 'stimmt' ? 'Danke, du hast diese Angaben schon bestätigt.' : 'Danke, du hast diesen Eintrag schon als geschlossen gemeldet.'); } catch {}
+  }
+  const senden = async (art) => {
+    for (const b of $$('button', box)) b.disabled = true;
+    try {
+      const r = await fetch('/api/rueckmeldung', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ eintrag: sid, art }) });
+      if (!r.ok) throw new Error();
+      speicher.set(merkKey, JSON.stringify({ art, t: Date.now() }));
+      zeigeDanke(art === 'stimmt' ? 'Danke! Das Prüfdatum auf dieser Seite wird in den nächsten Tagen aktualisiert.' : 'Danke für den Hinweis! Wir prüfen den Eintrag und nehmen ihn heraus, wenn er wirklich geschlossen ist.');
+      zaehle('rueckmeldung', art);
+    } catch {
+      for (const b of $$('button', box)) b.disabled = false;
+      danke.textContent = 'Das hat gerade nicht geklappt. Bitte versuch es später noch einmal.';
+      danke.hidden = false;
+    }
+  };
+  box.addEventListener('click', (ev) => {
+    const b = ev.target.closest('button');
+    if (!b) return;
+    if (b.dataset.rm === 'stimmt') senden('stimmt');
+    else if (b.dataset.rm === 'geschlossen') { frage.hidden = false; $('[data-rm-ja]', box).focus(); }
+    else if (b.matches('[data-rm-ja]')) senden('geschlossen');
+    else if (b.matches('[data-rm-nein]')) frage.hidden = true;
+  });
+}

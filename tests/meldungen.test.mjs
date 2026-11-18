@@ -89,3 +89,30 @@ test('Nutzungsstatistik zählt Klicks anonym und ist nur in der Verwaltung lesba
   assert.ok(d.ereignisse.some((x) => x.ereignis === 'filter' && x.detail === 'bio'));
   assert.equal((await verwaltung('statistik', {}, 'falsch')).status, 401);
 });
+
+test('Ein-Klick-Rückmeldung: zählt einmal pro Tag und Anschluss, Schließung über die Verwaltung', async () => {
+  const w = await ladeWorker();
+  const rm = (body, ip = '5.6.7.8') => w.fetch(new Request('https://hofladenliste.de/api/rueckmeldung', { method: 'POST', body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json', 'cf-connecting-ip': ip, 'user-agent': 'Mozilla/5.0' } }), env, ctx);
+  assert.equal((await rm({ eintrag: 'w136216919', art: 'stimmt' })).status, 200);
+  assert.equal((await (await rm({ eintrag: 'w136216919', art: 'stimmt' })).json()).doppelt, true); // gleicher Anschluss, gleicher Tag
+  assert.equal((await rm({ eintrag: 'w136216919', art: 'stimmt' }, '9.9.9.9')).status, 200);
+  assert.equal((await rm({ eintrag: 'kittlers-hofladen-riesa', art: 'geschlossen' })).status, 200); // Slug wird zur stabilen ID
+  assert.equal((await rm({ eintrag: 'kittlers-hofladen-riesa', art: 'geschlossen' }, '9.9.9.9')).status, 200);
+  assert.equal((await rm({ eintrag: 'gibt-es-nicht', art: 'stimmt' })).status, 404);
+  assert.equal((await rm({ eintrag: 'w136216919', art: 'quatsch' })).status, 400);
+  assert.equal((await w.fetch(new Request('https://hofladenliste.de/api/rueckmeldung'), env, ctx)).status, 405);
+  // Verwaltung: gemeldete Schließung sichtbar, Stand enthält Bestätigungen
+  const liste = await (await verwaltung('rueckmeldungen')).json();
+  const kittler = liste.rueckmeldungen.find((x) => x.pfad === '/hof/kittlers-hofladen-riesa/');
+  assert.equal(kittler.anzahl, 2);
+  let stand = await (await verwaltung('rueckmeldungen/stand')).json();
+  assert.equal(stand.bestaetigt.w136216919.anzahl, 2);
+  assert.equal(stand.gemeldet[kittler.eintrag].anzahl, 2);
+  assert.deepEqual(stand.geschlossen, {});
+  assert.equal((await verwaltung(`rueckmeldung/${kittler.eintrag}`, { method: 'POST', body: JSON.stringify({ aktion: 'geschlossen' }) })).status, 200);
+  stand = await (await verwaltung('rueckmeldungen/stand')).json();
+  assert.ok(stand.geschlossen[kittler.eintrag]);
+  assert.equal(stand.gemeldet[kittler.eintrag], undefined);
+  assert.equal((await verwaltung('rueckmeldungen/stand', {}, 'falsch'.repeat(6))).status, 401);
+});

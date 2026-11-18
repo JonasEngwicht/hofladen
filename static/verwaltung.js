@@ -25,7 +25,7 @@ async function laden(status = 'neu') {
   box.innerHTML = '<p>Lade …</p>';
   let d;
   try { const r = await api(`meldungen?status=${status}`); d = await r.json(); if (!r.ok) { box.innerHTML = `<p class="fehler">${esc(d.fehler)}</p>`; return; } } catch { return; }
-  box.innerHTML = `<p class="segment">${['neu', 'freigegeben', 'erledigt', 'abgelehnt'].map((s) => `<button type="button" data-status="${s}" aria-pressed="${s === status}">${s}</button>`).join('')}<button type="button" data-statistik>Statistik</button></p>
+  box.innerHTML = `<p class="segment">${['neu', 'freigegeben', 'erledigt', 'abgelehnt'].map((s) => `<button type="button" data-status="${s}" aria-pressed="${s === status}">${s}</button>`).join('')}<button type="button" data-schliessungen>Geschlossen gemeldet</button><button type="button" data-statistik>Statistik</button></p>
     ${d.meldungen.length ? '' : '<p>Keine Meldungen.</p>'}
     ${d.meldungen.map((m) => `<article class="block meldung" data-id="${m.id}">
       <h2>#${m.id} · ${esc(ART[m.art] || m.art)}${m.hof ? ` · <a href="/hof/${esc(m.hof)}/" target="_blank">${esc(m.hof)}</a>` : ''}</h2>
@@ -40,6 +40,7 @@ async function laden(status = 'neu') {
     </article>`).join('')}`;
   for (const b of box.querySelectorAll('[data-status]')) b.addEventListener('click', () => laden(b.dataset.status));
   box.querySelector('[data-statistik]').addEventListener('click', () => statistik());
+  box.querySelector('[data-schliessungen]').addEventListener('click', () => schliessungen());
   for (const f of box.querySelectorAll('[data-fotos]')) for (const id of f.dataset.fotos.split(',').filter(Boolean)) {
     const img = new Image(); img.alt = `Foto ${id}`; img.width = 240; bild(id).then((u) => { img.src = u; }); f.append(img);
   }
@@ -48,6 +49,26 @@ async function laden(status = 'neu') {
     let daten;
     try { daten = JSON.parse(art.querySelector('[data-json]').value); } catch { alert('JSON ist ungültig.'); return; }
     await api(`meldung/${art.dataset.id}`, { method: 'POST', body: JSON.stringify({ status: b.dataset.setze, notiz: art.querySelector('[data-notiz]').value, daten }) });
+    art.remove();
+  });
+}
+// Über „Geschlossen melden“ gemeldete Einträge: bestätigen (Eintrag verschwindet beim nächsten täglichen Abgleich) oder verwerfen
+async function schliessungen() {
+  const box = $('#verwaltung');
+  box.innerHTML = '<p>Lade …</p>';
+  const d = await (await api('rueckmeldungen')).json();
+  box.innerHTML = `<p class="segment"><button type="button" data-zurueck>Meldungen</button></p>
+    <p class="leise">Einträge, die Besucher als geschlossen gemeldet haben. „Geschlossen bestätigen“ nimmt den Eintrag beim nächsten täglichen Abgleich von der Seite (die Seite liefert dann 410). Bei OSM-Einträgen bitte auch in OpenStreetMap als geschlossen markieren.</p>
+    ${d.rueckmeldungen.length ? '' : '<p>Keine offenen Schließungsmeldungen.</p>'}
+    ${d.rueckmeldungen.map((x) => `<article class="block meldung" data-eintrag="${esc(x.eintrag)}">
+      <h2>${x.pfad ? `<a href="${esc(x.pfad)}" target="_blank">${esc(x.titel)}</a>` : esc(x.titel)} · ${esc(x.ort)}</h2>
+      <p>${x.anzahl}× als geschlossen gemeldet (${esc(x.erste)}${x.erste !== x.letzte ? ` bis ${esc(x.letzte)}` : ''})${x.bestaetigt ? ` · zuletzt als „stimmt noch“ bestätigt am ${esc(x.bestaetigt)}` : ''} · ID <code>${esc(x.eintrag)}</code>${/^[nwr]\d+$/.test(x.eintrag) ? ` · <a href="https://www.openstreetmap.org/${{ n: 'node', w: 'way', r: 'relation' }[x.eintrag[0]]}/${x.eintrag.slice(1)}" target="_blank" rel="noopener">in OSM ansehen</a>` : ''}</p>
+      <p class="kk-knoepfe"><button class="knopf knopf-dunkel" data-schliessen="geschlossen">Geschlossen bestätigen</button><button class="knopf knopf-hell" data-schliessen="verwerfen">Verwerfen</button></p>
+    </article>`).join('')}`;
+  box.querySelector('[data-zurueck]').addEventListener('click', () => laden());
+  for (const b of box.querySelectorAll('[data-schliessen]')) b.addEventListener('click', async () => {
+    const art = b.closest('[data-eintrag]');
+    await api(`rueckmeldung/${art.dataset.eintrag}`, { method: 'POST', body: JSON.stringify({ aktion: b.dataset.schliessen }) });
     art.remove();
   });
 }

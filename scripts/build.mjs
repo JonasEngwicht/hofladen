@@ -229,6 +229,24 @@ function stabileIdAus(roh) {
 }
 for (const e of eintraege) e.sid = stabileIdAus(e.osm || e.id);
 
+// Ein-Klick-Rückmeldungen (data/rueckmeldungen.json, täglich aus der Verwaltung): bestätigte Schließungen entfernen
+// (Seite liefert danach 410), Datum der letzten Prüfung je Eintrag aus OSM-Prüfdatum, Betreiber, Besuchern und Website-Prüfung
+const rueck = existsSync(join(ROOT, 'data', 'rueckmeldungen.json'))
+  ? JSON.parse(readFileSync(join(ROOT, 'data', 'rueckmeldungen.json'), 'utf8')) : { bestaetigt: {}, geschlossen: {}, gemeldet: {} };
+let geschlossenAnzahl = 0;
+for (let i = eintraege.length - 1; i >= 0; i--) if (rueck.geschlossen?.[eintraege[i].sid]) { eintraege.splice(i, 1); geschlossenAnzahl++; }
+for (const e of eintraege) {
+  const kand = [];
+  if (/^\d{4}-\d{2}(-\d{2})?$/.test(e.geprueft || '') && !e.gepflegt) kand.push([e.geprueft.length === 7 ? `${e.geprueft}-01` : e.geprueft, 'vor Ort geprüft (laut OpenStreetMap)']);
+  if (e.gepflegt?.stand) kand.push([e.gepflegt.stand, e.gepflegt.art === 'uebernahme' ? 'vom Betrieb bestätigt' : 'von uns geprüft und ergänzt']);
+  const b = rueck.bestaetigt?.[e.sid];
+  if (b) kand.push([b.tag, b.anzahl > 1 ? `von Besucherinnen und Besuchern bestätigt (${b.anzahl}×)` : 'von einer Besucherin oder einem Besucher bestätigt']);
+  if (e.webGeprueft) kand.push([e.webGeprueft, 'auf der Website des Hofs geprüft']);
+  kand.sort((x, y) => y[0].localeCompare(x[0]));
+  e.letztePruefung = kand[0] ? { tag: kand[0][0], wie: kand[0][1] } : null;
+  e.geschlossenGemeldet = rueck.gemeldet?.[e.sid]?.anzahl || 0;
+}
+
 // Gruppierung nach Kreis und Land
 const proKreis = new Map();
 for (const e of eintraege) {
@@ -1502,6 +1520,15 @@ for (const e of eintraege) {
     ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.quellen.map((q) => `${q.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram', strasse: 'Adresse' })[f]).join(', ')} ergänzt aus <a href="${esc(q.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(q.quelle).split('/')[0])}</a>${q.stand ? ` (Stand ${esc(datumDe(q.stand))})` : ''}`).join('; ')}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
+    <section class="pruefung" data-rueckmeldung="${esc(e.sid)}" aria-labelledby="pr-titel">
+      <h2 id="pr-titel">Stimmt das noch?</h2>
+      ${e.geschlossenGemeldet >= 2 ? '<p class="pruef-warnung">Mehrere Besucher haben gemeldet, dass dieser Hof geschlossen sein könnte. Wir prüfen das gerade.</p>' : ''}
+      <p class="pruef-stand">${e.letztePruefung ? `Zuletzt geprüft: <time datetime="${e.letztePruefung.tag}">${esc(datumDe(e.letztePruefung.tag))}</time>, ${esc(e.letztePruefung.wie)}.` : 'Diese Angaben hat noch niemand geprüft. Warst du in letzter Zeit dort?'}</p>
+      <div class="pruef-knoepfe"><button type="button" class="knopf knopf-dunkel" data-rm="stimmt">Ja, stimmt noch</button><button type="button" class="knopf knopf-hell" data-rm="geschlossen">Geschlossen melden</button></div>
+      <p class="pruef-frage" data-rm-frage hidden>Ist der ${e.typ === 'automat' ? 'Automat' : 'Hof oder Laden'} dauerhaft geschlossen? <button type="button" class="link" data-rm-ja>Ja, dauerhaft geschlossen</button> · <button type="button" class="link" data-rm-nein>Nein, abbrechen</button></p>
+      <p class="pruef-danke" data-rm-danke role="status" hidden></p>
+      <p class="leise">Öffnungszeiten oder Angebot haben sich geändert? <a href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a>.</p>
+    </section>
     <p class="hinweis">Angaben ohne Gewähr. ${e.gepflegt ? `${e.gepflegt.art === 'uebernahme' ? 'Der Betrieb pflegt diesen Eintrag selbst' : 'Angaben geprüft und ergänzt'} (Stand ${esc(datumDe(e.gepflegt.stand))}). ` : ''}${e.quelle === 'betreiber' ? `Eingetragen vom Betrieb. Etwas stimmt nicht? <a href="${bearbeiten(e, 'ergaenzen')}">Eintrag ergänzen</a>.` : QUELLEN[e.quelle] && !e.gepflegt
       ? `${quellenHinweis(e)} Die Angaben sind noch nicht vom Betrieb bestätigt. Etwas stimmt nicht oder ist der Hof geschlossen? <a href="${bearbeiten(e, 'ergaenzen')}">Bitte melden</a>.`
       : e.quelle === 'osm'
@@ -1658,6 +1685,8 @@ ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>'
 textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von hofladenliste.de: keine Cookies, kein Tracking – welche Daten beim Besuch, bei Karte und Suche anfallen.', `<h1>Datenschutzerklärung</h1>
 <h2>Verantwortlicher</h2>
 <p>${esc(imp.name) || '[Name]'}, ${esc(imp.strasse) || '[Straße]'}, ${esc(imp.plzOrt) || '[PLZ Ort]'}, ${esc(imp.email) || '[E-Mail]'}</p>
+<h2>Rückmeldung „Stimmt das noch?“</h2>
+<p>Klickst du auf einer Hofseite auf „Ja, stimmt noch“ oder „Geschlossen melden“, speichern wir nur den Eintrag, die Art der Rückmeldung und das Datum. Damit dieselbe Rückmeldung nicht mehrfach zählt, bilden wir aus deiner IP-Adresse, dem Tag und dem Eintrag einen nicht umkehrbaren Prüfwert, der nach einem Tag gelöscht wird. Die IP-Adresse selbst speichern wir nicht.</p>
 <h2>Hosting</h2>
 <p>Diese Website wird über Cloudflare (Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA) ausgeliefert. Beim Aufruf verarbeitet Cloudflare technisch notwendige Verbindungsdaten (z. B. IP-Adresse, Zeitpunkt, angeforderte Seite), um die Website auszuliefern und vor Angriffen zu schützen (Art. 6 Abs. 1 lit. f DSGVO). Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
 <h2>Schriften und Skripte</h2>
@@ -1948,5 +1977,5 @@ writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;
 const mitKat = eintraege.filter((e) => e.kat.length).length;
-console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
+console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${geschlossenAnzahl} als geschlossen entfernt, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
 if (impFehlt) console.warn('WARNUNG: Impressum in site.config.json ist unvollständig.');
