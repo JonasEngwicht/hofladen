@@ -27,7 +27,8 @@ jobs:
         continue-on-error: true
         env:
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-        run: curl -fsS -H "Authorization: Bearer $ADMIN_TOKEN" https://hofladenliste.de/api/verwaltung/einrichtung
+        run: |
+          curl -fsS -H "Authorization: Bearer $ADMIN_TOKEN" https://hofladenliste.de/api/verwaltung/einrichtung
       - name: Freigaben holen
         env:
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
