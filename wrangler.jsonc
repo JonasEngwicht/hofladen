@@ -27,5 +27,7 @@
   "r2_buckets": [
     { "binding": "KARTEN", "bucket_name": "hofladen-karten" }
   ],
+  // Täglich 07:17 UTC: Erinnerungen an Betriebe (nur mit Variable ERINNERUNGEN_AKTIV = "ja")
+  "triggers": { "crons": ["17 7 * * *"] },
   "observability": { "enabled": true }
 }

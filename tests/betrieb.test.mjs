@@ -145,6 +145,19 @@ test('Nachricht an den Hof: nur mit Turnstile, Antwort geht an den Absender, Adr
   assert.equal((await (await api('/api/turnstile')).json()).siteKey, 'site');
 });
 
+test('Erinnerung nach 6 Monaten: aus ohne Schalter, sonst eine Mail, Bestätigung per Klick', async () => {
+  const { erinnerungenSenden } = await import('../src/betrieb.js');
+  const h = { schema: async () => {}, sha256: async (t) => t, eintragIndex: () => ({ nachSid: new Map(EINTRAEGE.map((e) => [e[15], e])), nachSlug: new Map(), alteSlugs: {} }),
+    aufloesen: (x, i) => i.nachSid.get(x) || null, DOMAIN: 'https://hofladenliste.de' };
+  const spaeter = new Date(Date.now() + 200 * 864e5);
+  assert.equal((await erinnerungenSenden(env, h, { jetzt: spaeter })).aus, true);
+  const vorher = mails.length;
+  const r = await erinnerungenSenden({ ...env, ERINNERUNGEN_AKTIV: 'ja' }, h, { jetzt: spaeter });
+  assert.ok(r.gesendet >= 1);
+  assert.match(mails[vorher].subject, /Stimmt noch alles/);
+  assert.equal((await erinnerungenSenden({ ...env, ERINNERUNGEN_AKTIV: 'ja' }, h, { jetzt: spaeter })).gesendet, 0, 'nicht doppelt');
+});
+
 test('Ohne Anmeldung kein Zugriff auf den Betreiber-Bereich', async () => {
   cookie = '';
   assert.equal((await api('/api/betrieb/ich')).status, 401);
