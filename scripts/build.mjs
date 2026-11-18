@@ -14,7 +14,8 @@ const OUT = join(ROOT, 'public');
 const GEN = join(ROOT, 'src', 'generated');
 const cfg = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'));
 const BUILD_DATUM = process.env.BUILD_DATUM || new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' });
-const VERSION = Date.now().toString(36);
+// Version der CSS/JS-Dateien aus ihrem Inhalt: ändert sich nur, wenn sich die Dateien ändern
+const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
 const SAISON = [
@@ -332,7 +333,7 @@ ${inhalt}
 
 function kartenPanel({ titel = 'Karte', hinweis = 'Die Karte lädt Kartenbilder von OpenStreetMap. Dabei wird deine IP-Adresse an die OpenStreetMap Foundation übertragen.' } = {}) {
   return `<div class="kartenpanel" data-karte>
-  <div class="karte-flaeche" aria-label="${esc(titel)}"></div>
+  <div class="karte-flaeche" role="region" aria-label="${esc(titel)}"></div>
   <div class="karte-zustimmung">
     <p><b>Karte anzeigen?</b> ${esc(hinweis)}</p>
     <button type="button" class="knopf" data-karte-laden>Karte laden</button>
@@ -406,11 +407,16 @@ const anzArt = (a) => eintraege.filter((e) => e.art === a).length;
   const W = Math.ceil(px(15.1) + 8), H = Math.ceil(py(47.2) + 8);
   const r1 = (v) => Math.round(v * 2) / 2;
   const pfadUmriss = umriss.geometry.coordinates.map((poly) => 'M' + poly[0].map(([x, y]) => `${r1(px(x) + 4)} ${r1(py(y) + 4)}`).join('L') + 'Z').join('');
-  const punkte = new Set(eintraege.map((e) => `${Math.round(px(e.lon) + 4)} ${Math.round(py(e.lat) + 4)}`));
-  const pfadPunkte = [...punkte].map((p) => `M${p}h0`).join('');
+  const r2 = (v) => Math.round(v / 2) * 2;
+  const punkte = new Set(eintraege.map((e) => `${r2(px(e.lon) + 4)} ${r2(py(e.lat) + 4)}`));
+  // relative Bewegungen zwischen sortierten Punkten: deutlich kürzerer Pfad
+  const sortiertePunkte = [...punkte].map((p) => p.split(' ').map(Number)).sort((a, b) => a[1] - b[1] || a[0] - b[0]);
+  let px0 = 0, py0 = 0;
+  const pfadPunkte = sortiertePunkte.map(([x, y], i) => { const t = i ? `m${x - px0} ${y - py0}h0` : `M${x} ${y}h0`; px0 = x; py0 = y; return t; }).join('').replace(/ -/g, '-');
   mkdirSync(join(OUT, 'img'), { recursive: true });
   writeFileSync(join(OUT, 'img', 'deutschland.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><path d="${pfadUmriss}" fill="#1E4A37" stroke="#2F6249" stroke-width="1.2"/><path d="${pfadPunkte}" stroke="#F4C430" stroke-width="3" stroke-linecap="round" fill="none"/></svg>`);
   globalThis.KARTE_GROESSE = [W, H];
+  globalThis.KARTE_VERSION = createHash('sha1').update(readFileSync(join(OUT, 'img', 'deutschland.svg'))).digest('hex').slice(0, 8);
 }
 
 // ---------- SEO-Hilfen: Texte aus den Daten ----------
@@ -845,7 +851,7 @@ schreibe('/', seite({
     <p class="zuletzt" id="zuletzt" hidden></p>
   </div>
   <figure class="held-karte">
-    <img src="/img/deutschland.svg?v=${VERSION}" width="${KARTE_GROESSE[0]}" height="${KARTE_GROESSE[1]}" alt="Deutschlandkarte aus ${zahl(eintraege.length)} gelben Punkten – jeder Punkt ist ein Hofladen oder Hofautomat.">
+    <img src="/img/deutschland.svg?v=${KARTE_VERSION}" decoding="async" width="${KARTE_GROESSE[0]}" height="${KARTE_GROESSE[1]}" alt="Deutschlandkarte aus ${zahl(eintraege.length)} gelben Punkten – jeder Punkt ist ein Hofladen oder Hofautomat.">
     <figcaption>Jeder Punkt ein Hof. <a href="/karte/">Zur Karte</a></figcaption>
   </figure>
 </section>
@@ -1007,6 +1013,7 @@ ${KAT_TYPEN.some((t) => landKat(t, l)) ? `<section class="abschnitt"><h2>Nach Ka
 ${liste.length ? filterLeiste(liste) : ''}
 <div class="geteilt">
   <div class="liste" data-liste>
+    <h2 class="sr">Einträge</h2>
     ${liste.map((e) => karteHtml(kartenDaten(e))).join('\n    ')}
     <p class="leer-filter" data-leer-filter hidden>Keine Einträge passen zu deinem Filter. <button type="button" class="link" data-filter-zuruecksetzen>Filter zurücksetzen</button></p>
     <section class="umgebung" data-umgebung hidden><h2>Ganz in der Nähe, aber in anderen Kreisen</h2><div data-umgebung-liste></div></section>
@@ -1061,6 +1068,7 @@ for (const { t, k, liste: roh, pfad } of TYP_KREIS.values()) {
 </section>
 <div class="geteilt">
   <div class="liste" data-liste>
+    <h2 class="sr">Einträge</h2>
     ${liste.map((e) => karteHtml(kartenDaten(e))).join('\n    ')}
     <p class="leer-filter" data-leer-filter hidden></p>
     <section class="umgebung" data-umgebung hidden><h2>Ganz in der Nähe, aber in anderen Kreisen</h2><div data-umgebung-liste></div></section>
@@ -1260,6 +1268,7 @@ ${extraOben}
 ${filterLeiste(liste, { umkreis: UMKREISE.map((r) => [r, auswahl.filter(([d]) => d <= r).length]) })}
 <div class="geteilt">
   <div class="liste" data-liste>
+    <h2 class="sr">Einträge</h2>
     ${auswahl.map(([d, e]) => karteHtml(kartenDaten(e, Math.round(d * 10) / 10))).join('\n    ')}
     <p class="leer-filter" data-leer-filter hidden>Keine Einträge passen zu deinem Filter. <button type="button" class="link" data-filter-zuruecksetzen>Filter zurücksetzen</button></p>
     <section class="umgebung" data-umgebung hidden><h2>Ganz in der Nähe</h2><div data-umgebung-liste></div></section>
@@ -1568,7 +1577,9 @@ textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von h
 <h2 id="formular">Formular „Mitmachen“</h2>
 <p>Wenn du über das Formular einen Hof einträgst, Angaben korrigierst oder einen Eintrag übernimmst, speichern wir deine Angaben in einer Datenbank von Cloudflare (Cloudflare, Inc., Region Westeuropa): die Angaben zum Betrieb, gegebenenfalls Fotos sowie – freiwillig, bei der Übernahme eines Eintrags erforderlich – deinen Namen und deine E-Mail-Adresse. Die Angaben zum Betrieb und freigegebene Fotos veröffentlichen wir nach Prüfung. Name und E-Mail-Adresse verwenden wir nur für Rückfragen und zur Bestätigung von Betreibern; sie werden nicht veröffentlicht und spätestens sechs Monate nach Bearbeitung gelöscht. Abgelehnte Fotos löschen wir sofort. Gegen Missbrauch zählen wir Meldungen je Absender und Tag über einen anonymisierten Tages-Hash der IP-Adresse; die IP-Adresse selbst speichern wir nicht. Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bzw. bei Betreibern die Durchführung der Eintragung (Art. 6 Abs. 1 lit. b DSGVO). Du kannst deine Angaben jederzeit über die Kontaktadresse löschen lassen.</p>
 <h2>Cookies und Tracking</h2>
-<p>Diese Website setzt keine Cookies und nutzt kein Tracking. Links zu Routenplanern und zu Websites der Höfe öffnen externe Seiten; dort gelten deren Datenschutzbestimmungen.</p>
+<p>Diese Website setzt keine Cookies und nutzt kein Tracking über Websites hinweg. Links zu Routenplanern und zu Websites der Höfe öffnen externe Seiten; dort gelten deren Datenschutzbestimmungen.</p>
+<h2>Cloudflare Web Analytics</h2>
+<p>Für eine Reichweitenmessung nutzen wir Cloudflare Web Analytics (Cloudflare, Inc.). Dabei lädt dein Browser ein kleines Skript von static.cloudflareinsights.com, das aufgerufene Seiten, Ladezeiten, Herkunftsseite, Land sowie Browser- und Gerätetyp in zusammengefasster Form erfasst. Es werden keine Cookies gesetzt, nichts auf deinem Gerät gespeichert und keine Profile über Websites hinweg gebildet; IP-Adressen werden nicht zur Auswertung gespeichert. Rechtsgrundlage ist unser berechtigtes Interesse an einer datensparsamen Reichweitenmessung (Art. 6 Abs. 1 lit. f DSGVO). Mehr dazu in der <a href="https://www.cloudflare.com/de-de/privacypolicy/" rel="nofollow noopener" target="_blank">Datenschutzerklärung von Cloudflare</a>.</p>
 <h2>Deine Rechte</h2>
 <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.</p>`);
 // ---------- Badge für Höfe (Backlink) ----------
