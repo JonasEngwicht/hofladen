@@ -6,7 +6,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath, domainToUnicode } from 'node:url';
 import { createHash } from 'node:crypto';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
-import { rasterIndex, gleicherHof, QUELLEN, quellenId } from './quellen.mjs';
+import { rasterIndex, gleicherHof, QUELLEN, quellenId, solawiOk } from './quellen.mjs';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml } from '../static/karte.js';
 
@@ -109,6 +109,11 @@ const offenNeu = {}, offenErgaenzt = {}, offenErsetzt = new Map();
   const idx = rasterIndex(eintraege);
   for (const o of offen.neu) {
     const quelle = o.quelle || 'overture', qid = o.qid || o.overture;
+    if (o.art === 'Solawi' && !solawiOk(o.name)) continue; // auch für ältere Importe: keine Initiativen, Depots, Läden
+    // Dieselbe Solawi mit mehreren Abholstellen: nur ein Eintrag (gleicher Name im Umkreis von 30 km)
+    const nk = (x) => String(x || '').toLowerCase().replace(/[^a-zäöüß]/g, '');
+    const gleicheSolawi = o.art === 'Solawi' && eintraege.find((x) => x.art === 'Solawi' && nk(x.name) === nk(o.name) && distanzKm(x.lat, x.lon, o.lat, o.lon) < 30);
+    if (gleicheSolawi) { offenErsetzt.set(`${quelle}/${qid}`, gleicheSolawi.osm || gleicheSolawi.id); continue; }
     const doppelt = idx.nahe(o.lat, o.lon).find((e) => gleicherHof(e, o));
     // Hof ist inzwischen in OSM (oder einer vorrangigen Quelle): alte Seite leitet auf diesen Eintrag weiter
     if (doppelt) { offenErsetzt.set(`${quelle}/${qid}`, doppelt.osm || doppelt.id); for (const a of o.alteIds || []) offenErsetzt.set(a, doppelt.osm || doppelt.id); continue; }
@@ -208,10 +213,29 @@ const offenErgaenztSumme = Object.values(offenErgaenzt).reduce((a, b) => a + b, 
   }
 }
 
+// Namen aufräumen: Emojis raus, GROSSSCHRIFT in normale Schreibweise (Rechtsformen richtig geschrieben)
+const RECHTSFORM = { GMBH: 'GmbH', GBR: 'GbR', KG: 'KG', OHG: 'OHG', EG: 'eG', 'E.V.': 'e.V.', AG: 'AG', UG: 'UG', 'CO.': 'Co.', 'MBH': 'mbH' };
+function schoenerName(n) {
+  if (!n) return n;
+  let x = String(n).replace(/[\p{Extended_Pictographic}\u{FE0F}\u{200D}]/gu, '').replace(/\s+/g, ' ').trim();
+  x = x.replace(/[A-Za-zÄÖÜäöüß.]+/g, (w) => {
+    if (RECHTSFORM[w.toUpperCase()]) return /^[A-ZÄÖÜ.]+$/.test(w) ? RECHTSFORM[w.toUpperCase()] : w;
+    return w.length >= 4 && /^[A-ZÄÖÜß]+$/.test(w) ? w[0] + w.slice(1).toLowerCase() : w;
+  });
+  return x || n;
+}
+// Telefon: Vorsätze wie „Tel.:“ entfernen, bei mehreren Nummern die erste, zu kurze verwerfen
+function telefonSauber(t) {
+  if (!t) return t;
+  const x = String(t).replace(/^(tel(efon)?\.?|fon|phone|mobil)\s*(&\s*fax)?\s*:?\s*/i, '').split(/\s*[,;]\s*|\s+oder\s+/)[0].trim();
+  return x.replace(/\D/g, '').length >= 6 ? x : null;
+}
 // Anzeige-Felder und eindeutige Slugs
 for (const e of eintraege) {
   e.ortAnzeige = e.ort || e.ortNah;
   // Generische Namen ("Hofladen", "Regiomat", "Eier-Automat" …) bekommen den Ort dazu, damit Titel eindeutig und suchbar sind
+  e.name = schoenerName(e.name);
+  e.telefon = telefonSauber(e.telefon);
   const n = (e.name || '').trim();
   const generisch = /^(der |die |das )?(hof-?laden|hoflädchen|bauern-?laden|hofverkauf|regio-?mat|regio-?box|milch-?tankstelle|milch-?automat|frischmilch-?automat|milchhäusle|eier-?automat|eierhäusle|eier|kartoffeln|kartoffel-?kiste|lebensmittel-?automat|verkaufs-?automat|wurst-?automat|grillfleisch-?automat|honig-?automat|frische-?automat|schlemmerbox|direktvermarktung|selbstbedienung|bauernhof|mühlenladen)$/i.test(n);
   e.titel = !n ? `${e.art} in ${e.ortAnzeige}` : generisch ? `${n} in ${e.ortAnzeige}` : n;
@@ -1668,7 +1692,7 @@ for (const e of eintraege) {
   const artSatz = e.typ === 'hofladen' ? 'ein Hofladen' : e.art === 'Eierautomat' ? 'ein Eierautomat' : e.art === 'Milchtankstelle' ? 'eine Milchtankstelle' : `ein ${e.art}`;
   const naechsterHof = naehe.find(([, x]) => x.typ === 'hofladen');
   const ueber = [
-    `${esc(e.titel)} ist ${artSatz} in ${esc(e.ortAnzeige)} ${esc(imKreis)}.`,
+    `${esc(e.titel)} ist ${artSatz} in ${esc(e.ortAnzeige)}${imKreis.endsWith(e.ortAnzeige) ? '' : ` ${esc(imKreis)}`}.`,
     e.kat.length ? `Im Angebot: ${esc(nennung(e.kat.map((x) => KATEGORIEN[x])))}.` : '',
     ohKurz ? `Geöffnet: ${esc(ohKurz)}.` : '',
     naechsterHof ? `Der nächste weitere Hofladen ist <a href="${naechsterHof[1].pfad}">${esc(naechsterHof[1].titelSeite)}</a> in ${esc(naechsterHof[1].ortAnzeige)}, etwa ${km(naechsterHof[0])} entfernt.` : '',
@@ -1692,10 +1716,10 @@ for (const e of eintraege) {
   const hofFragen = [
     woche && ohKurz && [`Wann hat ${e.titel} geöffnet?`, `Laut den hinterlegten Öffnungszeiten: ${esc(ohKurz)}. Gerade in der Saison können sich die Zeiten ändern – im Zweifel vorher anrufen.`],
     woche && !rund && [`Hat ${e.titel} sonntags geöffnet?`, e.sonntag ? `Ja, sonntags ${(woche[6] || []).map(([a, b]) => `${uhr(a)}–${uhr(b)}`).join(' und ')} Uhr.` : 'Nein, laut den hinterlegten Öffnungszeiten ist sonntags geschlossen.'],
-    [`Wo befindet sich ${e.titel}?`, `${esc(e.titel)} liegt ${e.strasse ? `in der ${esc(e.adresse)}` : esc(e.adresse)} ${esc(imKreis)}. Über „Route planen“ startest du die Navigation.`],
+    [`Wo befindet sich ${e.titel}?`, `${e.strasse ? `Die Adresse ist ${esc(e.adresse)}` : `${esc(e.titel)} liegt ${esc(e.adresse)}`} (${esc(k.titel)}). Über „Route planen“ startest du die Navigation.`],
     e.kat.length && [`Was gibt es bei ${e.titel}?`, `Im Angebot: ${esc(nennung(e.kat.map((x) => KATEGORIEN[x])))}. Das Sortiment kann je nach Saison abweichen.`],
     e.zahlung && [`Wie kann man bei ${e.titel} bezahlen?`, `Laut Eintrag: ${esc(nennung(e.zahlung.map((z) => ZAHLUNG_TEXT[z])))}.`],
-    naechsteDrei.length && [`Welche Hofläden gibt es in der Nähe von ${e.titel}?`, `${nennung(naechsteDrei.map(([d, x]) => `${link(x)} in ${esc(x.ortAnzeige)} (${km(d)})`))}.`],
+    naechsteDrei.length && [`Welche Hofläden gibt es in der Nähe von ${e.titel}?`, `${nennung(naechsteDrei.map(([d, x]) => `${link(x)}${x.titel.includes(x.ortAnzeige) ? '' : ` in ${esc(x.ortAnzeige)}`} (${km(d)})`))}.`],
   ].filter(Boolean);
   const hofFaq = hofFragen.length >= 3 ? fragenHtml(hofFragen, `Häufige Fragen zu ${e.titel}`) : { html: '', ld: [] };
   const umgebungsSeite = naechsteUmgebungsSeite(e);
