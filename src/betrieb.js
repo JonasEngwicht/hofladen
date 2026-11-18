@@ -289,3 +289,30 @@ export async function hofZaehlen(env, h, sid, ereignis) {
   await env.STATS.prepare(`INSERT INTO hof_zahlen (tag, sid, ereignis, anzahl) VALUES (?1, ?2, ?3, 1)
     ON CONFLICT (tag, sid, ereignis) DO UPDATE SET anzahl = anzahl + 1`).bind(heute(), sid, ereignis).run();
 }
+
+// ---------- „Nachricht an den Hof“ (nur für Höfe mit Konto, Spam-Schutz mit Turnstile) ----------
+// Die Adresse des Hofs bleibt verborgen; die Antwort geht direkt an die Adresse des Absenders (Reply-To).
+export async function nachrichtAnnehmen(request, env, ctx, h) {
+  if (request.method !== 'POST') return antwortJson({ fehler: 'Nur POST' }, 405);
+  if (!env.STATS || !env.RESEND_API_KEY) return antwortJson({ fehler: 'Nachrichten sind gerade nicht möglich.' }, 503);
+  await h.schema(env);
+  const b = await request.json().catch(() => ({}));
+  const e = h.aufloesen(String(b.eintrag || ''), h.eintragIndex());
+  if (!e) return antwortJson({ fehler: 'Eintrag nicht gefunden.' }, 404);
+  const ip = request.headers.get('cf-connecting-ip') || '';
+  if (!await turnstilePruefen(env, b.turnstile, ip)) return antwortJson({ fehler: 'Die Spam-Prüfung ist fehlgeschlagen. Bitte lade die Seite neu und versuch es noch einmal.' }, 400);
+  const name = String(b.name || '').trim().slice(0, 80), email = String(b.email || '').trim().toLowerCase().slice(0, 190);
+  const text = String(b.text || '').trim().slice(0, 3000);
+  if (!h.EMAIL_RE.test(email)) return antwortJson({ fehler: 'Bitte gib deine E-Mail-Adresse an, damit der Hof antworten kann.' }, 400);
+  if (text.length < 10) return antwortJson({ fehler: 'Die Nachricht ist zu kurz.' }, 400);
+  if (/https?:\/\//i.test(text) && (text.match(/https?:\/\//gi) || []).length > 2) return antwortJson({ fehler: 'Bitte höchstens zwei Links in der Nachricht.' }, 400);
+  if (!await grenze(env, h, `nachricht|${ip}`, 5)) return antwortJson({ fehler: 'Heute sind schon mehrere Nachrichten von dir eingegangen. Bitte versuch es morgen wieder.' }, 429);
+  const empfaenger = (await env.STATS.prepare('SELECT k.email FROM konto_hoefe h JOIN konten k ON k.id = h.konto WHERE h.sid = ?1').bind(e[15]).all()).results.map((r) => r.email);
+  if (!empfaenger.length) return antwortJson({ fehler: 'Dieser Hof nimmt keine Nachrichten über Hofladenliste an.' }, 400);
+  for (const an of empfaenger.slice(0, 3)) {
+    await mailSenden(env, { an, antwortAn: email, betreff: `Nachricht über Hofladenliste: ${e[3]}`,
+      text: `Hallo,\n\n${name || 'Jemand'} (${email}) hat dir über deinen Eintrag „${e[3]}“ auf Hofladenliste geschrieben:\n\n${text}\n\n—\nAntworte einfach auf diese E-Mail, die Antwort geht direkt an ${email}.\nDeine E-Mail-Adresse haben wir nicht weitergegeben.\nHofladenliste – ${h.DOMAIN}/hof/${e[2]}/` });
+  }
+  ctx.waitUntil(hofZaehlen(env, h, e[15], 'nachricht').catch(() => {}));
+  return antwortJson({ ok: true });
+}

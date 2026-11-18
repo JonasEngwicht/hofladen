@@ -16,7 +16,7 @@ import ROUTEN from './generated/routen.json';
 import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
 import { wasWoTrennen } from './waswo.js';
-import { BETRIEB_SCHEMA, betriebApi, neuigkeitenApi, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
+import { BETRIEB_SCHEMA, betriebApi, neuigkeitenApi, nachrichtAnnehmen, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
@@ -675,6 +675,8 @@ export default {
     if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url, ctx);
     if (url.pathname.startsWith('/api/betrieb/')) return betriebApi(request, env, url, ctx, H);
     if (url.pathname === '/api/neuigkeiten') return neuigkeitenApi(url, env, H);
+    if (url.pathname === '/api/nachricht') return nachrichtAnnehmen(request, env, ctx, H);
+    if (url.pathname === '/api/turnstile') return new Response(JSON.stringify({ siteKey: env.TURNSTILE_SITE_KEY || null }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
     return seiteAusliefern(request, env, url);
   },
 };

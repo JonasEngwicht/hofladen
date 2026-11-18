@@ -1643,6 +1643,7 @@ for (const o of ortSeiten) {
 // ---------- Veranstaltungen der Betriebe (data/betrieb-export.json aus dem Betreiber-Bereich) ----------
 const BETRIEB_EXPORT = existsSync(join(ROOT, 'data', 'betrieb-export.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'betrieb-export.json'), 'utf8')) : { hoefeMitKonto: [], veranstaltungen: [] };
 const nachSid = new Map(eintraege.map((e) => [e.sid, e]));
+const MIT_KONTO = new Set(BETRIEB_EXPORT.hoefeMitKonto || []);
 const TERMINE = BETRIEB_EXPORT.veranstaltungen.map((v) => ({ ...v, e: nachSid.get(v.sid) }))
   .filter((v) => v.e && (v.ende || v.beginn).slice(0, 10) >= HEUTE).sort((a, b) => a.beginn.localeCompare(b.beginn));
 const terminZeit = (v) => {
@@ -1785,6 +1786,17 @@ for (const e of eintraege) {
     ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.quellen.map((q) => `${q.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram', strasse: 'Adresse' })[f]).join(', ')} ergänzt aus <a href="${esc(q.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(q.quelle).split('/')[0])}</a>${q.stand ? ` (Stand ${esc(datumDe(q.stand))})` : ''}`).join('; ')}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
+    ${MIT_KONTO.has(e.sid) ? `<section class="block nachricht" data-nachricht="${esc(e.sid)}"><h2>Nachricht an den Hof</h2>
+      <p>Frag nach Angebot, Vorbestellung oder Öffnungszeiten. Die Nachricht geht direkt an den Betrieb, seine E-Mail-Adresse bleibt verborgen. Die Antwort kommt an deine Adresse.</p>
+      <p><button type="button" class="knopf" data-nachricht-oeffnen>Nachricht schreiben</button></p>
+      <form class="betrieb-form" data-nachricht-form hidden>
+        <label>Dein Name <input name="name" maxlength="80" autocomplete="name"></label>
+        <label>Deine E-Mail-Adresse <input name="email" type="email" required autocomplete="email"></label>
+        <label class="breit">Nachricht <textarea name="text" rows="5" maxlength="3000" required minlength="10"></textarea></label>
+        <div class="breit" data-turnstile></div>
+        <button type="submit" class="knopf">Nachricht senden</button>
+        <p class="leise" data-status aria-live="polite">Beim Öffnen des Formulars lädt Cloudflare Turnstile (Spam-Schutz), siehe <a href="/datenschutz/">Datenschutz</a>.</p>
+      </form></section>` : ''}
     <section class="pruefung" data-rueckmeldung="${esc(e.sid)}" aria-labelledby="pr-titel">
       <h2 id="pr-titel">Stimmt das noch?</h2>
       ${e.geschlossenGemeldet >= 2 ? '<p class="pruef-warnung">Mehrere Besucher haben gemeldet, dass dieser Hof geschlossen sein könnte. Wir prüfen das gerade.</p>' : ''}
@@ -2043,6 +2055,8 @@ ${KACHELN ? '<p>Die Karten liefern wir von unserem eigenen Server aus (Kartendat
 <p>Wenn du eine Postleitzahl eingibst, wird sie an unseren Server übermittelt, um passende Hofläden anzuzeigen. Wenn du „Meinen Standort verwenden“ wählst, fragt dein Browser zuerst um Erlaubnis; die Koordinaten werden nur für diese Suche übertragen und nicht gespeichert. Die zuletzt gesuchte Postleitzahl speichert dein Browser lokal (localStorage).</p>
 <h2>Betreiber-Bereich</h2>
 <p>Betriebe melden sich unter /betrieb/ mit einem Link per E-Mail an, ein Passwort gibt es nicht. Wir speichern dafür die E-Mail-Adresse, die zugeordneten Höfe und den Zeitpunkt der letzten Anmeldung. Nach der Anmeldung setzt dein Browser ein technisch notwendiges Sitzungs-Cookie („hl_sitzung“, 30 Tage), das nur der Anmeldung dient (§ 25 Abs. 2 TTDSG). E-Mails (Anmeldelinks, Bestätigungen) versenden wir über Resend (Resend, Inc., USA, EU-US Data Privacy Framework); übermittelt werden Empfängeradresse und Inhalt der Nachricht (Art. 6 Abs. 1 lit. b DSGVO).</p>
+<h2>Nachricht an den Hof (Cloudflare Turnstile)</h2>
+<p>Bei Höfen, die ihren Eintrag selbst pflegen, kannst du über ein Formular eine Nachricht schicken. Erst wenn du „Nachricht schreiben“ wählst, lädt dein Browser Cloudflare Turnstile (Cloudflare, Inc.) zum Schutz vor Spam; dabei werden technische Daten wie IP-Adresse und Browsermerkmale an Cloudflare übertragen (Art. 6 Abs. 1 lit. f DSGVO). Name, E-Mail-Adresse und Text leiten wir per E-Mail (Resend) an den Betrieb weiter und speichern sie nicht.</p>
 <h2>Merkliste</h2>
 <p>Höfe, die du mit „Merken“ markierst, speichert nur dein Browser (localStorage) – wir haben darauf keinen Zugriff. Wenn du die Merkliste öffnest, lädt dein Browser die aktuellen Angaben zu diesen Höfen von unserem Server; dabei wird nichts gespeichert. Du kannst die Merkliste jederzeit dort leeren oder über die Browsereinstellungen löschen.</p>
 <h2>Suchstatistik</h2>
