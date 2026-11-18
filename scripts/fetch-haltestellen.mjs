@@ -25,9 +25,9 @@ SELECT ?art ?name ?wkt WHERE {
 const OVERPASS = `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;(node["highway"="bus_stop"]["name"](area.de);node["railway"~"^(halt|station|tram_stop)$"]["name"](area.de););out;`;
 
 async function ausQlever() {
-  const r = await fetch('https://qlever.dev/api/osm-planet', {
-    method: 'POST', headers: { 'User-Agent': UA, Accept: 'text/tab-separated-values', 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: 'query=' + encodeURIComponent(SPARQL), signal: AbortSignal.timeout(900_000),
+  // GET wie in fetch-osm.mjs (POST wird abgewiesen)
+  const r = await fetch(`https://qlever.dev/api/osm-planet?query=${encodeURIComponent(SPARQL)}`, {
+    headers: { 'User-Agent': UA, Accept: 'text/tab-separated-values' }, signal: AbortSignal.timeout(900_000),
   });
   if (!r.ok) throw new Error(`QLever HTTP ${r.status}`);
   const zeilen = (await r.text()).split('\n').slice(1);
@@ -40,8 +40,8 @@ async function ausQlever() {
   }
   return out;
 }
-async function ausOverpass() {
-  const r = await fetch('https://overpass-api.de/api/interpreter', {
+async function ausOverpass(url = 'https://overpass-api.de/api/interpreter') {
+  const r = await fetch(url, {
     method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded' },
     body: 'data=' + encodeURIComponent(OVERPASS), signal: AbortSignal.timeout(900_000),
   });
@@ -50,7 +50,8 @@ async function ausOverpass() {
 }
 
 let stops = null;
-for (const quelle of [ausQlever, ausOverpass]) {
+const kumi = () => ausOverpass('https://overpass.kumi.systems/api/interpreter');
+for (const quelle of [ausQlever, ausOverpass, kumi]) {
   try { stops = await quelle(); if (stops.length > 50_000) break; console.error(`${quelle.name}: nur ${stops.length}`); } catch (e) { console.error(`${quelle.name}: ${e.message}`); }
 }
 if (!stops || stops.length < 50_000) { console.error('Keine vollständigen Haltestellendaten – bestehende Datei bleibt.'); process.exit(1); }
