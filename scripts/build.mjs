@@ -4,6 +4,7 @@
 import { mkdirSync, writeFileSync, readFileSync, rmSync, cpSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, domainToUnicode } from 'node:url';
+import { createHash } from 'node:crypto';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml } from '../static/karte.js';
@@ -12,7 +13,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'public');
 const GEN = join(ROOT, 'src', 'generated');
 const cfg = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'));
-const BUILD_DATUM = new Date().toISOString().slice(0, 10);
+const BUILD_DATUM = process.env.BUILD_DATUM || new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' });
 const VERSION = Date.now().toString(36);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
@@ -168,7 +169,11 @@ const kartenDaten = (e, km) => ({ pfad: e.pfad, slug: e.slug, titel: e.titel, ar
 const SUCHFELD = 'type="search" maxlength="60" autocomplete="off" list="orte-vorschlaege" enterkeyhint="search"';
 const LOGO = `<svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#173B2C"/><path d="M15.5 34C15.5 18 48.5 18 48.5 34" fill="none" stroke="#F4C430" stroke-width="3.6" stroke-linecap="round"/><g fill="#F4C430" stroke="#173B2C" stroke-width="1.6" paint-order="stroke"><path d="M32 38V13" fill="none" stroke="#F4C430" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="32" cy="8.6" rx="2.4" ry="4.4"/><ellipse cx="28.6" cy="14.6" rx="2.3" ry="4.3" transform="rotate(-32 28.6 14.6)"/><ellipse cx="35.4" cy="14.6" rx="2.3" ry="4.3" transform="rotate(32 35.4 14.6)"/><ellipse cx="28.6" cy="21.2" rx="2.3" ry="4.3" transform="rotate(-32 28.6 21.2)"/><ellipse cx="35.4" cy="21.2" rx="2.3" ry="4.3" transform="rotate(32 35.4 21.2)"/><ellipse cx="28.6" cy="27.8" rx="2.3" ry="4.3" transform="rotate(-32 28.6 27.8)"/><ellipse cx="35.4" cy="27.8" rx="2.3" ry="4.3" transform="rotate(32 35.4 27.8)"/></g><path d="M8.5 34h47l-5 20.4A3.4 3.4 0 0 1 47.2 57H16.8a3.4 3.4 0 0 1-3.3-2.6z" fill="#F4C430"/><path d="M11.5 45h41" stroke="#173B2C" stroke-width="2.6"/><path d="M22.5 34.5 24 57M32 34.5V57M41.5 34.5 40 57" stroke="#173B2C" stroke-width="2.6"/></svg>`;
 
+// Inhalts-Hash je Seite (ohne Kopf/Fuß/Build-Version) – daraus entsteht das echte lastmod der Sitemap
+const SEITEN_HASH = new Map();
+const hash = (x) => createHash('sha1').update(x).digest('base64url').slice(0, 10);
 function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = [], krumen = [], klasse = '', kopfSuche = true }) {
+  SEITEN_HASH.set(pfad, hash([titel, beschreibung, noindex, JSON.stringify(jsonld), JSON.stringify(krumen), inhalt.replace(/\?v=[a-z0-9]+/g, '')].join('\u0000')));
   const url = cfg.domain + pfad;
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [['Start', '/'], ...krumen].map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: cfg.domain + p })) }] : [];
@@ -286,10 +291,12 @@ mkdirSync(OUT, { recursive: true });
 mkdirSync(GEN, { recursive: true });
 cpSync(join(ROOT, 'static'), OUT, { recursive: true });
 const sitemap = [];
+const ALLE_SEITEN = new Set();
 function schreibe(pfad, html, inSitemap = true) {
   const datei = join(OUT, pfad, pfad.endsWith('/') ? 'index.html' : '');
   mkdirSync(dirname(datei), { recursive: true });
   writeFileSync(datei, html);
+  if (pfad.endsWith('/')) ALLE_SEITEN.add(pfad);
   if (inSitemap) sitemap.push(pfad);
 }
 
@@ -1096,9 +1103,69 @@ schreibe('/404.html', seite({
 }), false);
 
 // ---------- Robots, Sitemap ----------
-writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
-const urls = sitemap.filter((p) => !p.endsWith('.html'));
-writeFileSync(join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((p) => `<url><loc>${cfg.domain}${p}</loc><lastmod>${BUILD_DATUM}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
+
+// Seitenarchiv (data/seiten-stand.json): Inhalts-Hash und Änderungsdatum je Seite, auch für Seiten,
+// die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.
+const STAND_DATEI = join(ROOT, 'data', 'seiten-stand.json');
+const stand = existsSync(STAND_DATEI) ? JSON.parse(readFileSync(STAND_DATEI, 'utf8')) : { seiten: {}, hoefe: {} };
+const ARCHIV_AUSNAHMEN = new Set(['/merkliste/']);
+for (const pfad of ALLE_SEITEN) {
+  if (ARCHIV_AUSNAHMEN.has(pfad)) continue;
+  const h = SEITEN_HASH.get(pfad);
+  const alt = stand.seiten[pfad];
+  if (!alt) stand.seiten[pfad] = [h, BUILD_DATUM];
+  else if (alt[0] !== h) stand.seiten[pfad] = [h, alt[0] == null ? alt[1] : BUILD_DATUM];
+}
+for (const e of eintraege) stand.hoefe[e.slug] = e.osm || e.id;
+const sortiert = (o) => Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]]));
+writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe) }));
+
+// Weiterleitungen für Seiten aus dem Archiv, die es nicht mehr gibt
+const slugNachId = new Map(eintraege.map((e) => [e.osm || e.id, e.slug]));
+const umleitungen = {}, entfernt = [];
+for (const pfad of Object.keys(stand.seiten)) {
+  if (ALLE_SEITEN.has(pfad)) continue;
+  const hof = pfad.match(/^\/hof\/([^/]+)\/$/);
+  if (hof) {
+    const neu = slugNachId.get(stand.hoefe[hof[1]]);
+    if (neu && neu !== hof[1]) umleitungen[pfad] = `/hof/${neu}/`; else entfernt.push(pfad);
+    continue;
+  }
+  // nächste übergeordnete Seite, z. B. aufgelöste Ortsseite → Kreisseite
+  let ziel = pfad;
+  do ziel = ziel.replace(/[^/]+\/$/, ''); while (ziel !== '/' && !ALLE_SEITEN.has(ziel));
+  umleitungen[pfad] = ziel;
+}
+writeFileSync(join(GEN, 'routen.json'), JSON.stringify({ umleitungen, entfernt }));
+console.log(`Seitenarchiv: ${Object.keys(stand.seiten).length} Seiten, ${Object.keys(umleitungen).length} Weiterleitungen, ${entfernt.length} entfernte Höfe (410)`);
+
+// Sitemaps nach Seitentyp mit Sitemap-Index
+const TYP_KREIS_PFADE = new Set([...TYP_KREIS.values()].map((x) => x.pfad));
+const sitemapTyp = (p) => p.startsWith('/hof/') ? 'hoefe'
+  : TYP_KREIS_PFADE.has(p) ? 'kategorien'
+  : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) ? 'orte'
+  : /^\/[^/]+\/[^/]+\/$/.test(p) && laender.some((l) => p.startsWith(`/${l.slug}/`)) ? 'kreise'
+  : 'seiten';
+const gruppen = new Map();
+for (const p of sitemap.filter((x) => x.endsWith('/'))) {
+  const t = sitemapTyp(p);
+  if (!gruppen.has(t)) gruppen.set(t, []);
+  gruppen.get(t).push(p);
+}
+mkdirSync(join(OUT, 'sitemaps'), { recursive: true });
+const indexEintraege = [];
+for (const t of ['seiten', 'kategorien', 'kreise', 'orte', 'hoefe']) {
+  const liste = (gruppen.get(t) || []).sort();
+  for (let i = 0; i < liste.length; i += 40000) {
+    const teil = liste.slice(i, i + 40000);
+    const name = `${t}${liste.length > 40000 ? `-${i / 40000 + 1}` : ''}.xml`;
+    const lastmod = teil.reduce((m, p) => (stand.seiten[p][1] > m ? stand.seiten[p][1] : m), '');
+    writeFileSync(join(OUT, 'sitemaps', name), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${teil.map((p) => `<url><loc>${cfg.domain}${p}</loc><lastmod>${stand.seiten[p][1]}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+    indexEintraege.push([name, lastmod]);
+  }
+}
+writeFileSync(join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexEintraege.map(([n, l]) => `<sitemap><loc>${cfg.domain}/sitemaps/${n}</loc><lastmod>${l}</lastmod></sitemap>`).join('\n')}\n</sitemapindex>\n`);
 
 // ---------- Daten für den Worker ----------
 const plzIndex = {};
