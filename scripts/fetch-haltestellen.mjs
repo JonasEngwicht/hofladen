@@ -56,27 +56,25 @@ for (const quelle of [ausQlever, ausOverpass, kumi]) {
 }
 if (!stops || stops.length < 50_000) { console.error('Keine vollständigen Haltestellendaten – bestehende Datei bleibt.'); process.exit(1); }
 
-// Einträge (OSM und offene Quellen) als Bezugspunkte
+// Einträge (OSM und offene Quellen) als Bezugspunkte: je Eintrag die nächste Haltestelle bis 1 km (Bahn bei ähnlicher Entfernung bevorzugt)
 const punkte = [];
 const lies = (p) => (existsSync(new URL(p, import.meta.url)) ? JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8')) : null);
 for (const e of lies('../data/osm-eintraege.json') || []) punkte.push([e.lat, e.lon]);
 for (const e of lies('../data/offene-quellen.json')?.neu || []) punkte.push([e.lat, e.lon]);
-const zelle = (lat, lon) => `${Math.floor(lat * 50)}:${Math.floor(lon * 50)}`; // 0,02°
-const raster = new Set(punkte.map(([a, b]) => zelle(a, b)));
-const nahGenug = (lat, lon) => {
-  const y = Math.floor(lat * 50), x = Math.floor(lon * 50);
-  for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) if (raster.has(`${y + dy}:${x + dx}`)) return true;
-  return false;
-};
-// Gleicher Name und Art innerhalb von etwa 150 m: nur einmal (Haltestelle mit zwei Richtungen)
-const gesehen = new Set(), behalten = [];
-for (const [lat, lon, name, art] of stops) {
-  if (!nahGenug(lat, lon)) continue;
-  const key = `${art}|${name}|${Math.round(lat * 700)}|${Math.round(lon * 450)}`;
-  if (gesehen.has(key)) continue;
-  gesehen.add(key);
-  behalten.push([+lat.toFixed(5), +lon.toFixed(5), name.slice(0, 80), art]);
+const zelle = (lat, lon) => `${Math.floor(lat * 100)}:${Math.floor(lon * 60)}`; // ≈ 1,1 km × 1,1 km
+const raster = new Map();
+for (const s of stops) { const k = zelle(s[0], s[1]); if (!raster.has(k)) raster.set(k, []); raster.get(k).push(s); }
+const km = (a, b, c, d) => { const r = Math.PI / 180, x = (d - b) * r * Math.cos(((a + c) / 2) * r), y = (c - a) * r; return 6371 * Math.hypot(x, y); };
+const ergebnis = {};
+for (const [lat, lon] of punkte) {
+  const y = Math.floor(lat * 100), x = Math.floor(lon * 60);
+  let best = null;
+  for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) for (const [sl, so, name, art] of raster.get(`${y + dy}:${x + dx}`) || []) {
+    const d = km(lat, lon, sl, so), wert = d - (art === 'bahn' ? 0.15 : 0);
+    if (d <= 1 && (!best || wert < best.wert)) best = { name, art, d, wert };
+  }
+  if (best) ergebnis[`${(+lat).toFixed(4)},${(+lon).toFixed(4)}`] = [best.name.slice(0, 80), best.art, Math.round(best.d * 100) * 10];
 }
-behalten.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
-writeFileSync(ZIEL, JSON.stringify(behalten).replace(/\],\[/g, '],\n[') + '\n');
-console.error(`${stops.length} Haltestellen gesamt, ${behalten.length} im Umkreis von Einträgen gespeichert (Raster ≈ ${UMKREIS_KM} km).`);
+const n = Object.keys(ergebnis).length;
+writeFileSync(ZIEL, '{\n' + Object.keys(ergebnis).sort().map((k) => `${JSON.stringify(k)}:${JSON.stringify(ergebnis[k])}`).join(',\n') + '\n}\n');
+console.error(`${stops.length} Haltestellen gesamt; ${n} von ${punkte.length} Einträgen haben eine Haltestelle im Umkreis von 1 km.`);

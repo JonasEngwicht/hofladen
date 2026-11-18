@@ -385,8 +385,13 @@ for (const e of eintraege) {
   e.vollst = { prozent: Math.round(100 * (VOLLSTAENDIGKEIT.length - fehlt.length) / VOLLSTAENDIGKEIT.length), fehlt };
 }
 // Nächste Haltestelle (OSM, data/haltestellen.json) im Umkreis von 1 km, Luftlinie
-const HALTESTELLEN = existsSync(join(ROOT, 'data', 'haltestellen.json'))
-  ? JSON.parse(readFileSync(join(ROOT, 'data', 'haltestellen.json'), 'utf8')).map(([lat, lon, name, art]) => ({ lat, lon, name, art })) : [];
+// data/haltestellen.json: { "lat,lon" (4 Nachkommastellen): [Name, Art, Meter] } aus scripts/fetch-haltestellen.mjs
+const HALTE_ROH = existsSync(join(ROOT, 'data', 'haltestellen.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'haltestellen.json'), 'utf8')) : {};
+const HALTESTELLEN = Array.isArray(HALTE_ROH) ? HALTE_ROH.map(([lat, lon, name, art]) => ({ lat, lon, name, art })) : [];
+if (!Array.isArray(HALTE_ROH)) for (const e of eintraege) {
+  const h = HALTE_ROH[`${(+e.lat).toFixed(4)},${(+e.lon).toFixed(4)}`];
+  if (h) e.haltestelle = { name: h[0], art: h[1], m: h[2] };
+}
 {
   const idx = rasterIndex(HALTESTELLEN);
   for (const e of eintraege) {
