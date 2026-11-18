@@ -1,0 +1,39 @@
+// Prüft die ausgerollte Seite: Statuscodes und Weiterleitungen, dazu PageSpeed Insights (mobil).
+// Aufruf: node scripts/live-check.mjs [https://hofladenliste.de] [--ohne-pagespeed]
+const BASIS = process.argv.find((a) => a.startsWith('http')) || 'https://hofladenliste.de';
+const routen = JSON.parse((await import('node:fs')).readFileSync(new URL('../src/generated/routen.json', import.meta.url), 'utf8'));
+const ersteUmleitung = Object.entries(routen.umleitungen)[0];
+
+const FAELLE = [
+  ['/', 200], ['/bayern/', 200], ['/bayern/landkreis-rosenheim/', 200], ['/hof/kittlers-hofladen-riesa/', 200],
+  ['/sitemap.xml', 200], ['/sitemaps/hoefe.xml', 200], ['/robots.txt', 200], ['/style.css', 200],
+  ['/bayern', 301, '/bayern/'], ['/bayern/index.html', 301, '/bayern/'], ['/Bayern/', 301, '/bayern/'],
+  ['/baden-w%C3%BCrttemberg/', 301, '/baden-wuerttemberg/'],
+  ...(ersteUmleitung ? [[ersteUmleitung[0], 301, ersteUmleitung[1]]] : []),
+  ...(routen.entfernt[0] ? [[routen.entfernt[0], 410]] : []),
+  ['/gibt-es-nicht/', 404], ['/suche?q=Tettnang', 302], ['/api/orte?q=Cottbus', 200],
+];
+let fehler = 0;
+for (const [pfad, status, ziel] of FAELLE) {
+  const r = await fetch(BASIS + pfad, { redirect: 'manual', headers: { 'User-Agent': 'HofladenlisteLiveCheck/1.0', 'Sec-Fetch-Mode': 'navigate' } });
+  const loc = r.headers.get('location');
+  const ok = r.status === status && (!ziel || loc === ziel || loc === BASIS + ziel);
+  if (!ok) fehler++;
+  console.log(`${ok ? 'OK  ' : 'FEHL'} ${r.status} ${pfad}${loc ? ` → ${loc}` : ''}${ok ? '' : `  (erwartet ${status}${ziel ? ` → ${ziel}` : ''})`}`);
+}
+
+if (!process.argv.includes('--ohne-pagespeed')) {
+  console.log('\nPageSpeed Insights, mobil (Labordaten):');
+  for (const pfad of ['/', '/baden-wuerttemberg/bodenseekreis/', '/baden-wuerttemberg/bodenseekreis/tettnang/', '/hof/kittlers-hofladen-riesa/']) {
+    try {
+      const r = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&category=performance&url=${encodeURIComponent(BASIS + pfad)}`);
+      const d = await r.json();
+      if (!d.lighthouseResult) { console.log(`  ${pfad}: keine Daten (${d.error?.message || r.status})`); continue; }
+      const a = d.lighthouseResult.audits;
+      const wert = (k) => a[k]?.displayValue || '–';
+      const punkte = Math.round(d.lighthouseResult.categories.performance.score * 100);
+      console.log(`  ${pfad}: Performance ${punkte}, LCP ${wert('largest-contentful-paint')}, CLS ${wert('cumulative-layout-shift')}, TBT ${wert('total-blocking-time')}, FCP ${wert('first-contentful-paint')}`);
+    } catch (e) { console.log(`  ${pfad}: ${e.message}`); }
+  }
+}
+if (fehler) { console.error(`\n${fehler} Prüfung(en) fehlgeschlagen`); process.exit(1); }

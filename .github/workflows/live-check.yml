@@ -1,0 +1,24 @@
+name: Live-Prüfung
+
+# Prüft die ausgerollte Seite (Statuscodes, Weiterleitungen) und misst mit PageSpeed Insights (mobil).
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Nur deployen', 'Daten aktualisieren']
+    types: [completed]
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generierte Routen erzeugen
+        run: node scripts/build.mjs > /dev/null
+      - name: Warten, bis Cloudflare fertig gebaut hat
+        if: github.event_name == 'workflow_run'
+        run: sleep 240
+      - name: Live-Prüfung
+        run: node scripts/live-check.mjs https://hofladenliste.de
