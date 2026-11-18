@@ -17,6 +17,9 @@ const osm = JSON.parse(readFileSync(opt('--osm', new URL('../data/osm-eintraege.
 const zielPfad = opt('--ziel', new URL('../data/overture.json', import.meta.url));
 const { kreise, plz, raster } = ladePlz(new URL('../data/quellen/plz-de.csv', import.meta.url));
 const stand = new Date().toISOString().slice(0, 10);
+// Ortsname aus der Adresse nur übernehmen, wenn es ihn in diesem Kreis gibt (Firmendaten nennen oft den Postort)
+const ortImKreis = new Set();
+for (const rows of plz.values()) for (const r of rows) if (!r.org) ortImKreis.add(`${r.ort}|${r.kreis}`);
 
 const orte = roh.orte.filter((o) => o.lat && o.lon && o.name).map((o) => ({ ...o, name: sauberName(o.name), k: kontakt(o), a: adresse(o) }));
 const osmIdx = rasterIndex(osm);
@@ -34,7 +37,8 @@ for (const e of osm) {
   const z = {};
   for (const { o } of kand) {
     for (const f of ['telefon', 'website', 'email', 'facebook', 'instagram']) if (!e[f] && !z[f] && o.k[f]) z[f] = o.k[f];
-    if (!e.strasse && !z.strasse && o.a.strasse && o.a.plz) Object.assign(z, { strasse: o.a.strasse, plz: e.plz || o.a.plz, ort: e.ort || o.a.ort });
+    if (!e.strasse && !z.strasse && o.a.strasse && o.a.plz && (e.ort || ortImKreis.has(`${o.a.ort}|${e.kreis}`)))
+      Object.assign(z, { strasse: o.a.strasse, plz: e.plz || o.a.plz, ort: e.ort || o.a.ort });
   }
   if (Object.keys(z).length) ergaenzungen[e.osm] = { ...z, overture: kand[0].o.id, datensatz: kand[0].o.quelle, lizenz: kand[0].o.lizenz };
 }
@@ -52,9 +56,14 @@ for (const o of auswahl) {
   if (!t) { stat.ohneOrt++; continue; }
   if (istOrganisation(t.ort.ort)) { const t2 = naechsterOrt(raster, o.lat, o.lon); if (t2) t = t2; }
   const { typ, art } = hofTyp(o.name);
+  let { strasse, plz: pc, ort } = o.a;
+  if (ort && !ortImKreis.has(`${ort}|${t.ort.kreis}`)) {
+    if (pc && pc === t.ort.plz) ort = t.ort.ort;
+    else { strasse = null; pc = null; ort = null; } // Adresse passt nicht zur Lage: lieber „bei <Ort>“ anzeigen
+  }
   neu.push({
     overture: o.id, datensatz: o.quelle, lizenz: o.lizenz, konfidenz: Math.round(o.konf * 100) / 100,
-    typ, art, name: o.name, strasse: o.a.strasse, plz: o.a.plz, ort: o.a.ort,
+    typ, art, name: o.name, strasse, plz: pc, ort,
     ortNah: t.ort.ort, plzNah: t.ort.plz, kreis: kreise.get(t.ort.kreis).code,
     lat: +(+o.lat).toFixed(6), lon: +(+o.lon).toFixed(6), oeffnungszeiten: null,
     telefon: o.k.telefon, email: o.k.email, website: o.k.website, facebook: o.k.facebook, instagram: o.k.instagram,

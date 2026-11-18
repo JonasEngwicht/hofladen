@@ -13,11 +13,11 @@ const EINTRAEGE = gen('eintraege');
 const clarenhof = EINTRAEGE.find((e) => e[2] === 'hofladen-gut-clarenhof-frechen');
 const SID = clarenhof[15];
 
-test('jeder Eintrag hat eine eindeutige stabile ID im OSM-Format', () => {
+test('jeder Eintrag hat eine eindeutige stabile ID (OSM, Betreiber, Overture, manuell)', () => {
   assert.match(SID, /^[nwr]\d+$/);
   const ids = new Set(EINTRAEGE.map((e) => e[15]));
   assert.equal(ids.size, EINTRAEGE.length);
-  for (const id of ids) assert.match(id, /^([nwr]\d+|b\d+|m-[a-z0-9-]+)$/);
+  for (const id of ids) assert.match(id, /^([nwr]\d+|b\d+|m-[a-z0-9-]+|o-[a-z0-9-]+)$/);
 });
 
 test('Vorbefüllung mit gültiger ID', async () => {

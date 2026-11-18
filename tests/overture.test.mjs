@@ -94,8 +94,10 @@ test('Overture: Doppelungen zusammenführen, beste Konfidenz bleibt', () => {
 test('Overture-Import: neue Höfe ohne OSM-Doppelungen, Ergänzungen nur für leere Felder', () => {
   const dir = mkdtempSync(join(tmpdir(), 'overture-'));
   const osm = [
-    { osm: 'node/1', typ: 'hofladen', art: 'Hofladen', name: 'Hofladen Meyer', strasse: null, plz: null, ort: null, lat: 51.74, lon: 14.63, telefon: null, website: 'https://osm-meyer.de/' },
+    { osm: 'node/1', typ: 'hofladen', art: 'Hofladen', name: 'Hofladen Meyer', strasse: null, plz: null, ort: null, kreis: '12071', lat: 51.74, lon: 14.63, telefon: null, website: 'https://osm-meyer.de/' },
     { osm: 'node/2', typ: 'hofladen', art: 'Hofladen', name: 'Hofladen', lat: 51.80, lon: 14.70, telefon: null },
+    // Adresse aus Overture nennt einen Ort aus einem anderen Kreis → keine Adress-Ergänzung
+    { osm: 'node/3', typ: 'hofladen', art: 'Hofladen', name: 'Hofladen Krause', strasse: null, plz: null, ort: null, kreis: '12071', lat: 51.60, lon: 14.70, telefon: null },
   ];
   const roh = { release: '2026-10-21.0', orte: [
     // gleicher Hof wie node/1 → keine neue Seite, aber Telefon und Adresse ergänzen
@@ -104,6 +106,9 @@ test('Overture-Import: neue Höfe ohne OSM-Doppelungen, Ergänzungen nur für le
     { id: 'bbb', name: 'Spargelhof Elsholz Hofladen', kat: 'farm', konf: 0.95, lat: 51.70, lon: 14.55, websites: ['http://www.spargelhof-elsholz.de'], phones: [], strasse: 'Feldweg 2', plz: '03149', ort: 'Forst (Lausitz)', quelle: 'BrightQuery', lizenz: 'CDLA-Permissive-2.0' },
     // Doppelung des neuen Hofs aus einer anderen Quelle
     { id: 'ccc', name: 'Hofladen Elsholz', kat: 'produce_store', konf: 0.8, lat: 51.7004, lon: 14.5502, phones: ['+4935622222'], quelle: 'meta', lizenz: 'CDLA-Permissive-2.0' },
+    { id: 'eee', name: 'Krauses Hofladen', kat: 'farm', konf: 0.9, lat: 51.6001, lon: 14.7001, phones: ['035623333'], strasse: 'Ringstraße 3', plz: '03149', ort: 'Tettnang', quelle: 'meta', lizenz: 'CDLA-Permissive-2.0' },
+    // neuer Hof, Postort passt nicht zur Lage → Adresse weglassen
+    { id: 'fff', name: 'Hofladen Neumann', kat: 'farm', konf: 0.9, lat: 51.65, lon: 14.45, strasse: 'Weg 1', plz: '88069', ort: 'Tettnang', quelle: 'meta', lizenz: 'CDLA-Permissive-2.0' },
     // kein Hofladen
     { id: 'ddd', name: 'Gartenmöbel Hofverkauf', kat: 'furniture_store', konf: 1, lat: 51.72, lon: 14.6, quelle: 'BrightQuery', lizenz: 'CDLA-Permissive-2.0' },
   ] };
@@ -111,8 +116,8 @@ test('Overture-Import: neue Höfe ohne OSM-Doppelungen, Ergänzungen nur für le
   writeFileSync(join(dir, 'osm.json'), JSON.stringify(osm));
   execFileSync(process.execPath, ['scripts/import-overture.mjs', join(dir, 'roh.json'), '--osm', join(dir, 'osm.json'), '--ziel', join(dir, 'ziel.json')]);
   const z = JSON.parse(readFileSync(join(dir, 'ziel.json'), 'utf8'));
-  assert.equal(z.neu.length, 1);
-  const n = z.neu[0];
+  assert.equal(z.neu.length, 2);
+  const n = z.neu.find((x) => x.overture === 'bbb');
   assert.equal(n.overture, 'bbb');
   assert.equal(n.name, 'Spargelhof Elsholz Hofladen');
   assert.equal(n.telefon, '+49 35622222'); // aus der Doppelung übernommen
@@ -124,4 +129,9 @@ test('Overture-Import: neue Höfe ohne OSM-Doppelungen, Ergänzungen nur für le
   assert.equal(e.strasse, 'Dorfstraße 1');
   assert.equal(e.website, undefined); // OSM hat schon eine Website
   assert.equal(z.ergaenzungen['node/2'], undefined); // generischer Name, nichts in 40 m
+  assert.equal(z.ergaenzungen['node/3'].telefon, '+49 35623333');
+  assert.equal(z.ergaenzungen['node/3'].strasse, undefined);
+  const neumann = z.neu.find((x) => x.overture === 'fff');
+  assert.deepEqual([neumann.strasse, neumann.plz, neumann.ort], [null, null, null]);
+  assert.ok(neumann.ortNah);
 });
