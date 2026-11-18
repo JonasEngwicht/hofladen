@@ -24,9 +24,11 @@ for (const [pfad, status, ziel] of FAELLE) {
 
 if (!process.argv.includes('--ohne-pagespeed')) {
   console.log('\nPageSpeed Insights, mobil (Labordaten):');
-  for (const pfad of ['/', '/baden-wuerttemberg/bodenseekreis/', '/baden-wuerttemberg/bodenseekreis/tettnang/', '/hof/kittlers-hofladen-riesa/']) {
+  if (!process.env.PAGESPEED_API_KEY) console.log('  (ohne API-Schlüssel – Secret PAGESPEED_API_KEY fehlt, Kontingent ist oft erschöpft)');
+  for (const pfad of ['/', '/berlin/berlin/', '/brandenburg/spree-neisse/forst-lausitz/', '/baden-wuerttemberg/bodenseekreis/', '/hof/kittlers-hofladen-riesa/']) {
     try {
-      const r = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&category=performance&url=${encodeURIComponent(BASIS + pfad)}`);
+      const key = process.env.PAGESPEED_API_KEY ? `&key=${process.env.PAGESPEED_API_KEY}` : '';
+      const r = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&category=performance&url=${encodeURIComponent(BASIS + pfad)}${key}`);
       const d = await r.json();
       if (!d.lighthouseResult) { console.log(`  ${pfad}: keine Daten (${d.error?.message || r.status})`); continue; }
       const a = d.lighthouseResult.audits;

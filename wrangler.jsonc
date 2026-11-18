@@ -10,9 +10,10 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
-    // HTML-Seiten liefert der Worker aus (301 statt 307 bei Schreibvarianten, 410 für entfernte Höfe)
+    // HTML-Seiten liefert der Worker aus (301 statt 307 bei Schreibvarianten, 410 für entfernte Höfe).
+    // Direkte Aufrufe von …/index.html laufen zuerst durch den Worker und werden per 301 umgeleitet.
     "html_handling": "none",
-    "run_worker_first": ["/suche", "/plz/*", "/api/*"]
+    "run_worker_first": ["/suche", "/plz/*", "/api/*", "/index.html", "/*/index.html"]
   },
   "routes": [
     { "pattern": "hofladenliste.de", "custom_domain": true },
