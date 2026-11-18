@@ -17,10 +17,12 @@ export function quellenId(quelle, id) {
 
 // Namen, die eindeutig auf Direktverkauf hinweisen
 export const STARK = /hof-?laden|hoflädchen|hofladl|hofverkauf|bauern-?laden|hofmarkt|hof-?käserei|hof-?shop|hof-?box|milch-?tankstelle|milch-?automat|frischmilch|milch-?häus|eier-?automat|eier-?häus|regio-?mat|regio-?box|direktvermarktung|direktverkauf|selbstbedienungs-?(hütte|häus|laden|stand)|verkaufs-?(hütte|häus|automat)|verkaufsstand/i;
+// Namen, die nach einem Hof oder Erzeuger klingen
+const HOF_NAME = /hof|bauer|\bgut\b|gut |m(ü|ue)hle|g(ä|ae)rtnerei|imkerei|k(ä|ae)serei|milch|eier|obst|gem(ü|ue)se|spargel|erdbeer|kartoffel|ziegen|schaf|demeter|bioland|naturland|landwirt|farm|weide|alm\b|brennerei|winzer|metzgerei/i;
 // Höfe, die oft direkt verkaufen – nur mit passender Kategorie und hoher Konfidenz
 export const SCHWACH = /bio-?hof|obst-?hof|spargel-?hof|erdbeer-?hof|gemüse-?hof|geflügel-?hof|eier-?hof|kartoffel-?hof/i;
 // Keine Höfe, auch wenn der Name passt
-const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten|online|versandhandel|transporte?\b|\.(de|com|net|eu|info)\b|^landkreis|^kreis |^stadt |^gemeinde |einkaufsf(ü|ue)hrer|regionale lebensmittel in|wochenmarkt|bauernmarkt|bio-?markt|markthalle|marktschw(ä|ae)rmer|food-?coop|initiative|netzwerk|verbund|arbeitsgemeinschaft|ernährungsrat|ernaehrungsrat/i;
+const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten|online|versandhandel|transporte?\b|\.(de|com|net|eu|info)\b|^landkreis|^kreis |^stadt |^gemeinde |einkaufsf(ü|ue)hrer|regionale lebensmittel in|wochenmarkt|bauernmarkt|bio-?markt|markthalle|marktschw(ä|ae)rmer|food-?coop|initiative|netzwerk|verbund|arbeitsgemeinschaft|ernährungsrat|ernaehrungsrat|hofl(ä|ae)den\b|direktvermarktern?\b|erzeuger in|einkaufen in|einkaufserlebnis|einkaufsm(ö|oe)glichkeit|fairtrade|^fair,|\b(marktkauf|edeka|rewe|kaufland|netto|aldi|lidl|penny|tegut|globus|denns|alnatura)\b/i;
 const KAT_HOF = new Set(['farm', 'poultry_farm', 'dairy_farm', 'orchard', 'pick_your_own_farm', 'ranch', 'agriculture',
   'agricultural_service', 'livestock_breeder', 'farmers_market', 'greengrocer', 'produce_store', 'grocery_store',
   'organic_grocery_store', 'food_and_beverage_store', 'specialty_foods_store', 'dairy_store', 'cheese_shop', 'butcher_shop',
@@ -33,7 +35,7 @@ export const MIN_KONF_STARK = 0.7;
 export const MIN_KONF_SCHWACH = 0.8;
 
 // Verzeichnisse, Branchenbücher und Plattformen sind keine Website des Hofs
-const FREMD = /(^|\.)(dasoertliche|gelbeseiten|11880|ortsdienst|oeffnungszeitenbuch|werkenntdenbesten|cylex|golocal|meinestadt|branchenbuch|yelp|tripadvisor|google|goo|freeontour|bauernhofurlaub|rausgegangen|hofladenfinder|heimischehoflaeden|hofladen-bauernladen|creditreform|northdata|wlw|firmenwissen|unternehmensregister|linktr|ebay|kleinanzeigen)\./i;
+const FREMD = /(^|\.)(dasoertliche|gelbeseiten|11880|ortsdienst|oeffnungszeitenbuch|werkenntdenbesten|cylex|golocal|meinestadt|branchenbuch|yelp|tripadvisor|google|goo|freeontour|bauernhofurlaub|rausgegangen|hofladenfinder|heimischehoflaeden|hofladen-bauernladen|creditreform|northdata|wlw|firmenwissen|unternehmensregister|linktr|ebay|kleinanzeigen|hinterland)\./i;
 
 export function hofTyp(name) {
   const n = name || '';
@@ -49,7 +51,9 @@ export function istHofladen(o) {
   if (!name || KEIN_HOF.test(name)) return false;
   const kat = o.kat || null, hier = o.hier || '';
   const katHof = KAT_HOF.has(kat) || HIER_HOF.test(hier);
-  // Quelle ordnet den Ort selbst als Hofladen/Direktvermarkter ein (Schlagwort, Datensatz über Direktvermarkter)
+  // Quelle ordnet den Ort selbst als Hofladen/Direktvermarkter ein (Schlagwort, Datensatz über Direktvermarkter);
+  // der Name muss trotzdem nach einem Hof oder Erzeuger klingen (keine Sammelseiten, Märkte, Läden ohne Hofbezug)
+  if (o.hofHinweis && !STARK.test(name) && !HOF_NAME.test(name)) return false;
   if (o.hofHinweis) return o.konf >= MIN_KONF_STARK && (kat === null || katHof || KAT_NUR_STARK.has(kat));
   if (STARK.test(name)) {
     if (o.konf < MIN_KONF_STARK) return false;
@@ -139,7 +143,7 @@ export function kontakt(o) {
   const webs = (o.websites || []).map(url).filter((u) => u && !/\.(pdf|docx?|xlsx?)(\?|#|$)/i.test(u));
   const socials = [...(o.socials || []), ...webs].map(url).filter(Boolean);
   const host = (u) => new URL(u).hostname.replace(/^www\./, '');
-  const website = webs.find((u) => !FREMD.test(`.${host(u)}`) && !/(^|\.)(facebook|instagram|fb)\.com$/.test(host(u))) || null;
+  const website = webs.find((u) => !FREMD.test(`.${host(u)}`) && !/(^|\.)(facebook|instagram|fb)\.com$/.test(host(u)) && !/\/branchenbuch\//i.test(u)) || null;
   const facebook = socials.find((u) => /(^|\.)(facebook|fb)\.com$/.test(host(u))) || null;
   const instagram = socials.find((u) => /(^|\.)instagram\.com$/.test(host(u))) || null;
   const tel = (o.phones || []).map(telefon).find(Boolean) || null;

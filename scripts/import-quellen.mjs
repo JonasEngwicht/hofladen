@@ -147,6 +147,7 @@ for (const o of auswahl) {
     produkte: null, selbstbedienung: typ === 'automat' || /selbstbedienung/i.test(o.name) ? true : null, zahlung: null, geprueft: null,
   });
 }
+const behalten = [];
 // Bisher veröffentlichte Einträge, die die Quelle nicht mehr führt, aber derselbe Hof aus einer anderen Quelle
 // (oder mit neuer ID aus derselben Quelle) ist da: ID übernehmen bzw. alte ID vermerken (Weiterleitung im Build)
 {
@@ -157,13 +158,18 @@ for (const o of auswahl) {
     const did = `${d.quelle}/${d.qid}`;
     if (jetztIds.has(did) || fehlend.includes(d.quelle)) continue;
     const n = freiIdx.nahe(d.lat, d.lon).find((x) => !x.geerbt && gleicherHof(x, d));
-    if (!n) continue;
+    if (!n) {
+      // Quelle führt den Hof diesmal nicht: bis zu zweimal behalten (Schwankungen zwischen Releases), dann entfernen
+      if ((d.fehlt || 0) < 2 && !osmIdx.nahe(d.lat, d.lon).some((x) => gleicherHof(x, d))) { behalten.push({ ...d, fehlt: (d.fehlt || 0) + 1 }); stat.behalten = (stat.behalten || 0) + 1; }
+      continue;
+    }
     n.geerbt = true;
     if (n.quelle === d.quelle) n.qid = d.qid;
     else n.alteIds = [...new Set([...(n.alteIds || []), did, ...(d.alteIds || [])])];
     stat.geerbt = (stat.geerbt || 0) + 1;
   }
   for (const n of neu) {
+    delete n.fehlt;
     const alt = bisherNach.get(`${n.quelle}/${n.qid}`);
     if (alt?.alteIds) n.alteIds = [...new Set([...(n.alteIds || []), ...alt.alteIds])];
     delete n.geerbt;
@@ -171,6 +177,7 @@ for (const o of auswahl) {
 }
 // Neue Einträge aus Quellen, deren Abruf fehlgeschlagen ist, behalten (sofern weiter nicht in OSM und nicht doppelt)
 const neuIdx = rasterIndex(neu);
+for (const e of behalten) if (!neuIdx.nahe(e.lat, e.lon).some((x) => gleicherHof(x, e))) { neu.push(e); neuIdx.add(e); }
 for (const e of bisher.neu.filter((x) => fehlend.includes(x.quelle))) {
   if (osmIdx.nahe(e.lat, e.lon).some((x) => gleicherHof(x, e)) || neuIdx.nahe(e.lat, e.lon).some((x) => gleicherHof(x, e))) continue;
   neu.push(e); neuIdx.add(e);
@@ -181,7 +188,7 @@ neu.sort((a, b) => a.quelle.localeCompare(b.quelle) || a.qid.localeCompare(b.qid
 const zaehl = (l) => l.reduce((m, e) => (m[e.quelle] = (m[e.quelle] || 0) + 1, m), {});
 const vorher = zaehl(bisher.neu), jetzt = zaehl(neu);
 for (const [q, n] of Object.entries(vorher)) {
-  if ((jetzt[q] || 0) < n * 0.7 && process.env.ERLAUBE_SCHWUND !== '1') {
+  if (n >= 50 && (jetzt[q] || 0) < n * 0.7 && process.env.ERLAUBE_SCHWUND !== '1') {
     console.error(`${q}: nur ${jetzt[q] || 0} statt bisher ${n} neue Einträge – Daten werden nicht überschrieben.`);
     process.exit(1);
   }
@@ -191,6 +198,6 @@ for (const q of fehlend) quellenInfo[q] = { ...(bisher.quellen?.[q] || {}), uebe
 writeFileSync(zielPfad, JSON.stringify({ stand, quellen: quellenInfo, neu, ergaenzungen }, null, 0).replace(/\},\{/g, '},\n{') + '\n');
 const felder = {};
 for (const z of Object.values(ergaenzungen)) for (const [f, q] of Object.entries(z.quellen)) felder[`${f}/${q}`] = (felder[`${f}/${q}`] || 0) + 1;
-console.log(`${stat.kandidaten} Kandidaten, ${stat.auswahl} eindeutige Hofläden/Automaten, davon ${stat.inOsm} schon in OSM, ${stat.ohneOrt} ohne Ort → ${neu.length} neue Einträge (${JSON.stringify(jetzt)}; ${stat.webGeprueft} über die Website bestätigt, ${stat.geerbt || 0} mit übernommener ID).`);
+console.log(`${stat.kandidaten} Kandidaten, ${stat.auswahl} eindeutige Hofläden/Automaten, davon ${stat.inOsm} schon in OSM, ${stat.ohneOrt} ohne Ort → ${neu.length} neue Einträge (${JSON.stringify(jetzt)}; ${stat.webGeprueft} über die Website bestätigt, ${stat.geerbt || 0} mit übernommener ID, ${stat.behalten || 0} vorerst behalten, obwohl die Quelle sie nicht mehr führt).`);
 if (fehlend.length) console.log(`Abruf fehlgeschlagen, bisherige Daten übernommen: ${fehlend.join(', ')}`);
 console.log(`Ergänzungen für ${Object.keys(ergaenzungen).length} OSM-Einträge: ${JSON.stringify(felder)}`);

@@ -143,6 +143,12 @@ test('Offene Quellen: Einordnung durch die Quelle, Prüfliste und Website-Bestä
   assert.ok(istHofladen({ name: 'Gut Wiesengrund', kat: null, konf: 0.8, hofHinweis: true }));
   assert.ok(!istHofladen({ name: 'Gut Wiesengrund', kat: null, konf: 0.8 }));
   assert.ok(!istHofladen({ name: 'Gasthaus zur Post', kat: null, konf: 0.9, hofHinweis: true }));
+  for (const n of ['Hofläden im Bergischen Land', 'Marktkauf Osnabrück', 'Fair, Regional, Biologisch, Nachhaltig', 'Hofläden und Direktvermarkter',
+    'Einkaufserlebnise bei unseren Direktvermarktern', 'Die Erzeuger in der Ökomodellregion', 'Landkreis Marburg-Biedenkopf', 'Ökologischer Einkaufsführer Thüringen'])
+    assert.ok(!istHofladen({ name: n, kat: null, konf: 0.8, hofHinweis: true }), n);
+  assert.ok(istHofladen({ name: 'Ziegenhof Haider', kat: null, konf: 0.8, hofHinweis: true }));
+  assert.equal(kontakt({ websites: ['https://www.muensterland.de/branchenbuch/hoflaeden/'] }).website, null);
+  assert.equal(kontakt({ websites: ['https://example.org/broschuere.pdf'] }).website, null);
   // nur die Konfidenz fehlt → Kandidat für die Website-Prüfung
   assert.ok(nurKonfidenzFehlt({ name: 'Hofladen Konstanz', kat: 'farm', konf: 0.55 }));
   assert.ok(!nurKonfidenzFehlt({ name: 'Hofladen Konstanz', kat: 'farm', konf: 0.9 }));
@@ -204,4 +210,13 @@ test('Offene Quellen: mehrere Quellen, stabile IDs, Website-Prüfung und fehlend
   z = JSON.parse(readFileSync(join(dir, 'ziel.json'), 'utf8'));
   assert.ok(z.neu.some((e) => e.quelle === 'foursquare' && e.qid === 'f1'));
   assert.equal(z.quellen.foursquare.uebernommen, true);
+  // Overture führt Schulze nicht mehr: zweimal behalten, beim dritten Mal entfernen
+  overture.orte = overture.orte.filter((o) => o.id !== 'ov1');
+  kvm.orte = kvm.orte.filter((o) => o.id !== 'k1');
+  writeFileSync(join(dir, 'overture.json'), JSON.stringify(overture)); writeFileSync(join(dir, 'kvm.json'), JSON.stringify(kvm));
+  for (const erwartet of [1, 2, undefined]) {
+    lauf('overture.json', 'kvm.json', 'fsq.json');
+    z = JSON.parse(readFileSync(join(dir, 'ziel.json'), 'utf8'));
+    assert.equal(z.neu.find((e) => e.qid === 'ov1')?.fehlt, erwartet);
+  }
 });
