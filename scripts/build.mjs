@@ -944,7 +944,8 @@ const MAERKTE = (existsSync(join(ROOT, 'data', 'osm-maerkte.json')) ? JSON.parse
 const maerkteProKreis = new Map();
 for (const m of MAERKTE) {
   m.ortAnzeige = m.ort || m.ortNah;
-  m.titel = m.name || `Wochenmarkt in ${m.ortAnzeige}`;
+  // Namen wie „Wochenmarkt“ allein bekommen den Ort dazu, damit Karte und Listen unterscheidbar bleiben
+  m.titel = !m.name ? `Wochenmarkt in ${m.ortAnzeige}` : /^(wochen|bauern|frische|grün|gruen)?markt(platz)?$/i.test(m.name.trim()) ? `${m.name.trim()} ${m.ortAnzeige}` : m.name;
   m.adresse = [m.strasse, [m.plz, m.ort].filter(Boolean).join(' ')].filter(Boolean).join(', ') || `${m.ortNah} (${m.plzNah})`;
   m.anker = `markt-${m.osm.replace('/', '-')}`;
   if (!maerkteProKreis.has(m.kreis)) maerkteProKreis.set(m.kreis, []);
