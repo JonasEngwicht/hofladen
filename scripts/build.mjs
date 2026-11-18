@@ -1366,6 +1366,20 @@ for (const t of ['seiten', 'kategorien', 'kreise', 'orte', 'hoefe']) {
 }
 writeFileSync(join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexEintraege.map(([n, l]) => `<sitemap><loc>${cfg.domain}/sitemaps/${n}</loc><lastmod>${l}</lastmod></sitemap>`).join('\n')}\n</sitemapindex>\n`);
 
+// ---------- Optional: Gesamtliste als JSON (LISTE_EXPORT=pfad node scripts/build.mjs) ----------
+if (process.env.LISTE_EXPORT) {
+  writeFileSync(process.env.LISTE_EXPORT, JSON.stringify(eintraege.map((e) => ({
+    name: e.titelSeite, art: e.art, strasse: e.strasse || '', plz: e.plz || '', ort: e.ortAnzeige, adresse: e.adresse,
+    kreis: e.k.titel, bundesland: e.k.landName, telefon: e.telefon || '', email: e.email || '', website: e.website || '',
+    facebook: e.facebook || '', instagram: e.instagram || '', oeffnungszeiten: e.oeffnungszeiten ? ((zeilen(e.oeffnungszeiten) || []).map(([t, v]) => `${t} ${v}`).join(', ') || e.oeffnungszeiten) : (e.oeffnungszeiten_text || ''),
+    oeffnungszeitenOsm: e.oeffnungszeiten || '', bio: e.bio ? 'ja' : '', angebot: e.kat.map((x) => KATEGORIEN[x]).join(', '),
+    betreiber: e.betreiber || '', ergaenzt: e.ergaenzt ? e.ergaenzt.felder.join(', ') : '',
+    quelle: e.osm ? `https://www.openstreetmap.org/${e.osm}` : (e.quelleUrl || 'manuell'), seite: cfg.domain + e.pfad,
+    indexiert: e.duenn ? 'nein' : 'ja', lat: e.lat, lon: e.lon,
+  }))));
+  console.log(`Liste exportiert: ${process.env.LISTE_EXPORT}`);
+}
+
 // ---------- Daten für den Worker ----------
 const plzIndex = {};
 for (const [p, rows] of plz) {
