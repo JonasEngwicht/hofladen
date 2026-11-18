@@ -87,9 +87,7 @@ async function starteKarte(panel) {
   const L = await ladeLeaflet();
   const flaeche = $('.karte-flaeche', panel);
   const map = L.map(flaeche, { preferCanvas: true, scrollWheelZoom: !!panel.closest('[data-vollkarte]') });
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map);
+  await kachelEbene(L).then((ebene) => ebene.addTo(map));
   const ctx = { map, L, panel, marker: new Map() };
   karten.push(ctx);
 
@@ -100,6 +98,28 @@ async function starteKarte(panel) {
     L.circleMarker(p, punktStil(hofKopf.dataset.typ, true)).addTo(map);
     map.setView(p, 14);
   } else listenKarte(ctx);
+}
+
+// Kartenhintergrund: eigene Vektorkacheln vom eigenen Server (data-kacheln), sonst OSM-Kacheln nach Zustimmung
+const KACHELN = document.documentElement.dataset.kacheln || '';
+const OSM_ATTR = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende';
+let protomapsLaden, zugestimmt = false;
+async function kachelEbene(L) {
+  if (KACHELN) {
+    try {
+      protomapsLaden ||= new Promise((ok, fehler) => {
+        const js = document.createElement('script');
+        js.src = '/vendor/protomaps-leaflet.js'; js.onload = () => ok(window.protomapsL); js.onerror = fehler;
+        document.head.append(js);
+      });
+      const pl = await protomapsLaden;
+      return pl.leafletLayer({ url: `/kacheln/${KACHELN}/{z}/{x}/{y}.mvt`, flavor: 'light', lang: 'de', maxDataZoom: 15,
+        attribution: `${OSM_ATTR} · <a href="https://protomaps.com/">Protomaps</a>` });
+    } catch (e) { console.warn('Eigene Kacheln nicht verfügbar', e); }
+    // Ersatz von OpenStreetMap nur mit Zustimmung (Klick auf „Karte laden“ oder gemerkt)
+    if (!zugestimmt && speicher.get('karteOk') !== '1') return L.layerGroup();
+  }
+  return L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: OSM_ATTR });
 }
 
 function punktStil(typ, gross = false) {
@@ -143,13 +163,15 @@ async function vollkarte(ctx) {
 
 for (const panel of $$('[data-karte]')) {
   $('[data-karte-laden]', panel)?.addEventListener('click', () => {
+    zugestimmt = true;
     if ($('[data-karte-merken]', panel)?.checked) speicher.set('karteOk', '1');
     starteKarte(panel);
   });
 }
 // Mit gespeicherter Zustimmung lädt die Karte erst, wenn sie in den sichtbaren Bereich kommt
 function karteAutomatisch() {
-  if (speicher.get('karteOk') !== '1') return;
+  // Eigene Kacheln brauchen keine Zustimmung (keine Anfrage an Dritte)
+  if (speicher.get('karteOk') !== '1' && !KACHELN) return;
   const panels = $$('[data-karte]');
   if (!('IntersectionObserver' in window)) return panels.forEach((p) => starteKarte(p));
   const io = new IntersectionObserver((eintraege) => {

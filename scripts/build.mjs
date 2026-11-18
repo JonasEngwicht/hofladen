@@ -18,6 +18,13 @@ const BUILD_DATUM = process.env.BUILD_DATUM || new Date().toLocaleDateString('sv
 // Version der CSS/JS-Dateien aus ihrem Inhalt: ändert sich nur, wenn sich die Dateien ändern
 // Version von Logo, Favicons und Vorschaubild (ändert sich nur, wenn sich die Dateien ändern)
 const ICON_VERSION = createHash('sha1').update(['favicon.svg', 'og-bild.png'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
+// Eigene Kartenkacheln (siehe .github/workflows/karten-erzeugen.yml): nur aktiv, wenn Kacheln und Bibliothek vorhanden sind
+const KACHELN = (() => {
+  try {
+    const k = JSON.parse(readFileSync(join(ROOT, 'data', 'karten.json'), 'utf8'));
+    return /^\d{8}$/.test(k.version) && existsSync(join(ROOT, 'static', 'vendor', 'protomaps-leaflet.js')) ? k : null;
+  } catch { return null; }
+})();
 const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
@@ -370,7 +377,7 @@ function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = []
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [['Start', '/'], ...krumen].map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: cfg.domain + p })) }] : [];
   return `<!doctype html>
-<html lang="de">
+<html lang="de"${KACHELN ? ` data-kacheln="${KACHELN.version}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -448,7 +455,7 @@ ${inhalt}
 `;
 }
 
-function kartenPanel({ titel = 'Karte', hinweis = 'Die Karte lädt Kartenbilder von OpenStreetMap. Dabei wird deine IP-Adresse an die OpenStreetMap Foundation übertragen.' } = {}) {
+function kartenPanel({ titel = 'Karte', hinweis = KACHELN ? 'Die Karte kommt von unserem eigenen Server, ohne Anfragen an Dritte. Kartendaten © OpenStreetMap-Mitwirkende.' : 'Die Karte lädt Kartenbilder von OpenStreetMap. Dabei wird deine IP-Adresse an die OpenStreetMap Foundation übertragen.' } = {}) {
   return `<div class="kartenpanel" data-karte>
   <div class="karte-flaeche" role="region" aria-label="${esc(titel)}"></div>
   <div class="karte-zustimmung">
@@ -1831,7 +1838,7 @@ textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von h
 <h2>Schriften und Skripte</h2>
 <p>Schriften und Programmbibliotheken liegen auf unserem eigenen Server. Es werden keine Inhalte von Google Fonts oder anderen Schriftanbietern geladen.</p>
 <h2>Karten</h2>
-<p>Karten werden erst geladen, wenn du auf „Karte laden“ klickst. Dann ruft dein Browser Kartenbilder von den Servern der OpenStreetMap Foundation (St John’s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Großbritannien) ab; dabei wird deine IP-Adresse übertragen (Art. 6 Abs. 1 lit. a DSGVO). Wenn du „Für diese Website merken“ auswählst, speichert dein Browser diese Entscheidung lokal (localStorage). Du kannst sie jederzeit über die Browsereinstellungen löschen. Datenschutzhinweise der OpenStreetMap Foundation: <a href="https://osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org/wiki/Privacy_Policy</a>.</p>
+${KACHELN ? '<p>Die Karten liefern wir von unserem eigenen Server aus (Kartendaten © OpenStreetMap-Mitwirkende, aufbereitet mit Protomaps). Dabei werden keine Daten an Dritte übertragen; es gelten die Angaben zu Cloudflare oben.</p>' : `<p>Karten werden erst geladen, wenn du auf „Karte laden“ klickst. Dann ruft dein Browser Kartenbilder von den Servern der OpenStreetMap Foundation (St John’s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Großbritannien) ab; dabei wird deine IP-Adresse übertragen (Art. 6 Abs. 1 lit. a DSGVO). Wenn du „Für diese Website merken“ auswählst, speichert dein Browser diese Entscheidung lokal (localStorage). Du kannst sie jederzeit über die Browsereinstellungen löschen. Datenschutzhinweise der OpenStreetMap Foundation: <a href="https://osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org/wiki/Privacy_Policy</a>.</p>`}
 <h2>Postleitzahl- und Standortsuche</h2>
 <p>Wenn du eine Postleitzahl eingibst, wird sie an unseren Server übermittelt, um passende Hofläden anzuzeigen. Wenn du „Meinen Standort verwenden“ wählst, fragt dein Browser zuerst um Erlaubnis; die Koordinaten werden nur für diese Suche übertragen und nicht gespeichert. Die zuletzt gesuchte Postleitzahl speichert dein Browser lokal (localStorage).</p>
 <h2>Merkliste</h2>
@@ -1902,7 +1909,7 @@ textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenli
 <h2>Angaben von Betrieben</h2>
 <p>Betriebe können ihren Eintrag über <a href="/mitmachen/">Mitmachen</a> übernehmen und pflegen. Diese Angaben prüfen wir und zeigen sie mit Stand an; sie haben Vorrang vor anderen Quellen.</p>
 <h2>Postleitzahlen und Orte</h2>
-<p>Postleitzahlen, Orte und Kreise: <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). Kartenbilder: OpenStreetMap, erst nach deiner Zustimmung geladen.</p>
+<p>Postleitzahlen, Orte und Kreise: <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). ${KACHELN ? `Kartenkacheln: © OpenStreetMap-Mitwirkende (ODbL), erzeugt mit <a href="https://protomaps.com/">Protomaps</a> (Stand ${KACHELN.version.slice(6)}.${KACHELN.version.slice(4, 6)}.${KACHELN.version.slice(0, 4)}), auf unserem eigenen Server.` : 'Kartenbilder: OpenStreetMap, erst nach deiner Zustimmung geladen.'}</p>
 <h2>Keine Daten anderer Verzeichnisse</h2>
 <p>Wir übernehmen keine Daten, Texte oder Bilder aus anderen Hofladen-Verzeichnissen.</p>
 `, false);

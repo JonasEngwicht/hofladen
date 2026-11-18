@@ -1,0 +1,115 @@
+name: Kartenkacheln erzeugen
+
+# Schneidet Deutschland aus dem aktuellen Protomaps-Build (OpenStreetMap, ODbL) aus, lädt die PMTiles-Datei
+# über die Verwaltung des Workers in den R2-Bucket „hofladen-karten“ und stellt die Seite auf die neue Version um.
+# Holt außerdem die Bibliothek protomaps-leaflet nach static/vendor/. Braucht die Secrets ADMIN_TOKEN und CF_DEPLOY_HOOK.
+on:
+  workflow_dispatch:
+    inputs:
+      maxzoom:
+        description: Höchste Zoomstufe der Kacheln
+        default: '15'
+  schedule:
+    - cron: '23 2 4 */3 *' # vierteljährlich
+
+permissions:
+  contents: write
+
+concurrency:
+  group: karten
+  cancel-in-progress: false
+
+jobs:
+  kacheln:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: pmtiles-Werkzeug holen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download -R protomaps/go-pmtiles -p '*Linux_x86_64.tar.gz' -O pmtiles.tgz
+          tar xzf pmtiles.tgz pmtiles
+          ./pmtiles version
+      - name: Neuesten Protomaps-Build finden
+        id: quelle
+        run: |
+          for i in $(seq 0 21); do
+            d=$(date -u -d "-$i day" +%Y%m%d)
+            if curl -sfI "https://build.protomaps.com/$d.pmtiles" > /dev/null; then echo "datum=$d" >> "$GITHUB_OUTPUT"; echo "Build $d"; exit 0; fi
+          done
+          echo "Kein Build in den letzten drei Wochen gefunden"; exit 1
+      - name: Deutschland ausschneiden
+        env:
+          D: ${{ steps.quelle.outputs.datum }}
+          Z: ${{ inputs.maxzoom || '15' }}
+        run: |
+          ./pmtiles extract "https://build.protomaps.com/$D.pmtiles" de.pmtiles --bbox=5.5,47.0,15.6,55.2 --maxzoom="$Z" --download-threads=8
+          ls -la de.pmtiles
+          ./pmtiles show de.pmtiles | head -40
+          groesse=$(stat -c %s de.pmtiles)
+          # Free-Tier R2: 10 GB, während der Umstellung liegen zwei Versionen im Bucket
+          if [ "$groesse" -gt 4500000000 ]; then echo "Datei zu groß ($groesse Bytes) – mit maxzoom 14 neu starten"; exit 1; fi
+      - name: Hochladen
+        env:
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          D: ${{ steps.quelle.outputs.datum }}
+        run: node scripts/karten-hochladen.mjs de.pmtiles "de-$D.pmtiles"
+      - name: Stichprobe gegen die hochgeladene Datei
+        env:
+          D: ${{ steps.quelle.outputs.datum }}
+        run: |
+          # Leipzig, Zoom 12 und 14: Kachel über den Worker muss der Kachel aus der Datei entsprechen
+          for zxy in "12 2188 1365" "14 8755 5460" "8 136 85"; do
+            set -- $zxy
+            ./pmtiles tile de.pmtiles $1 $2 $3 > lokal.bin || { echo "pmtiles tile nicht verfügbar"; break; }
+            (gzip -dc lokal.bin 2>/dev/null || cat lokal.bin) > lokal.mvt
+            code=$(curl -s --compressed -o fern.mvt -w '%{http_code}' "https://hofladenliste.de/kacheln/$D/$1/$2/$3.mvt")
+            echo "$1/$2/$3: HTTP $code, lokal $(stat -c %s lokal.mvt) Bytes, Worker $(stat -c %s fern.mvt) Bytes"
+            test "$code" = 200
+            cmp lokal.mvt fern.mvt
+          done
+      - name: Bibliothek protomaps-leaflet holen
+        run: |
+          npm pack protomaps-leaflet@5 --silent
+          tar xzf protomaps-leaflet-*.tgz
+          ls package/dist
+          f=$(ls package/dist/*.js | grep -vE '\.(mjs|cjs)$|module|esm' | head -1)
+          test -n "$f"
+          cp "$f" static/vendor/protomaps-leaflet.js
+          cp package/LICENSE static/vendor/PROTOMAPS-LEAFLET-LICENSE.txt 2>/dev/null || true
+          grep -q "protomapsL" static/vendor/protomaps-leaflet.js
+      - name: Version eintragen und Testbuild
+        env:
+          D: ${{ steps.quelle.outputs.datum }}
+        run: |
+          node -e "require('fs').writeFileSync('data/karten.json', JSON.stringify({version: process.env.D, quelle: 'Protomaps-Build ' + process.env.D + ' (OpenStreetMap, ODbL)', groesse: require('fs').statSync('de.pmtiles').size}, null, 1) + '\n')"
+          node scripts/build.mjs > /dev/null
+          npm test
+      - name: Commit und Deploy
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: |
+          git config user.name "hofladenliste-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/karten.json static/vendor/protomaps-leaflet.js static/vendor/PROTOMAPS-LEAFLET-LICENSE.txt
+          git commit -m "Kartenkacheln auf Stand ${{ steps.quelle.outputs.datum }}" || echo "Keine Änderungen"
+          git checkout -- .
+          git pull --rebase -q && git push
+          curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgelöst."
+      - name: Alte Versionen entfernen (die vorige bleibt als Rückfall)
+        env:
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          D: ${{ steps.quelle.outputs.datum }}
+        run: |
+          node scripts/karten-hochladen.mjs --liste > liste.json
+          cat liste.json
+          node -e "
+            const l = require('./liste.json').dateien.map((d) => d.datei).filter((d) => /^de-\d{8}\.pmtiles$/.test(d)).sort().reverse();
+            const weg = l.filter((d) => d !== 'de-' + process.env.D + '.pmtiles').slice(1);
+            require('fs').writeFileSync('weg.txt', weg.join('\n'));"
+          while read -r f; do [ -n "$f" ] && node scripts/karten-hochladen.mjs --loeschen "$f"; done < weg.txt || true

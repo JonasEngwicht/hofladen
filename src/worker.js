@@ -10,6 +10,7 @@
 import PLZ from './generated/plz.json';
 import EINTRAEGE from './generated/eintraege.json';
 import KATEGORIEN from './generated/kategorien.json';
+import { kachelAntwort, kartenHochladen } from './kacheln.js';
 import ORTE from './generated/orte.json';
 import ROUTEN from './generated/routen.json';
 import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
@@ -425,6 +426,7 @@ async function verwaltung(request, env, url) {
   await schema(env);
   const keinCache = (r) => { r.headers.set('Cache-Control', 'no-store'); return r; };
   const teil = url.pathname.replace('/api/verwaltung/', '');
+  if (teil === 'karten') return kartenHochladen(request, env, url);
   if (teil === 'meldungen') {
     const status = url.searchParams.get('status') || 'neu';
     const { results } = await env.STATS.prepare(`SELECT m.*, (SELECT group_concat(id) FROM meldung_fotos WHERE meldung = m.id) AS fotos
@@ -585,6 +587,7 @@ export default {
     if (url.pathname === '/api/hoefe') return hoefeApi(url);
     if (url.pathname === '/api/rueckmeldung') return rueckmeldungAnnehmen(request, env);
     if (url.pathname === '/api/ereignis') return ereignisZaehlen(request, env, ctx);
+    if (url.pathname.startsWith('/kacheln/')) return kachelAntwort(request, env, ctx, url);
     if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url);
     return seiteAusliefern(request, env, url);
   },
