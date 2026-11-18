@@ -4,12 +4,15 @@
 // Ausgabe im Overpass-Format: {elements:[{type,id,lat,lon,tags}]}.
 //
 // Aufruf: node scripts/fetch-osm.mjs [ausgabe.json]   (Standard: data/quellen/osm-roh.json)
+//         node scripts/fetch-osm.mjs --maerkte [ausgabe.json]   Wochenmärkte (amenity=marketplace)
 // Daten: © OpenStreetMap-Mitwirkende, ODbL.
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 
 const ENDPUNKT = 'https://qlever.dev/api/osm-planet';
-const ziel = process.argv[2] || new URL('../data/quellen/osm-roh.json', import.meta.url).pathname;
+const MAERKTE = process.argv.includes('--maerkte');
+const ziel = process.argv.slice(2).find((a) => !a.startsWith('--')) || new URL(MAERKTE ? '../data/quellen/maerkte-roh.json' : '../data/quellen/osm-roh.json', import.meta.url).pathname;
+const MINDESTENS = MAERKTE ? 300 : 1000;
 
 const PREFIX = `PREFIX osmkey: <https://www.openstreetmap.org/wiki/Key:>
 PREFIX ogc: <http://www.opengis.net/rdf#>
@@ -17,7 +20,9 @@ PREFIX osmrel: <https://www.openstreetmap.org/relation/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 `;
 // Relation 51477 = Deutschland
-const AUSWAHL = `{ SELECT DISTINCT ?osm WHERE { osmrel:51477 ogc:sfContains ?osm .
+const AUSWAHL = MAERKTE
+  ? `{ SELECT DISTINCT ?osm WHERE { osmrel:51477 ogc:sfContains ?osm . ?osm osmkey:amenity "marketplace" } }`
+  : `{ SELECT DISTINCT ?osm WHERE { osmrel:51477 ogc:sfContains ?osm .
   { ?osm osmkey:shop "farm" } UNION
   { ?osm osmkey:amenity "vending_machine" . ?osm osmkey:vending ?vd .
     FILTER(REGEX(?vd, "milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable")) } } }`;
@@ -66,7 +71,9 @@ async function ausQlever() {
 
 // Quelle 2: Overpass API (langsamer, aber unabhängig).
 const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
-const OVERPASS_Q = `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;(nwr["shop"="farm"](area.de);nwr["amenity"="vending_machine"]["vending"~"milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable"](area.de););out center tags;`;
+const OVERPASS_Q = MAERKTE
+  ? `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;nwr["amenity"="marketplace"](area.de);out center tags;`
+  : `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;(nwr["shop"="farm"](area.de);nwr["amenity"="vending_machine"]["vending"~"milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable"](area.de););out center tags;`;
 async function ausOverpass(url) {
   const j = await holen(url, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: 'data=' + encodeURIComponent(OVERPASS_Q) }, 3, 'Overpass ' + new URL(url).host);
@@ -79,7 +86,7 @@ let ergebnis = null;
 for (const quelle of [...OVERPASS.map((u) => () => ausOverpass(u)), ausQlever]) {
   try {
     const r = await quelle();
-    if (r.elements.length >= 1000) { ergebnis = r; break; }
+    if (r.elements.length >= MINDESTENS) { ergebnis = r; break; }
     console.error(`${r.quelle}: nur ${r.elements.length} Objekte, nächste Quelle`);
   } catch (e) { console.error(`Quelle fehlgeschlagen: ${e.message}`); }
 }

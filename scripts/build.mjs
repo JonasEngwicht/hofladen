@@ -302,6 +302,7 @@ const KAT_REGELN = [
   ['brot', /bread|\bbrot|bäcker|baecker|backwaren|bakery|backhaus/i],
   ['getraenke', /juice|saft|\bwein|weingut|winzer|\bmost\b|wine|cider/i],
   ['blumen', /flower|blumen|tulpen|sonnenblume/i],
+  ['weihnachtsbaeume', /christmas.?trees?|weihnachtsb(a|ä)um|christb(a|ä)um|tannenb(a|ä)um|nordmanntanne|weihnachtstanne|christbaummarkt/i],
 ];
 const ART_KAT = { Milchtankstelle: ['milch'], Eierautomat: ['eier'], Fleischautomat: ['fleisch'], Kartoffelautomat: ['kartoffeln'] };
 for (const e of eintraege) {
@@ -930,8 +931,49 @@ const monatsSpanne = (ms) => { if (!ms.length) return ''; const s = [...ms]; // 
   return `${MONATSNAMEN[s[start] - 1]} bis ${MONATSNAMEN[s[(start + s.length - 1) % s.length] - 1]}`; };
 const ANGEBOT = { eier: ['Eier vom Hof', 'Eiern'], milch: ['Milch vom Hof', 'Milch'], kaese: ['Käse vom Hof', 'Käse'], fleisch: ['Fleisch & Wurst vom Hof', 'Fleisch und Wurst'],
   gemuese: ['Gemüse vom Hof', 'Gemüse'], obst: ['Obst vom Hof', 'Obst'], kartoffeln: ['Kartoffeln vom Hof', 'Kartoffeln'], honig: ['Honig vom Hof', 'Honig'],
-  brot: ['Brot vom Hof', 'Brot'], getraenke: ['Saft & Wein vom Hof', 'Saft und Wein'], blumen: ['Blumen vom Feld', 'Blumen'] };
+  brot: ['Brot vom Hof', 'Brot'], getraenke: ['Saft & Wein vom Hof', 'Saft und Wein'], blumen: ['Blumen vom Feld', 'Blumen'],
+  weihnachtsbaeume: ['Weihnachtsbäume vom Hof', 'Weihnachtsbäumen'] };
 const ANGEBOT_SEITEN = Object.keys(ANGEBOT).filter((kat) => eintraege.filter((e) => e.kat.includes(kat)).length >= 30);
+// Weihnachtsbäume vom Hof (Saisonseite, Einträge über Name/Beschreibung oder Angebot des Betriebs)
+const WEIHNACHT = eintraege.filter((e) => e.kat.includes('weihnachtsbaeume'));
+
+// ---------- Wochenmärkte (OSM amenity=marketplace, data/osm-maerkte.json) ----------
+const MAERKTE = (existsSync(join(ROOT, 'data', 'osm-maerkte.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'osm-maerkte.json'), 'utf8')) : [])
+  .filter((m) => kreise.has(m.kreis));
+const maerkteProKreis = new Map();
+for (const m of MAERKTE) {
+  m.ortAnzeige = m.ort || m.ortNah;
+  m.titel = m.name || `Wochenmarkt in ${m.ortAnzeige}`;
+  m.adresse = [m.strasse, [m.plz, m.ort].filter(Boolean).join(' ')].filter(Boolean).join(', ') || `${m.ortNah} (${m.plzNah})`;
+  m.anker = `markt-${m.osm.replace('/', '-')}`;
+  if (!maerkteProKreis.has(m.kreis)) maerkteProKreis.set(m.kreis, []);
+  maerkteProKreis.get(m.kreis).push(m);
+}
+for (const l of maerkteProKreis.values()) l.sort((a, b) => (b.oeffnungszeiten ? 1 : 0) - (a.oeffnungszeiten ? 1 : 0) || a.ortAnzeige.localeCompare(b.ortAnzeige, 'de') || a.titel.localeCompare(b.titel, 'de'));
+const MARKT_SEITE_AB = MIN_SEITE; // eigene Kreisseite für Märkte ab 3 Märkten
+const marktPfad = (k) => `/wochenmaerkte/${k.landSlug}/${k.pfad.split('/')[2]}/`;
+const marktKarte = (m, H = 'h3') => `<article class="laden laden-markt" id="${m.anker}" data-typ="markt" data-land="${kreise.get(m.kreis)?.land || ''}" data-lat="${m.lat}" data-lon="${m.lon}"${m.oeffnungszeiten ? ` data-oh="${esc(m.oeffnungszeiten)}"` : ''}>
+  <div class="laden-symbol" title="Wochenmarkt">${ICON.markt}</div>
+  <div class="laden-text">
+    <p class="laden-art">${m.ueberdacht ? 'Markthalle' : 'Wochenmarkt'}${m.bio ? ' <span class="bio">Bio</span>' : ''}</p>
+    <${H} class="laden-name">${esc(m.titel)}</${H}>
+    <p class="laden-adr">${esc(m.adresse)}</p>
+    ${m.oeffnungszeiten ? statusHtml(m.oeffnungszeiten, null) : '<p class="st st-leer">Marktzeiten nicht hinterlegt</p>'}
+    <p class="aktionen">
+      <a class="akt" href="https://www.google.com/maps/dir/?api=1&amp;destination=${m.lat},${m.lon}" rel="nofollow noopener" target="_blank">${ICON.route}Route</a>${m.website ? `<a class="akt" href="${esc(m.website)}" rel="nofollow noopener" target="_blank">${ICON.web}Website</a>` : ''}<a class="akt" href="https://www.openstreetmap.org/${m.osm}" rel="nofollow noopener" target="_blank">${ICON.stift}In OSM bearbeiten</a>
+    </p>
+  </div>
+</article>`;
+// Abschnitt auf der Hofladen-Kreisseite: Märkte im Kreis (höchstens sechs) mit Link zur Marktseite
+function marktAbschnitt(k) {
+  const ms = maerkteProKreis.get(k.code) || [];
+  if (!ms.length) return '';
+  const ziel = ms.length >= MARKT_SEITE_AB ? marktPfad(k) : null;
+  return `<section class="abschnitt maerkte-kurz"><h2>Wochenmärkte ${esc(k.im)}</h2>
+  <p>Frisches vom Erzeuger gibt es auch auf ${ms.length === 1 ? 'dem Wochenmarkt' : `${zahl(ms.length)} Wochenmärkten`} ${esc(k.im)}${ziel ? ` – <a href="${ziel}">alle Wochenmärkte ${esc(k.im)}</a>` : ''}.</p>
+  <div class="karten-reihe">${ms.slice(0, 6).map((m) => marktKarte(m)).join('')}</div>
+</section>`;
+}
 
 const akkusativ = (t) => t.name === 'Milchtankstelle' ? 'eine Milchtankstelle' : `einen ${t.name}${/mat$/.test(t.name) ? 'en' : ''}`;
 // Seiten je Automatentyp und Kreis (ab zwei Einträgen), z. B. /bayern/landkreis-x/milchtankstellen/
@@ -1007,7 +1049,7 @@ schreibe('/', seite({
     <li>${ICON.hofladen}<div><h3>Hofläden</h3><p>Verkauf direkt auf dem Hof: Gemüse, Obst, Eier, Fleisch, Käse und was die Saison hergibt.</p><p class="anzahl">${zahl(anzHof)} Einträge</p></div></li>
     ${TYPEN.map((t) => `<li>${t.icon}<div><h3><a href="/${t.slug}/">${t.plural}</a></h3><p>${t.kurz}</p><p class="anzahl">${zahl(t.liste.length)} Einträge</p></div></li>`).join('\n    ')}
   </ul>
-  <p class="typ-chips start-kategorien"><a href="/hofladen-automaten/">${ICON.automat}Alle Hofladen-Automaten <span>${zahl(AUTOMATEN.liste.length)}</span></a><a href="/bio-hofladen/">${ICON.blatt}Bio-Hofläden <span>${zahl(BIO.liste.length)}</span></a><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a>${ANGEBOT_SEITEN.slice(0, 6).map((k) => `<a href="/angebot/${k}/">${esc(KATEGORIEN[k])}</a>`).join('')}</p>
+  <p class="typ-chips start-kategorien">${MAERKTE.length ? `<a href="/wochenmaerkte/">${ICON.markt}Wochenmärkte <span>${zahl(MAERKTE.length)}</span></a>` : ''}${WEIHNACHT.length && [10, 11, 12].includes(new Date().getMonth() + 1) ? `<a href="/weihnachtsbaum-vom-hof/">${ICON.tanne}Weihnachtsbaum vom Hof <span>${zahl(WEIHNACHT.length)}</span></a>` : ''}<a href="/hofladen-automaten/">${ICON.automat}Alle Hofladen-Automaten <span>${zahl(AUTOMATEN.liste.length)}</span></a><a href="/bio-hofladen/">${ICON.blatt}Bio-Hofläden <span>${zahl(BIO.liste.length)}</span></a><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a>${ANGEBOT_SEITEN.slice(0, 6).map((k) => `<a href="/angebot/${k}/">${esc(KATEGORIEN[k])}</a>`).join('')}</p>
 </section>
 <section class="abschnitt saison-jetzt" data-saison='${esc(saisonJetzt)}' data-saison-stand="${MONAT_JETZT}">
   <h2>Gerade frisch vom Feld</h2>
@@ -1132,7 +1174,7 @@ ${KAT_TYPEN.some((t) => landKat(t, l)) ? `<section class="abschnitt"><h2>Nach Ka
       schreibe(k.pfad, umgebungsSeite(z, {
         krumen: [[l.name, `/${l.slug}/`], [k.titel, k.pfad]],
         regionProfil: REGIONEN.get(k.code) || null,
-        extraUnten: `${ortListeHtml}<section class="abschnitt nachbarn"><h2>Hofläden in benachbarten Kreisen</h2><ul class="kreis-liste">${nachbarn.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.titel)}</span><span class="zahl">${zahl(proKreis.get(x.code)?.length || 0)}</span></a></li>`).join('')}</ul></section>`,
+        extraUnten: `${ortListeHtml}${marktAbschnitt(k)}<section class="abschnitt nachbarn"><h2>Hofläden in benachbarten Kreisen</h2><ul class="kreis-liste">${nachbarn.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.titel)}</span><span class="zahl">${zahl(proKreis.get(x.code)?.length || 0)}</span></a></li>`).join('')}</ul></section>`,
       }));
       continue;
     }
@@ -1170,6 +1212,7 @@ ${ortLinks.length > 1 ? `<section class="abschnitt">
   <h2>Hofläden nach Ort ${esc(im)}</h2>
   <ul class="kreis-liste">${orte.filter((o) => o.pfad !== k.pfad).map((o) => `<li><a href="${o.pfad}"><span>${esc(o.eigen ? ortUeberschrift(o).replace(/^Hofläden in /, '') : o.ort)}</span><span class="zahl">${o.liste.length ? zahl(o.liste.length) : ''}</span></a></li>`).join('')}</ul>
 </section>` : ''}
+${marktAbschnitt(k)}
 ${liste.length ? `<section class="abschnitt seo-text"><h2>Hofladen ${esc(im)}: Überblick</h2>${gebietsText(liste, im, { anker: l.slug })}${typLinks(liste, l.slug, k)}<p>Mehr aus der Region: <a href="/${l.slug}/">alle Hofläden in ${esc(l.name)}</a>.</p></section>` : ''}
 ${f.html}
 <section class="abschnitt nachbarn">
@@ -1909,6 +1952,68 @@ schreibe('/404.html', seite({
   inhalt: '<article class="text"><h1>Diese Seite gibt es nicht</h1><p>Vielleicht wurde der Eintrag verschoben. Gib oben deine Postleitzahl ein oder starte auf der <a href="/">Startseite</a>.</p></article>',
 }), false);
 
+// ---------- Wochenmärkte: Übersicht, Bundesländer, Kreise (ab 3 Märkten) ----------
+if (MAERKTE.length) {
+  const mitZeiten = MAERKTE.filter((m) => m.oeffnungszeiten).length;
+  const landInfo = laender.map((l) => {
+    const ks = l.kreise.map((k) => ({ k, ms: maerkteProKreis.get(k.code) || [] })).filter((x) => x.ms.length);
+    return { l, ks, n: ks.reduce((a, x) => a + x.ms.length, 0), pfad: `/wochenmaerkte/${l.slug}/` };
+  }).filter((x) => x.n);
+  const osmHinweis = '<p class="leise">Die Märkte stammen aus <a href="https://www.openstreetmap.org/">OpenStreetMap</a> (© OpenStreetMap-Mitwirkende, ODbL). Fehlt ein Markt oder stimmen die Zeiten nicht? Über „In OSM bearbeiten“ kannst du ihn direkt in OpenStreetMap ergänzen; wir übernehmen Änderungen zweimal pro Woche.</p>';
+  schreibe('/wochenmaerkte/', seite({
+    titel: `Wochenmärkte in Deutschland – ${zahl(MAERKTE.length)} Märkte mit Marktzeiten`,
+    beschreibung: `${zahl(MAERKTE.length)} Wochenmärkte, Bauernmärkte und Markthallen in Deutschland, ${zahl(mitZeiten)} davon mit Marktzeiten – nach Bundesland und Kreis, mit Route und Hofläden in der Nähe.`,
+    pfad: '/wochenmaerkte/', krumen: [['Wochenmärkte', '/wochenmaerkte/']],
+    inhalt: `<section class="seitenkopf"><h1>Wochenmärkte in Deutschland</h1>
+  <p>${zahl(MAERKTE.length)} Wochenmärkte, Bauernmärkte und Markthallen, ${zahl(mitZeiten)} davon mit Marktzeiten. Auf dem Markt verkaufen viele Höfe aus der Region – die Hofläden findest du auf den Seiten der Kreise.</p></section>
+<section class="abschnitt"><h2>Wochenmärkte nach Bundesland</h2>
+  <ul class="laender-liste">${landInfo.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.l.name)}</span><span class="zahl">${zahl(x.n)}</span></a></li>`).join('')}</ul></section>
+<section class="abschnitt">${osmHinweis}</section>`,
+  }));
+  for (const x of landInfo) {
+    const gross = x.ks.filter((y) => y.ms.length >= MARKT_SEITE_AB), klein = x.ks.filter((y) => y.ms.length < MARKT_SEITE_AB);
+    schreibe(x.pfad, seite({
+      titel: passend(`Wochenmärkte in ${x.l.name} – ${zahl(x.n)} Märkte nach Kreis`, `Wochenmärkte in ${x.l.name}`),
+      beschreibung: `${zahl(x.n)} Wochenmärkte und Bauernmärkte in ${x.l.name}: nach Kreis sortiert, mit Marktzeiten, Adresse und Route.`,
+      pfad: x.pfad, noindex: x.n < MIN_SEITE, krumen: [['Wochenmärkte', '/wochenmaerkte/'], [x.l.name, x.pfad]],
+      inhalt: `<section class="seitenkopf"><h1>Wochenmärkte in ${esc(x.l.name)}</h1><p>${zahl(x.n)} Märkte in ${zahl(x.ks.length)} Kreisen. <a href="/${x.l.slug}/">Hofläden in ${esc(x.l.name)}</a></p></section>
+${gross.length ? `<section class="abschnitt"><h2>Kreise mit mehreren Wochenmärkten</h2><ul class="kreis-liste">${gross.map((y) => `<li><a href="${marktPfad(y.k)}"><span>${esc(y.k.titel)}</span><span class="zahl">${zahl(y.ms.length)}</span></a></li>`).join('')}</ul></section>` : ''}
+${klein.map((y) => `<section class="abschnitt"><h2>Wochenmärkte ${esc(y.k.im)}</h2><div class="karten-reihe">${y.ms.map((m) => marktKarte(m)).join('')}</div><p><a href="${y.k.pfad}">Hofläden ${esc(y.k.im)}</a></p></section>`).join('\n')}
+<section class="abschnitt">${osmHinweis}</section>`,
+    }), x.n >= MIN_SEITE);
+    for (const { k, ms } of gross) {
+      const hoefe = (proKreis.get(k.code) || []).slice(0, 6);
+      const n = ms.length, z = ms.filter((m) => m.oeffnungszeiten).length;
+      const orte = [...new Set(ms.map((m) => m.ortAnzeige))];
+      schreibe(marktPfad(k), seite({
+        titel: passend(`Wochenmärkte ${k.im} – ${zahl(n)} Märkte mit Marktzeiten`, `Wochenmärkte ${k.im} – ${zahl(n)} Märkte`, `Wochenmärkte ${k.im}`),
+        beschreibung: `${zahl(n)} Wochenmärkte ${k.im}${orte.length > 1 ? `, u. a. in ${orte.slice(0, 3).join(', ')}` : ` in ${orte[0]}`}${z ? `, ${zahl(z)} davon mit Marktzeiten` : ''}. Mit Adresse, Route und Hofläden in der Nähe.`,
+        pfad: marktPfad(k), krumen: [['Wochenmärkte', '/wochenmaerkte/'], [x.l.name, x.pfad], [k.titel, marktPfad(k)]],
+        inhalt: `<section class="seitenkopf"><h1>Wochenmärkte ${esc(k.im)}</h1><p>${zahl(n)} Märkte${z ? `, ${zahl(z)} davon mit Marktzeiten` : ''}. Der Status „Jetzt geöffnet“ richtet sich nach den hinterlegten Marktzeiten.</p></section>
+<div class="liste">${ms.map((m) => marktKarte(m, 'h2')).join('\n')}</div>
+${hoefe.length ? `<section class="abschnitt"><h2>Hofläden ${esc(k.im)}</h2><div class="karten-reihe">${hoefe.map((e) => karteHtml(kartenDaten(e))).join('')}</div><p><a href="${k.pfad}">Alle Hofläden ${esc(k.im)}</a></p></section>` : ''}
+<section class="abschnitt">${osmHinweis}</section>`,
+      }));
+    }
+  }
+}
+
+// ---------- Saisonseite: Weihnachtsbaum vom Hof ----------
+{
+  const proLand = laender.map((l) => ({ l, liste: WEIHNACHT.filter((e) => e.k?.land === l.code).sort((a, b) => a.ortAnzeige.localeCompare(b.ortAnzeige, 'de')) })).filter((x) => x.liste.length);
+  schreibe('/weihnachtsbaum-vom-hof/', seite({
+    titel: WEIHNACHT.length ? `Weihnachtsbaum vom Hof – ${zahl(WEIHNACHT.length)} Höfe mit Weihnachtsbäumen` : 'Weihnachtsbaum vom Hof',
+    beschreibung: `Weihnachtsbaum direkt vom Hof kaufen: ${WEIHNACHT.length ? `${zahl(WEIHNACHT.length)} Höfe und Hofläden mit Weihnachtsbäumen,` : 'Höfe und Hofläden mit Weihnachtsbäumen,'} nach Bundesland, mit Öffnungszeiten und Route. Verkauft ihr Bäume? Kostenlos eintragen.`,
+    pfad: '/weihnachtsbaum-vom-hof/', noindex: WEIHNACHT.length < MIN_SEITE, krumen: [['Weihnachtsbaum vom Hof', '/weihnachtsbaum-vom-hof/']],
+    inhalt: `<section class="seitenkopf"><h1>Weihnachtsbaum vom Hof</h1>
+  <p>${WEIHNACHT.length ? `${zahl(WEIHNACHT.length)} ${WEIHNACHT.length === 1 ? 'Hof verkauft' : 'Höfe verkaufen'} laut Eintrag Weihnachtsbäume – oft frisch geschlagen und aus der Region.` : 'Hier sammeln wir Höfe, die Weihnachtsbäume verkaufen.'} Viele Höfe verkaufen nur in der Adventszeit; frag im Zweifel vorher nach.</p>
+  ${naeheSuche({ produkt: 'weihnachtsbaeume' }, 'Weihnachtsbäume in meiner Nähe')}
+</section>
+<section class="abschnitt hinweis-box"><h2>Ihr verkauft Weihnachtsbäume?</h2><p>Tragt euren Hof kostenlos ein oder ergänzt euren bestehenden Eintrag um „Weihnachtsbäume“ – dann erscheint ihr hier und bei der Suche nach dem Angebot.</p><p><a class="knopf knopf-dunkel" href="/mitmachen/?angebot=weihnachtsbaeume">Hof mit Weihnachtsbäumen eintragen</a></p></section>
+${proLand.map((x) => `<section class="abschnitt"><h2>Weihnachtsbäume vom Hof in ${esc(x.l.name)}</h2><div class="karten-reihe">${x.liste.map((e) => karteHtml(kartenDaten(e))).join('')}</div></section>`).join('\n')}`,
+  }), WEIHNACHT.length >= MIN_SEITE);
+}
+
 // ---------- Robots, Sitemap ----------
 writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\nDisallow: /verwaltung/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
 
@@ -1946,7 +2051,7 @@ console.log(`Seitenarchiv: ${Object.keys(stand.seiten).length} Seiten, ${Object.
 
 // Sitemaps nach Seitentyp mit Sitemap-Index
 const sitemapTyp = (p) => p.startsWith('/hof/') ? 'hoefe'
-  : KATEGORIE_PFADE.has(p) || p.startsWith('/angebot/') ? 'kategorien'
+  : KATEGORIE_PFADE.has(p) || p.startsWith('/angebot/') || p.startsWith('/wochenmaerkte/') ? 'kategorien'
   : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) ? 'orte'
   : /^\/[^/]+\/[^/]+\/$/.test(p) && laender.some((l) => p.startsWith(`/${l.slug}/`)) ? 'kreise'
   : 'seiten';

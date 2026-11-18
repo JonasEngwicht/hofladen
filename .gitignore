@@ -3,3 +3,4 @@ node_modules/
 public/
 src/generated/
 data/quellen/osm-roh*.json
+data/quellen/maerkte-roh*.json

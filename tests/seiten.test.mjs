@@ -19,7 +19,7 @@ const info = new Map(alle.map(([p, html]) => [p, {
 const sm = sitemapUrls();
 const inSitemap = new Set(sm.map((x) => x.loc));
 // Listenseiten mit Karten; kompakte Kategorieseiten (Bundesland) zeigen Linklisten statt Karten
-const art = (p) => p.startsWith('/hof/') ? 'hof' : /<body class="kompakt"/.test(info.get(p)?.html || '') ? 'kompakt'
+const art = (p) => p.startsWith('/hof/') ? 'hof' : p.startsWith('/wochenmaerkte/') ? 'maerkte' : /<body class="kompakt"/.test(info.get(p)?.html || '') ? 'kompakt'
   : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) && !p.startsWith('/angebot/') ? 'unterseite' : /^\/[^/]+\/[^/]+\/$/.test(p) && !p.startsWith('/angebot/') ? 'kreis' : 'sonstige';
 
 test('jede Seite: genau eine H1, ein Canonical auf sich selbst, Title und Description', () => {
@@ -151,6 +151,17 @@ test('Hofseiten: Rückmeldung „Stimmt das noch?“ und Datum der letzten Prüf
   for (const [p, html] of hoefe) assert.match(html, /data-rueckmeldung="[a-z0-9-]+"/, p);
   const mitDatum = hoefe.filter(([, html]) => /Zuletzt geprüft: <time datetime="\d{4}-\d{2}-\d{2}">/.test(html));
   assert.ok(mitDatum.length > 500, `nur ${mitDatum.length} Seiten mit Prüfdatum`);
+});
+
+test('Wochenmärkte: Kreisseiten nur ab drei Märkten, dünne Landesseiten noindex', () => {
+  const m = alle.filter(([p]) => p.startsWith('/wochenmaerkte/'));
+  if (!m.length) return; // ohne Marktdaten keine Seiten
+  for (const [p, html] of m) {
+    const n = (html.match(/<article class="laden laden-markt"/g) || []).length;
+    if (/^\/wochenmaerkte\/[^/]+\/[^/]+\/$/.test(p)) assert.ok(n >= 3, `${p}: nur ${n} Märkte`);
+    if (info.get(p).noindex) assert.ok(!inSitemap.has(DOMAIN + p), `${p} ist noindex, steht aber in der Sitemap`);
+  }
+  assert.ok(m.some(([p]) => p === '/wochenmaerkte/'));
 });
 
 test('Orts- und Umgebungsseiten: Titel, Intro, Filter und Liste nennen dieselbe Zahl', () => {
