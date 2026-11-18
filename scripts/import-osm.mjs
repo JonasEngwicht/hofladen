@@ -82,8 +82,15 @@ for (const [osm, el] of elemente) {
     const nurFood = sorten.every((s) => ['food', 'drinks', 'sweets', 'snacks', 'ice_cream', 'cigarettes', 'coffee'].includes(s));
     const text = [t.name, t.operator, t.brand, t.description].filter(Boolean).join(' ');
     if (nurFood && !HOF_HINWEIS.test(text)) { verwirf('Automat ohne Hofbezug'); continue; }
-  } else if (t.craft === 'beekeeper') typ = 'hofladen';
-  else if (t.pick_your_own === 'yes') typ = 'hofladen';
+  } else if (t.craft === 'beekeeper') {
+    // Imker ohne Namen sind meist nur Bienenstände – keine Verkaufsstelle
+    if (!t.name) { verwirf('Imker ohne Namen'); continue; }
+    typ = 'hofladen';
+  } else if (t.self_harvesting === 'yes' || t.pick_your_own === 'yes') {
+    // Selbsternte-Felder nur mit Namen oder bekannter Frucht (sonst nicht auffindbar)
+    if (!t.name && !t.crop && !t.produce) { verwirf('Selbsternte ohne Namen und Frucht'); continue; }
+    typ = 'hofladen';
+  }
   else if (t.amenity === 'cafe') typ = 'hofladen';
   else { verwirf('anderer Typ'); continue; }
 
@@ -97,10 +104,10 @@ for (const [osm, el] of elemente) {
   const strasse = [t['addr:street'] || t['addr:place'], t['addr:housenumber']].filter(Boolean).join(' ') || null;
   const ort = t['addr:city'] || t['addr:suburb'] || null;
   const art = typ === 'automat' ? automatArt(sorten) : t.shop === 'farm' ? 'Hofladen'
-    : t.craft === 'beekeeper' ? 'Imkerei' : t.pick_your_own === 'yes' ? 'Selbstpflücken' : 'Hofcafé';
+    : t.craft === 'beekeeper' ? 'Imkerei' : (t.self_harvesting === 'yes' || t.pick_your_own === 'yes') ? 'Selbstpflücken' : 'Hofcafé';
   const produkte = typ === 'automat'
     ? [...new Set(sorten.map((s) => VENDING[s]).filter(Boolean))]
-    : [...new Set((t.produce || t.product || '').split(';').map((s) => s.trim()).filter(Boolean))];
+    : [...new Set((t.produce || t.product || t.crop || '').split(';').map((s) => s.trim()).filter(Boolean))];
 
   eintraege.push({
     osm,

@@ -116,8 +116,8 @@ test('Suche nach Hofnamen', async () => {
   let r = await anfrage('/suche?q=Kittlers%20Hofladen');
   assert.equal(r.status, 302);
   assert.equal(ziel(r), '/hof/kittlers-hofladen-riesa/');
-  r = await anfrage('/suche?q=gut%20clarenhof');
-  assert.equal(ziel(r), '/hof/hofladen-gut-clarenhof-frechen/');
+  r = await anfrage('/suche?q=gut%20clarenhof'); // Hofladen und Hofcafé am selben Gut: Liste oder direkt der Hofladen
+  assert.match(ziel(r), /^\/(hof\/hofladen-gut-clarenhof-frechen\/|hofsuche\/\?q=gut%20clarenhof)$/);
   r = await anfrage('/suche?q=Biohof');
   assert.equal(ziel(r), '/hofsuche/?q=Biohof');
   r = await anfrage('/suche?q=xyzunbekannt');
