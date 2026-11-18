@@ -37,6 +37,24 @@ for (const [pfad, status, ziel] of FAELLE) {
   console.log(`${ok2 ? 'OK  ' : 'FEHL'} /api/eintrag liefert Gut Clarenhof (${d.eintrag?.titel || '–'}, ${d.eintrag?.vollstaendigkeit?.prozent ?? '–'} %)`);
 }
 
+// Overture-Einträge sind ausgerollt: erster Eintrag mit stabiler ID o-… und die Quellenseite
+{
+  const roh = JSON.parse((await import('node:fs')).readFileSync(new URL('../src/generated/eintraege.json', import.meta.url), 'utf8'));
+  const o = (Array.isArray(roh) ? roh : roh.eintraege).find((e) => String(e[15]).startsWith('o-'));
+  if (o) {
+    const d = await (await fetch(`${BASIS}/api/eintrag?id=${o[15]}`)).json().catch(() => ({}));
+    const seite = await fetch(`${BASIS}/hof/${o[2]}/`);
+    const text = seite.status === 200 ? await seite.text() : '';
+    const ok = d.eintrag?.slug === o[2] && /Overture Maps Foundation/.test(text);
+    if (!ok) fehler++;
+    console.log(`${ok ? 'OK  ' : 'FEHL'} Overture-Eintrag ${o[3]} (/hof/${o[2]}/, ${seite.status})`);
+  }
+  const q = await (await fetch(`${BASIS}/quellen/`)).text();
+  const ok = /Overture Maps/.test(q);
+  if (!ok) fehler++;
+  console.log(`${ok ? 'OK  ' : 'FEHL'} /quellen/ nennt Overture Maps`);
+}
+
 if (!process.argv.includes('--ohne-pagespeed')) {
   console.log('\nPageSpeed Insights, mobil (Labordaten):');
   if (!process.env.PAGESPEED_API_KEY) console.log('  (ohne API-Schlüssel – Secret PAGESPEED_API_KEY fehlt, Kontingent ist oft erschöpft)');
