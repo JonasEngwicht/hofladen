@@ -469,8 +469,8 @@ async function verwaltung(request, env, url, ctx) {
   if (teil === 'karten') return kartenHochladen(request, env, url);
   // Welche Secrets und Bindungen sind gesetzt? (nur ja/nein, nie Werte)
   if (teil === 'einrichtung') {
-    return keinCache(json({ secrets: Object.fromEntries(['ADMIN_TOKEN', 'RESEND_API_KEY', 'TURNSTILE_SECRET', 'TURNSTILE_SITE_KEY', 'MAIL_ABSENDER'].map((k) => [k, !!env[k]])),
-      bindungen: { STATS: !!env.STATS, KARTEN: !!env.KARTEN, ASSETS: !!env.ASSETS }, andere: Object.keys(env).filter((k) => !['ADMIN_TOKEN', 'RESEND_API_KEY', 'TURNSTILE_SECRET', 'TURNSTILE_SITE_KEY', 'MAIL_ABSENDER', 'STATS', 'KARTEN', 'ASSETS'].includes(k)) }));
+    return keinCache(json({ secrets: Object.fromEntries(['ADMIN_TOKEN', 'RESEND_API_KEY', 'TURNSTILE_SECRET', 'TURNSTILE_SECRET_KEY', 'TURNSTILE_SITE_KEY', 'MAIL_ABSENDER'].map((k) => [k, !!env[k]])),
+      bindungen: { STATS: !!env.STATS, KARTEN: !!env.KARTEN, ASSETS: !!env.ASSETS }, andere: Object.keys(env).filter((k) => !['ADMIN_TOKEN', 'RESEND_API_KEY', 'TURNSTILE_SECRET', 'TURNSTILE_SECRET_KEY', 'TURNSTILE_SITE_KEY', 'MAIL_ABSENDER', 'STATS', 'KARTEN', 'ASSETS'].includes(k)) }));
   }
   // Konto für einen Hof anlegen und Anmeldelink schicken (Freigabe durch die Verwaltung)
   if (teil === 'konto' && request.method === 'POST') {

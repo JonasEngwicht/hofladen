@@ -46,6 +46,7 @@ jobs:
           else
             git commit -m "Öffnungszeiten von Hof-Websites ergänzt"
             git pull --rebase
+            git pull --rebase -X theirs -q
             git push
             echo "geaendert=ja" >> "$GITHUB_OUTPUT"
           fi

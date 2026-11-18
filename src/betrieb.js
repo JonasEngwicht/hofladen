@@ -58,9 +58,10 @@ export async function mailSenden(env, { an, betreff, text, antwortAn = 'hofladen
 
 // ---------- Turnstile ----------
 export async function turnstilePruefen(env, token, ip) {
-  if (!env.TURNSTILE_SECRET) return false;
+  const geheim = env.TURNSTILE_SECRET || env.TURNSTILE_SECRET_KEY;
+  if (!geheim) return false;
   const f = new FormData();
-  f.append('secret', env.TURNSTILE_SECRET); f.append('response', String(token || '')); if (ip) f.append('remoteip', ip);
+  f.append('secret', geheim); f.append('response', String(token || '')); if (ip) f.append('remoteip', ip);
   const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: f });
   return !!(await r.json().catch(() => ({}))).success;
 }
