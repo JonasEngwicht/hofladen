@@ -19,6 +19,8 @@ test('Seiten mit Schrägstrich liefern 200 und HTML', async () => {
 test('Schreibvarianten leiten dauerhaft (301) um', async () => {
   const faelle = [
     ['/bayern', '/bayern/'],
+    ['/bayern/index.html', '/bayern/'],
+    ['/index.html', '/'],
     ['/Bayern/Landkreis-Rosenheim/', '/bayern/landkreis-rosenheim/'],
     ['/bayern/m%C3%BCnchen-stadt/', '/bayern/muenchen-stadt/'],
     ['/baden-w%C3%BCrttemberg/', '/baden-wuerttemberg/'],
