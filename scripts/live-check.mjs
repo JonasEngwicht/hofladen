@@ -28,13 +28,23 @@ if (!process.argv.includes('--ohne-pagespeed')) {
   for (const pfad of ['/', '/berlin/berlin/', '/brandenburg/spree-neisse/forst-lausitz/', '/baden-wuerttemberg/bodenseekreis/', '/hof/kittlers-hofladen-riesa/']) {
     try {
       const key = process.env.PAGESPEED_API_KEY ? `&key=${process.env.PAGESPEED_API_KEY}` : '';
-      const r = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&category=performance&url=${encodeURIComponent(BASIS + pfad)}${key}`);
+      const kat = ['performance', 'accessibility', 'best-practices', 'seo'].map((c) => `&category=${c}`).join('');
+      const r = await fetch(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile${kat}&locale=de&url=${encodeURIComponent(BASIS + pfad)}${key}`);
       const d = await r.json();
       if (!d.lighthouseResult) { console.log(`  ${pfad}: keine Daten (${d.error?.message || r.status})`); continue; }
       const a = d.lighthouseResult.audits;
       const wert = (k) => a[k]?.displayValue || '–';
       const punkte = Math.round(d.lighthouseResult.categories.performance.score * 100);
-      console.log(`  ${pfad}: Performance ${punkte}, LCP ${wert('largest-contentful-paint')}, CLS ${wert('cumulative-layout-shift')}, TBT ${wert('total-blocking-time')}, FCP ${wert('first-contentful-paint')}`);
+      const kats = d.lighthouseResult.categories;
+      const p = (k) => Math.round((kats[k]?.score ?? 0) * 100);
+      console.log(`  ${pfad}: Performance ${punkte}, Barrierefreiheit ${p('accessibility')}, Best Practices ${p('best-practices')}, SEO ${p('seo')} | LCP ${wert('largest-contentful-paint')}, CLS ${wert('cumulative-layout-shift')}, TBT ${wert('total-blocking-time')}, FCP ${wert('first-contentful-paint')}`);
+      // Nicht bestandene Prüfungen mit Details (für die Nachbesserung)
+      for (const [kid, kat] of Object.entries(kats)) for (const ref of kat.auditRefs) {
+        const au = a[ref.id];
+        if (!au || au.score === null || au.score >= 0.9 || ['notApplicable', 'informative', 'manual'].includes(au.scoreDisplayMode)) continue;
+        const items = (au.details?.items || []).slice(0, 4).map((it) => it.node?.selector || it.node?.snippet || it.url || it.source?.url || it.label || '').filter(Boolean);
+        console.log(`    – [${kid}] ${au.id}: ${au.title}${au.displayValue ? ` (${au.displayValue})` : ''}${items.length ? ` → ${items.join(' | ').slice(0, 300)}` : ''}`);
+      }
     } catch (e) { console.log(`  ${pfad}: ${e.message}`); }
   }
 }
