@@ -300,11 +300,13 @@ main { display: block; }
 .kl-meta { font-size: .88rem; color: var(--grau); }
 .kl-st { font-size: .88rem; }
 .kl-st.st-auf { color: #1F6B32; } .kl-st.st-zu { color: var(--bete); } .kl-st.st-unklar { color: var(--grau); }
-.kp-pin { display: grid; place-items: center; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2px solid var(--fichte); background: var(--raps); box-shadow: 0 1px 4px rgba(0,0,0,.3); }
-.kp-pin span { transform: rotate(45deg); font: 700 11px/1 var(--schrift); color: var(--fichte); }
-.kp-m { background: #7FB3D5; } .kp-e { background: #F2E2C4; } .kp-r { background: var(--kohl); } .kp-r span { color: #fff; }
-.kp-markt { background: #C8553D; border-color: #6E2617; } .kp-markt span { color: #fff; }
-.kp-cluster { display: grid; place-items: center; border-radius: 50%; background: rgba(23,59,44,.88); color: #fff; font: 700 13px/1 var(--schrift); box-shadow: 0 0 0 5px rgba(244,196,48,.55); cursor: pointer; }
+.leaflet-marker-icon.kp-pin { background: none; border: 0; }
+.kp-tropfen { position: absolute; inset: 0; display: grid; place-items: center; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2px solid var(--fichte); background: var(--raps); box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+.kp-tropfen b { display: block; transform: rotate(45deg); font: 700 11px/1 var(--schrift); color: var(--fichte); }
+.kp-m .kp-tropfen { background: #7FB3D5; } .kp-e .kp-tropfen { background: #F2E2C4; } .kp-r .kp-tropfen { background: var(--kohl); } .kp-r b { color: #fff; }
+.kp-markt .kp-tropfen { background: #C8553D; border-color: #6E2617; } .kp-markt b { color: #fff; }
+.leaflet-marker-icon.kp-cluster { display: grid; place-items: center; border-radius: 50%; background: rgba(23,59,44,.88); color: #fff; font: 700 13px/1 var(--schrift); box-shadow: 0 0 0 5px rgba(244,196,48,.55); cursor: pointer; text-align: center; }
+.kp-cluster span { display: block; font-variant-numeric: tabular-nums; }
 .kp { min-width: 200px; }
 .kp p { margin: 0 0 .35rem; }
 .kp-art { font-size: .85rem; color: var(--grau); }

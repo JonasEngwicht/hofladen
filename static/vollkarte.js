@@ -100,7 +100,7 @@ export async function vollkarte(ctx, { params, standortMerken, standortLesen, me
   for (const b of $$('[data-kf-schalter]', seite)) b.setAttribute('aria-pressed', String(!!f[b.dataset.kfSchalter]));
   for (const b of $$('[data-kf-kat]', seite)) b.setAttribute('aria-pressed', String(f.kat.has(b.dataset.kfKat)));
 
-  const pin = (p) => L.divIcon({ className: `kp-pin kp-${p.typ}`, html: `<span>${TYPEN[p.typ].zeichen}</span>`, iconSize: [26, 26], iconAnchor: [13, 13] });
+  const pin = (p) => L.divIcon({ className: `kp-pin kp-${p.typ}`, html: `<span class="kp-tropfen"><b>${TYPEN[p.typ].zeichen}</b></span>`, iconSize: [26, 26], iconAnchor: [13, 30], popupAnchor: [0, -28] });
   let gefiltert = [];
   const zeichne = () => {
     ebene.clearLayers();
