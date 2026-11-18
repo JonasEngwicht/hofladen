@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdtempSync, writeFileSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { istHofladen, hofTyp, namenAehnlich, gleicherHof, sauberName, kontakt, adresse, zusammenfuehren } from '../scripts/overture.mjs';
+import { telefon, istHofladen, hofTyp, namenAehnlich, gleicherHof, sauberName, kontakt, adresse, zusammenfuehren } from '../scripts/overture.mjs';
 
 const o = (name, kat, konf = 0.9, hier = '') => ({ name, kat, konf, hier });
 
@@ -44,6 +44,10 @@ test('Overture: Namen vergleichen und aufräumen', () => {
   assert.ok(!namenAehnlich('Hofladen', 'Bio Hofladen'));
   assert.equal(sauberName('Eier Und Geflügelhof Fuhrmann Gbr'), 'Eier und Geflügelhof Fuhrmann GbR');
   assert.equal(sauberName('Winklhofer´s  Hofladen'), 'Winklhofer’s Hofladen');
+  assert.equal(sauberName('Bio-geflügelhof Rothäusle'), 'Bio-Geflügelhof Rothäusle');
+  assert.equal(sauberName('Hofladen Lange | Eier und Kartoffeln'), 'Hofladen Lange');
+  assert.ok(!istHofladen(o('Weidner-Wild | Online-Hofladen', 'farm', 0.9)));
+  assert.ok(!istHofladen(o('Hofladen-Sauerland.de', 'farm', 0.9)));
 });
 
 test('Overture: gleicher Hof nach Abstand und Name', () => {
@@ -65,6 +69,12 @@ test('Overture: Kontaktdaten ohne Verzeichnisse, Social Media getrennt', () => {
   assert.equal(kontakt({ websites: ['https://www.hofladenfinder.org/hof/1'] }).website, null);
   assert.deepEqual(adresse({ strasse: 'Dorfstraße 5', plz: '03149', ort: 'Forst' }), { strasse: 'Dorfstraße 5', plz: '03149', ort: 'Forst' });
   assert.equal(adresse({ strasse: 'Dorfstraße', plz: '3149' }).strasse, null);
+  assert.equal(adresse({ strasse: '37 Straße der Freundschaft' }).strasse, 'Straße der Freundschaft 37');
+  assert.equal(telefon('4928729243270'), '+49 28729243270');
+  assert.equal(telefon('04952 52939092'), '+49 495252939092');
+  assert.equal(telefon('+4935621234'), '+49 35621234');
+  assert.equal(telefon('+49493866470266'), null);
+  assert.equal(telefon('12345'), null);
 });
 
 test('Overture: Doppelungen zusammenführen, beste Konfidenz bleibt', () => {

@@ -2,6 +2,7 @@ name: Overture-Daten aktualisieren
 
 # Holt einmal im Monat Hofläden und Automaten aus Overture Maps Places (offene Lizenzen, keine OSM-Daten),
 # ergänzt fehlende Einträge und füllt Kontaktdaten bestehender Einträge auf (data/overture.json).
+# Auswahlregeln: scripts/overture.mjs, Abgleich: scripts/import-overture.mjs.
 on:
   workflow_dispatch:
   schedule:

@@ -7,7 +7,7 @@ export const STARK = /hof-?laden|hoflädchen|hofladl|hofverkauf|bauern-?laden|ho
 // Höfe, die oft direkt verkaufen – nur mit passender Kategorie und hoher Konfidenz
 export const SCHWACH = /bio-?hof|obst-?hof|spargel-?hof|erdbeer-?hof|gemüse-?hof|geflügel-?hof|eier-?hof|kartoffel-?hof/i;
 // Keine Höfe, auch wenn der Name passt
-const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten/i;
+const KEIN_HOF = /verband|verein|e\.\s?v\.|genossenschaft|großhandel|grosshandel|vertrieb|agentur|automatenbau|automaten-?service|automatentechnik|marketing|beratung|software|möbel|moebel|ferienwohnung|ferienhaus|pension\b|hotel|gasthof|gasthaus|restaurant|landgasthof|reiterhof|reitstall|pferdehof|tierarzt|schule|kita|kindergarten|online|versandhandel|transporte?\b|\.(de|com|net|eu|info)\b/i;
 const KAT_HOF = new Set(['farm', 'poultry_farm', 'dairy_farm', 'orchard', 'pick_your_own_farm', 'ranch', 'agriculture',
   'agricultural_service', 'livestock_breeder', 'farmers_market', 'greengrocer', 'produce_store', 'grocery_store',
   'organic_grocery_store', 'food_and_beverage_store', 'specialty_foods_store', 'dairy_store', 'cheese_shop', 'butcher_shop',
@@ -95,7 +95,9 @@ export function rasterIndex(liste) {
 // Namen aus Firmendaten aufräumen ("Eier Und Geflügelhof Fuhrmann Gbr" → "Eier und Geflügelhof Fuhrmann GbR")
 export function sauberName(n) {
   let s = String(n || '').replace(/\s+/g, ' ').replace(/´|`/g, '’').trim();
+  s = s.split(' | ')[0].trim();
   s = s.replace(/ (Und|Der|Die|Das|Am|Im|An|Auf|Vom|Von|Zum|Zur|In|Bei|Mit|Aus) /g, (m) => m.toLowerCase());
+  s = s.replace(/(\p{L})-(\p{Ll})(\p{Ll}{3,})/gu, (m, a, b, c) => `${a}-${b.toUpperCase()}${c}`);
   s = s.replace(/\bGbr\b/g, 'GbR').replace(/\bGmbh\b/g, 'GmbH').replace(/\bKg\b/g, 'KG').replace(/\bOhg\b/g, 'OHG')
     .replace(/\bE\.\s?K\.?$/i, 'e. K.').replace(/\bU\.\s?Co\.?/i, 'u. Co.');
   return s;
@@ -114,13 +116,31 @@ export function kontakt(o) {
   const website = webs.find((u) => !FREMD.test(`.${host(u)}`) && !/(^|\.)(facebook|instagram|fb)\.com$/.test(host(u))) || null;
   const facebook = socials.find((u) => /(^|\.)(facebook|fb)\.com$/.test(host(u))) || null;
   const instagram = socials.find((u) => /(^|\.)instagram\.com$/.test(host(u))) || null;
-  const tel = (o.phones || []).map((p) => String(p).trim()).find((p) => /^\+?[\d\s/()-]{6,}$/.test(p)) || null;
+  const tel = (o.phones || []).map(telefon).find(Boolean) || null;
   const email = (o.emails || []).map((m) => String(m).trim().toLowerCase()).find((m) => /^[^@\s]+@[^@\s]+\.[a-z]{2,}$/.test(m)) || null;
-  return { website, facebook, instagram, telefon: tel ? tel.replace(/^\+49(\d)/, '+49 $1') : null, email };
+  return { website, facebook, instagram, telefon: tel, email };
+}
+// Telefonnummern einheitlich: +49 und Rufnummer ohne führende 0; offensichtlich kaputte Nummern verwerfen
+export function telefon(p) {
+  const roh = String(p || '').trim();
+  if (!/^\+?[\d\s/()-]{6,}$/.test(roh)) return null;
+  const z = roh.replace(/\D/g, '');
+  let national, international = true;
+  if (roh.startsWith('+')) { if (!z.startsWith('49')) return roh; national = z.slice(2); }
+  else if (z.startsWith('0049')) national = z.slice(4);
+  else if (z.startsWith('0')) { national = z.slice(1); international = false; }
+  else if (z.startsWith('49') && z.length >= 10) national = z.slice(2);
+  else return null;
+  national = national.replace(/^0/, '');
+  // doppelte Landesvorwahl (+49 49…) ist ein Datenfehler
+  if (national.length < 6 || national.length > 13 || (international && national.startsWith('49'))) return null;
+  return `+49 ${national}`;
 }
 export function adresse(o) {
   const plz = /^\d{5}$/.test(String(o.plz || '').trim()) ? String(o.plz).trim() : null;
-  const strasse = o.strasse && /\d/.test(o.strasse) && o.strasse.length <= 80 ? String(o.strasse).trim() : null;
+  let strasse = o.strasse && /\d/.test(o.strasse) && o.strasse.length <= 80 ? String(o.strasse).trim() : null;
+  const vorn = strasse && strasse.match(/^(\d+\s?[a-zA-Z]?)\s+(\D.*)$/); // "37 Straße der Freundschaft"
+  if (vorn) strasse = `${vorn[2]} ${vorn[1].replace(/\s/g, '')}`;
   return { strasse, plz, ort: o.ort ? String(o.ort).trim() : null };
 }
 
