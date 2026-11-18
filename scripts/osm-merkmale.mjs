@@ -28,7 +28,7 @@ export function merkmaleAus(t) {
   if (t.outdoor_seating === 'yes' || t.cafe === 'yes' || t.amenity === 'cafe') m.sitzen = true;
   if (t.toilets === 'yes') m.toilette = true;
   if (t.playground === 'yes') m.spielplatz = true;
-  if (t.pick_your_own === 'yes') m.selbstpfluecken = true;
+  if (t.self_harvesting === 'yes' || t.pick_your_own === 'yes') m.selbstpfluecken = true;
   if (t.amenity === 'cafe' || t.cafe === 'yes') m.hofcafe = true;
   if (['yes', 'surface', 'customers', 'free'].includes(t.parking)) m.parkplatz = true;
   if (['yes', 'only'].includes(t['delivery']) || t['shop:online'] === 'yes') m.lieferung = true;

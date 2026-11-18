@@ -26,7 +26,7 @@ const AUSWAHL = MAERKTE
   { ?osm osmkey:shop "farm" } UNION
   { ?osm osmkey:amenity "vending_machine" . ?osm osmkey:vending ?vd .
     FILTER(REGEX(?vd, "milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable|noodles|pasta")) } UNION
-  { ?osm osmkey:craft "beekeeper" } UNION { ?osm osmkey:pick_your_own "yes" } UNION
+  { ?osm osmkey:craft "beekeeper" } UNION { ?osm osmkey:self_harvesting "yes" } UNION { ?osm osmkey:pick_your_own "yes" } UNION
   { ?osm osmkey:amenity "cafe" . ?osm osmkey:name ?nm . FILTER(REGEX(?nm, "hofcaf|bauerncaf|hof-caf|bauernhofcaf|landcaf", "i")) } } }`;
 
 const UA = 'hofladenliste.de-datenimport (https://github.com/JonasEngwicht/hofladen; hofladenliste@gmail.com)';
@@ -75,7 +75,7 @@ async function ausQlever() {
 const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
 const OVERPASS_Q = MAERKTE
   ? `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;nwr["amenity"="marketplace"](area.de);out center tags;`
-  : `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;(nwr["shop"="farm"](area.de);nwr["amenity"="vending_machine"]["vending"~"milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable|noodles|pasta"](area.de);nwr["craft"="beekeeper"](area.de);nwr["pick_your_own"="yes"](area.de);nwr["amenity"="cafe"]["name"~"hofcaf|bauerncaf|hof-caf|bauernhofcaf|landcaf",i](area.de););out center tags;`;
+  : `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;(nwr["shop"="farm"](area.de);nwr["amenity"="vending_machine"]["vending"~"milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable|noodles|pasta"](area.de);nwr["craft"="beekeeper"]["name"](area.de);nwr["self_harvesting"="yes"](area.de);nwr["pick_your_own"="yes"](area.de);nwr["amenity"="cafe"]["name"~"hofcaf|bauerncaf|hof-caf|bauernhofcaf|landcaf",i](area.de););out center tags;`;
 async function ausOverpass(url) {
   const j = await holen(url, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: 'data=' + encodeURIComponent(OVERPASS_Q) }, 3, 'Overpass ' + new URL(url).host);
