@@ -1202,7 +1202,7 @@ for (const t of [...TYPEN, ...WEITERE_AKTIV]) {
   const proLand = laender.map((l) => ({ l, liste: t.liste.filter((e) => e.k.land === l.code) })).filter((x) => x.liste.length);
   const vollListe = t.liste.length <= 800;
   schreibe(`/${t.slug}/`, seite({
-    titel: `${t.name} in der Nähe – alle ${zahl(t.liste.length)} ${t.plural} in Deutschland`,
+    titel: [`${t.name} in der Nähe – alle ${zahl(t.liste.length)} ${t.plural} in Deutschland`, `${t.h1 || t.name} in der Nähe – ${zahl(t.liste.length)} in Deutschland`, `${t.h1 || t.plural} in Deutschland`].find((x) => x.length <= 80),
     beschreibung: `${t.name} in der Nähe finden: ${zahl(t.liste.length)} ${t.plural} in ganz Deutschland mit Adresse, Öffnungszeiten und Route – nach Bundesland und Landkreis sortiert.`,
     pfad: `/${t.slug}/`,
     jsonld: [itemList(`${t.plural} in Deutschland`, vollListe ? proLand.flatMap(({ liste }) => {
