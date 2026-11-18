@@ -4,11 +4,14 @@
 //  /plz/12345        → wie oben (kurze, teilbare URL)
 //  /api/orte?q=Tet   → Vorschläge für Ortsnamen
 //  /api/umkreis?plz=12345 oder ?lat=..&lon=..  → nächste Einträge als JSON
-// Alles andere liefert die statischen Seiten aus public/ (über env.ASSETS).
+// Seiten: Dateien wie /style.css liefert Cloudflare direkt aus. HTML-Seiten (/pfad/ → /pfad/index.html)
+// laufen über seiteAusliefern(): dort entstehen 301 (Schrägstrich, Umlaute, verschobene Seiten),
+// 410 (entfernte Höfe) und 404.
 import PLZ from './generated/plz.json';
 import EINTRAEGE from './generated/eintraege.json';
 import KATEGORIEN from './generated/kategorien.json';
 import ORTE from './generated/orte.json';
+import ROUTEN from './generated/routen.json';
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnop';
 
@@ -183,6 +186,42 @@ function eintraegeNachSlug(url) {
   return json({ ergebnisse: gefunden, unbekannt: slugs.filter((x) => !vorhanden.has(x)) });
 }
 
+// ---------- HTML-Seiten, Weiterleitungen, 410/404 ----------
+const ENTFERNT = new Set(ROUTEN.entfernt);
+function normalisiere(pfad) {
+  let p = pfad;
+  try { p = decodeURIComponent(p); } catch {}
+  p = p.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
+    .replace(/[\s_+]+/g, '-').replace(/\/{2,}/g, '/').replace(/\/index\.html?$/, '/');
+  if (!p.endsWith('/') && !/\.[a-z0-9]{2,5}$/.test(p)) p += '/';
+  return p;
+}
+async function seiteLaden(env, url, pfad, request) {
+  const r = await env.ASSETS.fetch(new Request(new URL(pfad === '/' ? '/index.html' : `${pfad}index.html`, url), { method: request.method, headers: request.headers }));
+  return r.status === 200 || r.status === 304 ? r : null;
+}
+async function fehlerSeite(env, url, status) {
+  const r = await env.ASSETS.fetch(new URL('/404.html', url));
+  return new Response(r.body, { status, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=300' } });
+}
+const dauerhaft = (url, pfad) => new Response(null, { status: 301, headers: { Location: pfad + url.search, 'Cache-Control': 'public, max-age=86400' } });
+
+async function seiteAusliefern(request, env, url) {
+  const pfad = url.pathname;
+  const n = normalisiere(pfad);
+  // Exakt passende Seite in kanonischer Schreibweise
+  if (n === pfad && pfad.endsWith('/') && !ROUTEN.umleitungen[pfad]) {
+    const r = await seiteLaden(env, url, pfad, request);
+    if (r) return r;
+  }
+  // Abweichende Schreibweise (ohne Schrägstrich, index.html, Großbuchstaben, Umlaute …)
+  if (ROUTEN.umleitungen[n]) return dauerhaft(url, ROUTEN.umleitungen[n]);
+  if (ENTFERNT.has(n)) return fehlerSeite(env, url, 410);
+  if (n !== pfad && n.endsWith('/') && await seiteLaden(env, url, n, new Request(url, { method: 'HEAD' }))) return dauerhaft(url, n);
+  if (/\.[a-z0-9]{2,5}$/i.test(pfad)) return env.ASSETS.fetch(request);
+  return fehlerSeite(env, url, 404);
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -196,6 +235,6 @@ export default {
     if (url.pathname === '/api/umkreis') return umkreis(url, env, ctx, request);
     if (url.pathname === '/api/eintraege') return eintraegeNachSlug(url);
     if (url.pathname === '/api/orte') return orteVorschlaege(url);
-    return env.ASSETS.fetch(request);
+    return seiteAusliefern(request, env, url);
   },
 };

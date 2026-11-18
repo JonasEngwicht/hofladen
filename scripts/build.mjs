@@ -4,6 +4,7 @@
 import { mkdirSync, writeFileSync, readFileSync, rmSync, cpSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, domainToUnicode } from 'node:url';
+import { createHash } from 'node:crypto';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml } from '../static/karte.js';
@@ -12,7 +13,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'public');
 const GEN = join(ROOT, 'src', 'generated');
 const cfg = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'));
-const BUILD_DATUM = new Date().toISOString().slice(0, 10);
+const BUILD_DATUM = process.env.BUILD_DATUM || new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' });
 const VERSION = Date.now().toString(36);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
@@ -168,7 +169,11 @@ const kartenDaten = (e, km) => ({ pfad: e.pfad, slug: e.slug, titel: e.titel, ar
 const SUCHFELD = 'type="search" maxlength="60" autocomplete="off" list="orte-vorschlaege" enterkeyhint="search"';
 const LOGO = `<svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#173B2C"/><path d="M15.5 34C15.5 18 48.5 18 48.5 34" fill="none" stroke="#F4C430" stroke-width="3.6" stroke-linecap="round"/><g fill="#F4C430" stroke="#173B2C" stroke-width="1.6" paint-order="stroke"><path d="M32 38V13" fill="none" stroke="#F4C430" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="32" cy="8.6" rx="2.4" ry="4.4"/><ellipse cx="28.6" cy="14.6" rx="2.3" ry="4.3" transform="rotate(-32 28.6 14.6)"/><ellipse cx="35.4" cy="14.6" rx="2.3" ry="4.3" transform="rotate(32 35.4 14.6)"/><ellipse cx="28.6" cy="21.2" rx="2.3" ry="4.3" transform="rotate(-32 28.6 21.2)"/><ellipse cx="35.4" cy="21.2" rx="2.3" ry="4.3" transform="rotate(32 35.4 21.2)"/><ellipse cx="28.6" cy="27.8" rx="2.3" ry="4.3" transform="rotate(-32 28.6 27.8)"/><ellipse cx="35.4" cy="27.8" rx="2.3" ry="4.3" transform="rotate(32 35.4 27.8)"/></g><path d="M8.5 34h47l-5 20.4A3.4 3.4 0 0 1 47.2 57H16.8a3.4 3.4 0 0 1-3.3-2.6z" fill="#F4C430"/><path d="M11.5 45h41" stroke="#173B2C" stroke-width="2.6"/><path d="M22.5 34.5 24 57M32 34.5V57M41.5 34.5 40 57" stroke="#173B2C" stroke-width="2.6"/></svg>`;
 
+// Inhalts-Hash je Seite (ohne Kopf/Fuß/Build-Version) – daraus entsteht das echte lastmod der Sitemap
+const SEITEN_HASH = new Map();
+const hash = (x) => createHash('sha1').update(x).digest('base64url').slice(0, 10);
 function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = [], krumen = [], klasse = '', kopfSuche = true }) {
+  SEITEN_HASH.set(pfad, hash([titel, beschreibung, noindex, JSON.stringify(jsonld), JSON.stringify(krumen), inhalt.replace(/\?v=[a-z0-9]+/g, '')].join('\u0000')));
   const url = cfg.domain + pfad;
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [['Start', '/'], ...krumen].map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: cfg.domain + p })) }] : [];
@@ -286,10 +291,12 @@ mkdirSync(OUT, { recursive: true });
 mkdirSync(GEN, { recursive: true });
 cpSync(join(ROOT, 'static'), OUT, { recursive: true });
 const sitemap = [];
+const ALLE_SEITEN = new Set();
 function schreibe(pfad, html, inSitemap = true) {
   const datei = join(OUT, pfad, pfad.endsWith('/') ? 'index.html' : '');
   mkdirSync(dirname(datei), { recursive: true });
   writeFileSync(datei, html);
+  if (pfad.endsWith('/')) ALLE_SEITEN.add(pfad);
   if (inSitemap) sitemap.push(pfad);
 }
 
@@ -450,6 +457,7 @@ const quellenHtml = (r) => `<section class="abschnitt quellen" id="quellen"><h2>
 const regionTeaser = (k) => { const r = REGIONEN.get(k.code); return r ? `<p class="region-teaser">${esc(r.teaser)} <a href="${k.pfad}#region">Mehr über die Region</a></p>` : ''; };
 
 // ---------- Orte ----------
+const MIN_SEITE = 3; // Listenseiten mit weniger Einträgen gelten als dünn
 const ORTE = new Map(); // kreis-Code → Map(ort → { ort, pfad, liste })
 for (const [code, liste] of proKreis) {
   const k = kreise.get(code);
@@ -463,9 +471,11 @@ for (const [code, liste] of proKreis) {
     let s = slugify(o.ort) || 'ort';
     while (slugs.has(s)) s += '-2';
     slugs.add(s);
-    // Eigene Ortsseite nur bei mindestens zwei Einträgen und wenn sie sich von der Kreisseite unterscheidet;
-    // bei einem Eintrag ist die Hofseite selbst die Seite für "Hofladen in <Ort>"
-    o.pfad = o.liste.length === liste.length ? k.pfad : o.liste.length === 1 ? null : `${k.pfad}${s}/`;
+    // Eigene Ortsseite erst ab MIN_SEITE Einträgen und nur, wenn sie sich von der Kreisseite unterscheidet
+    // (die gleichnamige kreisfreie Stadt ist die Kreisseite selbst). Bei einem Eintrag ist die Hofseite
+    // die Seite für "Hofladen in <Ort>", bei zwei die Kreisseite.
+    const istKreisStadt = k.art === 'Stadt' && (o.ort === k.name || o.ort === k.titel);
+    o.pfad = o.liste.length === liste.length || istKreisStadt ? k.pfad : o.liste.length === 1 ? null : o.liste.length < MIN_SEITE ? k.pfad : `${k.pfad}${s}/`;
     o.eigen = !!o.pfad && o.pfad !== k.pfad;
     o.lat = o.liste.reduce((x, e) => x + e.lat, 0) / o.liste.length;
     o.lon = o.liste.reduce((x, e) => x + e.lon, 0) / o.liste.length;
@@ -507,8 +517,48 @@ for (const e of eintraege) e.titelSeite = titelZahl.get(e.titel + '|' + e.ortAnz
     const z = (n.get(e.titelSeite) || 0) + 1; n.set(e.titelSeite, z);
     if (z > 1) e.titelSeite = `${e.titelSeite} – Nr. ${z}`;
   } }
+// ---------- Strukturierte Daten ----------
+const SCHEMA_TAGE = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const hhmm = (m) => `${String(Math.floor(m / 60) % 24).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+function oeffnungsSpezifikation(woche) {
+  const gruppen = new Map();
+  woche.forEach((iv, tag) => {
+    for (const [a, b] of iv) {
+      const key = `${a}-${b}`;
+      if (!gruppen.has(key)) gruppen.set(key, { a, b, tage: [] });
+      gruppen.get(key).tage.push(tag);
+    }
+  });
+  return [...gruppen.values()].map(({ a, b, tage }) => ({ '@type': 'OpeningHoursSpecification',
+    dayOfWeek: tage.map((t) => `https://schema.org/${SCHEMA_TAGE[t]}`),
+    opens: hhmm(a), closes: b === 1440 ? '23:59' : hhmm(b) }));
+}
+// ItemList für Listenseiten: Einträge [titel, pfad] in der angezeigten Reihenfolge
+const itemList = (name, eintraegeListe) => ({ '@context': 'https://schema.org', '@type': 'ItemList', name,
+  numberOfItems: eintraegeListe.length,
+  itemListElement: eintraegeListe.map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, url: cfg.domain + p })) });
+const hofItems = (liste) => liste.map((e) => [e.titelSeite, e.pfad]);
+
 // Längste Titelvariante, die (mit Marke) in ~65 Zeichen passt
 const passend = (...varianten) => varianten.find((v) => v.length + 16 <= 65) || varianten[varianten.length - 1];
+
+// Große Städte (gemessen an der Zahl ihrer Postleitzahlen) mit ihrer Seite – für die Startseite
+const GROSSSTAEDTE = (() => {
+  const plzJeOrt = new Map();
+  for (const rows of plz.values()) for (const r of rows) if (!r.org) {
+    const key = r.ort + '|' + r.kreis;
+    if (!plzJeOrt.has(key)) plzJeOrt.set(key, new Set());
+    plzJeOrt.get(key).add(r.plz);
+  }
+  return [...plzJeOrt].sort((a, b) => b[1].size - a[1].size).map(([key]) => {
+    const [name, code] = key.split('|');
+    const k = kreise.get(code);
+    const stadtKreis = k.art === 'Stadt' && (k.name === name || k.titel === name);
+    const o = ORTE.get(code)?.get(name);
+    const ziel = stadtKreis ? { pfad: k.pfad, n: proKreis.get(code)?.length || 0 } : o?.eigen ? { pfad: o.pfad, n: o.liste.length } : null;
+    return ziel && ziel.n >= MIN_SEITE ? { name, ...ziel } : null;
+  }).filter(Boolean).filter((x, i, a) => a.findIndex((y) => y.pfad === x.pfad) === i).slice(0, 20);
+})();
 
 // ---------- Startseite ----------
 const saisonJetzt = JSON.stringify(SAISON.map(([n, frisch, lager]) => [n, frisch, lager || []]));
@@ -535,7 +585,7 @@ const TYP_KREIS = new Map(); // `${t.slug}|${kreis-Code}` → { t, k, liste, pfa
     const proK = new Map();
     for (const e of t.liste) { if (!proK.has(e.kreis)) proK.set(e.kreis, []); proK.get(e.kreis).push(e); }
     for (const [code, liste] of proK) {
-      if (liste.length < 2) continue;
+      if (liste.length < MIN_SEITE) continue;
       const k = kreise.get(code);
       const pfad = `${k.pfad}${slugify(t.plural)}/`;
       if (belegt.has(pfad)) continue;
@@ -553,8 +603,7 @@ schreibe('/', seite({
   klasse: 'start',
   kopfSuche: false,
   jsonld: [{ '@context': 'https://schema.org', '@type': 'Organization', name: cfg.name, url: cfg.domain + '/', logo: cfg.domain + '/icon-512.png' },
-    { '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.domain + '/',
-    potentialAction: { '@type': 'SearchAction', target: cfg.domain + '/suche?q={q}', 'query-input': 'required name=q' } }],
+    { '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.domain + '/', inLanguage: 'de-DE' }],
   inhalt: `
 <section class="held">
   <div class="held-text">
@@ -602,6 +651,10 @@ schreibe('/', seite({
   </ul>
 </section>
 <section class="abschnitt">
+  <h2>Hofläden in großen Städten</h2>
+  <ul class="kreis-liste">${GROSSSTAEDTE.map((x) => `<li><a href="${x.pfad}"><span>Hofläden in ${esc(x.name)}</span><span class="zahl">${zahl(x.n)}</span></a></li>`).join('')}</ul>
+</section>
+<section class="abschnitt">
   <h2>Beliebte Orte für Hofläden</h2>
   <ul class="kreis-liste">${ortSeiten.slice().sort((a, b) => b.liste.length - a.liste.length).slice(0, 30).map((o) => `<li><a href="${o.pfad}"><span>Hofläden in ${esc(o.ortTitel)}</span><span class="zahl">${zahl(o.liste.length)}</span></a></li>`).join('')}</ul>
 </section>
@@ -627,6 +680,10 @@ for (const t of TYPEN) {
     titel: `${t.name} in der Nähe – alle ${zahl(t.liste.length)} ${t.plural} in Deutschland`,
     beschreibung: `${t.name} in der Nähe finden: ${zahl(t.liste.length)} ${t.plural} in ganz Deutschland mit Adresse, Öffnungszeiten und Route – nach Bundesland und Landkreis sortiert.`,
     pfad: `/${t.slug}/`,
+    jsonld: [itemList(`${t.plural} in Deutschland`, vollListe ? proLand.flatMap(({ liste }) => {
+      const proK = new Map(); for (const e of liste) { if (!proK.has(e.k)) proK.set(e.k, []); proK.get(e.k).push(e); }
+      return [...proK].sort((a, b) => a[0].titel.localeCompare(b[0].titel, 'de')).flatMap(([, es]) => hofItems(es)); })
+      : [...TYP_KREIS.values()].filter((x) => x.t === t).map((x) => [`${t.plural} ${x.k.im}`, x.pfad]))],
     krumen: [[t.plural, `/${t.slug}/`]],
     inhalt: `
 <section class="seitenkopf">
@@ -654,9 +711,10 @@ for (const l of laender) {
   const alle = mitDaten.flatMap((k) => proKreis.get(k.code));
   const topOrte = l.kreise.flatMap((k) => [...(ORTE.get(k.code)?.values() || [])]).filter((o) => o.eigen).sort((a, b) => b.liste.length - a.liste.length).slice(0, 24);
   schreibe(`/${l.slug}/`, seite({
-    titel: `Hofladen in ${l.name} – ${zahl(l.anzahl)} Hofläden & Hofautomaten nach Kreis`,
+    titel: passend(`Hofladen in ${l.name} – ${zahl(l.anzahl)} Hofläden & Hofautomaten nach Kreis`, `Hofladen in ${l.name} – ${zahl(l.anzahl)} Hofläden & Automaten`, `Hofläden in ${l.name} nach Kreis`),
     beschreibung: `Hofladen in ${l.name} finden: ${zaehlung(alle)} – nach Landkreis, Stadt und Ort sortiert, mit Öffnungszeiten, Angebot und Karte.`,
     pfad: `/${l.slug}/`,
+    jsonld: [itemList(`Landkreise und Städte in ${l.name}`, l.kreise.filter((k) => (proKreis.get(k.code)?.length || 0) >= MIN_SEITE).map((k) => [k.titel, k.pfad]))],
     krumen: [[l.name, `/${l.slug}/`]],
     inhalt: `
 <section class="seitenkopf">
@@ -703,9 +761,9 @@ ${topOrte.length ? `<section class="abschnitt">
         ? `Hofladen ${im} finden: ${zaehlung(liste)}${orte.length > 1 ? `, u. a. in ${orte.slice(0, 3).map((o) => o.ort).join(', ')}` : ''}. Öffnungszeiten, Angebot, Karte und Route.`
         : `Hofläden ${im}: noch keine Einträge – hier findest du Hofläden in der Umgebung.`,
       pfad: k.pfad,
-      noindex: liste.length === 0,
+      noindex: liste.length < MIN_SEITE,
       klasse: 'kreis',
-      jsonld: f.ld,
+      jsonld: [...(liste.length ? [itemList(`Hofläden ${im}`, hofItems(liste))] : []), ...f.ld],
       krumen: [[l.name, `/${l.slug}/`], [k.titel, k.pfad]],
       inhalt: `
 <section class="seitenkopf">
@@ -735,7 +793,7 @@ ${f.html}
   <ul class="kreis-liste">${nachbarn.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.titel)}</span><span class="zahl">${zahl(proKreis.get(x.code)?.length || 0)}</span></a></li>`).join('')}</ul>
 </section>
 ${REGIONEN.has(k.code) ? quellenHtml(REGIONEN.get(k.code)) : ''}`,
-    }), liste.length > 0);
+    }), liste.length >= MIN_SEITE);
   }
 }
 
@@ -759,6 +817,7 @@ for (const { t, k, liste: roh, pfad } of TYP_KREIS.values()) {
     beschreibung: `${t.plural} ${k.im}: ${zahl(n)} Standorte${ortNamen.length > 1 ? `, u. a. in ${ortNamen.slice(0, 3).join(', ')}` : ` in ${ortNamen[0]}`}. Adresse, Öffnungszeiten, Angebot und Route – plus ${t.plural} in den Nachbarkreisen.`,
     pfad,
     klasse: 'kreis',
+    jsonld: [itemList(`${t.plural} ${k.im}`, hofItems(liste))],
     krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], [t.plural, pfad]],
     inhalt: `
 <section class="seitenkopf">
@@ -810,6 +869,7 @@ for (const u of [
     titel: u.titel(alle.length),
     beschreibung: u.beschreibung(alle.length, nHof),
     pfad: u.pfad,
+    jsonld: [itemList(u.h1, proLand.flatMap(({ ks }) => ks.map(([k]) => [k.titel, k.pfad])))],
     krumen: [[u.h1, u.pfad]],
     inhalt: `
 <section class="seitenkopf">
@@ -848,7 +908,7 @@ for (const o of ortSeiten) {
     beschreibung: `${h1} (${k.titel}): ${nennung(liste.slice(0, 3).map((e) => e.titel))}${liste.length > 3 ? ' und weitere' : ''}. Öffnungszeiten, Angebot und Route – plus Hofläden in der Umgebung.`.slice(0, 300),
     pfad: o.pfad,
     klasse: 'kreis',
-    jsonld: f.ld,
+    jsonld: [itemList(h1, hofItems(liste)), ...f.ld],
     krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], [o.ort, o.pfad]],
     inhalt: `
 <section class="seitenkopf">
@@ -881,12 +941,14 @@ for (const e of eintraege) {
   const naehe = inDerNaehe(e, 4);
   const ld = { '@context': 'https://schema.org', '@type': e.typ === 'hofladen' ? 'Store' : 'LocalBusiness', name: e.titelSeite,
     geo: { '@type': 'GeoCoordinates', latitude: e.lat, longitude: e.lon }, url: cfg.domain + e.pfad };
-  if (e.strasse || e.plz || e.ort) ld.address = { '@type': 'PostalAddress', streetAddress: e.strasse || undefined,
-    postalCode: e.plz || undefined, addressLocality: e.ort || undefined, addressCountry: 'DE' };
+  ld.address = { '@type': 'PostalAddress', streetAddress: e.strasse || undefined, postalCode: e.plz || undefined,
+    addressLocality: e.ortAnzeige, addressRegion: k.landName, addressCountry: 'DE' };
   if (e.telefon) ld.telephone = e.telefon;
   if (e.website) ld.sameAs = [e.website];
   const woche = e.oeffnungszeiten ? parse(e.oeffnungszeiten) : null;
-  if (woche) ld.openingHours = e.oeffnungszeiten.split(';').map((s) => s.trim()).filter((s) => s && !/off|PH/.test(s));
+  if (woche && woche.some((iv) => iv.length)) ld.openingHoursSpecification = oeffnungsSpezifikation(woche);
+  ld['@id'] = cfg.domain + e.pfad + '#hof';
+  if (e.email) ld.email = e.email;
   const ohKurz = e.oeffnungszeiten ? (zeilen(e.oeffnungszeiten) || []).map(([t, v]) => `${t} ${v}`).join(', ') : '';
   const uhr = (m) => `${String(Math.floor(m / 60) % 24 || (m >= 1440 ? 24 : 0)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
   const ohTabelle = woche
@@ -912,11 +974,14 @@ for (const e of eintraege) {
     naechsterHof ? `Der nächste weitere Hofladen ist <a href="${naechsterHof[1].pfad}">${esc(naechsterHof[1].titelSeite)}</a> in ${esc(naechsterHof[1].ortAnzeige)}, etwa ${km(naechsterHof[0])} entfernt.` : '',
   ].filter(Boolean).join(' ');
   const titelEnthaeltOrt = e.titel.includes(e.ortAnzeige);
+  // Sehr lange Namen (OSM-Freitext) im Title kürzen, die H1 bleibt vollständig
+  const tn = e.titelSeite.length > 60 ? `${e.titelSeite.slice(0, 58).replace(/[\s,;–-]+\S*$/, '')} …` : e.titelSeite;
   schreibe(e.pfad, seite({
     titel: titelEnthaeltOrt
-      ? passend(`${e.titelSeite} – Öffnungszeiten, Angebot & Route`, `${e.titelSeite} – Öffnungszeiten & Route`, `${e.titelSeite} – Öffnungszeiten`, e.titelSeite)
-      : passend(`${e.titelSeite} – ${e.art} in ${e.ortAnzeige}, Öffnungszeiten`, `${e.titelSeite} – ${e.art} in ${e.ortAnzeige}`, `${e.titelSeite} in ${e.ortAnzeige}`, e.titelSeite),
-    beschreibung: `${e.titelSeite}: ${e.art} in ${e.ortAnzeige} (${k.titel}).${e.kat.length ? ` Angebot: ${e.kat.map((x) => KATEGORIEN[x]).join(', ')}.` : ''}${ohKurz ? ` Öffnungszeiten: ${ohKurz}.` : ''}${e.telefon ? ` Telefon: ${e.telefon}.` : ''}`.slice(0, 300),
+      ? passend(`${tn} – Öffnungszeiten, Angebot & Route`, `${tn} – Öffnungszeiten & Route`, `${tn} – Öffnungszeiten`, tn)
+      : passend(`${tn} – ${e.art} in ${e.ortAnzeige}, Öffnungszeiten`, `${tn} – ${e.art} in ${e.ortAnzeige}`, `${tn} in ${e.ortAnzeige}`, tn),
+    beschreibung: (() => { const b = `${e.titelSeite}: ${e.art} in ${e.ortAnzeige} (${k.titel}).${e.kat.length ? ` Angebot: ${e.kat.map((x) => KATEGORIEN[x]).join(', ')}.` : ''}${ohKurz ? ` Öffnungszeiten: ${ohKurz}.` : ''}${e.telefon ? ` Telefon: ${e.telefon}.` : ''}`;
+      return (b.length < 110 ? `${b} Adresse, ${ohKurz ? '' : 'Kontakt, '}Karte und Route${naechsterHof ? ` – plus Hofläden in der Nähe von ${e.ortAnzeige}` : ''}.` : b).slice(0, 300); })(),
     pfad: e.pfad,
     noindex: e.duenn,
     klasse: 'hof',
@@ -975,6 +1040,7 @@ schreibe('/karte/', seite({
   titel: 'Hofladen-Karte: alle Hofläden in Deutschland auf einer Karte',
   beschreibung: `Hofladen-Karte: alle ${zahl(eintraege.length)} Hofläden, Milchtankstellen, Eierautomaten und Regiomaten in Deutschland auf einer Karte – hineinzoomen, Hof antippen, Route planen.`,
   pfad: '/karte/',
+  krumen: [['Karte', '/karte/']],
   klasse: 'vollkarte',
   inhalt: `
 <section class="seitenkopf kompakt">
@@ -1000,6 +1066,7 @@ schreibe('/saisonkalender/', seite({
   titel: 'Saisonkalender Obst & Gemüse: was gibt es wann im Hofladen?',
   beschreibung: 'Wann gibt es Spargel, Erdbeeren, Kürbis und Grünkohl aus der Region? Der Saisonkalender für Obst und Gemüse aus deutschem Anbau – Monat für Monat.',
   pfad: '/saisonkalender/',
+  krumen: [['Saisonkalender', '/saisonkalender/']],
   klasse: 'saison',
   inhalt: `
 <section class="seitenkopf">
@@ -1041,6 +1108,7 @@ schreibe('/merkliste/', seite({
   titel: 'Deine Merkliste | Hofladenliste',
   beschreibung: 'Deine gemerkten Hofläden und Hofautomaten – gespeichert nur in deinem Browser.',
   pfad: '/merkliste/',
+  krumen: [['Merkliste', '/merkliste/']],
   noindex: true,
   inhalt: `
 <section class="seitenkopf kompakt">
@@ -1054,8 +1122,8 @@ schreibe('/merkliste/', seite({
 </section>`,
 }), false);
 
-const textSeite = (pfad, titel, beschreibung, html, noindex = true) => schreibe(pfad, seite({ titel: `${titel} | Hofladenliste`, beschreibung, pfad, noindex, klasse: 'textseite', inhalt: `<article class="text">${html}</article>` }), !noindex);
-textSeite('/impressum/', 'Impressum', 'Impressum von hofladenliste.de', `<h1>Impressum</h1>
+const textSeite = (pfad, titel, beschreibung, html, noindex = true) => schreibe(pfad, seite({ titel: `${titel} | Hofladenliste`, beschreibung, pfad, noindex, klasse: 'textseite', krumen: [[titel.replace(/ – .*/, ''), pfad]], inhalt: `<article class="text">${html}</article>` }), !noindex);
+textSeite('/impressum/', 'Impressum', 'Impressum von hofladenliste.de: Anbieter, Kontakt und Verantwortlicher für das Verzeichnis der Hofläden und Hofautomaten.', `<h1>Impressum</h1>
 ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>' : ''}
 <p>Angaben gemäß § 5 DDG</p>
 <p>${esc(imp.name)}<br>${esc(imp.strasse)}<br>${esc(imp.plzOrt)}</p>
@@ -1063,7 +1131,7 @@ ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>'
 <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: ${esc(imp.name)}, Anschrift wie oben.</p>
 <h2>Datenquellen und Lizenzen</h2>
 <p>Einträge: © OpenStreetMap-Mitwirkende, Open Database License (ODbL), <a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>. Postleitzahlen: GeoNames, CC BY 4.0. Umriss Deutschlands: Natural Earth (gemeinfrei). Karte: Leaflet (BSD-2-Clause). Schriften: Zilla Slab und Atkinson Hyperlegible Next (SIL Open Font License).</p>`);
-textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von hofladenliste.de', `<h1>Datenschutzerklärung</h1>
+textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von hofladenliste.de: keine Cookies, kein Tracking – welche Daten beim Besuch, bei Karte und Suche anfallen.', `<h1>Datenschutzerklärung</h1>
 <h2>Verantwortlicher</h2>
 <p>${esc(imp.name) || '[Name]'}, ${esc(imp.strasse) || '[Straße]'}, ${esc(imp.plzOrt) || '[PLZ Ort]'}, ${esc(imp.email) || '[E-Mail]'}</p>
 <h2>Hosting</h2>
@@ -1096,9 +1164,69 @@ schreibe('/404.html', seite({
 }), false);
 
 // ---------- Robots, Sitemap ----------
-writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
-const urls = sitemap.filter((p) => !p.endsWith('.html'));
-writeFileSync(join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((p) => `<url><loc>${cfg.domain}${p}</loc><lastmod>${BUILD_DATUM}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
+
+// Seitenarchiv (data/seiten-stand.json): Inhalts-Hash und Änderungsdatum je Seite, auch für Seiten,
+// die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.
+const STAND_DATEI = join(ROOT, 'data', 'seiten-stand.json');
+const stand = existsSync(STAND_DATEI) ? JSON.parse(readFileSync(STAND_DATEI, 'utf8')) : { seiten: {}, hoefe: {} };
+const ARCHIV_AUSNAHMEN = new Set(['/merkliste/']);
+for (const pfad of ALLE_SEITEN) {
+  if (ARCHIV_AUSNAHMEN.has(pfad)) continue;
+  const h = SEITEN_HASH.get(pfad);
+  const alt = stand.seiten[pfad];
+  if (!alt) stand.seiten[pfad] = [h, BUILD_DATUM];
+  else if (alt[0] !== h) stand.seiten[pfad] = [h, alt[0] == null ? alt[1] : BUILD_DATUM];
+}
+for (const e of eintraege) stand.hoefe[e.slug] = e.osm || e.id;
+const sortiert = (o) => Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]]));
+writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe) }));
+
+// Weiterleitungen für Seiten aus dem Archiv, die es nicht mehr gibt
+const slugNachId = new Map(eintraege.map((e) => [e.osm || e.id, e.slug]));
+const umleitungen = {}, entfernt = [];
+for (const pfad of Object.keys(stand.seiten)) {
+  if (ALLE_SEITEN.has(pfad)) continue;
+  const hof = pfad.match(/^\/hof\/([^/]+)\/$/);
+  if (hof) {
+    const neu = slugNachId.get(stand.hoefe[hof[1]]);
+    if (neu && neu !== hof[1]) umleitungen[pfad] = `/hof/${neu}/`; else entfernt.push(pfad);
+    continue;
+  }
+  // nächste übergeordnete Seite, z. B. aufgelöste Ortsseite → Kreisseite
+  let ziel = pfad;
+  do ziel = ziel.replace(/[^/]+\/$/, ''); while (ziel !== '/' && !ALLE_SEITEN.has(ziel));
+  umleitungen[pfad] = ziel;
+}
+writeFileSync(join(GEN, 'routen.json'), JSON.stringify({ umleitungen, entfernt }));
+console.log(`Seitenarchiv: ${Object.keys(stand.seiten).length} Seiten, ${Object.keys(umleitungen).length} Weiterleitungen, ${entfernt.length} entfernte Höfe (410)`);
+
+// Sitemaps nach Seitentyp mit Sitemap-Index
+const TYP_KREIS_PFADE = new Set([...TYP_KREIS.values()].map((x) => x.pfad));
+const sitemapTyp = (p) => p.startsWith('/hof/') ? 'hoefe'
+  : TYP_KREIS_PFADE.has(p) ? 'kategorien'
+  : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) ? 'orte'
+  : /^\/[^/]+\/[^/]+\/$/.test(p) && laender.some((l) => p.startsWith(`/${l.slug}/`)) ? 'kreise'
+  : 'seiten';
+const gruppen = new Map();
+for (const p of sitemap.filter((x) => x.endsWith('/'))) {
+  const t = sitemapTyp(p);
+  if (!gruppen.has(t)) gruppen.set(t, []);
+  gruppen.get(t).push(p);
+}
+mkdirSync(join(OUT, 'sitemaps'), { recursive: true });
+const indexEintraege = [];
+for (const t of ['seiten', 'kategorien', 'kreise', 'orte', 'hoefe']) {
+  const liste = (gruppen.get(t) || []).sort();
+  for (let i = 0; i < liste.length; i += 40000) {
+    const teil = liste.slice(i, i + 40000);
+    const name = `${t}${liste.length > 40000 ? `-${i / 40000 + 1}` : ''}.xml`;
+    const lastmod = teil.reduce((m, p) => (stand.seiten[p][1] > m ? stand.seiten[p][1] : m), '');
+    writeFileSync(join(OUT, 'sitemaps', name), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${teil.map((p) => `<url><loc>${cfg.domain}${p}</loc><lastmod>${stand.seiten[p][1]}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+    indexEintraege.push([name, lastmod]);
+  }
+}
+writeFileSync(join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexEintraege.map(([n, l]) => `<sitemap><loc>${cfg.domain}/sitemaps/${n}</loc><lastmod>${l}</lastmod></sitemap>`).join('\n')}\n</sitemapindex>\n`);
 
 // ---------- Daten für den Worker ----------
 const plzIndex = {};

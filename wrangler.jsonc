@@ -10,8 +10,8 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
-    "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash",
+    // HTML-Seiten liefert der Worker aus (301 statt 307 bei Schreibvarianten, 410 für entfernte Höfe)
+    "html_handling": "none",
     "run_worker_first": ["/suche", "/plz/*", "/api/*"]
   },
   "routes": [
