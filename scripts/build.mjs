@@ -1170,7 +1170,7 @@ schreibe('/', seite({
       <label for="plz">Postleitzahl, Ort, Name des Hofs – gern mit Produkt</label>
       <div class="plz-zeile">
         <input id="plz" name="q" ${SUCHFELD} placeholder="z. B. Spargel Cottbus" required>
-        <button type="submit">Hofläden finden</button>
+        <button type="submit" aria-label="Hofläden finden"><span class="knopf-lang">Hofläden finden</span><span class="knopf-kurz">Suchen</span></button>
       </div>
       <p class="fehler" id="plz-fehler" hidden>Diese Postleitzahl kennen wir nicht. Bitte prüfe die fünf Ziffern.</p>
       <div class="ort-auswahl" id="ort-auswahl" hidden></div>
