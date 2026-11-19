@@ -17,7 +17,7 @@ const UA = 'HofladenlisteBot/1.0 (+https://hofladenliste.de/mitmachen/; hofladen
 const ZIEL = 'data/impressum.json';
 const NEU_PRUEFEN_TAGE = 120;
 // Soziale Netzwerke, Baukasten-Startseiten, Verzeichnisse und Wettbewerber: dort steht kein Impressum des Hofs
-const FREMD = /(^|\.)(facebook|instagram|google|goo\.gl|wikipedia|youtube|linkedin|tiktok|ebay|kleinanzeigen|twitter|x|whatsapp|linktr|hofladen-bauernladen|regiomat|milchtankstellen|mein-bauernhof|marktschwaermer|dasoertliche|gelbeseiten|11880|cylex|golocal|meinestadt|branchenbuch|yelp|tripadvisor|hofladenfinder|heimischehoflaeden|bauernhofurlaub|landurlaub|creditreform|northdata)\./i;
+const FREMD = /(^|\.)(facebook|instagram|google|goo\.gl|wikipedia|youtube|linkedin|tiktok|ebay|kleinanzeigen|twitter|x|whatsapp|linktr|hofladen-bauernladen|regiomat|milchtankstellen|mein-bauernhof|marktschwaermer|dasoertliche|gelbeseiten|11880|cylex|golocal|meinestadt|branchenbuch|yelp|tripadvisor|hofladenfinder|heimischehoflaeden|bauernhofurlaub|landurlaub|creditreform|northdata|city-map|landservice|regiostars|wirtschaftsforum|stadtbranchenbuch|meinort|ortsdienst)\./i;
 // Domains mit vielen Einträgen sind Plattformen/Ketten: deren Impressum gehört nicht zum einzelnen Hof
 const MAX_EINTRAEGE_PRO_DOMAIN = 4;
 
@@ -60,6 +60,9 @@ const MAIL_UNSINN = /(\.(png|jpe?g|gif|svg|webp|css|js|php|html?)$)|(^|[@.])(exa
 // Abschnitte, in denen fremde Adressen stehen (Webdesign, Hosting, Datenschutzbeauftragte, Behörden, Streitschlichtung)
 const FREMD_KONTEXT = /(webdesign|web-design|gestaltung|umsetzung|realisierung|programmierung|erstellt (von|durch)|design (by|von)|konzept(ion)? (&|und) design|technische umsetzung|hosting|gehostet|provider|datenschutzbeauftragte|aufsichtsbehörde|landesbeauftragte|streitschlichtung|schlichtungsstelle|verbraucherzentrale|bildnachweis|fotos?:|fotografie|kammer|ministerium|landratsamt|kontrollstelle|öko-kontrollstelle|zertifizierungsstelle|redaktion(ell)? verantwortlich.*agentur|agentur)/i;
 
+// Fremde Domains, die nie dem Hof gehören: Agenturen, Medien, Kammern und Behörden
+const FREMD_DOMAIN = /(werbung|werbeagentur|agentur|webdesign|design|media|medien|marketing|kommunikation|internet|webservice|homepage|websites?\b|it-service|druck|verlag|zeitung|kurier|anzeiger|rundschau|lwk|landwirtschaftskammer|handwerkskammer|ihk-|bund\.de$|\.(nrw|bayern|niedersachsen|hessen|sachsen|thueringen|brandenburg|berlin|hamburg|bremen|saarland|rlp|bw|sh|mv|lsa)\.de$|^(poststelle|post)@)/i;
+
 function basisDomain(host) {
   const teile = host.toLowerCase().replace(/^www\./, '').split('.');
   return teile.slice(-2).join('.');
@@ -71,7 +74,7 @@ function namensKern(host) {
 // Alle Adressen einer Seite mit Position und Kontext
 export function mailsAusHtml(html) {
   const funde = [];
-  const text = htmlZuText(html);
+  const text = htmlZuText(html).normalize('NFKC');
   const t2 = entschleiern(text);
   for (const m of t2.matchAll(MAIL_RE)) {
     funde.push({ mail: m[0], pos: m.index / Math.max(t2.length, 1), vorher: t2.slice(Math.max(0, m.index - 160), m.index), text: true });
@@ -87,7 +90,7 @@ export function mailsAusHtml(html) {
   }
   // Kontext für Link-Funde aus dem Text nachtragen (gleiche Adresse)
   for (const f of funde) {
-    f.mail = f.mail.replace(/^[._-]+|[._-]+$/g, '').toLowerCase();
+    f.mail = f.mail.normalize('NFKC').replace(/^[._-]+|[._-]+$/g, '').toLowerCase();
     if (f.vorher == null) {
       const i = t2.toLowerCase().indexOf(f.mail);
       if (i >= 0) { f.vorher = t2.slice(Math.max(0, i - 160), i); f.pos = i / t2.length; }
@@ -112,10 +115,12 @@ export function besteMail(funde, website) {
     let p = 0;
     if (eigeneDomain) p += 4;
     else if (kern.length >= 5 && domain.replace(/[^a-z0-9äöü]/g, '').includes(kern)) p += 3;
+    else if (FREMD_DOMAIN.test(domain)) continue;
     else if (FREEMAIL.test(f.mail)) p += 2;
     else if (/(e-?mail|mail|kontakt)\s*:?\s*$/i.test(vorher.slice(-25))) p += 1;
     else continue; // fremde Domain ohne Hinweis, dass es die Adresse des Hofs ist
     if (/^(info|kontakt|hofladen|laden|mail|post|hallo|hello|office|bestellung|shop|verkauf)@/.test(f.mail)) p += 0.5;
+    if (/^poststelle@/.test(f.mail) && !eigeneDomain) continue;
     if (/^(datenschutz|privacy|dsb|rechnung|buchhaltung|bewerbung|jobs|presse|newsletter)@/.test(f.mail)) p -= 2;
     if (f.link) p += 0.3;
     const alt = kandidaten.get(f.mail);
@@ -176,25 +181,42 @@ async function hole(url, ms = 15000) {
   try { html = new TextDecoder(cs || 'utf-8').decode(buf); } catch { html = new TextDecoder('utf-8').decode(buf); }
   return { url: r.url, html };
 }
+// robots.txt: Gruppe für unseren Bot, sonst „*“; Platzhalter * und $; längste passende Regel gewinnt, Allow bei Gleichstand
+export function robotsRegeln(txt) {
+  const gruppen = []; let akt = null, hatteRegel = false;
+  for (const zeile of txt.split(/\r?\n/)) {
+    const i = zeile.replace(/#.*/, '').indexOf(':');
+    if (i < 0) continue;
+    const key = zeile.slice(0, i).trim().toLowerCase(), wert = zeile.replace(/#.*/, '').slice(i + 1).trim();
+    if (key === 'user-agent') {
+      if (!akt || hatteRegel) { akt = { agents: [], regeln: [] }; gruppen.push(akt); hatteRegel = false; }
+      akt.agents.push(wert.toLowerCase());
+    } else if ((key === 'allow' || key === 'disallow') && akt) { hatteRegel = true; if (wert) akt.regeln.push([key === 'allow', wert]); }
+  }
+  const eigene = gruppen.filter((g) => g.agents.some((x) => x.includes('hofladenliste')));
+  return (eigene.length ? eigene : gruppen.filter((g) => g.agents.includes('*'))).flatMap((g) => g.regeln);
+}
+export function robotsErlaubt(regeln, pfad) {
+  let best = null;
+  for (const [allow, muster] of regeln) {
+    const re = new RegExp(`^${muster.replace(/[.+?^{}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*').replace(/\\\$$|\$$/, '$')}`);
+    if (!re.test(pfad)) continue;
+    if (!best || muster.length > best[1].length || (muster.length === best[1].length && allow)) best = [allow, muster];
+  }
+  return !best || best[0];
+}
 const robotsCache = new Map();
 async function erlaubt(url) {
   const u = new URL(url);
   if (!robotsCache.has(u.origin)) {
-    const regeln = [];
+    let regeln = [];
     try {
       const r = await fetch(`${u.origin}/robots.txt`, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(8000) });
-      if (r.ok) {
-        let aktiv = false, gruppeHatte = false;
-        for (const zeile of (await r.text()).split('\n')) {
-          const [k, ...v] = zeile.replace(/#.*/, '').split(':'); const wert = v.join(':').trim(); const key = k.trim().toLowerCase();
-          if (key === 'user-agent') { if (gruppeHatte) { aktiv = false; gruppeHatte = false; } aktiv ||= wert === '*' || /hofladenliste/i.test(wert); }
-          else if (key === 'disallow' || key === 'allow') { gruppeHatte = true; if (aktiv && key === 'disallow' && wert) regeln.push(wert); }
-        }
-      }
+      if (r.ok && /text\/plain/i.test(r.headers.get('content-type') || 'text/plain')) regeln = robotsRegeln(await r.text());
     } catch { /* keine robots.txt → erlaubt */ }
     robotsCache.set(u.origin, regeln);
   }
-  return !robotsCache.get(u.origin).some((d) => u.pathname.startsWith(d.replace(/\*.*$/, '')));
+  return robotsErlaubt(robotsCache.get(u.origin), u.pathname + u.search);
 }
 
 const STANDARD_PFADE = ['/impressum', '/impressum/', '/impressum.html', '/impressum.php', '/de/impressum', '/impressum.htm', '/imprint'];
@@ -271,6 +293,16 @@ if (process.argv[2] === '--test') {
     fall('Muster-Adresse', besteMail(mailsAusHtml(imp('<p>E-Mail: max@mustermann.de</p>')), W), null),
     fall('Kontrollstelle davor, eigene Domain', besteMail(mailsAusHtml(imp('<p>Öko-Kontrollstelle: DE-ÖKO-039</p><p>E-Mail: info@hof-sonnenschein.de</p>')), W), 'info@hof-sonnenschein.de'),
     fall('Webdesign-Zeile, danach Freemail des Hofs', besteMail(mailsAusHtml(imp('<p>Webdesign: Pixel GmbH</p><p>Hof Sonnenschein</p><p>Dorfstraße 1</p><p>E-Mail: hof.sonne@gmx.de</p>')), W), 'hof.sonne@gmx.de'),
+    fall('Werbeagentur mit Label → nichts', besteMail(mailsAusHtml(imp('<p>E-Mail: info@inpunctowerbung.com</p>')), W), null),
+    fall('Kammer mit Label → nichts', besteMail(mailsAusHtml(imp('<p>E-Mail: info@lwk.nrw.de</p>')), W), null),
+    fall('Behörde → nichts', besteMail(mailsAusHtml(imp('<p>E-Mail: poststelle@nlf.niedersachsen.de</p>')), W), null),
+    fall('Ligatur ﬂ', besteMail(mailsAusHtml(imp('<p>E-Mail: info@geﬂuegel-schneckenburger.de</p>')), 'https://gefluegel-schneckenburger.de'), 'info@gefluegel-schneckenburger.de'),
+    fall('robots: /*? sperrt nur Parameter', robotsErlaubt(robotsRegeln('User-agent: *\nDisallow: /*?\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php'), '/impressum/'), true),
+    fall('robots: /*? sperrt ?p=1', robotsErlaubt(robotsRegeln('User-agent: *\nDisallow: /*?'), '/?p=1'), false),
+    fall('robots: *.pdf$', robotsErlaubt(robotsRegeln('User-agent: *\nDisallow: /*.pdf$'), '/impressum'), true),
+    fall('robots: alles gesperrt', robotsErlaubt(robotsRegeln('User-agent: *\nDisallow: /'), '/impressum'), false),
+    fall('robots: nur fremder Bot gesperrt', robotsErlaubt(robotsRegeln('User-agent: GPTBot\nDisallow: /\n\nUser-agent: *\nAllow: /'), '/impressum'), true),
+    fall('robots: Allow schlägt kürzeres Disallow', robotsErlaubt(robotsRegeln('User-agent: *\nDisallow: /\nAllow: /impressum'), '/impressum'), true),
     fall('Telefon', telefonAusHtml(imp('<p>Tel.: 03562 / 12 34 5<br>Fax: 03562 / 12 34 6</p>')), '03562 / 12 34 5'),
     fall('Telefon +49', telefonAusHtml(imp('<p>Telefon: +49 (0) 35 62 - 12345</p>')), '+49 (0) 35 62 - 12345'),
     fall('Fax allein → nichts', telefonAusHtml(imp('<p>Fax: 03562 123456</p>')), null),
