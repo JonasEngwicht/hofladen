@@ -247,6 +247,25 @@ for (const box of $$('[data-nachricht]')) {
   });
 }
 
+// Mobil: Umschalter zwischen Liste und Karte (Listenseiten mit Karte)
+{
+  const panel = $('.kartenpanel');
+  const liste = $('.werkzeug');
+  if (panel && liste && !panel.closest('[data-vollkarte], [data-route], .hof-karte')) {
+    const knopf = document.createElement('button');
+    knopf.type = 'button'; knopf.className = 'liste-karte-schalter';
+    const zuKarte = () => { knopf.textContent = 'Karte zeigen'; knopf.dataset.ziel = 'karte'; };
+    const zuListe = () => { knopf.textContent = 'Liste zeigen'; knopf.dataset.ziel = 'liste'; };
+    zuKarte();
+    document.body.append(knopf);
+    new IntersectionObserver(([e]) => (e.isIntersecting ? zuListe() : zuKarte()), { threshold: 0.4 }).observe(panel);
+    knopf.addEventListener('click', () => {
+      if (knopf.dataset.ziel === 'karte') { panel.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' }); if (!panel.dataset.geladen && (KACHELN || speicher.get('karteOk') === '1')) starteKarte(panel); }
+      else liste.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    });
+  }
+}
+
 // Hofläden entlang der Route
 if ($('[data-route]')) import(new URL('./route.js' + new URL(import.meta.url).search, import.meta.url)).then((m) => m.route(async () => {
   const p = $('[data-route] .kartenpanel');
