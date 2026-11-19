@@ -16,7 +16,7 @@ import ROUTEN from './generated/routen.json';
 import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
 import { wasWoTrennen } from './waswo.js';
-import { BETRIEB_SCHEMA, TIPP_SCHEMA, tippAnnehmen, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
+import { BETRIEB_SCHEMA, TIPP_SCHEMA, ABO_SCHEMA, saisonAbo, saisonMailsSenden, tippAnnehmen, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
@@ -273,6 +273,7 @@ const SCHEMA = [
   'CREATE INDEX IF NOT EXISTS rueckmeldungen_eintrag ON rueckmeldungen (eintrag, art, status)',
   ...BETRIEB_SCHEMA,
   ...TIPP_SCHEMA,
+  ...ABO_SCHEMA,
 ];
 let schemaOk = false;
 async function schema(env) {
@@ -683,6 +684,7 @@ export default {
   // Täglicher Cron (wrangler.jsonc): Erinnerungen an Betriebe, nur mit ERINNERUNGEN_AKTIV = "ja"
   async scheduled(event, env, ctx) {
     ctx.waitUntil(erinnerungenSenden(env, H).then((r) => console.log('Erinnerungen', JSON.stringify(r))).catch((e) => console.error('Erinnerungen', e.message)));
+    ctx.waitUntil(saisonMailsSenden(env, H).then((r) => console.log('Saison-Mails', JSON.stringify(r))).catch((e) => console.error('Saison-Mails', e.message)));
   },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -707,6 +709,7 @@ export default {
     if (url.pathname === '/api/neuigkeiten') return neuigkeitenApi(url, env, H);
     if (url.pathname === '/api/nachricht') return nachrichtAnnehmen(request, env, ctx, H);
     if (url.pathname === '/api/tipp') return tippAnnehmen(request, env, ctx, H);
+    if (url.pathname === '/api/saison-abo') return saisonAbo(request, env, ctx, H, PLZ);
     if (url.pathname === '/api/turnstile') return new Response(JSON.stringify({ siteKey: env.TURNSTILE_SITE_KEY || null }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
     return seiteAusliefern(request, env, url);
   },

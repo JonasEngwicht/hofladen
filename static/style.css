@@ -650,3 +650,4 @@ html { overflow-x: clip; }
 .tipp-texte p { margin: 0; }
 .tipp-auswahl { display: flex; flex-wrap: wrap; gap: .3rem .9rem; margin: .3rem 0 0; font-weight: 400; }
 fieldset.breit { border: 0; padding: 0; margin: 0; }
+.saison-abo-link { margin: .6rem 0 0; } .saison-abo-link a { font-weight: 600; }

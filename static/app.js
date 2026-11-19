@@ -201,6 +201,30 @@ for (const box of $$('[data-tipps]')) {
   });
 }
 
+// Saison-Benachrichtigung: Produkt vorwählen, Turnstile beim ersten Feldkontakt, Rückmeldungen aus dem Bestätigungslink
+for (const box of $$('[data-saison-abo]')) {
+  const form = $('[data-abo-form]', box), st = $('[data-status]', form);
+  let token = '', geladen = false;
+  const vor = params.get('produkt');
+  if (vor) for (const c of $$('input[name="produkte"]', form)) if (c.value === vor) c.checked = true;
+  if (params.get('bestaetigt')) box.insertAdjacentHTML('afterbegin', '<p class="hinweis-box">Bestätigt! Wir melden uns, sobald ein Hof in deiner Nähe etwas Passendes meldet.</p>');
+  if (params.get('abgemeldet')) box.insertAdjacentHTML('afterbegin', '<p class="hinweis-box">Du bist abgemeldet und bekommst keine Benachrichtigungen mehr. Deine E-Mail-Adresse haben wir gelöscht.</p>');
+  if (params.get('ungueltig')) box.insertAdjacentHTML('afterbegin', '<p class="hinweis-box fehler">Der Link ist ungültig oder wurde schon benutzt.</p>');
+  form.addEventListener('focusin', async () => {
+    if (geladen) return; geladen = true;
+    try { await turnstileIn($('[data-turnstile]', form), (t) => { token = t; }); } catch { st.textContent = 'Der Spam-Schutz konnte nicht geladen werden.'; }
+  });
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    if (!token) { st.textContent = 'Bitte warte kurz, bis die Spam-Prüfung fertig ist.'; return; }
+    const fd = new FormData(form);
+    const r = await fetch('/api/saison-abo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ turnstile: token, produkte: fd.getAll('produkte'), plz: fd.get('plz'), radius: fd.get('radius'), email: fd.get('email') }) });
+    const d = await r.json().catch(() => ({}));
+    if (r.ok) form.innerHTML = '<p class="hinweis-box">Fast geschafft: Bitte bestätige die Benachrichtigung über den Link in der E-Mail, die wir dir gerade geschickt haben.</p>';
+    else { st.textContent = d.fehler || 'Das hat nicht geklappt.'; window.turnstile?.reset(); token = ''; }
+  });
+}
+
 // „Nachricht an den Hof“: Turnstile erst nach dem Klick laden (Drittanbieter)
 for (const box of $$('[data-nachricht]')) {
   const form = $('[data-nachricht-form]', box);

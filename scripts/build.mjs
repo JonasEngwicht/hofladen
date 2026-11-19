@@ -8,7 +8,7 @@ import { createHash } from 'node:crypto';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
 import { rasterIndex, gleicherHof, QUELLEN, quellenId, solawiOk } from './quellen.mjs';
 import { RATGEBER } from './ratgeber.mjs';
-import { TIPP_MERKMALE } from '../src/betrieb.js';
+import { TIPP_MERKMALE, SAISON_PRODUKTE } from '../src/betrieb.js';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml } from '../static/karte.js';
 
@@ -517,6 +517,7 @@ ${inhalt}
     <li><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a></li>
     <li><a href="/bio-hofladen/">Bio-Hofläden</a></li>
     <li><a href="/saisonkalender/">Saisonkalender</a></li>
+    <li><a href="/saison-benachrichtigung/">Saison-Benachrichtigung</a></li>
     <li><a href="/ratgeber/">Ratgeber</a></li>
     <li><a href="/mitmachen/">Hofladen eintragen</a></li>
     <li><a href="/fuer-hoefe/">Für Höfe</a></li>
@@ -1990,6 +1991,7 @@ for (const sp of SAISON_SEITEN) {
   <p>${sp.liste.length ? `${zahl(sp.liste.length)} ${esc(sp.plural)}${nHof !== sp.liste.length ? ` (davon ${zahl(nHof)} Hofläden)` : ''} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')} nennen ${esc(sp.name)} ausdrücklich.` : `Noch hat kein Hof ${esc(sp.name)} ausdrücklich im Eintrag – viele Höfe mit ${esc(KATEGORIEN[sp.gruppe])} verkaufen sie trotzdem in der Saison.`}${saison ? ` Frisch vom Feld gibt es ${esc(sp.name)} von ${esc(saison)}${lager ? `, aus dem Lager ${esc(lager)}` : ''}.` : ''}</p>
   <h2 class="naehe-titel">Hier gibt’s ${esc(sp.name)} in deiner Nähe</h2>
   ${naeheSuche({ produkt: sp.gruppe }, `Höfe mit ${KATEGORIEN[sp.gruppe]} in meiner Nähe`)}
+  ${(() => { const p = SAISON_PRODUKTE.find((x) => x.replace(/^Neue /, '').toLowerCase().startsWith(sp.name.toLowerCase().slice(0, 5))); return p ? `<p class="saison-abo-link"><a href="/saison-benachrichtigung/?produkt=${encodeURIComponent(p)}">🔔 Sag mir Bescheid, wenn es ${esc(sp.name)} in meiner Nähe gibt</a></p>` : ''; })()}
   <form class="kopf-suche gross-suche" action="/suche" method="get"><label class="sr" for="sp-q">Postleitzahl, Ort oder Name des Hofs</label><input id="sp-q" name="q" ${SUCHFELD} placeholder="PLZ, Ort oder Hof" required><button type="submit">Suchen</button></form>
 </section>
 <section class="abschnitt seo-text"><p>Welche Höfe ${esc(sp.name)} anbieten, erkennen wir am Namen des Hofs, an der Beschreibung und an den Angaben in OpenStreetMap. Gerade bei saisonaler Ware lohnt sich vor dem Besuch ein Anruf – Erntebeginn und Verkaufszeiten hängen vom Wetter ab. Wann welches Obst und Gemüse Saison hat, zeigt der <a href="/saisonkalender/">Saisonkalender</a>.</p></section>
@@ -2151,6 +2153,26 @@ ${a.html}
   }));
 }
 
+// Saison-Benachrichtigung per E-Mail (Double-Opt-in), ausgelöst von Neuigkeiten der Betriebe
+schreibe('/saison-benachrichtigung/', seite({
+  titel: 'Saison-Benachrichtigung: Spargel, Erdbeeren & Co. in deiner Nähe | Hofladenliste',
+  beschreibung: 'Lass dich per E-Mail benachrichtigen, wenn Höfe in deiner Nähe melden, dass es Spargel, Erdbeeren, Kürbisse oder Weihnachtsbäume gibt. Kostenlos, jederzeit abbestellbar.',
+  pfad: '/saison-benachrichtigung/', krumen: [['Saison-Benachrichtigung', '/saison-benachrichtigung/']], klasse: 'textseite',
+  inhalt: `<section class="seitenkopf"><h1>Sag mir Bescheid, wenn’s losgeht</h1>
+  <p>Wenn ein Hof in deiner Nähe meldet „Spargel ist da!“ oder „Erdbeeren ab heute“, bekommst du eine kurze E-Mail – höchstens alle drei Tage, gebündelt. Die Meldungen kommen direkt von den Betrieben.</p></section>
+<section class="abschnitt saison-abo" data-saison-abo>
+  <form class="betrieb-form" data-abo-form>
+    <fieldset class="breit"><legend>Was interessiert dich?</legend><p class="tipp-auswahl">${SAISON_PRODUKTE.map((p) => `<label><input type="checkbox" name="produkte" value="${esc(p)}"> ${esc(p)}</label>`).join('')}</p></fieldset>
+    <label>Postleitzahl <input name="plz" inputmode="numeric" pattern="\\d{5}" maxlength="5" required autocomplete="postal-code"></label>
+    <label>Umkreis <select name="radius"><option value="10">10 km</option><option value="25" selected>25 km</option><option value="50">50 km</option></select></label>
+    <label class="breit">E-Mail-Adresse <input name="email" type="email" required autocomplete="email"></label>
+    <div class="breit" data-turnstile></div>
+    <button type="submit" class="knopf">Benachrichtigung bestellen</button>
+    <p class="leise breit" data-status aria-live="polite">Du bekommst zuerst eine E-Mail mit Bestätigungslink. Abmelden geht mit einem Klick in jeder Nachricht. Zum Schutz vor Spam lädt beim Absenden Cloudflare Turnstile.</p>
+  </form>
+</section>`,
+}));
+
 // Ersatzseite ohne Netz (Service Worker)
 schreibe('/offline/', seite({ titel: 'Gerade offline | Hofladenliste', beschreibung: 'Keine Verbindung: Deine Merkliste und zuletzt besuchte Höfe sind trotzdem verfügbar.', pfad: '/offline/', noindex: true, klasse: 'textseite', krumen: [['Offline', '/offline/']],
   inhalt: '<article class="text"><h1>Gerade keine Verbindung</h1><p>Diese Seite ist noch nicht auf deinem Gerät gespeichert. Deine <a href="/merkliste/">Merkliste</a> und Höfe, die du schon einmal geöffnet hast, funktionieren auch ohne Netz.</p><p>Sobald du wieder online bist, lädt die Seite normal.</p></article>' }), false);
@@ -2183,6 +2205,8 @@ ${KACHELN ? '<p>Die Karten liefern wir von unserem eigenen Server aus (Kartendat
 <p>Wenn du eine Postleitzahl eingibst, wird sie an unseren Server übermittelt, um passende Hofläden anzuzeigen. Wenn du „Meinen Standort verwenden“ wählst, fragt dein Browser zuerst um Erlaubnis; die Koordinaten werden nur für diese Suche übertragen und nicht gespeichert. Die zuletzt gesuchte Postleitzahl speichert dein Browser lokal (localStorage).</p>
 <h2>Betreiber-Bereich</h2>
 <p>Betriebe melden sich unter /betrieb/ mit einem Link per E-Mail an, ein Passwort gibt es nicht. Wir speichern dafür die E-Mail-Adresse, die zugeordneten Höfe und den Zeitpunkt der letzten Anmeldung. Nach der Anmeldung setzt dein Browser ein technisch notwendiges Sitzungs-Cookie („hl_sitzung“, 30 Tage), das nur der Anmeldung dient (§ 25 Abs. 2 TTDSG). E-Mails (Anmeldelinks, Bestätigungen) versenden wir über Resend (Resend, Inc., USA, EU-US Data Privacy Framework); übermittelt werden Empfängeradresse und Inhalt der Nachricht (Art. 6 Abs. 1 lit. b DSGVO).</p>
+<h2>Saison-Benachrichtigung</h2>
+<p>Für die Saison-Benachrichtigung speichern wir deine E-Mail-Adresse, Postleitzahl, Umkreis und die gewählten Produkte, bis du dich abmeldest (Art. 6 Abs. 1 lit. a DSGVO, Einwilligung per Bestätigungslink). Beim Abmelden löschen wir die E-Mail-Adresse. Versand über Resend.</p>
 <h2>Tipps von Besuchern</h2>
 <p>Tipps und „Daumen hoch“ zu einem Hof bestätigst du über einen Link per E-Mail (Versand über Resend). Wir speichern Merkmale, Text, den optionalen Vornamen und eine Prüfsumme der E-Mail-Adresse gegen Mehrfachabgaben, nicht die Adresse selbst. Veröffentlicht werden Merkmale, Text, Vorname und Datum, erst nach unserer Prüfung. Auch hier lädt Cloudflare Turnstile erst, wenn du „Tipp geben“ wählst.</p>
 <h2>Nachricht an den Hof (Cloudflare Turnstile)</h2>

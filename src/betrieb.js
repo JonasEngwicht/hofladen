@@ -412,3 +412,99 @@ Viele Grüße
 Hofladenliste – hofladenliste.de` });
   return antwortJson({ ok: true });
 }
+
+// ---------- Saison-Benachrichtigung („Sag mir Bescheid, wenn es Spargel in meiner Nähe gibt“) ----------
+// Double-Opt-in per E-Mail. Ausgelöst von Neuigkeiten der Betriebe („Spargel ist da!“) im gewählten Umkreis,
+// gebündelt höchstens alle drei Tage. Abmelden mit einem Klick in jeder Mail.
+export const SAISON_PRODUKTE = ['Spargel', 'Erdbeeren', 'Kirschen', 'Himbeeren', 'Heidelbeeren', 'Pflaumen', 'Äpfel', 'Birnen', 'Kürbis', 'Neue Kartoffeln', 'Grünkohl', 'Weihnachtsbaum', 'Gans', 'Honig'];
+export const ABO_SCHEMA = [
+  `CREATE TABLE IF NOT EXISTS saison_abos (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL, plz TEXT NOT NULL, lat REAL NOT NULL, lon REAL NOT NULL,
+    radius INTEGER NOT NULL, produkte TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'unbestaetigt', token_hash TEXT, abmelden TEXT NOT NULL,
+    erstellt TEXT NOT NULL, bestaetigt TEXT, letzte_mail TEXT)`,
+  'CREATE INDEX IF NOT EXISTS saison_abos_status ON saison_abos (status)',
+];
+const kmZwischen = (a, b, c, d) => { const r = Math.PI / 180; return 6371 * Math.hypot((d - b) * r * Math.cos(((a + c) / 2) * r), (c - a) * r); };
+const produktPasst = (abo, n) => {
+  const p = String(n.produkt || n.text || '').toLowerCase();
+  return abo.split(',').some((x) => { const w = x.toLowerCase().replace(/^neue\s+/, '').replace(/(en|n|e)$/, ''); return w.length >= 3 && p.includes(w); });
+};
+
+export async function saisonAbo(request, env, ctx, h, plzDaten) {
+  if (!env.STATS || !env.RESEND_API_KEY) return antwortJson({ fehler: 'Gerade nicht möglich.' }, 503);
+  await h.schema(env);
+  const url = new URL(request.url);
+  if (request.method === 'GET') {
+    const t = url.searchParams.get('t') || '', ab = url.searchParams.get('abmelden') || '';
+    if (/^[A-Za-z0-9_-]{20,}$/.test(t)) {
+      const r = await env.STATS.prepare("UPDATE saison_abos SET status = 'aktiv', token_hash = NULL, bestaetigt = ?1, letzte_mail = ?1 WHERE token_hash = ?2 AND status = 'unbestaetigt' RETURNING id").bind(new Date().toISOString(), await h.sha256(t)).first();
+      return Response.redirect(`${h.DOMAIN}/saison-benachrichtigung/?${r ? 'bestaetigt' : 'ungueltig'}=1`, 302);
+    }
+    if (/^[A-Za-z0-9_-]{20,}$/.test(ab)) {
+      // Abmelde-Schlüssel ist nur zum Abmelden gut, deshalb im Klartext gespeichert (bleibt für alle Mails gleich)
+      await env.STATS.prepare("UPDATE saison_abos SET status = 'abgemeldet', email = '' WHERE abmelden = ?1").bind(ab).run();
+      return Response.redirect(`${h.DOMAIN}/saison-benachrichtigung/?abgemeldet=1`, 302);
+    }
+    return antwortJson({ fehler: 'Link ungültig' }, 400);
+  }
+  if (request.method !== 'POST') return antwortJson({ fehler: 'Nur POST' }, 405);
+  const b = await request.json().catch(() => ({}));
+  const ip = request.headers.get('cf-connecting-ip') || '';
+  if (!await turnstilePruefen(env, b.turnstile, ip)) return antwortJson({ fehler: 'Die Spam-Prüfung ist fehlgeschlagen. Bitte lade die Seite neu.' }, 400);
+  const email = String(b.email || '').trim().toLowerCase().slice(0, 190);
+  const plz = String(b.plz || '').trim();
+  const ort = plzDaten[plz];
+  const produkte = [...new Set([].concat(b.produkte || []))].filter((p) => SAISON_PRODUKTE.includes(p));
+  const radius = [10, 25, 50].includes(+b.radius) ? +b.radius : 25;
+  if (!h.EMAIL_RE.test(email)) return antwortJson({ fehler: 'Bitte gib eine gültige E-Mail-Adresse an.' }, 400);
+  if (!ort) return antwortJson({ fehler: 'Diese Postleitzahl kennen wir nicht.' }, 400);
+  if (!produkte.length) return antwortJson({ fehler: 'Bitte wähle mindestens ein Produkt.' }, 400);
+  if (!await grenze(env, h, `abo|${ip}`, 5) || !await grenze(env, h, `abo|${email}`, 3)) return antwortJson({ fehler: 'Zu viele Anmeldungen heute. Bitte versuch es morgen.' }, 429);
+  const token = zufall(), abmelden = zufall();
+  await env.STATS.prepare('INSERT INTO saison_abos (email, plz, lat, lon, radius, produkte, token_hash, abmelden, erstellt) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9)')
+    .bind(email, plz, ort[0], ort[1], radius, produkte.join(','), await h.sha256(token), abmelden, new Date().toISOString()).run();
+  await mailSenden(env, { an: email, betreff: 'Bitte bestätige deine Saison-Benachrichtigung', text: `Hallo,
+
+du möchtest Bescheid bekommen, wenn es ${produkte.join(', ')} im Umkreis von ${radius} km um ${plz} ${ort[3]} gibt. Bitte bestätige das mit einem Klick:
+
+${h.DOMAIN}/api/saison-abo?t=${encodeURIComponent(token)}
+
+Ohne Bestätigung schicken wir dir nichts. Abmelden kannst du dich jederzeit über den Link in jeder Benachrichtigung:
+${h.DOMAIN}/api/saison-abo?abmelden=${encodeURIComponent(abmelden)}
+
+Viele Grüße
+Hofladenliste – hofladenliste.de` });
+  return antwortJson({ ok: true });
+}
+
+// Täglich (Cron): neue Meldungen der Betriebe passend zu Produkt und Umkreis, gebündelt
+export async function saisonMailsSenden(env, h, { jetzt = new Date(), maxMails = 200 } = {}) {
+  if (!env.STATS || !env.RESEND_API_KEY) return { gesendet: 0 };
+  await h.schema(env);
+  const grenzeIso = new Date(jetzt.getTime() - 3 * 864e5).toISOString();
+  const abos = (await env.STATS.prepare("SELECT * FROM saison_abos WHERE status = 'aktiv' AND (letzte_mail IS NULL OR letzte_mail < ?1) LIMIT 2000").bind(grenzeIso).all()).results;
+  if (!abos.length) return { gesendet: 0 };
+  const seit = new Date(jetzt.getTime() - 14 * 864e5).toISOString();
+  const news = (await env.STATS.prepare("SELECT * FROM neuigkeiten WHERE art IN ('da', 'ab', 'verfuegbar') AND erstellt >= ?1 AND bis >= ?2").bind(seit, jetzt.toISOString().slice(0, 10)).all()).results;
+  const idx = h.eintragIndex();
+  const mitOrt = news.map((n) => ({ ...n, e: h.aufloesen(n.sid, idx) })).filter((n) => n.e);
+  let gesendet = 0;
+  for (const a of abos) {
+    if (gesendet >= maxMails) break;
+    const passend = mitOrt.filter((n) => n.erstellt > (a.letzte_mail || a.bestaetigt || '') && produktPasst(a.produkte, n) && kmZwischen(a.lat, a.lon, n.e[0], n.e[1]) <= a.radius)
+      .map((n) => ({ ...n, km: kmZwischen(a.lat, a.lon, n.e[0], n.e[1]) })).sort((x, y) => x.km - y.km).slice(0, 10);
+    if (!passend.length) continue;
+    await env.STATS.prepare('UPDATE saison_abos SET letzte_mail = ?1 WHERE id = ?2').bind(jetzt.toISOString(), a.id).run();
+    await mailSenden(env, { an: a.email, betreff: `${passend[0].text} – ${passend[0].e[3]}${passend.length > 1 ? ` und ${passend.length - 1} weitere` : ''}`, text: `Hallo,
+
+neu in deiner Nähe (${a.plz}, Umkreis ${a.radius} km):
+
+${passend.map((n) => `• ${n.text} – ${n.e[3]}, ${n.e[5]} (${n.km < 1 ? 'unter 1' : Math.round(n.km)} km)\n  ${h.DOMAIN}/hof/${n.e[2]}/`).join('\n\n')}
+
+Die Angaben stammen von den Betrieben selbst.
+
+Abmelden: ${h.DOMAIN}/api/saison-abo?abmelden=${encodeURIComponent(a.abmelden)}
+Hofladenliste – hofladenliste.de` });
+    gesendet++;
+  }
+  return { gesendet };
+}

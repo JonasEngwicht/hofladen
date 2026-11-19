@@ -26,7 +26,7 @@ globalThis.fetch = async (u, init) => {
 };
 const linkAus = (m) => m.text.match(/\/betrieb\/\?anmelden=([A-Za-z0-9_%-]+)/)[1];
 
-let cookie = '';
+let cookie = '', anmeldeCookie = '';
 async function api(pfad, { methode = 'GET', body, form, kopf = {} } = {}) {
   const w = await ladeWorker();
   const init = { method: methode, headers: { Accept: 'application/json', 'cf-connecting-ip': '9.9.9.9', ...(cookie ? { cookie } : {}), ...kopf } };
@@ -56,6 +56,7 @@ test('Übernahme mit passender Adresse: Bestätigungslink, danach angemeldet und
   const e = await api('/api/betrieb/einloesen', { methode: 'POST', body: { token: decodeURIComponent(linkAus(mails[0])) } });
   assert.equal(e.status, 200);
   cookie = e.headers.get('set-cookie').split(';')[0];
+  anmeldeCookie = cookie;
   assert.match(e.headers.get('set-cookie'), /HttpOnly; Secure; SameSite=Lax/);
   // Link ist nur einmal gültig
   assert.equal((await api('/api/betrieb/einloesen', { methode: 'POST', body: { token: decodeURIComponent(linkAus(mails[0])) } })).status, 400);
@@ -189,6 +190,34 @@ test('Tipps: Turnstile, Bestätigung per Link, Moderation, Export ohne E-Mail', 
   const ex = await (await verwaltung('build-export')).json();
   assert.equal(ex.tipps.length, 1);
   assert.ok(!JSON.stringify(ex.tipps).includes('anna@example.org'));
+});
+
+test('Saison-Benachrichtigung: Double-Opt-in, Mail bei passender Meldung im Umkreis, Abmelden', async () => {
+  const { saisonMailsSenden } = await import('../src/betrieb.js');
+  const PLZ = JSON.parse(readFileSync(new URL('../src/generated/plz.json', import.meta.url)));
+  const plz = Object.entries(PLZ).sort((a, b) => Math.hypot(a[1][0] - HOF[0], a[1][1] - HOF[1]) - Math.hypot(b[1][0] - HOF[0], b[1][1] - HOF[1]))[0][0];
+  cookie = '';
+  const vorher = mails.length;
+  assert.equal((await api('/api/saison-abo', { methode: 'POST', body: { email: 'fan@example.org', plz: '00000', produkte: ['Spargel'], turnstile: 'gut' } })).status, 400);
+  assert.equal((await api('/api/saison-abo', { methode: 'POST', body: { email: 'fan@example.org', plz, produkte: ['Spargel', 'Unsinn'], radius: 25, turnstile: 'gut' } })).status, 200);
+  assert.equal(mails.length, vorher + 1);
+  const t = mails.at(-1).text.match(/saison-abo\?t=([A-Za-z0-9_%-]+)/)[1];
+  const ab = mails.at(-1).text.match(/saison-abo\?abmelden=([A-Za-z0-9_%-]+)/)[1];
+  assert.match((await api(`/api/saison-abo?t=${t}`)).headers.get('location'), /bestaetigt=1/);
+  // Betrieb meldet „Spargel ist da!“ (Konto aus dem ersten Test)
+  cookie = anmeldeCookie;
+  assert.equal((await api('/api/betrieb/neuigkeit', { methode: 'POST', body: { sid: HOF[15], art: 'da', produkt: 'Spargel', tage: 10 } })).status, 200);
+  cookie = '';
+  const h = { schema: async () => {}, eintragIndex: () => ({ nachSid: new Map(EINTRAEGE.map((e) => [e[15], e])) }), aufloesen: (x, i) => i.nachSid.get(x) || null, DOMAIN: 'https://hofladenliste.de' };
+  const spaeter = new Date(Date.now() + 4 * 864e5);
+  const n = mails.length;
+  assert.equal((await saisonMailsSenden(env, h, { jetzt: spaeter })).gesendet, 1);
+  assert.match(mails.at(-1).subject, /Spargel ist da!/);
+  assert.match(mails.at(-1).text, /abmelden=/);
+  assert.equal((await saisonMailsSenden(env, h, { jetzt: spaeter })).gesendet, 0, 'nicht doppelt');
+  assert.match((await api(`/api/saison-abo?abmelden=${ab}`)).headers.get('location'), /abgemeldet=1/);
+  assert.equal((await saisonMailsSenden(env, h, { jetzt: new Date(Date.now() + 9 * 864e5) })).gesendet, 0, 'abgemeldet');
+  assert.equal(mails.length, n + 1);
 });
 
 test('Ohne Anmeldung kein Zugriff auf den Betreiber-Bereich', async () => {
