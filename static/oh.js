@@ -1,7 +1,8 @@
 // Einfache Auswertung von OSM-Öffnungszeiten (opening_hours).
 // Unterstützt die häufigen Formen wie "Mo-Fr 08:00-18:00; Sa 08:00-12:00; Su off" und "24/7".
-// Komplexere Angaben (Monate, Wochen, Sonnenaufgang, Kommentare) werden nicht ausgewertet,
-// sondern nur übersetzt angezeigt.
+// Saisonzeiten (Monate, Datumsbereiche, Jahre), offenes Ende („10:00+“), Sonnenauf-/-untergang und
+// Ausweichregeln nur mit Kommentar („|| "nach Vereinbarung"“) wertet status() je Datum aus (regeln/tagesplan).
+// Kalenderwochen, n-ter Wochentag, Schulferien und Regeln mit Kommentar bleiben unausgewertet und werden übersetzt angezeigt.
 
 const TAGE = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 const TAGE_DE = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
@@ -86,14 +87,20 @@ export function zeilen(oh) {
 export function uebersetze(oh) {
   if (!oh) return '';
   return oh
+    .replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ?(\d{1,2})\b(?!:)/g, (_, m, d) => `${+d}. ${m}`)
+    .replace(/\s*\|\|\s*"([^"]*)"/g, ' (sonst $1)').replace(/"([^"]*)"/g, '„$1“')
+    .replace(/(\d{2}:\d{2})\+/g, 'ab $1')
     .replace(/\bTu\b/g, 'Di').replace(/\bWe\b/g, 'Mi').replace(/\bTh\b/g, 'Do').replace(/\bSu\b/g, 'So')
     .replace(/\bPH\b/g, 'Feiertage').replace(/\bSH\b/g, 'Schulferien')
     .replace(/\b(off|closed)\b/g, 'geschlossen').replace(/\bopen\b/g, 'geöffnet')
     .replace(/24\/7/g, 'rund um die Uhr')
-    .replace(/\bJan\b/g, 'Jan.').replace(/\bMar\b/g, 'März').replace(/\bMay\b/g, 'Mai')
-    .replace(/\bOct\b/g, 'Okt.').replace(/\bDec\b/g, 'Dez.')
+    .replace(/\bJan\b/g, 'Jan.').replace(/\bFeb\b/g, 'Feb.').replace(/\bMar\b/g, 'März').replace(/\bApr\b/g, 'Apr.').replace(/\bMay\b/g, 'Mai')
+    .replace(/\bJun\b/g, 'Juni').replace(/\bJul\b/g, 'Juli').replace(/\bAug\b/g, 'Aug.').replace(/\bSep\b/g, 'Sept.')
+    .replace(/\bOct\b/g, 'Okt.').replace(/\bNov\b/g, 'Nov.').replace(/\bDec\b/g, 'Dez.')
     .replace(/\bsunrise\b/g, 'Sonnenaufgang').replace(/\bsunset\b/g, 'Sonnenuntergang')
-    .replace(/(\d)-(\d)/g, '$1–$2').replace(/;\s*/g, '; ');
+    .replace(/(\d)-(\d)/g, '$1–$2')
+    .replace(/(\b(?:Mo|Di|Mi|Do|Fr|Sa|So|Jan\.|Feb\.|März|Apr\.|Mai|Juni|Juli|Aug\.|Sept\.|Okt\.|Nov\.|Dez\.|\d{1,2}|Sonnenaufgang))-(?=Mo|Di|Mi|Do|Fr|Sa|So|Jan|Feb|März|Apr|Mai|Juni|Juli|Aug|Sept|Okt|Nov|Dez|\d|Sonnenuntergang)/g, '$1–')
+    .replace(/;\s*/g, '; ');
 }
 
 // Wochentag (0 = Montag), Minute und Datum (JJJJ-MM-TT) in deutscher Ortszeit
@@ -145,10 +152,214 @@ export function jetztOffen(oh, datum = new Date()) {
   return s ? s.offen : null;
 }
 
+
+// ---------- Erweiterter Leser: Regeln mit Datumsbereichen ----------
+const MONATE = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const MONATE_DE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+const MON = MONATE.join('|');
+const TAG_RE = '(?:Mo|Tu|We|Th|Fr|Sa|Su|PH)(?:-(?:Mo|Tu|We|Th|Fr|Sa|Su))?';
+const PUNKT = '(?:\\d{1,2}:\\d{2}|sunrise|sunset|dawn|dusk|\\((?:sunrise|sunset|dawn|dusk)[+-]\\d{1,2}:\\d{2}\\))';
+const REGEL_CACHE = new Map();
+
+// Zeitpunkt: Minuten oder Sonnenereignis mit Versatz
+function punktLesen(t) {
+  const m = t.match(/^(\d{1,2}):(\d{2})$/);
+  if (m) return +m[1] <= 24 && +m[2] < 60 ? { min: +m[1] * 60 + +m[2] } : null;
+  const s = t.match(/^\(?(sunrise|sunset|dawn|dusk)(?:([+-])(\d{1,2}):(\d{2}))?\)?$/);
+  if (!s) return null;
+  return { ev: s[1], off: s[2] ? (s[2] === '-' ? -1 : 1) * (+s[3] * 60 + +s[4]) : 0 };
+}
+
+// Datums-Auswahl am Regelanfang, z. B. „Apr-Oct“, „May 01-Oct 31“, „Apr,May,Nov 16-30“, „2026 Dec 24-26,31“
+function datumLesen(r) {
+  const bereiche = [];
+  let rest = r, jahr = null, letzterMonat = null;
+  const j = rest.match(/^(\d{4})\s+(?=(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b)/);
+  if (j) { jahr = +j[1]; rest = rest.slice(j[0].length); }
+  const item = new RegExp(`^(${MON})(?:\\s*(\\d{1,2})(?!\\d*:\\d))?(?:-(?:(${MON})\\s*)?(\\d{1,2}(?!\\d*:\\d))?)?(?![a-z])`);
+  const nurTag = /^(\d{1,2})(?:-(\d{1,2}))?(?!\d*:\d)(?=\s*[,:;]|\s+[A-Za-z]|\s*$)/;
+  for (let erst = true; ; erst = false) {
+    let m = rest.match(item);
+    if (m) {
+      const m1 = MONATE.indexOf(m[1]) + 1, m2 = m[3] ? MONATE.indexOf(m[3]) + 1 : (m[4] ? m1 : (m[0].includes('-') ? null : m1));
+      if (m2 == null) return null;
+      const d1 = m[2] ? +m[2] : 1, d2 = m[4] ? +m[4] : (m[3] || !m[2] ? 31 : d1);
+      bereiche.push([m1 * 100 + d1, m2 * 100 + d2]); letzterMonat = m2;
+      rest = rest.slice(m[0].length);
+    } else if (!erst && letzterMonat && (m = rest.match(nurTag))) {
+      bereiche.push([letzterMonat * 100 + +m[1], letzterMonat * 100 + +(m[2] || m[1])]);
+      rest = rest.slice(m[0].length);
+    } else if (erst) return { bereiche: null, jahr: null, rest: r };
+    else return null;
+    const komma = rest.match(/^\s*,\s*/);
+    if (!komma) break;
+    const weiter = rest.slice(komma[0].length);
+    if (!new RegExp(`^(?:${MON})\\b|^\\d{1,2}(?!\\d*:\\d)`).test(weiter)) break;
+    rest = weiter;
+  }
+  return { bereiche, jahr, rest: rest.replace(/^\s*:?\s*/, '') };
+}
+
+// Regeln lesen: [{ bereiche, jahr, tage, ph, zeiten | 'off' }] oder null, wenn nicht auswertbar
+export function regeln(oh) {
+  if (!oh) return null;
+  if (REGEL_CACHE.has(oh)) return REGEL_CACHE.get(oh);
+  let erg = null;
+  try { erg = regelnLesen(oh); } catch { erg = null; }
+  REGEL_CACHE.set(oh, erg);
+  return erg;
+}
+function regelnLesen(oh) {
+  // Ausweichregeln, die nur einen Kommentar tragen („|| "nach Vereinbarung"“), ändern die festen Zeiten nicht
+  let s = oh.trim().replace(/\s*\|\|\s*"[^"]*"/g, '');
+  if (s.includes('||')) return null;
+  // Eigenständige Kommentare, die nur zusätzliche Termine nach Absprache nennen, ebenso
+  s = s.split(';').filter((r) => !/^\s*"[^"]*(vereinbarung|absprache|telefon|appointment|anmeldung|registration|reservation|if present)[^"]*"\s*$/i.test(r)).join(';');
+  if (/["[\]]|\bweek\b|\bSH\b|easter|unknown/i.test(s)) return null;
+  // Komma vor einer neuen Auswahl = zusätzliche Regel („Mo-Sa 08:30-12:30, Mo,Fr 14:00-18:00“), markiert mit „+“
+  s = s.replace(/\s*-\s*/g, '-')
+    .replace(new RegExp(`(\\d{2}:\\d{2}\\+?|\\b(?:off|closed))\\s*,\\s*(?=(?:Mo|Tu|We|Th|Fr|Sa|Su|PH|${MON})\\b)`, 'g'), '$1;+ ')
+    .replace(new RegExp(`\\b(${MON})(\\d{1,2})\\b`, 'g'), '$1 $2');
+  if (s === '24/7') s = '00:00-24:00';
+  const liste = [];
+  for (let regel of s.split(';')) {
+    regel = regel.trim();
+    if (!regel) continue;
+    const zusatz = regel.startsWith('+');
+    if (zusatz) regel = regel.slice(1).trim();
+    if (/^24\/7$/.test(regel)) regel = '00:00-24:00';
+    const d = datumLesen(regel);
+    if (!d) return null;
+    const m = d.rest.match(new RegExp(`^(${TAG_RE}(?:\\s*,\\s*${TAG_RE})*)?\\s*(.*)$`));
+    if (!m) return null;
+    const tagTeil = m[1], zeitTeil = m[2].replace(/^24\/7$/, '00:00-24:00').trim();
+    let tage = null, ph = false;
+    if (tagTeil) {
+      tage = [];
+      for (const stueck of tagTeil.split(',').map((x) => x.trim())) {
+        if (stueck === 'PH') { ph = true; continue; }
+        const [a, b] = stueck.split('-');
+        const ia = TAGE.indexOf(a), ib = b ? TAGE.indexOf(b) : ia;
+        if (ia < 0 || ib < 0) return null;
+        for (let i = ia; ; i = (i + 1) % 7) { tage.push(i); if (i === ib) break; }
+      }
+    }
+    let zeiten;
+    if (/^(off|closed)$/i.test(zeitTeil)) zeiten = 'off';
+    else if (zeitTeil === '') return null; // Auswahl ohne Zeiten („Th, Fr“, „Jun 29-Aug 15“) ist meist ein Eintragsfehler
+    else if (zeitTeil === 'open') zeiten = [{ von: { min: 0 }, bis: { min: 1440 } }];
+    else {
+      zeiten = [];
+      for (const z of zeitTeil.split(',').map((x) => x.trim())) {
+        const zm = z.match(new RegExp(`^(${PUNKT})(?:-(${PUNKT}))?(\\+)?$`));
+        if (!zm || (!zm[2] && !zm[3])) return null;
+        const von = punktLesen(zm[1]), bis = zm[2] ? punktLesen(zm[2]) : null;
+        if (!von || (zm[2] && !bis)) return null;
+        zeiten.push({ von, bis, offenEnde: !bis });
+      }
+    }
+    liste.push({ bereiche: d.bereiche, jahr: d.jahr, tage, ph, zeiten, zusatz });
+  }
+  return liste.length ? liste : null;
+}
+
+// Datum (JJJJ-MM-TT) verschieben und Wochentag (0 = Montag) bestimmen
+export function plusTage(ymd, n) {
+  const d = new Date(Date.UTC(+ymd.slice(0, 4), +ymd.slice(5, 7) - 1, +ymd.slice(8, 10) + n));
+  return d.toISOString().slice(0, 10);
+}
+const wochentag = (ymd) => (new Date(`${ymd}T12:00:00Z`).getUTCDay() + 6) % 7;
+
+// Sonnenzeiten in Minuten deutscher Ortszeit (NOAA-Näherung, auf wenige Minuten genau).
+// Ohne Ort: Mitte Deutschlands; Abweichung je nach Lage bis etwa eine halbe Stunde.
+function sommerzeit(ymd) {
+  const j = +ymd.slice(0, 4);
+  const letzterSonntag = (m) => { const d = new Date(Date.UTC(j, m + 1, 0)); d.setUTCDate(d.getUTCDate() - d.getUTCDay()); return d.toISOString().slice(0, 10); };
+  return ymd >= letzterSonntag(2) && ymd < letzterSonntag(9);
+}
+export function sonnenzeiten(ymd, ort = {}) {
+  const lat = ort.lat ?? 51.16, lon = ort.lon ?? 10.45;
+  const n = Math.round((Date.UTC(+ymd.slice(0, 4), +ymd.slice(5, 7) - 1, +ymd.slice(8, 10)) - Date.UTC(+ymd.slice(0, 4), 0, 1)) / 864e5) + 1;
+  const g = (2 * Math.PI / 365) * (n - 1);
+  const eq = 229.18 * (0.000075 + 0.001868 * Math.cos(g) - 0.032077 * Math.sin(g) - 0.014615 * Math.cos(2 * g) - 0.040849 * Math.sin(2 * g));
+  const dek = 0.006918 - 0.399912 * Math.cos(g) + 0.070257 * Math.sin(g) - 0.006758 * Math.cos(2 * g) + 0.000907 * Math.sin(2 * g) - 0.002697 * Math.cos(3 * g) + 0.00148 * Math.sin(3 * g);
+  const rad = Math.PI / 180, versatz = sommerzeit(ymd) ? 120 : 60;
+  const zeit = (zenit, auf) => {
+    const x = Math.cos(zenit * rad) / (Math.cos(lat * rad) * Math.cos(dek)) - Math.tan(lat * rad) * Math.tan(dek);
+    const ha = Math.acos(Math.max(-1, Math.min(1, x))) / rad;
+    return Math.round(720 - 4 * (lon + (auf ? ha : -ha)) - eq + versatz);
+  };
+  return { sunrise: zeit(90.833, true), sunset: zeit(90.833, false), dawn: zeit(96, true), dusk: zeit(96, false) };
+}
+
+function inBereich(ymd, r) {
+  if (r.jahr && +ymd.slice(0, 4) !== r.jahr) return false;
+  if (!r.bereiche) return true;
+  const md = +ymd.slice(5, 7) * 100 + +ymd.slice(8, 10);
+  return r.bereiche.some(([a, b]) => (a <= b ? md >= a && md <= b : md >= a || md <= b));
+}
+
+// Zeiten eines bestimmten Tages: [[von, bis, offenEnde]] in Minuten, [] = geschlossen, null = unklar
+export function tagesplan(oh, ymd, land = '', ort = {}) {
+  const liste = regeln(oh);
+  if (!liste) return null;
+  const tag = wochentag(ymd), ft = feiertag(ymd, land);
+  // Spätere Regeln ersetzen frühere für dieselben Tage; Zusatzregeln (nach Komma) ergänzen sie
+  let normal = null, feiertags = null;
+  const anwenden = (alt, r) => (r.zusatz && Array.isArray(alt) && Array.isArray(r.zeiten) ? [...alt, ...r.zeiten] : r.zeiten);
+  for (const r of liste) {
+    if (!inBereich(ymd, r)) continue;
+    const ohneTage = !r.tage && !r.ph;
+    if (ohneTage || r.tage?.includes(tag)) normal = anwenden(normal, r);
+    if (r.ph || ohneTage) feiertags = anwenden(feiertags, r);
+  }
+  let zeiten = normal;
+  if (ft) { if (!feiertags) return null; zeiten = feiertags; }
+  if (!zeiten || zeiten === 'off') return [];
+  let sonne = null;
+  const min = (p) => (p.min != null ? p.min : (sonne ??= sonnenzeiten(ymd, ort))[p.ev] + p.off);
+  return zeiten.map((z) => {
+    const von = min(z.von);
+    if (z.offenEnde) return von === 0 ? [0, 1440, false] : [von, null, true];
+    let bis = min(z.bis);
+    if (bis <= von) bis += 1440;
+    return [von, bis, false];
+  });
+}
+
+const monatTag = (ymd) => `${+ymd.slice(8, 10)}. ${MONATE_DE[+ymd.slice(5, 7) - 1]}`;
+function statusNachDatum(oh, datum, land, ort) {
+  const { min, ymd } = berlinZeit(datum);
+  const tag = wochentag(ymd);
+  const ft = feiertag(ymd, land);
+  const plan = tagesplan(oh, ymd, land, ort);
+  if (!plan) return { offen: null, kurz: ft ? `${ft}: Öffnungszeiten an Feiertagen unklar` : 'Öffnungszeiten heute unklar', heute: ft ? 'Feiertag' : 'unklar' };
+  const sonne = regeln(oh).some((r) => r.zeiten !== 'off' && r.zeiten.some((z) => z.von.ev || z.bis?.ev));
+  const ca = sonne ? 'ca. ' : '';
+  const heute = plan.length ? plan.map(([a, b]) => (b == null ? `ab ${uhr(a)}` : `${uhr(a)}–${uhr(b)}`)).join(', ') : (ft ? `geschlossen (${ft})` : 'geschlossen');
+  for (const [a, b] of plan) {
+    if (b == null && min >= a) return { offen: null, kurz: `Ab ${uhr(a)} geöffnet, Ende nicht angegeben`, heute };
+    if (b != null && min >= a && min < b) return { offen: true, kurz: a === 0 && b >= 1440 ? 'Heute durchgehend geöffnet' : `Geöffnet bis ${ca}${uhr(b % 1440 || 1440)}`, heute };
+  }
+  const gestern = tagesplan(oh, plusTage(ymd, -1), land, ort) || [];
+  for (const [, b] of gestern) if (b != null && b > 1440 && min + 1440 < b) return { offen: true, kurz: `Geöffnet bis ${ca}${uhr(b - 1440)}`, heute };
+  const spaeter = plan.filter(([a]) => a > min).sort((x, y) => x[0] - y[0])[0];
+  if (spaeter) return { offen: false, kurz: `Öffnet um ${ca}${uhr(spaeter[0])}`, heute };
+  for (let i = 1; i <= 400; i++) {
+    const d = plusTage(ymd, i);
+    const p = tagesplan(oh, d, land, ort);
+    if (!p || !p.length) continue; // geschlossen oder Feiertag ohne Angabe
+    const t = (tag + i) % 7;
+    if (i <= 6) return { offen: false, kurz: `Öffnet ${i === 1 ? 'morgen' : TAGE_DE[t]} ${ca}${uhr(p[0][0])}`, heute };
+    return { offen: false, kurz: `Saisonpause, öffnet am ${monatTag(d)}`, heute };
+  }
+  return { offen: false, kurz: 'Geschlossen', heute };
+}
+
 // Status für die Anzeige: { offen, kurz: "Geöffnet bis 18:00" | "Öffnet um 14:00" | "Öffnet Do 15:00" | "Geschlossen", heute: "08:00–18:00" | "geschlossen" }
-export function status(oh, datum = new Date(), land = '') {
+export function status(oh, datum = new Date(), land = '', ort = {}) {
   const w = parse(oh);
-  if (!w) return null;
+  if (!w) return regeln(oh) ? statusNachDatum(oh, datum, land, ort) : null;
   const { tag, min, ymd } = berlinZeit(datum);
   const ganz = w.every((iv) => iv.length === 1 && iv[0][0] === 0 && iv[0][1] >= 1440);
   if (ganz) return { offen: true, kurz: 'Rund um die Uhr geöffnet', heute: 'durchgehend' };
