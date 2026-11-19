@@ -87,6 +87,8 @@ main { display: block; }
 .plz-zeile input:focus { outline: none; }
 .plz-zeile:focus-within { box-shadow: 0 0 0 4px var(--raps); }
 .plz-zeile button { border: 0; background: var(--raps); color: var(--fichte); font: 700 1.05rem var(--schrift); padding: 0 1.2rem; border-radius: calc(var(--r) - 4px); cursor: pointer; white-space: nowrap; }
+.knopf-kurz { display: none; }
+@media (max-width: 420px) { .plz-zeile .knopf-lang { display: none; } .plz-zeile .knopf-kurz { display: inline; } }
 .plz-zeile button:hover { background: #FFD24A; }
 .held .fehler { color: #FFB4C6; margin-top: .6rem; }
 .wunsch { border: 0; padding: 0; margin: 1.3rem 0 0; display: flex; flex-wrap: wrap; gap: .45rem; max-width: 32rem; }
