@@ -70,6 +70,10 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "foursquare/3aba0c76e4924623d9e03968": {
+  "geprueft": "2026-11-19",
+  "fehler": "fetch failed"
+ },
  "foursquare/3babde4c78e44ef9ff040567": {
   "felder": {
    "email": {
@@ -85,6 +89,16 @@
    "email": {
     "wert": "info@marktscheune-meckse.de",
     "quelle": "http://www.marktscheune-meckse.de/impressum.htm",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "foursquare/471a21f1462949b55fdd1c21": {
+  "felder": {
+   "email": {
+    "wert": "info@saboe-hof.de",
+    "quelle": "https://saboe-hof.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -132,6 +146,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "foursquare/52c17e8c11d226b82f1ae474": {
+  "felder": {
+   "email": {
+    "wert": "hofladen@karlbergfelder.de",
+    "quelle": "https://karlbergfelder.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "foursquare/535cdeeb498e6c5d2079fa20": {
   "felder": {
    "email": {
@@ -165,6 +189,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "foursquare/57e4594f498ec6a0c984fa0c": {
+  "felder": {
+   "email": {
+    "wert": "marion.rothschild@biohof-ihlow.de",
+    "quelle": "https://www.biohof-ihlow.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "foursquare/57fca643498eb6c5147ee541": {
   "felder": {
    "email": {
@@ -180,6 +214,16 @@
    "email": {
     "wert": "info@barfbedarf.de",
     "quelle": "https://www.barfbedarf.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "foursquare/5a0d4d106fd62668f8d3f3e3": {
+  "felder": {
+   "email": {
+    "wert": "info@malsch-automaten.de",
+    "quelle": "https://www.malsch-automaten.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -309,6 +353,14 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "foursquare/60f05c070d92cd63d7493ef6": {
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
+ "foursquare/61599a8e83e1d8392f4d1efd": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "foursquare/62c3c88084014566099498f4": {
   "felder": {
    "email": {
@@ -371,6 +423,16 @@
   "fehler": "HTTP 403"
  },
  "foursquare/6a496fb03107bc017e17a473": {
+  "geprueft": "2026-11-19"
+ },
+ "foursquare/6a4970003107bc017e17e42b": {
+  "felder": {
+   "email": {
+    "wert": "info@annettenhof.de",
+    "quelle": "https://deluettewollladen.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
   "geprueft": "2026-11-19"
  },
  "foursquare/6a4975f83107bc017e1c96db": {
@@ -450,6 +512,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "foursquare/7743cd2991d04d50b50850da": {
+  "felder": {
+   "email": {
+    "wert": "info@biolandhof-meiers.de",
+    "quelle": "http://www.biolandhof-meiers.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "foursquare/7b432b85b2fa4ca58189ff09": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -515,6 +587,16 @@
  "foursquare/8d9d226563ac4b397e858881": {
   "geprueft": "2026-11-19"
  },
+ "foursquare/8ed1346a32b84588b87ea936": {
+  "felder": {
+   "email": {
+    "wert": "kontakt@gerlebogker-gmbh.de",
+    "quelle": "https://gerlebogker-gmbh.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "foursquare/9350856c8a220fda94f02855": {
   "felder": {
    "email": {
@@ -571,12 +653,30 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "foursquare/b1ac90a58f2341d2c8d56586": {
+  "felder": {
+   "email": {
+    "wert": "info@kernmuehle.de",
+    "quelle": "https://www.kernmuehle.de/service/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "foursquare/b45f02a60a794c3858bfec37": {
   "geprueft": "2026-11-19"
  },
  "foursquare/b588725587c24f5842b49405": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "foursquare/ba7aa219fe9241efe0a708fc": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
+ "foursquare/c346c80a7f824c4f41212403": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "foursquare/c5381087354f44a188443277": {
   "felder": {
@@ -802,6 +902,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "kvm/5313ecf15ffd46249001da797314c6a4": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "kvm/568ee5ce7c784bf98f4d742ff46d8737": {
   "felder": {
    "email": {
@@ -885,6 +989,10 @@
  "kvm/998e35e761e34bc0a2148dd0cfd515c3": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "kvm/99e2e60aae934f00b100a6e289615dae": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "kvm/a31d23e8958c4125b70cb0870f7d8642": {
   "geprueft": "2026-11-19"
@@ -1126,6 +1234,21 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/10038588891": {
+  "felder": {
+   "email": {
+    "wert": "info@imkerei-gayer.de",
+    "quelle": "https://www.imkerei-gayer.de/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 173 8785813",
+    "quelle": "https://www.imkerei-gayer.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/10041233968": {
   "felder": {
    "email": {
@@ -1186,6 +1309,21 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/10103718931": {
+  "felder": {
+   "email": {
+    "wert": "info@kommune-niederkaufungen.de",
+    "quelle": "https://www.kommune-niederkaufungen.de/kontakt/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "05605-80070",
+    "quelle": "https://www.kommune-niederkaufungen.de/kontakt/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/10108117027": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 420"
@@ -1218,6 +1356,16 @@
  "node/10156061293": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
+ },
+ "node/10159526711": {
+  "felder": {
+   "email": {
+    "wert": "post@landwirtschaft-deskau.de",
+    "quelle": "https://www.landwirtschaft-deskau.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/10161889119": {
   "geprueft": "2026-11-19",
@@ -1265,6 +1413,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/10235944249": {
+  "felder": {
+   "email": {
+    "wert": "info@hof-kindervatter.de",
+    "quelle": "https://hof-kindervatter.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/10242145911": {
   "felder": {
    "email": {
@@ -1298,6 +1456,21 @@
  "node/10247165519": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/10264871899": {
+  "felder": {
+   "email": {
+    "wert": "bauernhof_metz@yahoo.com",
+    "quelle": "https://www.landwirtschaftmetz.de/kontakt-1",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
+ "node/10270274185": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/10274810826": {
   "geprueft": "2026-11-19",
@@ -1549,6 +1722,17 @@
  "node/10763137376": {
   "geprueft": "2026-11-19"
  },
+ "node/10766137714": {
+  "felder": {
+   "email": {
+    "wert": "info@hofladen-fehling.de",
+    "quelle": "https://www.hofladen-fehling.de/info/mein-kontakt.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "node/10766236770": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -1568,6 +1752,9 @@
   "geprueft": "2026-11-19"
  },
  "node/10793767690": {
+  "geprueft": "2026-11-19"
+ },
+ "node/10799114462": {
   "geprueft": "2026-11-19"
  },
  "node/10807359858": {
@@ -1795,6 +1982,21 @@
  "node/10923880399": {
   "geprueft": "2026-11-19"
  },
+ "node/10937005032": {
+  "felder": {
+   "email": {
+    "wert": "kathrin.bergmann@htp-tel.de",
+    "quelle": "https://www.echt-schaf.eu/kontakt/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "05182/3307",
+    "quelle": "https://www.echt-schaf.eu/kontakt/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/10937881800": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
@@ -1827,6 +2029,16 @@
    "email": {
     "wert": "eichenhof-glaadt@web.de",
     "quelle": "http://eichenhof-glaadt.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/10965771451": {
+  "felder": {
+   "email": {
+    "wert": "info@angushof-schauer.de",
+    "quelle": "https://angushof-schauer.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -1872,6 +2084,16 @@
    "telefon": {
     "wert": "015164411993",
     "quelle": "https://www.metzgereiboehm.com/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/10977411300": {
+  "felder": {
+   "email": {
+    "wert": "post@landwirtschaft-deskau.de",
+    "quelle": "https://www.landwirtschaft-deskau.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -1934,6 +2156,21 @@
    "email": {
     "wert": "manfred.knoeferl@knoeferl-mundm.de",
     "quelle": "https://www.knoeferl-mundm.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/11044370587": {
+  "felder": {
+   "email": {
+    "wert": "kontakt@kasimirlieselotte.de",
+    "quelle": "https://www.kasimirlieselotte.de/Service/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 (0) 3327 43 72 09 0",
+    "quelle": "https://www.kasimirlieselotte.de/Service/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -2153,6 +2390,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/11197412785": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "node/11197716511": {
   "felder": {
    "email": {
@@ -2219,9 +2460,39 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "node/11236814280": {
+  "felder": {
+   "email": {
+    "wert": "greenplantern@web.de",
+    "quelle": "https://greenplantern.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 176 56338145",
+    "quelle": "https://greenplantern.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/11247051471": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/11247689739": {
+  "felder": {
+   "email": {
+    "wert": "kontakt@blueten.gold",
+    "quelle": "https://xn--blten-lva.gold/policies/legal-notice",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+4995269505658",
+    "quelle": "https://xn--blten-lva.gold/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/11248553820": {
   "geprueft": "2026-11-19",
@@ -2381,6 +2652,25 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/11492135609": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
+ "node/11492504169": {
+  "felder": {
+   "email": {
+    "wert": "info@der-bienenkorb.de",
+    "quelle": "https://www.der-bienenkorb.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 8323 9698783",
+    "quelle": "https://www.der-bienenkorb.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/11503264880": {
   "felder": {
    "email": {
@@ -2434,6 +2724,16 @@
    "email": {
     "wert": "hof-am-wall@t-online.de",
     "quelle": "https://www.milchtankstelle-langen.de/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/11601958801": {
+  "felder": {
+   "email": {
+    "wert": "info@pellens-hortensien.de",
+    "quelle": "https://www.pellens-hortensien.de/kontakt/",
     "stand": "2026-11-19"
    }
   },
@@ -2573,6 +2873,20 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/11750792470": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
+ "node/11752312423": {
+  "felder": {
+   "email": {
+    "wert": "julian.koenig@posteo.de",
+    "quelle": "https://gemueseoase.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/11752583623": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -2597,6 +2911,21 @@
    "email": {
     "wert": "info@biohof-wenninger.de",
     "quelle": "http://www.biohof-wenninger.de/impressum---datenschutz.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/11758799369": {
+  "felder": {
+   "email": {
+    "wert": "info@hofladen-bayern.de",
+    "quelle": "https://www.hofladen-bayern.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "015120188400",
+    "quelle": "https://www.hofladen-bayern.de/policies/legal-notice",
     "stand": "2026-11-19"
    }
   },
@@ -2636,6 +2965,16 @@
    "email": {
     "wert": "bruns-bergedorf@web.de",
     "quelle": "https://www.gemuesehof-bruns.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/11795362303": {
+  "felder": {
+   "email": {
+    "wert": "spargelhof-pruecklmayer@web.de",
+    "quelle": "http://www.spargelhof-pruecklmayer.de/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -2885,6 +3224,21 @@
  "node/11985401210": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "node/11998940931": {
+  "felder": {
+   "email": {
+    "wert": "info@mobilstallverband.de",
+    "quelle": "https://mein-mobil-ei.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 173 6429 619",
+    "quelle": "https://mein-mobil-ei.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/11999398704": {
   "geprueft": "2026-11-19",
@@ -3143,6 +3497,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/12207805709": {
+  "felder": {
+   "email": {
+    "wert": "info@obsthof-harms.de",
+    "quelle": "https://www.obsthof-harms.de/Impressum-Haftungsausschluss/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/12219408569": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -3152,6 +3516,21 @@
    "email": {
     "wert": "post@karls.de",
     "quelle": "https://karls.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/12222405311": {
+  "felder": {
+   "email": {
+    "wert": "riehlebiene@web.de",
+    "quelle": "https://www.riehlebiene.de/Impressum-Datenschutzerklaerung/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0172 7385964",
+    "quelle": "https://www.riehlebiene.de/Impressum-Datenschutzerklaerung/",
     "stand": "2026-11-19"
    }
   },
@@ -3204,6 +3583,17 @@
   "geprueft": "2026-11-19",
   "fehler": "The operation was aborted due to timeout"
  },
+ "node/12293454248": {
+  "felder": {
+   "email": {
+    "wert": "info@lindenhof-aidlingen.de",
+    "quelle": "https://www.lindenhof-aidlingen.de/KONTAKT/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "node/12294375536": {
   "felder": {
    "email": {
@@ -3227,6 +3617,21 @@
  "node/12309237243": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "node/12337730558": {
+  "felder": {
+   "email": {
+    "wert": "info@diegeflossenschaft.de",
+    "quelle": "https://sungerhof.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 151 55744056",
+    "quelle": "https://sungerhof.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/12337858131": {
   "felder": {
@@ -3255,9 +3660,22 @@
  "node/12356439122": {
   "geprueft": "2026-11-19"
  },
+ "node/12381022958": {
+  "geprueft": "2026-11-19"
+ },
  "node/12387837148": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/1241010040": {
+  "felder": {
+   "email": {
+    "wert": "aeweleshof-krumbach@t-online.de",
+    "quelle": "https://xn--weleshof-zza.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/12419323887": {
   "felder": {
@@ -3361,6 +3779,17 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/12505576105": {
+  "felder": {
+   "telefon": {
+    "wert": "03362 885455",
+    "quelle": "https://www.imker-woltersdorf.com/KONTAKT/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "node/1250646224": {
   "felder": {
    "email": {
@@ -3439,6 +3868,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/12593826307": {
+  "felder": {
+   "email": {
+    "wert": "info@hofladen-paulinenhof.de",
+    "quelle": "http://www.hofladen-paulinenhof.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/12608670246": {
   "felder": {
    "email": {
@@ -3488,6 +3927,20 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/12682198342": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
+ "node/12686358518": {
+  "felder": {
+   "email": {
+    "wert": "info@bauernhof-bakker.de",
+    "quelle": "https://www.bauernhof-bakker.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/12692681201": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -3510,6 +3963,16 @@
    "telefon": {
     "wert": "04535/598810",
     "quelle": "http://imker-stormarn.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/12726343375": {
+  "felder": {
+   "email": {
+    "wert": "kneipe@oex.de",
+    "quelle": "https://oex.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -3679,6 +4142,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/12920625552": {
+  "felder": {
+   "email": {
+    "wert": "info@porchers.de",
+    "quelle": "https://www.porchers.de/pages/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/12923077079": {
   "felder": {
    "email": {
@@ -3689,6 +4162,21 @@
    "telefon": {
     "wert": "+49 431 6589407",
     "quelle": "https://www.pfeifer-wurstwaren.de/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/12925134757": {
+  "felder": {
+   "email": {
+    "wert": "info@lenglerner-freilandeier.de",
+    "quelle": "https://www.lenglerner-freilandeier.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "05593 / 9377367",
+    "quelle": "https://www.lenglerner-freilandeier.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -3925,6 +4413,16 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "node/13073868715": {
+  "felder": {
+   "email": {
+    "wert": "info@storkes-biohof.de",
+    "quelle": "https://storkes-biohof.de/Kontakt/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/13074003963": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -3939,12 +4437,52 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/13094755880": {
+  "felder": {
+   "email": {
+    "wert": "info@gemuesehof-reinheimer.de",
+    "quelle": "https://www.gemuesehof-reinheimer.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "06144938500",
+    "quelle": "https://www.gemuesehof-reinheimer.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/13096950226": {
+  "felder": {
+   "email": {
+    "wert": "agrar.wg@web.de",
+    "quelle": "http://www.erdbeeren-dobareuth.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/13096991403": {
   "geprueft": "2026-11-19"
  },
  "node/13097062038": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
+ },
+ "node/13103246506": {
+  "felder": {
+   "email": {
+    "wert": "info@brennerei-hack.de",
+    "quelle": "https://www.brennerei-hack.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "09191 5767",
+    "quelle": "https://www.brennerei-hack.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/13108399017": {
   "felder": {
@@ -4045,6 +4583,10 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "node/13149031690": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
  },
  "node/13152752835": {
   "geprueft": "2026-11-19",
@@ -4205,6 +4747,21 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/13323033018": {
+  "felder": {
+   "email": {
+    "wert": "biohof@enzenhoefer.de",
+    "quelle": "https://www.xn--biohof-enzenhfer-ywb.de/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "09173/1031",
+    "quelle": "https://www.xn--biohof-enzenhfer-ywb.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/13338457462": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -4239,6 +4796,21 @@
    "email": {
     "wert": "ferienhof_benz@web.de",
     "quelle": "http://www.ferienhof-benz.de/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/13373646101": {
+  "felder": {
+   "email": {
+    "wert": "info@imkerei-kaiserbluete.de",
+    "quelle": "https://imkerei-kaiserbluete.de/Kontakt/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 (0) 174 2190202",
+    "quelle": "https://imkerei-kaiserbluete.de/Kontakt/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -4280,6 +4852,16 @@
  "node/13397230273": {
   "geprueft": "2026-11-19"
  },
+ "node/13397714634": {
+  "felder": {
+   "email": {
+    "wert": "info@moosfeld.de",
+    "quelle": "https://moosfeld.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/13404376901": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -4288,6 +4870,16 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/13420651345": {
+  "felder": {
+   "email": {
+    "wert": "hammanngbr@t-online.de",
+    "quelle": "https://www.hammann-hof.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/1342152258": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
@@ -4295,6 +4887,21 @@
  "node/1342311666": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/13446196259": {
+  "felder": {
+   "email": {
+    "wert": "hallo@unsere-kleine-farm.net",
+    "quelle": "https://www.unsere-kleine-farm.net/KONTAKT/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0151-25263652",
+    "quelle": "https://www.unsere-kleine-farm.net/KONTAKT/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/13472468109": {
   "felder": {
@@ -4355,6 +4962,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/13514632991": {
+  "felder": {
+   "telefon": {
+    "wert": "07254 / 500 12 50",
+    "quelle": "https://www.il-gusto-siciliano.de/Rechtliches/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/13521930088": {
   "geprueft": "2026-11-19"
  },
@@ -4392,11 +5009,36 @@
  "node/13603132188": {
   "geprueft": "2026-11-19"
  },
+ "node/13606348623": {
+  "felder": {
+   "email": {
+    "wert": "info@imkereibedarf-zuelow.de",
+    "quelle": "https://www.imkereibedarf-zuelow.de/Informationen/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "09924393",
+    "quelle": "https://www.imkereibedarf-zuelow.de/Informationen/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/13610678284": {
   "felder": {
    "email": {
     "wert": "kontakt@imkerei-tietjen.de",
     "quelle": "https://www.imkerei-tietjen.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/13626753108": {
+  "felder": {
+   "email": {
+    "wert": "feldmann@mecklenburger-wagyu.de",
+    "quelle": "https://mecklenburger-wagyu.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -4646,6 +5288,22 @@
  "node/1393001665": {
   "geprueft": "2026-11-19"
  },
+ "node/1393646918": {
+  "felder": {
+   "email": {
+    "wert": "info@grosshans-milch.de",
+    "quelle": "https://grosshans-milch.de/kontakt",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "06201 - 52 886",
+    "quelle": "https://grosshans-milch.de/kontakt",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "node/13936822774": {
   "felder": {
    "email": {
@@ -4665,6 +5323,21 @@
    "email": {
     "wert": "info@spargelgut-wasserschloss.de",
     "quelle": "https://spargelgut-wasserschloss.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/13944577691": {
+  "felder": {
+   "email": {
+    "wert": "info@afl-darmstadt.de",
+    "quelle": "https://www.spargel-appel.de/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "06151/375735",
+    "quelle": "https://www.spargel-appel.de/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -4775,6 +5448,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/14068345341": {
+  "felder": {
+   "email": {
+    "wert": "franzi@projekt-direkt.de",
+    "quelle": "https://www.projekt-direkt.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/14070277946": {
   "geprueft": "2026-11-19"
  },
@@ -4844,6 +5527,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/14134435896": {
+  "felder": {
+   "email": {
+    "wert": "hofliebe@icloud.com",
+    "quelle": "https://hofliebe-eismanufaktur.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/14134613518": {
   "felder": {
    "email": {
@@ -4854,6 +5547,16 @@
    "telefon": {
     "wert": "09251 604117",
     "quelle": "https://www.imkerei-fritsch.de/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/14134697729": {
+  "felder": {
+   "email": {
+    "wert": "info@proudfoot-ranch.de",
+    "quelle": "https://www.proudfoot-ranch.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -4923,6 +5626,21 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/14177709535": {
+  "felder": {
+   "email": {
+    "wert": "info-partyservice-frank@web.de",
+    "quelle": "https://www.partyservice-frank.de/datenschutz-impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "07116993572",
+    "quelle": "https://www.partyservice-frank.de/datenschutz-impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/14178739686": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -4930,6 +5648,16 @@
  "node/14184662367": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/14204585201": {
+  "felder": {
+   "email": {
+    "wert": "kriemhild-muehle.xanten@gmail.com",
+    "quelle": "https://www.kriemhild-muehle.de/Impressum-Co",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/14213777523": {
   "felder": {
@@ -4979,6 +5707,26 @@
  "node/14253263325": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/14259077146": {
+  "felder": {
+   "email": {
+    "wert": "verkauf@schlossimkerei.de",
+    "quelle": "https://schlossimkerei.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/14270342168": {
+  "felder": {
+   "email": {
+    "wert": "info@biohof-mayr.de",
+    "quelle": "https://www.biohof-mayr.de/pages/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/14291762107": {
   "felder": {
@@ -5276,6 +6024,17 @@
  "node/1720303256": {
   "geprueft": "2026-11-19"
  },
+ "node/1742488127": {
+  "felder": {
+   "email": {
+    "wert": "info@imkerei-beer.de",
+    "quelle": "https://www.imkerei-beer.de/info/mein-kontakt.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "node/1751693751": {
   "geprueft": "2026-11-19"
  },
@@ -5284,6 +6043,16 @@
    "email": {
     "wert": "info@ackerlei.de",
     "quelle": "https://www.ackerlei.de/page/1/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/1776803248": {
+  "felder": {
+   "email": {
+    "wert": "info@hegehof.de",
+    "quelle": "https://hegehof.de/policies/legal-notice",
     "stand": "2026-11-19"
    }
   },
@@ -5448,6 +6217,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/2184156297": {
+  "felder": {
+   "email": {
+    "wert": "info@donebauer.de",
+    "quelle": "https://www.donebauer.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/2189856258": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -5487,9 +6266,49 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/2306883458": {
+  "felder": {
+   "email": {
+    "wert": "info@hafen-spezerei.de",
+    "quelle": "https://hafen-spezerei.de/pages/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "040-241 84 930",
+    "quelle": "https://hafen-spezerei.de/pages/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/2306883460": {
+  "felder": {
+   "email": {
+    "wert": "info@hafen-spezerei.de",
+    "quelle": "https://hafen-spezerei.de/pages/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "040-241 84 930",
+    "quelle": "https://hafen-spezerei.de/pages/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/2309770082": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "node/2322407689": {
+  "felder": {
+   "email": {
+    "wert": "gruendlacherbauernladen@web.de",
+    "quelle": "http://www.gruendlacher-bauernladen.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/2338293669": {
   "felder": {
@@ -5508,6 +6327,21 @@
  "node/2365874772": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/2366947834": {
+  "felder": {
+   "email": {
+    "wert": "info@gaus-luetje.de",
+    "quelle": "https://www.gaus-luetje.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 (0) 5374 3504",
+    "quelle": "https://www.gaus-luetje.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/2367779381": {
   "felder": {
@@ -5680,6 +6514,10 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "node/2595999075": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "node/2601897915": {
   "felder": {
    "email": {
@@ -5695,6 +6533,16 @@
    "email": {
     "wert": "info@zeltverleih-link.de",
     "quelle": "http://www.zeltverleih-link.de/?section=impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/2612632381": {
+  "felder": {
+   "email": {
+    "wert": "info@burg-niederpleis.de",
+    "quelle": "https://www.burg-niederpleis.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -5790,6 +6638,21 @@
  "node/2835229683": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/2849464402": {
+  "felder": {
+   "email": {
+    "wert": "imkerei.vogl@t-online.de",
+    "quelle": "http://www.imkerei-vogl.de/Impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "08251 53272",
+    "quelle": "http://www.imkerei-vogl.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/2870006123": {
   "felder": {
@@ -5893,6 +6756,21 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/3047525742": {
+  "felder": {
+   "email": {
+    "wert": "kontakt@blaubeergarten.de",
+    "quelle": "https://www.blaubeerland.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "05164 - 9 14 20",
+    "quelle": "https://www.blaubeerland.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/3057110957": {
   "felder": {
    "email": {
@@ -5945,6 +6823,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/317060555": {
+  "felder": {
+   "telefon": {
+    "wert": "05508-1218",
+    "quelle": "https://www.historische-spinnerei.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/318090441": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
@@ -5982,6 +6870,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/3256469051": {
+  "felder": {
+   "email": {
+    "wert": "info@gefluegel-schneckenburger.de",
+    "quelle": "https://gefluegel-schneckenburger.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/3287461711": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -5990,9 +6888,39 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/3310964257": {
+  "felder": {
+   "email": {
+    "wert": "info@borchelhof.de",
+    "quelle": "http://www.hofladen-kleehof.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/3363206326": {
+  "felder": {
+   "email": {
+    "wert": "info@obsthof-harms.de",
+    "quelle": "https://www.obsthof-harms.de/Impressum-Haftungsausschluss/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/3364693866": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "node/338249698": {
+  "felder": {
+   "email": {
+    "wert": "info@kinzinger-berghof.com",
+    "quelle": "https://kinzinger-berghof.com/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/3399416474": {
   "geprueft": "2026-11-19"
@@ -6015,6 +6943,9 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 503"
  },
+ "node/3467080920": {
+  "geprueft": "2026-11-19"
+ },
  "node/3472747855": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
@@ -6022,6 +6953,10 @@
  "node/3474962819": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/3481818161": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/349240355": {
   "felder": {
@@ -6167,6 +7102,22 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/3623842316": {
+  "felder": {
+   "email": {
+    "wert": "info@schafraffenland.de",
+    "quelle": "http://www.schafraffenland.de/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "07223-8001258",
+    "quelle": "http://www.schafraffenland.de/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "node/3628500958": {
   "felder": {
    "email": {
@@ -6176,6 +7127,22 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "node/3633476391": {
+  "felder": {
+   "email": {
+    "wert": "angela.miggitsch@t-online.de",
+    "quelle": "http://www.xn--obst-und-gemse-angela-miggitsch-zid.de/Kontakt",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0211 754703",
+    "quelle": "http://www.xn--obst-und-gemse-angela-miggitsch-zid.de/Kontakt",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
  },
  "node/3640813703": {
   "felder": {
@@ -6198,6 +7165,10 @@
  "node/3665046396": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/3665769216": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/3667399670": {
   "felder": {
@@ -6228,6 +7199,10 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/3675435449": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "node/3686141225": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -6241,6 +7216,10 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "node/3702593128": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/3710415569": {
   "geprueft": "2026-11-19",
@@ -6328,6 +7307,21 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/3808099977": {
+  "felder": {
+   "email": {
+    "wert": "info@bauernhof-am-wattenmeer.de",
+    "quelle": "https://www.bauernhof-am-wattenmeer.de/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "04865/633",
+    "quelle": "https://www.bauernhof-am-wattenmeer.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/3817874062": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 503"
@@ -6398,6 +7392,17 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "node/3927913988": {
+  "felder": {
+   "email": {
+    "wert": "info@obst-altesland.de",
+    "quelle": "https://stade.city-map.de/de/obsthof-meyer-frisches-obst-aus-dem-alten-land",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
  },
  "node/3940288714": {
   "geprueft": "2026-11-19",
@@ -6615,6 +7620,16 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/4174637143": {
+  "felder": {
+   "email": {
+    "wert": "info@imker-pabel.de",
+    "quelle": "https://www.imker-pabel.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/4185844558": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
@@ -6644,6 +7659,20 @@
   "fehler": "HTTP 403"
  },
  "node/4193583864": {
+  "geprueft": "2026-11-19"
+ },
+ "node/4197080987": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
+ "node/4209405997": {
+  "felder": {
+   "email": {
+    "wert": "info@milchvieh-timmermann.de",
+    "quelle": "http://www.milchvieh-timmermann.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
   "geprueft": "2026-11-19"
  },
  "node/4223717320": {
@@ -6683,6 +7712,14 @@
  "node/4232550421": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/4239735833": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
+ "node/4239997554": {
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
  },
  "node/4256116286": {
   "felder": {
@@ -6725,6 +7762,10 @@
  "node/4278014902": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/4278523442": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/4278523489": {
   "felder": {
@@ -6794,6 +7835,10 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/4309840680": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "node/4314012737": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -6854,6 +7899,16 @@
    "email": {
     "wert": "info@gartenbaubauer.de",
     "quelle": "http://www.gartenbaubauer.de/impressum.php",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/4363314543": {
+  "felder": {
+   "email": {
+    "wert": "info@spargelunderdbeere.de",
+    "quelle": "https://www.spargelunderdbeere.de/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -7025,6 +8080,16 @@
  "node/4466834790": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/446718414": {
+  "felder": {
+   "email": {
+    "wert": "luetjenburg@steffen-muxall.de",
+    "quelle": "https://steffen-muxall.de/kontakt.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/4473373104": {
   "felder": {
@@ -7212,6 +8277,31 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/4664138810": {
+  "felder": {
+   "email": {
+    "wert": "imkerei@authentico.de",
+    "quelle": "https://authentico.bio/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0160-1295095",
+    "quelle": "https://authentico.bio/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/4670388321": {
+  "felder": {
+   "email": {
+    "wert": "buergin@hofgut-sonnenschein.de",
+    "quelle": "https://biowein-baden.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/4676156694": {
   "felder": {
    "email": {
@@ -7297,6 +8387,16 @@
  "node/4712867671": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/4715723498": {
+  "felder": {
+   "email": {
+    "wert": "info@bienenzuchtverein-bardenberg-alsdorf.de",
+    "quelle": "https://www.bienenzuchtverein-bardenberg-alsdorf.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/4717130586": {
   "geprueft": "2026-11-19",
@@ -7444,6 +8544,16 @@
  "node/4821014067": {
   "geprueft": "2026-11-19"
  },
+ "node/4835254736": {
+  "felder": {
+   "email": {
+    "wert": "georg.bucher.gemuesebau@t-online.de",
+    "quelle": "http://www.gemuesebau-bucher.com/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/4841649248": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
@@ -7461,6 +8571,16 @@
  "node/486547050": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/4887146475": {
+  "felder": {
+   "email": {
+    "wert": "info@diehlenhof.de",
+    "quelle": "https://www.diehlenhof.de/kontakt/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/4895825754": {
   "felder": {
@@ -7600,9 +8720,23 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "node/5049378040": {
+  "felder": {
+   "email": {
+    "wert": "info@langwiesentaler-bio-hof.de",
+    "quelle": "https://www.langwiesentaler-bio-hof.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/5054221568": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
+ },
+ "node/5058153842": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/5062458697": {
   "felder": {
@@ -7636,6 +8770,21 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "node/5108955785": {
+  "felder": {
+   "email": {
+    "wert": "info@hegehof.de",
+    "quelle": "https://hegehof.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 (0) 6203 930 80 0",
+    "quelle": "https://hegehof.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/5114463225": {
   "felder": {
    "email": {
@@ -7646,6 +8795,20 @@
   },
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "node/5115555169": {
+  "felder": {
+   "email": {
+    "wert": "info@gut-darss.de",
+    "quelle": "https://www.gut-darss.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/5126132253": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/5132581548": {
   "felder": {
@@ -7727,6 +8890,16 @@
  "node/5197167159": {
   "geprueft": "2026-11-19"
  },
+ "node/5214349475": {
+  "felder": {
+   "email": {
+    "wert": "info@wald-und-holz.nrw.de",
+    "quelle": "https://www.wald-und-holz.nrw.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/521562383": {
   "felder": {
    "email": {
@@ -7765,6 +8938,31 @@
  "node/5236672417": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "node/5237080669": {
+  "felder": {
+   "email": {
+    "wert": "info@oberwiesachhof.de",
+    "quelle": "https://www.oberwiesachhof.de/Impressum-Datenschutzerklaerung/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/5239280070": {
+  "felder": {
+   "email": {
+    "wert": "info@die-mehlmanufaktur.de",
+    "quelle": "https://www.die-mehlmanufaktur.de/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 (0) 7274 / 703204",
+    "quelle": "https://www.die-mehlmanufaktur.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/5240600121": {
   "felder": {
@@ -7836,6 +9034,21 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "node/5351006379": {
+  "felder": {
+   "email": {
+    "wert": "bauernhof-dresden@t-online.de",
+    "quelle": "http://www.bauernhof-dresden.de/Impressum,-Kontakt",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0351 4279424",
+    "quelle": "http://www.bauernhof-dresden.de/Impressum,-Kontakt",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/5358775163": {
   "felder": {
    "telefon": {
@@ -7893,6 +9106,16 @@
    "email": {
     "wert": "verwaltung@weide-hardebek.de",
     "quelle": "https://www.weide-hardebek.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/5460570146": {
+  "felder": {
+   "email": {
+    "wert": "info@mosaik-berlin.de",
+    "quelle": "https://www.mosaik-berlin.de/de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -8067,6 +9290,10 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/5615049485": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
  "node/5616595410": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -8133,6 +9360,16 @@
    "email": {
     "wert": "info@bauernhof-birkenhof.de",
     "quelle": "https://www.bauernhof-birkenhof.de/kontakt/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/5632897431": {
+  "felder": {
+   "email": {
+    "wert": "info@eichhof-reinsfeld.de",
+    "quelle": "http://www.eichhof-reinsfeld.de/Kontakt/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -8230,6 +9467,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/5651879084": {
+  "felder": {
+   "email": {
+    "wert": "info@hof-terporten.de",
+    "quelle": "http://hof-terporten.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/5652162170": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -8300,6 +9547,10 @@
  "node/5692319191": {
   "geprueft": "2026-11-19"
  },
+ "node/5694232199": {
+  "geprueft": "2026-11-19",
+  "fehler": "fetch failed"
+ },
  "node/5698707283": {
   "felder": {
    "email": {
@@ -8310,6 +9561,21 @@
    "telefon": {
     "wert": "0177 3235 421",
     "quelle": "https://www.straussenfarm-lohsa.de/impressum.htm",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/569966265": {
+  "felder": {
+   "email": {
+    "wert": "info@bauernhofcafe-hacienda.de",
+    "quelle": "https://www.bauernhofcafe-hacienda.de/https/-/www-facebook-com/Bauernhof-Cafe-Hacienda-111062910469742/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "04671 / 4934",
+    "quelle": "https://www.bauernhofcafe-hacienda.de/https/-/www-facebook-com/Bauernhof-Cafe-Hacienda-111062910469742/",
     "stand": "2026-11-19"
    }
   },
@@ -8373,6 +9639,10 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "node/5746620855": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
+ },
  "node/5747836377": {
   "felder": {
    "email": {
@@ -8406,6 +9676,10 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "node/5779996108": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/5780127842": {
   "felder": {
@@ -8500,6 +9774,16 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/5908178464": {
+  "felder": {
+   "email": {
+    "wert": "familie.sindlinger@t-online.de",
+    "quelle": "https://hof-sindlinger.de/Ueber-uns/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/5909850980": {
   "felder": {
    "email": {
@@ -8576,6 +9860,20 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/599709204": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 400"
+ },
+ "node/601398775": {
+  "felder": {
+   "email": {
+    "wert": "info@holtseer.de",
+    "quelle": "https://holtseer.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/602060034": {
   "geprueft": "2026-11-19"
  },
@@ -8594,6 +9892,26 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/6103146524": {
+  "felder": {
+   "email": {
+    "wert": "hallo@biene24.de",
+    "quelle": "https://www.biene24.de/kontakt/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/6107216520": {
+  "felder": {
+   "email": {
+    "wert": "hoffmann.landwirt@t-online.de",
+    "quelle": "https://www.hofladen-kiliansroda.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/6122077249": {
   "felder": {
    "email": {
@@ -8607,6 +9925,10 @@
  "node/6140089685": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/6142258549": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
  },
  "node/6170783237": {
   "felder": {
@@ -8802,6 +10124,21 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 502"
  },
+ "node/6378769585": {
+  "felder": {
+   "email": {
+    "wert": "martin.unterstaller@imkerverein-marktl.de",
+    "quelle": "https://www.imkerverein-marktl.de/ORGANISATORISCHES/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0173 6328657",
+    "quelle": "https://www.imkerverein-marktl.de/ORGANISATORISCHES/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/6379354135": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -8862,6 +10199,20 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/6399287332": {
+  "felder": {
+   "telefon": {
+    "wert": "06106 - 33 29",
+    "quelle": "http://www.bauernhof-stefan-raab.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/6407579426": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
  "node/6416880481": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -8920,9 +10271,29 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/6462839813": {
+  "felder": {
+   "email": {
+    "wert": "info@die-chili-manufaktur.de",
+    "quelle": "https://die-chili-manufaktur.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/6464144827": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/6478089144": {
+  "felder": {
+   "email": {
+    "wert": "info@johannsenshof.de",
+    "quelle": "https://www.johannsenshof.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/6479108386": {
   "geprueft": "2026-11-19",
@@ -8935,6 +10306,10 @@
  "node/6499572364": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "node/6504766386": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
  },
  "node/6514766146": {
   "geprueft": "2026-11-19",
@@ -9140,6 +10515,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/6653484347": {
+  "felder": {
+   "email": {
+    "wert": "tageszentrum-miltenberg@awo-unterfranken.de",
+    "quelle": "https://www.awo-unterfranken.de/einrichtungen/tageszentrum-fuer-seelische-gesundheit-und-artrio-das-hofcafe-miltenberg/kontakt-anfahrt/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/665363950": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -9163,6 +10548,21 @@
    "email": {
     "wert": "info@biohof-hanglberger.de",
     "quelle": "https://www.biohof-hanglberger.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/6698033776": {
+  "felder": {
+   "email": {
+    "wert": "info@hof-gloyer.de",
+    "quelle": "https://hof-gloyer.de/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "04194578",
+    "quelle": "https://hof-gloyer.de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -9209,6 +10609,10 @@
  "node/6763539725": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
+ },
+ "node/6767159629": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/6774826592": {
   "geprueft": "2026-11-19",
@@ -9285,6 +10689,25 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/6900239363": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
+ "node/6932310406": {
+  "felder": {
+   "email": {
+    "wert": "info@eselsbacherhof.de",
+    "quelle": "https://www.eselsbacherhof.de/Impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0261-96240988",
+    "quelle": "https://www.eselsbacherhof.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/6945599259": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -9324,6 +10747,16 @@
  "node/7017749024": {
   "geprueft": "2026-11-19"
  },
+ "node/7022581714": {
+  "felder": {
+   "email": {
+    "wert": "info@honig-goeken.de",
+    "quelle": "https://www.honig-goeken.de/Informationen/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/7057168841": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -9331,6 +10764,21 @@
  "node/7058056548": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/7070949732": {
+  "felder": {
+   "email": {
+    "wert": "info@gourmieze.de",
+    "quelle": "https://www.firma-hintz.eu/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0170-5530897",
+    "quelle": "https://www.firma-hintz.eu/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/7071860221": {
   "geprueft": "2026-11-19",
@@ -9359,6 +10807,9 @@
  "node/7124706711": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 503"
+ },
+ "node/7140220919": {
+  "geprueft": "2026-11-19"
  },
  "node/7158755222": {
   "felder": {
@@ -9543,6 +10994,10 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/7390773336": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "node/7394137784": {
   "felder": {
    "telefon": {
@@ -9615,6 +11070,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/7438685003": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "node/7440635434": {
   "felder": {
    "email": {
@@ -9625,6 +11084,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/7442490012": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
  "node/7444276722": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -9632,6 +11095,31 @@
  "node/7446785039": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "node/7462963403": {
+  "felder": {
+   "email": {
+    "wert": "info@walterhoch5.de",
+    "quelle": "https://walterhoch5.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "07664-1396",
+    "quelle": "https://walterhoch5.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/7466794872": {
+  "felder": {
+   "email": {
+    "wert": "familie.sindlinger@t-online.de",
+    "quelle": "https://hof-sindlinger.de/Ueber-uns/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/7477929867": {
   "geprueft": "2026-11-19",
@@ -9759,6 +11247,21 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "node/7633181276": {
+  "felder": {
+   "email": {
+    "wert": "sh.geywitz@gmail.com",
+    "quelle": "http://www.scharenstetter-frischeier.de/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "07336280",
+    "quelle": "http://www.scharenstetter-frischeier.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/7636163330": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -9830,6 +11333,25 @@
    "telefon": {
     "wert": "0151 220 091 10",
     "quelle": "https://www.taubertaler-heimatladen.de/impressum-datenschutz",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/7714787845": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
+ "node/7717064300": {
+  "felder": {
+   "email": {
+    "wert": "info@neuerkerode.de",
+    "quelle": "https://www.neuerkerode.de/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "05305 201 499",
+    "quelle": "https://www.neuerkerode.de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -9944,6 +11466,10 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/7817692854": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "node/7820709985": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -9955,6 +11481,36 @@
  "node/7834741279": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/7840870103": {
+  "felder": {
+   "email": {
+    "wert": "info@echt-bodensee.de",
+    "quelle": "https://www.echt-bodensee.de/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 (0) 7541 37 834 0",
+    "quelle": "https://www.echt-bodensee.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/7854388119": {
+  "felder": {
+   "email": {
+    "wert": "prospektservice@schwarzwald-tourismus.info",
+    "quelle": "https://www.schwarzwald-tourismus.info/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 761 896460",
+    "quelle": "https://www.schwarzwald-tourismus.info/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/7858620649": {
   "felder": {
@@ -10037,6 +11593,16 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
  },
+ "node/7947386320": {
+  "felder": {
+   "email": {
+    "wert": "info@hammerhof-lindau.de",
+    "quelle": "https://www.hammerhof-lindau.de/kontakt/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/7952693521": {
   "felder": {
    "email": {
@@ -10075,6 +11641,10 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "node/7999115303": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
  },
  "node/8003372493": {
   "felder": {
@@ -10140,6 +11710,21 @@
  "node/8051083832": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/8051150659": {
+  "felder": {
+   "email": {
+    "wert": "info@biomilchhof-berl.de",
+    "quelle": "https://biomilchhof-berl.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "09961 9437498",
+    "quelle": "https://biomilchhof-berl.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/8053290215": {
   "felder": {
@@ -10219,6 +11804,21 @@
  "node/812178070": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/8129668088": {
+  "felder": {
+   "email": {
+    "wert": "info@alb-ei.de",
+    "quelle": "http://www.alb-ei.de/IMPRESSUM",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49(0)73319320760",
+    "quelle": "http://www.alb-ei.de/IMPRESSUM",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/8143433051": {
   "geprueft": "2026-11-19",
@@ -10408,6 +12008,16 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "node/8312911960": {
+  "felder": {
+   "email": {
+    "wert": "info@gut-vorder-bollhagen.de",
+    "quelle": "https://gut-vorder-bollhagen.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/8332890188": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
@@ -10576,6 +12186,14 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 404"
  },
+ "node/8476239997": {
+  "geprueft": "2026-11-19",
+  "fehler": "URI malformed"
+ },
+ "node/8476239998": {
+  "geprueft": "2026-11-19",
+  "fehler": "URI malformed"
+ },
  "node/8477159989": {
   "geprueft": "2026-11-19"
  },
@@ -10589,6 +12207,16 @@
    "telefon": {
     "wert": "04941-609250",
     "quelle": "https://www.lhv-ostfriesland.de/index.php?id=11",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/8493163090": {
+  "felder": {
+   "email": {
+    "wert": "info@brandtgruen.de",
+    "quelle": "https://www.brandtgruen.de/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -10690,6 +12318,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/860353870": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 400"
+ },
  "node/8610219500": {
   "felder": {
    "email": {
@@ -10751,6 +12383,9 @@
     "stand": "2026-11-19"
    }
   },
+  "geprueft": "2026-11-19"
+ },
+ "node/8690797912": {
   "geprueft": "2026-11-19"
  },
  "node/8694291081": {
@@ -10960,6 +12595,26 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/8779375534": {
+  "felder": {
+   "email": {
+    "wert": "fruehpfahl@aol.com",
+    "quelle": "https://www.obst-gemuesebau-frueh.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/8779457109": {
+  "felder": {
+   "email": {
+    "wert": "info@ostseemuehle.de",
+    "quelle": "https://www.xn--ostseemhle-geb.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/8779669146": {
   "felder": {
    "email": {
@@ -11152,6 +12807,21 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/8887077891": {
+  "felder": {
+   "email": {
+    "wert": "u.bandow@stockhausen-gastro.de",
+    "quelle": "https://www.stockhausen-spezialitaeten.de/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "04101 30 50 0",
+    "quelle": "https://www.stockhausen-spezialitaeten.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/8892549081": {
   "geprueft": "2026-11-19"
  },
@@ -11196,9 +12866,34 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/8930690463": {
+  "felder": {
+   "email": {
+    "wert": "info@xn--ile-grner-dreiberg-r6b.de",
+    "quelle": "https://www.xn--ile-grner-dreiberg-r6b.de/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/8933858833": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "node/8938699024": {
+  "felder": {
+   "email": {
+    "wert": "info@grimmsteigei.de",
+    "quelle": "http://www.grimmsteigei.de/IMPRESSUM-DATENSCHUTZ/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 (0) 17650338008",
+    "quelle": "http://www.grimmsteigei.de/IMPRESSUM-DATENSCHUTZ/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/8947794942": {
   "felder": {
@@ -11209,6 +12904,10 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "node/8947839754": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
  },
  "node/8948068901": {
   "geprueft": "2026-11-19"
@@ -11337,6 +13036,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/9000362338": {
+  "felder": {
+   "email": {
+    "wert": "info@gutavelsbach.de",
+    "quelle": "https://gutavelsbach.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/9001663312": {
   "felder": {
    "email": {
@@ -11406,6 +13115,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/9051961454": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
  "node/9054512230": {
   "felder": {
    "email": {
@@ -11462,6 +13175,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/9077724025": {
+  "felder": {
+   "email": {
+    "wert": "jan.meyerhoff@oesenhof.de",
+    "quelle": "https://www.oesenhof.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/9079705574": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -11496,6 +13219,21 @@
    "telefon": {
     "wert": "+49 5251 143826",
     "quelle": "https://20four7kiosk.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/9103913319": {
+  "felder": {
+   "email": {
+    "wert": "wild-heigl@web.de",
+    "quelle": "http://www.wild-heigl.de/Impressum-Kontakt-Anfahrt",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "08122 4 29 29",
+    "quelle": "http://www.wild-heigl.de/Impressum-Kontakt-Anfahrt",
     "stand": "2026-11-19"
    }
   },
@@ -11726,6 +13464,17 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/9218515123": {
+  "felder": {
+   "email": {
+    "wert": "kontakt@munzel-piepenbrink.de",
+    "quelle": "https://munzelpiepenbrink.de/kontakt",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "node/9223915305": {
   "felder": {
    "email": {
@@ -11735,6 +13484,10 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "node/9233235316": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
  },
  "node/9233272990": {
   "felder": {
@@ -11765,6 +13518,16 @@
    "email": {
     "wert": "info@hof-eggeringhausen.de",
     "quelle": "https://hof-eggeringhausen.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/9251027112": {
+  "felder": {
+   "email": {
+    "wert": "info@klostergut-dibbesdorf.de",
+    "quelle": "https://www.klostergut-dibbesdorf.de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -11999,6 +13762,20 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/9434021847": {
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
+ "node/9436632109": {
+  "felder": {
+   "email": {
+    "wert": "info@porta-muehle.de",
+    "quelle": "https://porta-muehle.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/9442114592": {
   "felder": {
    "email": {
@@ -12024,6 +13801,16 @@
  "node/9483413202": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 500"
+ },
+ "node/9497219917": {
+  "felder": {
+   "email": {
+    "wert": "info@imkerei-wagner.de",
+    "quelle": "https://bienenprodukte-shop.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/9497338217": {
   "geprueft": "2026-11-19",
@@ -12063,6 +13850,16 @@
    "telefon": {
     "wert": "06736 - 909729",
     "quelle": "https://www.blaesser-honig.de/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/9529209929": {
+  "felder": {
+   "email": {
+    "wert": "info@visithavelland.de",
+    "quelle": "https://www.visithavelland.de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -12127,6 +13924,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/9571598417": {
+  "felder": {
+   "email": {
+    "wert": "info@hofladen-antony.de",
+    "quelle": "https://hofladen-antony.de/Kontakt/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/9575965891": {
   "felder": {
    "email": {
@@ -12178,6 +13985,16 @@
  "node/9624467563": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/963686346": {
+  "felder": {
+   "email": {
+    "wert": "info@magdeburger-pilzmanufaktur.de",
+    "quelle": "https://www.magdeburger-pilzmanufaktur.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/9644396899": {
   "felder": {
@@ -12236,6 +14053,16 @@
  "node/9669616895": {
   "geprueft": "2026-11-19"
  },
+ "node/9673877932": {
+  "felder": {
+   "email": {
+    "wert": "info@marzlinger-gaumenfreude.de",
+    "quelle": "https://www.marzlinger-gaumenfreude.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/9674402431": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -12253,6 +14080,9 @@
     "stand": "2026-11-19"
    }
   },
+  "geprueft": "2026-11-19"
+ },
+ "node/9675467129": {
   "geprueft": "2026-11-19"
  },
  "node/9684474081": {
@@ -12322,6 +14152,14 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "node/9707399610": {
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
+ "node/9707798316": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
  "node/9710850064": {
   "felder": {
    "email": {
@@ -12350,6 +14188,10 @@
  "node/9731978863": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/9735201518": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "node/973538649": {
   "geprueft": "2026-11-19",
@@ -12392,6 +14234,16 @@
  "node/9798356182": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "node/9801306056": {
+  "felder": {
+   "email": {
+    "wert": "hofladen@hof-struever.de",
+    "quelle": "https://www.hof-struever.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "node/9801733452": {
   "felder": {
@@ -12443,6 +14295,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "node/9808901485": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "node/9813856583": {
   "felder": {
    "email": {
@@ -12490,7 +14346,15 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/9837004272": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
+ },
  "node/9837794118": {
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
+ "node/9850330798": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
@@ -12577,6 +14441,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "node/9936632612": {
+  "felder": {
+   "email": {
+    "wert": "info@weidelandfarm.de",
+    "quelle": "https://weidelandfarm.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "node/9937135295": {
   "felder": {
    "email": {
@@ -12587,6 +14461,21 @@
    "telefon": {
     "wert": "09103 / 22 96",
     "quelle": "https://www.biohof-decker.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/9938299863": {
+  "felder": {
+   "email": {
+    "wert": "info@grimmsteigei.de",
+    "quelle": "http://www.grimmsteigei.de/IMPRESSUM-DATENSCHUTZ/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 (0) 17650338008",
+    "quelle": "http://www.grimmsteigei.de/IMPRESSUM-DATENSCHUTZ/",
     "stand": "2026-11-19"
    }
   },
@@ -12636,6 +14525,21 @@
    "email": {
     "wert": "info@obstbau-link.de",
     "quelle": "https://obstbau-link.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "node/9953048786": {
+  "felder": {
+   "email": {
+    "wert": "info@humpferranch.de",
+    "quelle": "https://humpferranch.de/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0160 / 97 04 34 28",
+    "quelle": "https://humpferranch.de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -12719,6 +14623,16 @@
   },
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "overture/01e0c0cb-5ee0-4317-840f-0437a23a348a": {
+  "felder": {
+   "email": {
+    "wert": "koellner_chris@web.de",
+    "quelle": "http://xn--biohof-kllner-pmb.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/020a24fd-beee-4b7a-8503-ec3e4b87f330": {
   "felder": {
@@ -12904,6 +14818,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/0cc0c973-6def-4893-badd-cea3d57356b2": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "overture/0cfd5022-ec56-4bce-8e81-8b485fa57c36": {
   "geprueft": "2026-11-19"
  },
@@ -12955,6 +14873,16 @@
  "overture/0dd1b10f-0994-4919-a266-79fc2755bf3a": {
   "geprueft": "2026-11-19"
  },
+ "overture/0e15ff6c-8a6b-4a3f-b476-57276eaadc2f": {
+  "felder": {
+   "email": {
+    "wert": "info@kartoffelhof-hoefler.de",
+    "quelle": "http://kartoffelhof-hoefler.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/0e1f836e-e4f0-42a8-8bb0-63fc97247c68": {
   "felder": {
    "email": {
@@ -13003,6 +14931,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "overture/119455ce-ddb1-4565-aeb4-f9c345c5de78": {
+  "felder": {
+   "email": {
+    "wert": "info@huberts-hofladen.de",
+    "quelle": "https://huberts-hofladen.com/IMPRESSUM/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/11c52a5d-1cd3-402b-8be4-11b3e20cfa71": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -13037,6 +14975,16 @@
    "email": {
     "wert": "info@hofladen-muehlbauer.de",
     "quelle": "https://www.hofladen-muehlbauer.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/12e01c2a-a017-4a91-9947-147b227580ce": {
+  "felder": {
+   "email": {
+    "wert": "info@rottaler-bio-ei.de",
+    "quelle": "https://www.rottaler-bio-ei.de/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -13194,15 +15142,44 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "overture/1c83f133-e017-4b6b-86e4-3119c90b1a0b": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "overture/1cdb5af0-0bf5-4bf6-a6f9-e430596c1d16": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "overture/1d7b5b9f-e328-4811-8610-c51f2cd39507": {
+  "felder": {
+   "email": {
+    "wert": "info@ruegenei.de",
+    "quelle": "https://www.ruegenei.de/IMPRESSUM/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "03 83 07 - 3 65",
+    "quelle": "https://www.ruegenei.de/IMPRESSUM/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/1e002599-0703-4b0b-9af4-41ff68ac2ae2": {
   "felder": {
    "email": {
     "wert": "info@biohof-boeglins.de",
     "quelle": "https://biohof-boeglins.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/1e833f7e-fa7b-4c9d-880c-573dddba059f": {
+  "felder": {
+   "email": {
+    "wert": "scheitz@andechser-molkerei.de",
+    "quelle": "https://www.andechser-natur.de/de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -13252,6 +15229,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/1fa05ca5-3fbd-45ed-8bef-7cf0d00089dc": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
+ },
  "overture/1fc12306-9f74-4f08-9532-fbb033c7744b": {
   "geprueft": "2026-11-19"
  },
@@ -13293,6 +15274,16 @@
  "overture/20fa4573-05b2-4df0-b1a8-1e1d296c256b": {
   "geprueft": "2026-11-19"
  },
+ "overture/21afe6a2-4259-43a0-b458-99030e77acaa": {
+  "felder": {
+   "email": {
+    "wert": "peterjbrand@t-online.de",
+    "quelle": "http://baumschulebrand.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/221a7849-8af3-4a52-920a-4162eec3b702": {
   "felder": {
    "email": {
@@ -13326,6 +15317,16 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "overture/22c6da9a-3a0d-4570-b43b-ebf1dbe5b748": {
+  "felder": {
+   "email": {
+    "wert": "info@spargelhof-hirsch.de",
+    "quelle": "https://spargelhof-hirsch.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/22fecad2-5ce6-4617-8dbe-f2e92005f339": {
   "felder": {
    "email": {
@@ -13343,6 +15344,10 @@
  "overture/235a097b-6f42-4f30-a7c0-682028b7345f": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "overture/235d9b7c-fec1-4ddb-a4fe-dbbbfe0cf478": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "overture/24517daf-55c6-4a3a-a6e0-84cfd9a45f58": {
   "felder": {
@@ -13397,6 +15402,16 @@
    "email": {
     "wert": "info@bauer-zorn.de",
     "quelle": "https://www.bauer-zorn.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/26c6b323-7615-44d5-a1fe-c0fb539fb556": {
+  "felder": {
+   "email": {
+    "wert": "admin@schneiders-biohofladen.de",
+    "quelle": "https://schneiders-biohofladen.de/policies/privacy-policy",
     "stand": "2026-11-19"
    }
   },
@@ -13488,6 +15503,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/2b5cb836-c503-4f0e-b10a-ffc5e4b4efb3": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "overture/2b6513dd-0adf-4875-89a7-3013e5679fb2": {
   "geprueft": "2026-11-19"
  },
@@ -13496,6 +15515,16 @@
    "email": {
     "wert": "thomas.merk@gmx.net",
     "quelle": "https://www.biohof-merk.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/2bc043c8-0f35-40c9-8741-0c95fe2387d4": {
+  "felder": {
+   "email": {
+    "wert": "info@spargel-hofmann.de",
+    "quelle": "https://www.spargel-hofmann.de/Kontakt/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -13549,6 +15578,21 @@
    "email": {
     "wert": "hofladen@proesslbauer.de",
     "quelle": "https://www.proesslbauer.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/30c00109-b387-4684-ae39-02ef1c70b0a7": {
+  "felder": {
+   "email": {
+    "wert": "info@kaesehofladen.de",
+    "quelle": "https://www.kaesehofladen.de/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 4926 - 307",
+    "quelle": "https://www.kaesehofladen.de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -13639,6 +15683,16 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "overture/333a7e4a-6b3f-44ee-af3c-98c98a998e3c": {
+  "felder": {
+   "email": {
+    "wert": "info@kartoffelhof-schaeffer.de",
+    "quelle": "https://www.kartoffelhof-schaeffer.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/3341235a-a15a-4832-a93c-197718134eb4": {
   "felder": {
    "email": {
@@ -13662,6 +15716,16 @@
  "overture/34f9a37e-0068-4a16-a0a8-990914a2c3b3": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "overture/3545eca6-69be-444c-809c-95bc0764c1e0": {
+  "felder": {
+   "email": {
+    "wert": "info@oberpfaelzer-spargel.de",
+    "quelle": "https://www.oberpfaelzer-spargel.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/35719b93-8a84-4589-9f01-25d96e5056a5": {
   "felder": {
@@ -13751,6 +15815,10 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "overture/388d7711-8225-4c6f-89fb-a295d694fe16": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
+ },
  "overture/38b0a185-63b9-45dd-a40d-7885fd7922c4": {
   "felder": {
    "email": {
@@ -13774,6 +15842,20 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/39cffa60-b530-4567-ae31-573ca7337bf3": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
+ },
+ "overture/39fc3cb0-ecb7-45c7-b6ef-b52a36b43636": {
+  "geprueft": "2026-11-19"
+ },
+ "overture/3a04eb0e-01e7-4fc0-87b2-24dc1a79273d": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
+ },
+ "overture/3a704a3f-2e41-491b-985d-98b128476367": {
+  "geprueft": "2026-11-19"
+ },
  "overture/3a73021d-1c23-44b5-bb09-456f90446a91": {
   "felder": {
    "email": {
@@ -13784,9 +15866,29 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/3b471e87-9926-4b52-81fc-218934bd4867": {
+  "felder": {
+   "email": {
+    "wert": "tweber-karben@t-online.de",
+    "quelle": "http://webershofladen.de/Impressum-und-Datenschutz",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/3b86c119-ffb4-4948-8471-cf4c0e60805f": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "overture/3b99c18e-fa99-4c0c-931b-553b380bf2b4": {
+  "felder": {
+   "email": {
+    "wert": "marco-grawe@gmx.de",
+    "quelle": "http://www.gefluegelhof-grawe.de/ImpressumKontakt/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/3be0b7a4-4edc-421c-bd48-d28519e6a18c": {
   "felder": {
@@ -13842,6 +15944,9 @@
  "overture/3f5d35f1-b09c-4286-ba43-ae03e9ea8d65": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "overture/411018a9-e4a5-4625-a37d-c49661df392d": {
+  "geprueft": "2026-11-19"
  },
  "overture/41350e2d-a377-453f-aeb1-7a7df6b55213": {
   "geprueft": "2026-11-19",
@@ -14058,6 +16163,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/4e5340e7-1dc1-43f9-ab2c-8417e96682a2": {
+  "felder": {
+   "email": {
+    "wert": "info@obsthof-kunz.de",
+    "quelle": "https://www.obsthof-kunz.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/4ebef0ca-b921-4706-9a19-6de512a22a40": {
   "felder": {
    "email": {
@@ -14075,6 +16190,16 @@
  "overture/4ed8bd46-1635-4708-a28f-8bc01e010908": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "overture/4f28467e-64a3-4e6e-960e-6918dfc7fc10": {
+  "felder": {
+   "email": {
+    "wert": "info@dieoelfreunde.de",
+    "quelle": "https://dieoelfreunde.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/4f83687a-1b99-4c39-adb3-89cfc4404c65": {
   "geprueft": "2026-11-19",
@@ -14118,6 +16243,26 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/53018bfe-7abe-4a17-b25c-fd011d7600ba": {
+  "felder": {
+   "email": {
+    "wert": "weingut-obsthof.schick@t-online.de",
+    "quelle": "http://www.obsthof-schick.de/Impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/530a7adb-ebf4-43ff-8d35-9484d65168a9": {
+  "felder": {
+   "email": {
+    "wert": "info@rebbigshof.de",
+    "quelle": "http://www.rebbigshof.de/Kontakt/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/5378ea5d-66e5-487a-a8d8-63be260702c4": {
   "felder": {
    "email": {
@@ -14131,6 +16276,9 @@
  "overture/54005522-f4b4-41e7-9985-98f9722805e4": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 429"
+ },
+ "overture/544d0d80-920d-44e2-ad02-1be34024df29": {
+  "geprueft": "2026-11-19"
  },
  "overture/54d3683d-0812-4ce2-8223-681d2b2486bc": {
   "felder": {
@@ -14163,9 +16311,22 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/5637304e-c842-4d46-9bbd-c7bee7c08097": {
+  "geprueft": "2026-11-19"
+ },
  "overture/567d7c41-684d-4477-b949-42488f81b22f": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "overture/579f86ce-5759-44ce-a362-1b9f6337bc1a": {
+  "felder": {
+   "email": {
+    "wert": "info@sylter-laedchen.de",
+    "quelle": "https://www.sylter-laedchen.de/pages/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/58126614-70bf-4ec7-8ab1-f31a6b6bf2e1": {
   "geprueft": "2026-11-19",
@@ -14309,6 +16470,27 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/63ffb47f-0eaf-4374-a1a8-287a5e4ecea0": {
+  "felder": {
+   "email": {
+    "wert": "info@noegels-hofladen.de",
+    "quelle": "http://www.noegels-hofladen.de/IMPRESSUM/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/6425ab44-ca5f-4522-a53e-8a297d7ce5c5": {
+  "felder": {
+   "email": {
+    "wert": "joerg.nies@t-online.de",
+    "quelle": "http://www.obsthof-nies.de/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "overture/64ac5edd-d6b2-4a92-a678-cbc0731164fb": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -14388,6 +16570,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/67e8b64d-d893-4772-84f8-3a033285c0fd": {
+  "felder": {
+   "email": {
+    "wert": "mhrobrecht@outlook.de",
+    "quelle": "https://www.biohof-robrecht.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/69c4a25f-d8ac-4bc9-afd1-400ae16b5468": {
   "felder": {
    "email": {
@@ -14430,6 +16622,16 @@
    "email": {
     "wert": "info@heilers-luelf.de",
     "quelle": "http://spargel-erdbeerhof.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/6b57cd2c-21d6-4047-8061-87c87855b4d5": {
+  "felder": {
+   "email": {
+    "wert": "info@kronenkaffee.de",
+    "quelle": "https://www.kronenkaffee.de/Service/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -14492,6 +16694,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/6ce4a8c9-333a-47e8-abb8-19fb9b1355f2": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
+ },
  "overture/6d44d53f-152d-4ee6-8dcd-ef4b33ca7b45": {
   "felder": {
    "email": {
@@ -14501,6 +16707,10 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "overture/6d45a137-8862-4eb9-8114-aff0a47dda43": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "overture/6d8ce19e-2f3a-456c-9ebc-210fc2bbe500": {
   "felder": {
@@ -14551,6 +16761,16 @@
    "email": {
     "wert": "info@denic.de",
     "quelle": "https://www.denic.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/6f0a1562-0cd6-42af-a46b-64c5ed15569c": {
+  "felder": {
+   "email": {
+    "wert": "info@gefluegelhof-esken.de",
+    "quelle": "http://www.gefluegelhof-esken.de/Kontakt/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -14614,6 +16834,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/7136739d-8783-45c3-b1b5-ad61e0791b1d": {
+  "felder": {
+   "email": {
+    "wert": "info@freiluftrind.de",
+    "quelle": "https://www.freiluftrind.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/713ebc5f-ee3a-480d-9317-a87be9b78a63": {
   "geprueft": "2026-11-19"
  },
@@ -14650,6 +16880,10 @@
  },
  "overture/7240460c-26a1-4917-80e2-a18cc22e81b2": {
   "geprueft": "2026-11-19"
+ },
+ "overture/74dc24db-abc7-45be-ad6a-34905e580022": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "overture/74ea32cb-0ee7-43dc-b7ff-79d74e5a4bd6": {
   "felder": {
@@ -14709,6 +16943,16 @@
    "email": {
     "wert": "werner.gammel@gmx.net",
     "quelle": "https://kartoffelhof-wallerfangen.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/7703dc5d-5a35-4113-8acf-feb1da3a70b2": {
+  "felder": {
+   "email": {
+    "wert": "info@herrmannsdorfer.de",
+    "quelle": "https://www.herrmannsdorfer.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -14815,6 +17059,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/7b642a00-305f-4813-bf32-9cd9f9147247": {
+  "felder": {
+   "email": {
+    "wert": "info@erdbeerhof-janssen.de",
+    "quelle": "https://erdbeerhof-janssen.com/IMPRESSUM-DATENSCHUTZ/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/7bcc59f7-bdc5-4a39-bfda-5253fac849de": {
   "felder": {
    "email": {
@@ -14844,6 +17098,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "overture/7d72769a-ef6b-423b-b4e3-be178854df69": {
+  "felder": {
+   "email": {
+    "wert": "gemuese.lueninghausen@mailbox.org",
+    "quelle": "https://www.gemuesehof-lueninghausen.de/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/7d9d6aca-5f12-46a0-89e5-65918a1b4483": {
   "felder": {
    "email": {
@@ -14863,6 +17127,30 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "overture/7f8564d3-6de8-459e-9dae-a5b94f85910f": {
+  "felder": {
+   "email": {
+    "wert": "info@schweisserei-michel.de",
+    "quelle": "https://www.schweisserei-michel.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/7fef0d6c-9204-46d8-a61b-b24daeb9fec8": {
+  "felder": {
+   "email": {
+    "wert": "biohof.hafner@gmx.de",
+    "quelle": "http://www.biohof-hafner.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/7ff4c5f0-478b-44d1-bf43-eaa08fcf651f": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
  },
  "overture/808e0c9c-92d8-4c45-bf4f-bca60302e9bd": {
   "felder": {
@@ -14889,6 +17177,9 @@
  "overture/8356801a-5c64-435a-88a1-d6eed416cd99": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "overture/83ce7b27-2ede-4230-86c0-881503f8b66a": {
+  "geprueft": "2026-11-19"
  },
  "overture/851ed8a9-c094-499d-95a6-acce67eb01b3": {
   "felder": {
@@ -15009,6 +17300,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/8a91d388-a51c-4c9a-8d1d-ab73bf95ea43": {
+  "felder": {
+   "email": {
+    "wert": "info@biohof-strohmeyer.de",
+    "quelle": "https://biohof-strohmeyer.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/8abb5a08-fcba-46ae-806c-c7e13e7c2e3d": {
   "felder": {
    "email": {
@@ -15034,6 +17335,16 @@
    "email": {
     "wert": "rosi.rester@gmx.de",
     "quelle": "https://rannahofladen.de/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/8c4411ae-5c30-4235-8cb8-c27078195762": {
+  "felder": {
+   "email": {
+    "wert": "info@fischraeucherei-schiessl.de",
+    "quelle": "https://www.fischraeucherei-schiessl.de/Impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -15100,6 +17411,16 @@
   },
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "overture/9223223c-5fe0-49a4-8710-86daeef56085": {
+  "felder": {
+   "email": {
+    "wert": "post@krempdorfer-obsthof.de",
+    "quelle": "https://krempdorfer-obsthof.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/9291e8d6-fb45-442e-9101-08ee10d7ea7d": {
   "felder": {
@@ -15174,6 +17495,17 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/955668c8-4782-432b-b3a3-1cf459a8abb0": {
+  "felder": {
+   "email": {
+    "wert": "post@gefluegelhof-kaiser.de",
+    "quelle": "https://gefluegelhof-kaiser.de/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "overture/95634ad5-71cf-4438-afdc-45af6cde7a3a": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -15211,6 +17543,16 @@
    "email": {
     "wert": "info@stefanserdbeerhof.de",
     "quelle": "https://www.stefanserdbeerhof.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/985dbc93-a72b-4f21-b5d0-dbf1ad1fd8db": {
+  "felder": {
+   "email": {
+    "wert": "info@obsthof-gestorf.de",
+    "quelle": "https://www.obsthof-gestorf.de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -15310,6 +17652,26 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/9b740dbf-3661-4189-8df1-98485b5c27f3": {
+  "felder": {
+   "email": {
+    "wert": "gerstenhofladen@posteo.de",
+    "quelle": "https://www.gerstenhofladen.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/9b9ca4ce-d1da-4287-92a1-91ac24f81988": {
+  "felder": {
+   "email": {
+    "wert": "info@biohof-elmengrund.de",
+    "quelle": "https://biohof-elmengrund.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/9bd2a9d9-495c-481b-a9ec-abfac9de4d14": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -15387,6 +17749,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "overture/a04d1dfb-b8ee-4477-bc08-29ea58733c5c": {
+  "felder": {
+   "email": {
+    "wert": "naturhof-schleyer@web.de",
+    "quelle": "https://www.naturhof-schleyer.com/kontakt/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/a067e527-dabe-41f6-a97c-9e56c1672227": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
@@ -15457,6 +17829,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/a30a38b8-1c5d-494a-be7e-94549ec1e965": {
+  "felder": {
+   "email": {
+    "wert": "familiejordt@outlook.de",
+    "quelle": "https://niehuuser-knolle.de/impressum-disclaimer/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/a31baba8-0c2f-438f-8367-b31f1b656964": {
   "felder": {
    "email": {
@@ -15470,6 +17852,20 @@
  "overture/a3384f32-8898-435a-a91a-d44ffac640d5": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "overture/a34216b8-7e08-4823-adb6-943ae2a4b79f": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
+ },
+ "overture/a383a76b-17b0-4376-a12c-fd2759b6f47b": {
+  "felder": {
+   "email": {
+    "wert": "erdbeerhofklausgbr@mail.com",
+    "quelle": "https://www.erdbeerhofklaus.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/a445ee52-8e9e-4aaf-9231-1fb35576492e": {
   "felder": {
@@ -15499,6 +17895,16 @@
    "telefon": {
     "wert": "00494946916630",
     "quelle": "https://milchtanken.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/a617e739-40fa-4a05-b18c-5caba0f48f39": {
+  "felder": {
+   "email": {
+    "wert": "info@chiemgaukorn.de",
+    "quelle": "https://chiemgaukorn.de/policies/legal-notice",
     "stand": "2026-11-19"
    }
   },
@@ -15619,6 +18025,26 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/ab55b711-4023-4fd1-abca-42eb9d5972a2": {
+  "felder": {
+   "email": {
+    "wert": "shop@biohof-stoevesandt.de",
+    "quelle": "https://biohof-stoevesandt.de/pages/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/ac01cf4e-1ec3-4323-81ba-2ca36c523cb2": {
+  "felder": {
+   "email": {
+    "wert": "biohof.drolshagen@t-online.de",
+    "quelle": "http://www.biohof-drolshagen.de/Impressum-Datenschutz",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/ac1d2b95-ef23-48ce-94c4-85522c9d1bd5": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -15642,6 +18068,16 @@
    "email": {
     "wert": "info@biohof-liebhart.de",
     "quelle": "https://www.biohof-liebhart.de/datenschutzerklaerung/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/ad2484ad-ce9c-4799-b027-627c81212c15": {
+  "felder": {
+   "email": {
+    "wert": "info@fruchtverliebt.de",
+    "quelle": "https://fruchtverliebt.de/15c42-web-agency-gb-home/impressum-und-datenschutz",
     "stand": "2026-11-19"
    }
   },
@@ -15949,6 +18385,10 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "overture/c2698093-66cf-4e0d-ad1b-80fdf53f1643": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "overture/c2a4423d-fe7a-4d2f-ab15-cbca718ed003": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -16040,6 +18480,16 @@
  "overture/c5b3d830-7f5d-43dc-a3d4-003af0d9fd16": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "overture/c5f1b427-247e-47cc-b236-67d5d57e2690": {
+  "felder": {
+   "email": {
+    "wert": "muehlmeyers-kartoffelhof@gmx.de",
+    "quelle": "https://www.xn--mhlmeyers-kartoffelhof-slc.de/Kontakt/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/c67499ab-9ae2-40c0-9adf-572a74926917": {
   "felder": {
@@ -16203,6 +18653,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "overture/ccbc2f41-5512-4c1c-bf04-13bb5dc48457": {
+  "felder": {
+   "email": {
+    "wert": "info@hofladen-widmann.de",
+    "quelle": "https://www.hofladen-widmann.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/cd3306fa-06a6-436d-bb67-b085754d51fc": {
   "felder": {
    "email": {
@@ -16280,6 +18740,16 @@
    "email": {
     "wert": "info@hofladen-morabach.de",
     "quelle": "https://hofladen-morabach.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/d1a6f390-0331-4b7f-b380-9934bd4af834": {
+  "felder": {
+   "email": {
+    "wert": "shop@machners-blumerei-und-hofladen.de",
+    "quelle": "https://machners-blumerei-und-hofladen.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -16368,6 +18838,26 @@
  "overture/d5840b7c-8574-4de1-8ace-568f955bc3f5": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "overture/d5c0db9a-a40b-47c6-a219-c7a7057b02f4": {
+  "felder": {
+   "email": {
+    "wert": "info@hof-osterbrink.de",
+    "quelle": "https://www.hof-osterbrink.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/d64b8922-69ba-49cd-a9b6-0a45a1762109": {
+  "felder": {
+   "email": {
+    "wert": "info@gefluegelhof-bleck.de",
+    "quelle": "https://gefluegelhof-bleck.de/Impressum/index.php/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/d671ce87-e256-4949-be10-4b2c24efd59a": {
   "geprueft": "2026-11-19",
@@ -16464,6 +18954,16 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "overture/daf087c6-568c-4ec4-9e3e-9e583ce690f4": {
+  "felder": {
+   "email": {
+    "wert": "info@leimgrabenhof.de",
+    "quelle": "https://leimgrabenhof.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/db27fb12-df6a-43fd-a92a-6cceadc2b3e3": {
   "felder": {
    "email": {
@@ -16519,6 +19019,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/dd933160-082c-4c92-8734-4e11ab03028b": {
+  "felder": {
+   "email": {
+    "wert": "info@biohof-claar.de",
+    "quelle": "https://www.biohof-claar.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/de733c94-53b3-463b-ad53-1c2251120b10": {
   "felder": {
    "email": {
@@ -16534,6 +19044,16 @@
    "email": {
     "wert": "biohof.loetzbeyer@gmx.de",
     "quelle": "https://biohof-loetzbeyer.de/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/df979e02-475c-4b29-96b8-3c254ea0f9e4": {
+  "felder": {
+   "email": {
+    "wert": "info@biohof-stamm.de",
+    "quelle": "https://biohof-stamm.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -16560,6 +19080,16 @@
   "geprueft": "2026-11-19"
  },
  "overture/e1d7c3eb-ea3a-468b-b5d0-a07357b7ad35": {
+  "geprueft": "2026-11-19"
+ },
+ "overture/e1d96ec9-b261-40a0-aed8-c8a0cc95a2af": {
+  "felder": {
+   "email": {
+    "wert": "info@apfeliebe.de",
+    "quelle": "https://apfeliebe.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
   "geprueft": "2026-11-19"
  },
  "overture/e1e3c6ac-cd37-4fbb-842e-ac2812fc8e05": {
@@ -16608,9 +19138,23 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/e39da237-74de-4b72-a3d6-16a11a2adb64": {
+  "felder": {
+   "email": {
+    "wert": "info@bund-naturschutz.de",
+    "quelle": "https://aschheim-feldkirchen-kirchheim.bund-naturschutz.de/kontakte-service/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/e3af1f55-df45-469e-9a2a-14069bca6a8a": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "overture/e40bf51a-88ed-4c71-9879-d8fe892bf0a8": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "overture/e47738f5-63b7-4049-86ad-89612bfb4c12": {
   "felder": {
@@ -16621,6 +19165,10 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "overture/e4ac63d9-cafe-4bb1-ba9b-67479a399aa5": {
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
  },
  "overture/e4bcffe5-4c12-412f-abc4-fa3e1434ecf0": {
   "geprueft": "2026-11-19",
@@ -16732,6 +19280,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/eb8cc491-f1b4-471e-ae73-e61ca939f2c6": {
+  "felder": {
+   "email": {
+    "wert": "steffansimon@web.de",
+    "quelle": "http://alpaka-trekking.de/Kontakt/Impressum/Datenschutzerklaerung/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/eb96e0e3-5ef8-4aae-b215-bed3d3f2c300": {
   "felder": {
    "email": {
@@ -16800,9 +19358,28 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/ee089081-c4dc-4e30-b236-3c0197b628bb": {
+  "felder": {
+   "email": {
+    "wert": "albertkuckertz@web.de",
+    "quelle": "http://www.kuckertz-kartoffeln.de/ImpressumDisclaimer/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0175-7987200",
+    "quelle": "http://www.kuckertz-kartoffeln.de/ImpressumDisclaimer/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/ee522f18-af7e-486d-848d-661719cac8ca": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "overture/ee8a80ca-41c3-4faf-8585-e82701b3eacc": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "overture/ef142eee-0adf-434e-8825-fda3fdd4b406": {
   "geprueft": "2026-11-19"
@@ -16814,6 +19391,25 @@
  "overture/efd25982-75b2-47a7-a4af-b5c4d07dc071": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "overture/f046c70f-0aee-4ae9-80b4-5150bd05d3eb": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
+ "overture/f054e71d-10f2-44d8-8350-0089462e18d0": {
+  "felder": {
+   "email": {
+    "wert": "shop@hofmanufaktur-kargow.de",
+    "quelle": "https://www.hofmanufaktur-kargow.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "03991 1822952",
+    "quelle": "https://www.hofmanufaktur-kargow.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "overture/f08a4726-9c33-49e4-846e-3dbbf2354f84": {
   "geprueft": "2026-11-19",
@@ -16884,11 +19480,31 @@
   },
   "geprueft": "2026-11-19"
  },
+ "overture/f33304ee-4da2-41f5-8330-90d5aed3e00f": {
+  "felder": {
+   "email": {
+    "wert": "kontakt@biohof-grossbardau.de",
+    "quelle": "http://www.biohof-grossbardau.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "overture/f3aec439-d554-432b-b72c-dc2ddb220ba1": {
   "felder": {
    "email": {
     "wert": "kontakt@starzenbauer.de",
     "quelle": "https://starzenbauer.de/index.php/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/f40a4439-bebb-40ff-a2b2-6a7a101cc824": {
+  "felder": {
+   "email": {
+    "wert": "hofladen-ziegler@web.de",
+    "quelle": "https://ziegler-hofladen.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -17044,9 +19660,17 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 503"
  },
+ "overture/fd0b8624-c6f3-4025-9f84-70ffaa73517d": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
+ },
  "overture/fd2eff0c-d315-487e-bc10-90ec9b82e678": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "overture/fdf64320-c0c2-4ed4-be37-95c0b22c5a00": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "overture/fe8b1018-414e-42d7-a4a3-685ff35eeb71": {
   "felder": {
@@ -17058,6 +19682,16 @@
    "telefon": {
     "wert": "036202 - 90207",
     "quelle": "https://www.landwirt-thoermer.de/impressum.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "overture/ff166f30-0a02-463e-8054-35d77b7d633d": {
+  "felder": {
+   "email": {
+    "wert": "redaktion@unser-ruebenach.de",
+    "quelle": "https://www.unser-ruebenach.de/impressum/",
     "stand": "2026-11-19"
    }
   },
@@ -17155,6 +19789,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/1041065637": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
  "way/104121880": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -17217,9 +19855,23 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/1069993127": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "way/107211088": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "way/1079369824": {
+  "felder": {
+   "email": {
+    "wert": "info@eickenhof.de",
+    "quelle": "https://www.eickenhof.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "way/108264130": {
   "felder": {
@@ -17254,6 +19906,31 @@
  "way/1108473211": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "way/112189542": {
+  "felder": {
+   "email": {
+    "wert": "info@krewelshof.de",
+    "quelle": "https://krewelshof.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "02256-95988-300",
+    "quelle": "https://krewelshof.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/112306400": {
+  "felder": {
+   "telefon": {
+    "wert": "+49 (0) 531-1298-0",
+    "quelle": "https://www.landesforsten.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "way/1125895477": {
   "geprueft": "2026-11-19"
@@ -17325,6 +20002,10 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "way/1209089205": {
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
  "way/1217787110": {
   "felder": {
    "email": {
@@ -17334,6 +20015,22 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "way/1224973292": {
+  "felder": {
+   "email": {
+    "wert": "info@hof-fiefhaus.de",
+    "quelle": "https://hof-fiefhaus.de/UeBER-UNS-KONTAKT/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "05973/1543",
+    "quelle": "https://hof-fiefhaus.de/UeBER-UNS-KONTAKT/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
  },
  "way/1228710106": {
   "felder": {
@@ -17348,6 +20045,10 @@
  "way/123433387": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "way/124983145": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 403"
  },
  "way/125173212": {
   "geprueft": "2026-11-19",
@@ -17406,6 +20107,31 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/1284670743": {
+  "felder": {
+   "email": {
+    "wert": "spitzenhof-info@t-online.de",
+    "quelle": "http://www.info-spitzenhof.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+4915736624986",
+    "quelle": "http://www.info-spitzenhof.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/1284683719": {
+  "felder": {
+   "email": {
+    "wert": "info@hanemannshof.de",
+    "quelle": "https://hanemannshof.de/pages/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/128774472": {
   "felder": {
    "email": {
@@ -17426,6 +20152,16 @@
    "telefon": {
     "wert": "+49 (0) 7171 89199",
     "quelle": "https://www.hofcafe-herdtlinsweiler.de/impressum-2.html",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/1306993726": {
+  "felder": {
+   "email": {
+    "wert": "info@wagyu-muenster.de",
+    "quelle": "https://shop.wagyu-muenster.de/policies/legal-notice",
     "stand": "2026-11-19"
    }
   },
@@ -17456,6 +20192,21 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/1328784193": {
+  "felder": {
+   "email": {
+    "wert": "hof.weustermann@gmx.de",
+    "quelle": "https://hof-weustermann.de/kontakt/impressum_datenschutzerklaerung/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+491702914947",
+    "quelle": "https://hof-weustermann.de/kontakt/impressum_datenschutzerklaerung/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/132964165": {
   "felder": {
    "email": {
@@ -17466,6 +20217,16 @@
    "telefon": {
     "wert": "069 - 46 23 92",
     "quelle": "http://www.wartburggemeinde-frankfurt.de/index.php?id=5",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/133150178": {
+  "felder": {
+   "email": {
+    "wert": "info@moelmsche-honig.de",
+    "quelle": "https://moelmsche-honig.de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -17634,6 +20395,31 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 400"
  },
+ "way/1430296392": {
+  "felder": {
+   "email": {
+    "wert": "schule@gymnasium-buchloe.de",
+    "quelle": "https://www.gymnasium-buchloe.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "08241 / 5079010",
+    "quelle": "https://www.gymnasium-buchloe.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/1435859773": {
+  "felder": {
+   "email": {
+    "wert": "bio@landgut-weimar.de",
+    "quelle": "https://www.biolandgut-weimar.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/144068178": {
   "felder": {
    "email": {
@@ -17643,6 +20429,10 @@
    }
   },
   "geprueft": "2026-11-19"
+ },
+ "way/144284866": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "way/145409653": {
   "felder": {
@@ -17654,6 +20444,16 @@
    "telefon": {
     "wert": "+49(0)8205 969926",
     "quelle": "https://www.woerle-obsthof.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/1464119916": {
+  "felder": {
+   "email": {
+    "wert": "hallo@hof-im-greth.de",
+    "quelle": "https://hof-im-greth.de/pages/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -17697,6 +20497,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/1527625936": {
+  "felder": {
+   "email": {
+    "wert": "theodor.bormann@t-online.de",
+    "quelle": "http://www.bormanns-hof.de/Impressum,-DSGVO/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/1527835484": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -17715,6 +20525,21 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "way/156141350": {
+  "felder": {
+   "email": {
+    "wert": "info@glaeserne-molkerei.de",
+    "quelle": "https://glaeserne-molkerei.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 (0) 33760 2077-0",
+    "quelle": "https://glaeserne-molkerei.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/1571451100": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -17722,6 +20547,21 @@
  "way/158670786": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "way/162361069": {
+  "felder": {
+   "email": {
+    "wert": "prospektservice@schwarzwald-tourismus.info",
+    "quelle": "https://www.schwarzwald-tourismus.info/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "+49 761 896460",
+    "quelle": "https://www.schwarzwald-tourismus.info/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "way/164060634": {
   "geprueft": "2026-11-19",
@@ -17740,6 +20580,16 @@
  "way/178354856": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "way/180988873": {
+  "felder": {
+   "email": {
+    "wert": "info@villa-landchic.de",
+    "quelle": "https://villa-landchic.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "way/183360754": {
   "felder": {
@@ -17760,6 +20610,10 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "way/189653814": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "way/189804335": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -17772,6 +20626,21 @@
    "email": {
     "wert": "kartoffelhof.sandland@t-online.de",
     "quelle": "https://kartoffelhof.sandland.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/192230256": {
+  "felder": {
+   "email": {
+    "wert": "sachsenhof@email.de",
+    "quelle": "https://www.scharbeutz-sachsenhof.de/impressum",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "04524-709971",
+    "quelle": "https://www.scharbeutz-sachsenhof.de/impressum",
     "stand": "2026-11-19"
    }
   },
@@ -17956,6 +20825,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/235299449": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
+ },
  "way/238864097": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
@@ -18000,6 +20873,10 @@
  "way/252881502": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "way/255093227": {
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
  },
  "way/257820535": {
   "felder": {
@@ -18184,6 +21061,21 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/300657700": {
+  "felder": {
+   "email": {
+    "wert": "kontakt@blaubeergarten.de",
+    "quelle": "https://www.blaubeerland.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "05164 - 9 14 20",
+    "quelle": "https://www.blaubeerland.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/303845533": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -18252,7 +21144,21 @@
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
+ "way/321388185": {
+  "felder": {
+   "email": {
+    "wert": "ralf.kuethe@yahoo.de",
+    "quelle": "https://www.hofcafe-bisdorf.com/impressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/322320429": {
+  "geprueft": "2026-11-19",
+  "fehler": "fetch failed"
+ },
+ "way/322897826": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
  },
@@ -18276,6 +21182,16 @@
   },
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
+ },
+ "way/329546774": {
+  "felder": {
+   "email": {
+    "wert": "h.i.d.fritsche@t-online.de",
+    "quelle": "http://www.da-bio-fritsche.de/KontaktImpressum",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "way/330683740": {
   "felder": {
@@ -18542,6 +21458,10 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/414956555": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
  "way/415729509": {
   "felder": {
    "email": {
@@ -18550,6 +21470,9 @@
     "stand": "2026-11-19"
    }
   },
+  "geprueft": "2026-11-19"
+ },
+ "way/41615975": {
   "geprueft": "2026-11-19"
  },
  "way/417061126": {
@@ -18562,6 +21485,16 @@
    "telefon": {
     "wert": "+49 (0)7031 68 08-0",
     "quelle": "https://www.holzgerlingen.de/de/impressum/?y=2026",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/421121473": {
+  "felder": {
+   "email": {
+    "wert": "info@milchvieh-timmermann.de",
+    "quelle": "http://www.milchvieh-timmermann.de/Impressum",
     "stand": "2026-11-19"
    }
   },
@@ -18680,11 +21613,36 @@
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
+ "way/479010033": {
+  "felder": {
+   "email": {
+    "wert": "kontakt@ggp-gruppe.de",
+    "quelle": "https://www.ggp-gruppe.de/impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0381 12371-0",
+    "quelle": "https://www.ggp-gruppe.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/481833830": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 400"
  },
  "way/485551041": {
+  "geprueft": "2026-11-19"
+ },
+ "way/490495164": {
+  "felder": {
+   "email": {
+    "wert": "hallo@hof-im-greth.de",
+    "quelle": "https://hof-im-greth.de/pages/impressum",
+    "stand": "2026-11-19"
+   }
+  },
   "geprueft": "2026-11-19"
  },
  "way/490725581": {
@@ -18724,6 +21682,16 @@
  "way/50155810": {
   "geprueft": "2026-11-19"
  },
+ "way/513026783": {
+  "felder": {
+   "email": {
+    "wert": "info@biohof-kroeger.de",
+    "quelle": "http://www.biohof-kroeger.de/Impressum/Datenschutzerklaerung/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/51849765": {
   "felder": {
    "email": {
@@ -18754,6 +21722,27 @@
  "way/53188077": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 503"
+ },
+ "way/54185628": {
+  "felder": {
+   "telefon": {
+    "wert": "09195-5388",
+    "quelle": "https://kraeuter-fuchs.de/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
+ "way/55992959": {
+  "felder": {
+   "email": {
+    "wert": "info@oettinger-muehle.de",
+    "quelle": "https://oettinger-muehle.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "way/563903319": {
   "geprueft": "2026-11-19",
@@ -18801,7 +21790,21 @@
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
  },
+ "way/61489595": {
+  "felder": {
+   "email": {
+    "wert": "florianhuck@web.de",
+    "quelle": "https://hofladen-rheingenuss.de/policies/legal-notice",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/625288486": {
+  "geprueft": "2026-11-19",
+  "hinweis": "kein-impressum"
+ },
+ "way/640052185": {
   "geprueft": "2026-11-19",
   "hinweis": "kein-impressum"
  },
@@ -18829,6 +21832,10 @@
  "way/67390760": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
+ },
+ "way/674647832": {
+  "geprueft": "2026-11-19",
+  "fehler": "robots.txt"
  },
  "way/677840082": {
   "geprueft": "2026-11-19",
@@ -18913,6 +21920,16 @@
  "way/740830956": {
   "geprueft": "2026-11-19",
   "fehler": "HTTP 403"
+ },
+ "way/741020616": {
+  "felder": {
+   "email": {
+    "wert": "info@weimar-gbr.de",
+    "quelle": "https://weimar-gbr.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
  },
  "way/747370046": {
   "geprueft": "2026-11-19",
@@ -19078,6 +22095,21 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/88580414": {
+  "felder": {
+   "email": {
+    "wert": "jensamend@gmx.de",
+    "quelle": "https://www.biohof-amend.de/Impressum/",
+    "stand": "2026-11-19"
+   },
+   "telefon": {
+    "wert": "0173-5949609",
+    "quelle": "https://www.biohof-amend.de/Impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/886247752": {
   "felder": {
    "email": {
@@ -19225,6 +22257,16 @@
   },
   "geprueft": "2026-11-19"
  },
+ "way/970351860": {
+  "felder": {
+   "email": {
+    "wert": "info@hofladen-kratzer.de",
+    "quelle": "https://hofladen-kratzer.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
  "way/972624194": {
   "geprueft": "2026-11-19",
   "fehler": "fetch failed"
@@ -19234,6 +22276,20 @@
    "email": {
     "wert": "info@hof-rokahr.de",
     "quelle": "https://www.hof-rokahr.de/impressum/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/97667090": {
+  "geprueft": "2026-11-19",
+  "fehler": "HTTP 404"
+ },
+ "way/98437878": {
+  "felder": {
+   "email": {
+    "wert": "info@imkerei-arndt.de",
+    "quelle": "https://imkerei-arndt.de/policies/legal-notice",
     "stand": "2026-11-19"
    }
   },
@@ -19249,6 +22305,16 @@
    "telefon": {
     "wert": "08206/9624392",
     "quelle": "https://www.gailer-schmiechen.de/index.php/privacy-policy/",
+    "stand": "2026-11-19"
+   }
+  },
+  "geprueft": "2026-11-19"
+ },
+ "way/986798280": {
+  "felder": {
+   "email": {
+    "wert": "info@hof-dudziak.de",
+    "quelle": "https://hof-dudziak.de/kontakt/impressum",
     "stand": "2026-11-19"
    }
   },
