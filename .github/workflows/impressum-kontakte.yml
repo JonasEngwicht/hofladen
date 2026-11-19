@@ -1,0 +1,65 @@
+name: Kontaktdaten aus dem Impressum
+
+# Liest E-Mail-Adresse (und fehlende Telefonnummer) aus dem Impressum der Hof-Websites – für alle Einträge,
+# die eine Website, aber keine E-Mail haben. Ergebnis: data/impressum.json (füllt im Build nur leere Felder).
+# Bereits geprüfte Einträge werden erst nach 120 Tagen erneut abgerufen.
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: 'Höchstens so viele Websites prüfen'
+        required: false
+        default: '6000'
+  schedule:
+    - cron: '41 3 8 * *' # monatlich am 8. um 03:41 UTC
+  push:
+    branches: [main]
+    paths:
+      - scripts/impressum-kontakte.mjs
+      - .github/workflows/impressum-kontakte.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daten
+  cancel-in-progress: false
+
+jobs:
+  auswerten:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Parser-Selbsttest
+        run: node scripts/impressum-kontakte.mjs --test
+      - name: Liste der Einträge
+        run: LISTE_EXPORT=/tmp/liste.json node scripts/build.mjs > /dev/null
+      - name: Impressum auswerten
+        run: node scripts/impressum-kontakte.mjs /tmp/liste.json "${{ github.event.inputs.max || '6000' }}"
+      - name: Testbuild
+        run: node scripts/build.mjs | tail -1
+      - name: Commit
+        id: commit
+        run: |
+          git config user.name "hofladenliste-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/impressum.json
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Kontaktdaten aus dem Impressum der Hof-Websites ergänzt"
+            git pull --rebase -X theirs -q
+            git push
+            echo "geaendert=ja" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Cloudflare-Deploy auslösen
+        if: steps.commit.outputs.geaendert == 'ja'
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "Secret CF_DEPLOY_HOOK fehlt."; exit 0; fi
+          curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgelöst."

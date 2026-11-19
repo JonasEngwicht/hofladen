@@ -149,11 +149,13 @@ for (const e of eintraege) {
 
 // Recherche-Funde aus öffentlichen Quellen der Höfe, Gemeinden und Tourismusverbände (data/recherche.json,
 // siehe scripts/recherche-uebernehmen.mjs): füllen ebenfalls nur leere Felder, je Feld mit eigener Quelle.
+// Danach Funde aus dem Impressum der Hof-Websites (data/impressum.json, siehe scripts/impressum-kontakte.mjs), gleiches Format.
 const recherche = existsSync(join(ROOT, 'data', 'recherche.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'recherche.json'), 'utf8')) : {};
-let rechercheAnzahl = 0;
-for (const e of eintraege) {
-  const r = recherche[e.osm || e.id];
-  if (!r) continue;
+const impressum = existsSync(join(ROOT, 'data', 'impressum.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'impressum.json'), 'utf8')) : {};
+let rechercheAnzahl = 0, impressumAnzahl = 0;
+for (const [datei, e] of [recherche, impressum].flatMap((d) => eintraege.map((e) => [d, e]))) {
+  const r = datei[e.osm || e.id];
+  if (!r?.felder) continue;
   const neu = new Map(); // Quelle → { felder, stand }
   for (const [f, v] of Object.entries(r.felder)) {
     if (f === 'oeffnungszeiten_text' ? (e.oeffnungszeiten || e.oeffnungszeiten_text) : e[f]) continue;
@@ -165,7 +167,7 @@ for (const e of eintraege) {
   if (!neu.size) continue;
   e.ergaenzt ??= { felder: [], quellen: [] };
   for (const q of neu.values()) { e.ergaenzt.felder.push(...q.felder); e.ergaenzt.quellen.push(q); }
-  rechercheAnzahl++;
+  if (datei === impressum) impressumAnzahl++; else rechercheAnzahl++;
 }
 
 // Kontaktdaten, Adressen und Öffnungszeiten (Text) aus offenen Quellen für OSM-Einträge: ebenfalls nur leere Felder
@@ -2604,7 +2606,7 @@ writeFileSync(join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\
 // ---------- Optional: Gesamtliste als JSON (LISTE_EXPORT=pfad node scripts/build.mjs) ----------
 if (process.env.LISTE_EXPORT) {
   writeFileSync(process.env.LISTE_EXPORT, JSON.stringify(eintraege.map((e) => ({
-    name: e.titelSeite, art: e.art, strasse: e.strasse || '', plz: e.plz || '', ort: e.ortAnzeige, adresse: e.adresse,
+    schluessel: e.osm || e.id, sid: e.sid, typ: e.typ, name: e.titelSeite, art: e.art, strasse: e.strasse || '', plz: e.plz || '', ort: e.ortAnzeige, adresse: e.adresse,
     kreis: e.k.titel, bundesland: e.k.landName, telefon: e.telefon || '', email: e.email || '', website: e.website || '',
     facebook: e.facebook || '', instagram: e.instagram || '', oeffnungszeiten: e.oeffnungszeiten ? ((zeilen(e.oeffnungszeiten) || []).map(([t, v]) => `${t} ${v}`).join(', ') || e.oeffnungszeiten) : (e.oeffnungszeiten_text || ''),
     oeffnungszeitenOsm: e.oeffnungszeiten || '', bio: e.bio ? 'ja' : '', angebot: e.kat.map((x) => KATEGORIEN[x]).join(', '),
@@ -2684,5 +2686,5 @@ writeFileSync(join(GEN, 'suchwoerter.json'), JSON.stringify([
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;
 const mitKat = eintraege.filter((e) => e.kat.length).length;
-console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${pflegeAnzahl} gepflegt, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${geschlossenAnzahl} als geschlossen entfernt, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
+console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${impressumAnzahl} mit Kontakt aus dem Impressum, ${pflegeAnzahl} gepflegt, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${geschlossenAnzahl} als geschlossen entfernt, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
 if (impFehlt) console.warn('WARNUNG: Impressum in site.config.json ist unvollständig.');
