@@ -635,3 +635,11 @@ html { overflow-x: clip; }
 .route-haupt .kartenpanel { height: 520px; }
 .route-liste { max-height: 520px; overflow: auto; list-style: none; padding: 0; margin: 0; }
 @media (max-width: 860px) { .route-haupt { display: block; } .route-haupt .kartenpanel { height: 360px; margin-bottom: 1rem; } .route-liste { max-height: none; } }
+.ratgeber-liste { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: .8rem; }
+.ratgeber-liste a { display: grid; gap: .3rem; padding: 1rem 1.1rem; border: 1px solid var(--linie); border-radius: var(--r-klein); background: var(--weiss); color: var(--tinte); text-decoration: none; height: 100%; }
+.ratgeber-liste a:hover { border-color: var(--fichte); }
+.ratgeber-liste span { color: var(--grau); font-size: .95rem; }
+.ratgeber table { border-collapse: collapse; margin: .6rem 0 1rem; }
+.ratgeber th, .ratgeber td { border-bottom: 1px solid var(--linie); padding: .35rem .7rem; text-align: left; }
+.passend ul { padding-left: 1.2rem; }
+.ratgeber-hinweis ul { padding-left: 1.2rem; }
