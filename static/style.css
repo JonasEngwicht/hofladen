@@ -717,3 +717,10 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
   .aushang { color: #173B2C; }
   .aushang h2, .aushang .aushang-name { color: #173B2C; }
 }
+
+/* Ladezustand: Platzhalter-Karten */
+.skelett { min-height: 170px; display: grid; align-content: start; gap: .7rem; padding: 1.2rem; }
+.skelett span { display: block; height: .9rem; border-radius: 6px; background: linear-gradient(90deg, var(--linie), var(--kalk), var(--linie)); background-size: 200% 100%; animation: skelett 1.4s ease-in-out infinite; }
+.skelett span:first-child { width: 40%; } .skelett span:nth-child(2) { width: 75%; height: 1.3rem; } .skelett span:nth-child(3) { width: 55%; }
+@keyframes skelett { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+@media (prefers-reduced-motion: reduce) { .skelett span { animation: none; } }

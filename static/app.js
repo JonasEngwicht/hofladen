@@ -490,6 +490,7 @@ for (const box of $$('[data-naehe]')) {
   nurOffen.addEventListener('change', filterAnwenden);
   start.addEventListener('click', () => {
     start.disabled = true; meldung.hidden = false; meldung.textContent = 'Standort wird ermittelt …';
+    liste.innerHTML = SKELETT(3);
     navigator.geolocation.getCurrentPosition(async (pos) => {
       standortMerken(pos.coords.latitude, pos.coords.longitude, 'deinem Standort');
       try {
@@ -506,6 +507,9 @@ for (const box of $$('[data-naehe]')) {
     }, () => { start.disabled = false; meldung.textContent = 'Standort nicht verfügbar – bitte oben die Postleitzahl eingeben.'; }, { timeout: 10000, maximumAge: 600000 });
   });
 }
+
+// Platzhalter-Karten, solange Ergebnisse laden
+const SKELETT = (n) => Array.from({ length: n }, () => '<div class="laden skelett" aria-hidden="true"><span></span><span></span><span></span></div>').join('');
 
 // ---------- Startseite ----------
 function startseite() {
@@ -806,6 +810,7 @@ async function merklisteSeite() {
   if (!box) return;
   const slugs = merkliste.lesen();
   if (!slugs.length) { merklisteStatus(); return; }
+  $('[data-merkliste-liste]').innerHTML = SKELETT(Math.min(slugs.length, 4));
   try {
     const r = await fetch(`/api/eintraege?slugs=${encodeURIComponent(slugs.join(','))}`);
     const d = await r.json();
