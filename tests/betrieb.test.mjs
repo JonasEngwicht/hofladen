@@ -158,6 +158,16 @@ test('Erinnerung nach 6 Monaten: aus ohne Schalter, sonst eine Mail, Bestätigun
   assert.equal((await erinnerungenSenden({ ...env, ERINNERUNGEN_AKTIV: 'ja' }, h, { jetzt: spaeter })).gesendet, 0, 'nicht doppelt');
 });
 
+test('Rückmeldung an die meldende Person, sobald ihre Meldung übernommen ist', async () => {
+  cookie = '';
+  const d = await (await api('/api/meldung', { methode: 'POST', form: { art: 'korrektur', eintrag: ANDERER[15], telefon: '0355 9999', kontakt_email: 'helfer@example.org' } })).json();
+  const vorher = mails.length;
+  assert.equal((await verwaltung(`meldung/${d.id}`, { methode: 'POST', body: { status: 'erledigt' } })).status, 200);
+  assert.equal(mails.length, vorher + 1);
+  assert.equal(mails.at(-1).to[0], 'helfer@example.org');
+  assert.match(mails.at(-1).text, new RegExp(`/hof/${ANDERER[2]}/`));
+});
+
 test('Ohne Anmeldung kein Zugriff auf den Betreiber-Bereich', async () => {
   cookie = '';
   assert.equal((await api('/api/betrieb/ich')).status, 401);

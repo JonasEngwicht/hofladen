@@ -573,6 +573,17 @@ async function verwaltung(request, env, url, ctx) {
     const werte = [b.status, new Date().toISOString(), String(b.notiz || '').slice(0, 1000)];
     if (b.daten && typeof b.daten === 'object') { sets.push('daten = ?4'); werte.push(JSON.stringify(b.daten).slice(0, 20000)); }
     await env.STATS.prepare(`UPDATE meldungen SET ${sets.join(', ')} WHERE id = ?${werte.length + 1}`).bind(...werte, +m[1]).run();
+    // Erledigt (übernommen): kurze Rückmeldung an die meldende Person, wenn sie eine Adresse angegeben hat
+    if (b.status === 'erledigt' && env.RESEND_API_KEY) {
+      const me = await env.STATS.prepare('SELECT art, hof, daten, kontakt_email FROM meldungen WHERE id = ?1').bind(+m[1]).first();
+      if (me?.kontakt_email && ['neu', 'korrektur'].includes(me.art)) {
+        const d = JSON.parse(me.daten || '{}');
+        const e = aufloesen(d.eintrag || me.hof, eintragIndex());
+        const name = e ? e[3] : d.name || 'der Hof';
+        const link = e ? `${DOMAIN}/hof/${e[2]}/` : `${DOMAIN}/suche?q=${encodeURIComponent(d.name || '')}`;
+        ctx.waitUntil(mailSenden(env, { an: me.kontakt_email, betreff: `Danke! Deine Meldung zu „${name}“ ist übernommen`, text: `Hallo,\n\ndanke für deine Meldung zu „${name}“. Wir haben sie geprüft und übernommen; in den nächsten Minuten ist sie online:\n\n${link}\n\nMit Hinweisen wie deinem bleibt Hofladenliste aktuell.\n\nViele Grüße\nHofladenliste – hofladenliste.de` }).catch((x) => console.error('Mail', x.message)));
+      }
+    }
     // Freigegebene Übernahme: Konto anlegen und Anmeldelink an die Kontaktadresse schicken
     if (b.status === 'freigegeben') {
       const mz = await env.STATS.prepare('SELECT art, hof, daten, kontakt_email FROM meldungen WHERE id = ?1').bind(+m[1]).first();
