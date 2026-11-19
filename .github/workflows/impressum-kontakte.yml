@@ -42,6 +42,12 @@ jobs:
         run: node scripts/impressum-kontakte.mjs /tmp/liste.json "${{ github.event.inputs.max || '6000' }}"
       - name: Testbuild
         run: node scripts/build.mjs | tail -1
+      - name: Funde als Artefakt sichern
+        uses: actions/upload-artifact@v4
+        with:
+          name: impressum
+          path: data/impressum.json
+          retention-days: 14
       - name: Commit
         id: commit
         run: |
@@ -52,6 +58,7 @@ jobs:
             echo "Keine Änderungen."
           else
             git commit -m "Kontaktdaten aus dem Impressum der Hof-Websites ergänzt"
+            git checkout -- . # Nebenprodukte des Testbuilds (z. B. data/seiten-stand.json) verwerfen
             git pull --rebase -X theirs -q
             git push
             echo "geaendert=ja" >> "$GITHUB_OUTPUT"
