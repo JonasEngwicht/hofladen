@@ -1,0 +1,32 @@
+name: IndexNow melden
+
+# Meldet nach jedem erfolgreichen Deploy (Live-Prüfung grün) die geänderten Seiten an IndexNow (Bing u. a.).
+# Manuell mit „alle“ einmal sämtliche Seiten aus den Sitemaps.
+on:
+  workflow_run:
+    workflows: ['Live-Prüfung']
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      alle:
+        description: Alle Seiten aus den Sitemaps melden
+        type: boolean
+        default: false
+
+concurrency:
+  group: indexnow-${{ github.event_name }}
+  cancel-in-progress: true
+
+jobs:
+  melden:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build (Sitemaps)
+        run: node scripts/build.mjs > /dev/null
+      - name: An IndexNow melden
+        run: node scripts/indexnow.mjs ${{ inputs.alle && '--alle' || '' }}
