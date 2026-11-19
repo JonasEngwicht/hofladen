@@ -1,6 +1,7 @@
 // Alle erzeugten HTML-Seiten: Meta-Angaben, Inhalt ohne JavaScript, JSON-LD und Sitemaps
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { seiten, sitemapUrls, DOMAIN } from './hilfen.mjs';
 import { pruefe, ladeVokabular } from './schema.mjs';
 
@@ -214,4 +215,27 @@ test('Produkt-Land-Seiten: nur ab drei Einträgen, verlinkt von der Produktseite
     assert.ok((s.html.match(/<ul class="eintrag-liste">[\s\S]*?<\/ul>/g) || []).join('').split('<li>').length - 1 >= 3, p);
     assert.ok(info.get(p.replace(/[a-z-]+\/$/, '')).html.includes(`href="${p}"`), `${p} nicht verlinkt`);
   }
+});
+
+test('Vertrauensseiten und Statistik: indexierbar, im Footer verlinkt, Zahlen stimmen', () => {
+  for (const p of ['/ueber-uns/', '/kontakt/', '/presse/', '/statistik/']) {
+    assert.ok(info.has(p) && !info.get(p).noindex, p);
+    assert.ok(info.get('/').html.includes(`href="${p}"`), `${p} im Footer`);
+  }
+  assert.match(info.get('/kontakt/').html, /hofladenliste@gmail\.com/);
+  const stat = info.get('/statistik/').html;
+  const zeilen = [...stat.matchAll(/<tr><th scope="row"><a href="\/[a-z-]+\/">[^<]+<\/a><\/th><td>([\d.]+)<\/td><td>([\d.]+)<\/td>/g)];
+  assert.equal(zeilen.length, 16);
+  const summe = zeilen.reduce((s, m) => s + +m[1].replace(/\./g, '') + +m[2].replace(/\./g, ''), 0);
+  const eintraege = JSON.parse(readFileSync(new URL('../src/generated/eintraege.json', import.meta.url))).length;
+  assert.equal(summe, eintraege);
+});
+
+test('PWA: Manifest mit Kurzbefehlen, Service Worker und Offline-Seite', () => {
+  const m = JSON.parse(readFileSync(new URL('../public/site.webmanifest', import.meta.url)));
+  assert.equal(m.display, 'standalone');
+  assert.ok(m.shortcuts.some((s) => s.url === '/karte/?offen=1&standort=1'));
+  assert.ok(m.icons.some((i) => i.purpose === 'maskable'));
+  assert.match(readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8'), /addEventListener\('fetch'/);
+  assert.ok(info.get('/offline/').noindex);
 });

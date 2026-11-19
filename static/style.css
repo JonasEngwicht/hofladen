@@ -625,3 +625,8 @@ html { overflow-x: clip; }
   main, .aushang-seite main { margin: 0; padding: 0; }
   .aushang { margin: 0; box-shadow: none; page-break-after: always; }
 }
+.tabelle-scroll { overflow-x: auto; }
+.stat-tabelle { border-collapse: collapse; width: 100%; max-width: 760px; font-variant-numeric: tabular-nums; }
+.stat-tabelle th, .stat-tabelle td { padding: .4rem .7rem; border-bottom: 1px solid var(--linie); text-align: right; }
+.stat-tabelle th[scope="row"], .stat-tabelle thead th:first-child { text-align: left; }
+.presse-zahlen b { font-size: 1.15em; }

@@ -509,6 +509,12 @@ ${inhalt}
     <li><a href="/saisonkalender/">Saisonkalender</a></li>
     <li><a href="/mitmachen/">Hofladen eintragen</a></li>
     <li><a href="/fuer-hoefe/">Für Höfe</a></li>
+    <li><a href="/wochenmaerkte/">Wochenmärkte</a></li>
+    <li><a href="/veranstaltungen/">Hoffeste &amp; Termine</a></li>
+    <li><a href="/ueber-uns/">Über uns</a></li>
+    <li><a href="/kontakt/">Kontakt</a></li>
+    <li><a href="/presse/">Presse</a></li>
+    <li><a href="/statistik/">Datenstand &amp; Statistik</a></li>
     <li><a href="/quellen/">Quellen</a></li>
     <li><a href="/impressum/">Impressum</a></li>
     <li><a href="/datenschutz/">Datenschutz</a></li>
@@ -2056,6 +2062,9 @@ schreibe('/aushang/empfehlen/', seite({
 }), false);
 
 const textSeite = (pfad, titel, beschreibung, html, noindex = true) => schreibe(pfad, seite({ titel: `${titel} | Hofladenliste`, beschreibung, pfad, noindex, klasse: 'textseite', krumen: [[titel.replace(/ – .*/, ''), pfad]], inhalt: `<article class="text">${html}</article>` }), !noindex);
+// Ersatzseite ohne Netz (Service Worker)
+schreibe('/offline/', seite({ titel: 'Gerade offline | Hofladenliste', beschreibung: 'Keine Verbindung: Deine Merkliste und zuletzt besuchte Höfe sind trotzdem verfügbar.', pfad: '/offline/', noindex: true, klasse: 'textseite', krumen: [['Offline', '/offline/']],
+  inhalt: '<article class="text"><h1>Gerade keine Verbindung</h1><p>Diese Seite ist noch nicht auf deinem Gerät gespeichert. Deine <a href="/merkliste/">Merkliste</a> und Höfe, die du schon einmal geöffnet hast, funktionieren auch ohne Netz.</p><p>Sobald du wieder online bist, lädt die Seite normal.</p></article>' }), false);
 // Ergebnisseite der Hofsuche (/suche leitet bei mehreren Treffern hierher); Inhalt kommt per JavaScript aus /api/hoefe
 schreibe('/hofsuche/', seite({ titel: 'Hof suchen | Hofladenliste', beschreibung: 'Hofläden, Hofautomaten und Milchtankstellen nach Namen suchen: Ergebnisse mit Ort, Öffnungszeiten und Entfernung.', pfad: '/hofsuche/', noindex: true, klasse: 'textseite', krumen: [['Hof suchen', '/hofsuche/']],
   inhalt: `<section class="seitenkopf"><h1>Hof suchen</h1>
@@ -2138,6 +2147,81 @@ schreibe('/verwaltung/', seite({
   pfad: '/verwaltung/', noindex: true, klasse: 'textseite', krumen: [['Verwaltung', '/verwaltung/']],
   inhalt: '<section class="abschnitt"><h1>Meldungen</h1><div id="verwaltung"></div></section><script type="module" src="/verwaltung.js"></script>',
 }), false);
+
+// ---------- Vertrauen: Über uns, Kontakt, Presse, Datenstand & Statistik ----------
+{
+  const nHof = eintraege.filter((e) => e.typ === 'hofladen').length, nAut = eintraege.length - nHof;
+  const proz = (f) => Math.round(100 * eintraege.filter(f).length / eintraege.length);
+  const verlauf = existsSync(join(ROOT, 'data', 'verlauf.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'verlauf.json'), 'utf8')) : [];
+  const nachArt = Object.entries(eintraege.reduce((a, e) => ((a[e.art] = (a[e.art] || 0) + 1), a), {})).sort((a, b) => b[1] - a[1]);
+  const quellenZahl = { osm: 0, overture: 0, foursquare: 0, kvm: 0, kommunal: 0, betreiber: 0, manuell: 0 };
+  for (const e of eintraege) quellenZahl[e.quelle] = (quellenZahl[e.quelle] || 0) + 1;
+  const QUELL_NAME = { osm: 'OpenStreetMap', overture: 'Overture Maps', foursquare: 'Foursquare Open Source Places', kvm: 'Karte von morgen', kommunal: 'Offene Verwaltungsdaten', betreiber: 'Angaben von Betrieben', manuell: 'Eigene Recherche' };
+  const proLandStat = laender.map((l) => {
+    const es = l.kreise.flatMap((k) => proKreis.get(k.code) || []);
+    return { l, hof: es.filter((e) => e.typ === 'hofladen').length, aut: es.filter((e) => e.typ === 'automat').length, maerkte: l.kreise.reduce((s, k) => s + (maerkteProKreis.get(k.code)?.length || 0), 0), zeiten: es.filter((e) => e.oeffnungszeiten).length, n: es.length };
+  }).sort((a, b) => b.n - a.n);
+  const datumLang = (d) => new Date(`${d}T12:00:00Z`).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const zahlenSatz = `${zahl(nHof)} Hofläden und Direktvermarkter, ${zahl(nAut)} Hofautomaten und ${zahl(MAERKTE.length)} Wochenmärkte in allen 16 Bundesländern`;
+
+  textSeite('/ueber-uns/', 'Über uns', 'Wer hinter Hofladenliste steht und warum: ein unabhängiges, kostenloses Verzeichnis für Hofläden, Milchtankstellen und Hofautomaten auf Basis offener Daten.', `<h1>Über Hofladenliste</h1>
+<p>Hofladenliste ist ein unabhängiges Verzeichnis für Lebensmittel direkt vom Hof: ${zahlenSatz}. Die Idee ist einfach: Wer frische Eier, Milch, Kartoffeln oder Honig aus der Nähe kaufen möchte, soll schnell sehen, wo es das gibt, wann geöffnet ist und wie man hinkommt.</p>
+<h2>Wer dahinter steht</h2>
+<p>Hofladenliste wird von ${esc(imp.name)} aus ${esc(imp.plzOrt.replace(/^\d{5}\s*/, ''))} betrieben. Die Seite ist kein Angebot eines Verbands, einer Handelskette oder eines Hofs, und sie verkauft nichts.</p>
+<h2>Was uns wichtig ist</h2>
+<ul>
+<li><b>Offene Daten:</b> Die meisten Einträge stammen aus OpenStreetMap und weiteren offenen Quellen mit freier Lizenz. Woher eine Angabe kommt, steht auf jeder Hofseite und unter <a href="/quellen/">Quellen</a>. Inhalte anderer Verzeichnisse übernehmen wir nicht.</li>
+<li><b>Kostenlos für Höfe:</b> Jeder Betrieb kann sich <a href="/mitmachen/">eintragen</a> und seinen Eintrag im <a href="/betrieb/">Betreiber-Bereich</a> selbst pflegen – mit Öffnungszeiten, Neuigkeiten und Terminen.</li>
+<li><b>Ohne Tracking:</b> keine Cookies für Besucher, keine Werbung, keine Analysedienste von Dritten. Die Karte kommt von unserem eigenen Server. Details in der <a href="/datenschutz/">Datenschutzerklärung</a>.</li>
+<li><b>Gemeinsam besser:</b> Öffnungszeiten ändern sich. Mit „Stimmt das noch?“ auf jeder Hofseite hilfst du, die Angaben aktuell zu halten.</li>
+</ul>
+<p>Fragen, Hinweise oder Kritik: <a href="/kontakt/">Kontakt</a>.</p>`, false);
+
+  textSeite('/kontakt/', 'Kontakt', 'Kontakt zu Hofladenliste: E-Mail hofladenliste@gmail.com – für Korrekturen, Einträge, Betriebe und Presseanfragen.', `<h1>Kontakt</h1>
+<p>Am schnellsten erreichst du uns per E-Mail: <a href="mailto:hofladenliste@gmail.com">hofladenliste@gmail.com</a>.</p>
+<h2>Worum geht es?</h2>
+<ul>
+<li><b>Eine Angabe stimmt nicht</b> (Öffnungszeiten, Adresse, Hof geschlossen): Nutze auf der Seite des Hofs „Stimmt das noch?“ oder „Fehler melden“ – dann landet die Meldung direkt beim richtigen Eintrag.</li>
+<li><b>Ein Hof fehlt:</b> <a href="/mitmachen/">Hofladen eintragen</a>, kostenlos.</li>
+<li><b>Du betreibst einen Hof:</b> Im <a href="/betrieb/">Betreiber-Bereich</a> pflegst du deinen Eintrag selbst. Ein Aushang mit QR-Code für deinen Laden ist dort auch zu finden.</li>
+<li><b>Presse:</b> Zahlen, Logo und Ansprechpartner auf der <a href="/presse/">Presseseite</a>.</li>
+</ul>
+<p>Anbieter dieser Website: siehe <a href="/impressum/">Impressum</a>.</p>`, false);
+
+  textSeite('/presse/', 'Presse', `Presseinformationen zu Hofladenliste: ${zahlenSatz}. Zahlen, Logo und Ansprechpartner.`, `<h1>Presse</h1>
+<p>Hofladenliste ist ein kostenloses, unabhängiges Verzeichnis für Lebensmittel direkt vom Hof. Stand ${esc(datumLang(HEUTE))}: ${zahlenSatz}.</p>
+<h2>Zahlen</h2>
+<ul class="presse-zahlen">
+<li><b>${zahl(nHof)}</b> Hofläden und Direktvermarkter, davon ${zahl(eintraege.filter((e) => e.art === 'Imkerei').length)} Imkereien und ${zahl(eintraege.filter((e) => e.art === 'Hofcafé').length)} Hofcafés</li>
+<li><b>${zahl(nAut)}</b> Hofautomaten, darunter ${zahl(eintraege.filter((e) => e.art === 'Milchtankstelle').length)} Milchtankstellen und ${zahl(eintraege.filter((e) => e.art === 'Eierautomat').length)} Eierautomaten</li>
+<li><b>${zahl(MAERKTE.length)}</b> Wochenmärkte</li>
+<li>Meiste Einträge: ${proLandStat.slice(0, 3).map((x) => `${esc(x.l.name)} (${zahl(x.n)})`).join(', ')}</li>
+</ul>
+<p>Alle Zahlen nach Bundesland und ihre Entwicklung stehen unter <a href="/statistik/">Datenstand &amp; Statistik</a>. Gern dürfen Sie sie mit Quellenangabe „hofladenliste.de“ verwenden.</p>
+<h2>Logo</h2>
+<p><img src="/favicon.svg" alt="Logo von Hofladenliste: gelbe Kartennadel mit grüner Ähre" width="96" height="96"></p>
+<p><a href="/favicon.svg" download>Logo als SVG</a> · <a href="/icon-512.png" download>Logo als PNG (512 × 512)</a> · <a href="/og-bild.png" download>Vorschaubild (1200 × 630)</a></p>
+<h2>Ansprechpartner</h2>
+<p>${esc(imp.name)}, ${esc(imp.plzOrt)}<br>E-Mail: <a href="mailto:hofladenliste@gmail.com">hofladenliste@gmail.com</a></p>
+<h2>Kurzbeschreibung zum Übernehmen</h2>
+<blockquote><p>Hofladenliste.de zeigt Hofläden, Milchtankstellen, Eier- und Regiomaten, Imkereien und Wochenmärkte in ganz Deutschland – mit Öffnungszeiten, Angebot, Karte und der Anzeige „jetzt geöffnet“. Die Daten stammen überwiegend aus OpenStreetMap und weiteren offenen Quellen; Betriebe können ihren Eintrag kostenlos selbst pflegen.</p></blockquote>`, false);
+
+  textSeite('/statistik/', 'Datenstand & Statistik', `Datenstand von Hofladenliste: ${zahlenSatz} – nach Bundesland, Art und Quelle, mit Vollständigkeit der Angaben und Verlauf.`, `<h1>Datenstand &amp; Statistik</h1>
+<p>Stand ${esc(datumLang(HEUTE))}: ${zahlenSatz}. Die Zahlen werden bei jeder Aktualisierung neu berechnet.</p>
+<h2>Nach Bundesland</h2>
+<div class="tabelle-scroll"><table class="stat-tabelle"><thead><tr><th scope="col">Bundesland</th><th scope="col">Hofläden</th><th scope="col">Automaten</th><th scope="col">Wochenmärkte</th><th scope="col">mit Öffnungszeiten</th></tr></thead><tbody>
+${proLandStat.map((x) => `<tr><th scope="row"><a href="/${x.l.slug}/">${esc(x.l.name)}</a></th><td>${zahl(x.hof)}</td><td>${zahl(x.aut)}</td><td>${zahl(x.maerkte)}</td><td>${x.n ? Math.round(100 * x.zeiten / x.n) : 0} %</td></tr>`).join('')}
+</tbody></table></div>
+<h2>Nach Art</h2>
+<div class="tabelle-scroll"><table class="stat-tabelle"><tbody>${nachArt.map(([a, n]) => `<tr><th scope="row">${esc(PLURAL_ART[a] || a)}</th><td>${zahl(n)}</td></tr>`).join('')}</tbody></table></div>
+<h2>Woher die Einträge kommen</h2>
+<div class="tabelle-scroll"><table class="stat-tabelle"><tbody>${Object.entries(quellenZahl).filter(([, n]) => n).sort((a, b) => b[1] - a[1]).map(([q, n]) => `<tr><th scope="row">${esc(QUELL_NAME[q] || q)}</th><td>${zahl(n)}</td></tr>`).join('')}</tbody></table></div>
+<p>Lizenzen und Details: <a href="/quellen/">Quellen</a>.</p>
+<h2>Wie vollständig die Angaben sind</h2>
+<ul><li>Öffnungszeiten: ${proz((e) => e.oeffnungszeiten)} %</li><li>Telefon: ${proz((e) => e.telefon)} %</li><li>Website: ${proz((e) => e.website)} %</li><li>Angebot (was es gibt): ${proz((e) => e.kat?.length)} %</li><li>Adresse mit Straße: ${proz((e) => e.strasse)} %</li><li>Haltestelle im Umkreis von 1 km: ${proz((e) => e.haltestelle)} %</li></ul>
+<p>Fehlt etwas bei einem Hof in deiner Nähe? Auf jeder Hofseite kannst du Angaben ergänzen.</p>
+${verlauf.length > 1 ? `<h2>Verlauf</h2><div class="tabelle-scroll"><table class="stat-tabelle"><thead><tr><th scope="col">Datum</th><th scope="col">Einträge</th><th scope="col">Hofläden</th><th scope="col">Automaten</th><th scope="col">Wochenmärkte</th></tr></thead><tbody>${[...verlauf].reverse().slice(0, 60).map((v) => `<tr><th scope="row">${esc(datumLang(v.datum))}</th><td>${zahl(v.eintraege)}</td><td>${zahl(v.hoefe)}</td><td>${zahl(v.automaten)}</td><td>${zahl(v.maerkte)}</td></tr>`).join('')}</tbody></table></div>` : ''}`, false);
+}
 
 textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenliste.de stammen: OpenStreetMap (ODbL), weitere offene Quellen wie Overture Maps, Foursquare und Karte von morgen, Websites der Höfe, Angaben von Betrieben und PLZ-Daten von GeoNames.', `<h1>Quellen und Datenstand</h1>
 <h2>OpenStreetMap</h2>

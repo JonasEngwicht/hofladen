@@ -13,6 +13,9 @@
   Cache-Control: public, max-age=604800
 /favicon*
   Cache-Control: public, max-age=604800
+/sw.js
+  Cache-Control: no-cache
+  Service-Worker-Allowed: /
 # Sicherheit
 /*
   X-Content-Type-Options: nosniff
