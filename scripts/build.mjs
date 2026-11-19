@@ -7,6 +7,7 @@ import { fileURLToPath, domainToUnicode } from 'node:url';
 import { createHash } from 'node:crypto';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
 import { rasterIndex, gleicherHof, QUELLEN, quellenId, solawiOk } from './quellen.mjs';
+import { RATGEBER } from './ratgeber.mjs';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml } from '../static/karte.js';
 
@@ -438,7 +439,15 @@ function seitenTyp(p) {
 // Inhalts-Hash je Seite (ohne Kopf/Fuß/Build-Version) – daraus entsteht das echte lastmod der Sitemap
 const SEITEN_HASH = new Map();
 const hash = (x) => createHash('sha1').update(x).digest('base64url').slice(0, 10);
+// Ratgeber-Artikel, die auf eine Seite verweisen, werden dort unten verlinkt
+const RATGEBER_FUER = new Map();
+for (const a of RATGEBER) for (const [p] of a.links) RATGEBER_FUER.set(p, [...(RATGEBER_FUER.get(p) || []), a]);
+const ratgeberHinweis = (pfad) => {
+  const as = RATGEBER_FUER.get(pfad);
+  return as ? `<aside class="abschnitt ratgeber-hinweis" aria-label="Ratgeber"><h2>Aus dem Ratgeber</h2><ul>${as.map((a) => `<li><a href="/ratgeber/${a.slug}/">${esc(a.titel)}</a></li>`).join('')}</ul></aside>` : '';
+};
 function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = [], krumen = [], klasse = '', kopfSuche = true }) {
+  inhalt += ratgeberHinweis(pfad);
   SEITEN_HASH.set(pfad, hash([titel, beschreibung, noindex, JSON.stringify(jsonld), JSON.stringify(krumen), inhalt.replace(/\?v=[a-z0-9]+/g, '')].join('\u0000')));
   const url = cfg.domain + pfad;
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -507,6 +516,7 @@ ${inhalt}
     <li><a href="/sonntags-geoeffnet/">Sonntags geöffnet</a></li>
     <li><a href="/bio-hofladen/">Bio-Hofläden</a></li>
     <li><a href="/saisonkalender/">Saisonkalender</a></li>
+    <li><a href="/ratgeber/">Ratgeber</a></li>
     <li><a href="/mitmachen/">Hofladen eintragen</a></li>
     <li><a href="/fuer-hoefe/">Für Höfe</a></li>
     <li><a href="/wochenmaerkte/">Wochenmärkte</a></li>
@@ -2086,6 +2096,36 @@ schreibe('/route/', seite({
   <div class="route-haupt">${kartenPanel({ titel: 'Karte der Strecke' })}<ol class="kl-liste route-liste" data-route-liste></ol></div>
 </section>`,
 }));
+
+// ---------- Ratgeber (eigene Artikel, scripts/ratgeber.mjs) ----------
+{
+  const ldArtikel = (a) => ({ '@context': 'https://schema.org', '@type': 'Article', headline: a.titel, description: a.beschreibung, inLanguage: 'de',
+    datePublished: a.datum, dateModified: a.geaendert || a.datum, mainEntityOfPage: `${cfg.domain}/ratgeber/${a.slug}/`,
+    author: { '@type': 'Organization', name: 'Hofladenliste', url: cfg.domain }, publisher: { '@type': 'Organization', name: 'Hofladenliste', url: cfg.domain, logo: { '@type': 'ImageObject', url: `${cfg.domain}/icon-512.png` } } });
+  for (const a of RATGEBER) {
+    const pfad = `/ratgeber/${a.slug}/`;
+    const andere = RATGEBER.filter((x) => x !== a).slice(0, 4);
+    schreibe(pfad, seite({
+      titel: `${a.titel} | Hofladenliste`, beschreibung: a.beschreibung, pfad, klasse: 'textseite', jsonld: [ldArtikel(a)],
+      krumen: [['Ratgeber', '/ratgeber/'], [a.kurz, pfad]],
+      inhalt: `<article class="text ratgeber">
+<h1>${esc(a.titel)}</h1>
+<p class="leise">Ratgeber · Stand <time datetime="${a.geaendert || a.datum}">${esc(datumDe(a.geaendert || a.datum))}</time></p>
+${a.html}
+<section class="passend"><h2>Passend dazu</h2><ul>${a.links.map(([p, t]) => `<li><a href="${p}">${esc(t)}</a></li>`).join('')}</ul></section>
+<section class="passend"><h2>Mehr aus dem Ratgeber</h2><ul>${andere.map((x) => `<li><a href="/ratgeber/${x.slug}/">${esc(x.titel)}</a></li>`).join('')}</ul></section>
+</article>`,
+    }));
+  }
+  schreibe('/ratgeber/', seite({
+    titel: 'Ratgeber: Einkaufen direkt vom Hof | Hofladenliste',
+    beschreibung: 'Ratgeber rund um Hofladen, Milchtankstelle und Eierautomat: Rohmilch abkochen, Eier-Kennzeichnung, Bio-Siegel, Solawi, Spargelzeit und mehr.',
+    pfad: '/ratgeber/', klasse: 'textseite', krumen: [['Ratgeber', '/ratgeber/']],
+    jsonld: [itemList('Ratgeber', RATGEBER.map((a) => [a.titel, `/ratgeber/${a.slug}/`]))],
+    inhalt: `<section class="seitenkopf"><h1>Ratgeber: Einkaufen direkt vom Hof</h1><p>Praktisches Wissen für den Einkauf im Hofladen, an der Milchtankstelle und am Eierautomaten – von uns geschrieben, ohne Werbung.</p></section>
+<section class="abschnitt"><ul class="ratgeber-liste">${RATGEBER.map((a) => `<li><a href="/ratgeber/${a.slug}/"><b>${esc(a.titel)}</b><span>${esc(a.beschreibung)}</span></a></li>`).join('')}</ul></section>`,
+  }));
+}
 
 // Ersatzseite ohne Netz (Service Worker)
 schreibe('/offline/', seite({ titel: 'Gerade offline | Hofladenliste', beschreibung: 'Keine Verbindung: Deine Merkliste und zuletzt besuchte Höfe sind trotzdem verfügbar.', pfad: '/offline/', noindex: true, klasse: 'textseite', krumen: [['Offline', '/offline/']],

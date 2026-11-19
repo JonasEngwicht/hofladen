@@ -20,7 +20,7 @@ const info = new Map(alle.map(([p, html]) => [p, {
 const sm = sitemapUrls();
 const inSitemap = new Set(sm.map((x) => x.loc));
 // Listenseiten mit Karten; kompakte Kategorieseiten (Bundesland) zeigen Linklisten statt Karten
-const art = (p) => p.startsWith('/hof/') ? 'hof' : p.startsWith('/wochenmaerkte/') ? 'maerkte' : /<body class="kompakt"/.test(info.get(p)?.html || '') ? 'kompakt'
+const art = (p) => p.startsWith('/hof/') ? 'hof' : p.startsWith('/wochenmaerkte/') ? 'maerkte' : /^\/(ratgeber|betrieb|aushang)\//.test(p) ? 'sonstige' : /<body class="kompakt"/.test(info.get(p)?.html || '') ? 'kompakt'
   : /^\/[^/]+\/[^/]+\/[^/]+\/$/.test(p) && !p.startsWith('/angebot/') ? 'unterseite' : /^\/[^/]+\/[^/]+\/$/.test(p) && !p.startsWith('/angebot/') ? 'kreis' : 'sonstige';
 
 test('jede Seite: genau eine H1, ein Canonical auf sich selbst, Title und Description', () => {
@@ -238,4 +238,16 @@ test('PWA: Manifest mit Kurzbefehlen, Service Worker und Offline-Seite', () => {
   assert.ok(m.icons.some((i) => i.purpose === 'maskable'));
   assert.match(readFileSync(new URL('../public/sw.js', import.meta.url), 'utf8'), /addEventListener\('fetch'/);
   assert.ok(info.get('/offline/').noindex);
+});
+
+test('Ratgeber: Artikel mit Article-JSON-LD, verlinkt von passenden Seiten, keine toten Links', () => {
+  const artikel = [...info.keys()].filter((p) => /^\/ratgeber\/[a-z-]+\/$/.test(p));
+  assert.ok(artikel.length >= 8);
+  for (const p of artikel) {
+    const h = info.get(p).html;
+    assert.match(h, /"@type":"Article"/, p);
+    assert.ok(!info.get(p).noindex, p);
+    for (const m of h.matchAll(/<section class="passend">[\s\S]*?<\/section>/g)) for (const l of m[0].matchAll(/href="(\/[^"]*)"/g)) assert.ok(info.has(l[1]), `${p} → ${l[1]}`);
+  }
+  assert.match(info.get('/milchtankstelle/').html, /href="\/ratgeber\/rohmilch-milchtankstelle\/"/);
 });
