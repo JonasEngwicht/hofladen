@@ -9,6 +9,7 @@ import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisati
 import { rasterIndex, gleicherHof, QUELLEN, quellenId, solawiOk } from './quellen.mjs';
 import { RATGEBER } from './ratgeber.mjs';
 import { stabileIdAus, felderAnwenden } from './pflege.mjs';
+import { felderBereinigen, dublettenFinden, automatArtAusName } from './bereinigen.mjs';
 import { TIPP_MERKMALE, SAISON_PRODUKTE } from '../src/betrieb.js';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml, PRODUKT_SPRITE, produktIcon } from '../static/karte.js';
@@ -240,6 +241,33 @@ let pflegeAnzahl = 0;
     }
   }
 }
+
+// Bereinigung (scripts/bereinigen.mjs): eindeutige Feldfehler, Typ aus eindeutigem Namen, Lage von Fremdquellen,
+// sichere Dopplungen (Verlierer fällt weg, alte Adresse leitet per 301 auf den Gewinner weiter)
+const bereinigt = { felder: 0, typ: 0, lage: 0, dubletten: 0 };
+for (const e of eintraege) {
+  if (felderBereinigen(e).length) bereinigt.felder++;
+  const art = !e.vomBetrieb && automatArtAusName(e);
+  if (art) { e.typ = 'automat'; e.art = art; e.selbstbedienung = true; bereinigt.typ++; }
+  // Offene Quellen: Koordinaten mehr als 30 km von der eigenen PLZ entfernt → Ort der PLZ (ungefähre Lage)
+  if (e.quelle !== 'osm' && !e.vomBetrieb && /^\d{5}$/.test(e.plz || '') && !e.lageUngefaehr) {
+    const rows = (plz.get(e.plz) || []).filter((r) => !r.org);
+    if (rows.length && Math.min(...rows.map((r) => distanzKm(r.lat, r.lon, e.lat, e.lon))) > 30) {
+      const row = rows.find((r) => r.ort === e.ort) || rows[0];
+      Object.assign(e, { lat: row.lat, lon: row.lon, lageUngefaehr: true, kreis: row.kreis, ortNah: row.ort, plzNah: row.plz });
+      bereinigt.lage++;
+    }
+  }
+}
+const dubletten = dublettenFinden(eintraege);
+if (process.env.DUBLETTEN_EXPORT) writeFileSync(process.env.DUBLETTEN_EXPORT, JSON.stringify(dubletten.map(([v, g]) => [v, g].map((e) => ({ id: e.osm || e.id, quelle: e.quelle, art: e.art, name: e.name, strasse: e.strasse, telefon: e.telefon, website: e.website, lat: e.lat, lon: e.lon, ort: e.ort || e.ortNah }))), null, 1));
+for (const [ver, gew] of dubletten) {
+  eintraege.splice(eintraege.indexOf(ver), 1);
+  offenErsetzt.set(ver.osm || ver.id, gew.osm || gew.id);
+  for (const a of ver.alteIds || []) offenErsetzt.set(a, gew.osm || gew.id);
+  bereinigt.dubletten++;
+}
+console.log(`Bereinigung: ${JSON.stringify(bereinigt)}`);
 
 // Namen aufräumen: Emojis raus, GROSSSCHRIFT in normale Schreibweise (Rechtsformen richtig geschrieben)
 const RECHTSFORM = { GMBH: 'GmbH', GBR: 'GbR', KG: 'KG', OHG: 'OHG', EG: 'eG', 'E.V.': 'e.V.', AG: 'AG', UG: 'UG', 'CO.': 'Co.', 'MBH': 'mbH' };
