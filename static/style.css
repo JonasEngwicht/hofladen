@@ -688,3 +688,32 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
   .liste-karte-schalter { display: inline-flex; position: fixed; bottom: calc(1rem + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 700; align-items: center; gap: .4rem; background: var(--fichte); color: #fff; border: 0; border-radius: 999px; padding: .75rem 1.3rem; font: 700 1rem var(--schrift); box-shadow: 0 4px 14px rgba(0,0,0,.25); cursor: pointer; }
   .liste-karte-schalter svg { width: 1.2em; height: 1.2em; }
 }
+
+/* Dunkelmodus nach Systemeinstellung. Dunkles Grün (Kopf, Startbild, Fuß) bleibt; Flächen und Text werden dunkel bzw. hell. */
+@media (prefers-color-scheme: dark) {
+  :root { --kalk: #0E1813; --weiss: #15231B; --tinte: #E3ECE6; --grau: #A3B3A9; --linie: #2B3E33; --kohl-hell: #22372B; --raps-hell: #3A3214; --fichte-3: #8ED1A8; --hell-text: #E9F2EC; color-scheme: dark; }
+  h1, h2, h3, a:hover, .seitenkopf .plz-hinweis, .arten-liste .anzahl, .laden-art .km, .laden-name a, .chips li, .akt, .akt:hover, .knopf-hell,
+  .hof-werkzeuge svg, .saison-tabelle thead th.aktuell, .merkmale dt, .melde-form legend, .melde-form h2, .pruef-danke, .auswahl-menue .auswahl-titel, .termin-zeit { color: var(--hell-text); }
+  .kopf, .logo, .kopf-nav a:hover, .held, .held h1, .standort, .segment button[aria-pressed="true"], .karte-zustimmung b, .hof-kopf, .hof-kopf h1, .hof-kopf .st b,
+  .aktionen.gross .akt + .akt, .knopf-dunkel, .region h2, .region-highlights b, .fuss a, .fuss-logo, .sticky-aktionen button, .liste-karte-schalter { color: #fff; }
+  .segment button[aria-pressed="true"], .knopf-dunkel { background: #2F6249; }
+  .werkzeug { background: rgba(14, 24, 19, .94); }
+  .umschalter[aria-pressed="true"], .hinweis-box, .melde-hof, .filter-aktiv { background: #1F3D2A; color: #CDEBD6; border-color: #3B6B4C; }
+  .laden-art .bio { background: #2D3E1A; color: #D3E8A8; }
+  .kl-eintrag a:hover, .kl-eintrag a:focus-visible, .ort-auswahl a:hover, .betrieb-zahlen div, .tipp-chips span, .auswahl-menue button:not(.link) { background: #1C2E24; }
+  .saison-tabelle td { background: #1A2A21; }
+  .zeiten-cta, .betreiber-box, .zeiten-hinweis, .melde-form .haken-liste.fehlt, .pruef-warnung, .news-liste a { background: #33290F; color: #F3E7C2; border-color: #5A4A1C; }
+  .news-badge { background: #4A3C10; color: #FBE7A6; }
+  .news-ausverkauft, .news-geschlossen { background: #4A1F1A; color: #F6C6BE; }
+  .laden-markt .laden-symbol { background: #22372B; }
+  .plz-zeile input, .melde-form input:not([type="checkbox"]):not([type="radio"]), .melde-form select, .melde-form textarea, .betrieb-form input, .betrieb-form select, .betrieb-form textarea, .kopf-suche input { color: var(--tinte); background: #101C16; }
+  .plz-zeile { background: #101C16; }
+  img:not([src$=".svg"]) { filter: brightness(.92); }
+  /* Karte und Popups bleiben hell (Kacheln), Text darin dunkel */
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #fff; color: #1F2A24; }
+  .leaflet-popup-content a, .kp .kp-name a, .kp-aktionen .akt { color: #173B2C; }
+  .kp-aktionen .akt { background: #fff; border-color: #D9E0DA; }
+  .kp-kat span { background: #EEF2EE; color: #1F2A24; }
+  .aushang { color: #173B2C; }
+  .aushang h2, .aushang .aushang-name { color: #173B2C; }
+}
