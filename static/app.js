@@ -102,6 +102,7 @@ async function starteKarte(panel) {
 
   const hofKopf = $('.hof-kopf');
   if (panel.closest('[data-vollkarte]')) await vollkarte(ctx);
+  else if (panel.closest('[data-route]')) map.setView([51.2, 10.4], 6);
   else if (hofKopf && panel.closest('.hof-karte')) {
     const p = [+hofKopf.dataset.lat, +hofKopf.dataset.lon];
     L.circleMarker(p, punktStil(hofKopf.dataset.typ, true)).addTo(map);
@@ -188,6 +189,12 @@ for (const box of $$('[data-nachricht]')) {
   });
 }
 
+// Hofläden entlang der Route
+if ($('[data-route]')) import(new URL('./route.js' + new URL(import.meta.url).search, import.meta.url)).then((m) => m.route(async () => {
+  const p = $('[data-route] .kartenpanel');
+  if (p && !p.dataset.geladen && (KACHELN || speicher.get('karteOk') === '1')) await starteKarte(p);
+  return karten.find((k) => k.panel === p) || null;
+}));
 if ($('[data-aushang]')) import(new URL('./aushang.js' + new URL(import.meta.url).search, import.meta.url)).then((m) => m.aushang());
 
 // Installierbare App: Service Worker (Merkliste und besuchte Seiten auch ohne Netz)
