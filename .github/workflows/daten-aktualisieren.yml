@@ -49,7 +49,7 @@ jobs:
         run: node scripts/fetch-osm.mjs --maerkte data/quellen/maerkte-roh.json && node scripts/import-maerkte.mjs data/quellen/maerkte-roh.json
       - name: Testbuild
         id: build
-        run: node scripts/build.mjs
+        run: node scripts/build.mjs && node scripts/verlauf.mjs
       # Ein fehlgeschlagener Abruf lässt die bisherigen Daten unverändert; der andere Teil wird trotzdem übernommen.
       - name: Commit, falls sich etwas geändert hat
         id: commit
@@ -57,7 +57,7 @@ jobs:
         run: |
           git config user.name "hofladenliste-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/osm-eintraege.json data/seiten-stand.json
+          git add data/osm-eintraege.json data/seiten-stand.json data/verlauf.json
           if [ -f data/osm-maerkte.json ]; then git add data/osm-maerkte.json; fi
           if git diff --cached --quiet; then
             echo "Keine Änderungen."

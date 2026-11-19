@@ -1,0 +1,18 @@
+[
+ {
+  "datum": "2026-11-17",
+  "eintraege": 10722,
+  "hoefe": 6936,
+  "automaten": 3786,
+  "maerkte": 0,
+  "mitZeiten": 4984
+ },
+ {
+  "datum": "2026-11-19",
+  "eintraege": 14225,
+  "hoefe": 10252,
+  "automaten": 3973,
+  "maerkte": 2010,
+  "mitZeiten": 5525
+ }
+]
