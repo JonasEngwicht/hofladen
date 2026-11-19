@@ -10,7 +10,7 @@ import { rasterIndex, gleicherHof, QUELLEN, quellenId, solawiOk } from './quelle
 import { RATGEBER } from './ratgeber.mjs';
 import { TIPP_MERKMALE, SAISON_PRODUKTE } from '../src/betrieb.js';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
-import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml } from '../static/karte.js';
+import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml, PRODUKT_SPRITE, produktIcon } from '../static/karte.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'public');
@@ -483,6 +483,7 @@ ${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}<meta proper
 ${[...bc, ...jsonld].map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
 <body class="${klasse}" data-seite="${seitenTyp(pfad)}">
+${PRODUKT_SPRITE}
 <a class="sprung" href="#inhalt">Zum Inhalt</a>
 <header class="kopf"><div class="kopf-innen">
   <a class="logo" href="/">${LOGO}<span>Hofladenliste</span></a>
@@ -578,7 +579,7 @@ function filterLeiste(liste, { umkreis = null } = {}) {
   ${nKarte ? `<button type="button" class="umschalter" data-karte-filter aria-pressed="false">Kartenzahlung <span>${nKarte}</span></button>` : ''}
   ${nKinder ? `<button type="button" class="umschalter" data-kinder-filter aria-pressed="false">Ausflug mit Kindern <span>${nKinder}</span></button>` : ''}
   ${nOepnv ? `<button type="button" class="umschalter" data-oepnv-filter aria-pressed="false" title="Haltestelle höchstens 1 km entfernt">Mit Bus &amp; Bahn <span>${nOepnv}</span></button>` : ''}
-  ${kats.length ? `<div class="kat-filter" aria-label="Angebot">${kats.map((k) => `<button type="button" data-kat-filter="${k}" aria-pressed="false">${esc(KATEGORIEN[k])}</button>`).join('')}</div>` : ''}
+  ${kats.length ? `<div class="kat-filter" aria-label="Angebot">${kats.map((k) => `<button type="button" data-kat-filter="${k}" aria-pressed="false">${produktIcon(k)}${esc(KATEGORIEN[k])}</button>`).join('')}</div>` : ''}
   <p class="treffer" aria-live="polite"><span data-trefferzahl>${liste.length}</span> ${liste.length === 1 ? 'Eintrag' : 'Einträge'}</p>
 </div>`;
 }
@@ -1622,7 +1623,7 @@ function umgebungsSeite(z, { extraOben = '', extraUnten = '', krumen, regionProf
   const inhalt = `
 <section class="seitenkopf">
   <h1>${esc(h1)}</h1>
-  <p>${esc(zl.satz)} ${nEigen ? `Direkt in ${esc(name)}: ${zaehlung(z.eigene)}.` : `Direkt in ${esc(name)} ist noch kein Hof eingetragen.`} Sortiert nach Entfernung vom Ortszentrum, mit Öffnungszeiten und Route.</p>
+  <p>${esc(zl.satz)} ${nEigen ? `Direkt in ${esc(name)}: ${zaehlung(z.eigene)}.` : `Direkt in ${esc(name)} ist noch kein Hof eingetragen${auswahl[0] ? ` – der nächste ist ${km(auswahl[0][0])} entfernt: <a href="${auswahl[0][1].pfad}">${esc(auswahl[0][1].titelSeite)}</a> in ${esc(auswahl[0][1].ortAnzeige)}` : ''}. Kennst du einen Hof in ${esc(name)}? <a href="/mitmachen/">Jetzt eintragen</a>.`} Sortiert nach Entfernung vom Ortszentrum, mit Öffnungszeiten und Route.</p>
   ${typKreisLinks(k).length ? `<p class="typ-chips">${typKreisLinks(k).map((x) => `<a href="${x.pfad}">${x.t.icon}${x.t.plural} ${esc(k.im)} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p>` : ''}
   <p class="plz-hinweis" data-plz-hinweis hidden></p>
 </section>
@@ -1808,6 +1809,12 @@ for (const e of eintraege) {
       ${kontakt.length ? `<ul class="kontakt">${kontakt.join('')}</ul>` : ''}
       ${e.betreiber && e.betreiber !== e.name ? `<p class="leise">Betreiber: ${esc(e.betreiber)}</p>` : ''}
     </section>
+    <nav class="sticky-aktionen" aria-label="Schnellaktionen">
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=${e.lat},${e.lon}" rel="nofollow noopener" target="_blank">${ICON.route}<span>Route</span></a>
+      ${e.telefon ? `<a href="${telHref(e.telefon)}">${ICON.telefon}<span>Anrufen</span></a>` : ''}
+      ${e.website ? `<a href="${esc(e.website)}" rel="nofollow noopener" target="_blank">${ICON.web}<span>Website</span></a>` : ''}
+      <button type="button" data-merken="${esc(e.slug)}" aria-pressed="false">${ICON.herz}<span>Merken</span></button>
+    </nav>
     <nav class="hof-werkzeuge" aria-label="Aktionen">
       <button type="button" data-merken="${esc(e.slug)}" aria-pressed="false">${ICON.herz}<span class="merken-text">Merken</span></button>
       <button type="button" data-teilen data-titel="${esc(e.titelSeite)}">${ICON.teilen}<span>Teilen</span></button>
@@ -1819,7 +1826,7 @@ for (const e of eintraege) {
     </div>
   </aside>
   <div class="hof-info">
-    ${e.kat.length ? `<section class="block"><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${(e.quelle === 'osm' || QUELLEN[e.quelle]) ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
+    ${e.kat.length ? `<section class="block"><h2>Angebot</h2><ul class="chips gross">${e.kat.map((x) => `<li>${produktIcon(x)}${esc(KATEGORIEN[x])}</li>`).join('')}</ul>${(e.quelle === 'osm' || QUELLEN[e.quelle]) ? '<p class="leise">Abgeleitet aus dem Eintrag und dem Namen des Hofs – das Sortiment kann je nach Saison abweichen.</p>' : ''}${e.kat.some((x) => ['obst', 'gemuese', 'kartoffeln'].includes(x)) ? '<p class="leise">Was gerade geerntet wird, steht im <a href="/saisonkalender/">Saisonkalender</a>.</p>' : ''}</section>` : ''}
     ${e.fotos?.length ? `<section class="block hof-fotos"><h2>Fotos</h2><div class="foto-reihe">${e.fotos.map((f, i) => `<img src="${esc(f)}" width="1200" height="900" alt="${esc(e.titel)} – Foto ${i + 1}" loading="lazy" decoding="async">`).join('')}</div><p class="leise">Fotos: ${esc(e.titel)}</p></section>` : ''}
     ${e.termine?.length ? `<section class="block termine"><h2>Veranstaltungen</h2><ul class="termin-liste">${e.termine.map((v) => terminHtml(v, false)).join('')}</ul><p class="leise">Angabe des Betriebs · <a href="/veranstaltungen/">Alle Veranstaltungen</a></p></section>` : ''}
     ${e.urlaub?.length ? `<section class="block saison-hinweis urlaub"><h2>Betriebsferien</h2>${e.urlaub.map((u) => `<p><b>${esc(datumDe(u.von))} bis ${esc(datumDe(u.bis))}</b>${u.text ? ` – ${esc(u.text)}` : ''}</p>`).join('')}<p class="leise">Angabe des Betriebs</p></section>` : ''}
@@ -1900,7 +1907,7 @@ schreibe('/karte/', seite({
     <button type="button" class="umschalter" data-kf-schalter="bio" aria-pressed="false">Bio</button>
     <button type="button" class="umschalter" data-kf-schalter="rund" aria-pressed="false">24/7</button>
     <button type="button" class="umschalter" data-kf-schalter="karte" aria-pressed="false">Kartenzahlung</button>
-    <div class="kat-filter" aria-label="Angebot">${Object.entries(KATEGORIEN).map(([k, n]) => `<button type="button" data-kf-kat="${k}" aria-pressed="false">${esc(n)}</button>`).join('')}</div>
+    <div class="kat-filter" aria-label="Angebot">${Object.entries(KATEGORIEN).map(([k, n]) => `<button type="button" data-kf-kat="${k}" aria-pressed="false">${produktIcon(k)}${esc(n)}</button>`).join('')}</div>
   </div>
   <div class="kartenseite-haupt">
     <div class="kartenseite-karte">${kartenPanel({ titel: 'Karte aller Hofläden in Deutschland' })}
