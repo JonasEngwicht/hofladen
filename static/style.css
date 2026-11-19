@@ -82,8 +82,8 @@ main { display: block; }
 .held-lead { font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: #CFE0D5; max-width: 30rem; margin: 1.1rem 0 1.8rem; }
 .plz-gross label { display: block; font-weight: 700; margin-bottom: .45rem; color: var(--raps); }
 .plz-zeile { display: flex; max-width: 30rem; background: var(--weiss); border-radius: var(--r); padding: .35rem; box-shadow: 0 0 0 4px rgba(244, 196, 48, .18); }
-.plz-zeile input { flex: 1; min-width: 0; border: 0; background: transparent; font: 700 1.7rem/1 var(--schrift); letter-spacing: .02em; padding: .55rem .8rem; color: var(--tinte); }
-.plz-zeile input::placeholder { color: #B5C0B8; }
+.plz-zeile input { flex: 1; min-width: 0; border: 0; background: transparent; font: 700 1.35rem/1.2 var(--schrift); letter-spacing: .02em; padding: .55rem .8rem; color: var(--tinte); }
+.plz-zeile input::placeholder { color: #6E7D73; font-size: 1.1rem; font-weight: 500; letter-spacing: 0; opacity: 1; }
 .plz-zeile input:focus { outline: none; }
 .plz-zeile:focus-within { box-shadow: 0 0 0 4px var(--raps); }
 .plz-zeile button { border: 0; background: var(--raps); color: var(--fichte); font: 700 1.05rem var(--schrift); padding: 0 1.2rem; border-radius: calc(var(--r) - 4px); cursor: pointer; white-space: nowrap; }
@@ -420,7 +420,8 @@ main { display: block; }
   .kopf-suche { margin-left: auto; flex: 1 1 11rem; max-width: 17rem; }
   .kopf-suche input { width: 100%; min-width: 0; }
   .held h1 { max-width: none; }
-  .plz-zeile input { font-size: 1.3rem; width: 100%; padding: .5rem .6rem; }
+  .plz-zeile input { font-size: 1.1rem; width: 100%; padding: .5rem .6rem; }
+  .plz-zeile input::placeholder { font-size: 1rem; }
   .held h1 { font-size: clamp(2.3rem, 11vw, 3rem); }
   .plz-zeile button { padding: 0 .9rem; font-size: .98rem; }
   .arten-liste { grid-template-columns: 1fr; }
@@ -713,6 +714,7 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
   .laden-markt .laden-symbol { background: #22372B; }
   .plz-zeile input, .melde-form input:not([type="checkbox"]):not([type="radio"]), .melde-form select, .melde-form textarea, .betrieb-form input, .betrieb-form select, .betrieb-form textarea, .kopf-suche input { color: var(--tinte); background: #101C16; }
   .plz-zeile { background: #101C16; }
+  .plz-zeile input::placeholder { color: #9AA89F; }
   img:not([src$=".svg"]) { filter: brightness(.92); }
   /* Karte und Popups bleiben hell (Kacheln), Text darin dunkel */
   .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #fff; color: #1F2A24; }
