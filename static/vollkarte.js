@@ -2,7 +2,7 @@
 // (Desktop daneben, mobil als Bottom-Sheet), Popup mit Status und Aktionen, „Mein Standort“ mit Umkreis.
 // Wird von app.js erst nach der Zustimmung zur Karte geladen.
 import { status } from './oh.js';
-import { KATEGORIEN, kmAnzeige } from './karte.js';
+import { KATEGORIEN, kmAnzeige, produktIcon } from './karte.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -81,7 +81,7 @@ export function clustern(punkte, projiziere, zelle = 56) {
 function popupHtml(p) {
   const s = p.oh ? status(p.oh, new Date(), p.land) : null;
   const st = s ? `<p class="kp-status ${s.offen === null ? 'st-unklar' : s.offen ? 'st-auf' : 'st-zu'}"><b>${esc(s.kurz)}</b></p>` : '<p class="kp-status st-leer">Keine Zeiten hinterlegt</p>';
-  const chips = p.kat.length ? `<p class="kp-kat">${p.kat.slice(0, 5).map((k) => `<span>${esc(KATEGORIEN[k])}</span>`).join('')}</p>` : '';
+  const chips = p.kat.length ? `<p class="kp-kat">${p.kat.slice(0, 5).map((k) => `<span>${produktIcon(k)}${esc(KATEGORIEN[k])}</span>`).join('')}</p>` : '';
   return `<div class="kp"><p class="kp-art">${esc(p.art)}${p.bio ? ' · Bio' : ''}</p><p class="kp-name"><a href="${esc(p.url)}">${esc(p.titel)}</a></p>${st}${chips}
   <p class="kp-aktionen"><a class="akt" href="https://www.google.com/maps/dir/?api=1&amp;destination=${p.lat},${p.lon}" rel="nofollow noopener" target="_blank">Route</a>${p.slug ? `<button type="button" class="akt" data-merken="${esc(p.slug)}" aria-pressed="false">Merken</button>` : ''}<a class="akt" href="${esc(p.url)}">Details</a></p></div>`;
 }
