@@ -8,14 +8,14 @@
   --fichte-3: #2F6249;
   --raps: #F4C430;
   --raps-hell: #FCEFB8;
-  --kalk: #F7F8F4;
+  --kalk: #F5F5EC;
   --weiss: #FFFFFF;
   --kohl: #6B8F7E;
   --kohl-hell: #E3ECE6;
   --bete: #A2334F;
   --tinte: #1F2A24;
   --grau: #56635B;
-  --linie: #D9E0DA;
+  --linie: #DCE0D2;
   --schrift: "Atkinson Next", "Atkinson Hyperlegible", system-ui, sans-serif;
   --titel: "Zilla Slab", Rockwell, "Roboto Slab", Georgia, serif;
   --breite: 1200px;
@@ -729,3 +729,86 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
 .skelett span:first-child { width: 40%; } .skelett span:nth-child(2) { width: 75%; height: 1.3rem; } .skelett span:nth-child(3) { width: 55%; }
 @keyframes skelett { from { background-position: 100% 0; } to { background-position: -100% 0; } }
 @media (prefers-reduced-motion: reduce) { .skelett span { animation: none; } }
+
+/* ============================================================
+   Hofgefühl: Feldrand, Hof am Horizont, Kreidetafel, Etiketten.
+   Bewusst nur wenige, aus dem Hofladen-Alltag entlehnte Motive.
+   ============================================================ */
+:root {
+  --tafel: #26302A;
+  --tafel-rand: #8A6440;
+  --kreide: #F1EEE2;
+  --kreide-leise: #BFC6BA;
+  --kraft: #EEE2C8;
+  --kraft-tinte: #5B4126;
+  --kraft-rand: #D9C59E;
+  --feldrand: 104px;
+}
+
+/* Feldrand unter dem dunklen Startbild und dem Hofkopf: Furchen, Rapsstreifen, Wegrand */
+.held, .hof-kopf { position: relative; }
+.held { padding-bottom: calc(var(--feldrand) + .5rem); }
+.held::before, .held::after, .hof-kopf::before, .hof-kopf::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: var(--feldrand); pointer-events: none; }
+.held::before, .hof-kopf::before { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E %3Cdefs%3E%3Cpattern id='f' width='18' height='120' patternUnits='userSpaceOnUse' patternTransform='skewX(-38)'%3E%3Crect width='18' height='120' fill='%231E4A37'/%3E%3Crect width='6' height='120' fill='%23285C43'/%3E%3C/pattern%3E%3C/defs%3E %3Cpath d='M0 120V48C200 8 430 -2 660 30S1030 90 1250 42 1420 20 1440 22V120Z' fill='url(%23f)'/%3E %3Cpath d='M0 120V72C180 48 380 44 590 60S930 100 1130 74 1360 54 1440 60V120Z' fill='%23F4C430'/%3E %3Cpath d='M0 120V84C180 64 380 62 590 74S930 108 1130 88 1360 70 1440 74V120Z' fill='%23E2B21F'/%3E %3C/svg%3E") bottom / 100% 100% no-repeat; }
+.held::after, .hof-kopf::after { background: var(--kalk); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 120V96C200 82 390 82 600 92S930 116 1130 100 1370 86 1440 90V120Z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 120V96C200 82 390 82 600 92S930 116 1130 100 1370 86 1440 90V120Z'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat; }
+.held > *, .hof-kopf > * { position: relative; z-index: 1; }
+.hof-kopf { --feldrand: 64px; padding-bottom: calc(1.6rem + 60px); }
+@media (max-width: 640px) {
+  :root { --feldrand: 60px; }
+  .hof-kopf { --feldrand: 40px; padding-bottom: calc(1.4rem + 36px); }
+}
+
+/* Hof am Horizont über dem Fuß */
+.fuss { position: relative; margin-top: 7rem; }
+.fuss::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 64px; margin-bottom: -1px; background: var(--fichte); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 64' preserveAspectRatio='xMidYMax slice'%3E %3Cpath d='M0 64V44C160 30 330 26 520 36S800 52 900 46 1180 26 1360 32 1540 44 1600 40V64Z'/%3E %3Crect x='842' y='26' width='46' height='24'/%3E%3Cpath d='M836 28 865 10 894 28Z'/%3E %3Crect x='896' y='14' width='13' height='34'/%3E%3Cpath d='M896 14a6.5 6.5 0 0 1 13 0Z'/%3E %3Crect x='779.5' y='34' width='4' height='16'/%3E%3Ccircle cx='781.5' cy='31' r='9'/%3E %3Crect x='799.5' y='38' width='3.5' height='12'/%3E%3Ccircle cx='801' cy='35' r='6.5'/%3E %3Crect x='929.5' y='32' width='4' height='18'/%3E%3Ccircle cx='931.5' cy='27' r='10'/%3E %3Crect x='299.5' y='26' width='4' height='10'/%3E%3Ccircle cx='301.5' cy='25' r='8'/%3E %3Crect x='1289.5' y='25' width='4' height='10'/%3E%3Ccircle cx='1291.5' cy='23' r='9'/%3E %3Crect x='1311.5' y='28' width='3.5' height='7'/%3E%3Ccircle cx='1313' cy='26' r='6'/%3E %3C/svg%3E") bottom / 100% 100% no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 64' preserveAspectRatio='xMidYMax slice'%3E %3Cpath d='M0 64V44C160 30 330 26 520 36S800 52 900 46 1180 26 1360 32 1540 44 1600 40V64Z'/%3E %3Crect x='842' y='26' width='46' height='24'/%3E%3Cpath d='M836 28 865 10 894 28Z'/%3E %3Crect x='896' y='14' width='13' height='34'/%3E%3Cpath d='M896 14a6.5 6.5 0 0 1 13 0Z'/%3E %3Crect x='779.5' y='34' width='4' height='16'/%3E%3Ccircle cx='781.5' cy='31' r='9'/%3E %3Crect x='799.5' y='38' width='3.5' height='12'/%3E%3Ccircle cx='801' cy='35' r='6.5'/%3E %3Crect x='929.5' y='32' width='4' height='18'/%3E%3Ccircle cx='931.5' cy='27' r='10'/%3E %3Crect x='299.5' y='26' width='4' height='10'/%3E%3Ccircle cx='301.5' cy='25' r='8'/%3E %3Crect x='1289.5' y='25' width='4' height='10'/%3E%3Ccircle cx='1291.5' cy='23' r='9'/%3E %3Crect x='1311.5' y='28' width='3.5' height='7'/%3E%3Ccircle cx='1313' cy='26' r='6'/%3E %3C/svg%3E") bottom / 100% 100% no-repeat; pointer-events: none; }
+.fuss-innen { padding-top: 1.6rem; }
+.fuss-logo svg { color: var(--raps); }
+.fuss-links a { color: #E6EFE9; text-decoration: none; }
+.fuss-links a:hover { color: var(--raps); text-decoration: underline; }
+@media (min-width: 961px) { .fuss-innen { grid-template-columns: 1.1fr 1.5fr 1fr; } .fuss-links { grid-template-columns: 1fr 1fr; column-gap: 1.5rem; } }
+
+/* Kreidetafel: „Gerade frisch vom Feld“ wie das Schild vor dem Hofladen */
+.saison-jetzt {
+  --kreide-a: rgba(241, 238, 226, .06);
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 30%, var(--kreide-a), transparent 70%),
+    radial-gradient(ellipse 50% 50% at 85% 75%, rgba(241, 238, 226, .045), transparent 70%),
+    var(--tafel);
+  color: var(--kreide);
+  border: 12px solid var(--tafel-rand);
+  border-image: linear-gradient(135deg, #9A7149, #7A5534 40%, #94693F 60%, #6E4B2D) 1;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .35), inset 0 0 40px rgba(0, 0, 0, .35), 0 12px 28px -14px rgba(38, 48, 42, .55);
+  border-radius: 0;
+  padding: 1.8rem clamp(1.2rem, 3vw, 2.4rem) 1.5rem;
+  max-width: calc(var(--breite) - 2.5rem);
+}
+.saison-jetzt h2 { color: var(--kreide); font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.saison-jetzt h2::after { content: ""; display: block; width: 7.5rem; height: 6px; margin-top: .45rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 6'%3E%3Cpath d='M2 4C25 1 55 5 80 2.5S112 3 118 2' fill='none' stroke='%23F4C430' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") left / 100% 100% no-repeat; }
+.saison-jetzt .saison-monat { color: var(--kreide); }
+.saison-jetzt .saison-monat.lager-titel { color: var(--kreide-leise); }
+.saison-jetzt .saison-chips li { background: none; padding: 0; }
+.saison-jetzt .saison-chips a { display: inline-block; color: var(--kreide); text-decoration: none; padding: .22rem .75rem; border: 1.5px solid rgba(241, 238, 226, .55); border-radius: 999px 880px 999px 760px / 760px 999px 880px 999px; font-size: .95rem; }
+.saison-jetzt .saison-chips a:hover { border-color: var(--raps); color: var(--raps); }
+.saison-jetzt .saison-chips.lager a { border-style: dashed; color: var(--kreide-leise); }
+.saison-jetzt a { color: var(--raps); }
+.saison-jetzt p { color: var(--kreide-leise); }
+.saison-jetzt :focus-visible { outline-color: var(--raps); }
+
+/* Produkt-Etiketten aus Packpapier (Angebot eines Hofs) */
+.chips li { background: var(--kraft); color: var(--kraft-tinte); border: 1px solid var(--kraft-rand); padding: .12rem .6rem .12rem .5rem; border-radius: 4px 999px 999px 4px; display: inline-flex; align-items: center; gap: .3rem; }
+.chips.gross li { padding: .28rem .85rem .28rem .65rem; }
+
+/* Ladenkarten: etwas wärmer, ein ruhiger Schatten statt nur Linie */
+.laden { border-color: var(--linie); box-shadow: 0 1px 0 rgba(23, 59, 44, .05); }
+.laden:hover { border-color: var(--kohl); box-shadow: 0 6px 18px -10px rgba(23, 59, 44, .35); }
+.laden-symbol { box-shadow: inset 0 -3px 0 rgba(23, 59, 44, .14); }
+
+/* Startseite: Angebotsarten als kleine Hofschilder */
+.arten-liste li > svg { border-radius: 12px; box-shadow: inset 0 -3px 0 rgba(23, 59, 44, .16); }
+
+@media (prefers-color-scheme: dark) {
+  :root { --kraft: #3A2F20; --kraft-tinte: #EBDCBC; --kraft-rand: #5A4A30; --tafel: #1A221D; }
+  .chips li { color: var(--kraft-tinte); }
+  .saison-jetzt h2, .saison-jetzt .saison-monat { color: var(--kreide); }
+}
+@media print { .held::before, .held::after, .hof-kopf::before, .hof-kopf::after, .fuss::before { display: none; } }
