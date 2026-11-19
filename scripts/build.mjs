@@ -276,10 +276,10 @@ for (const e of eintraege) {
   if (/^\d{4}-\d{2}(-\d{2})?$/.test(e.geprueft || '') && !e.gepflegt) kand.push([e.geprueft.length === 7 ? `${e.geprueft}-01` : e.geprueft, 'vor Ort geprüft (laut OpenStreetMap)']);
   if (e.gepflegt?.stand) kand.push([e.gepflegt.stand, e.gepflegt.art === 'uebernahme' ? 'vom Betrieb bestätigt' : 'von uns geprüft und ergänzt']);
   const b = rueck.bestaetigt?.[e.sid];
-  if (b) kand.push([b.tag, b.anzahl > 1 ? `von Besucherinnen und Besuchern bestätigt (${b.anzahl}×)` : 'von einer Besucherin oder einem Besucher bestätigt']);
+  if (b) kand.push([b.tag, b.anzahl > 1 ? `bestätigt von ${b.anzahl} Besucherinnen und Besuchern` : 'bestätigt von einer Besucherin oder einem Besucher', 'besuch']);
   if (e.webGeprueft) kand.push([e.webGeprueft, 'auf der Website des Hofs geprüft']);
   kand.sort((x, y) => y[0].localeCompare(x[0]));
-  e.letztePruefung = kand[0] ? { tag: kand[0][0], wie: kand[0][1] } : null;
+  e.letztePruefung = kand[0] ? { tag: kand[0][0], wie: kand[0][1], besuch: kand[0][2] === 'besuch' } : null;
   e.geschlossenGemeldet = rueck.gemeldet?.[e.sid]?.anzahl || 0;
 }
 
@@ -1807,7 +1807,7 @@ for (const e of eintraege) {
     <section class="pruefung" data-rueckmeldung="${esc(e.sid)}" aria-labelledby="pr-titel">
       <h2 id="pr-titel">Stimmt das noch?</h2>
       ${e.geschlossenGemeldet >= 2 ? '<p class="pruef-warnung">Mehrere Besucher haben gemeldet, dass dieser Hof geschlossen sein könnte. Wir prüfen das gerade.</p>' : ''}
-      <p class="pruef-stand">${e.letztePruefung ? `Zuletzt geprüft: <time datetime="${e.letztePruefung.tag}">${esc(datumDe(e.letztePruefung.tag))}</time>, ${esc(e.letztePruefung.wie)}.` : 'Diese Angaben hat noch niemand geprüft. Warst du in letzter Zeit dort?'}</p>
+      <p class="pruef-stand">${e.letztePruefung ? (e.letztePruefung.besuch ? `${esc(e.letztePruefung.wie[0].toUpperCase() + e.letztePruefung.wie.slice(1))}, zuletzt am <time datetime="${e.letztePruefung.tag}">${esc(datumDe(e.letztePruefung.tag))}</time>.` : `Zuletzt geprüft: <time datetime="${e.letztePruefung.tag}">${esc(datumDe(e.letztePruefung.tag))}</time>, ${esc(e.letztePruefung.wie)}.`) : 'Diese Angaben hat noch niemand geprüft. Warst du in letzter Zeit dort?'}</p>
       <div class="pruef-knoepfe"><button type="button" class="knopf knopf-dunkel" data-rm="stimmt">Ja, stimmt noch</button><button type="button" class="knopf knopf-hell" data-rm="geschlossen">Geschlossen melden</button></div>
       <p class="pruef-frage" data-rm-frage hidden>Ist der ${e.typ === 'automat' ? 'Automat' : 'Hof oder Laden'} dauerhaft geschlossen? <button type="button" class="link" data-rm-ja>Ja, dauerhaft geschlossen</button> · <button type="button" class="link" data-rm-nein>Nein, abbrechen</button></p>
       <p class="pruef-danke" data-rm-danke role="status" hidden></p>
@@ -2317,7 +2317,7 @@ textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenli
   <div class="feldgruppe">
     <h2>Kontakt</h2>
     <div class="zeile"><label>Dein Name<input name="kontakt_name" maxlength="120" autocomplete="name"></label><label>Deine E-Mail<input name="kontakt_email" type="email" maxlength="120" autocomplete="email"></label></div>
-    <p class="leise">Für Rückfragen; bei der Übernahme eines Eintrags Pflicht. Wird nicht veröffentlicht.</p>
+    <p class="leise">Für Rückfragen; bei der Übernahme eines Eintrags Pflicht. Wird nicht veröffentlicht. Mit E-Mail-Adresse sagen wir dir Bescheid, sobald deine Meldung online ist.</p>
     <label class="haken" data-nur-uebernahme hidden><input type="checkbox" name="badge" value="ja"><span>Schickt mir bitte das Badge „Wir sind auf hofladenliste.de“ für unsere Website.</span></label>
     <label>Anmerkungen<textarea name="hinweis" maxlength="2000" rows="3"></textarea></label>
     <label class="falle" aria-hidden="true">Firma<input name="firma" tabindex="-1" autocomplete="off"></label>
