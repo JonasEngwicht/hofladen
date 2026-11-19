@@ -700,6 +700,11 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
   .werkzeug { background: rgba(14, 24, 19, .94); }
   .umschalter[aria-pressed="true"], .hinweis-box, .melde-hof, .filter-aktiv { background: #1F3D2A; color: #CDEBD6; border-color: #3B6B4C; }
   .laden-art .bio { background: #2D3E1A; color: #D3E8A8; }
+  .seo-text p, .faq p, .faq summary, .text p, .text li { color: var(--tinte); }
+  .st-auf b, .kl-st.st-auf, .kp-status.st-auf { color: #7DDB98; }
+  .st-zu b, .kl-st.st-zu, .kp-status.st-zu { color: #FF9BB0; }
+  .st-unklar b, .kl-st.st-unklar { color: #EBC96B; }
+  .krumen > * + *::before { color: #6E8277; }
   .kl-eintrag a:hover, .kl-eintrag a:focus-visible, .ort-auswahl a:hover, .betrieb-zahlen div, .tipp-chips span, .auswahl-menue button:not(.link) { background: #1C2E24; }
   .saison-tabelle td { background: #1A2A21; }
   .zeiten-cta, .betreiber-box, .zeiten-hinweis, .melde-form .haken-liste.fehlt, .pruef-warnung, .news-liste a { background: #33290F; color: #F3E7C2; border-color: #5A4A1C; }
