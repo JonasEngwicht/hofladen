@@ -667,3 +667,24 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
   .sticky-aktionen [aria-pressed="true"] { color: var(--raps); }
   body:has(.sticky-aktionen) .fuss { padding-bottom: 76px; }
 }
+
+/* Saisonband auf der Startseite: Akzentfarbe je Monat */
+.saison-band { display: flex; align-items: center; gap: .8rem; margin: -.6rem 0 1.5rem; color: #E7F0EA; font-size: 1rem; max-width: 34rem; }
+.saison-band a { color: var(--saison, var(--raps)); font-weight: 700; }
+.saison-motive { display: flex; flex: none; }
+.saison-motive span { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--saison, var(--raps)); color: var(--fichte); border: 2px solid var(--fichte); margin-left: -.55rem; }
+.saison-motive span:first-child { margin-left: 0; }
+.saison-motive .pi { width: 1.35rem; height: 1.35rem; margin: 0; }
+
+/* Mobil: Filterleiste als feste, waagerecht scrollbare Zeile; Umschalter Liste/Karte unten */
+.liste-karte-schalter { display: none; }
+@media (max-width: 700px) {
+  .werkzeug { position: sticky; top: 0; z-index: 600; background: var(--kalk); flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; padding: .55rem 1.25rem; margin-left: -1.25rem; margin-right: -1.25rem; box-shadow: 0 6px 10px -10px rgba(23,59,44,.5); align-items: center; }
+  .werkzeug::-webkit-scrollbar { display: none; }
+  .werkzeug > *, .werkzeug .kat-filter, .werkzeug .segment { flex: none; }
+  .werkzeug .kat-filter { flex-wrap: nowrap; }
+  .werkzeug .treffer { white-space: nowrap; margin: 0 0 0 .3rem; }
+  .werkzeug button { min-height: 40px; white-space: nowrap; }
+  .liste-karte-schalter { display: inline-flex; position: fixed; bottom: calc(1rem + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 700; align-items: center; gap: .4rem; background: var(--fichte); color: #fff; border: 0; border-radius: 999px; padding: .75rem 1.3rem; font: 700 1rem var(--schrift); box-shadow: 0 4px 14px rgba(0,0,0,.25); cursor: pointer; }
+  .liste-karte-schalter svg { width: 1.2em; height: 1.2em; }
+}

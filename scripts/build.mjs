@@ -1052,6 +1052,19 @@ const SAISON_SEITEN = SAISON.filter(([n]) => SORTEN[n]).map(([name, frisch, lage
   return { name, slug, re, plural, gruppe, frisch, lager, liste, pfad: `/saisonkalender/${slug}/`, indexiert: liste.length >= MIN_SEITE };
 });
 const SAISON_NACH_NAME = new Map(SAISON_SEITEN.map((x) => [x.name, x]));
+// Saisonale Startseite: Akzentfarbe und Motive wechseln jeden Monat (aus dem Saisonkalender)
+const MONATS_FARBE = [null, '#CDE3F0', '#E8D9B5', '#C9E4A6', '#EDE3C0', '#EDE3C0', '#F5A3A8', '#F4A6B5', '#C3B1EC', '#F6C46A', '#F59E4C', '#D7B98E', '#9FD3B4'];
+const MONATS_NAME = ['', 'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+function saisonBand() {
+  const m = MONAT_JETZT;
+  const frisch = SAISON.filter(([, f]) => f.includes(m)).map(([n]) => n);
+  const namen = (frisch.length ? frisch : SAISON.filter(([, , l]) => (l || []).includes(m)).map(([n]) => n)).slice(0, 4);
+  const motive = m === 12 ? ['weihnachtsbaeume'] : [];
+  for (const n of namen) { const g = SORTEN[n]?.[3]; if (g && !motive.includes(g)) motive.push(g); }
+  if (!motive.length) motive.push('eier', 'milch');
+  const links = namen.map((n) => { const sp = SAISON_NACH_NAME.get(n); return sp?.indexiert ? `<a href="${sp.pfad}">${esc(n)}</a>` : esc(n); });
+  return `<p class="saison-band" style="--saison:${MONATS_FARBE[m]}"><span class="saison-motive" aria-hidden="true">${motive.slice(0, 3).map((k) => `<span>${produktIcon(k)}</span>`).join('')}</span><span>Jetzt im ${MONATS_NAME[m]}: ${m === 12 ? 'Weihnachtsbäume vom Hof, ' : ''}${nennung(links)} · <a href="/saisonkalender/">Saisonkalender</a></span></p>`;
+}
 const saisonJetzt = JSON.stringify(SAISON.map(([n, frisch, lager]) => [n, frisch, lager || [], SAISON_NACH_NAME.get(n)?.pfad || '/saisonkalender/']));
 // Monat beim Bauen; im Browser wird bei einem anderen Monat neu gerechnet (data-saison-stand)
 const MONAT_JETZT = +new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' }).slice(5, 7);
@@ -1152,6 +1165,7 @@ schreibe('/', seite({
   <div class="held-text">
     <h1>Hofläden in deiner Nähe</h1>
     <p class="held-lead">${zahl(eintraege.length)} Hofläden und Hofautomaten in ganz Deutschland – mit Öffnungszeiten, Angebot und Weg dorthin.</p>
+    ${saisonBand()}
     <form class="plz-gross" action="/suche" method="get">
       <label for="plz">Postleitzahl, Ort, Name des Hofs – gern mit Produkt</label>
       <div class="plz-zeile">
