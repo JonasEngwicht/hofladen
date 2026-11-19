@@ -92,3 +92,10 @@ test('Pflege im Build: Felder überschreiben OSM und räumen Ergänzungs-Hinweis
   assert.deepEqual(e.ergaenzt.felder, ['website']);
   assert.deepEqual(e.gepflegt, { art: 'pflege', stand: heute });
 });
+
+test('Pflege im Build: nur ergänzte PLZ setzt keinen Prüfvermerk', () => {
+  const e = { name: 'Hof' };
+  felderAnwenden(e, { plz: '03149' }, heute);
+  assert.equal(e.plz, '03149');
+  assert.equal(e.gepflegt, undefined);
+});
