@@ -643,3 +643,10 @@ html { overflow-x: clip; }
 .ratgeber th, .ratgeber td { border-bottom: 1px solid var(--linie); padding: .35rem .7rem; text-align: left; }
 .passend ul { padding-left: 1.2rem; }
 .ratgeber-hinweis ul { padding-left: 1.2rem; }
+.tipp-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tipp-chips span { background: #F3F6F2; border-radius: 999px; padding: .25rem .7rem; font-size: .93rem; }
+.tipp-texte { list-style: none; padding: 0; display: grid; gap: .6rem; }
+.tipp-texte li { border-left: 3px solid var(--raps); padding-left: .8rem; }
+.tipp-texte p { margin: 0; }
+.tipp-auswahl { display: flex; flex-wrap: wrap; gap: .3rem .9rem; margin: .3rem 0 0; font-weight: 400; }
+fieldset.breit { border: 0; padding: 0; margin: 0; }

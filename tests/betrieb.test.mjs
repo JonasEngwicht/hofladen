@@ -168,6 +168,29 @@ test('Rückmeldung an die meldende Person, sobald ihre Meldung übernommen ist',
   assert.match(mails.at(-1).text, new RegExp(`/hof/${ANDERER[2]}/`));
 });
 
+test('Tipps: Turnstile, Bestätigung per Link, Moderation, Export ohne E-Mail', async () => {
+  cookie = '';
+  const tipp = { eintrag: ANDERER[15], merkmale: ['eier', 'freundlich', 'unsinn'], text: 'Samstags gibt es frisches Brot vom Nachbarhof.', name: 'Anna', email: 'anna@example.org' };
+  assert.equal((await api('/api/tipp', { methode: 'POST', body: { ...tipp, turnstile: 'schlecht' } })).status, 400);
+  assert.equal((await api('/api/tipp', { methode: 'POST', body: { ...tipp, text: 'Siehe www.spam.de', turnstile: 'gut' } })).status, 400);
+  const vorher = mails.length;
+  assert.equal((await api('/api/tipp', { methode: 'POST', body: { ...tipp, turnstile: 'gut' } })).status, 200);
+  assert.equal(mails.length, vorher + 1);
+  assert.equal((await api('/api/tipp', { methode: 'POST', body: { ...tipp, turnstile: 'gut' } })).status, 409, 'nur ein Tipp pro Hof');
+  assert.equal((await (await verwaltung('tipps')).json()).tipps.length, 0, 'vor der Bestätigung nicht in der Moderation');
+  const link = mails.at(-1).text.match(/\/api\/tipp\?t=([A-Za-z0-9_%-]+)/)[1];
+  const r = await api(`/api/tipp?t=${link}`);
+  assert.equal(r.status, 302);
+  assert.match(r.headers.get('location'), new RegExp(`/hof/${ANDERER[2]}/\\?tipp=bestaetigt$`));
+  const offen = (await (await verwaltung('tipps')).json()).tipps;
+  assert.equal(offen.length, 1);
+  assert.equal(offen[0].merkmale, 'eier,freundlich');
+  await verwaltung(`tipp/${offen[0].id}`, { methode: 'POST', body: { status: 'freigegeben' } });
+  const ex = await (await verwaltung('build-export')).json();
+  assert.equal(ex.tipps.length, 1);
+  assert.ok(!JSON.stringify(ex.tipps).includes('anna@example.org'));
+});
+
 test('Ohne Anmeldung kein Zugriff auf den Betreiber-Bereich', async () => {
   cookie = '';
   assert.equal((await api('/api/betrieb/ich')).status, 401);

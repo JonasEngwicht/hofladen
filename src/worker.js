@@ -16,7 +16,7 @@ import ROUTEN from './generated/routen.json';
 import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
 import { wasWoTrennen } from './waswo.js';
-import { BETRIEB_SCHEMA, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
+import { BETRIEB_SCHEMA, TIPP_SCHEMA, tippAnnehmen, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
@@ -272,6 +272,7 @@ const SCHEMA = [
     status TEXT NOT NULL DEFAULT 'neu')`,
   'CREATE INDEX IF NOT EXISTS rueckmeldungen_eintrag ON rueckmeldungen (eintrag, art, status)',
   ...BETRIEB_SCHEMA,
+  ...TIPP_SCHEMA,
 ];
 let schemaOk = false;
 async function schema(env) {
@@ -487,6 +488,19 @@ async function verwaltung(request, env, url, ctx) {
     }
     return keinCache(json({ ok: true, sid: e[15], gesendet }));
   }
+  // Tipps moderieren
+  if (teil === 'tipps') {
+    const { results } = await env.STATS.prepare("SELECT id, sid, merkmale, text, name, status, erstellt FROM tipps WHERE status = ?1 ORDER BY id DESC LIMIT 200").bind(url.searchParams.get('status') || 'neu').all();
+    const idx = eintragIndex();
+    return keinCache(json({ tipps: results.map((t) => { const e = aufloesen(t.sid, idx); return { ...t, titel: e?.[3], pfad: e ? `/hof/${e[2]}/` : null }; }) }));
+  }
+  const tm = teil.match(/^tipp\/(\d+)$/);
+  if (tm && request.method === 'POST') {
+    const b = await request.json().catch(() => ({}));
+    if (!['freigegeben', 'abgelehnt'].includes(b.status)) return json({ fehler: 'Status' }, 400);
+    await env.STATS.prepare("UPDATE tipps SET status = ?1, geaendert = ?2 WHERE id = ?3 AND status != 'unbestaetigt'").bind(b.status, new Date().toISOString(), +tm[1]).run();
+    return keinCache(json({ ok: true }));
+  }
   if (teil === 'konten') {
     const { results } = await env.STATS.prepare('SELECT k.id, k.email, k.erstellt, k.zuletzt, group_concat(h.sid) AS hoefe FROM konten k LEFT JOIN konto_hoefe h ON h.konto = k.id GROUP BY k.id ORDER BY k.id DESC LIMIT 500').all();
     return keinCache(json({ konten: results }));
@@ -495,7 +509,8 @@ async function verwaltung(request, env, url, ctx) {
   if (teil === 'build-export') {
     const sids = (await env.STATS.prepare('SELECT DISTINCT sid FROM konto_hoefe').all()).results.map((r) => r.sid);
     const termine = (await env.STATS.prepare("SELECT id, sid, titel, beginn, ende, beschreibung FROM veranstaltungen WHERE status = 'aktiv' AND substr(coalesce(ende, beginn), 1, 10) >= ?1 ORDER BY beginn").bind(tagHeute()).all()).results;
-    return keinCache(json({ hoefeMitKonto: sids.sort(), veranstaltungen: termine }));
+    const tipps = (await env.STATS.prepare("SELECT id, sid, merkmale, text, name, geaendert FROM tipps WHERE status = 'freigegeben' ORDER BY id").all()).results;
+    return keinCache(json({ hoefeMitKonto: sids.sort(), veranstaltungen: termine, tipps }));
   }
   if (teil === 'meldungen') {
     const status = url.searchParams.get('status') || 'neu';
@@ -691,6 +706,7 @@ export default {
     if (url.pathname.startsWith('/api/betrieb/')) return betriebApi(request, env, url, ctx, H);
     if (url.pathname === '/api/neuigkeiten') return neuigkeitenApi(url, env, H);
     if (url.pathname === '/api/nachricht') return nachrichtAnnehmen(request, env, ctx, H);
+    if (url.pathname === '/api/tipp') return tippAnnehmen(request, env, ctx, H);
     if (url.pathname === '/api/turnstile') return new Response(JSON.stringify({ siteKey: env.TURNSTILE_SITE_KEY || null }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
     return seiteAusliefern(request, env, url);
   },

@@ -356,3 +356,59 @@ Du bekommst diese Erinnerung höchstens zweimal im Jahr.` });
   }
   return { gesendet };
 }
+
+// ---------- Tipps und Daumen hoch (moderiert, mit E-Mail-Bestätigung und Turnstile) ----------
+// Ablauf: Formular → E-Mail mit Bestätigungslink → Status „neu“ → Freigabe in der Verwaltung → Export für den Build.
+export const TIPP_MERKMALE = {
+  eier: 'tolle Eier', gemuese: 'frisches Gemüse', fleisch: 'gutes Fleisch', kaese: 'leckerer Käse', auswahl: 'große Auswahl',
+  freundlich: 'freundlich', karte: 'Kartenzahlung klappt', preise: 'faire Preise', kinder: 'schön mit Kindern', automat: 'Automat immer gefüllt',
+};
+export const TIPP_SCHEMA = [
+  `CREATE TABLE IF NOT EXISTS tipps (id INTEGER PRIMARY KEY AUTOINCREMENT, sid TEXT NOT NULL, merkmale TEXT NOT NULL, text TEXT, name TEXT,
+    email_hash TEXT NOT NULL, token_hash TEXT, status TEXT NOT NULL DEFAULT 'unbestaetigt', erstellt TEXT NOT NULL, geaendert TEXT)`,
+  'CREATE INDEX IF NOT EXISTS tipps_status ON tipps (status, sid)',
+];
+
+export async function tippAnnehmen(request, env, ctx, h) {
+  if (!env.STATS || !env.RESEND_API_KEY) return antwortJson({ fehler: 'Tipps sind gerade nicht möglich.' }, 503);
+  await h.schema(env);
+  const url = new URL(request.url);
+  // Bestätigungslink aus der E-Mail
+  if (request.method === 'GET') {
+    const t = url.searchParams.get('t') || '';
+    const row = /^[A-Za-z0-9_-]{20,}$/.test(t) ? await env.STATS.prepare("SELECT id, sid FROM tipps WHERE token_hash = ?1 AND status = 'unbestaetigt'").bind(await h.sha256(t)).first() : null;
+    const e = row && h.aufloesen(row.sid, h.eintragIndex());
+    if (row) await env.STATS.prepare("UPDATE tipps SET status = 'neu', token_hash = NULL, geaendert = ?1 WHERE id = ?2").bind(new Date().toISOString(), row.id).run();
+    return Response.redirect(`${h.DOMAIN}${e ? `/hof/${e[2]}/` : '/'}?tipp=${row ? 'bestaetigt' : 'ungueltig'}`, 302);
+  }
+  if (request.method !== 'POST') return antwortJson({ fehler: 'Nur POST' }, 405);
+  const b = await request.json().catch(() => ({}));
+  const e = h.aufloesen(String(b.eintrag || ''), h.eintragIndex());
+  if (!e) return antwortJson({ fehler: 'Eintrag nicht gefunden.' }, 404);
+  const ip = request.headers.get('cf-connecting-ip') || '';
+  if (!await turnstilePruefen(env, b.turnstile, ip)) return antwortJson({ fehler: 'Die Spam-Prüfung ist fehlgeschlagen. Bitte lade die Seite neu.' }, 400);
+  const merkmale = [...new Set([].concat(b.merkmale || []))].filter((m) => Object.hasOwn(TIPP_MERKMALE, m)).slice(0, 3);
+  const text = String(b.text || '').trim().replace(/\s+/g, ' ').slice(0, 280);
+  const email = String(b.email || '').trim().toLowerCase().slice(0, 190);
+  if (!merkmale.length && text.length < 15) return antwortJson({ fehler: 'Wähle mindestens ein Merkmal oder schreib einen kurzen Tipp.' }, 400);
+  if (/https?:\/\/|www\./i.test(text)) return antwortJson({ fehler: 'Bitte keine Links im Tipp.' }, 400);
+  if (!h.EMAIL_RE.test(email)) return antwortJson({ fehler: 'Bitte gib deine E-Mail-Adresse an – wir schicken dir einen Bestätigungslink.' }, 400);
+  if (!await grenze(env, h, `tipp|${ip}`, 5) || !await grenze(env, h, `tipp|${email}`, 5)) return antwortJson({ fehler: 'Heute sind schon mehrere Tipps von dir eingegangen.' }, 429);
+  const eh = await h.sha256(`tipp|${email}`);
+  if (await env.STATS.prepare("SELECT 1 FROM tipps WHERE sid = ?1 AND email_hash = ?2 AND status != 'abgelehnt' AND erstellt > ?3").bind(e[15], eh, new Date(Date.now() - 180 * 864e5).toISOString()).first())
+    return antwortJson({ fehler: 'Du hast zu diesem Hof schon einen Tipp abgegeben. Danke!' }, 409);
+  const token = zufall();
+  await env.STATS.prepare('INSERT INTO tipps (sid, merkmale, text, name, email_hash, token_hash, erstellt) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)')
+    .bind(e[15], merkmale.join(','), text || null, String(b.name || '').trim().slice(0, 40) || null, eh, await h.sha256(token), new Date().toISOString()).run();
+  await mailSenden(env, { an: email, betreff: `Bitte bestätige deinen Tipp zu „${e[3]}“`, text: `Hallo,
+
+danke für deinen Tipp zu „${e[3]}“ auf Hofladenliste. Bitte bestätige ihn mit einem Klick:
+
+${h.DOMAIN}/api/tipp?t=${encodeURIComponent(token)}
+
+Danach schauen wir kurz drüber und schalten ihn frei. Deine E-Mail-Adresse wird nicht veröffentlicht und nicht gespeichert (nur eine Prüfsumme gegen Mehrfachabgaben).
+
+Viele Grüße
+Hofladenliste – hofladenliste.de` });
+  return antwortJson({ ok: true });
+}

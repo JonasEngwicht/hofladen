@@ -8,6 +8,7 @@ import { createHash } from 'node:crypto';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
 import { rasterIndex, gleicherHof, QUELLEN, quellenId, solawiOk } from './quellen.mjs';
 import { RATGEBER } from './ratgeber.mjs';
+import { TIPP_MERKMALE } from '../src/betrieb.js';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml } from '../static/karte.js';
 
@@ -1661,6 +1662,28 @@ for (const o of ortSeiten) {
 const BETRIEB_EXPORT = existsSync(join(ROOT, 'data', 'betrieb-export.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'betrieb-export.json'), 'utf8')) : { hoefeMitKonto: [], veranstaltungen: [] };
 const nachSid = new Map(eintraege.map((e) => [e.sid, e]));
 const MIT_KONTO = new Set(BETRIEB_EXPORT.hoefeMitKonto || []);
+// Freigegebene Tipps von Besuchern je Hof
+for (const t of BETRIEB_EXPORT.tipps || []) { const e = nachSid.get(t.sid); if (e) (e.tipps ??= []).push(t); }
+const tippsHtml = (e) => {
+  const ts = e.tipps || [];
+  const zahl_ = {};
+  for (const t of ts) for (const m of String(t.merkmale || '').split(',').filter((x) => TIPP_MERKMALE[x])) zahl_[m] = (zahl_[m] || 0) + 1;
+  const texte = ts.filter((t) => t.text).slice(-5).reverse();
+  return `<section class="block tipps" data-tipps="${esc(e.sid)}"><h2>Was Besucher sagen</h2>
+    ${Object.keys(zahl_).length ? `<p class="tipp-chips">${Object.entries(zahl_).sort((a, b) => b[1] - a[1]).map(([m, n]) => `<span>👍 ${esc(TIPP_MERKMALE[m])}${n > 1 ? ` <b>${n}</b>` : ''}</span>`).join('')}</p>` : ''}
+    ${texte.length ? `<ul class="tipp-texte">${texte.map((t) => `<li><p>${esc(t.text)}</p><p class="leise">${t.name ? `${esc(t.name)}, ` : ''}${esc(datumDe((t.geaendert || '').slice(0, 10)))}</p></li>`).join('')}</ul>` : ''}
+    ${ts.length ? '' : '<p class="leise">Noch keine Tipps. Warst du schon dort?</p>'}
+    <p><button type="button" class="knopf knopf-hell" data-tipp-oeffnen>Tipp geben</button></p>
+    <form class="betrieb-form" data-tipp-form hidden>
+      <fieldset class="breit"><legend>Was war gut? (bis zu 3)</legend><p class="tipp-auswahl">${Object.entries(TIPP_MERKMALE).map(([k, t]) => `<label><input type="checkbox" name="merkmale" value="${k}"> ${esc(t)}</label>`).join('')}</p></fieldset>
+      <label class="breit">Kurzer Tipp (optional) <textarea name="text" maxlength="280" rows="2" placeholder="z. B. Samstags gibt es frisches Brot vom Nachbarhof."></textarea></label>
+      <label>Vorname (optional) <input name="name" maxlength="40" autocomplete="given-name"></label>
+      <label>E-Mail für den Bestätigungslink <input name="email" type="email" required autocomplete="email"></label>
+      <div class="breit" data-turnstile></div>
+      <button type="submit" class="knopf">Tipp abschicken</button>
+      <p class="leise" data-status aria-live="polite">Wir prüfen jeden Tipp, bevor er erscheint. Die E-Mail-Adresse wird nicht veröffentlicht. Beim Öffnen lädt Cloudflare Turnstile (Spam-Schutz).</p>
+    </form></section>`;
+};
 const TERMINE = BETRIEB_EXPORT.veranstaltungen.map((v) => ({ ...v, e: nachSid.get(v.sid) }))
   .filter((v) => v.e && (v.ende || v.beginn).slice(0, 10) >= HEUTE).sort((a, b) => a.beginn.localeCompare(b.beginn));
 const terminZeit = (v) => {
@@ -1803,6 +1826,7 @@ for (const e of eintraege) {
     ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.quellen.map((q) => `${q.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram', strasse: 'Adresse' })[f]).join(', ')} ergänzt aus <a href="${esc(q.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(q.quelle).split('/')[0])}</a>${q.stand ? ` (Stand ${esc(datumDe(q.stand))})` : ''}`).join('; ')}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
+    ${tippsHtml(e)}
     ${MIT_KONTO.has(e.sid) ? `<section class="block nachricht" data-nachricht="${esc(e.sid)}"><h2>Nachricht an den Hof</h2>
       <p>Frag nach Angebot, Vorbestellung oder Öffnungszeiten. Die Nachricht geht direkt an den Betrieb, seine E-Mail-Adresse bleibt verborgen. Die Antwort kommt an deine Adresse.</p>
       <p><button type="button" class="knopf" data-nachricht-oeffnen>Nachricht schreiben</button></p>
@@ -2159,6 +2183,8 @@ ${KACHELN ? '<p>Die Karten liefern wir von unserem eigenen Server aus (Kartendat
 <p>Wenn du eine Postleitzahl eingibst, wird sie an unseren Server übermittelt, um passende Hofläden anzuzeigen. Wenn du „Meinen Standort verwenden“ wählst, fragt dein Browser zuerst um Erlaubnis; die Koordinaten werden nur für diese Suche übertragen und nicht gespeichert. Die zuletzt gesuchte Postleitzahl speichert dein Browser lokal (localStorage).</p>
 <h2>Betreiber-Bereich</h2>
 <p>Betriebe melden sich unter /betrieb/ mit einem Link per E-Mail an, ein Passwort gibt es nicht. Wir speichern dafür die E-Mail-Adresse, die zugeordneten Höfe und den Zeitpunkt der letzten Anmeldung. Nach der Anmeldung setzt dein Browser ein technisch notwendiges Sitzungs-Cookie („hl_sitzung“, 30 Tage), das nur der Anmeldung dient (§ 25 Abs. 2 TTDSG). E-Mails (Anmeldelinks, Bestätigungen) versenden wir über Resend (Resend, Inc., USA, EU-US Data Privacy Framework); übermittelt werden Empfängeradresse und Inhalt der Nachricht (Art. 6 Abs. 1 lit. b DSGVO).</p>
+<h2>Tipps von Besuchern</h2>
+<p>Tipps und „Daumen hoch“ zu einem Hof bestätigst du über einen Link per E-Mail (Versand über Resend). Wir speichern Merkmale, Text, den optionalen Vornamen und eine Prüfsumme der E-Mail-Adresse gegen Mehrfachabgaben, nicht die Adresse selbst. Veröffentlicht werden Merkmale, Text, Vorname und Datum, erst nach unserer Prüfung. Auch hier lädt Cloudflare Turnstile erst, wenn du „Tipp geben“ wählst.</p>
 <h2>Nachricht an den Hof (Cloudflare Turnstile)</h2>
 <p>Bei Höfen, die ihren Eintrag selbst pflegen, kannst du über ein Formular eine Nachricht schicken. Erst wenn du „Nachricht schreiben“ wählst, lädt dein Browser Cloudflare Turnstile (Cloudflare, Inc.) zum Schutz vor Spam; dabei werden technische Daten wie IP-Adresse und Browsermerkmale an Cloudflare übertragen (Art. 6 Abs. 1 lit. f DSGVO). Name, E-Mail-Adresse und Text leiten wir per E-Mail (Resend) an den Betrieb weiter und speichern sie nicht.</p>
 <h2>Merkliste</h2>
