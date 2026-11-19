@@ -630,3 +630,8 @@ html { overflow-x: clip; }
 .stat-tabelle th, .stat-tabelle td { padding: .4rem .7rem; border-bottom: 1px solid var(--linie); text-align: right; }
 .stat-tabelle th[scope="row"], .stat-tabelle thead th:first-child { text-align: left; }
 .presse-zahlen b { font-size: 1.15em; }
+.route-form { margin-bottom: .6rem; }
+.route-haupt { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 1rem; align-items: start; }
+.route-haupt .kartenpanel { height: 520px; }
+.route-liste { max-height: 520px; overflow: auto; list-style: none; padding: 0; margin: 0; }
+@media (max-width: 860px) { .route-haupt { display: block; } .route-haupt .kartenpanel { height: 360px; margin-bottom: 1rem; } .route-liste { max-height: none; } }

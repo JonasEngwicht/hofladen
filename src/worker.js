@@ -74,7 +74,7 @@ function ortIndex() {
   return ORT_INDEX;
 }
 const ortZiel = (o) => `${o.pfad || o.kreisPfad}?plz=${o.plz}`;
-const ortAusgabe = (o) => ({ name: o.name, kreis: o.kreis, plz: o.plz, wert: o.doppelt ? `${o.name}, ${o.kreis}` : o.name });
+const ortAusgabe = (o) => ({ name: o.name, kreis: o.kreis, plz: o.plz, wert: o.doppelt ? `${o.name}, ${o.kreis}` : o.name, ...(PLZ[o.plz] ? { lat: PLZ[o.plz][0], lon: PLZ[o.plz][1] } : {}) });
 
 // Liefert alle passenden Orte; eindeutig = alle Treffer liegen im selben Kreis
 function ortSuche(q) {

@@ -51,3 +51,20 @@ test('/karte/: Filterleiste, „Mein Standort“, Legende und Liste mit Text ohn
   assert.match(html, /Hofläden nach Bundesland/);
   assert.doesNotMatch(html, /tile\.openstreetmap\.org/, 'Kacheln erst nach Zustimmung');
 });
+
+test('Route: Korridor um die Strecke, sortiert nach Position, außerhalb nichts', async () => {
+  const { korridor } = await import('../static/route.js');
+  // Cottbus → Forst (Lausitz), Luftlinie rund 21 km
+  const linie = [[51.7563, 14.3329], [51.7353, 14.6400]];
+  const ps = [
+    { titel: 'nah am Start', lat: 51.76, lon: 14.35 },
+    { titel: 'Mitte, 2 km daneben', lat: 51.764, lon: 14.49 },
+    { titel: 'weit weg', lat: 51.9, lon: 14.5 },
+    { titel: 'hinter dem Ziel', lat: 51.735, lon: 14.80 },
+  ];
+  const { treffer, laenge } = korridor(ps, linie, 3);
+  assert.ok(laenge > 20 && laenge < 23, String(laenge));
+  assert.deepEqual(treffer.map((t) => t.titel), ['nah am Start', 'Mitte, 2 km daneben']);
+  assert.ok(treffer[1].abstand > 1 && treffer[1].abstand < 3);
+  assert.ok(treffer[0].pos < treffer[1].pos);
+});

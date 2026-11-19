@@ -25,7 +25,7 @@ const KACHELN = (() => {
     return /^\d{8}$/.test(k.version) && existsSync(join(ROOT, 'static', 'vendor', 'protomaps-leaflet.js')) ? k : null;
   } catch { return null; }
 })();
-const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js', 'betrieb.js', 'aushang.js', 'qr.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
+const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js', 'betrieb.js', 'aushang.js', 'qr.js', 'route.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
 const SAISON = [
@@ -511,6 +511,7 @@ ${inhalt}
     <li><a href="/fuer-hoefe/">Für Höfe</a></li>
     <li><a href="/wochenmaerkte/">Wochenmärkte</a></li>
     <li><a href="/veranstaltungen/">Hoffeste &amp; Termine</a></li>
+    <li><a href="/route/">Höfe entlang der Route</a></li>
     <li><a href="/ueber-uns/">Über uns</a></li>
     <li><a href="/kontakt/">Kontakt</a></li>
     <li><a href="/presse/">Presse</a></li>
@@ -2062,6 +2063,30 @@ schreibe('/aushang/empfehlen/', seite({
 }), false);
 
 const textSeite = (pfad, titel, beschreibung, html, noindex = true) => schreibe(pfad, seite({ titel: `${titel} | Hofladenliste`, beschreibung, pfad, noindex, klasse: 'textseite', krumen: [[titel.replace(/ – .*/, ''), pfad]], inhalt: `<article class="text">${html}</article>` }), !noindex);
+// Hofläden entlang der Route (Start/Ziel als Luftlinie oder eigene GPX-Datei, Korridor 2–5 km; Berechnung im Browser)
+schreibe('/route/', seite({
+  titel: 'Hofläden entlang der Route – für Radtour und Wochenendausflug | Hofladenliste',
+  beschreibung: 'Hofläden, Milchtankstellen, Hofautomaten und Wochenmärkte entlang deiner Strecke finden: Start und Ziel eingeben oder GPX-Datei hochladen, Korridor von 2 bis 5 km.',
+  pfad: '/route/', krumen: [['Hofläden entlang der Route', '/route/']],
+  inhalt: `
+<section class="seitenkopf">
+  <h1>Hofläden entlang der Route</h1>
+  <p>Für Radtour, Wanderung oder Wochenendausflug: Gib Start und Ziel ein oder lade die GPX-Datei deiner Tour hoch. Wir zeigen alle Hofläden, Automaten und Wochenmärkte, die höchstens ein paar Kilometer neben der Strecke liegen – in der Reihenfolge, in der du an ihnen vorbeikommst.</p>
+</section>
+<section class="abschnitt route" data-route>
+  <form class="betrieb-form route-form" data-route-form>
+    <label>Start <input name="start" ${SUCHFELD} placeholder="Ort oder PLZ, z. B. Cottbus"></label>
+    <label>Ziel <input name="ziel" ${SUCHFELD} placeholder="z. B. Forst (Lausitz)"></label>
+    <label>Korridor <select name="breite"><option value="2">2 km neben der Strecke</option><option value="3" selected>3 km</option><option value="5">5 km</option></select></label>
+    <label>Oder GPX-Datei <input name="gpx" type="file" accept=".gpx,application/gpx+xml"></label>
+    <button type="submit" class="knopf">Höfe entlang der Strecke zeigen</button>
+    <p class="leise breit">Ohne GPX-Datei rechnen wir mit der Luftlinie zwischen Start und Ziel. Die GPX-Datei bleibt in deinem Browser und wird nicht hochgeladen.</p>
+  </form>
+  <p data-route-status aria-live="polite"></p>
+  <div class="route-haupt">${kartenPanel({ titel: 'Karte der Strecke' })}<ol class="kl-liste route-liste" data-route-liste></ol></div>
+</section>`,
+}));
+
 // Ersatzseite ohne Netz (Service Worker)
 schreibe('/offline/', seite({ titel: 'Gerade offline | Hofladenliste', beschreibung: 'Keine Verbindung: Deine Merkliste und zuletzt besuchte Höfe sind trotzdem verfügbar.', pfad: '/offline/', noindex: true, klasse: 'textseite', krumen: [['Offline', '/offline/']],
   inhalt: '<article class="text"><h1>Gerade keine Verbindung</h1><p>Diese Seite ist noch nicht auf deinem Gerät gespeichert. Deine <a href="/merkliste/">Merkliste</a> und Höfe, die du schon einmal geöffnet hast, funktionieren auch ohne Netz.</p><p>Sobald du wieder online bist, lädt die Seite normal.</p></article>' }), false);
