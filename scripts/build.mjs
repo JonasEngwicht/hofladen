@@ -8,6 +8,7 @@ import { createHash } from 'node:crypto';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
 import { rasterIndex, gleicherHof, QUELLEN, quellenId, solawiOk } from './quellen.mjs';
 import { RATGEBER } from './ratgeber.mjs';
+import { stabileIdAus, felderAnwenden } from './pflege.mjs';
 import { TIPP_MERKMALE, SAISON_PRODUKTE } from '../src/betrieb.js';
 import { zeilen, uebersetze, parse } from '../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml, PRODUKT_SPRITE, produktIcon } from '../static/karte.js';
@@ -50,6 +51,12 @@ const { kreise, plz, raster } = ladePlz(join(ROOT, 'data', 'quellen', 'plz-de.cs
 const osm = existsSync(join(ROOT, 'data', 'osm-eintraege.json'))
   ? JSON.parse(readFileSync(join(ROOT, 'data', 'osm-eintraege.json'), 'utf8')) : [];
 const manuell = JSON.parse(readFileSync(join(ROOT, 'data', 'manuell.json'), 'utf8'));
+// Eigene Pflege (data/pflege.json, siehe scripts/pflege.mjs): geprüfte Änderungen, neue Einträge, Schließungen
+const pflege = existsSync(join(ROOT, 'data', 'pflege.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'pflege.json'), 'utf8')) : { aenderungen: {}, neu: {}, geschlossen: {} };
+for (const [id, n] of Object.entries(pflege.neu || {})) {
+  const { saison, bio, stand, notiz, quelle, ...rest } = n;
+  manuell.push({ ...rest, id, ...(saison ? { saisonHinweis: saison } : {}), ...(bio ? { bio: true } : {}), quelle: quelle || null, gepflegt: { art: 'pflege', stand }, geprueft: stand });
+}
 
 // Ortsnamen, die sich als Firma/Behörde herausstellen (Filter in lib.mjs), durch den nächsten echten Ort ersetzen
 for (const e of osm) {
@@ -184,6 +191,23 @@ for (const e of eintraege) {
 }
 const offenErgaenztSumme = Object.values(offenErgaenzt).reduce((a, b) => a + b, 0);
 
+// Eigene Pflege: Änderungen je stabiler ID; Vorrang vor OSM und Ergänzungen, Angaben der Betriebe kommen danach
+let pflegeAnzahl = 0;
+{
+  const archiv = existsSync(join(ROOT, 'data', 'seiten-stand.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'seiten-stand.json'), 'utf8')).ersetzt || {} : {};
+  const weiter = new Map(Object.entries(archiv).map(([a, n]) => [stabileIdAus(a), stabileIdAus(n)]));
+  const nachSid = new Map(eintraege.map((e) => [stabileIdAus(e.osm || e.id), e]));
+  for (const [sid, a] of Object.entries(pflege.aenderungen || {})) {
+    let ziel = sid;
+    for (let n = 0; !nachSid.has(ziel) && weiter.has(ziel) && n < 5; n++) ziel = weiter.get(ziel);
+    const e = nachSid.get(ziel);
+    if (!e) { console.warn(`Pflege: Eintrag ${sid} nicht gefunden`); continue; }
+    felderAnwenden(e, a.felder || {}, a.stand);
+    if (a.felder?.lat != null) { const t = naechsterOrt(raster, e.lat, e.lon); if (t) { e.kreis = t.ort.kreis; e.ortNah = t.ort.ort; e.plzNah = t.ort.plz; } }
+    pflegeAnzahl++;
+  }
+}
+
 // Angaben von Betreibern und geprüften Korrekturen haben Vorrang vor OSM
 {
   const hoefeIds = existsSync(join(ROOT, 'data', 'seiten-stand.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'seiten-stand.json'), 'utf8')).hoefe : {};
@@ -256,15 +280,6 @@ for (const e of eintraege.sort((a, b) => (a.osm || a.id).localeCompare(b.osm || 
 // Stabile ID je Eintrag: ändert sich nie, auch wenn sich Name oder Slug ändern.
 // OSM: n123/w123/r123, Betreiber-Einträge: b<Meldung>, offene Quellen: o-/f-/k-/g-<ID> (Overture, Foursquare,
 // Karte von morgen, Verwaltungsdaten), manuelle Einträge: m-<id>
-function stabileIdAus(roh) {
-  const osm = String(roh).match(/^(node|way|relation)\/(\d+)$/);
-  if (osm) return osm[1][0] + osm[2];
-  const b = String(roh).match(/^betreiber\/(\d+)$/);
-  if (b) return `b${b[1]}`;
-  const o = String(roh).match(/^(overture|foursquare|kvm|kommunal)\/(.+)$/);
-  if (o) return quellenId(o[1], o[2]);
-  return `m-${slugify(String(roh))}`;
-}
 for (const e of eintraege) e.sid = stabileIdAus(e.osm || e.id);
 
 // Ein-Klick-Rückmeldungen (data/rueckmeldungen.json, täglich aus der Verwaltung): bestätigte Schließungen entfernen
@@ -272,7 +287,7 @@ for (const e of eintraege) e.sid = stabileIdAus(e.osm || e.id);
 const rueck = existsSync(join(ROOT, 'data', 'rueckmeldungen.json'))
   ? JSON.parse(readFileSync(join(ROOT, 'data', 'rueckmeldungen.json'), 'utf8')) : { bestaetigt: {}, geschlossen: {}, gemeldet: {} };
 let geschlossenAnzahl = 0;
-for (let i = eintraege.length - 1; i >= 0; i--) if (rueck.geschlossen?.[eintraege[i].sid]) { eintraege.splice(i, 1); geschlossenAnzahl++; }
+for (let i = eintraege.length - 1; i >= 0; i--) if (rueck.geschlossen?.[eintraege[i].sid] || pflege.geschlossen?.[eintraege[i].sid]) { eintraege.splice(i, 1); geschlossenAnzahl++; }
 for (const e of eintraege) {
   const kand = [];
   if (/^\d{4}-\d{2}(-\d{2})?$/.test(e.geprueft || '') && !e.gepflegt) kand.push([e.geprueft.length === 7 ? `${e.geprueft}-01` : e.geprueft, 'vor Ort geprüft (laut OpenStreetMap)']);
@@ -1844,7 +1859,7 @@ for (const e of eintraege) {
     ${e.fotos?.length ? `<section class="block hof-fotos"><h2>Fotos</h2><div class="foto-reihe">${e.fotos.map((f, i) => `<img src="${esc(f)}" width="1200" height="900" alt="${esc(e.titel)} – Foto ${i + 1}" loading="lazy" decoding="async">`).join('')}</div><p class="leise">Fotos: ${esc(e.titel)}</p></section>` : ''}
     ${e.termine?.length ? `<section class="block termine"><h2>Veranstaltungen</h2><ul class="termin-liste">${e.termine.map((v) => terminHtml(v, false)).join('')}</ul><p class="leise">Angabe des Betriebs · <a href="/veranstaltungen/">Alle Veranstaltungen</a></p></section>` : ''}
     ${e.urlaub?.length ? `<section class="block saison-hinweis urlaub"><h2>Betriebsferien</h2>${e.urlaub.map((u) => `<p><b>${esc(datumDe(u.von))} bis ${esc(datumDe(u.bis))}</b>${u.text ? ` – ${esc(u.text)}` : ''}</p>`).join('')}<p class="leise">Angabe des Betriebs</p></section>` : ''}
-    ${e.saisonHinweis ? `<section class="block saison-hinweis"><h2>Aktuell und saisonal</h2><p>${esc(e.saisonHinweis)}</p><p class="leise">Angabe des Betriebs, Stand ${esc(datumDe(e.gepflegt.stand))}</p></section>` : ''}
+    ${e.saisonHinweis ? `<section class="block saison-hinweis"><h2>Aktuell und saisonal</h2><p>${esc(e.saisonHinweis)}</p><p class="leise">${e.vomBetrieb?.saison ? 'Angabe des Betriebs, ' : ''}Stand ${esc(datumDe(e.gepflegt?.stand || HEUTE))}</p></section>` : ''}
     ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
     ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.quellen.map((q) => `${q.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram', strasse: 'Adresse' })[f]).join(', ')} ergänzt aus <a href="${esc(q.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(q.quelle).split('/')[0])}</a>${q.stand ? ` (Stand ${esc(datumDe(q.stand))})` : ''}`).join('; ')}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
@@ -2669,5 +2684,5 @@ writeFileSync(join(GEN, 'suchwoerter.json'), JSON.stringify([
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;
 const mitKat = eintraege.filter((e) => e.kat.length).length;
-console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${geschlossenAnzahl} als geschlossen entfernt, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
+console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${pflegeAnzahl} gepflegt, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${geschlossenAnzahl} als geschlossen entfernt, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
 if (impFehlt) console.warn('WARNUNG: Impressum in site.config.json ist unvollständig.');
