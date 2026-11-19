@@ -165,6 +165,42 @@ function markiere(k) {
   setTimeout(() => k.classList.remove('markiert'), 1600);
 }
 
+// Turnstile (Spam-Schutz von Cloudflare) erst nach einem Klick laden
+let turnstileLaden;
+async function turnstileIn(el, onToken) {
+  turnstileLaden ||= (async () => {
+    const { siteKey } = await (await fetch('/api/turnstile')).json();
+    await new Promise((ok, fehler) => { const s = document.createElement('script'); s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'; s.onload = ok; s.onerror = fehler; document.head.append(s); });
+    return siteKey;
+  })();
+  const siteKey = await turnstileLaden;
+  return window.turnstile.render(el, { sitekey: siteKey, language: 'de', callback: onToken });
+}
+// Tipps und Daumen hoch
+if (params.get('tipp')) $('[data-tipps] h2')?.insertAdjacentHTML('afterend', `<p class="hinweis-box">${params.get('tipp') === 'bestaetigt' ? 'Danke! Dein Tipp ist bestätigt und erscheint nach einer kurzen Prüfung.' : 'Dieser Bestätigungslink ist ungültig oder wurde schon benutzt.'}</p>`);
+for (const box of $$('[data-tipps]')) {
+  const form = $('[data-tipp-form]', box);
+  let token = '';
+  $('[data-tipp-oeffnen]', box)?.addEventListener('click', async (ev) => {
+    ev.currentTarget.hidden = true; form.hidden = false;
+    try { await turnstileIn($('[data-turnstile]', form), (t) => { token = t; }); } catch { $('[data-status]', form).textContent = 'Der Spam-Schutz konnte nicht geladen werden.'; }
+  });
+  form?.addEventListener('change', (ev) => {
+    const an = $$('input[name="merkmale"]:checked', form);
+    if (an.length > 3) ev.target.checked = false;
+  });
+  form?.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const st = $('[data-status]', form);
+    if (!token) { st.textContent = 'Bitte warte kurz, bis die Spam-Prüfung fertig ist.'; return; }
+    const fd = new FormData(form);
+    const r = await fetch('/api/tipp', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ eintrag: box.dataset.tipps, turnstile: token, merkmale: fd.getAll('merkmale'), text: fd.get('text'), name: fd.get('name'), email: fd.get('email') }) });
+    const d = await r.json().catch(() => ({}));
+    if (r.ok) form.innerHTML = '<p class="hinweis-box">Fast geschafft: Wir haben dir einen Bestätigungslink geschickt. Nach dem Klick prüfen wir den Tipp kurz und schalten ihn frei.</p>';
+    else { st.textContent = d.fehler || 'Senden fehlgeschlagen.'; window.turnstile?.reset(); token = ''; }
+  });
+}
+
 // „Nachricht an den Hof“: Turnstile erst nach dem Klick laden (Drittanbieter)
 for (const box of $$('[data-nachricht]')) {
   const form = $('[data-nachricht-form]', box);
@@ -172,9 +208,7 @@ for (const box of $$('[data-nachricht]')) {
   $('[data-nachricht-oeffnen]', box)?.addEventListener('click', async (ev) => {
     ev.currentTarget.hidden = true; form.hidden = false;
     try {
-      const { siteKey } = await (await fetch('/api/turnstile')).json();
-      await new Promise((ok, fehler) => { const s = document.createElement('script'); s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'; s.onload = ok; s.onerror = fehler; document.head.append(s); });
-      window.turnstile.render($('[data-turnstile]', form), { sitekey: siteKey, language: 'de', callback: (t) => { token = t; } });
+      await turnstileIn($('[data-turnstile]', form), (t) => { token = t; });
     } catch { $('[data-status]', form).textContent = 'Der Spam-Schutz konnte nicht geladen werden. Schreib dem Hof bitte direkt.'; }
   });
   form?.addEventListener('submit', async (ev) => {

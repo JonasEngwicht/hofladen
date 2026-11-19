@@ -50,6 +50,6 @@ console.log(`${freigaben.length} Freigabe(n) verarbeitet, ${Object.keys(daten).l
 const ex = await fetch(`${BASIS}/api/verwaltung/build-export`, { headers: kopf });
 if (ex.ok) {
   const d = await ex.json();
-  writeFileSync(new URL('../data/betrieb-export.json', import.meta.url), JSON.stringify({ hoefeMitKonto: d.hoefeMitKonto, veranstaltungen: d.veranstaltungen }, null, 1) + '\n');
+  writeFileSync(new URL('../data/betrieb-export.json', import.meta.url), JSON.stringify({ hoefeMitKonto: d.hoefeMitKonto, veranstaltungen: d.veranstaltungen, tipps: d.tipps || [] }, null, 1) + '\n');
   console.log(`Export: ${d.hoefeMitKonto.length} Höfe mit Konto, ${d.veranstaltungen.length} Veranstaltungen.`);
 } else console.error(`Export nicht abrufbar: HTTP ${ex.status}`);

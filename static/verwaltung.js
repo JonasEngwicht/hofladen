@@ -25,7 +25,7 @@ async function laden(status = 'neu') {
   box.innerHTML = '<p>Lade …</p>';
   let d;
   try { const r = await api(`meldungen?status=${status}`); d = await r.json(); if (!r.ok) { box.innerHTML = `<p class="fehler">${esc(d.fehler)}</p>`; return; } } catch { return; }
-  box.innerHTML = `<p class="segment">${['neu', 'freigegeben', 'erledigt', 'abgelehnt'].map((s) => `<button type="button" data-status="${s}" aria-pressed="${s === status}">${s}</button>`).join('')}<button type="button" data-schliessungen>Geschlossen gemeldet</button><button type="button" data-statistik>Statistik</button></p>
+  box.innerHTML = `<p class="segment">${['neu', 'freigegeben', 'erledigt', 'abgelehnt'].map((s) => `<button type="button" data-status="${s}" aria-pressed="${s === status}">${s}</button>`).join('')}<button type="button" data-schliessungen>Geschlossen gemeldet</button><button type="button" data-tipps>Tipps</button><button type="button" data-statistik>Statistik</button></p>
     ${d.meldungen.length ? '' : '<p>Keine Meldungen.</p>'}
     ${d.meldungen.map((m) => `<article class="block meldung" data-id="${m.id}">
       <h2>#${m.id} · ${esc(ART[m.art] || m.art)}${m.hof ? ` · <a href="/hof/${esc(m.hof)}/" target="_blank">${esc(m.hof)}</a>` : ''}</h2>
@@ -40,6 +40,7 @@ async function laden(status = 'neu') {
     </article>`).join('')}`;
   for (const b of box.querySelectorAll('[data-status]')) b.addEventListener('click', () => laden(b.dataset.status));
   box.querySelector('[data-statistik]').addEventListener('click', () => statistik());
+  box.querySelector('[data-tipps]').addEventListener('click', () => tipps());
   box.querySelector('[data-schliessungen]').addEventListener('click', () => schliessungen());
   for (const f of box.querySelectorAll('[data-fotos]')) for (const id of f.dataset.fotos.split(',').filter(Boolean)) {
     const img = new Image(); img.alt = `Foto ${id}`; img.width = 240; bild(id).then((u) => { img.src = u; }); f.append(img);
@@ -50,6 +51,24 @@ async function laden(status = 'neu') {
     try { daten = JSON.parse(art.querySelector('[data-json]').value); } catch { alert('JSON ist ungültig.'); return; }
     await api(`meldung/${art.dataset.id}`, { method: 'POST', body: JSON.stringify({ status: b.dataset.setze, notiz: art.querySelector('[data-notiz]').value, daten }) });
     art.remove();
+  });
+}
+// Tipps und Daumen hoch von Besuchern (per E-Mail bestätigt): freigeben oder ablehnen
+async function tipps() {
+  const box = $('#verwaltung');
+  box.innerHTML = '<p>Lade …</p>';
+  const d = await (await api('tipps')).json();
+  box.innerHTML = `<p class="segment"><button type="button" data-zurueck>Meldungen</button></p>
+    ${d.tipps.length ? '' : '<p>Keine Tipps zum Prüfen.</p>'}
+    ${d.tipps.map((t) => `<article class="block meldung" data-tipp="${t.id}"><h2>${t.pfad ? `<a href="${esc(t.pfad)}" target="_blank">${esc(t.titel)}</a>` : esc(t.sid)}</h2>
+      <p class="leise">${esc(new Date(t.erstellt).toLocaleString('de-DE'))}${t.name ? ` · ${esc(t.name)}` : ''}</p>
+      <p>${esc(t.merkmale.split(',').filter(Boolean).join(' · ')) || '<i>keine Merkmale</i>'}</p>${t.text ? `<blockquote>${esc(t.text)}</blockquote>` : ''}
+      <p class="kk-knoepfe"><button class="knopf knopf-gruen" data-tipp-setze="freigegeben">Freigeben</button><button class="knopf knopf-hell" data-tipp-setze="abgelehnt">Ablehnen</button></p></article>`).join('')}`;
+  box.querySelector('[data-zurueck]').addEventListener('click', () => laden());
+  for (const b of box.querySelectorAll('[data-tipp-setze]')) b.addEventListener('click', async () => {
+    const a = b.closest('[data-tipp]');
+    await api(`tipp/${a.dataset.tipp}`, { method: 'POST', body: JSON.stringify({ status: b.dataset.tippSetze }) });
+    a.remove();
   });
 }
 // Über „Geschlossen melden“ gemeldete Einträge: bestätigen (Eintrag verschwindet beim nächsten täglichen Abgleich) oder verwerfen
