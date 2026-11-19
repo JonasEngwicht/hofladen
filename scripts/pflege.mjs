@@ -178,8 +178,11 @@ export function felderAnwenden(e, felder, stand) {
     e.ergaenzt.quellen = e.ergaenzt.quellen.filter((q) => q.felder.length);
     if (!e.ergaenzt.felder.length) e.ergaenzt = null;
   }
-  e.gepflegt = { art: 'pflege', stand };
-  if (stand > (e.geprueft || '')) e.geprueft = stand;
+  // Nur eine ergänzte Postleitzahl ist keine Prüfung des Eintrags: dann kein „geprüft“-Vermerk
+  if (geaendert.some((f) => f !== 'plz')) {
+    e.gepflegt = { art: 'pflege', stand };
+    if (stand > (e.geprueft || '')) e.geprueft = stand;
+  }
   return geaendert;
 }
 
