@@ -87,6 +87,22 @@ class Felder(unittest.TestCase):
         self.assertEqual(k.wfs_typen('<FeatureType xmlns="x"><Name>poi</Name><Title>POI</Title></FeatureType>'), [('poi', 'POI')])
 
 
+class Gemischt(unittest.TestCase):
+    def test_getfeature_direkt(self):
+        u = 'https://g/poi?service=WFS&version=2.0.0&request=GetFeature&typeNames=poi_shopping&outputFormat=geojson'
+        self.assertEqual(k.ressource_art({'url': u}), 'geojson')
+        self.assertIsNone(k.ressource_art({'url': u.replace('geojson', 'shapezip')}))
+        self.assertEqual(k.ressource_art({'url': 'https://g/poi?'  , 'format': 'WFS'}), 'wfs')
+
+    def test_hinweis_nur_mit_passender_angabe(self):
+        self.assertFalse(k.nur_hofladen_datensatz('POI - Shopping'))
+        self.assertTrue(k.nur_hofladen_datensatz('Direktvermarkter GOT Rothenburg'))
+        friedhof = k.ort_aus_feature({'name': 'Friedhof Sölde', 'kategorie': 'Friedhof'}, 51.5, 7.5, 'a', 'CC0-1.0', 'u', 'd', False)
+        hof = k.ort_aus_feature({'name': 'Hof Kemper', 'kategorie': 'Hofladen'}, 51.5, 7.5, 'a', 'CC0-1.0', 'u', 'd', False)
+        self.assertFalse(friedhof['hofHinweis'])
+        self.assertTrue(hof['hofHinweis'])
+
+
 class Suche(unittest.TestCase):
     def test_auswahl(self):
         pakete = [
