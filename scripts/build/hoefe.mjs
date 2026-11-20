@@ -76,6 +76,11 @@ for (const e of eintraege) {
   ld['@id'] = cfg.domain + e.pfad + '#hof';
   if (e.fotos?.length) ld.image = e.fotos.map((f) => cfg.domain + f);
   if (e.email) ld.email = e.email;
+  // Nur Angaben, die auch sichtbar auf der Seite stehen
+  if (e.beschreibung) ld.description = e.beschreibung;
+  for (const s of [e.facebook, e.instagram]) if (s) (ld.sameAs ??= []).push(s);
+  if (e.zahlung?.length) ld.paymentAccepted = e.zahlung.map((z) => ZAHLUNG_TEXT[z]).filter(Boolean).join(', ');
+  if (e.kat.length) ld.hasOfferCatalog = { '@type': 'OfferCatalog', name: 'Angebot', itemListElement: e.kat.map((x) => ({ '@type': 'Offer', itemOffered: { '@type': 'Product', name: KATEGORIEN[x] } })) };
   const ohKurz = e.oeffnungszeiten ? (zeilen(e.oeffnungszeiten) || []).map(([t, v]) => `${t} ${v}`).join(', ') : '';
   const uhr = (m) => `${String(Math.floor(m / 60) % 24 || (m >= 1440 ? 24 : 0)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
   const ohTabelle = woche
@@ -137,6 +142,7 @@ for (const e of eintraege) {
     beschreibung: (() => { const b = `${e.titelSeite}: ${e.art} in ${e.ortAnzeige}${e.ortAnzeige.includes(k.titel) || k.titel.includes(e.ortAnzeige) ? '' : ` (${k.titel})`}.${e.kat.length ? ` Angebot: ${e.kat.map((x) => KATEGORIEN[x]).join(', ')}.` : ''}${ohKurz ? ` Öffnungszeiten: ${ohKurz}.` : ''}${e.telefon ? ` Telefon: ${e.telefon}.` : ''}`;
       return (b.length < 110 ? `${b} Adresse, ${ohKurz ? '' : 'Kontakt, '}Karte und Route${naechsterHof ? ` – plus Hofläden in der Nähe von ${e.ortAnzeige}` : ''}.` : b); })(),
     pfad: e.pfad,
+    bild: e.fotos?.[0] || null,
     noindex: e.duenn,
     klasse: 'hof',
     jsonld: [ld, ...hofFaq.ld, ...(e.termine || []).map(terminLd)],

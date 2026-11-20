@@ -390,7 +390,7 @@ ${GA_ID ? `<h2 id="google-analytics">Google Analytics (nur mit deiner Einwilligu
 <p><a class="knopf knopf-dunkel" href="/mitmachen/" data-badge-uebernehmen>Eintrag übernehmen oder neu eintragen</a></p>
 <h2>Badge für deine Website</h2>
 <p>Zeig deinen Kundinnen und Kunden, dass sie dich auf hofladenliste.de mit Öffnungszeiten und Route finden. Kopiere einfach den Code in deine Website.</p>
-<p class="badge-vorschau"><img src="/badge.svg" width="200" height="56" alt="Wir sind auf hofladenliste.de"> <img src="/badge-dunkel.svg" width="200" height="56" alt="Wir sind auf hofladenliste.de (dunkel)"></p>
+<p class="badge-vorschau"><img src="/badge.svg" width="200" height="56" loading="lazy" alt="Wir sind auf hofladenliste.de"> <img src="/badge-dunkel.svg" width="200" height="56" loading="lazy" alt="Wir sind auf hofladenliste.de (dunkel)"></p>
 <label for="badge-code-hell">Code (hell)</label>
 <textarea id="badge-code-hell" rows="3" readonly data-badge-code="badge.svg">${code('badge.svg')}</textarea>
 <label for="badge-code-dunkel">Code (dunkel)</label>
@@ -460,7 +460,7 @@ ${GA_ID ? '<li><b>Datensparsam:</b> keine Werbung, Google Analytics nur, wenn du
 </ul>
 <p>Alle Zahlen nach Bundesland und ihre Entwicklung stehen unter <a href="/statistik/">Datenstand &amp; Statistik</a>. Gern dürfen Sie sie mit Quellenangabe „hofladenliste.de“ verwenden.</p>
 <h2>Logo</h2>
-<p><img src="/favicon.svg" alt="Logo von Hofladenliste: gelbe Kartennadel mit grüner Ähre" width="96" height="96"></p>
+<p><img src="/favicon.svg" loading="lazy" alt="Logo von Hofladenliste: gelbe Kartennadel mit grüner Ähre" width="96" height="96"></p>
 <p><a href="/favicon.svg" download>Logo als SVG</a> · <a href="/icon-512.png" download>Logo als PNG (512 × 512)</a> · <a href="/og-bild.png" download>Vorschaubild (1200 × 630)</a></p>
 <h2>Ansprechpartner</h2>
 <p>${esc(imp.name)}, ${esc(imp.plzOrt)}<br>E-Mail: <a href="mailto:hofladenliste@gmail.com">hofladenliste@gmail.com</a></p>

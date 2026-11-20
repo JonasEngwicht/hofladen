@@ -44,6 +44,7 @@ export function pruefe(obj, pfad = '') {
         const ok = alleOberklassen(v, typ);
         for (const k of Object.keys(o)) {
           if (k.startsWith('@')) continue;
+          if (k === 'query-input') continue; // Googles Erweiterung für SearchAction (nicht im Vokabular)
           const d = v.domaenen.get(k);
           if (!d) f.push(`${wo}: unbekannte Eigenschaft ${k}`);
           else if (!d.some((x) => ok.has(x))) f.push(`${wo}: ${k} passt nicht zu ${typ}`);
