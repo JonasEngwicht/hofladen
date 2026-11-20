@@ -211,8 +211,11 @@ schreibe('/', seite({
   pfad: '/',
   klasse: 'start',
   kopfSuche: false,
-  jsonld: [{ '@context': 'https://schema.org', '@type': 'Organization', name: cfg.name, url: cfg.domain + '/', logo: cfg.domain + '/icon-512.png' },
-    { '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.domain + '/', inLanguage: 'de-DE' }],
+  jsonld: [{ '@context': 'https://schema.org', '@type': 'Organization', '@id': `${cfg.domain}/#organisation`, name: cfg.name, url: cfg.domain + '/', logo: cfg.domain + '/icon-512.png' },
+    { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${cfg.domain}/#website`, name: cfg.name, url: cfg.domain + '/', inLanguage: 'de-DE',
+      publisher: { '@id': `${cfg.domain}/#organisation` },
+      // Interne Suche: /suche?q=… leitet auf die passende Orts-, Kreis- oder Hofseite weiter
+      potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${cfg.domain}/suche?q={search_term_string}` }, 'query-input': 'required name=search_term_string' } }],
   inhalt: `
 <section class="held">
   <div class="held-text">

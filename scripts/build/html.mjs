@@ -1,6 +1,7 @@
 // Build, Teil „html“: HTML-Helfer und Seitenrahmen (seite(), Karte, Filterleiste).
 // Wird von scripts/build.mjs in fester Reihenfolge geladen; nutzt die Ergebnisse der vorherigen Teile.
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
+import { seitentext, faqZusammenfuehren } from '../seitentexte.mjs';
 import { join } from 'node:path';
 import { domainToUnicode } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -54,8 +55,27 @@ const ratgeberHinweis = (pfad) => {
 // Interne Links mit Parametern (z. B. /fuer-hoefe/?eintrag=…) sind Funktionen, keine Seiten: nofollow.
 // Ausnahme: Bearbeiten-Links /mitmachen/?… bleiben folgbar (Ziel ist noindex mit Canonical auf /mitmachen/).
 const nofollowParameter = (html) => html.replace(/<a ([^>]*?)href="(\/[^"#]*\?[^"]*)"([^>]*)>/g, (m, vor, href, nach) => /\brel=/.test(vor + nach) || href.startsWith('/mitmachen/') ? m : `<a ${vor}href="${href}" rel="nofollow"${nach}>`);
-function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = [], krumen = [], klasse = '', kopfSuche = true }) {
+// Bestätigung für Google Search Console / Bing Webmaster Tools: site.config.json → verifizierung
+// oder Umgebungsvariablen GOOGLE_SITE_VERIFICATION / BING_SITE_VERIFICATION (nur auf der Startseite)
+const VERIFIZIERUNG = [['google-site-verification', process.env.GOOGLE_SITE_VERIFICATION || cfg.verifizierung?.google],
+  ['msvalidate.01', process.env.BING_SITE_VERIFICATION || cfg.verifizierung?.bing]]
+  .filter(([, v]) => v).map(([n, v]) => `<meta name="${n}" content="${esc(v)}">\n`).join('');
+const SEITENTEXTE = existsSync(join(ROOT, 'data', 'seitentexte.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'seitentexte.json'), 'utf8')) : {};
+// Listen-Seiten: ItemList bekommt eine @id und eine CollectionPage, die auf sie zeigt
+function mitSammlung(jsonld, { titel, beschreibung, pfad }) {
+  const liste = jsonld.find((j) => j['@type'] === 'ItemList');
+  if (!liste || jsonld.some((j) => j['@type'] === 'CollectionPage')) return jsonld;
+  const url = cfg.domain + pfad;
+  return [{ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `${url}#seite`, url, name: titel.replace(/\s*\|\s*Hofladenliste\s*$/, ''),
+    description: kuerzeBeschreibung(beschreibung), inLanguage: 'de-DE', isPartOf: { '@id': `${cfg.domain}/#website` }, mainEntity: { '@id': `${url}#liste` } },
+  ...jsonld.map((j) => (j === liste ? { ...j, '@id': `${url}#liste` } : j))];
+}
+function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = [], krumen = [], klasse = '', kopfSuche = true, bild = null }) {
   inhalt += ratgeberHinweis(pfad);
+  // Gepflegte Texte je Seite (data/seitentexte.json): Einleitung, Abschnitte, FAQ – nur wenn vorhanden
+  const st = seitentext(SEITENTEXTE[pfad], pfad);
+  if (st) { inhalt += st.html; jsonld = faqZusammenfuehren(jsonld, st.faq); }
+  jsonld = mitSammlung(jsonld, { titel, beschreibung, pfad });
   SEITEN_HASH.set(pfad, hash([titel, beschreibung, noindex, JSON.stringify(jsonld), JSON.stringify(krumen), inhalt.replace(/\?v=[a-z0-9]+/g, '')].join('\u0000')));
   const url = cfg.domain + pfad;
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -79,11 +99,12 @@ ${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}<meta proper
 <link rel="icon" href="/favicon-96.png?v=${ICON_VERSION}" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=${ICON_VERSION}">
 <link rel="manifest" href="/site.webmanifest">
-<meta property="og:image" content="${cfg.domain}/og-bild.png?v=${ICON_VERSION}">
+${bild ? `<meta property="og:image" content="${esc(cfg.domain + bild)}">` : `<meta property="og:image" content="${cfg.domain}/og-bild.png?v=${ICON_VERSION}">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:height" content="630">`}
 <meta property="og:site_name" content="Hofladenliste">
 <meta name="twitter:card" content="summary_large_image">
+${pfad === '/' ? VERIFIZIERUNG : ''}
 <link rel="preload" href="/fonts/zilla-slab-bold.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="/fonts/atkinson-next.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="/style.css?v=${VERSION}">

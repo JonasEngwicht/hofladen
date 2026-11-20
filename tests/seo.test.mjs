@@ -1,6 +1,7 @@
 // SEO-Check: Pixelbreite von Titel und Beschreibung, https, Zeichensatz, Links ohne Parameter, keine doppelten Linktexte
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { seiten, ladeWorker, ASSETS } from './hilfen.mjs';
 import { titelBreite, beschreibungBreite, kuerzeBeschreibung, titelMitMarke, TITEL_MAX, BESCHREIBUNG_MAX } from '../scripts/pixel.mjs';
 
@@ -116,4 +117,79 @@ test('jede Seite: Teilen-Links als einfache Links (kein Skript von Dritten), mit
     assert.doesNotMatch(h, /<script[^>]+src="https?:\/\//, p);
     for (const m of teil.matchAll(/<a [^>]*href="https[^"]*"[^>]*>/g)) assert.match(m[0], /rel="nofollow noopener"/, p);
   }
+});
+
+// ---------- Strukturierte Daten, Seitentexte, Verifizierung (SEO-Paket A–G) ----------
+import { seitentext, faqZusammenfuehren } from '../scripts/seitentexte.mjs';
+const ldAus = (h) => [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
+const seiteHtml = (p) => alle.find(([x]) => x === p)?.[1];
+
+test('Startseite: WebSite mit @id und SearchAction auf /suche, Organisation mit @id', () => {
+  const ld = ldAus(seiteHtml('/'));
+  const ws = ld.find((j) => j['@type'] === 'WebSite');
+  assert.equal(ws['@id'], 'https://hofladenliste.de/#website');
+  assert.equal(ws.potentialAction.target.urlTemplate, 'https://hofladenliste.de/suche?q={search_term_string}');
+  assert.equal(ws.potentialAction['query-input'], 'required name=search_term_string');
+  assert.equal(ld.find((j) => j['@type'] === 'Organization')['@id'], 'https://hofladenliste.de/#organisation');
+});
+
+test('Listen-Seiten: CollectionPage zeigt auf die ItemList derselben Seite', () => {
+  let n = 0;
+  for (const [p, h] of alle) {
+    const ld = ldAus(h), il = ld.find((j) => j['@type'] === 'ItemList');
+    if (!il || /noindex/.test(h.match(/<meta name="robots"[^>]*>/)?.[0] || '')) continue;
+    const cp = ld.find((j) => j['@type'] === 'CollectionPage');
+    assert.ok(cp, `${p}: CollectionPage fehlt`);
+    assert.equal(cp.mainEntity['@id'], il['@id'], p);
+    assert.equal(cp.url, `https://hofladenliste.de${p}`, p);
+    assert.equal(cp.isPartOf['@id'], 'https://hofladenliste.de/#website', p);
+    if (++n > 300) break;
+  }
+  assert.ok(n > 50);
+});
+
+test('Hofseiten: Angebot, Bezahlen und Beschreibung im JSON-LD nur, wenn sichtbar; Foto als Vorschaubild', () => {
+  let mitAngebot = 0, mitZahlung = 0;
+  for (const [p, h] of alle.filter(([x]) => x.startsWith('/hof/')).slice(0, 3000)) {
+    const hof = ldAus(h).find((j) => j['@type'] === 'Store' || j['@type'] === 'LocalBusiness');
+    const text = h.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ').replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+    for (const o of hof.hasOfferCatalog?.itemListElement || []) { assert.ok(text.includes(o.itemOffered.name), `${p}: ${o.itemOffered.name}`); mitAngebot++; }
+    if (hof.paymentAccepted) { assert.ok(/<th>Bezahlen<\/th>|Bezahlen/.test(h), p); mitZahlung++; }
+    if (hof.description) assert.ok(text.includes(hof.description.slice(0, 40)), `${p}: Beschreibung nicht sichtbar`);
+    for (const s of hof.sameAs || []) assert.ok(h.includes(`href="${s.replace(/&/g, '&amp;')}"`), `${p}: ${s} nicht verlinkt`);
+    if (hof.image) assert.ok(h.includes(`<meta property="og:image" content="https://hofladenliste.de${hof.image[0].replace('https://hofladenliste.de', '')}"`), `${p}: Foto nicht als og:image`);
+  }
+  assert.ok(mitAngebot > 100 && mitZahlung > 10, `${mitAngebot} / ${mitZahlung}`);
+});
+
+test('Seitentexte: Absätze, FAQ und Links werden sicher gerendert; FAQ landet im FAQPage-JSON-LD', () => {
+  assert.equal(seitentext(null), null);
+  assert.equal(seitentext({}), null);
+  const st = seitentext({ titel: 'Milchtankstellen', einleitung: 'Erster <b>Absatz</b>.\n\nZweiter Absatz.', abschnitte: [{ ueberschrift: 'Rohmilch', text: 'Abkochen.' }],
+    faq: [{ frage: 'Ist das frisch?', antwort: 'Ja.' }, { frage: 'ohne Antwort' }], links: [{ text: 'Eierautomaten', pfad: '/eierautomat/' }, { text: 'böse', pfad: 'javascript:alert(1)' }] }, '/milchtankstelle/');
+  assert.match(st.html, /<h2>Milchtankstellen<\/h2><p>Erster &lt;b&gt;Absatz&lt;\/b&gt;\.<\/p><p>Zweiter Absatz\.<\/p><h3>Rohmilch<\/h3>/);
+  assert.match(st.html, /<dt>Ist das frisch\?<\/dt><dd><p>Ja\.<\/p><\/dd>/);
+  assert.match(st.html, /href="\/eierautomat\/"/);
+  assert.doesNotMatch(st.html, /javascript:|ohne Antwort/);
+  const neu = faqZusammenfuehren([], st.faq);
+  assert.equal(neu[0]['@type'], 'FAQPage');
+  assert.equal(neu[0].mainEntity[0].name, 'Ist das frisch?');
+  const alt = [{ '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: 'A' }] }];
+  assert.deepEqual(faqZusammenfuehren(alt, st.faq)[0].mainEntity.map((q) => q.name), ['A', 'Ist das frisch?']);
+});
+
+test('Verifizierung für die Search Console nur bei Konfiguration und nur auf der Startseite', () => {
+  const cfg = JSON.parse(readFileSync(new URL('../site.config.json', import.meta.url), 'utf8'));
+  const start = seiteHtml('/');
+  if (cfg.verifizierung?.google) assert.match(start, new RegExp(`<meta name="google-site-verification" content="${cfg.verifizierung.google}">`));
+  else assert.doesNotMatch(start, /google-site-verification/);
+  assert.doesNotMatch(seiteHtml('/bayern/'), /google-site-verification|msvalidate/);
+});
+
+test('robots.txt: Sitemap verlinkt, interne Suche, API, Verwaltung und Merkliste gesperrt; Formular- und Login-Seiten noindex', () => {
+  const r = readFileSync(new URL('../public/robots.txt', import.meta.url), 'utf8');
+  assert.match(r, /^Sitemap: https:\/\/hofladenliste\.de\/sitemap\.xml$/m);
+  for (const p of ['/suche', '/api/', '/verwaltung/', '/merkliste/']) assert.match(r, new RegExp(`^Disallow: ${p.replace(/\//g, '\\/')}$`, 'm'));
+  for (const p of ['/verwaltung/', '/betrieb/', '/mitmachen/danke/', '/hofsuche/', '/merkliste/']) assert.match(seiteHtml(p), /<meta name="robots" content="noindex/, p);
+  for (const p of ['/', '/milchtankstelle/', '/bayern/']) assert.doesNotMatch(seiteHtml(p), /<meta name="robots" content="noindex/, p);
 });
