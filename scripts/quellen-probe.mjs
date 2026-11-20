@@ -69,7 +69,10 @@ function markdown(erg, datensaetze) {
     ...erg.offenTreffer.slice(0, 20).map(({ treffer, felder: f }) => `| ${treffer.name} (${treffer.ortNah}) | ${treffer.quelle} | ${f.map((x) => NAME[x]).join(', ')} |`)];
   if (datensaetze) {
     out.push('', '## Gefundene Datensätze', '', '| Datensatz | Herausgeber | Lizenz | Ergebnis | Orte |', '|---|---|---|---|---|');
-    for (const b of datensaetze.filter((x) => x.titel)) out.push(`| [${b.titel}](${b.url}) | ${b.herausgeber} | ${b.lizenz || 'nicht offen'} | ${b.ergebnis}${b.ressourcen?.length ? ` (${b.ressourcen.join('; ')})` : ''} | ${b.orte ?? ''} |`);
+    for (const b of datensaetze.filter((x) => x.titel && x.ergebnis !== 'kein Hofladen-Thema')) out.push(`| [${b.titel}](${b.url}) | ${b.herausgeber} | ${b.lizenz || 'nicht offen'} | ${b.ergebnis}${b.ressourcen?.length ? ` (${b.ressourcen.join('; ')})` : ''} | ${b.orte ?? ''} |`);
+    out.push('', `Außerdem ${datensaetze.filter((x) => x.ergebnis === 'kein Hofladen-Thema').length} Treffer ohne Hofladen-Bezug (Statistik, Geologie …).`);
+    const roh = datensaetze.filter((x) => x.roh);
+    if (roh.length) out.push('', '## Rohangaben der thematischen Datensätze', '', '```json', JSON.stringify(roh.map((x) => ({ titel: x.titel, ...x.roh, wfs_typen: x.wfs_typen })), null, 1), '```');
     const fehler = datensaetze.filter((x) => x.fehler);
     if (fehler.length) out.push('', `Nicht erreichbar: ${fehler.map((f) => `${f.portal} („${f.begriff}“): ${f.fehler}`).join('; ')}`);
   }
