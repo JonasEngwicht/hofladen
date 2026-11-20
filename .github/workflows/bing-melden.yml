@@ -1,8 +1,8 @@
 name: Bing URL-Übermittlung
 
-# Reicht die wichtigsten Seiten (data/bing-wichtig.txt) über die Bing-Webmaster-API zur Indexierung ein.
-# Braucht das Secret BING_API_KEY (Bing Webmaster Tools → Einstellungen → API-Zugriff → API-Schlüssel).
-# Sendet nie mehr als das freie Tageskontingent.
+# Meldet die wichtigsten Seiten (data/bing-wichtig.txt) per IndexNow an Bing.
+# Braucht das Secret BING_API_KEY (IndexNow-Schlüssel aus bing.com/indexnow/getstarted)
+# und die passende Schlüsseldatei static/<schlüssel>.txt auf der Live-Seite.
 on:
   workflow_dispatch:
     inputs:
@@ -11,7 +11,7 @@ on:
         type: string
         default: data/bing-wichtig.txt
       max:
-        description: Höchstens so viele URLs senden (leer = Kontingent)
+        description: Höchstens so viele URLs senden (leer = alle)
         type: string
         default: ''
 
