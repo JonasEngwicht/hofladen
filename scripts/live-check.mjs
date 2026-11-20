@@ -53,6 +53,15 @@ for (const [pfad, status, ziel] of FAELLE) {
   console.log(`${ok2 ? 'OK  ' : 'FEHL'} Startseite: ${typ} · HSTS ${hsts || '–'} · Titel ${titelBreite(titel)} px „${titel}“`);
 }
 
+// Antwortzeiten (Zeit bis zur ersten Antwort, Startseite und Hofseite, je 5×)
+{
+  const ms = async (url, init = {}) => { const t = performance.now(); const r = await fetch(url, { redirect: 'manual', ...init }); await r.arrayBuffer(); return [Math.round(performance.now() - t), r.headers.get('cf-cache-status') || '–']; };
+  for (const url of [`${BASIS}/`, `${BASIS}/hof/kittlers-hofladen-riesa/`, `${BASIS}/bayern/`, BASIS.replace(/^https:/, 'http:') + '/']) {
+    const werte = []; for (let i = 0; i < 5; i++) werte.push(await ms(url));
+    console.log(`ZEIT ${url}: ${werte.map(([z, c]) => `${z} ms (${c})`).join(', ')}`);
+  }
+}
+
 // Overture-Einträge sind ausgerollt: erster Eintrag mit stabiler ID o-… und die Quellenseite
 {
   const roh = JSON.parse((await import('node:fs')).readFileSync(new URL('../src/generated/eintraege.json', import.meta.url), 'utf8'));
