@@ -65,7 +65,7 @@ for (const [pfad, status, ziel] of FAELLE) {
   const teile = [...index.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   const inSitemap = new Set();
   for (const t of teile.filter((u) => /\/(kreise|orte|kategorien)\.xml$/.test(u))) for (const m of (await (await fetch(t)).text()).matchAll(/<loc>([^<]+)<\/loc>/g)) inSitemap.add(m[1]);
-  const lokal = [...inSitemap].filter((u) => /\/[^/]+\/[^/]+\/$/.test(u.slice(BASIS.length)));
+  const lokal = [...inSitemap].filter((u) => /^\/[^/]+\/[^/]+\/$/.test(u.slice(BASIS.length)));
   const probe = ['/', '/bayern/oberallgaeu/', '/berlin/berlin/', '/bayern/oberallgaeu/milchtankstellen/', '/brandenburg/spree-neisse/burg-spreewald/', '/hof/kittlers-hofladen-riesa/'];
   for (const pfad of probe) {
     const r = await fetch(BASIS + pfad, { redirect: 'manual', headers: { 'User-Agent': 'HofladenlisteLiveCheck/1.0' } });
@@ -78,6 +78,16 @@ for (const [pfad, status, ziel] of FAELLE) {
     console.log(`${ok ? 'OK  ' : 'FEHL'} indexierbar ${pfad} (${r.status}${xr ? `, X-Robots-Tag ${xr}` : ''}${challenge ? `, Cloudflare-Abfrage ${challenge}` : ''}${can === BASIS + pfad ? '' : `, Canonical ${can || '–'}`}${sitemapOk ? '' : ', fehlt in der Sitemap'})`);
   }
   console.log(`INFO ${inSitemap.size} Kreis-, Orts- und Kategorieseiten in der Sitemap (${lokal.length} davon auf Kreisebene)`);
+  // Inhalte aus #88: Kurztext und Saison auf Burg (Spreewald), Doppelseite noindex mit Hinweis
+  const burg = await (await fetch(`${BASIS}/brandenburg/spree-neisse/burg-spreewald/`)).text();
+  const okB = /<div class="ortstext"><p>Burg liegt mitten im UNESCO-Biosphärenreservat/.test(burg) && /class="abschnitt saison-lokal"/.test(burg) && /Quellen: <a /.test(burg);
+  if (!okB) fehler++;
+  console.log(`${okB ? 'OK  ' : 'FEHL'} Burg (Spreewald): Kurztext oben, Saison-Block, Quellen`);
+  const dop = await fetch(`${BASIS}/bayern/schwabach/stadt-schwabach/`);
+  const dopHtml = dop.status === 200 ? await dop.text() : '';
+  const okD = /<meta name="robots" content="noindex/.test(dopHtml) && /Fast dieselben Höfe zeigt auch die Seite <a href="\/bayern\/schwabach\/"/.test(dopHtml) && !inSitemap.has(`${BASIS}/bayern/schwabach/stadt-schwabach/`);
+  if (!okD) fehler++;
+  console.log(`${okD ? 'OK  ' : 'FEHL'} Doppelseite /bayern/schwabach/stadt-schwabach/ noindex, verweist auf /bayern/schwabach/ (${dop.status})`);
   const g = await fetch(`${BASIS}/bayern/oberallgaeu/`, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' } });
   console.log(`INFO Abruf mit Googlebot-Kennung: ${g.status}${g.headers.get('cf-mitigated') ? ` (Cloudflare-Abfrage: ${g.headers.get('cf-mitigated')})` : ''}`);
 }
