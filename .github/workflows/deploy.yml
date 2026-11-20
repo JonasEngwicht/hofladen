@@ -41,6 +41,6 @@ jobs:
           done
           echo "::warning::Seitenstand konnte nicht gesichert werden"
       - name: Cloudflare-Deploy auslösen
-        env:
-          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
-        run: curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgelöst."
+        uses: ./.github/actions/deployen
+        with:
+          hook: ${{ secrets.CF_DEPLOY_HOOK }}

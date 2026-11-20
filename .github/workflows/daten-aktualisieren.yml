@@ -54,28 +54,15 @@ jobs:
       - name: Commit, falls sich etwas geändert hat
         id: commit
         if: steps.build.outcome == 'success'
-        run: |
-          git config user.name "hofladenliste-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/osm-eintraege.json data/seiten-stand.json data/verlauf.json
-          if [ -f data/osm-maerkte.json ]; then git add data/osm-maerkte.json; fi
-          if git diff --cached --quiet; then
-            echo "Keine Änderungen."
-          else
-            git commit -m "Daten aus OpenStreetMap aktualisiert"
-            git pull --rebase -X theirs -q
-            git push
-            echo "geaendert=ja" >> "$GITHUB_OUTPUT"
-          fi
-      # Cloudflare baut bei Pushes derzeit nicht automatisch; daher den Deploy Hook aufrufen.
-      # Die Hook-URL liegt als Repository-Secret CF_DEPLOY_HOOK (Settings > Secrets and variables > Actions).
-      - name: Cloudflare-Deploy ausloesen
+        uses: ./.github/actions/committen
+        with:
+          dateien: data/osm-eintraege.json data/osm-maerkte.json data/seiten-stand.json data/verlauf.json
+          nachricht: Daten aus OpenStreetMap aktualisiert
+      - name: Cloudflare-Deploy auslösen
         if: steps.commit.outputs.geaendert == 'ja' || github.event_name == 'workflow_dispatch'
-        env:
-          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
-        run: |
-          if [ -z "$HOOK" ]; then echo "Secret CF_DEPLOY_HOOK fehlt, Deploy bitte manuell ausloesen."; exit 0; fi
-          curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgeloest."
+        uses: ./.github/actions/deployen
+        with:
+          hook: ${{ secrets.CF_DEPLOY_HOOK }}
       - name: Fehlgeschlagenen Abruf anzeigen
         if: steps.hoefe.outcome == 'failure' || steps.maerkte.outcome == 'failure'
         run: |
