@@ -1,5 +1,6 @@
 // Gemeinsame Hilfsfunktionen für Import und Build (nur Node-Bordmittel).
 import { readFileSync } from 'node:fs';
+import { distanzKm } from '../static/helfer.js';
 
 export const BUNDESLAENDER = {
   BW: 'Baden-Württemberg', BY: 'Bayern', BE: 'Berlin', BB: 'Brandenburg',
@@ -156,12 +157,7 @@ function baueRaster(orte) {
   return r;
 }
 
-export function distanzKm(aLat, aLon, bLat, bLon) {
-  const R = 6371, rad = Math.PI / 180;
-  const dLat = (bLat - aLat) * rad, dLon = (bLon - aLon) * rad;
-  const h = Math.sin(dLat / 2) ** 2 + Math.cos(aLat * rad) * Math.cos(bLat * rad) * Math.sin(dLon / 2) ** 2;
-  return 2 * R * Math.asin(Math.sqrt(h));
-}
+export { distanzKm };
 
 // Nächster PLZ-Ort zu einer Koordinate (Suche im 0,1°-Raster, bis ca. 30 km).
 export function naechsterOrt(raster, lat, lon, kandidaten) {

@@ -1,6 +1,6 @@
 // Verwaltung der Meldungen (nur mit Zugangsschlüssel = Worker-Secret ADMIN_TOKEN)
+import { esc } from './helfer.js';
 const $ = (s, el = document) => el.querySelector(s);
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const SPEICHER = 'verwaltungToken';
 const ART = { neu: 'Neuer Eintrag', korrektur: 'Korrektur', uebernahme: 'Übernahme durch Betreiber' };
 const FELDER = { fotos: 'Fotos', name: 'Name', betriebsart: 'Art', strasse: 'Straße', plz: 'PLZ', ort: 'Ort', telefon: 'Telefon', email: 'E-Mail', website: 'Website',

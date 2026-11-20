@@ -1,6 +1,6 @@
 // Betreiber-Bereich (/betrieb/): Anmeldung per Link, eigene Höfe, Neuigkeiten, Termine, Statistik
+import { esc } from './helfer.js';
 const $ = (s, el = document) => el.querySelector(s);
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const datum = (d) => (d ? new Date(d.length === 10 ? `${d}T12:00` : d).toLocaleString('de-DE', d.length === 10 ? { day: 'numeric', month: 'long' } : { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }) : '');
 const zahl = (n) => (n || 0).toLocaleString('de-DE');
 

@@ -2,9 +2,9 @@
 // dann alle Einträge in einem Korridor von 2–5 km, sortiert nach der Position auf der Strecke.
 import { KATEGORIEN, kmAnzeige } from './karte.js';
 import { status } from './oh.js';
+import { esc } from './helfer.js';
 
 const $ = (s, el = document) => el.querySelector(s);
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // Abstand eines Punkts zur Strecke (lokal eben, km) und Position entlang der Strecke (km ab Start)
 export function korridor(punkte, linie, breiteKm) {

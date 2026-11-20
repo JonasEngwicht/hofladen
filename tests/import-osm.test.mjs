@@ -13,6 +13,7 @@ function importiere(elements) {
   const dir = mkdtempSync(join(tmpdir(), 'import-osm-'));
   try {
     cpSync(join(wurzel, 'scripts'), join(dir, 'scripts'), { recursive: true });
+    cpSync(join(wurzel, 'static', 'helfer.js'), join(dir, 'static', 'helfer.js'));
     mkdirSync(join(dir, 'data/quellen'), { recursive: true });
     cpSync(join(wurzel, 'data/quellen/plz-de.csv'), join(dir, 'data/quellen/plz-de.csv'));
     writeFileSync(join(dir, 'roh.json'), JSON.stringify({ elements }));
