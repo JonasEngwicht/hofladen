@@ -1,12 +1,45 @@
-# Löst nur den Cloudflare-Build aus – ohne die (langsame) OSM-Abfrage.
+# Löst den Cloudflare-Build aus – ohne die (langsame) OSM-Abfrage.
 # Für Code- oder Textänderungen: gh workflow run deploy.yml
+#
+# Vorher wird der Seitenstand (data/seiten-stand.json: Inhalts-Hash und Änderungsdatum je Seite) gesichert.
+# Sonst rechnet jeder Build gegen einen veralteten Stand, und Seiten, deren Inhalt sich nicht geändert hat,
+# bekämen in der Sitemap jeden Tag ein neues lastmod.
 name: Nur deployen
 on:
   workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: deploy
+  cancel-in-progress: false
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Seitenstand berechnen und sichern
+        run: |
+          node scripts/build.mjs > /dev/null
+          git add data/seiten-stand.json
+          if git diff --cached --quiet; then echo "Seitenstand unverändert."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Seitenstand gesichert"
+          for i in 1 2 3; do
+            if git push -q origin HEAD:main; then echo "Seitenstand gesichert."; exit 0; fi
+            # Jemand anderes hat gepusht: neu holen und den Stand auf dem neuen Code neu berechnen
+            git fetch -q origin main && git reset -q --hard origin/main
+            node scripts/build.mjs > /dev/null
+            git add data/seiten-stand.json
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Seitenstand gesichert"
+          done
+          echo "::warning::Seitenstand konnte nicht gesichert werden"
       - name: Cloudflare-Deploy auslösen
         env:
           HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
