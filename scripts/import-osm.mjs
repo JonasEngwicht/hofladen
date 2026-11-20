@@ -75,10 +75,19 @@ for (const [osm, el] of elemente) {
   if (Object.keys(t).some((k) => /^(disused|abandoned|was|removed|razed|demolished):/.test(k))) { verwirf('stillgelegt'); continue; }
 
   let typ, sorten = [];
-  if (t.shop === 'farm') typ = 'hofladen';
+  if (t.shop === 'farm' || t.shop === 'honey') typ = 'hofladen';
   else if (t.amenity === 'vending_machine') {
     typ = 'automat';
     sorten = (t.vending || '').split(/[;,]/).map((s) => s.trim()).filter(Boolean);
+    // Rohmilch-Automaten sind oft nur mit drink:raw_milk=yes erfasst; groceries entspricht food
+    if (t['drink:raw_milk'] === 'yes' && !sorten.includes('milk')) sorten.push('milk');
+    sorten = sorten.map((s) => (s === 'groceries' ? 'food' : s));
+    // Ohne vending-Angabe: Art aus dem Namen ableiten (z. B. „Eierautomat Müller“, „Milchtankstelle Hof X“)
+    if (!sorten.length) {
+      const n = [t.name, t.operator].filter(Boolean).join(' ');
+      if (/milch/i.test(n)) sorten.push('milk');
+      else if (/eier/i.test(n)) sorten.push('eggs');
+    }
     const nurFood = sorten.every((s) => ['food', 'drinks', 'sweets', 'snacks', 'ice_cream', 'cigarettes', 'coffee'].includes(s));
     const text = [t.name, t.operator, t.brand, t.description].filter(Boolean).join(' ');
     if (nurFood && !HOF_HINWEIS.test(text)) { verwirf('Automat ohne Hofbezug'); continue; }
@@ -104,7 +113,7 @@ for (const [osm, el] of elemente) {
   const strasse = [t['addr:street'] || t['addr:place'], t['addr:housenumber']].filter(Boolean).join(' ') || null;
   const ort = t['addr:city'] || t['addr:suburb'] || null;
   const art = typ === 'automat' ? automatArt(sorten) : t.shop === 'farm' ? 'Hofladen'
-    : t.craft === 'beekeeper' ? 'Imkerei' : (t.self_harvesting === 'yes' || t.pick_your_own === 'yes') ? 'Selbstpflücken' : 'Hofcafé';
+    : (t.craft === 'beekeeper' || t.shop === 'honey') ? 'Imkerei' : (t.self_harvesting === 'yes' || t.pick_your_own === 'yes') ? 'Selbstpflücken' : 'Hofcafé';
   const produkte = typ === 'automat'
     ? [...new Set(sorten.map((s) => VENDING[s]).filter(Boolean))]
     : [...new Set((t.produce || t.product || t.crop || '').split(';').map((s) => s.trim()).filter(Boolean))];
