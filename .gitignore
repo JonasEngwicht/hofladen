@@ -4,3 +4,4 @@ public/
 src/generated/
 data/quellen/osm-roh*.json
 data/quellen/maerkte-roh*.json
+__pycache__/

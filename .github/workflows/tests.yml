@@ -23,3 +23,5 @@ jobs:
         env:
           SCHEMAORG_JSONLD: /tmp/schemaorg.jsonld
         run: node --test tests/*.test.mjs
+      - name: Tests Verwaltungsdaten (Python)
+        run: python3 tests/kommunal_test.py

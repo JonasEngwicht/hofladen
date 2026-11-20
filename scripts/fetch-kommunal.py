@@ -2,8 +2,10 @@
 """Holt Hofläden und Direktvermarkter aus offenen Verwaltungsdaten (GovData / Open Data Bayern) und schreibt sie im
 gemeinsamen Kandidatenformat (siehe scripts/import-quellen.mjs). Nur Datensätze bzw. Einträge mit CC0 oder CC BY 4.0;
 Share-Alike-Lizenzen (CC BY-SA) passen nicht zu unserer ODbL-Datenbank und werden ausgelassen.
+Mit KOMMUNAL_SUCHE=1 werden zusätzlich GovData und Open.NRW nach weiteren Datensätzen durchsucht (scripts/kommunal_suche.py,
+dort auch Datenlizenz Deutschland Zero/Namensnennung 2.0); ein Bericht je Datensatz landet in <ziel>.bericht.json.
 Aufruf: python scripts/fetch-kommunal.py <ziel.json>"""
-import json, re, sys, urllib.request, datetime
+import json, os, re, sys, urllib.request, datetime
 
 ziel = sys.argv[1]
 UA = {'User-Agent': 'hofladenliste.de/1.0 (+https://hofladenliste.de/quellen/; hofladenliste@gmail.com)'}
@@ -71,6 +73,19 @@ try:
                      'quelleUrl': 'https://www.govdata.de/suche/daten/einkaufsangebote-und-dienstleistungen-in-bayern0c57a'})
 except Exception as e:
     fehler.append(f'BayernCloud: {e!r}')
+
+# 3) Weitere Datensätze aus GovData / Open.NRW (nur mit KOMMUNAL_SUCHE=1, zunächst für den Probelauf)
+if os.environ.get('KOMMUNAL_SUCHE') == '1':
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from kommunal_suche import suche
+    try:
+        weitere, bericht = suche(lambda u: get(u, 120), log=lambda m: print(m, file=sys.stderr))
+        orte += weitere
+        with open(ziel + '.bericht.json', 'w', encoding='utf-8') as f:
+            json.dump(bericht, f, ensure_ascii=False, indent=1)
+        print(f'Suche: {len(weitere)} Orte aus {sum(1 for b in bericht if b.get("orte"))} Datensätzen', file=sys.stderr)
+    except Exception as e:
+        fehler.append(f'Suche: {e!r}')
 
 print(f'Offene Verwaltungsdaten: {len(orte)} Orte', file=sys.stderr)
 for f in fehler: print('Fehler', f[:300], file=sys.stderr)
