@@ -1,0 +1,26 @@
+name: Bing-Webmaster-API prüfen
+
+# Prüft nur lesend, welches Secret ein gültiger Bing-Webmaster-API-Schlüssel ist
+# (Bing Webmaster Tools → Einstellungen → API-Zugriff → API-Schlüssel).
+on:
+  workflow_dispatch:
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Schlüssel prüfen
+        env:
+          KANDIDAT_BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+          KANDIDAT_BING_WEBMASTER_KEY: ${{ secrets.BING_WEBMASTER_KEY }}
+          KANDIDAT_BING_WEBMASTER: ${{ secrets.BING_WEBMASTER }}
+          KANDIDAT_WEBMASTER_API_KEY: ${{ secrets.WEBMASTER_API_KEY }}
+          KANDIDAT_BING_WEBMASTER_TOOLS_API_KEY: ${{ secrets.BING_WEBMASTER_TOOLS_API_KEY }}
+          KANDIDAT_BING_API: ${{ secrets.BING_API }}
+          KANDIDAT_BING_KEY: ${{ secrets.BING_KEY }}
+          KANDIDAT_BING_API_KEY: ${{ secrets.BING_API_KEY }}
+        run: node scripts/bing-api-pruefen.mjs
