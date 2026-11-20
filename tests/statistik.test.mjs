@@ -15,19 +15,17 @@ test('Statistik: Wahl wird gemerkt, unbekannte Werte zählen als „noch nicht g
 });
 
 test('Statistik: keine Seite lädt Google ohne Einwilligung', () => {
-  const ga = JSON.parse(readFileSync(new URL('../data/analytics.json', import.meta.url), 'utf8')).ga4;
   const pub = new URL('../public/', import.meta.url);
-  if (!existsSync(pub)) return;
+  if (!existsSync(new URL('index.html', pub))) return;
+  // Unabhängig davon, mit welcher Einstellung der letzte Build lief: nie fest eingebunden, Mess-ID nur mit Widerrufsmöglichkeit
   for (const pfad of ['index.html', 'datenschutz/index.html', 'impressum/index.html']) {
     const h = readFileSync(new URL(pfad, pub), 'utf8');
-    assert.doesNotMatch(h, /<script[^>]+(googletagmanager|google-analytics\.com)|gtag\(/, pfad); // nie fest eingebunden
-    if (ga) {
-      assert.match(h, new RegExp(`data-ga="${ga}"`), pfad);
-      assert.match(h, /data-cookie-einstellungen/, pfad);
-    } else assert.doesNotMatch(h, /data-ga=|data-cookie-einstellungen/, pfad);
+    assert.doesNotMatch(h, /<script[^>]+(googletagmanager|google-analytics\.com)|gtag\(/, pfad);
+    if (/data-ga="G-/.test(h)) assert.match(h, /data-cookie-einstellungen/, pfad);
+    else assert.doesNotMatch(h, /data-cookie-einstellungen/, pfad);
   }
   const ds = readFileSync(new URL('datenschutz/index.html', pub), 'utf8');
-  if (ga) assert.match(ds, /id="google-analytics"[\s\S]*widerrufen/);
+  if (/data-ga="G-/.test(ds)) assert.match(ds, /id="google-analytics"[\s\S]*widerrufen/);
   else assert.doesNotMatch(ds, /Google Analytics/);
   // Skript lädt gtag nur in analyticsLaden(), das nur nach „ja“ aufgerufen wird
   const js = readFileSync(new URL('../static/statistik.js', import.meta.url), 'utf8');
