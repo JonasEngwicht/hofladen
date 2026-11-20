@@ -81,8 +81,10 @@ class Felder(unittest.TestCase):
         cap = ('<wfs:FeatureType><wfs:Name>app:wochenmarkt</wfs:Name><wfs:Title>Märkte</wfs:Title></wfs:FeatureType>'
                '<wfs:FeatureType><wfs:Name>app:hoflaeden</wfs:Name><wfs:Title>Hofläden</wfs:Title></wfs:FeatureType>')
         u = k.wfs_getfeature_urls('https://geo.example/wfs?SERVICE=WFS', cap)
-        self.assertIn('TYPENAMES=app%3Ahoflaeden', u[0])
-        self.assertIn('SRSNAME=EPSG%3A4326', u[0])
+        self.assertIn('TYPENAMES=app%3Ahoflaeden', u[0][0])
+        self.assertIn('SRSNAME=EPSG%3A4326', u[0][0])
+        self.assertIn('TYPENAME=app%3Ahoflaeden', u[0][1])
+        self.assertEqual(k.wfs_typen('<FeatureType xmlns="x"><Name>poi</Name><Title>POI</Title></FeatureType>'), [('poi', 'POI')])
 
 
 class Suche(unittest.TestCase):

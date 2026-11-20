@@ -204,17 +204,31 @@ def features_aus_csv(text):
             yield z, ll[0], ll[1]
 
 
+def wfs_typen(capabilities_xml):
+    """(Name, Titel) der Featuretypen aus WFS-Capabilities."""
+    out = []
+    for block in re.findall(r'<(?:\w+:)?FeatureType\b.*?</(?:\w+:)?FeatureType>', capabilities_xml, re.S):
+        n = re.search(r'<(?:\w+:)?Name>([^<]+)</', block)
+        t = re.search(r'<(?:\w+:)?Title>([^<]*)</', block)
+        if n:
+            out.append((n.group(1).strip(), (t.group(1).strip() if t else '')))
+    return out
+
+
 def wfs_getfeature_urls(url, capabilities_xml, max_typen=3):
-    """GetFeature-Aufrufe (GeoJSON, WGS84) für die Featuretypen aus den Capabilities, Themen-Treffer zuerst."""
-    typen = re.findall(r'<(?:wfs:)?FeatureType>.*?<(?:wfs:)?Name>([^<]+)</(?:wfs:)?Name>.*?(?:<(?:wfs:)?Title>([^<]*)</(?:wfs:)?Title>)?',
-                       capabilities_xml, re.S)
+    """Je Featuretyp (Themen-Treffer zuerst) eine Liste von GetFeature-Varianten (GeoJSON, WGS84)."""
+    typen = wfs_typen(capabilities_xml)
     typen.sort(key=lambda t: 0 if THEMA.search(f'{t[0]} {t[1]}') else 1)
     basis = url.split('?')[0]
     out = []
     for name, _ in typen[:max_typen]:
-        q = urllib.parse.urlencode({'SERVICE': 'WFS', 'VERSION': '2.0.0', 'REQUEST': 'GetFeature', 'TYPENAMES': name,
-                                    'OUTPUTFORMAT': 'application/json', 'SRSNAME': 'EPSG:4326', 'COUNT': 5000})
-        out.append(f'{basis}?{q}')
+        varianten = []
+        for version, tn, fmt in [('2.0.0', 'TYPENAMES', 'application/json'), ('1.1.0', 'TYPENAME', 'application/json'),
+                                 ('1.1.0', 'TYPENAME', 'geojson'), ('2.0.0', 'TYPENAMES', 'json')]:
+            q = {'SERVICE': 'WFS', 'VERSION': version, 'REQUEST': 'GetFeature', tn: name, 'OUTPUTFORMAT': fmt, 'SRSNAME': 'EPSG:4326'}
+            q['COUNT' if version.startswith('2') else 'MAXFEATURES'] = 5000
+            varianten.append(f'{basis}?{urllib.parse.urlencode(q)}')
+        out.append(varianten)
     return out
 
 
@@ -260,6 +274,9 @@ def suche(get, log=print):
             info['ergebnis'] = 'schon eingebunden'; bericht.append(info); continue
         if ist_osm_kopie(pkg):
             info['ergebnis'] = 'Auszug aus OpenStreetMap'; bericht.append(info); continue
+        info['roh'] = {'lizenz': {k: pkg.get(k) for k in ('license_id', 'license_url', 'license_title') if pkg.get(k)},
+                       'ressourcen': [{k: str(r.get(k))[:200] for k in ('format', 'url', 'license', 'mimetype') if r.get(k)}
+                                      for r in (pkg.get('resources') or [])[:8]]}
         n_vorher, gelesen = len(orte), []
         for res in pkg.get('resources') or []:
             art, lic = ressource_art(res), datensatz_lizenz(pkg, res)
@@ -272,16 +289,24 @@ def suche(get, log=print):
                 feats = []
                 if art == 'wfs':
                     cap = get(url.split('?')[0] + '?SERVICE=WFS&REQUEST=GetCapabilities').decode('utf-8', 'replace')
-                    for u in wfs_getfeature_urls(url, cap):
-                        try:
-                            feats += list(features_aus_geojson(json.loads(get(u))))
-                        except Exception as e:
-                            gelesen.append(f'wfs-typ: {repr(e)[:80]}')
+                    info.setdefault('wfs_typen', wfs_typen(cap)[:30])
+                    for varianten in wfs_getfeature_urls(url, cap):
+                        letzter = None
+                        for u in varianten:  # Server verstehen unterschiedliche Versionen und Ausgabeformate
+                            try:
+                                feats += list(features_aus_geojson(json.loads(get(u))))
+                                letzter = None
+                                break
+                            except Exception as e:
+                                letzter = e
+                        if letzter is not None:
+                            gelesen.append(f'wfs-typ: {repr(letzter)[:80]}')
                 elif art == 'csv':
                     roh = get(url)
-                    text = roh.decode('utf-8-sig') if not roh.startswith(b'\xff') else roh.decode('utf-16')
-                    try: text.encode('utf-8')
-                    except UnicodeError: text = roh.decode('latin-1')
+                    try:
+                        text = roh.decode('utf-8-sig')
+                    except UnicodeDecodeError:
+                        text = roh.decode('latin-1')
                     feats = list(features_aus_csv(text))
                 else:
                     feats = list(features_aus_geojson(json.loads(get(url))))
