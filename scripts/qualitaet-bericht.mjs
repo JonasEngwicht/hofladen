@@ -10,12 +10,14 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ladePlz, distanzKm } from './lib.mjs';
 import { namenAehnlich, namenWoerter, rasterIndex } from './quellen.mjs';
-import { parse as ohParse } from '../static/oh.js';
+import { parse as ohParse, regeln as ohRegeln } from '../static/oh.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const liste = JSON.parse(readFileSync(process.argv[2] || '/tmp/liste.json', 'utf8'));
 const ziel = process.argv[3] || join(ROOT, 'docs', 'berichte', 'qualitaet.csv');
 const { plz } = ladePlz(join(ROOT, 'data', 'quellen', 'plz-de.csv'));
+// PLZ, die der Build aus den Adressen ergänzt hat (neue Gemeinden), gelten als bekannt
+const PLZ_ERGAENZT = new Set(Object.keys((() => { try { return JSON.parse(readFileSync(join(ROOT, 'src', 'generated', 'plz.json'), 'utf8')); } catch { return {}; } })()));
 
 const funde = []; // [schwere, pruefung, eintrag, detail, eintrag2?]
 const melde = (schwere, pruefung, e, detail, e2) => funde.push({ schwere, pruefung, e, detail, e2 });
@@ -69,7 +71,7 @@ for (const e of liste) {
   if (/&(amp|quot|#\d+);|<|>/.test(n)) melde('mittel', 'Name enthält HTML-Reste', e, n);
   if (/\b(geschlossen|aufgegeben|ehemalig|ehem\.|closed|permanently|insolvent|bis auf weiteres zu)\b/i.test(n)) melde('hoch', 'Name deutet auf Schließung', e, n);
   if (n.length > 90) melde('niedrig', 'Name sehr lang', e, `${n.length} Zeichen`);
-  if (/\s{2,}|^\W|[,;:\-]$/.test(n)) melde('niedrig', 'Name mit Satzzeichen/Leerzeichen am Rand', e, n);
+  if (/\s{2,}|^[^\p{L}\p{N}'„"(]|[,;:\-]$/u.test(n)) melde('niedrig', 'Name mit Satzzeichen/Leerzeichen am Rand', e, n);
   // Typ/Art
   if (!typAutomat(e) && AUTOMAT_WORT.test(n) && !/hofladen|hofcafe|laden|markt|hof\b/i.test(n)) melde('mittel', 'Name klingt nach Automat, Typ Hofladen', e, `${n} (${e.art})`);
   if (typAutomat(e) && /^(hofladen|bauernladen|hofcafé|hofcafe)\b/i.test(n) && !AUTOMAT_WORT.test(n)) melde('mittel', 'Name klingt nach Hofladen, Typ Automat', e, `${n} (${e.art})`);
@@ -112,7 +114,7 @@ for (const e of liste) {
   if (e.plz && !/^\d{5}$/.test(e.plz)) melde('hoch', 'PLZ nicht fünfstellig', e, e.plz);
   else if (e.plz) {
     const rows = plz.get(e.plz);
-    if (!rows) melde('mittel', 'PLZ unbekannt', e, e.plz);
+    if (!rows) { if (!PLZ_ERGAENZT.has(e.plz)) melde('mittel', 'PLZ unbekannt', e, e.plz); }
     else {
       const dmin = Math.min(...rows.map((r) => distanzKm(r.lat, r.lon, e.lat, e.lon)));
       if (dmin > 30) melde(dmin > 80 ? 'hoch' : 'mittel', 'Koordinaten weit weg von der PLZ', e, `PLZ ${e.plz} ${e.ort}: ${Math.round(dmin)} km`);
@@ -131,7 +133,10 @@ for (const e of liste) {
   // Öffnungszeiten
   const oh = e.oeffnungszeitenOsm;
   if (oh) {
-    if (!ohParse(oh)) melde('mittel', 'Öffnungszeiten nicht lesbar', e, oh);
+    // Lesbar heißt: die Seite kann einen Live-Status zeigen (Wochenplan oder Saison-/Datumsregeln wie in static/oh.js)
+    const nurHinweis = /^\s*"[^"]*"\s*$/.test(oh) || /^\s*(nach|auf)\s+(telefonischer\s+)?(vereinbarung|absprache|anfrage|nachfrage)\s*$/i.test(oh);
+    if (nurHinweis) melde('niedrig', 'Öffnungszeiten nur als Hinweis (kein Live-Status)', e, oh);
+    else if (!ohParse(oh) && !ohRegeln(oh)) melde('mittel', 'Öffnungszeiten nicht lesbar', e, oh);
     for (const m of oh.matchAll(/(\d{2}):(\d{2})-(\d{2}):(\d{2})/g)) {
       const von = +m[1] * 60 + +m[2], bis = +m[3] * 60 + +m[4];
       if (von === bis) { melde('mittel', 'Öffnungszeit mit gleicher Start- und Endzeit', e, oh); break; }

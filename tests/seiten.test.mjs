@@ -251,3 +251,12 @@ test('Ratgeber: Artikel mit Article-JSON-LD, verlinkt von passenden Seiten, kein
   }
   assert.match(info.get('/milchtankstelle/').html, /href="\/ratgeber\/rohmilch-milchtankstelle\/"/);
 });
+
+test('Datenqualität im Build: neue PLZ aus Adressen suchbar, keine „geschlossen“-Namen, keine Firmen als Ortsnamen', () => {
+  const PLZ = JSON.parse(readFileSync(new URL('../src/generated/plz.json', import.meta.url)));
+  assert.ok(PLZ['64760'], '64760 Oberzent (Gemeinde seit 2018) fehlt');
+  const E = JSON.parse(readFileSync(new URL('../src/generated/eintraege.json', import.meta.url)));
+  assert.ok(!E.some((e) => /\bgeschlossen\b/i.test(e[3]) && !/vorübergehend|montags|sonntags/i.test(e[3])), 'Eintrag mit „geschlossen“ im Namen');
+  assert.ok(!E.some((e) => /Gate Gourmet|Feldpostleitstelle|St\.?-? ?\w+-Hospital/.test(e[5])), 'Firma/Klinik als Ortsname');
+  assert.ok(!E.some((e) => /—>|-->/.test(e[3])), 'Pfeile im Namen');
+});
