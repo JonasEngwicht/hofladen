@@ -842,12 +842,17 @@ karteAutomatisch();
   for (const t of $$('[data-badge-code]')) t.addEventListener('focus', () => t.select());
 }
 
+// ---------- Google Analytics: nur nach Einwilligung (static/statistik.js) ----------
+if (document.documentElement.dataset.ga) import('./statistik.js').then((m) => m.statistikStarten(document.documentElement.dataset.ga)).catch(() => {});
+
 // ---------- Nutzungsstatistik: anonyme Tageszähler (siehe Datenschutz) ----------
 const seitenTyp = document.body.dataset.seite || 'sonstige';
 // Auf Hofseiten zählt jeder Klick auch für die Statistik des Betriebs (nur Tagessummen je Hof, hofSlug oben)
 function zaehle(e, d = '') {
   try {
     const daten = JSON.stringify({ e, s: seitenTyp, d, ...(hofSlug ? { h: hofSlug } : {}) });
+    // Mit Einwilligung zusätzlich als Ereignis an Google Analytics (window.gtag gibt es nur dann)
+    window.gtag?.('event', `klick_${e}`, { seitentyp: seitenTyp, ...(d ? { detail: String(d).slice(0, 100) } : {}), ...(hofSlug ? { hof: hofSlug } : {}) });
     if (!navigator.sendBeacon?.('/api/ereignis', new Blob([daten], { type: 'application/json' }))) fetch('/api/ereignis', { method: 'POST', body: daten, keepalive: true });
   } catch {}
 }

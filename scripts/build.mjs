@@ -29,7 +29,7 @@ const KACHELN = (() => {
     return /^\d{8}$/.test(k.version) && existsSync(join(ROOT, 'static', 'vendor', 'protomaps-leaflet.js')) ? k : null;
   } catch { return null; }
 })();
-const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js', 'betrieb.js', 'aushang.js', 'qr.js', 'route.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
+const VERSION = createHash('sha1').update(['style.css', 'app.js', 'karte.js', 'oh.js', 'vollkarte.js', 'betrieb.js', 'aushang.js', 'qr.js', 'route.js', 'statistik.js'].map((f) => readFileSync(join(ROOT, 'static', f))).join('')).digest('hex').slice(0, 8);
 
 // Saisonkalender: [Sorte, Monate frisch, Monate aus dem Lager] – Richtwerte Freiland Deutschland
 const SAISON = [
@@ -499,7 +499,7 @@ function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = []
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [['Start', '/'], ...krumen].map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: cfg.domain + p })) }] : [];
   return `<!doctype html>
-<html lang="de"${KACHELN ? ` data-kacheln="${KACHELN.version}" data-kacheln-z="${KACHELN.maxzoom || 14}"` : ''}>
+<html lang="de"${GA_ID ? ` data-ga="${GA_ID}"` : ''}${KACHELN ? ` data-kacheln="${KACHELN.version}" data-kacheln-z="${KACHELN.maxzoom || 14}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -576,7 +576,8 @@ ${inhalt}
     <li><a href="/statistik/">Datenstand &amp; Statistik</a></li>
     <li><a href="/quellen/">Quellen</a></li>
     <li><a href="/impressum/">Impressum</a></li>
-    <li><a href="/datenschutz/">Datenschutz</a></li>
+    <li><a href="/datenschutz/">Datenschutz</a></li>${GA_ID ? `
+    <li><button type="button" class="link-knopf" data-cookie-einstellungen hidden>Cookie-Einstellungen</button></li>` : ''}
   </ul>
   <p class="fuss-quelle">Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a> (ODbL) und <a href="/quellen/">weitere offene Quellen</a>, PLZ-Daten <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). Stand ${BUILD_DATUM.split('-').reverse().join('.')}.</p>
 </div></footer>
@@ -642,6 +643,9 @@ const ALLE_SEITEN = new Set();
 const STAND_DATEI = join(ROOT, 'data', 'seiten-stand.json');
 const stand = existsSync(STAND_DATEI) ? JSON.parse(readFileSync(STAND_DATEI, 'utf8')) : { seiten: {}, hoefe: {} };
 const ARCHIV_AUSNAHMEN = new Set(['/merkliste/', '/verwaltung/']);
+// Google Analytics 4 (Mess-ID ist öffentlich). Leer = aus. Geladen wird nur nach Einwilligung (static/statistik.js).
+const GA_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).ga4 || ''; } catch { return ''; } })();
+if (GA_ID && !/^G-[A-Z0-9]+$/.test(GA_ID)) throw new Error(`data/analytics.json: ungültige GA4-Mess-ID ${GA_ID}`);
 const STAND_PLATZHALTER = '%%SEITENSTAND%%'; // wird nach dem Hashen durch das Änderungsdatum ersetzt
 function schreibe(pfad, html, inSitemap = true) {
   const datei = join(OUT, pfad, pfad.endsWith('/') ? 'index.html' : '');
@@ -2256,7 +2260,7 @@ ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>'
 <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: ${esc(imp.name)}, Anschrift wie oben.</p>
 <h2>Datenquellen und Lizenzen</h2>
 <p>Einträge: © OpenStreetMap-Mitwirkende, Open Database License (ODbL), <a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>. Ergänzende Einträge und Kontaktdaten: Overture Maps Foundation, <a href="https://overturemaps.org/">overturemaps.org</a> (CDLA-Permissive-2.0; Datensätze von Foursquare unter Apache-2.0); Foursquare Open Source Places (Apache-2.0); Karte von morgen (CC0-1.0); offene Verwaltungsdaten der Stadt Rothenburg ob der Tauber (CC0) und der BayernCloud Tourismus (CC0 bzw. CC BY 4.0, Urheber auf der jeweiligen Hofseite). Postleitzahlen: GeoNames, CC BY 4.0. Umriss Deutschlands: Natural Earth (gemeinfrei). Karte: Leaflet (BSD-2-Clause). Schriften: Zilla Slab und Atkinson Hyperlegible Next (SIL Open Font License).</p>`);
-textSeite('/datenschutz/', 'Datenschutzerklärung', 'Datenschutzerklärung von hofladenliste.de: keine Cookies, kein Tracking – welche Daten beim Besuch, bei Karte und Suche anfallen.', `<h1>Datenschutzerklärung</h1>
+textSeite('/datenschutz/', 'Datenschutzerklärung', GA_ID ? 'Datenschutzerklärung von hofladenliste.de: welche Daten beim Besuch, bei Karte und Suche anfallen, und Google Analytics nur mit Einwilligung.' : 'Datenschutzerklärung von hofladenliste.de: keine Cookies, kein Tracking – welche Daten beim Besuch, bei Karte und Suche anfallen.', `<h1>Datenschutzerklärung</h1>
 <h2>Verantwortlicher</h2>
 <p>${esc(imp.name) || '[Name]'}, ${esc(imp.strasse) || '[Straße]'}, ${esc(imp.plzOrt) || '[PLZ Ort]'}, ${esc(imp.email) || '[E-Mail]'}</p>
 <h2>Rückmeldung „Stimmt das noch?“</h2>
@@ -2285,10 +2289,12 @@ ${KACHELN ? '<p>Die Karten liefern wir von unserem eigenen Server aus (Kartendat
 <p>Um zu sehen, welche Funktionen genutzt werden, zählen wir auf unserem Server Klicks auf „Route“, „Anrufen“, „Website“, auf Filter und auf „In meiner Nähe“ – als reine Tageszähler je Seitentyp (z. B. „heute 12-mal Route auf Hofseiten“). Auf Hofseiten zählen wir zusätzlich Aufrufe und diese Klicks je Hof als Tagessumme, damit der Betrieb sieht, wie oft sein Eintrag genutzt wird. Dabei speichern wir weder IP-Adressen noch Uhrzeiten, Geräte- oder Browserdaten; auf deinem Gerät wird nichts gespeichert oder ausgelesen. Ein Rückschluss auf einzelne Personen ist nicht möglich. Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung des Angebots (Art. 6 Abs. 1 lit. f DSGVO).</p>
 <h2 id="formular">Formular „Mitmachen“</h2>
 <p>Wenn du über das Formular einen Hof einträgst, Angaben korrigierst oder einen Eintrag übernimmst, speichern wir deine Angaben in einer Datenbank von Cloudflare (Cloudflare, Inc., Region Westeuropa): die Angaben zum Betrieb, gegebenenfalls Fotos sowie – freiwillig, bei der Übernahme eines Eintrags erforderlich – deinen Namen und deine E-Mail-Adresse. Die Angaben zum Betrieb und freigegebene Fotos veröffentlichen wir nach Prüfung. Name und E-Mail-Adresse verwenden wir nur für Rückfragen und zur Bestätigung von Betreibern; sie werden nicht veröffentlicht und spätestens sechs Monate nach Bearbeitung gelöscht. Abgelehnte Fotos löschen wir sofort. Gegen Missbrauch zählen wir Meldungen je Absender und Tag über einen anonymisierten Tages-Hash der IP-Adresse; die IP-Adresse selbst speichern wir nicht. Rechtsgrundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bzw. bei Betreibern die Durchführung der Eintragung (Art. 6 Abs. 1 lit. b DSGVO). Du kannst deine Angaben jederzeit über die Kontaktadresse löschen lassen.</p>
-<h2>Cookies und Tracking</h2>
-<p>Diese Website setzt keine Cookies und nutzt kein Tracking über Websites hinweg. Links zu Routenplanern und zu Websites der Höfe öffnen externe Seiten; dort gelten deren Datenschutzbestimmungen.</p>
-<h2>Cloudflare Web Analytics</h2>
-<p>Für eine Reichweitenmessung nutzen wir Cloudflare Web Analytics (Cloudflare, Inc.). Dabei lädt dein Browser ein kleines Skript von static.cloudflareinsights.com, das aufgerufene Seiten, Ladezeiten, Herkunftsseite, Land sowie Browser- und Gerätetyp in zusammengefasster Form erfasst. Es werden keine Cookies gesetzt, nichts auf deinem Gerät gespeichert und keine Profile über Websites hinweg gebildet; IP-Adressen werden nicht zur Auswertung gespeichert. Rechtsgrundlage ist unser berechtigtes Interesse an einer datensparsamen Reichweitenmessung (Art. 6 Abs. 1 lit. f DSGVO). Mehr dazu in der <a href="https://www.cloudflare.com/de-de/privacypolicy/" rel="nofollow noopener" target="_blank">Datenschutzerklärung von Cloudflare</a>.</p>
+${GA_ID ? `<h2 id="google-analytics">Google Analytics (nur mit deiner Einwilligung)</h2>
+<p>Wenn du im Hinweis „Darf Google Analytics mitzählen?“ auf „Erlauben“ klickst, nutzen wir Google Analytics 4, einen Webanalysedienst der Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland). Vorher wird nichts von Google geladen und kein Cookie gesetzt. Nach deiner Einwilligung lädt dein Browser ein Skript von googletagmanager.com und setzt die Cookies „_ga“ und „_ga_*“ (Speicherdauer bis zu zwei Jahre), mit denen wiederkehrende Besuche erkannt werden. Erfasst werden aufgerufene Seiten, Klicks auf Funktionen wie „Route“ oder „Anrufen“, Herkunftsseite, ungefährer Ort (aus der gekürzten IP-Adresse), Geräte- und Browsertyp sowie Zeitpunkt. Google Analytics 4 speichert keine vollständigen IP-Adressen. Google-Signale und Werbefunktionen sind ausgeschaltet. Die Daten können an Google LLC in den USA übermittelt werden; Google ist unter dem EU-US Data Privacy Framework zertifiziert. Wir nutzen die Auswertung nur, um zu sehen, welche Seiten und Funktionen gebraucht werden; die Daten werden nach 14 Monaten gelöscht.</p>
+<p>Rechtsgrundlage ist deine Einwilligung (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO). Du kannst sie jederzeit über „Cookie-Einstellungen“ unten auf jeder Seite widerrufen; dann löschen wir die Analytics-Cookies in deinem Browser und laden das Skript nicht mehr. Deine Wahl speichert dein Browser lokal (localStorage, Eintrag „statistik“). Mehr in der <a href="https://policies.google.com/privacy?hl=de" rel="nofollow noopener" target="_blank">Datenschutzerklärung von Google</a>.</p>
+<h2>Sonstige Cookies</h2>
+<p>Außer den Analytics-Cookies nach Einwilligung und dem Anmelde-Cookie im Betreiber-Bereich setzt diese Website keine Cookies. Links zu Routenplanern und zu Websites der Höfe öffnen externe Seiten; dort gelten deren Datenschutzbestimmungen.</p>` : `<h2>Cookies und Tracking</h2>
+<p>Für Besucher setzt diese Website keine Cookies und nutzt kein Tracking über Websites hinweg (zum Anmelde-Cookie im Betreiber-Bereich siehe oben). Links zu Routenplanern und zu Websites der Höfe öffnen externe Seiten; dort gelten deren Datenschutzbestimmungen.</p>`}
 <h2>Deine Rechte</h2>
 <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.</p>`);
 // ---------- Badge für Höfe (Backlink) ----------
@@ -2353,7 +2359,7 @@ schreibe('/verwaltung/', seite({
 <ul>
 <li><b>Offene Daten:</b> Die meisten Einträge stammen aus OpenStreetMap und weiteren offenen Quellen mit freier Lizenz. Woher eine Angabe kommt, steht auf jeder Hofseite und unter <a href="/quellen/">Quellen</a>. Inhalte anderer Verzeichnisse übernehmen wir nicht.</li>
 <li><b>Kostenlos für Höfe:</b> Jeder Betrieb kann sich <a href="/mitmachen/">eintragen</a> und seinen Eintrag im <a href="/betrieb/">Betreiber-Bereich</a> selbst pflegen – mit Öffnungszeiten, Neuigkeiten und Terminen.</li>
-<li><b>Ohne Tracking:</b> keine Cookies für Besucher, keine Werbung, keine Analysedienste von Dritten. Die Karte kommt von unserem eigenen Server. Details in der <a href="/datenschutz/">Datenschutzerklärung</a>.</li>
+${GA_ID ? '<li><b>Datensparsam:</b> keine Werbung, Google Analytics nur, wenn du es erlaubst. Die Karte kommt von unserem eigenen Server. Details in der <a href="/datenschutz/">Datenschutzerklärung</a>.</li>' : '<li><b>Ohne Tracking:</b> keine Cookies für Besucher, keine Werbung, keine Analysedienste von Dritten. Die Karte kommt von unserem eigenen Server. Details in der <a href="/datenschutz/">Datenschutzerklärung</a>.</li>'}
 <li><b>Gemeinsam besser:</b> Öffnungszeiten ändern sich. Mit „Stimmt das noch?“ auf jeder Hofseite hilfst du, die Angaben aktuell zu halten.</li>
 </ul>
 <p>Fragen, Hinweise oder Kritik: <a href="/kontakt/">Kontakt</a>.</p>`, false);
