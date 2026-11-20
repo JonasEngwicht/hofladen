@@ -1,6 +1,6 @@
 // Gemeinsame Logik für Worker und Skripte: Einträge nachschlagen (stabile ID, Slug, alte Slugs),
 // öffentliche Daten für das Bearbeiten-Formular und der Outreach-Export als CSV.
-// EINTRAEGE-Zeilen: siehe scripts/build.mjs („Daten für den Worker“).
+// EINTRAEGE-Zeilen: siehe scripts/build/abschluss.mjs („Daten für den Worker“).
 
 export const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
 export const UTM_OUTREACH = 'utm_source=outreach&utm_medium=email';
