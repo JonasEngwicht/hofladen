@@ -1,0 +1,15 @@
+name: Cloudflare-Deploy auslösen
+description: Ruft den Deploy Hook auf (Secret CF_DEPLOY_HOOK als Eingabe übergeben). Ohne Hook nur ein Hinweis.
+inputs:
+  hook:
+    description: URL des Deploy Hooks (secrets.CF_DEPLOY_HOOK)
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        HOOK: ${{ inputs.hook }}
+      run: |
+        if [ -z "$HOOK" ]; then echo "::warning::Secret CF_DEPLOY_HOOK fehlt, Deploy bitte manuell auslösen."; exit 0; fi
+        curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgelöst."

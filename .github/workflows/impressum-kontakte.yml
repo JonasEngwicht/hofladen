@@ -50,23 +50,12 @@ jobs:
           retention-days: 14
       - name: Commit
         id: commit
-        run: |
-          git config user.name "hofladenliste-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/impressum.json
-          if git diff --cached --quiet; then
-            echo "Keine Änderungen."
-          else
-            git commit -m "Kontaktdaten aus dem Impressum der Hof-Websites ergänzt"
-            git checkout -- . # Nebenprodukte des Testbuilds (z. B. data/seiten-stand.json) verwerfen
-            git pull --rebase -X theirs -q
-            git push
-            echo "geaendert=ja" >> "$GITHUB_OUTPUT"
-          fi
+        uses: ./.github/actions/committen
+        with:
+          dateien: data/impressum.json
+          nachricht: Kontaktdaten aus dem Impressum der Hof-Websites ergänzt
       - name: Cloudflare-Deploy auslösen
         if: steps.commit.outputs.geaendert == 'ja'
-        env:
-          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
-        run: |
-          if [ -z "$HOOK" ]; then echo "Secret CF_DEPLOY_HOOK fehlt."; exit 0; fi
-          curl -fsS -X POST "$HOOK" > /dev/null && echo "Deploy ausgelöst."
+        uses: ./.github/actions/deployen
+        with:
+          hook: ${{ secrets.CF_DEPLOY_HOOK }}

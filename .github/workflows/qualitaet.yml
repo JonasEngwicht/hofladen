@@ -27,12 +27,7 @@ jobs:
       - name: Bericht
         run: node scripts/qualitaet-bericht.mjs /tmp/liste.json | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Commit
-        run: |
-          git config user.name "hofladenliste-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/berichte/qualitaet.csv
-          if git diff --cached --quiet; then echo "Keine Änderungen."; exit 0; fi
-          git commit -m "Kontrolllauf Datenqualität: Bericht aktualisiert"
-          git checkout -- .
-          git pull --rebase -X theirs -q
-          git push
+        uses: ./.github/actions/committen
+        with:
+          dateien: docs/berichte/qualitaet.csv
+          nachricht: "Kontrolllauf Datenqualität: Bericht aktualisiert"

@@ -1,0 +1,33 @@
+name: Committen und pushen
+description: Fügt die genannten Dateien hinzu, committet bei Änderungen und pusht auf den aktuellen Branch (mit Rebase und Wiederholung).
+inputs:
+  dateien:
+    description: Pfade, durch Leerzeichen getrennt (fehlende werden übersprungen)
+    required: true
+  nachricht:
+    description: Commit-Nachricht
+    required: true
+outputs:
+  geaendert:
+    description: "'ja', wenn ein Commit gepusht wurde"
+    value: ${{ steps.commit.outputs.geaendert }}
+runs:
+  using: composite
+  steps:
+    - id: commit
+      shell: bash
+      env:
+        DATEIEN: ${{ inputs.dateien }}
+        NACHRICHT: ${{ inputs.nachricht }}
+      run: |
+        git config user.name "hofladenliste-bot"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        for f in $DATEIEN; do if [ -e "$f" ]; then git add "$f"; fi; done
+        if git diff --cached --quiet; then echo "Keine Änderungen."; exit 0; fi
+        git commit -q -m "$NACHRICHT"
+        git stash push --include-untracked -q || true # Nebenprodukte des Builds beiseitelegen
+        for i in 1 2 3; do
+          if git pull --rebase -X theirs -q && git push -q; then echo "geaendert=ja" >> "$GITHUB_OUTPUT"; echo "Gepusht."; exit 0; fi
+          sleep $((i * 5))
+        done
+        echo "::error::Push fehlgeschlagen"; exit 1
