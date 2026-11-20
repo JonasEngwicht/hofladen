@@ -583,6 +583,10 @@ ${inhalt}
     <li><a href="/datenschutz/">Datenschutz</a></li>${GA_ID ? `
     <li><button type="button" class="link-knopf" data-cookie-einstellungen hidden>Cookie-Einstellungen</button></li>` : ''}
   </ul>
+  ${(() => { const u = encodeURIComponent(url), t = encodeURIComponent(titel.replace(/\s*\|\s*Hofladenliste\s*$/, ''));
+    return `<p class="fuss-teilen">Seite teilen: ${[['WhatsApp', `https://wa.me/?text=${t}%20${u}`], ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${u}`],
+      ['Pinterest', `https://pinterest.com/pin/create/button/?url=${u}&amp;description=${t}`], ['X', `https://twitter.com/intent/tweet?url=${u}&amp;text=${t}`]]
+      .map(([n, h]) => `<a href="${h}" rel="nofollow noopener" target="_blank">${n}</a>`).join(' · ')} · <a href="mailto:?subject=${t}&amp;body=${u}" rel="nofollow">E-Mail</a></p>`; })()}
   <p class="fuss-quelle">Daten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a> (ODbL) und <a href="/quellen/">weitere offene Quellen</a>, PLZ-Daten <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0). Stand ${BUILD_DATUM.split('-').reverse().join('.')}.</p>
 </div></footer>
 <datalist id="orte-vorschlaege"></datalist>

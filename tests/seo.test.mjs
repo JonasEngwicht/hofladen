@@ -107,3 +107,13 @@ test('Worker: HTML-Seiten mit Zeichensatz im Header und HSTS', async () => {
     assert.match(r.headers.get('strict-transport-security') || '', /max-age=31536000/, p);
   }
 });
+
+test('jede Seite: Teilen-Links als einfache Links (kein Skript von Dritten), mit der eigenen Adresse', () => {
+  for (const [p, h] of alle.slice(0, 400)) {
+    const teil = h.match(/<p class="fuss-teilen">([\s\S]*?)<\/p>/)?.[1] || '';
+    const u = encodeURIComponent(`https://hofladenliste.de${p}`);
+    assert.ok(teil.includes(`https://wa.me/?text=`) && teil.includes(`facebook.com/sharer/sharer.php?u=${u}"`), p);
+    assert.doesNotMatch(h, /<script[^>]+src="https?:\/\//, p);
+    for (const m of teil.matchAll(/<a [^>]*href="https[^"]*"[^>]*>/g)) assert.match(m[0], /rel="nofollow noopener"/, p);
+  }
+});

@@ -398,7 +398,7 @@ main { display: block; }
 .fuss a { color: var(--weiss); }
 .fuss-logo { display: flex; align-items: center; gap: .6rem; color: var(--weiss); font: 700 1.25rem var(--titel); }
 .fuss-links { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; align-content: start; }
-.fuss-quelle { color: #A9C2B3; }
+.fuss-quelle, .fuss-teilen { color: #A9C2B3; }
 
 @media (max-width: 960px) {
   .hof-inhalt { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; margin-top: 1.25rem; }
