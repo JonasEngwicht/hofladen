@@ -41,7 +41,7 @@ Alles landet im Build in einer Liste `eintraege` (`scripts/build/daten.mjs`). Be
 3. eigene Pflege: `data/pflege.json` (`aenderungen`, `neu`, `geschlossen`; Format: `docs/pflege.md`)
 4. Angaben der Betriebe: `data/betreiber.json` (freigegebene Meldungen), `data/betrieb-export.json`
 
-Weitere Eingaben: `data/quellen/plz-de.csv` (PLZ → Ort/Kreis), `data/osm-maerkte.json`, `data/haltestellen.json`, `data/regionen/*.json` (Regionsprofile), `data/seitentexte.json` (gepflegte Texte je Seite, Format in `scripts/seitentexte.mjs`).
+Weitere Eingaben: `data/quellen/plz-de.csv` (PLZ → Ort/Kreis), `data/osm-maerkte.json`, `data/haltestellen.json`, `data/regionen/*.json` (Regionsprofile), `data/seitentexte.json` (gepflegte Texte je Seite, Format in `scripts/seitentexte.mjs`; welche lokalen Seiten noch keinen haben: `docs/seitentexte-offen.md`).
 `data/seiten-stand.json` (Hash und lastmod je Seite, Grundlage für 301/410) schreibt nur CI – **nie von Hand ändern**.
 
 Stabile IDs: `n`/`w`/`r` + Zahl (OSM), `o-`/`f-`/`k-`/`g-` (offene Quellen), `b` + Zahl (Betrieb), `m-` (eigene Pflege).
@@ -59,7 +59,7 @@ Für Refactorings: Ausgabe vorher und nachher mit festem `BUILD_DATUM=…` bauen
 
 - **Quellen:** nur OpenStreetMap (ODbL, Quelle nennen), offene Quellen mit Lizenzhinweis, Betreiber und eigene Pflege. Keine Daten, Texte oder Bilder von Wettbewerbern; kein Scraping von Google Maps, Branchenbüchern o. Ä.
 - **URLs:** `/bundesland/kreis/`, `/bundesland/kreis/ort/` und `/hof/<name>-<ort>/` bleiben. Jede Änderung bekommt eine 301 (läuft automatisch über das Seitenarchiv), entfernte Höfe liefern 410.
-- **Indexierung:** Listenseiten unter 3 Einträgen `noindex`; Formular-, Login-, Verwaltungs- und Suchseiten `noindex`; robots.txt sperrt `/suche`, `/api/`, `/merkliste/`, `/verwaltung/`.
+- **Indexierung:** Listenseiten unter 3 Einträgen `noindex`; Umgebungsseiten („Hofläden in X und Umgebung“) ohne eigenen Eintrag im Ort und Schreibvarianten desselben Orts mit fast gleicher Liste `noindex` (`UEBERDECKT` in `grundlagen.mjs`); Formular-, Login-, Verwaltungs- und Suchseiten `noindex`; robots.txt sperrt `/suche`, `/api/`, `/merkliste/`, `/verwaltung/`.
 - **Titel ≤ 580 px, Beschreibung ≤ 1000 px** (`scripts/pixel.mjs`, Test für alle Seiten). Neue Seitentypen mit kurzen Titelvarianten über `passend(...)`.
 - **Strukturierte Daten** nur für echte, sichtbare Angaben; kein `aggregateRating` ohne echte Bewertungen.
 - **Keine Parameter-Links** in Übersichten: Filter als `#produkt=…`/`#filter=…`; andere interne Links mit `?` bekommen automatisch `nofollow`.

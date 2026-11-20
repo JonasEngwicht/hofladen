@@ -6,8 +6,10 @@ import { distanzKm } from '../lib.mjs';
 import { stabileIdAus } from '../pflege.mjs';
 import { zeilen } from '../../static/oh.js';
 import { KATEGORIEN } from '../../static/karte.js';
-import { GEN, OUT, VOLLSTAENDIGKEIT, betreiber, cfg, eintraege, ergaenztAnzahl, ersetzt, geschlossenAnzahl, impressumAnzahl, kreise, laender, manuell, mitKindern, offenErgaenzt, offenErgaenztSumme, offenErsetzt, offenNeu, offenNeuSumme, pflegeAnzahl, plz, proKreis, rechercheAnzahl } from './daten.mjs';
-import { KATEGORIE_PFADE, seite } from './html.mjs';
+import { BUILD_DATUM, GEN, OUT, ROOT, VOLLSTAENDIGKEIT, betreiber, cfg, eintraege, ergaenztAnzahl, ersetzt, geschlossenAnzahl, impressumAnzahl, kreise, laender, manuell, mitKindern, offenErgaenzt, offenErgaenztSumme, offenErsetzt, offenNeu, offenNeuSumme, pflegeAnzahl, plz, proKreis, rechercheAnzahl } from './daten.mjs';
+import { KATEGORIE_PFADE, SEITENTEXTE, SEITENTEXT_GENUTZT, seite } from './html.mjs';
+import { pruefeSeitentexte } from '../seitentexte.mjs';
+import { SEITENTEXT_KANDIDATEN } from './regionen.mjs';
 import { ALLE_SEITEN, ORTE, STAND_DATEI, anzHof, sitemap, stand } from './grundlagen.mjs';
 import { ANGEBOT_SEITEN, SAISON_SEITEN, SORTEN } from './startseite.mjs';
 import { impFehlt } from './themen.mjs';
@@ -168,6 +170,15 @@ writeFileSync(join(GEN, 'suchwoerter.json'), JSON.stringify([
 
 const leereKreise = [...kreise.values()].filter((k) => !proKreis.get(k.code)).length;
 const mitKat = eintraege.filter((e) => e.kat.length).length;
+// ---------- Gepflegte Seitentexte: Prüfung und Liste offener lokaler Seiten ----------
+for (const f of pruefeSeitentexte(SEITENTEXTE)) console.warn(`Seitentext: ${f}`);
+for (const p of Object.keys(SEITENTEXTE)) if (!SEITENTEXT_GENUTZT.has(p) || !sitemap.includes(p)) console.warn(`Seitentext ${p}: keine indexierbare Seite – Text wird nicht oder nur auf einer noindex-Seite angezeigt`);
+if (process.env.SEITENTEXTE_OFFEN) {
+  const top = SEITENTEXT_KANDIDATEN.filter((x) => sitemap.includes(x.pfad)).sort((a, b) => b.n - a.n || a.pfad.localeCompare(b.pfad)).slice(0, 150);
+  writeFileSync(join(ROOT, 'docs', 'seitentexte-offen.md'), `# Lokale Seiten ohne gepflegten Text\n\nStand ${BUILD_DATUM}. Die ${top.length} indexierbaren lokalen Seiten mit den meisten eigenen Einträgen (bei Orten und Städten: Einträge im Ort selbst), für die es noch keinen Eintrag in \`data/seitentexte.json\` und kein Regionsprofil in \`data/regionen/\` gibt. Format: \`scripts/seitentexte.mjs\`.\nNeu erzeugen: \`SEITENTEXTE_OFFEN=1 node scripts/build.mjs\` (danach \`git checkout data/seiten-stand.json\`).\n\n| Seite | Art | eigene Einträge | Schlüssel in data/seitentexte.json |\n|---|---|---:|---|\n${top.map((x) => `| [${x.titel}](${cfg.domain}${x.pfad}) | ${x.art} | ${x.n} | \`${x.pfad}\` |`).join('\n')}\n`);
+  console.log(`Seitentexte: Liste offener Seiten geschrieben (${top.length})`);
+}
+console.log(`Seitentexte: ${SEITENTEXT_GENUTZT.size} angezeigt, ${SEITENTEXT_KANDIDATEN.length} lokale Seiten noch ohne gepflegten Text`);
 console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${impressumAnzahl} mit Kontakt aus dem Impressum, ${pflegeAnzahl} gepflegt, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${geschlossenAnzahl} als geschlossen entfernt, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
 if (impFehlt) console.warn('WARNUNG: Impressum in site.config.json ist unvollständig.');
 
