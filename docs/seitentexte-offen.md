@@ -43,8 +43,8 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Kreis Rendsburg-Eckernförde](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/) | Kreis | 65 | `/schleswig-holstein/rendsburg-eckernfoerde/` |
 | [Hofläden im Landkreis Rostock](https://hofladenliste.de/mecklenburg-vorpommern/landkreis-rostock/) | Kreis | 64 | `/mecklenburg-vorpommern/landkreis-rostock/` |
 | [Hofläden im Kreis Gütersloh](https://hofladenliste.de/nordrhein-westfalen/guetersloh/) | Kreis | 64 | `/nordrhein-westfalen/guetersloh/` |
-| [Hofläden im Landkreis Meißen](https://hofladenliste.de/sachsen/meissen/) | Kreis | 64 | `/sachsen/meissen/` |
 | [Hofläden im Kreis Warendorf](https://hofladenliste.de/nordrhein-westfalen/warendorf/) | Kreis | 63 | `/nordrhein-westfalen/warendorf/` |
+| [Hofläden im Landkreis Meißen](https://hofladenliste.de/sachsen/meissen/) | Kreis | 63 | `/sachsen/meissen/` |
 | [Hofläden im Ostalbkreis](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/) | Kreis | 62 | `/baden-wuerttemberg/ostalbkreis/` |
 | [Hofläden in der Städteregion Aachen](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/) | Kreis | 62 | `/nordrhein-westfalen/staedteregion-aachen/` |
 | [Hofläden im Rhein-Erft-Kreis](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/) | Kreis | 61 | `/nordrhein-westfalen/rhein-erft-kreis/` |
@@ -139,10 +139,10 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Landkreis Weilheim-Schongau](https://hofladenliste.de/bayern/weilheim-schongau/) | Kreis | 38 | `/bayern/weilheim-schongau/` |
 | [Hofläden im Landkreis Groß-Gerau](https://hofladenliste.de/hessen/gross-gerau/) | Kreis | 38 | `/hessen/gross-gerau/` |
 | [Hofläden im Landkreis Ludwigslust-Parchim](https://hofladenliste.de/mecklenburg-vorpommern/ludwigslust-parchim/) | Kreis | 38 | `/mecklenburg-vorpommern/ludwigslust-parchim/` |
-| [Hofläden im Landkreis Vorpommern-Greifswald](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-greifswald/) | Kreis | 38 | `/mecklenburg-vorpommern/vorpommern-greifswald/` |
 | [Regiomaten im Landkreis Harburg](https://hofladenliste.de/niedersachsen/harburg/regiomaten/) | Regiomaten | 38 | `/niedersachsen/harburg/regiomaten/` |
 | [Hofläden im Kreis Steinburg](https://hofladenliste.de/schleswig-holstein/steinburg/) | Kreis | 38 | `/schleswig-holstein/steinburg/` |
 | [Hofläden im Landkreis Gießen](https://hofladenliste.de/hessen/giessen/) | Kreis | 37 | `/hessen/giessen/` |
+| [Hofläden im Landkreis Vorpommern-Greifswald](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-greifswald/) | Kreis | 37 | `/mecklenburg-vorpommern/vorpommern-greifswald/` |
 | [Regiomaten in der Region Hannover](https://hofladenliste.de/niedersachsen/region-hannover/regiomaten/) | Regiomaten | 37 | `/niedersachsen/region-hannover/regiomaten/` |
 | [Hofläden im Ennepe-Ruhr-Kreis](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/) | Kreis | 37 | `/nordrhein-westfalen/ennepe-ruhr-kreis/` |
 | [Hofläden im Landkreis Bad Dürkheim](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/) | Kreis | 37 | `/rheinland-pfalz/bad-duerkheim/` |
