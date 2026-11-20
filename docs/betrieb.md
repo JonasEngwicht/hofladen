@@ -36,7 +36,7 @@ In `/verwaltung/` → „Statistik“: Suchen (PLZ, Ort, Standort), meistgesucht
 ## Regeln
 
 - Keine Daten, Texte oder Bilder anderer Verzeichnisse übernehmen.
-- Listenseiten erst ab 3 Einträgen indexieren (`MIN_SEITE` in `scripts/build.mjs`).
+- Listenseiten erst ab 3 Einträgen indexieren (`MIN_SEITE` in `scripts/build/grundlagen.mjs`).
 - URLs nicht ändern; wenn doch, leitet das Seitenarchiv (`data/seiten-stand.json`) automatisch per 301 weiter.
 - Keine `_redirects`-Regeln für `/…/index.html`: Cloudflare wendet sie auch auf die interne Abfrage des Workers an (alle Seiten wären 404).
 
