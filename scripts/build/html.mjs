@@ -1,7 +1,7 @@
 // Build, Teil „html“: HTML-Helfer und Seitenrahmen (seite(), Karte, Filterleiste).
 // Wird von scripts/build.mjs in fester Reihenfolge geladen; nutzt die Ergebnisse der vorherigen Teile.
 import { readFileSync, existsSync } from 'node:fs';
-import { seitentext, faqZusammenfuehren } from '../seitentexte.mjs';
+import { seitentext, seitentextOben, faqZusammenfuehren } from '../seitentexte.mjs';
 import { join } from 'node:path';
 import { domainToUnicode } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -61,6 +61,7 @@ const VERIFIZIERUNG = [['google-site-verification', process.env.GOOGLE_SITE_VERI
   ['msvalidate.01', process.env.BING_SITE_VERIFICATION || cfg.verifizierung?.bing]]
   .filter(([, v]) => v).map(([n, v]) => `<meta name="${n}" content="${esc(v)}">\n`).join('');
 const SEITENTEXTE = existsSync(join(ROOT, 'data', 'seitentexte.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'seitentexte.json'), 'utf8')) : {};
+const SEITENTEXT_GENUTZT = new Set(); // Pfade, deren Text auf einer gebauten Seite steht (Prüfung in abschluss.mjs)
 // Listen-Seiten: ItemList bekommt eine @id und eine CollectionPage, die auf sie zeigt
 function mitSammlung(jsonld, { titel, beschreibung, pfad }) {
   const liste = jsonld.find((j) => j['@type'] === 'ItemList');
@@ -75,6 +76,10 @@ function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = []
   // Gepflegte Texte je Seite (data/seitentexte.json): Einleitung, Abschnitte, FAQ – nur wenn vorhanden
   const st = seitentext(SEITENTEXTE[pfad], pfad);
   if (st) { inhalt += st.html; jsonld = faqZusammenfuehren(jsonld, st.faq); }
+  // Kurztext "oben": direkt unter Überschrift und Zahlen, vor dem Hinweis zur PLZ (sonst gleich nach der H1)
+  const oben = seitentextOben(SEITENTEXTE[pfad]);
+  if (oben) { inhalt = inhalt.includes('<p class="plz-hinweis"') ? inhalt.replace('<p class="plz-hinweis"', `${oben}\n  <p class="plz-hinweis"`) : inhalt.replace('</h1>', `</h1>${oben}`); SEITENTEXT_GENUTZT.add(pfad); }
+  if (SEITENTEXTE[pfad]) SEITENTEXT_GENUTZT.add(pfad);
   jsonld = mitSammlung(jsonld, { titel, beschreibung, pfad });
   SEITEN_HASH.set(pfad, hash([titel, beschreibung, noindex, JSON.stringify(jsonld), JSON.stringify(krumen), inhalt.replace(/\?v=[a-z0-9]+/g, '')].join('\u0000')));
   const url = cfg.domain + pfad;
@@ -217,4 +222,4 @@ function filterLeiste(liste, { umkreis = null } = {}) {
 </div>`;
 }
 
-export { GA_ID, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };
+export { GA_ID, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITENTEXTE, SEITENTEXT_GENUTZT, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };
