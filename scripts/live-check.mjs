@@ -37,6 +37,22 @@ for (const [pfad, status, ziel] of FAELLE) {
   console.log(`${ok2 ? 'OK  ' : 'FEHL'} /api/eintrag liefert Gut Clarenhof (${d.eintrag?.titel || '–'}, ${d.eintrag?.vollstaendigkeit?.prozent ?? '–'} %)`);
 }
 
+// SEO-Check (20.11.2026): http → https, Zeichensatz und HSTS im Header, Titel ≤ 580 px
+{
+  const { titelBreite } = await import('./pixel.mjs');
+  const http = await fetch(BASIS.replace(/^https:/, 'http:') + '/bayern/?x=1', { redirect: 'manual' });
+  const ok = http.status === 301 && http.headers.get('location') === `${BASIS}/bayern/?x=1`;
+  if (!ok) fehler++;
+  console.log(`${ok ? 'OK  ' : 'FEHL'} http → https (${http.status} → ${http.headers.get('location')})`);
+  const r = await fetch(`${BASIS}/`);
+  const typ = r.headers.get('content-type') || '', hsts = r.headers.get('strict-transport-security') || '';
+  const html = await r.text();
+  const titel = (html.match(/<title>([^<]*)<\/title>/)?.[1] || '').replace(/&amp;/g, '&');
+  const ok2 = /charset=utf-8/i.test(typ) && /max-age=\d+/.test(hsts) && titelBreite(titel) <= 580 && !/\?produkt=/.test(html);
+  if (!ok2) fehler++;
+  console.log(`${ok2 ? 'OK  ' : 'FEHL'} Startseite: ${typ} · HSTS ${hsts || '–'} · Titel ${titelBreite(titel)} px „${titel}“`);
+}
+
 // Overture-Einträge sind ausgerollt: erster Eintrag mit stabiler ID o-… und die Quellenseite
 {
   const roh = JSON.parse((await import('node:fs')).readFileSync(new URL('../src/generated/eintraege.json', import.meta.url), 'utf8'));
