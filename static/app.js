@@ -5,7 +5,9 @@ import { felderAusEintrag } from './vorbelegung.js';
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// Vorauswahl kommt aus ?… oder – bei Links von Übersichtsseiten – aus #produkt=… / #filter=… (keine Parameter-URLs für Suchmaschinen)
 const params = new URLSearchParams(location.search);
+if (location.hash.includes('=')) for (const [k, v] of new URLSearchParams(location.hash.slice(1))) params.append(k, v);
 const hofSlug = location.pathname.match(/^\/hof\/([a-z0-9-]+)\/$/)?.[1] || '';
 const speicher = {
   get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
@@ -567,7 +569,8 @@ function startseite() {
   // Saison steht schon im HTML (Monat beim Bauen); nur bei einem anderen Monat neu rechnen
   const saison = $('[data-saison]');
   if (saison && +saison.dataset.saisonStand !== berlinMonat()) $('[data-saison-inhalt]', saison).innerHTML = saisonHtml(JSON.parse(saison.dataset.saison), berlinMonat());
-  // Angebotswahl aus Links wie /?produkt=gemuese#plz vorbelegen
+  // Angebotswahl aus Links wie /?produkt=gemuese#plz vorbelegen; Links „mit Gemüse“ (data-wunsch) haken direkt an
+  for (const l of $('[data-wunsch]')) l.addEventListener('click', () => { const i = $(`.wunsch input[value="${CSS.escape(l.dataset.wunsch)}"]`); if (i) i.checked = true; });
   for (const p of params.getAll('produkt').flatMap((x) => x.split(','))) { const i = $(`.wunsch input[value="${CSS.escape(p)}"]`); if (i) i.checked = true; }
 }
 
