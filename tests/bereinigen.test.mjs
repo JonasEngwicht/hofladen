@@ -106,3 +106,10 @@ test('nameGeschlossen: dauerhaft geschlossen ja, vorübergehend oder Ruhetage ne
   for (const n of ['Hofladen & Imbiss geschlossen', 'ehemaliger Milchautomat', 'Hofladen Meier (closed)', 'Hofladen dauerhaft geschlossen']) assert.ok(nameGeschlossen(n), n);
   for (const n of ['Hofladen (vorübergehend geschlossen)', 'Hofladen montags geschlossen', 'Gut Geschlossenhof', 'Hofladen Winterpause geschlossen', 'Hofladen Ehemann']) assert.ok(!nameGeschlossen(n), n);
 });
+
+test('automatArtAusName: Obst-, Hof- und Warenautomaten sind Regiomaten', () => {
+  const art = (name) => automatArtAusName({ typ: 'hofladen', art: 'Hofladen', name });
+  for (const n of ['24h Obstautomat', "Loibl's Hofautomat", "Brodbeck's Hofautomaten", 'Warenautomat', 'Automaten Eis und Lebensmittel']) assert.equal(art(n), 'Regiomat', n);
+  assert.equal(art('Hofladen mit Automat'), null);
+  assert.equal(art('Gärtnerei Automatenweg'), null);
+});

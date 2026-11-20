@@ -193,6 +193,6 @@ export function automatArtAusName(e) {
   if (/kartoffel-?(automat|häus|box)/.test(n)) return 'Kartoffelautomat';
   if (/honig-?(automat|box)/.test(n)) return 'Honigautomat';
   if (/(fleisch|wurst|grill)-?(automat|box)/.test(n)) return 'Fleischautomat';
-  if (/regio-?mat|verkaufs-?automat|lebensmittel-?automat|hütten-?automat|\bautomat\b/.test(n)) return 'Regiomat';
+  if (/regio-?mat|(verkaufs|lebensmittel|hütten|obst|hof|waren)-?automat(en)?\b|\bautomat(en)?\b/.test(n)) return 'Regiomat';
   return null;
 }
