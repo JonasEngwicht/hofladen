@@ -492,7 +492,7 @@ export async function saisonMailsSenden(env, h, { jetzt = new Date(), maxMails =
   let gesendet = 0;
   for (const a of abos) {
     if (gesendet >= maxMails) break;
-    const passend = mitOrt.filter((n) => n.erstellt > (a.letzte_mail || a.bestaetigt || '') && produktPasst(a.produkte, n) && kmZwischen(a.lat, a.lon, n.e[0], n.e[1]) <= a.radius)
+    const passend = mitOrt.filter((n) => n.erstellt >= (a.letzte_mail || a.bestaetigt || '') && produktPasst(a.produkte, n) && kmZwischen(a.lat, a.lon, n.e[0], n.e[1]) <= a.radius)
       .map((n) => ({ ...n, km: kmZwischen(a.lat, a.lon, n.e[0], n.e[1]) })).sort((x, y) => x.km - y.km).slice(0, 10);
     if (!passend.length) continue;
     await env.STATS.prepare('UPDATE saison_abos SET letzte_mail = ?1 WHERE id = ?2').bind(jetzt.toISOString(), a.id).run();

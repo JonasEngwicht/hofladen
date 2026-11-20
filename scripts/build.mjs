@@ -2625,7 +2625,8 @@ for (const [alt, neu] of Object.entries(stand.ersetzt)) {
   if (!slugNachId.has(alt) && slugNachId.has(ziel)) { slugNachId.set(alt, slugNachId.get(ziel)); ersetztDurch.set(alt, ziel); }
 }
 for (const [alt, neu] of ersetztDurch) stand.ersetzt[alt] = neu;
-writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe), ersetzt: sortiert(stand.ersetzt) }));
+// Nur in CI schreiben (die Workflows committen die Datei); lokale Builds lassen das Repo sauber
+if (process.env.CI || process.env.SEITEN_STAND_SCHREIBEN) writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe), ersetzt: sortiert(stand.ersetzt) }));
 const umleitungen = {}, entfernt = [];
 for (const pfad of Object.keys(stand.seiten)) {
   if (ALLE_SEITEN.has(pfad)) continue;
