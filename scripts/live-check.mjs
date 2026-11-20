@@ -53,6 +53,35 @@ for (const [pfad, status, ziel] of FAELLE) {
   console.log(`${ok2 ? 'OK  ' : 'FEHL'} Startseite: ${typ} · HSTS ${hsts || '–'} · Titel ${titelBreite(titel)} px „${titel}“`);
 }
 
+// Indexierbarkeit lokaler Seiten (20.11.2026): je Seitentyp 200, kein noindex (Header oder Meta), Canonical auf sich selbst,
+// in der Sitemap; robots.txt sperrt nichts davon und nennt die Sitemap. Dazu ein Abruf mit Googlebot-Kennung (nur Hinweis:
+// Cloudflare darf eine gefälschte Googlebot-Kennung aus GitHub Actions ablehnen, echte Googlebots sind davon nicht betroffen).
+{
+  const robots = await (await fetch(`${BASIS}/robots.txt`)).text();
+  const okR = /^Sitemap: https:\/\/hofladenliste\.de\/sitemap\.xml$/m.test(robots) && !/^Disallow: \/\s*$/m.test(robots);
+  if (!okR) fehler++;
+  console.log(`${okR ? 'OK  ' : 'FEHL'} robots.txt: Sitemap genannt, keine Komplettsperre`);
+  const index = await (await fetch(`${BASIS}/sitemap.xml`)).text();
+  const teile = [...index.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const inSitemap = new Set();
+  for (const t of teile.filter((u) => /\/(kreise|orte|kategorien)\.xml$/.test(u))) for (const m of (await (await fetch(t)).text()).matchAll(/<loc>([^<]+)<\/loc>/g)) inSitemap.add(m[1]);
+  const lokal = [...inSitemap].filter((u) => /\/[^/]+\/[^/]+\/$/.test(u.slice(BASIS.length)));
+  const probe = ['/', '/bayern/oberallgaeu/', '/berlin/berlin/', '/bayern/oberallgaeu/milchtankstellen/', '/brandenburg/spree-neisse/burg-spreewald/', '/hof/kittlers-hofladen-riesa/'];
+  for (const pfad of probe) {
+    const r = await fetch(BASIS + pfad, { redirect: 'manual', headers: { 'User-Agent': 'HofladenlisteLiveCheck/1.0' } });
+    const html = r.status === 200 ? await r.text() : '';
+    const xr = r.headers.get('x-robots-tag') || '', challenge = r.headers.get('cf-mitigated') || '';
+    const can = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
+    const sitemapOk = pfad === '/' || pfad.startsWith('/hof/') || inSitemap.has(BASIS + pfad);
+    const ok = r.status === 200 && !/noindex/i.test(xr) && !challenge && !/<meta name="robots" content="noindex/.test(html) && can === BASIS + pfad && sitemapOk;
+    if (!ok) fehler++;
+    console.log(`${ok ? 'OK  ' : 'FEHL'} indexierbar ${pfad} (${r.status}${xr ? `, X-Robots-Tag ${xr}` : ''}${challenge ? `, Cloudflare-Abfrage ${challenge}` : ''}${can === BASIS + pfad ? '' : `, Canonical ${can || '–'}`}${sitemapOk ? '' : ', fehlt in der Sitemap'})`);
+  }
+  console.log(`INFO ${inSitemap.size} Kreis-, Orts- und Kategorieseiten in der Sitemap (${lokal.length} davon auf Kreisebene)`);
+  const g = await fetch(`${BASIS}/bayern/oberallgaeu/`, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' } });
+  console.log(`INFO Abruf mit Googlebot-Kennung: ${g.status}${g.headers.get('cf-mitigated') ? ` (Cloudflare-Abfrage: ${g.headers.get('cf-mitigated')})` : ''}`);
+}
+
 // Antwortzeiten (Zeit bis zur ersten Antwort, Startseite und Hofseite, je 5×)
 {
   const ms = async (url, init = {}) => { const t = performance.now(); const r = await fetch(url, { redirect: 'manual', ...init }); await r.arrayBuffer(); return [Math.round(performance.now() - t), r.headers.get('cf-cache-status') || '–']; };
