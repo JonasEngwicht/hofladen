@@ -1,6 +1,6 @@
 // Build, Teil „abschluss“: robots.txt, Sitemaps, Seitenarchiv und Daten für den Worker.
 // Wird von scripts/build.mjs in fester Reihenfolge geladen; nutzt die Ergebnisse der vorherigen Teile.
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { distanzKm } from '../lib.mjs';
 import { stabileIdAus } from '../pflege.mjs';
@@ -142,6 +142,8 @@ writeFileSync(join(GEN, 'plz.json'), JSON.stringify(plzIndex));
   writeFileSync(join(GEN, 'orte.json'), JSON.stringify({ k: kListe.map((k) => [k.pfad, k.titel]), o: orteIndex }));
   console.log(`Ortsnamen für die Suche: ${orteIndex.length}`);
 }
+// Für den Worker zusätzlich als Modul mit einem Text (wird dort erst bei Bedarf geparst, siehe src/worker.js)
+const alsTextModul = (name) => writeFileSync(join(GEN, `${name}.js`), `export default ${JSON.stringify(readFileSync(join(GEN, `${name}.json`), 'utf8'))};\n`);
 const KAT_CODES = Object.keys(KATEGORIEN);
 writeFileSync(join(GEN, 'eintraege.json'), JSON.stringify(eintraege.map((e) => [
   +e.lat.toFixed(5), +e.lon.toFixed(5), e.slug, e.titel, e.art, e.ortAnzeige, e.oeffnungszeiten || '', e.typ === 'hofladen' ? 1 : 0,
@@ -149,7 +151,8 @@ writeFileSync(join(GEN, 'eintraege.json'), JSON.stringify(eintraege.map((e) => [
   e.oeffnungszeiten_text || '', e.sonntag ? 1 : 0,
   // ab hier: Daten für das Bearbeiten-Formular und den Outreach-Export
   e.sid, e.name || '', e.strasse || '', e.plz || '', e.ort || e.ortAnzeige || '', e.email || '', (e.zahlung || []).join(','),
-  (e.beschreibung || '').slice(0, 600), e.fotos?.length || 0, e.vollst.prozent, e.vollst.fehlt.join(','), e.k?.land || '', mitKindern(e) ? 1 : 0, (e.verband || []).join(','), e.haltestelle ? 1 : 0])));
+  (e.beschreibung || '').slice(0, 600), e.fotos?.length || 0, e.vollst.prozent, e.vollst.fehlt.map((k) => 'abcdefghijklmnopqrstuvwxyz'[VOLLSTAENDIGKEIT.findIndex(([x]) => x === k)]).join(''), e.k?.land || '', mitKindern(e) ? 1 : 0, (e.verband || []).join(','), e.haltestelle ? 1 : 0])));
+for (const n of ['plz', 'orte', 'eintraege']) alsTextModul(n);
 writeFileSync(join(GEN, 'vollstaendigkeit.json'), JSON.stringify(VOLLSTAENDIGKEIT.map(([k, label]) => [k, label])));
 writeFileSync(join(GEN, 'kategorien.json'), JSON.stringify(KAT_CODES));
 // „Was + Wo“-Suche: Produktwörter → Kategorie, dazu die Zielseite, wenn nur das Produkt gesucht wird

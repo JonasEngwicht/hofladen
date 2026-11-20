@@ -7,11 +7,11 @@
 // Seiten: Dateien wie /style.css liefert Cloudflare direkt aus. HTML-Seiten (/pfad/ → /pfad/index.html)
 // laufen über seiteAusliefern(): dort entstehen 301 (Schrägstrich, Umlaute, verschobene Seiten),
 // 410 (entfernte Höfe) und 404.
-import PLZ from './generated/plz.json';
-import EINTRAEGE from './generated/eintraege.json';
+import PLZ_TEXT from './generated/plz.js';
+import EINTRAEGE_TEXT from './generated/eintraege.js';
 import KATEGORIEN from './generated/kategorien.json';
 import { kachelAntwort, kartenHochladen } from './kacheln.js';
-import ORTE from './generated/orte.json';
+import ORTE_TEXT from './generated/orte.js';
 import ROUTEN from './generated/routen.json';
 import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
@@ -19,6 +19,11 @@ import { wasWoTrennen } from './waswo.js';
 import { distanzKm } from '../static/helfer.js';
 import { BETRIEB_SCHEMA, TIPP_SCHEMA, ABO_SCHEMA, saisonAbo, saisonMailsSenden, tippAnnehmen, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
+
+// Große Daten (PLZ, Orte, Einträge) liegen als Text im Bundle und werden erst beim ersten Bedarf gelesen:
+// HTML-Seiten brauchen sie nicht, so bleibt der Kaltstart des Workers kurz.
+const spaeter = (text) => { let w; return () => (w ??= JSON.parse(text)); };
+const plzDaten = spaeter(PLZ_TEXT), orteDaten = spaeter(ORTE_TEXT), eintraegeDaten = spaeter(EINTRAEGE_TEXT);
 
 const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -46,7 +51,7 @@ function zaehle(env, ctx, request, { plz, kreis = '', art, produkt = '' }) {
 
 function sucheWeiterleitung(plz, produkte = [], env, ctx, request) {
   const p = (plz || '').replace(/\D/g, '');
-  const eintrag = /^\d{5}$/.test(p) ? PLZ[p] : null;
+  const eintrag = /^\d{5}$/.test(p) ? plzDaten()[p] : null;
   const prod = produkte.filter((x) => KATEGORIEN.includes(x));
   if (/^\d{5}$/.test(p)) zaehle(env, ctx, request, { plz: p, kreis: eintrag ? eintrag[2] : '', art: eintrag ? 'plz' : 'unbekannt', produkt: prod.sort().join(',') });
   if (!eintrag) return weiter(`/?fehler=plz&plz=${encodeURIComponent(p)}`);
@@ -60,15 +65,15 @@ let ORT_INDEX = null;
 function ortIndex() {
   if (ORT_INDEX) return ORT_INDEX;
   const zahl = new Map();
-  for (const o of ORTE.o) zahl.set(o[0], (zahl.get(o[0]) || 0) + 1);
-  ORT_INDEX = ORTE.o.map(([name, plz, ki, pfad, groesse]) => {
-    const [kreisPfad, kreis] = ORTE.k[ki];
+  for (const o of orteDaten().o) zahl.set(o[0], (zahl.get(o[0]) || 0) + 1);
+  ORT_INDEX = orteDaten().o.map(([name, plz, ki, pfad, groesse]) => {
+    const [kreisPfad, kreis] = orteDaten().k[ki];
     return { name, plz, kreis, kreisPfad, pfad, groesse, n: norm(name), kern: norm(name.replace(/\s*\(.*\)\s*$/, '')), kn: norm(kreis), doppelt: zahl.get(name) > 1 };
   });
   return ORT_INDEX;
 }
 const ortZiel = (o) => `${o.pfad || o.kreisPfad}?plz=${o.plz}`;
-const ortAusgabe = (o) => ({ name: o.name, kreis: o.kreis, plz: o.plz, wert: o.doppelt ? `${o.name}, ${o.kreis}` : o.name, ...(PLZ[o.plz] ? { lat: PLZ[o.plz][0], lon: PLZ[o.plz][1] } : {}) });
+const ortAusgabe = (o) => ({ name: o.name, kreis: o.kreis, plz: o.plz, wert: o.doppelt ? `${o.name}, ${o.kreis}` : o.name, ...(plzDaten()[o.plz] ? { lat: plzDaten()[o.plz][0], lon: plzDaten()[o.plz][1] } : {}) });
 
 // Liefert alle passenden Orte; eindeutig = alle Treffer liegen im selben Kreis
 function ortSuche(q) {
@@ -116,7 +121,7 @@ function orteVorschlaege(url) {
 // ---------- Suche nach Hofnamen ----------
 // Jedes Suchwort muss ein Wortanfang im Titel oder Ort des Eintrags sein: „kittlers“, „gut claren“, „hofladen forst“.
 let HOF_INDEX = null;
-const hofIndex = () => (HOF_INDEX ??= EINTRAEGE.map((e) => {
+const hofIndex = () => (HOF_INDEX ??= eintraegeDaten().map((e) => {
   const titel = norm(e[3]), name = norm(e[16] || ''), ort = norm(e[5]);
   return { e, titel, name, woerter: [...new Set(`${titel} ${name} ${ort}`.split(' ').filter(Boolean))], titelWoerter: new Set(`${titel} ${name}`.split(' ')) };
 }));
@@ -191,7 +196,7 @@ function umkreis(url, env, ctx, request) {
   let lon = parseFloat(url.searchParams.get('lon'));
   let ort = null;
   if (plz) {
-    const e = PLZ[plz];
+    const e = plzDaten()[plz];
     if (!e) return json({ fehler: 'PLZ unbekannt' }, 404);
     [lat, lon] = e; ort = { plz, name: e[3], kreisPfad: e[2], lat, lon };
   } else if (!(lat >= 47 && lat <= 56 && lon >= 5 && lon <= 16)) {
@@ -199,7 +204,7 @@ function umkreis(url, env, ctx, request) {
   } else {
     // Nächsten PLZ-Ort für die Anzeige bestimmen
     let best = Infinity;
-    for (const [p, e] of Object.entries(PLZ)) {
+    for (const [p, e] of Object.entries(plzDaten())) {
       const d = distanzKm(lat, lon, e[0], e[1]);
       if (d < best) { best = d; ort = { plz: p, name: e[3], kreisPfad: e[2], lat, lon }; }
     }
@@ -214,7 +219,7 @@ function umkreis(url, env, ctx, request) {
   const arten = (url.searchParams.get('art') || '').split(',').filter(Boolean);
   const produkte = (url.searchParams.get('produkt') || '').split(',').map((x) => KAT_BUCHSTABEN[KATEGORIEN.indexOf(x)]).filter(Boolean);
   const treffer = [];
-  for (const e of EINTRAEGE) {
+  for (const e of eintraegeDaten()) {
     if (typ === 'hofladen' && !e[7]) continue;
     if (typ === 'automat' && e[7]) continue;
     if (bio && !e[12]) continue;
@@ -244,7 +249,7 @@ function aufbereiten(e, km = null) {
 // Merkliste: Einträge zu gemerkten Slugs (max. 100), Reihenfolge wie angefragt
 let SLUG_INDEX = null;
 function eintraegeNachSlug(url) {
-  SLUG_INDEX ??= new Map(EINTRAEGE.map((e) => [e[2], e]));
+  SLUG_INDEX ??= new Map(eintraegeDaten().map((e) => [e[2], e]));
   const slugs = (url.searchParams.get('slugs') || '').split(',').map((x) => x.trim()).filter((x) => /^[a-z0-9-]{1,120}$/.test(x)).slice(0, 100);
   const gefunden = slugs.map((x) => SLUG_INDEX.get(x)).filter(Boolean).map((e) => aufbereiten(e));
   const vorhanden = new Set(gefunden.map((e) => e.slug));
@@ -614,7 +619,7 @@ async function verwaltung(request, env, url, ctx) {
 
 // ---------- Bearbeiten-Links mit stabiler ID ----------
 let IDX = null;
-const eintragIndex = () => (IDX ??= index(EINTRAEGE, ROUTEN.alteSlugs || {}));
+const eintragIndex = () => (IDX ??= index(eintraegeDaten(), ROUTEN.alteSlugs || {}));
 const DOMAIN = 'https://hofladenliste.de';
 // Hilfsfunktionen für src/betrieb.js
 const H = { schema: (env) => schema(env), sha256: (t) => sha256(t), eintragIndex, aufloesen, json: (d, s) => json(d, s), EMAIL_RE, DOMAIN };
@@ -715,7 +720,7 @@ export default {
     if (url.pathname === '/api/neuigkeiten') return neuigkeitenApi(url, env, H);
     if (url.pathname === '/api/nachricht') return nachrichtAnnehmen(request, env, ctx, H);
     if (url.pathname === '/api/tipp') return tippAnnehmen(request, env, ctx, H);
-    if (url.pathname === '/api/saison-abo') return saisonAbo(request, env, ctx, H, PLZ);
+    if (url.pathname === '/api/saison-abo') return saisonAbo(request, env, ctx, H, plzDaten());
     if (url.pathname === '/api/turnstile') return new Response(JSON.stringify({ siteKey: env.TURNSTILE_SITE_KEY || null }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
     return sicherheitsKopf(await seiteAusliefern(request, env, url));
   },

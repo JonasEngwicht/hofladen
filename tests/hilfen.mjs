@@ -28,6 +28,7 @@ export async function ladeWorker() {
   const dir = mkdtempSync(join(tmpdir(), 'hofladen-worker-'));
   const code = readFileSync(join(ROOT, 'src', 'worker.js'), 'utf8').replace(/from '\.\/generated\/(.*?)\.json';/g,
     (_, n) => `from ${JSON.stringify(pathToFileURL(join(ROOT, 'src', 'generated', `${n}.json`)).href)} with { type: 'json' };`)
+    .replace(/from '\.\/generated\/([a-z-]+\.js)';/g, (_, n) => `from ${JSON.stringify(pathToFileURL(join(ROOT, 'src', 'generated', n)).href)};`)
     .replace(/from '\.\/([a-z-]+\.js)';/g, (_, n) => `from ${JSON.stringify(pathToFileURL(join(ROOT, 'src', n)).href)};`)
     .replace(/from '\.\.\/static\/([a-z-]+\.js)';/g, (_, n) => `from ${JSON.stringify(pathToFileURL(join(ROOT, 'static', n)).href)};`);
   writeFileSync(join(dir, 'worker.mjs'), code);
