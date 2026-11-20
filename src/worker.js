@@ -660,6 +660,16 @@ async function fehlerSeite(env, url, status) {
 }
 const dauerhaft = (url, pfad) => new Response(null, { status: 301, headers: { Location: pfad + url.search, 'Cache-Control': 'public, max-age=86400' } });
 
+// HTML-Seiten: Zeichensatz im HTTP-Header und HSTS (Browser bleiben bei https)
+export const HSTS = 'max-age=31536000';
+function sicherheitsKopf(r) {
+  const typ = r.headers.get('Content-Type') || '';
+  if (r.status >= 300 && r.status < 400) return r;
+  const k = new Response(r.body, r);
+  if (/^text\/html/i.test(typ) && !/charset/i.test(typ)) k.headers.set('Content-Type', 'text/html; charset=utf-8');
+  k.headers.set('Strict-Transport-Security', HSTS);
+  return k;
+}
 async function seiteAusliefern(request, env, url) {
   const pfad = url.pathname;
   const bearb = pfad.match(/^\/hof\/([^/]+)\/(bearbeiten|uebernehmen)\/?$/i);
@@ -688,8 +698,10 @@ export default {
   },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    if (url.hostname.startsWith('www.')) {
-      url.hostname = url.hostname.slice(4);
+    // Immer https ohne www – in einem Schritt (http://www.… → https://…)
+    if (url.hostname.startsWith('www.') || (url.protocol === 'http:' && !/^(localhost|127\.)/.test(url.hostname))) {
+      if (url.hostname.startsWith('www.')) url.hostname = url.hostname.slice(4);
+      url.protocol = 'https:';
       return weiter(url.toString(), 301);
     }
     if (url.pathname === '/suche') return suche(url, env, ctx, request);
@@ -711,6 +723,6 @@ export default {
     if (url.pathname === '/api/tipp') return tippAnnehmen(request, env, ctx, H);
     if (url.pathname === '/api/saison-abo') return saisonAbo(request, env, ctx, H, PLZ);
     if (url.pathname === '/api/turnstile') return new Response(JSON.stringify({ siteKey: env.TURNSTILE_SITE_KEY || null }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
-    return seiteAusliefern(request, env, url);
+    return sicherheitsKopf(await seiteAusliefern(request, env, url));
   },
 };

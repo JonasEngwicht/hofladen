@@ -4,6 +4,7 @@ export const RATGEBER = [
   {
     slug: 'rohmilch-milchtankstelle',
     titel: 'Rohmilch aus der Milchtankstelle: abkochen, abfüllen, aufbewahren',
+    seitentitel: 'Rohmilch aus der Milchtankstelle: abkochen & aufbewahren',
     kurz: 'Rohmilch aus der Milchtankstelle',
     beschreibung: 'Was du über Rohmilch aus der Milchtankstelle wissen musst: warum sie abgekocht werden muss, welche Flaschen sich eignen und wie lange sie hält.',
     datum: '2026-11-19',
@@ -23,6 +24,7 @@ export const RATGEBER = [
   {
     slug: 'eier-vom-automaten',
     titel: 'Eier vom Automaten und ab Hof: Kennzeichnung, Frische, Lagerung',
+    seitentitel: 'Eier vom Automaten: Kennzeichnung, Frische, Lagerung',
     kurz: 'Eier vom Automaten',
     beschreibung: 'Was der Stempel auf dem Ei bedeutet, woran du frische Eier erkennst und wie du Eier vom Automaten oder Hofladen richtig lagerst.',
     datum: '2026-11-19',
@@ -100,6 +102,7 @@ export const RATGEBER = [
   {
     slug: 'spargelzeit',
     titel: 'Spargelzeit: Wann es losgeht und woran du frischen Spargel erkennst',
+    seitentitel: 'Spargelzeit: Beginn, Ende und frischen Spargel erkennen',
     kurz: 'Spargelzeit',
     beschreibung: 'Spargel vom Hof: wann die Saison beginnt und endet, woran du frische Stangen erkennst und wie du Spargel lagerst.',
     datum: '2026-11-19',

@@ -131,6 +131,8 @@ Mit diesem Link meldest du dich an (gültig für 7 Tage, danach bekommst du auf 
 
 ${link}
 
+Tipp: Für eure eigene Website gibt es ein kostenloses Badge „Wir sind auf hofladenliste.de“, das direkt auf euren Eintrag verlinkt: https://hofladenliste.de/fuer-hoefe/
+
 Viele Grüße
 Hofladenliste – hofladenliste.de`;
 

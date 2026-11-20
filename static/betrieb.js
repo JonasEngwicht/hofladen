@@ -18,7 +18,8 @@ function hofHtml(h, daten) {
   <h2><a href="${esc(h.pfad)}">${esc(h.titel)}</a></h2>
   <p class="leise">${esc(h.art)} in ${esc(h.ort)} · Angaben zu ${zahl(h.vollstaendigkeit)} % vollständig</p>
   <p class="betrieb-aktionen"><a class="knopf" href="/mitmachen/?eintrag=${encodeURIComponent(h.sid)}&amp;aktion=ergaenzen">Angaben und Öffnungszeiten bearbeiten</a>
-    <a class="knopf knopf-hell" href="/betrieb/aushang/?eintrag=${encodeURIComponent(h.sid)}">Aushang mit QR-Code drucken</a></p>
+    <a class="knopf knopf-hell" href="/betrieb/aushang/?eintrag=${encodeURIComponent(h.sid)}">Aushang mit QR-Code drucken</a>
+    <a class="knopf knopf-hell" href="/fuer-hoefe/?eintrag=${encodeURIComponent(h.sid)}">Badge für eure Website</a></p>
   <p class="leise">Als angemeldeter Betrieb gehen deine Änderungen ohne Prüfung durch und erscheinen nach der nächsten Aktualisierung (meist innerhalb von zwei Stunden). Deine Angaben haben Vorrang vor OpenStreetMap.</p>
 
   <section class="betrieb-block"><h3>Neuigkeit veröffentlichen</h3>
