@@ -13,7 +13,8 @@ const wert = (n) => (args.includes(n) ? args[args.indexOf(n) + 1] : null);
 const datei = wert('--datei') || new URL('../data/bing-wichtig.txt', import.meta.url).pathname;
 const max = +(wert('--max') || 0) || Infinity;
 const trocken = !!process.env.BING_TROCKEN;
-const key = process.env.BING_API_KEY;
+// Leerzeichen, Zeilenumbrüche oder Anführungszeichen aus dem Secret entfernen
+const key = (process.env.BING_API_KEY || '').trim().replace(/^["']+|["']+$/g, '').trim();
 
 if (!key && !trocken) {
   console.error('BING_API_KEY fehlt (GitHub-Secret BING_API_KEY anlegen).');
@@ -52,6 +53,7 @@ async function senden(urlList) {
   return { ok: r.ok, text: r.ok ? await r.text() : await fehler(r) };
 }
 
+if (!trocken) console.log(`Schlüssel: ${key.length} Zeichen${/^[0-9a-f]{32}$/i.test(key) ? '' : ' (erwartet: 32 Hex-Zeichen)'}`);
 const urls = leseListe(readFileSync(datei, 'utf8'));
 const frei = await kontingent();
 const teil = urls.slice(0, Math.min(frei, max));
