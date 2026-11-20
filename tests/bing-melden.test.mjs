@@ -40,3 +40,9 @@ test('Bing: die Liste der wichtigsten Seiten enthält nur Seiten aus der Sitemap
   try { xml = ['seiten', 'kreise', 'orte', 'kategorien', 'hoefe'].map((s) => readFileSync(new URL(`../public/sitemaps/${s}.xml`, import.meta.url), 'utf8')).join(''); } catch { return; } // ohne Build nur Formatprüfung
   for (const p of pfade) assert.ok(xml.includes(`<loc>https://hofladenliste.de${p}</loc>`), `${p} fehlt in der Sitemap`);
 });
+
+test('Bing: Leerzeichen und Anführungszeichen im Secret zählen nicht als Schlüssel', () => {
+  const ohne = spawnSync('node', [SKRIPT], { env: { ...process.env, BING_API_KEY: ' "" \n', BING_TROCKEN: '' }, encoding: 'utf8' });
+  assert.equal(ohne.status, 1);
+  assert.match(ohne.stderr, /BING_API_KEY fehlt/);
+});
