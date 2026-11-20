@@ -72,7 +72,7 @@ function markdown(erg, datensaetze) {
     for (const b of datensaetze.filter((x) => x.titel && x.ergebnis !== 'kein Hofladen-Thema')) out.push(`| [${b.titel}](${b.url}) | ${b.herausgeber} | ${b.lizenz || 'nicht offen'} | ${b.ergebnis}${b.ressourcen?.length ? ` (${b.ressourcen.join('; ')})` : ''} | ${b.orte ?? ''} |`);
     out.push('', `Außerdem ${datensaetze.filter((x) => x.ergebnis === 'kein Hofladen-Thema').length} Treffer ohne Hofladen-Bezug (Statistik, Geologie …).`);
     const roh = datensaetze.filter((x) => x.roh);
-    if (roh.length) out.push('', '## Rohangaben der thematischen Datensätze', '', '```json', JSON.stringify(roh.map((x) => ({ titel: x.titel, ...x.roh, wfs_typen: x.wfs_typen })), null, 1), '```');
+    if (roh.length) out.push('', '## Rohangaben der thematischen Datensätze', '', '```json', JSON.stringify(roh.filter((x) => x.orte || x.felder || x.wfs_typen || /hof|direkt|milch/i.test(x.titel)).map((x) => ({ titel: x.titel, ...x.roh, wfs_typen: x.wfs_typen, felder: x.felder })), null, 1), '```');
     const fehler = datensaetze.filter((x) => x.fehler);
     if (fehler.length) out.push('', `Nicht erreichbar: ${fehler.map((f) => `${f.portal} („${f.begriff}“): ${f.fehler}`).join('; ')}`);
   }

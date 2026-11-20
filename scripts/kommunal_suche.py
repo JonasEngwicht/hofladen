@@ -65,6 +65,11 @@ def ressource_art(res):
     """'geojson', 'json', 'csv', 'wfs' oder None."""
     f = str(res.get('format') or '').lower()
     u = str(res.get('url') or '').lower()
+    # fertiger GetFeature-Aufruf mit GeoJSON-Ausgabe: direkt lesen (nur der verlinkte Featuretyp)
+    if 'request=getfeature' in u and re.search(r'outputformat=(geojson|application(/|%2f)(geo\+)?json|json)\b', u):
+        return 'geojson'
+    if 'request=getfeature' in u:
+        return None  # Shape, CSV, GeoPackage … desselben Aufrufs: die GeoJSON-Variante reicht
     if 'wfs' in f or 'service=wfs' in u:
         return 'wfs'
     if 'geojson' in f or u.endswith('.geojson') or 'outputformat=geojson' in u or 'application/geo+json' in f:
@@ -131,8 +136,18 @@ def _feld(p, *muster):
     return None
 
 
-def ort_aus_feature(p, lat, lon, datensatz, lic, quelle_url, ds_id):
-    """Eigenschaften eines Features → Kandidat im gemeinsamen Format (siehe scripts/import-quellen.mjs)."""
+BREIT = re.compile(r'(?i)\bpoi\b|shopping|einkauf|dienstleist|freizeit|sehensw|tourismus|interesse')
+
+
+def nur_hofladen_datensatz(titel):
+    """Datensatz nur über Hofläden/Direktvermarkter (dann gilt jeder Ort als Hinweis auf Direktverkauf)."""
+    return bool(THEMA.search(str(titel or ''))) and not BREIT.search(str(titel or ''))
+
+
+def ort_aus_feature(p, lat, lon, datensatz, lic, quelle_url, ds_id, ds_hof=True):
+    """Eigenschaften eines Features → Kandidat im gemeinsamen Format (siehe scripts/import-quellen.mjs).
+    ds_hof: Datensatz nur über Hofläden; sonst zählt ein Ort nur als Hofladen-Hinweis, wenn eine seiner Angaben
+    (z. B. Kategorie „Hofladen“) dazu passt – im Übrigen entscheidet der Name (scripts/quellen.mjs)."""
     name = _feld(p, r'^(name|bezeichnung|titel|title|betrieb|anbieter|firma|name_?1)$', r'name|bezeichnung|betrieb|anbieter')
     if not name:
         return None
@@ -153,7 +168,9 @@ def ort_aus_feature(p, lat, lon, datensatz, lic, quelle_url, ds_id):
         fid = hashlib.sha1(f'{name.lower()}|{round(lat, 3)}|{round(lon, 3)}'.encode()).hexdigest()[:10]
     if web and not re.match(r'(?i)https?://', web):
         web = 'https://' + web if '.' in web and ' ' not in web else None
-    return {'id': f'{ds_id}-{fid}', 'name': name, 'kat': None, 'hier': '', 'konf': 0.85, 'hofHinweis': True,
+    werte = ' '.join(str(v) for k, v in p.items() if isinstance(v, (str, int)) and not re.search(r'(?i)name|bezeichnung|titel|title', str(k)))
+    hinweis = ds_hof or bool(THEMA.search(werte))
+    return {'id': f'{ds_id}-{fid}', 'name': name, 'kat': None, 'hier': '', 'konf': 0.85, 'hofHinweis': hinweis,
             'lat': lat, 'lon': lon, 'websites': [web] if web else [], 'phones': [tel] if tel else [],
             'emails': [mail] if mail else [], 'socials': [], 'strasse': strasse, 'plz': plz, 'ort': ort,
             'oeffnungszeiten_text': zeiten, 'beschreibung': None, 'thema': beschr or None,
@@ -267,7 +284,8 @@ def suche(get, log=print):
     log(f'Suche: {len(pakete)} Datensätze gefunden')
     for portal, seite, pkg in pakete:
         info = {'portal': portal, 'titel': pkg.get('title'), 'herausgeber': herausgeber(pkg),
-                'lizenz': datensatz_lizenz(pkg), 'url': seite.format(name=pkg.get('name') or pkg.get('id'))}
+                'lizenz': datensatz_lizenz(pkg) or next((l for l in (datensatz_lizenz(pkg, r) for r in pkg.get('resources') or []) if l), None),
+                'url': seite.format(name=pkg.get('name') or pkg.get('id'))}
         if not passt_thema(pkg):
             info['ergebnis'] = 'kein Hofladen-Thema'; bericht.append(info); continue
         if SCHON_DA.search(f"{pkg.get('title')} {pkg.get('name')} {herausgeber(pkg)}"):
@@ -278,7 +296,8 @@ def suche(get, log=print):
                        'ressourcen': [{k: str(r.get(k))[:200] for k in ('format', 'url', 'license', 'mimetype') if r.get(k)}
                                       for r in (pkg.get('resources') or [])[:8]]}
         n_vorher, gelesen = len(orte), []
-        for res in pkg.get('resources') or []:
+        rang = {'geojson': 0, 'json': 1, 'csv': 2, 'wfs': 3}
+        for res in sorted(pkg.get('resources') or [], key=lambda r: rang.get(ressource_art(r), 9)):
             art, lic = ressource_art(res), datensatz_lizenz(pkg, res)
             if not art:
                 continue
@@ -312,11 +331,16 @@ def suche(get, log=print):
                     feats = list(features_aus_geojson(json.loads(get(url))))
             except Exception as e:
                 gelesen.append(f'{art}: {repr(e)[:120]}'); continue
+            ds_hof = nur_hofladen_datensatz(pkg.get('title'))
+            hinweise = 0
             for p, lat, lon in feats:
-                o = ort_aus_feature(p, lat, lon, info['herausgeber'], lic, info['url'], ds_kurz(pkg))
+                o = ort_aus_feature(p, lat, lon, info['herausgeber'], lic, info['url'], ds_kurz(pkg), ds_hof)
                 if o:
                     orte.append(o)
-            gelesen.append(f'{art}: {len(feats)} Orte')
+                    hinweise += o['hofHinweis']
+            gelesen.append(f'{art}: {len(feats)} Orte, davon {hinweise} mit Hofladen-Angabe')
+            if feats and not ds_hof:
+                info['felder'] = sorted({str(k) for p, _, _ in feats[:50] for k in p})[:40]
             if len(orte) > n_vorher:
                 break  # eine lesbare Ressource je Datensatz reicht
         info['ressourcen'] = gelesen
