@@ -1,10 +1,10 @@
 import { status, berlinZeit, parse } from './oh.js';
 import { karteHtml, kmAnzeige } from './karte.js';
 import { felderAusEintrag } from './vorbelegung.js';
+import { esc } from './helfer.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 // Vorauswahl kommt aus ?… oder – bei Links von Übersichtsseiten – aus #produkt=… / #filter=… (keine Parameter-URLs für Suchmaschinen)
 const params = new URLSearchParams(location.search);
 if (location.hash.includes('=')) for (const [k, v] of new URLSearchParams(location.hash.slice(1))) params.append(k, v);

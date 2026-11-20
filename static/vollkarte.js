@@ -3,10 +3,10 @@
 // Wird von app.js erst nach der Zustimmung zur Karte geladen.
 import { status } from './oh.js';
 import { KATEGORIEN, kmAnzeige, produktIcon } from './karte.js';
+import { esc } from './helfer.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const distanz = (aLat, aLon, bLat, bLon) => {
   const r = Math.PI / 180, dLat = (bLat - aLat) * r, dLon = (bLon - aLon) * r;
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(aLat * r) * Math.cos(bLat * r) * Math.sin(dLon / 2) ** 2;

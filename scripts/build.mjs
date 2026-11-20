@@ -8,6 +8,7 @@ import { createHash } from 'node:crypto';
 import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from './lib.mjs';
 import { rasterIndex, gleicherHof, QUELLEN, quellenId, solawiOk } from './quellen.mjs';
 import { RATGEBER } from './ratgeber.mjs';
+import { esc } from '../static/helfer.js';
 import { titelBreite, titelMitMarke, kuerzeBeschreibung, TITEL_MAX } from './pixel.mjs';
 import { stabileIdAus, felderAnwenden } from './pflege.mjs';
 import { felderBereinigen, dublettenFinden, automatArtAusName } from './bereinigen.mjs';
@@ -52,12 +53,13 @@ const SAISON = [
 const { kreise, plz, raster } = ladePlz(join(ROOT, 'data', 'quellen', 'plz-de.csv'));
 const osm = existsSync(join(ROOT, 'data', 'osm-eintraege.json'))
   ? JSON.parse(readFileSync(join(ROOT, 'data', 'osm-eintraege.json'), 'utf8')) : [];
-const manuell = JSON.parse(readFileSync(join(ROOT, 'data', 'manuell.json'), 'utf8'));
+// Eigene Einträge entstehen nur noch über data/pflege.json („neu“); Feld ersetztOsm: "node/123" ersetzt einen OSM-Eintrag
+const manuell = [];
 // Eigene Pflege (data/pflege.json, siehe scripts/pflege.mjs): geprüfte Änderungen, neue Einträge, Schließungen
 const pflege = existsSync(join(ROOT, 'data', 'pflege.json')) ? JSON.parse(readFileSync(join(ROOT, 'data', 'pflege.json'), 'utf8')) : { aenderungen: {}, neu: {}, geschlossen: {} };
 for (const [id, n] of Object.entries(pflege.neu || {})) {
   const { saison, bio, stand, notiz, quelle, ...rest } = n;
-  manuell.push({ ...rest, id, ...(saison ? { saisonHinweis: saison } : {}), ...(bio ? { bio: true } : {}), quelle: quelle || null, gepflegt: { art: 'pflege', stand }, geprueft: stand });
+  manuell.push({ ...rest, id, ...(saison ? { saisonHinweis: saison } : {}), ...(bio ? { bio: true } : {}), quelle: quelle || null, ...(stand ? { gepflegt: { art: 'pflege', stand }, geprueft: stand } : {}) });
 }
 
 // Ortsnamen, die sich als Firma/Behörde herausstellen (Filter in lib.mjs), durch den nächsten echten Ort ersetzen
@@ -480,7 +482,6 @@ if (!Array.isArray(HALTE_ROH)) for (const e of eintraege) {
 const HALTE_ART = { bus: 'Bus', tram: 'Straßenbahn', bahn: 'Bahn' };
 
 // ---------- HTML-Helfer ----------
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const telHref = (t) => 'tel:' + t.replace(/[^\d+]/g, '').replace(/^00/, '+');
 const kurz = (u) => { let t = u; try { const x = new URL(u); t = domainToUnicode(x.hostname) + x.pathname + x.search; } catch {} return t.replace(/^www\./, '').replace(/\/$/, ''); };
 const zahl = (n) => n.toLocaleString('de-DE');

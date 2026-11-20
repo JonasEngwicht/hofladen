@@ -2,9 +2,9 @@
 import { qrSvg } from './qr.js';
 import { zeilen } from './oh.js';
 import { KATEGORIEN } from './karte.js';
+import { esc } from './helfer.js';
 
 const $ = (s, el = document) => el.querySelector(s);
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 function papier(format) {
   let st = $('#papier-format');

@@ -1,5 +1,6 @@
 // Ladenkarte: wird beim Build (Node) und im Browser (Umkreissuche) gleich gerendert.
 import { status, zeilen, uebersetze } from './oh.js';
+import { esc } from './helfer.js';
 
 export const KATEGORIEN = {
   eier: 'Eier', milch: 'Milch', kaese: 'Käse', fleisch: 'Fleisch & Wurst', gefluegel: 'Geflügel', wild: 'Wild', fisch: 'Fisch',
@@ -7,7 +8,6 @@ export const KATEGORIEN = {
   getraenke: 'Saft & Wein', blumen: 'Blumen', weihnachtsbaeume: 'Weihnachtsbäume', tierfutter: 'Tierfutter',
 };
 
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const telHref = (t) => 'tel:' + String(t).replace(/[^\d+]/g, '').replace(/^00/, '+');
 
 // Symbole (24×24, Strich in currentColor)
