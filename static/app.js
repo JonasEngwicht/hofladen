@@ -577,6 +577,8 @@ function startseite() {
 // ---------- Saisonkalender: Monat hervorheben, Obst/Gemüse filtern, Sorte suchen, Monatsansicht ----------
 const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 function berlinMonat() { return +new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' }).slice(5, 7); }
+// „Jetzt in der Saison“ auf lokalen Seiten gilt für den Monat beim Bauen – in einem anderen Monat ausblenden statt Falsches zeigen
+for (const s of $$('[data-saison-monat]')) if (+s.dataset.saisonMonat !== berlinMonat()) s.hidden = true;
 function saisonHtml(daten, monat, filter = () => true) {
   const chip = ([n, , , pfad]) => `<li><a href="${esc(pfad)}">${esc(n)}</a></li>`;
   const frisch = daten.filter((d) => d[1].includes(monat) && filter(d)), lager = daten.filter((d) => d[2].includes(monat) && filter(d));

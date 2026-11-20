@@ -1,0 +1,17 @@
+{
+  "pfad": "/bundesland/kreis/ort/",
+  "stand": "2026-11-20",
+  "einleitung": [
+    "Erster Absatz, steht oben (kurz, 2–3 Sätze): Was ist hier typisch? Stadtteile oder Nachbarorte mit Höfen, Landmarken, Landschaft, typische Produkte der Gegend. Interne Links gehen so: [Hofläden im Landkreis X](/bundesland/kreis/).",
+    "Optional ein zweiter Absatz, z. B. wie man die Höfe gut erreicht oder welche Märkte und Hoffeste es gibt."
+  ],
+  "fragen": [
+    { "frage": "Eine Frage, die Leute aus diesem Ort wirklich stellen?", "antwort": "Eine konkrete Antwort mit Namen, Orten oder Zeiten von hier." }
+  ],
+  "saison": [
+    { "titel": "Typisches Produkt der Gegend", "zeit": "Mai bis Juli" }
+  ],
+  "quellen": [
+    { "titel": "Name der Quelle", "url": "https://example.org/quelle" }
+  ]
+}

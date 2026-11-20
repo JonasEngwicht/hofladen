@@ -459,6 +459,10 @@ html { overflow-x: clip; }
 
 /* Querverweise auf Automatenseiten im Kreis */
 .seitenkopf .typ-chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .9rem; font-size: .95rem; }
+.seitenkopf .ortstext p { color: var(--tinte); font-size: 1.02rem; }
+.saison-lokal-liste { list-style: none; margin: .8rem 0; padding: 0; display: grid; gap: .5rem; }
+.saison-lokal-liste li { background: var(--weiss); border: 1px solid var(--linie); border-left: 3px solid var(--raps); border-radius: 0 var(--r-klein) var(--r-klein) 0; padding: .55rem .8rem; }
+.saison-lokal-liste b a { color: var(--fichte); }
 .typ-chips a { display: inline-flex; align-items: center; gap: .35rem; padding: .32rem .75rem .32rem .55rem; border: 1.5px solid var(--linie); border-radius: 999px; background: var(--weiss); color: var(--tinte); text-decoration: none; font-weight: 600; }
 .typ-chips a:hover { border-color: var(--kohl); }
 .typ-chips svg { width: 18px; height: 18px; color: var(--fichte-3); }

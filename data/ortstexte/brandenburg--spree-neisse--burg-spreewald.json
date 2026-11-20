@@ -1,0 +1,26 @@
+{
+  "pfad": "/brandenburg/spree-neisse/burg-spreewald/",
+  "stand": "2026-11-20",
+  "einleitung": [
+    "Burg liegt mitten im UNESCO-Biosphärenreservat Spreewald und gilt als größte Streusiedlung Deutschlands: Höfe und Häuser verteilen sich über Ortsteile wie Kauper, dazwischen ziehen sich die Fließe. Von Hof zu Hof kommst du hier am besten mit dem Rad oder im Kahn. Den Weg weist der 27 Meter hohe Bismarckturm auf dem Schlossberg.",
+    "Typisch für die Gegend ist die Spreewälder Gurke, seit 1999 als Herkunftsbezeichnung geschützt. Auf den Feldern rundherum reifen Spargel und Erdbeeren, und im Herbst lohnt ein Abstecher zu den Teichen bei Peitz, wenn der EU-geschützte Peitzer Karpfen abgefischt wird. Mehr über die Region steht auf der Seite [Hofläden im Landkreis Spree-Neiße](/brandenburg/spree-neisse/)."
+  ],
+  "fragen": [
+    {
+      "frage": "Kann ich die Hofläden rund um Burg mit dem Rad abfahren?",
+      "antwort": "Ja. Durch die Streusiedlung und das Biosphärenreservat führen viele Radwege, darunter der Gurken-Radweg. Die Entfernungen in der Liste oben sind vom Ortszentrum aus gemessen – für die Strecke zum Hof nutze „Route“ auf der Seite des Hofs."
+    }
+  ],
+  "saison": [
+    { "titel": "Spreewälder Gurken", "zeit": "Ernte im Hochsommer" },
+    { "titel": "Spargel & Erdbeeren", "zeit": "April bis Juli" },
+    { "titel": "Peitzer Karpfen", "zeit": "Abfischen im Herbst" }
+  ],
+  "quellen": [
+    { "titel": "Reiseland Brandenburg: Spreewald in 2 Tagen (Bismarckturm, Streusiedlung Burg)", "url": "https://www.reiseland-brandenburg.de/ausfluege-tourentipps/mehrtagesausfluege/spreewald-in-2-tagen/" },
+    { "titel": "Spreewald-Tourismus: UNESCO-Biosphärenreservat Spreewald (anerkannt 1991)", "url": "https://www.spreewald.de/en/activities-map/nature-experiences/nature-conservation-biosphere-reserve/unesco-spreewald-biosphere-reserve" },
+    { "titel": "visitBerlin: Biosphärenreservat Spreewald (Kahnfahrten, Gurken-Radweg)", "url": "https://www.visitberlin.de/de/node/22001" },
+    { "titel": "Lebensmittel Praxis: Spreewald-Gurken – Schutz seit 1999", "url": "https://lebensmittelpraxis.de/industrie-aktuell/29025-spreewald-gurken-schlechte-ernte-2020-11-10-10-45-06.html" },
+    { "titel": "Europäische Kommission, Vertretung in Deutschland: Peitzer Karpfen erhält geografisches Schutzsiegel (2022)", "url": "https://germany.representation.ec.europa.eu/news/peitzer-karpfen-erhalt-geografisches-schutzsiegel-2022-10-05_de" }
+  ]
+}

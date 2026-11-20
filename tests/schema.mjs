@@ -44,7 +44,8 @@ export function pruefe(obj, pfad = '') {
         const ok = alleOberklassen(v, typ);
         for (const k of Object.keys(o)) {
           if (k.startsWith('@')) continue;
-          const d = v.domaenen.get(k);
+          // Schema.org-Konvention für Aktionen: "<eigenschaft>-input"/"-output" (z. B. query-input der SearchAction)
+          const d = v.domaenen.get(k) || v.domaenen.get(k.match(/^(.+)-(input|output)$/)?.[1]);
           if (!d) f.push(`${wo}: unbekannte Eigenschaft ${k}`);
           else if (!d.some((x) => ok.has(x))) f.push(`${wo}: ${k} passt nicht zu ${typ}`);
         }
