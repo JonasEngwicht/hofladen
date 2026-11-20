@@ -1,0 +1,47 @@
+name: Probelauf Verwaltungsdaten
+
+# Testlauf für weitere offene Verwaltungsdaten (GovData, Open.NRW): holt die Daten, gleicht sie mit dem Bestand ab und
+# zeigt a) Ergänzungen zu bestehenden Einträgen und b) neue Einträge. Ändert keine Daten und stellt nichts live.
+# Bericht: Zusammenfassung dieses Laufs und Artefakt „probelauf“ (Bericht, Rohdaten, Testergebnis).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probelauf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verwaltungsdaten holen (mit Suche)
+        env:
+          KOMMUNAL_SUCHE: '1'
+        run: python scripts/fetch-kommunal.py "$RUNNER_TEMP/roh-kommunal.json"
+      - name: Abgleich (Testlauf, nur in eine Kopie)
+        env:
+          ERLAUBE_SCHWUND: '1'
+        run: |
+          cp data/offene-quellen.json "$RUNNER_TEMP/nachher.json"
+          node scripts/import-quellen.mjs "$RUNNER_TEMP/roh-kommunal.json" --ziel "$RUNNER_TEMP/nachher.json"
+      - name: Bericht
+        run: |
+          node scripts/quellen-probe.mjs data/offene-quellen.json "$RUNNER_TEMP/nachher.json" "$RUNNER_TEMP/roh-kommunal.json.bericht.json" > "$RUNNER_TEMP/bericht.md"
+          cat "$RUNNER_TEMP/bericht.md" >> "$GITHUB_STEP_SUMMARY"
+          cat "$RUNNER_TEMP/bericht.md"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probelauf
+          path: |
+            ${{ runner.temp }}/bericht.md
+            ${{ runner.temp }}/roh-kommunal.json
+            ${{ runner.temp }}/roh-kommunal.json.bericht.json
+            ${{ runner.temp }}/nachher.json

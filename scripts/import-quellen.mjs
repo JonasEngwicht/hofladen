@@ -89,15 +89,17 @@ for (const e of osm) {
     .filter(({ o, d }) => generisch ? d <= 0.04 && STARK.test(o.name) : d <= 0.5 && namenAehnlich(e.name, o.name))
     .sort((a, b) => QUELLEN[a.o.quelle].rang - QUELLEN[b.o.quelle].rang || b.o.konf - a.o.konf || a.d - b.d);
   if (!kand.length) continue;
-  const z = {}, quellen = {};
+  const z = {}, quellen = {}, herkunft = {};
+  // Verwaltungsdaten: Datensatz, Lizenz und Link je Feld merken (Namensnennung bei CC BY und Datenlizenz Deutschland)
+  const merke = (f, o) => { quellen[f] = o.quelle; if (o.quelle === 'kommunal') herkunft[f] = { datensatz: o.datensatz || null, lizenz: o.lizenz || null, quelleUrl: o.quelleUrl || null }; };
   for (const { o } of kand) {
-    for (const f of FELDER) if (!e[f] && !z[f] && o.k[f]) { z[f] = o.k[f]; quellen[f] = o.quelle; }
+    for (const f of FELDER) if (!e[f] && !z[f] && o.k[f]) { z[f] = o.k[f]; merke(f, o); }
     if (!e.strasse && !z.strasse && o.a.strasse && o.a.plz && (e.ort || ortImKreis.has(`${o.a.ort}|${e.kreis}`))) {
-      Object.assign(z, { strasse: o.a.strasse, plz: e.plz || o.a.plz, ort: e.ort || o.a.ort }); quellen.strasse = o.quelle;
+      Object.assign(z, { strasse: o.a.strasse, plz: e.plz || o.a.plz, ort: e.ort || o.a.ort }); merke('strasse', o);
     }
-    if (!e.oeffnungszeiten && !z.oeffnungszeiten_text && o.oeffnungszeiten_text) { z.oeffnungszeiten_text = o.oeffnungszeiten_text; quellen.oeffnungszeiten_text = o.quelle; }
+    if (!e.oeffnungszeiten && !z.oeffnungszeiten_text && o.oeffnungszeiten_text) { z.oeffnungszeiten_text = o.oeffnungszeiten_text; merke('oeffnungszeiten_text', o); }
   }
-  if (Object.keys(quellen).length) ergaenzungen[e.osm] = { ...z, quellen };
+  if (Object.keys(quellen).length) ergaenzungen[e.osm] = { ...z, quellen, ...(Object.keys(herkunft).length ? { herkunft } : {}) };
 }
 // Ergänzungen aus Quellen, deren Abruf diesmal fehlgeschlagen ist, behalten
 for (const [id, alt] of Object.entries(bisher.ergaenzungen || {})) {
@@ -107,6 +109,7 @@ for (const [id, alt] of Object.entries(bisher.ergaenzungen || {})) {
     const z = (ergaenzungen[id] ||= { quellen: {} });
     if (z[f]) continue;
     z[f] = alt[f]; z.quellen[f] = q;
+    if (alt.herkunft?.[f]) (z.herkunft ||= {})[f] = alt.herkunft[f];
     if (f === 'strasse') { z.plz = alt.plz; z.ort = alt.ort; }
   }
 }
