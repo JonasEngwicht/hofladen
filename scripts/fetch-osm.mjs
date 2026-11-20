@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Holt alle Hofläden (shop=farm) und Hofautomaten in Deutschland aus OpenStreetMap
+// Holt alle Hofläden (shop=farm), Honigläden (shop=honey) und Hofautomaten (auch Rohmilch-, Regiomat- und Eierautomaten nach Name/Betreiber) in Deutschland aus OpenStreetMap
 // über die Overpass API, ersatzweise über QLever (Universität Freiburg).
 // Ausgabe im Overpass-Format: {elements:[{type,id,lat,lon,tags}]}.
 //
@@ -25,7 +25,13 @@ const AUSWAHL = MAERKTE
   : `{ SELECT DISTINCT ?osm WHERE { osmrel:51477 ogc:sfContains ?osm .
   { ?osm osmkey:shop "farm" } UNION
   { ?osm osmkey:amenity "vending_machine" . ?osm osmkey:vending ?vd .
-    FILTER(REGEX(?vd, "milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable|noodles|pasta")) } UNION
+    FILTER(REGEX(?vd, "milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable|noodles|pasta|groceries")) } UNION
+  { ?osm osmkey:amenity "vending_machine" . ?osm osmkey:drink:raw_milk "yes" } UNION
+  { ?osm osmkey:amenity "vending_machine" . ?osm osmkey:name ?an .
+    FILTER(REGEX(?an, "regiomat|hofautomat|bauernautomat|eierautomat|milchtankstelle|milchautomat|hofladen", "i")) } UNION
+  { ?osm osmkey:amenity "vending_machine" . ?osm osmkey:operator ?ao .
+    FILTER(REGEX(?ao, "regiomat|hofautomat|bauernautomat", "i")) } UNION
+  { ?osm osmkey:shop "honey" } UNION
   { ?osm osmkey:craft "beekeeper" } UNION { ?osm osmkey:self_harvesting "yes" } UNION { ?osm osmkey:pick_your_own "yes" } UNION
   { ?osm osmkey:amenity "cafe" . ?osm osmkey:name ?nm . FILTER(REGEX(?nm, "hofcaf|bauerncaf|hof-caf|bauernhofcaf|landcaf", "i")) } } }`;
 
@@ -76,7 +82,7 @@ async function ausQlever() {
 const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
 const OVERPASS_Q = MAERKTE
   ? `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;nwr["amenity"="marketplace"](area.de);out center tags;`
-  : `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;(nwr["shop"="farm"](area.de);nwr["amenity"="vending_machine"]["vending"~"milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable|noodles|pasta"](area.de);nwr["craft"="beekeeper"]["name"](area.de);nwr["self_harvesting"="yes"](area.de);nwr["pick_your_own"="yes"](area.de);nwr["amenity"="cafe"]["name"~"hofcaf|bauerncaf|hof-caf|bauernhofcaf|landcaf",i](area.de););out center tags;`;
+  : `[out:json][timeout:900];area["ISO3166-1"="DE"][admin_level=2]->.de;(nwr["shop"="farm"](area.de);nwr["amenity"="vending_machine"]["vending"~"milk|eggs|meat|food|farm|potato|sausage|cheese|honey|fruit|vegetable|noodles|pasta|groceries"](area.de);nwr["amenity"="vending_machine"]["drink:raw_milk"="yes"](area.de);nwr["amenity"="vending_machine"]["name"~"regiomat|hofautomat|bauernautomat|eierautomat|milchtankstelle|milchautomat|hofladen",i](area.de);nwr["amenity"="vending_machine"]["operator"~"regiomat|hofautomat|bauernautomat",i](area.de);nwr["shop"="honey"](area.de);nwr["craft"="beekeeper"]["name"](area.de);nwr["self_harvesting"="yes"](area.de);nwr["pick_your_own"="yes"](area.de);nwr["amenity"="cafe"]["name"~"hofcaf|bauerncaf|hof-caf|bauernhofcaf|landcaf",i](area.de););out center tags;`;
 async function ausOverpass(url) {
   const j = await holen(url, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: 'data=' + encodeURIComponent(OVERPASS_Q) }, 3, 'Overpass ' + new URL(url).host);
