@@ -1,6 +1,11 @@
 // Gemeinsame Logik für Worker und Skripte: Einträge nachschlagen (stabile ID, Slug, alte Slugs),
 // öffentliche Daten für das Bearbeiten-Formular und der Outreach-Export als CSV.
-// EINTRAEGE-Zeilen: siehe scripts/build/abschluss.mjs („Daten für den Worker“).
+// EINTRAEGE (src/generated/eintraege.json) ist eine Liste von Zeilen, erzeugt in scripts/build/abschluss.mjs:
+//   0 lat, 1 lon, 2 slug, 3 titel, 4 art, 5 ortAnzeige, 6 oeffnungszeiten (OSM), 7 hofladen (1/0), 8 adresse,
+//   9 telefon, 10 website, 11 kategorien (Buchstaben, Reihenfolge wie kategorien.json), 12 bio, 13 oeffnungszeiten_text,
+//   14 sonntags offen, 15 stabile ID, 16 name, 17 strasse, 18 plz, 19 ort, 20 email, 21 zahlung, 22 beschreibung,
+//   23 fotos (Anzahl), 24 vollständig %, 25 fehlende Felder (Buchstaben, Reihenfolge wie vollstaendigkeit.json),
+//   26 Bundesland, 27 mit Kindern, 28 Verbände, 29 Haltestelle in der Nähe
 
 export const KAT_BUCHSTABEN = 'abcdefghijklmnopqrstuvwxyz';
 export const UTM_OUTREACH = 'utm_source=outreach&utm_medium=email';
@@ -21,9 +26,12 @@ export function aufloesen(eingabe, { nachSid, nachSlug, alteSlugs }) {
   return nachSid.get(x) || nachSlug.get(x) || nachSid.get(alteSlugs[x]) || null;
 }
 
+// Fehlende Felder als Schlüssel (z. B. ['telefon', 'zeiten'])
+export const fehlendeFelder = (e, felderLabels) => [...(e[25] || '')].map((c) => felderLabels[KAT_BUCHSTABEN.indexOf(c)]?.[0]).filter(Boolean);
+
 export function oeffentlich(e, kategorien, felderLabels) {
   const labels = new Map(felderLabels);
-  const fehlt = (e[25] || '').split(',').filter(Boolean);
+  const fehlt = fehlendeFelder(e, felderLabels);
   return {
     id: e[15], slug: e[2], pfad: `/hof/${e[2]}/`, titel: e[3], name: e[16], art: e[4], typ: e[7] ? 'hofladen' : 'automat',
     strasse: e[17], plz: e[18], ort: e[19], ortAnzeige: e[5], adresse: e[8],
@@ -51,7 +59,7 @@ export function outreachCsv(eingaben, idx, domain, felderLabels) {
     if (!e) { zeilen.push([eingabe, '', '', 'nicht gefunden', '', '', '', '', '']); continue; }
     const l = links(domain, e, UTM_OUTREACH);
     zeilen.push([eingabe, e[2], e[15], e[3], l.detail, l.kurz, l.uebernehmen, e[24],
-      (e[25] || '').split(',').filter(Boolean).map((k) => labels.get(k) || k).join(', ')]);
+      fehlendeFelder(e, felderLabels).map((k) => labels.get(k) || k).join(', ')]);
   }
   return '﻿' + zeilen.map((z) => z.map(csvFeld).join(';')).join('\r\n') + '\r\n';
 }
