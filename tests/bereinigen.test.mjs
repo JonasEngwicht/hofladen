@@ -88,3 +88,21 @@ test('Build: entfernte Dublette (Köcherhof aus Karte von morgen) leitet per 301
   assert.equal(r.status, 301);
   assert.equal(new URL(r.headers.get('location'), 'https://x').pathname, '/hof/koeckerhof-bielefeld/');
 });
+
+test('adresseTrennen: PLZ und Ort aus der Straße lösen, Hausnummer behalten, Zweifelsfälle unverändert', async () => {
+  const { adresseTrennen } = await import('../scripts/bereinigen.mjs');
+  const fall = (strasse, plz) => { const e = { strasse, plz }; adresseTrennen(e); return [e.strasse, e.plz]; };
+  assert.deepEqual(fall('Deutwanger Str. 30 78355 Hohenfels'), ['Deutwanger Str. 30', '78355']);
+  assert.deepEqual(fall('Brögberner Str., 49811 Lingen (Ems) 21'), ['Brögberner Str. 21', '49811']);
+  assert.deepEqual(fall('Mayerhof, 76661 Philippsburg, Deutschland', '76661'), ['Mayerhof', '76661']);
+  assert.deepEqual(fall('Hauptstraße 5 12345 Neustadt', '99999'), ['Hauptstraße 5', '99999'], 'vorhandene PLZ bleibt');
+  assert.deepEqual(fall('Dorfstr. 1 12345 Neustadt 4'), ['Dorfstr. 1 12345 Neustadt 4', undefined], 'zwei Hausnummern: nichts ändern');
+  assert.deepEqual(fall('Am Hof 12, 12345'), ['Am Hof 12, 12345', undefined]);
+  assert.deepEqual(fall('Hauptstraße 5'), ['Hauptstraße 5', undefined]);
+});
+
+test('nameGeschlossen: dauerhaft geschlossen ja, vorübergehend oder Ruhetage nein', async () => {
+  const { nameGeschlossen } = await import('../scripts/bereinigen.mjs');
+  for (const n of ['Hofladen & Imbiss geschlossen', 'ehemaliger Milchautomat', 'Hofladen Meier (closed)', 'Hofladen dauerhaft geschlossen']) assert.ok(nameGeschlossen(n), n);
+  for (const n of ['Hofladen (vorübergehend geschlossen)', 'Hofladen montags geschlossen', 'Gut Geschlossenhof', 'Hofladen Winterpause geschlossen', 'Hofladen Ehemann']) assert.ok(!nameGeschlossen(n), n);
+});

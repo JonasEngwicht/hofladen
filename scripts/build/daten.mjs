@@ -8,7 +8,7 @@ import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisati
 import { rasterIndex, gleicherHof, QUELLEN, solawiOk } from '../quellen.mjs';
 import { esc } from '../../static/helfer.js';
 import { stabileIdAus, felderAnwenden } from '../pflege.mjs';
-import { felderBereinigen, dublettenFinden, automatArtAusName } from '../bereinigen.mjs';
+import { felderBereinigen, dublettenFinden, automatArtAusName, nameGeschlossen } from '../bereinigen.mjs';
 import { zeilen, uebersetze, parse } from '../../static/oh.js';
 import { KATEGORIEN } from '../../static/karte.js';
 
@@ -267,7 +267,7 @@ let pflegeAnzahl = 0;
 
 // Bereinigung (scripts/bereinigen.mjs): eindeutige Feldfehler, Typ aus eindeutigem Namen, Lage von Fremdquellen,
 // sichere Dopplungen (Verlierer fällt weg, alte Adresse leitet per 301 auf den Gewinner weiter)
-const bereinigt = { felder: 0, typ: 0, lage: 0, dubletten: 0 };
+const bereinigt = { felder: 0, typ: 0, lage: 0, dubletten: 0, geschlossen: 0, plz: 0 };
 for (const e of eintraege) {
   if (felderBereinigen(e).length) bereinigt.felder++;
   const art = !e.vomBetrieb && automatArtAusName(e);
@@ -290,13 +290,38 @@ for (const [ver, gew] of dubletten) {
   for (const a of ver.alteIds || []) offenErsetzt.set(a, gew.osm || gew.id);
   bereinigt.dubletten++;
 }
+// Name sagt „geschlossen“/„ehemalig“ (nicht vom Betrieb, nicht aus eigener Pflege): Eintrag fällt weg, Adresse liefert 410
+for (let i = eintraege.length - 1; i >= 0; i--) {
+  const e = eintraege[i];
+  if (!e.vomBetrieb && !e.gepflegt && nameGeschlossen(e.name)) { eintraege.splice(i, 1); bereinigt.geschlossen++; }
+}
+// PLZ, die die GeoNames-Tabelle noch nicht kennt (neue Gemeinden, z. B. 64760 Oberzent), aus den Adressen der Einträge
+// ergänzen – nur wenn die nächste bekannte PLZ dieselben zwei Anfangsziffern hat und höchstens 15 km entfernt ist
+{
+  const neu = new Map();
+  for (const e of eintraege) {
+    if (!/^\d{5}$/.test(e.plz || '') || plz.has(e.plz) || !e.kreis) continue;
+    const t = naechsterOrt(raster, e.lat, e.lon);
+    if (!t || t.ort.plz.slice(0, 2) !== e.plz.slice(0, 2) || distanzKm(e.lat, e.lon, t.ort.lat, t.ort.lon) > 15) continue;
+    if (!neu.has(e.plz)) neu.set(e.plz, []);
+    neu.get(e.plz).push(e);
+  }
+  for (const [p, liste] of [...neu].sort()) {
+    const e = liste[0];
+    plz.set(p, [{ plz: p, ort: e.ort || e.ortNah, land: kreise.get(e.kreis)?.land, kreis: e.kreis, lat: +(liste.reduce((s, x) => s + x.lat, 0) / liste.length).toFixed(4),
+      lon: +(liste.reduce((s, x) => s + x.lon, 0) / liste.length).toFixed(4), org: false, ausEintraegen: true }]);
+    bereinigt.plz++;
+  }
+}
 console.log(`Bereinigung: ${JSON.stringify(bereinigt)}`);
 
 // Namen aufräumen: Emojis raus, GROSSSCHRIFT in normale Schreibweise (Rechtsformen richtig geschrieben)
 const RECHTSFORM = { GMBH: 'GmbH', GBR: 'GbR', KG: 'KG', OHG: 'OHG', EG: 'eG', 'E.V.': 'e.V.', AG: 'AG', UG: 'UG', 'CO.': 'Co.', 'MBH': 'mbH' };
 function schoenerName(n) {
   if (!n) return n;
-  let x = String(n).replace(/[\p{Extended_Pictographic}\u{FE0F}\u{200D}]/gu, '').replace(/\s+/g, ' ').trim();
+  let x = String(n).replace(/[\p{Extended_Pictographic}\u{FE0F}\u{200D}]/gu, '')
+    .replace(/\s*[—–=-]+>\s*/g, ' – ').replace(/(^|\s)\.{2,}(?=\S)/g, '$1') // Pfeile und Auslassungspunkte: „Kartoffeln ——> ...direkt vom Bauern“
+    .replace(/\s+/g, ' ').trim();
   x = x.replace(/[A-Za-zÄÖÜäöüß.]+/g, (w) => {
     if (RECHTSFORM[w.toUpperCase()]) return /^[A-ZÄÖÜ.]+$/.test(w) ? RECHTSFORM[w.toUpperCase()] : w;
     return w.length >= 4 && /^[A-ZÄÖÜß]+$/.test(w) ? w[0] + w.slice(1).toLowerCase() : w;

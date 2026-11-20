@@ -71,9 +71,24 @@ export function zeitenSauber(oh) {
   return String(oh).replace(/\b00:00-00:00\b/g, '00:00-24:00').replace(/^\s*Mo-Su(,PH)?\s+00:00-24:00\s*$/, '24/7');
 }
 
+// Straße mit angehängter PLZ und Ort („Deutwanger Str. 30 78355 Hohenfels“, „Mayerhof, 76661 Philippsburg, Deutschland“):
+// Straße kürzen, PLZ übernehmen, wenn sie fehlt; eine nachgestellte Hausnummer („…, 49811 Lingen (Ems) 21“) wandert zur Straße
+export function adresseTrennen(e) {
+  const m = String(e.strasse || '').match(/^(.*?[^\s,])[\s,]+(\d{5})\s+([^,\d][^,]*?)(?:\s+(\d+\s?[a-z]?))?(?:,\s*(?:Deutschland|Germany))?$/i);
+  if (!m || (m[4] && /\d/.test(m[1]))) return false; // zwei Hausnummern: lieber nichts ändern
+  e.strasse = m[4] ? `${m[1].replace(/[.,]?$/, (x) => (x === '.' ? '.' : ''))} ${m[4].replace(/\s/g, '')}` : m[1].replace(/,$/, '');
+  if (!e.plz) e.plz = m[2];
+  return true;
+}
+
+// Name sagt, dass der Betrieb dauerhaft geschlossen ist („… geschlossen“, „ehemaliger Hofladen“, „(closed)“)
+export const nameGeschlossen = (n) => /\b(dauerhaft\s+)?geschlossen\b|\behemalige[rs]?\b|\bpermanently closed\b|\(closed\)|\baufgegeben\b/i.test(String(n || ''))
+  && !/vorübergehend|winterpause|saison|urlaub|bis\s+\d|ab\s+\d|heute|montags|sonntags|feiertags/i.test(String(n || ''));
+
 // Gibt die Liste der geänderten Felder zurück (für Statistik und Tests)
 export function felderBereinigen(e) {
-  const vorher = { website: e.website, facebook: e.facebook, instagram: e.instagram, email: e.email, telefon: e.telefon, oeffnungszeiten: e.oeffnungszeiten };
+  const vorher = { website: e.website, facebook: e.facebook, instagram: e.instagram, email: e.email, telefon: e.telefon, oeffnungszeiten: e.oeffnungszeiten, strasse: e.strasse, plz: e.plz };
+  if (e.strasse) adresseTrennen(e);
   if (e.website) {
     const h = hostVon(/^https?:/i.test(e.website) ? e.website : `https://${e.website}`) || '';
     if (/(^|\.)(facebook\.com|fb\.com)$/.test(h)) { e.facebook ||= e.website; e.website = null; }
