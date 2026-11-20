@@ -693,6 +693,16 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
 }
 
 /* Dunkelmodus nach Systemeinstellung. Dunkles Grün (Kopf, Startbild, Fuß) bleibt; Flächen und Text werden dunkel bzw. hell. */
+
+/* Einwilligung Google Analytics: zwei gleichwertige Knöpfe, unten über dem Inhalt */
+.einwilligung { position: fixed; z-index: 2000; left: 1rem; right: 1rem; bottom: 1rem; max-width: 34rem; margin: 0 auto; background: var(--weiss); color: var(--tinte, #1d2b22); border: 1px solid rgba(0,0,0,.12); border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.18); padding: 1rem 1.1rem; font-size: .95rem; line-height: 1.45; }
+.einwilligung p { margin: 0 0 .8rem; }
+.einwilligung a { color: inherit; }
+.einwilligung-knoepfe { display: flex; gap: .6rem; }
+.einwilligung-knoepfe button { flex: 1; font: 700 1rem/1 var(--schrift, inherit); padding: .75rem 1rem; border-radius: 10px; border: 2px solid var(--fichte); background: transparent; color: var(--fichte); cursor: pointer; }
+.einwilligung-knoepfe button:hover, .einwilligung-knoepfe button:focus-visible { background: var(--fichte); color: #fff; }
+.link-knopf { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }
+@media (max-width: 640px) { .einwilligung { left: .5rem; right: .5rem; bottom: calc(.5rem + env(safe-area-inset-bottom)); } }
 @media (prefers-color-scheme: dark) {
   :root { --kalk: #0E1813; --weiss: #15231B; --tinte: #E3ECE6; --grau: #A3B3A9; --linie: #2B3E33; --kohl-hell: #22372B; --raps-hell: #3A3214; --fichte-3: #8ED1A8; --hell-text: #E9F2EC; color-scheme: dark; }
   h1, h2, h3, a:hover, .seitenkopf .plz-hinweis, .arten-liste .anzahl, .laden-art .km, .laden-name a, .chips li, .akt, .akt:hover, .knopf-hell,
@@ -816,3 +826,8 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
   .saison-jetzt h2, .saison-jetzt .saison-monat { color: var(--kreide); }
 }
 @media print { .held::before, .held::after, .hof-kopf::before, .hof-kopf::after, .fuss::before { display: none; } }
+@media (prefers-color-scheme: dark) {
+  .einwilligung { background: #14241B; color: #E6EFE8; border-color: rgba(255,255,255,.15); }
+  .einwilligung-knoepfe button { border-color: #7DDB98; color: #7DDB98; }
+  .einwilligung-knoepfe button:hover, .einwilligung-knoepfe button:focus-visible { background: #7DDB98; color: #0E1A13; }
+}
