@@ -108,7 +108,19 @@ function quellenHinweis(e) {
   if (e.quelle === 'overture') return `Quelle: offene Daten der ${a('https://overturemaps.org/', 'Overture Maps Foundation')} (${esc(OVERTURE_DATENSATZ[e.datensatz] || e.datensatz || 'Overture')}, ${esc(e.lizenz || 'CDLA-Permissive-2.0')}).${web}`;
   if (e.quelle === 'foursquare') return `Quelle: ${a('https://opensource.foursquare.com/os-places/', 'Foursquare Open Source Places')} (Apache-2.0).${web}`;
   if (e.quelle === 'kvm') return `Quelle: ${a(e.quelleUrl || 'https://kartevonmorgen.org/', 'Karte von morgen')} (CC0-1.0).${web}`;
-  return `Quelle: offene Verwaltungsdaten, ${a(e.quelleUrl || 'https://www.govdata.de/', e.datensatz || 'GovData')}${e.urheber ? `, ${esc(e.urheber)}` : ''} (${esc(e.lizenz || 'CC0-1.0')}).${web}`;
+  return `Quelle: offene Verwaltungsdaten, ${a(e.quelleUrl || 'https://www.govdata.de/', e.datensatz || 'GovData')}${e.urheber ? `, ${esc(e.urheber)}` : ''} (${lizenzLink(e.lizenz || 'CC0-1.0')}).${web}`;
+}
+// Lizenzname mit Link zum Lizenztext (Pflicht bei Datenlizenz Deutschland – Namensnennung)
+function lizenzLink(l) {
+  const t = LIZENZ_TEXT[l] || l;
+  return LIZENZ_URL[l] ? `<a href="${LIZENZ_URL[l]}" rel="nofollow noopener" target="_blank">${esc(t)}</a>` : esc(t);
+}
+// Liste der eingebundenen Verwaltungsdatensätze für /quellen/ und Impressum
+function verwaltungsDatensaetze() {
+  const liste = [...offenDatensaetze].map((x) => x.split('|')).sort((a, b) => a[0].localeCompare(b[0], 'de'));
+  const proName = new Map();
+  for (const [n, l] of liste) { if (!proName.has(n)) proName.set(n, new Set()); if (l) proName.get(n).add(l); }
+  return [...proName].map(([n, ls]) => `${esc(n)}${ls.size ? ` (${[...ls].map(lizenzLink).join(' bzw. ')})` : ''}`).join(', ');
 }
 // Offene Quellen (data/offene-quellen.json, siehe scripts/import-quellen.mjs): Overture Maps, Foursquare, Karte von morgen
 // und offene Verwaltungsdaten. Neue Einträge für Höfe, die in OpenStreetMap fehlen; Doppelungen werden hier noch einmal
@@ -116,6 +128,10 @@ function quellenHinweis(e) {
 const offen = existsSync(join(ROOT, 'data', 'offene-quellen.json'))
   ? JSON.parse(readFileSync(join(ROOT, 'data', 'offene-quellen.json'), 'utf8')) : { neu: [], ergaenzungen: {}, quellen: {} };
 const offenNeu = {}, offenErgaenzt = {}, offenErsetzt = new Map();
+// Datensätze offener Verwaltungsdaten, die auf der Seite vorkommen („Herausgeber|Lizenz“), für /quellen/ und Impressum
+const offenDatensaetze = new Set();
+const LIZENZ_TEXT = { 'CC0-1.0': 'CC0 1.0', 'CC-BY-4.0': 'CC BY 4.0', 'DL-DE-BY-2.0': 'Datenlizenz Deutschland – Namensnennung – Version 2.0', 'DL-DE-ZERO-2.0': 'Datenlizenz Deutschland – Zero – Version 2.0' };
+const LIZENZ_URL = { 'CC0-1.0': 'https://creativecommons.org/publicdomain/zero/1.0/', 'CC-BY-4.0': 'https://creativecommons.org/licenses/by/4.0/', 'DL-DE-BY-2.0': 'https://www.govdata.de/dl-de/by-2-0', 'DL-DE-ZERO-2.0': 'https://www.govdata.de/dl-de/zero-2-0' };
 {
   const idx = rasterIndex(eintraege);
   for (const o of offen.neu) {
@@ -130,6 +146,7 @@ const offenNeu = {}, offenErgaenzt = {}, offenErsetzt = new Map();
     if (doppelt) { offenErsetzt.set(`${quelle}/${qid}`, doppelt.osm || doppelt.id); for (const a of o.alteIds || []) offenErsetzt.set(a, doppelt.osm || doppelt.id); continue; }
     const e = { ...o, quelle, qid, id: `${quelle}/${qid}`, quelleUrl: o.quelleUrl || QUELLEN[quelle].url };
     eintraege.push(e); idx.add(e); offenNeu[quelle] = (offenNeu[quelle] || 0) + 1;
+    if (quelle === 'kommunal') offenDatensaetze.add(`${o.datensatz || 'GovData'}|${o.lizenz || ''}`);
   }
 }
 const offenNeuSumme = Object.values(offenNeu).reduce((a, b) => a + b, 0);
@@ -182,15 +199,22 @@ for (const e of eintraege) {
     if (f === 'oeffnungszeiten_text' ? (e.oeffnungszeiten || e.oeffnungszeiten_text) : e[f]) continue;
     e[f] = z[f];
     if (f === 'strasse') { e.plz ||= z.plz; e.ort ||= z.ort; }
-    if (!proQuelle.has(q)) proQuelle.set(q, []);
-    proQuelle.get(q).push(f === 'oeffnungszeiten_text' ? 'oeffnungszeiten' : f);
+    // Verwaltungsdaten: je Datensatz mit Herausgeber, Link und Lizenz (Namensnennung nach CC BY / Datenlizenz Deutschland)
+    const h = q === 'kommunal' ? z.herkunft?.[f] : null;
+    const schluessel = h ? `${q}|${h.datensatz}|${h.lizenz}` : q;
+    if (!proQuelle.has(schluessel)) proQuelle.set(schluessel, { q, h, felder: [] });
+    proQuelle.get(schluessel).felder.push(f === 'oeffnungszeiten_text' ? 'oeffnungszeiten' : f);
   }
   if (!proQuelle.size) continue;
   e.ergaenzt ??= { felder: [], quellen: [] };
-  for (const [q, felder] of proQuelle) {
+  const gezaehlt = new Set();
+  for (const { q, h, felder } of proQuelle.values()) {
     e.ergaenzt.felder.push(...felder);
-    e.ergaenzt.quellen.push({ felder, quelle: QUELLEN[q].url, stand: offen.stand });
-    offenErgaenzt[q] = (offenErgaenzt[q] || 0) + 1;
+    e.ergaenzt.quellen.push({ felder, quelle: h?.quelleUrl || QUELLEN[q].url, name: h?.datensatz || null, lizenz: h?.lizenz || null, stand: offen.stand });
+    if (h?.datensatz) offenDatensaetze.add(`${h.datensatz}|${h.lizenz || ''}`);
+    // ältere Ergänzungen ohne Herkunft stammen aus Rothenburg oder der BayernCloud
+    else if (q === 'kommunal') for (const x of ['Stadt Rothenburg ob der Tauber|CC0-1.0', 'BayernCloud Tourismus|CC0-1.0', 'BayernCloud Tourismus|CC-BY-4.0']) offenDatensaetze.add(x);
+    if (!gezaehlt.has(q)) { offenErgaenzt[q] = (offenErgaenzt[q] || 0) + 1; gezaehlt.add(q); }
   }
 }
 const offenErgaenztSumme = Object.values(offenErgaenzt).reduce((a, b) => a + b, 0);
@@ -1907,7 +1931,7 @@ for (const e of eintraege) {
     ${e.saisonHinweis ? `<section class="block saison-hinweis"><h2>Aktuell und saisonal</h2><p>${esc(e.saisonHinweis)}</p><p class="leise">${e.vomBetrieb?.saison ? 'Angabe des Betriebs, ' : ''}Stand ${esc(datumDe(e.gepflegt?.stand || HEUTE))}</p></section>` : ''}
     ${merkmale.length || saisonProdukte.length ? `<section class="block"><h2>Auf einen Blick</h2><dl class="merkmale">${merkmale.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}${saisonProdukte.map((sp) => `<div><dt><a href="${sp.pfad}">${esc(sp.name)}</a></dt><dd>${sp.frisch.length ? `Saison meist ${esc(monatsSpanne(sp.frisch))}` : 'im Angebot'}</dd></div>`).join('')}</dl></section>` : ''}
     <section class="block"><h2>Über ${esc(e.titel)}</h2>${e.beschreibung ? `<p>${esc(e.beschreibung)}</p>` : ''}<p>${ueber}</p>${regionTeaser(k)}</section>
-    ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.quellen.map((q) => `${q.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram', strasse: 'Adresse' })[f]).join(', ')} ergänzt aus <a href="${esc(q.quelle)}" rel="nofollow noopener" target="_blank">${esc(kurz(q.quelle).split('/')[0])}</a>${q.stand ? ` (Stand ${esc(datumDe(q.stand))})` : ''}`).join('; ')}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
+    ${e.ergaenzt ? `<p class="hinweis">${e.ergaenzt.quellen.map((q) => `${q.felder.map((f) => ({ website: 'Website', oeffnungszeiten: 'Öffnungszeiten', telefon: 'Telefon', email: 'E-Mail', facebook: 'Facebook', instagram: 'Instagram', strasse: 'Adresse' })[f]).join(', ')} ergänzt aus <a href="${esc(q.quelle)}" rel="nofollow noopener" target="_blank">${esc(q.name || kurz(q.quelle).split('/')[0])}</a>${q.lizenz ? ` (${lizenzLink(q.lizenz)})` : ''}${q.stand ? ` (Stand ${esc(datumDe(q.stand))})` : ''}`).join('; ')}. Zeiten können sich saisonal ändern – im Zweifel vorher anrufen.</p>` : ''}
     ${tippsHtml(e)}
     ${MIT_KONTO.has(e.sid) ? `<section class="block nachricht" data-nachricht="${esc(e.sid)}"><h2>Nachricht an den Hof</h2>
       <p>Frag nach Angebot, Vorbestellung oder Öffnungszeiten. Die Nachricht geht direkt an den Betrieb, seine E-Mail-Adresse bleibt verborgen. Die Antwort kommt an deine Adresse.</p>
@@ -2270,7 +2294,7 @@ ${impFehlt ? '<p class="fehler">Das Impressum wird gerade vervollständigt.</p>'
 <p>E-Mail: ${imp.email ? `<a href="mailto:${esc(imp.email)}">${esc(imp.email)}</a>` : ''}${imp.telefon ? `<br>Telefon: ${esc(imp.telefon)}` : ''}</p>
 <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: ${esc(imp.name)}, Anschrift wie oben.</p>
 <h2>Datenquellen und Lizenzen</h2>
-<p>Einträge: © OpenStreetMap-Mitwirkende, Open Database License (ODbL), <a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>. Ergänzende Einträge und Kontaktdaten: Overture Maps Foundation, <a href="https://overturemaps.org/">overturemaps.org</a> (CDLA-Permissive-2.0; Datensätze von Foursquare unter Apache-2.0); Foursquare Open Source Places (Apache-2.0); Karte von morgen (CC0-1.0); offene Verwaltungsdaten der Stadt Rothenburg ob der Tauber (CC0) und der BayernCloud Tourismus (CC0 bzw. CC BY 4.0, Urheber auf der jeweiligen Hofseite). Postleitzahlen: GeoNames, CC BY 4.0. Umriss Deutschlands: Natural Earth (gemeinfrei). Karte: Leaflet (BSD-2-Clause). Schriften: Zilla Slab und Atkinson Hyperlegible Next (SIL Open Font License).</p>`);
+<p>Einträge: © OpenStreetMap-Mitwirkende, Open Database License (ODbL), <a href="https://www.openstreetmap.org/copyright">openstreetmap.org/copyright</a>. Ergänzende Einträge und Kontaktdaten: Overture Maps Foundation, <a href="https://overturemaps.org/">overturemaps.org</a> (CDLA-Permissive-2.0; Datensätze von Foursquare unter Apache-2.0); Foursquare Open Source Places (Apache-2.0); Karte von morgen (CC0-1.0); offene Verwaltungsdaten${offenDatensaetze.size ? `: ${verwaltungsDatensaetze()}` : ''} (Herausgeber, Urheber und Lizenz auf der jeweiligen Hofseite). Postleitzahlen: GeoNames, CC BY 4.0. Umriss Deutschlands: Natural Earth (gemeinfrei). Karte: Leaflet (BSD-2-Clause). Schriften: Zilla Slab und Atkinson Hyperlegible Next (SIL Open Font License).</p>`);
 textSeite('/datenschutz/', 'Datenschutzerklärung', GA_ID ? 'Datenschutzerklärung von hofladenliste.de: welche Daten beim Besuch, bei Karte und Suche anfallen, und Google Analytics nur mit Einwilligung.' : 'Datenschutzerklärung von hofladenliste.de: keine Cookies, kein Tracking – welche Daten beim Besuch, bei Karte und Suche anfallen.', `<h1>Datenschutzerklärung</h1>
 <h2>Verantwortlicher</h2>
 <p>${esc(imp.name) || '[Name]'}, ${esc(imp.strasse) || '[Straße]'}, ${esc(imp.plzOrt) || '[PLZ Ort]'}, ${esc(imp.email) || '[E-Mail]'}</p>
@@ -2430,7 +2454,7 @@ textSeite('/quellen/', 'Quellen und Datenstand', 'Woher die Daten auf hofladenli
 <li><a href="https://overturemaps.org/">Overture Maps Foundation</a>, Places (${(offenNeu.overture || 0).toLocaleString('de-DE')} Einträge): <a href="https://cdla.dev/permissive-2-0/">CDLA-Permissive-2.0</a>, Datensätze von Foursquare unter Apache-2.0. Das Overture-Places-Thema enthält keine OpenStreetMap-Daten.</li>
 <li><a href="https://opensource.foursquare.com/os-places/">Foursquare Open Source Places</a> (${(offenNeu.foursquare || 0).toLocaleString('de-DE')} Einträge): <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a>.</li>
 <li><a href="https://kartevonmorgen.org/">Karte von morgen</a> (${(offenNeu.kvm || 0).toLocaleString('de-DE')} Einträge): gemeinfrei (CC0-1.0).</li>
-<li>Offene Verwaltungsdaten über <a href="https://www.govdata.de/">GovData</a> und Open Data Bayern (${(offenNeu.kommunal || 0).toLocaleString('de-DE')} Einträge): Direktvermarkter der Stadt Rothenburg ob der Tauber (CC0) und Einkaufsangebote der BayernCloud Tourismus, nur Einträge unter CC0 oder CC BY 4.0. Urheber nennen wir auf der jeweiligen Hofseite.</li>
+<li>Offene Verwaltungsdaten über <a href="https://www.govdata.de/">GovData</a> und Open Data Bayern (${(offenNeu.kommunal || 0).toLocaleString('de-DE')} Einträge): ${offenDatensaetze.size ? `${verwaltungsDatensaetze()}. ` : ''}Wir übernehmen nur Daten unter CC0, CC BY 4.0 oder der Datenlizenz Deutschland (Zero bzw. Namensnennung 2.0), keine Share-Alike-Lizenzen. Herausgeber, Urheber und Lizenz nennen wir auf der jeweiligen Hofseite.</li>
 </ul>
 <h2>Websites der Höfe</h2>
 <p>Fehlen in OpenStreetMap Öffnungszeiten oder Kontaktdaten, ergänzen wir sie aus der eigenen Website des Hofs. Auf der Seite des Eintrags steht dann, welche Angaben woher stammen und mit welchem Stand.</p>

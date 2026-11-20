@@ -4,7 +4,7 @@ name: Offene Quellen aktualisieren
 #  - Overture Maps Places (CDLA-Permissive-2.0 / Apache-2.0), scripts/fetch-overture.py
 #  - Foursquare Open Source Places (Apache-2.0, Hugging Face, Secret HUGGINGFACE_KEY), scripts/fetch-foursquare.py
 #  - Karte von morgen (CC0-1.0), scripts/fetch-kvm.mjs
-#  - offene Verwaltungsdaten (CC0 / CC BY 4.0), scripts/fetch-kommunal.py
+#  - offene Verwaltungsdaten (CC0, CC BY 4.0, Datenlizenz Deutschland Zero/Namensnennung 2.0), scripts/fetch-kommunal.py
 # Kandidaten mit eindeutigem Namen, aber niedriger Konfidenz werden über die eigene Website des Hofs geprüft
 # (scripts/websites-pruefen.mjs). Auswahl und Abgleich: scripts/quellen.mjs, scripts/import-quellen.mjs → data/offene-quellen.json.
 # Schlägt der Abruf einer Quelle fehl, bleiben deren bisherige Einträge erhalten. Veröffentlichte Einträge haben Bestandsschutz
@@ -47,6 +47,8 @@ jobs:
         run: node scripts/fetch-kvm.mjs "$RUNNER_TEMP/roh-kvm.json"
       - name: Offene Verwaltungsdaten
         continue-on-error: true
+        env:
+          KOMMUNAL_SUCHE: '1' # zusätzlich GovData/Open.NRW durchsuchen (scripts/kommunal_suche.py), seit 20.11.2026 freigegeben
         run: python scripts/fetch-kommunal.py "$RUNNER_TEMP/roh-kommunal.json"
       - name: Websites unsicherer Kandidaten prüfen
         run: |
