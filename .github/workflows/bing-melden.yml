@@ -1,0 +1,31 @@
+name: Bing URL-Übermittlung
+
+# Reicht die wichtigsten Seiten (data/bing-wichtig.txt) über die Bing-Webmaster-API zur Indexierung ein.
+# Braucht das Secret BING_API_KEY (Bing Webmaster Tools → Einstellungen → API-Zugriff → API-Schlüssel).
+# Sendet nie mehr als das freie Tageskontingent.
+on:
+  workflow_dispatch:
+    inputs:
+      datei:
+        description: Liste mit URLs oder Pfaden (eine pro Zeile)
+        type: string
+        default: data/bing-wichtig.txt
+      max:
+        description: Höchstens so viele URLs senden (leer = Kontingent)
+        type: string
+        default: ''
+
+jobs:
+  melden:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: An Bing senden
+        env:
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
+          DATEI: ${{ inputs.datei }}
+          MAX: ${{ inputs.max }}
+        run: node scripts/bing-melden.mjs --datei "$DATEI" ${MAX:+--max "$MAX"}
