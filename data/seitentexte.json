@@ -5690,5 +5690,747 @@
       }
     ],
     "stand": "2026-11-21"
+  },
+  "/bayern/neu-ulm/neu-ulm/": {
+    "titel": "Hofläden in Neu-Ulm: gut zu wissen",
+    "oben": "Neu-Ulm liegt auf der bayerischen Seite der Donau gegenüber von Ulm, wo die Iller einmündet. In der Stadt stehen fünf Hofläden und vier Regiomaten, darunter ein Bio-Automat, dazu ein Eierautomat und ein Alpakahof.",
+    "einleitung": "Im Illertal und im Roggenburger Land südlich der Stadt liegen Höfe mit Milchvieh, Hühnern und Ackerbau; sie verkaufen Eier, Milch, Kartoffeln und Fleisch. Viele Automaten sind rund um die Uhr erreichbar.\n\nWeitere Höfe findest du im übrigen Landkreis Neu-Ulm und in Ulm.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Neu-Ulm",
+        "pfad": "/bayern/neu-ulm/"
+      },
+      {
+        "text": "Hofläden in Ulm und Umgebung",
+        "pfad": "/baden-wuerttemberg/ulm/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ortenaukreis/offenburg/": {
+    "titel": "Hofläden in Offenburg: gut zu wissen",
+    "oben": "Offenburg liegt am Ausgang des Kinzigtals in die Rheinebene, und zu Ortsteilen wie Fessenbach und Zell-Weierbach gehören Weinberge und Obstgärten. In der Liste stehen ein Obsthof mit Bauernladen, ein Demeterhof, eine Solawi und weitere Hofläden.",
+    "einleitung": "In der Ortenau wachsen Kirschen, Zwetschgen, Äpfel und Erdbeeren, an den Schwarzwaldhängen Wein. Viele Höfe verkaufen Obst, Säfte und Brände direkt; dazu gibt es Eier, Geflügel und Fleisch.\n\nWeitere Höfe findest du in Durbach, Oberkirch und im übrigen Ortenaukreis.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Wein aus der Ortenau",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Durbach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/durbach/"
+      },
+      {
+        "text": "Hofläden im Ortenaukreis",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/passau-stadt/": {
+    "titel": "Hofläden in Passau: gut zu wissen",
+    "oben": "Passau ist die Dreiflüssestadt, wo Inn und Ilz in die Donau münden. Nördlich beginnt der Bayerische Wald, südlich das Rottal. In der Stadt gibt es Hofläden, einen Bauernmarkt in Hacklberg, einen Fleischautomaten und einen Hof mit Eiern und Nudeln.",
+    "einleitung": "Im Bayerischen Wald halten viele Höfe Rinder und verkaufen Fleisch, Wurst und Milchprodukte, im Hügelland um Passau gibt es Kartoffeln, Eier und Honig.\n\nWeitere Höfe findest du im Landkreis Passau und im Landkreis Freyung-Grafenau.",
+    "saison": [
+      {
+        "titel": "Eier & Nudeln",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Waldhonig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Passau",
+        "pfad": "/bayern/landkreis-passau/"
+      },
+      {
+        "text": "Hofläden im Landkreis Freyung-Grafenau",
+        "pfad": "/bayern/freyung-grafenau/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/aurich/aurich/": {
+    "titel": "Hofläden in Aurich: gut zu wissen",
+    "oben": "Aurich liegt mitten in Ostfriesland, umgeben von Wiesen, Weiden und Mooren. Typisch sind Milchkühe und Hühner: In der Liste stehen drei Eierautomaten, ein Milchhof mit Hofladen und weitere Bauernläden.",
+    "einleitung": "In Ostfriesland überwiegt Grünland, deshalb gibt es in den Hofläden vor allem Milch, Käse, Fleisch und Eier. Im Winter gehört Grünkohl dazu, im Sommer Erdbeeren von den Feldern auf der Geest.\n\nWeitere Höfe findest du im übrigen Landkreis Aurich und im Landkreis Leer.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Grünkohl",
+        "zeit": "November bis Februar"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Aurich",
+        "pfad": "/niedersachsen/aurich/"
+      },
+      {
+        "text": "Hofläden im Landkreis Leer",
+        "pfad": "/niedersachsen/leer/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/lueneburg/lueneburg/": {
+    "titel": "Hofläden in Lüneburg: gut zu wissen",
+    "oben": "Lüneburg wurde mit Salz reich, heute liegt die Stadt zwischen Elbtalaue im Norden und Lüneburger Heide im Süden. Nördlich bei Bardowick wird viel Spargel angebaut. In der Stadt gibt es einen Biohofladen, zwei Hofcafés und Höfe mit Selbstbedienung.",
+    "einleitung": "Auf den Sandböden rund um Lüneburg wachsen Spargel und Kartoffeln, in der Heide weiden Heidschnucken, und die Imker verkaufen Heidehonig. Ein Hof an den Teichen bietet zusätzlich Fisch.\n\nWeitere Höfe findest du im übrigen Landkreis Lüneburg und im Landkreis Uelzen.",
+    "saison": [
+      {
+        "titel": "Spargel aus Bardowick",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Heidehonig",
+        "zeit": "ab August"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Lüneburg",
+        "pfad": "/niedersachsen/lueneburg/"
+      },
+      {
+        "text": "Hofläden im Landkreis Uelzen",
+        "pfad": "/niedersachsen/uelzen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/rhein-erft-kreis/kerpen/": {
+    "titel": "Hofläden in Kerpen: gut zu wissen",
+    "oben": "Kerpen liegt an der Erft westlich von Köln, zwischen fruchtbaren Lössfeldern und dem Tagebau Hambach. In der Liste stehen sechs Hofläden, darunter ein Gemüsehof, und ein Regiomat.",
+    "einleitung": "Auf den Böden der Kölner Bucht wachsen Gemüse, Kartoffeln, Zuckerrüben und Getreide. Die Hofläden verkaufen Gemüse und Obst aus eigenem Anbau, im Frühjahr auch Spargel.\n\nWeitere Höfe findest du im übrigen Rhein-Erft-Kreis, etwa in Bergheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bergheim und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-erft-kreis/bergheim/"
+      },
+      {
+        "text": "Hofläden im Rhein-Erft-Kreis",
+        "pfad": "/nordrhein-westfalen/rhein-erft-kreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/rheinland-pfalz/neuwied/neuwied/": {
+    "titel": "Hofläden in Neuwied: gut zu wissen",
+    "oben": "Neuwied liegt am rechten Rheinufer im Neuwieder Becken, einer weiten, fruchtbaren Ebene zwischen Westerwald und Eifel. In der Liste stehen sieben Hofläden, darunter ein Obsthof.",
+    "einleitung": "Im milden Klima des Rheintals wachsen Obst, Gemüse und Getreide, auf den Höhen des Westerwalds überwiegen Wiesen und Viehhaltung. Die Hofläden verkaufen Obst, Kartoffeln, Eier und Fleisch.\n\nWeitere Höfe findest du im übrigen Landkreis Neuwied und im Landkreis Mayen-Koblenz.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Neuwied",
+        "pfad": "/rheinland-pfalz/neuwied/"
+      },
+      {
+        "text": "Hofläden im Landkreis Mayen-Koblenz",
+        "pfad": "/rheinland-pfalz/mayen-koblenz/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hamburg/hamburg/hamburg-eidelstedt/": {
+    "titel": "Hofläden in Eidelstedt: gut zu wissen",
+    "oben": "In Eidelstedt im Hamburger Westen steht ein Honigautomat, an dem du Honig aus der Umgebung rund um die Uhr kaufen kannst. Höfe mit Hofladen findest du im angrenzenden Kreis Pinneberg und in den Hamburger Außenbezirken.",
+    "einleitung": "Westlich von Eidelstedt beginnt der Kreis Pinneberg mit Baumschulen, Feldern und Höfen, die Erdbeeren, Kartoffeln und Eier verkaufen.\n\nAlle Höfe in Hamburg findest du auf der Hamburg-Seite.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hamburg und Umgebung",
+        "pfad": "/hamburg/hamburg/"
+      },
+      {
+        "text": "Hofläden im Kreis Pinneberg",
+        "pfad": "/schleswig-holstein/pinneberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/wilhelmshaven/": {
+    "titel": "Hofläden in Wilhelmshaven: gut zu wissen",
+    "oben": "Wilhelmshaven liegt am Jadebusen, umgeben von flacher Marsch mit Weiden und Deichen. In der Stadt ist bisher eine Imkerei in Rüstersiel eingetragen, die Höfe der Liste liegen vor allem im Landkreis Friesland.",
+    "einleitung": "In der friesischen Marsch halten viele Höfe Milchkühe und Rinder; sie verkaufen Milch, Käse, Fleisch und Eier. Im Winter gehört Grünkohl dazu.\n\nFehlt ein Hof aus Wilhelmshaven? Über „Mitmachen“ kannst du ihn ergänzen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Grünkohl",
+        "zeit": "November bis Februar"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Friesland",
+        "pfad": "/niedersachsen/friesland/"
+      },
+      {
+        "text": "Hofläden im Landkreis Wittmund",
+        "pfad": "/niedersachsen/wittmund/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/rheinland-pfalz/kaiserslautern-stadt/": {
+    "titel": "Hofläden in Kaiserslautern: gut zu wissen",
+    "oben": "Kaiserslautern liegt am Nordrand des Pfälzerwalds, eines der größten zusammenhängenden Waldgebiete Deutschlands. In der Stadt ist bisher nur ein Regiomat eingetragen, die Höfe der Liste liegen in den Dörfern im Landkreis Kaiserslautern.",
+    "einleitung": "Im Westpfälzer Bergland rund um die Stadt halten Höfe Rinder und Schafe, auf den Hochflächen wachsen Getreide und Kartoffeln. Viele verkaufen Fleisch, Wurst, Eier und Kartoffeln direkt.\n\nFehlt ein Hofladen aus Kaiserslautern? Über „Mitmachen“ lässt er sich eintragen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Wild aus dem Pfälzerwald",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Kaiserslautern",
+        "pfad": "/rheinland-pfalz/landkreis-kaiserslautern/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/sachsen-anhalt/dessau-rosslau/dessau/": {
+    "titel": "Hofläden in Dessau: gut zu wissen",
+    "oben": "Dessau liegt an Mulde und Elbe im Biosphärenreservat Mittelelbe, umgeben vom Gartenreich Dessau-Wörlitz, das zum UNESCO-Welterbe gehört. In der Stadt ist bisher eine Imkerei eingetragen, weitere Höfe liegen im Umland.",
+    "einleitung": "Die Auen an Elbe und Mulde sind Grünland mit Weidetieren, auf den Ackerflächen ringsum wachsen Getreide, Kartoffeln und Spargel. Honig kommt von Imkern aus den Auwäldern.\n\nWeitere Höfe findest du in den Landkreisen Wittenberg und Anhalt-Bitterfeld.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Wittenberg",
+        "pfad": "/sachsen-anhalt/wittenberg/"
+      },
+      {
+        "text": "Hofläden im Landkreis Anhalt-Bitterfeld",
+        "pfad": "/sachsen-anhalt/anhalt-bitterfeld/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/landkreis-karlsruhe/stutensee/": {
+    "titel": "Hofläden in Stutensee: gut zu wissen",
+    "oben": "Stutensee liegt in der Hardt nördlich von Karlsruhe, wo auf sandigen Böden viel Spargel wächst. In der Liste stehen acht Hofläden, eine Solawi, Regiomaten und Imkereien mit Honig aus den Hardtwäldern.",
+    "einleitung": "Im Frühjahr verkaufen die Höfe in Blankenloch, Spöck und Friedrichstal frischen Spargel, danach folgen Erdbeeren und Gemüse. Mehrere Imker in der Stadt verkaufen Honig direkt.\n\nWeitere Höfe findest du in Karlsruhe und im übrigen Landkreis Karlsruhe.",
+    "saison": [
+      {
+        "titel": "Spargel aus der Hardt",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Karlsruhe und Umgebung",
+        "pfad": "/baden-wuerttemberg/karlsruhe-stadt/"
+      },
+      {
+        "text": "Hofläden im Landkreis Karlsruhe",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/ammerland/wiefelstede/": {
+    "titel": "Hofläden in Wiefelstede: gut zu wissen",
+    "oben": "Wiefelstede liegt im Ammerland nördlich von Oldenburg, zwischen Baumschulen, Wiesen und Wallhecken. In der Liste stehen Hofläden, eine Milchtankstelle, Regiomaten und ein Honigautomat.",
+    "einleitung": "Typisch für das Ammerland sind Milchvieh und Baumschulen; die Höfe verkaufen Milch, Fleisch, Eier und Obst. Wallhecken, also bepflanzte Erdwälle zwischen den Feldern, prägen das Landschaftsbild.\n\nWeitere Höfe findest du in Bad Zwischenahn und im übrigen Landkreis Ammerland.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Zwischenahn und Umgebung",
+        "pfad": "/niedersachsen/ammerland/bad-zwischenahn/"
+      },
+      {
+        "text": "Hofläden im Landkreis Ammerland",
+        "pfad": "/niedersachsen/ammerland/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/cloppenburg/barssel/": {
+    "titel": "Hofläden in Barßel: gut zu wissen",
+    "oben": "Barßel liegt im Norden des Landkreises Cloppenburg zwischen Mooren, Kanälen und dem Hafen an der Soeste. Besonders häufig gibt es hier Eier: In der Liste stehen ein Eierhof, zwei Eierautomaten, ein Bio-Ziegenhof und Regiomaten.",
+    "einleitung": "Das Oldenburger Münsterland ist eine der Regionen mit der meisten Geflügelhaltung in Deutschland. In Barßel verkaufen Höfe Eier, Nudeln, Kartoffeln und Obst, der Ziegenhof Käse und Milch.\n\nWeitere Höfe findest du im übrigen Landkreis Cloppenburg und im Ammerland.",
+    "saison": [
+      {
+        "titel": "Eier & Nudeln",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Ziegenkäse",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Cloppenburg",
+        "pfad": "/niedersachsen/cloppenburg/"
+      },
+      {
+        "text": "Hofläden im Landkreis Ammerland",
+        "pfad": "/niedersachsen/ammerland/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/harburg/neu-wulmstorf/": {
+    "titel": "Hofläden in Neu Wulmstorf: gut zu wissen",
+    "oben": "Neu Wulmstorf grenzt im Süden an Hamburg, zwischen der Elbmarsch und den Harburger Bergen. Für die Größe des Orts gibt es viele Höfe mit Verkauf: elf Hofläden und eine Milchtankstelle stehen in der Liste.",
+    "einleitung": "Nördlich beginnt das Alte Land mit seinen Obsthöfen, südlich die Geest mit Kartoffeln und Erdbeeren. Die Hofläden verkaufen Obst, Kartoffeln, Eier und Fleisch.\n\nWeitere Höfe findest du im übrigen Landkreis Harburg und im Landkreis Stade.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel aus dem Alten Land",
+        "zeit": "August bis Oktober"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Harburg",
+        "pfad": "/niedersachsen/harburg/"
+      },
+      {
+        "text": "Hofläden in Jork und Umgebung",
+        "pfad": "/niedersachsen/stade/jork/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/region-hannover/lehrte/": {
+    "titel": "Hofläden in Lehrte: gut zu wissen",
+    "oben": "Lehrte liegt östlich von Hannover am Burgdorfer Holz, und in den Ortsteilen gibt es viele Höfe. In der Liste stehen neun Hofläden, ein Hofcafé in Immensen, eine Milchtankstelle und mit Gut Adolphshof ein Demeter-Hof.",
+    "einleitung": "Auf den Feldern wachsen Spargel, Kartoffeln, Gemüse und Getreide. Mehrere Höfe gehören zur Radtour „Von Hof zu Hof“ rund um das Burgdorfer Holz zwischen Burgdorf, Lehrte und Uetze.\n\nWeitere Höfe findest du in Uetze, Burgdorf und in der übrigen Region Hannover.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Uetze und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/uetze/"
+      },
+      {
+        "text": "Hofläden in Burgdorf und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/burgdorf/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/coesfeld/olfen/": {
+    "titel": "Hofläden in Olfen: gut zu wissen",
+    "oben": "Olfen liegt zwischen Lippe und Stever, und in den renaturierten Steverauen weiden Heckrinder und Konik-Pferde. In der Liste stehen Hofläden, zwei Milchtankstellen, Regiomaten und Imkereien.",
+    "einleitung": "Rund um Olfen liegen Münsterländer Höfe mit Milchvieh, Hühnern und Ackerbau; sie verkaufen Milch, Eier, Fleisch und Honig. Ein regionaler Hofladen am Rand der Hohen Mark bündelt Produkte mehrerer Höfe.\n\nWeitere Höfe findest du in Lüdinghausen und im übrigen Kreis Coesfeld.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lüdinghausen und Umgebung",
+        "pfad": "/nordrhein-westfalen/coesfeld/luedinghausen/"
+      },
+      {
+        "text": "Hofläden im Kreis Coesfeld",
+        "pfad": "/nordrhein-westfalen/coesfeld/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/minden-luebbecke/petershagen/": {
+    "titel": "Hofläden in Petershagen: gut zu wissen",
+    "oben": "Petershagen liegt an der Weser nördlich von Minden, eine Flächenstadt aus fast 30 Dörfern mit Feldern, Weiden und Mühlen. In der Liste stehen Hofläden, ein Hofcafé, eine Mosterei mit Apfelsaft und Pflaumenmus und Automaten.",
+    "einleitung": "Die Höfe verkaufen Eier, Honig, Fleisch und Geflügel, im Herbst frischen Apfelsaft aus der Mosterei. An der Westfälischen Mühlenstraße stehen mehrere Mühlen im Stadtgebiet.\n\nWeitere Höfe findest du in Minden und im übrigen Kreis Minden-Lübbecke.",
+    "saison": [
+      {
+        "titel": "Apfelsaft & Pflaumenmus",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Minden und Umgebung",
+        "pfad": "/nordrhein-westfalen/minden-luebbecke/minden/"
+      },
+      {
+        "text": "Hofläden im Kreis Minden-Lübbecke",
+        "pfad": "/nordrhein-westfalen/minden-luebbecke/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/rhein-kreis-neuss/kaarst/": {
+    "titel": "Hofläden in Kaarst: gut zu wissen",
+    "oben": "Kaarst liegt zwischen Neuss, Düsseldorf und Mönchengladbach, und rund um Büttgen und Vorst gibt es viele Felder. Hier verkaufen zwölf Höfe direkt, darunter ein Hofmarkt.",
+    "einleitung": "Typisch sind Gemüse, Kartoffeln, Fleisch, Eier und Milch, im Frühjahr Spargel und Erdbeeren. Die Höfe liegen nah beieinander, so lässt sich eine kleine Einkaufsrunde mit dem Rad gut verbinden.\n\nWeitere Höfe findest du in Korschenbroich, Neuss und im übrigen Rhein-Kreis Neuss.",
+    "saison": [
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Korschenbroich und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-kreis-neuss/korschenbroich/"
+      },
+      {
+        "text": "Hofläden im Rhein-Kreis Neuss",
+        "pfad": "/nordrhein-westfalen/rhein-kreis-neuss/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/sachsen/mittelsachsen/oederan/": {
+    "titel": "Hofläden in Oederan: gut zu wissen",
+    "oben": "Oederan liegt im Erzgebirgsvorland zwischen Chemnitz und Freiberg, bekannt durch den Miniaturpark Klein-Erzgebirge. Auffällig viele Imker gibt es hier: Sechs der zwölf Einträge verkaufen Honig, dazu kommen Hofläden mit Milch und Käse.",
+    "einleitung": "Rund um Oederan liegen Wiesen, Felder und Wälder; die Höfe verkaufen Milch, Käse, Fleisch und Kartoffeln. Honig gibt es als Blüten-, Raps- oder Waldhonig.\n\nWeitere Höfe findest du im übrigen Landkreis Mittelsachsen und in Chemnitz.",
+    "saison": [
+      {
+        "titel": "Rapshonig",
+        "zeit": "Frühsommer"
+      },
+      {
+        "titel": "Waldhonig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Mittelsachsen",
+        "pfad": "/sachsen/mittelsachsen/"
+      },
+      {
+        "text": "Hofläden in Chemnitz und Umgebung",
+        "pfad": "/sachsen/chemnitz/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/steinfurt/ibbenbueren/": {
+    "titel": "Hofläden in Ibbenbüren: gut zu wissen",
+    "oben": "Ibbenbüren liegt im Tecklenburger Land am Ende des Teutoburger Walds, eine Stadt mit langer Bergbaugeschichte. In der Liste stehen ein Hofcafé, ein Bio-Obsthof, Hofläden, Regiomaten und Eierautomaten.",
+    "einleitung": "Die Höfe verkaufen vor allem Eier, dazu Obst, Milch und Fleisch. Im Tecklenburger Land wechseln Wald, Hügel und Felder, gut für Rad- und Wandertouren mit Halt am Hofcafé.\n\nWeitere Höfe findest du im übrigen Kreis Steinfurt und im Landkreis Osnabrück.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Bio-Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Steinfurt",
+        "pfad": "/nordrhein-westfalen/steinfurt/"
+      },
+      {
+        "text": "Hofläden im Landkreis Osnabrück",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/warendorf/ahlen/": {
+    "titel": "Hofläden in Ahlen: gut zu wissen",
+    "oben": "Ahlen liegt an der Werse im südlichen Münsterland, zwischen Feldern und Bauerschaften. In der Liste stehen Hofläden, zwei Eierautomaten, ein Fleischautomat und eine Imkerei.",
+    "einleitung": "Typisch sind Eier, Fleisch, Kartoffeln und Spargel von Höfen mit eigener Erzeugung. Die Automaten sind praktisch, wenn der Hofladen geschlossen hat.\n\nWeitere Höfe findest du im übrigen Kreis Warendorf und in Hamm.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Warendorf",
+        "pfad": "/nordrhein-westfalen/warendorf/"
+      },
+      {
+        "text": "Hofläden in Hamm und Umgebung",
+        "pfad": "/nordrhein-westfalen/hamm/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/baden-baden/": {
+    "titel": "Hofläden in Baden-Baden: gut zu wissen",
+    "oben": "Baden-Baden ist Kurstadt und Weinort: Im Rebland mit Varnhalt, Steinbach und Neuweier wachsen Riesling und Spätburgunder an den Schwarzwaldhängen. In der Liste stehen ein Weingut mit Hofladen, ein Biohof und zwei Regiomaten.",
+    "einleitung": "Die Winzer im Rebland verkaufen Wein ab Hof, oft auch im traditionellen Bocksbeutel, der in Neuweier und Umgebung verwendet werden darf. In der Rheinebene wachsen Gemüse und Spargel.\n\nWeitere Höfe findest du im Landkreis Rastatt.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Wein aus dem Rebland",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Rastatt",
+        "pfad": "/baden-wuerttemberg/rastatt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/emden/": {
+    "titel": "Hofläden in Emden: gut zu wissen",
+    "oben": "Emden liegt an der Ems in Ostfriesland, umgeben von Marsch und Weiden. In der Stadt gibt es sechs Hofläden, darunter ein Käsehaus, einen Hof mit Landmilch und einen Angushof.",
+    "einleitung": "Auf den Marschböden rund um Emden halten viele Höfe Milchkühe und Rinder; in den Hofläden gibt es Milch, Käse, Fleisch, Eier und Kartoffeln. Nördlich beginnt die Krummhörn mit ihren Warfendörfern.\n\nWeitere Höfe findest du in den Landkreisen Aurich und Leer.",
+    "saison": [
+      {
+        "titel": "Käse & Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Rindfleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Aurich",
+        "pfad": "/niedersachsen/aurich/"
+      },
+      {
+        "text": "Hofläden im Landkreis Leer",
+        "pfad": "/niedersachsen/leer/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/": {
+    "titel": "Hofläden in Hattingen: gut zu wissen",
+    "oben": "Hattingen liegt an der Ruhr, mit Fachwerkaltstadt und dem hügeligen Hinterland der Elfringhauser Schweiz. In der Liste stehen vier Hofläden, ein Eierhof und ein Regiomat.",
+    "einleitung": "In der Elfringhauser Schweiz und auf den Höhen südlich der Ruhr liegen Höfe mit Wiesen und Weiden; sie verkaufen Eier, Geflügel, Fleisch und Gemüse. Der Ruhrtalradweg führt direkt durch Hattingen.\n\nWeitere Höfe findest du in Witten und im übrigen Ennepe-Ruhr-Kreis.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Witten und Umgebung",
+        "pfad": "/nordrhein-westfalen/ennepe-ruhr-kreis/witten/"
+      },
+      {
+        "text": "Hofläden im Ennepe-Ruhr-Kreis",
+        "pfad": "/nordrhein-westfalen/ennepe-ruhr-kreis/"
+      }
+    ],
+    "stand": "2026-11-21"
   }
 }
