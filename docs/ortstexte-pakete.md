@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 26 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 51 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -33,35 +33,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Mönchengladbach](https://hofladenliste.de/nordrhein-westfalen/moenchengladbach/) `/nordrhein-westfalen/moenchengladbach/` | Mönchengladbach | 13 | 30 | 69 |
 | ✓ | [Augsburg](https://hofladenliste.de/bayern/augsburg-stadt/) `/bayern/augsburg-stadt/` | Augsburg | 14 | 24 | 66 |
 
-## Paket 2 (0/25 fertig)
+## Paket 2 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Braunschweig](https://hofladenliste.de/niedersachsen/braunschweig/) `/niedersachsen/braunschweig/` | Braunschweig | 15 | 21 | 66 |
-|  | [Wiesbaden](https://hofladenliste.de/hessen/wiesbaden/) `/hessen/wiesbaden/` | Wiesbaden | 13 | 24 | 63 |
-|  | [Aachen](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/aachen/) `/nordrhein-westfalen/staedteregion-aachen/aachen/` | Städteregion Aachen | 10 | 32 | 62 |
-|  | [Freiburg im Breisgau](https://hofladenliste.de/baden-wuerttemberg/freiburg-im-breisgau/) `/baden-wuerttemberg/freiburg-im-breisgau/` | Freiburg im Breisgau | 12 | 25 | 61 |
-|  | [Saarbrücken](https://hofladenliste.de/saarland/regionalverband-saarbruecken/saarbruecken/) `/saarland/regionalverband-saarbruecken/saarbruecken/` | Regionalverband Saarbrücken | 16 | 13 | 61 |
-|  | [Mannheim](https://hofladenliste.de/baden-wuerttemberg/mannheim/) `/baden-wuerttemberg/mannheim/` | Mannheim | 14 | 17 | 59 |
-|  | [Heidelberg](https://hofladenliste.de/baden-wuerttemberg/heidelberg/) `/baden-wuerttemberg/heidelberg/` | Heidelberg | 8 | 31 | 55 |
-|  | [Magdeburg](https://hofladenliste.de/sachsen-anhalt/magdeburg/) `/sachsen-anhalt/magdeburg/` | Magdeburg | 15 | 8 | 53 |
-|  | [Neuss](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/neuss/) `/nordrhein-westfalen/rhein-kreis-neuss/neuss/` | Rhein-Kreis Neuss | 8 | 28 | 52 |
-|  | [Kiel](https://hofladenliste.de/schleswig-holstein/kiel/) `/schleswig-holstein/kiel/` | Kiel | 16 | 4 | 52 |
-|  | [Erfurt](https://hofladenliste.de/thueringen/erfurt/) `/thueringen/erfurt/` | Erfurt | 13 | 12 | 51 |
-|  | [Mainz](https://hofladenliste.de/rheinland-pfalz/mainz/) `/rheinland-pfalz/mainz/` | Mainz | 11 | 17 | 50 |
-|  | [Krefeld](https://hofladenliste.de/nordrhein-westfalen/krefeld/) `/nordrhein-westfalen/krefeld/` | Krefeld | 11 | 15 | 48 |
-|  | [Friedrichshafen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/friedrichshafen/) `/baden-wuerttemberg/bodenseekreis/friedrichshafen/` | Bodenseekreis | 3 | 36 | 45 |
-|  | [Paderborn](https://hofladenliste.de/nordrhein-westfalen/paderborn/paderborn/) `/nordrhein-westfalen/paderborn/paderborn/` | Kreis Paderborn | 5 | 30 | 45 |
-|  | [Oldenburg](https://hofladenliste.de/niedersachsen/oldenburg-stadt/) `/niedersachsen/oldenburg-stadt/` | Oldenburg | 9 | 18 | 45 |
-|  | [Gelsenkirchen](https://hofladenliste.de/nordrhein-westfalen/gelsenkirchen/) `/nordrhein-westfalen/gelsenkirchen/` | Gelsenkirchen | 13 | 6 | 45 |
-|  | [Halle](https://hofladenliste.de/sachsen-anhalt/halle/) `/sachsen-anhalt/halle/` | Halle | 13 | 5 | 44 |
-|  | [Potsdam](https://hofladenliste.de/brandenburg/potsdam/) `/brandenburg/potsdam/` | Potsdam | 8 | 18 | 42 |
-|  | [Hamm](https://hofladenliste.de/nordrhein-westfalen/hamm/) `/nordrhein-westfalen/hamm/` | Hamm | 8 | 18 | 42 |
-|  | [Mülheim an der Ruhr](https://hofladenliste.de/nordrhein-westfalen/muelheim-an-der-ruhr/) `/nordrhein-westfalen/muelheim-an-der-ruhr/` | Mülheim an der Ruhr | 10 | 12 | 42 |
-|  | [Rostock](https://hofladenliste.de/mecklenburg-vorpommern/rostock-stadt/) `/mecklenburg-vorpommern/rostock-stadt/` | Rostock | 10 | 11 | 41 |
-|  | [Kassel](https://hofladenliste.de/hessen/kassel-stadt/) `/hessen/kassel-stadt/` | Kassel | 11 | 8 | 41 |
-|  | [Euskirchen](https://hofladenliste.de/nordrhein-westfalen/euskirchen/euskirchen/) `/nordrhein-westfalen/euskirchen/euskirchen/` | Kreis Euskirchen | 2 | 34 | 40 |
-|  | [Ingolstadt](https://hofladenliste.de/bayern/ingolstadt/) `/bayern/ingolstadt/` | Ingolstadt | 5 | 25 | 40 |
+| ✓ | [Braunschweig](https://hofladenliste.de/niedersachsen/braunschweig/) `/niedersachsen/braunschweig/` | Braunschweig | 15 | 21 | 66 |
+| ✓ | [Wiesbaden](https://hofladenliste.de/hessen/wiesbaden/) `/hessen/wiesbaden/` | Wiesbaden | 13 | 24 | 63 |
+| ✓ | [Aachen](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/aachen/) `/nordrhein-westfalen/staedteregion-aachen/aachen/` | Städteregion Aachen | 10 | 32 | 62 |
+| ✓ | [Freiburg im Breisgau](https://hofladenliste.de/baden-wuerttemberg/freiburg-im-breisgau/) `/baden-wuerttemberg/freiburg-im-breisgau/` | Freiburg im Breisgau | 12 | 25 | 61 |
+| ✓ | [Saarbrücken](https://hofladenliste.de/saarland/regionalverband-saarbruecken/saarbruecken/) `/saarland/regionalverband-saarbruecken/saarbruecken/` | Regionalverband Saarbrücken | 16 | 13 | 61 |
+| ✓ | [Mannheim](https://hofladenliste.de/baden-wuerttemberg/mannheim/) `/baden-wuerttemberg/mannheim/` | Mannheim | 14 | 17 | 59 |
+| ✓ | [Heidelberg](https://hofladenliste.de/baden-wuerttemberg/heidelberg/) `/baden-wuerttemberg/heidelberg/` | Heidelberg | 8 | 31 | 55 |
+| ✓ | [Magdeburg](https://hofladenliste.de/sachsen-anhalt/magdeburg/) `/sachsen-anhalt/magdeburg/` | Magdeburg | 15 | 8 | 53 |
+| ✓ | [Neuss](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/neuss/) `/nordrhein-westfalen/rhein-kreis-neuss/neuss/` | Rhein-Kreis Neuss | 8 | 28 | 52 |
+| ✓ | [Kiel](https://hofladenliste.de/schleswig-holstein/kiel/) `/schleswig-holstein/kiel/` | Kiel | 16 | 4 | 52 |
+| ✓ | [Erfurt](https://hofladenliste.de/thueringen/erfurt/) `/thueringen/erfurt/` | Erfurt | 13 | 12 | 51 |
+| ✓ | [Mainz](https://hofladenliste.de/rheinland-pfalz/mainz/) `/rheinland-pfalz/mainz/` | Mainz | 11 | 17 | 50 |
+| ✓ | [Krefeld](https://hofladenliste.de/nordrhein-westfalen/krefeld/) `/nordrhein-westfalen/krefeld/` | Krefeld | 11 | 15 | 48 |
+| ✓ | [Friedrichshafen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/friedrichshafen/) `/baden-wuerttemberg/bodenseekreis/friedrichshafen/` | Bodenseekreis | 3 | 36 | 45 |
+| ✓ | [Paderborn](https://hofladenliste.de/nordrhein-westfalen/paderborn/paderborn/) `/nordrhein-westfalen/paderborn/paderborn/` | Kreis Paderborn | 5 | 30 | 45 |
+| ✓ | [Oldenburg](https://hofladenliste.de/niedersachsen/oldenburg-stadt/) `/niedersachsen/oldenburg-stadt/` | Oldenburg | 9 | 18 | 45 |
+| ✓ | [Gelsenkirchen](https://hofladenliste.de/nordrhein-westfalen/gelsenkirchen/) `/nordrhein-westfalen/gelsenkirchen/` | Gelsenkirchen | 13 | 6 | 45 |
+| ✓ | [Halle](https://hofladenliste.de/sachsen-anhalt/halle/) `/sachsen-anhalt/halle/` | Halle | 13 | 5 | 44 |
+| ✓ | [Potsdam](https://hofladenliste.de/brandenburg/potsdam/) `/brandenburg/potsdam/` | Potsdam | 8 | 18 | 42 |
+| ✓ | [Hamm](https://hofladenliste.de/nordrhein-westfalen/hamm/) `/nordrhein-westfalen/hamm/` | Hamm | 8 | 18 | 42 |
+| ✓ | [Mülheim an der Ruhr](https://hofladenliste.de/nordrhein-westfalen/muelheim-an-der-ruhr/) `/nordrhein-westfalen/muelheim-an-der-ruhr/` | Mülheim an der Ruhr | 10 | 12 | 42 |
+| ✓ | [Rostock](https://hofladenliste.de/mecklenburg-vorpommern/rostock-stadt/) `/mecklenburg-vorpommern/rostock-stadt/` | Rostock | 10 | 11 | 41 |
+| ✓ | [Kassel](https://hofladenliste.de/hessen/kassel-stadt/) `/hessen/kassel-stadt/` | Kassel | 11 | 8 | 41 |
+| ✓ | [Euskirchen](https://hofladenliste.de/nordrhein-westfalen/euskirchen/euskirchen/) `/nordrhein-westfalen/euskirchen/euskirchen/` | Kreis Euskirchen | 2 | 34 | 40 |
+| ✓ | [Ingolstadt](https://hofladenliste.de/bayern/ingolstadt/) `/bayern/ingolstadt/` | Ingolstadt | 5 | 25 | 40 |
 
 ## Paket 3 (0/25 fertig)
 
