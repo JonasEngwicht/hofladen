@@ -139,7 +139,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Ennepe-Ruhr-Kreis](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/) | Kreis | 37 | `/nordrhein-westfalen/ennepe-ruhr-kreis/` |
 | [Hofläden im Landkreis Bad Dürkheim](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/) | Kreis | 37 | `/rheinland-pfalz/bad-duerkheim/` |
 | [Regiomaten im Alb-Donau-Kreis](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/regiomaten/) | Regiomaten | 36 | `/baden-wuerttemberg/alb-donau-kreis/regiomaten/` |
-| [Hofläden in Friedrichshafen und Umgebung](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/friedrichshafen/) | Ort | 36 | `/baden-wuerttemberg/bodenseekreis/friedrichshafen/` |
 | [Hofladen-Automaten im Landkreis Ravensburg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/hofladen-automaten/) | Hofladen-Automaten | 36 | `/baden-wuerttemberg/ravensburg/hofladen-automaten/` |
 | [Hofläden im Landkreis Regensburg](https://hofladenliste.de/bayern/landkreis-regensburg/) | Kreis | 36 | `/bayern/landkreis-regensburg/` |
 | [Hofläden im Landkreis Havelland](https://hofladenliste.de/brandenburg/havelland/) | Kreis | 36 | `/brandenburg/havelland/` |
@@ -155,3 +154,4 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofladen-Automaten im Kreis Coesfeld](https://hofladenliste.de/nordrhein-westfalen/coesfeld/hofladen-automaten/) | Hofladen-Automaten | 35 | `/nordrhein-westfalen/coesfeld/hofladen-automaten/` |
 | [Hofläden im Märkischer Kreis](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/) | Kreis | 35 | `/nordrhein-westfalen/maerkischer-kreis/` |
 | [Bio-Hofläden im Bodenseekreis](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/bio-hofladen/) | Bio-Hofläden | 34 | `/baden-wuerttemberg/bodenseekreis/bio-hofladen/` |
+| [Hofläden im Landkreis Aschaffenburg](https://hofladenliste.de/bayern/landkreis-aschaffenburg/) | Kreis | 34 | `/bayern/landkreis-aschaffenburg/` |
