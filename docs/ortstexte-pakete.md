@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 526 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 551 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -633,35 +633,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Sprockhövel](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/sprockhoevel/) `/nordrhein-westfalen/ennepe-ruhr-kreis/sprockhoevel/` | Ennepe-Ruhr-Kreis | 1 | 6 | 9 |
 | ✓ | [Rheda-Wiedenbrück](https://hofladenliste.de/nordrhein-westfalen/guetersloh/rheda-wiedenbrueck/) `/nordrhein-westfalen/guetersloh/rheda-wiedenbrueck/` | Kreis Gütersloh | 1 | 6 | 9 |
 
-## Paket 22 (0/25 fertig)
+## Paket 22 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Issum](https://hofladenliste.de/nordrhein-westfalen/kleve/issum/) `/nordrhein-westfalen/kleve/issum/` | Kreis Kleve | 1 | 6 | 9 |
-|  | [Kranenburg](https://hofladenliste.de/nordrhein-westfalen/kleve/kranenburg/) `/nordrhein-westfalen/kleve/kranenburg/` | Kreis Kleve | 1 | 6 | 9 |
-|  | [Kalletal](https://hofladenliste.de/nordrhein-westfalen/lippe/kalletal/) `/nordrhein-westfalen/lippe/kalletal/` | Kreis Lippe | 1 | 6 | 9 |
-|  | [Lage](https://hofladenliste.de/nordrhein-westfalen/lippe/lage/) `/nordrhein-westfalen/lippe/lage/` | Kreis Lippe | 1 | 6 | 9 |
-|  | [Bad Wünnenberg](https://hofladenliste.de/nordrhein-westfalen/paderborn/bad-wuennenberg/) `/nordrhein-westfalen/paderborn/bad-wuennenberg/` | Kreis Paderborn | 1 | 6 | 9 |
-|  | [Lichtenau (Kreis Paderborn)](https://hofladenliste.de/nordrhein-westfalen/paderborn/lichtenau/) `/nordrhein-westfalen/paderborn/lichtenau/` | Kreis Paderborn | 1 | 6 | 9 |
-|  | [Elsdorf](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/elsdorf/) `/nordrhein-westfalen/rhein-erft-kreis/elsdorf/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
-|  | [Erftstadt](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/erftstadt/) `/nordrhein-westfalen/rhein-erft-kreis/erftstadt/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
-|  | [Wesseling](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/wesseling/) `/nordrhein-westfalen/rhein-erft-kreis/wesseling/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
-|  | [Jüchen](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/juechen/) `/nordrhein-westfalen/rhein-kreis-neuss/juechen/` | Rhein-Kreis Neuss | 1 | 6 | 9 |
-|  | [Wachtberg](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/wachtberg/) `/nordrhein-westfalen/rhein-sieg-kreis/wachtberg/` | Rhein-Sieg-Kreis | 1 | 6 | 9 |
-|  | [Werl](https://hofladenliste.de/nordrhein-westfalen/soest/werl/) `/nordrhein-westfalen/soest/werl/` | Kreis Soest | 1 | 6 | 9 |
-|  | [Simmerath](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/simmerath/) `/nordrhein-westfalen/staedteregion-aachen/simmerath/` | Städteregion Aachen | 1 | 6 | 9 |
-|  | [Tecklenburg](https://hofladenliste.de/nordrhein-westfalen/steinfurt/tecklenburg/) `/nordrhein-westfalen/steinfurt/tecklenburg/` | Kreis Steinfurt | 1 | 6 | 9 |
-|  | [Westerkappeln](https://hofladenliste.de/nordrhein-westfalen/steinfurt/westerkappeln/) `/nordrhein-westfalen/steinfurt/westerkappeln/` | Kreis Steinfurt | 1 | 6 | 9 |
-|  | [Grefrath](https://hofladenliste.de/nordrhein-westfalen/viersen/grefrath/) `/nordrhein-westfalen/viersen/grefrath/` | Kreis Viersen | 1 | 6 | 9 |
-|  | [Niederkrüchten](https://hofladenliste.de/nordrhein-westfalen/viersen/niederkruechten/) `/nordrhein-westfalen/viersen/niederkruechten/` | Kreis Viersen | 1 | 6 | 9 |
-|  | [Drensteinfurt](https://hofladenliste.de/nordrhein-westfalen/warendorf/drensteinfurt/) `/nordrhein-westfalen/warendorf/drensteinfurt/` | Kreis Warendorf | 1 | 6 | 9 |
-|  | [Everswinkel](https://hofladenliste.de/nordrhein-westfalen/warendorf/everswinkel/) `/nordrhein-westfalen/warendorf/everswinkel/` | Kreis Warendorf | 1 | 6 | 9 |
-|  | [Warendorf](https://hofladenliste.de/nordrhein-westfalen/warendorf/warendorf/) `/nordrhein-westfalen/warendorf/warendorf/` | Kreis Warendorf | 1 | 6 | 9 |
-|  | [Kamp-Lintfort](https://hofladenliste.de/nordrhein-westfalen/wesel/kamp-lintfort/) `/nordrhein-westfalen/wesel/kamp-lintfort/` | Kreis Wesel | 1 | 6 | 9 |
-|  | [Sonsbeck](https://hofladenliste.de/nordrhein-westfalen/wesel/sonsbeck/) `/nordrhein-westfalen/wesel/sonsbeck/` | Kreis Wesel | 1 | 6 | 9 |
-|  | [Meckenheim (Landkreis Bad Dürkheim)](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/meckenheim/) `/rheinland-pfalz/bad-duerkheim/meckenheim/` | Landkreis Bad Dürkheim | 1 | 6 | 9 |
-|  | [Rheinzabern](https://hofladenliste.de/rheinland-pfalz/germersheim/rheinzabern/) `/rheinland-pfalz/germersheim/rheinzabern/` | Landkreis Germersheim | 1 | 6 | 9 |
-|  | [Genthin](https://hofladenliste.de/sachsen-anhalt/jerichower-land/genthin/) `/sachsen-anhalt/jerichower-land/genthin/` | Landkreis Jerichower Land | 1 | 6 | 9 |
+| ✓ | [Issum](https://hofladenliste.de/nordrhein-westfalen/kleve/issum/) `/nordrhein-westfalen/kleve/issum/` | Kreis Kleve | 1 | 6 | 9 |
+| ✓ | [Kranenburg](https://hofladenliste.de/nordrhein-westfalen/kleve/kranenburg/) `/nordrhein-westfalen/kleve/kranenburg/` | Kreis Kleve | 1 | 6 | 9 |
+| ✓ | [Kalletal](https://hofladenliste.de/nordrhein-westfalen/lippe/kalletal/) `/nordrhein-westfalen/lippe/kalletal/` | Kreis Lippe | 1 | 6 | 9 |
+| ✓ | [Lage](https://hofladenliste.de/nordrhein-westfalen/lippe/lage/) `/nordrhein-westfalen/lippe/lage/` | Kreis Lippe | 1 | 6 | 9 |
+| ✓ | [Bad Wünnenberg](https://hofladenliste.de/nordrhein-westfalen/paderborn/bad-wuennenberg/) `/nordrhein-westfalen/paderborn/bad-wuennenberg/` | Kreis Paderborn | 1 | 6 | 9 |
+| ✓ | [Lichtenau (Kreis Paderborn)](https://hofladenliste.de/nordrhein-westfalen/paderborn/lichtenau/) `/nordrhein-westfalen/paderborn/lichtenau/` | Kreis Paderborn | 1 | 6 | 9 |
+| ✓ | [Elsdorf](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/elsdorf/) `/nordrhein-westfalen/rhein-erft-kreis/elsdorf/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
+| ✓ | [Erftstadt](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/erftstadt/) `/nordrhein-westfalen/rhein-erft-kreis/erftstadt/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
+| ✓ | [Wesseling](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/wesseling/) `/nordrhein-westfalen/rhein-erft-kreis/wesseling/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
+| ✓ | [Jüchen](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/juechen/) `/nordrhein-westfalen/rhein-kreis-neuss/juechen/` | Rhein-Kreis Neuss | 1 | 6 | 9 |
+| ✓ | [Wachtberg](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/wachtberg/) `/nordrhein-westfalen/rhein-sieg-kreis/wachtberg/` | Rhein-Sieg-Kreis | 1 | 6 | 9 |
+| ✓ | [Werl](https://hofladenliste.de/nordrhein-westfalen/soest/werl/) `/nordrhein-westfalen/soest/werl/` | Kreis Soest | 1 | 6 | 9 |
+| ✓ | [Simmerath](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/simmerath/) `/nordrhein-westfalen/staedteregion-aachen/simmerath/` | Städteregion Aachen | 1 | 6 | 9 |
+| ✓ | [Tecklenburg](https://hofladenliste.de/nordrhein-westfalen/steinfurt/tecklenburg/) `/nordrhein-westfalen/steinfurt/tecklenburg/` | Kreis Steinfurt | 1 | 6 | 9 |
+| ✓ | [Westerkappeln](https://hofladenliste.de/nordrhein-westfalen/steinfurt/westerkappeln/) `/nordrhein-westfalen/steinfurt/westerkappeln/` | Kreis Steinfurt | 1 | 6 | 9 |
+| ✓ | [Grefrath](https://hofladenliste.de/nordrhein-westfalen/viersen/grefrath/) `/nordrhein-westfalen/viersen/grefrath/` | Kreis Viersen | 1 | 6 | 9 |
+| ✓ | [Niederkrüchten](https://hofladenliste.de/nordrhein-westfalen/viersen/niederkruechten/) `/nordrhein-westfalen/viersen/niederkruechten/` | Kreis Viersen | 1 | 6 | 9 |
+| ✓ | [Drensteinfurt](https://hofladenliste.de/nordrhein-westfalen/warendorf/drensteinfurt/) `/nordrhein-westfalen/warendorf/drensteinfurt/` | Kreis Warendorf | 1 | 6 | 9 |
+| ✓ | [Everswinkel](https://hofladenliste.de/nordrhein-westfalen/warendorf/everswinkel/) `/nordrhein-westfalen/warendorf/everswinkel/` | Kreis Warendorf | 1 | 6 | 9 |
+| ✓ | [Warendorf](https://hofladenliste.de/nordrhein-westfalen/warendorf/warendorf/) `/nordrhein-westfalen/warendorf/warendorf/` | Kreis Warendorf | 1 | 6 | 9 |
+| ✓ | [Kamp-Lintfort](https://hofladenliste.de/nordrhein-westfalen/wesel/kamp-lintfort/) `/nordrhein-westfalen/wesel/kamp-lintfort/` | Kreis Wesel | 1 | 6 | 9 |
+| ✓ | [Sonsbeck](https://hofladenliste.de/nordrhein-westfalen/wesel/sonsbeck/) `/nordrhein-westfalen/wesel/sonsbeck/` | Kreis Wesel | 1 | 6 | 9 |
+| ✓ | [Meckenheim (Landkreis Bad Dürkheim)](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/meckenheim/) `/rheinland-pfalz/bad-duerkheim/meckenheim/` | Landkreis Bad Dürkheim | 1 | 6 | 9 |
+| ✓ | [Rheinzabern](https://hofladenliste.de/rheinland-pfalz/germersheim/rheinzabern/) `/rheinland-pfalz/germersheim/rheinzabern/` | Landkreis Germersheim | 1 | 6 | 9 |
+| ✓ | [Genthin](https://hofladenliste.de/sachsen-anhalt/jerichower-land/genthin/) `/sachsen-anhalt/jerichower-land/genthin/` | Landkreis Jerichower Land | 1 | 6 | 9 |
 
 ## Paket 23 (0/25 fertig)
 
