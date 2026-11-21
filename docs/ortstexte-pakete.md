@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 301 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 326 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -363,35 +363,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Stolberg (Rheinland)](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/) `/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/` | Städteregion Aachen | 3 | 3 | 12 |
 | ✓ | [Dinslaken](https://hofladenliste.de/nordrhein-westfalen/wesel/dinslaken/) `/nordrhein-westfalen/wesel/dinslaken/` | Kreis Wesel | 3 | 3 | 12 |
 
-## Paket 13 (0/25 fertig)
+## Paket 13 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Weimar](https://hofladenliste.de/thueringen/weimar/) `/thueringen/weimar/` | Weimar | 3 | 3 | 12 |
-|  | [Deggenhausertal](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/deggenhausertal/) `/baden-wuerttemberg/bodenseekreis/deggenhausertal/` | Bodenseekreis | 1 | 8 | 11 |
-|  | [Meckenbeuren](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/meckenbeuren/) `/baden-wuerttemberg/bodenseekreis/meckenbeuren/` | Bodenseekreis | 1 | 8 | 11 |
-|  | [Neukirch](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/neukirch/) `/baden-wuerttemberg/bodenseekreis/neukirch/` | Bodenseekreis | 1 | 8 | 11 |
-|  | [Oberteuringen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/oberteuringen/) `/baden-wuerttemberg/bodenseekreis/oberteuringen/` | Bodenseekreis | 1 | 8 | 11 |
-|  | [Leonberg](https://hofladenliste.de/baden-wuerttemberg/boeblingen/leonberg/) `/baden-wuerttemberg/boeblingen/leonberg/` | Landkreis Böblingen | 1 | 8 | 11 |
-|  | [Nufringen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/nufringen/) `/baden-wuerttemberg/boeblingen/nufringen/` | Landkreis Böblingen | 1 | 8 | 11 |
-|  | [Aichwald](https://hofladenliste.de/baden-wuerttemberg/esslingen/aichwald/) `/baden-wuerttemberg/esslingen/aichwald/` | Landkreis Esslingen | 1 | 8 | 11 |
-|  | [Filderstadt](https://hofladenliste.de/baden-wuerttemberg/esslingen/filderstadt/) `/baden-wuerttemberg/esslingen/filderstadt/` | Landkreis Esslingen | 1 | 8 | 11 |
-|  | [Schöntal](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/schoental/) `/baden-wuerttemberg/hohenlohekreis/schoental/` | Hohenlohekreis | 1 | 8 | 11 |
-|  | [Langenbrettach](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/langenbrettach/) `/baden-wuerttemberg/landkreis-heilbronn/langenbrettach/` | Landkreis Heilbronn | 1 | 8 | 11 |
-|  | [Marxzell](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/marxzell/) `/baden-wuerttemberg/landkreis-karlsruhe/marxzell/` | Landkreis Karlsruhe | 1 | 8 | 11 |
-|  | [Nordrach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/nordrach/) `/baden-wuerttemberg/ortenaukreis/nordrach/` | Ortenaukreis | 1 | 8 | 11 |
-|  | [Edingen-Neckarhausen](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/edingen-neckarhausen/) `/baden-wuerttemberg/rhein-neckar-kreis/edingen-neckarhausen/` | Rhein-Neckar-Kreis | 1 | 8 | 11 |
-|  | [Weinheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/weinheim/) `/baden-wuerttemberg/rhein-neckar-kreis/weinheim/` | Rhein-Neckar-Kreis | 1 | 8 | 11 |
-|  | [Aichach](https://hofladenliste.de/bayern/aichach-friedberg/aichach/) `/bayern/aichach-friedberg/aichach/` | Landkreis Aichach-Friedberg | 1 | 8 | 11 |
-|  | [Dasing](https://hofladenliste.de/bayern/aichach-friedberg/dasing/) `/bayern/aichach-friedberg/dasing/` | Landkreis Aichach-Friedberg | 1 | 8 | 11 |
-|  | [Dachau](https://hofladenliste.de/bayern/dachau/dachau/) `/bayern/dachau/dachau/` | Landkreis Dachau | 1 | 8 | 11 |
-|  | [Beilngries](https://hofladenliste.de/bayern/eichstaett/beilngries/) `/bayern/eichstaett/beilngries/` | Landkreis Eichstätt | 1 | 8 | 11 |
-|  | [Egloffstein](https://hofladenliste.de/bayern/forchheim/egloffstein/) `/bayern/forchheim/egloffstein/` | Landkreis Forchheim | 1 | 8 | 11 |
-|  | [Germering](https://hofladenliste.de/bayern/fuerstenfeldbruck/germering/) `/bayern/fuerstenfeldbruck/germering/` | Landkreis Fürstenfeldbruck | 1 | 8 | 11 |
-|  | [Pfaffenhofen an der Ilm](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/pfaffenhofen-an-der-ilm/) `/bayern/pfaffenhofen-an-der-ilm/pfaffenhofen-an-der-ilm/` | Landkreis Pfaffenhofen an der Ilm | 1 | 8 | 11 |
-|  | [Trebur](https://hofladenliste.de/hessen/gross-gerau/trebur/) `/hessen/gross-gerau/trebur/` | Landkreis Groß-Gerau | 1 | 8 | 11 |
-|  | [Grebenstein](https://hofladenliste.de/hessen/landkreis-kassel/grebenstein/) `/hessen/landkreis-kassel/grebenstein/` | Landkreis Kassel | 1 | 8 | 11 |
-|  | [Bad Vilbel](https://hofladenliste.de/hessen/wetteraukreis/bad-vilbel/) `/hessen/wetteraukreis/bad-vilbel/` | Wetteraukreis | 1 | 8 | 11 |
+| ✓ | [Weimar](https://hofladenliste.de/thueringen/weimar/) `/thueringen/weimar/` | Weimar | 3 | 3 | 12 |
+| ✓ | [Deggenhausertal](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/deggenhausertal/) `/baden-wuerttemberg/bodenseekreis/deggenhausertal/` | Bodenseekreis | 1 | 8 | 11 |
+| ✓ | [Meckenbeuren](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/meckenbeuren/) `/baden-wuerttemberg/bodenseekreis/meckenbeuren/` | Bodenseekreis | 1 | 8 | 11 |
+| ✓ | [Neukirch](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/neukirch/) `/baden-wuerttemberg/bodenseekreis/neukirch/` | Bodenseekreis | 1 | 8 | 11 |
+| ✓ | [Oberteuringen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/oberteuringen/) `/baden-wuerttemberg/bodenseekreis/oberteuringen/` | Bodenseekreis | 1 | 8 | 11 |
+| ✓ | [Leonberg](https://hofladenliste.de/baden-wuerttemberg/boeblingen/leonberg/) `/baden-wuerttemberg/boeblingen/leonberg/` | Landkreis Böblingen | 1 | 8 | 11 |
+| ✓ | [Nufringen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/nufringen/) `/baden-wuerttemberg/boeblingen/nufringen/` | Landkreis Böblingen | 1 | 8 | 11 |
+| ✓ | [Aichwald](https://hofladenliste.de/baden-wuerttemberg/esslingen/aichwald/) `/baden-wuerttemberg/esslingen/aichwald/` | Landkreis Esslingen | 1 | 8 | 11 |
+| ✓ | [Filderstadt](https://hofladenliste.de/baden-wuerttemberg/esslingen/filderstadt/) `/baden-wuerttemberg/esslingen/filderstadt/` | Landkreis Esslingen | 1 | 8 | 11 |
+| ✓ | [Schöntal](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/schoental/) `/baden-wuerttemberg/hohenlohekreis/schoental/` | Hohenlohekreis | 1 | 8 | 11 |
+| ✓ | [Langenbrettach](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/langenbrettach/) `/baden-wuerttemberg/landkreis-heilbronn/langenbrettach/` | Landkreis Heilbronn | 1 | 8 | 11 |
+| ✓ | [Marxzell](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/marxzell/) `/baden-wuerttemberg/landkreis-karlsruhe/marxzell/` | Landkreis Karlsruhe | 1 | 8 | 11 |
+| ✓ | [Nordrach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/nordrach/) `/baden-wuerttemberg/ortenaukreis/nordrach/` | Ortenaukreis | 1 | 8 | 11 |
+| ✓ | [Edingen-Neckarhausen](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/edingen-neckarhausen/) `/baden-wuerttemberg/rhein-neckar-kreis/edingen-neckarhausen/` | Rhein-Neckar-Kreis | 1 | 8 | 11 |
+| ✓ | [Weinheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/weinheim/) `/baden-wuerttemberg/rhein-neckar-kreis/weinheim/` | Rhein-Neckar-Kreis | 1 | 8 | 11 |
+| ✓ | [Aichach](https://hofladenliste.de/bayern/aichach-friedberg/aichach/) `/bayern/aichach-friedberg/aichach/` | Landkreis Aichach-Friedberg | 1 | 8 | 11 |
+| ✓ | [Dasing](https://hofladenliste.de/bayern/aichach-friedberg/dasing/) `/bayern/aichach-friedberg/dasing/` | Landkreis Aichach-Friedberg | 1 | 8 | 11 |
+| ✓ | [Dachau](https://hofladenliste.de/bayern/dachau/dachau/) `/bayern/dachau/dachau/` | Landkreis Dachau | 1 | 8 | 11 |
+| ✓ | [Beilngries](https://hofladenliste.de/bayern/eichstaett/beilngries/) `/bayern/eichstaett/beilngries/` | Landkreis Eichstätt | 1 | 8 | 11 |
+| ✓ | [Egloffstein](https://hofladenliste.de/bayern/forchheim/egloffstein/) `/bayern/forchheim/egloffstein/` | Landkreis Forchheim | 1 | 8 | 11 |
+| ✓ | [Germering](https://hofladenliste.de/bayern/fuerstenfeldbruck/germering/) `/bayern/fuerstenfeldbruck/germering/` | Landkreis Fürstenfeldbruck | 1 | 8 | 11 |
+| ✓ | [Pfaffenhofen an der Ilm](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/pfaffenhofen-an-der-ilm/) `/bayern/pfaffenhofen-an-der-ilm/pfaffenhofen-an-der-ilm/` | Landkreis Pfaffenhofen an der Ilm | 1 | 8 | 11 |
+| ✓ | [Trebur](https://hofladenliste.de/hessen/gross-gerau/trebur/) `/hessen/gross-gerau/trebur/` | Landkreis Groß-Gerau | 1 | 8 | 11 |
+| ✓ | [Grebenstein](https://hofladenliste.de/hessen/landkreis-kassel/grebenstein/) `/hessen/landkreis-kassel/grebenstein/` | Landkreis Kassel | 1 | 8 | 11 |
+| ✓ | [Bad Vilbel](https://hofladenliste.de/hessen/wetteraukreis/bad-vilbel/) `/hessen/wetteraukreis/bad-vilbel/` | Wetteraukreis | 1 | 8 | 11 |
 
 ## Paket 14 (0/25 fertig)
 
