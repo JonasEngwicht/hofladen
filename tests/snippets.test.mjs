@@ -29,3 +29,23 @@ test('Ortsseiten: Beschreibung nennt meist den nächsten Hof mit Namen', () => {
   assert.ok(mit / orte.length > 0.8, `nur ${mit} von ${orte.length} mit nächstem Hof`);
   assert.ok(!orte.some(([, h]) => /am selben Ort|\)\s*\(/.test(beschreibung(h))), 'keine Doppelklammern oder „am selben Ort“');
 });
+
+const titel = (h) => dec((h.match(/<title>([^<]*)<\/title>/) || [])[1] || '');
+
+test('Hofseiten: „Öffnungszeiten“ im Titel nur, wenn welche hinterlegt sind, und deutlich öfter als früher', () => {
+  const mit = hoefe.filter(([, h]) => titel(h).includes('Öffnungszeiten'));
+  assert.ok(mit.length > 4000, `nur ${mit.length} Titel mit „Öffnungszeiten“`);
+  const ohneZeiten = mit.filter(([, h]) => h.includes('<p class="leise">Keine Öffnungszeiten hinterlegt.')).map(([p]) => p);
+  assert.deepEqual(ohneZeiten.slice(0, 10), []);
+});
+
+test('Hofseiten: Rechtsformen (GmbH, GbR …) nur noch im Titel, wenn der Name sonst doppelt wäre', () => {
+  // Vorher (21.11.) 142 Titel mit Rechtsform; übrig bleiben nur Namensgleiche wie „Hofladen Fischer“
+  const mit = hoefe.filter(([, h]) => /\b(GmbH|GbR|OHG)\b/.test(titel(h)));
+  assert.ok(mit.length < 20, `${mit.length} Titel mit Rechtsform: ${mit.slice(0, 5).map(([p]) => p).join(', ')}`);
+});
+
+test('Automaten-Übersicht nennt „24/7“ in der Beschreibung', () => {
+  const [, h] = alle.find(([p]) => p === '/hofladen-automaten/');
+  assert.match(beschreibung(h), /24\/7/);
+});

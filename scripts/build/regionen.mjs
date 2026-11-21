@@ -256,7 +256,7 @@ ${kreisListe.map(([k, es]) => { const tk = typKreis(t, k); return `<section clas
   const rund = t.liste.filter((e) => istRund(wocheVon(e))).length;
   schreibe('/hofladen-automaten/', seite({
     titel: passend(`Hofladen-Automaten in der Nähe – ${zahl(t.liste.length)} Automaten in Deutschland`, `Hofladen-Automaten in der Nähe – ${zahl(t.liste.length)} Standorte`, `Hofladen-Automat in der Nähe – ${zahl(t.liste.length)} Automaten`),
-    beschreibung: `Hofladen-Automat in der Nähe finden: ${zahl(t.liste.length)} Milchtankstellen, Eierautomaten und Regiomaten, ${zahl(rund)} davon rund um die Uhr – mit Öffnungszeiten, Route und „jetzt geöffnet“.`,
+    beschreibung: `Hofladen-Automat in der Nähe finden: ${zahl(t.liste.length)} Milchtankstellen, Eierautomaten und Regiomaten, ${zahl(rund)} davon rund um die Uhr (24/7) – mit Öffnungszeiten, Route und „jetzt geöffnet“.`,
     pfad: '/hofladen-automaten/',
     krumen: [['Hofladen-Automaten', '/hofladen-automaten/']],
     jsonld: [itemList('Hofladen-Automaten nach Bundesland', proLand.map(({ l }) => [`Hofladen-Automaten in ${l.name}`, landKat(t, l)?.pfad || `/${l.slug}/`]))],

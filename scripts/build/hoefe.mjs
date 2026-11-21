@@ -14,6 +14,13 @@ import { zeitenSnippet, PLURAL_ART, STAND_PLATZHALTER, fragenHtml, gross, km, li
 import { SAISON_SEITEN, artTyp, monatsSpanne, typKreis } from './startseite.mjs';
 import { umgebungsSeite } from './regionen.mjs';
 
+// Erste Variante, die mit Marke passt, sonst die erste ohne Marke (null, wenn keine passt)
+const passendVorMarke = (...v) => v.find((x) => titelBreite(`${x} | Hofladenliste`) <= TITEL_MAX) || v.find((x) => titelBreite(x) <= TITEL_MAX) || null;
+const RECHTSFORM = /,?\s+(GmbH(\s*&\s*Co\.?\s*KG)?|GbR|OHG|KG|UG(\s*\(haftungsbeschränkt\))?|e\.\s?K\.|e\.\s?Kfm\.)(?=[\s,]|$)/g;
+// Ohne Rechtsform nur, wenn dadurch kein anderer Eintrag denselben Namen bekommt (eindeutige Titel)
+const ohneRechtsform = (t) => t.replace(RECHTSFORM, '').replace(/\s{2,}/g, ' ').trim();
+const NAMEN_ZAHL = new Map();
+for (const x of eintraege) { const n = ohneRechtsform(x.titelSeite); NAMEN_ZAHL.set(n, (NAMEN_ZAHL.get(n) || 0) + 1); }
 // ---------- Detailseiten ----------
 // Bearbeiten-Link mit stabiler ID (bleibt gültig, auch wenn sich der Slug ändert)
 // ---------- Veranstaltungen der Betriebe (data/betrieb-export.json aus dem Betreiber-Bereich) ----------
@@ -106,6 +113,7 @@ for (const e of eintraege) {
     naechsterHof ? `Der nächste weitere Hofladen ist <a href="${naechsterHof[1].pfad}">${esc(naechsterHof[1].titelSeite)}</a> in ${esc(naechsterHof[1].ortAnzeige)}, etwa ${km(naechsterHof[0])} entfernt.` : '',
   ].filter(Boolean).join(' ');
   const titelEnthaeltOrt = e.titel.includes(e.ortAnzeige);
+  const mitZeiten = !!(e.oeffnungszeiten || e.oeffnungszeiten_text);
   const rund = istRund(woche);
   const merkmale = [
     e.gepflegt?.art === 'uebernahme' && ['Vom Betrieb gepflegt', `Angaben vom Betrieb selbst, Stand ${datumDe(e.gepflegt.stand)}.`],
@@ -132,13 +140,19 @@ for (const e of eintraege) {
   const hofFaq = hofFragen.length >= 3 ? fragenHtml(hofFragen, `Häufige Fragen zu ${e.titel}`) : { html: '', ld: [] };
   const umgebungsSeite = naechsteUmgebungsSeite(e);
   // Sehr lange Namen (OSM-Freitext) im Title kürzen, die H1 bleibt vollständig
-  const tn = (() => { if (e.titelSeite.length <= 60 && titelBreite(e.titelSeite) <= TITEL_MAX - 10) return e.titelSeite;
-    const w = e.titelSeite.split(' '); while (w.length > 1 && (w.join(' ').length > 58 || titelBreite(`${w.join(' ')} …`) > TITEL_MAX - 10)) w.pop();
+  // Rechtsformen (GmbH, GbR, KG …) braucht im Title niemand – der Platz geht an Ort und „Öffnungszeiten“
+  const nameTitel = (() => { const n = ohneRechtsform(e.titelSeite); return n && (n === e.titelSeite || NAMEN_ZAHL.get(n) === 1) ? n : e.titelSeite; })();
+  const tn = (() => { if (nameTitel.length <= 60 && titelBreite(nameTitel) <= TITEL_MAX - 10) return nameTitel;
+    const w = nameTitel.split(' '); while (w.length > 1 && (w.join(' ').length > 58 || titelBreite(`${w.join(' ')} …`) > TITEL_MAX - 10)) w.pop();
     return `${w.join(' ').replace(/[\s,;:(–-]+$/, '')} …`; })();
   schreibe(e.pfad, seite({
+    // Name + Ort + „Öffnungszeiten“ (danach suchen die meisten); „Öffnungszeiten“ nur, wenn welche hinterlegt sind
     titel: titelEnthaeltOrt
-      ? passend(`${tn} – Öffnungszeiten, Angebot & Route`, `${tn} – Öffnungszeiten & Route`, `${tn} – Öffnungszeiten`, tn)
-      : passend(`${tn} – ${e.art} in ${e.ortAnzeige}, Öffnungszeiten`, `${tn} – ${e.art} in ${e.ortAnzeige}`, `${tn} in ${e.ortAnzeige}`, tn),
+      ? (mitZeiten ? passend(`${tn} – Öffnungszeiten, Angebot & Route`, `${tn} – Öffnungszeiten & Route`, `${tn} – Öffnungszeiten`, tn)
+        : passend(`${tn} – ${e.art}, Adresse & Route`, `${tn} – Adresse & Route`, tn))
+      // „Öffnungszeiten“ geht vor der Marke („| Hofladenliste“ zeigt Google ohnehin als Website-Namen)
+      : mitZeiten ? (passendVorMarke(`${tn} – ${e.art} in ${e.ortAnzeige}, Öffnungszeiten`, `${tn} in ${e.ortAnzeige} – Öffnungszeiten`) || passend(`${tn} – ${e.art} in ${e.ortAnzeige}`, `${tn} in ${e.ortAnzeige}`, tn))
+        : passend(`${tn} – ${e.art} in ${e.ortAnzeige}`, `${tn} in ${e.ortAnzeige}`, tn),
     // Snippet: Ort und Angebot zuerst (das sucht man), dann kompakte Zeiten; der Name steht schon im Titel
     beschreibung: (() => {
       const art = e.bio && !/bio/i.test(e.art) ? `Bio-${e.art}` : e.art;
