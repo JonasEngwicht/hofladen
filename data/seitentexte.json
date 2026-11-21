@@ -18458,5 +18458,755 @@
       }
     ],
     "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/rhein-neckar-kreis/dielheim/": {
+    "titel": "Hofläden in Dielheim: gut zu wissen",
+    "oben": "Dielheim liegt am Westrand des Kraichgaus bei Wiesloch. Eingetragen sind Freudensprung mit Obstbau und Hofladen, Melissa's Bio-Eiershop, der Windhof Beifuss, ein weiterer Hofladen und ein Fleisch-Regiomat.",
+    "einleitung": "Sanfte Lösshügel mit Obstwiesen, Feldern und einigen Weinbergen prägen die Gemeinde. Freudensprung verkauft Obst aus eigenem Anbau.\n\nWeitere Höfe findest du in Wiesloch und Rauenberg.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wiesloch und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/wiesloch/"
+      },
+      {
+        "text": "Hofläden in Rauenberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/rauenberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/rhein-neckar-kreis/heddesheim/": {
+    "titel": "Hofläden in Heddesheim: gut zu wissen",
+    "oben": "Heddesheim liegt in der Rheinebene zwischen Mannheim und Weinheim, früher wurde hier viel Tabak angebaut. Heute gibt es Eier an drei Automaten, eine Milchtankstelle und den Hofverkauf Schaaff.",
+    "einleitung": "Die flache, warme Ebene eignet sich gut für Gemüse, Spargel und Getreide. Alte Tabakscheunen erinnern an die Vergangenheit. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Ladenburg und Viernheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ladenburg und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/ladenburg/"
+      },
+      {
+        "text": "Hofläden in Viernheim und Umgebung",
+        "pfad": "/hessen/bergstrasse/viernheim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/rhein-neckar-kreis/sinsheim/": {
+    "titel": "Hofläden in Sinsheim: gut zu wissen",
+    "oben": "Sinsheim liegt im Kraichgau, über der Stadt steht die Burg Steinsberg. Eingetragen sind der Obsthof Krebs, der Demeter-Hofladen der Familie Schneider, der Ludwighof, der Geflügelhof Zoller und Uhler's Freilandeier mit eigener Nudelmanufaktur.",
+    "einleitung": "Die Lösshügel ringsum sind fruchtbares Ackerland mit Getreide, Zuckerrüben und Obst. Bekannt ist die Stadt auch für ihr Technikmuseum.\n\nWeitere Höfe findest du in Eppingen und Dielheim.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eppingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/eppingen/"
+      },
+      {
+        "text": "Hofläden in Dielheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/dielheim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/rottweil/zimmern-ob-rottweil/": {
+    "titel": "Hofläden in Zimmern ob Rottweil: gut zu wissen",
+    "oben": "Zimmern ob Rottweil liegt auf der Hochfläche über dem oberen Neckar. Die Hofläden hier haben viel Auswahl: Kramer's Hofladen führt Eier, Geflügel, Honig, Brot und Nudeln, Aulich's Hoflädele Milch, Käse, Fleisch und Gemüse. Dazu kommen Jauchs Hofladen, ein Stallverkauf und ein Regiomat.",
+    "einleitung": "Zwischen Schwarzwald und Alb liegen hier Felder und Wiesen, viele Höfe halten Rinder. Milch ab Stall ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Rottweil und Dunningen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rottweil und Umgebung",
+        "pfad": "/baden-wuerttemberg/rottweil/rottweil/"
+      },
+      {
+        "text": "Hofläden in Dunningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/rottweil/dunningen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/schwaebisch-hall/gaildorf/": {
+    "titel": "Hofläden in Gaildorf: gut zu wissen",
+    "oben": "Gaildorf liegt im Kochertal im Limpurger Land. Bio prägt die Einträge: der Demeterhof Steppach, der Bioland-Steinäckerhof und der Biolandhof Reimer. Dazu kommen Naturkost im Milchhäusle und die Imkerei Durchdenwald.",
+    "einleitung": "Wiesen im Tal und Wälder auf den Höhen prägen die Gegend. Das Limpurger Land ist Heimat des Limpurger Weideochsen, einer alten Rinderrasse.\n\nWeitere Höfe findest du in Michelbach an der Bilz und Schwäbisch Hall.",
+    "saison": [
+      {
+        "titel": "Rindfleisch",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Michelbach an der Bilz und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/michelbach-an-der-bilz/"
+      },
+      {
+        "text": "Hofläden in Schwäbisch Hall und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/schwaebisch-hall/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/schwaebisch-hall/michelbach-an-der-bilz/": {
+    "titel": "Hofläden in Michelbach an der Bilz: gut zu wissen",
+    "oben": "Michelbach an der Bilz liegt südlich von Schwäbisch Hall. Der Bioland-Hof Kleincomburg hat ein breites Angebot von Eiern über Gemüse bis Getränke, dazu kommen der Bio-Hofladen Maas, das Hofcafé Speck und Automaten mit Fleisch.",
+    "einleitung": "Die Bilz ist ein Hügel mit Wald, ringsum liegen Felder und Weiden der Hohenloher Ebene. Setzers Genussbox bietet Fleisch rund um die Uhr.\n\nWeitere Höfe findest du in Schwäbisch Hall und Gaildorf.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Schweinefleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schwäbisch Hall und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/schwaebisch-hall/"
+      },
+      {
+        "text": "Hofläden in Gaildorf und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/gaildorf/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/schwaebisch-hall/rot-am-see/": {
+    "titel": "Hofläden in Rot am See: gut zu wissen",
+    "oben": "Rot am See liegt in der Hohenloher Ebene an der Brettach. Eingetragen sind Lammfleisch von der Direktvermarktung Förster, ein Bio-Hoflädle, die Seemühle, Meinikheims Hofmilch und das Eierhäusle in Niederwinden.",
+    "einleitung": "Die flache Ebene ist Bauernland mit Getreide, Mais und viel Tierhaltung. Die Hofmilch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Blaufelden und Wallhausen.",
+    "saison": [
+      {
+        "titel": "Lammfleisch",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Blaufelden und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/blaufelden/"
+      },
+      {
+        "text": "Hofläden in Wallhausen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/wallhausen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/schwaebisch-hall/schwaebisch-hall/": {
+    "titel": "Hofläden in Schwäbisch Hall: gut zu wissen",
+    "oben": "Schwäbisch Hall am Kocher ist durch das Salz reich geworden, die Altstadt zieht sich steil zum Fluss hinab. Eingetragen sind der Bauernmarkt Schwäbisch Hall, der Werkverkauf der Hohenloher Molkerei mit Bio-Milch, Schiebers Bauernhof, die Imkerei Adams und Setzers Genussbox.",
+    "einleitung": "Die Region ist Heimat des Schwäbisch-Hällischen Landschweins. Im Freilandmuseum Wackershofen kannst du sehen, wie Höfe früher wirtschafteten.\n\nWeitere Höfe findest du in Michelbach an der Bilz und Michelfeld.",
+    "saison": [
+      {
+        "titel": "Schweinefleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Michelbach an der Bilz und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/michelbach-an-der-bilz/"
+      },
+      {
+        "text": "Hofläden in Michelfeld und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/michelfeld/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/schwarzwald-baar-kreis/donaueschingen/": {
+    "titel": "Hofläden in Donaueschingen: gut zu wissen",
+    "oben": "In Donaueschingen fließen Brigach und Breg zur Donau zusammen, im Schlosspark liegt die Donauquelle. Eingetragen sind der Steinenhof, Hogg's Hofladen, Demeter- und Bio-Produkte von Mößner, ein Eierautomat und der 24-Stunden-Automat vom Leimgraben Hof mit Eiern, Käse, Fleisch und Honig.",
+    "einleitung": "Die Baar ist eine kühle Hochebene mit Feldern, Wiesen und Mooren. Viele Höfe halten Rinder und bauen Getreide an.\n\nWeitere Höfe findest du in Bräunlingen und Tuningen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bräunlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/braeunlingen/"
+      },
+      {
+        "text": "Hofläden in Tuningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/tuningen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/sigmaringen/messkirch/": {
+    "titel": "Hofläden in Meßkirch: gut zu wissen",
+    "oben": "Meßkirch liegt zwischen Bodensee und Donau, bekannt ist die Klosterbaustelle Campus Galli. Eingetragen sind die Bio-Eier- und Nudelhütte, die Bio-Spießmühle, Klett's Eierhäusle mit Grillfleisch, Gemüse, Kartoffeln und Honig, ein Eierautomat und ein Regiomat.",
+    "einleitung": "Die Landschaft aus Hügeln, Wäldern und Feldern gehört zum Übergang von Oberschwaben zur Alb.\n\nWeitere Höfe findest du in Sauldorf und Inzigkofen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Grillfleisch",
+        "zeit": "Mai bis September"
+      },
+      {
+        "titel": "Mehl",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sauldorf und Umgebung",
+        "pfad": "/baden-wuerttemberg/sigmaringen/sauldorf/"
+      },
+      {
+        "text": "Hofläden in Inzigkofen und Umgebung",
+        "pfad": "/baden-wuerttemberg/sigmaringen/inzigkofen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/sigmaringen/sauldorf/": {
+    "titel": "Hofläden in Sauldorf: gut zu wissen",
+    "oben": "Sauldorf ist eine ländliche Gemeinde zwischen Meßkirch und Stockach. Bio ist hier stark: Heckler's Hofladen mit Eiern, Fleisch, Gemüse, Obst, Kartoffeln und Honig, die Kornschnalle und ein Bio-Eierhäusle. Dazu kommen die Solawi Waldfeldhof und der Walk-O-Mat mit Fleisch.",
+    "einleitung": "Felder, Wiesen und Wälder auf welligem Land prägen die Dörfer, im Süden geht es Richtung Hegau und Bodensee.\n\nWeitere Höfe findest du in Meßkirch und Stockach.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Meßkirch und Umgebung",
+        "pfad": "/baden-wuerttemberg/sigmaringen/messkirch/"
+      },
+      {
+        "text": "Hofläden in Stockach und Umgebung",
+        "pfad": "/baden-wuerttemberg/konstanz/stockach/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/tuebingen/gomaringen/": {
+    "titel": "Hofläden in Gomaringen: gut zu wissen",
+    "oben": "Gomaringen liegt im Albvorland zwischen Tübingen und Reutlingen. Eingetragen sind das Bio-Hoflädle Kuttler, Sabines Gsälzladen, zwei weitere Hofläden und ein Regiomat mit Eiern.",
+    "einleitung": "Gsälz ist das schwäbische Wort für Marmelade. Rund um den Ort liegen Streuobstwiesen und Felder, im Süden steigt der Albtrauf an.\n\nWeitere Höfe findest du in Mössingen und Kusterdingen.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Gsälz",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mössingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/tuebingen/moessingen/"
+      },
+      {
+        "text": "Hofläden in Kusterdingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/tuebingen/kusterdingen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/tuebingen/starzach/": {
+    "titel": "Hofläden in Starzach: gut zu wissen",
+    "oben": "Starzach liegt im Neckartal zwischen Horb und Rottenburg. Eingetragen sind das Hofcafé in der alten Brauerei Seifer mit eigenem Hofladen, das Marienhoflädle und zwei Regiomaten, einer mit Eiern, Fleisch und Nudeln, einer mit Gemüse und Obst.",
+    "einleitung": "Das Neckartal ist hier eng und bewaldet, auf den Hochflächen des Gäus liegen Felder.\n\nWeitere Höfe findest du in Rottenburg und Horb.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rottenburg am Neckar und Umgebung",
+        "pfad": "/baden-wuerttemberg/tuebingen/rottenburg-am-neckar/"
+      },
+      {
+        "text": "Hofläden in Horb am Neckar und Umgebung",
+        "pfad": "/baden-wuerttemberg/freudenstadt/horb-am-neckar/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/aichach-friedberg/kissing/": {
+    "titel": "Hofläden in Kissing: gut zu wissen",
+    "oben": "Kissing liegt an der Lechleite südöstlich von Augsburg. Eingetragen sind der Beerenhof Schmelcher, der Hofladen von Irmengard Ortlieb, ein weiterer Hofladen, eine Milchtankstelle und ein Fleisch-Regiomat.",
+    "einleitung": "Unterhalb der Hangkante liegt das breite Lechtal mit Feldern, oben beginnt das Hügelland. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Mering und Friedberg.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Himbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mering und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/mering/"
+      },
+      {
+        "text": "Hofläden in Friedberg (Landkreis Aichach-Friedberg) und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/friedberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/aichach-friedberg/obergriesbach/": {
+    "titel": "Hofläden in Obergriesbach: gut zu wissen",
+    "oben": "Obergriesbach liegt im Wittelsbacher Land zwischen Friedberg und Aichach. Eingetragen sind die Imkerei Vogl, Bio-Streuobst von Naßl, eine Selbstbedienungs-Hittn und zwei Regiomaten mit Eiern, Kartoffeln und Nudeln.",
+    "einleitung": "Streuobstwiesen, Felder und Waldstücke prägen das Hügelland. Aus dem Obst der Streuobstwiesen wird oft Saft gepresst.\n\nWeitere Höfe findest du in Dasing und Aichach.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dasing und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/dasing/"
+      },
+      {
+        "text": "Hofläden in Aichach und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/aichach/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/bad-kissingen/hammelburg/": {
+    "titel": "Hofläden in Hammelburg: gut zu wissen",
+    "oben": "Hammelburg an der Fränkischen Saale gilt als älteste Weinstadt Frankens. Eingetragen sind der Sturmiushof mit Bauernladen, der Biohof Hartung, ein Kartoffelautomat, ein Eierautomat und ein Fleisch-Regiomat.",
+    "einleitung": "An den Hängen des Saaletals wachsen Reben, ringsum liegen Felder und die Wälder der Rhön-Ausläufer.\n\nWeitere Höfe findest du in Wartmannsroth und Arnstein.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Federweißer",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wartmannsroth und Umgebung",
+        "pfad": "/bayern/bad-kissingen/wartmannsroth/"
+      },
+      {
+        "text": "Hofläden in Arnstein und Umgebung",
+        "pfad": "/bayern/main-spessart/arnstein/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/berchtesgadener-land/saaldorf-surheim/": {
+    "titel": "Hofläden in Saaldorf-Surheim: gut zu wissen",
+    "oben": "Saaldorf-Surheim liegt im Rupertiwinkel an der Salzach, gegenüber von Salzburg. Bio ist hier stark: Die Biohöfe Kern, Knoll und Rehrl sind eingetragen, dazu der Paulbauernhof mit Käse und Geigl's Bauernladen.",
+    "einleitung": "Das Alpenvorland ist Grünland mit vielen Milchkühen, im Süden sieht man die Berchtesgadener Berge. Der Biohof Kern verkauft Eier und Nudeln.\n\nWeitere Höfe findest du in Laufen und Teisendorf.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Laufen und Umgebung",
+        "pfad": "/bayern/berchtesgadener-land/laufen/"
+      },
+      {
+        "text": "Hofläden in Teisendorf und Umgebung",
+        "pfad": "/bayern/berchtesgadener-land/teisendorf/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/dachau/haimhausen/": {
+    "titel": "Hofläden in Haimhausen: gut zu wissen",
+    "oben": "Haimhausen liegt im Ampertal zwischen Dachau und Freising, mit einem Schloss über dem Tal. Eingetragen sind Wachterhof, Kranz Hofladen, Riedmeir Hof, der FLO-Markt und ein Automat mit Obst und Gemüse.",
+    "einleitung": "Die Amper fließt durch eine Aue mit Wiesen, auf den Hügeln liegen Felder.\n\nWeitere Höfe findest du in Fahrenzhausen und Eching.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Fahrenzhausen und Umgebung",
+        "pfad": "/bayern/freising/fahrenzhausen/"
+      },
+      {
+        "text": "Hofläden in Eching (Landkreis Freising) und Umgebung",
+        "pfad": "/bayern/freising/eching/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/dachau/markt-indersdorf/": {
+    "titel": "Hofläden in Markt Indersdorf: gut zu wissen",
+    "oben": "Markt Indersdorf liegt an der Glonn im Dachauer Land, bekannt ist das ehemalige Kloster. Milch spielt hier eine Rolle: Der Schwalbenhof verkauft Milch, Kienings Milchtankstelle Eier, Milch und Käse. Dazu kommen der Biohof Hefele, Lachner und der Bumbaurhof.",
+    "einleitung": "Das Hügelland an der Glonn ist von Wiesen, Feldern und Wald geprägt. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Röhrmoos und Schwabhausen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Röhrmoos und Umgebung",
+        "pfad": "/bayern/dachau/roehrmoos/"
+      },
+      {
+        "text": "Hofläden in Schwabhausen und Umgebung",
+        "pfad": "/bayern/dachau/schwabhausen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/dingolfing-landau/pilsting/": {
+    "titel": "Hofläden in Pilsting: gut zu wissen",
+    "oben": "Pilsting liegt im unteren Isartal zwischen Landau und Plattling. Eingetragen sind der Bio-Betrieb von Walter Löw, der Kiermeierhof, Lammer's Hofladen mit Fleisch, ein Regiomat und ein Eierautomat.",
+    "einleitung": "Das Isartal ist breit und fruchtbar, mit Feldern für Getreide, Zuckerrüben und Gemüse. Nördlich schließt der Gäuboden an.\n\nWeitere Höfe findest du in Landau an der Isar und Wallersdorf.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Landau an der Isar und Umgebung",
+        "pfad": "/bayern/dingolfing-landau/landau-an-der-isar/"
+      },
+      {
+        "text": "Hofläden in Wallersdorf und Umgebung",
+        "pfad": "/bayern/dingolfing-landau/wallersdorf/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/ebersberg/baiern/": {
+    "titel": "Hofläden in Baiern: gut zu wissen",
+    "oben": "Baiern liegt im Hügelland südlich von Ebersberg. Eingetragen sind die Bio-Hofkäserei Stroblberg mit Milch und Käse, Köck's Milchkanne mit Eiern, Milch und Honig, Summerer's Hofladen, Huaba Eier und Unser Bio-Ei mit Eiern und Nudeln.",
+    "einleitung": "Moränenhügel, Wiesen und Wälder prägen die Gegend, viele Höfe halten Milchkühe. Die Milch aus der Milchkanne ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Glonn und Bruckmühl.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Glonn und Umgebung",
+        "pfad": "/bayern/ebersberg/glonn/"
+      },
+      {
+        "text": "Hofläden in Bruckmühl und Umgebung",
+        "pfad": "/bayern/landkreis-rosenheim/bruckmuehl/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/ebersberg/pliening/": {
+    "titel": "Hofläden in Pliening: gut zu wissen",
+    "oben": "Pliening liegt östlich von München auf der Schotterebene. Fast alle Einträge sind Bio-Betriebe: der Burgharthof, der Biohof Windschuasta, der Biohof Kollmannsberger mit Gärtnerei und der Zehmerhof. Dazu kommt ein Fleisch-Regiomat.",
+    "einleitung": "Die flachen Felder werden für Getreide, Kartoffeln und Gemüse genutzt. Kollmannsberger verkauft Gemüse aus eigener Gärtnerei.\n\nWeitere Höfe findest du in Poing und Finsing.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Poing und Umgebung",
+        "pfad": "/bayern/ebersberg/poing/"
+      },
+      {
+        "text": "Hofläden in Finsing und Umgebung",
+        "pfad": "/bayern/erding/finsing/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/ebersberg/poing/": {
+    "titel": "Hofläden in Poing: gut zu wissen",
+    "oben": "Poing liegt östlich von München, bekannt ist der Wildpark. Eingetragen sind der Beerenhof Schimpf, der HansnHof, eine Imkerei und zwei Regiomaten, einer davon bio mit Milch und Fleisch.",
+    "einleitung": "Zwischen den Siedlungen liegen noch Felder auf der Schotterebene. Der Beerenhof baut Erdbeeren und andere Beeren an.\n\nWeitere Höfe findest du in Pliening und Kirchheim bei München.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Himbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Pliening und Umgebung",
+        "pfad": "/bayern/ebersberg/pliening/"
+      },
+      {
+        "text": "Hofläden in Kirchheim bei München und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/kirchheim-bei-muenchen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/eichstaett/denkendorf/": {
+    "titel": "Hofläden in Denkendorf: gut zu wissen",
+    "oben": "Denkendorf liegt auf der Jurahochfläche zwischen Ingolstadt und dem Altmühltal. Eingetragen sind Erdbeeren und Eis von Funck, die Straußenfarm Zimmermann, ein Hof mit Fruchtaufstrichen, Saft, Obst und Gemüse, Rehm's Hofladen und der Biohof Vogl.",
+    "einleitung": "Die Hochfläche ist von Feldern und Wäldern geprägt, an den Hängen zum Altmühltal liegen Wacholderheiden.\n\nWeitere Höfe findest du in Kipfenberg und Beilngries.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Fruchtaufstrich",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Hofeis",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kipfenberg und Umgebung",
+        "pfad": "/bayern/eichstaett/kipfenberg/"
+      },
+      {
+        "text": "Hofläden in Beilngries und Umgebung",
+        "pfad": "/bayern/eichstaett/beilngries/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/eichstaett/pollenfeld/": {
+    "titel": "Hofläden in Pollenfeld: gut zu wissen",
+    "oben": "Pollenfeld liegt auf der Jurahochfläche nördlich von Eichstätt. Bio prägt die Einträge: der Biohof Daum, der Biohof Knör und ein weiterer Bio-Hofladen. Dazu kommen ein Eierhäusl mit Eiern und Kartoffeln und ein Honighäusl.",
+    "einleitung": "Die Albhochfläche ist offen, mit Feldern, Wäldern und Trockenrasen. Unterhalb liegt das Altmühltal mit Eichstätt.\n\nWeitere Höfe findest du in Schernfeld und Kipfenberg.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schernfeld und Umgebung",
+        "pfad": "/bayern/eichstaett/schernfeld/"
+      },
+      {
+        "text": "Hofläden in Kipfenberg und Umgebung",
+        "pfad": "/bayern/eichstaett/kipfenberg/"
+      }
+    ],
+    "stand": "2026-11-21"
   }
 }
