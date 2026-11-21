@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 201 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 226 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -243,35 +243,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Emden](https://hofladenliste.de/niedersachsen/emden/) `/niedersachsen/emden/` | Emden | 3 | 6 | 15 |
 | ✓ | [Hattingen](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/) `/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/` | Ennepe-Ruhr-Kreis | 3 | 6 | 15 |
 
-## Paket 9 (0/25 fertig)
+## Paket 9 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Hilden](https://hofladenliste.de/nordrhein-westfalen/mettmann/hilden/) `/nordrhein-westfalen/mettmann/hilden/` | Kreis Mettmann | 3 | 6 | 15 |
-|  | [Rheine](https://hofladenliste.de/nordrhein-westfalen/steinfurt/rheine/) `/nordrhein-westfalen/steinfurt/rheine/` | Kreis Steinfurt | 3 | 6 | 15 |
-|  | [Frankfurt (Oder)](https://hofladenliste.de/brandenburg/frankfurt-oder/) `/brandenburg/frankfurt-oder/` | Frankfurt (Oder) | 4 | 3 | 15 |
-|  | [Neumünster](https://hofladenliste.de/schleswig-holstein/neumuenster/) `/schleswig-holstein/neumuenster/` | Neumünster | 4 | 3 | 15 |
-|  | [Emmendingen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/emmendingen/) `/baden-wuerttemberg/emmendingen/emmendingen/` | Landkreis Emmendingen | 1 | 11 | 14 |
-|  | [Ketsch](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/ketsch/) `/baden-wuerttemberg/rhein-neckar-kreis/ketsch/` | Rhein-Neckar-Kreis | 1 | 11 | 14 |
-|  | [Nersingen](https://hofladenliste.de/bayern/neu-ulm/nersingen/) `/bayern/neu-ulm/nersingen/` | Landkreis Neu-Ulm | 1 | 11 | 14 |
-|  | [Soltau](https://hofladenliste.de/niedersachsen/heidekreis/soltau/) `/niedersachsen/heidekreis/soltau/` | Heidekreis | 1 | 11 | 14 |
-|  | [Neustadt am Rübenberge](https://hofladenliste.de/niedersachsen/region-hannover/neustadt-am-ruebenberge/) `/niedersachsen/region-hannover/neustadt-am-ruebenberge/` | Region Hannover | 1 | 11 | 14 |
-|  | [Erkelenz](https://hofladenliste.de/nordrhein-westfalen/heinsberg/erkelenz/) `/nordrhein-westfalen/heinsberg/erkelenz/` | Kreis Heinsberg | 1 | 11 | 14 |
-|  | [Goch](https://hofladenliste.de/nordrhein-westfalen/kleve/goch/) `/nordrhein-westfalen/kleve/goch/` | Kreis Kleve | 1 | 11 | 14 |
-|  | [Kerken](https://hofladenliste.de/nordrhein-westfalen/kleve/kerken/) `/nordrhein-westfalen/kleve/kerken/` | Kreis Kleve | 1 | 11 | 14 |
-|  | [Bad Lippspringe](https://hofladenliste.de/nordrhein-westfalen/paderborn/bad-lippspringe/) `/nordrhein-westfalen/paderborn/bad-lippspringe/` | Kreis Paderborn | 1 | 11 | 14 |
-|  | [Hennef](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/hennef/) `/nordrhein-westfalen/rhein-sieg-kreis/hennef/` | Rhein-Sieg-Kreis | 1 | 11 | 14 |
-|  | [Brüggen](https://hofladenliste.de/nordrhein-westfalen/viersen/brueggen/) `/nordrhein-westfalen/viersen/brueggen/` | Kreis Viersen | 1 | 11 | 14 |
-|  | [Kempen](https://hofladenliste.de/nordrhein-westfalen/viersen/kempen/) `/nordrhein-westfalen/viersen/kempen/` | Kreis Viersen | 1 | 11 | 14 |
-|  | [Grömitz](https://hofladenliste.de/schleswig-holstein/ostholstein/groemitz/) `/schleswig-holstein/ostholstein/groemitz/` | Kreis Ostholstein | 1 | 11 | 14 |
-|  | [Schwäbisch Gmünd](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/schwaebisch-gmuend/) `/baden-wuerttemberg/ostalbkreis/schwaebisch-gmuend/` | Ostalbkreis | 3 | 5 | 14 |
-|  | [Aschaffenburg](https://hofladenliste.de/bayern/aschaffenburg-stadt/) `/bayern/aschaffenburg-stadt/` | Aschaffenburg | 3 | 5 | 14 |
-|  | [Peine](https://hofladenliste.de/niedersachsen/peine/peine/) `/niedersachsen/peine/peine/` | Landkreis Peine | 3 | 5 | 14 |
-|  | [Herford](https://hofladenliste.de/nordrhein-westfalen/herford/herford/) `/nordrhein-westfalen/herford/herford/` | Kreis Herford | 3 | 5 | 14 |
-|  | [Bad Salzuflen](https://hofladenliste.de/nordrhein-westfalen/lippe/bad-salzuflen/) `/nordrhein-westfalen/lippe/bad-salzuflen/` | Kreis Lippe | 3 | 5 | 14 |
-|  | [Lünen](https://hofladenliste.de/nordrhein-westfalen/unna/luenen/) `/nordrhein-westfalen/unna/luenen/` | Kreis Unna | 3 | 5 | 14 |
-|  | [Stade](https://hofladenliste.de/niedersachsen/stade/stade/) `/niedersachsen/stade/stade/` | Landkreis Stade | 4 | 2 | 14 |
-|  | [Lippstadt](https://hofladenliste.de/nordrhein-westfalen/soest/lippstadt/) `/nordrhein-westfalen/soest/lippstadt/` | Kreis Soest | 4 | 2 | 14 |
+| ✓ | [Hilden](https://hofladenliste.de/nordrhein-westfalen/mettmann/hilden/) `/nordrhein-westfalen/mettmann/hilden/` | Kreis Mettmann | 3 | 6 | 15 |
+| ✓ | [Rheine](https://hofladenliste.de/nordrhein-westfalen/steinfurt/rheine/) `/nordrhein-westfalen/steinfurt/rheine/` | Kreis Steinfurt | 3 | 6 | 15 |
+| ✓ | [Frankfurt (Oder)](https://hofladenliste.de/brandenburg/frankfurt-oder/) `/brandenburg/frankfurt-oder/` | Frankfurt (Oder) | 4 | 3 | 15 |
+| ✓ | [Neumünster](https://hofladenliste.de/schleswig-holstein/neumuenster/) `/schleswig-holstein/neumuenster/` | Neumünster | 4 | 3 | 15 |
+| ✓ | [Emmendingen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/emmendingen/) `/baden-wuerttemberg/emmendingen/emmendingen/` | Landkreis Emmendingen | 1 | 11 | 14 |
+| ✓ | [Ketsch](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/ketsch/) `/baden-wuerttemberg/rhein-neckar-kreis/ketsch/` | Rhein-Neckar-Kreis | 1 | 11 | 14 |
+| ✓ | [Nersingen](https://hofladenliste.de/bayern/neu-ulm/nersingen/) `/bayern/neu-ulm/nersingen/` | Landkreis Neu-Ulm | 1 | 11 | 14 |
+| ✓ | [Soltau](https://hofladenliste.de/niedersachsen/heidekreis/soltau/) `/niedersachsen/heidekreis/soltau/` | Heidekreis | 1 | 11 | 14 |
+| ✓ | [Neustadt am Rübenberge](https://hofladenliste.de/niedersachsen/region-hannover/neustadt-am-ruebenberge/) `/niedersachsen/region-hannover/neustadt-am-ruebenberge/` | Region Hannover | 1 | 11 | 14 |
+| ✓ | [Erkelenz](https://hofladenliste.de/nordrhein-westfalen/heinsberg/erkelenz/) `/nordrhein-westfalen/heinsberg/erkelenz/` | Kreis Heinsberg | 1 | 11 | 14 |
+| ✓ | [Goch](https://hofladenliste.de/nordrhein-westfalen/kleve/goch/) `/nordrhein-westfalen/kleve/goch/` | Kreis Kleve | 1 | 11 | 14 |
+| ✓ | [Kerken](https://hofladenliste.de/nordrhein-westfalen/kleve/kerken/) `/nordrhein-westfalen/kleve/kerken/` | Kreis Kleve | 1 | 11 | 14 |
+| ✓ | [Bad Lippspringe](https://hofladenliste.de/nordrhein-westfalen/paderborn/bad-lippspringe/) `/nordrhein-westfalen/paderborn/bad-lippspringe/` | Kreis Paderborn | 1 | 11 | 14 |
+| ✓ | [Hennef](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/hennef/) `/nordrhein-westfalen/rhein-sieg-kreis/hennef/` | Rhein-Sieg-Kreis | 1 | 11 | 14 |
+| ✓ | [Brüggen](https://hofladenliste.de/nordrhein-westfalen/viersen/brueggen/) `/nordrhein-westfalen/viersen/brueggen/` | Kreis Viersen | 1 | 11 | 14 |
+| ✓ | [Kempen](https://hofladenliste.de/nordrhein-westfalen/viersen/kempen/) `/nordrhein-westfalen/viersen/kempen/` | Kreis Viersen | 1 | 11 | 14 |
+| ✓ | [Grömitz](https://hofladenliste.de/schleswig-holstein/ostholstein/groemitz/) `/schleswig-holstein/ostholstein/groemitz/` | Kreis Ostholstein | 1 | 11 | 14 |
+| ✓ | [Schwäbisch Gmünd](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/schwaebisch-gmuend/) `/baden-wuerttemberg/ostalbkreis/schwaebisch-gmuend/` | Ostalbkreis | 3 | 5 | 14 |
+| ✓ | [Aschaffenburg](https://hofladenliste.de/bayern/aschaffenburg-stadt/) `/bayern/aschaffenburg-stadt/` | Aschaffenburg | 3 | 5 | 14 |
+| ✓ | [Peine](https://hofladenliste.de/niedersachsen/peine/peine/) `/niedersachsen/peine/peine/` | Landkreis Peine | 3 | 5 | 14 |
+| ✓ | [Herford](https://hofladenliste.de/nordrhein-westfalen/herford/herford/) `/nordrhein-westfalen/herford/herford/` | Kreis Herford | 3 | 5 | 14 |
+| ✓ | [Bad Salzuflen](https://hofladenliste.de/nordrhein-westfalen/lippe/bad-salzuflen/) `/nordrhein-westfalen/lippe/bad-salzuflen/` | Kreis Lippe | 3 | 5 | 14 |
+| ✓ | [Lünen](https://hofladenliste.de/nordrhein-westfalen/unna/luenen/) `/nordrhein-westfalen/unna/luenen/` | Kreis Unna | 3 | 5 | 14 |
+| ✓ | [Stade](https://hofladenliste.de/niedersachsen/stade/stade/) `/niedersachsen/stade/stade/` | Landkreis Stade | 4 | 2 | 14 |
+| ✓ | [Lippstadt](https://hofladenliste.de/nordrhein-westfalen/soest/lippstadt/) `/nordrhein-westfalen/soest/lippstadt/` | Kreis Soest | 4 | 2 | 14 |
 
 ## Paket 10 (0/25 fertig)
 
