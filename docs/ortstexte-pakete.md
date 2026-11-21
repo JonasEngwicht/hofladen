@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 251 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 276 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -303,35 +303,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Borchen](https://hofladenliste.de/nordrhein-westfalen/paderborn/borchen/) `/nordrhein-westfalen/paderborn/borchen/` | Kreis Paderborn | 1 | 10 | 13 |
 | ✓ | [Datteln](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/datteln/) `/nordrhein-westfalen/recklinghausen/datteln/` | Kreis Recklinghausen | 1 | 10 | 13 |
 
-## Paket 11 (0/25 fertig)
+## Paket 11 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Rommerskirchen](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/rommerskirchen/) `/nordrhein-westfalen/rhein-kreis-neuss/rommerskirchen/` | Rhein-Kreis Neuss | 1 | 10 | 13 |
-|  | [Alpen](https://hofladenliste.de/nordrhein-westfalen/wesel/alpen/) `/nordrhein-westfalen/wesel/alpen/` | Kreis Wesel | 1 | 10 | 13 |
-|  | [Fehmarn](https://hofladenliste.de/schleswig-holstein/ostholstein/fehmarn/) `/schleswig-holstein/ostholstein/fehmarn/` | Kreis Ostholstein | 1 | 10 | 13 |
-|  | [Albstadt](https://hofladenliste.de/baden-wuerttemberg/zollernalbkreis/albstadt/) `/baden-wuerttemberg/zollernalbkreis/albstadt/` | Zollernalbkreis | 3 | 4 | 13 |
-|  | [Kloster Lehnin](https://hofladenliste.de/brandenburg/potsdam-mittelmark/kloster-lehnin/) `/brandenburg/potsdam-mittelmark/kloster-lehnin/` | Landkreis Potsdam-Mittelmark | 3 | 4 | 13 |
-|  | [Hameln](https://hofladenliste.de/niedersachsen/hameln-pyrmont/hameln/) `/niedersachsen/hameln-pyrmont/hameln/` | Landkreis Hameln-Pyrmont | 3 | 4 | 13 |
-|  | [Bad Oeynhausen](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/bad-oeynhausen/) `/nordrhein-westfalen/minden-luebbecke/bad-oeynhausen/` | Kreis Minden-Lübbecke | 3 | 4 | 13 |
-|  | [Gummersbach](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/gummersbach/) `/nordrhein-westfalen/oberbergischer-kreis/gummersbach/` | Oberbergischer Kreis | 3 | 4 | 13 |
-|  | [Neustadt an der Weinstraße](https://hofladenliste.de/rheinland-pfalz/neustadt-an-der-weinstrasse/) `/rheinland-pfalz/neustadt-an-der-weinstrasse/` | Neustadt an der Weinstraße | 3 | 4 | 13 |
-|  | [Stuttgart Möhringen](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-moehringen/) `/baden-wuerttemberg/stuttgart/stuttgart-moehringen/` | Stuttgart | 4 | 1 | 13 |
-|  | [Schweinfurt](https://hofladenliste.de/bayern/schweinfurt-stadt/) `/bayern/schweinfurt-stadt/` | Schweinfurt | 4 | 1 | 13 |
-|  | [Jena](https://hofladenliste.de/thueringen/jena/) `/thueringen/jena/` | Jena | 4 | 1 | 13 |
-|  | [Herrenberg](https://hofladenliste.de/baden-wuerttemberg/boeblingen/herrenberg/) `/baden-wuerttemberg/boeblingen/herrenberg/` | Landkreis Böblingen | 1 | 9 | 12 |
-|  | [Kirchzarten](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/kirchzarten/) `/baden-wuerttemberg/breisgau-hochschwarzwald/kirchzarten/` | Landkreis Breisgau-Hochschwarzwald | 1 | 9 | 12 |
-|  | [Böhmenkirch](https://hofladenliste.de/baden-wuerttemberg/goeppingen/boehmenkirch/) `/baden-wuerttemberg/goeppingen/boehmenkirch/` | Landkreis Göppingen | 1 | 9 | 12 |
-|  | [Bretzfeld](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/bretzfeld/) `/baden-wuerttemberg/hohenlohekreis/bretzfeld/` | Hohenlohekreis | 1 | 9 | 12 |
-|  | [Ilsfeld](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/ilsfeld/) `/baden-wuerttemberg/landkreis-heilbronn/ilsfeld/` | Landkreis Heilbronn | 1 | 9 | 12 |
-|  | [Lauffen am Neckar](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/lauffen-am-neckar/) `/baden-wuerttemberg/landkreis-heilbronn/lauffen-am-neckar/` | Landkreis Heilbronn | 1 | 9 | 12 |
-|  | [Bretten](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/bretten/) `/baden-wuerttemberg/landkreis-karlsruhe/bretten/` | Landkreis Karlsruhe | 1 | 9 | 12 |
-|  | [Neuried](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/neuried/) `/baden-wuerttemberg/ortenaukreis/neuried/` | Ortenaukreis | 1 | 9 | 12 |
-|  | [Ottersweier](https://hofladenliste.de/baden-wuerttemberg/rastatt/ottersweier/) `/baden-wuerttemberg/rastatt/ottersweier/` | Landkreis Rastatt | 1 | 9 | 12 |
-|  | [Welzheim](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/welzheim/) `/baden-wuerttemberg/rems-murr-kreis/welzheim/` | Rems-Murr-Kreis | 1 | 9 | 12 |
-|  | [Hemsbach](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/hemsbach/) `/baden-wuerttemberg/rhein-neckar-kreis/hemsbach/` | Rhein-Neckar-Kreis | 1 | 9 | 12 |
-|  | [Friedberg (Landkreis Aichach-Friedberg)](https://hofladenliste.de/bayern/aichach-friedberg/friedberg/) `/bayern/aichach-friedberg/friedberg/` | Landkreis Aichach-Friedberg | 1 | 9 | 12 |
-|  | [Garching an der Alz](https://hofladenliste.de/bayern/altoetting/garching-an-der-alz/) `/bayern/altoetting/garching-an-der-alz/` | Landkreis Altötting | 1 | 9 | 12 |
+| ✓ | [Rommerskirchen](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/rommerskirchen/) `/nordrhein-westfalen/rhein-kreis-neuss/rommerskirchen/` | Rhein-Kreis Neuss | 1 | 10 | 13 |
+| ✓ | [Alpen](https://hofladenliste.de/nordrhein-westfalen/wesel/alpen/) `/nordrhein-westfalen/wesel/alpen/` | Kreis Wesel | 1 | 10 | 13 |
+| ✓ | [Fehmarn](https://hofladenliste.de/schleswig-holstein/ostholstein/fehmarn/) `/schleswig-holstein/ostholstein/fehmarn/` | Kreis Ostholstein | 1 | 10 | 13 |
+| ✓ | [Albstadt](https://hofladenliste.de/baden-wuerttemberg/zollernalbkreis/albstadt/) `/baden-wuerttemberg/zollernalbkreis/albstadt/` | Zollernalbkreis | 3 | 4 | 13 |
+| ✓ | [Kloster Lehnin](https://hofladenliste.de/brandenburg/potsdam-mittelmark/kloster-lehnin/) `/brandenburg/potsdam-mittelmark/kloster-lehnin/` | Landkreis Potsdam-Mittelmark | 3 | 4 | 13 |
+| ✓ | [Hameln](https://hofladenliste.de/niedersachsen/hameln-pyrmont/hameln/) `/niedersachsen/hameln-pyrmont/hameln/` | Landkreis Hameln-Pyrmont | 3 | 4 | 13 |
+| ✓ | [Bad Oeynhausen](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/bad-oeynhausen/) `/nordrhein-westfalen/minden-luebbecke/bad-oeynhausen/` | Kreis Minden-Lübbecke | 3 | 4 | 13 |
+| ✓ | [Gummersbach](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/gummersbach/) `/nordrhein-westfalen/oberbergischer-kreis/gummersbach/` | Oberbergischer Kreis | 3 | 4 | 13 |
+| ✓ | [Neustadt an der Weinstraße](https://hofladenliste.de/rheinland-pfalz/neustadt-an-der-weinstrasse/) `/rheinland-pfalz/neustadt-an-der-weinstrasse/` | Neustadt an der Weinstraße | 3 | 4 | 13 |
+| ✓ | [Stuttgart Möhringen](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-moehringen/) `/baden-wuerttemberg/stuttgart/stuttgart-moehringen/` | Stuttgart | 4 | 1 | 13 |
+| ✓ | [Schweinfurt](https://hofladenliste.de/bayern/schweinfurt-stadt/) `/bayern/schweinfurt-stadt/` | Schweinfurt | 4 | 1 | 13 |
+| ✓ | [Jena](https://hofladenliste.de/thueringen/jena/) `/thueringen/jena/` | Jena | 4 | 1 | 13 |
+| ✓ | [Herrenberg](https://hofladenliste.de/baden-wuerttemberg/boeblingen/herrenberg/) `/baden-wuerttemberg/boeblingen/herrenberg/` | Landkreis Böblingen | 1 | 9 | 12 |
+| ✓ | [Kirchzarten](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/kirchzarten/) `/baden-wuerttemberg/breisgau-hochschwarzwald/kirchzarten/` | Landkreis Breisgau-Hochschwarzwald | 1 | 9 | 12 |
+| ✓ | [Böhmenkirch](https://hofladenliste.de/baden-wuerttemberg/goeppingen/boehmenkirch/) `/baden-wuerttemberg/goeppingen/boehmenkirch/` | Landkreis Göppingen | 1 | 9 | 12 |
+| ✓ | [Bretzfeld](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/bretzfeld/) `/baden-wuerttemberg/hohenlohekreis/bretzfeld/` | Hohenlohekreis | 1 | 9 | 12 |
+| ✓ | [Ilsfeld](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/ilsfeld/) `/baden-wuerttemberg/landkreis-heilbronn/ilsfeld/` | Landkreis Heilbronn | 1 | 9 | 12 |
+| ✓ | [Lauffen am Neckar](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/lauffen-am-neckar/) `/baden-wuerttemberg/landkreis-heilbronn/lauffen-am-neckar/` | Landkreis Heilbronn | 1 | 9 | 12 |
+| ✓ | [Bretten](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/bretten/) `/baden-wuerttemberg/landkreis-karlsruhe/bretten/` | Landkreis Karlsruhe | 1 | 9 | 12 |
+| ✓ | [Neuried](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/neuried/) `/baden-wuerttemberg/ortenaukreis/neuried/` | Ortenaukreis | 1 | 9 | 12 |
+| ✓ | [Ottersweier](https://hofladenliste.de/baden-wuerttemberg/rastatt/ottersweier/) `/baden-wuerttemberg/rastatt/ottersweier/` | Landkreis Rastatt | 1 | 9 | 12 |
+| ✓ | [Welzheim](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/welzheim/) `/baden-wuerttemberg/rems-murr-kreis/welzheim/` | Rems-Murr-Kreis | 1 | 9 | 12 |
+| ✓ | [Hemsbach](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/hemsbach/) `/baden-wuerttemberg/rhein-neckar-kreis/hemsbach/` | Rhein-Neckar-Kreis | 1 | 9 | 12 |
+| ✓ | [Friedberg (Landkreis Aichach-Friedberg)](https://hofladenliste.de/bayern/aichach-friedberg/friedberg/) `/bayern/aichach-friedberg/friedberg/` | Landkreis Aichach-Friedberg | 1 | 9 | 12 |
+| ✓ | [Garching an der Alz](https://hofladenliste.de/bayern/altoetting/garching-an-der-alz/) `/bayern/altoetting/garching-an-der-alz/` | Landkreis Altötting | 1 | 9 | 12 |
 
 ## Paket 12 (0/25 fertig)
 
