@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 101 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 126 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -123,35 +123,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Jork](https://hofladenliste.de/niedersachsen/stade/jork/) `/niedersachsen/stade/jork/` | Landkreis Stade | 1 | 19 | 22 |
 | ✓ | [Lüdinghausen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/luedinghausen/) `/nordrhein-westfalen/coesfeld/luedinghausen/` | Kreis Coesfeld | 1 | 19 | 22 |
 
-## Paket 5 (0/25 fertig)
+## Paket 5 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Salzkotten](https://hofladenliste.de/nordrhein-westfalen/paderborn/salzkotten/) `/nordrhein-westfalen/paderborn/salzkotten/` | Kreis Paderborn | 1 | 19 | 22 |
-|  | [Worms](https://hofladenliste.de/rheinland-pfalz/worms/) `/rheinland-pfalz/worms/` | Worms | 4 | 10 | 22 |
-|  | [Landshut](https://hofladenliste.de/bayern/landshut-stadt/) `/bayern/landshut-stadt/` | Landshut | 5 | 7 | 22 |
-|  | [Celle](https://hofladenliste.de/niedersachsen/celle/celle/) `/niedersachsen/celle/celle/` | Landkreis Celle | 5 | 7 | 22 |
-|  | [Schwerin](https://hofladenliste.de/mecklenburg-vorpommern/schwerin/) `/mecklenburg-vorpommern/schwerin/` | Schwerin | 6 | 4 | 22 |
-|  | [Pforzheim](https://hofladenliste.de/baden-wuerttemberg/pforzheim/) `/baden-wuerttemberg/pforzheim/` | Pforzheim | 7 | 1 | 22 |
-|  | [Bremerhaven](https://hofladenliste.de/bremen/bremerhaven/) `/bremen/bremerhaven/` | Bremerhaven | 7 | 1 | 22 |
-|  | [Butzbach](https://hofladenliste.de/hessen/wetteraukreis/butzbach/) `/hessen/wetteraukreis/butzbach/` | Wetteraukreis | 1 | 18 | 21 |
-|  | [Haltern am See](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/haltern-am-see/) `/nordrhein-westfalen/recklinghausen/haltern-am-see/` | Kreis Recklinghausen | 1 | 18 | 21 |
-|  | [Garbsen](https://hofladenliste.de/niedersachsen/region-hannover/garbsen/) `/niedersachsen/region-hannover/garbsen/` | Region Hannover | 3 | 12 | 21 |
-|  | [Bergheim](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/bergheim/) `/nordrhein-westfalen/rhein-erft-kreis/bergheim/` | Rhein-Erft-Kreis | 3 | 12 | 21 |
-|  | [Konstanz](https://hofladenliste.de/baden-wuerttemberg/konstanz/konstanz/) `/baden-wuerttemberg/konstanz/konstanz/` | Landkreis Konstanz | 4 | 9 | 21 |
-|  | [Delmenhorst](https://hofladenliste.de/niedersachsen/delmenhorst/) `/niedersachsen/delmenhorst/` | Delmenhorst | 4 | 9 | 21 |
-|  | [Wolfsburg](https://hofladenliste.de/niedersachsen/wolfsburg/) `/niedersachsen/wolfsburg/` | Wolfsburg | 5 | 6 | 21 |
-|  | [Gera](https://hofladenliste.de/thueringen/gera/) `/thueringen/gera/` | Gera | 6 | 3 | 21 |
-|  | [Überlingen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/ueberlingen/) `/baden-wuerttemberg/bodenseekreis/ueberlingen/` | Bodenseekreis | 1 | 17 | 20 |
-|  | [Oberkirch](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/oberkirch/) `/baden-wuerttemberg/ortenaukreis/oberkirch/` | Ortenaukreis | 1 | 17 | 20 |
-|  | [Schneverdingen](https://hofladenliste.de/niedersachsen/heidekreis/schneverdingen/) `/niedersachsen/heidekreis/schneverdingen/` | Heidekreis | 1 | 17 | 20 |
-|  | [Meerbusch](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/meerbusch/) `/nordrhein-westfalen/rhein-kreis-neuss/meerbusch/` | Rhein-Kreis Neuss | 3 | 11 | 20 |
-|  | [Fulda](https://hofladenliste.de/hessen/fulda/fulda/) `/hessen/fulda/fulda/` | Landkreis Fulda | 4 | 8 | 20 |
-|  | [Marburg](https://hofladenliste.de/hessen/marburg-biedenkopf/marburg/) `/hessen/marburg-biedenkopf/marburg/` | Landkreis Marburg-Biedenkopf | 4 | 8 | 20 |
-|  | [Cuxhaven](https://hofladenliste.de/niedersachsen/cuxhaven/cuxhaven/) `/niedersachsen/cuxhaven/cuxhaven/` | Landkreis Cuxhaven | 4 | 8 | 20 |
-|  | [Düren](https://hofladenliste.de/nordrhein-westfalen/dueren/dueren/) `/nordrhein-westfalen/dueren/dueren/` | Kreis Düren | 4 | 8 | 20 |
-|  | [Aalen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/aalen/) `/baden-wuerttemberg/ostalbkreis/aalen/` | Ostalbkreis | 5 | 5 | 20 |
-|  | [Salzgitter](https://hofladenliste.de/niedersachsen/salzgitter/) `/niedersachsen/salzgitter/` | Salzgitter | 5 | 5 | 20 |
+| ✓ | [Salzkotten](https://hofladenliste.de/nordrhein-westfalen/paderborn/salzkotten/) `/nordrhein-westfalen/paderborn/salzkotten/` | Kreis Paderborn | 1 | 19 | 22 |
+| ✓ | [Worms](https://hofladenliste.de/rheinland-pfalz/worms/) `/rheinland-pfalz/worms/` | Worms | 4 | 10 | 22 |
+| ✓ | [Landshut](https://hofladenliste.de/bayern/landshut-stadt/) `/bayern/landshut-stadt/` | Landshut | 5 | 7 | 22 |
+| ✓ | [Celle](https://hofladenliste.de/niedersachsen/celle/celle/) `/niedersachsen/celle/celle/` | Landkreis Celle | 5 | 7 | 22 |
+| ✓ | [Schwerin](https://hofladenliste.de/mecklenburg-vorpommern/schwerin/) `/mecklenburg-vorpommern/schwerin/` | Schwerin | 6 | 4 | 22 |
+| ✓ | [Pforzheim](https://hofladenliste.de/baden-wuerttemberg/pforzheim/) `/baden-wuerttemberg/pforzheim/` | Pforzheim | 7 | 1 | 22 |
+| ✓ | [Bremerhaven](https://hofladenliste.de/bremen/bremerhaven/) `/bremen/bremerhaven/` | Bremerhaven | 7 | 1 | 22 |
+| ✓ | [Butzbach](https://hofladenliste.de/hessen/wetteraukreis/butzbach/) `/hessen/wetteraukreis/butzbach/` | Wetteraukreis | 1 | 18 | 21 |
+| ✓ | [Haltern am See](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/haltern-am-see/) `/nordrhein-westfalen/recklinghausen/haltern-am-see/` | Kreis Recklinghausen | 1 | 18 | 21 |
+| ✓ | [Garbsen](https://hofladenliste.de/niedersachsen/region-hannover/garbsen/) `/niedersachsen/region-hannover/garbsen/` | Region Hannover | 3 | 12 | 21 |
+| ✓ | [Bergheim](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/bergheim/) `/nordrhein-westfalen/rhein-erft-kreis/bergheim/` | Rhein-Erft-Kreis | 3 | 12 | 21 |
+| ✓ | [Konstanz](https://hofladenliste.de/baden-wuerttemberg/konstanz/konstanz/) `/baden-wuerttemberg/konstanz/konstanz/` | Landkreis Konstanz | 4 | 9 | 21 |
+| ✓ | [Delmenhorst](https://hofladenliste.de/niedersachsen/delmenhorst/) `/niedersachsen/delmenhorst/` | Delmenhorst | 4 | 9 | 21 |
+| ✓ | [Wolfsburg](https://hofladenliste.de/niedersachsen/wolfsburg/) `/niedersachsen/wolfsburg/` | Wolfsburg | 5 | 6 | 21 |
+| ✓ | [Gera](https://hofladenliste.de/thueringen/gera/) `/thueringen/gera/` | Gera | 6 | 3 | 21 |
+| ✓ | [Überlingen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/ueberlingen/) `/baden-wuerttemberg/bodenseekreis/ueberlingen/` | Bodenseekreis | 1 | 17 | 20 |
+| ✓ | [Oberkirch](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/oberkirch/) `/baden-wuerttemberg/ortenaukreis/oberkirch/` | Ortenaukreis | 1 | 17 | 20 |
+| ✓ | [Schneverdingen](https://hofladenliste.de/niedersachsen/heidekreis/schneverdingen/) `/niedersachsen/heidekreis/schneverdingen/` | Heidekreis | 1 | 17 | 20 |
+| ✓ | [Meerbusch](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/meerbusch/) `/nordrhein-westfalen/rhein-kreis-neuss/meerbusch/` | Rhein-Kreis Neuss | 3 | 11 | 20 |
+| ✓ | [Fulda](https://hofladenliste.de/hessen/fulda/fulda/) `/hessen/fulda/fulda/` | Landkreis Fulda | 4 | 8 | 20 |
+| ✓ | [Marburg](https://hofladenliste.de/hessen/marburg-biedenkopf/marburg/) `/hessen/marburg-biedenkopf/marburg/` | Landkreis Marburg-Biedenkopf | 4 | 8 | 20 |
+| ✓ | [Cuxhaven](https://hofladenliste.de/niedersachsen/cuxhaven/cuxhaven/) `/niedersachsen/cuxhaven/cuxhaven/` | Landkreis Cuxhaven | 4 | 8 | 20 |
+| ✓ | [Düren](https://hofladenliste.de/nordrhein-westfalen/dueren/dueren/) `/nordrhein-westfalen/dueren/dueren/` | Kreis Düren | 4 | 8 | 20 |
+| ✓ | [Aalen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/aalen/) `/baden-wuerttemberg/ostalbkreis/aalen/` | Ostalbkreis | 5 | 5 | 20 |
+| ✓ | [Salzgitter](https://hofladenliste.de/niedersachsen/salzgitter/) `/niedersachsen/salzgitter/` | Salzgitter | 5 | 5 | 20 |
 
 ## Paket 6 (0/25 fertig)
 
