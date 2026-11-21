@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 476 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 501 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -573,35 +573,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Immendingen](https://hofladenliste.de/baden-wuerttemberg/tuttlingen/immendingen/) `/baden-wuerttemberg/tuttlingen/immendingen/` | Landkreis Tuttlingen | 1 | 6 | 9 |
 | ✓ | [Lottstetten](https://hofladenliste.de/baden-wuerttemberg/waldshut/lottstetten/) `/baden-wuerttemberg/waldshut/lottstetten/` | Landkreis Waldshut | 1 | 6 | 9 |
 
-## Paket 20 (0/25 fertig)
+## Paket 20 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Sachsenkam](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/sachsenkam/) `/bayern/bad-toelz-wolfratshausen/sachsenkam/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 6 | 9 |
-|  | [Röhrmoos](https://hofladenliste.de/bayern/dachau/roehrmoos/) `/bayern/dachau/roehrmoos/` | Landkreis Dachau | 1 | 6 | 9 |
-|  | [Garmisch-Partenkirchen](https://hofladenliste.de/bayern/garmisch-partenkirchen/garmisch-partenkirchen/) `/bayern/garmisch-partenkirchen/garmisch-partenkirchen/` | Landkreis Garmisch-Partenkirchen | 1 | 6 | 9 |
-|  | [Mainleus](https://hofladenliste.de/bayern/kulmbach/mainleus/) `/bayern/kulmbach/mainleus/` | Landkreis Kulmbach | 1 | 6 | 9 |
-|  | [Roßtal](https://hofladenliste.de/bayern/landkreis-fuerth/rosstal/) `/bayern/landkreis-fuerth/rosstal/` | Landkreis Fürth | 1 | 6 | 9 |
-|  | [Münchberg](https://hofladenliste.de/bayern/landkreis-hof/muenchberg/) `/bayern/landkreis-hof/muenchberg/` | Landkreis Hof | 1 | 6 | 9 |
-|  | [Adlkofen](https://hofladenliste.de/bayern/landkreis-landshut/adlkofen/) `/bayern/landkreis-landshut/adlkofen/` | Landkreis Landshut | 1 | 6 | 9 |
-|  | [Garching bei München](https://hofladenliste.de/bayern/landkreis-muenchen/garching-bei-muenchen/) `/bayern/landkreis-muenchen/garching-bei-muenchen/` | Landkreis München | 1 | 6 | 9 |
-|  | [Bad Aibling](https://hofladenliste.de/bayern/landkreis-rosenheim/bad-aibling/) `/bayern/landkreis-rosenheim/bad-aibling/` | Landkreis Rosenheim | 1 | 6 | 9 |
-|  | [Bruckmühl](https://hofladenliste.de/bayern/landkreis-rosenheim/bruckmuehl/) `/bayern/landkreis-rosenheim/bruckmuehl/` | Landkreis Rosenheim | 1 | 6 | 9 |
-|  | [Penzing](https://hofladenliste.de/bayern/landsberg-am-lech/penzing/) `/bayern/landsberg-am-lech/penzing/` | Landkreis Landsberg am Lech | 1 | 6 | 9 |
-|  | [Nonnenhorn](https://hofladenliste.de/bayern/lindau/nonnenhorn/) `/bayern/lindau/nonnenhorn/` | Landkreis Lindau | 1 | 6 | 9 |
-|  | [Neunkirchen](https://hofladenliste.de/bayern/miltenberg/neunkirchen/) `/bayern/miltenberg/neunkirchen/` | Landkreis Miltenberg | 1 | 6 | 9 |
-|  | [Balderschwang](https://hofladenliste.de/bayern/oberallgaeu/balderschwang/) `/bayern/oberallgaeu/balderschwang/` | Landkreis Oberallgäu | 1 | 6 | 9 |
-|  | [Fischen im Allgäu](https://hofladenliste.de/bayern/oberallgaeu/fischen-im-allgaeu/) `/bayern/oberallgaeu/fischen-im-allgaeu/` | Landkreis Oberallgäu | 1 | 6 | 9 |
-|  | [Büchenbach](https://hofladenliste.de/bayern/roth/buechenbach/) `/bayern/roth/buechenbach/` | Landkreis Roth | 1 | 6 | 9 |
-|  | [Gilching](https://hofladenliste.de/bayern/starnberg/gilching/) `/bayern/starnberg/gilching/` | Landkreis Starnberg | 1 | 6 | 9 |
-|  | [Inning am Ammersee](https://hofladenliste.de/bayern/starnberg/inning-am-ammersee/) `/bayern/starnberg/inning-am-ammersee/` | Landkreis Starnberg | 1 | 6 | 9 |
-|  | [Weßling](https://hofladenliste.de/bayern/starnberg/wessling/) `/bayern/starnberg/wessling/` | Landkreis Starnberg | 1 | 6 | 9 |
-|  | [Weilheim in Oberbayern](https://hofladenliste.de/bayern/weilheim-schongau/weilheim-in-oberbayern/) `/bayern/weilheim-schongau/weilheim-in-oberbayern/` | Landkreis Weilheim-Schongau | 1 | 6 | 9 |
-|  | [Falkensee](https://hofladenliste.de/brandenburg/havelland/falkensee/) `/brandenburg/havelland/falkensee/` | Landkreis Havelland | 1 | 6 | 9 |
-|  | [Hofbieber](https://hofladenliste.de/hessen/fulda/hofbieber/) `/hessen/fulda/hofbieber/` | Landkreis Fulda | 1 | 6 | 9 |
-|  | [Schlüchtern](https://hofladenliste.de/hessen/main-kinzig-kreis/schluechtern/) `/hessen/main-kinzig-kreis/schluechtern/` | Main-Kinzig-Kreis | 1 | 6 | 9 |
-|  | [Cölbe](https://hofladenliste.de/hessen/marburg-biedenkopf/coelbe/) `/hessen/marburg-biedenkopf/coelbe/` | Landkreis Marburg-Biedenkopf | 1 | 6 | 9 |
-|  | [Seligenstadt](https://hofladenliste.de/hessen/offenbach/seligenstadt/) `/hessen/offenbach/seligenstadt/` | Landkreis Offenbach | 1 | 6 | 9 |
+| ✓ | [Sachsenkam](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/sachsenkam/) `/bayern/bad-toelz-wolfratshausen/sachsenkam/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 6 | 9 |
+| ✓ | [Röhrmoos](https://hofladenliste.de/bayern/dachau/roehrmoos/) `/bayern/dachau/roehrmoos/` | Landkreis Dachau | 1 | 6 | 9 |
+| ✓ | [Garmisch-Partenkirchen](https://hofladenliste.de/bayern/garmisch-partenkirchen/garmisch-partenkirchen/) `/bayern/garmisch-partenkirchen/garmisch-partenkirchen/` | Landkreis Garmisch-Partenkirchen | 1 | 6 | 9 |
+| ✓ | [Mainleus](https://hofladenliste.de/bayern/kulmbach/mainleus/) `/bayern/kulmbach/mainleus/` | Landkreis Kulmbach | 1 | 6 | 9 |
+| ✓ | [Roßtal](https://hofladenliste.de/bayern/landkreis-fuerth/rosstal/) `/bayern/landkreis-fuerth/rosstal/` | Landkreis Fürth | 1 | 6 | 9 |
+| ✓ | [Münchberg](https://hofladenliste.de/bayern/landkreis-hof/muenchberg/) `/bayern/landkreis-hof/muenchberg/` | Landkreis Hof | 1 | 6 | 9 |
+| ✓ | [Adlkofen](https://hofladenliste.de/bayern/landkreis-landshut/adlkofen/) `/bayern/landkreis-landshut/adlkofen/` | Landkreis Landshut | 1 | 6 | 9 |
+| ✓ | [Garching bei München](https://hofladenliste.de/bayern/landkreis-muenchen/garching-bei-muenchen/) `/bayern/landkreis-muenchen/garching-bei-muenchen/` | Landkreis München | 1 | 6 | 9 |
+| ✓ | [Bad Aibling](https://hofladenliste.de/bayern/landkreis-rosenheim/bad-aibling/) `/bayern/landkreis-rosenheim/bad-aibling/` | Landkreis Rosenheim | 1 | 6 | 9 |
+| ✓ | [Bruckmühl](https://hofladenliste.de/bayern/landkreis-rosenheim/bruckmuehl/) `/bayern/landkreis-rosenheim/bruckmuehl/` | Landkreis Rosenheim | 1 | 6 | 9 |
+| ✓ | [Penzing](https://hofladenliste.de/bayern/landsberg-am-lech/penzing/) `/bayern/landsberg-am-lech/penzing/` | Landkreis Landsberg am Lech | 1 | 6 | 9 |
+| ✓ | [Nonnenhorn](https://hofladenliste.de/bayern/lindau/nonnenhorn/) `/bayern/lindau/nonnenhorn/` | Landkreis Lindau | 1 | 6 | 9 |
+| ✓ | [Neunkirchen](https://hofladenliste.de/bayern/miltenberg/neunkirchen/) `/bayern/miltenberg/neunkirchen/` | Landkreis Miltenberg | 1 | 6 | 9 |
+| ✓ | [Balderschwang](https://hofladenliste.de/bayern/oberallgaeu/balderschwang/) `/bayern/oberallgaeu/balderschwang/` | Landkreis Oberallgäu | 1 | 6 | 9 |
+| ✓ | [Fischen im Allgäu](https://hofladenliste.de/bayern/oberallgaeu/fischen-im-allgaeu/) `/bayern/oberallgaeu/fischen-im-allgaeu/` | Landkreis Oberallgäu | 1 | 6 | 9 |
+| ✓ | [Büchenbach](https://hofladenliste.de/bayern/roth/buechenbach/) `/bayern/roth/buechenbach/` | Landkreis Roth | 1 | 6 | 9 |
+| ✓ | [Gilching](https://hofladenliste.de/bayern/starnberg/gilching/) `/bayern/starnberg/gilching/` | Landkreis Starnberg | 1 | 6 | 9 |
+| ✓ | [Inning am Ammersee](https://hofladenliste.de/bayern/starnberg/inning-am-ammersee/) `/bayern/starnberg/inning-am-ammersee/` | Landkreis Starnberg | 1 | 6 | 9 |
+| ✓ | [Weßling](https://hofladenliste.de/bayern/starnberg/wessling/) `/bayern/starnberg/wessling/` | Landkreis Starnberg | 1 | 6 | 9 |
+| ✓ | [Weilheim in Oberbayern](https://hofladenliste.de/bayern/weilheim-schongau/weilheim-in-oberbayern/) `/bayern/weilheim-schongau/weilheim-in-oberbayern/` | Landkreis Weilheim-Schongau | 1 | 6 | 9 |
+| ✓ | [Falkensee](https://hofladenliste.de/brandenburg/havelland/falkensee/) `/brandenburg/havelland/falkensee/` | Landkreis Havelland | 1 | 6 | 9 |
+| ✓ | [Hofbieber](https://hofladenliste.de/hessen/fulda/hofbieber/) `/hessen/fulda/hofbieber/` | Landkreis Fulda | 1 | 6 | 9 |
+| ✓ | [Schlüchtern](https://hofladenliste.de/hessen/main-kinzig-kreis/schluechtern/) `/hessen/main-kinzig-kreis/schluechtern/` | Main-Kinzig-Kreis | 1 | 6 | 9 |
+| ✓ | [Cölbe](https://hofladenliste.de/hessen/marburg-biedenkopf/coelbe/) `/hessen/marburg-biedenkopf/coelbe/` | Landkreis Marburg-Biedenkopf | 1 | 6 | 9 |
+| ✓ | [Seligenstadt](https://hofladenliste.de/hessen/offenbach/seligenstadt/) `/hessen/offenbach/seligenstadt/` | Landkreis Offenbach | 1 | 6 | 9 |
 
 ## Paket 21 (0/25 fertig)
 
