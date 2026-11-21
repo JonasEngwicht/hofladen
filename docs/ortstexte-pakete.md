@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 76 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 101 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -93,35 +93,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Velbert](https://hofladenliste.de/nordrhein-westfalen/mettmann/velbert/) `/nordrhein-westfalen/mettmann/velbert/` | Kreis Mettmann | 4 | 15 | 27 |
 | ✓ | [Witten](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/witten/) `/nordrhein-westfalen/ennepe-ruhr-kreis/witten/` | Ennepe-Ruhr-Kreis | 5 | 12 | 27 |
 
-## Paket 4 (0/25 fertig)
+## Paket 4 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Recklinghausen](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/recklinghausen/) `/nordrhein-westfalen/recklinghausen/recklinghausen/` | Kreis Recklinghausen | 5 | 12 | 27 |
-|  | [Ratingen](https://hofladenliste.de/nordrhein-westfalen/mettmann/ratingen/) `/nordrhein-westfalen/mettmann/ratingen/` | Kreis Mettmann | 6 | 9 | 27 |
-|  | [Koblenz](https://hofladenliste.de/rheinland-pfalz/koblenz/) `/rheinland-pfalz/koblenz/` | Koblenz | 7 | 6 | 27 |
-|  | [Hagen](https://hofladenliste.de/nordrhein-westfalen/hagen/) `/nordrhein-westfalen/hagen/` | Hagen | 8 | 3 | 27 |
-|  | [Rosenheim](https://hofladenliste.de/bayern/rosenheim-stadt/) `/bayern/rosenheim-stadt/` | Rosenheim | 3 | 17 | 26 |
-|  | [Esslingen am Neckar](https://hofladenliste.de/baden-wuerttemberg/esslingen/esslingen-am-neckar/) `/baden-wuerttemberg/esslingen/esslingen-am-neckar/` | Landkreis Esslingen | 5 | 11 | 26 |
-|  | [Bottrop](https://hofladenliste.de/nordrhein-westfalen/bottrop/) `/nordrhein-westfalen/bottrop/` | Bottrop | 5 | 11 | 26 |
-|  | [Regensburg](https://hofladenliste.de/bayern/regensburg-stadt/) `/bayern/regensburg-stadt/` | Regensburg | 7 | 5 | 26 |
-|  | [Taunusstein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/taunusstein/) `/hessen/rheingau-taunus-kreis/taunusstein/` | Rheingau-Taunus-Kreis | 7 | 5 | 26 |
-|  | [Limburg an der Lahn](https://hofladenliste.de/hessen/limburg-weilburg/limburg-an-der-lahn/) `/hessen/limburg-weilburg/limburg-an-der-lahn/` | Landkreis Limburg-Weilburg | 8 | 2 | 26 |
-|  | [Oberhausen](https://hofladenliste.de/nordrhein-westfalen/oberhausen/) `/nordrhein-westfalen/oberhausen/` | Oberhausen | 8 | 2 | 26 |
-|  | [Delbrück](https://hofladenliste.de/nordrhein-westfalen/paderborn/delbrueck/) `/nordrhein-westfalen/paderborn/delbrueck/` | Kreis Paderborn | 1 | 22 | 25 |
-|  | [Hamminkeln](https://hofladenliste.de/nordrhein-westfalen/wesel/hamminkeln/) `/nordrhein-westfalen/wesel/hamminkeln/` | Kreis Wesel | 1 | 22 | 25 |
-|  | [Ravensburg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/ravensburg/) `/baden-wuerttemberg/ravensburg/ravensburg/` | Landkreis Ravensburg | 3 | 16 | 25 |
-|  | [Unna](https://hofladenliste.de/nordrhein-westfalen/unna/unna/) `/nordrhein-westfalen/unna/unna/` | Kreis Unna | 3 | 16 | 25 |
-|  | [Straelen](https://hofladenliste.de/nordrhein-westfalen/kleve/straelen/) `/nordrhein-westfalen/kleve/straelen/` | Kreis Kleve | 1 | 21 | 24 |
-|  | [Willich](https://hofladenliste.de/nordrhein-westfalen/viersen/willich/) `/nordrhein-westfalen/viersen/willich/` | Kreis Viersen | 1 | 21 | 24 |
-|  | [Bamberg](https://hofladenliste.de/bayern/bamberg-stadt/) `/bayern/bamberg-stadt/` | Bamberg | 4 | 12 | 24 |
-|  | [Minden](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/minden/) `/nordrhein-westfalen/minden-luebbecke/minden/` | Kreis Minden-Lübbecke | 4 | 12 | 24 |
-|  | [Berlin Kreuzberg](https://hofladenliste.de/berlin/berlin/berlin-kreuzberg/) `/berlin/berlin/berlin-kreuzberg/` | Berlin | 7 | 3 | 24 |
-|  | [Bergisch Gladbach](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/bergisch-gladbach/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/bergisch-gladbach/` | Rheinisch-Bergischer Kreis | 5 | 8 | 23 |
-|  | [Trier](https://hofladenliste.de/rheinland-pfalz/trier/) `/rheinland-pfalz/trier/` | Trier | 6 | 5 | 23 |
-|  | [Zwickau](https://hofladenliste.de/sachsen/zwickau/zwickau/) `/sachsen/zwickau/zwickau/` | Landkreis Zwickau | 6 | 5 | 23 |
-|  | [Jork](https://hofladenliste.de/niedersachsen/stade/jork/) `/niedersachsen/stade/jork/` | Landkreis Stade | 1 | 19 | 22 |
-|  | [Lüdinghausen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/luedinghausen/) `/nordrhein-westfalen/coesfeld/luedinghausen/` | Kreis Coesfeld | 1 | 19 | 22 |
+| ✓ | [Recklinghausen](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/recklinghausen/) `/nordrhein-westfalen/recklinghausen/recklinghausen/` | Kreis Recklinghausen | 5 | 12 | 27 |
+| ✓ | [Ratingen](https://hofladenliste.de/nordrhein-westfalen/mettmann/ratingen/) `/nordrhein-westfalen/mettmann/ratingen/` | Kreis Mettmann | 6 | 9 | 27 |
+| ✓ | [Koblenz](https://hofladenliste.de/rheinland-pfalz/koblenz/) `/rheinland-pfalz/koblenz/` | Koblenz | 7 | 6 | 27 |
+| ✓ | [Hagen](https://hofladenliste.de/nordrhein-westfalen/hagen/) `/nordrhein-westfalen/hagen/` | Hagen | 8 | 3 | 27 |
+| ✓ | [Rosenheim](https://hofladenliste.de/bayern/rosenheim-stadt/) `/bayern/rosenheim-stadt/` | Rosenheim | 3 | 17 | 26 |
+| ✓ | [Esslingen am Neckar](https://hofladenliste.de/baden-wuerttemberg/esslingen/esslingen-am-neckar/) `/baden-wuerttemberg/esslingen/esslingen-am-neckar/` | Landkreis Esslingen | 5 | 11 | 26 |
+| ✓ | [Bottrop](https://hofladenliste.de/nordrhein-westfalen/bottrop/) `/nordrhein-westfalen/bottrop/` | Bottrop | 5 | 11 | 26 |
+| ✓ | [Regensburg](https://hofladenliste.de/bayern/regensburg-stadt/) `/bayern/regensburg-stadt/` | Regensburg | 7 | 5 | 26 |
+| ✓ | [Taunusstein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/taunusstein/) `/hessen/rheingau-taunus-kreis/taunusstein/` | Rheingau-Taunus-Kreis | 7 | 5 | 26 |
+| ✓ | [Limburg an der Lahn](https://hofladenliste.de/hessen/limburg-weilburg/limburg-an-der-lahn/) `/hessen/limburg-weilburg/limburg-an-der-lahn/` | Landkreis Limburg-Weilburg | 8 | 2 | 26 |
+| ✓ | [Oberhausen](https://hofladenliste.de/nordrhein-westfalen/oberhausen/) `/nordrhein-westfalen/oberhausen/` | Oberhausen | 8 | 2 | 26 |
+| ✓ | [Delbrück](https://hofladenliste.de/nordrhein-westfalen/paderborn/delbrueck/) `/nordrhein-westfalen/paderborn/delbrueck/` | Kreis Paderborn | 1 | 22 | 25 |
+| ✓ | [Hamminkeln](https://hofladenliste.de/nordrhein-westfalen/wesel/hamminkeln/) `/nordrhein-westfalen/wesel/hamminkeln/` | Kreis Wesel | 1 | 22 | 25 |
+| ✓ | [Ravensburg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/ravensburg/) `/baden-wuerttemberg/ravensburg/ravensburg/` | Landkreis Ravensburg | 3 | 16 | 25 |
+| ✓ | [Unna](https://hofladenliste.de/nordrhein-westfalen/unna/unna/) `/nordrhein-westfalen/unna/unna/` | Kreis Unna | 3 | 16 | 25 |
+| ✓ | [Straelen](https://hofladenliste.de/nordrhein-westfalen/kleve/straelen/) `/nordrhein-westfalen/kleve/straelen/` | Kreis Kleve | 1 | 21 | 24 |
+| ✓ | [Willich](https://hofladenliste.de/nordrhein-westfalen/viersen/willich/) `/nordrhein-westfalen/viersen/willich/` | Kreis Viersen | 1 | 21 | 24 |
+| ✓ | [Bamberg](https://hofladenliste.de/bayern/bamberg-stadt/) `/bayern/bamberg-stadt/` | Bamberg | 4 | 12 | 24 |
+| ✓ | [Minden](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/minden/) `/nordrhein-westfalen/minden-luebbecke/minden/` | Kreis Minden-Lübbecke | 4 | 12 | 24 |
+| ✓ | [Berlin Kreuzberg](https://hofladenliste.de/berlin/berlin/berlin-kreuzberg/) `/berlin/berlin/berlin-kreuzberg/` | Berlin | 7 | 3 | 24 |
+| ✓ | [Bergisch Gladbach](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/bergisch-gladbach/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/bergisch-gladbach/` | Rheinisch-Bergischer Kreis | 5 | 8 | 23 |
+| ✓ | [Trier](https://hofladenliste.de/rheinland-pfalz/trier/) `/rheinland-pfalz/trier/` | Trier | 6 | 5 | 23 |
+| ✓ | [Zwickau](https://hofladenliste.de/sachsen/zwickau/zwickau/) `/sachsen/zwickau/zwickau/` | Landkreis Zwickau | 6 | 5 | 23 |
+| ✓ | [Jork](https://hofladenliste.de/niedersachsen/stade/jork/) `/niedersachsen/stade/jork/` | Landkreis Stade | 1 | 19 | 22 |
+| ✓ | [Lüdinghausen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/luedinghausen/) `/nordrhein-westfalen/coesfeld/luedinghausen/` | Kreis Coesfeld | 1 | 19 | 22 |
 
 ## Paket 5 (0/25 fertig)
 
