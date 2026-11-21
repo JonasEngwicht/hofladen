@@ -46,6 +46,19 @@ test('data/seitentexte.json: gültig, nur für indexierbare Seiten, Kurztext ste
       assert.ok(i > html.indexOf('</h1>') && (liste < 0 || i < liste), `${pfad}: Kurztext nicht zwischen Überschrift und Liste`);
     }
     for (const q of e.faq || []) assert.ok(ld(html).some((j) => j['@type'] === 'FAQPage' && j.mainEntity.some((x) => x.name === q.frage)), `${pfad}: Frage fehlt im JSON-LD`);
+    for (const l of e.links || []) assert.ok(alle.has(l.pfad), `${pfad}: Link ${l.pfad} zeigt auf keine Seite`);
+  }
+});
+
+test('Gepflegte Ortstexte sind individuell: kein Kurztext und keine Einleitung doppelt', () => {
+  for (const feld of ['oben', 'einleitung']) {
+    const gesehen = new Map();
+    for (const [pfad, e] of Object.entries(SEITENTEXTE)) {
+      if (!e[feld]) continue;
+      const kern = e[feld].toLowerCase().replace(/[^a-zäöüß]+/g, ' ').trim().slice(0, 80);
+      assert.ok(!gesehen.has(kern), `${pfad}: "${feld}" beginnt wie bei ${gesehen.get(kern)}`);
+      gesehen.set(kern, pfad);
+    }
   }
 });
 
