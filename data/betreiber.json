@@ -1,1 +1,69 @@
-{}
+{
+ "1": {
+  "art": "uebernahme",
+  "hof": "landmarkt-wey-juechen",
+  "daten": {
+   "name": "Landmarkt Wey",
+   "betriebsart": "Hofladen",
+   "strasse": "Wey 64",
+   "plz": "41363",
+   "ort": "Jüchen",
+   "telefon": "+49 2166 982473",
+   "email": "info@landmarkt-wey.de",
+   "website": "https://www.landmarkt-wey.de/",
+   "beschreibung": "Der Landmarkt Wey ist täglich von 6.00 bis 22.00 Uhr mit ec/Kreditkarte zu öffnen und ein Einkauf via self-checkout möglich. Zusätzlich haben wir unsere bisherigen Öffnungszeiten Di-Fr/Sa beibehalten: dann ist persönliche Beratung sowie Barzahlung möglich (9.00 bis 18.00 bzw. Sa bis 13.00)",
+   "kontakt_name": "Hartmut Strommenger",
+   "oeffnungszeiten": "Mo 06:00-22:00; Tu 06:00-22:00,09:00-18:00; We 06:00-22:00,09:00-18:00; Th 06:00-22:00,09:00-18:00; Fr 06:00-22:00,09:00-18:00; Sa 06:00-22:00,09:00-13:00; Su 06:00-22:00",
+   "angebot": [
+    "eier",
+    "milch",
+    "kaese",
+    "fleisch",
+    "gefluegel",
+    "gemuese",
+    "obst",
+    "kartoffeln",
+    "honig",
+    "nudeln",
+    "marmelade",
+    "getraenke"
+   ],
+   "zahlung": [
+    "bar",
+    "girocard",
+    "kreditkarte",
+    "kontaktlos"
+   ],
+   "badge": true,
+   "eintrag": "n5666751903",
+   "diff": {
+    "oeffnungszeiten": [
+     "Tu-Fr 09:00-12:00,13:00-18:00, Sa 09:00-13:00; Su-Mo, PH off",
+     "Mo 06:00-22:00; Tu 06:00-22:00,09:00-18:00; We 06:00-22:00,09:00-18:00; Th 06:00-22:00,09:00-18:00; Fr 06:00-22:00,09:00-18:00; Sa 06:00-22:00,09:00-13:00; Su 06:00-22:00"
+    ],
+    "angebot": [
+     "",
+     "eier, fleisch, gefluegel, gemuese, getraenke, honig, kaese, kartoffeln, marmelade, milch, nudeln, obst"
+    ],
+    "zahlung": [
+     "",
+     "bar, girocard, kontaktlos, kreditkarte"
+    ],
+    "beschreibung": [
+     "",
+     "Der Landmarkt Wey ist täglich von 6.00 bis 22.00 Uhr mit ec/Kreditkarte zu öffnen und ein Einkauf via self-checkout möglich. Zusätzlich haben wir unsere bisherigen Öffnungszeiten Di-Fr/Sa beibehalten: dann ist persönliche Beratung sowie Barzahlung möglich (9.00 bis 18.00 bzw. Sa bis 13.00)"
+    ],
+    "fotos": [
+     "0",
+     "+3"
+    ]
+   }
+  },
+  "stand": "2026-11-21",
+  "fotos": [
+   "/fotos/1.jpg",
+   "/fotos/2.jpg",
+   "/fotos/3.jpg"
+  ]
+ }
+}
