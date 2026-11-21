@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 126 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 151 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -153,35 +153,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Aalen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/aalen/) `/baden-wuerttemberg/ostalbkreis/aalen/` | Ostalbkreis | 5 | 5 | 20 |
 | ✓ | [Salzgitter](https://hofladenliste.de/niedersachsen/salzgitter/) `/niedersachsen/salzgitter/` | Salzgitter | 5 | 5 | 20 |
 
-## Paket 6 (0/25 fertig)
+## Paket 6 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Gütersloh](https://hofladenliste.de/nordrhein-westfalen/guetersloh/guetersloh/) `/nordrhein-westfalen/guetersloh/guetersloh/` | Kreis Gütersloh | 5 | 5 | 20 |
-|  | [Arnsberg](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/arnsberg/) `/nordrhein-westfalen/hochsauerlandkreis/arnsberg/` | Hochsauerlandkreis | 5 | 5 | 20 |
-|  | [Remscheid](https://hofladenliste.de/nordrhein-westfalen/remscheid/) `/nordrhein-westfalen/remscheid/` | Remscheid | 6 | 2 | 20 |
-|  | [Bermatingen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/bermatingen/) `/baden-wuerttemberg/bodenseekreis/bermatingen/` | Bodenseekreis | 1 | 16 | 19 |
-|  | [Markdorf](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/markdorf/) `/baden-wuerttemberg/bodenseekreis/markdorf/` | Bodenseekreis | 1 | 16 | 19 |
-|  | [Wegberg](https://hofladenliste.de/nordrhein-westfalen/heinsberg/wegberg/) `/nordrhein-westfalen/heinsberg/wegberg/` | Kreis Heinsberg | 1 | 16 | 19 |
-|  | [Göppingen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/goeppingen/) `/baden-wuerttemberg/goeppingen/goeppingen/` | Landkreis Göppingen | 3 | 10 | 19 |
-|  | [Melle](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/melle/) `/niedersachsen/landkreis-osnabrueck/melle/` | Landkreis Osnabrück | 3 | 10 | 19 |
-|  | [Castrop-Rauxel](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/castrop-rauxel/) `/nordrhein-westfalen/recklinghausen/castrop-rauxel/` | Kreis Recklinghausen | 4 | 7 | 19 |
-|  | [Ludwigsburg](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/ludwigsburg/) `/baden-wuerttemberg/ludwigsburg/ludwigsburg/` | Landkreis Ludwigsburg | 5 | 4 | 19 |
-|  | [Villingen-Schwenningen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/villingen-schwenningen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/villingen-schwenningen/` | Schwarzwald-Baar-Kreis | 5 | 4 | 19 |
-|  | [Hildesheim](https://hofladenliste.de/niedersachsen/hildesheim/hildesheim/) `/niedersachsen/hildesheim/hildesheim/` | Landkreis Hildesheim | 5 | 4 | 19 |
-|  | [Siegen](https://hofladenliste.de/nordrhein-westfalen/siegen-wittgenstein/siegen/) `/nordrhein-westfalen/siegen-wittgenstein/siegen/` | Kreis Siegen-Wittgenstein | 5 | 4 | 19 |
-|  | [Hamburg Rotherbaum](https://hofladenliste.de/hamburg/hamburg/hamburg-rotherbaum/) `/hamburg/hamburg/hamburg-rotherbaum/` | Hamburg | 6 | 1 | 19 |
-|  | [Hamburg Tonndorf](https://hofladenliste.de/hamburg/hamburg/hamburg-tonndorf/) `/hamburg/hamburg/hamburg-tonndorf/` | Hamburg | 6 | 1 | 19 |
-|  | [Hanau](https://hofladenliste.de/hessen/main-kinzig-kreis/hanau/) `/hessen/main-kinzig-kreis/hanau/` | Main-Kinzig-Kreis | 6 | 1 | 19 |
-|  | [Offenbach](https://hofladenliste.de/hessen/offenbach-am-main/offenbach/) `/hessen/offenbach-am-main/offenbach/` | Offenbach am Main | 6 | 1 | 19 |
-|  | [Uetze](https://hofladenliste.de/niedersachsen/region-hannover/uetze/) `/niedersachsen/region-hannover/uetze/` | Region Hannover | 1 | 15 | 18 |
-|  | [Dülmen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/duelmen/) `/nordrhein-westfalen/coesfeld/duelmen/` | Kreis Coesfeld | 1 | 15 | 18 |
-|  | [Korschenbroich](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/korschenbroich/) `/nordrhein-westfalen/rhein-kreis-neuss/korschenbroich/` | Rhein-Kreis Neuss | 1 | 15 | 18 |
-|  | [Waiblingen](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/waiblingen/) `/baden-wuerttemberg/rems-murr-kreis/waiblingen/` | Rems-Murr-Kreis | 3 | 9 | 18 |
-|  | [Nordhorn](https://hofladenliste.de/niedersachsen/grafschaft-bentheim/nordhorn/) `/niedersachsen/grafschaft-bentheim/nordhorn/` | Landkreis Grafschaft Bentheim | 3 | 9 | 18 |
-|  | [Dorsten](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/dorsten/) `/nordrhein-westfalen/recklinghausen/dorsten/` | Kreis Recklinghausen | 3 | 9 | 18 |
-|  | [Wesel](https://hofladenliste.de/nordrhein-westfalen/wesel/wesel/) `/nordrhein-westfalen/wesel/wesel/` | Kreis Wesel | 3 | 9 | 18 |
-|  | [Bayreuth](https://hofladenliste.de/bayern/bayreuth-stadt/) `/bayern/bayreuth-stadt/` | Bayreuth | 4 | 6 | 18 |
+| ✓ | [Gütersloh](https://hofladenliste.de/nordrhein-westfalen/guetersloh/guetersloh/) `/nordrhein-westfalen/guetersloh/guetersloh/` | Kreis Gütersloh | 5 | 5 | 20 |
+| ✓ | [Arnsberg](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/arnsberg/) `/nordrhein-westfalen/hochsauerlandkreis/arnsberg/` | Hochsauerlandkreis | 5 | 5 | 20 |
+| ✓ | [Remscheid](https://hofladenliste.de/nordrhein-westfalen/remscheid/) `/nordrhein-westfalen/remscheid/` | Remscheid | 6 | 2 | 20 |
+| ✓ | [Bermatingen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/bermatingen/) `/baden-wuerttemberg/bodenseekreis/bermatingen/` | Bodenseekreis | 1 | 16 | 19 |
+| ✓ | [Markdorf](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/markdorf/) `/baden-wuerttemberg/bodenseekreis/markdorf/` | Bodenseekreis | 1 | 16 | 19 |
+| ✓ | [Wegberg](https://hofladenliste.de/nordrhein-westfalen/heinsberg/wegberg/) `/nordrhein-westfalen/heinsberg/wegberg/` | Kreis Heinsberg | 1 | 16 | 19 |
+| ✓ | [Göppingen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/goeppingen/) `/baden-wuerttemberg/goeppingen/goeppingen/` | Landkreis Göppingen | 3 | 10 | 19 |
+| ✓ | [Melle](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/melle/) `/niedersachsen/landkreis-osnabrueck/melle/` | Landkreis Osnabrück | 3 | 10 | 19 |
+| ✓ | [Castrop-Rauxel](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/castrop-rauxel/) `/nordrhein-westfalen/recklinghausen/castrop-rauxel/` | Kreis Recklinghausen | 4 | 7 | 19 |
+| ✓ | [Ludwigsburg](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/ludwigsburg/) `/baden-wuerttemberg/ludwigsburg/ludwigsburg/` | Landkreis Ludwigsburg | 5 | 4 | 19 |
+| ✓ | [Villingen-Schwenningen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/villingen-schwenningen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/villingen-schwenningen/` | Schwarzwald-Baar-Kreis | 5 | 4 | 19 |
+| ✓ | [Hildesheim](https://hofladenliste.de/niedersachsen/hildesheim/hildesheim/) `/niedersachsen/hildesheim/hildesheim/` | Landkreis Hildesheim | 5 | 4 | 19 |
+| ✓ | [Siegen](https://hofladenliste.de/nordrhein-westfalen/siegen-wittgenstein/siegen/) `/nordrhein-westfalen/siegen-wittgenstein/siegen/` | Kreis Siegen-Wittgenstein | 5 | 4 | 19 |
+| ✓ | [Hamburg Rotherbaum](https://hofladenliste.de/hamburg/hamburg/hamburg-rotherbaum/) `/hamburg/hamburg/hamburg-rotherbaum/` | Hamburg | 6 | 1 | 19 |
+| ✓ | [Hamburg Tonndorf](https://hofladenliste.de/hamburg/hamburg/hamburg-tonndorf/) `/hamburg/hamburg/hamburg-tonndorf/` | Hamburg | 6 | 1 | 19 |
+| ✓ | [Hanau](https://hofladenliste.de/hessen/main-kinzig-kreis/hanau/) `/hessen/main-kinzig-kreis/hanau/` | Main-Kinzig-Kreis | 6 | 1 | 19 |
+| ✓ | [Offenbach](https://hofladenliste.de/hessen/offenbach-am-main/offenbach/) `/hessen/offenbach-am-main/offenbach/` | Offenbach am Main | 6 | 1 | 19 |
+| ✓ | [Uetze](https://hofladenliste.de/niedersachsen/region-hannover/uetze/) `/niedersachsen/region-hannover/uetze/` | Region Hannover | 1 | 15 | 18 |
+| ✓ | [Dülmen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/duelmen/) `/nordrhein-westfalen/coesfeld/duelmen/` | Kreis Coesfeld | 1 | 15 | 18 |
+| ✓ | [Korschenbroich](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/korschenbroich/) `/nordrhein-westfalen/rhein-kreis-neuss/korschenbroich/` | Rhein-Kreis Neuss | 1 | 15 | 18 |
+| ✓ | [Waiblingen](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/waiblingen/) `/baden-wuerttemberg/rems-murr-kreis/waiblingen/` | Rems-Murr-Kreis | 3 | 9 | 18 |
+| ✓ | [Nordhorn](https://hofladenliste.de/niedersachsen/grafschaft-bentheim/nordhorn/) `/niedersachsen/grafschaft-bentheim/nordhorn/` | Landkreis Grafschaft Bentheim | 3 | 9 | 18 |
+| ✓ | [Dorsten](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/dorsten/) `/nordrhein-westfalen/recklinghausen/dorsten/` | Kreis Recklinghausen | 3 | 9 | 18 |
+| ✓ | [Wesel](https://hofladenliste.de/nordrhein-westfalen/wesel/wesel/) `/nordrhein-westfalen/wesel/wesel/` | Kreis Wesel | 3 | 9 | 18 |
+| ✓ | [Bayreuth](https://hofladenliste.de/bayern/bayreuth-stadt/) `/bayern/bayreuth-stadt/` | Bayreuth | 4 | 6 | 18 |
 
 ## Paket 7 (0/25 fertig)
 
