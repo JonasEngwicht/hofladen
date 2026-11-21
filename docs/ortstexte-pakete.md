@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 176 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 201 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -213,35 +213,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Winsen (Luhe)](https://hofladenliste.de/niedersachsen/harburg/winsen-luhe/) `/niedersachsen/harburg/winsen-luhe/` | Landkreis Harburg | 1 | 13 | 16 |
 | ✓ | [Meckenheim (Rhein-Sieg-Kreis)](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/meckenheim/) `/nordrhein-westfalen/rhein-sieg-kreis/meckenheim/` | Rhein-Sieg-Kreis | 1 | 13 | 16 |
 
-## Paket 8 (0/25 fertig)
+## Paket 8 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Neu-Ulm](https://hofladenliste.de/bayern/neu-ulm/neu-ulm/) `/bayern/neu-ulm/neu-ulm/` | Landkreis Neu-Ulm | 2 | 10 | 16 |
-|  | [Offenburg](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/offenburg/) `/baden-wuerttemberg/ortenaukreis/offenburg/` | Ortenaukreis | 3 | 7 | 16 |
-|  | [Passau](https://hofladenliste.de/bayern/passau-stadt/) `/bayern/passau-stadt/` | Passau | 3 | 7 | 16 |
-|  | [Aurich](https://hofladenliste.de/niedersachsen/aurich/aurich/) `/niedersachsen/aurich/aurich/` | Landkreis Aurich | 3 | 7 | 16 |
-|  | [Lüneburg](https://hofladenliste.de/niedersachsen/lueneburg/lueneburg/) `/niedersachsen/lueneburg/lueneburg/` | Landkreis Lüneburg | 3 | 7 | 16 |
-|  | [Kerpen](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/kerpen/) `/nordrhein-westfalen/rhein-erft-kreis/kerpen/` | Rhein-Erft-Kreis | 3 | 7 | 16 |
-|  | [Neuwied](https://hofladenliste.de/rheinland-pfalz/neuwied/neuwied/) `/rheinland-pfalz/neuwied/neuwied/` | Landkreis Neuwied | 3 | 7 | 16 |
-|  | [Hamburg Eidelstedt](https://hofladenliste.de/hamburg/hamburg/hamburg-eidelstedt/) `/hamburg/hamburg/hamburg-eidelstedt/` | Hamburg | 5 | 1 | 16 |
-|  | [Wilhelmshaven](https://hofladenliste.de/niedersachsen/wilhelmshaven/) `/niedersachsen/wilhelmshaven/` | Wilhelmshaven | 5 | 1 | 16 |
-|  | [Kaiserslautern](https://hofladenliste.de/rheinland-pfalz/kaiserslautern-stadt/) `/rheinland-pfalz/kaiserslautern-stadt/` | Kaiserslautern | 5 | 1 | 16 |
-|  | [Dessau](https://hofladenliste.de/sachsen-anhalt/dessau-rosslau/dessau/) `/sachsen-anhalt/dessau-rosslau/dessau/` | Dessau-Roßlau | 5 | 1 | 16 |
-|  | [Stutensee](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/stutensee/) `/baden-wuerttemberg/landkreis-karlsruhe/stutensee/` | Landkreis Karlsruhe | 1 | 12 | 15 |
-|  | [Wiefelstede](https://hofladenliste.de/niedersachsen/ammerland/wiefelstede/) `/niedersachsen/ammerland/wiefelstede/` | Landkreis Ammerland | 1 | 12 | 15 |
-|  | [Barßel](https://hofladenliste.de/niedersachsen/cloppenburg/barssel/) `/niedersachsen/cloppenburg/barssel/` | Landkreis Cloppenburg | 1 | 12 | 15 |
-|  | [Neu Wulmstorf](https://hofladenliste.de/niedersachsen/harburg/neu-wulmstorf/) `/niedersachsen/harburg/neu-wulmstorf/` | Landkreis Harburg | 1 | 12 | 15 |
-|  | [Lehrte](https://hofladenliste.de/niedersachsen/region-hannover/lehrte/) `/niedersachsen/region-hannover/lehrte/` | Region Hannover | 1 | 12 | 15 |
-|  | [Olfen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/olfen/) `/nordrhein-westfalen/coesfeld/olfen/` | Kreis Coesfeld | 1 | 12 | 15 |
-|  | [Petershagen](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/petershagen/) `/nordrhein-westfalen/minden-luebbecke/petershagen/` | Kreis Minden-Lübbecke | 1 | 12 | 15 |
-|  | [Kaarst](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/kaarst/) `/nordrhein-westfalen/rhein-kreis-neuss/kaarst/` | Rhein-Kreis Neuss | 1 | 12 | 15 |
-|  | [Oederan](https://hofladenliste.de/sachsen/mittelsachsen/oederan/) `/sachsen/mittelsachsen/oederan/` | Landkreis Mittelsachsen | 1 | 12 | 15 |
-|  | [Ibbenbüren](https://hofladenliste.de/nordrhein-westfalen/steinfurt/ibbenbueren/) `/nordrhein-westfalen/steinfurt/ibbenbueren/` | Kreis Steinfurt | 2 | 9 | 15 |
-|  | [Ahlen](https://hofladenliste.de/nordrhein-westfalen/warendorf/ahlen/) `/nordrhein-westfalen/warendorf/ahlen/` | Kreis Warendorf | 2 | 9 | 15 |
-|  | [Baden-Baden](https://hofladenliste.de/baden-wuerttemberg/baden-baden/) `/baden-wuerttemberg/baden-baden/` | Baden-Baden | 3 | 6 | 15 |
-|  | [Emden](https://hofladenliste.de/niedersachsen/emden/) `/niedersachsen/emden/` | Emden | 3 | 6 | 15 |
-|  | [Hattingen](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/) `/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/` | Ennepe-Ruhr-Kreis | 3 | 6 | 15 |
+| ✓ | [Neu-Ulm](https://hofladenliste.de/bayern/neu-ulm/neu-ulm/) `/bayern/neu-ulm/neu-ulm/` | Landkreis Neu-Ulm | 2 | 10 | 16 |
+| ✓ | [Offenburg](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/offenburg/) `/baden-wuerttemberg/ortenaukreis/offenburg/` | Ortenaukreis | 3 | 7 | 16 |
+| ✓ | [Passau](https://hofladenliste.de/bayern/passau-stadt/) `/bayern/passau-stadt/` | Passau | 3 | 7 | 16 |
+| ✓ | [Aurich](https://hofladenliste.de/niedersachsen/aurich/aurich/) `/niedersachsen/aurich/aurich/` | Landkreis Aurich | 3 | 7 | 16 |
+| ✓ | [Lüneburg](https://hofladenliste.de/niedersachsen/lueneburg/lueneburg/) `/niedersachsen/lueneburg/lueneburg/` | Landkreis Lüneburg | 3 | 7 | 16 |
+| ✓ | [Kerpen](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/kerpen/) `/nordrhein-westfalen/rhein-erft-kreis/kerpen/` | Rhein-Erft-Kreis | 3 | 7 | 16 |
+| ✓ | [Neuwied](https://hofladenliste.de/rheinland-pfalz/neuwied/neuwied/) `/rheinland-pfalz/neuwied/neuwied/` | Landkreis Neuwied | 3 | 7 | 16 |
+| ✓ | [Hamburg Eidelstedt](https://hofladenliste.de/hamburg/hamburg/hamburg-eidelstedt/) `/hamburg/hamburg/hamburg-eidelstedt/` | Hamburg | 5 | 1 | 16 |
+| ✓ | [Wilhelmshaven](https://hofladenliste.de/niedersachsen/wilhelmshaven/) `/niedersachsen/wilhelmshaven/` | Wilhelmshaven | 5 | 1 | 16 |
+| ✓ | [Kaiserslautern](https://hofladenliste.de/rheinland-pfalz/kaiserslautern-stadt/) `/rheinland-pfalz/kaiserslautern-stadt/` | Kaiserslautern | 5 | 1 | 16 |
+| ✓ | [Dessau](https://hofladenliste.de/sachsen-anhalt/dessau-rosslau/dessau/) `/sachsen-anhalt/dessau-rosslau/dessau/` | Dessau-Roßlau | 5 | 1 | 16 |
+| ✓ | [Stutensee](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/stutensee/) `/baden-wuerttemberg/landkreis-karlsruhe/stutensee/` | Landkreis Karlsruhe | 1 | 12 | 15 |
+| ✓ | [Wiefelstede](https://hofladenliste.de/niedersachsen/ammerland/wiefelstede/) `/niedersachsen/ammerland/wiefelstede/` | Landkreis Ammerland | 1 | 12 | 15 |
+| ✓ | [Barßel](https://hofladenliste.de/niedersachsen/cloppenburg/barssel/) `/niedersachsen/cloppenburg/barssel/` | Landkreis Cloppenburg | 1 | 12 | 15 |
+| ✓ | [Neu Wulmstorf](https://hofladenliste.de/niedersachsen/harburg/neu-wulmstorf/) `/niedersachsen/harburg/neu-wulmstorf/` | Landkreis Harburg | 1 | 12 | 15 |
+| ✓ | [Lehrte](https://hofladenliste.de/niedersachsen/region-hannover/lehrte/) `/niedersachsen/region-hannover/lehrte/` | Region Hannover | 1 | 12 | 15 |
+| ✓ | [Olfen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/olfen/) `/nordrhein-westfalen/coesfeld/olfen/` | Kreis Coesfeld | 1 | 12 | 15 |
+| ✓ | [Petershagen](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/petershagen/) `/nordrhein-westfalen/minden-luebbecke/petershagen/` | Kreis Minden-Lübbecke | 1 | 12 | 15 |
+| ✓ | [Kaarst](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/kaarst/) `/nordrhein-westfalen/rhein-kreis-neuss/kaarst/` | Rhein-Kreis Neuss | 1 | 12 | 15 |
+| ✓ | [Oederan](https://hofladenliste.de/sachsen/mittelsachsen/oederan/) `/sachsen/mittelsachsen/oederan/` | Landkreis Mittelsachsen | 1 | 12 | 15 |
+| ✓ | [Ibbenbüren](https://hofladenliste.de/nordrhein-westfalen/steinfurt/ibbenbueren/) `/nordrhein-westfalen/steinfurt/ibbenbueren/` | Kreis Steinfurt | 2 | 9 | 15 |
+| ✓ | [Ahlen](https://hofladenliste.de/nordrhein-westfalen/warendorf/ahlen/) `/nordrhein-westfalen/warendorf/ahlen/` | Kreis Warendorf | 2 | 9 | 15 |
+| ✓ | [Baden-Baden](https://hofladenliste.de/baden-wuerttemberg/baden-baden/) `/baden-wuerttemberg/baden-baden/` | Baden-Baden | 3 | 6 | 15 |
+| ✓ | [Emden](https://hofladenliste.de/niedersachsen/emden/) `/niedersachsen/emden/` | Emden | 3 | 6 | 15 |
+| ✓ | [Hattingen](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/) `/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/` | Ennepe-Ruhr-Kreis | 3 | 6 | 15 |
 
 ## Paket 9 (0/25 fertig)
 
