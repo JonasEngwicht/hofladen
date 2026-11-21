@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 576 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 601 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -693,35 +693,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Bodman-Ludwigshafen](https://hofladenliste.de/baden-wuerttemberg/konstanz/bodman-ludwigshafen/) `/baden-wuerttemberg/konstanz/bodman-ludwigshafen/` | Landkreis Konstanz | 1 | 5 | 8 |
 | ✓ | [Reichenau](https://hofladenliste.de/baden-wuerttemberg/konstanz/reichenau/) `/baden-wuerttemberg/konstanz/reichenau/` | Landkreis Konstanz | 1 | 5 | 8 |
 
-## Paket 24 (0/25 fertig)
+## Paket 24 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Bad Friedrichshall](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/bad-friedrichshall/) `/baden-wuerttemberg/landkreis-heilbronn/bad-friedrichshall/` | Landkreis Heilbronn | 1 | 5 | 8 |
-|  | [Bad Wimpfen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/bad-wimpfen/) `/baden-wuerttemberg/landkreis-heilbronn/bad-wimpfen/` | Landkreis Heilbronn | 1 | 5 | 8 |
-|  | [Gondelsheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/gondelsheim/) `/baden-wuerttemberg/landkreis-karlsruhe/gondelsheim/` | Landkreis Karlsruhe | 1 | 5 | 8 |
-|  | [Graben-Neudorf](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/graben-neudorf/) `/baden-wuerttemberg/landkreis-karlsruhe/graben-neudorf/` | Landkreis Karlsruhe | 1 | 5 | 8 |
-|  | [Kraichtal](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/kraichtal/) `/baden-wuerttemberg/landkreis-karlsruhe/kraichtal/` | Landkreis Karlsruhe | 1 | 5 | 8 |
-|  | [Oberderdingen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/oberderdingen/) `/baden-wuerttemberg/landkreis-karlsruhe/oberderdingen/` | Landkreis Karlsruhe | 1 | 5 | 8 |
-|  | [Pfinztal](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/pfinztal/) `/baden-wuerttemberg/landkreis-karlsruhe/pfinztal/` | Landkreis Karlsruhe | 1 | 5 | 8 |
-|  | [Bietigheim-Bissingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/bietigheim-bissingen/) `/baden-wuerttemberg/ludwigsburg/bietigheim-bissingen/` | Landkreis Ludwigsburg | 1 | 5 | 8 |
-|  | [Marbach am Neckar](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/marbach-am-neckar/) `/baden-wuerttemberg/ludwigsburg/marbach-am-neckar/` | Landkreis Ludwigsburg | 1 | 5 | 8 |
-|  | [Markgröningen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/markgroeningen/) `/baden-wuerttemberg/ludwigsburg/markgroeningen/` | Landkreis Ludwigsburg | 1 | 5 | 8 |
-|  | [Sersheim](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/sersheim/) `/baden-wuerttemberg/ludwigsburg/sersheim/` | Landkreis Ludwigsburg | 1 | 5 | 8 |
-|  | [Höpfingen](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/hoepfingen/) `/baden-wuerttemberg/neckar-odenwald-kreis/hoepfingen/` | Neckar-Odenwald-Kreis | 1 | 5 | 8 |
-|  | [Ravenstein](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/ravenstein/) `/baden-wuerttemberg/neckar-odenwald-kreis/ravenstein/` | Neckar-Odenwald-Kreis | 1 | 5 | 8 |
-|  | [Oberharmersbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/oberharmersbach/) `/baden-wuerttemberg/ortenaukreis/oberharmersbach/` | Ortenaukreis | 1 | 5 | 8 |
-|  | [Zell am Harmersbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/) `/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/` | Ortenaukreis | 1 | 5 | 8 |
-|  | [Durmersheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/durmersheim/) `/baden-wuerttemberg/rastatt/durmersheim/` | Landkreis Rastatt | 1 | 5 | 8 |
-|  | [Achberg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/achberg/) `/baden-wuerttemberg/ravensburg/achberg/` | Landkreis Ravensburg | 1 | 5 | 8 |
-|  | [Aulendorf](https://hofladenliste.de/baden-wuerttemberg/ravensburg/aulendorf/) `/baden-wuerttemberg/ravensburg/aulendorf/` | Landkreis Ravensburg | 1 | 5 | 8 |
-|  | [Baienfurt](https://hofladenliste.de/baden-wuerttemberg/ravensburg/baienfurt/) `/baden-wuerttemberg/ravensburg/baienfurt/` | Landkreis Ravensburg | 1 | 5 | 8 |
-|  | [Bodnegg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bodnegg/) `/baden-wuerttemberg/ravensburg/bodnegg/` | Landkreis Ravensburg | 1 | 5 | 8 |
-|  | [Kißlegg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/kisslegg/) `/baden-wuerttemberg/ravensburg/kisslegg/` | Landkreis Ravensburg | 1 | 5 | 8 |
-|  | [Wilhelmsdorf](https://hofladenliste.de/baden-wuerttemberg/ravensburg/wilhelmsdorf/) `/baden-wuerttemberg/ravensburg/wilhelmsdorf/` | Landkreis Ravensburg | 1 | 5 | 8 |
-|  | [Backnang](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/backnang/) `/baden-wuerttemberg/rems-murr-kreis/backnang/` | Rems-Murr-Kreis | 1 | 5 | 8 |
-|  | [Rudersberg](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/rudersberg/) `/baden-wuerttemberg/rems-murr-kreis/rudersberg/` | Rems-Murr-Kreis | 1 | 5 | 8 |
-|  | [Pfullingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/pfullingen/) `/baden-wuerttemberg/reutlingen/pfullingen/` | Landkreis Reutlingen | 1 | 5 | 8 |
+| ✓ | [Bad Friedrichshall](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/bad-friedrichshall/) `/baden-wuerttemberg/landkreis-heilbronn/bad-friedrichshall/` | Landkreis Heilbronn | 1 | 5 | 8 |
+| ✓ | [Bad Wimpfen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/bad-wimpfen/) `/baden-wuerttemberg/landkreis-heilbronn/bad-wimpfen/` | Landkreis Heilbronn | 1 | 5 | 8 |
+| ✓ | [Gondelsheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/gondelsheim/) `/baden-wuerttemberg/landkreis-karlsruhe/gondelsheim/` | Landkreis Karlsruhe | 1 | 5 | 8 |
+| ✓ | [Graben-Neudorf](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/graben-neudorf/) `/baden-wuerttemberg/landkreis-karlsruhe/graben-neudorf/` | Landkreis Karlsruhe | 1 | 5 | 8 |
+| ✓ | [Kraichtal](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/kraichtal/) `/baden-wuerttemberg/landkreis-karlsruhe/kraichtal/` | Landkreis Karlsruhe | 1 | 5 | 8 |
+| ✓ | [Oberderdingen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/oberderdingen/) `/baden-wuerttemberg/landkreis-karlsruhe/oberderdingen/` | Landkreis Karlsruhe | 1 | 5 | 8 |
+| ✓ | [Pfinztal](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/pfinztal/) `/baden-wuerttemberg/landkreis-karlsruhe/pfinztal/` | Landkreis Karlsruhe | 1 | 5 | 8 |
+| ✓ | [Bietigheim-Bissingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/bietigheim-bissingen/) `/baden-wuerttemberg/ludwigsburg/bietigheim-bissingen/` | Landkreis Ludwigsburg | 1 | 5 | 8 |
+| ✓ | [Marbach am Neckar](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/marbach-am-neckar/) `/baden-wuerttemberg/ludwigsburg/marbach-am-neckar/` | Landkreis Ludwigsburg | 1 | 5 | 8 |
+| ✓ | [Markgröningen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/markgroeningen/) `/baden-wuerttemberg/ludwigsburg/markgroeningen/` | Landkreis Ludwigsburg | 1 | 5 | 8 |
+| ✓ | [Sersheim](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/sersheim/) `/baden-wuerttemberg/ludwigsburg/sersheim/` | Landkreis Ludwigsburg | 1 | 5 | 8 |
+| ✓ | [Höpfingen](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/hoepfingen/) `/baden-wuerttemberg/neckar-odenwald-kreis/hoepfingen/` | Neckar-Odenwald-Kreis | 1 | 5 | 8 |
+| ✓ | [Ravenstein](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/ravenstein/) `/baden-wuerttemberg/neckar-odenwald-kreis/ravenstein/` | Neckar-Odenwald-Kreis | 1 | 5 | 8 |
+| ✓ | [Oberharmersbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/oberharmersbach/) `/baden-wuerttemberg/ortenaukreis/oberharmersbach/` | Ortenaukreis | 1 | 5 | 8 |
+| ✓ | [Zell am Harmersbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/) `/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/` | Ortenaukreis | 1 | 5 | 8 |
+| ✓ | [Durmersheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/durmersheim/) `/baden-wuerttemberg/rastatt/durmersheim/` | Landkreis Rastatt | 1 | 5 | 8 |
+| ✓ | [Achberg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/achberg/) `/baden-wuerttemberg/ravensburg/achberg/` | Landkreis Ravensburg | 1 | 5 | 8 |
+| ✓ | [Aulendorf](https://hofladenliste.de/baden-wuerttemberg/ravensburg/aulendorf/) `/baden-wuerttemberg/ravensburg/aulendorf/` | Landkreis Ravensburg | 1 | 5 | 8 |
+| ✓ | [Baienfurt](https://hofladenliste.de/baden-wuerttemberg/ravensburg/baienfurt/) `/baden-wuerttemberg/ravensburg/baienfurt/` | Landkreis Ravensburg | 1 | 5 | 8 |
+| ✓ | [Bodnegg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bodnegg/) `/baden-wuerttemberg/ravensburg/bodnegg/` | Landkreis Ravensburg | 1 | 5 | 8 |
+| ✓ | [Kißlegg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/kisslegg/) `/baden-wuerttemberg/ravensburg/kisslegg/` | Landkreis Ravensburg | 1 | 5 | 8 |
+| ✓ | [Wilhelmsdorf](https://hofladenliste.de/baden-wuerttemberg/ravensburg/wilhelmsdorf/) `/baden-wuerttemberg/ravensburg/wilhelmsdorf/` | Landkreis Ravensburg | 1 | 5 | 8 |
+| ✓ | [Backnang](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/backnang/) `/baden-wuerttemberg/rems-murr-kreis/backnang/` | Rems-Murr-Kreis | 1 | 5 | 8 |
+| ✓ | [Rudersberg](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/rudersberg/) `/baden-wuerttemberg/rems-murr-kreis/rudersberg/` | Rems-Murr-Kreis | 1 | 5 | 8 |
+| ✓ | [Pfullingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/pfullingen/) `/baden-wuerttemberg/reutlingen/pfullingen/` | Landkreis Reutlingen | 1 | 5 | 8 |
 
 ## Paket 25 (0/25 fertig)
 
