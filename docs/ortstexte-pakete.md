@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 276 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 301 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -333,35 +333,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Friedberg (Landkreis Aichach-Friedberg)](https://hofladenliste.de/bayern/aichach-friedberg/friedberg/) `/bayern/aichach-friedberg/friedberg/` | Landkreis Aichach-Friedberg | 1 | 9 | 12 |
 | ✓ | [Garching an der Alz](https://hofladenliste.de/bayern/altoetting/garching-an-der-alz/) `/bayern/altoetting/garching-an-der-alz/` | Landkreis Altötting | 1 | 9 | 12 |
 
-## Paket 12 (0/25 fertig)
+## Paket 12 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Puchheim](https://hofladenliste.de/bayern/fuerstenfeldbruck/puchheim/) `/bayern/fuerstenfeldbruck/puchheim/` | Landkreis Fürstenfeldbruck | 1 | 9 | 12 |
-|  | [Abensberg](https://hofladenliste.de/bayern/kelheim/abensberg/) `/bayern/kelheim/abensberg/` | Landkreis Kelheim | 1 | 9 | 12 |
-|  | [Gersthofen](https://hofladenliste.de/bayern/landkreis-augsburg/gersthofen/) `/bayern/landkreis-augsburg/gersthofen/` | Landkreis Augsburg | 1 | 9 | 12 |
-|  | [Bad Füssing](https://hofladenliste.de/bayern/landkreis-passau/bad-fuessing/) `/bayern/landkreis-passau/bad-fuessing/` | Landkreis Passau | 1 | 9 | 12 |
-|  | [Wasserburg (Bodensee)](https://hofladenliste.de/bayern/lindau/wasserburg-bodensee/) `/bayern/lindau/wasserburg-bodensee/` | Landkreis Lindau | 1 | 9 | 12 |
-|  | [Senden (Landkreis Neu-Ulm)](https://hofladenliste.de/bayern/neu-ulm/senden/) `/bayern/neu-ulm/senden/` | Landkreis Neu-Ulm | 1 | 9 | 12 |
-|  | [Dallgow-Döberitz](https://hofladenliste.de/brandenburg/havelland/dallgow-doeberitz/) `/brandenburg/havelland/dallgow-doeberitz/` | Landkreis Havelland | 1 | 9 | 12 |
-|  | [Friesoythe](https://hofladenliste.de/niedersachsen/cloppenburg/friesoythe/) `/niedersachsen/cloppenburg/friesoythe/` | Landkreis Cloppenburg | 1 | 9 | 12 |
-|  | [Hatten](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/hatten/) `/niedersachsen/landkreis-oldenburg/hatten/` | Landkreis Oldenburg | 1 | 9 | 12 |
-|  | [Isernhagen](https://hofladenliste.de/niedersachsen/region-hannover/isernhagen/) `/niedersachsen/region-hannover/isernhagen/` | Region Hannover | 1 | 9 | 12 |
-|  | [Hollern-Twielenfleth](https://hofladenliste.de/niedersachsen/stade/hollern-twielenfleth/) `/niedersachsen/stade/hollern-twielenfleth/` | Landkreis Stade | 1 | 9 | 12 |
-|  | [Zülpich](https://hofladenliste.de/nordrhein-westfalen/euskirchen/zuelpich/) `/nordrhein-westfalen/euskirchen/zuelpich/` | Kreis Euskirchen | 1 | 9 | 12 |
-|  | [Verl](https://hofladenliste.de/nordrhein-westfalen/guetersloh/verl/) `/nordrhein-westfalen/guetersloh/verl/` | Kreis Gütersloh | 1 | 9 | 12 |
-|  | [Lohmar](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/lohmar/) `/nordrhein-westfalen/rhein-sieg-kreis/lohmar/` | Rhein-Sieg-Kreis | 1 | 9 | 12 |
-|  | [Tönisvorst](https://hofladenliste.de/nordrhein-westfalen/viersen/toenisvorst/) `/nordrhein-westfalen/viersen/toenisvorst/` | Kreis Viersen | 1 | 9 | 12 |
-|  | [Grafschaft](https://hofladenliste.de/rheinland-pfalz/ahrweiler/grafschaft/) `/rheinland-pfalz/ahrweiler/grafschaft/` | Landkreis Ahrweiler | 1 | 9 | 12 |
-|  | [Radebeul](https://hofladenliste.de/sachsen/meissen/radebeul/) `/sachsen/meissen/radebeul/` | Landkreis Meißen | 1 | 9 | 12 |
-|  | [Wilsdruff](https://hofladenliste.de/sachsen/saechsische-schweiz/wilsdruff/) `/sachsen/saechsische-schweiz/wilsdruff/` | Landkreis Sächsische Schweiz | 1 | 9 | 12 |
-|  | [Bad Homburg vor der Höhe](https://hofladenliste.de/hessen/hochtaunuskreis/bad-homburg-vor-der-hoehe/) `/hessen/hochtaunuskreis/bad-homburg-vor-der-hoehe/` | Hochtaunuskreis | 3 | 3 | 12 |
-|  | [Lingen](https://hofladenliste.de/niedersachsen/emsland/lingen/) `/niedersachsen/emsland/lingen/` | Landkreis Emsland | 3 | 3 | 12 |
-|  | [Seevetal](https://hofladenliste.de/niedersachsen/harburg/seevetal/) `/niedersachsen/harburg/seevetal/` | Landkreis Harburg | 3 | 3 | 12 |
-|  | [Detmold](https://hofladenliste.de/nordrhein-westfalen/lippe/detmold/) `/nordrhein-westfalen/lippe/detmold/` | Kreis Lippe | 3 | 3 | 12 |
-|  | [Marl](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/marl/) `/nordrhein-westfalen/recklinghausen/marl/` | Kreis Recklinghausen | 3 | 3 | 12 |
-|  | [Stolberg (Rheinland)](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/) `/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/` | Städteregion Aachen | 3 | 3 | 12 |
-|  | [Dinslaken](https://hofladenliste.de/nordrhein-westfalen/wesel/dinslaken/) `/nordrhein-westfalen/wesel/dinslaken/` | Kreis Wesel | 3 | 3 | 12 |
+| ✓ | [Puchheim](https://hofladenliste.de/bayern/fuerstenfeldbruck/puchheim/) `/bayern/fuerstenfeldbruck/puchheim/` | Landkreis Fürstenfeldbruck | 1 | 9 | 12 |
+| ✓ | [Abensberg](https://hofladenliste.de/bayern/kelheim/abensberg/) `/bayern/kelheim/abensberg/` | Landkreis Kelheim | 1 | 9 | 12 |
+| ✓ | [Gersthofen](https://hofladenliste.de/bayern/landkreis-augsburg/gersthofen/) `/bayern/landkreis-augsburg/gersthofen/` | Landkreis Augsburg | 1 | 9 | 12 |
+| ✓ | [Bad Füssing](https://hofladenliste.de/bayern/landkreis-passau/bad-fuessing/) `/bayern/landkreis-passau/bad-fuessing/` | Landkreis Passau | 1 | 9 | 12 |
+| ✓ | [Wasserburg (Bodensee)](https://hofladenliste.de/bayern/lindau/wasserburg-bodensee/) `/bayern/lindau/wasserburg-bodensee/` | Landkreis Lindau | 1 | 9 | 12 |
+| ✓ | [Senden (Landkreis Neu-Ulm)](https://hofladenliste.de/bayern/neu-ulm/senden/) `/bayern/neu-ulm/senden/` | Landkreis Neu-Ulm | 1 | 9 | 12 |
+| ✓ | [Dallgow-Döberitz](https://hofladenliste.de/brandenburg/havelland/dallgow-doeberitz/) `/brandenburg/havelland/dallgow-doeberitz/` | Landkreis Havelland | 1 | 9 | 12 |
+| ✓ | [Friesoythe](https://hofladenliste.de/niedersachsen/cloppenburg/friesoythe/) `/niedersachsen/cloppenburg/friesoythe/` | Landkreis Cloppenburg | 1 | 9 | 12 |
+| ✓ | [Hatten](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/hatten/) `/niedersachsen/landkreis-oldenburg/hatten/` | Landkreis Oldenburg | 1 | 9 | 12 |
+| ✓ | [Isernhagen](https://hofladenliste.de/niedersachsen/region-hannover/isernhagen/) `/niedersachsen/region-hannover/isernhagen/` | Region Hannover | 1 | 9 | 12 |
+| ✓ | [Hollern-Twielenfleth](https://hofladenliste.de/niedersachsen/stade/hollern-twielenfleth/) `/niedersachsen/stade/hollern-twielenfleth/` | Landkreis Stade | 1 | 9 | 12 |
+| ✓ | [Zülpich](https://hofladenliste.de/nordrhein-westfalen/euskirchen/zuelpich/) `/nordrhein-westfalen/euskirchen/zuelpich/` | Kreis Euskirchen | 1 | 9 | 12 |
+| ✓ | [Verl](https://hofladenliste.de/nordrhein-westfalen/guetersloh/verl/) `/nordrhein-westfalen/guetersloh/verl/` | Kreis Gütersloh | 1 | 9 | 12 |
+| ✓ | [Lohmar](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/lohmar/) `/nordrhein-westfalen/rhein-sieg-kreis/lohmar/` | Rhein-Sieg-Kreis | 1 | 9 | 12 |
+| ✓ | [Tönisvorst](https://hofladenliste.de/nordrhein-westfalen/viersen/toenisvorst/) `/nordrhein-westfalen/viersen/toenisvorst/` | Kreis Viersen | 1 | 9 | 12 |
+| ✓ | [Grafschaft](https://hofladenliste.de/rheinland-pfalz/ahrweiler/grafschaft/) `/rheinland-pfalz/ahrweiler/grafschaft/` | Landkreis Ahrweiler | 1 | 9 | 12 |
+| ✓ | [Radebeul](https://hofladenliste.de/sachsen/meissen/radebeul/) `/sachsen/meissen/radebeul/` | Landkreis Meißen | 1 | 9 | 12 |
+| ✓ | [Wilsdruff](https://hofladenliste.de/sachsen/saechsische-schweiz/wilsdruff/) `/sachsen/saechsische-schweiz/wilsdruff/` | Landkreis Sächsische Schweiz | 1 | 9 | 12 |
+| ✓ | [Bad Homburg vor der Höhe](https://hofladenliste.de/hessen/hochtaunuskreis/bad-homburg-vor-der-hoehe/) `/hessen/hochtaunuskreis/bad-homburg-vor-der-hoehe/` | Hochtaunuskreis | 3 | 3 | 12 |
+| ✓ | [Lingen](https://hofladenliste.de/niedersachsen/emsland/lingen/) `/niedersachsen/emsland/lingen/` | Landkreis Emsland | 3 | 3 | 12 |
+| ✓ | [Seevetal](https://hofladenliste.de/niedersachsen/harburg/seevetal/) `/niedersachsen/harburg/seevetal/` | Landkreis Harburg | 3 | 3 | 12 |
+| ✓ | [Detmold](https://hofladenliste.de/nordrhein-westfalen/lippe/detmold/) `/nordrhein-westfalen/lippe/detmold/` | Kreis Lippe | 3 | 3 | 12 |
+| ✓ | [Marl](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/marl/) `/nordrhein-westfalen/recklinghausen/marl/` | Kreis Recklinghausen | 3 | 3 | 12 |
+| ✓ | [Stolberg (Rheinland)](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/) `/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/` | Städteregion Aachen | 3 | 3 | 12 |
+| ✓ | [Dinslaken](https://hofladenliste.de/nordrhein-westfalen/wesel/dinslaken/) `/nordrhein-westfalen/wesel/dinslaken/` | Kreis Wesel | 3 | 3 | 12 |
 
 ## Paket 13 (0/25 fertig)
 
