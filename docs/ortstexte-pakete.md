@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 351 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 376 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -423,35 +423,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Zschopau](https://hofladenliste.de/sachsen/erzgebirgskreis/zschopau/) `/sachsen/erzgebirgskreis/zschopau/` | Erzgebirgskreis | 2 | 5 | 11 |
 | ✓ | [Heidenheim an der Brenz](https://hofladenliste.de/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/) `/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/` | Landkreis Heidenheim | 3 | 2 | 11 |
 
-## Paket 15 (0/25 fertig)
+## Paket 15 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Hof](https://hofladenliste.de/bayern/hof-stadt/) `/bayern/hof-stadt/` | Hof | 3 | 2 | 11 |
-|  | [Kempten](https://hofladenliste.de/bayern/kempten/) `/bayern/kempten/` | Kempten | 3 | 2 | 11 |
-|  | [Hamburg Eißendorf](https://hofladenliste.de/hamburg/hamburg/hamburg-eissendorf/) `/hamburg/hamburg/hamburg-eissendorf/` | Hamburg | 3 | 2 | 11 |
-|  | [Hamburg Ottensen](https://hofladenliste.de/hamburg/hamburg/hamburg-ottensen/) `/hamburg/hamburg/hamburg-ottensen/` | Hamburg | 3 | 2 | 11 |
-|  | [Goslar](https://hofladenliste.de/niedersachsen/goslar/goslar/) `/niedersachsen/goslar/goslar/` | Landkreis Goslar | 3 | 2 | 11 |
-|  | [Stadland](https://hofladenliste.de/niedersachsen/wesermarsch/stadland/) `/niedersachsen/wesermarsch/stadland/` | Landkreis Wesermarsch | 3 | 2 | 11 |
-|  | [Menden](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/menden/) `/nordrhein-westfalen/maerkischer-kreis/menden/` | Märkischer Kreis | 3 | 2 | 11 |
-|  | [Troisdorf](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/troisdorf/) `/nordrhein-westfalen/rhein-sieg-kreis/troisdorf/` | Rhein-Sieg-Kreis | 3 | 2 | 11 |
-|  | [Riesa](https://hofladenliste.de/sachsen/meissen/riesa/) `/sachsen/meissen/riesa/` | Landkreis Meißen | 3 | 2 | 11 |
-|  | [Waldenbuch](https://hofladenliste.de/baden-wuerttemberg/boeblingen/waldenbuch/) `/baden-wuerttemberg/boeblingen/waldenbuch/` | Landkreis Böblingen | 1 | 7 | 10 |
-|  | [Endingen am Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/emmendingen/endingen-am-kaiserstuhl/) `/baden-wuerttemberg/emmendingen/endingen-am-kaiserstuhl/` | Landkreis Emmendingen | 1 | 7 | 10 |
-|  | [Remchingen](https://hofladenliste.de/baden-wuerttemberg/enzkreis/remchingen/) `/baden-wuerttemberg/enzkreis/remchingen/` | Enzkreis | 1 | 7 | 10 |
-|  | [Engen](https://hofladenliste.de/baden-wuerttemberg/konstanz/engen/) `/baden-wuerttemberg/konstanz/engen/` | Landkreis Konstanz | 1 | 7 | 10 |
-|  | [Karlsbad](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/karlsbad/) `/baden-wuerttemberg/landkreis-karlsruhe/karlsbad/` | Landkreis Karlsruhe | 1 | 7 | 10 |
-|  | [Sachsenheim](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/sachsenheim/) `/baden-wuerttemberg/ludwigsburg/sachsenheim/` | Landkreis Ludwigsburg | 1 | 7 | 10 |
-|  | [Vaihingen an der Enz](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/vaihingen-an-der-enz/) `/baden-wuerttemberg/ludwigsburg/vaihingen-an-der-enz/` | Landkreis Ludwigsburg | 1 | 7 | 10 |
-|  | [Essingen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/essingen/) `/baden-wuerttemberg/ostalbkreis/essingen/` | Ostalbkreis | 1 | 7 | 10 |
-|  | [Alfdorf](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/alfdorf/) `/baden-wuerttemberg/rems-murr-kreis/alfdorf/` | Rems-Murr-Kreis | 1 | 7 | 10 |
-|  | [Kusterdingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/kusterdingen/) `/baden-wuerttemberg/tuebingen/kusterdingen/` | Landkreis Tübingen | 1 | 7 | 10 |
-|  | [Eurasburg](https://hofladenliste.de/bayern/aichach-friedberg/eurasburg/) `/bayern/aichach-friedberg/eurasburg/` | Landkreis Aichach-Friedberg | 1 | 7 | 10 |
-|  | [Mering](https://hofladenliste.de/bayern/aichach-friedberg/mering/) `/bayern/aichach-friedberg/mering/` | Landkreis Aichach-Friedberg | 1 | 7 | 10 |
-|  | [Ansbach](https://hofladenliste.de/bayern/ansbach-stadt/) `/bayern/ansbach-stadt/` | Ansbach | 1 | 7 | 10 |
-|  | [Lenggries](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/lenggries/) `/bayern/bad-toelz-wolfratshausen/lenggries/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 7 | 10 |
-|  | [Erding](https://hofladenliste.de/bayern/erding/erding/) `/bayern/erding/erding/` | Landkreis Erding | 1 | 7 | 10 |
-|  | [Moosinning](https://hofladenliste.de/bayern/erding/moosinning/) `/bayern/erding/moosinning/` | Landkreis Erding | 1 | 7 | 10 |
+| ✓ | [Hof](https://hofladenliste.de/bayern/hof-stadt/) `/bayern/hof-stadt/` | Hof | 3 | 2 | 11 |
+| ✓ | [Kempten](https://hofladenliste.de/bayern/kempten/) `/bayern/kempten/` | Kempten | 3 | 2 | 11 |
+| ✓ | [Hamburg Eißendorf](https://hofladenliste.de/hamburg/hamburg/hamburg-eissendorf/) `/hamburg/hamburg/hamburg-eissendorf/` | Hamburg | 3 | 2 | 11 |
+| ✓ | [Hamburg Ottensen](https://hofladenliste.de/hamburg/hamburg/hamburg-ottensen/) `/hamburg/hamburg/hamburg-ottensen/` | Hamburg | 3 | 2 | 11 |
+| ✓ | [Goslar](https://hofladenliste.de/niedersachsen/goslar/goslar/) `/niedersachsen/goslar/goslar/` | Landkreis Goslar | 3 | 2 | 11 |
+| ✓ | [Stadland](https://hofladenliste.de/niedersachsen/wesermarsch/stadland/) `/niedersachsen/wesermarsch/stadland/` | Landkreis Wesermarsch | 3 | 2 | 11 |
+| ✓ | [Menden](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/menden/) `/nordrhein-westfalen/maerkischer-kreis/menden/` | Märkischer Kreis | 3 | 2 | 11 |
+| ✓ | [Troisdorf](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/troisdorf/) `/nordrhein-westfalen/rhein-sieg-kreis/troisdorf/` | Rhein-Sieg-Kreis | 3 | 2 | 11 |
+| ✓ | [Riesa](https://hofladenliste.de/sachsen/meissen/riesa/) `/sachsen/meissen/riesa/` | Landkreis Meißen | 3 | 2 | 11 |
+| ✓ | [Waldenbuch](https://hofladenliste.de/baden-wuerttemberg/boeblingen/waldenbuch/) `/baden-wuerttemberg/boeblingen/waldenbuch/` | Landkreis Böblingen | 1 | 7 | 10 |
+| ✓ | [Endingen am Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/emmendingen/endingen-am-kaiserstuhl/) `/baden-wuerttemberg/emmendingen/endingen-am-kaiserstuhl/` | Landkreis Emmendingen | 1 | 7 | 10 |
+| ✓ | [Remchingen](https://hofladenliste.de/baden-wuerttemberg/enzkreis/remchingen/) `/baden-wuerttemberg/enzkreis/remchingen/` | Enzkreis | 1 | 7 | 10 |
+| ✓ | [Engen](https://hofladenliste.de/baden-wuerttemberg/konstanz/engen/) `/baden-wuerttemberg/konstanz/engen/` | Landkreis Konstanz | 1 | 7 | 10 |
+| ✓ | [Karlsbad](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/karlsbad/) `/baden-wuerttemberg/landkreis-karlsruhe/karlsbad/` | Landkreis Karlsruhe | 1 | 7 | 10 |
+| ✓ | [Sachsenheim](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/sachsenheim/) `/baden-wuerttemberg/ludwigsburg/sachsenheim/` | Landkreis Ludwigsburg | 1 | 7 | 10 |
+| ✓ | [Vaihingen an der Enz](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/vaihingen-an-der-enz/) `/baden-wuerttemberg/ludwigsburg/vaihingen-an-der-enz/` | Landkreis Ludwigsburg | 1 | 7 | 10 |
+| ✓ | [Essingen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/essingen/) `/baden-wuerttemberg/ostalbkreis/essingen/` | Ostalbkreis | 1 | 7 | 10 |
+| ✓ | [Alfdorf](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/alfdorf/) `/baden-wuerttemberg/rems-murr-kreis/alfdorf/` | Rems-Murr-Kreis | 1 | 7 | 10 |
+| ✓ | [Kusterdingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/kusterdingen/) `/baden-wuerttemberg/tuebingen/kusterdingen/` | Landkreis Tübingen | 1 | 7 | 10 |
+| ✓ | [Eurasburg](https://hofladenliste.de/bayern/aichach-friedberg/eurasburg/) `/bayern/aichach-friedberg/eurasburg/` | Landkreis Aichach-Friedberg | 1 | 7 | 10 |
+| ✓ | [Mering](https://hofladenliste.de/bayern/aichach-friedberg/mering/) `/bayern/aichach-friedberg/mering/` | Landkreis Aichach-Friedberg | 1 | 7 | 10 |
+| ✓ | [Ansbach](https://hofladenliste.de/bayern/ansbach-stadt/) `/bayern/ansbach-stadt/` | Ansbach | 1 | 7 | 10 |
+| ✓ | [Lenggries](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/lenggries/) `/bayern/bad-toelz-wolfratshausen/lenggries/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 7 | 10 |
+| ✓ | [Erding](https://hofladenliste.de/bayern/erding/erding/) `/bayern/erding/erding/` | Landkreis Erding | 1 | 7 | 10 |
+| ✓ | [Moosinning](https://hofladenliste.de/bayern/erding/moosinning/) `/bayern/erding/moosinning/` | Landkreis Erding | 1 | 7 | 10 |
 
 ## Paket 16 (0/25 fertig)
 
