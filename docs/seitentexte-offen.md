@@ -1,6 +1,6 @@
 # Lokale Seiten ohne gepflegten Text
 
-Stand 2026-11-20. Die 150 indexierbaren lokalen Seiten mit den meisten eigenen Einträgen (bei Orten und Städten: Einträge im Ort selbst), für die es noch keinen Eintrag in `data/seitentexte.json` und kein Regionsprofil in `data/regionen/` gibt. Format: `scripts/seitentexte.mjs`.
+Stand 2026-11-21. Die 150 indexierbaren lokalen Seiten mit den meisten eigenen Einträgen (bei Orten und Städten: Einträge im Ort selbst), für die es noch keinen Eintrag in `data/seitentexte.json` und kein Regionsprofil in `data/regionen/` gibt. Format: `scripts/seitentexte.mjs`.
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 | Seite | Art | eigene Einträge | Schlüssel in data/seitentexte.json |
@@ -19,7 +19,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Kreis Ostholstein](https://hofladenliste.de/schleswig-holstein/ostholstein/) | Kreis | 76 | `/schleswig-holstein/ostholstein/` |
 | [Hofläden im Landkreis Forchheim](https://hofladenliste.de/bayern/forchheim/) | Kreis | 75 | `/bayern/forchheim/` |
 | [Hofläden im Landkreis München](https://hofladenliste.de/bayern/landkreis-muenchen/) | Kreis | 75 | `/bayern/landkreis-muenchen/` |
-| [Hofläden in Berlin und Umgebung](https://hofladenliste.de/berlin/berlin/) | Stadt | 74 | `/berlin/berlin/` |
 | [Hofläden im Kreis Borken](https://hofladenliste.de/nordrhein-westfalen/borken/) | Kreis | 74 | `/nordrhein-westfalen/borken/` |
 | [Hofläden im Landkreis Osnabrück](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/) | Kreis | 73 | `/niedersachsen/landkreis-osnabrueck/` |
 | [Hofläden im Landkreis Cloppenburg](https://hofladenliste.de/niedersachsen/cloppenburg/) | Kreis | 72 | `/niedersachsen/cloppenburg/` |
@@ -35,7 +34,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Landkreis Diepholz](https://hofladenliste.de/niedersachsen/diepholz/) | Kreis | 67 | `/niedersachsen/diepholz/` |
 | [Hofladen-Automaten im Kreis Paderborn](https://hofladenliste.de/nordrhein-westfalen/paderborn/hofladen-automaten/) | Hofladen-Automaten | 67 | `/nordrhein-westfalen/paderborn/hofladen-automaten/` |
 | [Hofläden im Landkreis Reutlingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/) | Kreis | 66 | `/baden-wuerttemberg/reutlingen/` |
-| [Hofläden in Stuttgart und Umgebung](https://hofladenliste.de/baden-wuerttemberg/stuttgart/) | Stadt | 66 | `/baden-wuerttemberg/stuttgart/` |
 | [Hofläden im Kreis Segeberg](https://hofladenliste.de/schleswig-holstein/segeberg/) | Kreis | 66 | `/schleswig-holstein/segeberg/` |
 | [Hofläden im Landkreis Fürstenfeldbruck](https://hofladenliste.de/bayern/fuerstenfeldbruck/) | Kreis | 65 | `/bayern/fuerstenfeldbruck/` |
 | [Hofläden im Landkreis Mecklenburgische Seenplatte](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/) | Kreis | 65 | `/mecklenburg-vorpommern/mecklenburgische-seenplatte/` |
@@ -52,7 +50,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Landkreis Waldshut](https://hofladenliste.de/baden-wuerttemberg/waldshut/) | Kreis | 58 | `/baden-wuerttemberg/waldshut/` |
 | [Hofläden im Landkreis Ostallgäu](https://hofladenliste.de/bayern/ostallgaeu/) | Kreis | 58 | `/bayern/ostallgaeu/` |
 | [Hofläden im Landkreis Emmendingen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/) | Kreis | 57 | `/baden-wuerttemberg/emmendingen/` |
-| [Hofläden in Hamburg und Umgebung](https://hofladenliste.de/hamburg/hamburg/) | Stadt | 57 | `/hamburg/hamburg/` |
 | [Hofläden im Kreis Mettmann](https://hofladenliste.de/nordrhein-westfalen/mettmann/) | Kreis | 57 | `/nordrhein-westfalen/mettmann/` |
 | [Hofläden im Landkreis Deggendorf](https://hofladenliste.de/bayern/deggendorf/) | Kreis | 56 | `/bayern/deggendorf/` |
 | [Hofläden im Kreis Heinsberg](https://hofladenliste.de/nordrhein-westfalen/heinsberg/) | Kreis | 56 | `/nordrhein-westfalen/heinsberg/` |
@@ -65,7 +62,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Landkreis Ansbach](https://hofladenliste.de/bayern/landkreis-ansbach/) | Kreis | 54 | `/bayern/landkreis-ansbach/` |
 | [Bio-Hofläden im Landkreis Landshut](https://hofladenliste.de/bayern/landkreis-landshut/bio-hofladen/) | Bio-Hofläden | 54 | `/bayern/landkreis-landshut/bio-hofladen/` |
 | [Hofläden im Landkreis Lindau](https://hofladenliste.de/bayern/lindau/) | Kreis | 54 | `/bayern/lindau/` |
-| [Hofläden in München und Umgebung](https://hofladenliste.de/bayern/muenchen-stadt/) | Stadt | 54 | `/bayern/muenchen-stadt/` |
 | [Hofläden im Landkreis Bergstraße](https://hofladenliste.de/hessen/bergstrasse/) | Kreis | 54 | `/hessen/bergstrasse/` |
 | [Hofläden im Landkreis Vorpommern-Rügen](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-ruegen/) | Kreis | 54 | `/mecklenburg-vorpommern/vorpommern-ruegen/` |
 | [Hofläden im Landkreis Fulda](https://hofladenliste.de/hessen/fulda/) | Kreis | 53 | `/hessen/fulda/` |
@@ -83,7 +79,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Landkreis Oberallgäu](https://hofladenliste.de/bayern/oberallgaeu/) | Kreis | 50 | `/bayern/oberallgaeu/` |
 | [Hofläden im Landkreis Cuxhaven](https://hofladenliste.de/niedersachsen/cuxhaven/) | Kreis | 50 | `/niedersachsen/cuxhaven/` |
 | [Hofläden im Landkreis Zwickau](https://hofladenliste.de/sachsen/zwickau/) | Kreis | 50 | `/sachsen/zwickau/` |
-| [Hofläden in Lübeck und Umgebung](https://hofladenliste.de/schleswig-holstein/luebeck/) | Stadt | 50 | `/schleswig-holstein/luebeck/` |
 | [Hofläden im Kreis Plön](https://hofladenliste.de/schleswig-holstein/ploen/) | Kreis | 50 | `/schleswig-holstein/ploen/` |
 | [Hofladen-Automaten im Ortenaukreis](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/hofladen-automaten/) | Hofladen-Automaten | 49 | `/baden-wuerttemberg/ortenaukreis/hofladen-automaten/` |
 | [Regiomaten im Kreis Paderborn](https://hofladenliste.de/nordrhein-westfalen/paderborn/regiomaten/) | Regiomaten | 49 | `/nordrhein-westfalen/paderborn/regiomaten/` |
@@ -104,11 +99,9 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Kreis Soest](https://hofladenliste.de/nordrhein-westfalen/soest/) | Kreis | 46 | `/nordrhein-westfalen/soest/` |
 | [Hofläden im Landkreis Freising](https://hofladenliste.de/bayern/freising/) | Kreis | 45 | `/bayern/freising/` |
 | [Hofläden im Landkreis Neu-Ulm](https://hofladenliste.de/bayern/neu-ulm/) | Kreis | 45 | `/bayern/neu-ulm/` |
-| [Hofläden in Nürnberg und Umgebung](https://hofladenliste.de/bayern/nuernberg/) | Stadt | 45 | `/bayern/nuernberg/` |
 | [Hofläden im Schwalm-Eder-Kreis](https://hofladenliste.de/hessen/schwalm-eder-kreis/) | Kreis | 45 | `/hessen/schwalm-eder-kreis/` |
 | [Hofläden im Landkreis Nienburg/Weser](https://hofladenliste.de/niedersachsen/nienburg-weser/) | Kreis | 45 | `/niedersachsen/nienburg-weser/` |
 | [Hofladen-Automaten in der Region Hannover](https://hofladenliste.de/niedersachsen/region-hannover/hofladen-automaten/) | Hofladen-Automaten | 45 | `/niedersachsen/region-hannover/hofladen-automaten/` |
-| [Hofläden in Münster und Umgebung](https://hofladenliste.de/nordrhein-westfalen/muenster/) | Stadt | 45 | `/nordrhein-westfalen/muenster/` |
 | [Hofladen-Automaten im Bodenseekreis](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/hofladen-automaten/) | Hofladen-Automaten | 44 | `/baden-wuerttemberg/bodenseekreis/hofladen-automaten/` |
 | [Hofladen-Automaten im Landkreis Esslingen](https://hofladenliste.de/baden-wuerttemberg/esslingen/hofladen-automaten/) | Hofladen-Automaten | 44 | `/baden-wuerttemberg/esslingen/hofladen-automaten/` |
 | [Hofläden im Landkreis Sigmaringen](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/) | Kreis | 44 | `/baden-wuerttemberg/sigmaringen/` |
@@ -122,7 +115,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Landkreis Rhön-Grabfeld](https://hofladenliste.de/bayern/rhoen-grabfeld/) | Kreis | 43 | `/bayern/rhoen-grabfeld/` |
 | [Hofläden im Landkreis Ammerland](https://hofladenliste.de/niedersachsen/ammerland/) | Kreis | 43 | `/niedersachsen/ammerland/` |
 | [Hofläden im Kreis Minden-Lübbecke](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/) | Kreis | 43 | `/nordrhein-westfalen/minden-luebbecke/` |
-| [Hofläden in Dresden und Umgebung](https://hofladenliste.de/sachsen/dresden/) | Stadt | 43 | `/sachsen/dresden/` |
 | [Hofläden im Landkreis Leipzig](https://hofladenliste.de/sachsen/landkreis-leipzig/) | Kreis | 43 | `/sachsen/landkreis-leipzig/` |
 | [Hofläden im Landkreis Traunstein](https://hofladenliste.de/bayern/traunstein/) | Kreis | 42 | `/bayern/traunstein/` |
 | [Hofläden im Hochsauerlandkreis](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/) | Kreis | 42 | `/nordrhein-westfalen/hochsauerlandkreis/` |
@@ -148,10 +140,18 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | [Hofläden im Landkreis Bad Dürkheim](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/) | Kreis | 37 | `/rheinland-pfalz/bad-duerkheim/` |
 | [Regiomaten im Alb-Donau-Kreis](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/regiomaten/) | Regiomaten | 36 | `/baden-wuerttemberg/alb-donau-kreis/regiomaten/` |
 | [Hofläden in Friedrichshafen und Umgebung](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/friedrichshafen/) | Ort | 36 | `/baden-wuerttemberg/bodenseekreis/friedrichshafen/` |
+| [Hofladen-Automaten im Landkreis Ravensburg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/hofladen-automaten/) | Hofladen-Automaten | 36 | `/baden-wuerttemberg/ravensburg/hofladen-automaten/` |
 | [Hofläden im Landkreis Regensburg](https://hofladenliste.de/bayern/landkreis-regensburg/) | Kreis | 36 | `/bayern/landkreis-regensburg/` |
 | [Hofläden im Landkreis Havelland](https://hofladenliste.de/brandenburg/havelland/) | Kreis | 36 | `/brandenburg/havelland/` |
 | [Hofladen-Automaten im Landkreis Breisgau-Hochschwarzwald](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/hofladen-automaten/) | Hofladen-Automaten | 35 | `/baden-wuerttemberg/breisgau-hochschwarzwald/hofladen-automaten/` |
 | [Regiomaten im Landkreis Heilbronn](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/regiomaten/) | Regiomaten | 35 | `/baden-wuerttemberg/landkreis-heilbronn/regiomaten/` |
 | [Hofladen-Automaten im Landkreis Karlsruhe](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/hofladen-automaten/) | Hofladen-Automaten | 35 | `/baden-wuerttemberg/landkreis-karlsruhe/hofladen-automaten/` |
 | [Hofläden im Landkreis Lörrach](https://hofladenliste.de/baden-wuerttemberg/loerrach/) | Kreis | 35 | `/baden-wuerttemberg/loerrach/` |
-| [Hofladen-Automaten im Landkreis Ravensburg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/hofladen-automaten/) | Hofladen-Automaten | 35 | `/baden-wuerttemberg/ravensburg/hofladen-automaten/` |
+| [Hofläden im Landkreis Dingolfing-Landau](https://hofladenliste.de/bayern/dingolfing-landau/) | Kreis | 35 | `/bayern/dingolfing-landau/` |
+| [Hofläden im Landkreis Fürth](https://hofladenliste.de/bayern/landkreis-fuerth/) | Kreis | 35 | `/bayern/landkreis-fuerth/` |
+| [Hofläden im Landkreis Schweinfurt](https://hofladenliste.de/bayern/landkreis-schweinfurt/) | Kreis | 35 | `/bayern/landkreis-schweinfurt/` |
+| [Hofläden im Landkreis Main-Spessart](https://hofladenliste.de/bayern/main-spessart/) | Kreis | 35 | `/bayern/main-spessart/` |
+| [Hofläden im Landkreis Offenbach](https://hofladenliste.de/hessen/offenbach/) | Kreis | 35 | `/hessen/offenbach/` |
+| [Hofladen-Automaten im Kreis Coesfeld](https://hofladenliste.de/nordrhein-westfalen/coesfeld/hofladen-automaten/) | Hofladen-Automaten | 35 | `/nordrhein-westfalen/coesfeld/hofladen-automaten/` |
+| [Hofläden im Märkischer Kreis](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/) | Kreis | 35 | `/nordrhein-westfalen/maerkischer-kreis/` |
+| [Bio-Hofläden im Bodenseekreis](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/bio-hofladen/) | Bio-Hofläden | 34 | `/baden-wuerttemberg/bodenseekreis/bio-hofladen/` |

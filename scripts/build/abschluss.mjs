@@ -10,7 +10,7 @@ import { BUILD_DATUM, GEN, OUT, ROOT, VOLLSTAENDIGKEIT, betreiber, cfg, eintraeg
 import { KATEGORIE_PFADE, SEITENTEXTE, SEITENTEXT_GENUTZT, seite } from './html.mjs';
 import { pruefeSeitentexte } from '../seitentexte.mjs';
 import { SEITENTEXT_KANDIDATEN } from './regionen.mjs';
-import { ALLE_SEITEN, ORTE, STAND_DATEI, anzHof, sitemap, stand } from './grundlagen.mjs';
+import { ALLE_SEITEN, ORTE, ORTSMITTE, STAND_DATEI, UMGEBUNG, anzHof, sitemap, stand, umgebungIndexiert } from './grundlagen.mjs';
 import { ANGEBOT_SEITEN, SAISON_SEITEN, SORTEN } from './startseite.mjs';
 import { impFehlt } from './themen.mjs';
 
@@ -178,7 +178,28 @@ if (process.env.SEITENTEXTE_OFFEN) {
   writeFileSync(join(ROOT, 'docs', 'seitentexte-offen.md'), `# Lokale Seiten ohne gepflegten Text\n\nStand ${BUILD_DATUM}. Die ${top.length} indexierbaren lokalen Seiten mit den meisten eigenen Einträgen (bei Orten und Städten: Einträge im Ort selbst), für die es noch keinen Eintrag in \`data/seitentexte.json\` und kein Regionsprofil in \`data/regionen/\` gibt. Format: \`scripts/seitentexte.mjs\`.\nNeu erzeugen: \`SEITENTEXTE_OFFEN=1 node scripts/build.mjs\` (danach \`git checkout data/seiten-stand.json\`).\n\n| Seite | Art | eigene Einträge | Schlüssel in data/seitentexte.json |\n|---|---|---:|---|\n${top.map((x) => `| [${x.titel}](${cfg.domain}${x.pfad}) | ${x.art} | ${x.n} | \`${x.pfad}\` |`).join('\n')}\n`);
   console.log(`Seitentexte: Liste offener Seiten geschrieben (${top.length})`);
 }
-console.log(`Seitentexte: ${SEITENTEXT_GENUTZT.size} angezeigt, ${SEITENTEXT_KANDIDATEN.length} lokale Seiten noch ohne gepflegten Text`);
+// Orts- und Stadtseiten in Paketen à 25, absteigend nach Relevanz – Arbeitsliste für gepflegte Ortstexte.
+// Relevanz = 3 × Zahl der Postleitzahlen des Orts (Maß für die Größe, also die Suchnachfrage) + eigene Einträge im Ort.
+if (process.env.SEITENTEXTE_OFFEN) {
+  const orte = UMGEBUNG.filter((z) => umgebungIndexiert(z) && sitemap.includes(z.pfad)).map((z) => {
+    const plzZahl = ORTSMITTE.get(z.name + '|' + z.k.code)?.plz.size || 0;
+    return { z, plzZahl, rel: 3 * plzZahl + z.eigene.length };
+  }).sort((a, b) => b.rel - a.rel || b.z.eigene.length - a.z.eigene.length || a.z.pfad.localeCompare(b.z.pfad));
+  const pakete = [];
+  for (let i = 0; i < orte.length; i += 25) pakete.push(orte.slice(i, i + 25));
+  const fertig = orte.filter((x) => SEITENTEXTE[x.z.pfad]).length;
+  writeFileSync(join(ROOT, 'docs', 'ortstexte-pakete.md'), `# Ortstexte: Pakete à 25 nach Relevanz\n\nStand ${BUILD_DATUM}. Alle ${orte.length} indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. ${fertig} haben schon einen gepflegten Text in \`data/seitentexte.json\` (✓).\nNeu erzeugen: \`SEITENTEXTE_OFFEN=1 node scripts/build.mjs\` (danach \`git checkout data/seiten-stand.json\`).\n\n${pakete.map((p, i) => `## Paket ${i + 1} (${p.filter((x) => SEITENTEXTE[x.z.pfad]).length}/${p.length} fertig)\n\n| | Seite | Kreis | PLZ | eigene | Relevanz |\n|---|---|---|---:|---:|---:|\n${p.map((x) => `| ${SEITENTEXTE[x.z.pfad] ? '✓' : ''} | [${x.z.titelName || x.z.name}](${cfg.domain}${x.z.pfad}) \`${x.z.pfad}\` | ${x.z.k.titel} | ${x.plzZahl} | ${x.z.eigene.length} | ${x.rel} |`).join('\n')}\n`).join('\n')}`);
+  console.log(`Ortstexte: ${orte.length} Orts- und Stadtseiten in ${pakete.length} Paketen (${fertig} fertig)`);
+  // Fakten je Ort als Arbeitsgrundlage für die Texte (nicht im Repo)
+  if (process.env.ORTSTEXTE_DATEN) writeFileSync(process.env.ORTSTEXTE_DATEN, JSON.stringify(orte.map(({ z, plzZahl, rel }, i) => ({
+    paket: Math.floor(i / 25) + 1, pfad: z.pfad, name: z.titelName || z.name, ort: z.name, kreis: z.k.titel, land: z.k.landName, kreisPfad: z.k.pfad, landSlug: z.k.landSlug, plzZahl, rel,
+    lat: +z.lat.toFixed(4), lon: +z.lon.toFixed(4), kreisSeite: !!z.kreisSeite, fertig: !!SEITENTEXTE[z.pfad],
+    eigene: z.eigene.map((e) => ({ titel: e.titel, art: e.art, kat: e.kat, bio: !!e.bio, ort: e.ortAnzeige })),
+    umkreis25: z.umkreis.filter(([d]) => d <= 25).length,
+    naheTitel: z.umkreis.slice(0, 12).map(([d, e]) => `${e.titel} (${e.art}, ${e.ortAnzeige}, ${d.toFixed(1)} km)`),
+  })), null, 1));
+}
+console.log(`Seitentexte: ${SEITENTEXT_GENUTZT.size} angezeigt,${SEITENTEXT_KANDIDATEN.length} lokale Seiten noch ohne gepflegten Text`);
 console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${impressumAnzahl} mit Kontakt aus dem Impressum, ${pflegeAnzahl} gepflegt, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${geschlossenAnzahl} als geschlossen entfernt, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
 if (impFehlt) console.warn('WARNUNG: Impressum in site.config.json ist unvollständig.');
 

@@ -52,5 +52,1075 @@
       }
     ],
     "stand": "2026-11-20"
+  },
+  "/berlin/berlin/": {
+    "titel": "Hofläden in Berlin: gut zu wissen",
+    "oben": "Auch mitten in Berlin wird Landwirtschaft betrieben: Die Domäne Dahlem im Südwesten ist ein Bio-Landgut mit Hofladen und eigenem U-Bahn-Anschluss, samstags findet dort ein Ökomarkt statt. Die meisten Höfe der Liste liegen am Stadtrand und im Brandenburger Umland.",
+    "einleitung": "Wer in Berlin direkt beim Erzeuger kaufen will, hat mehrere Wege: Hofläden am Stadtrand, die Ökomärkte in den Bezirken, auf denen Bio-Betriebe aus Berlin und Brandenburg verkaufen, und Milch- oder Eierautomaten, die auch abends zugänglich sind.\n\nIm Frühjahr lohnt der Blick nach Südwesten: Rund um Beelitz liegt ein bekanntes Spargelanbaugebiet, viele Höfe verkaufen dort direkt ab Feld und Hof. Im Spätsommer folgt das Obst aus Werder an der Havel.",
+    "faq": [
+      {
+        "frage": "Wann ist der Ökomarkt auf der Domäne Dahlem?",
+        "antwort": "Samstags von 8 bis 13 Uhr im Gutshof an der Königin-Luise-Straße 49. Bio-Betriebe aus Berlin und Brandenburg verkaufen dort unter anderem Obst und Gemüse, Brot, Eier, Käse und Fleisch. Der Hofladen der Domäne hat zusätzlich unter der Woche geöffnet."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel aus Beelitz",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Obst aus Werder (Havel)",
+        "zeit": "Sommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Potsdam-Mittelmark (Beelitz, Werder)",
+        "pfad": "/brandenburg/potsdam-mittelmark/"
+      },
+      {
+        "text": "Hofläden im Havelland",
+        "pfad": "/brandenburg/havelland/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "berlin.de: Ökomarkt auf der Domäne Dahlem",
+        "url": "https://www.berlin.de/special/shopping/biomarkt/1925769-1925662-oekomarkt-auf-der-domaene-dahlem.html"
+      },
+      {
+        "titel": "Berliner Zeitung: Landgasthaus Domäne Dahlem",
+        "url": "https://www.berliner-zeitung.de/article/so-gut-schmeckt-es-im-landgasthaus-domaene-dahlem-2293465"
+      },
+      {
+        "titel": "visitBerlin: Domäne Dahlem",
+        "url": "https://www.visitberlin.de/de/node/15588"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hamburg/hamburg/": {
+    "titel": "Hofläden in Hamburg: gut zu wissen",
+    "oben": "Hamburgs Gemüsegarten liegt im eigenen Stadtgebiet: Die Vier- und Marschlande im Bezirk Bergedorf sind für Gemüse, Obst und Blumen bekannt, viele Betriebe bauen unter Glas an. Südlich der Elbe beginnt mit dem Alten Land eines der größten Obstanbaugebiete Europas.",
+    "einleitung": "In den Vier- und Marschlanden liegen die Höfe hinter Deichen an Dove- und Gose-Elbe, dazwischen Fachwerkhäuser, Wiesen und Gewächshäuser. Hofläden verkaufen Salat, Tomaten, Kräuter und Blumen, im Sommer stehen viele Verkaufsstände an der Straße, und beim Mitmachgartenbau erntest du selbst.\n\nIm Alten Land zwischen Neuenfelde und Stade dreht sich alles um Äpfel, Kirschen, Birnen und Beeren. Zur Blüte im Frühjahr und zur Ernte im Herbst ist dort am meisten los; manche Höfe laden zum Selbstpflücken ein.",
+    "faq": [
+      {
+        "frage": "Wo liegen die Vier- und Marschlande?",
+        "antwort": "Im grünen Südosten Hamburgs, im Bezirk Bergedorf. Zwölf der 14 Stadtteile des Bezirks gehören dazu, etwa Kirchwerder, Curslack und Ochsenwerder. Mit dem Rad erreichst du sie gut über Deichwege und alte Bahntrassen."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Gemüse aus den Vierlanden",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel aus dem Alten Land",
+        "zeit": "August bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Stade (Altes Land)",
+        "pfad": "/niedersachsen/stade/"
+      },
+      {
+        "text": "Hofläden im Kreis Herzogtum Lauenburg",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "hamburg.de: Vier- und Marschlande",
+        "url": "https://www.hamburg.de/leben-in-hamburg/bezirke-hamburg/vier-und-marschlande-306216"
+      },
+      {
+        "titel": "hamburg.de: Land- und Forstwirtschaft",
+        "url": "https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/themen/agrarwirtschaft/agrarwirtschaft-179710"
+      },
+      {
+        "titel": "Hamburg Tourismus: Mitmachgartenbau",
+        "url": "https://hamburg-tourism.de/sehen-erleben/freizeit-sport/mitmachgartenbau"
+      },
+      {
+        "titel": "hamburg.de: Altes Land",
+        "url": "https://www.hamburg.de/freizeit/ausfluege/altes-land-305594"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/muenchen-stadt/": {
+    "titel": "Hofläden in München: gut zu wissen",
+    "oben": "Die Stadt München ist selbst Landwirtin: Die Stadtgüter bewirtschaften zehn Güter, acht davon nach Bioland- oder Naturland-Richtlinien, und bieten Krautgärten zum Mitmachen. Im Grüngürtel am Stadtrand liegen weitere Höfe mit Verkauf, dazu viele Regiomaten und Milchhäusl.",
+    "einleitung": "Auffällig in der Liste sind die vielen Automaten: Regiomaten, Milch-, Eier- und Kartoffelautomaten stehen an Höfen am Stadtrand und sind oft auch abends erreichbar. Daneben gibt es klassische Hofläden, Imkereien und eine Genossenschaft, die Gemüse in die Stadt liefert.\n\nIm Frühjahr bringen die Spargelstände Farbe in die Stadt, viele Höfe aus dem Umland verkaufen dann an der Straße. Im Herbst folgen Kartoffeln, Kürbisse und Lagergemüse.",
+    "faq": [
+      {
+        "frage": "Was sind Krautgärten in München?",
+        "antwort": "Vorbereitete Gemüseparzellen am Stadtrand, die du für eine Saison mietest. Im Frühjahr wird angepflanzt, danach pflegst und erntest du selbst. Angeboten werden sie von den Stadtgütern und von Landwirten im Münchner Grüngürtel."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis München",
+        "pfad": "/bayern/landkreis-muenchen/"
+      },
+      {
+        "text": "Hofläden im Landkreis Dachau",
+        "pfad": "/bayern/dachau/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Stadt München: Stadtgüter München",
+        "url": "https://stadt.muenchen.de/infos/stadtgueter-muenchen.html"
+      },
+      {
+        "titel": "Stadt München: Landwirte im Grüngürtel (Flyer)",
+        "url": "https://lhm.muenchen.swm.de/dam/jcr:f041d614-23c3-46d5-8f33-7299ca4e7163/Gruenguertel%20Landwirte%20Liste_Flyer_20240410.pdf"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/stuttgart/": {
+    "titel": "Hofläden in Stuttgart: gut zu wissen",
+    "oben": "Stuttgart ist eine Großstadt mit Weinbergen: Rund 420 Hektar Reben stehen im Stadtgebiet, die Stadt betreibt sogar ein eigenes Weingut. Knapp 200 Landwirte bewirtschaften rund 2.500 Hektar Äcker, Weinberge und Wiesen, und viele von ihnen verkaufen im Hofladen.",
+    "einleitung": "Auf der Filderebene im Süden wächst das Filderkraut, ein spitz zulaufendes Weißkraut, das seit 2012 als geschützte geografische Angabe im EU-Register steht. Geerntet wird im Spätsommer und Herbst, viele Höfe verkaufen es frisch oder als Sauerkraut.\n\nIn den Weinbaustadtteilen wie Bad Cannstatt, Uhlbach oder Rotenberg verkaufen Weingüter ab Hof, und im Herbst öffnen die Besenwirtschaften. An den Hängen liefern Streuobstwiesen Äpfel für Saft und Most.",
+    "faq": [
+      {
+        "frage": "Was ist das Besondere am Filderkraut?",
+        "antwort": "Filderkraut ist ein spitzes Weißkraut von der Filderebene südlich von Stuttgart. Es gilt als besonders zart und eignet sich gut für Sauerkraut. Die Bezeichnung ist EU-weit geschützt, von den alten Landsorten gibt es nur noch rund 15."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Filderkraut",
+        "zeit": "September bis November"
+      },
+      {
+        "titel": "Wein vom Neckar",
+        "zeit": "Lese im Herbst"
+      },
+      {
+        "titel": "Streuobst & Most",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Esslingen (Fildern)",
+        "pfad": "/baden-wuerttemberg/esslingen/"
+      },
+      {
+        "text": "Hofläden im Rems-Murr-Kreis",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Stadt Stuttgart: Landwirtschaft",
+        "url": "https://www.stuttgart.de/wirtschaft/innovationsoekosysteme/biooekonomie/landwirtschaft.php"
+      },
+      {
+        "titel": "Stuttgart-Marketing: Regionale Produkte (PDF)",
+        "url": "https://presse.stuttgart-tourist.de/_Resources/Persistent/2/2/e/8/22e802394e96179e97f4904e2970274e7e1882e5/03_Regionale_Produkte.pdf"
+      },
+      {
+        "titel": "Land Baden-Württemberg: Filderkrautfest",
+        "url": "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/filderkrautfest-leinfelden-echterdingen"
+      },
+      {
+        "titel": "Land Baden-Württemberg: Filderkrauternte gestartet",
+        "url": "https://www.baden-wuerttemberg.de/de/service/presse/pressemitteilung/pid/traditionelle-filderkrauternte-gestartet"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/koeln/": {
+    "titel": "Hofläden in Köln: gut zu wissen",
+    "oben": "Köln hat seinen Gemüsegarten vor der Tür: Am Vorgebirge zwischen Köln und Bonn sorgt mildes Klima für Obst-, Gemüse- und Blumenanbau, bekannt ist vor allem der Bornheimer Spargel. In der Stadt selbst gibt es Spargel- und Gemüsehöfe am Rand und mehrere solidarische Landwirtschaften.",
+    "einleitung": "Der Bornheimer Spargel trägt seit 2014 das EU-Siegel „geschützte geografische Angabe“. Schon die Römer nutzten das Vorgebirge als Obst- und Gemüsegarten für ihre Siedlungen am Rhein, heute verkaufen dort viele Familienbetriebe ab Hof.\n\nWer keinen eigenen Garten hat, kann in Köln Mitglied einer Solawi werden und jede Woche einen Ernteanteil abholen, oder auf Ackerflächen am Stadtrand eine Gemüseparzelle bewirtschaften.",
+    "faq": [
+      {
+        "frage": "Wann ist Spargelzeit rund um Köln?",
+        "antwort": "Gestochen wird meist von April bis zum 24. Juni. Die Spargelgenossenschaft am Vorgebirge kürt jedes Jahr gemeinsam mit Brühl eine Spargelkönigin, in Bornheim gibt es ein Spargelfest."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel vom Vorgebirge",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Grünkohl",
+        "zeit": "November bis Februar"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Rhein-Sieg-Kreis (Bornheim)",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/"
+      },
+      {
+        "text": "Hofläden im Rhein-Erft-Kreis",
+        "pfad": "/nordrhein-westfalen/rhein-erft-kreis/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Bornheimer Spargel (dewiki)",
+        "url": "https://dewiki.de/Lexikon/Bornheimer_Spargel"
+      },
+      {
+        "titel": "Stadt Bornheim: Rheingenuss (PDF)",
+        "url": "https://www.bornheim.de/fileadmin/dokumente/_freizeit-tourismus/Bornheim_erleben/erlebnistouren/Rheingenuss.pdf"
+      },
+      {
+        "titel": "Stadt Köln: Gartenlabore",
+        "url": "https://www.stadt-koeln.de/mediaasset/content/pdf67/gartenlabore_infoblatt_final.pdf"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/duesseldorf/": {
+    "titel": "Hofläden in Düsseldorf: gut zu wissen",
+    "oben": "Im Düsseldorfer Süden ist es überraschend ländlich: Himmelgeist ist bis heute ein von der Landwirtschaft geprägtes Dorf am Rhein, und in der Urdenbacher Kämpe stehen Streuobstwiesen. Auch im Norden und Osten der Stadt gibt es Höfe mit Hofladen, Hofcafé oder Regiomat.",
+    "einleitung": "Viele Betriebe in und um Düsseldorf verkaufen inzwischen Obst und Gemüse im eigenen Hofladen, manche bieten Mietgärten an oder arbeiten als solidarische Landwirtschaft. Typisch für die Gegend sind Kartoffeln, Spargel, Erdbeeren und Feldgemüse.\n\nDie Rheinauen im Süden lassen sich gut mit dem Rad erkunden. Direkt hinter der Stadtgrenze liegen im Kreis Mettmann und im Rhein-Kreis Neuss viele weitere Höfe mit Direktverkauf.",
+    "faq": [
+      {
+        "frage": "Was ist eine Solawi?",
+        "antwort": "Bei einer solidarischen Landwirtschaft finanzieren Mitglieder gemeinsam die Arbeit eines Hofs und bekommen dafür regelmäßig einen Anteil der Ernte. In Düsseldorf gibt es zum Beispiel die Solawi Düsseldorf, die in der Liste steht."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Streuobst aus den Rheinauen",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Mettmann",
+        "pfad": "/nordrhein-westfalen/mettmann/"
+      },
+      {
+        "text": "Hofläden im Rhein-Kreis Neuss",
+        "pfad": "/nordrhein-westfalen/rhein-kreis-neuss/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Wikipedia: Himmelgeist",
+        "url": "https://en.wikipedia.org/wiki/Himmelgeist"
+      },
+      {
+        "titel": "KuLaDig: Urdenbacher Kämpe",
+        "url": "https://www.kuladig.de/Objektansicht/Drucken/KLD-281113"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/frankfurt-am-main/": {
+    "titel": "Hofläden in Frankfurt: gut zu wissen",
+    "oben": "Frankfurt hat eine eigene geschützte Spezialität: Die Kräuter für die Frankfurter Grüne Soße wachsen seit Generationen in Oberrad südlich des Mains. Dazu kommen Streuobstwiesen für den Apfelwein und Höfe im Grüngürtel, die direkt verkaufen.",
+    "einleitung": "In die echte Grie Soß gehören sieben Kräuter: Borretsch, Kerbel, Kresse, Petersilie, Pimpinelle, Sauerampfer und Schnittlauch. Seit 2016 ist die Kräutermischung als „Frankfurter Grüne Soße“ geschützte geografische Angabe; Gärtnereien verkaufen sie gebündelt an Ständen und auf den Wochenmärkten.\n\nDie Streuobstwiesen rund um die Stadt liefern die Äpfel für Saft und Apfelwein. Mehr Höfe findest du in der Wetterau nördlich von Frankfurt und im Main-Taunus-Kreis.",
+    "faq": [
+      {
+        "frage": "Wann gibt es frische Kräuter für Grüne Soße?",
+        "antwort": "Vom Frühjahr bis in den Herbst. Traditionell kommt die erste Grüne Soße am Gründonnerstag auf den Tisch. Die geschützte Mischung wird als Bund ganzer Kräuter mit mindestens 250 Gramm verkauft."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Kräuter für Grüne Soße",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Äpfel für Apfelwein",
+        "zeit": "Ernte im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Wetteraukreis",
+        "pfad": "/hessen/wetteraukreis/"
+      },
+      {
+        "text": "Hofläden im Main-Taunus-Kreis",
+        "pfad": "/hessen/main-taunus-kreis/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Stadt Frankfurt: Sieben Kräuter sollen’s sein (PDF)",
+        "url": "https://frankfurt.de/-/media/frankfurtde/frankfurt-themen/umwelt-und-gruen/umwelt-und-gruen-a-z/pdf/veroeffentlichungen/sieben_kraeuter_sollens_sein.pdf"
+      },
+      {
+        "titel": "DPMA: Spezifikation Frankfurter Grüne Soße",
+        "url": "https://register.dpma.de/DPMAregister/geo/detail.pdfdownload/22500"
+      },
+      {
+        "titel": "UGB: Grüne Soße",
+        "url": "https://www.ugb.de/ugb-medien/einzelhefte/mikrobiom-kleine-bakterien-gross-im-kommen/gruene-sosse/druckansicht.pdf"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bremen/bremen/": {
+    "titel": "Hofläden in Bremen: gut zu wissen",
+    "oben": "In Bremen prägen Wiesen und Weiden die Landwirtschaft: Rund 80 Prozent der Fläche sind Grünland, bewirtschaftet vor allem von Familienbetrieben. Viele Milchviehhöfe liegen im Blockland an der Wümme, ein beliebtes Ziel für Radtouren mit Halt am Hofladen oder Hofcafé.",
+    "einleitung": "Typisch für Bremen sind deshalb Milch, Käse und Fleisch aus Weidehaltung; in der Liste stehen mehrere Milchtankstellen und Eierautomaten. Einige Höfe liegen auf alten Warften direkt am Deich und wirtschaften ökologisch.\n\nIm Winter gehört Kohl und Pinkel zur Bremer Küche, Grünkohl gibt es dann in vielen Hofläden frisch vom Feld. Weitere Höfe findest du in den Landkreisen Osterholz und Verden.",
+    "faq": [
+      {
+        "frage": "Was ist das Blockland?",
+        "antwort": "Ein ländlicher Ortsteil am nördlichen Stadtrand Bremens: rund 30 Quadratkilometer Wiesen, Gräben und Deiche. Die Höfe liegen auf Warften an der Wümme, von der Innenstadt aus erreichst du sie gut mit dem Rad."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Grünkohl",
+        "zeit": "November bis Februar"
+      },
+      {
+        "titel": "Weidemilch & Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Osterholz",
+        "pfad": "/niedersachsen/osterholz/"
+      },
+      {
+        "text": "Hofläden im Landkreis Verden",
+        "pfad": "/niedersachsen/verden/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Bremen: Bremische Landwirtschaft zukunftsfähig machen (PDF)",
+        "url": "https://www.rathaus.bremen.de/sixcms/media.php/13/top%206_20220503_Bremische_Landwirtschaft%20zukunftsfaehig_machen.pdf"
+      },
+      {
+        "titel": "Wikipedia: Blockland",
+        "url": "https://wikipedia.com/wiki/Bremen-Blockland"
+      },
+      {
+        "titel": "oekolandbau.de: Hof Kaemena im Blockland",
+        "url": "https://www.oekolandbau.de/fileadmin/redaktion/dokumente/demobetriebe/Betriebsflyer_2020ff/PDFs/004_Kaemena_FB_LR_web_IV.pdf"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/sachsen/dresden/": {
+    "titel": "Hofläden in Dresden: gut zu wissen",
+    "oben": "Rund um Dresden wachsen Wein und Obst: An den Elbhängen bei Pillnitz und Wachwitz liegen Weinberge der Sächsischen Weinstraße, und in Pillnitz werden Äpfel, Kirschen und Erdbeeren gezüchtet. Viele Höfe am Stadtrand verkaufen Honig, Käse, Eier und Fleisch direkt.",
+    "einleitung": "Die Sächsische Weinstraße führt 55 Kilometer von Pirna über Dresden und Radebeul bis Diesbar-Seußlitz. Weingüter entlang der Strecke verkaufen ab Hof, zur Lese im Herbst wird an vielen Orten gefeiert.\n\nAuffällig in der Liste sind die vielen Imkereien rund um Dresden. Im Umland, etwa in der Sächsischen Schweiz oder im Landkreis Meißen, gibt es außerdem Hofkäsereien, Milchtankstellen und Fleisch aus der Region.",
+    "faq": [
+      {
+        "frage": "Was hat Pillnitz mit Obst zu tun?",
+        "antwort": "In Dresden-Pillnitz forschen Landesamt, Hochschule und Bundesinstitut zu Obst- und Gartenbau. Die Pillnitzer Züchtungen bei Apfel, Süß- und Sauerkirsche sowie Erdbeere sind weltweit bekannt."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juli"
+      },
+      {
+        "titel": "Wein von den Elbhängen",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Meißen",
+        "pfad": "/sachsen/meissen/"
+      },
+      {
+        "text": "Hofläden im Landkreis Sächsische Schweiz",
+        "pfad": "/sachsen/saechsische-schweiz/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "LfULG: Grünes Forum Pillnitz (PDF)",
+        "url": "https://www.lfulg.sachsen.de/download/Faltblatt_Gruenes_Forum_Pillnitz.pdf"
+      },
+      {
+        "titel": "Weinbauverband Sachsen: Weinland (PDF)",
+        "url": "https://www.weinbauverband-sachsen.de/dokumente/Weinland-2018.pdf"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/nuernberg/": {
+    "titel": "Hofläden in Nürnberg: gut zu wissen",
+    "oben": "Nürnbergs Gemüse wächst vor der Haustür: Im Knoblauchsland zwischen Nürnberg, Fürth und Erlangen liegt das größte zusammenhängende Gemüseanbaugebiet Bayerns. Viele Familienbetriebe dort verkaufen in Hofläden und an Ständen, die meisten Einträge der Liste bieten Gemüse an.",
+    "einleitung": "Der Name Knoblauchsland ist schon seit 1439 belegt. Heute bauen die Betriebe auf rund 1.900 Hektar Freiland und etwa 95 Hektar unter Glas Salate, Gurken, Tomaten, Kräuter und anderes Feingemüse an, konventionell wie biologisch. Zu den Dörfern im Stadtgebiet gehören Kraftshof, Buch, Almoshof und Schnepfenreuth.\n\nDie Gegend lässt sich gut mit dem Rad erkunden, etwa auf dem Genussradweg „Knoblauchsland-8er“. Gemüse von dort gibt es auch auf den Nürnberger Wochenmärkten.",
+    "faq": [
+      {
+        "frage": "Wo kann ich Gemüse aus dem Knoblauchsland kaufen?",
+        "antwort": "In den Hofläden im Norden der Stadt, die in der Liste nach Entfernung sortiert sind, an Verkaufsständen in der Saison und auf den Wochenmärkten in Nürnberg."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Salate",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Gurken & Tomaten",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kraut & Lagergemüse",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Fürth",
+        "pfad": "/bayern/landkreis-fuerth/"
+      },
+      {
+        "text": "Hofläden im Landkreis Erlangen-Höchstadt",
+        "pfad": "/bayern/erlangen-hoechstadt/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Stadt Nürnberg: Tipps für den regionalen Einkauf",
+        "url": "https://www.nuernberg.de/internet/stadtportal/regional_einkaufen.html"
+      },
+      {
+        "titel": "Stadt Nürnberg: Knoblauchsland",
+        "url": "https://www.nuernberg.de/internet/stadtplanung/knoblauchsland.html"
+      },
+      {
+        "titel": "inFranken: Kartoffeln, Gemüse und Obst",
+        "url": "https://www.infranken.de/ratgeber/genuss/rezepte/qualitaet-aus-der-heimat-kartoffeln-gemuese-und-obst-art-6341176"
+      },
+      {
+        "titel": "VGN: Knoblauchsland-8er (PDF)",
+        "url": "https://vgn.de/c106969e-bf19-47ec-b4d5-16b2831d731c"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/essen/": {
+    "titel": "Hofläden in Essen: gut zu wissen",
+    "oben": "Essen ist grüner, als viele denken: Im Süden der Stadt, rund um den Baldeneysee und in Kettwig, Schuir oder Burgaltendorf, liegen alte Bauerschaften mit Höfen, Wiesen und Äckern. Einige davon verkaufen im Hofladen, vom Bioland-Gemüse bis zu Eiern und Honig.",
+    "einleitung": "Viele dieser Höfe gehen auf Güter der Abtei Werden zurück, die das Land im Essener Süden über Jahrhunderte prägte. Im Norden gehört Essen zum Emscher Landschaftspark: Rund 40 Prozent seiner Fläche nutzt die Landwirtschaft, mit Hofläden und Bauernhofcafés, etwa am Mechtenberg an der Grenze zu Gelsenkirchen und Bochum.\n\nMehr Auswahl findest du in den Nachbarstädten und im Kreis Mettmann, viele Höfe dort sind in weniger als einer halben Stunde erreichbar.",
+    "faq": [
+      {
+        "frage": "Gibt es Bio-Höfe in Essen?",
+        "antwort": "Ja, in der Liste steht zum Beispiel der Bioland-Hof Maas. Ob ein Betrieb zertifiziert ist, erkennst du am EU-Bio-Logo und an der Öko-Kontrollstellennummer auf der Ware."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Mettmann",
+        "pfad": "/nordrhein-westfalen/mettmann/"
+      },
+      {
+        "text": "Hofläden im Ennepe-Ruhr-Kreis",
+        "pfad": "/nordrhein-westfalen/ennepe-ruhr-kreis/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "KuLaDig: Bäuerliche Kulturlandschaft Fischlaker Höfe",
+        "url": "https://www.kuladig.de/Objektansicht/Drucken/O-4679-20110128-2"
+      },
+      {
+        "titel": "KuLaDig: Berchemer Höfe in Kettwig",
+        "url": "https://www.kuladig.de/Objektansicht/Drucken/A-KHB-20080908-0014"
+      },
+      {
+        "titel": "Landservicehöfe im Emscher Landschaftspark (PDF)",
+        "url": "https://e-pflicht.ub.uni-duesseldorf.de/download/pdf/155174"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/sachsen/leipzig-stadt/": {
+    "titel": "Hofläden in Leipzig: gut zu wissen",
+    "oben": "Rund um Leipzig hat sich eine lebendige Szene für regionales Essen entwickelt: Mehrere solidarische Landwirtschaften, ein Ernährungsrat und Höfe im Umland versorgen die Stadt. Auffällig in der Liste sind die vielen Milchtankstellen und Milchautomaten am Stadtrand.",
+    "einleitung": "Der Leipziger Ernährungscluster aus Erzeugern, Solawis, Handel und Ernährungsrat gilt als einer der größten seiner Art in Deutschland. Die Region Leipzig ist außerdem eine Bio-Regio-Modellregion des Freistaats, die regionale Lieferketten stärken soll.\n\nIm Leipziger Land und in Nordsachsen verkaufen Höfe Kartoffeln, Obst und Fleisch ab Hof. Regelmäßig finden Bauernmärkte statt, etwa im Kloster Buch in Leisnig, wo an jedem zweiten Samstag von März bis Dezember über 80 Direktvermarkter und Händler verkaufen.",
+    "faq": [
+      {
+        "frage": "Kann ich Milch aus der Milchtankstelle direkt trinken?",
+        "antwort": "Milch aus der Milchtankstelle ist Rohmilch und sollte vor dem Trinken abgekocht werden, darauf weisen auch die Automaten hin. Flaschen bringst du am besten selbst mit, an vielen Automaten kannst du sie auch kaufen."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Äpfel aus dem Sächsischen Obstland",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Leipzig",
+        "pfad": "/sachsen/landkreis-leipzig/"
+      },
+      {
+        "text": "Hofläden im Landkreis Nordsachsen",
+        "pfad": "/sachsen/nordsachsen/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Leipziger Internet Zeitung: Ernährungscluster",
+        "url": "https://www.l-iz.de/wirtschaft/wirtschaft-leipzig/2024/08/regionale-lebensmittel-guenther-und-oezdemir-zu-besuch-bei-leipziger-akteuren-600755"
+      },
+      {
+        "titel": "Freistaat Sachsen: Bio-Regio-Modellregion Leipzig",
+        "url": "https://www.medienservice.sachsen.de/medien/news/1043239/download_pdf"
+      },
+      {
+        "titel": "Leipzig Tourismus: Bauern- und Wochenmärkte (PDF)",
+        "url": "https://www.leipzig.travel/fileadmin/Mediendatenbank/4_B2B/2_Medien/1_Recherchetexte/Bauern-und-Wochenmaerkte-in-der-Region-Leipzig-leipzig-travel.pdf"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/dortmund/": {
+    "titel": "Hofläden in Dortmund: gut zu wissen",
+    "oben": "Fast ein Fünftel von Dortmund ist Acker und Wiese: 93 landwirtschaftliche Betriebe bewirtschaften rund 5.200 Hektar, vor allem in den Außenbezirken. Einige verkaufen im Hofladen oder über Regiomaten, und in der Liste stehen auch ein Lernbauernhof und eine Solawi.",
+    "einleitung": "Sechs der Dortmunder Betriebe wirtschaften ökologisch. Wie im übrigen Ruhrgebiet wachsen auf den Feldern vor allem Getreide, Mais, Raps und Kartoffeln; dazu kommen Höfe mit Feldgemüse, Eiern, Milch und Fleisch aus eigener Haltung.\n\nWeitere Hofläden findest du im Kreis Unna östlich der Stadt und im Kreis Recklinghausen im Norden.",
+    "faq": [
+      {
+        "frage": "Wie viele Bauernhöfe gibt es in Dortmund?",
+        "antwort": "Laut einem Gutachten für die Wirtschaftsförderung Dortmund bewirtschafteten 2020 93 landwirtschaftliche Betriebe 5.212 Hektar, etwa 19 Prozent des Stadtgebiets. Sechs davon arbeiten ökologisch auf rund 369 Hektar."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Unna",
+        "pfad": "/nordrhein-westfalen/unna/"
+      },
+      {
+        "text": "Hofläden im Kreis Recklinghausen",
+        "pfad": "/nordrhein-westfalen/recklinghausen/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Wirtschaftsförderung Dortmund: Gutachten Landwirtschaft (PDF)",
+        "url": "https://wirtschaftsfoerderung-dortmund.de/sites/default/files/2025-03/DoZirkul%C3%A4r2030_Gutachten%20%C3%BCber%20die%20Landwirtschaft%20in%20der%20Stadt%20Dortmund.pdf"
+      },
+      {
+        "titel": "Landwirtschaft in der Metropole Ruhr (PDF)",
+        "url": "https://epflicht.ulb.uni-muenster.de/download/pdf/698204"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/region-hannover/hannover/": {
+    "titel": "Hofläden in Hannover: gut zu wissen",
+    "oben": "Hannover liegt in einer der bekanntesten Spargelregionen Deutschlands: Nordöstlich der Stadt wächst rund um Burgdorf der Burgdorfer Spargel, und die Niedersächsische Spargelstraße verbindet Burgdorf mit Nienburg. Viele Höfe der Region verkaufen an Ständen direkt vom Feld.",
+    "einleitung": "Rund um das Burgdorfer Holz zwischen Burgdorf, Lehrte und Uetze hat die Region Hannover 16 Höfe in der Tour „Von Hof zu Hof“ zusammengestellt, gut mit Rad oder Bahn erreichbar. Neben Spargel gibt es dort Erdbeeren zum Selbstpflücken, Kartoffeln, Eier und Fleisch.\n\nZu den hannöverschen Spezialitäten zählt auch Aal aus dem Steinhuder Meer im Westen der Region. In der Stadt selbst stehen Kartoffelautomaten und Regiomaten, außerdem gibt es mehrere Solawis.",
+    "faq": [
+      {
+        "frage": "Wann ist Spargelzeit in der Region Hannover?",
+        "antwort": "Die Saison beginnt meist im April und endet im Juni. Auf dem Wochenmarkt in Burgdorf gibt es den Burgdorfer Spargel vor allem im Mai und Juni."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Burgdorfer Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Burgdorf und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/burgdorf/"
+      },
+      {
+        "text": "Hofläden in der Region Hannover",
+        "pfad": "/niedersachsen/region-hannover/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "hannover.de: Spargel",
+        "url": "https://www.hannover.de/Kultur-Freizeit/Geschichte-Geschichten/Echt-hann%C3%B6versch/Zehn-Dinge/Typisch-hann%C3%B6versche-Spezialit%C3%A4ten,-die-man-mal-probiert-haben-muss/Spargel"
+      },
+      {
+        "titel": "Region Hannover: Von Hof zu Hof – Burgdorfer Holz (PDF)",
+        "url": "https://www.hannover.de/content/download/664064/file/_61.04_FB_VonHofzuHof_Burgdorfer%20Holz_2026_Internet.pdf"
+      },
+      {
+        "titel": "hannover.de: Wochenmarkt Burgdorf",
+        "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Region-Hannover/Wochenmarkt-Burgdorf"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/wuppertal/": {
+    "titel": "Hofläden in Wuppertal: gut zu wissen",
+    "oben": "Wuppertal liegt im Bergischen Land, und das zeigt sich an den Höfen: Wiesen, Kühe und kleine Familienbetriebe an den Hängen rund um die Stadt. In der Liste stehen ein Biohof, eine Bauernkäserei, eine Milchtankstelle und mehrere Regiomaten.",
+    "einleitung": "Zur bergischen Küche gehört die Bergische Kaffeetafel, für die vieles direkt vom Hof kommt: Butter, Quark, Käse, Milch und Eier. Im Sommer gibt es Kirschen, im Herbst Äpfel von Streuobstwiesen.\n\nWeitere Höfe findest du im Kreis Mettmann westlich der Stadt und im Rheinisch-Bergischen Kreis im Süden.",
+    "faq": [
+      {
+        "frage": "Was gehört zur Bergischen Kaffeetafel?",
+        "antwort": "Klassisch Waffeln mit heißen Kirschen, Milchreis, Rosinenstuten, Schwarzbrot, Butter, Quark, Käse und Wurst, dazu Kaffee aus der Dröppelminna, einer Kanne mit Zapfhahn."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Milch & Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Mettmann",
+        "pfad": "/nordrhein-westfalen/mettmann/"
+      },
+      {
+        "text": "Hofläden im Rheinisch-Bergischen Kreis",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/muenster/": {
+    "titel": "Hofläden in Münster: gut zu wissen",
+    "oben": "Münster ist das Zentrum des Münsterlands, und das sieht man in der Liste: Mehr als 40 Höfe, Milchtankstellen und Automaten liegen direkt im Stadtgebiet, viele davon in den Bauerschaften am Stadtrand. Typisch sind Eier, Milch, Kartoffeln, Spargel und Fleisch.",
+    "einleitung": "Ein fester Ort für regionale Lebensmittel ist der Wochenmarkt auf dem Domplatz, mittwochs und samstags, auf dem auch Erzeuger aus dem Münsterland verkaufen. Wer lieber direkt zum Hof fährt, nimmt das Rad: Das flache Münsterland ist dafür wie gemacht, etwa auf der 100-Schlösser-Route.\n\nIm Frühjahr bieten Spargelhöfe am Stadtrand Spargel und Erdbeeren an. Weitere Höfe findest du in den Kreisen Warendorf, Coesfeld und Steinfurt.",
+    "faq": [
+      {
+        "frage": "Wann ist Wochenmarkt auf dem Domplatz in Münster?",
+        "antwort": "Mittwochs und samstags am Vormittag. Neben Händlern verkaufen dort auch Höfe aus dem Münsterland Gemüse, Eier, Käse und Fleisch."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Grünkohl",
+        "zeit": "November bis Februar"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Warendorf",
+        "pfad": "/nordrhein-westfalen/warendorf/"
+      },
+      {
+        "text": "Hofläden im Kreis Coesfeld",
+        "pfad": "/nordrhein-westfalen/coesfeld/"
+      },
+      {
+        "text": "Hofläden im Kreis Steinfurt",
+        "pfad": "/nordrhein-westfalen/steinfurt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/duisburg/": {
+    "titel": "Hofläden in Duisburg: gut zu wissen",
+    "oben": "Duisburg ist nicht nur Hafen und Stahl: Am Rhein im Norden und Westen der Stadt, etwa in Baerl und Walsum, gibt es noch Äcker und Höfe. In der Liste stehen Hofläden, ein Geflügelhof, Eierautomaten und mehrere Imkereien.",
+    "einleitung": "Duisburg liegt am Übergang vom Ruhrgebiet zum Niederrhein. Auf den Höfen der Umgebung wachsen Kartoffeln, Spargel, Erdbeeren und Feldgemüse; in den Kreisen Wesel und Kleve gleich nebenan liegen viele weitere Hofläden.\n\nPraktisch sind die Eier- und Regiomaten in der Stadt: Sie bieten Eier, Nudeln oder Kartoffeln oft auch dann an, wenn der Hofladen schon geschlossen hat.",
+    "saison": [
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Freilandeier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Wesel",
+        "pfad": "/nordrhein-westfalen/wesel/"
+      },
+      {
+        "text": "Hofläden im Kreis Kleve",
+        "pfad": "/nordrhein-westfalen/kleve/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/schleswig-holstein/luebeck/": {
+    "titel": "Hofläden in Lübeck: gut zu wissen",
+    "oben": "Rund um Lübeck ist es ländlich und hügelig: Zwischen Trave, Ostsee und Holsteinischer Schweiz liegen viele Höfe, die Obst, Kartoffeln, Eier und Fleisch direkt verkaufen. Mit rund 50 Einträgen im Stadtgebiet gehört Lübeck zu den Städten mit den meisten Hofläden in der Liste.",
+    "einleitung": "Besonders viele Höfe in und um Lübeck bieten Obst an, Erdbeeren im Frühsommer und Äpfel im Herbst. Dazu kommen Wild, Geflügel und Käse aus der Region.\n\nFür einen Ausflug bieten sich Ostholstein und das Herzogtum Lauenburg an, beide grenzen direkt an die Stadt und haben viele Hofläden und Hofcafés.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Ostholstein",
+        "pfad": "/schleswig-holstein/ostholstein/"
+      },
+      {
+        "text": "Hofläden im Kreis Herzogtum Lauenburg",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/bielefeld/": {
+    "titel": "Hofläden in Bielefeld: gut zu wissen",
+    "oben": "Bielefeld liegt am Teutoburger Wald, und am Stadtrand beginnt das Ravensberger Land mit Einzelhöfen und Fachwerkbauernhäusern. In der Liste stehen fast 30 Höfe im Stadtgebiet, darunter Hofcafés, eine Solawi und Bio-Hofläden.",
+    "einleitung": "Typisch für Ostwestfalen ist der Pickert, ein Kartoffelgebäck aus der Pfanne, für das viele Hofläden die Zutaten haben: Kartoffeln, Eier und Mehl. Im Frühjahr gibt es Spargel und Erdbeeren, im Herbst Kartoffeln und Kürbisse.\n\nWeitere Höfe findest du in den Kreisen Gütersloh und Herford, die an Bielefeld grenzen.",
+    "faq": [
+      {
+        "frage": "Was ist Pickert?",
+        "antwort": "Eine ostwestfälische Spezialität aus Kartoffeln, Mehl, Eiern und oft Rosinen, die als Fladen in der Pfanne oder als Laib gebacken wird. Dazu passen Leberwurst, Rübenkraut oder Marmelade."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Gütersloh",
+        "pfad": "/nordrhein-westfalen/guetersloh/"
+      },
+      {
+        "text": "Hofläden im Kreis Herford",
+        "pfad": "/nordrhein-westfalen/herford/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/bochum/": {
+    "titel": "Hofläden in Bochum: gut zu wissen",
+    "oben": "Im Bochumer Süden wird es ländlich: Rund um Stiepel und den Kemnader See an der Ruhr liegen Höfe mit Hofladen, Freilandeiern und Hofautomaten. Auch in den übrigen Stadtteilen verkaufen Bauern direkt, rund 25 Einträge liegen im Stadtgebiet.",
+    "einleitung": "Auffällig sind die vielen Eier-, Milch- und Regiomaten: Sie stehen oft direkt am Hof und sind auch abends oder sonntags erreichbar.\n\nDer Ruhrtalradweg führt am Kemnader See vorbei und verbindet viele Höfe im Ruhrtal, eine gute Strecke für eine Einkaufstour mit dem Rad. Weitere Höfe liegen im Ennepe-Ruhr-Kreis südlich der Ruhr.",
+    "saison": [
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Freilandeier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Ennepe-Ruhr-Kreis",
+        "pfad": "/nordrhein-westfalen/ennepe-ruhr-kreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/bonn/": {
+    "titel": "Hofläden in Bonn: gut zu wissen",
+    "oben": "Bonn liegt zwischen zwei Obst- und Gemüsegebieten: Am Vorgebirge nördlich der Stadt wachsen Spargel, Erdbeeren und Gemüse, rund um Meckenheim im Südwesten Äpfel und Birnen. Auch in Bonn selbst verkaufen Gemüse- und Obsthöfe direkt.",
+    "einleitung": "Der Bornheimer Spargel vom Vorgebirge trägt seit 2014 das EU-Siegel „geschützte geografische Angabe“. Schon zu Römerzeiten diente der Hang als Obst- und Gemüsegarten für die Siedlung Bonna; heute verkaufen viele Höfe dort in der Saison ab Hof und an Ständen.\n\nIn Bonn gibt es außerdem mehrere solidarische Landwirtschaften. Weitere Hofläden findest du im Rhein-Sieg-Kreis, der Bonn fast ganz umschließt.",
+    "faq": [
+      {
+        "frage": "Wann gibt es Äpfel direkt vom Hof bei Bonn?",
+        "antwort": "Frisch geerntet meist von August bis Oktober, aus dem Lager bieten viele Obsthöfe Äpfel bis ins Frühjahr an."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel vom Vorgebirge",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Äpfel & Birnen",
+        "zeit": "August bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Rhein-Sieg-Kreis",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "Bornheimer Spargel (dewiki)",
+        "url": "https://dewiki.de/Lexikon/Bornheimer_Spargel"
+      },
+      {
+        "titel": "Stadt Bornheim: Rheingenuss (PDF)",
+        "url": "https://www.bornheim.de/fileadmin/dokumente/_freizeit-tourismus/Bornheim_erleben/erlebnistouren/Rheingenuss.pdf"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/karlsruhe-stadt/": {
+    "titel": "Hofläden in Karlsruhe: gut zu wissen",
+    "oben": "Karlsruhe liegt in der warmen Oberrheinebene, wo Spargel, Erdbeeren und Obst gut gedeihen. In der Liste stehen fast 30 Höfe im Stadtgebiet, vom Bioland-Hofladen bis zum Hofgut Maxau am Rhein mit Hofladen und Café.",
+    "einleitung": "Bekannt ist der Spargel aus der Hardt nördlich von Karlsruhe, besonders rund um Bruchsal. Im Frühjahr verkaufen viele Höfe frisch gestochenen Spargel ab Hof, danach folgen Erdbeeren und Kirschen.\n\nAm Turmberg in Durlach wird Wein angebaut, und Streuobstwiesen am Rand des Kraichgaus liefern im Herbst Äpfel und Saft. Weitere Hofläden findest du im Landkreis Karlsruhe.",
+    "faq": [
+      {
+        "frage": "Wo gibt es Spargel rund um Karlsruhe?",
+        "antwort": "Vor allem in der Hardt nördlich der Stadt und rund um Bruchsal. Die Saison läuft meist von April bis Ende Juni, viele Höfe verkaufen dann an Ständen und im Hofladen."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel aus der Hardt",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Karlsruhe",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/sachsen/chemnitz/": {
+    "titel": "Hofläden in Chemnitz: gut zu wissen",
+    "oben": "Chemnitz liegt am Rand des Erzgebirges, und die Höfe rundherum sind von Wiesen und Viehhaltung geprägt. In der Liste stehen Milchtankstellen, Eierautomaten und auffällig viele Imkereien, besonders häufig sind Eier, Honig und Milch.",
+    "einleitung": "In Sachsen gibt es viele Milchtankstellen, an denen du Rohmilch selbst zapfst; vor dem Trinken abkochen. Im Erzgebirge und in Mittelsachsen verkaufen Höfe außerdem Fleisch, Wurst und Käse aus eigener Herstellung.\n\nIm Herbst und Winter haben manche Höfe Gänse, Wild oder Weihnachtsbäume im Angebot, ein Blick in die einzelnen Einträge lohnt sich.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Weidemilch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Weihnachtsbäume",
+        "zeit": "Dezember"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Erzgebirgskreis",
+        "pfad": "/sachsen/erzgebirgskreis/"
+      },
+      {
+        "text": "Hofläden im Landkreis Mittelsachsen",
+        "pfad": "/sachsen/mittelsachsen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/moenchengladbach/": {
+    "titel": "Hofläden in Mönchengladbach: gut zu wissen",
+    "oben": "Mönchengladbach liegt am Niederrhein, umgeben von weiten Äckern: Kartoffeln, Getreide, Zuckerrüben und Gemüse prägen die Höfe im Stadtgebiet. Rund 30 Einträge liegen direkt in der Stadt, darunter Bioland-Höfe und auffällig viele Regiomaten.",
+    "einleitung": "Typisch für das Rheinland ist Rübenkraut aus Zuckerrüben, als „Rheinisches Zuckerrübenkraut“ EU-weit geschützt und ideal zu Reibekuchen. Im Frühjahr kommen Spargel und Erdbeeren dazu, im Herbst Kartoffeln in vielen Sorten.\n\nWeitere Höfe findest du im Kreis Viersen und im Rhein-Kreis Neuss; viele Gemüsebetriebe am Niederrhein verkaufen direkt ab Hof.",
+    "faq": [
+      {
+        "frage": "Was ist Rübenkraut?",
+        "antwort": "Ein dunkler, dicker Sirup aus eingekochten Zuckerrüben, typisch für das Rheinland. Er passt zu Reibekuchen, Pfannkuchen und aufs Brot."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Viersen",
+        "pfad": "/nordrhein-westfalen/viersen/"
+      },
+      {
+        "text": "Hofläden im Rhein-Kreis Neuss",
+        "pfad": "/nordrhein-westfalen/rhein-kreis-neuss/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/augsburg-stadt/": {
+    "titel": "Hofläden in Augsburg: gut zu wissen",
+    "oben": "Rund um Augsburg treffen Lech, Wertach und weite Ackerflächen zusammen, im Umland verkaufen viele Höfe Eier, Fleisch, Milch und Kartoffeln direkt. In der Stadt selbst liegen rund 25 Einträge, darunter Gut Wellenburg mit Hofladen und mehrere Milch- und Eierautomaten.",
+    "einleitung": "Im Frühjahr ist Spargelzeit: Nordöstlich von Augsburg liegt das Schrobenhausener Land, dessen Spargel als geschützte geografische Angabe eingetragen ist, und auch im Wittelsbacher Land rund um Aichach wird viel Spargel angebaut.\n\nIn der Stadt ist der Stadtmarkt der zentrale Ort für Lebensmittel aus der Region. Weitere Hofläden findest du im Landkreis Augsburg und im Landkreis Aichach-Friedberg.",
+    "faq": [
+      {
+        "frage": "Wo gibt es Spargel bei Augsburg?",
+        "antwort": "Vor allem im Schrobenhausener Land rund 40 Kilometer nordöstlich und im Landkreis Aichach-Friedberg. Die Saison dauert meist von April bis Ende Juni."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Schrobenhausener Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Eier & Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Aichach-Friedberg",
+        "pfad": "/bayern/aichach-friedberg/"
+      },
+      {
+        "text": "Hofläden im Landkreis Augsburg",
+        "pfad": "/bayern/landkreis-augsburg/"
+      }
+    ],
+    "stand": "2026-11-21"
   }
 }
