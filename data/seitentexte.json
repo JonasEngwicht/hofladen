@@ -13208,5 +13208,755 @@
       }
     ],
     "stand": "2026-11-21"
+  },
+  "/schleswig-holstein/ostholstein/scharbeutz/": {
+    "titel": "Hofläden in Scharbeutz: gut zu wissen",
+    "oben": "Scharbeutz ist ein Ostseebad an der Lübecker Bucht. Hinter dem Strand beginnt Ackerland, und hier sind der Kartoffelhof Börgers mit Regiomat für Eier und Kartoffeln, der Spargelhof Beeck, ein Eierautomat und das Hofcafé Sachsenhof eingetragen.",
+    "einleitung": "Das hügelige Hinterland gehört zum östlichen Holstein mit Knicks, Feldern und kleinen Seen. Auf den Böden wachsen Raps, Getreide, Kartoffeln und Spargel.\n\nWeitere Höfe findest du in Timmendorfer Strand und Ahrensbök.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Juli bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Timmendorfer Strand und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/timmendorfer-strand/"
+      },
+      {
+        "text": "Hofläden in Ahrensbök und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/ahrensboek/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/loerrach/loerrach/": {
+    "titel": "Hofläden in Lörrach: gut zu wissen",
+    "oben": "Lörrach liegt im Wiesental am Dreiländereck von Deutschland, Frankreich und der Schweiz. In der Stadt ist der Bauernladen des Obst- und Gemüsehofs Schopferer eingetragen, weitere Höfe liegen im Markgräflerland nördlich der Stadt.",
+    "einleitung": "Das milde Klima am Oberrhein begünstigt Obst, Gemüse und Wein. Im Markgräflerland wächst vor allem Gutedel, an den Hängen stehen Kirsch- und Zwetschgenbäume.\n\nWeitere Höfe findest du in Weil am Rhein und Efringen-Kirchen.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Zwetschgen",
+        "zeit": "August und September"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weil am Rhein und Umgebung",
+        "pfad": "/baden-wuerttemberg/loerrach/weil-am-rhein/"
+      },
+      {
+        "text": "Hofläden in Efringen-Kirchen und Umgebung",
+        "pfad": "/baden-wuerttemberg/loerrach/efringen-kirchen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/stuttgart/stuttgart-vaihingen/": {
+    "titel": "Hofläden in Stuttgart Vaihingen: gut zu wissen",
+    "oben": "Vaihingen ist ein Stuttgarter Stadtbezirk am Rand des Glemswalds. Im Bezirk ist Beeren-Brodbeck eingetragen, das Beeren verkauft, weitere Höfe liegen in Möhringen, Büsnau und auf den Fildern.",
+    "einleitung": "Zwischen Wohngebieten und Universität liegen noch Felder, Wiesen und Wald. Südlich beginnen die Filder mit ihren Krautfeldern.\n\nEine Übersicht aller Höfe in der Stadt findest du auf der Stuttgart-Seite.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Himbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Filderkraut",
+        "zeit": "September bis November"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stuttgart Möhringen und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-moehringen/"
+      },
+      {
+        "text": "Hofläden in Stuttgart",
+        "pfad": "/baden-wuerttemberg/stuttgart/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/brandenburg/oder-spree/gruenheide-mark/": {
+    "titel": "Hofläden in Grünheide (Mark): gut zu wissen",
+    "oben": "Grünheide liegt östlich von Berlin zwischen Seen und Kiefernwäldern an der Löcknitz. In der Gemeinde ist ein Straußenhof eingetragen, weitere Höfe findest du im Umland Richtung Strausberg und Steinhöfel.",
+    "einleitung": "Werlsee, Peetzsee und viele kleinere Gewässer machen die Gegend zu einem Ausflugsziel, die Löcknitz ist bei Kanuten beliebt. Auf den sandigen Böden wachsen Kiefern, Roggen und Spargel.\n\nWeitere Höfe findest du in Steinhöfel und Strausberg.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Heidelbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Steinhöfel und Umgebung",
+        "pfad": "/brandenburg/oder-spree/steinhoefel/"
+      },
+      {
+        "text": "Hofläden in Strausberg und Umgebung",
+        "pfad": "/brandenburg/maerkisch-oderland/strausberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/brandenburg/oder-spree/rietz-neuendorf/": {
+    "titel": "Hofläden in Rietz-Neuendorf: gut zu wissen",
+    "oben": "Rietz-Neuendorf liegt an der Spree zwischen Beeskow und Fürstenwalde. Hier ist Gut Hirschaue eingetragen, ein Bio-Betrieb mit Wild. Weitere Höfe liegen im Umland Richtung Steinhöfel und Frankfurt an der Oder.",
+    "einleitung": "Die Landschaft wechselt zwischen Kiefernwäldern, Wiesen an der Spree und Feldern auf sandigem Boden. Nicht weit entfernt liegt der Scharmützelsee.\n\nWeitere Höfe findest du in Steinhöfel und Grünheide.",
+    "saison": [
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Steinhöfel und Umgebung",
+        "pfad": "/brandenburg/oder-spree/steinhoefel/"
+      },
+      {
+        "text": "Hofläden im Landkreis Oder-Spree",
+        "pfad": "/brandenburg/oder-spree/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hamburg/hamburg/hamburg-heimfeld/": {
+    "titel": "Hofläden in Hamburg Heimfeld: gut zu wissen",
+    "oben": "Heimfeld liegt im Hamburger Süden am Fuß der Harburger Berge. Der Regiomat hier ist gut bestückt, mit Eiern, Milch, Fleisch, Kartoffeln und Nudeln. Weitere Höfe liegen gleich südlich in Niedersachsen.",
+    "einleitung": "Hinter den bewaldeten Harburger Bergen beginnt die Geest mit Feldern und Weiden, auf denen Kartoffeln und Getreide wachsen.\n\nWeitere Höfe findest du in Eißendorf, Rosengarten und Seevetal.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Juli bis Oktober"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hamburg Eißendorf und Umgebung",
+        "pfad": "/hamburg/hamburg/hamburg-eissendorf/"
+      },
+      {
+        "text": "Hofläden in Rosengarten und Umgebung",
+        "pfad": "/niedersachsen/harburg/rosengarten/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/mecklenburg-vorpommern/mecklenburgische-seenplatte/neubrandenburg/": {
+    "titel": "Hofläden in Neubrandenburg: gut zu wissen",
+    "oben": "Neubrandenburg ist die Stadt der vier Tore am Tollensesee. In der Stadt steht ein Regiomat mit Eiern, Fleisch, Kartoffeln, Honig und Getränken, die meisten Höfe liegen in den Dörfern ringsum.",
+    "einleitung": "Rund um den Tollensesee liegen weite Felder mit Raps und Getreide, Wälder und eine Vielzahl kleiner Seen. Die Mecklenburgische Seenplatte ist ein beliebtes Rad- und Wasserrevier.\n\nWeitere Höfe findest du in Sponholz und Neustrelitz.",
+    "saison": [
+      {
+        "titel": "Rapshonig",
+        "zeit": "Mai und Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Fisch aus den Seen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sponholz und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/sponholz/"
+      },
+      {
+        "text": "Hofläden in Neustrelitz und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/neustrelitz/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/mecklenburg-vorpommern/vorpommern-greifswald/greifswald/": {
+    "titel": "Hofläden in Greifswald: gut zu wissen",
+    "oben": "Greifswald ist eine alte Hanse- und Universitätsstadt am Ryck, nahe dem Greifswalder Bodden. In der Stadt ist Greifenacker eingetragen, weitere Höfe liegen im weiten Ackerland Vorpommerns.",
+    "einleitung": "Rund um die Stadt liegen große Felder mit Raps, Getreide und Zuckerrüben, an der Küste Salzwiesen und Schilf. Fisch aus dem Bodden, etwa Hering im Frühjahr, gehört zur regionalen Küche.\n\nWeitere Höfe findest du in Stralsund und im übrigen Landkreis.",
+    "saison": [
+      {
+        "titel": "Hering",
+        "zeit": "März und April"
+      },
+      {
+        "titel": "Rapshonig",
+        "zeit": "Mai und Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stralsund und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/vorpommern-ruegen/stralsund/"
+      },
+      {
+        "text": "Hofläden im Landkreis Vorpommern-Greifswald",
+        "pfad": "/mecklenburg-vorpommern/vorpommern-greifswald/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/mecklenburg-vorpommern/vorpommern-ruegen/stralsund/": {
+    "titel": "Hofläden in Stralsund: gut zu wissen",
+    "oben": "Stralsund ist eine Hansestadt am Strelasund, über die Brücken geht es nach Rügen. In der Stadt ist Karls mit Obst eingetragen, weitere Höfe liegen auf Rügen und auf dem Festland ringsum.",
+    "einleitung": "Die Altstadt gehört zum Welterbe, ringsum liegt flaches Ackerland mit Raps und Getreide. Auf den leichten Böden Vorpommerns gedeihen Erdbeeren gut.\n\nWeitere Höfe findest du in Greifswald und auf Rügen.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Rapshonig",
+        "zeit": "Mai und Juni"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Greifswald und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/vorpommern-greifswald/greifswald/"
+      },
+      {
+        "text": "Hofläden im Landkreis Vorpommern-Rügen",
+        "pfad": "/mecklenburg-vorpommern/vorpommern-ruegen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/rheinland-pfalz/pirmasens/": {
+    "titel": "Hofläden in Pirmasens: gut zu wissen",
+    "oben": "Pirmasens ist die Schuhstadt am Westrand des Pfälzerwalds. In der Stadt ist der Hofladen Bißbort eingetragen, weitere Höfe liegen auf der Hochfläche des Westrichs und rund um Zweibrücken.",
+    "einleitung": "Westlich der Stadt beginnt die Sickinger Höhe mit Feldern und Wiesen, östlich der Pfälzerwald mit Buchen und Kiefern. Im Herbst sammeln viele Esskastanien im Wald.\n\nWeitere Höfe findest du in Zweibrücken und Kaiserslautern.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Esskastanien",
+        "zeit": "Oktober"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zweibrücken",
+        "pfad": "/rheinland-pfalz/zweibruecken/"
+      },
+      {
+        "text": "Hofläden in Kaiserslautern",
+        "pfad": "/rheinland-pfalz/kaiserslautern-stadt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/sachsen-anhalt/saalekreis/schkopau/": {
+    "titel": "Hofläden in Schkopau: gut zu wissen",
+    "oben": "Schkopau liegt zwischen Halle und Merseburg an der Saale. In der Gemeinde ist der Bio-Hofladen in Raßnitz eingetragen, weitere Höfe liegen in Halle und im Saalekreis.",
+    "einleitung": "Zwischen Saale und Weißer Elster liegen Auen mit Wiesen und Auwald, ringsum fruchtbares Ackerland. Raßnitz liegt in der Elster-Luppe-Aue, einer Landschaft mit vielen Wasserläufen.\n\nWeitere Höfe findest du in Halle und Schkeuditz.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Halle",
+        "pfad": "/sachsen-anhalt/halle/"
+      },
+      {
+        "text": "Hofläden im Saalekreis",
+        "pfad": "/sachsen-anhalt/saalekreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/sachsen/bautzen/doberschau-gaussig/": {
+    "titel": "Hofläden in Doberschau-Gaußig: gut zu wissen",
+    "oben": "Doberschau-Gaußig liegt im Oberlausitzer Bergland südlich von Bautzen. In der Gemeinde ist eine Milchtankstelle eingetragen. Viele Höfe in der Gegend halten Milchkühe auf den Wiesen am Spreetal.",
+    "einleitung": "Die Landschaft ist hügelig, mit Wiesen, Feldern und Wäldern. Die Oberlausitz ist auch Heimat der Sorben, deren Bräuche zu Ostern besonders bekannt sind. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bautzen und Elstra.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bautzen und Umgebung",
+        "pfad": "/sachsen/bautzen/bautzen/"
+      },
+      {
+        "text": "Hofläden im Landkreis Bautzen",
+        "pfad": "/sachsen/bautzen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/sachsen/goerlitz/goerlitz/": {
+    "titel": "Hofläden in Görlitz: gut zu wissen",
+    "oben": "Görlitz an der Neiße ist die östlichste Stadt Deutschlands, mit einer Altstadt aus Gotik, Renaissance und Barock. In der Stadt ist eine Milchtankstelle eingetragen, weitere Höfe liegen in den Dörfern der Oberlausitz.",
+    "einleitung": "Vor der Stadt erhebt sich die Landeskrone, ringsum liegen Felder und Wiesen. In der Oberlausitz sind Teichwirtschaften verbreitet, Karpfen gibt es vor allem im Herbst und Winter. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Markersdorf und Herrnhut.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Karpfen",
+        "zeit": "September bis Dezember"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Markersdorf und Umgebung",
+        "pfad": "/sachsen/goerlitz/markersdorf/"
+      },
+      {
+        "text": "Hofläden in Herrnhut und Umgebung",
+        "pfad": "/sachsen/goerlitz/herrnhut/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/schleswig-holstein/pinneberg/elmshorn/": {
+    "titel": "Hofläden in Elmshorn: gut zu wissen",
+    "oben": "Elmshorn liegt an der Krückau, wo die Elbmarsch an die Geest grenzt. In der Stadt ist die Imkerei Peter Hall eingetragen, weitere Höfe liegen in den Dörfern des Kreises Pinneberg.",
+    "einleitung": "Der Kreis Pinneberg ist für seine Baumschulen bekannt. In der Marsch westlich der Stadt weiden Kühe, auf der Geest wachsen Getreide und Kartoffeln.\n\nWeitere Höfe findest du in Neuendorf bei Elmshorn und Appen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Grünkohl",
+        "zeit": "November bis Februar"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neuendorf bei Elmshorn und Umgebung",
+        "pfad": "/schleswig-holstein/steinburg/neuendorf-bei-elmshorn/"
+      },
+      {
+        "text": "Hofläden in Appen und Umgebung",
+        "pfad": "/schleswig-holstein/pinneberg/appen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/griesingen/": {
+    "titel": "Hofläden in Griesingen: gut zu wissen",
+    "oben": "Griesingen liegt bei Ehingen im Donautal. Für ein kleines Dorf gibt es viel Auswahl: eine Milchtankstelle, ein Kartoffelhäusle, einen Honigautomaten, einen Regiomat mit Milch, Käse und Fleisch und einen weiteren mit Eiern, Nudeln und Marmelade.",
+    "einleitung": "Zwischen Donau und den Ausläufern der Alb liegen Felder und Wiesen, viele Höfe halten Milchkühe. Der Ernsthof verkauft ab Hof. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Ehingen und Laupheim.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ehingen an der Donau und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/ehingen-an-der-donau/"
+      },
+      {
+        "text": "Hofläden in Laupheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/biberach/laupheim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/biberach/ummendorf/": {
+    "titel": "Hofläden in Ummendorf: gut zu wissen",
+    "oben": "Ummendorf liegt an der Riß südlich von Biberach in Oberschwaben. Bio-Eier gibt es hier bei Franzis Bioeiern und im Eierhäusle, dazu kommen der Bio-Hofladen Steigmiller, eine Milchtankstelle, ein Fleischautomat und ein Regiomat.",
+    "einleitung": "Oberschwaben ist eine Hügellandschaft mit Wiesen, Wäldern und Mooren, Milchvieh prägt die Höfe. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bad Waldsee und im übrigen Landkreis Biberach.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Waldsee und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/bad-waldsee/"
+      },
+      {
+        "text": "Hofläden im Landkreis Biberach",
+        "pfad": "/baden-wuerttemberg/biberach/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/bodenseekreis/kressbronn-am-bodensee/": {
+    "titel": "Hofläden in Kressbronn am Bodensee: gut zu wissen",
+    "oben": "Kressbronn liegt am östlichen Bodenseeufer an der Mündung der Argen. Drei Obsthöfe sind eingetragen, Bernhard, Mainberger und Strohmaier, dazu ein Hofcafé und der Hofladen am Schleinsee mit Eiern, Milch, Käse, Brot und Marmelade.",
+    "einleitung": "Zwischen See und Hinterland ziehen sich Obstplantagen, im Hinterland liegt der kleine Schleinsee. Das milde Klima am See begünstigt Äpfel, Birnen und Kirschen.\n\nWeitere Höfe findest du in Nonnenhorn und Wasserburg.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis November"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nonnenhorn und Umgebung",
+        "pfad": "/bayern/lindau/nonnenhorn/"
+      },
+      {
+        "text": "Hofläden im Bodenseekreis",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/bodenseekreis/salem/": {
+    "titel": "Hofläden in Salem: gut zu wissen",
+    "oben": "Salem liegt im Hinterland des Bodensees, bekannt für das Schloss im ehemaligen Kloster. Eingetragen sind die Solawi Wegwarte, ein Milchautomat, der Obst-Regiomat vom Obsthof Rauch, das Hofgut Rimpertsweiler, ein Biohof und ein Hofladen mit Kartoffeln, Honig und Nudeln.",
+    "einleitung": "Das Salemer Tal ist von Obstplantagen, Wiesen und Feldern geprägt. Biohof Saile wirtschaftet biologisch. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Uhldingen-Mühlhofen und Bermatingen.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis November"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Uhldingen-Mühlhofen und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/uhldingen-muehlhofen/"
+      },
+      {
+        "text": "Hofläden in Bermatingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/bermatingen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/boeblingen/bondorf/": {
+    "titel": "Hofläden in Bondorf: gut zu wissen",
+    "oben": "Bondorf liegt im Oberen Gäu südlich von Herrenberg. Drei Bio-Betriebe sind eingetragen, darunter der Bio-Gemüsehof Rapp, dazu Sautter's Kartoffel-Lädle, ein Regiomat mit Kartoffeln und ein Eierautomat.",
+    "einleitung": "Das Gäu ist offenes Ackerland auf Muschelkalk mit Getreide, Raps und Kartoffeln. Hof Schlayer und Hiller's Hoflädle verkaufen Bio-Ware.\n\nWeitere Höfe findest du in Gäufelden, Jettingen und Herrenberg.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gäufelden und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/gaeufelden/"
+      },
+      {
+        "text": "Hofläden in Herrenberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/herrenberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/boeblingen/ehningen/": {
+    "titel": "Hofläden in Ehningen: gut zu wissen",
+    "oben": "Ehningen liegt im Würmtal zwischen Böblingen und Herrenberg. Bio hat hier Gewicht: Burghof Tafel, der Obsthof Kempf und der Biolandhof Bodemer sind eingetragen. Dazu kommen Hofgut Mauren, der Maurenertal Hof und ein Regiomat mit Eiern und Milch.",
+    "einleitung": "Die Würm fließt durch ein Tal mit Wiesen und Streuobst, darüber liegt das Ackerland des Gäus. Das Hofgut Mauren liegt in einem stillen Seitental.\n\nWeitere Höfe findest du in Gärtringen und Nufringen.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gärtringen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/gaertringen/"
+      },
+      {
+        "text": "Hofläden in Nufringen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/nufringen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/boeblingen/gaertringen/": {
+    "titel": "Hofläden in Gärtringen: gut zu wissen",
+    "oben": "Gärtringen liegt am Rand des Schönbuchs im Gäu. Kartoffeln gibt es hier an zwei Automaten, einer davon heißt Kartoffeln und Kunst. Dazu kommen der Biohof von Klaus Sindlinger, der Hofladen Lutz, ein Eier- und ein Honigautomat.",
+    "einleitung": "Zwischen Wald und Ackerland liegen Streuobstwiesen und Felder. Die Gäuböden sind gut für Getreide und Kartoffeln.\n\nWeitere Höfe findest du in Nufringen, Ehningen und Deckenpfronn.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nufringen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/nufringen/"
+      },
+      {
+        "text": "Hofläden in Ehningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/ehningen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/hartheim/": {
+    "titel": "Hofläden in Hartheim: gut zu wissen",
+    "oben": "Hartheim liegt in der Rheinebene südwestlich von Freiburg, gegenüber dem Elsass. Fast alles läuft über Automaten: Vogel's Weidehühner mit Eiern und Nudeln, Regiomaten mit Gemüse, Fleisch und Marmelade, ein Fleisch- und ein Eierautomat. Dazu kommt der Bohrerhof.",
+    "einleitung": "Zwischen den Dörfern und dem Rheinwald liegen Felder mit Mais, Gemüse und Spargel. Die warme Oberrheinebene gehört zu den mildesten Gegenden Deutschlands.\n\nWeitere Höfe findest du in Bad Krozingen und Heitersheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Krozingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/bad-krozingen/"
+      },
+      {
+        "text": "Hofläden in Heitersheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/heitersheim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/schallstadt/": {
+    "titel": "Hofläden in Schallstadt: gut zu wissen",
+    "oben": "Schallstadt liegt südlich von Freiburg am Batzenberg, einem Weinberg am Beginn des Markgräflerlands. Eingetragen sind der Obsthof Kiechle, das Naturgut Hörnle mit Bio-Ware, die Demeter-Gärtnerei Kräutergarten Urban und drei Automaten mit Eiern und Gemüse.",
+    "einleitung": "Auf den Lössböden wachsen Wein, Obst und Gemüse, das milde Klima bringt früh die erste Ernte. Siggi's Hexenhüsle und S'Hoflädele verkaufen über Automaten.\n\nWeitere Höfe findest du in Bad Krozingen und Freiburg.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Mai bis Oktober"
+      },
+      {
+        "titel": "Trauben",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Krozingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/bad-krozingen/"
+      },
+      {
+        "text": "Hofläden in Freiburg im Breisgau",
+        "pfad": "/baden-wuerttemberg/freiburg-im-breisgau/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/emmendingen/teningen/": {
+    "titel": "Hofläden in Teningen: gut zu wissen",
+    "oben": "Teningen liegt an der Elz zwischen Emmendingen und dem Kaiserstuhl. Zwei Imkereien sind eingetragen, M. Fuchs und BeeAndy, dazu das Lädili uf'm Ramstalhof, Winterhalders Automat mit Eiern, Gemüse, Kartoffeln und Honig und zwei Fleisch-Regiomaten.",
+    "einleitung": "Zwischen Rheinebene und Schwarzwaldrand liegen Felder, Obstwiesen und Weinberge am Kaiserstuhlrand. Das Lädili ist alemannisch für Lädchen.\n\nWeitere Höfe findest du in Emmendingen und Bahlingen am Kaiserstuhl.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Emmendingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/emmendingen/emmendingen/"
+      },
+      {
+        "text": "Hofläden in Bahlingen am Kaiserstuhl und Umgebung",
+        "pfad": "/baden-wuerttemberg/emmendingen/bahlingen-am-kaiserstuhl/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/esslingen/oberboihingen/": {
+    "titel": "Hofläden in Oberboihingen: gut zu wissen",
+    "oben": "Oberboihingen liegt am Neckar bei Nürtingen. Weiler's Milchhäusle verkauft Milch und Gemüse, Regiomaten bieten Eier, Käse, Fleisch und Getränke. Dazu kommen ein Eierautomat und Vollmers Hofwaren.",
+    "einleitung": "Das Neckartal ist hier breit, mit Feldern und Wiesen, an den Hängen Streuobst. Im Süden sieht man den Albtrauf. Die Milch aus dem Milchhäusle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Nürtingen und Wernau.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nürtingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/nuertingen/"
+      },
+      {
+        "text": "Hofläden in Wernau und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/wernau/"
+      }
+    ],
+    "stand": "2026-11-21"
   }
 }

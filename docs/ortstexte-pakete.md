@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 426 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 451 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -513,35 +513,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Barsbüttel](https://hofladenliste.de/schleswig-holstein/stormarn/barsbuettel/) `/schleswig-holstein/stormarn/barsbuettel/` | Kreis Stormarn | 1 | 7 | 10 |
 | ✓ | [Feldberger Seenlandschaft](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/` | Landkreis Mecklenburgische Seenplatte | 2 | 4 | 10 |
 
-## Paket 18 (0/25 fertig)
+## Paket 18 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Scharbeutz](https://hofladenliste.de/schleswig-holstein/ostholstein/scharbeutz/) `/schleswig-holstein/ostholstein/scharbeutz/` | Kreis Ostholstein | 2 | 4 | 10 |
-|  | [Lörrach](https://hofladenliste.de/baden-wuerttemberg/loerrach/loerrach/) `/baden-wuerttemberg/loerrach/loerrach/` | Landkreis Lörrach | 3 | 1 | 10 |
-|  | [Stuttgart Vaihingen](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-vaihingen/) `/baden-wuerttemberg/stuttgart/stuttgart-vaihingen/` | Stuttgart | 3 | 1 | 10 |
-|  | [Grünheide (Mark)](https://hofladenliste.de/brandenburg/oder-spree/gruenheide-mark/) `/brandenburg/oder-spree/gruenheide-mark/` | Landkreis Oder-Spree | 3 | 1 | 10 |
-|  | [Rietz-Neuendorf](https://hofladenliste.de/brandenburg/oder-spree/rietz-neuendorf/) `/brandenburg/oder-spree/rietz-neuendorf/` | Landkreis Oder-Spree | 3 | 1 | 10 |
-|  | [Hamburg Heimfeld](https://hofladenliste.de/hamburg/hamburg/hamburg-heimfeld/) `/hamburg/hamburg/hamburg-heimfeld/` | Hamburg | 3 | 1 | 10 |
-|  | [Neubrandenburg](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/neubrandenburg/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/neubrandenburg/` | Landkreis Mecklenburgische Seenplatte | 3 | 1 | 10 |
-|  | [Greifswald](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-greifswald/greifswald/) `/mecklenburg-vorpommern/vorpommern-greifswald/greifswald/` | Landkreis Vorpommern-Greifswald | 3 | 1 | 10 |
-|  | [Stralsund](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-ruegen/stralsund/) `/mecklenburg-vorpommern/vorpommern-ruegen/stralsund/` | Landkreis Vorpommern-Rügen | 3 | 1 | 10 |
-|  | [Pirmasens](https://hofladenliste.de/rheinland-pfalz/pirmasens/) `/rheinland-pfalz/pirmasens/` | Pirmasens | 3 | 1 | 10 |
-|  | [Schkopau](https://hofladenliste.de/sachsen-anhalt/saalekreis/schkopau/) `/sachsen-anhalt/saalekreis/schkopau/` | Saalekreis | 3 | 1 | 10 |
-|  | [Doberschau-Gaußig](https://hofladenliste.de/sachsen/bautzen/doberschau-gaussig/) `/sachsen/bautzen/doberschau-gaussig/` | Landkreis Bautzen | 3 | 1 | 10 |
-|  | [Görlitz](https://hofladenliste.de/sachsen/goerlitz/goerlitz/) `/sachsen/goerlitz/goerlitz/` | Landkreis Görlitz | 3 | 1 | 10 |
-|  | [Elmshorn](https://hofladenliste.de/schleswig-holstein/pinneberg/elmshorn/) `/schleswig-holstein/pinneberg/elmshorn/` | Kreis Pinneberg | 3 | 1 | 10 |
-|  | [Griesingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/griesingen/) `/baden-wuerttemberg/alb-donau-kreis/griesingen/` | Alb-Donau-Kreis | 1 | 6 | 9 |
-|  | [Ummendorf](https://hofladenliste.de/baden-wuerttemberg/biberach/ummendorf/) `/baden-wuerttemberg/biberach/ummendorf/` | Landkreis Biberach | 1 | 6 | 9 |
-|  | [Kressbronn am Bodensee](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/kressbronn-am-bodensee/) `/baden-wuerttemberg/bodenseekreis/kressbronn-am-bodensee/` | Bodenseekreis | 1 | 6 | 9 |
-|  | [Salem](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/salem/) `/baden-wuerttemberg/bodenseekreis/salem/` | Bodenseekreis | 1 | 6 | 9 |
-|  | [Bondorf](https://hofladenliste.de/baden-wuerttemberg/boeblingen/bondorf/) `/baden-wuerttemberg/boeblingen/bondorf/` | Landkreis Böblingen | 1 | 6 | 9 |
-|  | [Ehningen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/ehningen/) `/baden-wuerttemberg/boeblingen/ehningen/` | Landkreis Böblingen | 1 | 6 | 9 |
-|  | [Gärtringen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/gaertringen/) `/baden-wuerttemberg/boeblingen/gaertringen/` | Landkreis Böblingen | 1 | 6 | 9 |
-|  | [Hartheim](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/hartheim/) `/baden-wuerttemberg/breisgau-hochschwarzwald/hartheim/` | Landkreis Breisgau-Hochschwarzwald | 1 | 6 | 9 |
-|  | [Schallstadt](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/schallstadt/) `/baden-wuerttemberg/breisgau-hochschwarzwald/schallstadt/` | Landkreis Breisgau-Hochschwarzwald | 1 | 6 | 9 |
-|  | [Teningen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/teningen/) `/baden-wuerttemberg/emmendingen/teningen/` | Landkreis Emmendingen | 1 | 6 | 9 |
-|  | [Oberboihingen](https://hofladenliste.de/baden-wuerttemberg/esslingen/oberboihingen/) `/baden-wuerttemberg/esslingen/oberboihingen/` | Landkreis Esslingen | 1 | 6 | 9 |
+| ✓ | [Scharbeutz](https://hofladenliste.de/schleswig-holstein/ostholstein/scharbeutz/) `/schleswig-holstein/ostholstein/scharbeutz/` | Kreis Ostholstein | 2 | 4 | 10 |
+| ✓ | [Lörrach](https://hofladenliste.de/baden-wuerttemberg/loerrach/loerrach/) `/baden-wuerttemberg/loerrach/loerrach/` | Landkreis Lörrach | 3 | 1 | 10 |
+| ✓ | [Stuttgart Vaihingen](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-vaihingen/) `/baden-wuerttemberg/stuttgart/stuttgart-vaihingen/` | Stuttgart | 3 | 1 | 10 |
+| ✓ | [Grünheide (Mark)](https://hofladenliste.de/brandenburg/oder-spree/gruenheide-mark/) `/brandenburg/oder-spree/gruenheide-mark/` | Landkreis Oder-Spree | 3 | 1 | 10 |
+| ✓ | [Rietz-Neuendorf](https://hofladenliste.de/brandenburg/oder-spree/rietz-neuendorf/) `/brandenburg/oder-spree/rietz-neuendorf/` | Landkreis Oder-Spree | 3 | 1 | 10 |
+| ✓ | [Hamburg Heimfeld](https://hofladenliste.de/hamburg/hamburg/hamburg-heimfeld/) `/hamburg/hamburg/hamburg-heimfeld/` | Hamburg | 3 | 1 | 10 |
+| ✓ | [Neubrandenburg](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/neubrandenburg/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/neubrandenburg/` | Landkreis Mecklenburgische Seenplatte | 3 | 1 | 10 |
+| ✓ | [Greifswald](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-greifswald/greifswald/) `/mecklenburg-vorpommern/vorpommern-greifswald/greifswald/` | Landkreis Vorpommern-Greifswald | 3 | 1 | 10 |
+| ✓ | [Stralsund](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-ruegen/stralsund/) `/mecklenburg-vorpommern/vorpommern-ruegen/stralsund/` | Landkreis Vorpommern-Rügen | 3 | 1 | 10 |
+| ✓ | [Pirmasens](https://hofladenliste.de/rheinland-pfalz/pirmasens/) `/rheinland-pfalz/pirmasens/` | Pirmasens | 3 | 1 | 10 |
+| ✓ | [Schkopau](https://hofladenliste.de/sachsen-anhalt/saalekreis/schkopau/) `/sachsen-anhalt/saalekreis/schkopau/` | Saalekreis | 3 | 1 | 10 |
+| ✓ | [Doberschau-Gaußig](https://hofladenliste.de/sachsen/bautzen/doberschau-gaussig/) `/sachsen/bautzen/doberschau-gaussig/` | Landkreis Bautzen | 3 | 1 | 10 |
+| ✓ | [Görlitz](https://hofladenliste.de/sachsen/goerlitz/goerlitz/) `/sachsen/goerlitz/goerlitz/` | Landkreis Görlitz | 3 | 1 | 10 |
+| ✓ | [Elmshorn](https://hofladenliste.de/schleswig-holstein/pinneberg/elmshorn/) `/schleswig-holstein/pinneberg/elmshorn/` | Kreis Pinneberg | 3 | 1 | 10 |
+| ✓ | [Griesingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/griesingen/) `/baden-wuerttemberg/alb-donau-kreis/griesingen/` | Alb-Donau-Kreis | 1 | 6 | 9 |
+| ✓ | [Ummendorf](https://hofladenliste.de/baden-wuerttemberg/biberach/ummendorf/) `/baden-wuerttemberg/biberach/ummendorf/` | Landkreis Biberach | 1 | 6 | 9 |
+| ✓ | [Kressbronn am Bodensee](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/kressbronn-am-bodensee/) `/baden-wuerttemberg/bodenseekreis/kressbronn-am-bodensee/` | Bodenseekreis | 1 | 6 | 9 |
+| ✓ | [Salem](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/salem/) `/baden-wuerttemberg/bodenseekreis/salem/` | Bodenseekreis | 1 | 6 | 9 |
+| ✓ | [Bondorf](https://hofladenliste.de/baden-wuerttemberg/boeblingen/bondorf/) `/baden-wuerttemberg/boeblingen/bondorf/` | Landkreis Böblingen | 1 | 6 | 9 |
+| ✓ | [Ehningen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/ehningen/) `/baden-wuerttemberg/boeblingen/ehningen/` | Landkreis Böblingen | 1 | 6 | 9 |
+| ✓ | [Gärtringen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/gaertringen/) `/baden-wuerttemberg/boeblingen/gaertringen/` | Landkreis Böblingen | 1 | 6 | 9 |
+| ✓ | [Hartheim](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/hartheim/) `/baden-wuerttemberg/breisgau-hochschwarzwald/hartheim/` | Landkreis Breisgau-Hochschwarzwald | 1 | 6 | 9 |
+| ✓ | [Schallstadt](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/schallstadt/) `/baden-wuerttemberg/breisgau-hochschwarzwald/schallstadt/` | Landkreis Breisgau-Hochschwarzwald | 1 | 6 | 9 |
+| ✓ | [Teningen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/teningen/) `/baden-wuerttemberg/emmendingen/teningen/` | Landkreis Emmendingen | 1 | 6 | 9 |
+| ✓ | [Oberboihingen](https://hofladenliste.de/baden-wuerttemberg/esslingen/oberboihingen/) `/baden-wuerttemberg/esslingen/oberboihingen/` | Landkreis Esslingen | 1 | 6 | 9 |
 
 ## Paket 19 (0/25 fertig)
 
