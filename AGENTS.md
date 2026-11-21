@@ -41,7 +41,7 @@ Alles landet im Build in einer Liste `eintraege` (`scripts/build/daten.mjs`). Be
 3. eigene Pflege: `data/pflege.json` (`aenderungen`, `neu`, `geschlossen`; Format: `docs/pflege.md`)
 4. Angaben der Betriebe: `data/betreiber.json` (freigegebene Meldungen), `data/betrieb-export.json`
 
-Weitere Eingaben: `data/quellen/plz-de.csv` (PLZ → Ort/Kreis), `data/osm-maerkte.json`, `data/haltestellen.json`, `data/regionen/*.json` (Regionsprofile), `data/seitentexte.json` (gepflegte Texte je Seite, Format in `scripts/seitentexte.mjs`; welche lokalen Seiten noch keinen haben: `docs/seitentexte-offen.md`).
+Weitere Eingaben: `data/quellen/plz-de.csv` (PLZ → Ort/Kreis), `data/osm-maerkte.json`, `data/haltestellen.json`, `data/regionen/*.json` (Regionsprofile), `data/seitentexte.json` (gepflegte Texte je Seite, Format in `scripts/seitentexte.mjs`; welche lokalen Seiten noch keinen haben: `docs/seitentexte-offen.md`; Ortstexte in 25er-Paketen nach Relevanz: `docs/ortstexte-pakete.md`, Anleitung `docs/ortstexte-anleitung.md`).
 `data/seiten-stand.json` (Hash und lastmod je Seite, Grundlage für 301/410) schreibt nur CI – **nie von Hand ändern**.
 
 Stabile IDs: `n`/`w`/`r` + Zahl (OSM), `o-`/`f-`/`k-`/`g-` (offene Quellen), `b` + Zahl (Betrieb), `m-` (eigene Pflege).
