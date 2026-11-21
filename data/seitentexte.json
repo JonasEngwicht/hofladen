@@ -17708,5 +17708,755 @@
       }
     ],
     "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/landkreis-heilbronn/bad-friedrichshall/": {
+    "titel": "Hofläden in Bad Friedrichshall: gut zu wissen",
+    "oben": "Bad Friedrichshall liegt dort, wo Kocher und Jagst in den Neckar münden. Eingetragen sind der Hofladen Seidel, der Selbstbedienungsautomat vom Biohof Mandel, eine Milchtankstelle, ein Eierautomat und ein Regiomat mit Obst.",
+    "einleitung": "Unter der Stadt wird seit langem Salz abgebaut, ein Besucherbergwerk zeigt die Stollen. An den Hängen der Flusstäler wachsen Wein und Obst, auf den Hochflächen Getreide.\n\nWeitere Höfe findest du in Bad Wimpfen und Neuenstadt am Kocher.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Wimpfen und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/bad-wimpfen/"
+      },
+      {
+        "text": "Hofläden in Neuenstadt am Kocher und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/neuenstadt-am-kocher/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/landkreis-heilbronn/bad-wimpfen/": {
+    "titel": "Hofläden in Bad Wimpfen: gut zu wissen",
+    "oben": "Bad Wimpfen thront mit der alten Kaiserpfalz und dem Blauen Turm über dem Neckar. Fast alles gibt es hier aus Automaten: einen Milchautomaten, einen Eierautomaten mit Kartoffeln und Zwiebeln und zwei Regiomaten mit Eiern, Milch, Fleisch, Gemüse und Nudeln. Dazu kommt ein Hofladen.",
+    "einleitung": "Rund um die Stadt liegen Felder auf den Lösshöhen des Kraichgaus und Weinberge über dem Neckartal. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bad Friedrichshall und Siegelsbach.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Zwiebeln",
+        "zeit": "August bis Oktober"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Friedrichshall und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/bad-friedrichshall/"
+      },
+      {
+        "text": "Hofläden in Siegelsbach und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/siegelsbach/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/landkreis-karlsruhe/gondelsheim/": {
+    "titel": "Hofläden in Gondelsheim: gut zu wissen",
+    "oben": "Gondelsheim liegt im Kraichgau zwischen Bruchsal und Bretten. Eier sind hier gut zu bekommen: an zwei Eierautomaten, beim ei-o-mat mit Kartoffelhütte und als Freilandeier der Gebrüder Schäfer. Dazu kommt der Demeter-Gärtnerhof Kohler.",
+    "einleitung": "Zwischen Saalbach und Kraichgauhügeln liegen Felder mit Getreide, Zuckerrüben und Kartoffeln. Der Gärtnerhof baut Bio-Gemüse an.\n\nWeitere Höfe findest du in Bretten und Bruchsal.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bretten und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/bretten/"
+      },
+      {
+        "text": "Hofläden in Bruchsal und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/bruchsal/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/landkreis-karlsruhe/graben-neudorf/": {
+    "titel": "Hofläden in Graben-Neudorf: gut zu wissen",
+    "oben": "Graben-Neudorf liegt in der Hardt nördlich von Karlsruhe, in einem bekannten Spargelgebiet. Eingetragen sind der Spargelhof Raupp, der Spargelverkauf von Beate Zimmermann, der Gemüsebau Kammerer, der Hofladen Melder und das Hof-Café Mösch.",
+    "einleitung": "Die sandigen Böden der Rheinebene erwärmen sich im Frühjahr schnell und sind ideal für Spargel. Dazwischen liegen Kiefernwälder der Hardt.\n\nWeitere Höfe findest du in Bruchsal und Stutensee.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bruchsal und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/bruchsal/"
+      },
+      {
+        "text": "Hofläden in Stutensee und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/stutensee/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/landkreis-karlsruhe/kraichtal/": {
+    "titel": "Hofläden in Kraichtal: gut zu wissen",
+    "oben": "Kraichtal besteht aus neun Stadtteilen im Hügelland des Kraichgaus. Eingetragen sind die Hofläden Häberle, Keller und Dörrmann sowie der Hof am Seeberg der Familie Lepp mit Hofladen und Milchtankstelle.",
+    "einleitung": "Die Kraich fließt durch ein Tal mit Wiesen, auf den Lösshügeln wachsen Getreide, Zuckerrüben und Obst, an Südhängen Wein. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Eppingen und Oberderdingen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eppingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/eppingen/"
+      },
+      {
+        "text": "Hofläden in Oberderdingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/oberderdingen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/landkreis-karlsruhe/oberderdingen/": {
+    "titel": "Hofläden in Oberderdingen: gut zu wissen",
+    "oben": "Oberderdingen liegt am Rand des Strombergs im Kraichgau. Iris' Hoflädle verkauft Eier, Milch und Fleisch, das Großvillarser Milchhäusle Eier, Milch und Nudeln. Dazu kommen der Luisenhof, der Bauernhof Leis und ein Regiomat mit Eiern.",
+    "einleitung": "An den Hängen des Strombergs wächst Wein, in den Tälern liegen Felder und Streuobstwiesen. Die Milch aus dem Milchhäusle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bretten und Kraichtal.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Trauben",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bretten und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/bretten/"
+      },
+      {
+        "text": "Hofläden in Kraichtal und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/kraichtal/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/landkreis-karlsruhe/pfinztal/": {
+    "titel": "Hofläden in Pfinztal: gut zu wissen",
+    "oben": "Pfinztal liegt im Tal der Pfinz östlich von Karlsruhe. Eingetragen sind der Biolandhof Petrik, Obstbau Wenz, das Eierhäusle Bampi, der Laux'omat mit Fleisch und AllerlEi.",
+    "einleitung": "Im Tal liegen Wiesen und Felder, an den Hängen Streuobst und Wald am Übergang zum Kraichgau.\n\nWeitere Höfe findest du in Remchingen und Karlsruhe.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Remchingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/enzkreis/remchingen/"
+      },
+      {
+        "text": "Hofläden in Karlsruhe",
+        "pfad": "/baden-wuerttemberg/karlsruhe-stadt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ludwigsburg/bietigheim-bissingen/": {
+    "titel": "Hofläden in Bietigheim-Bissingen: gut zu wissen",
+    "oben": "Bietigheim-Bissingen liegt an Enz und Metter, über die Enz spannt sich ein großer Eisenbahnviadukt. Eingetragen sind Christians Freilandeier mit Laden und Automat, der Naturfundus Hofladen mit Honig und Brot, der Schnauferhof und Geiger.",
+    "einleitung": "Rund um die Stadt liegen Weinberge an den Talhängen und Felder auf den Hochflächen des Strohgäus.\n\nWeitere Höfe findest du in Sachsenheim und Markgröningen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Trauben",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sachsenheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/sachsenheim/"
+      },
+      {
+        "text": "Hofläden in Markgröningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/markgroeningen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ludwigsburg/marbach-am-neckar/": {
+    "titel": "Hofläden in Marbach am Neckar: gut zu wissen",
+    "oben": "Marbach am Neckar ist die Geburtsstadt Friedrich Schillers. Eingetragen sind der Obsthof Eisenmann, Stirm's Hofladen, Beckbissinger's Kartoffelautomat und ein weiterer Hofladen.",
+    "einleitung": "Die Stadt liegt über dem Neckar, an den Hängen wachsen Reben, auf den Hochflächen Obst und Getreide.\n\nWeitere Höfe findest du in Murr und Oberstenfeld.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Murr und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/murr/"
+      },
+      {
+        "text": "Hofläden in Oberstenfeld und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/oberstenfeld/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ludwigsburg/markgroeningen/": {
+    "titel": "Hofläden in Markgröningen: gut zu wissen",
+    "oben": "Markgröningen ist für seinen Schäferlauf bekannt, eines der ältesten Feste im Land. Eingetragen sind das Selbstbedienungs-Ständle von Kachler's Weinbau und Bauernhof, das Milchhäusle der Familie Gröner, Kartoffeln zur Selbstbedienung und die Hofläden Bäßler und Glaser.",
+    "einleitung": "Die Stadt liegt im Strohgäu über dem Glemstal, ringsum Felder und Weinberge. Die Milch aus dem Milchhäusle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Schwieberdingen und Möglingen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Trauben",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schwieberdingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/schwieberdingen/"
+      },
+      {
+        "text": "Hofläden in Möglingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/moeglingen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ludwigsburg/sersheim/": {
+    "titel": "Hofläden in Sersheim: gut zu wissen",
+    "oben": "Sersheim liegt am Rand des Strombergs zwischen Vaihingen und Sachsenheim. Eingetragen sind der Geflügelhof Grau mit Eiern und Geflügel, ein Mühlenladen und Regiomaten mit Eiern, Milch, Fleisch und Kartoffeln.",
+    "einleitung": "Felder auf fruchtbarem Boden und Weinberge an den Hängen des Strombergs prägen die Umgebung.\n\nWeitere Höfe findest du in Sachsenheim und Vaihingen an der Enz.",
+    "saison": [
+      {
+        "titel": "Suppenhühner",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Mehl",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sachsenheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/sachsenheim/"
+      },
+      {
+        "text": "Hofläden in Vaihingen an der Enz und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/vaihingen-an-der-enz/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/neckar-odenwald-kreis/hoepfingen/": {
+    "titel": "Hofläden in Höpfingen: gut zu wissen",
+    "oben": "Höpfingen liegt im Bauland am Rand des Odenwalds. Wurst steht hier im Mittelpunkt: Berberichs Wurstschuppen und Zugelder's Wurst- und Eierhütte sind eingetragen, dazu zwei Eierautomaten und ein Hofladen.",
+    "einleitung": "Das Bauland ist eine offene Hochfläche mit Getreidefeldern. Typisch für die Gegend ist Grünkern, unreif geernteter und gedarrter Dinkel.\n\nWeitere Höfe findest du in Hardheim und Walldürn.",
+    "saison": [
+      {
+        "titel": "Grünkern",
+        "zeit": "Juli"
+      },
+      {
+        "titel": "Wurst",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hardheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/neckar-odenwald-kreis/hardheim/"
+      },
+      {
+        "text": "Hofläden in Walldürn und Umgebung",
+        "pfad": "/baden-wuerttemberg/neckar-odenwald-kreis/wallduern/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/neckar-odenwald-kreis/ravenstein/": {
+    "titel": "Hofläden in Ravenstein: gut zu wissen",
+    "oben": "Ravenstein liegt im Bauland zwischen Odenwald und Jagsttal. Eingetragen sind drei Stellen mit Eiern, darunter das Eierhäuschen am Kirchenbuckel, ein Hofladen mit Kartoffeln und die Imkerei Hennegriff.",
+    "einleitung": "Die Hochfläche ist von Getreidefeldern geprägt, auch Dinkel für Grünkern wird hier angebaut. In den Tälern liegen Wiesen und Wald.\n\nWeitere Höfe findest du in Schöntal und Rosenberg.",
+    "saison": [
+      {
+        "titel": "Grünkern",
+        "zeit": "Juli"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schöntal und Umgebung",
+        "pfad": "/baden-wuerttemberg/hohenlohekreis/schoental/"
+      },
+      {
+        "text": "Hofläden in Rosenberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/neckar-odenwald-kreis/rosenberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ortenaukreis/oberharmersbach/": {
+    "titel": "Hofläden in Oberharmersbach: gut zu wissen",
+    "oben": "Oberharmersbach liegt im Harmersbachtal im Schwarzwald, früher ein freies Reichstal. Der Breigenhof verkauft Eier, Fleisch, Obst, Honig und Brot, Kornbauer's Milchtankstelle Eier, Milch, Fleisch und Honig. Dazu kommen Danielhof, Donissihof und ein Regiomat mit Eiern, Milch und Brot.",
+    "einleitung": "Die Schwarzwaldhöfe liegen verstreut an den Hängen, mit Weiden und Obstbäumen. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Zell am Harmersbach und Nordrach.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Schwarzwälder Schinken",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zell am Harmersbach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/"
+      },
+      {
+        "text": "Hofläden in Nordrach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/nordrach/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/": {
+    "titel": "Hofläden in Zell am Harmersbach: gut zu wissen",
+    "oben": "Zell am Harmersbach ist für seine Keramik bekannt, deren Hahn-und-Henne-Muster viele kennen. Eingetragen sind zwei Bio-Betriebe, die Rösslemühle und der Biohof Reber, dazu Regiomaten mit Eiern, Milch, Fleisch, Kartoffeln und Honig und ein Fleischautomat.",
+    "einleitung": "Das Tal öffnet sich hier zur Kinzig, an den Hängen liegen Obstwiesen und Schwarzwaldhöfe.\n\nWeitere Höfe findest du in Oberharmersbach und Haslach.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Zwetschgen",
+        "zeit": "August und September"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberharmersbach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/oberharmersbach/"
+      },
+      {
+        "text": "Hofläden in Haslach im Kinzigtal und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/haslach-im-kinzigtal/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/rastatt/durmersheim/": {
+    "titel": "Hofläden in Durmersheim: gut zu wissen",
+    "oben": "Durmersheim liegt in der Rheinebene zwischen Karlsruhe und Rastatt. Honig ist hier gut vertreten, gleich zwei Honigautomaten sind eingetragen. Dazu kommen der Hofladen Gehrer, ein Hofladen mit Obst und ein Eierautomat.",
+    "einleitung": "Kiefernwälder der Hardt, Felder und die Rheinauen prägen die Gemeinde. Bekannt ist die Wallfahrtskirche Bickesheim.\n\nWeitere Höfe findest du in Rheinstetten und Ötigheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rheinstetten und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/rheinstetten/"
+      },
+      {
+        "text": "Hofläden in Ötigheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rastatt/oetigheim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ravensburg/achberg/": {
+    "titel": "Hofläden in Achberg: gut zu wissen",
+    "oben": "Achberg liegt an der Argen zwischen Wangen und Lindau. Zwei Bio-Höfe sind eingetragen, Kübler's Hofladen mit Eiern, Milch und Honig und der Hofladen Bentele mit Obst. Dazu kommen die Milchtankstelle der Familie Kübler, Tante Berta und ein Regiomat.",
+    "einleitung": "Das Argental mit Wiesen und Wald prägt die Gemeinde, viele Höfe halten Milchkühe. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Neukirch und Bodolz.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neukirch und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/neukirch/"
+      },
+      {
+        "text": "Hofläden in Bodolz und Umgebung",
+        "pfad": "/bayern/lindau/bodolz/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ravensburg/aulendorf/": {
+    "titel": "Hofläden in Aulendorf: gut zu wissen",
+    "oben": "Aulendorf ist ein Kurort in Oberschwaben mit einem Schloss in der Ortsmitte. Eingetragen sind der Bio-Geflügelhof Rothäusle mit Eiern und Geflügel, die Gold Imkerei und die Hofläden Seifert, Multerhof und Johanneshof.",
+    "einleitung": "Die Landschaft aus Moränenhügeln, Wiesen und kleinen Seen ist typisch für Oberschwaben, viele Höfe halten Milchvieh.\n\nWeitere Höfe findest du in Bad Waldsee und Fronreute.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Suppenhühner",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Waldsee und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/bad-waldsee/"
+      },
+      {
+        "text": "Hofläden in Fronreute und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/fronreute/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ravensburg/baienfurt/": {
+    "titel": "Hofläden in Baienfurt: gut zu wissen",
+    "oben": "Baienfurt liegt im Schussental bei Weingarten. Eingetragen sind der Biohof Vetter mit Eiern, der Hofladen Neubriach, s' Hoflädele, eine Milchtankstelle und ein Automat der Metzgerei Brenner.",
+    "einleitung": "Das Tal der Schussen ist breit und offen, an den Hängen liegen Wiesen und Wälder. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Weingarten und Berg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weingarten (Landkreis Ravensburg) und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/weingarten/"
+      },
+      {
+        "text": "Hofläden in Berg (Landkreis Ravensburg) und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/berg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ravensburg/bodnegg/": {
+    "titel": "Hofläden in Bodnegg: gut zu wissen",
+    "oben": "Bodnegg liegt im Hügelland östlich von Ravensburg. Bio ist hier stark: der Demeter-Gärtnerhof Wölfle-Decker, der Hofladen Mosisgreut und der Biohof Brugger. Dazu kommen Bernhard Bentele und ein Regiomat mit Eiern, Wild und Nudeln.",
+    "einleitung": "Zwischen Wäldern und Wiesen liegen verstreute Höfe, viele halten Milchkühe. Der Demeter-Gärtnerhof verkauft Obst aus biodynamischem Anbau.\n\nWeitere Höfe findest du in Neukirch und Schlier.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neukirch und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/neukirch/"
+      },
+      {
+        "text": "Hofläden in Schlier und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/schlier/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ravensburg/kisslegg/": {
+    "titel": "Hofläden in Kißlegg: gut zu wissen",
+    "oben": "Kißlegg liegt im Westallgäu zwischen Seen und Mooren, mit zwei Barockschlössern im Ort. Milch und Käse stehen hier im Mittelpunkt: zwei Milchtankstellen, eine davon mit Käse, und ein Käse-Regiomat. Dazu kommen der Schöpfle Hofladen und Eier.",
+    "einleitung": "Das Allgäuer Hügelland ist Grünland, fast jeder Hof hält Milchkühe. Die Milch aus den Tankstellen ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Wangen und Vogt.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Bergkäse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wangen im Allgäu und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/wangen-im-allgaeu/"
+      },
+      {
+        "text": "Hofläden in Vogt und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/vogt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ravensburg/wilhelmsdorf/": {
+    "titel": "Hofläden in Wilhelmsdorf: gut zu wissen",
+    "oben": "Wilhelmsdorf liegt am Pfrunger-Burgweiler Ried, einem der größten Moore Südwestdeutschlands. Der Bio-Hofladen Gebhard verkauft Eier, Milch, Gemüse und Obst, dazu kommen der Hofladen Kloker, die Direktvermarktung Meschenmoser und Regiomaten, einer mit Milch.",
+    "einleitung": "Rund um das Ried liegen Wiesen, Felder und Wald. Ein Naturschutzzentrum erklärt die Moorlandschaft.\n\nWeitere Höfe findest du im Deggenhausertal und in Horgenzell.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Deggenhausertal und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/deggenhausertal/"
+      },
+      {
+        "text": "Hofläden in Horgenzell und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/horgenzell/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/rems-murr-kreis/backnang/": {
+    "titel": "Hofläden in Backnang: gut zu wissen",
+    "oben": "Backnang liegt an der Murr, früher war die Stadt für ihre Gerbereien bekannt. Eingetragen sind der Biolandhof Adrion, Steffis Hofcafé, Heller's Eierautomat und ein Fleisch-Regiomat.",
+    "einleitung": "Rund um die Stadt liegen Felder und Streuobstwiesen, im Osten beginnen die Wälder des Schwäbischen Walds.\n\nWeitere Höfe findest du in Auenwald und Burgstetten.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Auenwald und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/auenwald/"
+      },
+      {
+        "text": "Hofläden in Burgstetten und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/burgstetten/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/rems-murr-kreis/rudersberg/": {
+    "titel": "Hofläden in Rudersberg: gut zu wissen",
+    "oben": "Rudersberg liegt im Wieslauftal am Rand des Schwäbischen Walds. Eine Besonderheit sind die Zumhofer Hausnudeln. Daneben gibt es die Hofläden Klemens, Schulz und Schwenger.",
+    "einleitung": "Das Tal ist von Wiesen, Streuobst und bewaldeten Hängen geprägt. Schwäbische Nudeln und Spätzle werden traditionell mit Eiern vom eigenen Hof gemacht.\n\nWeitere Höfe findest du in Welzheim und Berglen.",
+    "saison": [
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Welzheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/welzheim/"
+      },
+      {
+        "text": "Hofläden in Berglen und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/berglen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/reutlingen/pfullingen/": {
+    "titel": "Hofläden in Pfullingen: gut zu wissen",
+    "oben": "Pfullingen liegt an der Echaz am Fuß der Schwäbischen Alb, über der Stadt steht der Schönbergturm. Hier gibt es mehrere Regiomaten mit Eiern, Fleisch, Käse, Honig und Nudeln.",
+    "einleitung": "Zwischen Albtrauf und Echaztal liegen Streuobstwiesen, die zu den größten in Europa zählen. Oben auf der Alb weiden Schafe.\n\nWeitere Höfe findest du in Reutlingen und Metzingen.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Reutlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/reutlingen/reutlingen/"
+      },
+      {
+        "text": "Hofläden in Metzingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/reutlingen/metzingen/"
+      }
+    ],
+    "stand": "2026-11-21"
   }
 }
