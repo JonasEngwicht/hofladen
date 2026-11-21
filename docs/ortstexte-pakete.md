@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 326 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 351 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -393,35 +393,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Grebenstein](https://hofladenliste.de/hessen/landkreis-kassel/grebenstein/) `/hessen/landkreis-kassel/grebenstein/` | Landkreis Kassel | 1 | 8 | 11 |
 | ✓ | [Bad Vilbel](https://hofladenliste.de/hessen/wetteraukreis/bad-vilbel/) `/hessen/wetteraukreis/bad-vilbel/` | Wetteraukreis | 1 | 8 | 11 |
 
-## Paket 14 (0/25 fertig)
+## Paket 14 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Westerstede](https://hofladenliste.de/niedersachsen/ammerland/westerstede/) `/niedersachsen/ammerland/westerstede/` | Landkreis Ammerland | 1 | 8 | 11 |
-|  | [Sassenburg](https://hofladenliste.de/niedersachsen/gifhorn/sassenburg/) `/niedersachsen/gifhorn/sassenburg/` | Landkreis Gifhorn | 1 | 8 | 11 |
-|  | [Friedland](https://hofladenliste.de/niedersachsen/goettingen/friedland/) `/niedersachsen/goettingen/friedland/` | Landkreis Göttingen | 1 | 8 | 11 |
-|  | [Wistedt](https://hofladenliste.de/niedersachsen/harburg/wistedt/) `/niedersachsen/harburg/wistedt/` | Landkreis Harburg | 1 | 8 | 11 |
-|  | [Nörten-Hardenberg](https://hofladenliste.de/niedersachsen/northeim/noerten-hardenberg/) `/niedersachsen/northeim/noerten-hardenberg/` | Landkreis Northeim | 1 | 8 | 11 |
-|  | [Heiden](https://hofladenliste.de/nordrhein-westfalen/borken/heiden/) `/nordrhein-westfalen/borken/heiden/` | Kreis Borken | 1 | 8 | 11 |
-|  | [Senden (Kreis Coesfeld)](https://hofladenliste.de/nordrhein-westfalen/coesfeld/senden/) `/nordrhein-westfalen/coesfeld/senden/` | Kreis Coesfeld | 1 | 8 | 11 |
-|  | [Hückelhoven](https://hofladenliste.de/nordrhein-westfalen/heinsberg/hueckelhoven/) `/nordrhein-westfalen/heinsberg/hueckelhoven/` | Kreis Heinsberg | 1 | 8 | 11 |
-|  | [Kalkar](https://hofladenliste.de/nordrhein-westfalen/kleve/kalkar/) `/nordrhein-westfalen/kleve/kalkar/` | Kreis Kleve | 1 | 8 | 11 |
-|  | [Rees](https://hofladenliste.de/nordrhein-westfalen/kleve/rees/) `/nordrhein-westfalen/kleve/rees/` | Kreis Kleve | 1 | 8 | 11 |
-|  | [Altenbeken](https://hofladenliste.de/nordrhein-westfalen/paderborn/altenbeken/) `/nordrhein-westfalen/paderborn/altenbeken/` | Kreis Paderborn | 1 | 8 | 11 |
-|  | [Bornheim](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/bornheim/) `/nordrhein-westfalen/rhein-sieg-kreis/bornheim/` | Rhein-Sieg-Kreis | 1 | 8 | 11 |
-|  | [Burscheid](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/burscheid/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/burscheid/` | Rheinisch-Bergischer Kreis | 1 | 8 | 11 |
-|  | [Geseke](https://hofladenliste.de/nordrhein-westfalen/soest/geseke/) `/nordrhein-westfalen/soest/geseke/` | Kreis Soest | 1 | 8 | 11 |
-|  | [Steinfurt](https://hofladenliste.de/nordrhein-westfalen/steinfurt/steinfurt/) `/nordrhein-westfalen/steinfurt/steinfurt/` | Kreis Steinfurt | 1 | 8 | 11 |
-|  | [Schwalmtal](https://hofladenliste.de/nordrhein-westfalen/viersen/schwalmtal/) `/nordrhein-westfalen/viersen/schwalmtal/` | Kreis Viersen | 1 | 8 | 11 |
-|  | [Telgte](https://hofladenliste.de/nordrhein-westfalen/warendorf/telgte/) `/nordrhein-westfalen/warendorf/telgte/` | Kreis Warendorf | 1 | 8 | 11 |
-|  | [Schermbeck](https://hofladenliste.de/nordrhein-westfalen/wesel/schermbeck/) `/nordrhein-westfalen/wesel/schermbeck/` | Kreis Wesel | 1 | 8 | 11 |
-|  | [Xanten](https://hofladenliste.de/nordrhein-westfalen/wesel/xanten/) `/nordrhein-westfalen/wesel/xanten/` | Kreis Wesel | 1 | 8 | 11 |
-|  | [Immenstaad am Bodensee](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/immenstaad-am-bodensee/) `/baden-wuerttemberg/bodenseekreis/immenstaad-am-bodensee/` | Bodenseekreis | 2 | 5 | 11 |
-|  | [Freising](https://hofladenliste.de/bayern/freising/freising/) `/bayern/freising/freising/` | Landkreis Freising | 2 | 5 | 11 |
-|  | [Wittingen](https://hofladenliste.de/niedersachsen/gifhorn/wittingen/) `/niedersachsen/gifhorn/wittingen/` | Landkreis Gifhorn | 2 | 5 | 11 |
-|  | [Herten](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/herten/) `/nordrhein-westfalen/recklinghausen/herten/` | Kreis Recklinghausen | 2 | 5 | 11 |
-|  | [Zschopau](https://hofladenliste.de/sachsen/erzgebirgskreis/zschopau/) `/sachsen/erzgebirgskreis/zschopau/` | Erzgebirgskreis | 2 | 5 | 11 |
-|  | [Heidenheim an der Brenz](https://hofladenliste.de/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/) `/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/` | Landkreis Heidenheim | 3 | 2 | 11 |
+| ✓ | [Westerstede](https://hofladenliste.de/niedersachsen/ammerland/westerstede/) `/niedersachsen/ammerland/westerstede/` | Landkreis Ammerland | 1 | 8 | 11 |
+| ✓ | [Sassenburg](https://hofladenliste.de/niedersachsen/gifhorn/sassenburg/) `/niedersachsen/gifhorn/sassenburg/` | Landkreis Gifhorn | 1 | 8 | 11 |
+| ✓ | [Friedland](https://hofladenliste.de/niedersachsen/goettingen/friedland/) `/niedersachsen/goettingen/friedland/` | Landkreis Göttingen | 1 | 8 | 11 |
+| ✓ | [Wistedt](https://hofladenliste.de/niedersachsen/harburg/wistedt/) `/niedersachsen/harburg/wistedt/` | Landkreis Harburg | 1 | 8 | 11 |
+| ✓ | [Nörten-Hardenberg](https://hofladenliste.de/niedersachsen/northeim/noerten-hardenberg/) `/niedersachsen/northeim/noerten-hardenberg/` | Landkreis Northeim | 1 | 8 | 11 |
+| ✓ | [Heiden](https://hofladenliste.de/nordrhein-westfalen/borken/heiden/) `/nordrhein-westfalen/borken/heiden/` | Kreis Borken | 1 | 8 | 11 |
+| ✓ | [Senden (Kreis Coesfeld)](https://hofladenliste.de/nordrhein-westfalen/coesfeld/senden/) `/nordrhein-westfalen/coesfeld/senden/` | Kreis Coesfeld | 1 | 8 | 11 |
+| ✓ | [Hückelhoven](https://hofladenliste.de/nordrhein-westfalen/heinsberg/hueckelhoven/) `/nordrhein-westfalen/heinsberg/hueckelhoven/` | Kreis Heinsberg | 1 | 8 | 11 |
+| ✓ | [Kalkar](https://hofladenliste.de/nordrhein-westfalen/kleve/kalkar/) `/nordrhein-westfalen/kleve/kalkar/` | Kreis Kleve | 1 | 8 | 11 |
+| ✓ | [Rees](https://hofladenliste.de/nordrhein-westfalen/kleve/rees/) `/nordrhein-westfalen/kleve/rees/` | Kreis Kleve | 1 | 8 | 11 |
+| ✓ | [Altenbeken](https://hofladenliste.de/nordrhein-westfalen/paderborn/altenbeken/) `/nordrhein-westfalen/paderborn/altenbeken/` | Kreis Paderborn | 1 | 8 | 11 |
+| ✓ | [Bornheim](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/bornheim/) `/nordrhein-westfalen/rhein-sieg-kreis/bornheim/` | Rhein-Sieg-Kreis | 1 | 8 | 11 |
+| ✓ | [Burscheid](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/burscheid/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/burscheid/` | Rheinisch-Bergischer Kreis | 1 | 8 | 11 |
+| ✓ | [Geseke](https://hofladenliste.de/nordrhein-westfalen/soest/geseke/) `/nordrhein-westfalen/soest/geseke/` | Kreis Soest | 1 | 8 | 11 |
+| ✓ | [Steinfurt](https://hofladenliste.de/nordrhein-westfalen/steinfurt/steinfurt/) `/nordrhein-westfalen/steinfurt/steinfurt/` | Kreis Steinfurt | 1 | 8 | 11 |
+| ✓ | [Schwalmtal](https://hofladenliste.de/nordrhein-westfalen/viersen/schwalmtal/) `/nordrhein-westfalen/viersen/schwalmtal/` | Kreis Viersen | 1 | 8 | 11 |
+| ✓ | [Telgte](https://hofladenliste.de/nordrhein-westfalen/warendorf/telgte/) `/nordrhein-westfalen/warendorf/telgte/` | Kreis Warendorf | 1 | 8 | 11 |
+| ✓ | [Schermbeck](https://hofladenliste.de/nordrhein-westfalen/wesel/schermbeck/) `/nordrhein-westfalen/wesel/schermbeck/` | Kreis Wesel | 1 | 8 | 11 |
+| ✓ | [Xanten](https://hofladenliste.de/nordrhein-westfalen/wesel/xanten/) `/nordrhein-westfalen/wesel/xanten/` | Kreis Wesel | 1 | 8 | 11 |
+| ✓ | [Immenstaad am Bodensee](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/immenstaad-am-bodensee/) `/baden-wuerttemberg/bodenseekreis/immenstaad-am-bodensee/` | Bodenseekreis | 2 | 5 | 11 |
+| ✓ | [Freising](https://hofladenliste.de/bayern/freising/freising/) `/bayern/freising/freising/` | Landkreis Freising | 2 | 5 | 11 |
+| ✓ | [Wittingen](https://hofladenliste.de/niedersachsen/gifhorn/wittingen/) `/niedersachsen/gifhorn/wittingen/` | Landkreis Gifhorn | 2 | 5 | 11 |
+| ✓ | [Herten](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/herten/) `/nordrhein-westfalen/recklinghausen/herten/` | Kreis Recklinghausen | 2 | 5 | 11 |
+| ✓ | [Zschopau](https://hofladenliste.de/sachsen/erzgebirgskreis/zschopau/) `/sachsen/erzgebirgskreis/zschopau/` | Erzgebirgskreis | 2 | 5 | 11 |
+| ✓ | [Heidenheim an der Brenz](https://hofladenliste.de/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/) `/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/` | Landkreis Heidenheim | 3 | 2 | 11 |
 
 ## Paket 15 (0/25 fertig)
 

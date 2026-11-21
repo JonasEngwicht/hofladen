@@ -10202,5 +10202,761 @@
       }
     ],
     "stand": "2026-11-21"
+  },
+  "/niedersachsen/ammerland/westerstede/": {
+    "titel": "Hofläden in Westerstede: gut zu wissen",
+    "oben": "Westerstede ist Kreisstadt des Ammerlands, einer Landschaft aus Baumschulen, Rhododendronparks und Wallhecken. Eingetragen sind ein Spargel- und Gemüsehof, ein Bauerncafé, ein Honigautomat und Regiomaten mit Eiern, Kartoffeln, Gemüse und Käse.",
+    "einleitung": "Das Ammerland ist für seine Baumschulen und den Ammerländer Schinken bekannt, der geräuchert und luftgetrocknet wird. Auf der Geest wachsen Spargel, Kartoffeln und Mais, dazwischen liegen Weiden mit Milchkühen. Warband verkauft Spargel und Gemüse, Hofladen Petersfeld und Hollweger Hofladen Produkte vom Hof.\n\nWeitere Höfe findest du in Bad Zwischenahn und Wiefelstede.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Rhododendronblüte",
+        "zeit": "Mai"
+      },
+      {
+        "titel": "Grünkohl",
+        "zeit": "November bis Februar"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Zwischenahn und Umgebung",
+        "pfad": "/niedersachsen/ammerland/bad-zwischenahn/"
+      },
+      {
+        "text": "Hofläden im Landkreis Ammerland",
+        "pfad": "/niedersachsen/ammerland/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/gifhorn/sassenburg/": {
+    "titel": "Hofläden in Sassenburg: gut zu wissen",
+    "oben": "Sassenburg liegt zwischen Gifhorn und Wolfsburg in einer Landschaft aus Heide, Moor und Wald. Eier und Kartoffeln sind hier fast überall zu haben, außerdem gibt es eine Schäferei und die Beerenscheune Grußendorf mit Obst, Honig, Marmelade und Getränken.",
+    "einleitung": "Die leichten Sandböden eignen sich gut für Kartoffeln und Beeren, östlich der Gemeinde liegt das Große Moor. Lippel's Hof, Behn's Hofladen und weitere Höfe verkaufen Eier und Kartoffeln, die Schäferei Paulus verkauft ebenfalls ab Hof.\n\nWeitere Höfe findest du in Gifhorn und Wasbüttel.",
+    "saison": [
+      {
+        "titel": "Heidelbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Juli bis Oktober"
+      },
+      {
+        "titel": "Lammfleisch",
+        "zeit": "Frühjahr bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gifhorn und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/gifhorn/"
+      },
+      {
+        "text": "Hofläden im Landkreis Gifhorn",
+        "pfad": "/niedersachsen/gifhorn/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/goettingen/friedland/": {
+    "titel": "Hofläden in Friedland: gut zu wissen",
+    "oben": "Friedland liegt im Leinetal südlich von Göttingen, nahe der Grenze zu Hessen und Thüringen. Zwei Bio-Hofläden sind eingetragen, Herborts Hofladen und Reiffis Hofshop, dazu das Eierhuus mit Eiern, Obst und Nudeln, der Naturhof Stieg und Regiomaten.",
+    "einleitung": "Die Leine fließt durch ein breites Tal mit Feldern und Wiesen, die Hänge ringsum sind bewaldet. Bekannt ist der Ort durch das Grenzdurchgangslager Friedland. Hof Ilse betreibt einen eigenen Regiomat.\n\nSüdlich liegt das Kirschenland um Witzenhausen. Weitere Höfe findest du in Göttingen und Gleichen.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Göttingen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/goettingen/"
+      },
+      {
+        "text": "Hofläden in Witzenhausen und Umgebung",
+        "pfad": "/hessen/werra-meissner-kreis/witzenhausen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/harburg/wistedt/": {
+    "titel": "Hofläden in Wistedt: gut zu wissen",
+    "oben": "Wistedt ist ein kleines Dorf in der Nordheide bei Tostedt. Kartoffeln vom Bauernhof gibt es hier an gleich vier Selbstbedienungsstellen, dazu Eier, den Hofladen Meinke und den Tannenhof Fricke.",
+    "einleitung": "Die sandigen Geestböden der Nordheide sind typisches Kartoffelland. Viele Höfe stellen ihre Kartoffeln und Eier in kleine Hütten oder Automaten an der Straße, bezahlt wird oft in eine Kasse des Vertrauens.\n\nWeitere Höfe findest du in Tostedt, Königsmoor und Otter.",
+    "saison": [
+      {
+        "titel": "Frühkartoffeln",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Lagerkartoffeln",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Tostedt und Umgebung",
+        "pfad": "/niedersachsen/harburg/tostedt/"
+      },
+      {
+        "text": "Hofläden im Landkreis Harburg",
+        "pfad": "/niedersachsen/harburg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/northeim/noerten-hardenberg/": {
+    "titel": "Hofläden in Nörten-Hardenberg: gut zu wissen",
+    "oben": "Nörten-Hardenberg liegt im Leinetal nördlich von Göttingen, über dem Ort steht die Burgruine Hardenberg. Der Angersteiner Hofladen hat ein breites Angebot von Eiern über Fleisch bis Honig und Nudeln, dazu kommen weitere Hofläden und mehrere Regiomaten.",
+    "einleitung": "Der Ort ist auch für seine Kornbrennerei bekannt. Im Tal liegen Felder auf fruchtbarem Lössboden, an den Hängen Wald. Rodetaler Naturhof, Hof Königshall und der Bauernhof Vogel verkaufen ab Hof.\n\nEin Regiomat hat Eier, Kartoffeln und Nudeln, zwei weitere Fleisch. Weitere Höfe findest du in Bovenden und Hardegsen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Wurst",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bovenden und Umgebung",
+        "pfad": "/niedersachsen/goettingen/bovenden/"
+      },
+      {
+        "text": "Hofläden im Landkreis Northeim",
+        "pfad": "/niedersachsen/northeim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/borken/heiden/": {
+    "titel": "Hofläden in Heiden: gut zu wissen",
+    "oben": "Heiden liegt im westlichen Münsterland zwischen Borken und Reken. Die Höfe sind auf Gemüse ausgerichtet: ein Spargelhof, ein Kartoffelhof und der Gemüsehof Brun mit Kartoffeln und Zwiebeln. Mehrere Regiomaten bieten Honig, einer auch Fleisch.",
+    "einleitung": "Die Parklandschaft des Münsterlands mit Wallhecken, Feldern und Einzelhöfen prägt die Gemeinde. Bekannt sind die Düwelsteene, ein Großsteingrab aus der Jungsteinzeit. Münsterländer Wieseneier, Hof Hüppe und Limbergs Bauernstübchen verkaufen über Automaten.\n\nWeitere Höfe findest du in Reken, Velen und Borken.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Juli bis Oktober"
+      },
+      {
+        "titel": "Zwiebeln",
+        "zeit": "August bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Reken und Umgebung",
+        "pfad": "/nordrhein-westfalen/borken/reken/"
+      },
+      {
+        "text": "Hofläden im Kreis Borken",
+        "pfad": "/nordrhein-westfalen/borken/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/coesfeld/senden/": {
+    "titel": "Hofläden in Senden (Kreis Coesfeld): gut zu wissen",
+    "oben": "Senden liegt an der Stever südwestlich von Münster. Zwei Bio-Höfe sind eingetragen, Halsbenning und Spliethofe, dazu Hof Grothues-Potthoff mit Hofladen und Hofcafé, Hof Wahlkamp und Regiomaten mit Eiern und Milch.",
+    "einleitung": "Rund um die Burg Senden liegen Felder, Wiesen und Wäldchen der Münsterländer Parklandschaft, der Dortmund-Ems-Kanal führt durch die Gemeinde. Die 100-Schlösser-Route verbindet Senden per Rad mit Lüdinghausen und Nordkirchen.\n\nEin Eierautomat bietet Landeier aus Freilandhaltung.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lüdinghausen und Umgebung",
+        "pfad": "/nordrhein-westfalen/coesfeld/luedinghausen/"
+      },
+      {
+        "text": "Hofläden im Kreis Coesfeld",
+        "pfad": "/nordrhein-westfalen/coesfeld/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/heinsberg/hueckelhoven/": {
+    "titel": "Hofläden in Hückelhoven: gut zu wissen",
+    "oben": "Hückelhoven liegt an der Rur und war lange eine Bergbaustadt. Heute bekommst du hier Eier, Kartoffeln und Milch an mehreren Regiomaten, außerdem gibt es einen Eierhof, eine Imkerei und Hofläden.",
+    "einleitung": "Östlich der Rur beginnt die fruchtbare Erkelenzer Börde mit Zuckerrüben, Getreide und Kartoffeln, im Rurtal liegen Wiesen und Auwald. Ein Regiomat hat Eier, Milch und Kartoffeln, der Hofladen Müller verkauft ab Hof.\n\nWeitere Höfe findest du in Erkelenz, Wassenberg und Heinsberg.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Erkelenz und Umgebung",
+        "pfad": "/nordrhein-westfalen/heinsberg/erkelenz/"
+      },
+      {
+        "text": "Hofläden im Kreis Heinsberg",
+        "pfad": "/nordrhein-westfalen/heinsberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/kleve/kalkar/": {
+    "titel": "Hofläden in Kalkar: gut zu wissen",
+    "oben": "Kalkar liegt am unteren Niederrhein, mit einem Marktplatz aus dem Mittelalter. Die Einträge sind vielfältig: Edelobst Raadts, ein Bio-Betrieb, der Kartoffelhof Franken, Eier und Geflügel vom Geflügelhof Reuvers und Weihnachtsbäume bei Tannen-Karl.",
+    "einleitung": "Zwischen Rhein und den Höhen bei Uedem liegen flache Wiesen, Felder und alte Rheinarme. Viele Höfe halten Milchvieh und Geflügel, auf den Feldern wachsen Kartoffeln und Getreide. Kniesthof und Ortscher Hof verkaufen ab Hof, ein Imker hat Honig.\n\nWeitere Höfe findest du in Uedem, Rees und Bedburg-Hau.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Weihnachtsbäume",
+        "zeit": "Dezember"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Uedem und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/uedem/"
+      },
+      {
+        "text": "Hofläden in Rees und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/rees/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/kleve/rees/": {
+    "titel": "Hofläden in Rees: gut zu wissen",
+    "oben": "Rees liegt direkt am Rhein und gilt als eine der ältesten Städte am Niederrhein. Obst hat hier Gewicht: Die Reeserwarder Obstanlagen und der Vriendshof mit Obst und Marmelade sind eingetragen. Dazu kommen zwei Cafés auf dem Land und mehrere Hofläden.",
+    "einleitung": "Rund um die Stadt liegen Rheinwiesen, Deiche und flache Felder, im Winter rasten hier viele Wildgänse. Im Bauerncafé Drostenhof und im Landcafé Fischer kannst du einkehren. Rosenhof, Averstegshof und Kalfhovenhof verkaufen ab Hof.\n\nWeitere Höfe findest du in Kalkar, Emmerich und Isselburg.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis Oktober"
+      },
+      {
+        "titel": "Marmelade",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Emmerich am Rhein und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/emmerich-am-rhein/"
+      },
+      {
+        "text": "Hofläden in Isselburg und Umgebung",
+        "pfad": "/nordrhein-westfalen/borken/isselburg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/paderborn/altenbeken/": {
+    "titel": "Hofläden in Altenbeken: gut zu wissen",
+    "oben": "Altenbeken liegt im Eggegebirge östlich von Paderborn und ist für sein großes Eisenbahnviadukt bekannt. Eingetragen sind ein Naturland-Hof, ein Biohof, der Bierssenhof, eine Milchtankstelle und mehrere Regiomaten.",
+    "einleitung": "Wald prägt die Gemeinde, in den Tälern liegen Wiesen und kleine Felder. Viele Höfe halten Rinder. Brigitte Veller wirtschaftet nach Naturland-Richtlinien, der Biohof Bannenberg ebenfalls biologisch.\n\nAn der Milchtankstelle gibt es Rohmilch: vor dem Trinken abkochen. Weitere Höfe findest du in Bad Lippspringe und Paderborn.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Rindfleisch",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Lippspringe und Umgebung",
+        "pfad": "/nordrhein-westfalen/paderborn/bad-lippspringe/"
+      },
+      {
+        "text": "Hofläden im Kreis Paderborn",
+        "pfad": "/nordrhein-westfalen/paderborn/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/rhein-sieg-kreis/bornheim/": {
+    "titel": "Hofläden in Bornheim: gut zu wissen",
+    "oben": "Bornheim liegt am Vorgebirge zwischen Köln und Bonn, einem der ältesten Gemüse- und Obstgärten des Rheinlands. Bio ist stark vertreten: der Biohof Bursch mit Hofladen und Café, Kley, Hof Schulz und der Biolandhof Apfelbacher.",
+    "einleitung": "Die Lössböden am Hang der Ville sind fruchtbar und früh warm, deshalb werden hier Spargel, Erdbeeren, Salat, Kohl und Obst angebaut. Der Gemüsehof Steiger verkauft Gemüse, der Hofladen Äpfel + Birnen & Co Obst.\n\nWeitere Höfe findest du in Alfter und Wesseling.",
+    "faq": [
+      {
+        "frage": "Was wächst am Vorgebirge?",
+        "antwort": "Vor allem Gemüse wie Salat, Kohl und Spargel, dazu Erdbeeren, Äpfel und Birnen. Die Höfe verkaufen in der Saison oft täglich frisch geerntete Ware."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Äpfel und Birnen",
+        "zeit": "August bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Alfter und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/alfter/"
+      },
+      {
+        "text": "Hofläden im Rhein-Sieg-Kreis",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/rheinisch-bergischer-kreis/burscheid/": {
+    "titel": "Hofläden in Burscheid: gut zu wissen",
+    "oben": "Burscheid liegt im Bergischen Land zwischen Leverkusen und Wermelskirchen. Eingetragen sind der Biohof Jörgens mit Charolais-Rindern, Mönchhof, Thomashof, Hofladen Birken, Eierautomaten und ein Regiomat mit Eiern, Käse und Nudeln.",
+    "einleitung": "Die hügelige Landschaft mit Wiesen, Wäldern und Bachtälern eignet sich vor allem für Grünland und Rinderhaltung. Typisch für die Region ist die Bergische Kaffeetafel mit Waffeln, Milchreis und Kaffee aus der Dröppelminna.\n\nWeitere Höfe findest du in Odenthal und Leichlingen.",
+    "saison": [
+      {
+        "titel": "Rindfleisch",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Odenthal und Umgebung",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/odenthal/"
+      },
+      {
+        "text": "Hofläden im Rheinisch-Bergischer Kreis",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/soest/geseke/": {
+    "titel": "Hofläden in Geseke: gut zu wissen",
+    "oben": "Geseke liegt am Hellweg zwischen Lippstadt und Paderborn. Milch und Eier gibt es hier vor allem aus Automaten: zwei Milchtankstellen, ein Eierautomat und Regiomaten. Der Geflügelhof Linneweber verkauft Eier, Fleisch und Geflügel.",
+    "einleitung": "Südlich der Stadt steigt das Land zur Haar an, nördlich liegt fruchtbares Ackerland der Börde mit Getreide und Zuckerrüben. Die Milch aus den Tankstellen ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Salzkotten, Lippstadt und Anröchte.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Suppenhühner",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Salzkotten und Umgebung",
+        "pfad": "/nordrhein-westfalen/paderborn/salzkotten/"
+      },
+      {
+        "text": "Hofläden in Lippstadt und Umgebung",
+        "pfad": "/nordrhein-westfalen/soest/lippstadt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/steinfurt/steinfurt/": {
+    "titel": "Hofläden in Steinfurt: gut zu wissen",
+    "oben": "Die Stadt Steinfurt besteht aus Burgsteinfurt und Borghorst im nördlichen Münsterland. Drei Imkereien sind eingetragen, dazu ein Bio-Hofladen, ein Gemüsehof und das Melkhus, ein Bauerncafé, wie es im Münsterland Tradition hat.",
+    "einleitung": "Ein Melkhus ist ein kleines Hofcafé, in dem Bäuerinnen Milchgetränke und regionale Spezialitäten anbieten. In Burgsteinfurt liegen das Wasserschloss und der Landschaftspark Bagno. Ringsum wechseln Felder, Weiden und Wäldchen.\n\nOveresch verkauft Bio-Ware, Dieckmann Gemüse. Weitere Höfe findest du in Wettringen und Laer.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wettringen (Kreis Steinfurt) und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/wettringen/"
+      },
+      {
+        "text": "Hofläden im Kreis Steinfurt",
+        "pfad": "/nordrhein-westfalen/steinfurt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/viersen/schwalmtal/": {
+    "titel": "Hofläden in Schwalmtal: gut zu wissen",
+    "oben": "Schwalmtal liegt im Naturpark Maas-Schwalm-Nette an der Grenze zu den Niederlanden. Ein Regiomat hat Eier, Fleisch, Gemüse, Obst und Kartoffeln, dazu kommen zwei Bio-Läden, der Janshof, Jacobs Hof, ein Obsthof und ein Bauerncafé.",
+    "einleitung": "Die Schwalm fließt durch ein Tal mit Wiesen, Bruchwäldern und alten Wassermühlen. Auf den Feldern wachsen Kartoffeln, Gemüse und Getreide. Der Janshof verkauft Gemüse, Obst und Kartoffeln, Jacobs Hof Fleisch und Kartoffeln, der Obsthof Scholz-Döbelin Obst.\n\nIm Bauerncafé Bolten kannst du einkehren. Weitere Höfe liegen in Brüggen und Niederkrüchten.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Brüggen und Umgebung",
+        "pfad": "/nordrhein-westfalen/viersen/brueggen/"
+      },
+      {
+        "text": "Hofläden in Niederkrüchten und Umgebung",
+        "pfad": "/nordrhein-westfalen/viersen/niederkruechten/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/warendorf/telgte/": {
+    "titel": "Hofläden in Telgte: gut zu wissen",
+    "oben": "Telgte an der Ems ist ein alter Wallfahrtsort östlich von Münster. Eingetragen sind zwei Bio-Höfe, der Milchhof Große Kintrup mit Milch-Regiomat, ein Bäcker-Hofladen, eine Rosenbox mit Blumen und das Telgenkämmerken.",
+    "einleitung": "Die Ems fließt hier durch Wiesen und Auwälder, ringsum liegt die Parklandschaft des Münsterlands mit Einzelhöfen. Hof Fockenbrock und der Biohof Schulze Nahrup wirtschaften biologisch, Lütke Zutelgte verkauft ab Hof.\n\nDer Emsradweg verbindet Telgte mit Warendorf und Greven. Weitere Höfe findest du in Everswinkel und Münster.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Rosen",
+        "zeit": "Juni bis September"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Everswinkel und Umgebung",
+        "pfad": "/nordrhein-westfalen/warendorf/everswinkel/"
+      },
+      {
+        "text": "Hofläden in Münster",
+        "pfad": "/nordrhein-westfalen/muenster/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/wesel/schermbeck/": {
+    "titel": "Hofläden in Schermbeck: gut zu wissen",
+    "oben": "Schermbeck liegt an der Lippe am Rand des Naturparks Hohe Mark. Gleich zwei Forellenzuchten sind eingetragen, dazu drei Bio-Betriebe, darunter der Biolandhof Bonhoff, eine Bio-Imkerei, der Hofladen Bauer Graaf und ein Hofcafé.",
+    "einleitung": "Klare Bäche aus den Wäldern der Hohen Mark speisen die Teiche der Forellenzuchten Naroda und Schoel. Ringsum liegen Felder und Weiden. Bonhoff verkauft Bio-Eier und Fleisch, Deiters hat einen Naturkostladen, die Imkerei Unterberg Bio-Honig.\n\nIm Sonnenhof-Café kannst du einkehren. Weitere Höfe findest du in Hünxe, Dorsten und Raesfeld.",
+    "saison": [
+      {
+        "titel": "Forellen",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hünxe und Umgebung",
+        "pfad": "/nordrhein-westfalen/wesel/huenxe/"
+      },
+      {
+        "text": "Hofläden in Dorsten und Umgebung",
+        "pfad": "/nordrhein-westfalen/recklinghausen/dorsten/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/wesel/xanten/": {
+    "titel": "Hofläden in Xanten: gut zu wissen",
+    "oben": "Xanten ist eine Römerstadt am Niederrhein und eng mit der Nibelungensage verbunden. Passend dazu backt die Kriemhild Mühle Bio-Brot in einer Windmühle. Außerdem gibt es die Grenzdycker Milchtankstelle, Fleisch und Honig vom Gamerschlagshof und mehrere Hofläden.",
+    "einleitung": "Im Archäologischen Park sind Teile der römischen Stadt wieder aufgebaut, ringsum liegen Rheinwiesen und Baggerseen. Viele Höfe halten Milchkühe. An der Milchtankstelle gibt es Rohmilch: vor dem Trinken abkochen.\n\nLobbes Hof und der Bauernladen am Ort ergänzen das Angebot. Weitere Höfe findest du in Sonsbeck und Alpen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sonsbeck und Umgebung",
+        "pfad": "/nordrhein-westfalen/wesel/sonsbeck/"
+      },
+      {
+        "text": "Hofläden in Alpen und Umgebung",
+        "pfad": "/nordrhein-westfalen/wesel/alpen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/bodenseekreis/immenstaad-am-bodensee/": {
+    "titel": "Hofläden in Immenstaad am Bodensee: gut zu wissen",
+    "oben": "Immenstaad liegt am Nordufer des Bodensees zwischen Meersburg und Friedrichshafen. Obst prägt die Einträge: der Obst- und Ferienhof Lehle, Dikreuter's Hoflädele mit Obst und Getränken und Regiomaten mit Obst, Honig und Fleisch.",
+    "einleitung": "Zwischen Ufer und Hinterland ziehen sich Apfelplantagen, an einigen Hängen auch Reben. Das milde Seeklima schützt die Obstbäume vor Frost. Viele Höfe bieten zugleich Ferienwohnungen an.\n\nWeitere Höfe findest du in Markdorf und Meersburg.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis November"
+      },
+      {
+        "titel": "Apfelsaft",
+        "zeit": "ab Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Meersburg und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/meersburg/"
+      },
+      {
+        "text": "Hofläden in Markdorf und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/markdorf/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/freising/freising/": {
+    "titel": "Hofläden in Freising: gut zu wissen",
+    "oben": "Freising liegt an der Isar mit dem Domberg und Weihenstephan, wo Landwirtschaft und Brauwesen studiert werden. Fast alle Einträge sind Bio-Betriebe: der Milchhof Zierer mit Milch, Käse, Fleisch und Honig, der Biolandhof Braun, ein Eierhof und eine Bio-Imkerei.",
+    "einleitung": "Nördlich der Stadt beginnt das Tertiärhügelland mit Feldern und Hopfengärten, südlich liegt das flache Erdinger Moos. Der Biolandhof Braun verkauft Milch, eine weitere Milchtankstelle bietet Rohmilch, die du vor dem Trinken abkochen solltest.\n\nWeitere Höfe findest du in Marzling und Kranzberg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Marzling und Umgebung",
+        "pfad": "/bayern/freising/marzling/"
+      },
+      {
+        "text": "Hofläden im Landkreis Freising",
+        "pfad": "/bayern/freising/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/gifhorn/wittingen/": {
+    "titel": "Hofläden in Wittingen: gut zu wissen",
+    "oben": "Wittingen liegt im Norden des Landkreises Gifhorn am Rand der Südheide. Eingetragen sind der Spargelhof Brink, der Ziegenhof Kramer auf Hof Dreibirken und mehrere Hofläden, einer davon in Darrigsdorf.",
+    "einleitung": "Die Landschaft ist flach, mit Wäldern, Heide und Feldern auf sandigem Boden, auf dem Spargel und Kartoffeln gut wachsen. Bekannt ist die Stadt für ihre Brauerei.\n\nWeitere Höfe findest du in Sassenburg und im Landkreis Uelzen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Ziegenkäse",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sassenburg und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/sassenburg/"
+      },
+      {
+        "text": "Hofläden im Landkreis Uelzen",
+        "pfad": "/niedersachsen/uelzen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/recklinghausen/herten/": {
+    "titel": "Hofläden in Herten: gut zu wissen",
+    "oben": "Herten liegt mitten im Ruhrgebiet, hat aber zwischen den Stadtteilen noch Felder. Eingetragen sind der Spargelhof Schulte-Scherlebeck, Hof Heine, Hof Stoffers, Bauer Feldhaus und der Hofladen am Brunnenhof.",
+    "einleitung": "Auf der Halde Hoheward erinnert ein Horizontobservatorium an den Bergbau, am Fuß liegen Wald und Felder. Im Norden und Osten der Stadt wird noch Ackerbau betrieben, mit Spargel, Kartoffeln und Getreide.\n\nWeitere Höfe findest du in Recklinghausen und Marl.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Recklinghausen und Umgebung",
+        "pfad": "/nordrhein-westfalen/recklinghausen/recklinghausen/"
+      },
+      {
+        "text": "Hofläden in Marl und Umgebung",
+        "pfad": "/nordrhein-westfalen/recklinghausen/marl/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/sachsen/erzgebirgskreis/zschopau/": {
+    "titel": "Hofläden in Zschopau: gut zu wissen",
+    "oben": "Zschopau liegt im Tal der Zschopau im Erzgebirge, überragt von Schloss Wildeck. Drei Imkereien sind eingetragen, dazu der Hofladen Kirsch mit Obst und ein Lebensmittelautomat mit Eiern, Käse, Fleisch und Obst.",
+    "einleitung": "Das Erzgebirge ist waldreich, die Hochflächen tragen Wiesen und kleine Felder. Die vielen Wald- und Wiesenblüten liefern Bienen reiche Tracht. Imker Uhlig, der Imkershop Erzgebirge und die Imkerei zum alten Badeplatz verkaufen Honig.\n\nWeitere Höfe findest du in Großolbersdorf und Augustusburg.",
+    "saison": [
+      {
+        "titel": "Waldhonig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Großolbersdorf und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/grossolbersdorf/"
+      },
+      {
+        "text": "Hofläden in Augustusburg und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/augustusburg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/": {
+    "titel": "Hofläden in Heidenheim an der Brenz: gut zu wissen",
+    "oben": "Heidenheim liegt an der Brenz auf der Ostalb, über der Stadt steht Schloss Hellenstein. In der Stadt sind das Bio-Talhofcafé und ein Regiomat mit Eiern, Milch und Honig eingetragen, weitere Höfe liegen in den Albdörfern ringsum.",
+    "einleitung": "Westlich der Stadt beginnt der Albuch, östlich das Härtsfeld, beides Hochflächen mit Wiesen, Wäldern und Feldern auf Kalkboden. Viele Höfe halten Rinder und Schafe.\n\nWeitere Höfe findest du in Steinheim am Albuch und Herbrechtingen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Lammfleisch",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Steinheim am Albuch und Umgebung",
+        "pfad": "/baden-wuerttemberg/heidenheim/steinheim-am-albuch/"
+      },
+      {
+        "text": "Hofläden im Landkreis Heidenheim",
+        "pfad": "/baden-wuerttemberg/heidenheim/"
+      }
+    ],
+    "stand": "2026-11-21"
   }
 }
