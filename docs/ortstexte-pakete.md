@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 401 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 426 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -483,35 +483,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Stelle](https://hofladenliste.de/niedersachsen/harburg/stelle/) `/niedersachsen/harburg/stelle/` | Landkreis Harburg | 1 | 7 | 10 |
 | ✓ | [Bad Essen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-essen/) `/niedersachsen/landkreis-osnabrueck/bad-essen/` | Landkreis Osnabrück | 1 | 7 | 10 |
 
-## Paket 17 (0/25 fertig)
+## Paket 17 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Wedemark](https://hofladenliste.de/niedersachsen/region-hannover/wedemark/) `/niedersachsen/region-hannover/wedemark/` | Region Hannover | 1 | 7 | 10 |
-|  | [Dörverden](https://hofladenliste.de/niedersachsen/verden/doerverden/) `/niedersachsen/verden/doerverden/` | Landkreis Verden | 1 | 7 | 10 |
-|  | [Rhede](https://hofladenliste.de/nordrhein-westfalen/borken/rhede/) `/nordrhein-westfalen/borken/rhede/` | Kreis Borken | 1 | 7 | 10 |
-|  | [Ascheberg](https://hofladenliste.de/nordrhein-westfalen/coesfeld/ascheberg/) `/nordrhein-westfalen/coesfeld/ascheberg/` | Kreis Coesfeld | 1 | 7 | 10 |
-|  | [Nordkirchen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/nordkirchen/) `/nordrhein-westfalen/coesfeld/nordkirchen/` | Kreis Coesfeld | 1 | 7 | 10 |
-|  | [Jülich](https://hofladenliste.de/nordrhein-westfalen/dueren/juelich/) `/nordrhein-westfalen/dueren/juelich/` | Kreis Düren | 1 | 7 | 10 |
-|  | [Rietberg](https://hofladenliste.de/nordrhein-westfalen/guetersloh/rietberg/) `/nordrhein-westfalen/guetersloh/rietberg/` | Kreis Gütersloh | 1 | 7 | 10 |
-|  | [Medebach](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/medebach/) `/nordrhein-westfalen/hochsauerlandkreis/medebach/` | Hochsauerlandkreis | 1 | 7 | 10 |
-|  | [Schmallenberg](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/schmallenberg/) `/nordrhein-westfalen/hochsauerlandkreis/schmallenberg/` | Hochsauerlandkreis | 1 | 7 | 10 |
-|  | [Wachtendonk](https://hofladenliste.de/nordrhein-westfalen/kleve/wachtendonk/) `/nordrhein-westfalen/kleve/wachtendonk/` | Kreis Kleve | 1 | 7 | 10 |
-|  | [Weeze](https://hofladenliste.de/nordrhein-westfalen/kleve/weeze/) `/nordrhein-westfalen/kleve/weeze/` | Kreis Kleve | 1 | 7 | 10 |
-|  | [Heiligenhaus](https://hofladenliste.de/nordrhein-westfalen/mettmann/heiligenhaus/) `/nordrhein-westfalen/mettmann/heiligenhaus/` | Kreis Mettmann | 1 | 7 | 10 |
-|  | [Mettmann](https://hofladenliste.de/nordrhein-westfalen/mettmann/mettmann/) `/nordrhein-westfalen/mettmann/mettmann/` | Kreis Mettmann | 1 | 7 | 10 |
-|  | [Waltrop](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/waltrop/) `/nordrhein-westfalen/recklinghausen/waltrop/` | Kreis Recklinghausen | 1 | 7 | 10 |
-|  | [Hürth](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/huerth/) `/nordrhein-westfalen/rhein-erft-kreis/huerth/` | Rhein-Erft-Kreis | 1 | 7 | 10 |
-|  | [Pulheim](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/pulheim/) `/nordrhein-westfalen/rhein-erft-kreis/pulheim/` | Rhein-Erft-Kreis | 1 | 7 | 10 |
-|  | [Niederkassel](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/niederkassel/) `/nordrhein-westfalen/rhein-sieg-kreis/niederkassel/` | Rhein-Sieg-Kreis | 1 | 7 | 10 |
-|  | [Rheinbach](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/rheinbach/) `/nordrhein-westfalen/rhein-sieg-kreis/rheinbach/` | Rhein-Sieg-Kreis | 1 | 7 | 10 |
-|  | [Lippetal](https://hofladenliste.de/nordrhein-westfalen/soest/lippetal/) `/nordrhein-westfalen/soest/lippetal/` | Kreis Soest | 1 | 7 | 10 |
-|  | [Hünxe](https://hofladenliste.de/nordrhein-westfalen/wesel/huenxe/) `/nordrhein-westfalen/wesel/huenxe/` | Kreis Wesel | 1 | 7 | 10 |
-|  | [Neukirchen-Vluyn](https://hofladenliste.de/nordrhein-westfalen/wesel/neukirchen-vluyn/) `/nordrhein-westfalen/wesel/neukirchen-vluyn/` | Kreis Wesel | 1 | 7 | 10 |
-|  | [Limbach-Oberfrohna](https://hofladenliste.de/sachsen/zwickau/limbach-oberfrohna/) `/sachsen/zwickau/limbach-oberfrohna/` | Landkreis Zwickau | 1 | 7 | 10 |
-|  | [Wildenfels](https://hofladenliste.de/sachsen/zwickau/wildenfels/) `/sachsen/zwickau/wildenfels/` | Landkreis Zwickau | 1 | 7 | 10 |
-|  | [Barsbüttel](https://hofladenliste.de/schleswig-holstein/stormarn/barsbuettel/) `/schleswig-holstein/stormarn/barsbuettel/` | Kreis Stormarn | 1 | 7 | 10 |
-|  | [Feldberger Seenlandschaft](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/` | Landkreis Mecklenburgische Seenplatte | 2 | 4 | 10 |
+| ✓ | [Wedemark](https://hofladenliste.de/niedersachsen/region-hannover/wedemark/) `/niedersachsen/region-hannover/wedemark/` | Region Hannover | 1 | 7 | 10 |
+| ✓ | [Dörverden](https://hofladenliste.de/niedersachsen/verden/doerverden/) `/niedersachsen/verden/doerverden/` | Landkreis Verden | 1 | 7 | 10 |
+| ✓ | [Rhede](https://hofladenliste.de/nordrhein-westfalen/borken/rhede/) `/nordrhein-westfalen/borken/rhede/` | Kreis Borken | 1 | 7 | 10 |
+| ✓ | [Ascheberg](https://hofladenliste.de/nordrhein-westfalen/coesfeld/ascheberg/) `/nordrhein-westfalen/coesfeld/ascheberg/` | Kreis Coesfeld | 1 | 7 | 10 |
+| ✓ | [Nordkirchen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/nordkirchen/) `/nordrhein-westfalen/coesfeld/nordkirchen/` | Kreis Coesfeld | 1 | 7 | 10 |
+| ✓ | [Jülich](https://hofladenliste.de/nordrhein-westfalen/dueren/juelich/) `/nordrhein-westfalen/dueren/juelich/` | Kreis Düren | 1 | 7 | 10 |
+| ✓ | [Rietberg](https://hofladenliste.de/nordrhein-westfalen/guetersloh/rietberg/) `/nordrhein-westfalen/guetersloh/rietberg/` | Kreis Gütersloh | 1 | 7 | 10 |
+| ✓ | [Medebach](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/medebach/) `/nordrhein-westfalen/hochsauerlandkreis/medebach/` | Hochsauerlandkreis | 1 | 7 | 10 |
+| ✓ | [Schmallenberg](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/schmallenberg/) `/nordrhein-westfalen/hochsauerlandkreis/schmallenberg/` | Hochsauerlandkreis | 1 | 7 | 10 |
+| ✓ | [Wachtendonk](https://hofladenliste.de/nordrhein-westfalen/kleve/wachtendonk/) `/nordrhein-westfalen/kleve/wachtendonk/` | Kreis Kleve | 1 | 7 | 10 |
+| ✓ | [Weeze](https://hofladenliste.de/nordrhein-westfalen/kleve/weeze/) `/nordrhein-westfalen/kleve/weeze/` | Kreis Kleve | 1 | 7 | 10 |
+| ✓ | [Heiligenhaus](https://hofladenliste.de/nordrhein-westfalen/mettmann/heiligenhaus/) `/nordrhein-westfalen/mettmann/heiligenhaus/` | Kreis Mettmann | 1 | 7 | 10 |
+| ✓ | [Mettmann](https://hofladenliste.de/nordrhein-westfalen/mettmann/mettmann/) `/nordrhein-westfalen/mettmann/mettmann/` | Kreis Mettmann | 1 | 7 | 10 |
+| ✓ | [Waltrop](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/waltrop/) `/nordrhein-westfalen/recklinghausen/waltrop/` | Kreis Recklinghausen | 1 | 7 | 10 |
+| ✓ | [Hürth](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/huerth/) `/nordrhein-westfalen/rhein-erft-kreis/huerth/` | Rhein-Erft-Kreis | 1 | 7 | 10 |
+| ✓ | [Pulheim](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/pulheim/) `/nordrhein-westfalen/rhein-erft-kreis/pulheim/` | Rhein-Erft-Kreis | 1 | 7 | 10 |
+| ✓ | [Niederkassel](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/niederkassel/) `/nordrhein-westfalen/rhein-sieg-kreis/niederkassel/` | Rhein-Sieg-Kreis | 1 | 7 | 10 |
+| ✓ | [Rheinbach](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/rheinbach/) `/nordrhein-westfalen/rhein-sieg-kreis/rheinbach/` | Rhein-Sieg-Kreis | 1 | 7 | 10 |
+| ✓ | [Lippetal](https://hofladenliste.de/nordrhein-westfalen/soest/lippetal/) `/nordrhein-westfalen/soest/lippetal/` | Kreis Soest | 1 | 7 | 10 |
+| ✓ | [Hünxe](https://hofladenliste.de/nordrhein-westfalen/wesel/huenxe/) `/nordrhein-westfalen/wesel/huenxe/` | Kreis Wesel | 1 | 7 | 10 |
+| ✓ | [Neukirchen-Vluyn](https://hofladenliste.de/nordrhein-westfalen/wesel/neukirchen-vluyn/) `/nordrhein-westfalen/wesel/neukirchen-vluyn/` | Kreis Wesel | 1 | 7 | 10 |
+| ✓ | [Limbach-Oberfrohna](https://hofladenliste.de/sachsen/zwickau/limbach-oberfrohna/) `/sachsen/zwickau/limbach-oberfrohna/` | Landkreis Zwickau | 1 | 7 | 10 |
+| ✓ | [Wildenfels](https://hofladenliste.de/sachsen/zwickau/wildenfels/) `/sachsen/zwickau/wildenfels/` | Landkreis Zwickau | 1 | 7 | 10 |
+| ✓ | [Barsbüttel](https://hofladenliste.de/schleswig-holstein/stormarn/barsbuettel/) `/schleswig-holstein/stormarn/barsbuettel/` | Kreis Stormarn | 1 | 7 | 10 |
+| ✓ | [Feldberger Seenlandschaft](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/` | Landkreis Mecklenburgische Seenplatte | 2 | 4 | 10 |
 
 ## Paket 18 (0/25 fertig)
 
