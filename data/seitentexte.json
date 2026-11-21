@@ -1918,5 +1918,791 @@
       }
     ],
     "stand": "2026-11-21"
+  },
+  "/bayern/erlangen/": {
+    "titel": "Hofläden in Erlangen: gut zu wissen",
+    "oben": "Erlangen liegt am Nordrand des Knoblauchslands, Tennenlohe und Eltersdorf gehören schon zum großen Gemüseanbaugebiet im Städtedreieck mit Nürnberg und Fürth. Die Hofläden im Stadtgebiet haben ein breites Angebot: Gemüse, Eier, Kartoffeln, Fleisch und oft auch Käse und Obst.",
+    "einleitung": "Östlich der Stadt beginnt die Fränkische Schweiz, eines der großen Kirschenanbaugebiete Deutschlands; zur Kirschblüte im April und zur Ernte im Juli lohnt ein Ausflug. Westlich im Aischgrund werden seit Jahrhunderten Karpfen gezüchtet, die im Herbst und Winter Saison haben.\n\nIn der Liste stehen über 20 Hofläden direkt in Erlangen, dazu zwei Milchtankstellen und Regiomaten. Weitere Höfe findest du im Landkreis Erlangen-Höchstadt und im Landkreis Forchheim.",
+    "faq": [
+      {
+        "frage": "Wann ist Karpfenzeit im Aischgrund?",
+        "antwort": "Traditionell in den Monaten mit „r“, also von September bis April. Im Herbst werden die Teiche abgefischt, dann gibt es frischen Karpfen direkt bei den Teichwirten."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Gemüse aus dem Knoblauchsland",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Kirschen aus der Fränkischen Schweiz",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Aischgründer Karpfen",
+        "zeit": "September bis April"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Erlangen-Höchstadt",
+        "pfad": "/bayern/erlangen-hoechstadt/"
+      },
+      {
+        "text": "Hofläden im Landkreis Forchheim",
+        "pfad": "/bayern/forchheim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/reutlingen/reutlingen/": {
+    "titel": "Hofläden in Reutlingen: gut zu wissen",
+    "oben": "Reutlingen liegt am Fuß der Schwäbischen Alb, und das Albvorland rund um die Stadt ist eine der großen Streuobstlandschaften Europas. Auf der Alb beginnt das UNESCO-Biosphärengebiet Schwäbische Alb mit Weidetieren, Linsen und Getreide.",
+    "einleitung": "Aus den Äpfeln und Birnen der Streuobstwiesen werden Saft, Most und Schnaps; viele Höfe verkaufen sie im Herbst direkt. Auf der Alb oberhalb der Stadt werden wieder Alblinsen angebaut, dazu kommen Fleisch von Weiderindern und Lämmern.\n\nIn Reutlingen stehen auffällig viele Regiomaten mit Eiern, Wurst und Nudeln, dazu eine Milchtankstelle. Weitere Höfe findest du im übrigen Landkreis Reutlingen und im Landkreis Esslingen.",
+    "saison": [
+      {
+        "titel": "Streuobst & Most",
+        "zeit": "September bis November"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Lamm von der Alb",
+        "zeit": "Frühjahr bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Reutlingen",
+        "pfad": "/baden-wuerttemberg/reutlingen/"
+      },
+      {
+        "text": "Hofläden im Landkreis Esslingen",
+        "pfad": "/baden-wuerttemberg/esslingen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/tuebingen/tuebingen/": {
+    "titel": "Hofläden in Tübingen: gut zu wissen",
+    "oben": "Rund um Tübingen treffen Neckartal, Ammertal und der Schönbuch zusammen. In den Teilorten wie Kilchberg, Hirschau oder Unterjesingen liegen Höfe mit Hofladen, und am Spitzberg wird sogar Wein angebaut. Dazu kommen mehr als zehn Regiomaten im Stadtgebiet.",
+    "einleitung": "An den Hängen des Neckartals stehen Streuobstwiesen, deren Äpfel zu Saft und Most werden. Auf den Höfen gibt es Eier, Kartoffeln, Fleisch und Käse, zum Teil aus Bioland-Betrieben.\n\nWer mit dem Rad unterwegs ist, kommt auf dem Neckartal-Radweg an vielen Höfen vorbei. Weitere Hofläden findest du im übrigen Landkreis Tübingen, etwa in Ammerbuch und Rottenburg, und im Landkreis Reutlingen.",
+    "saison": [
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Streuobst & Saft",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Wein vom Spitzberg",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ammerbuch und Umgebung",
+        "pfad": "/baden-wuerttemberg/tuebingen/ammerbuch/"
+      },
+      {
+        "text": "Hofläden im Landkreis Tübingen",
+        "pfad": "/baden-wuerttemberg/tuebingen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/darmstadt/": {
+    "titel": "Hofläden in Darmstadt: gut zu wissen",
+    "oben": "Darmstadt liegt zwischen Odenwald und dem Hessischen Ried, und in der Rheinebene westlich der Stadt wachsen Spargel, Erdbeeren und Gemüse. In der Liste stehen Hofläden, zwei Hofcafés, eine Solawi und Automaten mit Eiern und Honig.",
+    "einleitung": "Im Frühjahr verkaufen Spargel- und Erdbeerhöfe am Stadtrand und im Ried ihre Ernte an Ständen und im Hofladen. Südlich beginnt die Hessische Bergstraße, wo Wein, Mandeln und Obst im milden Klima gedeihen.\n\nWeitere Höfe findest du im Landkreis Darmstadt-Dieburg, der die Stadt umschließt, und im Kreis Groß-Gerau im Ried.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Äpfel aus dem Odenwald",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Darmstadt-Dieburg",
+        "pfad": "/hessen/darmstadt-dieburg/"
+      },
+      {
+        "text": "Hofläden im Kreis Groß-Gerau",
+        "pfad": "/hessen/gross-gerau/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/osnabrueck-stadt/": {
+    "titel": "Hofläden in Osnabrück: gut zu wissen",
+    "oben": "Osnabrück ist von Bauernland umgeben: Im Osnabrücker Land zwischen Wiehengebirge und Teutoburger Wald liegen viele Höfe mit Direktverkauf, und im südlichen Teil um Glandorf und Bad Iburg wird Spargel angebaut. In der Stadt gibt es Hofläden, Milchtankstellen und Regiomaten.",
+    "einleitung": "Typisch für die Gegend sind Fleisch und Wurst aus eigener Haltung, frische Milch, Kartoffeln und Spargel. Einige Höfe am Stadtrand wie Gut Muesenburg haben einen eigenen Hofladen.\n\nWeitere Höfe findest du im Landkreis Osnabrück, der die Stadt ganz umschließt, und im Kreis Steinfurt jenseits der Landesgrenze.",
+    "saison": [
+      {
+        "titel": "Spargel aus dem Osnabrücker Land",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Osnabrück",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/"
+      },
+      {
+        "text": "Hofläden im Kreis Steinfurt",
+        "pfad": "/nordrhein-westfalen/steinfurt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/wuerzburg-stadt/": {
+    "titel": "Hofläden in Würzburg: gut zu wissen",
+    "oben": "Würzburg ist das Zentrum des Weinlands Franken: Rund um die Stadt stehen Reben an den Mainhängen, und der Frankenwein wird traditionell im bauchigen Bocksbeutel abgefüllt. Viele Winzer verkaufen ab Hof, dazu kommen Hofläden, Bauernmärkte und Imkereien.",
+    "einleitung": "Mainabwärts und -aufwärts liegen Weinorte mit Heckenwirtschaften, die nur zu bestimmten Zeiten im Jahr öffnen. Bei Kitzingen und Albertshofen östlich der Stadt liegt außerdem ein bekanntes Gemüseanbaugebiet für Salat, Gurken und Feingemüse.\n\nWeitere Höfe findest du im Landkreis Würzburg und im Landkreis Kitzingen.",
+    "faq": [
+      {
+        "frage": "Was ist eine Heckenwirtschaft?",
+        "antwort": "In Franken dürfen Winzer ihren eigenen Wein einige Wochen im Jahr in einer einfachen Wirtschaft ausschenken, meist mit kleinen Brotzeiten. Wann eine Heckenwirtschaft geöffnet hat, steht meist am Hof angeschrieben."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse aus Albertshofen",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Frankenwein",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Würzburg",
+        "pfad": "/bayern/landkreis-wuerzburg/"
+      },
+      {
+        "text": "Hofläden im Landkreis Kitzingen",
+        "pfad": "/bayern/kitzingen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ulm/": {
+    "titel": "Hofläden in Ulm: gut zu wissen",
+    "oben": "Ulm liegt an der Donau, an der Grenze zwischen Baden-Württemberg und Bayern: Nördlich steigt die Schwäbische Alb an, südlich beginnt Oberschwaben. In Ulm stehen auffällig viele Regiomaten mit Fleisch, Eiern und Nudeln, dazu eine Milchtankstelle, eine Solawi und ein Spargel- und Beerenhof.",
+    "einleitung": "Auf der Ulmer Alb und im Alb-Donau-Kreis liegen Höfe mit Getreide, Kartoffeln und Tierhaltung; im Donautal werden Spargel und Beeren angebaut. Viele Höfe verkaufen Wurst und Fleisch aus eigener Schlachtung.\n\nJenseits der Donau liegt Neu-Ulm mit weiteren Hofläden. Mehr findest du im Alb-Donau-Kreis und im Landkreis Neu-Ulm.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Beeren",
+        "zeit": "Juni bis August"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Alb-Donau-Kreis",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/"
+      },
+      {
+        "text": "Hofläden im Landkreis Neu-Ulm",
+        "pfad": "/bayern/neu-ulm/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/werra-meissner-kreis/witzenhausen/": {
+    "titel": "Hofläden in Witzenhausen: gut zu wissen",
+    "oben": "Witzenhausen an der Werra ist die Kirschenstadt: Rund um den Ort liegt eines der größten Kirschenanbaugebiete Deutschlands, zur Blüte im April ist das Tal weiß. Die Universität Kassel bildet hier ökologische Landwirte aus, und entsprechend viele Bio-Höfe und eine Solawi stehen in der Liste.",
+    "einleitung": "Im Juli werden die Kirschen geerntet, viele Höfe verkaufen sie dann an Ständen, und in der Stadt wird Kirschenmarkt gefeiert. Neben Obst gibt es Eier, Geflügel und Fleisch von Höfen im Werratal und auf den Höhen ringsum.\n\nWeitere Höfe findest du im übrigen Werra-Meißner-Kreis und im Landkreis Kassel.",
+    "faq": [
+      {
+        "frage": "Wann ist Kirschenzeit in Witzenhausen?",
+        "antwort": "Die Bäume blühen meist im April, geerntet wird je nach Sorte von Ende Juni bis Ende Juli. In dieser Zeit verkaufen viele Höfe frische Kirschen direkt."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Kirschblüte",
+        "zeit": "April"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juli"
+      },
+      {
+        "titel": "Äpfel & Zwetschgen",
+        "zeit": "August bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Werra-Meißner-Kreis",
+        "pfad": "/hessen/werra-meissner-kreis/"
+      },
+      {
+        "text": "Hofläden im Landkreis Kassel",
+        "pfad": "/hessen/landkreis-kassel/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/goettingen/goettingen/": {
+    "titel": "Hofläden in Göttingen: gut zu wissen",
+    "oben": "Göttingen liegt im Leinetal zwischen Göttinger Wald und Solling-Vorland, und rund um die Stadt wachsen Erdbeeren, Beeren und Getreide. In der Liste stehen zehn Hofläden in Göttingen, dazu eine Milchtankstelle und Automaten mit Eiern.",
+    "einleitung": "Im Frühsommer sind Erdbeeren und Beeren das große Thema, mehrere Beerenhöfe verkaufen dann ab Feld. Im Herbst folgen Kartoffeln und Äpfel. Östlich der Stadt beginnt das Eichsfeld, bekannt für seine luftgetrocknete Mettwurst.\n\nWeitere Höfe findest du im übrigen Landkreis Göttingen und im Thüringer Eichsfeld.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Beeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Göttingen",
+        "pfad": "/niedersachsen/goettingen/"
+      },
+      {
+        "text": "Hofläden im Landkreis Eichsfeld",
+        "pfad": "/thueringen/eichsfeld/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/rhein-kreis-neuss/dormagen/": {
+    "titel": "Hofläden in Dormagen: gut zu wissen",
+    "oben": "Dormagen liegt am Rhein zwischen Köln und Düsseldorf, und auf den Feldern ringsum wird viel Spargel gestochen: Mehrere Spargelhöfe stehen in der Liste. Dazu kommen eine Bauernkäserei, ein Hofcafé und auffällig viele Imkereien.",
+    "einleitung": "Im Frühjahr verkaufen die Spargelhöfe an Ständen und im Hofladen, danach folgen Erdbeeren und Feldgemüse. Käse, Eier und Geflügel gibt es das ganze Jahr. Ein Ausflugsziel mit Höfen in der Nähe ist die mittelalterliche Zollfeste Zons am Rhein.\n\nWeitere Höfe findest du im übrigen Rhein-Kreis Neuss und rund um Köln.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Rhein-Kreis Neuss",
+        "pfad": "/nordrhein-westfalen/rhein-kreis-neuss/"
+      },
+      {
+        "text": "Hofläden in Köln und Umgebung",
+        "pfad": "/nordrhein-westfalen/koeln/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/leverkusen/": {
+    "titel": "Hofläden in Leverkusen: gut zu wissen",
+    "oben": "Leverkusen ist mehr als Chemie und Fußball: Am Übergang vom Rheintal ins Bergische Land liegen Bauernhöfe und Obstgüter wie das Obstgut Morsbroich. In der Liste stehen gut ein Dutzend Hofläden mit Obst, Eiern, Kartoffeln und Fleisch.",
+    "einleitung": "Östlich der Stadt steigt das Bergische Land an, mit Grünland, Kühen und kleinen Höfen. In den Hofläden gibt es Äpfel, Birnen und Säfte, Eier aus eigener Haltung und im Winter oft Geflügel.\n\nWeitere Höfe findest du im Rheinisch-Bergischen Kreis und im Kreis Mettmann.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Äpfel & Birnen",
+        "zeit": "August bis Oktober"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Rheinisch-Bergischen Kreis",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/"
+      },
+      {
+        "text": "Hofläden im Kreis Mettmann",
+        "pfad": "/nordrhein-westfalen/mettmann/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/tuebingen/ammerbuch/": {
+    "titel": "Hofläden in Ammerbuch: gut zu wissen",
+    "oben": "Ammerbuch liegt im Ammertal zwischen Tübingen und Herrenberg, am Rand des Naturparks Schönbuch. Für eine Gemeinde dieser Größe gibt es hier besonders viele Höfe mit Direktverkauf: fast 30 Einträge, vom Hofladen über Regiomaten bis zur Solawi.",
+    "einleitung": "Auf den Feldern des Ammertals und im angrenzenden Gäu wachsen Getreide, Kartoffeln und Gemüse, an den Hängen Streuobst. Die Hofläden verkaufen Saft und Most, Eier, Honig, Nudeln und Fleisch, viele Regiomaten sind rund um die Uhr erreichbar.\n\nDie Ammertalbahn verbindet die Ortsteile mit Tübingen und Herrenberg. Weitere Höfe findest du im übrigen Landkreis Tübingen und im Landkreis Böblingen.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Streuobst & Most",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Tübingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/tuebingen/tuebingen/"
+      },
+      {
+        "text": "Hofläden im Landkreis Böblingen",
+        "pfad": "/baden-wuerttemberg/boeblingen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/solingen/": {
+    "titel": "Hofläden in Solingen: gut zu wissen",
+    "oben": "Solingen liegt im Bergischen Land hoch über der Wupper, und zwischen den Stadtteilen gibt es viel Grün mit Wiesen, Wald und Bauernhöfen. In der Liste stehen Hofläden wie der Biohof Nau und Gut Hohenscheid sowie zwei Regiomaten.",
+    "einleitung": "Typisch für die Höfe im Bergischen sind Milchkühe und Grünland; in den Hofläden gibt es Eier, Milch, Fleisch und Gemüse. Das Wuppertal mit der Müngstener Brücke und Schloss Burg ist ein beliebtes Ausflugsziel, an den Wanderwegen liegen auch Höfe.\n\nWeitere Höfe findest du in Wuppertal und im Kreis Mettmann.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Milch & Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wuppertal und Umgebung",
+        "pfad": "/nordrhein-westfalen/wuppertal/"
+      },
+      {
+        "text": "Hofläden im Kreis Mettmann",
+        "pfad": "/nordrhein-westfalen/mettmann/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/brandenburg/cottbus/": {
+    "titel": "Hofläden in Cottbus: gut zu wissen",
+    "oben": "Cottbus liegt zwischen Spreewald und Lausitzer Seenland: Nordwestlich der Stadt beginnen bei Burg die Fließe des Spreewalds mit seinen Gurken, nordöstlich liegen die Teiche bei Peitz mit dem Peitzer Karpfen. In der Stadt selbst gibt es eine Milchtankstelle mit Frischmilch aus Drebkau.",
+    "einleitung": "Die Spreewälder Gurke ist seit 1999 als Herkunftsbezeichnung geschützt, der Peitzer Karpfen seit 2022. Rund um Cottbus verkaufen Höfe außerdem Spargel, Erdbeeren, Kartoffeln, Honig und Leinöl.\n\nWo früher Braunkohle gefördert wurde, entsteht am Rand der Stadt der Cottbuser Ostsee. Für die Auswahl lohnt der Blick ins Umland: Weitere Höfe findest du im Landkreis Spree-Neiße, der Cottbus umschließt.",
+    "faq": [
+      {
+        "frage": "Wann gibt es frischen Peitzer Karpfen?",
+        "antwort": "Im Herbst, wenn die Teiche bei Peitz abgefischt werden. Dann verkaufen viele Teichwirte frischen Karpfen direkt, die Saison reicht bis in den Winter."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Spreewälder Gurken",
+        "zeit": "Ernte im Hochsommer"
+      },
+      {
+        "titel": "Peitzer Karpfen",
+        "zeit": "Abfischen im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Spree-Neiße",
+        "pfad": "/brandenburg/spree-neisse/"
+      },
+      {
+        "text": "Hofläden in Burg (Spreewald) und Umgebung",
+        "pfad": "/brandenburg/spree-neisse/burg-spreewald/"
+      }
+    ],
+    "quellen": [
+      {
+        "titel": "EU-Kommission: Peitzer Karpfen geschützt (2022)",
+        "url": "https://germany.representation.ec.europa.eu/news/peitzer-karpfen-erhalt-geografisches-schutzsiegel-2022-10-05_de"
+      },
+      {
+        "titel": "Lebensmittel Praxis: Spreewald-Gurken",
+        "url": "https://lebensmittelpraxis.de/industrie-aktuell/29025-spreewald-gurken-schlechte-ernte-2020-11-10-10-45-06.html"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/bodenseekreis/tettnang/": {
+    "titel": "Hofläden in Tettnang: gut zu wissen",
+    "oben": "Tettnang ist die Hopfenstadt am Bodensee: Der Tettnanger Hopfen ist als geschützte Ursprungsbezeichnung eingetragen, und im Spätsommer prägen die hohen Hopfengärten das Hinterland. Daneben ist Obst das große Thema, fast die Hälfte der Hofläden in der Liste verkauft Äpfel und Co.",
+    "einleitung": "Zwischen Hopfengärten und Obstplantagen liegen über 20 Hofläden, dazu Regiomaten, ein Grillfleischautomat und eine Milchtankstelle. Viele Obsthöfe verkaufen frisch gepressten Saft und Most.\n\nRund um Tettnang führen Rad- und Wanderwege durch die Hopfenlandschaft. Weitere Höfe findest du in Friedrichshafen und im übrigen Bodenseekreis.",
+    "faq": [
+      {
+        "frage": "Wann ist Hopfenernte in Tettnang?",
+        "antwort": "Meist Ende August bis Mitte September. Dann werden die Reben in den Hopfengärten abgeschnitten und die Dolden auf den Höfen gepflückt und getrocknet."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Hopfenernte",
+        "zeit": "Ende August bis September"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Friedrichshafen und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/friedrichshafen/"
+      },
+      {
+        "text": "Hofläden im Bodenseekreis",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/lahn-dill-kreis/wetzlar/": {
+    "titel": "Hofläden in Wetzlar: gut zu wissen",
+    "oben": "Wetzlar liegt an der Lahn, wo die Dill einmündet, umgeben von Wäldern und Wiesen des Lahn-Dill-Berglands. In der Stadt selbst ist bisher eine Imkerei eingetragen, die meisten Höfe der Liste liegen in den Dörfern ringsum.",
+    "einleitung": "Im Lahntal und auf den Höhen von Westerwald und Taunus liegen Höfe mit Grünland, Rindern und Schafen, dazu Streuobstwiesen. In den Hofläden gibt es Fleisch und Wurst, Eier, Kartoffeln und Apfelsaft.\n\nDer Lahntalradweg verbindet Wetzlar mit Gießen und Limburg, an der Strecke liegen weitere Höfe. Kennst du einen Hofladen in Wetzlar, der hier fehlt? Trag ihn ein.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Apfelsaft von Streuobstwiesen",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Lahn-Dill-Kreis",
+        "pfad": "/hessen/lahn-dill-kreis/"
+      },
+      {
+        "text": "Hofläden im Landkreis Gießen",
+        "pfad": "/hessen/giessen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/fuerth-stadt/": {
+    "titel": "Hofläden in Fürth: gut zu wissen",
+    "oben": "Ein Teil des Knoblauchslands gehört zu Fürth: In Poppenreuth, Ronhof und Kronach bauen Familienbetriebe Gemüse an. Dazu kommen Bioland-Hofläden, zwei Milchtankstellen und auffällig viele Regiomaten mit Eiern, Kartoffeln und Nudeln.",
+    "einleitung": "Das Knoblauchsland zwischen Fürth, Nürnberg und Erlangen ist das größte zusammenhängende Gemüseanbaugebiet Bayerns. Im Sommer verkaufen die Höfe Salate, Gurken und Tomaten frisch vom Feld, im Herbst Kraut und Lagergemüse.\n\nWeitere Höfe findest du im Landkreis Fürth westlich der Stadt und in Nürnberg.",
+    "saison": [
+      {
+        "titel": "Gemüse aus dem Knoblauchsland",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Fürth",
+        "pfad": "/bayern/landkreis-fuerth/"
+      },
+      {
+        "text": "Hofläden in Nürnberg und Umgebung",
+        "pfad": "/bayern/nuernberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/rhein-kreis-neuss/grevenbroich/": {
+    "titel": "Hofläden in Grevenbroich: gut zu wissen",
+    "oben": "Grevenbroich liegt an der Erft im Rheinischen Revier, zwischen Braunkohletagebau und weiten Ackerflächen. Auf den fruchtbaren Lössböden wachsen Getreide, Zuckerrüben, Spargel und Gemüse; in der Liste stehen rund 20 Einträge, darunter ein Spargelgarten und mehrere Imkereien.",
+    "einleitung": "Im Frühjahr verkaufen Spargelhöfe frisch gestochenen Spargel, im Sommer gibt es Erdbeeren und Feldgemüse. Honig kommt von mehreren Imkereien direkt im Stadtgebiet.\n\nWeitere Höfe findest du im übrigen Rhein-Kreis Neuss, etwa in Dormagen und Neuss.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dormagen und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-kreis-neuss/dormagen/"
+      },
+      {
+        "text": "Hofläden im Rhein-Kreis Neuss",
+        "pfad": "/nordrhein-westfalen/rhein-kreis-neuss/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/viersen/viersen/": {
+    "titel": "Hofläden in Viersen: gut zu wissen",
+    "oben": "Viersen liegt am Niederrhein nahe der niederländischen Grenze, zwischen Feldern und dem Naturpark Schwalm-Nette. Typisch für die Höfe hier sind Kartoffeln, Eier und Gemüse; in der Liste stehen Bauernläden und viele Regiomaten.",
+    "einleitung": "Im Kreis Viersen wird viel Spargel angebaut, etwa in Brüggen, und im Sommer gibt es Erdbeeren und Feldgemüse. Kartoffeln in vielen Sorten bekommst du in den Hofläden und an Automaten fast das ganze Jahr.\n\nWeitere Höfe findest du im übrigen Kreis Viersen und in Mönchengladbach.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Frühjahr"
+      },
+      {
+        "titel": "Freilandeier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Viersen",
+        "pfad": "/nordrhein-westfalen/viersen/"
+      },
+      {
+        "text": "Hofläden in Mönchengladbach und Umgebung",
+        "pfad": "/nordrhein-westfalen/moenchengladbach/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/heilbronn-stadt/": {
+    "titel": "Hofläden in Heilbronn: gut zu wissen",
+    "oben": "Heilbronn ist eine der großen Weinstädte Württembergs: Rund um den Wartberg und an den Neckarhängen stehen Reben, und viele Weingüter verkaufen ab Hof. Dazu kommen Hofläden, eine Gärtnerei und ein Fleischautomat.",
+    "einleitung": "Typische Rebsorten im Heilbronner Land sind Trollinger, Lemberger und Riesling. Zur Lese im Herbst finden Weinfeste statt, und in den Besenwirtschaften gibt es Wein mit Vesper.\n\nIm Umland wachsen außerdem Obst, Spargel und Gemüse. Weitere Höfe findest du im Landkreis Heilbronn.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Wein vom Neckar",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Heilbronn",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/herne/": {
+    "titel": "Hofläden in Herne: gut zu wissen",
+    "oben": "Herne ist eine der am dichtesten besiedelten Städte Deutschlands, Hofläden gibt es hier nur wenige. In der Liste stehen zwei Einträge im Stadtgebiet, die übrigen Höfe liegen in den Nachbarstädten und im Kreis Recklinghausen.",
+    "einleitung": "Rund um Herne gehören viele Flächen zum Emscher Landschaftspark, wo Landwirte Hofläden, Bauernhofcafés und Angebote für Familien betreiben. Die Liste zeigt alle Höfe im Umkreis, sortiert nach Entfernung.\n\nWeitere Höfe findest du in Bochum und im Kreis Recklinghausen. Kennst du einen Hofladen in Herne, der hier fehlt? Trag ihn ein.",
+    "saison": [
+      {
+        "titel": "Spargel & Erdbeeren",
+        "zeit": "April bis Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bochum und Umgebung",
+        "pfad": "/nordrhein-westfalen/bochum/"
+      },
+      {
+        "text": "Hofläden im Kreis Recklinghausen",
+        "pfad": "/nordrhein-westfalen/recklinghausen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/kleve/kevelaer/": {
+    "titel": "Hofläden in Kevelaer: gut zu wissen",
+    "oben": "Kevelaer kennen viele als Wallfahrtsort, doch rundherum ist Gartenbauland: Zwischen Kevelaer, Geldern und Straelen stehen viele Gewächshäuser und Gemüsefelder. In der Liste stehen Hofläden, ein Bauernhofcafé und Spargel- und Erdbeerhöfe.",
+    "einleitung": "Ganz in der Nähe liegt Walbeck, bekannt für seinen Spargel. Im Frühjahr verkaufen viele Höfe Spargel und Erdbeeren, im Sommer Gemüse aus dem Freiland und unter Glas, im Herbst Kartoffeln und Kürbisse.\n\nWeitere Höfe findest du im übrigen Kreis Kleve und im Kreis Viersen.",
+    "saison": [
+      {
+        "titel": "Walbecker Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Gemüse vom Niederrhein",
+        "zeit": "Frühjahr bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Kleve",
+        "pfad": "/nordrhein-westfalen/kleve/"
+      },
+      {
+        "text": "Hofläden im Kreis Viersen",
+        "pfad": "/nordrhein-westfalen/viersen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/rheinland-pfalz/ludwigshafen-am-rhein/": {
+    "titel": "Hofläden in Ludwigshafen: gut zu wissen",
+    "oben": "Ludwigshafen liegt am Rand der Vorderpfalz, eines der größten Gemüseanbaugebiete Deutschlands. Auf den Feldern zwischen Rhein und Haardt wachsen Salate, Radieschen, Rettich, Möhren und Spargel, und viele Gemüsehöfe verkaufen direkt.",
+    "einleitung": "Bekannt ist Schifferstadt südwestlich der Stadt als Rettichstadt. Durch das milde Klima beginnt die Saison hier früh, und manche Kulturen werden mehrmals im Jahr geerntet.\n\nWestlich beginnt die Deutsche Weinstraße mit Weingütern, die ab Hof verkaufen. Weitere Höfe findest du im Rhein-Pfalz-Kreis und im Landkreis Bad Dürkheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Pfälzer Gemüse",
+        "zeit": "März bis November"
+      },
+      {
+        "titel": "Wein von der Weinstraße",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Rhein-Pfalz-Kreis",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/"
+      },
+      {
+        "text": "Hofläden im Landkreis Bad Dürkheim",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/mettmann/velbert/": {
+    "titel": "Hofläden in Velbert: gut zu wissen",
+    "oben": "Velbert liegt im Niederbergischen Land zwischen Ruhr und Wupper, und zwischen den Stadtteilen Langenberg, Neviges und Velbert-Mitte gibt es viele Höfe auf den Hügeln. In der Liste stehen Hofläden, ein Hofcafé, eine Hofkooperative und Automaten mit Eiern.",
+    "einleitung": "Typisch für die Gegend sind Grünland und Viehhaltung; in den Hofläden gibt es Eier, Milch, Fleisch, Kartoffeln und Gemüse. Manche Höfe sind als Ausflugsziel mit Hofcafé bekannt.\n\nWeitere Höfe findest du im übrigen Kreis Mettmann und im Ennepe-Ruhr-Kreis.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier & Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Mettmann",
+        "pfad": "/nordrhein-westfalen/mettmann/"
+      },
+      {
+        "text": "Hofläden im Ennepe-Ruhr-Kreis",
+        "pfad": "/nordrhein-westfalen/ennepe-ruhr-kreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/ennepe-ruhr-kreis/witten/": {
+    "titel": "Hofläden in Witten: gut zu wissen",
+    "oben": "Witten liegt im grünen Ruhrtal, wo im Muttental einst der Ruhrbergbau begann. Heute liegen an den Hängen Höfe mit Hofladen, Eierautomaten und einer Milchtankstelle, dazu eine Solawi.",
+    "einleitung": "Auffällig in der Liste sind die drei Eierautomaten und die Kartoffelhöfe. Im Sommer gibt es Obst und Erdbeeren, im Herbst Kartoffeln. Mehrere Imkereien verkaufen Honig aus dem Ruhrtal.\n\nDer Ruhrtalradweg verbindet Witten mit Bochum und Hattingen. Weitere Höfe findest du im übrigen Ennepe-Ruhr-Kreis.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Ennepe-Ruhr-Kreis",
+        "pfad": "/nordrhein-westfalen/ennepe-ruhr-kreis/"
+      },
+      {
+        "text": "Hofläden in Bochum und Umgebung",
+        "pfad": "/nordrhein-westfalen/bochum/"
+      }
+    ],
+    "stand": "2026-11-21"
   }
 }

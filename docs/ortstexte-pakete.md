@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 51 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 76 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -63,35 +63,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Euskirchen](https://hofladenliste.de/nordrhein-westfalen/euskirchen/euskirchen/) `/nordrhein-westfalen/euskirchen/euskirchen/` | Kreis Euskirchen | 2 | 34 | 40 |
 | ✓ | [Ingolstadt](https://hofladenliste.de/bayern/ingolstadt/) `/bayern/ingolstadt/` | Ingolstadt | 5 | 25 | 40 |
 
-## Paket 3 (0/25 fertig)
+## Paket 3 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Erlangen](https://hofladenliste.de/bayern/erlangen/) `/bayern/erlangen/` | Erlangen | 4 | 27 | 39 |
-|  | [Reutlingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/reutlingen/) `/baden-wuerttemberg/reutlingen/reutlingen/` | Landkreis Reutlingen | 6 | 21 | 39 |
-|  | [Tübingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/tuebingen/) `/baden-wuerttemberg/tuebingen/tuebingen/` | Landkreis Tübingen | 4 | 26 | 38 |
-|  | [Darmstadt](https://hofladenliste.de/hessen/darmstadt/) `/hessen/darmstadt/` | Darmstadt | 8 | 14 | 38 |
-|  | [Osnabrück](https://hofladenliste.de/niedersachsen/osnabrueck-stadt/) `/niedersachsen/osnabrueck-stadt/` | Osnabrück | 9 | 10 | 37 |
-|  | [Würzburg](https://hofladenliste.de/bayern/wuerzburg-stadt/) `/bayern/wuerzburg-stadt/` | Würzburg | 8 | 12 | 36 |
-|  | [Ulm](https://hofladenliste.de/baden-wuerttemberg/ulm/) `/baden-wuerttemberg/ulm/` | Ulm | 6 | 17 | 35 |
-|  | [Witzenhausen](https://hofladenliste.de/hessen/werra-meissner-kreis/witzenhausen/) `/hessen/werra-meissner-kreis/witzenhausen/` | Werra-Meißner-Kreis | 6 | 16 | 34 |
-|  | [Göttingen](https://hofladenliste.de/niedersachsen/goettingen/goettingen/) `/niedersachsen/goettingen/goettingen/` | Landkreis Göttingen | 7 | 13 | 34 |
-|  | [Dormagen](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/dormagen/) `/nordrhein-westfalen/rhein-kreis-neuss/dormagen/` | Rhein-Kreis Neuss | 4 | 21 | 33 |
-|  | [Leverkusen](https://hofladenliste.de/nordrhein-westfalen/leverkusen/) `/nordrhein-westfalen/leverkusen/` | Leverkusen | 6 | 15 | 33 |
-|  | [Ammerbuch](https://hofladenliste.de/baden-wuerttemberg/tuebingen/ammerbuch/) `/baden-wuerttemberg/tuebingen/ammerbuch/` | Landkreis Tübingen | 1 | 29 | 32 |
-|  | [Solingen](https://hofladenliste.de/nordrhein-westfalen/solingen/) `/nordrhein-westfalen/solingen/` | Solingen | 8 | 8 | 32 |
-|  | [Cottbus](https://hofladenliste.de/brandenburg/cottbus/) `/brandenburg/cottbus/` | Cottbus | 10 | 2 | 32 |
-|  | [Tettnang](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/tettnang/) `/baden-wuerttemberg/bodenseekreis/tettnang/` | Bodenseekreis | 1 | 28 | 31 |
-|  | [Wetzlar](https://hofladenliste.de/hessen/lahn-dill-kreis/wetzlar/) `/hessen/lahn-dill-kreis/wetzlar/` | Lahn-Dill-Kreis | 10 | 1 | 31 |
-|  | [Fürth](https://hofladenliste.de/bayern/fuerth-stadt/) `/bayern/fuerth-stadt/` | Fürth | 5 | 15 | 30 |
-|  | [Grevenbroich](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/grevenbroich/) `/nordrhein-westfalen/rhein-kreis-neuss/grevenbroich/` | Rhein-Kreis Neuss | 3 | 20 | 29 |
-|  | [Viersen](https://hofladenliste.de/nordrhein-westfalen/viersen/viersen/) `/nordrhein-westfalen/viersen/viersen/` | Kreis Viersen | 4 | 17 | 29 |
-|  | [Heilbronn](https://hofladenliste.de/baden-wuerttemberg/heilbronn-stadt/) `/baden-wuerttemberg/heilbronn-stadt/` | Heilbronn | 6 | 11 | 29 |
-|  | [Herne](https://hofladenliste.de/nordrhein-westfalen/herne/) `/nordrhein-westfalen/herne/` | Herne | 9 | 2 | 29 |
-|  | [Kevelaer](https://hofladenliste.de/nordrhein-westfalen/kleve/kevelaer/) `/nordrhein-westfalen/kleve/kevelaer/` | Kreis Kleve | 5 | 13 | 28 |
-|  | [Ludwigshafen am Rhein](https://hofladenliste.de/rheinland-pfalz/ludwigshafen-am-rhein/) `/rheinland-pfalz/ludwigshafen-am-rhein/` | Ludwigshafen am Rhein | 7 | 7 | 28 |
-|  | [Velbert](https://hofladenliste.de/nordrhein-westfalen/mettmann/velbert/) `/nordrhein-westfalen/mettmann/velbert/` | Kreis Mettmann | 4 | 15 | 27 |
-|  | [Witten](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/witten/) `/nordrhein-westfalen/ennepe-ruhr-kreis/witten/` | Ennepe-Ruhr-Kreis | 5 | 12 | 27 |
+| ✓ | [Erlangen](https://hofladenliste.de/bayern/erlangen/) `/bayern/erlangen/` | Erlangen | 4 | 27 | 39 |
+| ✓ | [Reutlingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/reutlingen/) `/baden-wuerttemberg/reutlingen/reutlingen/` | Landkreis Reutlingen | 6 | 21 | 39 |
+| ✓ | [Tübingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/tuebingen/) `/baden-wuerttemberg/tuebingen/tuebingen/` | Landkreis Tübingen | 4 | 26 | 38 |
+| ✓ | [Darmstadt](https://hofladenliste.de/hessen/darmstadt/) `/hessen/darmstadt/` | Darmstadt | 8 | 14 | 38 |
+| ✓ | [Osnabrück](https://hofladenliste.de/niedersachsen/osnabrueck-stadt/) `/niedersachsen/osnabrueck-stadt/` | Osnabrück | 9 | 10 | 37 |
+| ✓ | [Würzburg](https://hofladenliste.de/bayern/wuerzburg-stadt/) `/bayern/wuerzburg-stadt/` | Würzburg | 8 | 12 | 36 |
+| ✓ | [Ulm](https://hofladenliste.de/baden-wuerttemberg/ulm/) `/baden-wuerttemberg/ulm/` | Ulm | 6 | 17 | 35 |
+| ✓ | [Witzenhausen](https://hofladenliste.de/hessen/werra-meissner-kreis/witzenhausen/) `/hessen/werra-meissner-kreis/witzenhausen/` | Werra-Meißner-Kreis | 6 | 16 | 34 |
+| ✓ | [Göttingen](https://hofladenliste.de/niedersachsen/goettingen/goettingen/) `/niedersachsen/goettingen/goettingen/` | Landkreis Göttingen | 7 | 13 | 34 |
+| ✓ | [Dormagen](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/dormagen/) `/nordrhein-westfalen/rhein-kreis-neuss/dormagen/` | Rhein-Kreis Neuss | 4 | 21 | 33 |
+| ✓ | [Leverkusen](https://hofladenliste.de/nordrhein-westfalen/leverkusen/) `/nordrhein-westfalen/leverkusen/` | Leverkusen | 6 | 15 | 33 |
+| ✓ | [Ammerbuch](https://hofladenliste.de/baden-wuerttemberg/tuebingen/ammerbuch/) `/baden-wuerttemberg/tuebingen/ammerbuch/` | Landkreis Tübingen | 1 | 29 | 32 |
+| ✓ | [Solingen](https://hofladenliste.de/nordrhein-westfalen/solingen/) `/nordrhein-westfalen/solingen/` | Solingen | 8 | 8 | 32 |
+| ✓ | [Cottbus](https://hofladenliste.de/brandenburg/cottbus/) `/brandenburg/cottbus/` | Cottbus | 10 | 2 | 32 |
+| ✓ | [Tettnang](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/tettnang/) `/baden-wuerttemberg/bodenseekreis/tettnang/` | Bodenseekreis | 1 | 28 | 31 |
+| ✓ | [Wetzlar](https://hofladenliste.de/hessen/lahn-dill-kreis/wetzlar/) `/hessen/lahn-dill-kreis/wetzlar/` | Lahn-Dill-Kreis | 10 | 1 | 31 |
+| ✓ | [Fürth](https://hofladenliste.de/bayern/fuerth-stadt/) `/bayern/fuerth-stadt/` | Fürth | 5 | 15 | 30 |
+| ✓ | [Grevenbroich](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/grevenbroich/) `/nordrhein-westfalen/rhein-kreis-neuss/grevenbroich/` | Rhein-Kreis Neuss | 3 | 20 | 29 |
+| ✓ | [Viersen](https://hofladenliste.de/nordrhein-westfalen/viersen/viersen/) `/nordrhein-westfalen/viersen/viersen/` | Kreis Viersen | 4 | 17 | 29 |
+| ✓ | [Heilbronn](https://hofladenliste.de/baden-wuerttemberg/heilbronn-stadt/) `/baden-wuerttemberg/heilbronn-stadt/` | Heilbronn | 6 | 11 | 29 |
+| ✓ | [Herne](https://hofladenliste.de/nordrhein-westfalen/herne/) `/nordrhein-westfalen/herne/` | Herne | 9 | 2 | 29 |
+| ✓ | [Kevelaer](https://hofladenliste.de/nordrhein-westfalen/kleve/kevelaer/) `/nordrhein-westfalen/kleve/kevelaer/` | Kreis Kleve | 5 | 13 | 28 |
+| ✓ | [Ludwigshafen am Rhein](https://hofladenliste.de/rheinland-pfalz/ludwigshafen-am-rhein/) `/rheinland-pfalz/ludwigshafen-am-rhein/` | Ludwigshafen am Rhein | 7 | 7 | 28 |
+| ✓ | [Velbert](https://hofladenliste.de/nordrhein-westfalen/mettmann/velbert/) `/nordrhein-westfalen/mettmann/velbert/` | Kreis Mettmann | 4 | 15 | 27 |
+| ✓ | [Witten](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/witten/) `/nordrhein-westfalen/ennepe-ruhr-kreis/witten/` | Ennepe-Ruhr-Kreis | 5 | 12 | 27 |
 
 ## Paket 4 (0/25 fertig)
 
