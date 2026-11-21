@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 376 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 401 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -453,35 +453,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Erding](https://hofladenliste.de/bayern/erding/erding/) `/bayern/erding/erding/` | Landkreis Erding | 1 | 7 | 10 |
 | ✓ | [Moosinning](https://hofladenliste.de/bayern/erding/moosinning/) `/bayern/erding/moosinning/` | Landkreis Erding | 1 | 7 | 10 |
 
-## Paket 16 (0/25 fertig)
+## Paket 16 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Oberding](https://hofladenliste.de/bayern/erding/oberding/) `/bayern/erding/oberding/` | Landkreis Erding | 1 | 7 | 10 |
-|  | [Gräfenberg](https://hofladenliste.de/bayern/forchheim/graefenberg/) `/bayern/forchheim/graefenberg/` | Landkreis Forchheim | 1 | 7 | 10 |
-|  | [Fahrenzhausen](https://hofladenliste.de/bayern/freising/fahrenzhausen/) `/bayern/freising/fahrenzhausen/` | Landkreis Freising | 1 | 7 | 10 |
-|  | [Olching](https://hofladenliste.de/bayern/fuerstenfeldbruck/olching/) `/bayern/fuerstenfeldbruck/olching/` | Landkreis Fürstenfeldbruck | 1 | 7 | 10 |
-|  | [Bobingen](https://hofladenliste.de/bayern/landkreis-augsburg/bobingen/) `/bayern/landkreis-augsburg/bobingen/` | Landkreis Augsburg | 1 | 7 | 10 |
-|  | [Cadolzburg](https://hofladenliste.de/bayern/landkreis-fuerth/cadolzburg/) `/bayern/landkreis-fuerth/cadolzburg/` | Landkreis Fürth | 1 | 7 | 10 |
-|  | [Kumhausen](https://hofladenliste.de/bayern/landkreis-landshut/kumhausen/) `/bayern/landkreis-landshut/kumhausen/` | Landkreis Landshut | 1 | 7 | 10 |
-|  | [Vilsbiburg](https://hofladenliste.de/bayern/landkreis-landshut/vilsbiburg/) `/bayern/landkreis-landshut/vilsbiburg/` | Landkreis Landshut | 1 | 7 | 10 |
-|  | [Bad Endorf](https://hofladenliste.de/bayern/landkreis-rosenheim/bad-endorf/) `/bayern/landkreis-rosenheim/bad-endorf/` | Landkreis Rosenheim | 1 | 7 | 10 |
-|  | [Bodolz](https://hofladenliste.de/bayern/lindau/bodolz/) `/bayern/lindau/bodolz/` | Landkreis Lindau | 1 | 7 | 10 |
-|  | [Lindau (Bodensee)](https://hofladenliste.de/bayern/lindau/lindau-bodensee/) `/bayern/lindau/lindau-bodensee/` | Landkreis Lindau | 1 | 7 | 10 |
-|  | [Miltenberg](https://hofladenliste.de/bayern/miltenberg/miltenberg/) `/bayern/miltenberg/miltenberg/` | Landkreis Miltenberg | 1 | 7 | 10 |
-|  | [Schrobenhausen](https://hofladenliste.de/bayern/neuburg-schrobenhausen/schrobenhausen/) `/bayern/neuburg-schrobenhausen/schrobenhausen/` | Landkreis Neuburg-Schrobenhausen | 1 | 7 | 10 |
-|  | [Thalmässing](https://hofladenliste.de/bayern/roth/thalmaessing/) `/bayern/roth/thalmaessing/` | Landkreis Roth | 1 | 7 | 10 |
-|  | [Schwabach](https://hofladenliste.de/bayern/schwabach/) `/bayern/schwabach/` | Schwabach | 1 | 7 | 10 |
-|  | [Hofgeismar](https://hofladenliste.de/hessen/landkreis-kassel/hofgeismar/) `/hessen/landkreis-kassel/hofgeismar/` | Landkreis Kassel | 1 | 7 | 10 |
-|  | [Hofheim am Taunus](https://hofladenliste.de/hessen/main-taunus-kreis/hofheim-am-taunus/) `/hessen/main-taunus-kreis/hofheim-am-taunus/` | Main-Taunus-Kreis | 1 | 7 | 10 |
-|  | [Karben](https://hofladenliste.de/hessen/wetteraukreis/karben/) `/hessen/wetteraukreis/karben/` | Wetteraukreis | 1 | 7 | 10 |
-|  | [Münzenberg](https://hofladenliste.de/hessen/wetteraukreis/muenzenberg/) `/hessen/wetteraukreis/muenzenberg/` | Wetteraukreis | 1 | 7 | 10 |
-|  | [Emstek](https://hofladenliste.de/niedersachsen/cloppenburg/emstek/) `/niedersachsen/cloppenburg/emstek/` | Landkreis Cloppenburg | 1 | 7 | 10 |
-|  | [Otterndorf](https://hofladenliste.de/niedersachsen/cuxhaven/otterndorf/) `/niedersachsen/cuxhaven/otterndorf/` | Landkreis Cuxhaven | 1 | 7 | 10 |
-|  | [Gifhorn](https://hofladenliste.de/niedersachsen/gifhorn/gifhorn/) `/niedersachsen/gifhorn/gifhorn/` | Landkreis Gifhorn | 1 | 7 | 10 |
-|  | [Otter](https://hofladenliste.de/niedersachsen/harburg/otter/) `/niedersachsen/harburg/otter/` | Landkreis Harburg | 1 | 7 | 10 |
-|  | [Stelle](https://hofladenliste.de/niedersachsen/harburg/stelle/) `/niedersachsen/harburg/stelle/` | Landkreis Harburg | 1 | 7 | 10 |
-|  | [Bad Essen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-essen/) `/niedersachsen/landkreis-osnabrueck/bad-essen/` | Landkreis Osnabrück | 1 | 7 | 10 |
+| ✓ | [Oberding](https://hofladenliste.de/bayern/erding/oberding/) `/bayern/erding/oberding/` | Landkreis Erding | 1 | 7 | 10 |
+| ✓ | [Gräfenberg](https://hofladenliste.de/bayern/forchheim/graefenberg/) `/bayern/forchheim/graefenberg/` | Landkreis Forchheim | 1 | 7 | 10 |
+| ✓ | [Fahrenzhausen](https://hofladenliste.de/bayern/freising/fahrenzhausen/) `/bayern/freising/fahrenzhausen/` | Landkreis Freising | 1 | 7 | 10 |
+| ✓ | [Olching](https://hofladenliste.de/bayern/fuerstenfeldbruck/olching/) `/bayern/fuerstenfeldbruck/olching/` | Landkreis Fürstenfeldbruck | 1 | 7 | 10 |
+| ✓ | [Bobingen](https://hofladenliste.de/bayern/landkreis-augsburg/bobingen/) `/bayern/landkreis-augsburg/bobingen/` | Landkreis Augsburg | 1 | 7 | 10 |
+| ✓ | [Cadolzburg](https://hofladenliste.de/bayern/landkreis-fuerth/cadolzburg/) `/bayern/landkreis-fuerth/cadolzburg/` | Landkreis Fürth | 1 | 7 | 10 |
+| ✓ | [Kumhausen](https://hofladenliste.de/bayern/landkreis-landshut/kumhausen/) `/bayern/landkreis-landshut/kumhausen/` | Landkreis Landshut | 1 | 7 | 10 |
+| ✓ | [Vilsbiburg](https://hofladenliste.de/bayern/landkreis-landshut/vilsbiburg/) `/bayern/landkreis-landshut/vilsbiburg/` | Landkreis Landshut | 1 | 7 | 10 |
+| ✓ | [Bad Endorf](https://hofladenliste.de/bayern/landkreis-rosenheim/bad-endorf/) `/bayern/landkreis-rosenheim/bad-endorf/` | Landkreis Rosenheim | 1 | 7 | 10 |
+| ✓ | [Bodolz](https://hofladenliste.de/bayern/lindau/bodolz/) `/bayern/lindau/bodolz/` | Landkreis Lindau | 1 | 7 | 10 |
+| ✓ | [Lindau (Bodensee)](https://hofladenliste.de/bayern/lindau/lindau-bodensee/) `/bayern/lindau/lindau-bodensee/` | Landkreis Lindau | 1 | 7 | 10 |
+| ✓ | [Miltenberg](https://hofladenliste.de/bayern/miltenberg/miltenberg/) `/bayern/miltenberg/miltenberg/` | Landkreis Miltenberg | 1 | 7 | 10 |
+| ✓ | [Schrobenhausen](https://hofladenliste.de/bayern/neuburg-schrobenhausen/schrobenhausen/) `/bayern/neuburg-schrobenhausen/schrobenhausen/` | Landkreis Neuburg-Schrobenhausen | 1 | 7 | 10 |
+| ✓ | [Thalmässing](https://hofladenliste.de/bayern/roth/thalmaessing/) `/bayern/roth/thalmaessing/` | Landkreis Roth | 1 | 7 | 10 |
+| ✓ | [Schwabach](https://hofladenliste.de/bayern/schwabach/) `/bayern/schwabach/` | Schwabach | 1 | 7 | 10 |
+| ✓ | [Hofgeismar](https://hofladenliste.de/hessen/landkreis-kassel/hofgeismar/) `/hessen/landkreis-kassel/hofgeismar/` | Landkreis Kassel | 1 | 7 | 10 |
+| ✓ | [Hofheim am Taunus](https://hofladenliste.de/hessen/main-taunus-kreis/hofheim-am-taunus/) `/hessen/main-taunus-kreis/hofheim-am-taunus/` | Main-Taunus-Kreis | 1 | 7 | 10 |
+| ✓ | [Karben](https://hofladenliste.de/hessen/wetteraukreis/karben/) `/hessen/wetteraukreis/karben/` | Wetteraukreis | 1 | 7 | 10 |
+| ✓ | [Münzenberg](https://hofladenliste.de/hessen/wetteraukreis/muenzenberg/) `/hessen/wetteraukreis/muenzenberg/` | Wetteraukreis | 1 | 7 | 10 |
+| ✓ | [Emstek](https://hofladenliste.de/niedersachsen/cloppenburg/emstek/) `/niedersachsen/cloppenburg/emstek/` | Landkreis Cloppenburg | 1 | 7 | 10 |
+| ✓ | [Otterndorf](https://hofladenliste.de/niedersachsen/cuxhaven/otterndorf/) `/niedersachsen/cuxhaven/otterndorf/` | Landkreis Cuxhaven | 1 | 7 | 10 |
+| ✓ | [Gifhorn](https://hofladenliste.de/niedersachsen/gifhorn/gifhorn/) `/niedersachsen/gifhorn/gifhorn/` | Landkreis Gifhorn | 1 | 7 | 10 |
+| ✓ | [Otter](https://hofladenliste.de/niedersachsen/harburg/otter/) `/niedersachsen/harburg/otter/` | Landkreis Harburg | 1 | 7 | 10 |
+| ✓ | [Stelle](https://hofladenliste.de/niedersachsen/harburg/stelle/) `/niedersachsen/harburg/stelle/` | Landkreis Harburg | 1 | 7 | 10 |
+| ✓ | [Bad Essen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-essen/) `/niedersachsen/landkreis-osnabrueck/bad-essen/` | Landkreis Osnabrück | 1 | 7 | 10 |
 
 ## Paket 17 (0/25 fertig)
 
