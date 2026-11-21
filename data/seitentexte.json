@@ -14708,5 +14708,755 @@
       }
     ],
     "stand": "2026-11-21"
+  },
+  "/bayern/bad-toelz-wolfratshausen/sachsenkam/": {
+    "titel": "Hofläden in Sachsenkam: gut zu wissen",
+    "oben": "Sachsenkam liegt im Voralpenland bei Bad Tölz, bekannt ist das Kloster Reutberg über dem Kirchsee. Milch, Käse und Fleisch gibt es hier vor allem aus Automaten, unter anderem von Region Oim und an einer Milchtankstelle mit Eiern. Dazu kommen der Hofladen Bacher und ein Verkaufshäuschen.",
+    "einleitung": "Hügel, Moore und Wiesen mit Blick auf die Berge prägen die Gemeinde, fast alle Höfe halten Milchkühe. Die Milch aus den Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Dietramszell und Holzkirchen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Bergkäse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Rindfleisch",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dietramszell und Umgebung",
+        "pfad": "/bayern/bad-toelz-wolfratshausen/dietramszell/"
+      },
+      {
+        "text": "Hofläden in Holzkirchen und Umgebung",
+        "pfad": "/bayern/miesbach/holzkirchen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/dachau/roehrmoos/": {
+    "titel": "Hofläden in Röhrmoos: gut zu wissen",
+    "oben": "Röhrmoos liegt im Dachauer Hinterland, einem Hügelland nördlich von München. Kartoffeln gibt es hier an einem Kartoffelautomaten und einem Regiomat, dazu kommen der Hofladen Schöll, der Reischlhof und der Weiherbauernhof.",
+    "einleitung": "Auf den Hügeln wechseln Felder, Wiesen und Wälder, die Böden eignen sich gut für Kartoffeln und Getreide. Die Höfe liegen verstreut in den Ortsteilen.\n\nWeitere Höfe findest du in Hebertshausen und Markt Indersdorf.",
+    "saison": [
+      {
+        "titel": "Frühkartoffeln",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Lagerkartoffeln",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hebertshausen und Umgebung",
+        "pfad": "/bayern/dachau/hebertshausen/"
+      },
+      {
+        "text": "Hofläden in Markt Indersdorf und Umgebung",
+        "pfad": "/bayern/dachau/markt-indersdorf/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/garmisch-partenkirchen/garmisch-partenkirchen/": {
+    "titel": "Hofläden in Garmisch-Partenkirchen: gut zu wissen",
+    "oben": "Garmisch-Partenkirchen liegt im Werdenfelser Land am Fuß der Zugspitze. Eingetragen sind der Werdenfelser Hofladen, Zugspitz-Honig, ein Honigautomat, ein Automat einer Metzgerei und weitere Regiomaten.",
+    "einleitung": "Zwischen den Bergen liegen Wiesen und Almen, im Sommer weidet das Vieh oben auf den Almen. Bergwiesen mit vielen Kräutern liefern Bienen eine besondere Tracht.\n\nWeitere Höfe findest du in Oberammergau und Saulgrub.",
+    "saison": [
+      {
+        "titel": "Bergblütenhonig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Almkäse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberammergau und Umgebung",
+        "pfad": "/bayern/garmisch-partenkirchen/oberammergau/"
+      },
+      {
+        "text": "Hofläden im Landkreis Garmisch-Partenkirchen",
+        "pfad": "/bayern/garmisch-partenkirchen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/kulmbach/mainleus/": {
+    "titel": "Hofläden in Mainleus: gut zu wissen",
+    "oben": "Mainleus liegt am Main westlich von Kulmbach, nicht weit vom Zusammenfluss von Rotem und Weißem Main. Eingetragen sind die Bio-Hofgärtnerei Patersberg mit Gemüse, der Spargelhof Stenglein, drei Imker und ein Eierautomat.",
+    "einleitung": "Das Maintal ist hier breit, mit Wiesen und Feldern, an den Hängen Wald und Streuobst. Die Imker Fiedler, Unger und Passing verkaufen Honig aus der Gegend.\n\nWeitere Höfe findest du in Kulmbach und Himmelkron.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kulmbach und Umgebung",
+        "pfad": "/bayern/kulmbach/kulmbach/"
+      },
+      {
+        "text": "Hofläden in Himmelkron und Umgebung",
+        "pfad": "/bayern/kulmbach/himmelkron/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/landkreis-fuerth/rosstal/": {
+    "titel": "Hofläden in Roßtal: gut zu wissen",
+    "oben": "Roßtal liegt im Rangau südwestlich von Fürth. Zwei Bio-Höfe sind eingetragen, der Biolandhof Kernmühle mit Hofladen und der Biohof Stürmer, dazu der Bauernladen Insenhöfer, Staudner's Hofladen, eine HofladenBox und ein Regiomat.",
+    "einleitung": "Das Hügelland ist von Feldern, Wäldern und kleinen Weihern geprägt, in denen Karpfen gezüchtet werden.\n\nWeitere Höfe findest du in Ammerndorf, Cadolzburg und Zirndorf.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Karpfen",
+        "zeit": "September bis April"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ammerndorf und Umgebung",
+        "pfad": "/bayern/landkreis-fuerth/ammerndorf/"
+      },
+      {
+        "text": "Hofläden in Cadolzburg und Umgebung",
+        "pfad": "/bayern/landkreis-fuerth/cadolzburg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/landkreis-hof/muenchberg/": {
+    "titel": "Hofläden in Münchberg: gut zu wissen",
+    "oben": "Münchberg liegt auf der Münchberger Hochfläche zwischen Frankenwald und Fichtelgebirge. Eingetragen sind die Hofliebe Eismanufaktur mit Laden und Automat, eine Milchtankstelle auf dem Bauernhof Findeiss, Honig von Steimker und der Imkerei Fritsch und ein weiterer Hofladen.",
+    "einleitung": "Die Hochfläche ist kühl und offen, mit Wiesen, Weiden und Feldern. Viele Höfe halten Milchkühe, daraus macht die Eismanufaktur Speiseeis. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Konradsreuth und Hof.",
+    "saison": [
+      {
+        "titel": "Hofeis",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Konradsreuth und Umgebung",
+        "pfad": "/bayern/landkreis-hof/konradsreuth/"
+      },
+      {
+        "text": "Hofläden in Hof",
+        "pfad": "/bayern/hof-stadt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/landkreis-landshut/adlkofen/": {
+    "titel": "Hofläden in Adlkofen: gut zu wissen",
+    "oben": "Adlkofen liegt im Hügelland östlich von Landshut. Drei Bio-Betriebe sind eingetragen, darunter der Bio-Hofladen Langwiesental mit Käse, Fleisch, Gemüse und Brot. Außerdem gibt es einen Lehr- und Beispielsbetrieb für Obstbau, eine Milchtankstelle und Beim Hoga.",
+    "einleitung": "Zwischen Isar und Vils liegen Felder, Wiesen und Obstwiesen auf welligem Land. Der Biohof Schlittmeier und der Betrieb Oberkühbuch verkaufen Bio-Fleisch.\n\nWeitere Höfe findest du in Kröning und Ergolding.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis Oktober"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kröning und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/kroening/"
+      },
+      {
+        "text": "Hofläden in Ergolding (Landkreis Landshut) und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/ergolding/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/landkreis-muenchen/garching-bei-muenchen/": {
+    "titel": "Hofläden in Garching bei München: gut zu wissen",
+    "oben": "Garching liegt an der Isar nördlich von München, bekannt für den Forschungscampus. Am Ortsrand stehen gleich mehrere kleine Verkaufsstellen mit frischen Eiern und Kartoffeln, eine mit Rohmilch, und Schweiger's Hofhaisl mit Eiern, Kartoffeln und Nudeln.",
+    "einleitung": "Zwischen Isarauen und der Garchinger Heide, einem Schutzgebiet mit seltenen Pflanzen, liegen Felder auf der Schotterebene. Rohmilch vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Ismaning und Oberschleißheim.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ismaning und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/ismaning/"
+      },
+      {
+        "text": "Hofläden in Oberschleißheim und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/oberschleissheim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/landkreis-rosenheim/bad-aibling/": {
+    "titel": "Hofläden in Bad Aibling: gut zu wissen",
+    "oben": "Bad Aibling liegt im Mangfalltal westlich von Rosenheim und ist ein Moorheilbad. Eingetragen sind Eier vom Geflügelhof Kerschl, der Billerhof, Gmias-Oim mit Bio-Eiern, Gemüse und Kartoffeln, ein Bio-Hofladen mit Honig und Regiomaten, einer mit Milch.",
+    "einleitung": "Die Mangfall fließt durch ein breites Tal mit Wiesen und Mooren, nach Süden steigen die Hügel zum Wendelstein an. Viele Höfe halten Milchkühe.\n\nWeitere Höfe findest du in Kolbermoor und Bruckmühl.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kolbermoor und Umgebung",
+        "pfad": "/bayern/landkreis-rosenheim/kolbermoor/"
+      },
+      {
+        "text": "Hofläden in Bruckmühl und Umgebung",
+        "pfad": "/bayern/landkreis-rosenheim/bruckmuehl/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/landkreis-rosenheim/bruckmuehl/": {
+    "titel": "Hofläden in Bruckmühl: gut zu wissen",
+    "oben": "Bruckmühl liegt im Mangfalltal zwischen Rosenheim und Holzkirchen, im Ortsteil Weihenlinden steht eine bekannte Wallfahrtskirche. Eingetragen sind die Bioland-Gärtnerei am Hainerbach, Kerschl's Geflügelhof und Regiomaten mit Milch und Fleisch.",
+    "einleitung": "Wiesen, Wälder und das Tal der Mangfall prägen die Gemeinde, Richtung Süden liegen die Voralpen. Die Bioland-Gärtnerei baut Gemüse an, der Geflügelhof verkauft Eier und Geflügel.\n\nWeitere Höfe findest du in Bad Aibling und Irschenberg.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gänse",
+        "zeit": "November und Dezember"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Aibling und Umgebung",
+        "pfad": "/bayern/landkreis-rosenheim/bad-aibling/"
+      },
+      {
+        "text": "Hofläden in Irschenberg und Umgebung",
+        "pfad": "/bayern/miesbach/irschenberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/landsberg-am-lech/penzing/": {
+    "titel": "Hofläden in Penzing: gut zu wissen",
+    "oben": "Penzing liegt östlich von Landsberg am Lech. Fast alles gibt es hier aus Automaten, mit Eiern, Nudeln, Fleisch, Honig und Kartoffeln. Der Biohof Mayr verkauft Bio-Eier, Kartoffeln, Honig und Nudeln.",
+    "einleitung": "Die Felder liegen auf der Schotterebene am Lech, im Osten beginnt das Hügelland Richtung Ammersee. Das Speisekammerl hat Eier und Fleisch.\n\nWeitere Höfe findest du in Kaufering und Weil.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kaufering und Umgebung",
+        "pfad": "/bayern/landsberg-am-lech/kaufering/"
+      },
+      {
+        "text": "Hofläden in Weil und Umgebung",
+        "pfad": "/bayern/landsberg-am-lech/weil/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/lindau/nonnenhorn/": {
+    "titel": "Hofläden in Nonnenhorn: gut zu wissen",
+    "oben": "Nonnenhorn ist ein Wein- und Obstdorf am bayerischen Bodenseeufer. Vier Obsthöfe sind eingetragen, darunter ein Bioland-Obsthof, Marschall, Gierer und Wengle, dazu das Dorflädele und eine Milchtankstelle.",
+    "einleitung": "Am Ufer wachsen Reben, dahinter Apfel- und Birnbäume, das milde Seeklima begünstigt beides. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Wasserburg und Kressbronn.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis November"
+      },
+      {
+        "titel": "Federweißer",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wasserburg (Bodensee) und Umgebung",
+        "pfad": "/bayern/lindau/wasserburg-bodensee/"
+      },
+      {
+        "text": "Hofläden in Kressbronn am Bodensee und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/kressbronn-am-bodensee/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/miltenberg/neunkirchen/": {
+    "titel": "Hofläden in Neunkirchen: gut zu wissen",
+    "oben": "Neunkirchen liegt im bayerischen Odenwald an der Grenze zu Baden-Württemberg. Zwei Mühlen sind eingetragen, die Bio-Ottenmühle und die Zimmermann Mühle, dazu der Biohof Danzer mit Gemüse und Kartoffeln, Obst-Baumann, ein Kartoffelhäusle und ein Bioland-Hof mit Eiern und Nudeln.",
+    "einleitung": "In den Bachtälern des Odenwalds standen früher viele Mühlen, auf den Höhen liegen Felder und Wiesen. Obst-Baumann verkauft Obst aus der Gegend.\n\nWeitere Höfe findest du in Eichenbühl und Miltenberg.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Mehl",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eichenbühl und Umgebung",
+        "pfad": "/bayern/miltenberg/eichenbuehl/"
+      },
+      {
+        "text": "Hofläden in Miltenberg und Umgebung",
+        "pfad": "/bayern/miltenberg/miltenberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/oberallgaeu/balderschwang/": {
+    "titel": "Hofläden in Balderschwang: gut zu wissen",
+    "oben": "Balderschwang liegt auf über 1.000 Metern in einem Hochtal der Allgäuer Alpen. Käse spielt hier die Hauptrolle: Mehrere Regiomaten bieten Käse, Höfle Alp Köstlichkeiten zusätzlich Milch und Fleisch. Dazu kommen der Almhof Lässer und Annis Hofladen.",
+    "einleitung": "Das Tal ist von Bergwiesen und Alpen umgeben, die Kühe stehen im Sommer auf den Hochweiden. Aus der Milch entstehen Bergkäse und Alpkäse.\n\nWeitere Höfe findest du in Oberstaufen und Fischen.",
+    "saison": [
+      {
+        "titel": "Alpkäse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Bergkäse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Viehscheid",
+        "zeit": "September"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberstaufen und Umgebung",
+        "pfad": "/bayern/oberallgaeu/oberstaufen/"
+      },
+      {
+        "text": "Hofläden in Fischen im Allgäu und Umgebung",
+        "pfad": "/bayern/oberallgaeu/fischen-im-allgaeu/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/oberallgaeu/fischen-im-allgaeu/": {
+    "titel": "Hofläden in Fischen im Allgäu: gut zu wissen",
+    "oben": "Fischen liegt im Illertal kurz vor Oberstdorf. Eingetragen sind zwei Milchtankstellen, darunter das Maderhalmar Millhisle, zwei Regiomaten mit Käse, der Automat vom Bauernhof Vogler und das Hofcafé Bim Dischlar.",
+    "einleitung": "Die Höfe im oberen Illertal halten Braunvieh auf Wiesen und Alpen, aus der Milch wird Bergkäse. Millhisle ist allgäuerisch für Milchhäuschen. Die Milch aus den Tankstellen ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bad Hindelang und Balderschwang.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Bergkäse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Viehscheid",
+        "zeit": "September"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Hindelang und Umgebung",
+        "pfad": "/bayern/oberallgaeu/bad-hindelang/"
+      },
+      {
+        "text": "Hofläden in Balderschwang und Umgebung",
+        "pfad": "/bayern/oberallgaeu/balderschwang/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/roth/buechenbach/": {
+    "titel": "Hofläden in Büchenbach: gut zu wissen",
+    "oben": "Büchenbach liegt zwischen Roth und Schwabach. Hier gibt es viel Selbstbedienung: einen Rund-um-die-Uhr-Shop mit Milch, Gemüse und Nudeln, Regiomaten mit Eiern, Käse, Fleisch und Brot, eine Milchtankstelle und einen Eierautomaten. Dazu kommt Weiß Direktvermarktung.",
+    "einleitung": "Felder, Kiefernwälder und kleine Weiher prägen das Land südlich von Nürnberg. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Roth und Schwabach.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Karpfen",
+        "zeit": "September bis April"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Roth und Umgebung",
+        "pfad": "/bayern/roth/roth/"
+      },
+      {
+        "text": "Hofläden in Schwabach",
+        "pfad": "/bayern/schwabach/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/starnberg/gilching/": {
+    "titel": "Hofläden in Gilching: gut zu wissen",
+    "oben": "Gilching liegt zwischen Starnberg und Fürstenfeldbruck. Der Hofladen Seeger verkauft Eier, Gemüse, Kartoffeln, Nudeln und Marmelade, dazu kommen zwei Milchtankstellen, ein Eierautomat, ein Regiomat und ein weiterer Hofladen.",
+    "einleitung": "Felder und Wälder auf der Schotterebene westlich von München prägen den Ort, südlich liegen die Seen des Fünfseenlands. Die Milch aus den Tankstellen ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Weßling und Alling.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weßling und Umgebung",
+        "pfad": "/bayern/starnberg/wessling/"
+      },
+      {
+        "text": "Hofläden in Alling und Umgebung",
+        "pfad": "/bayern/fuerstenfeldbruck/alling/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/starnberg/inning-am-ammersee/": {
+    "titel": "Hofläden in Inning am Ammersee: gut zu wissen",
+    "oben": "Inning liegt am Nordende des Ammersees. Eingetragen sind der Perger Hofladen, die Starnberger Bienenwelt, Hey Horst Automaten mit Eiern, Milch und Gemüse und Regiomaten mit Eiern, Nudeln und Fleisch.",
+    "einleitung": "Moränenhügel, Wiesen und das Ampermoos am Seeausfluss prägen die Landschaft. Viele Höfe halten Milchkühe.\n\nWeitere Höfe findest du in Seefeld und Utting am Ammersee.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Seefeld und Umgebung",
+        "pfad": "/bayern/starnberg/seefeld/"
+      },
+      {
+        "text": "Hofläden in Utting am Ammersee und Umgebung",
+        "pfad": "/bayern/landsberg-am-lech/utting-am-ammersee/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/starnberg/wessling/": {
+    "titel": "Hofläden in Weßling: gut zu wissen",
+    "oben": "Weßling liegt am kleinen Weßlinger See im Fünfseenland. Der Biohof Grenzebach hat einen Hofladen und einen Milchautomaten mit Eiern, Milch und Gemüse, dazu kommen der Seedamer Hofladen, ein Eierautomat und weitere Hofläden.",
+    "einleitung": "Zwischen Ammersee und Starnberger See liegen Wiesen, Felder und Wälder auf hügeligem Moränenland. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Gilching und Seefeld.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gilching und Umgebung",
+        "pfad": "/bayern/starnberg/gilching/"
+      },
+      {
+        "text": "Hofläden in Seefeld und Umgebung",
+        "pfad": "/bayern/starnberg/seefeld/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/weilheim-schongau/weilheim-in-oberbayern/": {
+    "titel": "Hofläden in Weilheim in Oberbayern: gut zu wissen",
+    "oben": "Weilheim liegt an der Ammer im Pfaffenwinkel, mit Blick auf den Hohen Peißenberg. Caros Gutscafé mit Hofladen verkauft Eier, Fleisch, Gemüse und Obst, die Eierhütte Eier, Milch, Käse, Kartoffeln und Honig. Dazu kommen Remesch Naturkost, ein Milchautomat und Regiomaten.",
+    "einleitung": "Das Alpenvorland ist hier von Mooren, Wiesen und Milchviehhaltung geprägt. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Pähl und Hohenpeißenberg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Pähl und Umgebung",
+        "pfad": "/bayern/weilheim-schongau/paehl/"
+      },
+      {
+        "text": "Hofläden in Hohenpeißenberg und Umgebung",
+        "pfad": "/bayern/weilheim-schongau/hohenpeissenberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/brandenburg/havelland/falkensee/": {
+    "titel": "Hofläden in Falkensee: gut zu wissen",
+    "oben": "Falkensee grenzt an Berlin-Spandau und ist eine der größten Städte im Havelland. Honig gibt es hier reichlich: Fünf Imkereien sind eingetragen. Dazu kommt Bio-Rindfleisch von den Highland Cattle am Langen Horst.",
+    "einleitung": "Gärten, Kiefernwälder und die Wiesen am Falkenhagener See bieten Bienen viel Nahrung. Die Highland Cattle stehen ganzjährig draußen auf der Weide.\n\nWeitere Höfe findest du in Dallgow-Döberitz und Wustermark.",
+    "saison": [
+      {
+        "titel": "Frühjahrshonig",
+        "zeit": "Mai und Juni"
+      },
+      {
+        "titel": "Sommerhonig",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Rindfleisch",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dallgow-Döberitz und Umgebung",
+        "pfad": "/brandenburg/havelland/dallgow-doeberitz/"
+      },
+      {
+        "text": "Hofläden in Wustermark und Umgebung",
+        "pfad": "/brandenburg/havelland/wustermark/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/fulda/hofbieber/": {
+    "titel": "Hofläden in Hofbieber: gut zu wissen",
+    "oben": "Hofbieber liegt in der Rhön am Fuß der Milseburg. Zwei Bio-Höfe sind eingetragen, Rhönhof Henkel und Pfaffenhof, dazu der Thanhof mit Eiern, Käse, Fleisch, Kartoffeln und Nudeln, die Ölmühle Rehberg, der Geflügelhof Bleuel und ein Bauernhof-Café.",
+    "einleitung": "Das Biosphärenreservat Rhön ist eine offene Mittelgebirgslandschaft mit Weiden, Hecken und Wäldern. Typisch ist das Rhönschaf mit seinem schwarzen Kopf.\n\nWeitere Höfe findest du in Fulda und Gersfeld.",
+    "saison": [
+      {
+        "titel": "Lammfleisch",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Speiseöl",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Fulda und Umgebung",
+        "pfad": "/hessen/fulda/fulda/"
+      },
+      {
+        "text": "Hofläden in Gersfeld und Umgebung",
+        "pfad": "/hessen/fulda/gersfeld/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/main-kinzig-kreis/schluechtern/": {
+    "titel": "Hofläden in Schlüchtern: gut zu wissen",
+    "oben": "Schlüchtern liegt im oberen Kinzigtal zwischen Vogelsberg, Spessart und Rhön. Eingetragen sind zwei Bio-Hofläden, darunter Hof Gläser, der Flurhöfer, ein Käse-Regiomat, ein Wurst- und Grillfleischautomat und ein Automat mit Eiern und Eis.",
+    "einleitung": "Das Bergwinkel genannte Land ist von Wiesen, Wäldern und kleinen Feldern geprägt, viele Höfe halten Rinder und Schafe.\n\nWeitere Höfe findest du in Flieden und Neuhof.",
+    "saison": [
+      {
+        "titel": "Grillfleisch",
+        "zeit": "Mai bis September"
+      },
+      {
+        "titel": "Hofeis",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Flieden und Umgebung",
+        "pfad": "/hessen/fulda/flieden/"
+      },
+      {
+        "text": "Hofläden in Neuhof und Umgebung",
+        "pfad": "/hessen/fulda/neuhof/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/marburg-biedenkopf/coelbe/": {
+    "titel": "Hofläden in Cölbe: gut zu wissen",
+    "oben": "Cölbe liegt nördlich von Marburg, wo die Ohm in die Lahn mündet. Eingetragen sind der Bio-Hof Fleckenbühl, Wehrdaer Freilandeier, zwei weitere Eierautomaten, ein Fleisch-Regiomat und ein Hofcafé mit Brasserie.",
+    "einleitung": "Die Auen von Lahn und Ohm sind breit und fruchtbar, mit Wiesen und Feldern, auf den Hügeln ringsum liegt Wald.\n\nWeitere Höfe findest du in Marburg und Lahntal.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Marburg und Umgebung",
+        "pfad": "/hessen/marburg-biedenkopf/marburg/"
+      },
+      {
+        "text": "Hofläden in Lahntal und Umgebung",
+        "pfad": "/hessen/marburg-biedenkopf/lahntal/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/offenbach/seligenstadt/": {
+    "titel": "Hofläden in Seligenstadt: gut zu wissen",
+    "oben": "Seligenstadt am Main ist eine Fachwerkstadt mit der Einhardbasilika. Eingetragen sind der Bio-Hof Ackerlei, der Eichwaldhof, der Zöllerhof, der Hühnerhof Lüft mit Eiern und ein Automat vom Herrenhof mit Eiern, Fleisch und Kartoffeln.",
+    "einleitung": "In der Mainebene wachsen auf den sandigen Böden Spargel, Erdbeeren und Kartoffeln, ringsum liegen Wälder.\n\nWeitere Höfe findest du in Rodgau und Karlstein am Main.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rodgau und Umgebung",
+        "pfad": "/hessen/offenbach/rodgau/"
+      },
+      {
+        "text": "Hofläden in Karlstein am Main und Umgebung",
+        "pfad": "/bayern/landkreis-aschaffenburg/karlstein-am-main/"
+      }
+    ],
+    "stand": "2026-11-21"
   }
 }
