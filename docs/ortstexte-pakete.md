@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 501 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 526 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -603,35 +603,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Cölbe](https://hofladenliste.de/hessen/marburg-biedenkopf/coelbe/) `/hessen/marburg-biedenkopf/coelbe/` | Landkreis Marburg-Biedenkopf | 1 | 6 | 9 |
 | ✓ | [Seligenstadt](https://hofladenliste.de/hessen/offenbach/seligenstadt/) `/hessen/offenbach/seligenstadt/` | Landkreis Offenbach | 1 | 6 | 9 |
 
-## Paket 21 (0/25 fertig)
+## Paket 21 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Gudensberg](https://hofladenliste.de/hessen/schwalm-eder-kreis/gudensberg/) `/hessen/schwalm-eder-kreis/gudensberg/` | Schwalm-Eder-Kreis | 1 | 6 | 9 |
-|  | [Wanfried](https://hofladenliste.de/hessen/werra-meissner-kreis/wanfried/) `/hessen/werra-meissner-kreis/wanfried/` | Werra-Meißner-Kreis | 1 | 6 | 9 |
-|  | [Rockenberg](https://hofladenliste.de/hessen/wetteraukreis/rockenberg/) `/hessen/wetteraukreis/rockenberg/` | Wetteraukreis | 1 | 6 | 9 |
-|  | [Wölfersheim](https://hofladenliste.de/hessen/wetteraukreis/woelfersheim/) `/hessen/wetteraukreis/woelfersheim/` | Wetteraukreis | 1 | 6 | 9 |
-|  | [Rastede](https://hofladenliste.de/niedersachsen/ammerland/rastede/) `/niedersachsen/ammerland/rastede/` | Landkreis Ammerland | 1 | 6 | 9 |
-|  | [Syke](https://hofladenliste.de/niedersachsen/diepholz/syke/) `/niedersachsen/diepholz/syke/` | Landkreis Diepholz | 1 | 6 | 9 |
-|  | [Lehe](https://hofladenliste.de/niedersachsen/emsland/lehe/) `/niedersachsen/emsland/lehe/` | Landkreis Emsland | 1 | 6 | 9 |
-|  | [Salzbergen](https://hofladenliste.de/niedersachsen/emsland/salzbergen/) `/niedersachsen/emsland/salzbergen/` | Landkreis Emsland | 1 | 6 | 9 |
-|  | [Duderstadt](https://hofladenliste.de/niedersachsen/goettingen/duderstadt/) `/niedersachsen/goettingen/duderstadt/` | Landkreis Göttingen | 1 | 6 | 9 |
-|  | [Bad Münder am Deister](https://hofladenliste.de/niedersachsen/hameln-pyrmont/bad-muender-am-deister/) `/niedersachsen/hameln-pyrmont/bad-muender-am-deister/` | Landkreis Hameln-Pyrmont | 1 | 6 | 9 |
-|  | [Tostedt](https://hofladenliste.de/niedersachsen/harburg/tostedt/) `/niedersachsen/harburg/tostedt/` | Landkreis Harburg | 1 | 6 | 9 |
-|  | [Neuenkirchen](https://hofladenliste.de/niedersachsen/heidekreis/neuenkirchen/) `/niedersachsen/heidekreis/neuenkirchen/` | Heidekreis | 1 | 6 | 9 |
-|  | [Dötlingen](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/doetlingen/) `/niedersachsen/landkreis-oldenburg/doetlingen/` | Landkreis Oldenburg | 1 | 6 | 9 |
-|  | [Menslage](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/menslage/) `/niedersachsen/landkreis-osnabrueck/menslage/` | Landkreis Osnabrück | 1 | 6 | 9 |
-|  | [Edemissen](https://hofladenliste.de/niedersachsen/peine/edemissen/) `/niedersachsen/peine/edemissen/` | Landkreis Peine | 1 | 6 | 9 |
-|  | [Vechelde](https://hofladenliste.de/niedersachsen/peine/vechelde/) `/niedersachsen/peine/vechelde/` | Landkreis Peine | 1 | 6 | 9 |
-|  | [Springe](https://hofladenliste.de/niedersachsen/region-hannover/springe/) `/niedersachsen/region-hannover/springe/` | Region Hannover | 1 | 6 | 9 |
-|  | [Rotenburg (Wümme)](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/rotenburg-wuemme/) `/niedersachsen/rotenburg-wuemme/rotenburg-wuemme/` | Landkreis Rotenburg (Wümme) | 1 | 6 | 9 |
-|  | [Visbek](https://hofladenliste.de/niedersachsen/vechta/visbek/) `/niedersachsen/vechta/visbek/` | Landkreis Vechta | 1 | 6 | 9 |
-|  | [Ahaus](https://hofladenliste.de/nordrhein-westfalen/borken/ahaus/) `/nordrhein-westfalen/borken/ahaus/` | Kreis Borken | 1 | 6 | 9 |
-|  | [Borken](https://hofladenliste.de/nordrhein-westfalen/borken/borken/) `/nordrhein-westfalen/borken/borken/` | Kreis Borken | 1 | 6 | 9 |
-|  | [Vreden](https://hofladenliste.de/nordrhein-westfalen/borken/vreden/) `/nordrhein-westfalen/borken/vreden/` | Kreis Borken | 1 | 6 | 9 |
-|  | [Coesfeld](https://hofladenliste.de/nordrhein-westfalen/coesfeld/coesfeld/) `/nordrhein-westfalen/coesfeld/coesfeld/` | Kreis Coesfeld | 1 | 6 | 9 |
-|  | [Sprockhövel](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/sprockhoevel/) `/nordrhein-westfalen/ennepe-ruhr-kreis/sprockhoevel/` | Ennepe-Ruhr-Kreis | 1 | 6 | 9 |
-|  | [Rheda-Wiedenbrück](https://hofladenliste.de/nordrhein-westfalen/guetersloh/rheda-wiedenbrueck/) `/nordrhein-westfalen/guetersloh/rheda-wiedenbrueck/` | Kreis Gütersloh | 1 | 6 | 9 |
+| ✓ | [Gudensberg](https://hofladenliste.de/hessen/schwalm-eder-kreis/gudensberg/) `/hessen/schwalm-eder-kreis/gudensberg/` | Schwalm-Eder-Kreis | 1 | 6 | 9 |
+| ✓ | [Wanfried](https://hofladenliste.de/hessen/werra-meissner-kreis/wanfried/) `/hessen/werra-meissner-kreis/wanfried/` | Werra-Meißner-Kreis | 1 | 6 | 9 |
+| ✓ | [Rockenberg](https://hofladenliste.de/hessen/wetteraukreis/rockenberg/) `/hessen/wetteraukreis/rockenberg/` | Wetteraukreis | 1 | 6 | 9 |
+| ✓ | [Wölfersheim](https://hofladenliste.de/hessen/wetteraukreis/woelfersheim/) `/hessen/wetteraukreis/woelfersheim/` | Wetteraukreis | 1 | 6 | 9 |
+| ✓ | [Rastede](https://hofladenliste.de/niedersachsen/ammerland/rastede/) `/niedersachsen/ammerland/rastede/` | Landkreis Ammerland | 1 | 6 | 9 |
+| ✓ | [Syke](https://hofladenliste.de/niedersachsen/diepholz/syke/) `/niedersachsen/diepholz/syke/` | Landkreis Diepholz | 1 | 6 | 9 |
+| ✓ | [Lehe](https://hofladenliste.de/niedersachsen/emsland/lehe/) `/niedersachsen/emsland/lehe/` | Landkreis Emsland | 1 | 6 | 9 |
+| ✓ | [Salzbergen](https://hofladenliste.de/niedersachsen/emsland/salzbergen/) `/niedersachsen/emsland/salzbergen/` | Landkreis Emsland | 1 | 6 | 9 |
+| ✓ | [Duderstadt](https://hofladenliste.de/niedersachsen/goettingen/duderstadt/) `/niedersachsen/goettingen/duderstadt/` | Landkreis Göttingen | 1 | 6 | 9 |
+| ✓ | [Bad Münder am Deister](https://hofladenliste.de/niedersachsen/hameln-pyrmont/bad-muender-am-deister/) `/niedersachsen/hameln-pyrmont/bad-muender-am-deister/` | Landkreis Hameln-Pyrmont | 1 | 6 | 9 |
+| ✓ | [Tostedt](https://hofladenliste.de/niedersachsen/harburg/tostedt/) `/niedersachsen/harburg/tostedt/` | Landkreis Harburg | 1 | 6 | 9 |
+| ✓ | [Neuenkirchen](https://hofladenliste.de/niedersachsen/heidekreis/neuenkirchen/) `/niedersachsen/heidekreis/neuenkirchen/` | Heidekreis | 1 | 6 | 9 |
+| ✓ | [Dötlingen](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/doetlingen/) `/niedersachsen/landkreis-oldenburg/doetlingen/` | Landkreis Oldenburg | 1 | 6 | 9 |
+| ✓ | [Menslage](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/menslage/) `/niedersachsen/landkreis-osnabrueck/menslage/` | Landkreis Osnabrück | 1 | 6 | 9 |
+| ✓ | [Edemissen](https://hofladenliste.de/niedersachsen/peine/edemissen/) `/niedersachsen/peine/edemissen/` | Landkreis Peine | 1 | 6 | 9 |
+| ✓ | [Vechelde](https://hofladenliste.de/niedersachsen/peine/vechelde/) `/niedersachsen/peine/vechelde/` | Landkreis Peine | 1 | 6 | 9 |
+| ✓ | [Springe](https://hofladenliste.de/niedersachsen/region-hannover/springe/) `/niedersachsen/region-hannover/springe/` | Region Hannover | 1 | 6 | 9 |
+| ✓ | [Rotenburg (Wümme)](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/rotenburg-wuemme/) `/niedersachsen/rotenburg-wuemme/rotenburg-wuemme/` | Landkreis Rotenburg (Wümme) | 1 | 6 | 9 |
+| ✓ | [Visbek](https://hofladenliste.de/niedersachsen/vechta/visbek/) `/niedersachsen/vechta/visbek/` | Landkreis Vechta | 1 | 6 | 9 |
+| ✓ | [Ahaus](https://hofladenliste.de/nordrhein-westfalen/borken/ahaus/) `/nordrhein-westfalen/borken/ahaus/` | Kreis Borken | 1 | 6 | 9 |
+| ✓ | [Borken](https://hofladenliste.de/nordrhein-westfalen/borken/borken/) `/nordrhein-westfalen/borken/borken/` | Kreis Borken | 1 | 6 | 9 |
+| ✓ | [Vreden](https://hofladenliste.de/nordrhein-westfalen/borken/vreden/) `/nordrhein-westfalen/borken/vreden/` | Kreis Borken | 1 | 6 | 9 |
+| ✓ | [Coesfeld](https://hofladenliste.de/nordrhein-westfalen/coesfeld/coesfeld/) `/nordrhein-westfalen/coesfeld/coesfeld/` | Kreis Coesfeld | 1 | 6 | 9 |
+| ✓ | [Sprockhövel](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/sprockhoevel/) `/nordrhein-westfalen/ennepe-ruhr-kreis/sprockhoevel/` | Ennepe-Ruhr-Kreis | 1 | 6 | 9 |
+| ✓ | [Rheda-Wiedenbrück](https://hofladenliste.de/nordrhein-westfalen/guetersloh/rheda-wiedenbrueck/) `/nordrhein-westfalen/guetersloh/rheda-wiedenbrueck/` | Kreis Gütersloh | 1 | 6 | 9 |
 
 ## Paket 22 (0/25 fertig)
 
