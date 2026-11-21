@@ -5,7 +5,7 @@ import { esc } from '../../static/helfer.js';
 import { KATEGORIEN, ICON, karteHtml } from '../../static/karte.js';
 import { eintraege, istRund, kreisMitte, kreise, laender, offen, plz, proKreis, wocheVon } from './daten.mjs';
 import { KATEGORIE_PFADE, SEITENTEXTE, SUCHFELD, filterLeiste, kartenDaten, kartenPanel, plural, seite, zahl } from './html.mjs';
-import { MIN_SEITE, ORTE, REGIONEN, UEBERDECKT, UMGEBUNG_PFAD, umgebungIndexiert, UMKREISE, fragen, fragenHtml, gebietsText, gross, hofItems, itemList, km, link, naheOrte, nennung, ortListe, ortSeiten, ortUeberschrift, passend, quellenHtml, regionHtml, regionTeaser, schreibe, umkreis, zaehlung, zaehlungKurz } from './grundlagen.mjs';
+import { angebotHaeufig, MIN_SEITE, ORTE, REGIONEN, UEBERDECKT, UMGEBUNG_PFAD, umgebungIndexiert, UMKREISE, fragen, fragenHtml, gebietsText, gross, hofItems, itemList, km, link, naheOrte, nennung, ortListe, ortSeiten, ortUeberschrift, passend, quellenHtml, regionHtml, regionTeaser, schreibe, umkreis, zaehlung, zaehlungKurz } from './grundlagen.mjs';
 import { ANGEBOT, ANGEBOT_SEITEN, AUTOMATEN, BIO, KAT_TYPEN, LAND_KAT, MONATSNAMEN, MONAT_JETZT, SAISON_SEITEN, TYPEN, TYP_KREIS, akkusativ, landKat, marktAbschnitt, typKreis, typKreisLinks, typLinks } from './startseite.mjs';
 
 // Lokale Seiten ohne gepflegten Text (data/seitentexte.json) – für docs/seitentexte-offen.md (abschluss.mjs)
@@ -101,7 +101,7 @@ ${KAT_TYPEN.some((t) => landKat(t, l)) ? `<section class="abschnitt"><h2>Nach Ka
       titel: liste.length > 1 ? passend(`Hofladen ${im} – ${zaehlungKurz(liste)} mit Öffnungszeiten`, `Hofladen ${im} – ${zaehlungKurz(liste)}`, `Hofladen ${im} – ${plural(liste.length, 'Eintrag', 'Einträge')}`, `Hofladen ${im}`)
         : liste.length ? passend(`Hofladen ${im} – Öffnungszeiten, Adresse & Route`, `Hofladen ${im} – Öffnungszeiten`, `Hofladen ${im}`) : `Hofladen ${im} – Hofläden in der Umgebung`,
       beschreibung: liste.length
-        ? `Hofladen ${im} finden: ${zaehlung(liste)}${orte.length > 1 ? `, u. a. in ${orte.slice(0, 3).map((o) => o.ort).join(', ')}` : ''}. Öffnungszeiten, Angebot, Karte und Route.`
+        ? [`Hofladen ${im} finden: ${zaehlung(liste)}${orte.length > 1 ? `, u. a. in ${orte.slice(0, 3).map((o) => o.ort).join(', ')}` : ''}.`, ...(() => { const ang = angebotHaeufig(liste), so = liste.filter((e) => e.sonntag).length; return [ang.length ? `Oft im Angebot: ${nennung(ang)}.` : '', so >= 2 ? `${zahl(so)} auch sonntags geöffnet.` : '']; })(), 'Öffnungszeiten, Karte und Route.'].filter(Boolean).join(' ')
         : `Hofläden ${im}: noch keine Einträge – hier findest du Hofläden in der Umgebung.`,
       pfad: k.pfad,
       noindex: liste.length < MIN_SEITE,
@@ -416,7 +416,19 @@ function umgebungsSeite(z, { extraOben = '', extraUnten = '', krumen, regionProf
   const ueber = UEBERDECKT.get(z);
   const tn = z.titelName || name, nT = zahl(zl.gesamt);
   const titel = passend(`Hofladen ${tn} und Umgebung – ${nT} Höfe mit Öffnungszeiten`, `Hofladen ${tn} und Umgebung – ${nT} Höfe`, `Hofladen ${tn} und Umgebung`, `Hofladen ${tn}`);
-  const beschreibung = `Hofläden in ${name} und Umgebung: ${zl.satz}${nEigen ? ` Direkt in ${name}: ${zaehlung(z.eigene)}.` : ''} Mit Entfernung, Öffnungszeiten und Route.`.slice(0, 300);
+  // Snippet: der nächste Hof mit Namen (konkret statt nur Zahlen), dann Menge, Angebot und Sonntag
+  const beschreibung = (() => {
+    const [d0, e0] = auswahl[0] || [];
+    const naechst = e0 ? `Am nächsten: ${e0.titel}${e0.ortAnzeige.startsWith(name) || e0.titel.includes(e0.ortAnzeige) ? '' : ` in ${e0.ortAnzeige}`}${d0 < 0.05 ? '' : `, ${km(d0)}`}.` : '';
+    const ang = angebotHaeufig(liste);
+    const so = liste.filter((e) => e.sonntag).length;
+    return [`Hofläden in ${name} und Umgebung: ${zahl(zl.gesamt)} im Umkreis von ${R} km${nEigen ? `, ${zahl(nEigen)} direkt im Ort` : ''}.`,
+      ang.length ? `Oft im Angebot: ${nennung(ang)}.` : '',
+      so >= 2 ? `${zahl(so)} auch sonntags geöffnet.` : '',
+      'Mit Öffnungszeiten und Route.',
+      // Letzter Satz bleibt beim Kürzen erhalten: der nächste Hof mit Namen
+      naechst].filter(Boolean).join(' ');
+  })();
   // FAQ aus echten Zahlen
   const automatNah = z.umkreis.find(([, e]) => e.typ === 'automat');
   const f = [

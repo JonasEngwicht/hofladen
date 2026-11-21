@@ -81,6 +81,24 @@ function zaehlung(liste) {
 }
 
 // Automatenart → Themenseite
+// ---------- Bausteine für Snippets (Meta-Beschreibungen) ----------
+// Öffnungszeiten kompakt: nur offene Tage, „07:00–18:00“ → „7–18 Uhr“; rund um die Uhr → „rund um die Uhr“
+// max: höchstens so viele Zeichen; sonst nur die ersten Tage mit „u. a.“ davor
+function zeitenSnippet(zl, max = Infinity) {
+  if (!zl?.length) return '';
+  if (zl.some(([, v]) => v === 'durchgehend') && zl.every(([, v]) => v === 'durchgehend')) return 'rund um die Uhr';
+  const kurzZeit = (v) => v === 'durchgehend' ? 'rund um die Uhr' : `${v.replace(/\b0(\d):/g, '$1:').replace(/:00\b/g, '')} Uhr`;
+  const teile = zl.filter(([, v]) => v !== 'geschlossen').map(([t, v]) => `${t} ${kurzZeit(v)}`);
+  let text = teile.join(', ');
+  for (let n = teile.length - 1; text.length > max && n >= 1; n--) text = `u. a. ${teile.slice(0, n).join(', ')}`;
+  return text.length > max ? '' : text;
+}
+// Häufigstes Angebot in einer Liste (nur Kategorien, die mindestens zweimal vorkommen)
+function angebotHaeufig(liste, n = 3) {
+  const z = {};
+  for (const e of liste) for (const k of e.kat || []) z[k] = (z[k] || 0) + 1;
+  return Object.entries(z).filter(([, c]) => c >= 2).sort((a, b) => b[1] - a[1]).slice(0, n).map(([k]) => KATEGORIEN[k]);
+}
 const ART_TYP = { Milchtankstelle: 'milchtankstelle', Eierautomat: 'eierautomat', Regiomat: 'regiomat', Fleischautomat: 'regiomat', Kartoffelautomat: 'regiomat', Honigautomat: 'regiomat', Nudelautomat: 'regiomat',
   Imkerei: 'imker', Solawi: 'solawi', 'Selbstpflücken': 'selbstpfluecken', 'Hofcafé': 'hofcafe' };
 function zaehlungLinks(liste, anker = '') {
@@ -409,4 +427,4 @@ const GROSSSTAEDTE = (() => {
   }).filter(Boolean).filter((x, i, a) => a.findIndex((y) => y.pfad === x.pfad) === i).slice(0, 20);
 })();
 
-export { ALLE_SEITEN, ARCHIV_AUSNAHMEN, ART_TYP, UEBERDECKT, umgebungIndexiert, GROSSSTAEDTE, LAUSITZ, MIN_SEITE, ORTE, ORTSMITTE, PLURAL_ART, REGIONEN, SCHEMA_TAGE, STAND_DATEI, STAND_PLATZHALTER, UMGEBUNG, UMGEBUNG_PFAD, UMKREISE, UMKREIS_MAX, analyse, anzArt, anzHof, fragen, fragenHtml, gebietsText, gross, hhmm, hofItems, itemList, km, link, naechsteUmgebungsSeite, naechster, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortNamenZahl, ortSeiten, ortUeberschrift, passend, quellenHtml, regionDir, regionHtml, regionTeaser, schreibe, sitemap, stand, titelZahl, umkreis, zaehlung, zaehlungKurz, zaehlungLinks };
+export { angebotHaeufig, zeitenSnippet, ALLE_SEITEN, ARCHIV_AUSNAHMEN, ART_TYP, UEBERDECKT, umgebungIndexiert, GROSSSTAEDTE, LAUSITZ, MIN_SEITE, ORTE, ORTSMITTE, PLURAL_ART, REGIONEN, SCHEMA_TAGE, STAND_DATEI, STAND_PLATZHALTER, UMGEBUNG, UMGEBUNG_PFAD, UMKREISE, UMKREIS_MAX, analyse, anzArt, anzHof, fragen, fragenHtml, gebietsText, gross, hhmm, hofItems, itemList, km, link, naechsteUmgebungsSeite, naechster, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortNamenZahl, ortSeiten, ortUeberschrift, passend, quellenHtml, regionDir, regionHtml, regionTeaser, schreibe, sitemap, stand, titelZahl, umkreis, zaehlung, zaehlungKurz, zaehlungLinks };

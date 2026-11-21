@@ -10,7 +10,7 @@ import { zeilen, uebersetze, parse } from '../../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml, produktIcon } from '../../static/karte.js';
 import { HALTE_ART, HEUTE, ROOT, ausstattung, betreiber, cfg, datumDe, eintraege, inDerNaehe, istRund, lizenzLink, osm, quellenHinweis, zeitenKurz } from './daten.mjs';
 import { kartenDaten, kartenPanel, kurz, seite, telHref } from './html.mjs';
-import { PLURAL_ART, STAND_PLATZHALTER, fragenHtml, gross, km, link, naechsteUmgebungsSeite, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortUeberschrift, passend, regionTeaser, schreibe, stand } from './grundlagen.mjs';
+import { zeitenSnippet, PLURAL_ART, STAND_PLATZHALTER, fragenHtml, gross, km, link, naechsteUmgebungsSeite, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortUeberschrift, passend, regionTeaser, schreibe, stand } from './grundlagen.mjs';
 import { SAISON_SEITEN, artTyp, monatsSpanne, typKreis } from './startseite.mjs';
 import { umgebungsSeite } from './regionen.mjs';
 
@@ -139,8 +139,20 @@ for (const e of eintraege) {
     titel: titelEnthaeltOrt
       ? passend(`${tn} – Öffnungszeiten, Angebot & Route`, `${tn} – Öffnungszeiten & Route`, `${tn} – Öffnungszeiten`, tn)
       : passend(`${tn} – ${e.art} in ${e.ortAnzeige}, Öffnungszeiten`, `${tn} – ${e.art} in ${e.ortAnzeige}`, `${tn} in ${e.ortAnzeige}`, tn),
-    beschreibung: (() => { const b = `${e.titelSeite}: ${e.art} in ${e.ortAnzeige}${e.ortAnzeige.includes(k.titel) || k.titel.includes(e.ortAnzeige) ? '' : ` (${k.titel})`}.${e.kat.length ? ` Angebot: ${e.kat.map((x) => KATEGORIEN[x]).join(', ')}.` : ''}${ohKurz ? ` Öffnungszeiten: ${ohKurz}.` : ''}${e.telefon ? ` Telefon: ${e.telefon}.` : ''}`;
-      return (b.length < 110 ? `${b} Adresse, ${ohKurz ? '' : 'Kontakt, '}Karte und Route${naechsterHof ? ` – plus Hofläden in der Nähe von ${e.ortAnzeige}` : ''}.` : b); })(),
+    // Snippet: Ort und Angebot zuerst (das sucht man), dann kompakte Zeiten; der Name steht schon im Titel
+    beschreibung: (() => {
+      const art = e.bio && !/bio/i.test(e.art) ? `Bio-${e.art}` : e.art;
+      const kreis = e.ortAnzeige.includes(k.titel) || k.titel.includes(e.ortAnzeige) ? '' : ` (${k.titel})`;
+      const kat = e.kat.map((x) => KATEGORIEN[x]);
+      const angebot = kat.length ? `: ${nennung(kat.length > 4 ? [...kat.slice(0, 4), 'mehr'] : kat)}` : '';
+      const zeiten = rund ? 'Rund um die Uhr geöffnet.' : woche && e.oeffnungszeiten ? (() => { const z = zeitenSnippet(zeilen(e.oeffnungszeiten), 75); return z ? `Geöffnet ${z}.` : ''; })() : '';
+      const extra = [e.typ !== 'automat' && e.selbstbedienung && 'Selbstbedienung.', !rund && e.sonntag && !zeiten && 'Auch sonntags geöffnet.'].filter(Boolean).join(' ');
+      const schluss = `${e.titelSeite}: Adresse, ${e.telefon ? 'Telefon, ' : ''}Karte und Route${naechsterHof ? ` – plus Hofläden in der Nähe von ${e.ortAnzeige}` : ''}.`;
+      const teile = [`${art} in ${e.ortAnzeige}${kreis}${angebot}.`, zeiten, extra, schluss].filter(Boolean);
+      // Einträge ohne Angebot mit einem allgemeinen Satz auffüllen (steht als letzter Mittelsatz, fällt beim Kürzen zuerst weg)
+      if (!angebot) teile.splice(-1, 0, 'Regional einkaufen in deiner Nähe.');
+      return teile.join(' ');
+    })(),
     pfad: e.pfad,
     bild: e.fotos?.[0] || null,
     noindex: e.duenn,
