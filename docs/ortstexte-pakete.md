@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 551 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 576 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -663,35 +663,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Rheinzabern](https://hofladenliste.de/rheinland-pfalz/germersheim/rheinzabern/) `/rheinland-pfalz/germersheim/rheinzabern/` | Landkreis Germersheim | 1 | 6 | 9 |
 | ✓ | [Genthin](https://hofladenliste.de/sachsen-anhalt/jerichower-land/genthin/) `/sachsen-anhalt/jerichower-land/genthin/` | Landkreis Jerichower Land | 1 | 6 | 9 |
 
-## Paket 23 (0/25 fertig)
+## Paket 23 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Stendal](https://hofladenliste.de/sachsen-anhalt/stendal/stendal/) `/sachsen-anhalt/stendal/stendal/` | Landkreis Stendal | 1 | 6 | 9 |
-|  | [Elstra](https://hofladenliste.de/sachsen/bautzen/elstra/) `/sachsen/bautzen/elstra/` | Landkreis Bautzen | 1 | 6 | 9 |
-|  | [Meißen](https://hofladenliste.de/sachsen/meissen/meissen/) `/sachsen/meissen/meissen/` | Landkreis Meißen | 1 | 6 | 9 |
-|  | [Wermsdorf](https://hofladenliste.de/sachsen/nordsachsen/wermsdorf/) `/sachsen/nordsachsen/wermsdorf/` | Landkreis Nordsachsen | 1 | 6 | 9 |
-|  | [Freital](https://hofladenliste.de/sachsen/saechsische-schweiz/freital/) `/sachsen/saechsische-schweiz/freital/` | Landkreis Sächsische Schweiz | 1 | 6 | 9 |
-|  | [Stolpen](https://hofladenliste.de/sachsen/saechsische-schweiz/stolpen/) `/sachsen/saechsische-schweiz/stolpen/` | Landkreis Sächsische Schweiz | 1 | 6 | 9 |
-|  | [Pellworm](https://hofladenliste.de/schleswig-holstein/nordfriesland/pellworm/) `/schleswig-holstein/nordfriesland/pellworm/` | Kreis Nordfriesland | 1 | 6 | 9 |
-|  | [Appen](https://hofladenliste.de/schleswig-holstein/pinneberg/appen/) `/schleswig-holstein/pinneberg/appen/` | Kreis Pinneberg | 1 | 6 | 9 |
-|  | [Blomesche Wildnis](https://hofladenliste.de/schleswig-holstein/steinburg/blomesche-wildnis/) `/schleswig-holstein/steinburg/blomesche-wildnis/` | Kreis Steinburg | 1 | 6 | 9 |
-|  | [Langenwetzendorf](https://hofladenliste.de/thueringen/greiz/langenwetzendorf/) `/thueringen/greiz/langenwetzendorf/` | Landkreis Greiz | 1 | 6 | 9 |
-|  | [Schwielowsee](https://hofladenliste.de/brandenburg/potsdam-mittelmark/schwielowsee/) `/brandenburg/potsdam-mittelmark/schwielowsee/` | Landkreis Potsdam-Mittelmark | 2 | 3 | 9 |
-|  | [Zeitz](https://hofladenliste.de/sachsen-anhalt/burgenlandkreis/zeitz/) `/sachsen-anhalt/burgenlandkreis/zeitz/` | Burgenlandkreis | 2 | 3 | 9 |
-|  | [Handewitt](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/handewitt/) `/schleswig-holstein/schleswig-flensburg/handewitt/` | Kreis Schleswig-Flensburg | 2 | 3 | 9 |
-|  | [Meersburg](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/meersburg/) `/baden-wuerttemberg/bodenseekreis/meersburg/` | Bodenseekreis | 1 | 5 | 8 |
-|  | [Jettingen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/jettingen/) `/baden-wuerttemberg/boeblingen/jettingen/` | Landkreis Böblingen | 1 | 5 | 8 |
-|  | [Bad Krozingen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/bad-krozingen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/bad-krozingen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
-|  | [Eichstetten am Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/eichstetten-am-kaiserstuhl/) `/baden-wuerttemberg/breisgau-hochschwarzwald/eichstetten-am-kaiserstuhl/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
-|  | [Sankt Peter](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/sankt-peter/) `/baden-wuerttemberg/breisgau-hochschwarzwald/sankt-peter/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
-|  | [Mühlacker](https://hofladenliste.de/baden-wuerttemberg/enzkreis/muehlacker/) `/baden-wuerttemberg/enzkreis/muehlacker/` | Enzkreis | 1 | 5 | 8 |
-|  | [Kirchheim unter Teck](https://hofladenliste.de/baden-wuerttemberg/esslingen/kirchheim-unter-teck/) `/baden-wuerttemberg/esslingen/kirchheim-unter-teck/` | Landkreis Esslingen | 1 | 5 | 8 |
-|  | [Wolfschlugen](https://hofladenliste.de/baden-wuerttemberg/esslingen/wolfschlugen/) `/baden-wuerttemberg/esslingen/wolfschlugen/` | Landkreis Esslingen | 1 | 5 | 8 |
-|  | [Pfalzgrafenweiler](https://hofladenliste.de/baden-wuerttemberg/freudenstadt/pfalzgrafenweiler/) `/baden-wuerttemberg/freudenstadt/pfalzgrafenweiler/` | Landkreis Freudenstadt | 1 | 5 | 8 |
-|  | [Uhingen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/uhingen/) `/baden-wuerttemberg/goeppingen/uhingen/` | Landkreis Göppingen | 1 | 5 | 8 |
-|  | [Bodman-Ludwigshafen](https://hofladenliste.de/baden-wuerttemberg/konstanz/bodman-ludwigshafen/) `/baden-wuerttemberg/konstanz/bodman-ludwigshafen/` | Landkreis Konstanz | 1 | 5 | 8 |
-|  | [Reichenau](https://hofladenliste.de/baden-wuerttemberg/konstanz/reichenau/) `/baden-wuerttemberg/konstanz/reichenau/` | Landkreis Konstanz | 1 | 5 | 8 |
+| ✓ | [Stendal](https://hofladenliste.de/sachsen-anhalt/stendal/stendal/) `/sachsen-anhalt/stendal/stendal/` | Landkreis Stendal | 1 | 6 | 9 |
+| ✓ | [Elstra](https://hofladenliste.de/sachsen/bautzen/elstra/) `/sachsen/bautzen/elstra/` | Landkreis Bautzen | 1 | 6 | 9 |
+| ✓ | [Meißen](https://hofladenliste.de/sachsen/meissen/meissen/) `/sachsen/meissen/meissen/` | Landkreis Meißen | 1 | 6 | 9 |
+| ✓ | [Wermsdorf](https://hofladenliste.de/sachsen/nordsachsen/wermsdorf/) `/sachsen/nordsachsen/wermsdorf/` | Landkreis Nordsachsen | 1 | 6 | 9 |
+| ✓ | [Freital](https://hofladenliste.de/sachsen/saechsische-schweiz/freital/) `/sachsen/saechsische-schweiz/freital/` | Landkreis Sächsische Schweiz | 1 | 6 | 9 |
+| ✓ | [Stolpen](https://hofladenliste.de/sachsen/saechsische-schweiz/stolpen/) `/sachsen/saechsische-schweiz/stolpen/` | Landkreis Sächsische Schweiz | 1 | 6 | 9 |
+| ✓ | [Pellworm](https://hofladenliste.de/schleswig-holstein/nordfriesland/pellworm/) `/schleswig-holstein/nordfriesland/pellworm/` | Kreis Nordfriesland | 1 | 6 | 9 |
+| ✓ | [Appen](https://hofladenliste.de/schleswig-holstein/pinneberg/appen/) `/schleswig-holstein/pinneberg/appen/` | Kreis Pinneberg | 1 | 6 | 9 |
+| ✓ | [Blomesche Wildnis](https://hofladenliste.de/schleswig-holstein/steinburg/blomesche-wildnis/) `/schleswig-holstein/steinburg/blomesche-wildnis/` | Kreis Steinburg | 1 | 6 | 9 |
+| ✓ | [Langenwetzendorf](https://hofladenliste.de/thueringen/greiz/langenwetzendorf/) `/thueringen/greiz/langenwetzendorf/` | Landkreis Greiz | 1 | 6 | 9 |
+| ✓ | [Schwielowsee](https://hofladenliste.de/brandenburg/potsdam-mittelmark/schwielowsee/) `/brandenburg/potsdam-mittelmark/schwielowsee/` | Landkreis Potsdam-Mittelmark | 2 | 3 | 9 |
+| ✓ | [Zeitz](https://hofladenliste.de/sachsen-anhalt/burgenlandkreis/zeitz/) `/sachsen-anhalt/burgenlandkreis/zeitz/` | Burgenlandkreis | 2 | 3 | 9 |
+| ✓ | [Handewitt](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/handewitt/) `/schleswig-holstein/schleswig-flensburg/handewitt/` | Kreis Schleswig-Flensburg | 2 | 3 | 9 |
+| ✓ | [Meersburg](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/meersburg/) `/baden-wuerttemberg/bodenseekreis/meersburg/` | Bodenseekreis | 1 | 5 | 8 |
+| ✓ | [Jettingen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/jettingen/) `/baden-wuerttemberg/boeblingen/jettingen/` | Landkreis Böblingen | 1 | 5 | 8 |
+| ✓ | [Bad Krozingen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/bad-krozingen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/bad-krozingen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
+| ✓ | [Eichstetten am Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/eichstetten-am-kaiserstuhl/) `/baden-wuerttemberg/breisgau-hochschwarzwald/eichstetten-am-kaiserstuhl/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
+| ✓ | [Sankt Peter](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/sankt-peter/) `/baden-wuerttemberg/breisgau-hochschwarzwald/sankt-peter/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
+| ✓ | [Mühlacker](https://hofladenliste.de/baden-wuerttemberg/enzkreis/muehlacker/) `/baden-wuerttemberg/enzkreis/muehlacker/` | Enzkreis | 1 | 5 | 8 |
+| ✓ | [Kirchheim unter Teck](https://hofladenliste.de/baden-wuerttemberg/esslingen/kirchheim-unter-teck/) `/baden-wuerttemberg/esslingen/kirchheim-unter-teck/` | Landkreis Esslingen | 1 | 5 | 8 |
+| ✓ | [Wolfschlugen](https://hofladenliste.de/baden-wuerttemberg/esslingen/wolfschlugen/) `/baden-wuerttemberg/esslingen/wolfschlugen/` | Landkreis Esslingen | 1 | 5 | 8 |
+| ✓ | [Pfalzgrafenweiler](https://hofladenliste.de/baden-wuerttemberg/freudenstadt/pfalzgrafenweiler/) `/baden-wuerttemberg/freudenstadt/pfalzgrafenweiler/` | Landkreis Freudenstadt | 1 | 5 | 8 |
+| ✓ | [Uhingen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/uhingen/) `/baden-wuerttemberg/goeppingen/uhingen/` | Landkreis Göppingen | 1 | 5 | 8 |
+| ✓ | [Bodman-Ludwigshafen](https://hofladenliste.de/baden-wuerttemberg/konstanz/bodman-ludwigshafen/) `/baden-wuerttemberg/konstanz/bodman-ludwigshafen/` | Landkreis Konstanz | 1 | 5 | 8 |
+| ✓ | [Reichenau](https://hofladenliste.de/baden-wuerttemberg/konstanz/reichenau/) `/baden-wuerttemberg/konstanz/reichenau/` | Landkreis Konstanz | 1 | 5 | 8 |
 
 ## Paket 24 (0/25 fertig)
 
