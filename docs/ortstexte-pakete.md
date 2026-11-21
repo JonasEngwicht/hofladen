@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 601 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 626 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -723,35 +723,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Rudersberg](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/rudersberg/) `/baden-wuerttemberg/rems-murr-kreis/rudersberg/` | Rems-Murr-Kreis | 1 | 5 | 8 |
 | ✓ | [Pfullingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/pfullingen/) `/baden-wuerttemberg/reutlingen/pfullingen/` | Landkreis Reutlingen | 1 | 5 | 8 |
 
-## Paket 25 (0/25 fertig)
+## Paket 25 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Dielheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/dielheim/) `/baden-wuerttemberg/rhein-neckar-kreis/dielheim/` | Rhein-Neckar-Kreis | 1 | 5 | 8 |
-|  | [Heddesheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/heddesheim/) `/baden-wuerttemberg/rhein-neckar-kreis/heddesheim/` | Rhein-Neckar-Kreis | 1 | 5 | 8 |
-|  | [Sinsheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/sinsheim/) `/baden-wuerttemberg/rhein-neckar-kreis/sinsheim/` | Rhein-Neckar-Kreis | 1 | 5 | 8 |
-|  | [Zimmern ob Rottweil](https://hofladenliste.de/baden-wuerttemberg/rottweil/zimmern-ob-rottweil/) `/baden-wuerttemberg/rottweil/zimmern-ob-rottweil/` | Landkreis Rottweil | 1 | 5 | 8 |
-|  | [Gaildorf](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/gaildorf/) `/baden-wuerttemberg/schwaebisch-hall/gaildorf/` | Landkreis Schwäbisch Hall | 1 | 5 | 8 |
-|  | [Michelbach an der Bilz](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/michelbach-an-der-bilz/) `/baden-wuerttemberg/schwaebisch-hall/michelbach-an-der-bilz/` | Landkreis Schwäbisch Hall | 1 | 5 | 8 |
-|  | [Rot am See](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/rot-am-see/) `/baden-wuerttemberg/schwaebisch-hall/rot-am-see/` | Landkreis Schwäbisch Hall | 1 | 5 | 8 |
-|  | [Schwäbisch Hall](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/schwaebisch-hall/) `/baden-wuerttemberg/schwaebisch-hall/schwaebisch-hall/` | Landkreis Schwäbisch Hall | 1 | 5 | 8 |
-|  | [Donaueschingen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/donaueschingen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/donaueschingen/` | Schwarzwald-Baar-Kreis | 1 | 5 | 8 |
-|  | [Meßkirch](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/messkirch/) `/baden-wuerttemberg/sigmaringen/messkirch/` | Landkreis Sigmaringen | 1 | 5 | 8 |
-|  | [Sauldorf](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/sauldorf/) `/baden-wuerttemberg/sigmaringen/sauldorf/` | Landkreis Sigmaringen | 1 | 5 | 8 |
-|  | [Gomaringen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/gomaringen/) `/baden-wuerttemberg/tuebingen/gomaringen/` | Landkreis Tübingen | 1 | 5 | 8 |
-|  | [Starzach](https://hofladenliste.de/baden-wuerttemberg/tuebingen/starzach/) `/baden-wuerttemberg/tuebingen/starzach/` | Landkreis Tübingen | 1 | 5 | 8 |
-|  | [Kissing](https://hofladenliste.de/bayern/aichach-friedberg/kissing/) `/bayern/aichach-friedberg/kissing/` | Landkreis Aichach-Friedberg | 1 | 5 | 8 |
-|  | [Obergriesbach](https://hofladenliste.de/bayern/aichach-friedberg/obergriesbach/) `/bayern/aichach-friedberg/obergriesbach/` | Landkreis Aichach-Friedberg | 1 | 5 | 8 |
-|  | [Hammelburg](https://hofladenliste.de/bayern/bad-kissingen/hammelburg/) `/bayern/bad-kissingen/hammelburg/` | Landkreis Bad Kissingen | 1 | 5 | 8 |
-|  | [Saaldorf-Surheim](https://hofladenliste.de/bayern/berchtesgadener-land/saaldorf-surheim/) `/bayern/berchtesgadener-land/saaldorf-surheim/` | Landkreis Berchtesgadener Land | 1 | 5 | 8 |
-|  | [Haimhausen](https://hofladenliste.de/bayern/dachau/haimhausen/) `/bayern/dachau/haimhausen/` | Landkreis Dachau | 1 | 5 | 8 |
-|  | [Markt Indersdorf](https://hofladenliste.de/bayern/dachau/markt-indersdorf/) `/bayern/dachau/markt-indersdorf/` | Landkreis Dachau | 1 | 5 | 8 |
-|  | [Pilsting](https://hofladenliste.de/bayern/dingolfing-landau/pilsting/) `/bayern/dingolfing-landau/pilsting/` | Landkreis Dingolfing-Landau | 1 | 5 | 8 |
-|  | [Baiern](https://hofladenliste.de/bayern/ebersberg/baiern/) `/bayern/ebersberg/baiern/` | Landkreis Ebersberg | 1 | 5 | 8 |
-|  | [Pliening](https://hofladenliste.de/bayern/ebersberg/pliening/) `/bayern/ebersberg/pliening/` | Landkreis Ebersberg | 1 | 5 | 8 |
-|  | [Poing](https://hofladenliste.de/bayern/ebersberg/poing/) `/bayern/ebersberg/poing/` | Landkreis Ebersberg | 1 | 5 | 8 |
-|  | [Denkendorf](https://hofladenliste.de/bayern/eichstaett/denkendorf/) `/bayern/eichstaett/denkendorf/` | Landkreis Eichstätt | 1 | 5 | 8 |
-|  | [Pollenfeld](https://hofladenliste.de/bayern/eichstaett/pollenfeld/) `/bayern/eichstaett/pollenfeld/` | Landkreis Eichstätt | 1 | 5 | 8 |
+| ✓ | [Dielheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/dielheim/) `/baden-wuerttemberg/rhein-neckar-kreis/dielheim/` | Rhein-Neckar-Kreis | 1 | 5 | 8 |
+| ✓ | [Heddesheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/heddesheim/) `/baden-wuerttemberg/rhein-neckar-kreis/heddesheim/` | Rhein-Neckar-Kreis | 1 | 5 | 8 |
+| ✓ | [Sinsheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/sinsheim/) `/baden-wuerttemberg/rhein-neckar-kreis/sinsheim/` | Rhein-Neckar-Kreis | 1 | 5 | 8 |
+| ✓ | [Zimmern ob Rottweil](https://hofladenliste.de/baden-wuerttemberg/rottweil/zimmern-ob-rottweil/) `/baden-wuerttemberg/rottweil/zimmern-ob-rottweil/` | Landkreis Rottweil | 1 | 5 | 8 |
+| ✓ | [Gaildorf](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/gaildorf/) `/baden-wuerttemberg/schwaebisch-hall/gaildorf/` | Landkreis Schwäbisch Hall | 1 | 5 | 8 |
+| ✓ | [Michelbach an der Bilz](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/michelbach-an-der-bilz/) `/baden-wuerttemberg/schwaebisch-hall/michelbach-an-der-bilz/` | Landkreis Schwäbisch Hall | 1 | 5 | 8 |
+| ✓ | [Rot am See](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/rot-am-see/) `/baden-wuerttemberg/schwaebisch-hall/rot-am-see/` | Landkreis Schwäbisch Hall | 1 | 5 | 8 |
+| ✓ | [Schwäbisch Hall](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/schwaebisch-hall/) `/baden-wuerttemberg/schwaebisch-hall/schwaebisch-hall/` | Landkreis Schwäbisch Hall | 1 | 5 | 8 |
+| ✓ | [Donaueschingen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/donaueschingen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/donaueschingen/` | Schwarzwald-Baar-Kreis | 1 | 5 | 8 |
+| ✓ | [Meßkirch](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/messkirch/) `/baden-wuerttemberg/sigmaringen/messkirch/` | Landkreis Sigmaringen | 1 | 5 | 8 |
+| ✓ | [Sauldorf](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/sauldorf/) `/baden-wuerttemberg/sigmaringen/sauldorf/` | Landkreis Sigmaringen | 1 | 5 | 8 |
+| ✓ | [Gomaringen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/gomaringen/) `/baden-wuerttemberg/tuebingen/gomaringen/` | Landkreis Tübingen | 1 | 5 | 8 |
+| ✓ | [Starzach](https://hofladenliste.de/baden-wuerttemberg/tuebingen/starzach/) `/baden-wuerttemberg/tuebingen/starzach/` | Landkreis Tübingen | 1 | 5 | 8 |
+| ✓ | [Kissing](https://hofladenliste.de/bayern/aichach-friedberg/kissing/) `/bayern/aichach-friedberg/kissing/` | Landkreis Aichach-Friedberg | 1 | 5 | 8 |
+| ✓ | [Obergriesbach](https://hofladenliste.de/bayern/aichach-friedberg/obergriesbach/) `/bayern/aichach-friedberg/obergriesbach/` | Landkreis Aichach-Friedberg | 1 | 5 | 8 |
+| ✓ | [Hammelburg](https://hofladenliste.de/bayern/bad-kissingen/hammelburg/) `/bayern/bad-kissingen/hammelburg/` | Landkreis Bad Kissingen | 1 | 5 | 8 |
+| ✓ | [Saaldorf-Surheim](https://hofladenliste.de/bayern/berchtesgadener-land/saaldorf-surheim/) `/bayern/berchtesgadener-land/saaldorf-surheim/` | Landkreis Berchtesgadener Land | 1 | 5 | 8 |
+| ✓ | [Haimhausen](https://hofladenliste.de/bayern/dachau/haimhausen/) `/bayern/dachau/haimhausen/` | Landkreis Dachau | 1 | 5 | 8 |
+| ✓ | [Markt Indersdorf](https://hofladenliste.de/bayern/dachau/markt-indersdorf/) `/bayern/dachau/markt-indersdorf/` | Landkreis Dachau | 1 | 5 | 8 |
+| ✓ | [Pilsting](https://hofladenliste.de/bayern/dingolfing-landau/pilsting/) `/bayern/dingolfing-landau/pilsting/` | Landkreis Dingolfing-Landau | 1 | 5 | 8 |
+| ✓ | [Baiern](https://hofladenliste.de/bayern/ebersberg/baiern/) `/bayern/ebersberg/baiern/` | Landkreis Ebersberg | 1 | 5 | 8 |
+| ✓ | [Pliening](https://hofladenliste.de/bayern/ebersberg/pliening/) `/bayern/ebersberg/pliening/` | Landkreis Ebersberg | 1 | 5 | 8 |
+| ✓ | [Poing](https://hofladenliste.de/bayern/ebersberg/poing/) `/bayern/ebersberg/poing/` | Landkreis Ebersberg | 1 | 5 | 8 |
+| ✓ | [Denkendorf](https://hofladenliste.de/bayern/eichstaett/denkendorf/) `/bayern/eichstaett/denkendorf/` | Landkreis Eichstätt | 1 | 5 | 8 |
+| ✓ | [Pollenfeld](https://hofladenliste.de/bayern/eichstaett/pollenfeld/) `/bayern/eichstaett/pollenfeld/` | Landkreis Eichstätt | 1 | 5 | 8 |
 
 ## Paket 26 (0/25 fertig)
 
