@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 226 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 251 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -273,35 +273,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Stade](https://hofladenliste.de/niedersachsen/stade/stade/) `/niedersachsen/stade/stade/` | Landkreis Stade | 4 | 2 | 14 |
 | ✓ | [Lippstadt](https://hofladenliste.de/nordrhein-westfalen/soest/lippstadt/) `/nordrhein-westfalen/soest/lippstadt/` | Kreis Soest | 4 | 2 | 14 |
 
-## Paket 10 (0/25 fertig)
+## Paket 10 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Leinfelden-Echterdingen](https://hofladenliste.de/baden-wuerttemberg/esslingen/leinfelden-echterdingen/) `/baden-wuerttemberg/esslingen/leinfelden-echterdingen/` | Landkreis Esslingen | 1 | 10 | 13 |
-|  | [Brackenheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/brackenheim/) `/baden-wuerttemberg/landkreis-heilbronn/brackenheim/` | Landkreis Heilbronn | 1 | 10 | 13 |
-|  | [Ditzingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/ditzingen/) `/baden-wuerttemberg/ludwigsburg/ditzingen/` | Landkreis Ludwigsburg | 1 | 10 | 13 |
-|  | [Achern](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/achern/) `/baden-wuerttemberg/ortenaukreis/achern/` | Ortenaukreis | 1 | 10 | 13 |
-|  | [Renchen](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/renchen/) `/baden-wuerttemberg/ortenaukreis/renchen/` | Ortenaukreis | 1 | 10 | 13 |
-|  | [Rheinau](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/rheinau/) `/baden-wuerttemberg/ortenaukreis/rheinau/` | Ortenaukreis | 1 | 10 | 13 |
-|  | [Weinstadt](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/weinstadt/) `/baden-wuerttemberg/rems-murr-kreis/weinstadt/` | Rems-Murr-Kreis | 1 | 10 | 13 |
-|  | [Hockenheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/hockenheim/) `/baden-wuerttemberg/rhein-neckar-kreis/hockenheim/` | Rhein-Neckar-Kreis | 1 | 10 | 13 |
-|  | [Affing](https://hofladenliste.de/bayern/aichach-friedberg/affing/) `/bayern/aichach-friedberg/affing/` | Landkreis Aichach-Friedberg | 1 | 10 | 13 |
-|  | [Maisach](https://hofladenliste.de/bayern/fuerstenfeldbruck/maisach/) `/bayern/fuerstenfeldbruck/maisach/` | Landkreis Fürstenfeldbruck | 1 | 10 | 13 |
-|  | [Stephanskirchen](https://hofladenliste.de/bayern/landkreis-rosenheim/stephanskirchen/) `/bayern/landkreis-rosenheim/stephanskirchen/` | Landkreis Rosenheim | 1 | 10 | 13 |
-|  | [Beelitz](https://hofladenliste.de/brandenburg/potsdam-mittelmark/beelitz/) `/brandenburg/potsdam-mittelmark/beelitz/` | Landkreis Potsdam-Mittelmark | 1 | 10 | 13 |
-|  | [Weiterstadt](https://hofladenliste.de/hessen/darmstadt-dieburg/weiterstadt/) `/hessen/darmstadt-dieburg/weiterstadt/` | Landkreis Darmstadt-Dieburg | 1 | 10 | 13 |
-|  | [Rodgau](https://hofladenliste.de/hessen/offenbach/rodgau/) `/hessen/offenbach/rodgau/` | Landkreis Offenbach | 1 | 10 | 13 |
-|  | [Bad Nauheim](https://hofladenliste.de/hessen/wetteraukreis/bad-nauheim/) `/hessen/wetteraukreis/bad-nauheim/` | Wetteraukreis | 1 | 10 | 13 |
-|  | [Löningen](https://hofladenliste.de/niedersachsen/cloppenburg/loeningen/) `/niedersachsen/cloppenburg/loeningen/` | Landkreis Cloppenburg | 1 | 10 | 13 |
-|  | [Stuhr](https://hofladenliste.de/niedersachsen/diepholz/stuhr/) `/niedersachsen/diepholz/stuhr/` | Landkreis Diepholz | 1 | 10 | 13 |
-|  | [Buchholz in der Nordheide](https://hofladenliste.de/niedersachsen/harburg/buchholz-in-der-nordheide/) `/niedersachsen/harburg/buchholz-in-der-nordheide/` | Landkreis Harburg | 1 | 10 | 13 |
-|  | [Walsrode](https://hofladenliste.de/niedersachsen/heidekreis/walsrode/) `/niedersachsen/heidekreis/walsrode/` | Heidekreis | 1 | 10 | 13 |
-|  | [Ganderkesee](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/ganderkesee/) `/niedersachsen/landkreis-oldenburg/ganderkesee/` | Landkreis Oldenburg | 1 | 10 | 13 |
-|  | [Scheeßel](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/scheessel/) `/niedersachsen/rotenburg-wuemme/scheessel/` | Landkreis Rotenburg (Wümme) | 1 | 10 | 13 |
-|  | [Thedinghausen](https://hofladenliste.de/niedersachsen/verden/thedinghausen/) `/niedersachsen/verden/thedinghausen/` | Landkreis Verden | 1 | 10 | 13 |
-|  | [Lemgo](https://hofladenliste.de/nordrhein-westfalen/lippe/lemgo/) `/nordrhein-westfalen/lippe/lemgo/` | Kreis Lippe | 1 | 10 | 13 |
-|  | [Borchen](https://hofladenliste.de/nordrhein-westfalen/paderborn/borchen/) `/nordrhein-westfalen/paderborn/borchen/` | Kreis Paderborn | 1 | 10 | 13 |
-|  | [Datteln](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/datteln/) `/nordrhein-westfalen/recklinghausen/datteln/` | Kreis Recklinghausen | 1 | 10 | 13 |
+| ✓ | [Leinfelden-Echterdingen](https://hofladenliste.de/baden-wuerttemberg/esslingen/leinfelden-echterdingen/) `/baden-wuerttemberg/esslingen/leinfelden-echterdingen/` | Landkreis Esslingen | 1 | 10 | 13 |
+| ✓ | [Brackenheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/brackenheim/) `/baden-wuerttemberg/landkreis-heilbronn/brackenheim/` | Landkreis Heilbronn | 1 | 10 | 13 |
+| ✓ | [Ditzingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/ditzingen/) `/baden-wuerttemberg/ludwigsburg/ditzingen/` | Landkreis Ludwigsburg | 1 | 10 | 13 |
+| ✓ | [Achern](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/achern/) `/baden-wuerttemberg/ortenaukreis/achern/` | Ortenaukreis | 1 | 10 | 13 |
+| ✓ | [Renchen](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/renchen/) `/baden-wuerttemberg/ortenaukreis/renchen/` | Ortenaukreis | 1 | 10 | 13 |
+| ✓ | [Rheinau](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/rheinau/) `/baden-wuerttemberg/ortenaukreis/rheinau/` | Ortenaukreis | 1 | 10 | 13 |
+| ✓ | [Weinstadt](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/weinstadt/) `/baden-wuerttemberg/rems-murr-kreis/weinstadt/` | Rems-Murr-Kreis | 1 | 10 | 13 |
+| ✓ | [Hockenheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/hockenheim/) `/baden-wuerttemberg/rhein-neckar-kreis/hockenheim/` | Rhein-Neckar-Kreis | 1 | 10 | 13 |
+| ✓ | [Affing](https://hofladenliste.de/bayern/aichach-friedberg/affing/) `/bayern/aichach-friedberg/affing/` | Landkreis Aichach-Friedberg | 1 | 10 | 13 |
+| ✓ | [Maisach](https://hofladenliste.de/bayern/fuerstenfeldbruck/maisach/) `/bayern/fuerstenfeldbruck/maisach/` | Landkreis Fürstenfeldbruck | 1 | 10 | 13 |
+| ✓ | [Stephanskirchen](https://hofladenliste.de/bayern/landkreis-rosenheim/stephanskirchen/) `/bayern/landkreis-rosenheim/stephanskirchen/` | Landkreis Rosenheim | 1 | 10 | 13 |
+| ✓ | [Beelitz](https://hofladenliste.de/brandenburg/potsdam-mittelmark/beelitz/) `/brandenburg/potsdam-mittelmark/beelitz/` | Landkreis Potsdam-Mittelmark | 1 | 10 | 13 |
+| ✓ | [Weiterstadt](https://hofladenliste.de/hessen/darmstadt-dieburg/weiterstadt/) `/hessen/darmstadt-dieburg/weiterstadt/` | Landkreis Darmstadt-Dieburg | 1 | 10 | 13 |
+| ✓ | [Rodgau](https://hofladenliste.de/hessen/offenbach/rodgau/) `/hessen/offenbach/rodgau/` | Landkreis Offenbach | 1 | 10 | 13 |
+| ✓ | [Bad Nauheim](https://hofladenliste.de/hessen/wetteraukreis/bad-nauheim/) `/hessen/wetteraukreis/bad-nauheim/` | Wetteraukreis | 1 | 10 | 13 |
+| ✓ | [Löningen](https://hofladenliste.de/niedersachsen/cloppenburg/loeningen/) `/niedersachsen/cloppenburg/loeningen/` | Landkreis Cloppenburg | 1 | 10 | 13 |
+| ✓ | [Stuhr](https://hofladenliste.de/niedersachsen/diepholz/stuhr/) `/niedersachsen/diepholz/stuhr/` | Landkreis Diepholz | 1 | 10 | 13 |
+| ✓ | [Buchholz in der Nordheide](https://hofladenliste.de/niedersachsen/harburg/buchholz-in-der-nordheide/) `/niedersachsen/harburg/buchholz-in-der-nordheide/` | Landkreis Harburg | 1 | 10 | 13 |
+| ✓ | [Walsrode](https://hofladenliste.de/niedersachsen/heidekreis/walsrode/) `/niedersachsen/heidekreis/walsrode/` | Heidekreis | 1 | 10 | 13 |
+| ✓ | [Ganderkesee](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/ganderkesee/) `/niedersachsen/landkreis-oldenburg/ganderkesee/` | Landkreis Oldenburg | 1 | 10 | 13 |
+| ✓ | [Scheeßel](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/scheessel/) `/niedersachsen/rotenburg-wuemme/scheessel/` | Landkreis Rotenburg (Wümme) | 1 | 10 | 13 |
+| ✓ | [Thedinghausen](https://hofladenliste.de/niedersachsen/verden/thedinghausen/) `/niedersachsen/verden/thedinghausen/` | Landkreis Verden | 1 | 10 | 13 |
+| ✓ | [Lemgo](https://hofladenliste.de/nordrhein-westfalen/lippe/lemgo/) `/nordrhein-westfalen/lippe/lemgo/` | Kreis Lippe | 1 | 10 | 13 |
+| ✓ | [Borchen](https://hofladenliste.de/nordrhein-westfalen/paderborn/borchen/) `/nordrhein-westfalen/paderborn/borchen/` | Kreis Paderborn | 1 | 10 | 13 |
+| ✓ | [Datteln](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/datteln/) `/nordrhein-westfalen/recklinghausen/datteln/` | Kreis Recklinghausen | 1 | 10 | 13 |
 
 ## Paket 11 (0/25 fertig)
 

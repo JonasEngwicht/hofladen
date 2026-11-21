@@ -7172,5 +7172,761 @@
       }
     ],
     "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/esslingen/leinfelden-echterdingen/": {
+    "titel": "Hofläden in Leinfelden-Echterdingen: gut zu wissen",
+    "oben": "Leinfelden-Echterdingen liegt auf den Fildern, der Lösshochfläche südlich von Stuttgart, die für ihr Spitzkraut bekannt ist. Trotz Flughafen und Messe gibt es hier viele Familienbetriebe mit Hofladen, dazu Eierautomaten, einen Regiomat und einen Biohof.",
+    "einleitung": "Das Filderkraut ist eine spitze Weißkohlsorte und als geschützte geografische Angabe eingetragen. Im Herbst feiert Echterdingen das Filderkrautfest, und die Höfe verkaufen frisches Kraut und Sauerkraut. Daneben wachsen auf den Feldern Kartoffeln, Salat und Getreide.\n\nDie Höfe liegen nah beieinander in Leinfelden, Echterdingen, Stetten und Musberg, sodass sich mehrere Läden gut mit dem Rad verbinden lassen. Nach Norden schließen die Stuttgarter Filderstadtteile an.",
+    "saison": [
+      {
+        "titel": "Filderkraut",
+        "zeit": "September bis November"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Esslingen",
+        "pfad": "/baden-wuerttemberg/esslingen/"
+      },
+      {
+        "text": "Hofläden in Stuttgart",
+        "pfad": "/baden-wuerttemberg/stuttgart/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/landkreis-heilbronn/brackenheim/": {
+    "titel": "Hofläden in Brackenheim: gut zu wissen",
+    "oben": "Brackenheim im Zabergäu gilt als größte Weinbaugemeinde Württembergs und ist der Geburtsort von Theodor Heuss. Neben Wein gibt es hier Obst, Beeren und Milch direkt vom Hof, eine Solawi und eine Bio-Mühle mit eigenem Laden.",
+    "einleitung": "Das Zabergäu ist ein sanftes Hügelland zwischen Heuchelberg und Stromberg. An den Hängen stehen Reben, vor allem Lemberger und Trollinger, in den Tälern Obstwiesen und Felder. Der Mühlenladen Spielberger verkauft Mehl und Getreideprodukte, Hofladen Scheuerle hat unter anderem Nudeln und Getränke.\n\nAn der Milchtankstelle bekommst du Rohmilch: vor dem Trinken abkochen. Weitere Höfe liegen in Lauffen, Nordheim und Schwaigern.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Beeren",
+        "zeit": "Juni bis August"
+      },
+      {
+        "titel": "Äpfel und Birnen",
+        "zeit": "August bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Heilbronn",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/"
+      },
+      {
+        "text": "Hofläden in Lauffen am Neckar und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/lauffen-am-neckar/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ludwigsburg/ditzingen/": {
+    "titel": "Hofläden in Ditzingen: gut zu wissen",
+    "oben": "Ditzingen an der Glems ist das Tor zum Strohgäu, einer offenen Ackerlandschaft westlich von Stuttgart. In der Stadt gibt es zwei Bio-Hofläden, Mühlenläden, einen Milchautomaten und mehrere Eierhäuschen zur Selbstbedienung.",
+    "einleitung": "Der Name Strohgäu erinnert an den Getreideanbau auf den fruchtbaren Lössböden. Entsprechend findest du in Ditzingen Mühlen mit Laden, etwa Tonmühle und Mühleladen, die Mehl und Backzutaten anbieten. Der Biohofladen Hagenlocher ist gleich zweimal eingetragen.\n\nDer Milchautomat hat neben Milch auch Eier und Fleisch. Nach Süden geht es nach Gerlingen und Leonberg, nach Norden in die Strohgäu-Dörfer Hemmingen und Schwieberdingen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Mehl aus neuer Ernte",
+        "zeit": "ab Spätsommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Ludwigsburg",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/"
+      },
+      {
+        "text": "Hofläden in Leonberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/leonberg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ortenaukreis/achern/": {
+    "titel": "Hofläden in Achern: gut zu wissen",
+    "oben": "Achern liegt dort, wo das Achertal aus dem Schwarzwald in die Rheinebene tritt. An den Vorbergen wachsen Kirschen, Zwetschgen und Äpfel, und viele Familienhöfe verkaufen ihr Obst direkt. Dazu kommen ein Milchhäusle und zwei Bio-Betriebe.",
+    "einleitung": "Die Ortenau ist eines der großen Obstanbaugebiete Baden-Württembergs. Rund um Achern und das benachbarte Sasbachwalden reihen sich Obstwiesen und Reben, weiter oben im Achertal liegen Mummelsee und Hornisgrinde. Der Drei-Kirschenhof hat seinen Schwerpunkt beim Steinobst, Webers Hofglück bietet Bio-Obst, Kartoffeln und Honig.\n\nIm Milchhäusle Lindenhof gibt es Rohmilch zum Selbstzapfen: vor dem Trinken abkochen.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Zwetschgen",
+        "zeit": "August und September"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September bis November"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sasbachwalden und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/sasbachwalden/"
+      },
+      {
+        "text": "Hofläden im Ortenaukreis",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ortenaukreis/renchen/": {
+    "titel": "Hofläden in Renchen: gut zu wissen",
+    "oben": "Renchen liegt am Ausgang des Renchtals, wo Obstbau und Rheinebene aufeinandertreffen. Mehrere Obsthöfe verkaufen hier direkt, dazu kommen ein Ziegenhof, eine Schwarzwaldimkerei und Automaten für frische Ware rund um die Uhr.",
+    "einleitung": "Die Stadt ist eng mit dem Dichter Grimmelshausen verbunden, der hier Schultheiß war. Landwirtschaftlich prägen Erdbeeren, Kirschen und Äpfel die Gegend. Der Obsthof Zink hat zusätzlich eine Frische-Tankstelle, an der du auch außerhalb der Ladenzeiten Obst bekommst.\n\nWer weiter ins Tal fährt, kommt nach Oberkirch, einem Zentrum für Obst und Brennereien. Nach Norden schließt Achern an.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "ab August"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberkirch und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/oberkirch/"
+      },
+      {
+        "text": "Hofläden im Ortenaukreis",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/ortenaukreis/rheinau/": {
+    "titel": "Hofläden in Rheinau: gut zu wissen",
+    "oben": "Rheinau liegt im Hanauerland direkt am Rhein, gegenüber dem Elsass. Auffällig sind die vielen Selbstbedienungsstellen: zwei Milchtankstellen, darunter das Linxer Milchhiesl, Eierautomaten und Regiomaten, einer davon mit Fleisch.",
+    "einleitung": "Die Stadt besteht aus mehreren Dörfern in der Rheinebene zwischen Kehl und Lichtenau. Auf den ebenen Flächen wachsen Mais, Getreide und Gemüse, entlang des Rheins liegen Auwälder und Altrheinarme, die sich gut mit dem Rad erkunden lassen.\n\nDer Apfelhof Schrempp verkauft Äpfel, Agrar Eier Sänger Eier, und die Imkerei Kleis hat Honig aus der Rheinaue. Milch aus den Tankstellen ist Rohmilch: vor dem Trinken abkochen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis Oktober"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Renchen und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/renchen/"
+      },
+      {
+        "text": "Hofläden in Lichtenau und Umgebung",
+        "pfad": "/baden-wuerttemberg/rastatt/lichtenau/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/rems-murr-kreis/weinstadt/": {
+    "titel": "Hofläden in Weinstadt: gut zu wissen",
+    "oben": "Weinstadt im Remstal trägt den Weinbau schon im Namen, doch auffällig viele Einträge hier sind Obsthöfe: Aroma-Obst, Beeren, Kirschen und Äpfel aus den Hängen zwischen Beutelsbach und Strümpfelbach. Dazu kommen eine Imkerei und ein Hofcafé.",
+    "einleitung": "Die Stadt entstand aus den Orten Beutelsbach, Endersbach, Großheppach, Schnait und Strümpfelbach. Auf der Südseite des Remstals liegen Weinberge, darunter Obstanlagen und Streuobstwiesen. Kilburger hat Obst und Beeren, Hubschneider Aroma-Obst, Häcker und Crosman betreiben ebenfalls Obstbau.\n\nDer Remstal-Höhenweg und Radwege an der Rems verbinden die Höfe mit Kernen und Waiblingen.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Beeren",
+        "zeit": "Juni bis August"
+      },
+      {
+        "titel": "Äpfel und Birnen",
+        "zeit": "September bis November"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Rems-Murr-Kreis",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/"
+      },
+      {
+        "text": "Hofläden in Kernen im Remstal und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/kernen-im-remstal/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/baden-wuerttemberg/rhein-neckar-kreis/hockenheim/": {
+    "titel": "Hofläden in Hockenheim: gut zu wissen",
+    "oben": "Hockenheim kennen viele wegen der Rennstrecke, doch die Sandböden der Rheinebene rund um die Stadt sind Spargelland. Ein Spargelhof, ein Bio-Apfelsafthof, ein Stadtladen mit Café und mehrere Automaten mit Eiern, Milch und Dosenwurst sind eingetragen.",
+    "einleitung": "Zwischen Schwetzingen, Hockenheim und Walldorf wird seit langem Spargel angebaut, früher war hier außerdem der Tabak wichtig. Der Spargelhof Großhans verkauft neben Spargel auch Obst und Kartoffeln, Rinklef presst Bio-Apfelsaft. Der Johanneshof hat einen Hofladen und zusätzlich einen Stadtladen mit Café und Deli.\n\nWeitere Höfe findest du in Reilingen, Ketsch und Altlußheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Apfelsaft aus neuer Ernte",
+        "zeit": "ab Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Rhein-Neckar-Kreis",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/"
+      },
+      {
+        "text": "Hofläden in Reilingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/reilingen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/aichach-friedberg/affing/": {
+    "titel": "Hofläden in Affing: gut zu wissen",
+    "oben": "Affing liegt zwischen Augsburg und Aichach im Wittelsbacher Land. Die Höfe der Gemeinde haben klare Schwerpunkte: Säfte, Gemüse, Kartoffeln und Milch, dazu ein Biohof und mehrere Automaten, an denen du rund um die Uhr Milch und Eier bekommst.",
+    "einleitung": "Das Hügelland östlich des Lechs ist von Ackerbau und Milchviehhaltung geprägt. Der Saftladen Gamperl verkauft Säfte, der Gemüsehof Mägele Gemüse, die Kartoffelhütte Kartoffeln. Die Milli-Hittn und die 24h Milch- und Eiertankstelle bieten Rohmilch und Eier zur Selbstbedienung, die Milch vor dem Trinken abkochen.\n\nWeitere Höfe liegen im übrigen Landkreis Aichach-Friedberg und nördlich von Augsburg.",
+    "saison": [
+      {
+        "titel": "Frühkartoffeln",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Apfelsaft",
+        "zeit": "ab Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Aichach-Friedberg",
+        "pfad": "/bayern/aichach-friedberg/"
+      },
+      {
+        "text": "Hofläden in Augsburg",
+        "pfad": "/bayern/augsburg-stadt/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/fuerstenfeldbruck/maisach/": {
+    "titel": "Hofläden in Maisach: gut zu wissen",
+    "oben": "Maisach liegt im Ackerland nordwestlich von München und hat ungewöhnlich viele Selbstbedienungsstellen: Regiomaten mit Eiern, Nudeln und Fleisch, eine Kartoffelhütte und einen Eierautomaten. Dazu kommen ein Erdbeerfeld, ein Biohof mit Wild und eine Hofmetzgerei.",
+    "einleitung": "Auf den Feldern zwischen Maisach, Gernlinden und Mammendorf wachsen Getreide, Kartoffeln und Erdbeeren. Das Erdbeerfeld der Familie Wolf hat neben Erdbeeren auch Gemüse, der Biohof Hirschvogel bietet Wild, und die Metzgerei Widmann verkauft Fleisch und Wurst aus dem Hofladen.\n\nNach Osten schließen Olching und Fürstenfeldbruck an, nach Norden der Landkreis Dachau.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Fürstenfeldbruck",
+        "pfad": "/bayern/fuerstenfeldbruck/"
+      },
+      {
+        "text": "Hofläden im Landkreis Dachau",
+        "pfad": "/bayern/dachau/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/bayern/landkreis-rosenheim/stephanskirchen/": {
+    "titel": "Hofläden in Stephanskirchen: gut zu wissen",
+    "oben": "Stephanskirchen liegt zwischen Rosenheim, dem Inn und dem Simssee im Voralpenland. Die Auswahl ist vielseitig: Käse aus einer Hofkäserei, Feldgemüse, Forellen, Milch direkt vom Hof, eine Solawi und ein Bio-Hof mit Café.",
+    "einleitung": "Grünland und Milchviehhaltung bestimmen die Landschaft rund um den Simssee. Die Hofkäserei beim Ertl verarbeitet Milch zu Käse, Thanner Forellen verkauft Fisch aus eigener Zucht, und Hiebl Feldgemüse baut Gemüse an. Beim Kerner gibt es Hofladen und Hofcafé, die SoLawi Landlmühle versorgt ihre Mitglieder mit Bio-Gemüse.\n\nDer Simssee lädt zu Rad- und Wandertouren ein, im Osten beginnt der Chiemgau.",
+    "saison": [
+      {
+        "titel": "Feldgemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Forellen",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Bergkäse und Hofkäse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rosenheim",
+        "pfad": "/bayern/rosenheim-stadt/"
+      },
+      {
+        "text": "Hofläden im Landkreis Rosenheim",
+        "pfad": "/bayern/landkreis-rosenheim/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/brandenburg/potsdam-mittelmark/beelitz/": {
+    "titel": "Hofläden in Beelitz: gut zu wissen",
+    "oben": "Beelitz ist die Spargelstadt Brandenburgs: Der Beelitzer Spargel ist als geschützte geografische Angabe eingetragen, und fast alle Einträge hier sind Spargelhöfe. Dazu kommen der Erlebnishof Klaistow und ein Regiomat mit Eiern und Fleisch.",
+    "einleitung": "Die leichten, sandigen Böden südlich von Potsdam erwärmen sich im Frühjahr schnell und eignen sich gut für Spargel. Spargelhöfe in Schlunkendorf, Elsholz, Falkenthal und anderen Ortsteilen verkaufen in der Saison direkt ab Hof, viele auch Erdbeeren und Heidelbeeren.\n\nDer Erlebnishof Klaistow ist ein beliebtes Ausflugsziel mit Hofladen. Weitere Höfe findest du in Werder an der Havel und Treuenbrietzen.",
+    "faq": [
+      {
+        "frage": "Wann gibt es Beelitzer Spargel?",
+        "antwort": "Die Saison beginnt je nach Wetter im April und endet traditionell am Johannistag, dem 24. Juni. In dieser Zeit verkaufen die Spargelhöfe täglich frisch gestochenen Spargel."
+      }
+    ],
+    "saison": [
+      {
+        "titel": "Beelitzer Spargel",
+        "zeit": "April bis 24. Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Heidelbeeren",
+        "zeit": "Juli und August"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Potsdam-Mittelmark",
+        "pfad": "/brandenburg/potsdam-mittelmark/"
+      },
+      {
+        "text": "Hofläden in Werder (Havel) und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/werder-havel/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/darmstadt-dieburg/weiterstadt/": {
+    "titel": "Hofläden in Weiterstadt: gut zu wissen",
+    "oben": "Weiterstadt liegt nordwestlich von Darmstadt am Rand des Hessischen Rieds. Auf den Sandböden wachsen Spargel und Beeren, und mehrere Spargelhöfe verkaufen direkt. Dazu kommen ein Geflügelhof und ein Apfelbetrieb aus Gräfenhausen.",
+    "einleitung": "Das Ried ist eine flache, warme Ebene zwischen Rhein und Odenwald, gut geeignet für Gemüse und Erdbeeren. Spargelhof Mager und Tannenhof verkaufen Spargel, der Tannenhof außerdem Beerenobst. Der Geflügelhof Weiterstadt bietet Eier und Geflügel, Vom Gräfenhäuser Apfelbaum Äpfel.\n\nZwei Regiomaten haben Eier und Fleisch. Weitere Höfe liegen in Griesheim, Büttelborn und im Landkreis Groß-Gerau.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Darmstadt-Dieburg",
+        "pfad": "/hessen/darmstadt-dieburg/"
+      },
+      {
+        "text": "Hofläden im Landkreis Groß-Gerau",
+        "pfad": "/hessen/gross-gerau/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/offenbach/rodgau/": {
+    "titel": "Hofläden in Rodgau: gut zu wissen",
+    "oben": "Rodgau liegt in der Untermainebene zwischen Offenbach und Seligenstadt. Die Höfe hier setzen stark auf Automaten: Einer davon hat Eier, Fleisch, Gemüse, Kartoffeln, Honig und Nudeln, ein Regiomat zusätzlich Käse und Marmelade. Erdbeeren kannst du selbst pflücken.",
+    "einleitung": "Zwischen den Stadtteilen liegen Felder und Wald auf eher sandigen Böden, auf denen Spargel, Erdbeeren und Kartoffeln gut gedeihen. Bei Bauer Würfl gibt es Erdbeeren zum Selbstpflücken, der Bauernhof Raab verkauft Fleisch, und Kellers's Automaten bieten ein breites Sortiment rund um die Uhr.\n\nEin Hofcafé, der Sandhof und Grimm's Bauernlädchen ergänzen die Auswahl. Nach Osten geht es nach Seligenstadt und Babenhausen.",
+    "saison": [
+      {
+        "titel": "Erdbeeren zum Selbstpflücken",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Sommer bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Seligenstadt und Umgebung",
+        "pfad": "/hessen/offenbach/seligenstadt/"
+      },
+      {
+        "text": "Hofläden im Landkreis Offenbach",
+        "pfad": "/hessen/offenbach/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/hessen/wetteraukreis/bad-nauheim/": {
+    "titel": "Hofläden in Bad Nauheim: gut zu wissen",
+    "oben": "Bad Nauheim ist Kurstadt am Taunusrand, liegt aber mitten in der Wetterau, einer der fruchtbarsten Ackerlandschaften Hessens. Eingetragen sind eine Straußwirtschaft, ein Milchhäuschen, mehrere Hofläden und das Wetterauer Früchtchen.",
+    "einleitung": "Die Lössböden der Wetterau tragen Getreide, Zuckerrüben, Gemüse und Obst. Der Stadtteil Steinfurth ist als Rosendorf bekannt, dort werden seit langem Rosen gezüchtet. Die Rote Pumpe ist Straußwirtschaft, im Schweizer Milchhäuschen gibt es Rohmilch, die du vor dem Trinken abkochen solltest.\n\nDie Regiohütte Hof Möbs, Hoffreunde und Hofladen Schwabe ergänzen das Angebot. Weitere Höfe liegen in Friedberg und Butzbach.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Rosen aus Steinfurth",
+        "zeit": "Juni bis September"
+      },
+      {
+        "titel": "Äpfel und Apfelwein",
+        "zeit": "ab Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Friedberg (Hessen) und Umgebung",
+        "pfad": "/hessen/wetteraukreis/friedberg/"
+      },
+      {
+        "text": "Hofläden im Wetteraukreis",
+        "pfad": "/hessen/wetteraukreis/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/cloppenburg/loeningen/": {
+    "titel": "Hofläden in Löningen: gut zu wissen",
+    "oben": "Löningen liegt im Hasetal im Oldenburger Münsterland. Auffällig ist der Honig: Ein Imkerverein, eine Imkerei und ein Honigautomat sind eingetragen. Außerdem gibt es Schafmilchprodukte, einen Obstbau-Meisterbetrieb und einen Biohof.",
+    "einleitung": "Die Hase schlängelt sich durch Wiesen und Wälder und ist bei Kanufahrern beliebt. Ringsum liegt eine Geestlandschaft mit Ackerbau und Tierhaltung. Niehaus Ehren baut Obst und Gemüse an, Ingrid Brockhaus verkauft Milch und Käse vom Schaf, und der Hasetaler Hofladen sowie der Biohof am Kolk ergänzen das Angebot.\n\nEierautomaten stehen in den Ortsteilen. Nach Westen grenzt das Emsland, nach Süden das Osnabrücker Land.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer bis Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Cloppenburg",
+        "pfad": "/niedersachsen/cloppenburg/"
+      },
+      {
+        "text": "Hofläden in Menslage und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/menslage/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/diepholz/stuhr/": {
+    "titel": "Hofläden in Stuhr: gut zu wissen",
+    "oben": "Stuhr grenzt direkt an Bremen und ist Milchland: Mehr als die Hälfte der Einträge hier sind Milchtankstellen oder Milchautomaten, etwa bei Mahlstedt und Hof Evers. Dazu kommen Gemüse, Kartoffeln und Eier.",
+    "einleitung": "Rund um Brinkum, Heiligenrode und Varrel wechseln Wiesen an der Ochtum mit Ackerflächen auf der Geest. Viele Höfe halten Milchkühe und verkaufen die Milch über Automaten, die meist rund um die Uhr zugänglich sind. Es handelt sich um Rohmilch: vor dem Trinken abkochen.\n\nDie Gemüsedeern verkauft Gemüse, Fischer's Milcheck auch Kartoffeln. Weitere Höfe findest du in Weyhe und Syke.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Juni bis Oktober"
+      },
+      {
+        "titel": "Grünkohl",
+        "zeit": "November bis Februar"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weyhe und Umgebung",
+        "pfad": "/niedersachsen/diepholz/weyhe/"
+      },
+      {
+        "text": "Hofläden in Bremen",
+        "pfad": "/bremen/bremen/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/harburg/buchholz-in-der-nordheide/": {
+    "titel": "Hofläden in Buchholz in der Nordheide: gut zu wissen",
+    "oben": "Buchholz liegt in der Nordheide zwischen Hamburg und der Lüneburger Heide. Typisch sind kleine Verkaufsstände mit Kartoffeln und Eiern vom Bauernhof, dazu Honig aus mehreren Imkereien, ein Obsthof und ein Bio-Hof.",
+    "einleitung": "Die sandigen Geestböden eignen sich gut für Kartoffeln, und viele Höfe stellen sie in Automaten oder Hütten an die Straße. Heideflächen, Wald und Feld liefern Bienen eine lange Tracht, spät im Sommer kommt Heidehonig dazu. Der Obsthof von Stemm verkauft Obst, Fritz' Hoff wirtschaftet biologisch.\n\nDie Landeier vom Kiekeberg erinnern an das Freilichtmuseum am Kiekeberg im benachbarten Rosengarten. Weitere Höfe liegen in Jesteburg und Tostedt.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Juli bis Oktober"
+      },
+      {
+        "titel": "Heidehonig",
+        "zeit": "ab September"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Jesteburg und Umgebung",
+        "pfad": "/niedersachsen/harburg/jesteburg/"
+      },
+      {
+        "text": "Hofläden im Landkreis Harburg",
+        "pfad": "/niedersachsen/harburg/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/heidekreis/walsrode/": {
+    "titel": "Hofläden in Walsrode: gut zu wissen",
+    "oben": "Walsrode an der Böhme liegt mitten in der Lüneburger Heide. Auffällig viele Bio-Betriebe sind hier eingetragen, dazu ein Spargelhof, eine Imkerei und ein Hofcafé. Die Höfe liegen verstreut in den Dörfern rund um die Stadt.",
+    "einleitung": "Auf den leichten Heideböden werden Spargel, Kartoffeln und Heidelbeeren angebaut, auf den Weiden stehen Rinder und Heidschnucken. Der Biohof Wildung verkauft Eier, Fleisch und Kartoffeln, der Hof Rengstorf Gemüse und Obst, der Spargelhof Bostel Spargel. Dazu kommen Bio-Hofladen Zwei Eichen und Biolandhof Winkelmann.\n\nIn Weetmüller's Hof-Café kannst du einkehren. Weitere Höfe findest du in Bomlitz und Schwarmstedt.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Heidelbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Heidehonig",
+        "zeit": "ab September"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Heidekreis",
+        "pfad": "/niedersachsen/heidekreis/"
+      },
+      {
+        "text": "Hofläden in Bomlitz und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/bomlitz/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/landkreis-oldenburg/ganderkesee/": {
+    "titel": "Hofläden in Ganderkesee: gut zu wissen",
+    "oben": "Ganderkesee liegt zwischen Delmenhorst und der Wildeshauser Geest. Die Höfe hier bieten eine breite Grundversorgung: Kartoffeln, Gemüse, Eier, Honig und Marmelade, teils in Regiomaten, und Wachtendorf's Hofladen führt sogar Milch, Käse und Fleisch.",
+    "einleitung": "Geestäcker, Wiesen und Wälder wechseln sich ab. Der Kartoffelhof Moorschlatt hat sich auf Kartoffeln spezialisiert, der Gemüsehof Bruns auf Gemüse, der Hof Wempe verkauft Gemüse und Obst. Hof Bredendiek und Hof Osterloh betreiben eigene Regiomaten.\n\nDat moi nüst Lädchen und der Imkerverein haben Honig. Weitere Höfe liegen in Hatten und Dötlingen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Juli bis Oktober"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Grünkohl",
+        "zeit": "November bis Februar"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Oldenburg",
+        "pfad": "/niedersachsen/landkreis-oldenburg/"
+      },
+      {
+        "text": "Hofläden in Delmenhorst",
+        "pfad": "/niedersachsen/delmenhorst/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/rotenburg-wuemme/scheessel/": {
+    "titel": "Hofläden in Scheeßel: gut zu wissen",
+    "oben": "Scheeßel liegt an der Wümme zwischen Bremen und Hamburg. Neben mehreren Hofläden mit eigenem Namen gibt es kleine Automaten mit Kartoffeln und Eiern vom Bauernhof, eine Imkerei und zwei Cafés auf dem Land.",
+    "einleitung": "Die Wümmeniederung mit Wiesen und Moor prägt die Landschaft, auf der Geest wird Ackerbau betrieben. Kartoffeln und Eier stehen oft in Selbstbedienungshütten an der Straße. Bassen's Bauernladen, Wolters, Peets und Röpers Hofladen liegen in den Dörfern der Gemeinde.\n\nIm Hofcafé im Grünen und im Landcafé Schroers Kontor kannst du einkehren. Nach Süden schließt Rotenburg an.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Juli bis Oktober"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rotenburg (Wümme) und Umgebung",
+        "pfad": "/niedersachsen/rotenburg-wuemme/rotenburg-wuemme/"
+      },
+      {
+        "text": "Hofläden im Landkreis Rotenburg (Wümme)",
+        "pfad": "/niedersachsen/rotenburg-wuemme/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/niedersachsen/verden/thedinghausen/": {
+    "titel": "Hofläden in Thedinghausen: gut zu wissen",
+    "oben": "Thedinghausen liegt südlich der Weser und gehört trotzdem zum Landkreis Verden. Bio spielt hier eine große Rolle: Ein Bioland-Hof mit Café, ein Bio-Obstgut und ein Selbstbedienungshofladen mit Milch, Fleisch und Honig sind eingetragen.",
+    "einleitung": "Die Marsch an der Weser ist flach und fruchtbar, im Süden beginnt die Geest. Dubrow's Bio-Obstgut verkauft Obst, der Erdbeerhof Schröder Erdbeeren, und bei Hüneke gibt es Donnerstedter Spargel. Im Lunser Land-Lädchen findest du Eier, Kartoffeln und Marmelade.\n\nDas Erbhof genannte Schloss im Ort ist ein Bau der Weserrenaissance. Weitere Höfe liegen in Martfeld und Weyhe.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "August bis Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Landkreis Verden",
+        "pfad": "/niedersachsen/verden/"
+      },
+      {
+        "text": "Hofläden in Martfeld und Umgebung",
+        "pfad": "/niedersachsen/diepholz/martfeld/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/lippe/lemgo/": {
+    "titel": "Hofläden in Lemgo: gut zu wissen",
+    "oben": "Die Hansestadt Lemgo an der Bega ist für ihre Bauten der Weserrenaissance bekannt. Rund um die Stadt gibt es Obst aus biologischem Anbau, Eier und Fleisch, eine Milchtankstelle und einen Bio-Meierhof mit eigener Verkaufsstelle.",
+    "einleitung": "Das Lipper Bergland ist hügelig, mit Äckern auf Löss und Wäldern auf den Kuppen. Obsthof und Obstplantage Schäferkordt verkaufen Bio-Obst, Gemüse und Kartoffeln, Hanken Eier, Obst und Kartoffeln. Der Meierhof Luherheide betreibt die Verkaufsstelle Alte Pforte.\n\nIn Stuckmann's Milchhäuschen bekommst du Rohmilch: vor dem Trinken abkochen. Eine lippische Spezialität ist Pickert, ein Kartoffelgebäck. Weitere Höfe findest du in Lage und Dörentrup.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September bis November"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden im Kreis Lippe",
+        "pfad": "/nordrhein-westfalen/lippe/"
+      },
+      {
+        "text": "Hofläden in Lage und Umgebung",
+        "pfad": "/nordrhein-westfalen/lippe/lage/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/paderborn/borchen/": {
+    "titel": "Hofläden in Borchen: gut zu wissen",
+    "oben": "Borchen liegt südlich von Paderborn, wo die Altenau in die Alme mündet. Viele Einträge sind Automaten und Regio-Boxen mit Eiern und Fleisch, dazu ein Blumenautomat, ein Biohof und der Meierhof im Ortsteil Etteln.",
+    "einleitung": "Südlich der Gemeinde steigt das Land zur Paderborner Hochfläche an, mit Getreidefeldern und Kalkböden. Wernys Wiesenei verkauft Eier, Fleisch und Nudeln, der Hofladen Eggehof und der Biohof Wippermann ergänzen das Angebot. Hochstift Blumen hat einen Automaten mit Schnittblumen.\n\nDas Altenautal eignet sich für Radtouren. Weitere Höfe liegen in Paderborn, Salzkotten und Lichtenau.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Schnittblumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Paderborn und Umgebung",
+        "pfad": "/nordrhein-westfalen/paderborn/paderborn/"
+      },
+      {
+        "text": "Hofläden im Kreis Paderborn",
+        "pfad": "/nordrhein-westfalen/paderborn/"
+      }
+    ],
+    "stand": "2026-11-21"
+  },
+  "/nordrhein-westfalen/recklinghausen/datteln/": {
+    "titel": "Hofläden in Datteln: gut zu wissen",
+    "oben": "Datteln ist als Kanalstadt bekannt: Hier kreuzen sich mehrere Kanäle, rund um den Hafen liegt ein großer Kanalknotenpunkt. Am Nordrand des Ruhrgebiets beginnt zugleich das Münsterland, und Hofläden, eine Mühle, Imkereien und Fleischautomaten sind eingetragen.",
+    "einleitung": "Nördlich der Stadt fließt die Lippe, dahinter liegen Felder und Höfe des Münsterlands. Möller's Deele, Hofladen Engelkamp, Hofladen Schneider und der Markfelder Hofladen verkaufen direkt ab Hof, die Mühle Niewind hat einen eigenen Laden. Honig gibt es bei der Imkerei Rosenfeld und in Tinas Bienenhütte.\n\nDie Leinpfade an den Kanälen sind gute Radwege. Weitere Höfe liegen in Waltrop und Olfen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Mai bis Juli"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Waltrop und Umgebung",
+        "pfad": "/nordrhein-westfalen/recklinghausen/waltrop/"
+      },
+      {
+        "text": "Hofläden im Kreis Recklinghausen",
+        "pfad": "/nordrhein-westfalen/recklinghausen/"
+      }
+    ],
+    "stand": "2026-11-21"
   }
 }
