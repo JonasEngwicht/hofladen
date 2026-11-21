@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 151 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 176 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -183,35 +183,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Wesel](https://hofladenliste.de/nordrhein-westfalen/wesel/wesel/) `/nordrhein-westfalen/wesel/wesel/` | Kreis Wesel | 3 | 9 | 18 |
 | ✓ | [Bayreuth](https://hofladenliste.de/bayern/bayreuth-stadt/) `/bayern/bayreuth-stadt/` | Bayreuth | 4 | 6 | 18 |
 
-## Paket 7 (0/25 fertig)
+## Paket 7 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Brandenburg an der Havel](https://hofladenliste.de/brandenburg/brandenburg-an-der-havel/) `/brandenburg/brandenburg-an-der-havel/` | Brandenburg an der Havel | 4 | 6 | 18 |
-|  | [Wolfenbüttel](https://hofladenliste.de/niedersachsen/wolfenbuettel/wolfenbuettel/) `/niedersachsen/wolfenbuettel/wolfenbuettel/` | Landkreis Wolfenbüttel | 4 | 6 | 18 |
-|  | [Plauen](https://hofladenliste.de/sachsen/vogtlandkreis/plauen/) `/sachsen/vogtlandkreis/plauen/` | Vogtlandkreis | 4 | 6 | 18 |
-|  | [Gießen](https://hofladenliste.de/hessen/giessen/giessen/) `/hessen/giessen/giessen/` | Landkreis Gießen | 5 | 3 | 18 |
-|  | [Eltville am Rhein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/eltville-am-rhein/) `/hessen/rheingau-taunus-kreis/eltville-am-rhein/` | Rheingau-Taunus-Kreis | 5 | 3 | 18 |
-|  | [Flensburg](https://hofladenliste.de/schleswig-holstein/flensburg/) `/schleswig-holstein/flensburg/` | Flensburg | 5 | 3 | 18 |
-|  | [Norderstedt](https://hofladenliste.de/schleswig-holstein/segeberg/norderstedt/) `/schleswig-holstein/segeberg/norderstedt/` | Kreis Segeberg | 5 | 3 | 18 |
-|  | [Deggendorf](https://hofladenliste.de/bayern/deggendorf/deggendorf/) `/bayern/deggendorf/deggendorf/` | Landkreis Deggendorf | 1 | 14 | 17 |
-|  | [Bad Feilnbach](https://hofladenliste.de/bayern/landkreis-rosenheim/bad-feilnbach/) `/bayern/landkreis-rosenheim/bad-feilnbach/` | Landkreis Rosenheim | 1 | 14 | 17 |
-|  | [Geldern](https://hofladenliste.de/nordrhein-westfalen/kleve/geldern/) `/nordrhein-westfalen/kleve/geldern/` | Kreis Kleve | 1 | 14 | 17 |
-|  | [Nettetal](https://hofladenliste.de/nordrhein-westfalen/viersen/nettetal/) `/nordrhein-westfalen/viersen/nettetal/` | Kreis Viersen | 1 | 14 | 17 |
-|  | [Fellbach](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/fellbach/) `/baden-wuerttemberg/rems-murr-kreis/fellbach/` | Rems-Murr-Kreis | 2 | 11 | 17 |
-|  | [Langenhagen](https://hofladenliste.de/niedersachsen/region-hannover/langenhagen/) `/niedersachsen/region-hannover/langenhagen/` | Region Hannover | 3 | 8 | 17 |
-|  | [Bocholt](https://hofladenliste.de/nordrhein-westfalen/borken/bocholt/) `/nordrhein-westfalen/borken/bocholt/` | Kreis Borken | 3 | 8 | 17 |
-|  | [Gladbeck](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/gladbeck/) `/nordrhein-westfalen/recklinghausen/gladbeck/` | Kreis Recklinghausen | 3 | 8 | 17 |
-|  | [Sindelfingen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/sindelfingen/) `/baden-wuerttemberg/boeblingen/sindelfingen/` | Landkreis Böblingen | 4 | 5 | 17 |
-|  | [Moers](https://hofladenliste.de/nordrhein-westfalen/wesel/moers/) `/nordrhein-westfalen/wesel/moers/` | Kreis Wesel | 4 | 5 | 17 |
-|  | [Stuttgart Zuffenhausen](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-zuffenhausen/) `/baden-wuerttemberg/stuttgart/stuttgart-zuffenhausen/` | Stuttgart | 5 | 2 | 17 |
-|  | [Iserlohn](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/iserlohn/) `/nordrhein-westfalen/maerkischer-kreis/iserlohn/` | Märkischer Kreis | 5 | 2 | 17 |
-|  | [Lüdenscheid](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/luedenscheid/) `/nordrhein-westfalen/maerkischer-kreis/luedenscheid/` | Märkischer Kreis | 5 | 2 | 17 |
-|  | [Durbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/durbach/) `/baden-wuerttemberg/ortenaukreis/durbach/` | Ortenaukreis | 1 | 13 | 16 |
-|  | [Werder (Havel)](https://hofladenliste.de/brandenburg/potsdam-mittelmark/werder-havel/) `/brandenburg/potsdam-mittelmark/werder-havel/` | Landkreis Potsdam-Mittelmark | 1 | 13 | 16 |
-|  | [Bad Zwischenahn](https://hofladenliste.de/niedersachsen/ammerland/bad-zwischenahn/) `/niedersachsen/ammerland/bad-zwischenahn/` | Landkreis Ammerland | 1 | 13 | 16 |
-|  | [Winsen (Luhe)](https://hofladenliste.de/niedersachsen/harburg/winsen-luhe/) `/niedersachsen/harburg/winsen-luhe/` | Landkreis Harburg | 1 | 13 | 16 |
-|  | [Meckenheim (Rhein-Sieg-Kreis)](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/meckenheim/) `/nordrhein-westfalen/rhein-sieg-kreis/meckenheim/` | Rhein-Sieg-Kreis | 1 | 13 | 16 |
+| ✓ | [Brandenburg an der Havel](https://hofladenliste.de/brandenburg/brandenburg-an-der-havel/) `/brandenburg/brandenburg-an-der-havel/` | Brandenburg an der Havel | 4 | 6 | 18 |
+| ✓ | [Wolfenbüttel](https://hofladenliste.de/niedersachsen/wolfenbuettel/wolfenbuettel/) `/niedersachsen/wolfenbuettel/wolfenbuettel/` | Landkreis Wolfenbüttel | 4 | 6 | 18 |
+| ✓ | [Plauen](https://hofladenliste.de/sachsen/vogtlandkreis/plauen/) `/sachsen/vogtlandkreis/plauen/` | Vogtlandkreis | 4 | 6 | 18 |
+| ✓ | [Gießen](https://hofladenliste.de/hessen/giessen/giessen/) `/hessen/giessen/giessen/` | Landkreis Gießen | 5 | 3 | 18 |
+| ✓ | [Eltville am Rhein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/eltville-am-rhein/) `/hessen/rheingau-taunus-kreis/eltville-am-rhein/` | Rheingau-Taunus-Kreis | 5 | 3 | 18 |
+| ✓ | [Flensburg](https://hofladenliste.de/schleswig-holstein/flensburg/) `/schleswig-holstein/flensburg/` | Flensburg | 5 | 3 | 18 |
+| ✓ | [Norderstedt](https://hofladenliste.de/schleswig-holstein/segeberg/norderstedt/) `/schleswig-holstein/segeberg/norderstedt/` | Kreis Segeberg | 5 | 3 | 18 |
+| ✓ | [Deggendorf](https://hofladenliste.de/bayern/deggendorf/deggendorf/) `/bayern/deggendorf/deggendorf/` | Landkreis Deggendorf | 1 | 14 | 17 |
+| ✓ | [Bad Feilnbach](https://hofladenliste.de/bayern/landkreis-rosenheim/bad-feilnbach/) `/bayern/landkreis-rosenheim/bad-feilnbach/` | Landkreis Rosenheim | 1 | 14 | 17 |
+| ✓ | [Geldern](https://hofladenliste.de/nordrhein-westfalen/kleve/geldern/) `/nordrhein-westfalen/kleve/geldern/` | Kreis Kleve | 1 | 14 | 17 |
+| ✓ | [Nettetal](https://hofladenliste.de/nordrhein-westfalen/viersen/nettetal/) `/nordrhein-westfalen/viersen/nettetal/` | Kreis Viersen | 1 | 14 | 17 |
+| ✓ | [Fellbach](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/fellbach/) `/baden-wuerttemberg/rems-murr-kreis/fellbach/` | Rems-Murr-Kreis | 2 | 11 | 17 |
+| ✓ | [Langenhagen](https://hofladenliste.de/niedersachsen/region-hannover/langenhagen/) `/niedersachsen/region-hannover/langenhagen/` | Region Hannover | 3 | 8 | 17 |
+| ✓ | [Bocholt](https://hofladenliste.de/nordrhein-westfalen/borken/bocholt/) `/nordrhein-westfalen/borken/bocholt/` | Kreis Borken | 3 | 8 | 17 |
+| ✓ | [Gladbeck](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/gladbeck/) `/nordrhein-westfalen/recklinghausen/gladbeck/` | Kreis Recklinghausen | 3 | 8 | 17 |
+| ✓ | [Sindelfingen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/sindelfingen/) `/baden-wuerttemberg/boeblingen/sindelfingen/` | Landkreis Böblingen | 4 | 5 | 17 |
+| ✓ | [Moers](https://hofladenliste.de/nordrhein-westfalen/wesel/moers/) `/nordrhein-westfalen/wesel/moers/` | Kreis Wesel | 4 | 5 | 17 |
+| ✓ | [Stuttgart Zuffenhausen](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-zuffenhausen/) `/baden-wuerttemberg/stuttgart/stuttgart-zuffenhausen/` | Stuttgart | 5 | 2 | 17 |
+| ✓ | [Iserlohn](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/iserlohn/) `/nordrhein-westfalen/maerkischer-kreis/iserlohn/` | Märkischer Kreis | 5 | 2 | 17 |
+| ✓ | [Lüdenscheid](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/luedenscheid/) `/nordrhein-westfalen/maerkischer-kreis/luedenscheid/` | Märkischer Kreis | 5 | 2 | 17 |
+| ✓ | [Durbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/durbach/) `/baden-wuerttemberg/ortenaukreis/durbach/` | Ortenaukreis | 1 | 13 | 16 |
+| ✓ | [Werder (Havel)](https://hofladenliste.de/brandenburg/potsdam-mittelmark/werder-havel/) `/brandenburg/potsdam-mittelmark/werder-havel/` | Landkreis Potsdam-Mittelmark | 1 | 13 | 16 |
+| ✓ | [Bad Zwischenahn](https://hofladenliste.de/niedersachsen/ammerland/bad-zwischenahn/) `/niedersachsen/ammerland/bad-zwischenahn/` | Landkreis Ammerland | 1 | 13 | 16 |
+| ✓ | [Winsen (Luhe)](https://hofladenliste.de/niedersachsen/harburg/winsen-luhe/) `/niedersachsen/harburg/winsen-luhe/` | Landkreis Harburg | 1 | 13 | 16 |
+| ✓ | [Meckenheim (Rhein-Sieg-Kreis)](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/meckenheim/) `/nordrhein-westfalen/rhein-sieg-kreis/meckenheim/` | Rhein-Sieg-Kreis | 1 | 13 | 16 |
 
 ## Paket 8 (0/25 fertig)
 
