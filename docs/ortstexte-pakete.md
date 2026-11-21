@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 451 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 476 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -543,35 +543,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Teningen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/teningen/) `/baden-wuerttemberg/emmendingen/teningen/` | Landkreis Emmendingen | 1 | 6 | 9 |
 | ✓ | [Oberboihingen](https://hofladenliste.de/baden-wuerttemberg/esslingen/oberboihingen/) `/baden-wuerttemberg/esslingen/oberboihingen/` | Landkreis Esslingen | 1 | 6 | 9 |
 
-## Paket 19 (0/25 fertig)
+## Paket 19 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Ebersbach an der Fils](https://hofladenliste.de/baden-wuerttemberg/goeppingen/ebersbach-an-der-fils/) `/baden-wuerttemberg/goeppingen/ebersbach-an-der-fils/` | Landkreis Göppingen | 1 | 6 | 9 |
-|  | [Steinheim am Albuch](https://hofladenliste.de/baden-wuerttemberg/heidenheim/steinheim-am-albuch/) `/baden-wuerttemberg/heidenheim/steinheim-am-albuch/` | Landkreis Heidenheim | 1 | 6 | 9 |
-|  | [Steißlingen](https://hofladenliste.de/baden-wuerttemberg/konstanz/steisslingen/) `/baden-wuerttemberg/konstanz/steisslingen/` | Landkreis Konstanz | 1 | 6 | 9 |
-|  | [Stockach](https://hofladenliste.de/baden-wuerttemberg/konstanz/stockach/) `/baden-wuerttemberg/konstanz/stockach/` | Landkreis Konstanz | 1 | 6 | 9 |
-|  | [Eppingen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/eppingen/) `/baden-wuerttemberg/landkreis-heilbronn/eppingen/` | Landkreis Heilbronn | 1 | 6 | 9 |
-|  | [Bruchsal](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/bruchsal/) `/baden-wuerttemberg/landkreis-karlsruhe/bruchsal/` | Landkreis Karlsruhe | 1 | 6 | 9 |
-|  | [Ettlingen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/ettlingen/) `/baden-wuerttemberg/landkreis-karlsruhe/ettlingen/` | Landkreis Karlsruhe | 1 | 6 | 9 |
-|  | [Oberhausen-Rheinhausen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/oberhausen-rheinhausen/) `/baden-wuerttemberg/landkreis-karlsruhe/oberhausen-rheinhausen/` | Landkreis Karlsruhe | 1 | 6 | 9 |
-|  | [Efringen-Kirchen](https://hofladenliste.de/baden-wuerttemberg/loerrach/efringen-kirchen/) `/baden-wuerttemberg/loerrach/efringen-kirchen/` | Landkreis Lörrach | 1 | 6 | 9 |
-|  | [Hemmingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/hemmingen/) `/baden-wuerttemberg/ludwigsburg/hemmingen/` | Landkreis Ludwigsburg | 1 | 6 | 9 |
-|  | [Lautenbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/lautenbach/) `/baden-wuerttemberg/ortenaukreis/lautenbach/` | Ortenaukreis | 1 | 6 | 9 |
-|  | [Sinzheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/sinzheim/) `/baden-wuerttemberg/rastatt/sinzheim/` | Landkreis Rastatt | 1 | 6 | 9 |
-|  | [Bad Wurzach](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bad-wurzach/) `/baden-wuerttemberg/ravensburg/bad-wurzach/` | Landkreis Ravensburg | 1 | 6 | 9 |
-|  | [Kernen im Remstal](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/kernen-im-remstal/) `/baden-wuerttemberg/rems-murr-kreis/kernen-im-remstal/` | Rems-Murr-Kreis | 1 | 6 | 9 |
-|  | [Schwaikheim](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/schwaikheim/) `/baden-wuerttemberg/rems-murr-kreis/schwaikheim/` | Rems-Murr-Kreis | 1 | 6 | 9 |
-|  | [Münsingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/muensingen/) `/baden-wuerttemberg/reutlingen/muensingen/` | Landkreis Reutlingen | 1 | 6 | 9 |
-|  | [Ladenburg](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/ladenburg/) `/baden-wuerttemberg/rhein-neckar-kreis/ladenburg/` | Rhein-Neckar-Kreis | 1 | 6 | 9 |
-|  | [Schriesheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/schriesheim/) `/baden-wuerttemberg/rhein-neckar-kreis/schriesheim/` | Rhein-Neckar-Kreis | 1 | 6 | 9 |
-|  | [Wiesloch](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/wiesloch/) `/baden-wuerttemberg/rhein-neckar-kreis/wiesloch/` | Rhein-Neckar-Kreis | 1 | 6 | 9 |
-|  | [Rottweil](https://hofladenliste.de/baden-wuerttemberg/rottweil/rottweil/) `/baden-wuerttemberg/rottweil/rottweil/` | Landkreis Rottweil | 1 | 6 | 9 |
-|  | [Crailsheim](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/crailsheim/) `/baden-wuerttemberg/schwaebisch-hall/crailsheim/` | Landkreis Schwäbisch Hall | 1 | 6 | 9 |
-|  | [Bräunlingen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/braeunlingen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/braeunlingen/` | Schwarzwald-Baar-Kreis | 1 | 6 | 9 |
-|  | [Königsfeld im Schwarzwald](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/) `/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/` | Schwarzwald-Baar-Kreis | 1 | 6 | 9 |
-|  | [Immendingen](https://hofladenliste.de/baden-wuerttemberg/tuttlingen/immendingen/) `/baden-wuerttemberg/tuttlingen/immendingen/` | Landkreis Tuttlingen | 1 | 6 | 9 |
-|  | [Lottstetten](https://hofladenliste.de/baden-wuerttemberg/waldshut/lottstetten/) `/baden-wuerttemberg/waldshut/lottstetten/` | Landkreis Waldshut | 1 | 6 | 9 |
+| ✓ | [Ebersbach an der Fils](https://hofladenliste.de/baden-wuerttemberg/goeppingen/ebersbach-an-der-fils/) `/baden-wuerttemberg/goeppingen/ebersbach-an-der-fils/` | Landkreis Göppingen | 1 | 6 | 9 |
+| ✓ | [Steinheim am Albuch](https://hofladenliste.de/baden-wuerttemberg/heidenheim/steinheim-am-albuch/) `/baden-wuerttemberg/heidenheim/steinheim-am-albuch/` | Landkreis Heidenheim | 1 | 6 | 9 |
+| ✓ | [Steißlingen](https://hofladenliste.de/baden-wuerttemberg/konstanz/steisslingen/) `/baden-wuerttemberg/konstanz/steisslingen/` | Landkreis Konstanz | 1 | 6 | 9 |
+| ✓ | [Stockach](https://hofladenliste.de/baden-wuerttemberg/konstanz/stockach/) `/baden-wuerttemberg/konstanz/stockach/` | Landkreis Konstanz | 1 | 6 | 9 |
+| ✓ | [Eppingen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/eppingen/) `/baden-wuerttemberg/landkreis-heilbronn/eppingen/` | Landkreis Heilbronn | 1 | 6 | 9 |
+| ✓ | [Bruchsal](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/bruchsal/) `/baden-wuerttemberg/landkreis-karlsruhe/bruchsal/` | Landkreis Karlsruhe | 1 | 6 | 9 |
+| ✓ | [Ettlingen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/ettlingen/) `/baden-wuerttemberg/landkreis-karlsruhe/ettlingen/` | Landkreis Karlsruhe | 1 | 6 | 9 |
+| ✓ | [Oberhausen-Rheinhausen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/oberhausen-rheinhausen/) `/baden-wuerttemberg/landkreis-karlsruhe/oberhausen-rheinhausen/` | Landkreis Karlsruhe | 1 | 6 | 9 |
+| ✓ | [Efringen-Kirchen](https://hofladenliste.de/baden-wuerttemberg/loerrach/efringen-kirchen/) `/baden-wuerttemberg/loerrach/efringen-kirchen/` | Landkreis Lörrach | 1 | 6 | 9 |
+| ✓ | [Hemmingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/hemmingen/) `/baden-wuerttemberg/ludwigsburg/hemmingen/` | Landkreis Ludwigsburg | 1 | 6 | 9 |
+| ✓ | [Lautenbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/lautenbach/) `/baden-wuerttemberg/ortenaukreis/lautenbach/` | Ortenaukreis | 1 | 6 | 9 |
+| ✓ | [Sinzheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/sinzheim/) `/baden-wuerttemberg/rastatt/sinzheim/` | Landkreis Rastatt | 1 | 6 | 9 |
+| ✓ | [Bad Wurzach](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bad-wurzach/) `/baden-wuerttemberg/ravensburg/bad-wurzach/` | Landkreis Ravensburg | 1 | 6 | 9 |
+| ✓ | [Kernen im Remstal](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/kernen-im-remstal/) `/baden-wuerttemberg/rems-murr-kreis/kernen-im-remstal/` | Rems-Murr-Kreis | 1 | 6 | 9 |
+| ✓ | [Schwaikheim](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/schwaikheim/) `/baden-wuerttemberg/rems-murr-kreis/schwaikheim/` | Rems-Murr-Kreis | 1 | 6 | 9 |
+| ✓ | [Münsingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/muensingen/) `/baden-wuerttemberg/reutlingen/muensingen/` | Landkreis Reutlingen | 1 | 6 | 9 |
+| ✓ | [Ladenburg](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/ladenburg/) `/baden-wuerttemberg/rhein-neckar-kreis/ladenburg/` | Rhein-Neckar-Kreis | 1 | 6 | 9 |
+| ✓ | [Schriesheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/schriesheim/) `/baden-wuerttemberg/rhein-neckar-kreis/schriesheim/` | Rhein-Neckar-Kreis | 1 | 6 | 9 |
+| ✓ | [Wiesloch](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/wiesloch/) `/baden-wuerttemberg/rhein-neckar-kreis/wiesloch/` | Rhein-Neckar-Kreis | 1 | 6 | 9 |
+| ✓ | [Rottweil](https://hofladenliste.de/baden-wuerttemberg/rottweil/rottweil/) `/baden-wuerttemberg/rottweil/rottweil/` | Landkreis Rottweil | 1 | 6 | 9 |
+| ✓ | [Crailsheim](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/crailsheim/) `/baden-wuerttemberg/schwaebisch-hall/crailsheim/` | Landkreis Schwäbisch Hall | 1 | 6 | 9 |
+| ✓ | [Bräunlingen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/braeunlingen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/braeunlingen/` | Schwarzwald-Baar-Kreis | 1 | 6 | 9 |
+| ✓ | [Königsfeld im Schwarzwald](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/) `/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/` | Schwarzwald-Baar-Kreis | 1 | 6 | 9 |
+| ✓ | [Immendingen](https://hofladenliste.de/baden-wuerttemberg/tuttlingen/immendingen/) `/baden-wuerttemberg/tuttlingen/immendingen/` | Landkreis Tuttlingen | 1 | 6 | 9 |
+| ✓ | [Lottstetten](https://hofladenliste.de/baden-wuerttemberg/waldshut/lottstetten/) `/baden-wuerttemberg/waldshut/lottstetten/` | Landkreis Waldshut | 1 | 6 | 9 |
 
 ## Paket 20 (0/25 fertig)
 
