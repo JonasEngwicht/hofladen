@@ -67,7 +67,9 @@ def objekte(ergebnis):
 
 
 def ist_poi(node):
-    return 'PointOfInterest' in json.dumps(node.get('@type', ''))
+    """Hauptknoten eines Orts: hat Koordinaten-Verweis (geo). Nicht nur odta:PointOfInterest, Hofläden sind oft nur
+    Store/GroceryStore; Hilfsknoten (Adresse, Geo, Bilder, Urheber) haben kein geo."""
+    return S + 'geo' in node or 'PointOfInterest' in json.dumps(node.get('@type', ''))
 
 
 # ---------- Lizenz ----------
