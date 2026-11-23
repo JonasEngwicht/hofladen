@@ -92,7 +92,8 @@ if os.environ.get('DZT_API_KEY'):
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import dzt_kg
     try:
-        weitere, b = dzt_kg.abruf(dzt_kg.poster(os.environ['DZT_API_KEY']), log=lambda m: print(m, file=sys.stderr))
+        wurzel = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+        weitere, b = dzt_kg.abruf(dzt_kg.poster(os.environ['DZT_API_KEY']), dzt_kg.bestand_laden(wurzel), log=lambda m: print(m, file=sys.stderr))
         orte += weitere
         pfad = ziel + '.bericht.json'
         alt = json.load(open(pfad, encoding='utf-8')) if os.path.exists(pfad) else []
