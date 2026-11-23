@@ -21,6 +21,14 @@ if (ADSENSE_ID && !/^ca-pub-\d{16}$/.test(ADSENSE_ID)) throw new Error(`data/ana
 // Google Tag Manager (Container-ID ist öffentlich). Lädt wie GA4 erst nach Einwilligung in die Statistik. Leer = aus.
 const GTM_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).gtm || ''; } catch { return ''; } })();
 if (GTM_ID && !/^GTM-[A-Z0-9]+$/.test(GTM_ID)) throw new Error(`data/analytics.json: ungültige GTM-Container-ID ${GTM_ID}`);
+// Fest eingebundener Tag-Manager-Code (auf Jonas’ Wunsch, damit Google ihn findet): Consent Mode steht auf „denied“,
+// eine gespeicherte Zustimmung (localStorage statistik/werbung) wird sofort weitergegeben. Cookies erst nach Zustimmung.
+const GTM_KOPF = GTM_ID ? `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+gtag('set','ads_data_redaction',true);gtag('set','url_passthrough',false);
+try{var e=localStorage;if(e.getItem('statistik')==='ja')gtag('consent','update',{analytics_storage:'granted'});if(e.getItem('werbung')==='ja')gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});}catch(x){}
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');</script>
+` : '';
 const STATISTIK_AKTIV = Boolean(GA_ID || GTM_ID); // Analytics direkt (GA4) oder über den Tag Manager
 const EINWILLIGUNG = Boolean(STATISTIK_AKTIV || ADSENSE_ID);
 // Pfade der Kategorieseiten (werden bei den Kategorien gefüllt; seitenTyp() braucht sie)
@@ -99,7 +107,7 @@ function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = []
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(titelMitMarke(titel))}</title>
+${GTM_KOPF}<title>${esc(titelMitMarke(titel))}</title>
 <meta name="description" content="${esc(kuerzeBeschreibung(beschreibung))}">
 <link rel="canonical" href="${esc(url)}">
 ${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}<meta property="og:title" content="${esc(titel.replace(/\s*\|\s*Hofladenliste\s*$/, ''))}">
