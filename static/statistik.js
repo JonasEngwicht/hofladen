@@ -35,6 +35,19 @@ export function analyticsLaden(id) {
   document.head.append(s);
 }
 
+// Google Tag Manager: nur nach Einwilligung in die Statistik. Der Container-Inhalt (welche Tags laufen) liegt bei Google.
+let gtmGeladen = false;
+export function gtmLaden(id) {
+  if (gtmGeladen || !/^GTM-[A-Z0-9]+$/.test(id)) return;
+  gtmGeladen = true;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(id)}`;
+  document.head.append(s);
+}
+
 let werbungGeladen = false;
 export function werbungLaden(client) {
   if (werbungGeladen || !/^ca-pub-\d{16}$/.test(client)) return;
@@ -47,9 +60,9 @@ export function werbungLaden(client) {
 }
 
 // Welche Dienste sind eingerichtet? Nur diese erscheinen im Hinweis.
-function dienste(ga, ads) {
+function dienste(ga, ads, gtm) {
   return [
-    ga && { art: 'statistik', schluessel: SCHLUESSEL, name: 'Statistik (Google Analytics)', text: 'zählt, welche Seiten genutzt werden, damit wir die Hofladenliste verbessern können', anker: 'google-analytics', laden: () => analyticsLaden(ga) },
+    (ga || gtm) && { art: 'statistik', schluessel: SCHLUESSEL, name: 'Statistik (Google Analytics)', text: 'zählt, welche Seiten genutzt werden, damit wir die Hofladenliste verbessern können', anker: 'google-analytics', laden: () => { if (ga) analyticsLaden(ga); if (gtm) gtmLaden(gtm); } },
     ads && { art: 'werbung', schluessel: SCHLUESSEL_WERBUNG, name: 'Werbung (Google AdSense)', text: 'zeigt Anzeigen, mit denen wir die kostenlose Hofladenliste finanzieren', anker: 'google-adsense', laden: () => werbungLaden(ads) },
   ].filter(Boolean);
 }
@@ -82,8 +95,8 @@ function bannerZeigen(liste) {
   document.body.append(box);
 }
 
-export function statistikStarten(ga, ads) {
-  const liste = dienste(ga, ads);
+export function statistikStarten(ga, ads, gtm) {
+  const liste = dienste(ga, ads, gtm);
   if (!liste.length) return;
   for (const k of document.querySelectorAll('[data-cookie-einstellungen]')) {
     k.hidden = false;

@@ -848,8 +848,8 @@ karteAutomatisch();
 }
 
 // ---------- Google Analytics und AdSense: nur nach Einwilligung (static/statistik.js) ----------
-{ const { ga, ads } = document.documentElement.dataset;
-  if (ga || ads) import('./statistik.js').then((m) => m.statistikStarten(ga, ads)).catch(() => {}); }
+{ const { ga, gtm, ads } = document.documentElement.dataset;
+  if (ga || gtm || ads) import('./statistik.js').then((m) => m.statistikStarten(ga, ads, gtm)).catch(() => {}); }
 
 // ---------- Nutzungsstatistik: anonyme Tageszähler (siehe Datenschutz) ----------
 const seitenTyp = document.body.dataset.seite || 'sonstige';
