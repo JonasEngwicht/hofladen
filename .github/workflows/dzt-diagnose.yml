@@ -1,0 +1,22 @@
+name: DZT Diagnose
+
+# Gibt die Rohantwort des DZT Knowledge Graph für einen einzelnen Hof aus (Lizenzfeld, Adresse, Geo). Ändert nichts.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rohantwort
+        env:
+          DZT_API_KEY: ${{ secrets.DZT_API_KEY }}
+        run: python scripts/dzt-diagnose.py
