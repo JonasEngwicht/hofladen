@@ -21,7 +21,8 @@ if (ADSENSE_ID && !/^ca-pub-\d{16}$/.test(ADSENSE_ID)) throw new Error(`data/ana
 // Google Tag Manager (Container-ID ist öffentlich). Lädt wie GA4 erst nach Einwilligung in die Statistik. Leer = aus.
 const GTM_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).gtm || ''; } catch { return ''; } })();
 if (GTM_ID && !/^GTM-[A-Z0-9]+$/.test(GTM_ID)) throw new Error(`data/analytics.json: ungültige GTM-Container-ID ${GTM_ID}`);
-const EINWILLIGUNG = Boolean(GA_ID || GTM_ID || ADSENSE_ID);
+const STATISTIK_AKTIV = Boolean(GA_ID || GTM_ID); // Analytics direkt (GA4) oder über den Tag Manager
+const EINWILLIGUNG = Boolean(STATISTIK_AKTIV || ADSENSE_ID);
 // Pfade der Kategorieseiten (werden bei den Kategorien gefüllt; seitenTyp() braucht sie)
 const KATEGORIE_PFADE = new Set();
 const telHref = (t) => 'tel:' + t.replace(/[^\d+]/g, '').replace(/^00/, '+');
@@ -230,4 +231,4 @@ function filterLeiste(liste, { umkreis = null } = {}) {
 </div>`;
 }
 
-export { ADSENSE_ID, GA_ID, GTM_ID, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITENTEXTE, SEITENTEXT_GENUTZT, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };
+export { ADSENSE_ID, GA_ID, GTM_ID, STATISTIK_AKTIV, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITENTEXTE, SEITENTEXT_GENUTZT, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };

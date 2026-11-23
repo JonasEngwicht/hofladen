@@ -33,11 +33,11 @@ test('Statistik: keine Seite lädt Google ohne Einwilligung', () => {
     const ads = h.match(/data-ads="(ca-pub-\d{16})"/)?.[1];
     if (ads) assert.match(h, new RegExp(`<meta name="google-adsense-account" content="${ads}">`), pfad);
     else assert.doesNotMatch(h, /google-adsense-account/, pfad);
-    if (/data-ga="G-/.test(h) || ads) assert.match(h, /data-cookie-einstellungen/, pfad);
+    if (/data-(ga|gtm)="(G|GTM)-/.test(h) || ads) assert.match(h, /data-cookie-einstellungen/, pfad);
     else assert.doesNotMatch(h, /data-cookie-einstellungen/, pfad);
   }
   const ds = readFileSync(new URL('datenschutz/index.html', pub), 'utf8');
-  if (/data-ga="G-/.test(ds)) assert.match(ds, /id="google-analytics"[\s\S]*widerrufen/);
+  if (/data-(ga|gtm)="(G|GTM)-/.test(ds)) assert.match(ds, /id="google-analytics"[\s\S]*widerrufen/);
   else assert.doesNotMatch(ds, /Google Analytics/);
   // Skript lädt gtag nur in analyticsLaden(), das nur nach „ja“ aufgerufen wird
   const js = readFileSync(new URL('../static/statistik.js', import.meta.url), 'utf8');
