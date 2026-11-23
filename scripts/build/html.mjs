@@ -14,6 +14,11 @@ import { BUILD_DATUM, ICON_VERSION, KACHELN, ROOT, VERSION, cfg, impressum, istR
 // ---------- HTML-Helfer ----------
 const GA_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).ga4 || ''; } catch { return ''; } })();
 if (GA_ID && !/^G-[A-Z0-9]+$/.test(GA_ID)) throw new Error(`data/analytics.json: ungültige GA4-Mess-ID ${GA_ID}`);
+// Google AdSense (Publisher-ID ist öffentlich). Leer = aus. Im Kopf steht nur das Bestätigungs-Meta-Tag (keine Anfrage an Google);
+// das Werbeskript lädt erst nach Einwilligung (static/statistik.js).
+const ADSENSE_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).adsense || ''; } catch { return ''; } })();
+if (ADSENSE_ID && !/^ca-pub-\d{16}$/.test(ADSENSE_ID)) throw new Error(`data/analytics.json: ungültige AdSense-ID ${ADSENSE_ID}`);
+const EINWILLIGUNG = Boolean(GA_ID || ADSENSE_ID);
 // Pfade der Kategorieseiten (werden bei den Kategorien gefüllt; seitenTyp() braucht sie)
 const KATEGORIE_PFADE = new Set();
 const telHref = (t) => 'tel:' + t.replace(/[^\d+]/g, '').replace(/^00/, '+');
@@ -86,7 +91,7 @@ function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = []
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [['Start', '/'], ...krumen].map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: cfg.domain + p })) }] : [];
   return nofollowParameter(`<!doctype html>
-<html lang="de"${GA_ID ? ` data-ga="${GA_ID}"` : ''}${KACHELN ? ` data-kacheln="${KACHELN.version}" data-kacheln-z="${KACHELN.maxzoom || 14}"` : ''}>
+<html lang="de"${GA_ID ? ` data-ga="${GA_ID}"` : ''}${ADSENSE_ID ? ` data-ads="${ADSENSE_ID}"` : ''}${KACHELN ? ` data-kacheln="${KACHELN.version}" data-kacheln-z="${KACHELN.maxzoom || 14}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,7 +103,7 @@ ${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}<meta proper
 <meta property="og:url" content="${esc(url)}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta name="theme-color" content="#173B2C">
+<meta name="theme-color" content="#173B2C">${ADSENSE_ID ? `\n<meta name="google-adsense-account" content="${ADSENSE_ID}">` : ''}
 <link rel="icon" href="/favicon.ico?v=${ICON_VERSION}" sizes="48x48">
 <link rel="icon" href="/favicon.svg?v=${ICON_VERSION}" type="image/svg+xml">
 <link rel="icon" href="/favicon-96.png?v=${ICON_VERSION}" type="image/png" sizes="96x96">
@@ -164,7 +169,7 @@ ${inhalt}
     <li><a href="/statistik/">Datenstand &amp; Statistik</a></li>
     <li><a href="/quellen/">Quellen</a></li>
     <li><a href="/impressum/">Impressum</a></li>
-    <li><a href="/datenschutz/">Datenschutz</a></li>${GA_ID ? `
+    <li><a href="/datenschutz/">Datenschutz</a></li>${EINWILLIGUNG ? `
     <li><button type="button" class="link-knopf" data-cookie-einstellungen hidden>Cookie-Einstellungen</button></li>` : ''}
   </ul>
   ${(() => { const u = encodeURIComponent(url), t = encodeURIComponent(titel.replace(/\s*\|\s*Hofladenliste\s*$/, ''));
@@ -222,4 +227,4 @@ function filterLeiste(liste, { umkreis = null } = {}) {
 </div>`;
 }
 
-export { GA_ID, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITENTEXTE, SEITENTEXT_GENUTZT, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };
+export { ADSENSE_ID, GA_ID, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITENTEXTE, SEITENTEXT_GENUTZT, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };
