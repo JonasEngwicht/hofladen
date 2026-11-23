@@ -1,0 +1,64 @@
+name: Probelauf DZT Knowledge Graph
+
+# Schneller Testlauf nur für den DZT Knowledge Graph (ohne die langsame GovData-Suche): holt die Daten, gleicht sie mit dem Bestand ab und
+# zeigt a) Ergänzungen zu bestehenden Einträgen und b) neue Einträge. Ändert keine Daten und stellt nichts live.
+# Bericht: Zusammenfassung dieses Laufs und Artefakt „probelauf“ (Bericht, Rohdaten, Testergebnis).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probelauf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verwaltungsdaten holen (ohne GovData-Suche, mit DZT)
+        env:
+          DZT_API_KEY: ${{ secrets.DZT_API_KEY }} # DZT Knowledge Graph (scripts/dzt_kg.py), fehlt das Secret, wird er übersprungen
+        run: python scripts/fetch-kommunal.py "$RUNNER_TEMP/roh-kommunal.json"
+      - name: DZT-Stichprobe ins Log
+        run: |
+          python3 - <<'PY'
+          import json, os, collections
+          d = json.load(open(os.environ['RUNNER_TEMP'] + '/roh-kommunal.json'))
+          dzt = [o for o in d['orte'] if o['id'].startswith('dzt-')]
+          print('DZT-Orte mit Hofbezug und offener Lizenz:', len(dzt))
+          print('Lizenzen:', collections.Counter(o['lizenz'] for o in dzt))
+          print('mit Adresse/PLZ/Telefon/Website:', sum(1 for o in dzt if o['strasse']), sum(1 for o in dzt if o['plz']), sum(1 for o in dzt if o['phones']), sum(1 for o in dzt if o['websites']))
+          for o in dzt[:60]: print(' -', o['name'], '|', o['plz'], o['ort'], '|', o['lizenz'], '|', o['id'][:60])
+          b = json.load(open(os.environ['RUNNER_TEMP'] + '/roh-kommunal.json.bericht.json'))
+          for x in b:
+              if x.get('roh', {}).get('lizenzen') is not None:
+                  print('Lizenzwerte (alle Treffer):', json.dumps(x['roh']['lizenzen'], ensure_ascii=False)[:1500])
+                  print('Fehler:', x['roh']['fehler'][:5])
+                  print('Beispielobjekt:', json.dumps(x['roh']['beispiele'][:1], ensure_ascii=False)[:2500])
+          PY
+      - name: Abgleich (Testlauf, nur in eine Kopie)
+        env:
+          ERLAUBE_SCHWUND: '1'
+        run: |
+          cp data/offene-quellen.json "$RUNNER_TEMP/nachher.json"
+          node scripts/import-quellen.mjs "$RUNNER_TEMP/roh-kommunal.json" --ziel "$RUNNER_TEMP/nachher.json"
+      - name: Bericht
+        run: |
+          node scripts/quellen-probe.mjs data/offene-quellen.json "$RUNNER_TEMP/nachher.json" "$RUNNER_TEMP/roh-kommunal.json.bericht.json" > "$RUNNER_TEMP/bericht.md"
+          cat "$RUNNER_TEMP/bericht.md" >> "$GITHUB_STEP_SUMMARY"
+          cat "$RUNNER_TEMP/bericht.md"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probelauf
+          path: |
+            ${{ runner.temp }}/bericht.md
+            ${{ runner.temp }}/roh-kommunal.json
+            ${{ runner.temp }}/roh-kommunal.json.bericht.json
+            ${{ runner.temp }}/nachher.json
