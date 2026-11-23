@@ -18,7 +18,10 @@ if (GA_ID && !/^G-[A-Z0-9]+$/.test(GA_ID)) throw new Error(`data/analytics.json:
 // das Werbeskript lädt erst nach Einwilligung (static/statistik.js).
 const ADSENSE_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).adsense || ''; } catch { return ''; } })();
 if (ADSENSE_ID && !/^ca-pub-\d{16}$/.test(ADSENSE_ID)) throw new Error(`data/analytics.json: ungültige AdSense-ID ${ADSENSE_ID}`);
-const EINWILLIGUNG = Boolean(GA_ID || ADSENSE_ID);
+// Google Tag Manager (Container-ID ist öffentlich). Lädt wie GA4 erst nach Einwilligung in die Statistik. Leer = aus.
+const GTM_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).gtm || ''; } catch { return ''; } })();
+if (GTM_ID && !/^GTM-[A-Z0-9]+$/.test(GTM_ID)) throw new Error(`data/analytics.json: ungültige GTM-Container-ID ${GTM_ID}`);
+const EINWILLIGUNG = Boolean(GA_ID || GTM_ID || ADSENSE_ID);
 // Pfade der Kategorieseiten (werden bei den Kategorien gefüllt; seitenTyp() braucht sie)
 const KATEGORIE_PFADE = new Set();
 const telHref = (t) => 'tel:' + t.replace(/[^\d+]/g, '').replace(/^00/, '+');
@@ -91,7 +94,7 @@ function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = []
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [['Start', '/'], ...krumen].map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: cfg.domain + p })) }] : [];
   return nofollowParameter(`<!doctype html>
-<html lang="de"${GA_ID ? ` data-ga="${GA_ID}"` : ''}${ADSENSE_ID ? ` data-ads="${ADSENSE_ID}"` : ''}${KACHELN ? ` data-kacheln="${KACHELN.version}" data-kacheln-z="${KACHELN.maxzoom || 14}"` : ''}>
+<html lang="de"${GA_ID ? ` data-ga="${GA_ID}"` : ''}${GTM_ID ? ` data-gtm="${GTM_ID}"` : ''}${ADSENSE_ID ? ` data-ads="${ADSENSE_ID}"` : ''}${KACHELN ? ` data-kacheln="${KACHELN.version}" data-kacheln-z="${KACHELN.maxzoom || 14}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -227,4 +230,4 @@ function filterLeiste(liste, { umkreis = null } = {}) {
 </div>`;
 }
 
-export { ADSENSE_ID, GA_ID, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITENTEXTE, SEITENTEXT_GENUTZT, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };
+export { ADSENSE_ID, GA_ID, GTM_ID, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITENTEXTE, SEITENTEXT_GENUTZT, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };

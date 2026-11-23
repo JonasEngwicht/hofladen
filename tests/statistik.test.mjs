@@ -41,7 +41,7 @@ test('Statistik: keine Seite lädt Google ohne Einwilligung', () => {
   else assert.doesNotMatch(ds, /Google Analytics/);
   // Skript lädt gtag nur in analyticsLaden(), das nur nach „ja“ aufgerufen wird
   const js = readFileSync(new URL('../static/statistik.js', import.meta.url), 'utf8');
-  assert.equal((js.match(/googletagmanager/g) || []).length, 1);
+  assert.equal((js.match(/googletagmanager/g) || []).length, 2); // gtag/js und gtm.js, beide nur in den Lade-Funktionen
   assert.equal((js.match(/googlesyndication/g) || []).length, 1);
   assert.match(js, /if \(w === 'ja'\) d\.laden\(\)/);
   // AdSense: ads.txt passt zur Publisher-ID, Datenschutz erklärt den Dienst
