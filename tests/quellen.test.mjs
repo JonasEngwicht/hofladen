@@ -245,3 +245,17 @@ test('Solawi aus der Karte von morgen: Verein oder Genossenschaft ist erlaubt, N
   assert.ok(!istHofladen({ name: 'Solawi-Netzwerk Sachsen', solawi: true, konf: 0.8 }));
   assert.ok(!istHofladen({ name: 'Gemüsegarten e.V.', konf: 0.8 }));
 });
+
+test('Offene Quellen: Berichtsdatei neben den Rohdaten wird ignoriert (Platzhalter roh-*.json)', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'bericht-'));
+  writeFileSync(join(dir, 'osm.json'), JSON.stringify([]));
+  writeFileSync(join(dir, 'roh-kommunal.json'), JSON.stringify({ quelle: 'kommunal', release: '2026-11-23', orte: [
+    { id: 'x1', name: 'Hofladen Test', kat: null, konf: 0.9, hofHinweis: true, lat: 51.7, lon: 14.6, strasse: 'Dorfstr. 1', plz: '03149', ort: 'Forst (Lausitz)', datensatz: 'Test', lizenz: 'CC0-1.0' }] }));
+  writeFileSync(join(dir, 'roh-kommunal.json.bericht.json'), JSON.stringify([{ titel: 'Bericht ohne orte-Feld' }]));
+  // wie im Workflow: Platzhalter greift beide Dateien
+  execFileSync(process.execPath, ['scripts/import-quellen.mjs', join(dir, 'roh-kommunal.json'), join(dir, 'roh-kommunal.json.bericht.json'),
+    '--osm', join(dir, 'osm.json'), '--ziel', join(dir, 'ziel.json'), '--pruefung', join(dir, 'pruefung.json')]);
+  const z = JSON.parse(readFileSync(join(dir, 'ziel.json'), 'utf8'));
+  assert.equal(z.neu.length, 1);
+  assert.equal(z.neu[0].quelle, 'kommunal');
+});

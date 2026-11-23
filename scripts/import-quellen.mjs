@@ -18,7 +18,8 @@ import { QUELLEN, istHofladen, nurKonfidenzFehlt, hofTyp, sauberName, kontakt, a
 const args = process.argv.slice(2);
 const OPTIONEN = ['--osm', '--ziel', '--pruefung', '--pruefliste'];
 const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
-const rohPfade = args.filter((a, i) => !a.startsWith('--') && !OPTIONEN.includes(args[i - 1]));
+// Berichtsdateien (<roh>.bericht.json, Suchbericht von fetch-kommunal.py) passen auf den Platzhalter roh-*.json, sind aber keine Rohdaten
+const rohPfade = args.filter((a, i) => !a.startsWith('--') && !OPTIONEN.includes(args[i - 1]) && !a.endsWith('.bericht.json'));
 if (!rohPfade.length) { console.error('Aufruf: node scripts/import-quellen.mjs <roh.json> [...]'); process.exit(1); }
 const osm = JSON.parse(readFileSync(opt('--osm', new URL('../data/osm-eintraege.json', import.meta.url)), 'utf8'));
 const zielPfad = opt('--ziel', new URL('../data/offene-quellen.json', import.meta.url));
