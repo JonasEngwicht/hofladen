@@ -29,7 +29,15 @@ test('Statistik: keine Seite lädt Google ohne Einwilligung', () => {
   // Unabhängig davon, mit welcher Einstellung der letzte Build lief: nie fest eingebunden, Mess-ID nur mit Widerrufsmöglichkeit
   for (const pfad of ['index.html', 'datenschutz/index.html', 'impressum/index.html']) {
     const h = readFileSync(new URL(pfad, pub), 'utf8');
-    assert.doesNotMatch(h, /<script[^>]+(googletagmanager|google-analytics\.com|googlesyndication)|gtag\(|adsbygoogle/, pfad);
+    assert.doesNotMatch(h, /<script[^>]+(googletagmanager|google-analytics\.com|googlesyndication)|adsbygoogle/, pfad);
+    // Tag Manager: nur mit Consent Mode, der vorher alles auf „denied“ setzt
+    const gtm = h.match(/data-gtm="(GTM-[A-Z0-9]+)"/)?.[1];
+    if (gtm) {
+      const k = h.indexOf(`gtm.js?id='+i+dl`), c = h.indexOf("gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'");
+      assert.ok(c > 0 && k > c, `${pfad}: Consent-Default vor dem Tag Manager`);
+      assert.ok(h.indexOf('<head>') < c && c < h.indexOf('<title>'), `${pfad}: Tag Manager weit oben im Kopf`);
+      assert.match(h, new RegExp(`'dataLayer','${gtm}'\\);</script>`), pfad);
+    } else assert.doesNotMatch(h, /gtag\(/, pfad);
     const ads = h.match(/data-ads="(ca-pub-\d{16})"/)?.[1];
     if (ads) assert.match(h, new RegExp(`<meta name="google-adsense-account" content="${ads}">`), pfad);
     else assert.doesNotMatch(h, /google-adsense-account/, pfad);
@@ -41,7 +49,7 @@ test('Statistik: keine Seite lädt Google ohne Einwilligung', () => {
   else assert.doesNotMatch(ds, /Google Analytics/);
   // Skript lädt gtag nur in analyticsLaden(), das nur nach „ja“ aufgerufen wird
   const js = readFileSync(new URL('../static/statistik.js', import.meta.url), 'utf8');
-  assert.equal((js.match(/googletagmanager/g) || []).length, 2); // gtag/js und gtm.js, beide nur in den Lade-Funktionen
+  assert.equal((js.match(/googletagmanager/g) || []).length, 1); // gtag/js nur in analyticsLaden(); gtm.js steht im Kopf
   assert.equal((js.match(/googlesyndication/g) || []).length, 1);
   assert.match(js, /if \(w === 'ja'\) d\.laden\(\)/);
   // AdSense: ads.txt passt zur Publisher-ID, Datenschutz erklärt den Dienst

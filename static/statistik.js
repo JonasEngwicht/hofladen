@@ -1,5 +1,5 @@
-// Google Analytics 4 und Google AdSense – nur nach ausdrücklicher Einwilligung (§ 25 TDDDG, Art. 6 Abs. 1 lit. a DSGVO).
-// Vor der Einwilligung gibt es keine einzige Anfrage an Google. Die Wahl liegt je Dienst in localStorage
+// Google Analytics 4 (über den Tag Manager) und Google AdSense – Cookies und Werbung nur nach ausdrücklicher Einwilligung (§ 25 TDDDG, Art. 6 Abs. 1 lit. a DSGVO).
+// Der Tag Manager lädt auf jeder Seite, steht aber per Consent Mode auf „denied“, bis zugestimmt wird. Die Wahl liegt je Dienst in localStorage
 // („statistik“ bzw. „werbung“, jeweils ja/nein) und lässt sich über „Cookie-Einstellungen“ im Fuß jeder Seite jederzeit ändern.
 export const SCHLUESSEL = 'statistik';
 export const SCHLUESSEL_WERBUNG = 'werbung';
@@ -35,17 +35,14 @@ export function analyticsLaden(id) {
   document.head.append(s);
 }
 
-// Google Tag Manager: nur nach Einwilligung in die Statistik. Der Container-Inhalt (welche Tags laufen) liegt bei Google.
-let gtmGeladen = false;
-export function gtmLaden(id) {
-  if (gtmGeladen || !/^GTM-[A-Z0-9]+$/.test(id)) return;
-  gtmGeladen = true;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
-  const s = document.createElement('script');
-  s.async = true;
-  s.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(id)}`;
-  document.head.append(s);
+// Google Tag Manager: steht fest im Seitenkopf (scripts/build/html.mjs) mit Google Consent Mode, alles „denied“.
+// Hier wird die Einwilligung nur an Google weitergegeben bzw. zurückgenommen.
+export function einwilligungMelden(art, erlaubt) {
+  if (typeof window.gtag !== 'function') return;
+  const wert = erlaubt ? 'granted' : 'denied';
+  window.gtag('consent', 'update', art === 'werbung'
+    ? { ad_storage: wert, ad_user_data: wert, ad_personalization: wert }
+    : { analytics_storage: wert });
 }
 
 let werbungGeladen = false;
@@ -62,8 +59,8 @@ export function werbungLaden(client) {
 // Welche Dienste sind eingerichtet? Nur diese erscheinen im Hinweis.
 function dienste(ga, ads, gtm) {
   return [
-    (ga || gtm) && { art: 'statistik', schluessel: SCHLUESSEL, name: 'Statistik (Google Analytics)', text: 'zählt, welche Seiten genutzt werden, damit wir die Hofladenliste verbessern können', anker: 'google-analytics', laden: () => { if (ga) analyticsLaden(ga); if (gtm) gtmLaden(gtm); } },
-    ads && { art: 'werbung', schluessel: SCHLUESSEL_WERBUNG, name: 'Werbung (Google AdSense)', text: 'zeigt Anzeigen, mit denen wir die kostenlose Hofladenliste finanzieren', anker: 'google-adsense', laden: () => werbungLaden(ads) },
+    (ga || gtm) && { art: 'statistik', schluessel: SCHLUESSEL, name: 'Statistik (Google Analytics)', text: 'zählt, welche Seiten genutzt werden, damit wir die Hofladenliste verbessern können', anker: 'google-analytics', laden: () => { if (ga) analyticsLaden(ga); if (gtm) einwilligungMelden('statistik', true); } },
+    ads && { art: 'werbung', schluessel: SCHLUESSEL_WERBUNG, name: 'Werbung (Google AdSense)', text: 'zeigt Anzeigen, mit denen wir die kostenlose Hofladenliste finanzieren', anker: 'google-adsense', laden: () => { einwilligungMelden('werbung', true); werbungLaden(ads); } },
   ].filter(Boolean);
 }
 
@@ -87,7 +84,7 @@ function bannerZeigen(liste) {
       const vorher = wahlLesen(undefined, d.schluessel);
       wahlSpeichern(w, undefined, d.schluessel);
       if (w === 'ja') d.laden();
-      else if (vorher === 'ja') { cookiesLoeschen(document, d.art); neuLaden = true; } // Widerruf: Skript ist schon geladen
+      else if (vorher === 'ja') { einwilligungMelden(d.art, false); cookiesLoeschen(document, d.art); neuLaden = true; } // Widerruf: Skript ist schon geladen
     }
     box.remove();
     if (neuLaden) location.reload();

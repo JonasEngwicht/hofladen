@@ -63,6 +63,6 @@ Für Refactorings: Ausgabe vorher und nachher mit festem `BUILD_DATUM=…` bauen
 - **Titel ≤ 580 px, Beschreibung ≤ 1000 px** (`scripts/pixel.mjs`, Test für alle Seiten). Neue Seitentypen mit kurzen Titelvarianten über `passend(...)`.
 - **Strukturierte Daten** nur für echte, sichtbare Angaben; kein `aggregateRating` ohne echte Bewertungen.
 - **Keine Parameter-Links** in Übersichten: Filter als `#produkt=…`/`#filter=…`; andere interne Links mit `?` bekommen automatisch `nofollow`.
-- **Dritte nur mit Zustimmung:** Kacheln, Schriften, Analytics und Karten kommen vom eigenen Server oder laden erst nach Einwilligung. Teilen-Links ohne fremde Skripte.
+- **Dritte nur mit Zustimmung:** Kacheln, Schriften, Analytics und Karten kommen vom eigenen Server oder laden erst nach Einwilligung. Teilen-Links ohne fremde Skripte. Ausnahme (Jonas’ Entscheidung vom 23.11.2026): der Google Tag Manager steht fest im Kopf, mit Consent Mode auf „denied“ bis zur Zustimmung; AdSense-Skript lädt weiter erst nach Einwilligung.
 - **E-Mails an Betriebe** nur nach Freigabe durch Jonas. Kontakt überall: hofladenliste@gmail.com.
 - **Secrets** (nur Namen): GitHub `CF_DEPLOY_HOOK`, `ADMIN_TOKEN`, `RESEND_API_KEY`, `HUGGINGFACE_KEY`, `PAGESPEED_API_KEY`, Turnstile; Worker `RESEND_API_KEY`, `TURNSTILE_*`, `ADMIN_TOKEN`. Nie ausgeben, speichern oder in Links einbauen.
