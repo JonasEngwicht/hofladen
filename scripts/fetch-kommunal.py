@@ -87,6 +87,21 @@ if os.environ.get('KOMMUNAL_SUCHE') == '1':
     except Exception as e:
         fehler.append(f'Suche: {e!r}')
 
+# 4) DZT Knowledge Graph (Tourismusdaten aller Länder, nur mit Secret DZT_API_KEY; scripts/dzt_kg.py)
+if os.environ.get('DZT_API_KEY'):
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import dzt_kg
+    try:
+        weitere, b = dzt_kg.abruf(dzt_kg.poster(os.environ['DZT_API_KEY']), log=lambda m: print(m, file=sys.stderr))
+        orte += weitere
+        pfad = ziel + '.bericht.json'
+        alt = json.load(open(pfad, encoding='utf-8')) if os.path.exists(pfad) else []
+        with open(pfad, 'w', encoding='utf-8') as f:
+            json.dump(alt + [b], f, ensure_ascii=False, indent=1)
+        print(f"DZT: {b['ergebnis']}", file=sys.stderr)
+    except Exception as e:
+        fehler.append(f'DZT: {e!r}')
+
 print(f'Offene Verwaltungsdaten: {len(orte)} Orte', file=sys.stderr)
 for f in fehler: print('Fehler', f[:300], file=sys.stderr)
 if not orte:

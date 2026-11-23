@@ -1,6 +1,6 @@
 name: Probelauf Verwaltungsdaten
 
-# Testlauf für weitere offene Verwaltungsdaten (GovData, Open.NRW): holt die Daten, gleicht sie mit dem Bestand ab und
+# Testlauf für weitere offene Verwaltungsdaten (GovData, Open.NRW, DZT Knowledge Graph): holt die Daten, gleicht sie mit dem Bestand ab und
 # zeigt a) Ergänzungen zu bestehenden Einträgen und b) neue Einträge. Ändert keine Daten und stellt nichts live.
 # Bericht: Zusammenfassung dieses Laufs und Artefakt „probelauf“ (Bericht, Rohdaten, Testergebnis).
 on:
@@ -24,6 +24,7 @@ jobs:
       - name: Verwaltungsdaten holen (mit Suche)
         env:
           KOMMUNAL_SUCHE: '1'
+          DZT_API_KEY: ${{ secrets.DZT_API_KEY }} # DZT Knowledge Graph (scripts/dzt_kg.py), fehlt das Secret, wird er übersprungen
         run: python scripts/fetch-kommunal.py "$RUNNER_TEMP/roh-kommunal.json"
       - name: Abgleich (Testlauf, nur in eine Kopie)
         env:
