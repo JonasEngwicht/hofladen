@@ -1,37 +1,31 @@
-"""Diagnose DZT Knowledge Graph: gibt je Format die Rohantwort für einen einzelnen Hof aus (Lizenzfeld, verknüpfte Knoten).
+"""Diagnose DZT Knowledge Graph: Struktur der Detailantwort eines Hofs (Schlüssel des Hauptknotens, Lizenzfelder).
 Aufruf (nur in der Action, braucht DZT_API_KEY): python scripts/dzt-diagnose.py"""
 import json, os, sys, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dzt_kg as d
 
-def roh(argumente, name='get_pois_by_criteria', fmt='jsonld'):
-    body = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call', 'params': {'name': name, 'arguments': argumente}}).encode()
-    req = urllib.request.Request(d.MCP, data=body, method='POST', headers={
-        'x-api-key': os.environ['DZT_API_KEY'], 'Content-Type': 'application/json',
-        'Accept': 'application/json, text/event-stream', 'x-output-format': fmt, 'User-Agent': 'hofladenliste.de/1.0'})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        return r.read().decode('utf-8')
-
-print('=== tools/list ===')
-body = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'tools/list'}).encode()
-req = urllib.request.Request(d.MCP, data=body, method='POST', headers={'x-api-key': os.environ['DZT_API_KEY'], 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream', 'User-Agent': 'hofladenliste.de/1.0'})
-try:
-    print(urllib.request.urlopen(req, timeout=60).read().decode()[:6000])
-except Exception as e:
-    print('tools/list Fehler', e, getattr(e, 'read', lambda: b'')()[:500])
-for fmt in ('jsonld', 'both'):
-    print(f'=== get_pois_by_criteria name=Hofladen Alztaler, Format {fmt} ===')
-    try:
-        t = roh({'name': 'Hofladen Alztaler Hofmolkerei'}, fmt=fmt)
-        print(len(t), 'Zeichen'); print(t[:9000])
-    except Exception as e:
-        print('Fehler', e, getattr(e, 'read', lambda: b'')()[:500])
-print('=== get_entity_details ===')
-try:
-    erg = d.antwort_lesen(roh({'name': 'Hofladen Alztaler Hofmolkerei'}))
-    uri = next((o['@id'] for o in d.objekte(erg) if 'PointOfInterest' in json.dumps(o.get('@type'))), None)
-    print('uri', uri)
-    if uri:
-        t = roh({'uri': uri}, name='get_entity_details'); print(len(t), 'Zeichen'); print(t[:9000])
-except Exception as e:
-    print('Fehler', e, getattr(e, 'read', lambda: b'')()[:500])
+post = d.poster(os.environ['DZT_API_KEY'])
+kurz = lambda v, n=220: json.dumps(v, ensure_ascii=False)[:n]
+for name in ('Hofladen Alztaler Hofmolkerei', 'Hofladen'):
+    print(f'=== Suche {name} ===')
+    erg = post('get_pois_by_criteria', {'name': name} if ' ' in name else {'keywords_all': [name]})
+    obj = d.objekte(erg)
+    poi = [o for o in obj if 'PointOfInterest' in json.dumps(o.get('@type', ''))]
+    print('Knoten:', len(obj), 'POIs:', len(poi), 'Seitenfelder:', {k: v for k, v in erg.items() if k != 'jsonld'})
+    for o in poi[:3]:
+        print('POI-Schlüssel:', [k.rsplit('/', 1)[-1] for k in o])
+    lic = [(o['@id'][-12:], kurz(o.get('https://schema.org/license')), kurz(o.get('https://schema.org/copyrightNotice'))) for o in obj if 'https://schema.org/license' in o]
+    print('Knoten mit license:', len(lic), lic[:6])
+    if name != 'Hofladen':
+        uri = poi[0]['@id']
+        det = d.objekte(d.antwort_lesen(json.dumps({'jsonrpc': '2.0', 'id': 1, 'result': {'structuredContent': {'jsonld': json.loads(json.dumps({'@graph': []}))}}})))
+        r = post('get_entity_details', {'uri': uri})
+        g = d.objekte(r)
+        print('Detail-Knoten:', len(g))
+        hauptk = next(o for o in g if o['@id'] == uri)
+        for k, v in hauptk.items():
+            print('  ', k.replace('https://', ''), '=', kurz(v, 160))
+        for o in g:
+            for k, v in o.items():
+                if 'icen' in k or 'opyright' in k:
+                    print('LIZENZ', o['@id'][-12:], k.replace('https://', ''), kurz(v, 200))
