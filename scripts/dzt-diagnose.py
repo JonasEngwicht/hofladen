@@ -14,15 +14,24 @@ def roh(argumente, name='get_pois_by_criteria', fmt='jsonld'):
 
 print('=== tools/list ===')
 body = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'tools/list'}).encode()
-req = urllib.request.Request(d.MCP, data=body, method='POST', headers={'x-api-key': os.environ['DZT_API_KEY'], 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream'})
-print(urllib.request.urlopen(req, timeout=60).read().decode()[:6000])
+req = urllib.request.Request(d.MCP, data=body, method='POST', headers={'x-api-key': os.environ['DZT_API_KEY'], 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream', 'User-Agent': 'hofladenliste.de/1.0'})
+try:
+    print(urllib.request.urlopen(req, timeout=60).read().decode()[:6000])
+except Exception as e:
+    print('tools/list Fehler', e, getattr(e, 'read', lambda: b'')()[:500])
 for fmt in ('jsonld', 'both'):
     print(f'=== get_pois_by_criteria name=Hofladen Alztaler, Format {fmt} ===')
-    t = roh({'name': 'Hofladen Alztaler Hofmolkerei'}, fmt=fmt)
-    print(len(t), 'Zeichen'); print(t[:9000])
+    try:
+        t = roh({'name': 'Hofladen Alztaler Hofmolkerei'}, fmt=fmt)
+        print(len(t), 'Zeichen'); print(t[:9000])
+    except Exception as e:
+        print('Fehler', e, getattr(e, 'read', lambda: b'')()[:500])
 print('=== get_entity_details ===')
-erg = d.antwort_lesen(roh({'name': 'Hofladen Alztaler Hofmolkerei'}))
-uri = next((o['@id'] for o in d.objekte(erg) if 'PointOfInterest' in json.dumps(o.get('@type'))), None)
-print('uri', uri)
-if uri:
-    t = roh({'uri': uri}, name='get_entity_details'); print(len(t), 'Zeichen'); print(t[:9000])
+try:
+    erg = d.antwort_lesen(roh({'name': 'Hofladen Alztaler Hofmolkerei'}))
+    uri = next((o['@id'] for o in d.objekte(erg) if 'PointOfInterest' in json.dumps(o.get('@type'))), None)
+    print('uri', uri)
+    if uri:
+        t = roh({'uri': uri}, name='get_entity_details'); print(len(t), 'Zeichen'); print(t[:9000])
+except Exception as e:
+    print('Fehler', e, getattr(e, 'read', lambda: b'')()[:500])
