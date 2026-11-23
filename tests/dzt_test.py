@@ -60,6 +60,14 @@ class Suche(unittest.TestCase):
         self.assertFalse(d.hofbezug('Stadtmuseum', 'Ausstellung über Imkerei'))  # schwacher Bezug zählt nur im Namen
 
 
+class Typen(unittest.TestCase):
+    def test_hofladen_ohne_pointofinterest_typ(self):
+        g = poi('s1', name='Hofladen Gut Neu Sacro')
+        g[0]['@type'] = ['https://schema.org/Place', 'https://schema.org/Store', 'https://schema.org/GroceryStore']
+        k = d.kurzsatz_aus_suche(g)
+        self.assertEqual([x['name'] for x in k], ['Hofladen Gut Neu Sacro'])   # Hilfsknoten (Adresse, Geo, Bild) zählen nicht
+
+
 class Kandidat(unittest.TestCase):
     def test_felder(self):
         k = d.kurzsatz_aus_suche(poi())[0]
