@@ -847,8 +847,9 @@ karteAutomatisch();
   for (const t of $$('[data-badge-code]')) t.addEventListener('focus', () => t.select());
 }
 
-// ---------- Google Analytics: nur nach Einwilligung (static/statistik.js) ----------
-if (document.documentElement.dataset.ga) import('./statistik.js').then((m) => m.statistikStarten(document.documentElement.dataset.ga)).catch(() => {});
+// ---------- Google Analytics und AdSense: nur nach Einwilligung (static/statistik.js) ----------
+{ const { ga, ads } = document.documentElement.dataset;
+  if (ga || ads) import('./statistik.js').then((m) => m.statistikStarten(ga, ads)).catch(() => {}); }
 
 // ---------- Nutzungsstatistik: anonyme Tageszähler (siehe Datenschutz) ----------
 const seitenTyp = document.body.dataset.seite || 'sonstige';
