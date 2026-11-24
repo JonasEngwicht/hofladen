@@ -34,6 +34,8 @@ for (const url of urls) {
   const anfragen = ereignisse.filter((e) => e.method === 'Network.requestWillBeSent').map((e) => e.params.request.url);
   const zaehler = anfragen.some((u) => u.includes('/api/ereignis'));
   const besuch = anfragen.some((u) => u.includes('/api/besuch'));
+  const dokAnfrage = ereignisse.find((e) => e.method === 'Network.requestWillBeSent' && e.params.type === 'Document')?.params.request;
+  if (dokAnfrage) console.log(`     Kennung der Seitenanfrage: ${/HeadlessChrome/.test(dokAnfrage.headers?.['User-Agent'] || '') ? 'HeadlessChrome' : 'normal'}`);
   const dok = ereignisse.find((e) => e.method === 'Network.responseReceived' && e.params.type === 'Document')?.params.response;
   if (dok) { const k = Object.fromEntries(Object.entries(dok.headers || {}).map(([n, v]) => [n.toLowerCase(), v]));
     console.log(`     Dokument: ${dok.status}${dok.fromDiskCache ? ' (Browser-Cache)' : ''}${dok.fromPrefetchCache ? ' (Prefetch-Cache)' : ''} · cf-cache-status ${k['cf-cache-status'] || '–'} · age ${k.age || '–'} · HSTS ${k['strict-transport-security'] ? 'ja' : 'nein'} · cf-ray ${k['cf-ray'] || '–'}`); }
