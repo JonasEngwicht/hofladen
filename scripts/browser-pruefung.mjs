@@ -33,7 +33,9 @@ for (const url of urls) {
   const gtm = anfragen.some((u) => u.includes('googletagmanager.com/gtm.js'));
   const module = anfragen.filter((u) => /hofladenliste\.de\/[a-z-]+\.js/.test(u)).map((u) => u.replace(/^.*\.de\//, '').replace(/\?.*/, ''));
   const banner = (await cdp('Runtime.evaluate', { expression: "!!document.querySelector('.einwilligung')", returnByValue: true })).result?.result?.value;
-  const ok = !ex.length;
+  const mitStatistik = (await cdp('Runtime.evaluate', { expression: "!!(document.documentElement.dataset.gtm || document.documentElement.dataset.ga)", returnByValue: true })).result?.result?.value;
+  // Erwartet: keine JS-Fehler; Einwilligungs-Hinweis für neue Besucher, wenn Statistik eingerichtet ist; Zähler-Anfrage auf Hofseiten
+  const ok = !ex.length && (!mitStatistik || banner) && (!/\/hof\//.test(url) || zaehler);
   if (!ok) fehler++;
   console.log(`${ok ? 'OK  ' : 'FEHL'} ${url}\n     Module: ${module.join(', ') || '–'} · Tag Manager: ${gtm ? 'ja' : 'nein'} · Zähler: ${zaehler ? 'ja' : 'nein'} · Einwilligungs-Hinweis: ${banner ? 'ja' : 'nein'}`);
   for (const x of ex) console.log(`     JS-Fehler: ${x.split('\n').slice(0, 3).join(' | ')}`);
