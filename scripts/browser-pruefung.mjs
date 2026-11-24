@@ -34,7 +34,9 @@ for (const url of urls) {
   const anfragen = ereignisse.filter((e) => e.method === 'Network.requestWillBeSent').map((e) => e.params.request.url);
   const zaehler = anfragen.some((u) => u.includes('/api/ereignis'));
   const besuch = anfragen.some((u) => u.includes('/api/besuch'));
-  const gtm = anfragen.some((u) => u.includes('googletagmanager.com/gtm.js'));
+  const gtmAnfrage = ereignisse.find((e) => e.method === 'Network.requestWillBeSent' && e.params.request.url.includes('googletagmanager.com/gtm.js'));
+  const gtm = Boolean(gtmAnfrage);
+  if (gtm) console.log(`     Tag Manager geladen von: ${gtmAnfrage.params.documentURL} · Auslöser ${gtmAnfrage.params.initiator?.type} ${gtmAnfrage.params.initiator?.url || gtmAnfrage.params.initiator?.stack?.callFrames?.[0]?.url || ''} · im HTML: ${(await cdp('Runtime.evaluate', { expression: "document.documentElement.outerHTML.includes('gtm.js')", returnByValue: true })).result?.result?.value}`);
   const module = anfragen.filter((u) => /hofladenliste\.de\/[a-z-]+\.js/.test(u)).map((u) => u.replace(/^.*\.de\//, '').replace(/\?.*/, ''));
   const banner = (await cdp('Runtime.evaluate', { expression: "!!document.querySelector('.einwilligung')", returnByValue: true })).result?.result?.value;
   const mitStatistik = (await cdp('Runtime.evaluate', { expression: "!!(document.documentElement.dataset.gtm || document.documentElement.dataset.ga)", returnByValue: true })).result?.result?.value;
