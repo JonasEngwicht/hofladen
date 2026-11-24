@@ -17,7 +17,7 @@ import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
 import { wasWoTrennen } from './waswo.js';
 import { distanzKm } from '../static/helfer.js';
-import { BESUCHE_SCHEMA, besuchZaehlen, besucheAufraeumen, besucheAuswerten, besuchPruefen } from './besuche.js';
+import { BESUCHE_SCHEMA, auslieferungArt, auslieferungZaehlen, besuchZaehlen, besucheAufraeumen, besucheAuswerten, besuchPruefen } from './besuche.js';
 import { BETRIEB_SCHEMA, TIPP_SCHEMA, ABO_SCHEMA, saisonAbo, saisonMailsSenden, tippAnnehmen, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
@@ -739,6 +739,9 @@ export default {
     if (url.pathname === '/api/tipp') return tippAnnehmen(request, env, ctx, H);
     if (url.pathname === '/api/saison-abo') return saisonAbo(request, env, ctx, H, plzDaten());
     if (url.pathname === '/api/turnstile') return new Response(JSON.stringify({ siteKey: env.TURNSTILE_SITE_KEY || null }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
-    return sicherheitsKopf(await seiteAusliefern(request, env, url));
+    const antwort = await seiteAusliefern(request, env, url);
+    const art = env.STATS && (antwort.status === 200 || antwort.status === 304) ? auslieferungArt(request, url.pathname) : null;
+    if (art) ctx.waitUntil(schema(env).then(() => auslieferungZaehlen(env, art)).catch(() => {}));
+    return sicherheitsKopf(antwort);
   },
 };
