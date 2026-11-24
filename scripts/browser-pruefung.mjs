@@ -27,7 +27,9 @@ for (const m of ['Runtime.enable', 'Log.enable', 'Network.enable', 'Page.enable'
 let fehler = 0;
 for (const url of urls) {
   ereignisse.length = 0;
-  await cdp('Page.navigate', { url });
+  // erste Seite wie eingetippt, weitere wie ein Klick auf einen Link (so kommen echte Besucher von Seite zu Seite)
+  if (url === urls[0]) await cdp('Page.navigate', { url });
+  else await cdp('Runtime.evaluate', { expression: `location.href = ${JSON.stringify(url)}` });
   await warte(8000);
   const ex = ereignisse.filter((e) => e.method === 'Runtime.exceptionThrown').map((e) => e.params.exceptionDetails.exception?.description || e.params.exceptionDetails.text);
   const kons = ereignisse.filter((e) => (e.method === 'Runtime.consoleAPICalled' && e.params.type === 'error') || (e.method === 'Log.entryAdded' && e.params.entry.level === 'error'))
