@@ -51,6 +51,13 @@ for (const [pfad, status, ziel] of FAELLE) {
   const ok2 = /charset=utf-8/i.test(typ) && /max-age=\d+/.test(hsts) && titelBreite(titel) <= 580 && !/\?produkt=/.test(html);
   if (!ok2) fehler++;
   console.log(`${ok2 ? 'OK  ' : 'FEHL'} Startseite: ${typ} · HSTS ${hsts || '–'} · Titel ${titelBreite(titel)} px „${titel}“`);
+  // Ausgelieferte Startseite = aktueller Build? (Besuchsmeldung da; Tag Manager nur, wenn data/analytics.json ihn einschaltet)
+  const { readFileSync } = await import('node:fs');
+  const google = JSON.parse(readFileSync(new URL('../data/analytics.json', import.meta.url))).aktiv !== false;
+  const gtm = html.includes('googletagmanager.com/gtm.js'), beacon = html.includes("sendBeacon('/api/besuch'");
+  const ok3 = beacon && gtm === google;
+  if (!ok3) fehler++;
+  console.log(`${ok3 ? 'OK  ' : 'FEHL'} Startseite aktuell: Besuchsmeldung ${beacon ? 'ja' : 'nein'} · Tag Manager ${gtm ? 'ja' : 'nein'} (soll ${google ? 'ja' : 'nein'}) · Cache ${r.headers.get('cf-cache-status') || '–'} · Alter ${r.headers.get('age') || '–'} s · ${r.headers.get('cache-control') || '–'}`);
 }
 
 // Indexierbarkeit lokaler Seiten (20.11.2026): je Seitentyp 200, kein noindex (Header oder Meta), Canonical auf sich selbst,
