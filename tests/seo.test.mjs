@@ -201,3 +201,10 @@ test('kein Product- oder Offer-Markup (Google verlangt dafür Preis oder Bewertu
     }
   }
 });
+
+test('Browser-JS: über $() (ein Element) wird nicht iteriert – das brach am 20.11. app.js auf allen Seiten ab', () => {
+  for (const f of ['app.js', 'betrieb.js', 'route.js', 'vollkarte.js', 'aushang.js', 'karte.js', 'verwaltung.js', 'statistik.js']) {
+    const s = readFileSync(new URL(`../static/${f}`, import.meta.url), 'utf8');
+    assert.doesNotMatch(s, /\bof \$\(|\.\.\.\$\(/, `${f}: for…of über $() statt $$()`);
+  }
+});

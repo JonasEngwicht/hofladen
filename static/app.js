@@ -570,7 +570,7 @@ function startseite() {
   const saison = $('[data-saison]');
   if (saison && +saison.dataset.saisonStand !== berlinMonat()) $('[data-saison-inhalt]', saison).innerHTML = saisonHtml(JSON.parse(saison.dataset.saison), berlinMonat());
   // Angebotswahl aus Links wie /?produkt=gemuese#plz vorbelegen; Links „mit Gemüse“ (data-wunsch) haken direkt an
-  for (const l of $('[data-wunsch]')) l.addEventListener('click', () => { const i = $(`.wunsch input[value="${CSS.escape(l.dataset.wunsch)}"]`); if (i) i.checked = true; });
+  for (const l of $$('[data-wunsch]')) l.addEventListener('click', () => { const i = $(`.wunsch input[value="${CSS.escape(l.dataset.wunsch)}"]`); if (i) i.checked = true; });
   for (const p of params.getAll('produkt').flatMap((x) => x.split(','))) { const i = $(`.wunsch input[value="${CSS.escape(p)}"]`); if (i) i.checked = true; }
 }
 

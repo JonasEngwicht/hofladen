@@ -24,3 +24,8 @@ jobs:
         env:
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
         run: node scripts/live-check.mjs https://hofladenliste.de
+      - name: Browser-Prüfung (JavaScript läuft auf den wichtigsten Seitentypen)
+        if: always()
+        run: >-
+          node scripts/browser-pruefung.mjs https://hofladenliste.de/ https://hofladenliste.de/hof/hofladen-gut-clarenhof-frechen/
+          https://hofladenliste.de/bayern/ https://hofladenliste.de/milchtankstelle/ https://hofladenliste.de/saisonkalender/ https://hofladenliste.de/karte/
