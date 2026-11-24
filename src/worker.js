@@ -741,7 +741,10 @@ export default {
     if (url.pathname === '/api/turnstile') return new Response(JSON.stringify({ siteKey: env.TURNSTILE_SITE_KEY || null }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
     const antwort = await seiteAusliefern(request, env, url);
     const art = env.STATS && (antwort.status === 200 || antwort.status === 304) ? auslieferungArt(request, url.pathname) : null;
-    if (art) ctx.waitUntil(schema(env).then(() => auslieferungZaehlen(env, art)).catch(() => {}));
+    if (art) ctx.waitUntil(schema(env).then(() => auslieferungZaehlen(env, art)).catch((e) => auslieferungZaehlen(env, `fehler ${String(e.message).slice(0, 80)}`).catch(() => {})));
+    // vorübergehend: Diagnose, warum Seitenaufrufe nicht als Kontrolle zählen
+    else if (env.STATS && /Mozilla\/5\.0 \(Windows NT 10\.0; Win64; x64\).*Chrome\/131\.0\.0\.0 Safari/.test(request.headers.get('user-agent') || ''))
+      ctx.waitUntil(auslieferungZaehlen(env, `diag ${antwort.status} ${request.method} ${request.headers.get('sec-fetch-dest')} ${request.headers.get('sec-purpose')}`.slice(0, 100)).catch(() => {}));
     return sicherheitsKopf(antwort);
   },
 };
