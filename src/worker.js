@@ -17,6 +17,7 @@ import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
 import { wasWoTrennen } from './waswo.js';
 import { distanzKm } from '../static/helfer.js';
+import { BESUCHE_SCHEMA, besuchZaehlen, besucheAufraeumen, besucheAuswerten, zaehlbar } from './besuche.js';
 import { BETRIEB_SCHEMA, TIPP_SCHEMA, ABO_SCHEMA, saisonAbo, saisonMailsSenden, tippAnnehmen, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
@@ -273,6 +274,7 @@ const SCHEMA = [
   ...BETRIEB_SCHEMA,
   ...TIPP_SCHEMA,
   ...ABO_SCHEMA,
+  ...BESUCHE_SCHEMA,
 ];
 let schemaOk = false;
 async function schema(env) {
@@ -523,6 +525,10 @@ async function verwaltung(request, env, url, ctx) {
       FROM meldungen m WHERE status = 'freigegeben' ORDER BY id`).all();
     return keinCache(json({ freigaben: results.map((m) => ({ ...m, daten: JSON.parse(m.daten), fotos: m.fotos ? String(m.fotos).split(',').map(Number) : [] })) }));
   }
+  if (teil === 'besuche') {
+    const tage = Math.min(365, Math.max(1, +url.searchParams.get('tage') || 30));
+    return keinCache(json(await besucheAuswerten(env, tage)));
+  }
   if (teil === 'statistik') {
     const tage = Math.min(365, Math.max(1, +url.searchParams.get('tage') || 30));
     const ab = new Date(Date.now() - tage * 864e5).toISOString().slice(0, 10);
@@ -693,6 +699,7 @@ export default {
   // Täglicher Cron (wrangler.jsonc): Erinnerungen an Betriebe, nur mit ERINNERUNGEN_AKTIV = "ja"
   async scheduled(event, env, ctx) {
     ctx.waitUntil(erinnerungenSenden(env, H).then((r) => console.log('Erinnerungen', JSON.stringify(r))).catch((e) => console.error('Erinnerungen', e.message)));
+    ctx.waitUntil(schema(env).then(() => besucheAufraeumen(env)).catch((e) => console.error('Besuche aufräumen', e.message)));
     ctx.waitUntil(saisonMailsSenden(env, H).then((r) => console.log('Saison-Mails', JSON.stringify(r))).catch((e) => console.error('Saison-Mails', e.message)));
   },
   async fetch(request, env, ctx) {
@@ -722,6 +729,9 @@ export default {
     if (url.pathname === '/api/tipp') return tippAnnehmen(request, env, ctx, H);
     if (url.pathname === '/api/saison-abo') return saisonAbo(request, env, ctx, H, plzDaten());
     if (url.pathname === '/api/turnstile') return new Response(JSON.stringify({ siteKey: env.TURNSTILE_SITE_KEY || null }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
-    return sicherheitsKopf(await seiteAusliefern(request, env, url));
+    const seite = sicherheitsKopf(await seiteAusliefern(request, env, url));
+    // Eigene Besucherstatistik ohne Cookies (src/besuche.js) – läuft nach der Antwort, bremst die Seite nicht
+    if (env.STATS && zaehlbar(request, url, seite)) ctx.waitUntil(schema(env).then(() => besuchZaehlen(env, request, url)).catch((e) => console.error('Besuch', e.message)));
+    return seite;
   },
 };
