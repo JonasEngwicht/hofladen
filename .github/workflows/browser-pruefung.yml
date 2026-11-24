@@ -1,0 +1,21 @@
+name: Browser-Prüfung
+# Lädt Live-Seiten in einem echten Chrome und meldet JavaScript-Fehler (scripts/browser-pruefung.mjs)
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: URLs, durch Leerzeichen getrennt
+        default: https://hofladenliste.de/ https://hofladenliste.de/hof/hofladen-gut-clarenhof-frechen/ https://hofladenliste.de/bayern/ https://hofladenliste.de/saisonkalender/
+permissions:
+  contents: read
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - env:
+          URLS: ${{ inputs.urls }}
+        run: node scripts/browser-pruefung.mjs $URLS
