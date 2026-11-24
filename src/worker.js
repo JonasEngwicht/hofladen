@@ -719,6 +719,9 @@ export default {
       url.protocol = 'https:';
       return weiter(url.toString(), 301);
     }
+    // vorübergehend: erreicht jede Seitenanfrage der Browser-Prüfung den Worker?
+    if (env.STATS && request.method === 'GET' && /Chrome\/131\.0\.0\.0 Safari/.test(request.headers.get('user-agent') || '') && !url.pathname.startsWith('/api/') && !/\.[a-z0-9]{2,5}$/.test(url.pathname))
+      await auslieferungZaehlen(env, `top ${url.pathname} ${request.headers.get('sec-fetch-dest')}`.slice(0, 100)).catch(() => {});
     if (url.pathname === '/suche') return suche(url, env, ctx, request);
     const m = url.pathname.match(/^\/plz\/(\d{5})\/?$/);
     if (m) return sucheWeiterleitung(m[1], [], env, ctx, request);
