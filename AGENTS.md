@@ -27,7 +27,7 @@ Keine npm-Abhängigkeiten: nur Node-Bordmittel (Node 22). Ausnahme: einige Abruf
 | `scripts/*.mjs` | Helfer (`lib`, `pixel`, `pflege`, `quellen`, `bereinigen`, `seitentexte`) und Import-/Pflegeskripte |
 | `src/worker.js` | Worker: Weiterleitungen (https, www, 301/410), Suche, APIs, Formulare, Verwaltung |
 | `src/betrieb.js`, `src/eintraege.js` | Betreiber-Bereich und Mails; Zugriff auf Eintragszeilen (Feldliste dort) |
-| `src/besuche.js` | eigene Besucherstatistik ohne Cookies (Zählung beim Ausliefern, Auswertung für /verwaltung/, Grafiken in `static/besucher.js`) |
+| `src/besuche.js` | eigene Besucherstatistik ohne Cookies (Seiten melden sich per `sendBeacon` an `/api/besuch`, Kontrollzähler für ausgelieferte Seiten und Bots, Auswertung für /verwaltung/, Grafiken in `static/besucher.js`; Browser mit geöffneter Verwaltung zählen nicht) |
 | `static/` | CSS und Browser-JS (`app.js` lädt Karte, Route, Betrieb … bei Bedarf nach); `helfer.js`, `oh.js`, `karte.js` nutzen Build und Browser gemeinsam |
 | `tests/` | Tests; `hilfen.mjs` lädt den Worker mit nachgebautem Asset-Server |
 | `docs/` | `betrieb.md` (Workflows, Secrets, Moderation), `pflege.md`, Berichte |
