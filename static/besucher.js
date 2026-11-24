@@ -115,6 +115,8 @@ export async function besucher(box, api, zurueck, tage = 30) {
         <div class="block b-kachel"><span>Seitenaufrufe heute</span><b>${zahl(d.heute.aufrufe)}</b><small>gestern ${zahl(d.gestern.aufrufe)}</small></div>
         <div class="block b-kachel"><span>Besuche, ${tage} Tage</span><b>${zahl(summe)}</b><small>${qGesamt ? `${Math.round(100 * suche / qGesamt)} % über Suchmaschinen` : '&nbsp;'}</small></div>
       </div>
+      ${(() => { const k = d.kontrolle?.heute || {}; const aus = (k.seite || 0) + (k.vorab || 0);
+        return `<p class="b-live">Kontrolle heute: ${zahl(aus)} Seiten an Browser ausgeliefert${k.vorab ? ` (davon ${zahl(k.vorab)} von Google o. Ä. vorab geladen)` : ''} · ${zahl(d.heute.aufrufe)} Aufrufe gemeldet</p>`; })()}
       ${karte('Letzte 60 Minuten', `<div class="b-grafik" data-g="min">${minG.html}<div class="b-tip" hidden></div></div>`, 'Seitenaufrufe je Minute')}
       ${karte('Heute nach Stunden', `<div class="b-grafik" data-g="std">${stdG.html}<div class="b-tip" hidden></div></div>
         <p class="b-legende"><span class="b-heute">heute</span><span class="b-gestern">gestern</span></p>${tabelle(['Stunde', 'heute', 'gestern'], heute.map((v, h) => [`${h} Uhr`, v == null ? '–' : zahl(v), zahl(gestern[h])]))}`, 'Besuche (Aufrufe von außerhalb der Seite)')}

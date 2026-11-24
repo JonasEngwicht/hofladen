@@ -2,6 +2,8 @@
 import { esc } from './helfer.js';
 const $ = (s, el = document) => el.querySelector(s);
 const SPEICHER = 'verwaltungToken';
+// Dieser Browser gehört zur Verwaltung: seine Seitenaufrufe zählen nicht in der Besucherstatistik (siehe BESUCH_SKRIPT)
+try { localStorage.setItem('hl-nicht-zaehlen', '1'); } catch {}
 const ART = { neu: 'Neuer Eintrag', korrektur: 'Korrektur', uebernahme: 'Übernahme durch Betreiber' };
 const FELDER = { fotos: 'Fotos', name: 'Name', betriebsart: 'Art', strasse: 'Straße', plz: 'PLZ', ort: 'Ort', telefon: 'Telefon', email: 'E-Mail', website: 'Website',
   oeffnungszeiten: 'Öffnungszeiten (OSM)', saison: 'Saison', angebot: 'Angebot', bio: 'Bio', zahlung: 'Bezahlen', beschreibung: 'Beschreibung', hinweis: 'Anmerkung', kontakt_name: 'Kontakt' };

@@ -36,7 +36,7 @@ const STATISTIK_AKTIV = Boolean(GA_ID || GTM_ID); // Analytics direkt (GA4) oder
 const EINWILLIGUNG = Boolean(STATISTIK_AKTIV || ADSENSE_ID);
 // Eigene Besucherstatistik (src/besuche.js): meldet Pfad und Herkunft einmal pro Anzeige an den eigenen Server.
 // Vorgerenderte Seiten (Google lädt Suchtreffer vorab) zählen erst, wenn sie wirklich angezeigt werden. Keine Cookies.
-const BESUCH_SKRIPT = `<script>(function(){function z(){try{navigator.sendBeacon('/api/besuch',JSON.stringify({p:location.pathname,r:document.referrer}))}catch(e){}}if(document.prerendering)document.addEventListener('prerenderingchange',z,{once:true});else z()})()</script>\n`;
+const BESUCH_SKRIPT = `<script>(function(){function z(){try{if(localStorage.getItem('hl-nicht-zaehlen'))return;navigator.sendBeacon('/api/besuch',JSON.stringify({p:location.pathname,r:document.referrer}))}catch(e){}}if(document.prerendering)document.addEventListener('prerenderingchange',z,{once:true});else z()})()</script>\n`;
 // Pfade der Kategorieseiten (werden bei den Kategorien gefüllt; seitenTyp() braucht sie)
 const KATEGORIE_PFADE = new Set();
 const telHref = (t) => 'tel:' + t.replace(/[^\d+]/g, '').replace(/^00/, '+');

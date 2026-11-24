@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { fakeD1 } from './d1.mjs';
 import { ladeWorker, ASSETS } from './hilfen.mjs';
-import { BESUCHE_SCHEMA, herkunft, geraet, besuchPruefen, besuchZaehlen, besucheAuswerten, besucheAufraeumen, seitenTyp, berlinZeit } from '../src/besuche.js';
+import { BESUCHE_SCHEMA, herkunft, geraet, besuchPruefen, besuchZaehlen, auslieferungArt, besucheAuswerten, besucheAufraeumen, seitenTyp, berlinZeit } from '../src/besuche.js';
 
 const CHROME = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36';
 const IPHONE = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Mobile/15E148 Safari/604.1';
@@ -38,6 +38,16 @@ test('geraet: Handy, Tablet, Rechner', () => {
 
 const meldung = (daten, kopf = {}) => [new Request('https://hofladenliste.de/api/besuch', { method: 'POST', body: JSON.stringify(daten),
   headers: { 'user-agent': CHROME, 'sec-fetch-site': 'same-origin', ...kopf } }), daten];
+test('auslieferungArt: Seiten an Browser, vorab geladen getrennt, ohne Bots und Unterseiten', () => {
+  assert.equal(auslieferungArt(navigation('/bayern/'), '/bayern/'), 'seite');
+  assert.equal(auslieferungArt(navigation('/bayern/', { 'sec-purpose': 'prefetch;anonymous-client-ip' }), '/bayern/'), 'vorab');
+  assert.equal(auslieferungArt(navigation('/bayern/', { 'sec-purpose': 'prefetch;prerender' }), '/bayern/'), 'vorab');
+  assert.equal(auslieferungArt(navigation('/bayern/', { 'user-agent': 'Mozilla/5.0 (compatible; Googlebot/2.1)' }), '/bayern/'), null, 'Bot');
+  assert.equal(auslieferungArt(navigation('/bayern/', { 'sec-fetch-dest': 'iframe' }), '/bayern/'), null, 'kein Dokument');
+  assert.equal(auslieferungArt(navigation('/verwaltung/'), '/verwaltung/'), null, 'Verwaltung');
+  assert.equal(auslieferungArt(new Request('https://hofladenliste.de/', { headers: { 'user-agent': CHROME, accept: 'text/html' } }), '/'), 'seite', 'ohne Sec-Fetch');
+});
+
 test('besuchPruefen: nur Meldungen der eigenen Seite, ohne Bots, mit gültigem Pfad', () => {
   assert.deepEqual(besuchPruefen(...meldung({ p: '/bayern/', r: 'https://www.google.de/' })), { pfad: '/bayern/', referer: 'https://www.google.de/', ua: CHROME });
   assert.equal(besuchPruefen(...meldung({ p: '/bayern/' }, { 'user-agent': 'Mozilla/5.0 (compatible; Googlebot/2.1)' })), null, 'Bot');
@@ -110,10 +120,12 @@ test('Worker: /api/besuch zählt Meldungen der Seite, Bots nicht; Auswertung nur
   assert.match(await seite.text(), /navigator\.sendBeacon\('\/api\/besuch'[\s\S]*prerenderingchange/, 'Beacon im Seitenkopf');
   await Promise.all(warte);
   assert.equal(db._db.prepare('SELECT SUM(anzahl) AS n FROM besuche').get().n, 1, 'nur die eine Meldung zählt, nicht das Ausliefern');
+  assert.equal(db._db.prepare("SELECT anzahl FROM besuche_kontrolle WHERE art = 'seite'").get().anzahl, 1, 'Ausliefern zählt nur zur Kontrolle');
   assert.equal((await w.fetch(new Request('https://hofladenliste.de/api/verwaltung/besuche'), env, ctx)).status, 401);
   const a = await w.fetch(new Request('https://hofladenliste.de/api/verwaltung/besuche?tage=7', { headers: { Authorization: 'Bearer test-zugang-1234567890-abc' } }), env, ctx);
   assert.equal(a.status, 200);
   const d = await a.json();
   assert.equal(d.tage, 7);
   assert.equal(d.quellen[0].quelle, 'google');
+  assert.equal(d.kontrolle.heute.seite, 1);
 });

@@ -15,6 +15,7 @@ export const BESUCHE_SCHEMA = [
     anzahl INTEGER NOT NULL, PRIMARY KEY (tag, pfad, quelle, geraet))`,
   `CREATE TABLE IF NOT EXISTS besuche_minute (minute TEXT PRIMARY KEY, aufrufe INTEGER NOT NULL, einstiege INTEGER NOT NULL)`,
   `CREATE TABLE IF NOT EXISTS besuche_verweise (tag TEXT NOT NULL, host TEXT NOT NULL, anzahl INTEGER NOT NULL, PRIMARY KEY (tag, host))`,
+  `CREATE TABLE IF NOT EXISTS besuche_kontrolle (tag TEXT NOT NULL, art TEXT NOT NULL, anzahl INTEGER NOT NULL, PRIMARY KEY (tag, art))`,
 ];
 
 // Bots, Vorschau-Abrufe und Prüfwerkzeuge zählen nicht
@@ -75,6 +76,21 @@ export async function besuchZaehlen(env, { pfad, referer, ua }, eigenerHost = 'h
 }
 
 // Minutenzähler nach 35 Tagen löschen (täglicher Cron)
+// Kontrolle: ausgelieferte HTML-Seiten an Browser (ohne Bots), getrennt nach normalem Aufruf und Vorab-Laden
+// (Google lädt Suchtreffer per Prefetch/Prerender vorab). Zum Abgleich mit den gemeldeten Besuchen.
+export function auslieferungArt(request, pfad) {
+  const h = request.headers, ua = h.get('user-agent') || '';
+  if (request.method !== 'GET' || BOT.test(ua) || !ua.startsWith('Mozilla/')) return null;
+  if (/^\/(verwaltung|betrieb|api)\//.test(pfad)) return null;
+  const dest = h.get('sec-fetch-dest');
+  if (dest ? dest !== 'document' : !/text\/html/.test(h.get('accept') || '')) return null;
+  return /prefetch|prerender/i.test(h.get('sec-purpose') || h.get('purpose') || '') ? 'vorab' : 'seite';
+}
+export async function auslieferungZaehlen(env, art, jetzt = new Date()) {
+  await env.STATS.prepare(`INSERT INTO besuche_kontrolle (tag, art, anzahl) VALUES (?1, ?2, 1)
+    ON CONFLICT (tag, art) DO UPDATE SET anzahl = anzahl + 1`).bind(berlin(jetzt).tag, art).run();
+}
+
 export async function besucheAufraeumen(env, jetzt = new Date()) {
   const grenze = berlin(new Date(jetzt.getTime() - 35 * 864e5)).minute;
   await env.STATS.prepare('DELETE FROM besuche_minute WHERE minute < ?1').bind(grenze).run();
@@ -100,7 +116,7 @@ export async function besucheAuswerten(env, tage = 30, jetzt = new Date()) {
   const vor60 = berlin(new Date(jetzt.getTime() - 59 * 6e4)).minute;
   const vor5 = berlin(new Date(jetzt.getTime() - 4 * 6e4)).minute;
   const alle = (sql, ...p) => env.STATS.prepare(sql).bind(...p).all().then((r) => r.results);
-  const [minuten, stunden, tageListe, quellen, geraete, seiten, einstiege, verweise] = await Promise.all([
+  const [minuten, stunden, tageListe, quellen, geraete, seiten, einstiege, verweise, kontrolle] = await Promise.all([
     alle('SELECT minute, aufrufe, einstiege FROM besuche_minute WHERE minute >= ?1 ORDER BY minute', vor60),
     alle(`SELECT substr(minute, 1, 13) AS stunde, SUM(aufrufe) AS aufrufe, SUM(einstiege) AS einstiege FROM besuche_minute
       WHERE minute >= ?1 GROUP BY stunde ORDER BY stunde`, `${gestern.tag} 00:00`),
@@ -111,6 +127,7 @@ export async function besucheAuswerten(env, tage = 30, jetzt = new Date()) {
     alle('SELECT pfad, SUM(anzahl) AS anzahl FROM besuche WHERE tag >= ?1 GROUP BY pfad ORDER BY anzahl DESC LIMIT 400', ab),
     alle(`SELECT pfad, SUM(anzahl) AS anzahl FROM besuche WHERE tag >= ?1 AND quelle != 'intern' GROUP BY pfad ORDER BY anzahl DESC LIMIT 25`, ab),
     alle('SELECT host, SUM(anzahl) AS anzahl FROM besuche_verweise WHERE tag >= ?1 GROUP BY host ORDER BY anzahl DESC LIMIT 25', ab),
+    alle('SELECT tag, art, anzahl FROM besuche_kontrolle WHERE tag >= ?1', gestern.tag),
   ]);
   const typen = {};
   for (const s of seiten) typen[seitenTyp(s.pfad)] = (typen[seitenTyp(s.pfad)] || 0) + s.anzahl;
@@ -123,5 +140,7 @@ export async function besucheAuswerten(env, tage = 30, jetzt = new Date()) {
     stunden, tageListe, quellen, geraete,
     typen: Object.entries(typen).map(([typ, anzahl]) => ({ typ, anzahl })).sort((a, b) => b.anzahl - a.anzahl),
     seiten: seiten.slice(0, 25), einstiege, verweise,
+    kontrolle: Object.fromEntries([heute.tag, gestern.tag].map((t) => [t === heute.tag ? 'heute' : 'gestern',
+      Object.fromEntries(kontrolle.filter((k) => k.tag === t).map((k) => [k.art, k.anzahl]))])),
   };
 }
