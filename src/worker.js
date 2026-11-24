@@ -17,7 +17,7 @@ import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
 import { wasWoTrennen } from './waswo.js';
 import { distanzKm } from '../static/helfer.js';
-import { BESUCHE_SCHEMA, besuchZaehlen, besucheAufraeumen, besucheAuswerten, zaehlbar } from './besuche.js';
+import { BESUCHE_SCHEMA, besuchZaehlen, besucheAufraeumen, besucheAuswerten, besuchPruefen } from './besuche.js';
 import { BETRIEB_SCHEMA, TIPP_SCHEMA, ABO_SCHEMA, saisonAbo, saisonMailsSenden, tippAnnehmen, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
@@ -463,6 +463,15 @@ function berechtigt(request, env) {
   for (let i = 0; i < soll.length; i++) d |= soll.charCodeAt(i) ^ ist.charCodeAt(i);
   return d === 0;
 }
+// Eigene Besucherstatistik ohne Cookies (src/besuche.js): Meldung der Seite per sendBeacon
+async function besuchAnnehmen(request, env, ctx, url) {
+  if (!env.STATS) return new Response(null, { status: 204 });
+  let daten = null;
+  try { daten = JSON.parse((await request.text()).slice(0, 2000)); } catch {}
+  const b = besuchPruefen(request, daten);
+  if (b) ctx.waitUntil(schema(env).then(() => besuchZaehlen(env, b, url.hostname)).catch((e) => console.error('Besuch', e.message)));
+  return new Response(null, { status: 204, headers: { 'Cache-Control': 'no-store' } });
+}
 async function verwaltung(request, env, url, ctx) {
   if (!env.ADMIN_TOKEN) return json({ fehler: 'Verwaltung ist noch nicht eingerichtet (Secret ADMIN_TOKEN fehlt).' }, 503);
   if (!berechtigt(request, env)) return json({ fehler: 'Nicht berechtigt' }, 401);
@@ -721,6 +730,7 @@ export default {
     if (url.pathname === '/api/hoefe') return hoefeApi(url);
     if (url.pathname === '/api/rueckmeldung') return rueckmeldungAnnehmen(request, env);
     if (url.pathname === '/api/ereignis') return ereignisZaehlen(request, env, ctx);
+    if (url.pathname === '/api/besuch') return besuchAnnehmen(request, env, ctx, url);
     if (url.pathname.startsWith('/kacheln/')) return kachelAntwort(request, env, ctx, url);
     if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url, ctx);
     if (url.pathname.startsWith('/api/betrieb/')) return betriebApi(request, env, url, ctx, H);
@@ -729,9 +739,6 @@ export default {
     if (url.pathname === '/api/tipp') return tippAnnehmen(request, env, ctx, H);
     if (url.pathname === '/api/saison-abo') return saisonAbo(request, env, ctx, H, plzDaten());
     if (url.pathname === '/api/turnstile') return new Response(JSON.stringify({ siteKey: env.TURNSTILE_SITE_KEY || null }), { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=3600' } });
-    const seite = sicherheitsKopf(await seiteAusliefern(request, env, url));
-    // Eigene Besucherstatistik ohne Cookies (src/besuche.js) – läuft nach der Antwort, bremst die Seite nicht
-    if (env.STATS && zaehlbar(request, url, seite)) ctx.waitUntil(schema(env).then(() => besuchZaehlen(env, request, url)).catch((e) => console.error('Besuch', e.message)));
-    return seite;
+    return sicherheitsKopf(await seiteAusliefern(request, env, url));
   },
 };

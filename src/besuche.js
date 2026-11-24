@@ -1,6 +1,9 @@
-// Eigene Besucherstatistik ohne Cookies: der Worker zählt Seitenaufrufe direkt beim Ausliefern der HTML-Seite.
+// Eigene Besucherstatistik ohne Cookies. Jede Seite meldet beim Anzeigen einmal Pfad und Herkunft (Referrer) per
+// sendBeacon an /api/besuch (kleines Skript im Kopf, scripts/build/html.mjs). Warum im Browser und nicht beim Ausliefern:
+// Google lädt Suchtreffer auf dem Handy oft vorab (prefetch/prerender) – der Klick erzeugt dann keine Anfrage mehr am Server.
+// Das Skript zählt vorgerenderte Seiten erst, wenn sie wirklich angezeigt werden. Bots ohne JavaScript zählen nicht.
 // Gespeichert werden nur Tageszähler (Seite, Herkunft, Gerät) und Minutenzähler – keine IP-Adresse, keine Kennung,
-// nichts im Browser. Deshalb braucht es dafür keine Einwilligung (kein Zugriff auf das Endgerät, § 25 TDDDG).
+// nichts im Browser.
 //
 // Tabellen (D1 STATS):
 //   besuche          Tag × Seite × Herkunft × Gerät → Aufrufe (Herkunft „intern“ = Klick innerhalb der Seite)
@@ -37,16 +40,16 @@ export function geraet(ua = '') {
   return 'rechner';
 }
 
-// Zählt nur echte Seitenaufrufe von Browsern: Navigation zu einem Dokument, kein Vorladen, kein Bot
-export function zaehlbar(request, url, antwort) {
-  if (request.method !== 'GET' || antwort.status !== 200) return false;
-  if (!/^text\/html/i.test(antwort.headers.get('Content-Type') || '')) return false;
-  const h = request.headers;
-  if (h.get('sec-fetch-dest') !== 'document' || h.get('sec-fetch-mode') !== 'navigate') return false;
-  if (/prefetch|prerender/i.test(`${h.get('sec-purpose') || ''} ${h.get('purpose') || ''} ${h.get('x-moz') || ''}`)) return false;
-  if (BOT.test(h.get('user-agent') || '')) return false;
-  if (/^\/(verwaltung|betrieb|api)\//.test(url.pathname)) return false;
-  return true;
+// Prüft eine Meldung von /api/besuch: nur von der eigenen Seite (sendBeacon schickt Sec-Fetch-Site: same-origin),
+// kein Bot, gültiger Pfad; Verwaltung und Betreiber-Bereich zählen nicht. Liefert { pfad, referer, ua } oder null.
+export function besuchPruefen(request, daten) {
+  const h = request.headers, ua = h.get('user-agent') || '';
+  if (request.method !== 'POST' || BOT.test(ua)) return null;
+  const site = h.get('sec-fetch-site');
+  if (site && site !== 'same-origin') return null;
+  const pfad = typeof daten?.p === 'string' ? daten.p : '';
+  if (!/^\/[a-z0-9äöüß\-/._%]*$/i.test(pfad) || pfad.length > 200 || /^\/(verwaltung|betrieb|api)\//.test(pfad)) return null;
+  return { pfad, referer: typeof daten.r === 'string' ? daten.r.slice(0, 500) : '', ua };
 }
 
 const berlin = (d) => {
@@ -56,14 +59,13 @@ const berlin = (d) => {
 };
 export { berlin as berlinZeit };
 
-export async function besuchZaehlen(env, request, url, jetzt = new Date()) {
+export async function besuchZaehlen(env, { pfad, referer, ua }, eigenerHost = 'hofladenliste.de', jetzt = new Date()) {
   const { tag, minute } = berlin(jetzt);
-  const { quelle, host } = herkunft(request.headers.get('referer') || '', url.hostname);
+  const { quelle, host } = herkunft(referer || '', eigenerHost);
   const einstieg = quelle === 'intern' ? 0 : 1;
-  const pfad = url.pathname.slice(0, 200);
   const q = [
     env.STATS.prepare(`INSERT INTO besuche (tag, pfad, quelle, geraet, anzahl) VALUES (?1, ?2, ?3, ?4, 1)
-      ON CONFLICT (tag, pfad, quelle, geraet) DO UPDATE SET anzahl = anzahl + 1`).bind(tag, pfad, quelle, geraet(request.headers.get('user-agent') || '')),
+      ON CONFLICT (tag, pfad, quelle, geraet) DO UPDATE SET anzahl = anzahl + 1`).bind(tag, pfad, quelle, geraet(ua || '')),
     env.STATS.prepare(`INSERT INTO besuche_minute (minute, aufrufe, einstiege) VALUES (?1, 1, ?2)
       ON CONFLICT (minute) DO UPDATE SET aufrufe = aufrufe + 1, einstiege = einstiege + ?2`).bind(minute, einstieg),
   ];
