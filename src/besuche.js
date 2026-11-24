@@ -80,8 +80,8 @@ export async function besuchZaehlen(env, { pfad, referer, ua }, eigenerHost = 'h
 // (Google lädt Suchtreffer per Prefetch/Prerender vorab). Zum Abgleich mit den gemeldeten Besuchen.
 export function auslieferungArt(request, pfad) {
   const h = request.headers, ua = h.get('user-agent') || '';
-  if (request.method !== 'GET' || BOT.test(ua) || !ua.startsWith('Mozilla/')) return null;
-  if (/^\/(verwaltung|betrieb|api)\//.test(pfad)) return null;
+  if (request.method !== 'GET' || /^\/(verwaltung|betrieb|api)\//.test(pfad)) return null;
+  if (BOT.test(ua) || !ua.startsWith('Mozilla/')) return 'bot'; // Suchmaschinen, Vorschauen, Prüfskripte
   const dest = h.get('sec-fetch-dest');
   if (dest ? dest !== 'document' : !/text\/html/.test(h.get('accept') || '')) return null;
   return /prefetch|prerender/i.test(h.get('sec-purpose') || h.get('purpose') || '') ? 'vorab' : 'seite';
