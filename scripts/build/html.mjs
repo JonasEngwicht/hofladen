@@ -34,6 +34,9 @@ try{var e=localStorage;if(e.getItem('statistik')==='ja')gtag('consent','update',
 ` : '';
 const STATISTIK_AKTIV = Boolean(GA_ID || GTM_ID); // Analytics direkt (GA4) oder über den Tag Manager
 const EINWILLIGUNG = Boolean(STATISTIK_AKTIV || ADSENSE_ID);
+// Eigene Besucherstatistik (src/besuche.js): meldet Pfad und Herkunft einmal pro Anzeige an den eigenen Server.
+// Vorgerenderte Seiten (Google lädt Suchtreffer vorab) zählen erst, wenn sie wirklich angezeigt werden. Keine Cookies.
+const BESUCH_SKRIPT = `<script>(function(){function z(){try{navigator.sendBeacon('/api/besuch',JSON.stringify({p:location.pathname,r:document.referrer}))}catch(e){}}if(document.prerendering)document.addEventListener('prerenderingchange',z,{once:true});else z()})()</script>\n`;
 // Pfade der Kategorieseiten (werden bei den Kategorien gefüllt; seitenTyp() braucht sie)
 const KATEGORIE_PFADE = new Set();
 const telHref = (t) => 'tel:' + t.replace(/[^\d+]/g, '').replace(/^00/, '+');
@@ -110,7 +113,7 @@ function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = []
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-${GTM_KOPF}<title>${esc(titelMitMarke(titel))}</title>
+${BESUCH_SKRIPT}${GTM_KOPF}<title>${esc(titelMitMarke(titel))}</title>
 <meta name="description" content="${esc(kuerzeBeschreibung(beschreibung))}">
 <link rel="canonical" href="${esc(url)}">
 ${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}<meta property="og:title" content="${esc(titel.replace(/\s*\|\s*Hofladenliste\s*$/, ''))}">
