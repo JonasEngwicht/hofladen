@@ -65,5 +65,41 @@
    "/fotos/2.jpg",
    "/fotos/3.jpg"
   ]
+ },
+ "2": {
+  "art": "uebernahme",
+  "hof": "hofcafe-jaegerwirt-hohenlinden",
+  "daten": {
+   "name": "Hofcafe Jägerwirt",
+   "strasse": "Birkach 36",
+   "plz": "85664",
+   "ort": "Hohenlinden",
+   "oeffnungszeiten": "We 14:00-17:00; Th 14:00-17:00; Fr 13:00-17:00; Sa 09:30-12:00,14:00-17:00",
+   "angebot": [
+    "eier",
+    "kaese",
+    "fleisch",
+    "kartoffeln",
+    "honig",
+    "brot",
+    "nudeln"
+   ],
+   "zahlung": [
+    "bar"
+   ],
+   "eintrag": "n10857575037",
+   "diff": {
+    "oeffnungszeiten": [
+     "Fr-Su 14:00-18:00",
+     "We 14:00-17:00; Th 14:00-17:00; Fr 13:00-17:00; Sa 09:30-12:00,14:00-17:00"
+    ],
+    "angebot": [
+     "",
+     "brot, eier, fleisch, honig, kaese, kartoffeln, nudeln"
+    ]
+   }
+  },
+  "stand": "2026-11-24",
+  "fotos": []
  }
 }
