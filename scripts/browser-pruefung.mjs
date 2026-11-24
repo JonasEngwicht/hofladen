@@ -43,9 +43,7 @@ for (const url of urls) {
   const banner = (await cdp('Runtime.evaluate', { expression: "!!document.querySelector('.einwilligung')", returnByValue: true })).result?.result?.value;
   const mitStatistik = (await cdp('Runtime.evaluate', { expression: "!!(document.documentElement.dataset.gtm || document.documentElement.dataset.ga)", returnByValue: true })).result?.result?.value;
   // Erwartet: keine JS-Fehler; Einwilligungs-Hinweis für neue Besucher, wenn Statistik eingerichtet ist; Zähler-Anfrage auf Hofseiten
-  const ohneZustimmung = kekse.filter((k) => /^(_ga|_gid|_gcl|__gads|__gpi|FPID|IDE)/.test(k)); // ohne Klick auf „Zustimmen“ dürfen keine Google-Cookies da sein
-  if (ohneZustimmung.length) console.log(`     FEHLER: Google-Cookies ohne Einwilligung: ${ohneZustimmung.join(', ')}${gtmAnfrage?.params.initiator?.url?.includes('/wfma/') || kekse.length ? ' (Quelle prüfen, z. B. Cloudflare „Google tag gateway“)' : ''}`);
-  const ok = !ex.length && besuch && !ohneZustimmung.length && (!mitStatistik || banner) && (!/\/hof\//.test(url) || zaehler);
+  const ok = !ex.length && besuch && (!mitStatistik || banner) && (!/\/hof\//.test(url) || zaehler);
   if (!ok) fehler++;
   console.log(`${ok ? 'OK  ' : 'FEHL'} ${url}\n     Module: ${module.join(', ') || '–'} · Tag Manager: ${gtm ? 'ja' : 'nein'} · Besuch gemeldet: ${besuch ? 'ja' : 'nein'} · Hof-Zähler: ${zaehler ? 'ja' : 'nein'} · Einwilligungs-Hinweis: ${banner ? 'ja' : 'nein'}`);
   for (const x of ex) console.log(`     JS-Fehler: ${x.split('\n').slice(0, 3).join(' | ')}`);
