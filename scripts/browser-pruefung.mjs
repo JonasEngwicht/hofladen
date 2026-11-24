@@ -34,12 +34,18 @@ for (const url of urls) {
   const anfragen = ereignisse.filter((e) => e.method === 'Network.requestWillBeSent').map((e) => e.params.request.url);
   const zaehler = anfragen.some((u) => u.includes('/api/ereignis'));
   const besuch = anfragen.some((u) => u.includes('/api/besuch'));
-  const gtm = anfragen.some((u) => u.includes('googletagmanager.com/gtm.js'));
+  const gtmAnfrage = ereignisse.find((e) => e.method === 'Network.requestWillBeSent' && e.params.request.url.includes('googletagmanager.com/gtm.js'));
+  const gtm = Boolean(gtmAnfrage);
+  const kekse = ((await cdp('Network.getAllCookies')).result?.cookies || []).map((c) => c.name);
+  if (kekse.length) console.log(`     Cookies im Browser: ${kekse.join(', ')}`);
+  if (gtm) console.log(`     Tag Manager geladen von: ${gtmAnfrage.params.documentURL} · Auslöser ${gtmAnfrage.params.initiator?.type} ${gtmAnfrage.params.initiator?.url || gtmAnfrage.params.initiator?.stack?.callFrames?.[0]?.url || ''} · im HTML: ${(await cdp('Runtime.evaluate', { expression: "document.documentElement.outerHTML.includes('gtm.js')", returnByValue: true })).result?.result?.value}`);
   const module = anfragen.filter((u) => /hofladenliste\.de\/[a-z-]+\.js/.test(u)).map((u) => u.replace(/^.*\.de\//, '').replace(/\?.*/, ''));
   const banner = (await cdp('Runtime.evaluate', { expression: "!!document.querySelector('.einwilligung')", returnByValue: true })).result?.result?.value;
   const mitStatistik = (await cdp('Runtime.evaluate', { expression: "!!(document.documentElement.dataset.gtm || document.documentElement.dataset.ga)", returnByValue: true })).result?.result?.value;
   // Erwartet: keine JS-Fehler; Einwilligungs-Hinweis für neue Besucher, wenn Statistik eingerichtet ist; Zähler-Anfrage auf Hofseiten
-  const ok = !ex.length && besuch && (!mitStatistik || banner) && (!/\/hof\//.test(url) || zaehler);
+  const ohneZustimmung = kekse.filter((k) => /^(_ga|_gid|_gcl|__gads|__gpi|FPID|IDE)/.test(k)); // ohne Klick auf „Zustimmen“ dürfen keine Google-Cookies da sein
+  if (ohneZustimmung.length) console.log(`     FEHLER: Google-Cookies ohne Einwilligung: ${ohneZustimmung.join(', ')}${gtmAnfrage?.params.initiator?.url?.includes('/wfma/') || kekse.length ? ' (Quelle prüfen, z. B. Cloudflare „Google tag gateway“)' : ''}`);
+  const ok = !ex.length && besuch && !ohneZustimmung.length && (!mitStatistik || banner) && (!/\/hof\//.test(url) || zaehler);
   if (!ok) fehler++;
   console.log(`${ok ? 'OK  ' : 'FEHL'} ${url}\n     Module: ${module.join(', ') || '–'} · Tag Manager: ${gtm ? 'ja' : 'nein'} · Besuch gemeldet: ${besuch ? 'ja' : 'nein'} · Hof-Zähler: ${zaehler ? 'ja' : 'nein'} · Einwilligungs-Hinweis: ${banner ? 'ja' : 'nein'}`);
   for (const x of ex) console.log(`     JS-Fehler: ${x.split('\n').slice(0, 3).join(' | ')}`);
