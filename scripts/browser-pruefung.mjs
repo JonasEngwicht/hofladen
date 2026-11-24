@@ -12,7 +12,7 @@ const urls = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const chrome = process.env.CHROME || 'google-chrome';
 const proc = spawn(chrome, ['--headless=new', '--no-sandbox', '--disable-gpu', '--remote-debugging-port=9333', '--user-data-dir=/tmp/chrome-pruefung', ...(alsBesucher ? [`--user-agent=${BESUCHER_UA}`] : []), 'about:blank'], { stdio: 'ignore' });
 let ws;
-for (let i = 0; i < 50 && !ws; i++) {
+for (let i = 0; i < 150 && !ws; i++) { // bis 30 s: Chrome startet auf frischen Runnern manchmal langsam
   try { const t = await (await fetch('http://127.0.0.1:9333/json/list')).json(); ws = t.find((x) => x.type === 'page')?.webSocketDebuggerUrl; } catch {}
   if (!ws) await warte(200);
 }
