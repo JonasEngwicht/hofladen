@@ -4,7 +4,9 @@
 import { spawn } from 'node:child_process';
 import { setTimeout as warte } from 'node:timers/promises';
 
-const urls = process.argv.slice(2);
+// --als-besucher: normale Browser-Kennung statt „HeadlessChrome“, damit der Aufruf in der eigenen Besucherstatistik zählt (Test der Zählung)
+const alsBesucher = process.argv.includes('--als-besucher');
+const urls = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const chrome = process.env.CHROME || 'google-chrome';
 const proc = spawn(chrome, ['--headless=new', '--no-sandbox', '--disable-gpu', '--remote-debugging-port=9333', '--user-data-dir=/tmp/chrome-pruefung', 'about:blank'], { stdio: 'ignore' });
 let ws;
@@ -19,6 +21,7 @@ let id = 0; const offen = new Map(); const ereignisse = [];
 sock.addEventListener('message', (m) => { const d = JSON.parse(m.data); if (d.id && offen.has(d.id)) { offen.get(d.id)(d); offen.delete(d.id); } else if (d.method) ereignisse.push(d); });
 const cdp = (method, params = {}) => new Promise((r) => { const i = ++id; offen.set(i, r); sock.send(JSON.stringify({ id: i, method, params })); });
 for (const m of ['Runtime.enable', 'Log.enable', 'Network.enable', 'Page.enable']) await cdp(m);
+if (alsBesucher) await cdp('Network.setUserAgentOverride', { userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' });
 
 let fehler = 0;
 for (const url of urls) {
