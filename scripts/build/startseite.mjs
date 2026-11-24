@@ -271,7 +271,7 @@ schreibe('/', seite({
 </section>
 <section class="abschnitt">
   <h2>Beliebte Orte für Hofläden</h2>
-  <ul class="kreis-liste">${ortSeiten.slice().sort((a, b) => b.liste.length - a.liste.length).slice(0, 30).map((o) => `<li><a href="${o.pfad}"><span>Hofläden in ${esc(o.ortTitel)}</span><span class="zahl">${zahl(o.liste.length)}</span></a></li>`).join('')}</ul>
+  <ul class="kreis-liste">${ortSeiten.filter((o) => !GROSSSTAEDTE.some((g) => g.pfad === o.pfad)).sort((a, b) => b.liste.length - a.liste.length).slice(0, 30).map((o) => `<li><a href="${o.pfad}"><span>Hofläden in ${esc(o.ortTitel)}</span><span class="zahl">${zahl(o.liste.length)}</span></a></li>`).join('')}</ul>
 </section>
 <section class="abschnitt seo-text">
   <h2>Hofladen in der Nähe finden</h2>
