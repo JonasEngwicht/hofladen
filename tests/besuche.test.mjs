@@ -42,7 +42,7 @@ test('auslieferungArt: Seiten an Browser, vorab geladen getrennt, ohne Bots und 
   assert.equal(auslieferungArt(navigation('/bayern/'), '/bayern/'), 'seite');
   assert.equal(auslieferungArt(navigation('/bayern/', { 'sec-purpose': 'prefetch;anonymous-client-ip' }), '/bayern/'), 'vorab');
   assert.equal(auslieferungArt(navigation('/bayern/', { 'sec-purpose': 'prefetch;prerender' }), '/bayern/'), 'vorab');
-  assert.equal(auslieferungArt(navigation('/bayern/', { 'user-agent': 'Mozilla/5.0 (compatible; Googlebot/2.1)' }), '/bayern/'), null, 'Bot');
+  assert.equal(auslieferungArt(navigation('/bayern/', { 'user-agent': 'Mozilla/5.0 (compatible; Googlebot/2.1)' }), '/bayern/'), 'bot', 'Bot');
   assert.equal(auslieferungArt(navigation('/bayern/', { 'sec-fetch-dest': 'iframe' }), '/bayern/'), null, 'kein Dokument');
   assert.equal(auslieferungArt(navigation('/verwaltung/'), '/verwaltung/'), null, 'Verwaltung');
   assert.equal(auslieferungArt(new Request('https://hofladenliste.de/', { headers: { 'user-agent': CHROME, accept: 'text/html' } }), '/'), 'seite', 'ohne Sec-Fetch');

@@ -27,7 +27,9 @@ for (const m of ['Runtime.enable', 'Log.enable', 'Network.enable', 'Page.enable'
 let fehler = 0;
 for (const url of urls) {
   ereignisse.length = 0;
-  await cdp('Page.navigate', { url });
+  // erste Seite wie eingetippt, weitere wie ein Klick auf einen Link (so kommen echte Besucher von Seite zu Seite)
+  if (url === urls[0]) await cdp('Page.navigate', { url });
+  else await cdp('Runtime.evaluate', { expression: `location.href = ${JSON.stringify(url)}` });
   await warte(8000);
   const ex = ereignisse.filter((e) => e.method === 'Runtime.exceptionThrown').map((e) => e.params.exceptionDetails.exception?.description || e.params.exceptionDetails.text);
   const kons = ereignisse.filter((e) => (e.method === 'Runtime.consoleAPICalled' && e.params.type === 'error') || (e.method === 'Log.entryAdded' && e.params.entry.level === 'error'))
@@ -35,6 +37,10 @@ for (const url of urls) {
   const anfragen = ereignisse.filter((e) => e.method === 'Network.requestWillBeSent').map((e) => e.params.request.url);
   const zaehler = anfragen.some((u) => u.includes('/api/ereignis'));
   const besuch = anfragen.some((u) => u.includes('/api/besuch'));
+  const dokId = ereignisse.find((e) => e.method === 'Network.requestWillBeSent' && e.params.type === 'Document')?.params.requestId;
+  const extra = ereignisse.find((e) => e.method === 'Network.requestWillBeSentExtraInfo' && e.params.requestId === dokId)?.params.headers || {};
+  const draht = Object.fromEntries(Object.entries(extra).map(([n, v]) => [n.toLowerCase(), v]));
+  console.log(`     Seitenanfrage (gesendet): UA ${/Headless/.test(draht['user-agent'] || '') ? 'Headless' : draht['user-agent'] ? 'normal' : '–'} · sec-fetch-dest ${draht['sec-fetch-dest'] || '–'} · sec-purpose ${draht['sec-purpose'] || '–'}`);
   const dok = ereignisse.find((e) => e.method === 'Network.responseReceived' && e.params.type === 'Document')?.params.response;
   if (dok) { const k = Object.fromEntries(Object.entries(dok.headers || {}).map(([n, v]) => [n.toLowerCase(), v]));
     console.log(`     Dokument: ${dok.status}${dok.fromDiskCache ? ' (Browser-Cache)' : ''}${dok.fromPrefetchCache ? ' (Prefetch-Cache)' : ''} · cf-cache-status ${k['cf-cache-status'] || '–'} · age ${k.age || '–'} · HSTS ${k['strict-transport-security'] ? 'ja' : 'nein'} · cf-ray ${k['cf-ray'] || '–'}`); }
