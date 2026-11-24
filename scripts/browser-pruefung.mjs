@@ -6,9 +6,11 @@ import { setTimeout as warte } from 'node:timers/promises';
 
 // --als-besucher: normale Browser-Kennung statt „HeadlessChrome“, damit der Aufruf in der eigenen Besucherstatistik zählt (Test der Zählung)
 const alsBesucher = process.argv.includes('--als-besucher');
+// Kennung als Startparameter: Network.setUserAgentOverride gilt nach einem Seitenwechsel nicht mehr für die Seitenanfrage selbst
+const BESUCHER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
 const urls = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const chrome = process.env.CHROME || 'google-chrome';
-const proc = spawn(chrome, ['--headless=new', '--no-sandbox', '--disable-gpu', '--remote-debugging-port=9333', '--user-data-dir=/tmp/chrome-pruefung', 'about:blank'], { stdio: 'ignore' });
+const proc = spawn(chrome, ['--headless=new', '--no-sandbox', '--disable-gpu', '--remote-debugging-port=9333', '--user-data-dir=/tmp/chrome-pruefung', ...(alsBesucher ? [`--user-agent=${BESUCHER_UA}`] : []), 'about:blank'], { stdio: 'ignore' });
 let ws;
 for (let i = 0; i < 50 && !ws; i++) {
   try { const t = await (await fetch('http://127.0.0.1:9333/json/list')).json(); ws = t.find((x) => x.type === 'page')?.webSocketDebuggerUrl; } catch {}
@@ -21,7 +23,6 @@ let id = 0; const offen = new Map(); const ereignisse = [];
 sock.addEventListener('message', (m) => { const d = JSON.parse(m.data); if (d.id && offen.has(d.id)) { offen.get(d.id)(d); offen.delete(d.id); } else if (d.method) ereignisse.push(d); });
 const cdp = (method, params = {}) => new Promise((r) => { const i = ++id; offen.set(i, r); sock.send(JSON.stringify({ id: i, method, params })); });
 for (const m of ['Runtime.enable', 'Log.enable', 'Network.enable', 'Page.enable']) await cdp(m);
-if (alsBesucher) await cdp('Network.setUserAgentOverride', { userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36' });
 
 let fehler = 0;
 for (const url of urls) {
@@ -34,8 +35,6 @@ for (const url of urls) {
   const anfragen = ereignisse.filter((e) => e.method === 'Network.requestWillBeSent').map((e) => e.params.request.url);
   const zaehler = anfragen.some((u) => u.includes('/api/ereignis'));
   const besuch = anfragen.some((u) => u.includes('/api/besuch'));
-  const dokAnfrage = ereignisse.find((e) => e.method === 'Network.requestWillBeSent' && e.params.type === 'Document')?.params.request;
-  if (dokAnfrage) console.log(`     Kennung der Seitenanfrage: ${/HeadlessChrome/.test(dokAnfrage.headers?.['User-Agent'] || '') ? 'HeadlessChrome' : 'normal'}`);
   const dok = ereignisse.find((e) => e.method === 'Network.responseReceived' && e.params.type === 'Document')?.params.response;
   if (dok) { const k = Object.fromEntries(Object.entries(dok.headers || {}).map(([n, v]) => [n.toLowerCase(), v]));
     console.log(`     Dokument: ${dok.status}${dok.fromDiskCache ? ' (Browser-Cache)' : ''}${dok.fromPrefetchCache ? ' (Prefetch-Cache)' : ''} · cf-cache-status ${k['cf-cache-status'] || '–'} · age ${k.age || '–'} · HSTS ${k['strict-transport-security'] ? 'ja' : 'nein'} · cf-ray ${k['cf-ray'] || '–'}`); }
