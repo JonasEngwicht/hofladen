@@ -719,9 +719,6 @@ export default {
       url.protocol = 'https:';
       return weiter(url.toString(), 301);
     }
-    // vorübergehend: erreicht jede Seitenanfrage der Browser-Prüfung den Worker?
-    if (env.STATS && request.method === 'GET' && /Chrome\/131\.0\.0\.0 Safari/.test(request.headers.get('user-agent') || '') && !url.pathname.startsWith('/api/') && !/\.[a-z0-9]{2,5}$/.test(url.pathname))
-      await auslieferungZaehlen(env, `top ${url.pathname} ${request.headers.get('sec-fetch-dest')}`.slice(0, 100)).catch(() => {});
     if (url.pathname === '/suche') return suche(url, env, ctx, request);
     const m = url.pathname.match(/^\/plz\/(\d{5})\/?$/);
     if (m) return sucheWeiterleitung(m[1], [], env, ctx, request);
@@ -745,9 +742,6 @@ export default {
     const antwort = await seiteAusliefern(request, env, url);
     const art = env.STATS && (antwort.status === 200 || antwort.status === 304) ? auslieferungArt(request, url.pathname) : null;
     if (art) ctx.waitUntil(schema(env).then(() => auslieferungZaehlen(env, art)).catch((e) => auslieferungZaehlen(env, `fehler ${String(e.message).slice(0, 80)}`).catch(() => {})));
-    // vorübergehend: Diagnose, warum Seitenaufrufe nicht als Kontrolle zählen
-    else if (env.STATS && /Mozilla\/5\.0 \(Windows NT 10\.0; Win64; x64\).*Chrome\/131\.0\.0\.0 Safari/.test(request.headers.get('user-agent') || ''))
-      ctx.waitUntil(auslieferungZaehlen(env, `diag ${antwort.status} ${request.method} ${request.headers.get('sec-fetch-dest')} ${request.headers.get('sec-purpose')}`.slice(0, 100)).catch(() => {}));
     return sicherheitsKopf(antwort);
   },
 };
