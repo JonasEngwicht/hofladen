@@ -153,7 +153,7 @@ test('Hofseiten: Angebot, Bezahlen und Beschreibung im JSON-LD nur, wenn sichtba
   for (const [p, h] of alle.filter(([x]) => x.startsWith('/hof/')).slice(0, 3000)) {
     const hof = ldAus(h).find((j) => j['@type'] === 'Store' || j['@type'] === 'LocalBusiness');
     const text = h.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ').replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
-    for (const o of hof.hasOfferCatalog?.itemListElement || []) { assert.ok(text.includes(o.itemOffered.name), `${p}: ${o.itemOffered.name}`); mitAngebot++; }
+    for (const o of hof.hasOfferCatalog?.itemListElement || []) { assert.equal(typeof o, 'string', `${p}: Angebot nur als Text`); assert.ok(text.includes(o), `${p}: ${o}`); mitAngebot++; }
     if (hof.paymentAccepted) { assert.ok(/<th>Bezahlen<\/th>|Bezahlen/.test(h), p); mitZahlung++; }
     if (hof.description) assert.ok(text.includes(hof.description.slice(0, 40)), `${p}: Beschreibung nicht sichtbar`);
     for (const s of hof.sameAs || []) assert.ok(h.includes(`href="${s.replace(/&/g, '&amp;')}"`), `${p}: ${s} nicht verlinkt`);
@@ -192,4 +192,12 @@ test('robots.txt: Sitemap verlinkt, interne Suche, API, Verwaltung und Merkliste
   for (const p of ['/suche', '/api/', '/verwaltung/', '/merkliste/']) assert.match(r, new RegExp(`^Disallow: ${p.replace(/\//g, '\\/')}$`, 'm'));
   for (const p of ['/verwaltung/', '/betrieb/', '/mitmachen/danke/', '/hofsuche/', '/merkliste/']) assert.match(seiteHtml(p), /<meta name="robots" content="noindex/, p);
   for (const p of ['/', '/milchtankstelle/', '/bayern/']) assert.doesNotMatch(seiteHtml(p), /<meta name="robots" content="noindex/, p);
+});
+
+test('kein Product- oder Offer-Markup (Google verlangt dafür Preis oder Bewertungen)', () => {
+  for (const [p, h] of alle) {
+    for (const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+      assert.doesNotMatch(m[1], /"@type":\s*"(Product|Offer|AggregateOffer|Review|AggregateRating)"/, p);
+    }
+  }
 });

@@ -87,7 +87,9 @@ for (const e of eintraege) {
   if (e.beschreibung) ld.description = e.beschreibung;
   for (const s of [e.facebook, e.instagram]) if (s) (ld.sameAs ??= []).push(s);
   if (e.zahlung?.length) ld.paymentAccepted = e.zahlung.map((z) => ZAHLUNG_TEXT[z]).filter(Boolean).join(', ');
-  if (e.kat.length) ld.hasOfferCatalog = { '@type': 'OfferCatalog', name: 'Angebot', itemListElement: e.kat.map((x) => ({ '@type': 'Offer', itemOffered: { '@type': 'Product', name: KATEGORIEN[x] } })) };
+  // Angebot als einfache Liste: Product-/Offer-Typen würden bei Google als Produkt-Snippets gelten
+  // und dann Preis („offers“), Bewertung („review“) oder „aggregateRating“ verlangen (Search Console, 24.11.2026)
+  if (e.kat.length) ld.hasOfferCatalog = { '@type': 'OfferCatalog', name: 'Angebot', itemListElement: e.kat.map((x) => KATEGORIEN[x]) };
   const ohKurz = e.oeffnungszeiten ? (zeilen(e.oeffnungszeiten) || []).map(([t, v]) => `${t} ${v}`).join(', ') : '';
   const uhr = (m) => `${String(Math.floor(m / 60) % 24 || (m >= 1440 ? 24 : 0)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
   const ohTabelle = woche
