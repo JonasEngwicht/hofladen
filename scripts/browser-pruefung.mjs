@@ -36,6 +36,8 @@ for (const url of urls) {
   const besuch = anfragen.some((u) => u.includes('/api/besuch'));
   const gtmAnfrage = ereignisse.find((e) => e.method === 'Network.requestWillBeSent' && e.params.request.url.includes('googletagmanager.com/gtm.js'));
   const gtm = Boolean(gtmAnfrage);
+  const kekse = ((await cdp('Network.getAllCookies')).result?.cookies || []).map((c) => c.name);
+  if (kekse.length) console.log(`     Cookies im Browser: ${kekse.join(', ')}`);
   if (gtm) console.log(`     Tag Manager geladen von: ${gtmAnfrage.params.documentURL} · Auslöser ${gtmAnfrage.params.initiator?.type} ${gtmAnfrage.params.initiator?.url || gtmAnfrage.params.initiator?.stack?.callFrames?.[0]?.url || ''} · im HTML: ${(await cdp('Runtime.evaluate', { expression: "document.documentElement.outerHTML.includes('gtm.js')", returnByValue: true })).result?.result?.value}`);
   const module = anfragen.filter((u) => /hofladenliste\.de\/[a-z-]+\.js/.test(u)).map((u) => u.replace(/^.*\.de\//, '').replace(/\?.*/, ''));
   const banner = (await cdp('Runtime.evaluate', { expression: "!!document.querySelector('.einwilligung')", returnByValue: true })).result?.result?.value;
