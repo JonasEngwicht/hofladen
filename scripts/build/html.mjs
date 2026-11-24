@@ -12,14 +12,17 @@ import { KATEGORIEN, ICON, PRODUKT_SPRITE, produktIcon } from '../../static/kart
 import { BUILD_DATUM, ICON_VERSION, KACHELN, ROOT, VERSION, cfg, impressum, istRund, laender, mitKindern, offen, plz, wocheVon } from './daten.mjs';
 
 // ---------- HTML-Helfer ----------
-const GA_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).ga4 || ''; } catch { return ''; } })();
+// data/analytics.json: Google-Dienste (IDs sind öffentlich). "aktiv": false schaltet Tag Manager, Analytics und das
+// AdSense-Werbeskript ab – damit entfällt auch der Einwilligungs-Hinweis. Die IDs bleiben stehen; AdSense-Bestätigung
+// (Meta-Tag, ads.txt) bleibt, sie baut keine Verbindung zu Google auf. Besucher zählt der Worker cookielos (src/besuche.js).
+const ANALYTICS = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')); } catch { return {}; } })();
+const GOOGLE_AKTIV = ANALYTICS.aktiv !== false;
+const GA_ID = GOOGLE_AKTIV ? ANALYTICS.ga4 || '' : '';
 if (GA_ID && !/^G-[A-Z0-9]+$/.test(GA_ID)) throw new Error(`data/analytics.json: ungültige GA4-Mess-ID ${GA_ID}`);
-// Google AdSense (Publisher-ID ist öffentlich). Leer = aus. Im Kopf steht nur das Bestätigungs-Meta-Tag (keine Anfrage an Google);
-// das Werbeskript lädt erst nach Einwilligung (static/statistik.js).
-const ADSENSE_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).adsense || ''; } catch { return ''; } })();
-if (ADSENSE_ID && !/^ca-pub-\d{16}$/.test(ADSENSE_ID)) throw new Error(`data/analytics.json: ungültige AdSense-ID ${ADSENSE_ID}`);
-// Google Tag Manager (Container-ID ist öffentlich). Lädt wie GA4 erst nach Einwilligung in die Statistik. Leer = aus.
-const GTM_ID = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'data', 'analytics.json'), 'utf8')).gtm || ''; } catch { return ''; } })();
+const ADSENSE_KONTO = ANALYTICS.adsense || '';
+if (ADSENSE_KONTO && !/^ca-pub-\d{16}$/.test(ADSENSE_KONTO)) throw new Error(`data/analytics.json: ungültige AdSense-ID ${ADSENSE_KONTO}`);
+const ADSENSE_ID = GOOGLE_AKTIV ? ADSENSE_KONTO : ''; // Werbeskript (nur nach Einwilligung)
+const GTM_ID = GOOGLE_AKTIV ? ANALYTICS.gtm || '' : '';
 if (GTM_ID && !/^GTM-[A-Z0-9]+$/.test(GTM_ID)) throw new Error(`data/analytics.json: ungültige GTM-Container-ID ${GTM_ID}`);
 // Fest eingebundener Tag-Manager-Code (auf Jonas’ Wunsch, damit Google ihn findet): Consent Mode steht auf „denied“,
 // eine gespeicherte Zustimmung (localStorage statistik/werbung) wird sofort weitergegeben. Cookies erst nach Zustimmung.
@@ -115,7 +118,7 @@ ${noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}<meta proper
 <meta property="og:url" content="${esc(url)}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta name="theme-color" content="#173B2C">${ADSENSE_ID ? `\n<meta name="google-adsense-account" content="${ADSENSE_ID}">` : ''}
+<meta name="theme-color" content="#173B2C">${ADSENSE_KONTO ? `\n<meta name="google-adsense-account" content="${ADSENSE_KONTO}">` : ''}
 <link rel="icon" href="/favicon.ico?v=${ICON_VERSION}" sizes="48x48">
 <link rel="icon" href="/favicon.svg?v=${ICON_VERSION}" type="image/svg+xml">
 <link rel="icon" href="/favicon-96.png?v=${ICON_VERSION}" type="image/png" sizes="96x96">
@@ -239,4 +242,4 @@ function filterLeiste(liste, { umkreis = null } = {}) {
 </div>`;
 }
 
-export { ADSENSE_ID, GA_ID, GTM_ID, STATISTIK_AKTIV, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITENTEXTE, SEITENTEXT_GENUTZT, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };
+export { ADSENSE_ID, ADSENSE_KONTO, GA_ID, GTM_ID, STATISTIK_AKTIV, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, NATIONALE_KATEGORIEN, RATGEBER_FUER, SEITENTEXTE, SEITENTEXT_GENUTZT, SEITEN_HASH, SUCHFELD, filterLeiste, hash, kartenDaten, kartenPanel, kurz, nofollowParameter, plural, ratgeberHinweis, seite, seitenTyp, telHref, zahl };

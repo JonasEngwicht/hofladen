@@ -7,7 +7,7 @@ import { stabileIdAus } from '../pflege.mjs';
 import { zeilen } from '../../static/oh.js';
 import { KATEGORIEN } from '../../static/karte.js';
 import { BUILD_DATUM, GEN, OUT, ROOT, VOLLSTAENDIGKEIT, betreiber, cfg, eintraege, ergaenztAnzahl, ersetzt, geschlossenAnzahl, impressumAnzahl, kreise, laender, manuell, mitKindern, offenErgaenzt, offenErgaenztSumme, offenErsetzt, offenNeu, offenNeuSumme, pflegeAnzahl, plz, proKreis, rechercheAnzahl } from './daten.mjs';
-import { ADSENSE_ID, KATEGORIE_PFADE, SEITENTEXTE, SEITENTEXT_GENUTZT, seite } from './html.mjs';
+import { ADSENSE_KONTO, KATEGORIE_PFADE, SEITENTEXTE, SEITENTEXT_GENUTZT, seite } from './html.mjs';
 import { pruefeSeitentexte } from '../seitentexte.mjs';
 import { SEITENTEXT_KANDIDATEN } from './regionen.mjs';
 import { ALLE_SEITEN, ORTE, ORTSMITTE, STAND_DATEI, UMGEBUNG, anzHof, sitemap, stand, umgebungIndexiert } from './grundlagen.mjs';
@@ -17,7 +17,7 @@ import { impFehlt } from './themen.mjs';
 // ---------- Robots, Sitemap ----------
 writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\nDisallow: /verwaltung/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
 // ads.txt: autorisierte Verkäufer für Google AdSense (f08c47fec0942fa0 ist Googles feste TAG-ID)
-if (ADSENSE_ID) writeFileSync(join(OUT, 'ads.txt'), `google.com, ${ADSENSE_ID.replace(/^ca-/, '')}, DIRECT, f08c47fec0942fa0\n`);
+if (ADSENSE_KONTO) writeFileSync(join(OUT, 'ads.txt'), `google.com, ${ADSENSE_KONTO.replace(/^ca-/, '')}, DIRECT, f08c47fec0942fa0\n`);
 
 // Seitenarchiv (data/seiten-stand.json): Inhalts-Hash und Änderungsdatum je Seite, auch für Seiten,
 // die es nicht mehr gibt. Daraus entstehen echtes lastmod, 301-Weiterleitungen und 410 für entfernte Höfe.

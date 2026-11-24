@@ -27,6 +27,7 @@ Keine npm-Abhängigkeiten: nur Node-Bordmittel (Node 22). Ausnahme: einige Abruf
 | `scripts/*.mjs` | Helfer (`lib`, `pixel`, `pflege`, `quellen`, `bereinigen`, `seitentexte`) und Import-/Pflegeskripte |
 | `src/worker.js` | Worker: Weiterleitungen (https, www, 301/410), Suche, APIs, Formulare, Verwaltung |
 | `src/betrieb.js`, `src/eintraege.js` | Betreiber-Bereich und Mails; Zugriff auf Eintragszeilen (Feldliste dort) |
+| `src/besuche.js` | eigene Besucherstatistik ohne Cookies (Zählung beim Ausliefern, Auswertung für /verwaltung/, Grafiken in `static/besucher.js`) |
 | `static/` | CSS und Browser-JS (`app.js` lädt Karte, Route, Betrieb … bei Bedarf nach); `helfer.js`, `oh.js`, `karte.js` nutzen Build und Browser gemeinsam |
 | `tests/` | Tests; `hilfen.mjs` lädt den Worker mit nachgebautem Asset-Server |
 | `docs/` | `betrieb.md` (Workflows, Secrets, Moderation), `pflege.md`, Berichte |
@@ -63,6 +64,6 @@ Für Refactorings: Ausgabe vorher und nachher mit festem `BUILD_DATUM=…` bauen
 - **Titel ≤ 580 px, Beschreibung ≤ 1000 px** (`scripts/pixel.mjs`, Test für alle Seiten). Neue Seitentypen mit kurzen Titelvarianten über `passend(...)`.
 - **Strukturierte Daten** nur für echte, sichtbare Angaben; kein `aggregateRating` ohne echte Bewertungen.
 - **Keine Parameter-Links** in Übersichten: Filter als `#produkt=…`/`#filter=…`; andere interne Links mit `?` bekommen automatisch `nofollow`.
-- **Dritte nur mit Zustimmung:** Kacheln, Schriften, Analytics und Karten kommen vom eigenen Server oder laden erst nach Einwilligung. Teilen-Links ohne fremde Skripte. Ausnahme (Jonas’ Entscheidung vom 23.11.2026): der Google Tag Manager steht fest im Kopf, mit Consent Mode auf „denied“ bis zur Zustimmung; AdSense-Skript lädt weiter erst nach Einwilligung.
+- **Dritte nur mit Zustimmung:** Kacheln, Schriften, Analytics und Karten kommen vom eigenen Server oder laden erst nach Einwilligung. Teilen-Links ohne fremde Skripte. Google (Tag Manager/Analytics, AdSense-Werbung) ist seit 24.11.2026 abgeschaltet (`data/analytics.json` → `"aktiv": false`, damit kein Einwilligungs-Hinweis); mit `true` kommen Tag Manager (Consent Mode „denied“ bis zur Zustimmung) und Hinweis zurück. Besucher zählt der Worker selbst, ohne Cookies (`src/besuche.js`, Ansicht in /verwaltung/).
 - **E-Mails an Betriebe** nur nach Freigabe durch Jonas. Kontakt überall: hofladenliste@gmail.com.
 - **Secrets** (nur Namen): GitHub `CF_DEPLOY_HOOK`, `ADMIN_TOKEN`, `RESEND_API_KEY`, `HUGGINGFACE_KEY`, `PAGESPEED_API_KEY`, `DZT_API_KEY` (DZT Knowledge Graph, nie in Repo oder Logs), Turnstile; Worker `RESEND_API_KEY`, `TURNSTILE_*`, `ADMIN_TOKEN`. Nie ausgeben, speichern oder in Links einbauen.

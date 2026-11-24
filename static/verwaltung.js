@@ -14,7 +14,7 @@ async function api(pfad, opt = {}) {
 }
 function anmelden(meldung = '') {
   $('#verwaltung').innerHTML = `<form id="login" class="melde-form"><label>Zugangsschlüssel<input type="password" name="t" autocomplete="current-password" required></label><p><button class="knopf knopf-dunkel">Anmelden</button></p>${meldung ? `<p class="fehler">${esc(meldung)}</p>` : ''}</form>`;
-  $('#login').addEventListener('submit', (ev) => { ev.preventDefault(); token = ev.target.t.value.trim(); sessionStorage.setItem(SPEICHER, token); laden(); });
+  $('#login').addEventListener('submit', (ev) => { ev.preventDefault(); token = ev.target.t.value.trim(); sessionStorage.setItem(SPEICHER, token); besucherZeigen(); });
 }
 async function bild(id) {
   const r = await api(`foto/${id}`);
@@ -25,7 +25,7 @@ async function laden(status = 'neu') {
   box.innerHTML = '<p>Lade …</p>';
   let d;
   try { const r = await api(`meldungen?status=${status}`); d = await r.json(); if (!r.ok) { box.innerHTML = `<p class="fehler">${esc(d.fehler)}</p>`; return; } } catch { return; }
-  box.innerHTML = `<p class="segment">${['neu', 'freigegeben', 'erledigt', 'abgelehnt'].map((s) => `<button type="button" data-status="${s}" aria-pressed="${s === status}">${s}</button>`).join('')}<button type="button" data-schliessungen>Geschlossen gemeldet</button><button type="button" data-tipps>Tipps</button><button type="button" data-statistik>Statistik</button></p>
+  box.innerHTML = `<p class="segment">${['neu', 'freigegeben', 'erledigt', 'abgelehnt'].map((s) => `<button type="button" data-status="${s}" aria-pressed="${s === status}">${s}</button>`).join('')}<button type="button" data-schliessungen>Geschlossen gemeldet</button><button type="button" data-tipps>Tipps</button><button type="button" data-statistik>Suchen & Klicks</button><button type="button" data-besucher-knopf>Besucher</button></p>
     ${d.meldungen.length ? '' : '<p>Keine Meldungen.</p>'}
     ${d.meldungen.map((m) => `<article class="block meldung" data-id="${m.id}">
       <h2>#${m.id} · ${esc(ART[m.art] || m.art)}${m.hof ? ` · <a href="/hof/${esc(m.hof)}/" target="_blank">${esc(m.hof)}</a>` : ''}</h2>
@@ -40,6 +40,7 @@ async function laden(status = 'neu') {
     </article>`).join('')}`;
   for (const b of box.querySelectorAll('[data-status]')) b.addEventListener('click', () => laden(b.dataset.status));
   box.querySelector('[data-statistik]').addEventListener('click', () => statistik());
+  box.querySelector('[data-besucher-knopf]').addEventListener('click', () => besucherZeigen());
   box.querySelector('[data-tipps]').addEventListener('click', () => tipps());
   box.querySelector('[data-schliessungen]').addEventListener('click', () => schliessungen());
   for (const f of box.querySelectorAll('[data-fotos]')) for (const id of f.dataset.fotos.split(',').filter(Boolean)) {
@@ -108,4 +109,9 @@ async function statistik(tage = 30) {
   box.querySelector('[data-zurueck]').addEventListener('click', () => laden());
   for (const b of box.querySelectorAll('[data-tage]')) b.addEventListener('click', () => statistik(+b.dataset.tage));
 }
-token ? laden() : anmelden();
+// Besucherstatistik (static/besucher.js, eigene cookielose Zählung) – Startansicht der Verwaltung
+async function besucherZeigen(tage = 30) {
+  const m = await import('./besucher.js');
+  m.besucher($('#verwaltung'), api, () => laden(), tage);
+}
+token ? besucherZeigen() : anmelden();

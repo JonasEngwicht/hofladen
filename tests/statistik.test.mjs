@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { wahlLesen, wahlSpeichern, SCHLUESSEL_WERBUNG } from '../static/statistik.js';
 
+const KONFIG = JSON.parse(readFileSync(new URL('../data/analytics.json', import.meta.url), 'utf8'));
 const speicher = () => { const m = new Map(); return { getItem: (k) => m.get(k) ?? null, setItem: (k, v) => m.set(k, String(v)) }; };
 
 test('Statistik: Wahl wird gemerkt, unbekannte Werte zählen als „noch nicht gewählt“', () => {
@@ -39,8 +40,10 @@ test('Statistik: keine Seite lädt Google ohne Einwilligung', () => {
       assert.match(h, new RegExp(`'dataLayer','${gtm}'\\);</script>`), pfad);
     } else assert.doesNotMatch(h, /gtag\(/, pfad);
     const ads = h.match(/data-ads="(ca-pub-\d{16})"/)?.[1];
-    if (ads) assert.match(h, new RegExp(`<meta name="google-adsense-account" content="${ads}">`), pfad);
+    // Bestätigungs-Tag steht, sobald ein AdSense-Konto eingetragen ist – auch wenn Google gerade abgeschaltet ist („aktiv“: false)
+    if (KONFIG.adsense) assert.match(h, new RegExp(`<meta name="google-adsense-account" content="${KONFIG.adsense}">`), pfad);
     else assert.doesNotMatch(h, /google-adsense-account/, pfad);
+    if (KONFIG.aktiv === false) assert.doesNotMatch(h, /data-(ga|gtm|ads)=|gtag\(|googletagmanager/, `${pfad}: Google ist abgeschaltet`);
     if (/data-(ga|gtm)="(G|GTM)-/.test(h) || ads) assert.match(h, /data-cookie-einstellungen/, pfad);
     else assert.doesNotMatch(h, /data-cookie-einstellungen/, pfad);
   }
@@ -54,8 +57,8 @@ test('Statistik: keine Seite lädt Google ohne Einwilligung', () => {
   assert.match(js, /if \(w === 'ja'\) d\.laden\(\)/);
   // AdSense: ads.txt passt zur Publisher-ID, Datenschutz erklärt den Dienst
   const ads = readFileSync(new URL('index.html', pub), 'utf8').match(/data-ads="ca-(pub-\d{16})"/)?.[1];
-  if (ads) {
-    assert.equal(readFileSync(new URL('ads.txt', pub), 'utf8'), `google.com, ${ads}, DIRECT, f08c47fec0942fa0\n`);
-    assert.match(ds, /id="google-adsense"[\s\S]*widerrufen/);
-  } else assert.equal(existsSync(new URL('ads.txt', pub)), false);
+  if (KONFIG.adsense) assert.equal(readFileSync(new URL('ads.txt', pub), 'utf8'), `google.com, ${KONFIG.adsense.replace(/^ca-/, '')}, DIRECT, f08c47fec0942fa0\n`);
+  else assert.equal(existsSync(new URL('ads.txt', pub)), false);
+  if (ads) assert.match(ds, /id="google-adsense"[\s\S]*widerrufen/);
+  else assert.doesNotMatch(ds, /id="google-adsense"/);
 });

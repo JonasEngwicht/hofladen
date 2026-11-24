@@ -838,3 +838,51 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
   .einwilligung-knoepfe button { border-color: #7DDB98; color: #7DDB98; }
   .einwilligung-knoepfe button:hover, .einwilligung-knoepfe button:focus-visible { background: #7DDB98; color: #0E1A13; }
 }
+
+/* ---------- Besucherstatistik in der Verwaltung (static/besucher.js) ---------- */
+.besucher { display: grid; gap: 1rem; --b-heute: #2a78d6; --b-gestern: #eb6834; }
+@media (prefers-color-scheme: dark) { .besucher { --b-heute: #3987e5; --b-gestern: #d95926; } }
+.besucher .segment { flex-wrap: wrap; justify-self: start; }
+.b-live { margin: 0; color: var(--grau); font-size: .9rem; display: flex; align-items: center; gap: .5rem; }
+.b-puls { width: .6rem; height: .6rem; border-radius: 50%; background: var(--fichte-3); box-shadow: 0 0 0 0 var(--fichte-3); animation: b-puls 2s infinite; }
+@keyframes b-puls { 0% { box-shadow: 0 0 0 0 rgba(47, 98, 73, .5); } 70% { box-shadow: 0 0 0 .5rem rgba(47, 98, 73, 0); } 100% { box-shadow: 0 0 0 0 rgba(47, 98, 73, 0); } }
+@media (prefers-reduced-motion: reduce) { .b-puls { animation: none; } }
+.b-kacheln { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .75rem; }
+.b-kachel { display: grid; gap: .15rem; padding: 1rem 1.1rem; }
+.b-kachel span { font-size: .85rem; color: var(--grau); }
+.b-kachel b { font: 700 2rem/1.1 var(--titel); color: var(--tinte); font-variant-numeric: tabular-nums; }
+.b-kachel small { color: var(--grau); font-size: .8rem; }
+.b-karte h2 { font-size: 1.1rem; margin: 0 0 .2rem; }
+.b-karte > .leise { margin: 0 0 .6rem; font-size: .85rem; }
+.b-grafik { position: relative; }
+.b-grafik svg { display: block; width: 100%; height: auto; overflow: visible; touch-action: pan-y; }
+.b-raster { stroke: var(--linie); stroke-width: 1; }
+.b-achse { fill: var(--grau); font: 11px var(--schrift); }
+.b-marke { fill: var(--fichte-3); }
+.b-linie { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.b-linie.b-heute { stroke: var(--b-heute); }
+.b-punkt.b-heute { fill: var(--b-heute); }
+.b-linie.b-gestern { stroke: var(--b-gestern); stroke-dasharray: 5 4; }
+.b-punkt.b-gestern { fill: var(--b-gestern); }
+.b-punkt { stroke: var(--weiss); stroke-width: 2; }
+.b-wert { fill: var(--tinte); font: 600 12px var(--schrift); }
+.b-fokus { stroke: var(--tinte); stroke-width: 1; opacity: .5; pointer-events: none; }
+.b-tip { position: absolute; top: -.4rem; transform: translateY(-100%); background: var(--tinte); color: var(--weiss); font-size: .82rem; line-height: 1.35; padding: .35rem .55rem; border-radius: var(--r-klein); pointer-events: none; white-space: nowrap; z-index: 2; }
+.b-legende { display: flex; gap: 1.2rem; margin: .4rem 0 0; font-size: .85rem; color: var(--grau); }
+.b-legende span::before { content: ""; display: inline-block; width: 1.4rem; height: 0; border-top: 2px solid var(--b-heute); vertical-align: middle; margin-right: .4rem; }
+.b-legende .b-gestern::before { border-top: 2px dashed var(--b-gestern); }
+.b-tabelle { margin-top: .6rem; font-size: .9rem; }
+.b-tabelle summary { cursor: pointer; color: var(--grau); }
+.b-tabelle table { margin-top: .4rem; }
+.b-raster2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+.b-rang { list-style: none; margin: .4rem 0 0; padding: 0; display: grid; gap: .55rem; }
+.b-rang li { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "name zahl" "spur spur"; align-items: baseline; gap: .2rem .6rem; font-size: .9rem; }
+.b-rang-name { grid-area: name; }
+.b-rang-zahl { grid-area: zahl; }
+.b-rang-spur { grid-area: spur; height: .55rem; background: var(--kohl-hell); border-radius: 3px; overflow: hidden; }
+.b-rang-balken { display: block; height: 100%; background: var(--fichte-3); border-radius: 0 3px 3px 0; }
+.b-rang-zahl { font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
+.b-rang-zahl small { font-weight: 400; color: var(--grau); }
+.b-liste { margin: .4rem 0 0; padding-left: 1.4rem; display: grid; gap: .3rem; font-size: .9rem; }
+.b-liste li span { display: inline-block; max-width: calc(100% - 4rem); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+.b-liste li b { float: right; font-variant-numeric: tabular-nums; }
