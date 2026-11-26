@@ -8,7 +8,7 @@ import { SAISON_PRODUKTE } from '../../src/betrieb.js';
 import { KATEGORIEN, ICON, karteHtml, produktIcon } from '../../static/karte.js';
 import { HEUTE, KACHELN, OUT, ROOT, SAISON, betreiber, cfg, datumDe, eintraege, impressum, kreise, laender, manuell, offen, offenDatensaetze, offenNeu, offenNeuSumme, osm, plz, proKreis, verwaltungsDatensaetze } from './daten.mjs';
 import { ADSENSE_ID, GA_ID, GTM_ID, STATISTIK_AKTIV, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, SUCHFELD, kartenDaten, kartenPanel, plural, seite, zahl } from './html.mjs';
-import { MIN_SEITE, PLURAL_ART, anzHof, gross, hofItems, itemList, km, link, passend, schreibe } from './grundlagen.mjs';
+import { MIN_SEITE, PLURAL_ART, anzHof, hoefeZahl, gross, hofItems, itemList, km, link, passend, schreibe } from './grundlagen.mjs';
 import { MAERKTE, MARKT_SEITE_AB, MONATSNAMEN, MONAT_JETZT, SAISON_NACH_NAME, SAISON_SEITEN, TYPEN, WEIHNACHT, maerkteProKreis, marktKarte, marktPfad, monatsSpanne, saisonMonatHtml } from './startseite.mjs';
 import { naeheSuche } from './regionen.mjs';
 import { TERMINE, ZAHLUNG_TEXT, bearbeiten, terminHtml, terminLd } from './hoefe.mjs';
@@ -122,8 +122,8 @@ for (const sp of SAISON_SEITEN) {
   const saison = monatsSpanne(sp.frisch), lager = monatsSpanne(sp.lager);
   const andere = SAISON_SEITEN.filter((x) => x !== sp);
   schreibe(sp.pfad, seite({
-    titel: passend(`${sp.name} vom Hof – ${zahl(sp.liste.length)} ${sp.plural} in Deutschland`, `${sp.name} vom Hof – ${zahl(sp.liste.length)} Höfe`, `${sp.name} vom Hof`),
-    beschreibung: `${sp.name} direkt vom Erzeuger: ${zahl(sp.liste.length)} ${sp.plural} und Hofläden${saison ? `. Saison: ${saison}` : ''}${lager ? `, aus dem Lager ${lager}` : ''}. Mit Öffnungszeiten, Adresse und Route.`,
+    titel: passend(`${sp.name} vom Hof – ${hoefeZahl(sp.liste.length, sp.plural)} in Deutschland`, `${sp.name} vom Hof – ${hoefeZahl(sp.liste.length, 'Höfe')}`, `${sp.name} vom Hof`),
+    beschreibung: `${sp.name} direkt vom Erzeuger: ${hoefeZahl(sp.liste.length, sp.plural)} und Hofläden${saison ? `. Saison: ${saison}` : ''}${lager ? `, aus dem Lager ${lager}` : ''}. Mit Öffnungszeiten, Adresse und Route.`,
     pfad: sp.pfad,
     klasse: 'kompakt',
     noindex: !sp.indexiert,
@@ -132,7 +132,7 @@ for (const sp of SAISON_SEITEN) {
     inhalt: `
 <section class="seitenkopf">
   <h1>${esc(sp.name)} vom Hof</h1>
-  <p>${sp.liste.length ? `${zahl(sp.liste.length)} ${esc(sp.plural)}${nHof !== sp.liste.length ? ` (davon ${zahl(nHof)} Hofläden)` : ''} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')} nennen ${esc(sp.name)} ausdrücklich.` : `Noch hat kein Hof ${esc(sp.name)} ausdrücklich im Eintrag – viele Höfe mit ${esc(KATEGORIEN[sp.gruppe])} verkaufen sie trotzdem in der Saison.`}${saison ? ` Frisch vom Feld gibt es ${esc(sp.name)} von ${esc(saison)}${lager ? `, aus dem Lager ${esc(lager)}` : ''}.` : ''}</p>
+  <p>${sp.liste.length ? `${esc(hoefeZahl(sp.liste.length, sp.plural))}${nHof !== sp.liste.length ? ` (davon ${zahl(nHof)} Hofläden)` : ''} in ${plural(proLand.length, 'Bundesland', 'Bundesländern')} ${sp.liste.length === 1 ? 'nennt' : 'nennen'} ${esc(sp.name)} ausdrücklich.` : `Noch hat kein Hof ${esc(sp.name)} ausdrücklich im Eintrag – viele Höfe mit ${esc(KATEGORIEN[sp.gruppe])} verkaufen sie trotzdem in der Saison.`}${saison ? ` Frisch vom Feld gibt es ${esc(sp.name)} von ${esc(saison)}${lager ? `, aus dem Lager ${esc(lager)}` : ''}.` : ''}</p>
   <h2 class="naehe-titel">Hier gibt’s ${esc(sp.name)} in deiner Nähe</h2>
   ${naeheSuche({ produkt: sp.gruppe }, `Höfe mit ${KATEGORIEN[sp.gruppe]} in meiner Nähe`)}
   ${(() => { const p = SAISON_PRODUKTE.find((x) => x.replace(/^Neue /, '').toLowerCase().startsWith(sp.name.toLowerCase().slice(0, 5))); return p ? `<p class="saison-abo-link"><a href="/saison-benachrichtigung/#produkt=${encodeURIComponent(p)}">🔔 Sag mir Bescheid, wenn es ${esc(sp.name)} in meiner Nähe gibt</a></p>` : ''; })()}
@@ -609,7 +609,7 @@ if (MAERKTE.length) {
       titel: passend(`Wochenmärkte in ${x.l.name} – ${zahl(x.n)} Märkte nach Kreis`, `Wochenmärkte in ${x.l.name}`),
       beschreibung: `${zahl(x.n)} Wochenmärkte und Bauernmärkte in ${x.l.name}: nach Kreis sortiert, mit Marktzeiten, Adresse und Route.`,
       pfad: x.pfad, noindex: x.n < MIN_SEITE, krumen: [['Wochenmärkte', '/wochenmaerkte/'], [x.l.name, x.pfad]],
-      inhalt: `<section class="seitenkopf"><h1>Wochenmärkte in ${esc(x.l.name)}</h1><p>${zahl(x.n)} Märkte in ${zahl(x.ks.length)} Kreisen. <a href="/${x.l.slug}/">Hofläden in ${esc(x.l.name)}</a></p></section>
+      inhalt: `<section class="seitenkopf"><h1>Wochenmärkte in ${esc(x.l.name)}</h1><p>${zahl(x.n)} Märkte in ${plural(x.ks.length, 'Kreis', 'Kreisen')}. <a href="/${x.l.slug}/">Hofläden in ${esc(x.l.name)}</a></p></section>
 ${gross.length ? `<section class="abschnitt"><h2>Kreise mit mehreren Wochenmärkten</h2><ul class="kreis-liste">${gross.map((y) => `<li><a href="${marktPfad(y.k)}"><span>${esc(y.k.titel)}</span><span class="zahl">${zahl(y.ms.length)}</span></a></li>`).join('')}</ul></section>` : ''}
 ${klein.map((y) => `<section class="abschnitt"><h2>Wochenmärkte ${esc(y.k.im)}</h2><div class="karten-reihe">${y.ms.map((m) => marktKarte(m)).join('')}</div><p><a href="${y.k.pfad}">Hofläden ${esc(y.k.im)}</a></p></section>`).join('\n')}
 <section class="abschnitt">${osmHinweis}</section>`,

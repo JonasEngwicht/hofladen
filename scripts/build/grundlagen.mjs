@@ -70,15 +70,21 @@ const nennung = (arr) => arr.length <= 1 ? (arr[0] || '') : `${arr.slice(0, -1).
 const gross = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const link = (e) => `<a href="${e.pfad}">${esc(e.titel)}</a>`;
 
-function zaehlung(liste) {
+// Unbestimmter Artikel für „1 …“ im Fließtext („ein Hofladen“, „eine Milchtankstelle“)
+const ARTIKEL_EINS = { Milchtankstelle: 'eine', Imkerei: 'eine', Solawi: 'eine' };
+// Zählung der Arten; worte: true schreibt „ein Hofladen“ statt „1 Hofladen“ (für ganze Sätze)
+function zaehlung(liste, { worte = false } = {}) {
   const nHof = liste.filter((e) => e.typ === 'hofladen').length;
   const arten = new Map();
   for (const e of liste) if (e.typ !== 'hofladen') arten.set(e.art, (arten.get(e.art) || 0) + 1);
+  const eins = (wort) => `${worte ? ARTIKEL_EINS[wort] || 'ein' : '1'} ${wort}`;
   const teile = [];
-  if (nHof) teile.push(plural(nHof, 'Hofladen', 'Hofläden'));
-  for (const [a, n] of [...arten].sort((x, y) => y[1] - x[1])) teile.push(`${zahl(n)} ${n === 1 ? a : PLURAL_ART[a] || a}`);
+  if (nHof) teile.push(nHof === 1 ? eins('Hofladen') : plural(nHof, 'Hofladen', 'Hofläden'));
+  for (const [a, n] of [...arten].sort((x, y) => y[1] - x[1])) teile.push(n === 1 ? eins(a) : `${zahl(n)} ${PLURAL_ART[a] || a}`);
   return nennung(teile);
 }
+// „ist ein Hofladen eingetragen“ / „sind 3 Hofläden und ein Regiomat eingetragen“
+const eingetragen = (liste) => `${liste.length === 1 ? 'ist' : 'sind'} ${zaehlung(liste, { worte: true })} eingetragen`;
 
 // Automatenart → Themenseite
 // ---------- Bausteine für Snippets (Meta-Beschreibungen) ----------
@@ -158,6 +164,12 @@ function naechster(lat, lon, bedingung, ausser = new Set()) {
 }
 // Entfernung: unter 1 km in Metern, unter 50 m „am selben Ort“
 const km = (d) => d < 0.05 ? 'am selben Ort' : d < 1 ? `${Math.max(50, Math.round(d * 20) * 50)} m` : `${d < 10 ? d.toFixed(1).replace('.', ',') : Math.round(d)} km`;
+// Entfernung im Satz: „etwa 300 m entfernt“, unter 50 m „am selben Standort“
+const entfernt = (d) => d < 0.05 ? 'am selben Standort' : `etwa ${km(d)} entfernt`;
+// Abstand zur Ortsmitte im Satz: „etwa 300 m vom Ortszentrum entfernt“, unter 50 m „direkt im Ortszentrum“
+const vomZentrum = (d) => d < 0.05 ? 'direkt im Ortszentrum' : `etwa ${km(d)} vom Ortszentrum entfernt`;
+// „Höfe mit Pastinaken“ → „Hof mit Pastinaken“, „Spargelhöfe“ → „Spargelhof“
+const hoefeZahl = (n, pluralWort) => `${zahl(n)} ${n === 1 ? pluralWort.replace(/höfe\b/, 'hof').replace(/Höfe\b/, 'Hof') : pluralWort}`;
 
 function gebietsText(liste, wo, { orteNennen = true, anker = '' } = {}) {
   const a = analyse(liste);
@@ -189,10 +201,10 @@ function fragen(liste, wo, mitte, { orteLinks = [] } = {}) {
     : `Für keinen Eintrag ${wo} sind Sonntagszeiten hinterlegt.${a.rund.length ? ` Rund um die Uhr erreichbar sind aber ${nennung(a.rund.slice(0, 3).map(link))}.` : ' Viele <a href="/regiomat/">Regiomaten</a> und <a href="/eierautomat/">Eierautomaten</a> sind trotzdem auch sonntags zugänglich.'}`]);
   if (a.milch.length) f.push([`Gibt es eine Milchtankstelle ${wo}?`, `Ja, ${a.milch.length === 1 ? 'eine' : zahl(a.milch.length)}: ${nennung(a.milch.slice(0, 5).map((e) => `${link(e)} (${esc(e.ortAnzeige)})`))}. Dort zapfst du frische Rohmilch selbst – vor dem Trinken bitte abkochen. Alle Standorte findest du unter <a href="/milchtankstelle/">Milchtankstellen in Deutschland</a>.`]);
   else { const n = naechster(mitte.lat, mitte.lon, (x) => x.art === 'Milchtankstelle', im);
-    if (n) f.push([`Gibt es eine Milchtankstelle ${wo}?`, `${gross(wo)} ist bisher keine Milchtankstelle eingetragen. Die nächste ist ${link(n[1])} in ${esc(n[1].ortAnzeige)}, etwa ${km(n[0])} entfernt. Weitere findest du unter <a href="/milchtankstelle/">Milchtankstellen in Deutschland</a>.`]); }
+    if (n) f.push([`Gibt es eine Milchtankstelle ${wo}?`, `${gross(wo)} ist bisher keine Milchtankstelle eingetragen. Die nächste ist ${link(n[1])} in ${esc(n[1].ortAnzeige)}, ${entfernt(n[0])}. Weitere findest du unter <a href="/milchtankstelle/">Milchtankstellen in Deutschland</a>.`]); }
   if (a.eier.length) f.push([`Wo bekomme ich Eier vom Hof ${wo}?`, `Eier gibt es zum Beispiel bei ${nennung(a.eier.slice(0, 4).map(link))}${a.eier.length > 4 ? ` und ${zahl(a.eier.length - 4)} weiteren` : ''}. Auch abends und am Wochenende gibt es Eier oft am <a href="/eierautomat/">Eierautomaten</a>.`]);
   else { const n = naechster(mitte.lat, mitte.lon, (x) => x.kat.includes('eier'), im);
-    if (n) f.push([`Wo bekomme ich Eier vom Hof ${wo}?`, `Der nächste Hof mit Eiern ist ${link(n[1])} in ${esc(n[1].ortAnzeige)}, etwa ${km(n[0])} entfernt. Eine Übersicht bietet die Seite <a href="/eierautomat/">Eierautomaten in Deutschland</a>.`]); }
+    if (n) f.push([`Wo bekomme ich Eier vom Hof ${wo}?`, `Der nächste Hof mit Eiern ist ${link(n[1])} in ${esc(n[1].ortAnzeige)}, ${entfernt(n[0])}. Eine Übersicht bietet die Seite <a href="/eierautomat/">Eierautomaten in Deutschland</a>.`]); }
   if (orteLinks.length > 1) f.push([`In welchen Orten ${wo} gibt es Hofläden?`, `${nennung(orteLinks.slice(0, 12))}${orteLinks.length > 12 ? ` und ${zahl(orteLinks.length - 12)} weiteren Orten` : ''}.`]);
   return f;
 }
@@ -427,4 +439,4 @@ const GROSSSTAEDTE = (() => {
   }).filter(Boolean).filter((x, i, a) => a.findIndex((y) => y.pfad === x.pfad) === i).slice(0, 20);
 })();
 
-export { angebotHaeufig, zeitenSnippet, ALLE_SEITEN, ARCHIV_AUSNAHMEN, ART_TYP, UEBERDECKT, umgebungIndexiert, GROSSSTAEDTE, LAUSITZ, MIN_SEITE, ORTE, ORTSMITTE, PLURAL_ART, REGIONEN, SCHEMA_TAGE, STAND_DATEI, STAND_PLATZHALTER, UMGEBUNG, UMGEBUNG_PFAD, UMKREISE, UMKREIS_MAX, analyse, anzArt, anzHof, fragen, fragenHtml, gebietsText, gross, hhmm, hofItems, itemList, km, link, naechsteUmgebungsSeite, naechster, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortNamenZahl, ortSeiten, ortUeberschrift, passend, quellenHtml, regionDir, regionHtml, regionTeaser, schreibe, sitemap, stand, titelZahl, umkreis, zaehlung, zaehlungKurz, zaehlungLinks };
+export { angebotHaeufig, eingetragen, entfernt, hoefeZahl, vomZentrum, zeitenSnippet, ALLE_SEITEN, ARCHIV_AUSNAHMEN, ART_TYP, UEBERDECKT, umgebungIndexiert, GROSSSTAEDTE, LAUSITZ, MIN_SEITE, ORTE, ORTSMITTE, PLURAL_ART, REGIONEN, SCHEMA_TAGE, STAND_DATEI, STAND_PLATZHALTER, UMGEBUNG, UMGEBUNG_PFAD, UMKREISE, UMKREIS_MAX, analyse, anzArt, anzHof, fragen, fragenHtml, gebietsText, gross, hhmm, hofItems, itemList, km, link, naechsteUmgebungsSeite, naechster, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortNamenZahl, ortSeiten, ortUeberschrift, passend, quellenHtml, regionDir, regionHtml, regionTeaser, schreibe, sitemap, stand, titelZahl, umkreis, zaehlung, zaehlungKurz, zaehlungLinks };
