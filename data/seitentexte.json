@@ -26468,5 +26468,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/bayern/fuerstenfeldbruck/moorenweis/": {
+    "titel": "Hofläden in Moorenweis: gut zu wissen",
+    "oben": "Moorenweis liegt im Landkreis Fürstenfeldbruck westlich von München. Eingetragen sind der Biohof Silbernagl mit Weiderindern, Brennholz, Äpfeln und Geflügel, Lachmayr-direkt, Salabaurs Hofladen und ein Regiomat mit Eiern und Nudeln.",
+    "einleitung": "Felder und Wiesen prägen die Gemeinde. Der Biohof Silbernagl verkauft Fleisch, Eier und Äpfel und zusätzlich Brennholz.\n\nWeitere Höfe findest du in Mammendorf und Schöngeising.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mammendorf und Umgebung",
+        "pfad": "/bayern/fuerstenfeldbruck/mammendorf/"
+      },
+      {
+        "text": "Hofläden in Schöngeising und Umgebung",
+        "pfad": "/bayern/fuerstenfeldbruck/schoengeising/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/garmisch-partenkirchen/saulgrub/": {
+    "titel": "Hofläden in Saulgrub: gut zu wissen",
+    "oben": "Saulgrub liegt in den Ammergauer Alpen im Landkreis Garmisch-Partenkirchen. Eingetragen sind der Hofladen von Gut Acheleschwaig mit Bio-Angebot, ein Eierautomat und zwei Regiomaten, einer mit Milch, einer mit Eiern und Fleisch.",
+    "einleitung": "Almwiesen und Wald in den Ammergauer Alpen prägen das Land. Die Milch aus dem Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Oberammergau und Hohenpeißenberg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberammergau und Umgebung",
+        "pfad": "/bayern/garmisch-partenkirchen/oberammergau/"
+      },
+      {
+        "text": "Hofläden in Hohenpeißenberg und Umgebung",
+        "pfad": "/bayern/weilheim-schongau/hohenpeissenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/guenzburg/ziemetshausen/": {
+    "titel": "Hofläden in Ziemetshausen: gut zu wissen",
+    "oben": "Ziemetshausen liegt im Landkreis Günzburg im Naturpark Augsburg-Westliche Wälder. Eingetragen sind der Wiedenbauerhof und gleich drei Imkereien.",
+    "einleitung": "Wald, Wiesen und Hügel prägen das schwäbische Land. Bei drei Imkereien ist Honig die Spezialität.\n\nWeitere Höfe findest du in Mickhausen und Gessertshausen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mickhausen und Umgebung",
+        "pfad": "/bayern/landkreis-augsburg/mickhausen/"
+      },
+      {
+        "text": "Hofläden in Gessertshausen und Umgebung",
+        "pfad": "/bayern/landkreis-augsburg/gessertshausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/kitzingen/kitzingen/": {
+    "titel": "Hofläden in Kitzingen: gut zu wissen",
+    "oben": "Kitzingen liegt am Main in Mainfranken, die Gegend ist von Weinbau geprägt. Eingetragen sind die Imkerei Englert, der Hanft Kartoffelhof, der Biohof Schleyer und der Hofladen des Staatsguts Kitzingen.",
+    "einleitung": "Der Mainbogen bei Kitzingen ist fruchtbares Land mit Weinbergen und Feldern. Mehrere der Betriebe arbeiten nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Willanzheim und Volkach.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Willanzheim und Umgebung",
+        "pfad": "/bayern/kitzingen/willanzheim/"
+      },
+      {
+        "text": "Hofläden in Volkach und Umgebung",
+        "pfad": "/bayern/kitzingen/volkach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/kulmbach/himmelkron/": {
+    "titel": "Hofläden in Himmelkron: gut zu wissen",
+    "oben": "Himmelkron liegt bei Kulmbach in Oberfranken. Eingetragen sind die Frankenfarm Direktvermarktungs GmbH, der Hofladen Kauper, der Gössenreuther Hofladen mit Landküche und ein Kürbisverkauf.",
+    "einleitung": "Wiesen, Felder und Wald prägen die Gegend. Kürbisse gibt es hier vor allem im Herbst.\n\nWeitere Höfe findest du in Kulmbach und Mainleus.",
+    "saison": [
+      {
+        "titel": "Kürbis",
+        "zeit": "September bis November"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kulmbach und Umgebung",
+        "pfad": "/bayern/kulmbach/kulmbach/"
+      },
+      {
+        "text": "Hofläden in Mainleus und Umgebung",
+        "pfad": "/bayern/kulmbach/mainleus/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-ansbach/adelshofen/": {
+    "titel": "Hofläden in Adelshofen: gut zu wissen",
+    "oben": "Adelshofen liegt in Mittelfranken in der Nähe von Rothenburg ob der Tauber. Eingetragen sind Oppelts Hofladen, Weinbau Blumenstock mit Getränken und Blumen und zwei weitere Hofläden.",
+    "einleitung": "Felder und Wiesen bestimmen die Gegend. Bei Weinbau Blumenstock gibt es neben Getränken auch Blumen.\n\nWeitere Höfe findest du in Rothenburg ob der Tauber und Wettringen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rothenburg ob der Tauber und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/"
+      },
+      {
+        "text": "Hofläden in Wettringen (Landkreis Ansbach) und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/wettringen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-ansbach/heilsbronn/": {
+    "titel": "Hofläden in Heilsbronn: gut zu wissen",
+    "oben": "Heilsbronn liegt in Mittelfranken, bekannt ist das Münster. Eingetragen sind der Maußer Hof mit Hofautomat für Eier, Kreiselmeyer, der Bauernhofladen Hahn-Diel und Kupfers 24/7 Box mit Milch.",
+    "einleitung": "Die Gegend ist ländlich mit Feldern und Wiesen. Die Milch aus der Box ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Petersaurach und Neuendettelsau.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Petersaurach und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/petersaurach/"
+      },
+      {
+        "text": "Hofläden in Neuendettelsau und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/neuendettelsau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-ansbach/neuendettelsau/": {
+    "titel": "Hofläden in Neuendettelsau: gut zu wissen",
+    "oben": "Neuendettelsau liegt in Mittelfranken und ist durch die Diakonie bekannt. Eingetragen sind Lokale Köstlichkeiten 24x7 mit Eiern, Fleisch, Fisch und Honig, die Imkerei und Honigtankstelle Meyer, der Geflügelhof Landshuter und der Eierautomat Malmersdorfer Gaggerli.",
+    "einleitung": "Honig, Eier und Geflügel sind hier die Stärken. Der Automat Lokale Köstlichkeiten ist rund um die Uhr zugänglich.\n\nWeitere Höfe findest du in Petersaurach und Heilsbronn.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Petersaurach und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/petersaurach/"
+      },
+      {
+        "text": "Hofläden in Heilsbronn und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/heilsbronn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-ansbach/petersaurach/": {
+    "titel": "Hofläden in Petersaurach: gut zu wissen",
+    "oben": "Petersaurach liegt in Mittelfranken bei Ansbach. Eingetragen sind der Bauernladen in Petersaurach, ein Bio-Hofladen, Täufers Hofladen und ein Eierautomat.",
+    "einleitung": "Felder, Wiesen und Weiher prägen die Gegend. Eier gibt es auch am Automaten.\n\nWeitere Höfe findest du in Neuendettelsau und Heilsbronn.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neuendettelsau und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/neuendettelsau/"
+      },
+      {
+        "text": "Hofläden in Heilsbronn und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/heilsbronn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-augsburg/gablingen/": {
+    "titel": "Hofläden in Gablingen: gut zu wissen",
+    "oben": "Gablingen liegt nördlich von Augsburg. Eingetragen sind das Hofladen Kratzer mit Eiern und Nudeln, Hafnerbauer und Moirshofs Schatzkammer, alle mit Bio-Angebot, außerdem ein Regiomat mit Fleisch.",
+    "einleitung": "Das Land um Augsburg ist von Feldern und kleinen Wäldern geprägt. Drei der Höfe arbeiten biologisch.\n\nWeitere Höfe findest du in Langweid am Lech und Gersthofen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Langweid am Lech und Umgebung",
+        "pfad": "/bayern/landkreis-augsburg/langweid-am-lech/"
+      },
+      {
+        "text": "Hofläden in Gersthofen und Umgebung",
+        "pfad": "/bayern/landkreis-augsburg/gersthofen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-augsburg/graben/": {
+    "titel": "Hofläden in Graben: gut zu wissen",
+    "oben": "Graben liegt auf dem Lechfeld südlich von Augsburg. Eingetragen sind Kartoffeln in Graben, Lidls Hofprodukte, Hagg's Hüttenautomat mit Eiern und eine Milchtankstelle.",
+    "einleitung": "Das Lechfeld ist eine weite, flache Kiesebene mit Äckern. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Obermeitingen und Schwabmünchen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Obermeitingen und Umgebung",
+        "pfad": "/bayern/landsberg-am-lech/obermeitingen/"
+      },
+      {
+        "text": "Hofläden in Schwabmünchen und Umgebung",
+        "pfad": "/bayern/landkreis-augsburg/schwabmuenchen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-augsburg/koenigsbrunn/": {
+    "titel": "Hofläden in Königsbrunn: gut zu wissen",
+    "oben": "Königsbrunn liegt südlich von Augsburg auf dem Lechfeld. Eingetragen sind das Frisch Hof-Laden, ein weiterer Hofladen, ein Eierautomat und ein Regiomat mit Eiern, Kartoffeln und Honig.",
+    "einleitung": "Die Stadt ist von Feldern umgeben, Eier und Kartoffeln gibt es auch am Automaten. Augsburg ist in wenigen Minuten erreichbar.\n\nWeitere Höfe findest du in Bobingen und Kissing.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bobingen und Umgebung",
+        "pfad": "/bayern/landkreis-augsburg/bobingen/"
+      },
+      {
+        "text": "Hofläden in Kissing und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/kissing/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-augsburg/schwabmuenchen/": {
+    "titel": "Hofläden in Schwabmünchen: gut zu wissen",
+    "oben": "Schwabmünchen liegt im Tal der Singold im Landkreis Augsburg. Eingetragen sind der Pfänder-Hof mit Bioland-Hofladen, Josef Huber mit Fleisch- und Wurstspezialitäten, der Hofladen Kraus und ein Bio-Hofladen.",
+    "einleitung": "Felder und Wiesen prägen die Gegend. Fleisch und Wurst gibt es direkt bei Huber.\n\nWeitere Höfe findest du in Langerringen und Graben.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Langerringen und Umgebung",
+        "pfad": "/bayern/landkreis-augsburg/langerringen/"
+      },
+      {
+        "text": "Hofläden in Graben und Umgebung",
+        "pfad": "/bayern/landkreis-augsburg/graben/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-bayreuth/pegnitz/": {
+    "titel": "Hofläden in Pegnitz: gut zu wissen",
+    "oben": "Pegnitz liegt am Rand der Fränkischen Schweiz im Landkreis Bayreuth. Eingetragen sind der Weidehof Shop, die Hofläden Herzing und Hedelmühle und ein Regiomat.",
+    "einleitung": "Wälder, Wiesen und Felsen prägen die Gegend. Der Weidehof Shop ist ein Automat für regionale Produkte.\n\nWeitere Höfe findest du in Hiltpoltstein und Wiesenttal.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hiltpoltstein und Umgebung",
+        "pfad": "/bayern/forchheim/hiltpoltstein/"
+      },
+      {
+        "text": "Hofläden in Wiesenttal und Umgebung",
+        "pfad": "/bayern/forchheim/wiesenttal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-landshut/ergolding/": {
+    "titel": "Hofläden in Ergolding (Landkreis Landshut): gut zu wissen",
+    "oben": "Ergolding liegt an der Isar bei Landshut. Eingetragen sind Riedls Hofladen, Helenas Spezialitäten, der Biohof Voit mit Kartoffeln und ein Regiomat mit Eiern, Milch und Käse.",
+    "einleitung": "Die Isarauen und Felder prägen die Gemeinde. Die Milch aus dem Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Altdorf und Landshut.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Altdorf (Landkreis Landshut) und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/altdorf/"
+      },
+      {
+        "text": "Hofläden in Landshut",
+        "pfad": "/bayern/landshut-stadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-landshut/kroening/": {
+    "titel": "Hofläden in Kröning: gut zu wissen",
+    "oben": "Kröning liegt im niederbayerischen Hügelland im Landkreis Landshut. Eingetragen sind vier Bio-Höfe: der Biohof Amann, der Bio-Hofladen Koblpoint, der Bauernhof Zehetbauer und der Bio-Schafhof Nickl.",
+    "einleitung": "Hügel, Wiesen und Äcker prägen das Land. Dass alle vier Höfe biologisch arbeiten, ist für die Größe der Gemeinde auffällig.\n\nWeitere Höfe findest du in Schalkham und Vilsbiburg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Milchprodukte",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schalkham und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/schalkham/"
+      },
+      {
+        "text": "Hofläden in Vilsbiburg und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/vilsbiburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-landshut/velden/": {
+    "titel": "Hofläden in Velden: gut zu wissen",
+    "oben": "Velden liegt an der Vils im Landkreis Landshut in Niederbayern. Eingetragen sind der Hofladen Aigner mit Milch und Fleisch, der Biohof Liebl mit Eiern, Fleisch und Wild und zwei Eierautomaten.",
+    "einleitung": "Das Vilstal ist ein ländliches Tal mit Wiesen und Feldern. Eier gibt es hier gleich an zwei Automaten.\n\nWeitere Höfe findest du in Neufraunhofen und Wurmsham.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neufraunhofen und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/neufraunhofen/"
+      },
+      {
+        "text": "Hofläden in Wurmsham und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/wurmsham/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-landshut/vilsheim/": {
+    "titel": "Hofläden in Vilsheim: gut zu wissen",
+    "oben": "Vilsheim liegt im Landkreis Landshut in Niederbayern. Eingetragen sind die Hofmolkerei MilchHerz, die Milchherz Milchtankstelle, der Biohof Lackermeier und der Biohof Schweiberg.",
+    "einleitung": "Die Hofmolkerei verarbeitet Milch zu Milchprodukten, daneben gibt es Fleisch und Eier von Bio-Höfen. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Buch am Erlbach und Kumhausen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Buch am Erlbach und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/buch-am-erlbach/"
+      },
+      {
+        "text": "Hofläden in Kumhausen und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/kumhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-muenchen/aying/": {
+    "titel": "Hofläden in Aying: gut zu wissen",
+    "oben": "Aying liegt im Süden des Landkreises München, bekannt ist die Brauerei. Eingetragen sind der Hofladen Kainzenhof, der Behamhof mit Bio-Eiern, Milch und Käse, ein Eierautomat und ein Regiomat mit Fleisch.",
+    "einleitung": "Das Münchner Umland ist hier noch grünes Land mit Wiesen und Feldern. Beim Behamhof gibt es Milchprodukte nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Glonn und Otterfing.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Glonn und Umgebung",
+        "pfad": "/bayern/ebersberg/glonn/"
+      },
+      {
+        "text": "Hofläden in Otterfing und Umgebung",
+        "pfad": "/bayern/miesbach/otterfing/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-muenchen/baierbrunn/": {
+    "titel": "Hofläden in Baierbrunn: gut zu wissen",
+    "oben": "Baierbrunn liegt im Isartal südlich von München. Eingetragen sind der Naturlandhof Seitz, eine Milchtankstelle, der A2 Milchautomat und ein Regiomat mit Eiern.",
+    "einleitung": "Das Isartal bietet Wald und Wiesen direkt vor der Stadt. Die Milch aus Tankstelle und Automat ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Oberhaching und Sauerlach.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberhaching und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/oberhaching/"
+      },
+      {
+        "text": "Hofläden in Sauerlach und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/sauerlach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-muenchen/graefelfing/": {
+    "titel": "Hofläden in Gräfelfing: gut zu wissen",
+    "oben": "Gräfelfing liegt westlich von München. Eingetragen sind der Gutsladen, die Erntebox mit Eiern, Käse und Fleisch, ein Regiomat mit Eiern, Fleisch, Gemüse und Kartoffeln und ein Fleischautomat.",
+    "einleitung": "Die Gemeinde ist weitgehend bebaut, die Höfe liegen am Rand. Mit mehreren Automaten kannst du hier auch spät noch einkaufen.\n\nWeitere Höfe findest du in Germering und Gauting.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Germering und Umgebung",
+        "pfad": "/bayern/fuerstenfeldbruck/germering/"
+      },
+      {
+        "text": "Hofläden in Gauting und Umgebung",
+        "pfad": "/bayern/starnberg/gauting/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-muenchen/grasbrunn/": {
+    "titel": "Hofläden in Grasbrunn: gut zu wissen",
+    "oben": "Grasbrunn liegt östlich von München. Eingetragen sind der Hofladen beim Moar, das Grasbrunner SB-Haisl und zwei Kartoffelautomaten.",
+    "einleitung": "Auf den Feldern im Münchner Osten werden Kartoffeln angebaut, die du hier auch am Automaten bekommst. Das SB-Haisl ist ein Selbstbedienungsverkauf.\n\nWeitere Höfe findest du in Putzbrunn und Vaterstetten.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Putzbrunn und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/putzbrunn/"
+      },
+      {
+        "text": "Hofläden in Vaterstetten und Umgebung",
+        "pfad": "/bayern/ebersberg/vaterstetten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-muenchen/ismaning/": {
+    "titel": "Hofläden in Ismaning: gut zu wissen",
+    "oben": "Ismaning liegt nördlich von München an der Isar, bekannt ist der Speichersee. Eingetragen sind der Brandmair-Hof mit Bio-Gemüse, -Obst und -Honig, der Holzerhof, der Hofladen Landmann und ein Eierautomat.",
+    "einleitung": "Das Münchner Umland ist fruchtbar, hier wachsen Gemüse und Obst. Eier gibt es auch am Automaten.\n\nWeitere Höfe findest du in Garching und Aschheim.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Garching bei München und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/garching-bei-muenchen/"
+      },
+      {
+        "text": "Hofläden in Aschheim und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/aschheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-muenchen/putzbrunn/": {
+    "titel": "Hofläden in Putzbrunn: gut zu wissen",
+    "oben": "Putzbrunn liegt östlich von München. Eingetragen sind der Bio-Hofladen Daberger mit Eiern, Fleisch, Kartoffeln und Honig, ein Eierautomat, ein Kartoffelautomat und ein Regiomat mit Eiern und Nudeln.",
+    "einleitung": "Hier gibt es gleich mehrere Automaten für Eier und Kartoffeln. Der Daberger Hof arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Grasbrunn und Vaterstetten.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Grasbrunn und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/grasbrunn/"
+      },
+      {
+        "text": "Hofläden in Vaterstetten und Umgebung",
+        "pfad": "/bayern/ebersberg/vaterstetten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-muenchen/sauerlach/": {
+    "titel": "Hofläden in Sauerlach: gut zu wissen",
+    "oben": "Sauerlach liegt südöstlich von München am Rand des Oberlandes. Eingetragen sind der Urzlhof, der Imker Balthasar Ailer, ein Hofladen und der Dorfkramer 24/7.",
+    "einleitung": "Wiesen und Wald prägen die Gegend. Der Dorfkramer ist rund um die Uhr zugänglich.\n\nWeitere Höfe findest du in Egling und Oberhaching.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Egling und Umgebung",
+        "pfad": "/bayern/bad-toelz-wolfratshausen/egling/"
+      },
+      {
+        "text": "Hofläden in Oberhaching und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/oberhaching/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }

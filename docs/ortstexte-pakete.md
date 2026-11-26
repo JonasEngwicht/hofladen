@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 868 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 893 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1053,35 +1053,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Eching (Landkreis Freising)](https://hofladenliste.de/bayern/freising/eching/) `/bayern/freising/eching/` | Landkreis Freising | 1 | 4 | 7 |
 | ✓ | [Marzling](https://hofladenliste.de/bayern/freising/marzling/) `/bayern/freising/marzling/` | Landkreis Freising | 1 | 4 | 7 |
 
-## Paket 36 (0/25 fertig)
+## Paket 36 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Moorenweis](https://hofladenliste.de/bayern/fuerstenfeldbruck/moorenweis/) `/bayern/fuerstenfeldbruck/moorenweis/` | Landkreis Fürstenfeldbruck | 1 | 4 | 7 |
-|  | [Saulgrub](https://hofladenliste.de/bayern/garmisch-partenkirchen/saulgrub/) `/bayern/garmisch-partenkirchen/saulgrub/` | Landkreis Garmisch-Partenkirchen | 1 | 4 | 7 |
-|  | [Ziemetshausen](https://hofladenliste.de/bayern/guenzburg/ziemetshausen/) `/bayern/guenzburg/ziemetshausen/` | Landkreis Günzburg | 1 | 4 | 7 |
-|  | [Kitzingen](https://hofladenliste.de/bayern/kitzingen/kitzingen/) `/bayern/kitzingen/kitzingen/` | Landkreis Kitzingen | 1 | 4 | 7 |
-|  | [Himmelkron](https://hofladenliste.de/bayern/kulmbach/himmelkron/) `/bayern/kulmbach/himmelkron/` | Landkreis Kulmbach | 1 | 4 | 7 |
-|  | [Adelshofen](https://hofladenliste.de/bayern/landkreis-ansbach/adelshofen/) `/bayern/landkreis-ansbach/adelshofen/` | Landkreis Ansbach | 1 | 4 | 7 |
-|  | [Heilsbronn](https://hofladenliste.de/bayern/landkreis-ansbach/heilsbronn/) `/bayern/landkreis-ansbach/heilsbronn/` | Landkreis Ansbach | 1 | 4 | 7 |
-|  | [Neuendettelsau](https://hofladenliste.de/bayern/landkreis-ansbach/neuendettelsau/) `/bayern/landkreis-ansbach/neuendettelsau/` | Landkreis Ansbach | 1 | 4 | 7 |
-|  | [Petersaurach](https://hofladenliste.de/bayern/landkreis-ansbach/petersaurach/) `/bayern/landkreis-ansbach/petersaurach/` | Landkreis Ansbach | 1 | 4 | 7 |
-|  | [Gablingen](https://hofladenliste.de/bayern/landkreis-augsburg/gablingen/) `/bayern/landkreis-augsburg/gablingen/` | Landkreis Augsburg | 1 | 4 | 7 |
-|  | [Graben](https://hofladenliste.de/bayern/landkreis-augsburg/graben/) `/bayern/landkreis-augsburg/graben/` | Landkreis Augsburg | 1 | 4 | 7 |
-|  | [Königsbrunn](https://hofladenliste.de/bayern/landkreis-augsburg/koenigsbrunn/) `/bayern/landkreis-augsburg/koenigsbrunn/` | Landkreis Augsburg | 1 | 4 | 7 |
-|  | [Schwabmünchen](https://hofladenliste.de/bayern/landkreis-augsburg/schwabmuenchen/) `/bayern/landkreis-augsburg/schwabmuenchen/` | Landkreis Augsburg | 1 | 4 | 7 |
-|  | [Pegnitz](https://hofladenliste.de/bayern/landkreis-bayreuth/pegnitz/) `/bayern/landkreis-bayreuth/pegnitz/` | Landkreis Bayreuth | 1 | 4 | 7 |
-|  | [Ergolding (Landkreis Landshut)](https://hofladenliste.de/bayern/landkreis-landshut/ergolding/) `/bayern/landkreis-landshut/ergolding/` | Landkreis Landshut | 1 | 4 | 7 |
-|  | [Kröning](https://hofladenliste.de/bayern/landkreis-landshut/kroening/) `/bayern/landkreis-landshut/kroening/` | Landkreis Landshut | 1 | 4 | 7 |
-|  | [Velden](https://hofladenliste.de/bayern/landkreis-landshut/velden/) `/bayern/landkreis-landshut/velden/` | Landkreis Landshut | 1 | 4 | 7 |
-|  | [Vilsheim](https://hofladenliste.de/bayern/landkreis-landshut/vilsheim/) `/bayern/landkreis-landshut/vilsheim/` | Landkreis Landshut | 1 | 4 | 7 |
-|  | [Aying](https://hofladenliste.de/bayern/landkreis-muenchen/aying/) `/bayern/landkreis-muenchen/aying/` | Landkreis München | 1 | 4 | 7 |
-|  | [Baierbrunn](https://hofladenliste.de/bayern/landkreis-muenchen/baierbrunn/) `/bayern/landkreis-muenchen/baierbrunn/` | Landkreis München | 1 | 4 | 7 |
-|  | [Gräfelfing](https://hofladenliste.de/bayern/landkreis-muenchen/graefelfing/) `/bayern/landkreis-muenchen/graefelfing/` | Landkreis München | 1 | 4 | 7 |
-|  | [Grasbrunn](https://hofladenliste.de/bayern/landkreis-muenchen/grasbrunn/) `/bayern/landkreis-muenchen/grasbrunn/` | Landkreis München | 1 | 4 | 7 |
-|  | [Ismaning](https://hofladenliste.de/bayern/landkreis-muenchen/ismaning/) `/bayern/landkreis-muenchen/ismaning/` | Landkreis München | 1 | 4 | 7 |
-|  | [Putzbrunn](https://hofladenliste.de/bayern/landkreis-muenchen/putzbrunn/) `/bayern/landkreis-muenchen/putzbrunn/` | Landkreis München | 1 | 4 | 7 |
-|  | [Sauerlach](https://hofladenliste.de/bayern/landkreis-muenchen/sauerlach/) `/bayern/landkreis-muenchen/sauerlach/` | Landkreis München | 1 | 4 | 7 |
+| ✓ | [Moorenweis](https://hofladenliste.de/bayern/fuerstenfeldbruck/moorenweis/) `/bayern/fuerstenfeldbruck/moorenweis/` | Landkreis Fürstenfeldbruck | 1 | 4 | 7 |
+| ✓ | [Saulgrub](https://hofladenliste.de/bayern/garmisch-partenkirchen/saulgrub/) `/bayern/garmisch-partenkirchen/saulgrub/` | Landkreis Garmisch-Partenkirchen | 1 | 4 | 7 |
+| ✓ | [Ziemetshausen](https://hofladenliste.de/bayern/guenzburg/ziemetshausen/) `/bayern/guenzburg/ziemetshausen/` | Landkreis Günzburg | 1 | 4 | 7 |
+| ✓ | [Kitzingen](https://hofladenliste.de/bayern/kitzingen/kitzingen/) `/bayern/kitzingen/kitzingen/` | Landkreis Kitzingen | 1 | 4 | 7 |
+| ✓ | [Himmelkron](https://hofladenliste.de/bayern/kulmbach/himmelkron/) `/bayern/kulmbach/himmelkron/` | Landkreis Kulmbach | 1 | 4 | 7 |
+| ✓ | [Adelshofen](https://hofladenliste.de/bayern/landkreis-ansbach/adelshofen/) `/bayern/landkreis-ansbach/adelshofen/` | Landkreis Ansbach | 1 | 4 | 7 |
+| ✓ | [Heilsbronn](https://hofladenliste.de/bayern/landkreis-ansbach/heilsbronn/) `/bayern/landkreis-ansbach/heilsbronn/` | Landkreis Ansbach | 1 | 4 | 7 |
+| ✓ | [Neuendettelsau](https://hofladenliste.de/bayern/landkreis-ansbach/neuendettelsau/) `/bayern/landkreis-ansbach/neuendettelsau/` | Landkreis Ansbach | 1 | 4 | 7 |
+| ✓ | [Petersaurach](https://hofladenliste.de/bayern/landkreis-ansbach/petersaurach/) `/bayern/landkreis-ansbach/petersaurach/` | Landkreis Ansbach | 1 | 4 | 7 |
+| ✓ | [Gablingen](https://hofladenliste.de/bayern/landkreis-augsburg/gablingen/) `/bayern/landkreis-augsburg/gablingen/` | Landkreis Augsburg | 1 | 4 | 7 |
+| ✓ | [Graben](https://hofladenliste.de/bayern/landkreis-augsburg/graben/) `/bayern/landkreis-augsburg/graben/` | Landkreis Augsburg | 1 | 4 | 7 |
+| ✓ | [Königsbrunn](https://hofladenliste.de/bayern/landkreis-augsburg/koenigsbrunn/) `/bayern/landkreis-augsburg/koenigsbrunn/` | Landkreis Augsburg | 1 | 4 | 7 |
+| ✓ | [Schwabmünchen](https://hofladenliste.de/bayern/landkreis-augsburg/schwabmuenchen/) `/bayern/landkreis-augsburg/schwabmuenchen/` | Landkreis Augsburg | 1 | 4 | 7 |
+| ✓ | [Pegnitz](https://hofladenliste.de/bayern/landkreis-bayreuth/pegnitz/) `/bayern/landkreis-bayreuth/pegnitz/` | Landkreis Bayreuth | 1 | 4 | 7 |
+| ✓ | [Ergolding (Landkreis Landshut)](https://hofladenliste.de/bayern/landkreis-landshut/ergolding/) `/bayern/landkreis-landshut/ergolding/` | Landkreis Landshut | 1 | 4 | 7 |
+| ✓ | [Kröning](https://hofladenliste.de/bayern/landkreis-landshut/kroening/) `/bayern/landkreis-landshut/kroening/` | Landkreis Landshut | 1 | 4 | 7 |
+| ✓ | [Velden](https://hofladenliste.de/bayern/landkreis-landshut/velden/) `/bayern/landkreis-landshut/velden/` | Landkreis Landshut | 1 | 4 | 7 |
+| ✓ | [Vilsheim](https://hofladenliste.de/bayern/landkreis-landshut/vilsheim/) `/bayern/landkreis-landshut/vilsheim/` | Landkreis Landshut | 1 | 4 | 7 |
+| ✓ | [Aying](https://hofladenliste.de/bayern/landkreis-muenchen/aying/) `/bayern/landkreis-muenchen/aying/` | Landkreis München | 1 | 4 | 7 |
+| ✓ | [Baierbrunn](https://hofladenliste.de/bayern/landkreis-muenchen/baierbrunn/) `/bayern/landkreis-muenchen/baierbrunn/` | Landkreis München | 1 | 4 | 7 |
+| ✓ | [Gräfelfing](https://hofladenliste.de/bayern/landkreis-muenchen/graefelfing/) `/bayern/landkreis-muenchen/graefelfing/` | Landkreis München | 1 | 4 | 7 |
+| ✓ | [Grasbrunn](https://hofladenliste.de/bayern/landkreis-muenchen/grasbrunn/) `/bayern/landkreis-muenchen/grasbrunn/` | Landkreis München | 1 | 4 | 7 |
+| ✓ | [Ismaning](https://hofladenliste.de/bayern/landkreis-muenchen/ismaning/) `/bayern/landkreis-muenchen/ismaning/` | Landkreis München | 1 | 4 | 7 |
+| ✓ | [Putzbrunn](https://hofladenliste.de/bayern/landkreis-muenchen/putzbrunn/) `/bayern/landkreis-muenchen/putzbrunn/` | Landkreis München | 1 | 4 | 7 |
+| ✓ | [Sauerlach](https://hofladenliste.de/bayern/landkreis-muenchen/sauerlach/) `/bayern/landkreis-muenchen/sauerlach/` | Landkreis München | 1 | 4 | 7 |
 
 ## Paket 37 (1/25 fertig)
 
