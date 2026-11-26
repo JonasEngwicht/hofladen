@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1444 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1469 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1473,35 +1473,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Sigmaringen](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/sigmaringen/) `/baden-wuerttemberg/sigmaringen/sigmaringen/` | Landkreis Sigmaringen | 1 | 3 | 6 |
 | ✓ | [Stuttgart Büsnau](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-buesnau/) `/baden-wuerttemberg/stuttgart/stuttgart-buesnau/` | Stuttgart | 1 | 3 | 6 |
 
-## Paket 50 (0/25 fertig)
+## Paket 50 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Stuttgart Hoffeld](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-hoffeld/) `/baden-wuerttemberg/stuttgart/stuttgart-hoffeld/` | Stuttgart | 1 | 3 | 6 |
-|  | [Stuttgart Mönchfeld](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-moenchfeld/) `/baden-wuerttemberg/stuttgart/stuttgart-moenchfeld/` | Stuttgart | 1 | 3 | 6 |
-|  | [Stuttgart Riedenberg](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-riedenberg/) `/baden-wuerttemberg/stuttgart/stuttgart-riedenberg/` | Stuttgart | 1 | 3 | 6 |
-|  | [Stuttgart Stammheim](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-stammheim/) `/baden-wuerttemberg/stuttgart/stuttgart-stammheim/` | Stuttgart | 1 | 3 | 6 |
-|  | [Rottenburg am Neckar](https://hofladenliste.de/baden-wuerttemberg/tuebingen/rottenburg-am-neckar/) `/baden-wuerttemberg/tuebingen/rottenburg-am-neckar/` | Landkreis Tübingen | 1 | 3 | 6 |
-|  | [Neuhausen ob Eck](https://hofladenliste.de/baden-wuerttemberg/tuttlingen/neuhausen-ob-eck/) `/baden-wuerttemberg/tuttlingen/neuhausen-ob-eck/` | Landkreis Tuttlingen | 1 | 3 | 6 |
-|  | [Dachsberg](https://hofladenliste.de/baden-wuerttemberg/waldshut/dachsberg/) `/baden-wuerttemberg/waldshut/dachsberg/` | Landkreis Waldshut | 1 | 3 | 6 |
-|  | [Dogern](https://hofladenliste.de/baden-wuerttemberg/waldshut/dogern/) `/baden-wuerttemberg/waldshut/dogern/` | Landkreis Waldshut | 1 | 3 | 6 |
-|  | [Küssaberg](https://hofladenliste.de/baden-wuerttemberg/waldshut/kuessaberg/) `/baden-wuerttemberg/waldshut/kuessaberg/` | Landkreis Waldshut | 1 | 3 | 6 |
-|  | [Laufenburg](https://hofladenliste.de/baden-wuerttemberg/waldshut/laufenburg/) `/baden-wuerttemberg/waldshut/laufenburg/` | Landkreis Waldshut | 1 | 3 | 6 |
-|  | [Ühlingen-Birkendorf](https://hofladenliste.de/baden-wuerttemberg/waldshut/uehlingen-birkendorf/) `/baden-wuerttemberg/waldshut/uehlingen-birkendorf/` | Landkreis Waldshut | 1 | 3 | 6 |
-|  | [Wutach](https://hofladenliste.de/baden-wuerttemberg/waldshut/wutach/) `/baden-wuerttemberg/waldshut/wutach/` | Landkreis Waldshut | 1 | 3 | 6 |
-|  | [Rosenfeld](https://hofladenliste.de/baden-wuerttemberg/zollernalbkreis/rosenfeld/) `/baden-wuerttemberg/zollernalbkreis/rosenfeld/` | Zollernalbkreis | 1 | 3 | 6 |
-|  | [Winterlingen](https://hofladenliste.de/baden-wuerttemberg/zollernalbkreis/winterlingen/) `/baden-wuerttemberg/zollernalbkreis/winterlingen/` | Zollernalbkreis | 1 | 3 | 6 |
-|  | [Adelzhausen](https://hofladenliste.de/bayern/aichach-friedberg/adelzhausen/) `/bayern/aichach-friedberg/adelzhausen/` | Landkreis Aichach-Friedberg | 1 | 3 | 6 |
-|  | [Hollenbach](https://hofladenliste.de/bayern/aichach-friedberg/hollenbach/) `/bayern/aichach-friedberg/hollenbach/` | Landkreis Aichach-Friedberg | 1 | 3 | 6 |
-|  | [Kühbach](https://hofladenliste.de/bayern/aichach-friedberg/kuehbach/) `/bayern/aichach-friedberg/kuehbach/` | Landkreis Aichach-Friedberg | 1 | 3 | 6 |
-|  | [Unterneukirchen](https://hofladenliste.de/bayern/altoetting/unterneukirchen/) `/bayern/altoetting/unterneukirchen/` | Landkreis Altötting | 1 | 3 | 6 |
-|  | [Hahnbach](https://hofladenliste.de/bayern/amberg-sulzbach/hahnbach/) `/bayern/amberg-sulzbach/hahnbach/` | Landkreis Amberg-Sulzbach | 1 | 3 | 6 |
-|  | [Sulzbach-Rosenberg](https://hofladenliste.de/bayern/amberg-sulzbach/sulzbach-rosenberg/) `/bayern/amberg-sulzbach/sulzbach-rosenberg/` | Landkreis Amberg-Sulzbach | 1 | 3 | 6 |
-|  | [Amberg](https://hofladenliste.de/bayern/amberg/) `/bayern/amberg/` | Amberg | 1 | 3 | 6 |
-|  | [Burkardroth](https://hofladenliste.de/bayern/bad-kissingen/burkardroth/) `/bayern/bad-kissingen/burkardroth/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
-|  | [Münnerstadt](https://hofladenliste.de/bayern/bad-kissingen/muennerstadt/) `/bayern/bad-kissingen/muennerstadt/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
-|  | [Oberleichtersbach](https://hofladenliste.de/bayern/bad-kissingen/oberleichtersbach/) `/bayern/bad-kissingen/oberleichtersbach/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
-|  | [Wartmannsroth](https://hofladenliste.de/bayern/bad-kissingen/wartmannsroth/) `/bayern/bad-kissingen/wartmannsroth/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
+| ✓ | [Stuttgart Hoffeld](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-hoffeld/) `/baden-wuerttemberg/stuttgart/stuttgart-hoffeld/` | Stuttgart | 1 | 3 | 6 |
+| ✓ | [Stuttgart Mönchfeld](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-moenchfeld/) `/baden-wuerttemberg/stuttgart/stuttgart-moenchfeld/` | Stuttgart | 1 | 3 | 6 |
+| ✓ | [Stuttgart Riedenberg](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-riedenberg/) `/baden-wuerttemberg/stuttgart/stuttgart-riedenberg/` | Stuttgart | 1 | 3 | 6 |
+| ✓ | [Stuttgart Stammheim](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-stammheim/) `/baden-wuerttemberg/stuttgart/stuttgart-stammheim/` | Stuttgart | 1 | 3 | 6 |
+| ✓ | [Rottenburg am Neckar](https://hofladenliste.de/baden-wuerttemberg/tuebingen/rottenburg-am-neckar/) `/baden-wuerttemberg/tuebingen/rottenburg-am-neckar/` | Landkreis Tübingen | 1 | 3 | 6 |
+| ✓ | [Neuhausen ob Eck](https://hofladenliste.de/baden-wuerttemberg/tuttlingen/neuhausen-ob-eck/) `/baden-wuerttemberg/tuttlingen/neuhausen-ob-eck/` | Landkreis Tuttlingen | 1 | 3 | 6 |
+| ✓ | [Dachsberg](https://hofladenliste.de/baden-wuerttemberg/waldshut/dachsberg/) `/baden-wuerttemberg/waldshut/dachsberg/` | Landkreis Waldshut | 1 | 3 | 6 |
+| ✓ | [Dogern](https://hofladenliste.de/baden-wuerttemberg/waldshut/dogern/) `/baden-wuerttemberg/waldshut/dogern/` | Landkreis Waldshut | 1 | 3 | 6 |
+| ✓ | [Küssaberg](https://hofladenliste.de/baden-wuerttemberg/waldshut/kuessaberg/) `/baden-wuerttemberg/waldshut/kuessaberg/` | Landkreis Waldshut | 1 | 3 | 6 |
+| ✓ | [Laufenburg](https://hofladenliste.de/baden-wuerttemberg/waldshut/laufenburg/) `/baden-wuerttemberg/waldshut/laufenburg/` | Landkreis Waldshut | 1 | 3 | 6 |
+| ✓ | [Ühlingen-Birkendorf](https://hofladenliste.de/baden-wuerttemberg/waldshut/uehlingen-birkendorf/) `/baden-wuerttemberg/waldshut/uehlingen-birkendorf/` | Landkreis Waldshut | 1 | 3 | 6 |
+| ✓ | [Wutach](https://hofladenliste.de/baden-wuerttemberg/waldshut/wutach/) `/baden-wuerttemberg/waldshut/wutach/` | Landkreis Waldshut | 1 | 3 | 6 |
+| ✓ | [Rosenfeld](https://hofladenliste.de/baden-wuerttemberg/zollernalbkreis/rosenfeld/) `/baden-wuerttemberg/zollernalbkreis/rosenfeld/` | Zollernalbkreis | 1 | 3 | 6 |
+| ✓ | [Winterlingen](https://hofladenliste.de/baden-wuerttemberg/zollernalbkreis/winterlingen/) `/baden-wuerttemberg/zollernalbkreis/winterlingen/` | Zollernalbkreis | 1 | 3 | 6 |
+| ✓ | [Adelzhausen](https://hofladenliste.de/bayern/aichach-friedberg/adelzhausen/) `/bayern/aichach-friedberg/adelzhausen/` | Landkreis Aichach-Friedberg | 1 | 3 | 6 |
+| ✓ | [Hollenbach](https://hofladenliste.de/bayern/aichach-friedberg/hollenbach/) `/bayern/aichach-friedberg/hollenbach/` | Landkreis Aichach-Friedberg | 1 | 3 | 6 |
+| ✓ | [Kühbach](https://hofladenliste.de/bayern/aichach-friedberg/kuehbach/) `/bayern/aichach-friedberg/kuehbach/` | Landkreis Aichach-Friedberg | 1 | 3 | 6 |
+| ✓ | [Unterneukirchen](https://hofladenliste.de/bayern/altoetting/unterneukirchen/) `/bayern/altoetting/unterneukirchen/` | Landkreis Altötting | 1 | 3 | 6 |
+| ✓ | [Hahnbach](https://hofladenliste.de/bayern/amberg-sulzbach/hahnbach/) `/bayern/amberg-sulzbach/hahnbach/` | Landkreis Amberg-Sulzbach | 1 | 3 | 6 |
+| ✓ | [Sulzbach-Rosenberg](https://hofladenliste.de/bayern/amberg-sulzbach/sulzbach-rosenberg/) `/bayern/amberg-sulzbach/sulzbach-rosenberg/` | Landkreis Amberg-Sulzbach | 1 | 3 | 6 |
+| ✓ | [Amberg](https://hofladenliste.de/bayern/amberg/) `/bayern/amberg/` | Amberg | 1 | 3 | 6 |
+| ✓ | [Burkardroth](https://hofladenliste.de/bayern/bad-kissingen/burkardroth/) `/bayern/bad-kissingen/burkardroth/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
+| ✓ | [Münnerstadt](https://hofladenliste.de/bayern/bad-kissingen/muennerstadt/) `/bayern/bad-kissingen/muennerstadt/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
+| ✓ | [Oberleichtersbach](https://hofladenliste.de/bayern/bad-kissingen/oberleichtersbach/) `/bayern/bad-kissingen/oberleichtersbach/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
+| ✓ | [Wartmannsroth](https://hofladenliste.de/bayern/bad-kissingen/wartmannsroth/) `/bayern/bad-kissingen/wartmannsroth/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
 
 ## Paket 51 (24/25 fertig)
 
