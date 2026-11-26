@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1006 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1031 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1893,35 +1893,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Rheurdt](https://hofladenliste.de/nordrhein-westfalen/kleve/rheurdt/) `/nordrhein-westfalen/kleve/rheurdt/` | Kreis Kleve | 1 | 3 | 6 |
 |  | [Blomberg](https://hofladenliste.de/nordrhein-westfalen/lippe/blomberg/) `/nordrhein-westfalen/lippe/blomberg/` | Kreis Lippe | 1 | 3 | 6 |
 
-## Paket 64 (0/25 fertig)
+## Paket 64 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Extertal](https://hofladenliste.de/nordrhein-westfalen/lippe/extertal/) `/nordrhein-westfalen/lippe/extertal/` | Kreis Lippe | 1 | 3 | 6 |
-|  | [Hemer](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/hemer/) `/nordrhein-westfalen/maerkischer-kreis/hemer/` | Märkischer Kreis | 1 | 3 | 6 |
-|  | [Meinerzhagen](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/meinerzhagen/) `/nordrhein-westfalen/maerkischer-kreis/meinerzhagen/` | Märkischer Kreis | 1 | 3 | 6 |
-|  | [Erkrath](https://hofladenliste.de/nordrhein-westfalen/mettmann/erkrath/) `/nordrhein-westfalen/mettmann/erkrath/` | Kreis Mettmann | 1 | 3 | 6 |
-|  | [Frechen](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/frechen/) `/nordrhein-westfalen/rhein-erft-kreis/frechen/` | Rhein-Erft-Kreis | 1 | 3 | 6 |
-|  | [Hobein](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/hobein/) `/nordrhein-westfalen/rhein-sieg-kreis/hobein/` | Rhein-Sieg-Kreis | 1 | 3 | 6 |
-|  | [Neunkirchen-Seelscheid](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/neunkirchen-seelscheid/) `/nordrhein-westfalen/rhein-sieg-kreis/neunkirchen-seelscheid/` | Rhein-Sieg-Kreis | 1 | 3 | 6 |
-|  | [Odenthal](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/odenthal/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/odenthal/` | Rheinisch-Bergischer Kreis | 1 | 3 | 6 |
-|  | [Rösrath](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/roesrath/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/roesrath/` | Rheinisch-Bergischer Kreis | 1 | 3 | 6 |
-|  | [Kreuztal](https://hofladenliste.de/nordrhein-westfalen/siegen-wittgenstein/kreuztal/) `/nordrhein-westfalen/siegen-wittgenstein/kreuztal/` | Kreis Siegen-Wittgenstein | 1 | 3 | 6 |
-|  | [Wilnsdorf](https://hofladenliste.de/nordrhein-westfalen/siegen-wittgenstein/wilnsdorf/) `/nordrhein-westfalen/siegen-wittgenstein/wilnsdorf/` | Kreis Siegen-Wittgenstein | 1 | 3 | 6 |
-|  | [Baesweiler](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/baesweiler/) `/nordrhein-westfalen/staedteregion-aachen/baesweiler/` | Städteregion Aachen | 1 | 3 | 6 |
-|  | [Eschweiler](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/eschweiler/) `/nordrhein-westfalen/staedteregion-aachen/eschweiler/` | Städteregion Aachen | 1 | 3 | 6 |
-|  | [Monschau](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/monschau/) `/nordrhein-westfalen/staedteregion-aachen/monschau/` | Städteregion Aachen | 1 | 3 | 6 |
-|  | [Roetgen](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/roetgen/) `/nordrhein-westfalen/staedteregion-aachen/roetgen/` | Städteregion Aachen | 1 | 3 | 6 |
-|  | [Hörstel](https://hofladenliste.de/nordrhein-westfalen/steinfurt/hoerstel/) `/nordrhein-westfalen/steinfurt/hoerstel/` | Kreis Steinfurt | 1 | 3 | 6 |
-|  | [Hopsten](https://hofladenliste.de/nordrhein-westfalen/steinfurt/hopsten/) `/nordrhein-westfalen/steinfurt/hopsten/` | Kreis Steinfurt | 1 | 3 | 6 |
-|  | [Lengerich](https://hofladenliste.de/nordrhein-westfalen/steinfurt/lengerich/) `/nordrhein-westfalen/steinfurt/lengerich/` | Kreis Steinfurt | 1 | 3 | 6 |
-|  | [Bergkamen](https://hofladenliste.de/nordrhein-westfalen/unna/bergkamen/) `/nordrhein-westfalen/unna/bergkamen/` | Kreis Unna | 1 | 3 | 6 |
-|  | [Bönen](https://hofladenliste.de/nordrhein-westfalen/unna/boenen/) `/nordrhein-westfalen/unna/boenen/` | Kreis Unna | 1 | 3 | 6 |
-|  | [Beckum](https://hofladenliste.de/nordrhein-westfalen/warendorf/beckum/) `/nordrhein-westfalen/warendorf/beckum/` | Kreis Warendorf | 1 | 3 | 6 |
-|  | [Sassenberg](https://hofladenliste.de/nordrhein-westfalen/warendorf/sassenberg/) `/nordrhein-westfalen/warendorf/sassenberg/` | Kreis Warendorf | 1 | 3 | 6 |
-|  | [Bad Neuenahr-Ahrweiler](https://hofladenliste.de/rheinland-pfalz/ahrweiler/bad-neuenahr-ahrweiler/) `/rheinland-pfalz/ahrweiler/bad-neuenahr-ahrweiler/` | Landkreis Ahrweiler | 1 | 3 | 6 |
-|  | [Berg (Landkreis Ahrweiler)](https://hofladenliste.de/rheinland-pfalz/ahrweiler/berg/) `/rheinland-pfalz/ahrweiler/berg/` | Landkreis Ahrweiler | 1 | 3 | 6 |
-|  | [Brohl-Lützing](https://hofladenliste.de/rheinland-pfalz/ahrweiler/brohl-luetzing/) `/rheinland-pfalz/ahrweiler/brohl-luetzing/` | Landkreis Ahrweiler | 1 | 3 | 6 |
+| ✓ | [Extertal](https://hofladenliste.de/nordrhein-westfalen/lippe/extertal/) `/nordrhein-westfalen/lippe/extertal/` | Kreis Lippe | 1 | 3 | 6 |
+| ✓ | [Hemer](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/hemer/) `/nordrhein-westfalen/maerkischer-kreis/hemer/` | Märkischer Kreis | 1 | 3 | 6 |
+| ✓ | [Meinerzhagen](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/meinerzhagen/) `/nordrhein-westfalen/maerkischer-kreis/meinerzhagen/` | Märkischer Kreis | 1 | 3 | 6 |
+| ✓ | [Erkrath](https://hofladenliste.de/nordrhein-westfalen/mettmann/erkrath/) `/nordrhein-westfalen/mettmann/erkrath/` | Kreis Mettmann | 1 | 3 | 6 |
+| ✓ | [Frechen](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/frechen/) `/nordrhein-westfalen/rhein-erft-kreis/frechen/` | Rhein-Erft-Kreis | 1 | 3 | 6 |
+| ✓ | [Hobein](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/hobein/) `/nordrhein-westfalen/rhein-sieg-kreis/hobein/` | Rhein-Sieg-Kreis | 1 | 3 | 6 |
+| ✓ | [Neunkirchen-Seelscheid](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/neunkirchen-seelscheid/) `/nordrhein-westfalen/rhein-sieg-kreis/neunkirchen-seelscheid/` | Rhein-Sieg-Kreis | 1 | 3 | 6 |
+| ✓ | [Odenthal](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/odenthal/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/odenthal/` | Rheinisch-Bergischer Kreis | 1 | 3 | 6 |
+| ✓ | [Rösrath](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/roesrath/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/roesrath/` | Rheinisch-Bergischer Kreis | 1 | 3 | 6 |
+| ✓ | [Kreuztal](https://hofladenliste.de/nordrhein-westfalen/siegen-wittgenstein/kreuztal/) `/nordrhein-westfalen/siegen-wittgenstein/kreuztal/` | Kreis Siegen-Wittgenstein | 1 | 3 | 6 |
+| ✓ | [Wilnsdorf](https://hofladenliste.de/nordrhein-westfalen/siegen-wittgenstein/wilnsdorf/) `/nordrhein-westfalen/siegen-wittgenstein/wilnsdorf/` | Kreis Siegen-Wittgenstein | 1 | 3 | 6 |
+| ✓ | [Baesweiler](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/baesweiler/) `/nordrhein-westfalen/staedteregion-aachen/baesweiler/` | Städteregion Aachen | 1 | 3 | 6 |
+| ✓ | [Eschweiler](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/eschweiler/) `/nordrhein-westfalen/staedteregion-aachen/eschweiler/` | Städteregion Aachen | 1 | 3 | 6 |
+| ✓ | [Monschau](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/monschau/) `/nordrhein-westfalen/staedteregion-aachen/monschau/` | Städteregion Aachen | 1 | 3 | 6 |
+| ✓ | [Roetgen](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/roetgen/) `/nordrhein-westfalen/staedteregion-aachen/roetgen/` | Städteregion Aachen | 1 | 3 | 6 |
+| ✓ | [Hörstel](https://hofladenliste.de/nordrhein-westfalen/steinfurt/hoerstel/) `/nordrhein-westfalen/steinfurt/hoerstel/` | Kreis Steinfurt | 1 | 3 | 6 |
+| ✓ | [Hopsten](https://hofladenliste.de/nordrhein-westfalen/steinfurt/hopsten/) `/nordrhein-westfalen/steinfurt/hopsten/` | Kreis Steinfurt | 1 | 3 | 6 |
+| ✓ | [Lengerich](https://hofladenliste.de/nordrhein-westfalen/steinfurt/lengerich/) `/nordrhein-westfalen/steinfurt/lengerich/` | Kreis Steinfurt | 1 | 3 | 6 |
+| ✓ | [Bergkamen](https://hofladenliste.de/nordrhein-westfalen/unna/bergkamen/) `/nordrhein-westfalen/unna/bergkamen/` | Kreis Unna | 1 | 3 | 6 |
+| ✓ | [Bönen](https://hofladenliste.de/nordrhein-westfalen/unna/boenen/) `/nordrhein-westfalen/unna/boenen/` | Kreis Unna | 1 | 3 | 6 |
+| ✓ | [Beckum](https://hofladenliste.de/nordrhein-westfalen/warendorf/beckum/) `/nordrhein-westfalen/warendorf/beckum/` | Kreis Warendorf | 1 | 3 | 6 |
+| ✓ | [Sassenberg](https://hofladenliste.de/nordrhein-westfalen/warendorf/sassenberg/) `/nordrhein-westfalen/warendorf/sassenberg/` | Kreis Warendorf | 1 | 3 | 6 |
+| ✓ | [Bad Neuenahr-Ahrweiler](https://hofladenliste.de/rheinland-pfalz/ahrweiler/bad-neuenahr-ahrweiler/) `/rheinland-pfalz/ahrweiler/bad-neuenahr-ahrweiler/` | Landkreis Ahrweiler | 1 | 3 | 6 |
+| ✓ | [Berg (Landkreis Ahrweiler)](https://hofladenliste.de/rheinland-pfalz/ahrweiler/berg/) `/rheinland-pfalz/ahrweiler/berg/` | Landkreis Ahrweiler | 1 | 3 | 6 |
+| ✓ | [Brohl-Lützing](https://hofladenliste.de/rheinland-pfalz/ahrweiler/brohl-luetzing/) `/rheinland-pfalz/ahrweiler/brohl-luetzing/` | Landkreis Ahrweiler | 1 | 3 | 6 |
 
 ## Paket 65 (0/25 fertig)
 

@@ -30608,5 +30608,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/lippe/extertal/": {
+    "titel": "Hofläden in Extertal: gut zu wissen",
+    "oben": "In Extertal sind ein Regiomat mit Milch und Fleisch, der Hof Hellmig und der Biolandhof Flötotto eingetragen.",
+    "einleitung": "Milch und Fleisch gibt es jederzeit am Regiomaten. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Dörentrup, Rinteln und Blomberg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dörentrup und Umgebung",
+        "pfad": "/nordrhein-westfalen/lippe/doerentrup/"
+      },
+      {
+        "text": "Hofläden in Rinteln und Umgebung",
+        "pfad": "/niedersachsen/schaumburg/rinteln/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/maerkischer-kreis/hemer/": {
+    "titel": "Hofläden in Hemer: gut zu wissen",
+    "oben": "Hemer nennt die Sundwiger Mühle, den Hofladen Mesterscheid und den Hofladen Elfenfohren.",
+    "einleitung": "Drei Hofläden liegen im Stadtgebiet.\n\nWeitere Höfe findest du in Menden und Iserlohn.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Menden und Umgebung",
+        "pfad": "/nordrhein-westfalen/maerkischer-kreis/menden/"
+      },
+      {
+        "text": "Hofläden in Iserlohn und Umgebung",
+        "pfad": "/nordrhein-westfalen/maerkischer-kreis/iserlohn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/maerkischer-kreis/meinerzhagen/": {
+    "titel": "Hofläden in Meinerzhagen: gut zu wissen",
+    "oben": "In Meinerzhagen sind Joest's Hofladen, die Imkerei Linn Rohr und der Hofladen Landpartie mit Bio-Eiern, Milch, Obst und Kartoffeln eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei Linn Rohr. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Gummersbach und Lüdenscheid.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gummersbach und Umgebung",
+        "pfad": "/nordrhein-westfalen/oberbergischer-kreis/gummersbach/"
+      },
+      {
+        "text": "Hofläden in Lüdenscheid und Umgebung",
+        "pfad": "/nordrhein-westfalen/maerkischer-kreis/luedenscheid/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/mettmann/erkrath/": {
+    "titel": "Hofläden in Erkrath: gut zu wissen",
+    "oben": "Erkrath hat einen Regiomaten mit Gemüse, Ben's Shop und die Imkerei Die NeanderBiene.",
+    "einleitung": "Gemüse gibt es jederzeit am Regiomaten, Honig bei der NeanderBiene.\n\nWeitere Höfe findest du in Mettmann, Hilden und Düsseldorf.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mettmann und Umgebung",
+        "pfad": "/nordrhein-westfalen/mettmann/mettmann/"
+      },
+      {
+        "text": "Hofläden in Hilden und Umgebung",
+        "pfad": "/nordrhein-westfalen/mettmann/hilden/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rhein-erft-kreis/frechen/": {
+    "titel": "Hofläden in Frechen: gut zu wissen",
+    "oben": "In Frechen sind die Gartenoase Köln West mit Bio-Angebot, die Imkerei Falman und der Hofladen Gut Clarenhof eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei Falman.\n\nWeitere Höfe findest du in Hürth, Kerpen und Köln.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hürth und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-erft-kreis/huerth/"
+      },
+      {
+        "text": "Hofläden in Kerpen und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-erft-kreis/kerpen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rhein-sieg-kreis/hobein/": {
+    "titel": "Hofläden in Hobein: gut zu wissen",
+    "oben": "Hobein nennt einen Eierautomaten, ein Hofcafé und den Hofverkauf Kühlwetter.",
+    "einleitung": "Eier gibt es jederzeit am Automaten, im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Meckenheim und Wachtberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Meckenheim (Rhein-Sieg-Kreis) und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/meckenheim/"
+      },
+      {
+        "text": "Hofläden in Wachtberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/wachtberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rhein-sieg-kreis/neunkirchen-seelscheid/": {
+    "titel": "Hofläden in Neunkirchen-Seelscheid: gut zu wissen",
+    "oben": "In Neunkirchen-Seelscheid sind der Imker Bruno Vester, das Hofcafé Franken und das Horbacher Mühlenlädchen eingetragen.",
+    "einleitung": "Honig gibt es beim Imker Vester, im Hofcafé Franken kannst du einkehren.\n\nWeitere Höfe findest du in Much und Overath.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Much und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/much/"
+      },
+      {
+        "text": "Hofläden in Overath und Umgebung",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rheinisch-bergischer-kreis/odenthal/": {
+    "titel": "Hofläden in Odenthal: gut zu wissen",
+    "oben": "Odenthal hat eine Milchtankstelle mit Eiern und Milch, Essers Hofladen und den Geflügelhof Hungenbach.",
+    "einleitung": "Geflügel gibt es auf dem Geflügelhof Hungenbach. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Burscheid und in der Stadt Leverkusen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Burscheid und Umgebung",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/burscheid/"
+      },
+      {
+        "text": "Hofläden in Leverkusen",
+        "pfad": "/nordrhein-westfalen/leverkusen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rheinisch-bergischer-kreis/roesrath/": {
+    "titel": "Hofläden in Rösrath: gut zu wissen",
+    "oben": "In Rösrath sind der Biohof Stöcker, ein Regiomat und ein Hofmarkt mit Bio-Angebot eingetragen.",
+    "einleitung": "Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Lohmar und Overath.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lohmar und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/lohmar/"
+      },
+      {
+        "text": "Hofläden in Overath und Umgebung",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/siegen-wittgenstein/kreuztal/": {
+    "titel": "Hofläden in Kreuztal: gut zu wissen",
+    "oben": "Kreuztal nennt den Irlenhof, den Biolandhof Eichenhof mit Fleisch, Obst, Honig, Brot und Getränken und den Junkermarkt.",
+    "einleitung": "Der Eichenhof arbeitet nach Bioland-Richtlinien und führt ein breites Sortiment.\n\nWeitere Höfe findest du in Siegen, Mudersbach und Lennestadt.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Siegen und Umgebung",
+        "pfad": "/nordrhein-westfalen/siegen-wittgenstein/siegen/"
+      },
+      {
+        "text": "Hofläden in Lennestadt und Umgebung",
+        "pfad": "/nordrhein-westfalen/olpe/lennestadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/siegen-wittgenstein/wilnsdorf/": {
+    "titel": "Hofläden in Wilnsdorf: gut zu wissen",
+    "oben": "In Wilnsdorf sind die Edelkäserei Kalteiche mit Bio-Milch und Käse, der Hofladen Birkenhof mit Bio-Sortiment und das Hof-Café auf dem Birkenhof eingetragen.",
+    "einleitung": "Käse gibt es in der Edelkäserei Kalteiche, im Hof-Café kannst du einkehren. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Siegen und Mudersbach.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Siegen und Umgebung",
+        "pfad": "/nordrhein-westfalen/siegen-wittgenstein/siegen/"
+      },
+      {
+        "text": "Hofläden in Mudersbach und Umgebung",
+        "pfad": "/rheinland-pfalz/altenkirchen/mudersbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/staedteregion-aachen/baesweiler/": {
+    "titel": "Hofläden in Baesweiler: gut zu wissen",
+    "oben": "Baesweiler hat den Obstbaubetrieb Roosen, einen Kartoffel- und Eierautomaten vom Petershof und den Koch Obst- & Gemüsehof.",
+    "einleitung": "Kartoffeln und Eier gibt es jederzeit am Automaten, Obst und Gemüse auf den Höfen.\n\nWeitere Höfe findest du in Aldenhoven und Würselen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Aldenhoven und Umgebung",
+        "pfad": "/nordrhein-westfalen/dueren/aldenhoven/"
+      },
+      {
+        "text": "Hofläden in Würselen und Umgebung",
+        "pfad": "/nordrhein-westfalen/staedteregion-aachen/wuerselen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/staedteregion-aachen/eschweiler/": {
+    "titel": "Hofläden in Eschweiler: gut zu wissen",
+    "oben": "In Eschweiler sind ein SB Frischmilchautomat, der Hofladen Gut Merzbrück und Schöner's Hoflädchen eingetragen.",
+    "einleitung": "Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Stolberg und Aldenhoven.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stolberg (Rheinland) und Umgebung",
+        "pfad": "/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/"
+      },
+      {
+        "text": "Hofläden in Aldenhoven und Umgebung",
+        "pfad": "/nordrhein-westfalen/dueren/aldenhoven/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/staedteregion-aachen/monschau/": {
+    "titel": "Hofläden in Monschau: gut zu wissen",
+    "oben": "Monschau in der Eifel hat eine Milchtankstelle mit Eiern, Milch und Käse, einen Milchautomaten in Konzen und einen Regiomaten.",
+    "einleitung": "Alle Einträge sind Automaten und jederzeit zugänglich. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Simmerath und Roetgen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Simmerath und Umgebung",
+        "pfad": "/nordrhein-westfalen/staedteregion-aachen/simmerath/"
+      },
+      {
+        "text": "Hofläden in Roetgen und Umgebung",
+        "pfad": "/nordrhein-westfalen/staedteregion-aachen/roetgen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/staedteregion-aachen/roetgen/": {
+    "titel": "Hofläden in Roetgen: gut zu wissen",
+    "oben": "In Roetgen sind die Imkerei Wetzel, ein Bio-Milchautomat und ein Regiomat mit Fleisch eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei Wetzel. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Simmerath und Monschau.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Simmerath und Umgebung",
+        "pfad": "/nordrhein-westfalen/staedteregion-aachen/simmerath/"
+      },
+      {
+        "text": "Hofläden in Monschau und Umgebung",
+        "pfad": "/nordrhein-westfalen/staedteregion-aachen/monschau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/steinfurt/hoerstel/": {
+    "titel": "Hofläden in Hörstel: gut zu wissen",
+    "oben": "Hörstel nennt einen Regiomaten, den Hofladen Junge-Bornholt und einen Hofladen mit Eiern, Kartoffeln und Honig.",
+    "einleitung": "Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Hopsten, Rheine und Ibbenbüren.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hopsten und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/hopsten/"
+      },
+      {
+        "text": "Hofläden in Rheine und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/rheine/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/steinfurt/hopsten/": {
+    "titel": "Hofläden in Hopsten: gut zu wissen",
+    "oben": "In Hopsten sind der Hofladen Mersch, ein Regiomat mit Eiern und der Hofladen Richelmann eingetragen.",
+    "einleitung": "Eier gibt es jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Hörstel, Spelle und Salzbergen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hörstel und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/hoerstel/"
+      },
+      {
+        "text": "Hofläden in Spelle und Umgebung",
+        "pfad": "/niedersachsen/emsland/spelle/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/steinfurt/lengerich/": {
+    "titel": "Hofläden in Lengerich: gut zu wissen",
+    "oben": "Lengerich hat den Weidenhof mit Bio-Gemüse und zwei Regiomaten mit Eiern und Milch.",
+    "einleitung": "Eier und Milch gibt es jederzeit an den Regiomaten. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Tecklenburg und Ibbenbüren.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Tecklenburg und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/tecklenburg/"
+      },
+      {
+        "text": "Hofläden in Ibbenbüren und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/ibbenbueren/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/unna/bergkamen/": {
+    "titel": "Hofläden in Bergkamen: gut zu wissen",
+    "oben": "In Bergkamen sind ein Hofladen, der Biohof von I. und W. Höhne und der Geflügelhof Schulze-Kissing mit Eiern, Fleisch und Geflügel eingetragen.",
+    "einleitung": "Geflügel gibt es auf dem Geflügelhof, der Biohof Höhne arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Werne, Bönen und Unna.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Werne und Umgebung",
+        "pfad": "/nordrhein-westfalen/unna/werne/"
+      },
+      {
+        "text": "Hofläden in Bönen und Umgebung",
+        "pfad": "/nordrhein-westfalen/unna/boenen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/unna/boenen/": {
+    "titel": "Hofläden in Bönen: gut zu wissen",
+    "oben": "Bönen nennt das Hofcafé Erdbeerhof Louven, den Biohof Stemper und die Regio-Box mit Eiern.",
+    "einleitung": "Erdbeeren gibt es auf dem Erdbeerhof Louven im Frühsommer, Eier jederzeit in der Regio-Box.\n\nWeitere Höfe findest du in Unna, Hamm und Bergkamen.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Unna und Umgebung",
+        "pfad": "/nordrhein-westfalen/unna/unna/"
+      },
+      {
+        "text": "Hofläden in Bergkamen und Umgebung",
+        "pfad": "/nordrhein-westfalen/unna/bergkamen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/warendorf/beckum/": {
+    "titel": "Hofläden in Beckum: gut zu wissen",
+    "oben": "In Beckum sind ein Hofladen, BE lebt und der Hofladen Brandkamp eingetragen.",
+    "einleitung": "Drei Hofläden bieten regionale Produkte.\n\nWeitere Höfe findest du in Ennigerloh, Lippetal und Ahlen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ennigerloh und Umgebung",
+        "pfad": "/nordrhein-westfalen/warendorf/ennigerloh/"
+      },
+      {
+        "text": "Hofläden in Ahlen und Umgebung",
+        "pfad": "/nordrhein-westfalen/warendorf/ahlen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/warendorf/sassenberg/": {
+    "titel": "Hofläden in Sassenberg: gut zu wissen",
+    "oben": "Sassenberg hat die Landwirtschaft Vrochte mit Gemüse, den Spargelhof Hüchtker und den Spargelhof Kreienbaum.",
+    "einleitung": "Spargel gibt es auf zwei Spargelhöfen in der Saison.\n\nWeitere Höfe findest du in Warendorf, Versmold und Harsewinkel.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Warendorf und Umgebung",
+        "pfad": "/nordrhein-westfalen/warendorf/warendorf/"
+      },
+      {
+        "text": "Hofläden in Versmold und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/versmold/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/ahrweiler/bad-neuenahr-ahrweiler/": {
+    "titel": "Hofläden in Bad Neuenahr-Ahrweiler: gut zu wissen",
+    "oben": "In Bad Neuenahr-Ahrweiler sind der Obsthof Watzig, ein Hofladen und das Eierhäuschen eingetragen.",
+    "einleitung": "Obst gibt es auf dem Obsthof Watzig, Eier jederzeit im Eierhäuschen.\n\nWeitere Höfe findest du in Grafschaft, Wachtberg und Meckenheim.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Grafschaft und Umgebung",
+        "pfad": "/rheinland-pfalz/ahrweiler/grafschaft/"
+      },
+      {
+        "text": "Hofläden in Wachtberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/wachtberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/ahrweiler/berg/": {
+    "titel": "Hofläden in Berg (Landkreis Ahrweiler): gut zu wissen",
+    "oben": "Berg nennt den Apollonia Hof mit Hofladen, den Hofladen Sampels und den Honert'Hof.",
+    "einleitung": "Drei Hofläden liegen im Ort.\n\nWeitere Höfe findest du in Rheinbach, Grafschaft und Meckenheim.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rheinbach und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/rheinbach/"
+      },
+      {
+        "text": "Hofläden in Grafschaft und Umgebung",
+        "pfad": "/rheinland-pfalz/ahrweiler/grafschaft/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/ahrweiler/brohl-luetzing/": {
+    "titel": "Hofläden in Brohl-Lützing: gut zu wissen",
+    "oben": "In Brohl-Lützing sind der Mühlenladen mit Bio-Angebot und zwei Imker, Paul Delfs und Edmund Hommen, eingetragen.",
+    "einleitung": "Honig gibt es bei beiden Imkern.\n\nWeitere Höfe findest du in Andernach, Glees und Neuwied.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Andernach und Umgebung",
+        "pfad": "/rheinland-pfalz/mayen-koblenz/andernach/"
+      },
+      {
+        "text": "Hofläden in Glees und Umgebung",
+        "pfad": "/rheinland-pfalz/ahrweiler/glees/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
