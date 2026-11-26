@@ -32828,5 +32828,725 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/bayern/erding/woerth/": {
+    "titel": "Hofläden in Wörth: gut zu wissen",
+    "oben": "In Wörth sind zwei Regiomaten mit Milch und Fleisch sowie das Bauernhof-Eis Stangl eingetragen.",
+    "einleitung": "Milch und Fleisch gibt es an den Regiomaten, jederzeit. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Neuching, Moosinning und Finsing.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eis",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neuching und Umgebung",
+        "pfad": "/bayern/erding/neuching/"
+      },
+      {
+        "text": "Hofläden in Finsing und Umgebung",
+        "pfad": "/bayern/erding/finsing/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/erlangen-hoechstadt/eckental/": {
+    "titel": "Hofläden in Eckental: gut zu wissen",
+    "oben": "Eckental hat die Imkerei Vogt, den Biohof Eckert mit Gemüse, Obst, Kartoffeln und Honig und den Geflügelhof Pabst mit Eiern, Fleisch und Geflügel.",
+    "einleitung": "Der Biohof Eckert arbeitet nach Bio-Richtlinien und führt Gemüse, Obst, Kartoffeln und Honig. Geflügel gibt es auf dem Geflügelhof Pabst.\n\nWeitere Höfe findest du in Igensdorf, Weißenohe und Gräfenberg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Igensdorf und Umgebung",
+        "pfad": "/bayern/forchheim/igensdorf/"
+      },
+      {
+        "text": "Hofläden in Gräfenberg und Umgebung",
+        "pfad": "/bayern/forchheim/graefenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/erlangen-hoechstadt/kalchreuth/": {
+    "titel": "Hofläden in Kalchreuth: gut zu wissen",
+    "oben": "Kalchreuth bietet das Milch-Haisl, einen Regiomaten mit Eiern und Honig und einen Eierautomaten.",
+    "einleitung": "Alle drei Einträge sind Automaten, du kannst also jederzeit einkaufen. Die Milch im Milch-Haisl ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Neunkirchen am Brand, Hetzles und Eckental.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neunkirchen am Brand und Umgebung",
+        "pfad": "/bayern/forchheim/neunkirchen-am-brand/"
+      },
+      {
+        "text": "Hofläden in Eckental und Umgebung",
+        "pfad": "/bayern/erlangen-hoechstadt/eckental/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/erlangen-hoechstadt/vestenbergsgreuth/": {
+    "titel": "Hofläden in Vestenbergsgreuth: gut zu wissen",
+    "oben": "In Vestenbergsgreuth stehen Brandt's Milchtankstelle, die Milchtankstelle Brandt und ein Regiomat mit Käse.",
+    "einleitung": "Milch gibt es rund um die Uhr an den Tankstellen. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Emskirchen, Aurachtal und Heßdorf.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Emskirchen und Umgebung",
+        "pfad": "/bayern/neustadt-an-der-aisch-bad-windsheim/emskirchen/"
+      },
+      {
+        "text": "Hofläden in Aurachtal und Umgebung",
+        "pfad": "/bayern/erlangen-hoechstadt/aurachtal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/forchheim/hausen/": {
+    "titel": "Hofläden in Hausen: gut zu wissen",
+    "oben": "Hausen im Landkreis Forchheim hat vier Einträge: den Pilatushof, Singer's Bauernladen, den Biohof Röder und den Spargelhof Ei like Zenk.",
+    "einleitung": "Der Pilatushof führt Gemüse, Obst und Nudeln, der Spargelhof Zenk Eier und Gemüse. Der Biohof Röder arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Forchheim, Möhrendorf und Kunreuth.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Forchheim (Landkreis Forchheim) und Umgebung",
+        "pfad": "/bayern/forchheim/forchheim/"
+      },
+      {
+        "text": "Hofläden in Kunreuth und Umgebung",
+        "pfad": "/bayern/forchheim/kunreuth/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/forchheim/hiltpoltstein/": {
+    "titel": "Hofläden in Hiltpoltstein: gut zu wissen",
+    "oben": "Hiltpoltstein nennt einen Regiomaten mit Eiern, Fleisch und Geflügel, den Hofladen am Gasthaus zur Sägemühle und den Schafferhof.",
+    "einleitung": "Eier, Fleisch und Geflügel gibt es am Regiomaten, jederzeit. Am Gasthaus gibt es außerdem Marmelade und Getränke.\n\nWeitere Höfe findest du in Gräfenberg, Weißenohe und Egloffstein.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Marmelade",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gräfenberg und Umgebung",
+        "pfad": "/bayern/forchheim/graefenberg/"
+      },
+      {
+        "text": "Hofläden in Egloffstein und Umgebung",
+        "pfad": "/bayern/forchheim/egloffstein/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/forchheim/leutenbach/": {
+    "titel": "Hofläden in Leutenbach: gut zu wissen",
+    "oben": "In Leutenbach sind der Biohof Schmidt mit Obst, die Obstwiese Schmitt und ein Hofladen eingetragen.",
+    "einleitung": "Die Obstwiese Schmitt führt Obst, Honig, Nudeln, Marmelade und Getränke.\n\nWeitere Höfe findest du in Kunreuth, Egloffstein und Ebermannstadt.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Marmelade",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kunreuth und Umgebung",
+        "pfad": "/bayern/forchheim/kunreuth/"
+      },
+      {
+        "text": "Hofläden in Ebermannstadt und Umgebung",
+        "pfad": "/bayern/forchheim/ebermannstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/forchheim/neunkirchen-am-brand/": {
+    "titel": "Hofläden in Neunkirchen am Brand: gut zu wissen",
+    "oben": "Neunkirchen am Brand hat den Hofladen Wagner, den Geflügelhof Hofmann mit Eiern, Fleisch und Geflügel und den Ökolandbau Schmitt mit Bio-Angebot.",
+    "einleitung": "Geflügel und Eier gibt es auf dem Geflügelhof Hofmann.\n\nWeitere Höfe findest du in Hetzles, Kalchreuth und Igensdorf.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hetzles und Umgebung",
+        "pfad": "/bayern/forchheim/hetzles/"
+      },
+      {
+        "text": "Hofläden in Kalchreuth und Umgebung",
+        "pfad": "/bayern/erlangen-hoechstadt/kalchreuth/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/forchheim/wiesenttal/": {
+    "titel": "Hofläden in Wiesenttal: gut zu wissen",
+    "oben": "Wiesenttal liegt in der Fränkischen Schweiz. Eingetragen sind die Sektmanufaktur und Edelbrennerei Schilling mit Hofladen, der Biohof Beyer und eine Imkerei.",
+    "einleitung": "Honig gibt es bei der Imkerei, Sekt und Edelbrände bei Schilling.\n\nWeitere Höfe findest du in Ebermannstadt, Egloffstein und Leutenbach.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Edelbrände",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ebermannstadt und Umgebung",
+        "pfad": "/bayern/forchheim/ebermannstadt/"
+      },
+      {
+        "text": "Hofläden in Egloffstein und Umgebung",
+        "pfad": "/bayern/forchheim/egloffstein/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/freising/hetzenhausen/": {
+    "titel": "Hofläden in Hetzenhausen: gut zu wissen",
+    "oben": "In Hetzenhausen sind der Hofladen Pflüglerhof, die Schmankerl-Hütt'n und Büchlers' Eierhaisl eingetragen.",
+    "einleitung": "Eier, Kartoffeln und Nudeln führt Büchlers' Eierhaisl. Die Schmankerl-Hütt'n ist ein Automat.\n\nWeitere Höfe findest du in Eching, Garching bei München und Haimhausen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eching (Landkreis Freising) und Umgebung",
+        "pfad": "/bayern/freising/eching/"
+      },
+      {
+        "text": "Hofläden in Haimhausen und Umgebung",
+        "pfad": "/bayern/dachau/haimhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/fuerstenfeldbruck/mammendorf/": {
+    "titel": "Hofläden in Mammendorf: gut zu wissen",
+    "oben": "Mammendorf hat Mayer's Hofladen, einen Regiomaten mit Fleisch und den Spargelstand der Familie Wolf.",
+    "einleitung": "Spargel gibt es am Stand der Familie Wolf in der Saison, Fleisch am Regiomaten.\n\nWeitere Höfe findest du in Fürstenfeldbruck, Maisach und Schöngeising.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Maisach und Umgebung",
+        "pfad": "/bayern/fuerstenfeldbruck/maisach/"
+      },
+      {
+        "text": "Hofläden in Schöngeising und Umgebung",
+        "pfad": "/bayern/fuerstenfeldbruck/schoengeising/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/fuerstenfeldbruck/schoengeising/": {
+    "titel": "Hofläden in Schöngeising: gut zu wissen",
+    "oben": "Schöngeising nennt Spargel & Erdbeeren Wolf, einen Hofladen und einen Imker mit Honig.",
+    "einleitung": "Spargel und Erdbeeren gibt es bei Wolf in der Saison, Honig beim Imker.\n\nWeitere Höfe findest du in Fürstenfeldbruck, Alling und Gilching.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Alling und Umgebung",
+        "pfad": "/bayern/fuerstenfeldbruck/alling/"
+      },
+      {
+        "text": "Hofläden in Gilching und Umgebung",
+        "pfad": "/bayern/starnberg/gilching/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/garmisch-partenkirchen/grossweil/": {
+    "titel": "Hofläden in Großweil: gut zu wissen",
+    "oben": "Großweil hat einen Eierautomaten, das Hofcafé am Stern und einen Regiomaten mit Eiern.",
+    "einleitung": "Eier gibt es an beiden Automaten, jederzeit. Im Hofcafé am Stern kannst du einkehren.\n\nWeitere Höfe findest du in Schlehdorf, Habach und Benediktbeuern.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schlehdorf und Umgebung",
+        "pfad": "/bayern/bad-toelz-wolfratshausen/schlehdorf/"
+      },
+      {
+        "text": "Hofläden in Benediktbeuern und Umgebung",
+        "pfad": "/bayern/bad-toelz-wolfratshausen/benediktbeuern/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/garmisch-partenkirchen/oberammergau/": {
+    "titel": "Hofläden in Oberammergau: gut zu wissen",
+    "oben": "In Oberammergau sind zwei Regiomaten, einer mit Fleisch, einer mit Eiern, und eine Milchtankstelle eingetragen.",
+    "einleitung": "Alle drei Einträge sind Automaten und jederzeit zugänglich. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Saulgrub, Garmisch-Partenkirchen und Großweil.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Saulgrub und Umgebung",
+        "pfad": "/bayern/garmisch-partenkirchen/saulgrub/"
+      },
+      {
+        "text": "Hofläden in Garmisch-Partenkirchen und Umgebung",
+        "pfad": "/bayern/garmisch-partenkirchen/garmisch-partenkirchen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/guenzburg/guenzburg/": {
+    "titel": "Hofläden in Günzburg: gut zu wissen",
+    "oben": "In Günzburg sind der Hofladen Bertelemühle mit Bio-Angebot, Alpakas im Donaumoos und Gollmitzer's Spargel- und Erdbeerhof eingetragen.",
+    "einleitung": "Spargel und Erdbeeren gibt es bei Gollmitzer in der Saison. Die Bertelemühle arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Leipheim, Nersingen und Waldstetten.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Leipheim und Umgebung",
+        "pfad": "/bayern/guenzburg/leipheim/"
+      },
+      {
+        "text": "Hofläden in Waldstetten (Landkreis Günzburg) und Umgebung",
+        "pfad": "/bayern/guenzburg/waldstetten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/guenzburg/leipheim/": {
+    "titel": "Hofläden in Leipheim: gut zu wissen",
+    "oben": "Leipheim hat das Straußenlädle Donaumoos, einen Regiomaten mit Eiern und den Biohof Weber.",
+    "einleitung": "Eier gibt es am Regiomaten, jederzeit. Der Biohof Weber arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Günzburg, Nersingen und Langenau.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Günzburg und Umgebung",
+        "pfad": "/bayern/guenzburg/guenzburg/"
+      },
+      {
+        "text": "Hofläden in Langenau und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/langenau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/guenzburg/waldstetten/": {
+    "titel": "Hofläden in Waldstetten (Landkreis Günzburg): gut zu wissen",
+    "oben": "In Waldstetten sind Frey's Hofladen Food-Box, ein Eierautomat und die Milchtankstelle vom Ganser Hof eingetragen.",
+    "einleitung": "Alle drei Einträge sind Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Günzburg, Leipheim und Nersingen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Günzburg und Umgebung",
+        "pfad": "/bayern/guenzburg/guenzburg/"
+      },
+      {
+        "text": "Hofläden in Leipheim und Umgebung",
+        "pfad": "/bayern/guenzburg/leipheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/hassberge/knetzgau/": {
+    "titel": "Hofläden in Knetzgau: gut zu wissen",
+    "oben": "Knetzgau liegt im Landkreis Haßberge am Main. Eingetragen sind der Weiki Hof, Böhlgrund Rinder & Schafe mit Fleisch und Honig und der Maingut Hofladen.",
+    "einleitung": "Fleisch von Rind und Schaf gibt es bei Böhlgrund, dazu Honig.\n\nWeitere Höfe findest du in Schwebheim, Pfarrweisach und Kolitzheim.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schwebheim und Umgebung",
+        "pfad": "/bayern/landkreis-schweinfurt/schwebheim/"
+      },
+      {
+        "text": "Hofläden in Pfarrweisach und Umgebung",
+        "pfad": "/bayern/hassberge/pfarrweisach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/hassberge/pfarrweisach/": {
+    "titel": "Hofläden in Pfarrweisach: gut zu wissen",
+    "oben": "Pfarrweisach hat einen Eierautomaten, den Vier Burgenblick Hof und den Weisachtaler Biohof der Familie Elflein.",
+    "einleitung": "Eier gibt es jederzeit am Automaten. Der Weisachtaler Biohof arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Weitramsdorf, Coburg und Knetzgau.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weitramsdorf und Umgebung",
+        "pfad": "/bayern/landkreis-coburg/weitramsdorf/"
+      },
+      {
+        "text": "Hofläden in Knetzgau und Umgebung",
+        "pfad": "/bayern/hassberge/knetzgau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/kelheim/mainburg/": {
+    "titel": "Hofläden in Mainburg: gut zu wissen",
+    "oben": "In Mainburg, mitten in der Hallertau, sind ein Regiomat mit Eiern, der Prößlbauer Hofladen und der Regionalmarkt Aquaponik-Profis eingetragen.",
+    "einleitung": "Fisch und Gemüse gibt es beim Regionalmarkt Aquaponik-Profis. Eier gibt es jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Wolnzach, Pfeffenhausen und Vohburg an der Donau.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wolnzach und Umgebung",
+        "pfad": "/bayern/pfaffenhofen-an-der-ilm/wolnzach/"
+      },
+      {
+        "text": "Hofläden in Pfeffenhausen und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/pfeffenhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/kitzingen/willanzheim/": {
+    "titel": "Hofläden in Willanzheim: gut zu wissen",
+    "oben": "Willanzheim hat die Hofkäserei Brunner, den Hofladen Hagenmühle und Keil's Regiomat mit Honig, Nudeln und Getränken.",
+    "einleitung": "Käse gibt es direkt aus der Hofkäserei Brunner. Honig und Nudeln führt Keil's Regiomat, jederzeit.\n\nWeitere Höfe findest du in Kitzingen, Volkach und Würzburg.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kitzingen und Umgebung",
+        "pfad": "/bayern/kitzingen/kitzingen/"
+      },
+      {
+        "text": "Hofläden in Volkach und Umgebung",
+        "pfad": "/bayern/kitzingen/volkach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/kulmbach/kulmbach/": {
+    "titel": "Hofläden in Kulmbach: gut zu wissen",
+    "oben": "In Kulmbach sind ein Wurstautomat, die Milchtanke und das Kulmbacher-Weideschwein eingetragen.",
+    "einleitung": "Wurst gibt es am Automaten, Fleisch vom Weideschwein im Hofladen. Die Milch aus der Milchtanke ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Mainleus, Himmelkron und Bayreuth.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Wurst",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mainleus und Umgebung",
+        "pfad": "/bayern/kulmbach/mainleus/"
+      },
+      {
+        "text": "Hofläden in Himmelkron und Umgebung",
+        "pfad": "/bayern/kulmbach/himmelkron/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-ansbach/wettringen/": {
+    "titel": "Hofläden in Wettringen (Landkreis Ansbach): gut zu wissen",
+    "oben": "Wettringen nennt den Sternhof Hofladen und zwei Imkerei-Einträge mit Honig unter dem Namen Reu.",
+    "einleitung": "Honig gibt es bei der Imkerei Reu, weitere Waren im Sternhof Hofladen.\n\nWeitere Höfe findest du in Wallhausen, Rot am See und Rothenburg ob der Tauber.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wallhausen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/wallhausen/"
+      },
+      {
+        "text": "Hofläden in Rothenburg ob der Tauber und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-aschaffenburg/hoesbach/": {
+    "titel": "Hofläden in Hösbach: gut zu wissen",
+    "oben": "Hösbach hat den Imkerverein Hösbach, einen Eierautomaten und die Imkerei Naturgold.",
+    "einleitung": "Honig gibt es gleich bei zwei Imkereien, Eier jederzeit am Automaten.\n\nWeitere Höfe findest du in Aschaffenburg, Laufach und Stockstadt am Main.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Laufach und Umgebung",
+        "pfad": "/bayern/landkreis-aschaffenburg/laufach/"
+      },
+      {
+        "text": "Hofläden in Stockstadt am Main und Umgebung",
+        "pfad": "/bayern/landkreis-aschaffenburg/stockstadt-am-main/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
