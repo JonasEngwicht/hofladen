@@ -9,6 +9,7 @@ import { titelBreite, TITEL_MAX } from '../pixel.mjs';
 import { KATEGORIEN } from '../../static/karte.js';
 import { BUILD_DATUM, GEN, OUT, ROOT, cfg, eintraege, ersetzt, istRund, kreisMitte, kreise, plz, proKreis, raster2, wocheVon } from './daten.mjs';
 import { SEITEN_HASH, kurz, plural, zahl } from './html.mjs';
+import { HASH_VERSION } from '../seitenhash.mjs';
 
 // ---------- Ausgabe vorbereiten ----------
 rmSync(OUT, { recursive: true, force: true });
@@ -23,6 +24,8 @@ const ALLE_SEITEN = new Set();
 const STAND_DATEI = join(ROOT, 'data', 'seiten-stand.json');
 const stand = existsSync(STAND_DATEI) ? JSON.parse(readFileSync(STAND_DATEI, 'utf8')) : { seiten: {}, hoefe: {} };
 const ARCHIV_AUSNAHMEN = new Set(['/merkliste/', '/verwaltung/']);
+const HASH_UMSTELLUNG = (stand.version || 1) !== HASH_VERSION;
+if (HASH_UMSTELLUNG) console.log(`Seitenarchiv: Hash-Berechnung ${stand.version || 1} → ${HASH_VERSION}, Hashes werden ersetzt, Datum bleibt`);
 // Google Analytics 4 (Mess-ID ist öffentlich). Leer = aus. Geladen wird nur nach Einwilligung (static/statistik.js).
 const STAND_PLATZHALTER = '%%SEITENSTAND%%'; // wird nach dem Hashen durch das Änderungsdatum ersetzt
 function schreibe(pfad, html, inSitemap = true) {
@@ -32,7 +35,8 @@ function schreibe(pfad, html, inSitemap = true) {
     const h = SEITEN_HASH.get(pfad);
     const alt = stand.seiten[pfad];
     if (!alt) stand.seiten[pfad] = [h, BUILD_DATUM];
-    else if (alt[0] !== h) stand.seiten[pfad] = [h, alt[0] == null ? alt[1] : BUILD_DATUM];
+    // neue Hash-Berechnung (HASH_VERSION): nur den Hash ersetzen, das Datum bleibt (einmalige Umstellung im CI-Lauf)
+    else if (alt[0] !== h) stand.seiten[pfad] = [h, alt[0] == null || HASH_UMSTELLUNG ? alt[1] : BUILD_DATUM];
     html = html.replaceAll(STAND_PLATZHALTER, stand.seiten[pfad][1].split('-').reverse().join('.'));
   }
   writeFileSync(datei, html);

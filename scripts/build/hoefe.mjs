@@ -10,6 +10,7 @@ import { zeilen, uebersetze, parse } from '../../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml, produktIcon } from '../../static/karte.js';
 import { HALTE_ART, HEUTE, ROOT, ausstattung, betreiber, cfg, datumDe, eintraege, inDerNaehe, istRund, lizenzLink, osm, quellenHinweis, zeitenKurz } from './daten.mjs';
 import { kartenDaten, kartenPanel, kurz, seite, telHref } from './html.mjs';
+import { hofKern } from '../seitenhash.mjs';
 import { zeitenSnippet, entfernt, PLURAL_ART, STAND_PLATZHALTER, fragenHtml, gross, km, link, naechsteUmgebungsSeite, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortUeberschrift, passend, regionTeaser, schreibe, stand } from './grundlagen.mjs';
 import { SAISON_SEITEN, artTyp, monatsSpanne, typKreis } from './startseite.mjs';
 import { umgebungsSeite } from './regionen.mjs';
@@ -172,6 +173,7 @@ for (const e of eintraege) {
     bild: e.fotos?.[0] || null,
     noindex: e.duenn,
     klasse: 'hof',
+    hashKern: hofKern(e, { ausstattung: ausstattung(e), konto: MIT_KONTO.has(e.sid), tipps: tippsHtml(e) }),
     jsonld: [ld, ...hofFaq.ld, ...(e.termine || []).map(terminLd)],
     krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], ...(o?.eigen ? [[o.ort, o.pfad]] : []), [e.titel, e.pfad]],
     inhalt: `

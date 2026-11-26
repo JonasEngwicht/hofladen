@@ -4,6 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { seitentext, seitentextOben, faqZusammenfuehren } from '../seitentexte.mjs';
 import { join } from 'node:path';
 import { domainToUnicode } from 'node:url';
+import { listenKern } from '../seitenhash.mjs';
 import { createHash } from 'node:crypto';
 import { RATGEBER } from '../ratgeber.mjs';
 import { esc } from '../../static/helfer.js';
@@ -94,7 +95,8 @@ function mitSammlung(jsonld, { titel, beschreibung, pfad }) {
     description: kuerzeBeschreibung(beschreibung), inLanguage: 'de-DE', isPartOf: { '@id': `${cfg.domain}/#website` }, mainEntity: { '@id': `${url}#liste` } },
   ...jsonld.map((j) => (j === liste ? { ...j, '@id': `${url}#liste` } : j))];
 }
-function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = [], krumen = [], klasse = '', kopfSuche = true, bild = null }) {
+const LAND_PFAD = new RegExp(`^/(${laender.map((l) => l.slug).join('|')})/`);
+function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = [], krumen = [], klasse = '', kopfSuche = true, bild = null, hashKern = null }) {
   inhalt += ratgeberHinweis(pfad);
   // Gepflegte Texte je Seite (data/seitentexte.json): Einleitung, Abschnitte, FAQ – nur wenn vorhanden
   const st = seitentext(SEITENTEXTE[pfad], pfad);
@@ -104,7 +106,8 @@ function seite({ titel, beschreibung, pfad, inhalt, noindex = false, jsonld = []
   if (oben) { inhalt = inhalt.includes('<p class="plz-hinweis"') ? inhalt.replace('<p class="plz-hinweis"', `${oben}\n  <p class="plz-hinweis"`) : inhalt.replace('</h1>', `</h1>${oben}`); SEITENTEXT_GENUTZT.add(pfad); }
   if (SEITENTEXTE[pfad]) SEITENTEXT_GENUTZT.add(pfad);
   jsonld = mitSammlung(jsonld, { titel, beschreibung, pfad });
-  SEITEN_HASH.set(pfad, hash([titel, beschreibung, noindex, JSON.stringify(jsonld), JSON.stringify(krumen), inhalt.replace(/\?v=[a-z0-9]+/g, '')].join('\u0000')));
+  const kern = hashKern ? ['hof', titel, noindex, JSON.stringify(krumen), JSON.stringify(hashKern)] : listenKern({ pfad, titel, noindex, krumen, inhalt, seitentext: SEITENTEXTE[pfad] || null, landPfad: LAND_PFAD });
+  SEITEN_HASH.set(pfad, hash((kern || [titel, beschreibung, noindex, JSON.stringify(jsonld), JSON.stringify(krumen), inhalt.replace(/\?v=[a-z0-9]+/g, '')]).join('\u0000')));
   const url = cfg.domain + pfad;
   const bc = krumen.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [['Start', '/'], ...krumen].map(([n, p], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: cfg.domain + p })) }] : [];
