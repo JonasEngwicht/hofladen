@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1346 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1371 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1353,35 +1353,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Breisach am Rhein](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/) `/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
 | ✓ | [Breitnau](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/) `/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
 
-## Paket 46 (0/25 fertig)
+## Paket 46 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Gottenheim](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/gottenheim/) `/baden-wuerttemberg/breisgau-hochschwarzwald/gottenheim/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
-|  | [Merdingen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/merdingen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/merdingen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
-|  | [Münstertal](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/muenstertal/) `/baden-wuerttemberg/breisgau-hochschwarzwald/muenstertal/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
-|  | [Schluchsee](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/schluchsee/) `/baden-wuerttemberg/breisgau-hochschwarzwald/schluchsee/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
-|  | [Stegen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/stegen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/stegen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
-|  | [Titisee-Neustadt](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/titisee-neustadt/) `/baden-wuerttemberg/breisgau-hochschwarzwald/titisee-neustadt/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
-|  | [Vogtsburg im Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/vogtsburg-im-kaiserstuhl/) `/baden-wuerttemberg/breisgau-hochschwarzwald/vogtsburg-im-kaiserstuhl/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
-|  | [Bad Herrenalb](https://hofladenliste.de/baden-wuerttemberg/calw/bad-herrenalb/) `/baden-wuerttemberg/calw/bad-herrenalb/` | Landkreis Calw | 1 | 3 | 6 |
-|  | [Bad Liebenzell](https://hofladenliste.de/baden-wuerttemberg/calw/bad-liebenzell/) `/baden-wuerttemberg/calw/bad-liebenzell/` | Landkreis Calw | 1 | 3 | 6 |
-|  | [Neubulach](https://hofladenliste.de/baden-wuerttemberg/calw/neubulach/) `/baden-wuerttemberg/calw/neubulach/` | Landkreis Calw | 1 | 3 | 6 |
-|  | [Ostelsheim](https://hofladenliste.de/baden-wuerttemberg/calw/ostelsheim/) `/baden-wuerttemberg/calw/ostelsheim/` | Landkreis Calw | 1 | 3 | 6 |
-|  | [Wildberg](https://hofladenliste.de/baden-wuerttemberg/calw/wildberg/) `/baden-wuerttemberg/calw/wildberg/` | Landkreis Calw | 1 | 3 | 6 |
-|  | [Denzlingen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/denzlingen/) `/baden-wuerttemberg/emmendingen/denzlingen/` | Landkreis Emmendingen | 1 | 3 | 6 |
-|  | [Forchheim (Landkreis Emmendingen)](https://hofladenliste.de/baden-wuerttemberg/emmendingen/forchheim/) `/baden-wuerttemberg/emmendingen/forchheim/` | Landkreis Emmendingen | 1 | 3 | 6 |
-|  | [Waldkirch](https://hofladenliste.de/baden-wuerttemberg/emmendingen/waldkirch/) `/baden-wuerttemberg/emmendingen/waldkirch/` | Landkreis Emmendingen | 1 | 3 | 6 |
-|  | [Keltern](https://hofladenliste.de/baden-wuerttemberg/enzkreis/keltern/) `/baden-wuerttemberg/enzkreis/keltern/` | Enzkreis | 1 | 3 | 6 |
-|  | [Kieselbronn](https://hofladenliste.de/baden-wuerttemberg/enzkreis/kieselbronn/) `/baden-wuerttemberg/enzkreis/kieselbronn/` | Enzkreis | 1 | 3 | 6 |
-|  | [Straubenhardt](https://hofladenliste.de/baden-wuerttemberg/enzkreis/straubenhardt/) `/baden-wuerttemberg/enzkreis/straubenhardt/` | Enzkreis | 1 | 3 | 6 |
-|  | [Altdorf (Landkreis Esslingen)](https://hofladenliste.de/baden-wuerttemberg/esslingen/altdorf/) `/baden-wuerttemberg/esslingen/altdorf/` | Landkreis Esslingen | 1 | 3 | 6 |
-|  | [Hochdorf](https://hofladenliste.de/baden-wuerttemberg/esslingen/hochdorf/) `/baden-wuerttemberg/esslingen/hochdorf/` | Landkreis Esslingen | 1 | 3 | 6 |
-|  | [Lichtenwald](https://hofladenliste.de/baden-wuerttemberg/esslingen/lichtenwald/) `/baden-wuerttemberg/esslingen/lichtenwald/` | Landkreis Esslingen | 1 | 3 | 6 |
-|  | [Ostfildern](https://hofladenliste.de/baden-wuerttemberg/esslingen/ostfildern/) `/baden-wuerttemberg/esslingen/ostfildern/` | Landkreis Esslingen | 1 | 3 | 6 |
-|  | [Wernau](https://hofladenliste.de/baden-wuerttemberg/esslingen/wernau/) `/baden-wuerttemberg/esslingen/wernau/` | Landkreis Esslingen | 1 | 3 | 6 |
-|  | [Kuchen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/kuchen/) `/baden-wuerttemberg/goeppingen/kuchen/` | Landkreis Göppingen | 1 | 3 | 6 |
-|  | [Wangen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/wangen/) `/baden-wuerttemberg/goeppingen/wangen/` | Landkreis Göppingen | 1 | 3 | 6 |
+| ✓ | [Gottenheim](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/gottenheim/) `/baden-wuerttemberg/breisgau-hochschwarzwald/gottenheim/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+| ✓ | [Merdingen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/merdingen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/merdingen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+| ✓ | [Münstertal](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/muenstertal/) `/baden-wuerttemberg/breisgau-hochschwarzwald/muenstertal/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+| ✓ | [Schluchsee](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/schluchsee/) `/baden-wuerttemberg/breisgau-hochschwarzwald/schluchsee/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+| ✓ | [Stegen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/stegen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/stegen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+| ✓ | [Titisee-Neustadt](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/titisee-neustadt/) `/baden-wuerttemberg/breisgau-hochschwarzwald/titisee-neustadt/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+| ✓ | [Vogtsburg im Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/vogtsburg-im-kaiserstuhl/) `/baden-wuerttemberg/breisgau-hochschwarzwald/vogtsburg-im-kaiserstuhl/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+| ✓ | [Bad Herrenalb](https://hofladenliste.de/baden-wuerttemberg/calw/bad-herrenalb/) `/baden-wuerttemberg/calw/bad-herrenalb/` | Landkreis Calw | 1 | 3 | 6 |
+| ✓ | [Bad Liebenzell](https://hofladenliste.de/baden-wuerttemberg/calw/bad-liebenzell/) `/baden-wuerttemberg/calw/bad-liebenzell/` | Landkreis Calw | 1 | 3 | 6 |
+| ✓ | [Neubulach](https://hofladenliste.de/baden-wuerttemberg/calw/neubulach/) `/baden-wuerttemberg/calw/neubulach/` | Landkreis Calw | 1 | 3 | 6 |
+| ✓ | [Ostelsheim](https://hofladenliste.de/baden-wuerttemberg/calw/ostelsheim/) `/baden-wuerttemberg/calw/ostelsheim/` | Landkreis Calw | 1 | 3 | 6 |
+| ✓ | [Wildberg](https://hofladenliste.de/baden-wuerttemberg/calw/wildberg/) `/baden-wuerttemberg/calw/wildberg/` | Landkreis Calw | 1 | 3 | 6 |
+| ✓ | [Denzlingen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/denzlingen/) `/baden-wuerttemberg/emmendingen/denzlingen/` | Landkreis Emmendingen | 1 | 3 | 6 |
+| ✓ | [Forchheim (Landkreis Emmendingen)](https://hofladenliste.de/baden-wuerttemberg/emmendingen/forchheim/) `/baden-wuerttemberg/emmendingen/forchheim/` | Landkreis Emmendingen | 1 | 3 | 6 |
+| ✓ | [Waldkirch](https://hofladenliste.de/baden-wuerttemberg/emmendingen/waldkirch/) `/baden-wuerttemberg/emmendingen/waldkirch/` | Landkreis Emmendingen | 1 | 3 | 6 |
+| ✓ | [Keltern](https://hofladenliste.de/baden-wuerttemberg/enzkreis/keltern/) `/baden-wuerttemberg/enzkreis/keltern/` | Enzkreis | 1 | 3 | 6 |
+| ✓ | [Kieselbronn](https://hofladenliste.de/baden-wuerttemberg/enzkreis/kieselbronn/) `/baden-wuerttemberg/enzkreis/kieselbronn/` | Enzkreis | 1 | 3 | 6 |
+| ✓ | [Straubenhardt](https://hofladenliste.de/baden-wuerttemberg/enzkreis/straubenhardt/) `/baden-wuerttemberg/enzkreis/straubenhardt/` | Enzkreis | 1 | 3 | 6 |
+| ✓ | [Altdorf (Landkreis Esslingen)](https://hofladenliste.de/baden-wuerttemberg/esslingen/altdorf/) `/baden-wuerttemberg/esslingen/altdorf/` | Landkreis Esslingen | 1 | 3 | 6 |
+| ✓ | [Hochdorf](https://hofladenliste.de/baden-wuerttemberg/esslingen/hochdorf/) `/baden-wuerttemberg/esslingen/hochdorf/` | Landkreis Esslingen | 1 | 3 | 6 |
+| ✓ | [Lichtenwald](https://hofladenliste.de/baden-wuerttemberg/esslingen/lichtenwald/) `/baden-wuerttemberg/esslingen/lichtenwald/` | Landkreis Esslingen | 1 | 3 | 6 |
+| ✓ | [Ostfildern](https://hofladenliste.de/baden-wuerttemberg/esslingen/ostfildern/) `/baden-wuerttemberg/esslingen/ostfildern/` | Landkreis Esslingen | 1 | 3 | 6 |
+| ✓ | [Wernau](https://hofladenliste.de/baden-wuerttemberg/esslingen/wernau/) `/baden-wuerttemberg/esslingen/wernau/` | Landkreis Esslingen | 1 | 3 | 6 |
+| ✓ | [Kuchen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/kuchen/) `/baden-wuerttemberg/goeppingen/kuchen/` | Landkreis Göppingen | 1 | 3 | 6 |
+| ✓ | [Wangen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/wangen/) `/baden-wuerttemberg/goeppingen/wangen/` | Landkreis Göppingen | 1 | 3 | 6 |
 
 ## Paket 47 (0/25 fertig)
 

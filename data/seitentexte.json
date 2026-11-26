@@ -40808,5 +40808,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/gottenheim/": {
+    "titel": "Hofläden in Gottenheim: gut zu wissen",
+    "oben": "Gottenheim liegt am Kaiserstuhl im Landkreis Breisgau-Hochschwarzwald. Eingetragen sind ein Regiomat mit Eiern und Milch, das Apfel- und Kartoffelparadies Hausbrennerei Hagios und der Hofladen Präg.",
+    "einleitung": "Äpfel und Kartoffeln gibt es im Apfel- und Kartoffelparadies, dazu eine Hausbrennerei. Die Milch aus dem Regiomaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Eichstetten und Merdingen.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eichstetten am Kaiserstuhl und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/eichstetten-am-kaiserstuhl/"
+      },
+      {
+        "text": "Hofläden in Merdingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/merdingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/merdingen/": {
+    "titel": "Hofläden in Merdingen: gut zu wissen",
+    "oben": "Merdingen liegt am Tuniberg im Landkreis Breisgau-Hochschwarzwald. Eingetragen sind Wochner Erdbeeren, ein Hofladen und der Weinverkauf Gretzmeier.",
+    "einleitung": "Erdbeeren gibt es bei Wochner, die Saison ist im Frühsommer. Wein aus der Gegend gibt es beim Weinverkauf Gretzmeier.\n\nWeitere Höfe findest du in Gottenheim und Breisach am Rhein.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gottenheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/gottenheim/"
+      },
+      {
+        "text": "Hofläden in Breisach am Rhein und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/muenstertal/": {
+    "titel": "Hofläden in Münstertal: gut zu wissen",
+    "oben": "Münstertal liegt im Südschwarzwald im Landkreis Breisgau-Hochschwarzwald. Eingetragen sind die Käserei Glocknerhof mit Bio-Käse, ein Regiomat mit Fleisch und Melario mit Honig.",
+    "einleitung": "Käse gibt es direkt aus der Bio-Käserei Glocknerhof, Honig bei Melario. Der Schwarzwald prägt die Landschaft mit Wald und Weiden.\n\nWeitere Höfe findest du in Bollschweil und Heitersheim.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bollschweil und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/bollschweil/"
+      },
+      {
+        "text": "Hofläden in Heitersheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/heitersheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/schluchsee/": {
+    "titel": "Hofläden in Schluchsee: gut zu wissen",
+    "oben": "Schluchsee liegt im Hochschwarzwald am gleichnamigen See. Eingetragen sind ein Honigautomat, eine Milchtankstelle und die Imkerei Zipfel.",
+    "einleitung": "Honig ist die Spezialität, es gibt ihn am Automaten und bei der Imkerei Zipfel. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Dachsberg und Titisee-Neustadt.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dachsberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/dachsberg/"
+      },
+      {
+        "text": "Hofläden in Titisee-Neustadt und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/titisee-neustadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/stegen/": {
+    "titel": "Hofläden in Stegen: gut zu wissen",
+    "oben": "Stegen liegt im Dreisamtal östlich von Freiburg im Landkreis Breisgau-Hochschwarzwald. Eingetragen sind ein Regiomat mit Milch und Fleisch, ein Hofladen mit Bio-Angebot und der Baldenwegerhof mit Bio-Fleisch, Gemüse, Obst und Brot.",
+    "einleitung": "Der Baldenwegerhof hat ein sehr breites Bio-Sortiment. Die Milch aus dem Regiomaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Kirchzarten und St. Peter.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kirchzarten und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/kirchzarten/"
+      },
+      {
+        "text": "Hofläden in Sankt Peter und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/sankt-peter/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/titisee-neustadt/": {
+    "titel": "Hofläden in Titisee-Neustadt: gut zu wissen",
+    "oben": "Titisee-Neustadt liegt im Hochschwarzwald im Landkreis Breisgau-Hochschwarzwald. Eingetragen sind ein Eierautomat, der Hofladen Wilmershof mit Eiern und Fleisch und der Hilpertenhof mit Bio-Angebot.",
+    "einleitung": "Eier gibt es am Automaten und im Wilmershof. Der Titisee ist ein beliebtes Ausflugsziel.\n\nWeitere Höfe findest du in Breitnau und Schluchsee.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Breitnau und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/"
+      },
+      {
+        "text": "Hofläden in Schluchsee und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/schluchsee/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/vogtsburg-im-kaiserstuhl/": {
+    "titel": "Hofläden in Vogtsburg im Kaiserstuhl: gut zu wissen",
+    "oben": "Vogtsburg im Kaiserstuhl liegt im Weinbaugebiet Kaiserstuhl im Landkreis Breisgau-Hochschwarzwald. Eingetragen sind ein Regiomat mit Eiern, Marmelade und Blumen und zwei Hofläden.",
+    "einleitung": "Der Kaiserstuhl ist als Weinbaugebiet bekannt, das Klima ist mild. Am Regiomaten gibt es Eier, Marmelade und Blumen.\n\nWeitere Höfe findest du in Sasbach am Kaiserstuhl und Breisach am Rhein.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sasbach am Kaiserstuhl und Umgebung",
+        "pfad": "/baden-wuerttemberg/emmendingen/sasbach-am-kaiserstuhl/"
+      },
+      {
+        "text": "Hofläden in Breisach am Rhein und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/calw/bad-herrenalb/": {
+    "titel": "Hofläden in Bad Herrenalb: gut zu wissen",
+    "oben": "Bad Herrenalb liegt im nördlichen Schwarzwald im Landkreis Calw. Eingetragen sind der Schwalbenhof mit breitem Angebot, Schwarzwälder Schinken vom Schlotterhof als Automat und ein Eierautomat des Schwalbenhofs.",
+    "einleitung": "Der Schwalbenhof hat von Eiern bis Nudeln viel im Angebot. Schinken gibt es am Automaten.\n\nWeitere Höfe findest du in Gaggenau und Marxzell.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gaggenau und Umgebung",
+        "pfad": "/baden-wuerttemberg/rastatt/gaggenau/"
+      },
+      {
+        "text": "Hofläden in Marxzell und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/marxzell/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/calw/bad-liebenzell/": {
+    "titel": "Hofläden in Bad Liebenzell: gut zu wissen",
+    "oben": "Bad Liebenzell liegt im Nagoldtal im Landkreis Calw. Eingetragen sind der Ulmenhof, das Hofgut Georgenau und der Hardthof.",
+    "einleitung": "Drei Höfe liegen rund um die Kurstadt. Pforzheim ist gut erreichbar.\n\nWeitere Höfe findest du in Tiefenbronn und Ostelsheim.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Tiefenbronn und Umgebung",
+        "pfad": "/baden-wuerttemberg/enzkreis/tiefenbronn/"
+      },
+      {
+        "text": "Hofläden in Ostelsheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/calw/ostelsheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/calw/neubulach/": {
+    "titel": "Hofläden in Neubulach: gut zu wissen",
+    "oben": "Neubulach liegt im Nordschwarzwald im Landkreis Calw. Eingetragen sind ein Eierautomat, ein Regiomat mit Eiern und Nudeln und ein Hofladen.",
+    "einleitung": "Eier gibt es hier gleich an zwei Automaten, dazu Nudeln. Die Automaten sind jederzeit zugänglich.\n\nWeitere Höfe findest du in Wildberg und Deckenpfronn.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wildberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/calw/wildberg/"
+      },
+      {
+        "text": "Hofläden in Deckenpfronn und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/deckenpfronn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/calw/ostelsheim/": {
+    "titel": "Hofläden in Ostelsheim: gut zu wissen",
+    "oben": "Ostelsheim liegt im Heckengäu im Landkreis Calw. Eingetragen sind der Forchenhof mit Eiern und Nudeln, ein Eierautomat und ein Regiomat mit Fleisch.",
+    "einleitung": "Eier gibt es im Forchenhof und am Automaten. Fleisch gibt es am Regiomaten.\n\nWeitere Höfe findest du in Grafenau und Renningen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Grafenau und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/grafenau/"
+      },
+      {
+        "text": "Hofläden in Renningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/renningen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/calw/wildberg/": {
+    "titel": "Hofläden in Wildberg: gut zu wissen",
+    "oben": "Wildberg liegt im Nagoldtal im Landkreis Calw. Eingetragen sind der Hof Lindach mit Bio-Angebot, der Demeterhof mit Zeltwiese und ein Feld zum Selbstpflücken von Blumen.",
+    "einleitung": "Blumen kannst du hier selbst pflücken. Der Hof Lindach arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Neubulach und Jettingen.",
+    "saison": [
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neubulach und Umgebung",
+        "pfad": "/baden-wuerttemberg/calw/neubulach/"
+      },
+      {
+        "text": "Hofläden in Jettingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/jettingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/emmendingen/denzlingen/": {
+    "titel": "Hofläden in Denzlingen: gut zu wissen",
+    "oben": "Denzlingen liegt im Elztal bei Freiburg im Landkreis Emmendingen. Eingetragen sind die Imkerei Sonnhalde, ein Selbsternte-Blumenfeld mit Bio-Gemüse und der Biolandbetrieb Südhof.",
+    "einleitung": "Auf dem Selbsternte-Feld erntest du Blumen und Gemüse selbst. Der Südhof arbeitet nach Bioland-Richtlinien.\n\nWeitere Höfe findest du in Heuweiler und Gundelfingen.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heuweiler und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/heuweiler/"
+      },
+      {
+        "text": "Hofläden in Gundelfingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/gundelfingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/emmendingen/forchheim/": {
+    "titel": "Hofläden in Forchheim (Landkreis Emmendingen): gut zu wissen",
+    "oben": "Forchheim liegt am Kaiserstuhl im Landkreis Emmendingen. Eingetragen sind Onkel Knolle mit Eiern, Fleisch und Brot, der Kartoffelhof Binder und ein Hofladen mit Bio-Angebot.",
+    "einleitung": "Kartoffeln gibt es beim Kartoffelhof Binder, Eier, Fleisch und Brot am Automaten von Onkel Knolle. Die Gegend ist von Weinbergen und Feldern geprägt.\n\nWeitere Höfe findest du in Endingen und Bahlingen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Endingen am Kaiserstuhl und Umgebung",
+        "pfad": "/baden-wuerttemberg/emmendingen/endingen-am-kaiserstuhl/"
+      },
+      {
+        "text": "Hofläden in Bahlingen am Kaiserstuhl und Umgebung",
+        "pfad": "/baden-wuerttemberg/emmendingen/bahlingen-am-kaiserstuhl/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/emmendingen/waldkirch/": {
+    "titel": "Hofläden in Waldkirch: gut zu wissen",
+    "oben": "Waldkirch liegt im Elztal im Landkreis Emmendingen am Rand des Schwarzwalds. Eingetragen sind die Imkerei Karl, der Obsthof Schätzle und der Obsthof Franz Xaver.",
+    "einleitung": "Obst gibt es auf zwei Höfen, Honig bei der Imkerei Karl. Waldkirch ist als Orgelbaustadt bekannt.\n\nWeitere Höfe findest du in Denzlingen und Heuweiler.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Denzlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/emmendingen/denzlingen/"
+      },
+      {
+        "text": "Hofläden in Heuweiler und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/heuweiler/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/enzkreis/keltern/": {
+    "titel": "Hofläden in Keltern: gut zu wissen",
+    "oben": "Keltern liegt im Enzkreis bei Pforzheim. Eingetragen sind ein Hofladen, die Mühle Beck mit Bio-Angebot und beewwe.love mit Honig.",
+    "einleitung": "Honig gibt es bei beewwe.love, die Mühle Beck arbeitet nach Bio-Richtlinien. Pforzheim ist nah.\n\nWeitere Höfe findest du in Remchingen und Straubenhardt.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Remchingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/enzkreis/remchingen/"
+      },
+      {
+        "text": "Hofläden in Straubenhardt und Umgebung",
+        "pfad": "/baden-wuerttemberg/enzkreis/straubenhardt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/enzkreis/kieselbronn/": {
+    "titel": "Hofläden in Kieselbronn: gut zu wissen",
+    "oben": "Kieselbronn liegt im Enzkreis zwischen Pforzheim und Mühlacker. Eingetragen sind das Milchhäusle mit Eiern und Milch, der Hofladen Golderer und Wernert.",
+    "einleitung": "Milch und Eier gibt es im Milchhäusle, die Milch ist Rohmilch: vor dem Trinken abkochen. Pforzheim ist nah.\n\nWeitere Höfe findest du in Mühlacker und Bretten.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mühlacker und Umgebung",
+        "pfad": "/baden-wuerttemberg/enzkreis/muehlacker/"
+      },
+      {
+        "text": "Hofläden in Bretten und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/bretten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/enzkreis/straubenhardt/": {
+    "titel": "Hofläden in Straubenhardt: gut zu wissen",
+    "oben": "Straubenhardt liegt im Enzkreis am Nordrand des Schwarzwalds. Eingetragen sind der Bauernladen Reiser, der Aussiedlerhof Wössner und der Regiomat des Panoramahofs Robert Rapp mit Eiern und Milch.",
+    "einleitung": "Der Regiomat auf dem Panoramahof liefert Eier und Milch. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Keltern und Marxzell.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Keltern und Umgebung",
+        "pfad": "/baden-wuerttemberg/enzkreis/keltern/"
+      },
+      {
+        "text": "Hofläden in Marxzell und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/marxzell/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/esslingen/altdorf/": {
+    "titel": "Hofläden in Altdorf (Landkreis Esslingen): gut zu wissen",
+    "oben": "Altdorf liegt im Landkreis Esslingen bei Nürtingen. Eingetragen sind zwei Regiomaten, einer mit Käse und Fleisch, einer mit Eiern, und ein Hofladen.",
+    "einleitung": "Käse, Fleisch und Eier gibt es an Automaten, jederzeit. Stuttgart ist gut erreichbar.\n\nWeitere Höfe findest du in Nürtingen und Wolfschlugen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nürtingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/nuertingen/"
+      },
+      {
+        "text": "Hofläden in Wolfschlugen und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/wolfschlugen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/esslingen/hochdorf/": {
+    "titel": "Hofläden in Hochdorf: gut zu wissen",
+    "oben": "Hochdorf liegt im Landkreis Esslingen im Filstal. Eingetragen sind ein Hofladen, ein Regiomat und Holzers Hofladen mit Bio-Angebot.",
+    "einleitung": "Holzers Hofladen arbeitet nach Bio-Richtlinien. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Wernau und Ebersbach an der Fils.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wernau und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/wernau/"
+      },
+      {
+        "text": "Hofläden in Ebersbach an der Fils und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/ebersbach-an-der-fils/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/esslingen/lichtenwald/": {
+    "titel": "Hofläden in Lichtenwald: gut zu wissen",
+    "oben": "Lichtenwald liegt im Landkreis Esslingen am Schurwald. Eingetragen sind Grasers Hoflädle und zwei Regiomaten, einer mit Eiern, Fleisch, Obst, Kartoffeln und Honig.",
+    "einleitung": "Der Regiomat hat ein breites Sortiment und ist jederzeit zugänglich. Der Schurwald ist ein Höhenzug mit Wald und Streuobstwiesen.\n\nWeitere Höfe findest du in Ebersbach an der Fils und Hochdorf.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ebersbach an der Fils und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/ebersbach-an-der-fils/"
+      },
+      {
+        "text": "Hofläden in Hochdorf und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/hochdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/esslingen/ostfildern/": {
+    "titel": "Hofläden in Ostfildern: gut zu wissen",
+    "oben": "Ostfildern liegt auf den Fildern südlich von Stuttgart. Eingetragen sind eine Milchtankstelle, das Riederhof Eierlädle und ein Hofladen mit Gemüse.",
+    "einleitung": "Die Filder sind für Gemüse und Filderkraut bekannt. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Esslingen am Neckar und Stuttgart.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Esslingen am Neckar und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/esslingen-am-neckar/"
+      },
+      {
+        "text": "Hofläden in Stuttgart Riedenberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-riedenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/esslingen/wernau/": {
+    "titel": "Hofläden in Wernau: gut zu wissen",
+    "oben": "Wernau liegt am Neckar im Landkreis Esslingen. Eingetragen sind zwei Regiomaten, einer mit Eiern, und der Hofladen Wilhelm Zink.",
+    "einleitung": "Eier gibt es am Regiomaten, jederzeit. Esslingen ist nicht weit.\n\nWeitere Höfe findest du in Hochdorf und Kirchheim unter Teck.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hochdorf und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/hochdorf/"
+      },
+      {
+        "text": "Hofläden in Kirchheim unter Teck und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/kirchheim-unter-teck/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/goeppingen/kuchen/": {
+    "titel": "Hofläden in Kuchen: gut zu wissen",
+    "oben": "Kuchen liegt im Filstal im Landkreis Göppingen. Eingetragen sind ein Fleischautomat, ein Hofladen und der Rohrhof.",
+    "einleitung": "Fleisch gibt es am Automaten, jederzeit.\n\nWeitere Höfe findest du in Gingen an der Fils und Schlat.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gingen an der Fils und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/gingen-an-der-fils/"
+      },
+      {
+        "text": "Hofläden in Schlat und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/schlat/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/goeppingen/wangen/": {
+    "titel": "Hofläden in Wangen: gut zu wissen",
+    "oben": "Wangen liegt im Landkreis Göppingen im Filstal. Eingetragen sind Karins Hofladen, ein Regiomat mit Fleisch und der Niederwälder Hof Rösch.",
+    "einleitung": "Fleisch gibt es am Regiomaten. Göppingen ist nicht weit.\n\nWeitere Höfe findest du in Uhingen und Göppingen.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Uhingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/uhingen/"
+      },
+      {
+        "text": "Hofläden in Göppingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/goeppingen/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
