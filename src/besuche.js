@@ -9,6 +9,7 @@
 //   besuche          Tag × Seite × Herkunft × Gerät → Aufrufe (Herkunft „intern“ = Klick innerhalb der Seite)
 //   besuche_minute   Minute (Berlin) → Aufrufe, Einstiege (Aufrufe von außen = Besuche); 35 Tage, für Live-Ansicht und Stundenverlauf
 //   besuche_verweise Tag × fremde Website → Einstiege (woher Besucher über Links kommen)
+//   bot_abrufe       Tag × Bot × Seitentyp → Abrufe von Suchmaschinen und anderen Bots (Crawlbudget: was ruft Google ab?)
 
 export const BESUCHE_SCHEMA = [
   `CREATE TABLE IF NOT EXISTS besuche (tag TEXT NOT NULL, pfad TEXT NOT NULL, quelle TEXT NOT NULL, geraet TEXT NOT NULL,
@@ -16,6 +17,7 @@ export const BESUCHE_SCHEMA = [
   `CREATE TABLE IF NOT EXISTS besuche_minute (minute TEXT PRIMARY KEY, aufrufe INTEGER NOT NULL, einstiege INTEGER NOT NULL)`,
   `CREATE TABLE IF NOT EXISTS besuche_verweise (tag TEXT NOT NULL, host TEXT NOT NULL, anzahl INTEGER NOT NULL, PRIMARY KEY (tag, host))`,
   `CREATE TABLE IF NOT EXISTS besuche_kontrolle (tag TEXT NOT NULL, art TEXT NOT NULL, anzahl INTEGER NOT NULL, PRIMARY KEY (tag, art))`,
+  `CREATE TABLE IF NOT EXISTS bot_abrufe (tag TEXT NOT NULL, bot TEXT NOT NULL, typ TEXT NOT NULL, anzahl INTEGER NOT NULL, PRIMARY KEY (tag, bot, typ))`,
 ];
 
 // Bots, Vorschau-Abrufe und Prüfwerkzeuge zählen nicht
@@ -89,6 +91,36 @@ export function auslieferungArt(request, pfad) {
 export async function auslieferungZaehlen(env, art, jetzt = new Date()) {
   await env.STATS.prepare(`INSERT INTO besuche_kontrolle (tag, art, anzahl) VALUES (?1, ?2, 1)
     ON CONFLICT (tag, art) DO UPDATE SET anzahl = anzahl + 1`).bind(berlin(jetzt).tag, art).run();
+}
+
+// Bot-Abrufe: welcher Bot ruft welchen Seitentyp ab? Antwort auf die Crawling-Statistik der Search Console
+// („Anderer Agent-Typ“, „Anderer Dateityp“). Gezählt wird nur, was durch den Worker läuft: HTML-Seiten und Kartenkacheln.
+const BOT_NAMEN = [
+  ['google-bild', /Googlebot-Image/i], ['google-anzeigen', /Mediapartners-Google|AdsBot-Google/i], ['google-pruefung', /Google-InspectionTool/i],
+  ['google-andere', /GoogleOther/i], ['googlebot-handy', /Googlebot.*Mobile|Mobile.*Googlebot/i], ['googlebot-rechner', /Googlebot/i], ['google-sonst', /google/i],
+  ['bing', /bingbot|BingPreview|msnbot/i],
+  ['ki', /GPTBot|ChatGPT|OAI-SearchBot|ClaudeBot|Claude-|anthropic|PerplexityBot|CCBot|Bytespider|Amazonbot|meta-externalagent|Applebot|YouBot|cohere/i],
+  ['seo-werkzeug', /Ahrefs|Semrush|MJ12bot|DotBot|DataForSeo|SEOkicks|Sistrix|Screaming|serpstat|BLEXBot/i],
+];
+export const botName = (ua = '') => (BOT_NAMEN.find(([, re]) => re.test(ua)) || ['andere'])[0];
+export function botTyp(pfad) {
+  if (pfad.startsWith('/kacheln/')) return 'kacheln';
+  if (pfad === '/') return 'start';
+  const t = pfad.split('/').filter(Boolean);
+  if (t[0] === 'hof') return 'hof';
+  if (LAENDER.has(t[0])) return t.length === 1 ? 'land' : t.length === 2 ? 'kreis' : 'ort';
+  if (['angebot', 'saisonkalender', 'ratgeber', 'wochenmaerkte'].includes(t[0])) return t[0];
+  return 'sonst';
+}
+// Liefert { bot, typ } für Abrufe von Bots, sonst null
+export function botAbruf(request, pfad) {
+  const ua = request.headers.get('user-agent') || '';
+  if (request.method !== 'GET' || !(BOT.test(ua) || !ua.startsWith('Mozilla/'))) return null;
+  return { bot: botName(ua), typ: botTyp(pfad) };
+}
+export async function botZaehlen(env, { bot, typ }, jetzt = new Date()) {
+  await env.STATS.prepare(`INSERT INTO bot_abrufe (tag, bot, typ, anzahl) VALUES (?1, ?2, ?3, 1)
+    ON CONFLICT (tag, bot, typ) DO UPDATE SET anzahl = anzahl + 1`).bind(berlin(jetzt).tag, bot, typ).run();
 }
 
 export async function besucheAufraeumen(env, jetzt = new Date()) {

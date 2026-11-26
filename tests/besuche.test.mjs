@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { fakeD1 } from './d1.mjs';
 import { ladeWorker, ASSETS } from './hilfen.mjs';
-import { BESUCHE_SCHEMA, herkunft, geraet, besuchPruefen, besuchZaehlen, auslieferungArt, besucheAuswerten, besucheAufraeumen, seitenTyp, berlinZeit } from '../src/besuche.js';
+import { BESUCHE_SCHEMA, herkunft, geraet, besuchPruefen, besuchZaehlen, auslieferungArt, besucheAuswerten, besucheAufraeumen, seitenTyp, berlinZeit, botName, botTyp, botAbruf } from '../src/besuche.js';
 
 const CHROME = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36';
 const IPHONE = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Mobile/15E148 Safari/604.1';
@@ -128,4 +128,37 @@ test('Worker: /api/besuch zählt Meldungen der Seite, Bots nicht; Auswertung nur
   assert.equal(d.tage, 7);
   assert.equal(d.quellen[0].quelle, 'google');
   assert.equal(d.kontrolle.heute.seite, 1);
+});
+
+const GOOGLE_HANDY = 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
+test('Bot-Abrufe: Bot und Seitentyp erkennen', () => {
+  assert.equal(botName(GOOGLE_HANDY), 'googlebot-handy');
+  assert.equal(botName('Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'), 'googlebot-rechner');
+  assert.equal(botName('Mediapartners-Google'), 'google-anzeigen');
+  assert.equal(botName('Mozilla/5.0 (compatible; GoogleOther)'), 'google-andere');
+  assert.equal(botName('Googlebot-Image/1.0'), 'google-bild');
+  assert.equal(botName('Mozilla/5.0 (compatible; Google-InspectionTool/1.0;)'), 'google-pruefung');
+  assert.equal(botName('Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)'), 'bing');
+  assert.equal(botName('Mozilla/5.0 (compatible; GPTBot/1.2)'), 'ki');
+  assert.equal(botName('Mozilla/5.0 (compatible; AhrefsBot/7.0)'), 'seo-werkzeug');
+  assert.equal(botName('curl/8.0'), 'andere');
+  for (const [p, t] of [['/', 'start'], ['/hof/beispielhof-forst/', 'hof'], ['/bayern/', 'land'], ['/bayern/rosenheim/', 'kreis'], ['/bayern/rosenheim/riedering/', 'ort'],
+    ['/angebot/eier/bayern/', 'angebot'], ['/saisonkalender/kartoffeln/', 'saisonkalender'], ['/kacheln/20261101/10/1/2.mvt', 'kacheln'], ['/milchtankstelle/', 'sonst']]) assert.equal(botTyp(p), t, p);
+  assert.equal(botAbruf(navigation('/bayern/'), '/bayern/'), null, 'Browser zählt nicht');
+  assert.deepEqual(botAbruf(navigation('/bayern/', { 'user-agent': GOOGLE_HANDY }), '/bayern/'), { bot: 'googlebot-handy', typ: 'land' });
+});
+
+test('Worker: Bot-Abrufe von Seiten und Kacheln landen in bot_abrufe, Browser nicht', async () => {
+  const w = await ladeWorker();
+  const db = await neueDb(), warte = []; // Schema direkt anlegen: der Worker legt es je Instanz nur einmal an
+  const env = { ASSETS, STATS: db };
+  const ctx = { waitUntil: (p) => warte.push(p) };
+  await w.fetch(navigation('/bayern/', { 'user-agent': GOOGLE_HANDY }), env, ctx);
+  await w.fetch(navigation('/bayern/', { 'user-agent': GOOGLE_HANDY }), env, ctx);
+  await w.fetch(navigation('/angebot/eier/', { 'user-agent': 'Mediapartners-Google' }), env, ctx);
+  await w.fetch(navigation('/kacheln/20261101/6/33/21.mvt', { 'user-agent': GOOGLE_HANDY }), env, ctx);
+  await w.fetch(navigation('/bayern/'), env, ctx);
+  await Promise.all(warte);
+  const zeilen = db._db.prepare('SELECT bot, typ, anzahl FROM bot_abrufe ORDER BY bot, typ').all().map((z) => `${z.bot} ${z.typ} ${z.anzahl}`);
+  assert.deepEqual(zeilen, ['google-anzeigen angebot 1', 'googlebot-handy kacheln 1', 'googlebot-handy land 2']);
 });

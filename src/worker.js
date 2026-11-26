@@ -17,7 +17,7 @@ import VOLLSTAENDIGKEIT from './generated/vollstaendigkeit.json';
 import SUCHWOERTER from './generated/suchwoerter.json';
 import { wasWoTrennen } from './waswo.js';
 import { distanzKm } from '../static/helfer.js';
-import { BESUCHE_SCHEMA, auslieferungArt, auslieferungZaehlen, besuchZaehlen, besucheAufraeumen, besucheAuswerten, besuchPruefen } from './besuche.js';
+import { BESUCHE_SCHEMA, auslieferungArt, auslieferungZaehlen, botAbruf, botZaehlen, besuchZaehlen, besucheAufraeumen, besucheAuswerten, besuchPruefen } from './besuche.js';
 import { BETRIEB_SCHEMA, TIPP_SCHEMA, ABO_SCHEMA, saisonAbo, saisonMailsSenden, tippAnnehmen, betriebApi, neuigkeitenApi, nachrichtAnnehmen, erinnerungenSenden, hofZaehlen, kontoAusSitzung, kontoHatHof, kontoAnlegen, linkErstellen, mailSenden, emailPasstZuWebsite, MAIL_BESTAETIGEN, MAIL_WILLKOMMEN, HOF_EREIGNISSE } from './betrieb.js';
 import { index, aufloesen, oeffentlich, links, outreachCsv } from './eintraege.js';
 
@@ -731,7 +731,12 @@ export default {
     if (url.pathname === '/api/rueckmeldung') return rueckmeldungAnnehmen(request, env);
     if (url.pathname === '/api/ereignis') return ereignisZaehlen(request, env, ctx);
     if (url.pathname === '/api/besuch') return besuchAnnehmen(request, env, ctx, url);
-    if (url.pathname.startsWith('/kacheln/')) return kachelAntwort(request, env, ctx, url);
+    if (url.pathname.startsWith('/kacheln/')) {
+      // Kacheln sind in robots.txt gesperrt; der Zähler zeigt, ob sich Bots daran halten
+      const bot = env.STATS && botAbruf(request, url.pathname);
+      if (bot) ctx.waitUntil(schema(env).then(() => botZaehlen(env, bot)).catch(() => {}));
+      return kachelAntwort(request, env, ctx, url);
+    }
     if (url.pathname.startsWith('/api/verwaltung/')) return verwaltung(request, env, url, ctx);
     if (url.pathname.startsWith('/api/betrieb/')) return betriebApi(request, env, url, ctx, H);
     if (url.pathname === '/api/neuigkeiten') return neuigkeitenApi(url, env, H);
@@ -742,6 +747,8 @@ export default {
     const antwort = await seiteAusliefern(request, env, url);
     const art = env.STATS && (antwort.status === 200 || antwort.status === 304) ? auslieferungArt(request, url.pathname) : null;
     if (art) ctx.waitUntil(schema(env).then(() => auslieferungZaehlen(env, art)).catch((e) => auslieferungZaehlen(env, `fehler ${String(e.message).slice(0, 80)}`).catch(() => {})));
+    const bot = art === 'bot' ? botAbruf(request, url.pathname) : null;
+    if (bot) ctx.waitUntil(schema(env).then(() => botZaehlen(env, bot)).catch(() => {}));
     return sicherheitsKopf(antwort);
   },
 };

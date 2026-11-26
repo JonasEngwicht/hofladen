@@ -17,7 +17,9 @@ import { ANGEBOT_SEITEN, SAISON_SEITEN, SORTEN } from './startseite.mjs';
 import { impFehlt } from './themen.mjs';
 
 // ---------- Robots, Sitemap ----------
-writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\nDisallow: /verwaltung/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
+// /kacheln/: Kartenhintergrund. Googles Renderer lädt sonst je Seite mehrere Kacheln (eigene Adressen je Kartenausschnitt),
+// das kostet Crawlbudget und bringt für die Indexierung nichts – die Liste steht im HTML.
+writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /suche\nDisallow: /api/\nDisallow: /merkliste/\nDisallow: /verwaltung/\nDisallow: /kacheln/\n\nSitemap: ${cfg.domain}/sitemap.xml\n`);
 // ads.txt: autorisierte Verkäufer für Google AdSense (f08c47fec0942fa0 ist Googles feste TAG-ID)
 if (ADSENSE_KONTO) writeFileSync(join(OUT, 'ads.txt'), `google.com, ${ADSENSE_KONTO.replace(/^ca-/, '')}, DIRECT, f08c47fec0942fa0\n`);
 
