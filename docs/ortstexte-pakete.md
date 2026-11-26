@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1199 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1224 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1173,35 +1173,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Beerfelden](https://hofladenliste.de/hessen/odenwaldkreis/beerfelden/) `/hessen/odenwaldkreis/beerfelden/` | Odenwaldkreis | 1 | 4 | 7 |
 | ✓ | [Mossautal](https://hofladenliste.de/hessen/odenwaldkreis/mossautal/) `/hessen/odenwaldkreis/mossautal/` | Odenwaldkreis | 1 | 4 | 7 |
 
-## Paket 40 (0/25 fertig)
+## Paket 40 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Reichelsheim (Odenwaldkreis)](https://hofladenliste.de/hessen/odenwaldkreis/reichelsheim/) `/hessen/odenwaldkreis/reichelsheim/` | Odenwaldkreis | 1 | 4 | 7 |
-|  | [Egelsbach](https://hofladenliste.de/hessen/offenbach/egelsbach/) `/hessen/offenbach/egelsbach/` | Landkreis Offenbach | 1 | 4 | 7 |
-|  | [Bad Schwalbach](https://hofladenliste.de/hessen/rheingau-taunus-kreis/bad-schwalbach/) `/hessen/rheingau-taunus-kreis/bad-schwalbach/` | Rheingau-Taunus-Kreis | 1 | 4 | 7 |
-|  | [Hünstetten](https://hofladenliste.de/hessen/rheingau-taunus-kreis/huenstetten/) `/hessen/rheingau-taunus-kreis/huenstetten/` | Rheingau-Taunus-Kreis | 1 | 4 | 7 |
-|  | [Wabern](https://hofladenliste.de/hessen/schwalm-eder-kreis/wabern/) `/hessen/schwalm-eder-kreis/wabern/` | Schwalm-Eder-Kreis | 1 | 4 | 7 |
-|  | [Bad Sooden-Allendorf](https://hofladenliste.de/hessen/werra-meissner-kreis/bad-sooden-allendorf/) `/hessen/werra-meissner-kreis/bad-sooden-allendorf/` | Werra-Meißner-Kreis | 1 | 4 | 7 |
-|  | [Gedern](https://hofladenliste.de/hessen/wetteraukreis/gedern/) `/hessen/wetteraukreis/gedern/` | Wetteraukreis | 1 | 4 | 7 |
-|  | [Ortenberg](https://hofladenliste.de/hessen/wetteraukreis/ortenberg/) `/hessen/wetteraukreis/ortenberg/` | Wetteraukreis | 1 | 4 | 7 |
-|  | [Kalkhorst](https://hofladenliste.de/mecklenburg-vorpommern/nordwestmecklenburg/kalkhorst/) `/mecklenburg-vorpommern/nordwestmecklenburg/kalkhorst/` | Landkreis Nordwestmecklenburg | 1 | 4 | 7 |
-|  | [Klütz](https://hofladenliste.de/mecklenburg-vorpommern/nordwestmecklenburg/kluetz/) `/mecklenburg-vorpommern/nordwestmecklenburg/kluetz/` | Landkreis Nordwestmecklenburg | 1 | 4 | 7 |
-|  | [Altenkirchen](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-ruegen/altenkirchen/) `/mecklenburg-vorpommern/vorpommern-ruegen/altenkirchen/` | Landkreis Vorpommern-Rügen | 1 | 4 | 7 |
-|  | [Großefehn](https://hofladenliste.de/niedersachsen/aurich/grossefehn/) `/niedersachsen/aurich/grossefehn/` | Landkreis Aurich | 1 | 4 | 7 |
-|  | [Norden](https://hofladenliste.de/niedersachsen/aurich/norden/) `/niedersachsen/aurich/norden/` | Landkreis Aurich | 1 | 4 | 7 |
-|  | [Adelheidsdorf](https://hofladenliste.de/niedersachsen/celle/adelheidsdorf/) `/niedersachsen/celle/adelheidsdorf/` | Landkreis Celle | 1 | 4 | 7 |
-|  | [Bergen](https://hofladenliste.de/niedersachsen/celle/bergen/) `/niedersachsen/celle/bergen/` | Landkreis Celle | 1 | 4 | 7 |
-|  | [Faßberg](https://hofladenliste.de/niedersachsen/celle/fassberg/) `/niedersachsen/celle/fassberg/` | Landkreis Celle | 1 | 4 | 7 |
-|  | [Hermannsburg](https://hofladenliste.de/niedersachsen/celle/hermannsburg/) `/niedersachsen/celle/hermannsburg/` | Landkreis Celle | 1 | 4 | 7 |
-|  | [Cloppenburg](https://hofladenliste.de/niedersachsen/cloppenburg/cloppenburg/) `/niedersachsen/cloppenburg/cloppenburg/` | Landkreis Cloppenburg | 1 | 4 | 7 |
-|  | [Saterland](https://hofladenliste.de/niedersachsen/cloppenburg/saterland/) `/niedersachsen/cloppenburg/saterland/` | Landkreis Cloppenburg | 1 | 4 | 7 |
-|  | [Bassum](https://hofladenliste.de/niedersachsen/diepholz/bassum/) `/niedersachsen/diepholz/bassum/` | Landkreis Diepholz | 1 | 4 | 7 |
-|  | [Kirchdorf](https://hofladenliste.de/niedersachsen/diepholz/kirchdorf/) `/niedersachsen/diepholz/kirchdorf/` | Landkreis Diepholz | 1 | 4 | 7 |
-|  | [Weyhe](https://hofladenliste.de/niedersachsen/diepholz/weyhe/) `/niedersachsen/diepholz/weyhe/` | Landkreis Diepholz | 1 | 4 | 7 |
-|  | [Emsbüren](https://hofladenliste.de/niedersachsen/emsland/emsbueren/) `/niedersachsen/emsland/emsbueren/` | Landkreis Emsland | 1 | 4 | 7 |
-|  | [Haren](https://hofladenliste.de/niedersachsen/emsland/haren/) `/niedersachsen/emsland/haren/` | Landkreis Emsland | 1 | 4 | 7 |
-|  | [Meppen](https://hofladenliste.de/niedersachsen/emsland/meppen/) `/niedersachsen/emsland/meppen/` | Landkreis Emsland | 1 | 4 | 7 |
+| ✓ | [Reichelsheim (Odenwaldkreis)](https://hofladenliste.de/hessen/odenwaldkreis/reichelsheim/) `/hessen/odenwaldkreis/reichelsheim/` | Odenwaldkreis | 1 | 4 | 7 |
+| ✓ | [Egelsbach](https://hofladenliste.de/hessen/offenbach/egelsbach/) `/hessen/offenbach/egelsbach/` | Landkreis Offenbach | 1 | 4 | 7 |
+| ✓ | [Bad Schwalbach](https://hofladenliste.de/hessen/rheingau-taunus-kreis/bad-schwalbach/) `/hessen/rheingau-taunus-kreis/bad-schwalbach/` | Rheingau-Taunus-Kreis | 1 | 4 | 7 |
+| ✓ | [Hünstetten](https://hofladenliste.de/hessen/rheingau-taunus-kreis/huenstetten/) `/hessen/rheingau-taunus-kreis/huenstetten/` | Rheingau-Taunus-Kreis | 1 | 4 | 7 |
+| ✓ | [Wabern](https://hofladenliste.de/hessen/schwalm-eder-kreis/wabern/) `/hessen/schwalm-eder-kreis/wabern/` | Schwalm-Eder-Kreis | 1 | 4 | 7 |
+| ✓ | [Bad Sooden-Allendorf](https://hofladenliste.de/hessen/werra-meissner-kreis/bad-sooden-allendorf/) `/hessen/werra-meissner-kreis/bad-sooden-allendorf/` | Werra-Meißner-Kreis | 1 | 4 | 7 |
+| ✓ | [Gedern](https://hofladenliste.de/hessen/wetteraukreis/gedern/) `/hessen/wetteraukreis/gedern/` | Wetteraukreis | 1 | 4 | 7 |
+| ✓ | [Ortenberg](https://hofladenliste.de/hessen/wetteraukreis/ortenberg/) `/hessen/wetteraukreis/ortenberg/` | Wetteraukreis | 1 | 4 | 7 |
+| ✓ | [Kalkhorst](https://hofladenliste.de/mecklenburg-vorpommern/nordwestmecklenburg/kalkhorst/) `/mecklenburg-vorpommern/nordwestmecklenburg/kalkhorst/` | Landkreis Nordwestmecklenburg | 1 | 4 | 7 |
+| ✓ | [Klütz](https://hofladenliste.de/mecklenburg-vorpommern/nordwestmecklenburg/kluetz/) `/mecklenburg-vorpommern/nordwestmecklenburg/kluetz/` | Landkreis Nordwestmecklenburg | 1 | 4 | 7 |
+| ✓ | [Altenkirchen](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-ruegen/altenkirchen/) `/mecklenburg-vorpommern/vorpommern-ruegen/altenkirchen/` | Landkreis Vorpommern-Rügen | 1 | 4 | 7 |
+| ✓ | [Großefehn](https://hofladenliste.de/niedersachsen/aurich/grossefehn/) `/niedersachsen/aurich/grossefehn/` | Landkreis Aurich | 1 | 4 | 7 |
+| ✓ | [Norden](https://hofladenliste.de/niedersachsen/aurich/norden/) `/niedersachsen/aurich/norden/` | Landkreis Aurich | 1 | 4 | 7 |
+| ✓ | [Adelheidsdorf](https://hofladenliste.de/niedersachsen/celle/adelheidsdorf/) `/niedersachsen/celle/adelheidsdorf/` | Landkreis Celle | 1 | 4 | 7 |
+| ✓ | [Bergen](https://hofladenliste.de/niedersachsen/celle/bergen/) `/niedersachsen/celle/bergen/` | Landkreis Celle | 1 | 4 | 7 |
+| ✓ | [Faßberg](https://hofladenliste.de/niedersachsen/celle/fassberg/) `/niedersachsen/celle/fassberg/` | Landkreis Celle | 1 | 4 | 7 |
+| ✓ | [Hermannsburg](https://hofladenliste.de/niedersachsen/celle/hermannsburg/) `/niedersachsen/celle/hermannsburg/` | Landkreis Celle | 1 | 4 | 7 |
+| ✓ | [Cloppenburg](https://hofladenliste.de/niedersachsen/cloppenburg/cloppenburg/) `/niedersachsen/cloppenburg/cloppenburg/` | Landkreis Cloppenburg | 1 | 4 | 7 |
+| ✓ | [Saterland](https://hofladenliste.de/niedersachsen/cloppenburg/saterland/) `/niedersachsen/cloppenburg/saterland/` | Landkreis Cloppenburg | 1 | 4 | 7 |
+| ✓ | [Bassum](https://hofladenliste.de/niedersachsen/diepholz/bassum/) `/niedersachsen/diepholz/bassum/` | Landkreis Diepholz | 1 | 4 | 7 |
+| ✓ | [Kirchdorf](https://hofladenliste.de/niedersachsen/diepholz/kirchdorf/) `/niedersachsen/diepholz/kirchdorf/` | Landkreis Diepholz | 1 | 4 | 7 |
+| ✓ | [Weyhe](https://hofladenliste.de/niedersachsen/diepholz/weyhe/) `/niedersachsen/diepholz/weyhe/` | Landkreis Diepholz | 1 | 4 | 7 |
+| ✓ | [Emsbüren](https://hofladenliste.de/niedersachsen/emsland/emsbueren/) `/niedersachsen/emsland/emsbueren/` | Landkreis Emsland | 1 | 4 | 7 |
+| ✓ | [Haren](https://hofladenliste.de/niedersachsen/emsland/haren/) `/niedersachsen/emsland/haren/` | Landkreis Emsland | 1 | 4 | 7 |
+| ✓ | [Meppen](https://hofladenliste.de/niedersachsen/emsland/meppen/) `/niedersachsen/emsland/meppen/` | Landkreis Emsland | 1 | 4 | 7 |
 
 ## Paket 41 (0/25 fertig)
 
