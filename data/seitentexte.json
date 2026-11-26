@@ -33548,5 +33548,725 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/hessen/rheingau-taunus-kreis/niedernhausen/": {
+    "titel": "Hofläden in Niedernhausen: gut zu wissen",
+    "oben": "In Niedernhausen sind zwei Regiomaten und der Hofladen Waldhof Niederseelbach eingetragen.",
+    "einleitung": "Die Regiomaten sind jederzeit zugänglich.\n\nWeitere Höfe findest du in Idstein, Schneidhain und Wiesbaden.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Idstein und Umgebung",
+        "pfad": "/hessen/rheingau-taunus-kreis/idstein/"
+      },
+      {
+        "text": "Hofläden in Königstein im Taunus Schneidhain und Umgebung",
+        "pfad": "/hessen/hochtaunuskreis/koenigstein-im-taunus-schneidhain/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/schwalm-eder-kreis/bad-zwesten/": {
+    "titel": "Hofläden in Bad Zwesten: gut zu wissen",
+    "oben": "Bad Zwesten nennt das Landstübchen, einen Eierautomaten und Bio Breuer's Frühstücksei.",
+    "einleitung": "Eier gibt es an zwei Automaten, jederzeit.\n\nWeitere Höfe findest du in Fritzlar, Wabern und Gemünden (Wohra).",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Fritzlar und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/fritzlar/"
+      },
+      {
+        "text": "Hofläden in Gemünden (Wohra) und Umgebung",
+        "pfad": "/hessen/waldeck-frankenberg/gemuenden-wohra/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/schwalm-eder-kreis/edermuende/": {
+    "titel": "Hofläden in Edermünde: gut zu wissen",
+    "oben": "In Edermünde sind der Hofladen Albert, ein Eierautomat mit Eiern und Nudeln und Luckhart's Ölmühle eingetragen.",
+    "einleitung": "Öl gibt es bei Luckhart's Ölmühle, Eier und Nudeln am Automaten.\n\nWeitere Höfe findest du in Baunatal, Gudensberg und Felsberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Öl",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Baunatal und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/baunatal/"
+      },
+      {
+        "text": "Hofläden in Felsberg und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/felsberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/schwalm-eder-kreis/felsberg/": {
+    "titel": "Hofläden in Felsberg: gut zu wissen",
+    "oben": "Felsberg hat einen Regiomaten mit Eiern und zwei Hofläden.",
+    "einleitung": "Eier gibt es jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Gudensberg, Wabern und Edermünde.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gudensberg und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/gudensberg/"
+      },
+      {
+        "text": "Hofläden in Edermünde und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/edermuende/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/schwalm-eder-kreis/fritzlar/": {
+    "titel": "Hofläden in Fritzlar: gut zu wissen",
+    "oben": "In Fritzlar sind der Hofladen Neuhaus und zwei Regiomaten mit Eiern und Fleisch eingetragen.",
+    "einleitung": "Eier und Fleisch gibt es jederzeit an den Regiomaten.\n\nWeitere Höfe findest du in Wabern, Gudensberg und Felsberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wabern und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/wabern/"
+      },
+      {
+        "text": "Hofläden in Gudensberg und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/gudensberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/vogelsbergkreis/muecke/": {
+    "titel": "Hofläden in Mücke: gut zu wissen",
+    "oben": "Mücke im Vogelsberg nennt einen Imker, das Bernsfelder Bauernbrot und einen Hofladen.",
+    "einleitung": "Brot gibt es beim Bernsfelder Bauernbrot, Honig beim Imker.\n\nWeitere Höfe findest du in Grünberg, Ebsdorfergrund und Lich.",
+    "saison": [
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Grünberg und Umgebung",
+        "pfad": "/hessen/giessen/gruenberg/"
+      },
+      {
+        "text": "Hofläden in Lich und Umgebung",
+        "pfad": "/hessen/giessen/lich/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/waldeck-frankenberg/bad-arolsen/": {
+    "titel": "Hofläden in Bad Arolsen: gut zu wissen",
+    "oben": "In Bad Arolsen sind der Schanzenhof mit Bio-Angebot, die Imkerei Maiwald und der Regiomat Volkmarser Freilandeier mit Eiern, Fleisch, Kartoffeln, Honig und Nudeln eingetragen.",
+    "einleitung": "Der Regiomat ist jederzeit zugänglich, Honig gibt es bei Maiwald.\n\nWeitere Höfe findest du in Wolfhagen, Marsberg und Waldeck.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wolfhagen und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/wolfhagen/"
+      },
+      {
+        "text": "Hofläden in Waldeck und Umgebung",
+        "pfad": "/hessen/waldeck-frankenberg/waldeck/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/waldeck-frankenberg/gemuenden-wohra/": {
+    "titel": "Hofläden in Gemünden (Wohra): gut zu wissen",
+    "oben": "Gemünden (Wohra) hat Holzbächers Hofladen, einen Regiomaten mit Milch und Käse und die Milchbar Christ mit Bio-Milch.",
+    "einleitung": "Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Kirchhain, Bad Zwesten und Cölbe.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kirchhain und Umgebung",
+        "pfad": "/hessen/marburg-biedenkopf/kirchhain/"
+      },
+      {
+        "text": "Hofläden in Bad Zwesten und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/bad-zwesten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/waldeck-frankenberg/waldeck/": {
+    "titel": "Hofläden in Waldeck: gut zu wissen",
+    "oben": "In Waldeck am Edersee sind das Yachthoflädchen, die Edersee Imkerei und ein Regiomat mit Fleisch eingetragen.",
+    "einleitung": "Honig gibt es bei der Edersee Imkerei, Fleisch am Regiomaten.\n\nWeitere Höfe findest du in Wolfhagen, Fritzlar und Schauenburg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wolfhagen und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/wolfhagen/"
+      },
+      {
+        "text": "Hofläden in Fritzlar und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/fritzlar/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/werra-meissner-kreis/hessisch-lichtenau/": {
+    "titel": "Hofläden in Hessisch Lichtenau: gut zu wissen",
+    "oben": "Hessisch Lichtenau nennt zwei Regiomaten Das Grimmsteig-Ei und den Hofladen Siebald mit Bauerngarten.",
+    "einleitung": "Eier, Fleisch, Honig und Nudeln gibt es an den Regiomaten, jederzeit.\n\nWeitere Höfe findest du in Kaufungen, Witzenhausen und Alheim.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kaufungen und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/kaufungen/"
+      },
+      {
+        "text": "Hofläden in Witzenhausen und Umgebung",
+        "pfad": "/hessen/werra-meissner-kreis/witzenhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/werra-meissner-kreis/sontra/": {
+    "titel": "Hofläden in Sontra: gut zu wissen",
+    "oben": "In Sontra sind der Berneburger Geflügelhof, der Geflügelhof Dorsch und der Heuhof eingetragen.",
+    "einleitung": "Geflügel und Eier gibt es auf beiden Geflügelhöfen.\n\nWeitere Höfe findest du in Wildeck, Eschwege und Alheim.",
+    "saison": [
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wildeck und Umgebung",
+        "pfad": "/hessen/hersfeld-rotenburg/wildeck/"
+      },
+      {
+        "text": "Hofläden in Eschwege und Umgebung",
+        "pfad": "/hessen/werra-meissner-kreis/eschwege/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/wetteraukreis/friedberg/": {
+    "titel": "Hofläden in Friedberg (Wetteraukreis): gut zu wissen",
+    "oben": "Friedberg in der Wetterau hat den Obsthof Gröninger mit Bio-Obst, Florian Hess Obst- und Gartenbau und einen Hofladen.",
+    "einleitung": "Obst gibt es gleich auf zwei Höfen.\n\nWeitere Höfe findest du in Bad Nauheim, Wölfersheim und Reichelsheim.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Nauheim und Umgebung",
+        "pfad": "/hessen/wetteraukreis/bad-nauheim/"
+      },
+      {
+        "text": "Hofläden in Wölfersheim und Umgebung",
+        "pfad": "/hessen/wetteraukreis/woelfersheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/landkreis-rostock/bastorf/": {
+    "titel": "Hofläden in Bastorf: gut zu wissen",
+    "oben": "Bastorf bei Kühlungsborn nennt den Hofladen Gutshof Bastorf, einen Regiomaten mit Honig und einen Eierautomaten.",
+    "einleitung": "Honig und Eier gibt es jederzeit an den Automaten.\n\nWeitere Höfe findest du in Kritzmow, Boltenhagen und in der Stadt Rostock.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kritzmow und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/landkreis-rostock/kritzmow/"
+      },
+      {
+        "text": "Hofläden in Boltenhagen und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/nordwestmecklenburg/boltenhagen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/landkreis-rostock/kritzmow/": {
+    "titel": "Hofläden in Kritzmow: gut zu wissen",
+    "oben": "In Kritzmow sind der Hofladen der Bio- und Erlebnisgärtnerei Rohde mit Gemüse, ein Eierautomat mit Eiern, Fleisch und Geflügel und ein Regiomat eingetragen.",
+    "einleitung": "Bio-Gemüse gibt es in der Gärtnerei Rohde, Eier und Geflügel am Automaten.\n\nWeitere Höfe findest du in Bastorf, Boltenhagen und in der Stadt Rostock.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bastorf und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/landkreis-rostock/bastorf/"
+      },
+      {
+        "text": "Hofläden in Boltenhagen und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/nordwestmecklenburg/boltenhagen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/ludwigslust-parchim/plau-am-see/": {
+    "titel": "Hofläden in Plau am See: gut zu wissen",
+    "oben": "Plau am See hat die Hofladen-Box Engels mit Fleisch, den Hofladen und das Café Bauernhof Reichelt und die Imkerei Bode.",
+    "einleitung": "Fleisch gibt es jederzeit in der Hofladen-Box, Honig bei der Imkerei Bode.\n\nWeitere Höfe findest du in Rechlin und Kratzeburg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rechlin und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/rechlin/"
+      },
+      {
+        "text": "Hofläden in Kratzeburg und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/mecklenburgische-seenplatte/neustrelitz/": {
+    "titel": "Hofläden in Neustrelitz: gut zu wissen",
+    "oben": "In Neustrelitz sind die Solawi Klein Trebbow (LandKulturHof e.V.), eine Milchtankstelle und der Hof Dudziak mit Bio-Eiern, Geflügel und Kartoffeln eingetragen.",
+    "einleitung": "Die Milch ist Rohmilch: vor dem Trinken abkochen. Der Hof Dudziak arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Kratzeburg, Lychen und in der Feldberger Seenlandschaft.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kratzeburg und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/"
+      },
+      {
+        "text": "Hofläden in Lychen und Umgebung",
+        "pfad": "/brandenburg/uckermark/lychen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/mecklenburgische-seenplatte/rechlin/": {
+    "titel": "Hofläden in Rechlin: gut zu wissen",
+    "oben": "Rechlin an der Müritz nennt den Ziegenhof Müritz mit Hofladen und Käserei, eine Milchtankstelle und die Müritzfischer Fischers Land Boek.",
+    "einleitung": "Ziegenkäse gibt es auf dem Ziegenhof, Fisch bei den Müritzfischern. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Kratzeburg, Neustrelitz und Plau am See.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kratzeburg und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/"
+      },
+      {
+        "text": "Hofläden in Neustrelitz und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/neustrelitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/mecklenburgische-seenplatte/sponholz/": {
+    "titel": "Hofläden in Sponholz: gut zu wissen",
+    "oben": "In Sponholz sind ein Honigautomat, ein Regiomat mit Eiern, Fleisch, Kartoffeln, Honig und Getränken und der Milchhof Warlin eingetragen.",
+    "einleitung": "Honig und Regiomat-Produkte gibt es jederzeit am Automaten, Eier und Milch beim Milchhof Warlin. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Neubrandenburg und in der Feldberger Seenlandschaft.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neubrandenburg und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/neubrandenburg/"
+      },
+      {
+        "text": "Hofläden in Feldberger Seenlandschaft und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/nordwestmecklenburg/boltenhagen/": {
+    "titel": "Hofläden in Boltenhagen: gut zu wissen",
+    "oben": "Boltenhagen an der Ostsee hat den Bio-Hofladen Stellshagen und Meer, einen Hofladen mit Marmelade und den Bauernmarkt Boltenhagen.",
+    "einleitung": "Marmelade gibt es im Hofladen, Bio-Produkte in Stellshagen und Meer.\n\nWeitere Höfe findest du in Klütz, Kalkhorst und Grömitz.",
+    "saison": [
+      {
+        "titel": "Marmelade",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Klütz und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/nordwestmecklenburg/kluetz/"
+      },
+      {
+        "text": "Hofläden in Kalkhorst und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/nordwestmecklenburg/kalkhorst/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/vorpommern-greifswald/zempin/": {
+    "titel": "Hofläden in Zempin: gut zu wissen",
+    "oben": "In Zempin auf Usedom sind der Hofladen Küstenglück, die Imkerei Sommer im Glas und ein Regiomat mit Brot eingetragen.",
+    "einleitung": "Brot gibt es jederzeit am Regiomaten, Honig bei Sommer im Glas.\n\nWeitere Höfe findest du in Greifswald und Stralsund.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Greifswald und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/vorpommern-greifswald/greifswald/"
+      },
+      {
+        "text": "Hofläden in Stralsund und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/vorpommern-ruegen/stralsund/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/vorpommern-ruegen/zingst/": {
+    "titel": "Hofläden in Zingst: gut zu wissen",
+    "oben": "Zingst auf dem Darß hat einen Honigladen, einen Honigautomaten und die Speisekammer Bio.",
+    "einleitung": "Honig gibt es im Laden und jederzeit am Automaten.\n\nWeitere Höfe findest du in Stralsund, Altenkirchen und in der Stadt Rostock.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stralsund und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/vorpommern-ruegen/stralsund/"
+      },
+      {
+        "text": "Hofläden in Altenkirchen und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/vorpommern-ruegen/altenkirchen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/ammerland/edewecht/": {
+    "titel": "Hofläden in Edewecht: gut zu wissen",
+    "oben": "In Edewecht sind der Himpsl-Hof mit Bio-Angebot, eine Milchtankstelle und ein SB-Hofladen eingetragen.",
+    "einleitung": "Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bad Zwischenahn, Wardenburg und in der Stadt Oldenburg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Zwischenahn und Umgebung",
+        "pfad": "/niedersachsen/ammerland/bad-zwischenahn/"
+      },
+      {
+        "text": "Hofläden in Wardenburg und Umgebung",
+        "pfad": "/niedersachsen/landkreis-oldenburg/wardenburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/cloppenburg/cappeln-oldenburg/": {
+    "titel": "Hofläden in Cappeln (Oldenburg): gut zu wissen",
+    "oben": "Cappeln (Oldenburg) nennt einen Kartoffelautomaten, einen Regiomaten mit Eiern und Blumen und den Geflügelhof Bültermann.",
+    "einleitung": "Kartoffeln, Eier und Blumen gibt es jederzeit an den Automaten, Geflügel auf dem Geflügelhof.\n\nWeitere Höfe findest du in Emstek, Cloppenburg und Bakum.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Emstek und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/emstek/"
+      },
+      {
+        "text": "Hofläden in Cloppenburg und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/cloppenburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/cloppenburg/essen-oldenburg/": {
+    "titel": "Hofläden in Essen (Oldenburg): gut zu wissen",
+    "oben": "In Essen (Oldenburg) sind der Regiomarkt 24 mit Eiern, ein Honigautomat und der Hofladen Diers eingetragen.",
+    "einleitung": "Eier und Honig gibt es jederzeit an den Automaten.\n\nWeitere Höfe findest du in Menslage, Badbergen und Lastrup.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Menslage und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/menslage/"
+      },
+      {
+        "text": "Hofläden in Lastrup und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/lastrup/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
