@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 720 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 743 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -873,35 +873,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Bedburg](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/bedburg/) `/nordrhein-westfalen/rhein-erft-kreis/bedburg/` | Rhein-Erft-Kreis | 1 | 5 | 8 |
 | ✓ | [Alfter](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/alfter/) `/nordrhein-westfalen/rhein-sieg-kreis/alfter/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
 
-## Paket 30 (2/25 fertig)
+## Paket 30 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Königswinter](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/koenigswinter/) `/nordrhein-westfalen/rhein-sieg-kreis/koenigswinter/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
-|  | [Much](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/much/) `/nordrhein-westfalen/rhein-sieg-kreis/much/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
-|  | [Overath](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/` | Rheinisch-Bergischer Kreis | 1 | 5 | 8 |
-|  | [Saerbeck](https://hofladenliste.de/nordrhein-westfalen/steinfurt/saerbeck/) `/nordrhein-westfalen/steinfurt/saerbeck/` | Kreis Steinfurt | 1 | 5 | 8 |
-|  | [Schwerte](https://hofladenliste.de/nordrhein-westfalen/unna/schwerte/) `/nordrhein-westfalen/unna/schwerte/` | Kreis Unna | 1 | 5 | 8 |
+| ✓ | [Königswinter](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/koenigswinter/) `/nordrhein-westfalen/rhein-sieg-kreis/koenigswinter/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
+| ✓ | [Much](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/much/) `/nordrhein-westfalen/rhein-sieg-kreis/much/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
+| ✓ | [Overath](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/` | Rheinisch-Bergischer Kreis | 1 | 5 | 8 |
+| ✓ | [Saerbeck](https://hofladenliste.de/nordrhein-westfalen/steinfurt/saerbeck/) `/nordrhein-westfalen/steinfurt/saerbeck/` | Kreis Steinfurt | 1 | 5 | 8 |
+| ✓ | [Schwerte](https://hofladenliste.de/nordrhein-westfalen/unna/schwerte/) `/nordrhein-westfalen/unna/schwerte/` | Kreis Unna | 1 | 5 | 8 |
 | ✓ | [Grefrath](https://hofladenliste.de/nordrhein-westfalen/viersen/grefrath/) `/nordrhein-westfalen/viersen/grefrath/` | Kreis Viersen | 1 | 5 | 8 |
-|  | [Oelde](https://hofladenliste.de/nordrhein-westfalen/warendorf/oelde/) `/nordrhein-westfalen/warendorf/oelde/` | Kreis Warendorf | 1 | 5 | 8 |
-|  | [Sendenhorst](https://hofladenliste.de/nordrhein-westfalen/warendorf/sendenhorst/) `/nordrhein-westfalen/warendorf/sendenhorst/` | Kreis Warendorf | 1 | 5 | 8 |
+| ✓ | [Oelde](https://hofladenliste.de/nordrhein-westfalen/warendorf/oelde/) `/nordrhein-westfalen/warendorf/oelde/` | Kreis Warendorf | 1 | 5 | 8 |
+| ✓ | [Sendenhorst](https://hofladenliste.de/nordrhein-westfalen/warendorf/sendenhorst/) `/nordrhein-westfalen/warendorf/sendenhorst/` | Kreis Warendorf | 1 | 5 | 8 |
 | ✓ | [Warendorf](https://hofladenliste.de/nordrhein-westfalen/warendorf/warendorf/) `/nordrhein-westfalen/warendorf/warendorf/` | Kreis Warendorf | 1 | 5 | 8 |
-|  | [Rheinberg](https://hofladenliste.de/nordrhein-westfalen/wesel/rheinberg/) `/nordrhein-westfalen/wesel/rheinberg/` | Kreis Wesel | 1 | 5 | 8 |
-|  | [Wittlich](https://hofladenliste.de/rheinland-pfalz/bernkastel-wittlich/wittlich/) `/rheinland-pfalz/bernkastel-wittlich/wittlich/` | Landkreis Bernkastel-Wittlich | 1 | 5 | 8 |
-|  | [Alflen](https://hofladenliste.de/rheinland-pfalz/cochem-zell/alflen/) `/rheinland-pfalz/cochem-zell/alflen/` | Landkreis Cochem-Zell | 1 | 5 | 8 |
-|  | [Mutterstadt](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/mutterstadt/) `/rheinland-pfalz/rhein-pfalz-kreis/mutterstadt/` | Rhein-Pfalz-Kreis | 1 | 5 | 8 |
-|  | [Offenbach an der Queich](https://hofladenliste.de/rheinland-pfalz/suedliche-weinstrasse/offenbach-an-der-queich/) `/rheinland-pfalz/suedliche-weinstrasse/offenbach-an-der-queich/` | Landkreis Südliche Weinstraße | 1 | 5 | 8 |
-|  | [Merzig](https://hofladenliste.de/saarland/merzig-wadern/merzig/) `/saarland/merzig-wadern/merzig/` | Landkreis Merzig-Wadern | 1 | 5 | 8 |
-|  | [Lebach](https://hofladenliste.de/saarland/saarlouis/lebach/) `/saarland/saarlouis/lebach/` | Landkreis Saarlouis | 1 | 5 | 8 |
-|  | [Schmelz](https://hofladenliste.de/saarland/saarlouis/schmelz/) `/saarland/saarlouis/schmelz/` | Landkreis Saarlouis | 1 | 5 | 8 |
-|  | [Sankt Ingbert](https://hofladenliste.de/saarland/saarpfalz-kreis/sankt-ingbert/) `/saarland/saarpfalz-kreis/sankt-ingbert/` | Saarpfalz-Kreis | 1 | 5 | 8 |
-|  | [Grimma](https://hofladenliste.de/sachsen/landkreis-leipzig/grimma/) `/sachsen/landkreis-leipzig/grimma/` | Landkreis Leipzig | 1 | 5 | 8 |
-|  | [Kitzen](https://hofladenliste.de/sachsen/landkreis-leipzig/kitzen/) `/sachsen/landkreis-leipzig/kitzen/` | Landkreis Leipzig | 1 | 5 | 8 |
-|  | [Großenhain](https://hofladenliste.de/sachsen/meissen/grossenhain/) `/sachsen/meissen/grossenhain/` | Landkreis Meißen | 1 | 5 | 8 |
-|  | [Klipphausen](https://hofladenliste.de/sachsen/meissen/klipphausen/) `/sachsen/meissen/klipphausen/` | Landkreis Meißen | 1 | 5 | 8 |
-|  | [Halsbrücke](https://hofladenliste.de/sachsen/mittelsachsen/halsbruecke/) `/sachsen/mittelsachsen/halsbruecke/` | Landkreis Mittelsachsen | 1 | 5 | 8 |
-|  | [Liebschützberg](https://hofladenliste.de/sachsen/nordsachsen/liebschuetzberg/) `/sachsen/nordsachsen/liebschuetzberg/` | Landkreis Nordsachsen | 1 | 5 | 8 |
-|  | [Schnakenbek](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/schnakenbek/) `/schleswig-holstein/herzogtum-lauenburg/schnakenbek/` | Kreis Herzogtum Lauenburg | 1 | 5 | 8 |
+| ✓ | [Rheinberg](https://hofladenliste.de/nordrhein-westfalen/wesel/rheinberg/) `/nordrhein-westfalen/wesel/rheinberg/` | Kreis Wesel | 1 | 5 | 8 |
+| ✓ | [Wittlich](https://hofladenliste.de/rheinland-pfalz/bernkastel-wittlich/wittlich/) `/rheinland-pfalz/bernkastel-wittlich/wittlich/` | Landkreis Bernkastel-Wittlich | 1 | 5 | 8 |
+| ✓ | [Alflen](https://hofladenliste.de/rheinland-pfalz/cochem-zell/alflen/) `/rheinland-pfalz/cochem-zell/alflen/` | Landkreis Cochem-Zell | 1 | 5 | 8 |
+| ✓ | [Mutterstadt](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/mutterstadt/) `/rheinland-pfalz/rhein-pfalz-kreis/mutterstadt/` | Rhein-Pfalz-Kreis | 1 | 5 | 8 |
+| ✓ | [Offenbach an der Queich](https://hofladenliste.de/rheinland-pfalz/suedliche-weinstrasse/offenbach-an-der-queich/) `/rheinland-pfalz/suedliche-weinstrasse/offenbach-an-der-queich/` | Landkreis Südliche Weinstraße | 1 | 5 | 8 |
+| ✓ | [Merzig](https://hofladenliste.de/saarland/merzig-wadern/merzig/) `/saarland/merzig-wadern/merzig/` | Landkreis Merzig-Wadern | 1 | 5 | 8 |
+| ✓ | [Lebach](https://hofladenliste.de/saarland/saarlouis/lebach/) `/saarland/saarlouis/lebach/` | Landkreis Saarlouis | 1 | 5 | 8 |
+| ✓ | [Schmelz](https://hofladenliste.de/saarland/saarlouis/schmelz/) `/saarland/saarlouis/schmelz/` | Landkreis Saarlouis | 1 | 5 | 8 |
+| ✓ | [Sankt Ingbert](https://hofladenliste.de/saarland/saarpfalz-kreis/sankt-ingbert/) `/saarland/saarpfalz-kreis/sankt-ingbert/` | Saarpfalz-Kreis | 1 | 5 | 8 |
+| ✓ | [Grimma](https://hofladenliste.de/sachsen/landkreis-leipzig/grimma/) `/sachsen/landkreis-leipzig/grimma/` | Landkreis Leipzig | 1 | 5 | 8 |
+| ✓ | [Kitzen](https://hofladenliste.de/sachsen/landkreis-leipzig/kitzen/) `/sachsen/landkreis-leipzig/kitzen/` | Landkreis Leipzig | 1 | 5 | 8 |
+| ✓ | [Großenhain](https://hofladenliste.de/sachsen/meissen/grossenhain/) `/sachsen/meissen/grossenhain/` | Landkreis Meißen | 1 | 5 | 8 |
+| ✓ | [Klipphausen](https://hofladenliste.de/sachsen/meissen/klipphausen/) `/sachsen/meissen/klipphausen/` | Landkreis Meißen | 1 | 5 | 8 |
+| ✓ | [Halsbrücke](https://hofladenliste.de/sachsen/mittelsachsen/halsbruecke/) `/sachsen/mittelsachsen/halsbruecke/` | Landkreis Mittelsachsen | 1 | 5 | 8 |
+| ✓ | [Liebschützberg](https://hofladenliste.de/sachsen/nordsachsen/liebschuetzberg/) `/sachsen/nordsachsen/liebschuetzberg/` | Landkreis Nordsachsen | 1 | 5 | 8 |
+| ✓ | [Schnakenbek](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/schnakenbek/) `/schleswig-holstein/herzogtum-lauenburg/schnakenbek/` | Kreis Herzogtum Lauenburg | 1 | 5 | 8 |
 
 ## Paket 31 (0/25 fertig)
 
