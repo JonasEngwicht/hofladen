@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 793 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 818 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -963,35 +963,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Siegelsbach](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/siegelsbach/) `/baden-wuerttemberg/landkreis-heilbronn/siegelsbach/` | Landkreis Heilbronn | 1 | 4 | 7 |
 | ✓ | [Malsch](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/malsch/) `/baden-wuerttemberg/landkreis-karlsruhe/malsch/` | Landkreis Karlsruhe | 1 | 4 | 7 |
 
-## Paket 33 (0/25 fertig)
+## Paket 33 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Rheinstetten](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/rheinstetten/) `/baden-wuerttemberg/landkreis-karlsruhe/rheinstetten/` | Landkreis Karlsruhe | 1 | 4 | 7 |
-|  | [Waldbronn](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/waldbronn/) `/baden-wuerttemberg/landkreis-karlsruhe/waldbronn/` | Landkreis Karlsruhe | 1 | 4 | 7 |
-|  | [Maulburg](https://hofladenliste.de/baden-wuerttemberg/loerrach/maulburg/) `/baden-wuerttemberg/loerrach/maulburg/` | Landkreis Lörrach | 1 | 4 | 7 |
-|  | [Weil am Rhein](https://hofladenliste.de/baden-wuerttemberg/loerrach/weil-am-rhein/) `/baden-wuerttemberg/loerrach/weil-am-rhein/` | Landkreis Lörrach | 1 | 4 | 7 |
-|  | [Remseck am Neckar](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/remseck-am-neckar/) `/baden-wuerttemberg/ludwigsburg/remseck-am-neckar/` | Landkreis Ludwigsburg | 1 | 4 | 7 |
-|  | [Wertheim](https://hofladenliste.de/baden-wuerttemberg/main-tauber-kreis/wertheim/) `/baden-wuerttemberg/main-tauber-kreis/wertheim/` | Main-Tauber-Kreis | 1 | 4 | 7 |
-|  | [Buchen (Odenwald)](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/buchen-odenwald/) `/baden-wuerttemberg/neckar-odenwald-kreis/buchen-odenwald/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
-|  | [Hardheim](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/hardheim/) `/baden-wuerttemberg/neckar-odenwald-kreis/hardheim/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
-|  | [Limbach](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/limbach/) `/baden-wuerttemberg/neckar-odenwald-kreis/limbach/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
-|  | [Osterburken](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/osterburken/) `/baden-wuerttemberg/neckar-odenwald-kreis/osterburken/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
-|  | [Appenweier](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/appenweier/) `/baden-wuerttemberg/ortenaukreis/appenweier/` | Ortenaukreis | 1 | 4 | 7 |
-|  | [Sasbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/sasbach/) `/baden-wuerttemberg/ortenaukreis/sasbach/` | Ortenaukreis | 1 | 4 | 7 |
-|  | [Sasbachwalden](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/sasbachwalden/) `/baden-wuerttemberg/ortenaukreis/sasbachwalden/` | Ortenaukreis | 1 | 4 | 7 |
-|  | [Schwanau](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/schwanau/) `/baden-wuerttemberg/ortenaukreis/schwanau/` | Ortenaukreis | 1 | 4 | 7 |
-|  | [Waldstetten (Ostalbkreis)](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/waldstetten/) `/baden-wuerttemberg/ostalbkreis/waldstetten/` | Ostalbkreis | 1 | 4 | 7 |
-|  | [Bühl](https://hofladenliste.de/baden-wuerttemberg/rastatt/buehl/) `/baden-wuerttemberg/rastatt/buehl/` | Landkreis Rastatt | 1 | 4 | 7 |
-|  | [Gaggenau](https://hofladenliste.de/baden-wuerttemberg/rastatt/gaggenau/) `/baden-wuerttemberg/rastatt/gaggenau/` | Landkreis Rastatt | 1 | 4 | 7 |
-|  | [Lichtenau (Landkreis Rastatt)](https://hofladenliste.de/baden-wuerttemberg/rastatt/lichtenau/) `/baden-wuerttemberg/rastatt/lichtenau/` | Landkreis Rastatt | 1 | 4 | 7 |
-|  | [Bad Waldsee](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bad-waldsee/) `/baden-wuerttemberg/ravensburg/bad-waldsee/` | Landkreis Ravensburg | 1 | 4 | 7 |
-|  | [Bergatreute](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bergatreute/) `/baden-wuerttemberg/ravensburg/bergatreute/` | Landkreis Ravensburg | 1 | 4 | 7 |
-|  | [Horgenzell](https://hofladenliste.de/baden-wuerttemberg/ravensburg/horgenzell/) `/baden-wuerttemberg/ravensburg/horgenzell/` | Landkreis Ravensburg | 1 | 4 | 7 |
-|  | [Wangen im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/wangen-im-allgaeu/) `/baden-wuerttemberg/ravensburg/wangen-im-allgaeu/` | Landkreis Ravensburg | 1 | 4 | 7 |
-|  | [Berglen](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/berglen/) `/baden-wuerttemberg/rems-murr-kreis/berglen/` | Rems-Murr-Kreis | 1 | 4 | 7 |
-|  | [Südbund](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/suedbund/) `/baden-wuerttemberg/rems-murr-kreis/suedbund/` | Rems-Murr-Kreis | 1 | 4 | 7 |
-|  | [Eppelheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/eppelheim/) `/baden-wuerttemberg/rhein-neckar-kreis/eppelheim/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
+| ✓ | [Rheinstetten](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/rheinstetten/) `/baden-wuerttemberg/landkreis-karlsruhe/rheinstetten/` | Landkreis Karlsruhe | 1 | 4 | 7 |
+| ✓ | [Waldbronn](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/waldbronn/) `/baden-wuerttemberg/landkreis-karlsruhe/waldbronn/` | Landkreis Karlsruhe | 1 | 4 | 7 |
+| ✓ | [Maulburg](https://hofladenliste.de/baden-wuerttemberg/loerrach/maulburg/) `/baden-wuerttemberg/loerrach/maulburg/` | Landkreis Lörrach | 1 | 4 | 7 |
+| ✓ | [Weil am Rhein](https://hofladenliste.de/baden-wuerttemberg/loerrach/weil-am-rhein/) `/baden-wuerttemberg/loerrach/weil-am-rhein/` | Landkreis Lörrach | 1 | 4 | 7 |
+| ✓ | [Remseck am Neckar](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/remseck-am-neckar/) `/baden-wuerttemberg/ludwigsburg/remseck-am-neckar/` | Landkreis Ludwigsburg | 1 | 4 | 7 |
+| ✓ | [Wertheim](https://hofladenliste.de/baden-wuerttemberg/main-tauber-kreis/wertheim/) `/baden-wuerttemberg/main-tauber-kreis/wertheim/` | Main-Tauber-Kreis | 1 | 4 | 7 |
+| ✓ | [Buchen (Odenwald)](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/buchen-odenwald/) `/baden-wuerttemberg/neckar-odenwald-kreis/buchen-odenwald/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
+| ✓ | [Hardheim](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/hardheim/) `/baden-wuerttemberg/neckar-odenwald-kreis/hardheim/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
+| ✓ | [Limbach](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/limbach/) `/baden-wuerttemberg/neckar-odenwald-kreis/limbach/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
+| ✓ | [Osterburken](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/osterburken/) `/baden-wuerttemberg/neckar-odenwald-kreis/osterburken/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
+| ✓ | [Appenweier](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/appenweier/) `/baden-wuerttemberg/ortenaukreis/appenweier/` | Ortenaukreis | 1 | 4 | 7 |
+| ✓ | [Sasbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/sasbach/) `/baden-wuerttemberg/ortenaukreis/sasbach/` | Ortenaukreis | 1 | 4 | 7 |
+| ✓ | [Sasbachwalden](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/sasbachwalden/) `/baden-wuerttemberg/ortenaukreis/sasbachwalden/` | Ortenaukreis | 1 | 4 | 7 |
+| ✓ | [Schwanau](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/schwanau/) `/baden-wuerttemberg/ortenaukreis/schwanau/` | Ortenaukreis | 1 | 4 | 7 |
+| ✓ | [Waldstetten (Ostalbkreis)](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/waldstetten/) `/baden-wuerttemberg/ostalbkreis/waldstetten/` | Ostalbkreis | 1 | 4 | 7 |
+| ✓ | [Bühl](https://hofladenliste.de/baden-wuerttemberg/rastatt/buehl/) `/baden-wuerttemberg/rastatt/buehl/` | Landkreis Rastatt | 1 | 4 | 7 |
+| ✓ | [Gaggenau](https://hofladenliste.de/baden-wuerttemberg/rastatt/gaggenau/) `/baden-wuerttemberg/rastatt/gaggenau/` | Landkreis Rastatt | 1 | 4 | 7 |
+| ✓ | [Lichtenau (Landkreis Rastatt)](https://hofladenliste.de/baden-wuerttemberg/rastatt/lichtenau/) `/baden-wuerttemberg/rastatt/lichtenau/` | Landkreis Rastatt | 1 | 4 | 7 |
+| ✓ | [Bad Waldsee](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bad-waldsee/) `/baden-wuerttemberg/ravensburg/bad-waldsee/` | Landkreis Ravensburg | 1 | 4 | 7 |
+| ✓ | [Bergatreute](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bergatreute/) `/baden-wuerttemberg/ravensburg/bergatreute/` | Landkreis Ravensburg | 1 | 4 | 7 |
+| ✓ | [Horgenzell](https://hofladenliste.de/baden-wuerttemberg/ravensburg/horgenzell/) `/baden-wuerttemberg/ravensburg/horgenzell/` | Landkreis Ravensburg | 1 | 4 | 7 |
+| ✓ | [Wangen im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/wangen-im-allgaeu/) `/baden-wuerttemberg/ravensburg/wangen-im-allgaeu/` | Landkreis Ravensburg | 1 | 4 | 7 |
+| ✓ | [Berglen](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/berglen/) `/baden-wuerttemberg/rems-murr-kreis/berglen/` | Rems-Murr-Kreis | 1 | 4 | 7 |
+| ✓ | [Südbund](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/suedbund/) `/baden-wuerttemberg/rems-murr-kreis/suedbund/` | Rems-Murr-Kreis | 1 | 4 | 7 |
+| ✓ | [Eppelheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/eppelheim/) `/baden-wuerttemberg/rhein-neckar-kreis/eppelheim/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
 
 ## Paket 34 (0/25 fertig)
 
