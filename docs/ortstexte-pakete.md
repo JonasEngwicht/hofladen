@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1080 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1104 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1533,35 +1533,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Isen](https://hofladenliste.de/bayern/erding/isen/) `/bayern/erding/isen/` | Landkreis Erding | 1 | 3 | 6 |
 | ✓ | [Neuching](https://hofladenliste.de/bayern/erding/neuching/) `/bayern/erding/neuching/` | Landkreis Erding | 1 | 3 | 6 |
 
-## Paket 52 (0/25 fertig)
+## Paket 52 (24/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Wörth](https://hofladenliste.de/bayern/erding/woerth/) `/bayern/erding/woerth/` | Landkreis Erding | 1 | 3 | 6 |
-|  | [Eckental](https://hofladenliste.de/bayern/erlangen-hoechstadt/eckental/) `/bayern/erlangen-hoechstadt/eckental/` | Landkreis Erlangen-Höchstadt | 1 | 3 | 6 |
-|  | [Kalchreuth](https://hofladenliste.de/bayern/erlangen-hoechstadt/kalchreuth/) `/bayern/erlangen-hoechstadt/kalchreuth/` | Landkreis Erlangen-Höchstadt | 1 | 3 | 6 |
-|  | [Vestenbergsgreuth](https://hofladenliste.de/bayern/erlangen-hoechstadt/vestenbergsgreuth/) `/bayern/erlangen-hoechstadt/vestenbergsgreuth/` | Landkreis Erlangen-Höchstadt | 1 | 3 | 6 |
-|  | [Hausen](https://hofladenliste.de/bayern/forchheim/hausen/) `/bayern/forchheim/hausen/` | Landkreis Forchheim | 1 | 3 | 6 |
-|  | [Hiltpoltstein](https://hofladenliste.de/bayern/forchheim/hiltpoltstein/) `/bayern/forchheim/hiltpoltstein/` | Landkreis Forchheim | 1 | 3 | 6 |
-|  | [Leutenbach](https://hofladenliste.de/bayern/forchheim/leutenbach/) `/bayern/forchheim/leutenbach/` | Landkreis Forchheim | 1 | 3 | 6 |
-|  | [Neunkirchen am Brand](https://hofladenliste.de/bayern/forchheim/neunkirchen-am-brand/) `/bayern/forchheim/neunkirchen-am-brand/` | Landkreis Forchheim | 1 | 3 | 6 |
-|  | [Wiesenttal](https://hofladenliste.de/bayern/forchheim/wiesenttal/) `/bayern/forchheim/wiesenttal/` | Landkreis Forchheim | 1 | 3 | 6 |
-|  | [Hetzenhausen](https://hofladenliste.de/bayern/freising/hetzenhausen/) `/bayern/freising/hetzenhausen/` | Landkreis Freising | 1 | 3 | 6 |
-|  | [Mammendorf](https://hofladenliste.de/bayern/fuerstenfeldbruck/mammendorf/) `/bayern/fuerstenfeldbruck/mammendorf/` | Landkreis Fürstenfeldbruck | 1 | 3 | 6 |
-|  | [Schöngeising](https://hofladenliste.de/bayern/fuerstenfeldbruck/schoengeising/) `/bayern/fuerstenfeldbruck/schoengeising/` | Landkreis Fürstenfeldbruck | 1 | 3 | 6 |
-|  | [Großweil](https://hofladenliste.de/bayern/garmisch-partenkirchen/grossweil/) `/bayern/garmisch-partenkirchen/grossweil/` | Landkreis Garmisch-Partenkirchen | 1 | 3 | 6 |
-|  | [Oberammergau](https://hofladenliste.de/bayern/garmisch-partenkirchen/oberammergau/) `/bayern/garmisch-partenkirchen/oberammergau/` | Landkreis Garmisch-Partenkirchen | 1 | 3 | 6 |
-|  | [Günzburg](https://hofladenliste.de/bayern/guenzburg/guenzburg/) `/bayern/guenzburg/guenzburg/` | Landkreis Günzburg | 1 | 3 | 6 |
-|  | [Leipheim](https://hofladenliste.de/bayern/guenzburg/leipheim/) `/bayern/guenzburg/leipheim/` | Landkreis Günzburg | 1 | 3 | 6 |
-|  | [Waldstetten (Landkreis Günzburg)](https://hofladenliste.de/bayern/guenzburg/waldstetten/) `/bayern/guenzburg/waldstetten/` | Landkreis Günzburg | 1 | 3 | 6 |
-|  | [Knetzgau](https://hofladenliste.de/bayern/hassberge/knetzgau/) `/bayern/hassberge/knetzgau/` | Landkreis Haßberge | 1 | 3 | 6 |
-|  | [Pfarrweisach](https://hofladenliste.de/bayern/hassberge/pfarrweisach/) `/bayern/hassberge/pfarrweisach/` | Landkreis Haßberge | 1 | 3 | 6 |
-|  | [Mainburg](https://hofladenliste.de/bayern/kelheim/mainburg/) `/bayern/kelheim/mainburg/` | Landkreis Kelheim | 1 | 3 | 6 |
+| ✓ | [Wörth](https://hofladenliste.de/bayern/erding/woerth/) `/bayern/erding/woerth/` | Landkreis Erding | 1 | 3 | 6 |
+| ✓ | [Eckental](https://hofladenliste.de/bayern/erlangen-hoechstadt/eckental/) `/bayern/erlangen-hoechstadt/eckental/` | Landkreis Erlangen-Höchstadt | 1 | 3 | 6 |
+| ✓ | [Kalchreuth](https://hofladenliste.de/bayern/erlangen-hoechstadt/kalchreuth/) `/bayern/erlangen-hoechstadt/kalchreuth/` | Landkreis Erlangen-Höchstadt | 1 | 3 | 6 |
+| ✓ | [Vestenbergsgreuth](https://hofladenliste.de/bayern/erlangen-hoechstadt/vestenbergsgreuth/) `/bayern/erlangen-hoechstadt/vestenbergsgreuth/` | Landkreis Erlangen-Höchstadt | 1 | 3 | 6 |
+| ✓ | [Hausen](https://hofladenliste.de/bayern/forchheim/hausen/) `/bayern/forchheim/hausen/` | Landkreis Forchheim | 1 | 3 | 6 |
+| ✓ | [Hiltpoltstein](https://hofladenliste.de/bayern/forchheim/hiltpoltstein/) `/bayern/forchheim/hiltpoltstein/` | Landkreis Forchheim | 1 | 3 | 6 |
+| ✓ | [Leutenbach](https://hofladenliste.de/bayern/forchheim/leutenbach/) `/bayern/forchheim/leutenbach/` | Landkreis Forchheim | 1 | 3 | 6 |
+| ✓ | [Neunkirchen am Brand](https://hofladenliste.de/bayern/forchheim/neunkirchen-am-brand/) `/bayern/forchheim/neunkirchen-am-brand/` | Landkreis Forchheim | 1 | 3 | 6 |
+| ✓ | [Wiesenttal](https://hofladenliste.de/bayern/forchheim/wiesenttal/) `/bayern/forchheim/wiesenttal/` | Landkreis Forchheim | 1 | 3 | 6 |
+| ✓ | [Hetzenhausen](https://hofladenliste.de/bayern/freising/hetzenhausen/) `/bayern/freising/hetzenhausen/` | Landkreis Freising | 1 | 3 | 6 |
+| ✓ | [Mammendorf](https://hofladenliste.de/bayern/fuerstenfeldbruck/mammendorf/) `/bayern/fuerstenfeldbruck/mammendorf/` | Landkreis Fürstenfeldbruck | 1 | 3 | 6 |
+| ✓ | [Schöngeising](https://hofladenliste.de/bayern/fuerstenfeldbruck/schoengeising/) `/bayern/fuerstenfeldbruck/schoengeising/` | Landkreis Fürstenfeldbruck | 1 | 3 | 6 |
+| ✓ | [Großweil](https://hofladenliste.de/bayern/garmisch-partenkirchen/grossweil/) `/bayern/garmisch-partenkirchen/grossweil/` | Landkreis Garmisch-Partenkirchen | 1 | 3 | 6 |
+| ✓ | [Oberammergau](https://hofladenliste.de/bayern/garmisch-partenkirchen/oberammergau/) `/bayern/garmisch-partenkirchen/oberammergau/` | Landkreis Garmisch-Partenkirchen | 1 | 3 | 6 |
+| ✓ | [Günzburg](https://hofladenliste.de/bayern/guenzburg/guenzburg/) `/bayern/guenzburg/guenzburg/` | Landkreis Günzburg | 1 | 3 | 6 |
+| ✓ | [Leipheim](https://hofladenliste.de/bayern/guenzburg/leipheim/) `/bayern/guenzburg/leipheim/` | Landkreis Günzburg | 1 | 3 | 6 |
+| ✓ | [Waldstetten (Landkreis Günzburg)](https://hofladenliste.de/bayern/guenzburg/waldstetten/) `/bayern/guenzburg/waldstetten/` | Landkreis Günzburg | 1 | 3 | 6 |
+| ✓ | [Knetzgau](https://hofladenliste.de/bayern/hassberge/knetzgau/) `/bayern/hassberge/knetzgau/` | Landkreis Haßberge | 1 | 3 | 6 |
+| ✓ | [Pfarrweisach](https://hofladenliste.de/bayern/hassberge/pfarrweisach/) `/bayern/hassberge/pfarrweisach/` | Landkreis Haßberge | 1 | 3 | 6 |
+| ✓ | [Mainburg](https://hofladenliste.de/bayern/kelheim/mainburg/) `/bayern/kelheim/mainburg/` | Landkreis Kelheim | 1 | 3 | 6 |
 |  | [Riedenburg](https://hofladenliste.de/bayern/kelheim/riedenburg/) `/bayern/kelheim/riedenburg/` | Landkreis Kelheim | 1 | 3 | 6 |
-|  | [Willanzheim](https://hofladenliste.de/bayern/kitzingen/willanzheim/) `/bayern/kitzingen/willanzheim/` | Landkreis Kitzingen | 1 | 3 | 6 |
-|  | [Kulmbach](https://hofladenliste.de/bayern/kulmbach/kulmbach/) `/bayern/kulmbach/kulmbach/` | Landkreis Kulmbach | 1 | 3 | 6 |
-|  | [Wettringen (Landkreis Ansbach)](https://hofladenliste.de/bayern/landkreis-ansbach/wettringen/) `/bayern/landkreis-ansbach/wettringen/` | Landkreis Ansbach | 1 | 3 | 6 |
-|  | [Hösbach](https://hofladenliste.de/bayern/landkreis-aschaffenburg/hoesbach/) `/bayern/landkreis-aschaffenburg/hoesbach/` | Landkreis Aschaffenburg | 1 | 3 | 6 |
+| ✓ | [Willanzheim](https://hofladenliste.de/bayern/kitzingen/willanzheim/) `/bayern/kitzingen/willanzheim/` | Landkreis Kitzingen | 1 | 3 | 6 |
+| ✓ | [Kulmbach](https://hofladenliste.de/bayern/kulmbach/kulmbach/) `/bayern/kulmbach/kulmbach/` | Landkreis Kulmbach | 1 | 3 | 6 |
+| ✓ | [Wettringen (Landkreis Ansbach)](https://hofladenliste.de/bayern/landkreis-ansbach/wettringen/) `/bayern/landkreis-ansbach/wettringen/` | Landkreis Ansbach | 1 | 3 | 6 |
+| ✓ | [Hösbach](https://hofladenliste.de/bayern/landkreis-aschaffenburg/hoesbach/) `/bayern/landkreis-aschaffenburg/hoesbach/` | Landkreis Aschaffenburg | 1 | 3 | 6 |
 
 ## Paket 53 (0/25 fertig)
 
