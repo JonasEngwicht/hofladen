@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 940 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 964 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1683,35 +1683,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Pappenheim](https://hofladenliste.de/bayern/weissenburg-gunzenhausen/pappenheim/) `/bayern/weissenburg-gunzenhausen/pappenheim/` | Landkreis Weißenburg-Gunzenhausen | 1 | 3 | 6 |
 |  | [Strausberg](https://hofladenliste.de/brandenburg/maerkisch-oderland/strausberg/) `/brandenburg/maerkisch-oderland/strausberg/` | Landkreis Märkisch-Oderland | 1 | 3 | 6 |
 
-## Paket 57 (1/25 fertig)
+## Paket 57 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Kremmen](https://hofladenliste.de/brandenburg/oberhavel/kremmen/) `/brandenburg/oberhavel/kremmen/` | Landkreis Oberhavel | 1 | 3 | 6 |
-|  | [Liebenwalde](https://hofladenliste.de/brandenburg/oberhavel/liebenwalde/) `/brandenburg/oberhavel/liebenwalde/` | Landkreis Oberhavel | 1 | 3 | 6 |
-|  | [Mühlenbeck](https://hofladenliste.de/brandenburg/oberhavel/muehlenbeck/) `/brandenburg/oberhavel/muehlenbeck/` | Landkreis Oberhavel | 1 | 3 | 6 |
-|  | [Calau](https://hofladenliste.de/brandenburg/oberspreewald-lausitz/calau/) `/brandenburg/oberspreewald-lausitz/calau/` | Landkreis Oberspreewald-Lausitz | 1 | 3 | 6 |
-|  | [Raddusch](https://hofladenliste.de/brandenburg/oberspreewald-lausitz/raddusch/) `/brandenburg/oberspreewald-lausitz/raddusch/` | Landkreis Oberspreewald-Lausitz | 1 | 3 | 6 |
-|  | [Neuruppin](https://hofladenliste.de/brandenburg/ostprignitz-ruppin/neuruppin/) `/brandenburg/ostprignitz-ruppin/neuruppin/` | Landkreis Ostprignitz-Ruppin | 1 | 3 | 6 |
-|  | [Derwitz](https://hofladenliste.de/brandenburg/potsdam-mittelmark/derwitz/) `/brandenburg/potsdam-mittelmark/derwitz/` | Landkreis Potsdam-Mittelmark | 1 | 3 | 6 |
-|  | [Teltow](https://hofladenliste.de/brandenburg/potsdam-mittelmark/teltow/) `/brandenburg/potsdam-mittelmark/teltow/` | Landkreis Potsdam-Mittelmark | 1 | 3 | 6 |
-|  | [Golm](https://hofladenliste.de/brandenburg/potsdam/golm/) `/brandenburg/potsdam/golm/` | Potsdam | 1 | 3 | 6 |
+| ✓ | [Kremmen](https://hofladenliste.de/brandenburg/oberhavel/kremmen/) `/brandenburg/oberhavel/kremmen/` | Landkreis Oberhavel | 1 | 3 | 6 |
+| ✓ | [Liebenwalde](https://hofladenliste.de/brandenburg/oberhavel/liebenwalde/) `/brandenburg/oberhavel/liebenwalde/` | Landkreis Oberhavel | 1 | 3 | 6 |
+| ✓ | [Mühlenbeck](https://hofladenliste.de/brandenburg/oberhavel/muehlenbeck/) `/brandenburg/oberhavel/muehlenbeck/` | Landkreis Oberhavel | 1 | 3 | 6 |
+| ✓ | [Calau](https://hofladenliste.de/brandenburg/oberspreewald-lausitz/calau/) `/brandenburg/oberspreewald-lausitz/calau/` | Landkreis Oberspreewald-Lausitz | 1 | 3 | 6 |
+| ✓ | [Raddusch](https://hofladenliste.de/brandenburg/oberspreewald-lausitz/raddusch/) `/brandenburg/oberspreewald-lausitz/raddusch/` | Landkreis Oberspreewald-Lausitz | 1 | 3 | 6 |
+| ✓ | [Neuruppin](https://hofladenliste.de/brandenburg/ostprignitz-ruppin/neuruppin/) `/brandenburg/ostprignitz-ruppin/neuruppin/` | Landkreis Ostprignitz-Ruppin | 1 | 3 | 6 |
+| ✓ | [Derwitz](https://hofladenliste.de/brandenburg/potsdam-mittelmark/derwitz/) `/brandenburg/potsdam-mittelmark/derwitz/` | Landkreis Potsdam-Mittelmark | 1 | 3 | 6 |
+| ✓ | [Teltow](https://hofladenliste.de/brandenburg/potsdam-mittelmark/teltow/) `/brandenburg/potsdam-mittelmark/teltow/` | Landkreis Potsdam-Mittelmark | 1 | 3 | 6 |
+| ✓ | [Golm](https://hofladenliste.de/brandenburg/potsdam/golm/) `/brandenburg/potsdam/golm/` | Potsdam | 1 | 3 | 6 |
 | ✓ | [Burg (Spreewald)](https://hofladenliste.de/brandenburg/spree-neisse/burg-spreewald/) `/brandenburg/spree-neisse/burg-spreewald/` | Landkreis Spree-Neiße | 1 | 3 | 6 |
-|  | [Spremberg](https://hofladenliste.de/brandenburg/spree-neisse/spremberg/) `/brandenburg/spree-neisse/spremberg/` | Landkreis Spree-Neiße | 1 | 3 | 6 |
-|  | [Ludwigsfelde](https://hofladenliste.de/brandenburg/teltow-flaeming/ludwigsfelde/) `/brandenburg/teltow-flaeming/ludwigsfelde/` | Landkreis Teltow-Fläming | 1 | 3 | 6 |
-|  | [Niedergörsdorf](https://hofladenliste.de/brandenburg/teltow-flaeming/niedergoersdorf/) `/brandenburg/teltow-flaeming/niedergoersdorf/` | Landkreis Teltow-Fläming | 1 | 3 | 6 |
-|  | [Trebbin](https://hofladenliste.de/brandenburg/teltow-flaeming/trebbin/) `/brandenburg/teltow-flaeming/trebbin/` | Landkreis Teltow-Fläming | 1 | 3 | 6 |
-|  | [Boitzenburger Land](https://hofladenliste.de/brandenburg/uckermark/boitzenburger-land/) `/brandenburg/uckermark/boitzenburger-land/` | Landkreis Uckermark | 1 | 3 | 6 |
-|  | [Lychen](https://hofladenliste.de/brandenburg/uckermark/lychen/) `/brandenburg/uckermark/lychen/` | Landkreis Uckermark | 1 | 3 | 6 |
-|  | [Templin](https://hofladenliste.de/brandenburg/uckermark/templin/) `/brandenburg/uckermark/templin/` | Landkreis Uckermark | 1 | 3 | 6 |
-|  | [Heppenheim (Bergstraße)](https://hofladenliste.de/hessen/bergstrasse/heppenheim-bergstrasse/) `/hessen/bergstrasse/heppenheim-bergstrasse/` | Landkreis Bergstraße | 1 | 3 | 6 |
-|  | [Viernheim](https://hofladenliste.de/hessen/bergstrasse/viernheim/) `/hessen/bergstrasse/viernheim/` | Landkreis Bergstraße | 1 | 3 | 6 |
-|  | [Dieburg](https://hofladenliste.de/hessen/darmstadt-dieburg/dieburg/) `/hessen/darmstadt-dieburg/dieburg/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
-|  | [Erzhausen](https://hofladenliste.de/hessen/darmstadt-dieburg/erzhausen/) `/hessen/darmstadt-dieburg/erzhausen/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
-|  | [Groß-Bieberau](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-bieberau/) `/hessen/darmstadt-dieburg/gross-bieberau/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
-|  | [Flieden](https://hofladenliste.de/hessen/fulda/flieden/) `/hessen/fulda/flieden/` | Landkreis Fulda | 1 | 3 | 6 |
-|  | [Gersfeld](https://hofladenliste.de/hessen/fulda/gersfeld/) `/hessen/fulda/gersfeld/` | Landkreis Fulda | 1 | 3 | 6 |
-|  | [Neuhof](https://hofladenliste.de/hessen/fulda/neuhof/) `/hessen/fulda/neuhof/` | Landkreis Fulda | 1 | 3 | 6 |
+| ✓ | [Spremberg](https://hofladenliste.de/brandenburg/spree-neisse/spremberg/) `/brandenburg/spree-neisse/spremberg/` | Landkreis Spree-Neiße | 1 | 3 | 6 |
+| ✓ | [Ludwigsfelde](https://hofladenliste.de/brandenburg/teltow-flaeming/ludwigsfelde/) `/brandenburg/teltow-flaeming/ludwigsfelde/` | Landkreis Teltow-Fläming | 1 | 3 | 6 |
+| ✓ | [Niedergörsdorf](https://hofladenliste.de/brandenburg/teltow-flaeming/niedergoersdorf/) `/brandenburg/teltow-flaeming/niedergoersdorf/` | Landkreis Teltow-Fläming | 1 | 3 | 6 |
+| ✓ | [Trebbin](https://hofladenliste.de/brandenburg/teltow-flaeming/trebbin/) `/brandenburg/teltow-flaeming/trebbin/` | Landkreis Teltow-Fläming | 1 | 3 | 6 |
+| ✓ | [Boitzenburger Land](https://hofladenliste.de/brandenburg/uckermark/boitzenburger-land/) `/brandenburg/uckermark/boitzenburger-land/` | Landkreis Uckermark | 1 | 3 | 6 |
+| ✓ | [Lychen](https://hofladenliste.de/brandenburg/uckermark/lychen/) `/brandenburg/uckermark/lychen/` | Landkreis Uckermark | 1 | 3 | 6 |
+| ✓ | [Templin](https://hofladenliste.de/brandenburg/uckermark/templin/) `/brandenburg/uckermark/templin/` | Landkreis Uckermark | 1 | 3 | 6 |
+| ✓ | [Heppenheim (Bergstraße)](https://hofladenliste.de/hessen/bergstrasse/heppenheim-bergstrasse/) `/hessen/bergstrasse/heppenheim-bergstrasse/` | Landkreis Bergstraße | 1 | 3 | 6 |
+| ✓ | [Viernheim](https://hofladenliste.de/hessen/bergstrasse/viernheim/) `/hessen/bergstrasse/viernheim/` | Landkreis Bergstraße | 1 | 3 | 6 |
+| ✓ | [Dieburg](https://hofladenliste.de/hessen/darmstadt-dieburg/dieburg/) `/hessen/darmstadt-dieburg/dieburg/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
+| ✓ | [Erzhausen](https://hofladenliste.de/hessen/darmstadt-dieburg/erzhausen/) `/hessen/darmstadt-dieburg/erzhausen/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
+| ✓ | [Groß-Bieberau](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-bieberau/) `/hessen/darmstadt-dieburg/gross-bieberau/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
+| ✓ | [Flieden](https://hofladenliste.de/hessen/fulda/flieden/) `/hessen/fulda/flieden/` | Landkreis Fulda | 1 | 3 | 6 |
+| ✓ | [Gersfeld](https://hofladenliste.de/hessen/fulda/gersfeld/) `/hessen/fulda/gersfeld/` | Landkreis Fulda | 1 | 3 | 6 |
+| ✓ | [Neuhof](https://hofladenliste.de/hessen/fulda/neuhof/) `/hessen/fulda/neuhof/` | Landkreis Fulda | 1 | 3 | 6 |
 
 ## Paket 58 (0/25 fertig)
 

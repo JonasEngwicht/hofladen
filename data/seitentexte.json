@@ -28628,5 +28628,725 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/brandenburg/oberhavel/kremmen/": {
+    "titel": "Hofläden in Kremmen: gut zu wissen",
+    "oben": "In Kremmen sind zwei Imkereien mit Honig, die Imkerei in Kremmen und die Rhinluch-Imkerei, und der Hofladen des Spargelhofs eingetragen.",
+    "einleitung": "Honig gibt es an zwei Stellen, Spargel im Hofladen des Spargelhofs in der Saison.\n\nWeitere Höfe findest du im Löwenberger Land, in Falkensee und in Wustermark.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Löwenberger Land und Umgebung",
+        "pfad": "/brandenburg/oberhavel/loewenberger-land/"
+      },
+      {
+        "text": "Hofläden in Falkensee und Umgebung",
+        "pfad": "/brandenburg/havelland/falkensee/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/oberhavel/liebenwalde/": {
+    "titel": "Hofläden in Liebenwalde: gut zu wissen",
+    "oben": "Liebenwalde nennt den Hofladen Gräben, einen Eierautomaten und die Tourismusinformation mit Hofladen.",
+    "einleitung": "Eier gibt es jederzeit am Automaten.\n\nWeitere Höfe findest du im Löwenberger Land, in Gransee und in Mühlenbeck.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gransee und Umgebung",
+        "pfad": "/brandenburg/oberhavel/gransee/"
+      },
+      {
+        "text": "Hofläden in Mühlenbeck und Umgebung",
+        "pfad": "/brandenburg/oberhavel/muehlenbeck/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/oberhavel/muehlenbeck/": {
+    "titel": "Hofläden in Mühlenbeck: gut zu wissen",
+    "oben": "Mühlenbeck am nördlichen Berliner Rand hat den Summter Hofladen, einen Hofladen in Mühlenbeck und den Mühlenbecker Hofladen.",
+    "einleitung": "Drei Hofläden liegen nahe beieinander.\n\nWeitere Höfe findest du in Liebenwalde und in Berlin.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Liebenwalde und Umgebung",
+        "pfad": "/brandenburg/oberhavel/liebenwalde/"
+      },
+      {
+        "text": "Hofläden in Berlin Kreuzberg und Umgebung",
+        "pfad": "/berlin/berlin/berlin-kreuzberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/oberspreewald-lausitz/calau/": {
+    "titel": "Hofläden in Calau: gut zu wissen",
+    "oben": "In Calau sind der Spargelhof Kalkwitz, die Bäuerliche Produktionsgemeinschaft Sassleben mit Bio-Angebot und ein weiterer Eintrag des Spargelhofs Kalkwitz verzeichnet.",
+    "einleitung": "Spargel gibt es auf dem Spargelhof Kalkwitz in der Saison.\n\nWeitere Höfe findest du in Lübbenau, Raddusch und Boblitz.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lübbenau/Spreewald und Umgebung",
+        "pfad": "/brandenburg/oberspreewald-lausitz/luebbenau-spreewald/"
+      },
+      {
+        "text": "Hofläden in Raddusch und Umgebung",
+        "pfad": "/brandenburg/oberspreewald-lausitz/raddusch/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/oberspreewald-lausitz/raddusch/": {
+    "titel": "Hofläden in Raddusch: gut zu wissen",
+    "oben": "Raddusch im Spreewald hat einen Fischverkauf, den Spreewälder Hofladen und die Alpaca Finca mit Bio-Angebot.",
+    "einleitung": "Fisch gibt es beim Fischverkauf.\n\nWeitere Höfe findest du in Boblitz, Lübbenau und Burg im Spreewald.",
+    "saison": [
+      {
+        "titel": "Fisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gurken",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Boblitz und Umgebung",
+        "pfad": "/brandenburg/oberspreewald-lausitz/boblitz/"
+      },
+      {
+        "text": "Hofläden in Burg (Spreewald) und Umgebung",
+        "pfad": "/brandenburg/spree-neisse/burg-spreewald/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/ostprignitz-ruppin/neuruppin/": {
+    "titel": "Hofläden in Neuruppin: gut zu wissen",
+    "oben": "In Neuruppin sind der Hofladen der Lebensräume gGmbH, die Regionalentwicklungsgesellschaft Nordwestbrandenburg und der Treskower Hofladen eingetragen.",
+    "einleitung": "Drei Hofläden bieten regionale Produkte.\n\nWeitere Höfe findest du in Kremmen, im Löwenberger Land und in Gransee.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kremmen und Umgebung",
+        "pfad": "/brandenburg/oberhavel/kremmen/"
+      },
+      {
+        "text": "Hofläden in Gransee und Umgebung",
+        "pfad": "/brandenburg/oberhavel/gransee/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/potsdam-mittelmark/derwitz/": {
+    "titel": "Hofläden in Derwitz: gut zu wissen",
+    "oben": "Derwitz bei Werder nennt den Derwitzer Hofladen, einen weiteren Hofladen und den Kirschgarten Werder mit Obst.",
+    "einleitung": "Kirschen und anderes Obst gibt es im Kirschgarten Werder in der Saison.\n\nWeitere Höfe findest du in Werder an der Havel, in Golm und in Schwielowsee.",
+    "saison": [
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Werder (Havel) und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/werder-havel/"
+      },
+      {
+        "text": "Hofläden in Schwielowsee und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/schwielowsee/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/potsdam-mittelmark/teltow/": {
+    "titel": "Hofläden in Teltow: gut zu wissen",
+    "oben": "Teltow hat zwei Einträge von Grabow's Hofladen, als Regiomat und als Hofladen, und eine Hofstelle in der Dorfstraße mit Eiern, Gemüse und Honig.",
+    "einleitung": "Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Ludwigsfelde, Potsdam und Berlin.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ludwigsfelde und Umgebung",
+        "pfad": "/brandenburg/teltow-flaeming/ludwigsfelde/"
+      },
+      {
+        "text": "Hofläden in Potsdam",
+        "pfad": "/brandenburg/potsdam/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/potsdam/golm/": {
+    "titel": "Hofläden in Golm: gut zu wissen",
+    "oben": "Golm gehört zu Potsdam. Eingetragen sind Imkerhonig aus Werder an einem Regiomaten, ein Kartoffelverkauf direkt vom Bauern und ein Eierverkauf.",
+    "einleitung": "Honig und Kartoffeln gibt es direkt, Eier in Freilandhaltung.\n\nWeitere Höfe findest du in Werder an der Havel und in Schwielowsee.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Werder (Havel) und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/werder-havel/"
+      },
+      {
+        "text": "Hofläden in Schwielowsee und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/schwielowsee/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/spree-neisse/spremberg/": {
+    "titel": "Hofläden in Spremberg: gut zu wissen",
+    "oben": "In Spremberg sind die Spremberger Hofkäserei, eine Lehrimkerei und der Hof Dörry eingetragen.",
+    "einleitung": "Käse gibt es direkt aus der Hofkäserei, Honig bei der Lehrimkerei.\n\nWeitere Höfe findest du in Hoyerswerda, Kolkwitz und in Cottbus.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hoyerswerda und Umgebung",
+        "pfad": "/sachsen/bautzen/hoyerswerda/"
+      },
+      {
+        "text": "Hofläden in Kolkwitz und Umgebung",
+        "pfad": "/brandenburg/spree-neisse/kolkwitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/teltow-flaeming/ludwigsfelde/": {
+    "titel": "Hofläden in Ludwigsfelde: gut zu wissen",
+    "oben": "Ludwigsfelde nennt das Vierseithofcafé \"land.wirt.schaft\", den Kartoffel-Landhof und den Spargelhof Siethen.",
+    "einleitung": "Spargel gibt es auf dem Spargelhof Siethen in der Saison, Kartoffeln im Landhof, im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Trebbin, Teltow und Potsdam.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Trebbin und Umgebung",
+        "pfad": "/brandenburg/teltow-flaeming/trebbin/"
+      },
+      {
+        "text": "Hofläden in Teltow und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/teltow/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/teltow-flaeming/niedergoersdorf/": {
+    "titel": "Hofläden in Niedergörsdorf: gut zu wissen",
+    "oben": "In Niedergörsdorf sind Sommers Hofladen mit Bio-Angebot, ein weiterer Hofladen und ein Eierautomat eingetragen.",
+    "einleitung": "Eier gibt es jederzeit am Automaten.\n\nWeitere Höfe findest du in Treuenbrietzen, Beelitz und Trebbin.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Treuenbrietzen und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/treuenbrietzen/"
+      },
+      {
+        "text": "Hofläden in Beelitz und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/beelitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/teltow-flaeming/trebbin/": {
+    "titel": "Hofläden in Trebbin: gut zu wissen",
+    "oben": "Trebbin hat das Hofcafé Stangenhagen, die Imkerei Brauße und den Hofladen von Rainer Herzlieb.",
+    "einleitung": "Honig gibt es bei der Imkerei Brauße, im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Ludwigsfelde, Beelitz und Teltow.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ludwigsfelde und Umgebung",
+        "pfad": "/brandenburg/teltow-flaeming/ludwigsfelde/"
+      },
+      {
+        "text": "Hofläden in Beelitz und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/beelitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/uckermark/boitzenburger-land/": {
+    "titel": "Hofläden in Boitzenburger Land: gut zu wissen",
+    "oben": "Im Boitzenburger Land sind der Hof im Winkel und zwei Imkereien mit Honig eingetragen.",
+    "einleitung": "Honig gibt es bei beiden Imkereien.\n\nWeitere Höfe findest du in Templin, Lychen und in der Feldberger Seenlandschaft.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Templin und Umgebung",
+        "pfad": "/brandenburg/uckermark/templin/"
+      },
+      {
+        "text": "Hofläden in Lychen und Umgebung",
+        "pfad": "/brandenburg/uckermark/lychen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/uckermark/lychen/": {
+    "titel": "Hofläden in Lychen: gut zu wissen",
+    "oben": "Lychen nennt den (Hof-)Laden und die Rezeption Re:hof mit Milch, Käse, Gemüse, Obst, Honig, Marmelade und Getränken, einen Regiomaten und ein Hofcafé.",
+    "einleitung": "Eier und Kartoffeln gibt es jederzeit am Regiomaten. Der Re:hof führt ein breites Sortiment.\n\nWeitere Höfe findest du in Templin, im Boitzenburger Land und in der Feldberger Seenlandschaft.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Templin und Umgebung",
+        "pfad": "/brandenburg/uckermark/templin/"
+      },
+      {
+        "text": "Hofläden in Boitzenburger Land und Umgebung",
+        "pfad": "/brandenburg/uckermark/boitzenburger-land/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/uckermark/templin/": {
+    "titel": "Hofläden in Templin: gut zu wissen",
+    "oben": "In Templin sind der Hofladen Staudenmüller mit Bio-Gemüse, ein weiterer Hofladen und der Wald-Hofladen eingetragen.",
+    "einleitung": "Bio-Gemüse gibt es im Hofladen Staudenmüller.\n\nWeitere Höfe findest du im Boitzenburger Land, in Lychen und in der Feldberger Seenlandschaft.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Boitzenburger Land und Umgebung",
+        "pfad": "/brandenburg/uckermark/boitzenburger-land/"
+      },
+      {
+        "text": "Hofläden in Lychen und Umgebung",
+        "pfad": "/brandenburg/uckermark/lychen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/bergstrasse/heppenheim-bergstrasse/": {
+    "titel": "Hofläden in Heppenheim (Bergstraße): gut zu wissen",
+    "oben": "Heppenheim an der Bergstraße hat einen Regiomaten mit Eiern, Käse und Fleisch, einen Hofladen und den Eierautomaten von Willi Arnold.",
+    "einleitung": "Eier, Käse und Fleisch gibt es jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Bensheim, Hemsbach und Einhausen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bensheim und Umgebung",
+        "pfad": "/hessen/bergstrasse/bensheim/"
+      },
+      {
+        "text": "Hofläden in Einhausen und Umgebung",
+        "pfad": "/hessen/bergstrasse/einhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/bergstrasse/viernheim/": {
+    "titel": "Hofläden in Viernheim: gut zu wissen",
+    "oben": "In Viernheim sind der Eierautomat Wolk, der Hofladen Wolk und ein Regiomat mit Eiern eingetragen.",
+    "einleitung": "Eier gibt es jederzeit an den Automaten.\n\nWeitere Höfe findest du in Heddesheim, Weinheim und Hirschberg an der Bergstraße.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heddesheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/heddesheim/"
+      },
+      {
+        "text": "Hofläden in Weinheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/weinheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/darmstadt-dieburg/dieburg/": {
+    "titel": "Hofläden in Dieburg: gut zu wissen",
+    "oben": "Dieburg nennt einen Hofladen, Bauer Busch und den Birkenhof.",
+    "einleitung": "Drei Höfe verkaufen direkt.\n\nWeitere Höfe findest du in Groß-Zimmern, Groß-Umstadt und Reinheim.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Groß-Zimmern und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/gross-zimmern/"
+      },
+      {
+        "text": "Hofläden in Reinheim und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/reinheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/darmstadt-dieburg/erzhausen/": {
+    "titel": "Hofläden in Erzhausen: gut zu wissen",
+    "oben": "In Erzhausen sind ein Hofladen, die Bienenheimat mit Honig und das Hofladen-Café Ottilienmühle eingetragen.",
+    "einleitung": "Honig gibt es bei der Bienenheimat, im Hofladen-Café kannst du einkehren.\n\nWeitere Höfe findest du in Egelsbach, Weiterstadt und Dreieich.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Egelsbach und Umgebung",
+        "pfad": "/hessen/offenbach/egelsbach/"
+      },
+      {
+        "text": "Hofläden in Weiterstadt und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/weiterstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/darmstadt-dieburg/gross-bieberau/": {
+    "titel": "Hofläden in Groß-Bieberau: gut zu wissen",
+    "oben": "Groß-Bieberau hat zwei Hofläden und das Bauernlädchen Volz.",
+    "einleitung": "Drei Hofläden liegen im Ort.\n\nWeitere Höfe findest du in Reinheim, Brensbach und Otzberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Reinheim und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/reinheim/"
+      },
+      {
+        "text": "Hofläden in Otzberg und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/otzberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/fulda/flieden/": {
+    "titel": "Hofläden in Flieden: gut zu wissen",
+    "oben": "In Flieden sind der Biolandhof Hartmann, der Biohof Gans und Quitte mit Fleisch und Geflügel und der Hof Wiegand eingetragen.",
+    "einleitung": "Geflügel gibt es auf dem Biohof Gans und Quitte.\n\nWeitere Höfe findest du in Neuhof, Schlüchtern und in der Stadt Fulda.",
+    "saison": [
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neuhof und Umgebung",
+        "pfad": "/hessen/fulda/neuhof/"
+      },
+      {
+        "text": "Hofläden in Schlüchtern und Umgebung",
+        "pfad": "/hessen/main-kinzig-kreis/schluechtern/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/fulda/gersfeld/": {
+    "titel": "Hofläden in Gersfeld: gut zu wissen",
+    "oben": "Gersfeld liegt in der Rhön. Eingetragen sind der Rhöner Bauernladen (zweimal) und die Hofkäserei Richter.",
+    "einleitung": "Käse gibt es direkt aus der Hofkäserei Richter.\n\nWeitere Höfe findest du in Oberelsbach, Hofbieber und Künzell.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberelsbach und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/oberelsbach/"
+      },
+      {
+        "text": "Hofläden in Hofbieber und Umgebung",
+        "pfad": "/hessen/fulda/hofbieber/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/fulda/neuhof/": {
+    "titel": "Hofläden in Neuhof: gut zu wissen",
+    "oben": "Neuhof nennt die Solawi Osthessen, das BioGut Benkner und einen Eierautomaten.",
+    "einleitung": "Eier gibt es jederzeit am Automaten.\n\nWeitere Höfe findest du in Flieden, Schlüchtern und in der Stadt Fulda.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Flieden und Umgebung",
+        "pfad": "/hessen/fulda/flieden/"
+      },
+      {
+        "text": "Hofläden in Schlüchtern und Umgebung",
+        "pfad": "/hessen/main-kinzig-kreis/schluechtern/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
