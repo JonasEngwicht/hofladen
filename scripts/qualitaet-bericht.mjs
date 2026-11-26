@@ -9,6 +9,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ladePlz, distanzKm } from './lib.mjs';
+import { strasseZerlegen } from './bereinigen.mjs';
 import { namenAehnlich, namenWoerter, rasterIndex } from './quellen.mjs';
 import { parse as ohParse, regeln as ohRegeln } from '../static/oh.js';
 
@@ -128,6 +129,7 @@ for (const e of liste) {
     if (/\b\d{5}\b/.test(e.strasse)) melde('mittel', 'Straße enthält eine PLZ', e, e.strasse);
     if (e.strasse.toLowerCase() === n.toLowerCase()) melde('mittel', 'Straße gleich Name', e, e.strasse);
     if (/https?:|@/.test(e.strasse)) melde('hoch', 'Straße enthält URL/E-Mail', e, e.strasse);
+    if (e.strasse.includes(',') && !strasseZerlegen(e.strasse).sicher) melde('mittel', 'Straße unklar (mehrere Teile)', e, e.strasse);
   }
   if (!(e.lat > 47.2 && e.lat < 55.1 && e.lon > 5.8 && e.lon < 15.1)) melde('hoch', 'Koordinaten außerhalb Deutschlands', e, `${e.lat}, ${e.lon}`);
   // Öffnungszeiten
