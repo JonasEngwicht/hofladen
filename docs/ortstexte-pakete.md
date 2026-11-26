@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1055 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1080 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1953,35 +1953,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Bornstedt](https://hofladenliste.de/sachsen-anhalt/mansfeld-suedharz/bornstedt/) `/sachsen-anhalt/mansfeld-suedharz/bornstedt/` | Landkreis Mansfeld-Südharz | 1 | 3 | 6 |
 |  | [Tangermünde](https://hofladenliste.de/sachsen-anhalt/stendal/tangermuende/) `/sachsen-anhalt/stendal/tangermuende/` | Landkreis Stendal | 1 | 3 | 6 |
 
-## Paket 66 (0/25 fertig)
+## Paket 66 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Sohland an der Spree](https://hofladenliste.de/sachsen/bautzen/sohland-an-der-spree/) `/sachsen/bautzen/sohland-an-der-spree/` | Landkreis Bautzen | 1 | 3 | 6 |
-|  | [Wachau](https://hofladenliste.de/sachsen/bautzen/wachau/) `/sachsen/bautzen/wachau/` | Landkreis Bautzen | 1 | 3 | 6 |
-|  | [Weißenberg](https://hofladenliste.de/sachsen/bautzen/weissenberg/) `/sachsen/bautzen/weissenberg/` | Landkreis Bautzen | 1 | 3 | 6 |
-|  | [Dresden Gompitz, Ockerwitz](https://hofladenliste.de/sachsen/dresden/dresden-gompitz-ockerwitz/) `/sachsen/dresden/dresden-gompitz-ockerwitz/` | Dresden | 1 | 3 | 6 |
-|  | [Burkhardtsdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/burkhardtsdorf/) `/sachsen/erzgebirgskreis/burkhardtsdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
-|  | [Crottendorf](https://hofladenliste.de/sachsen/erzgebirgskreis/crottendorf/) `/sachsen/erzgebirgskreis/crottendorf/` | Erzgebirgskreis | 1 | 3 | 6 |
-|  | [Drebach](https://hofladenliste.de/sachsen/erzgebirgskreis/drebach/) `/sachsen/erzgebirgskreis/drebach/` | Erzgebirgskreis | 1 | 3 | 6 |
-|  | [Gornsdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/gornsdorf/) `/sachsen/erzgebirgskreis/gornsdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
-|  | [Großolbersdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/grossolbersdorf/) `/sachsen/erzgebirgskreis/grossolbersdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
-|  | [Heidersdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/heidersdorf/) `/sachsen/erzgebirgskreis/heidersdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
-|  | [Niederwürschnitz](https://hofladenliste.de/sachsen/erzgebirgskreis/niederwuerschnitz/) `/sachsen/erzgebirgskreis/niederwuerschnitz/` | Erzgebirgskreis | 1 | 3 | 6 |
-|  | [Markersdorf](https://hofladenliste.de/sachsen/goerlitz/markersdorf/) `/sachsen/goerlitz/markersdorf/` | Landkreis Görlitz | 1 | 3 | 6 |
-|  | [Belgershain](https://hofladenliste.de/sachsen/landkreis-leipzig/belgershain/) `/sachsen/landkreis-leipzig/belgershain/` | Landkreis Leipzig | 1 | 3 | 6 |
-|  | [Groitzsch](https://hofladenliste.de/sachsen/landkreis-leipzig/groitzsch/) `/sachsen/landkreis-leipzig/groitzsch/` | Landkreis Leipzig | 1 | 3 | 6 |
-|  | [Coswig](https://hofladenliste.de/sachsen/meissen/coswig/) `/sachsen/meissen/coswig/` | Landkreis Meißen | 1 | 3 | 6 |
-|  | [Ebersbach](https://hofladenliste.de/sachsen/meissen/ebersbach/) `/sachsen/meissen/ebersbach/` | Landkreis Meißen | 1 | 3 | 6 |
-|  | [Lommatzsch](https://hofladenliste.de/sachsen/meissen/lommatzsch/) `/sachsen/meissen/lommatzsch/` | Landkreis Meißen | 1 | 3 | 6 |
-|  | [Niederau](https://hofladenliste.de/sachsen/meissen/niederau/) `/sachsen/meissen/niederau/` | Landkreis Meißen | 1 | 3 | 6 |
-|  | [Priestewitz](https://hofladenliste.de/sachsen/meissen/priestewitz/) `/sachsen/meissen/priestewitz/` | Landkreis Meißen | 1 | 3 | 6 |
-|  | [Augustusburg](https://hofladenliste.de/sachsen/mittelsachsen/augustusburg/) `/sachsen/mittelsachsen/augustusburg/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
-|  | [Bobritzsch](https://hofladenliste.de/sachsen/mittelsachsen/bobritzsch/) `/sachsen/mittelsachsen/bobritzsch/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
-|  | [Lichtenau (Landkreis Mittelsachsen)](https://hofladenliste.de/sachsen/mittelsachsen/lichtenau/) `/sachsen/mittelsachsen/lichtenau/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
-|  | [Penig](https://hofladenliste.de/sachsen/mittelsachsen/penig/) `/sachsen/mittelsachsen/penig/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
-|  | [Seelitz](https://hofladenliste.de/sachsen/mittelsachsen/seelitz/) `/sachsen/mittelsachsen/seelitz/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
-|  | [Striegistal](https://hofladenliste.de/sachsen/mittelsachsen/striegistal/) `/sachsen/mittelsachsen/striegistal/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
+| ✓ | [Sohland an der Spree](https://hofladenliste.de/sachsen/bautzen/sohland-an-der-spree/) `/sachsen/bautzen/sohland-an-der-spree/` | Landkreis Bautzen | 1 | 3 | 6 |
+| ✓ | [Wachau](https://hofladenliste.de/sachsen/bautzen/wachau/) `/sachsen/bautzen/wachau/` | Landkreis Bautzen | 1 | 3 | 6 |
+| ✓ | [Weißenberg](https://hofladenliste.de/sachsen/bautzen/weissenberg/) `/sachsen/bautzen/weissenberg/` | Landkreis Bautzen | 1 | 3 | 6 |
+| ✓ | [Dresden Gompitz, Ockerwitz](https://hofladenliste.de/sachsen/dresden/dresden-gompitz-ockerwitz/) `/sachsen/dresden/dresden-gompitz-ockerwitz/` | Dresden | 1 | 3 | 6 |
+| ✓ | [Burkhardtsdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/burkhardtsdorf/) `/sachsen/erzgebirgskreis/burkhardtsdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
+| ✓ | [Crottendorf](https://hofladenliste.de/sachsen/erzgebirgskreis/crottendorf/) `/sachsen/erzgebirgskreis/crottendorf/` | Erzgebirgskreis | 1 | 3 | 6 |
+| ✓ | [Drebach](https://hofladenliste.de/sachsen/erzgebirgskreis/drebach/) `/sachsen/erzgebirgskreis/drebach/` | Erzgebirgskreis | 1 | 3 | 6 |
+| ✓ | [Gornsdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/gornsdorf/) `/sachsen/erzgebirgskreis/gornsdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
+| ✓ | [Großolbersdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/grossolbersdorf/) `/sachsen/erzgebirgskreis/grossolbersdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
+| ✓ | [Heidersdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/heidersdorf/) `/sachsen/erzgebirgskreis/heidersdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
+| ✓ | [Niederwürschnitz](https://hofladenliste.de/sachsen/erzgebirgskreis/niederwuerschnitz/) `/sachsen/erzgebirgskreis/niederwuerschnitz/` | Erzgebirgskreis | 1 | 3 | 6 |
+| ✓ | [Markersdorf](https://hofladenliste.de/sachsen/goerlitz/markersdorf/) `/sachsen/goerlitz/markersdorf/` | Landkreis Görlitz | 1 | 3 | 6 |
+| ✓ | [Belgershain](https://hofladenliste.de/sachsen/landkreis-leipzig/belgershain/) `/sachsen/landkreis-leipzig/belgershain/` | Landkreis Leipzig | 1 | 3 | 6 |
+| ✓ | [Groitzsch](https://hofladenliste.de/sachsen/landkreis-leipzig/groitzsch/) `/sachsen/landkreis-leipzig/groitzsch/` | Landkreis Leipzig | 1 | 3 | 6 |
+| ✓ | [Coswig](https://hofladenliste.de/sachsen/meissen/coswig/) `/sachsen/meissen/coswig/` | Landkreis Meißen | 1 | 3 | 6 |
+| ✓ | [Ebersbach](https://hofladenliste.de/sachsen/meissen/ebersbach/) `/sachsen/meissen/ebersbach/` | Landkreis Meißen | 1 | 3 | 6 |
+| ✓ | [Lommatzsch](https://hofladenliste.de/sachsen/meissen/lommatzsch/) `/sachsen/meissen/lommatzsch/` | Landkreis Meißen | 1 | 3 | 6 |
+| ✓ | [Niederau](https://hofladenliste.de/sachsen/meissen/niederau/) `/sachsen/meissen/niederau/` | Landkreis Meißen | 1 | 3 | 6 |
+| ✓ | [Priestewitz](https://hofladenliste.de/sachsen/meissen/priestewitz/) `/sachsen/meissen/priestewitz/` | Landkreis Meißen | 1 | 3 | 6 |
+| ✓ | [Augustusburg](https://hofladenliste.de/sachsen/mittelsachsen/augustusburg/) `/sachsen/mittelsachsen/augustusburg/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
+| ✓ | [Bobritzsch](https://hofladenliste.de/sachsen/mittelsachsen/bobritzsch/) `/sachsen/mittelsachsen/bobritzsch/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
+| ✓ | [Lichtenau (Landkreis Mittelsachsen)](https://hofladenliste.de/sachsen/mittelsachsen/lichtenau/) `/sachsen/mittelsachsen/lichtenau/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
+| ✓ | [Penig](https://hofladenliste.de/sachsen/mittelsachsen/penig/) `/sachsen/mittelsachsen/penig/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
+| ✓ | [Seelitz](https://hofladenliste.de/sachsen/mittelsachsen/seelitz/) `/sachsen/mittelsachsen/seelitz/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
+| ✓ | [Striegistal](https://hofladenliste.de/sachsen/mittelsachsen/striegistal/) `/sachsen/mittelsachsen/striegistal/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
 
 ## Paket 67 (24/25 fertig)
 

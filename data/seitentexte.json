@@ -32078,5 +32078,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/sachsen/bautzen/sohland-an-der-spree/": {
+    "titel": "Hofläden in Sohland an der Spree: gut zu wissen",
+    "oben": "In Sohland an der Spree sind die Hofkäserei Vetter, die Sohlander Direktvermarktungs GmbH und der Hofladen Großmann eingetragen.",
+    "einleitung": "Käse gibt es direkt aus der Hofkäserei Vetter.\n\nWeitere Höfe findest du in Doberschau-Gaußig, Bautzen und Herrnhut.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Doberschau-Gaußig und Umgebung",
+        "pfad": "/sachsen/bautzen/doberschau-gaussig/"
+      },
+      {
+        "text": "Hofläden in Bautzen und Umgebung",
+        "pfad": "/sachsen/bautzen/bautzen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/bautzen/wachau/": {
+    "titel": "Hofläden in Wachau: gut zu wissen",
+    "oben": "Wachau nennt den Hofladen Oesehof Seifersdorf, einen Milchautomaten mit Eiern, Milch und Honig und einen Regiomaten.",
+    "einleitung": "Milch, Eier und Honig gibt es jederzeit am Automaten. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Radeburg, Elstra und in der Stadt Dresden.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Radeburg und Umgebung",
+        "pfad": "/sachsen/meissen/radeburg/"
+      },
+      {
+        "text": "Hofläden in Elstra und Umgebung",
+        "pfad": "/sachsen/bautzen/elstra/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/bautzen/weissenberg/": {
+    "titel": "Hofläden in Weißenberg: gut zu wissen",
+    "oben": "In Weißenberg sind ein Hofladen, Agrar-Produkte und die Imkerei Diener eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei Diener.\n\nWeitere Höfe findest du in Bautzen, Markersdorf und Herrnhut.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bautzen und Umgebung",
+        "pfad": "/sachsen/bautzen/bautzen/"
+      },
+      {
+        "text": "Hofläden in Markersdorf und Umgebung",
+        "pfad": "/sachsen/goerlitz/markersdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/dresden/dresden-gompitz-ockerwitz/": {
+    "titel": "Hofläden in Dresden Gompitz, Ockerwitz: gut zu wissen",
+    "oben": "Gompitz und Ockerwitz im Dresdner Westen haben eine Milchtankstelle, einen Regiomaten mit Eiern und das Blumenfeld Bei den Blumen zum Selberpflücken.",
+    "einleitung": "Blumen kannst du selbst pflücken, Eier gibt es jederzeit am Regiomaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Radebeul, Freital und Wilsdruff.",
+    "saison": [
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Radebeul und Umgebung",
+        "pfad": "/sachsen/meissen/radebeul/"
+      },
+      {
+        "text": "Hofläden in Wilsdruff und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/wilsdruff/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/erzgebirgskreis/burkhardtsdorf/": {
+    "titel": "Hofläden in Burkhardtsdorf: gut zu wissen",
+    "oben": "In Burkhardtsdorf sind der Roessler Hof und zwei Imker eingetragen: die Imkerei Gläßer und Frank Weiße.",
+    "einleitung": "Honig gibt es bei beiden Imkern.\n\nWeitere Höfe findest du in Gornsdorf, Drebach und Chemnitz.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gornsdorf und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/gornsdorf/"
+      },
+      {
+        "text": "Hofläden in Drebach und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/drebach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/erzgebirgskreis/crottendorf/": {
+    "titel": "Hofläden in Crottendorf: gut zu wissen",
+    "oben": "Crottendorf im Erzgebirge nennt Bienentau, die Erlebnisimkerei von Schulze und Schmiedgen, einen Honigladen und die Hofkäserei Fritzsch.",
+    "einleitung": "Honig gibt es an zwei Stellen, Käse direkt aus der Hofkäserei.\n\nWeitere Höfe findest du in Drebach, Lößnitz und Gornsdorf.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Drebach und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/drebach/"
+      },
+      {
+        "text": "Hofläden in Lößnitz und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/loessnitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/erzgebirgskreis/drebach/": {
+    "titel": "Hofläden in Drebach: gut zu wissen",
+    "oben": "In Drebach sind der Hofladen Horn mit Eiern, Käse, Fleisch, Obst, Honig und Getränken, Frassgusch mit Bio-Angebot und die Imkerei Schreiter eingetragen.",
+    "einleitung": "Der Hofladen Horn führt ein breites Sortiment.\n\nWeitere Höfe findest du in Großolbersdorf, Zschopau und Burkhardtsdorf.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Großolbersdorf und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/grossolbersdorf/"
+      },
+      {
+        "text": "Hofläden in Zschopau und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/zschopau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/erzgebirgskreis/gornsdorf/": {
+    "titel": "Hofläden in Gornsdorf: gut zu wissen",
+    "oben": "Gornsdorf hat den Hofladen Bauer Ziegs, Bärbels Bienenkärbel mit Honig und den Landhandel Gornsdorf.",
+    "einleitung": "Honig gibt es bei Bärbels Bienenkärbel.\n\nWeitere Höfe findest du in Burkhardtsdorf, Drebach und Niederwürschnitz.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Burkhardtsdorf und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/burkhardtsdorf/"
+      },
+      {
+        "text": "Hofläden in Niederwürschnitz und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/niederwuerschnitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/erzgebirgskreis/grossolbersdorf/": {
+    "titel": "Hofläden in Großolbersdorf: gut zu wissen",
+    "oben": "In Großolbersdorf sind eine Frischmilchtankstelle, Hopfgartner Honig und ein Lebensmittelautomat mit Eiern, Käse, Kartoffeln und Honig eingetragen.",
+    "einleitung": "Milch und Lebensmittel gibt es jederzeit an den Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Zschopau, Drebach und Augustusburg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zschopau und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/zschopau/"
+      },
+      {
+        "text": "Hofläden in Augustusburg und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/augustusburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/erzgebirgskreis/heidersdorf/": {
+    "titel": "Hofläden in Heidersdorf: gut zu wissen",
+    "oben": "Heidersdorf nennt eine Milchtankstelle, den Landhandel Heidersdorf und ein Bienenhaus.",
+    "einleitung": "Die Milch ist Rohmilch: vor dem Trinken abkochen. Honig gibt es im Bienenhaus.\n\nWeitere Höfe findest du in Eppendorf, Großolbersdorf und Zschopau.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eppendorf und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/eppendorf/"
+      },
+      {
+        "text": "Hofläden in Großolbersdorf und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/grossolbersdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/erzgebirgskreis/niederwuerschnitz/": {
+    "titel": "Hofläden in Niederwürschnitz: gut zu wissen",
+    "oben": "In Niederwürschnitz sind die Frischmilchzapfe, der Hofladen von Heike und Jörg Grimm und Bienenwilli eingetragen.",
+    "einleitung": "Die Milch ist Rohmilch: vor dem Trinken abkochen. Honig gibt es bei Bienenwilli.\n\nWeitere Höfe findest du in Hartenstein, Gornsdorf und Lößnitz.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hartenstein und Umgebung",
+        "pfad": "/sachsen/zwickau/hartenstein/"
+      },
+      {
+        "text": "Hofläden in Gornsdorf und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/gornsdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/goerlitz/markersdorf/": {
+    "titel": "Hofläden in Markersdorf: gut zu wissen",
+    "oben": "Markersdorf bei Görlitz hat eine Milchtankstelle, die Imkerei Windfege und einen Hofladen mit Kartoffeln.",
+    "einleitung": "Honig gibt es bei der Imkerei Windfege. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Görlitz, Herrnhut und Weißenberg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Görlitz und Umgebung",
+        "pfad": "/sachsen/goerlitz/goerlitz/"
+      },
+      {
+        "text": "Hofläden in Weißenberg und Umgebung",
+        "pfad": "/sachsen/bautzen/weissenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/landkreis-leipzig/belgershain/": {
+    "titel": "Hofläden in Belgershain: gut zu wissen",
+    "oben": "In Belgershain sind das Landcafé Köhra, ein Hofladen mit Gemüse und Blumen und der Imker Weisbrich eingetragen.",
+    "einleitung": "Im Landcafé Köhra kannst du einkehren, Honig gibt es beim Imker Weisbrich.\n\nWeitere Höfe findest du in Grimma, Taucha und in der Stadt Leipzig.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Grimma und Umgebung",
+        "pfad": "/sachsen/landkreis-leipzig/grimma/"
+      },
+      {
+        "text": "Hofläden in Taucha und Umgebung",
+        "pfad": "/sachsen/nordsachsen/taucha/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/landkreis-leipzig/groitzsch/": {
+    "titel": "Hofläden in Groitzsch: gut zu wissen",
+    "oben": "Groitzsch nennt den Agross Hofladen, den Hofladen Lupke und den Hofladen von Christian Haubold.",
+    "einleitung": "Drei Hofläden bieten regionale Produkte.\n\nWeitere Höfe findest du in Kitzen, Zeitz und Belgershain.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kitzen und Umgebung",
+        "pfad": "/sachsen/landkreis-leipzig/kitzen/"
+      },
+      {
+        "text": "Hofläden in Belgershain und Umgebung",
+        "pfad": "/sachsen/landkreis-leipzig/belgershain/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/meissen/coswig/": {
+    "titel": "Hofläden in Coswig: gut zu wissen",
+    "oben": "In Coswig sind Frisches Gemüse, der Hofladen Bioobst Görnitz und der Imker Clausnitzer eingetragen.",
+    "einleitung": "Gemüse und Bio-Obst gibt es direkt, Honig beim Imker Clausnitzer.\n\nWeitere Höfe findest du in Niederau, Radebeul und Meißen.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Niederau und Umgebung",
+        "pfad": "/sachsen/meissen/niederau/"
+      },
+      {
+        "text": "Hofläden in Radebeul und Umgebung",
+        "pfad": "/sachsen/meissen/radebeul/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/meissen/ebersbach/": {
+    "titel": "Hofläden in Ebersbach: gut zu wissen",
+    "oben": "Ebersbach bei Großenhain hat den Imker Bader, einen Hofladen und den Imker Clemens Hering.",
+    "einleitung": "Honig gibt es bei zwei Imkern.\n\nWeitere Höfe findest du in Radeburg, Priestewitz und Großenhain.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Radeburg und Umgebung",
+        "pfad": "/sachsen/meissen/radeburg/"
+      },
+      {
+        "text": "Hofläden in Priestewitz und Umgebung",
+        "pfad": "/sachsen/meissen/priestewitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/meissen/lommatzsch/": {
+    "titel": "Hofläden in Lommatzsch: gut zu wissen",
+    "oben": "In Lommatzsch sind der Bauernladen mit Eiern, Fleisch und Geflügel, die BIO PlanÈTE Ölmühle Moog und die Honigbar eingetragen.",
+    "einleitung": "Öl gibt es in der Ölmühle Moog, Honig in der Honigbar.\n\nWeitere Höfe findest du in Jahnatal, Riesa und Meißen.",
+    "saison": [
+      {
+        "titel": "Öl",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Jahnatal und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/jahnatal/"
+      },
+      {
+        "text": "Hofläden in Meißen und Umgebung",
+        "pfad": "/sachsen/meissen/meissen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/meissen/niederau/": {
+    "titel": "Hofläden in Niederau: gut zu wissen",
+    "oben": "Niederau nennt den Hofladen Bauernhof Friede, den Mäserhof und Gut Schlechte Niederau mit Bio-Angebot.",
+    "einleitung": "Gut Schlechte arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Coswig, Meißen und Radebeul.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Coswig und Umgebung",
+        "pfad": "/sachsen/meissen/coswig/"
+      },
+      {
+        "text": "Hofläden in Meißen und Umgebung",
+        "pfad": "/sachsen/meissen/meissen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/meissen/priestewitz/": {
+    "titel": "Hofläden in Priestewitz: gut zu wissen",
+    "oben": "In Priestewitz sind der Bienenhof Leupold, der Großenhainer Geflügelhof und der Obsthof Ibisch eingetragen.",
+    "einleitung": "Geflügel gibt es im Großenhainer Geflügelhof, Obst auf dem Obsthof Ibisch.\n\nWeitere Höfe findest du in Großenhain, Meißen und Ebersbach.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Großenhain und Umgebung",
+        "pfad": "/sachsen/meissen/grossenhain/"
+      },
+      {
+        "text": "Hofläden in Ebersbach und Umgebung",
+        "pfad": "/sachsen/meissen/ebersbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/augustusburg/": {
+    "titel": "Hofläden in Augustusburg: gut zu wissen",
+    "oben": "Augustusburg hat den Hofladen Blockhauscafé, den Landwirtschaftsbetrieb Schönherr mit Käse und den Imker Eckhardt Keup.",
+    "einleitung": "Käse gibt es beim Betrieb Schönherr, Honig beim Imker Keup.\n\nWeitere Höfe findest du in Flöha, Oederan und Zschopau.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Flöha und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/floeha/"
+      },
+      {
+        "text": "Hofläden in Oederan und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/oederan/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/bobritzsch/": {
+    "titel": "Hofläden in Bobritzsch: gut zu wissen",
+    "oben": "In Bobritzsch sind eine Imkerei, die Früchteverarbeitung Sohra und ein Honigautomat eingetragen.",
+    "einleitung": "Honig gibt es jederzeit am Automaten.\n\nWeitere Höfe findest du in Halsbrücke, Dippoldiswalde und Wilsdruff.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Halsbrücke und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/halsbruecke/"
+      },
+      {
+        "text": "Hofläden in Dippoldiswalde und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/dippoldiswalde/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/lichtenau/": {
+    "titel": "Hofläden in Lichtenau (Landkreis Mittelsachsen): gut zu wissen",
+    "oben": "Lichtenau nennt eine Imkerei, den Gartenbau Liebers und den Biohof Landsprosse.",
+    "einleitung": "Der Biohof Landsprosse arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Flöha, Augustusburg und in der Stadt Chemnitz.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Flöha und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/floeha/"
+      },
+      {
+        "text": "Hofläden in Augustusburg und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/augustusburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/penig/": {
+    "titel": "Hofläden in Penig: gut zu wissen",
+    "oben": "In Penig sind das Landgut Chursdorf, Hainich's Hofladen und der Geflügelhof Arnsdorf mit Bio-Eiern, Fleisch, Geflügel und Nudeln eingetragen.",
+    "einleitung": "Geflügel gibt es auf dem Geflügelhof Arnsdorf.\n\nWeitere Höfe findest du in Niederfrohna, Limbach-Oberfrohna und Callenberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Niederfrohna und Umgebung",
+        "pfad": "/sachsen/zwickau/niederfrohna/"
+      },
+      {
+        "text": "Hofläden in Limbach-Oberfrohna und Umgebung",
+        "pfad": "/sachsen/zwickau/limbach-oberfrohna/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/seelitz/": {
+    "titel": "Hofläden in Seelitz: gut zu wissen",
+    "oben": "Seelitz nennt das Honighaus Zetteritz, den Imkereifachhandel Fischer mit Bio-Honig und den Obstgut Seelitz.",
+    "einleitung": "Honig gibt es an zwei Stellen, Obst im Obstgut Seelitz.\n\nWeitere Höfe findest du in Penig, Niederfrohna und Lichtenau.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Penig und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/penig/"
+      },
+      {
+        "text": "Hofläden in Lichtenau (Landkreis Mittelsachsen) und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/lichtenau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/striegistal/": {
+    "titel": "Hofläden in Striegistal: gut zu wissen",
+    "oben": "In Striegistal sind die Senfmanufaktur Schubertmühle, der Hofladen Straußenhof und das Strigistaler Wiesenei eingetragen.",
+    "einleitung": "Senf und Marmelade gibt es in der Schubertmühle, Eier beim Wiesenei.\n\nWeitere Höfe findest du in Halsbrücke, Oederan und Lichtenau.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Senf",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Marmelade",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oederan und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/oederan/"
+      },
+      {
+        "text": "Hofläden in Lichtenau (Landkreis Mittelsachsen) und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/lichtenau/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
