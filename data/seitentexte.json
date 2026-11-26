@@ -47246,5 +47246,635 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/ahrweiler/glees/": {
+    "titel": "Hofläden in Glees: gut zu wissen",
+    "oben": "In Glees bei Maria Laach sind das Klostergut-Hofladen der Familie Ullenbruch, der Hofladen Maria Laach mit Bio-Angebot und ein Regiomat eingetragen.",
+    "einleitung": "Der Hofladen Maria Laach arbeitet nach Bio-Richtlinien. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Brohl-Lützing, Andernach und Bad Neuenahr-Ahrweiler.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Brohl-Lützing und Umgebung",
+        "pfad": "/rheinland-pfalz/ahrweiler/brohl-luetzing/"
+      },
+      {
+        "text": "Hofläden in Andernach und Umgebung",
+        "pfad": "/rheinland-pfalz/mayen-koblenz/andernach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/altenkirchen/mudersbach/": {
+    "titel": "Hofläden in Mudersbach: gut zu wissen",
+    "oben": "Mudersbach nennt den Lehrbienenstand, eine Hobby-Imkerei und einen Regiomaten mit Eiern und Fleisch.",
+    "einleitung": "Honig gibt es an zwei Stellen, Eier und Fleisch jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Siegen und Wilnsdorf.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Siegen und Umgebung",
+        "pfad": "/nordrhein-westfalen/siegen-wittgenstein/siegen/"
+      },
+      {
+        "text": "Hofläden in Wilnsdorf und Umgebung",
+        "pfad": "/nordrhein-westfalen/siegen-wittgenstein/wilnsdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/alzey-worms/monsheim/": {
+    "titel": "Hofläden in Monsheim: gut zu wissen",
+    "oben": "In Monsheim sind das Weingut und der Hofladen Holz Liebrich, die Siebenstern-Imkerei und ein Hofladen eingetragen.",
+    "einleitung": "Wein gibt es im Weingut Holz Liebrich, Honig bei der Siebenstern-Imkerei.\n\nWeitere Höfe findest du in Worms, Weisenheim am Sand und Frankenthal.",
+    "saison": [
+      {
+        "titel": "Wein",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Worms",
+        "pfad": "/rheinland-pfalz/worms/"
+      },
+      {
+        "text": "Hofläden in Weisenheim am Sand und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/bad-duerkheim/altleiningen/": {
+    "titel": "Hofläden in Altleiningen: gut zu wissen",
+    "oben": "Altleiningen hat den Hofladen Kleinsägmühlerhof, den Hofladen Goyert und die Imkerei John.",
+    "einleitung": "Honig gibt es bei der Imkerei John.\n\nWeitere Höfe findest du in Erpolzheim und Weisenheim am Sand.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Erpolzheim und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/erpolzheim/"
+      },
+      {
+        "text": "Hofläden in Weisenheim am Sand und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/germersheim/kandel/": {
+    "titel": "Hofläden in Kandel: gut zu wissen",
+    "oben": "In Kandel sind das Café Zapf, ein Regiomat mit Fleisch und Schowalter's Spargel eingetragen.",
+    "einleitung": "Spargel gibt es bei Schowalter in der Saison, Fleisch jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Rheinzabern und Neupotz.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rheinzabern und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/rheinzabern/"
+      },
+      {
+        "text": "Hofläden in Neupotz und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/neupotz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/germersheim/neupotz/": {
+    "titel": "Hofläden in Neupotz: gut zu wissen",
+    "oben": "Neupotz nennt den Jägerhof, einen Regiomaten mit Eiern und Nudeln und einen Hofladen.",
+    "einleitung": "Eier und Nudeln gibt es jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Rheinzabern und Eggenstein-Leopoldshafen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rheinzabern und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/rheinzabern/"
+      },
+      {
+        "text": "Hofläden in Eggenstein-Leopoldshafen und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/eggenstein-leopoldshafen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/germersheim/weingarten/": {
+    "titel": "Hofläden in Weingarten (Landkreis Germersheim): gut zu wissen",
+    "oben": "In Weingarten sind ein Regiomat mit Milch und Fleisch, der Hofladen Krebs und der Hofladen von Gerlinde Andres eingetragen.",
+    "einleitung": "Am Regiomaten in Weingarten gibt es Milch und Fleisch, jederzeit. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Schwegenheim und Bellheim.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schwegenheim und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/schwegenheim/"
+      },
+      {
+        "text": "Hofläden in Bellheim und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/bellheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/kusel/altenglan/": {
+    "titel": "Hofläden in Altenglan: gut zu wissen",
+    "oben": "Altenglan hat den Imkerverein Altenglan von 1877, einen Regiomaten mit Milch und den Bienenlehrpfad.",
+    "einleitung": "Honig gibt es beim Imkerverein. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Sankt Wendel und Nohfelden.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sankt Wendel und Umgebung",
+        "pfad": "/saarland/st-wendel/sankt-wendel/"
+      },
+      {
+        "text": "Hofläden in Nohfelden und Umgebung",
+        "pfad": "/saarland/st-wendel/nohfelden/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/mainz-bingen/klein-winternheim/": {
+    "titel": "Hofläden in Klein-Winternheim: gut zu wissen",
+    "oben": "In Klein-Winternheim sind die Eierkiste, Reinhildes Hofladen und Appel Happel eingetragen.",
+    "einleitung": "Eier gibt es jederzeit in der Eierkiste.\n\nWeitere Höfe findest du in Nieder-Olm, Zornheim und in der Stadt Mainz.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nieder-Olm und Umgebung",
+        "pfad": "/rheinland-pfalz/mainz-bingen/nieder-olm/"
+      },
+      {
+        "text": "Hofläden in Zornheim und Umgebung",
+        "pfad": "/rheinland-pfalz/mainz-bingen/zornheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/mayen-koblenz/winningen/": {
+    "titel": "Hofläden in Winningen: gut zu wissen",
+    "oben": "Winningen an der Mosel nennt einen Regiomaten mit Fleisch, einen Hofladen und einen Eierautomaten.",
+    "einleitung": "Fleisch und Eier gibt es jederzeit an den Automaten.\n\nWeitere Höfe findest du in Andernach, Neuwied und in der Stadt Koblenz.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Andernach und Umgebung",
+        "pfad": "/rheinland-pfalz/mayen-koblenz/andernach/"
+      },
+      {
+        "text": "Hofläden in Neuwied und Umgebung",
+        "pfad": "/rheinland-pfalz/neuwied/neuwied/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/rhein-pfalz-kreis/neuhofen/": {
+    "titel": "Hofläden in Neuhofen: gut zu wissen",
+    "oben": "In Neuhofen sind ein Hofladen, der Spargelhof Fischer und ein Regiomat eingetragen.",
+    "einleitung": "Spargel gibt es auf dem Spargelhof Fischer in der Saison.\n\nWeitere Höfe findest du in Mutterstadt, Schifferstadt und Ludwigshafen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mutterstadt und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/mutterstadt/"
+      },
+      {
+        "text": "Hofläden in Schifferstadt und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/schifferstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/": {
+    "titel": "Hofläden in Römerberg: gut zu wissen",
+    "oben": "Römerberg nennt den Regiomaten Fritz und Fritzi, die Hofgemeinschaft Mechtersheim mit Bio-Hofladen und Lieferservice und den Jesterhof mit Obst, Gemüse, Hofladen und Destillerie.",
+    "einleitung": "Die Hofgemeinschaft arbeitet nach Bio-Richtlinien. Obst und Gemüse gibt es auf dem Jesterhof.\n\nWeitere Höfe findest du in Dudenhofen und in der Stadt Speyer.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dudenhofen und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/dudenhofen/"
+      },
+      {
+        "text": "Hofläden in Speyer",
+        "pfad": "/rheinland-pfalz/speyer/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/suedliche-weinstrasse/edenkoben/": {
+    "titel": "Hofläden in Edenkoben: gut zu wissen",
+    "oben": "In Edenkoben sind die Imkerei Thomas Zirkel, ein Wurstautomat und die Käsewerkstatt mit Milch und Käse eingetragen.",
+    "einleitung": "Käse gibt es in der Käsewerkstatt, Wurst jederzeit am Automaten.\n\nWeitere Höfe findest du in Neustadt an der Weinstraße und Landau in der Pfalz.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Wurst",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neustadt an der Weinstraße",
+        "pfad": "/rheinland-pfalz/neustadt-an-der-weinstrasse/"
+      },
+      {
+        "text": "Hofläden in Landau in der Pfalz",
+        "pfad": "/rheinland-pfalz/landau-in-der-pfalz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/suedliche-weinstrasse/schweighofen/": {
+    "titel": "Hofläden in Schweighofen: gut zu wissen",
+    "oben": "Schweighofen liegt an der Grenze zum Elsass. Eingetragen sind der Obst- und Weinhof Michael Fischer, das Weingut Stefan Fischer und der Bauernhof Kieffer.",
+    "einleitung": "Wein gibt es in zwei Weingütern, Obst auf dem Obst- und Weinhof Fischer.\n\nWeitere Höfe findest du in Kandel, Rheinzabern und Landau in der Pfalz.",
+    "saison": [
+      {
+        "titel": "Wein",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kandel und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/kandel/"
+      },
+      {
+        "text": "Hofläden in Rheinzabern und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/rheinzabern/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/merzig-wadern/perl/": {
+    "titel": "Hofläden in Perl: gut zu wissen",
+    "oben": "In Perl im Dreiländereck an der Mosel sind Bauer Ehl mit Obst, die Imkerei Timmer und ein Eierautomat eingetragen.",
+    "einleitung": "Obst gibt es bei Bauer Ehl, Honig bei der Imkerei Timmer, Eier jederzeit am Automaten.\n\nWeitere Höfe findest du in Merzig, Rehlingen-Siersburg und Losheim am See.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Merzig und Umgebung",
+        "pfad": "/saarland/merzig-wadern/merzig/"
+      },
+      {
+        "text": "Hofläden in Losheim am See und Umgebung",
+        "pfad": "/saarland/merzig-wadern/losheim-am-see/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/saarlouis/wadgassen/": {
+    "titel": "Hofläden in Wadgassen: gut zu wissen",
+    "oben": "Wadgassen hat den Geflügelhof Lorson mit Eiern, Fleisch und Geflügel, einen Regiomaten mit Eiern und Lonsi's Hofladen.",
+    "einleitung": "Geflügel gibt es auf dem Geflügelhof Lorson, Eier jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Saarwellingen, Rehlingen-Siersburg und Saarbrücken.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Saarwellingen und Umgebung",
+        "pfad": "/saarland/saarlouis/saarwellingen/"
+      },
+      {
+        "text": "Hofläden in Rehlingen-Siersburg und Umgebung",
+        "pfad": "/saarland/saarlouis/rehlingen-siersburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/st-wendel/sankt-wendel/": {
+    "titel": "Hofläden in Sankt Wendel: gut zu wissen",
+    "oben": "In Sankt Wendel sind ein Hofladen, der Harschberger Hofladen und der Martinshof Hofladen eingetragen.",
+    "einleitung": "Sankt Wendel bietet drei Hofläden mit regionalen Produkten.\n\nWeitere Höfe findest du in Nohfelden, Lebach und Sankt Ingbert.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nohfelden und Umgebung",
+        "pfad": "/saarland/st-wendel/nohfelden/"
+      },
+      {
+        "text": "Hofläden in Lebach und Umgebung",
+        "pfad": "/saarland/saarlouis/lebach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen-anhalt/boerde/suelzetal/": {
+    "titel": "Hofläden in Sülzetal: gut zu wissen",
+    "oben": "Sülzetal nennt den Hofladen Sülldorf mit Bio-Angebot, den Hofladen Altenweddinger Geflügelhof und den Obsthof Hornemann.",
+    "einleitung": "Geflügel gibt es im Altenweddinger Geflügelhof, Obst auf dem Obsthof Hornemann.\n\nWeitere Höfe findest du in Magdeburg und Tangerhütte.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Tangerhütte und Umgebung",
+        "pfad": "/sachsen-anhalt/stendal/tangerhuette/"
+      },
+      {
+        "text": "Hofläden in Magdeburg",
+        "pfad": "/sachsen-anhalt/magdeburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen-anhalt/burgenlandkreis/wetterzeube/": {
+    "titel": "Hofläden in Wetterzeube: gut zu wissen",
+    "oben": "In Wetterzeube sind der Ziegenhof Scleckweda mit Bio-Angebot, der Trebnitzer Beeren- und Straußenhof und der Schafhof Eric Peter eingetragen.",
+    "einleitung": "Beeren gibt es auf dem Trebnitzer Beeren- und Straußenhof in der Saison.\n\nWeitere Höfe findest du in Zeitz, Gera und Groitzsch.",
+    "saison": [
+      {
+        "titel": "Beeren",
+        "zeit": "Juni bis August"
+      },
+      {
+        "titel": "Ziegenprodukte",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zeitz und Umgebung",
+        "pfad": "/sachsen-anhalt/burgenlandkreis/zeitz/"
+      },
+      {
+        "text": "Hofläden in Groitzsch und Umgebung",
+        "pfad": "/sachsen/landkreis-leipzig/groitzsch/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen-anhalt/mansfeld-suedharz/bornstedt/": {
+    "titel": "Hofläden in Bornstedt: gut zu wissen",
+    "oben": "Bornstedt hat drei Einträge mit Honig: Jux, Adalbert Jux und Uwe Arndt Akkordeonservice.",
+    "einleitung": "Honig ist hier das Thema, verkauft direkt von den Imkern.\n\nWeitere Höfe findest du in Schkopau, Bad Sulza und in der Stadt Halle.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frühtracht",
+        "zeit": "Mai"
+      },
+      {
+        "titel": "Sommerhonig",
+        "zeit": "Juli und August"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schkopau und Umgebung",
+        "pfad": "/sachsen-anhalt/saalekreis/schkopau/"
+      },
+      {
+        "text": "Hofläden in Bad Sulza und Umgebung",
+        "pfad": "/thueringen/weimarer-land/bad-sulza/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen-anhalt/stendal/tangermuende/": {
+    "titel": "Hofläden in Tangermünde: gut zu wissen",
+    "oben": "In Tangermünde sind der Altmärkische Bauernmarkt, die Imkerei HonigBär und ein Bioladen eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei HonigBär.\n\nWeitere Höfe findest du in Stendal, Tangerhütte und Genthin.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stendal und Umgebung",
+        "pfad": "/sachsen-anhalt/stendal/stendal/"
+      },
+      {
+        "text": "Hofläden in Tangerhütte und Umgebung",
+        "pfad": "/sachsen-anhalt/stendal/tangerhuette/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
