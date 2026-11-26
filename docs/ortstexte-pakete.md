@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1582 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1607 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -2043,35 +2043,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Rohr (Landkreis Schmalkalden-Meiningen)](https://hofladenliste.de/thueringen/schmalkalden-meiningen/rohr/) `/thueringen/schmalkalden-meiningen/rohr/` | Landkreis Schmalkalden-Meiningen | 1 | 3 | 6 |
 | ✓ | [Bad Sulza](https://hofladenliste.de/thueringen/weimarer-land/bad-sulza/) `/thueringen/weimarer-land/bad-sulza/` | Landkreis Weimarer Land | 1 | 3 | 6 |
 
-## Paket 69 (0/25 fertig)
+## Paket 69 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Kranichfeld](https://hofladenliste.de/thueringen/weimarer-land/kranichfeld/) `/thueringen/weimarer-land/kranichfeld/` | Landkreis Weimarer Land | 1 | 3 | 6 |
-|  | [Bad Boll](https://hofladenliste.de/baden-wuerttemberg/goeppingen/bad-boll/) `/baden-wuerttemberg/goeppingen/bad-boll/` | Landkreis Göppingen | 0 | 5 | 5 |
-|  | [Emmerich am Rhein](https://hofladenliste.de/nordrhein-westfalen/kleve/emmerich-am-rhein/) `/nordrhein-westfalen/kleve/emmerich-am-rhein/` | Kreis Kleve | 0 | 5 | 5 |
-|  | [Coburg](https://hofladenliste.de/bayern/coburg-stadt/) `/bayern/coburg-stadt/` | Coburg | 1 | 2 | 5 |
-|  | [Kaufbeuren](https://hofladenliste.de/bayern/kaufbeuren/) `/bayern/kaufbeuren/` | Kaufbeuren | 1 | 2 | 5 |
-|  | [Memmingen](https://hofladenliste.de/bayern/memmingen/) `/bayern/memmingen/` | Memmingen | 1 | 2 | 5 |
-|  | [Speyer](https://hofladenliste.de/rheinland-pfalz/speyer/) `/rheinland-pfalz/speyer/` | Speyer | 1 | 2 | 5 |
-|  | [Zweibrücken](https://hofladenliste.de/rheinland-pfalz/zweibruecken/) `/rheinland-pfalz/zweibruecken/` | Zweibrücken | 1 | 2 | 5 |
-|  | [Dessau-Roßlau](https://hofladenliste.de/sachsen-anhalt/dessau-rosslau/) `/sachsen-anhalt/dessau-rosslau/` | Dessau-Roßlau | 1 | 2 | 5 |
-|  | [Bautzen](https://hofladenliste.de/sachsen/bautzen/bautzen/) `/sachsen/bautzen/bautzen/` | Landkreis Bautzen | 1 | 2 | 5 |
-|  | [Leichlingen (Rheinland)](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen-rheinland/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen-rheinland/` | Rheinisch-Bergischer Kreis | 0 | 4 | 4 |
-|  | [St. Egidien](https://hofladenliste.de/sachsen/zwickau/st-egidien/) `/sachsen/zwickau/st-egidien/` | Landkreis Zwickau | 0 | 4 | 4 |
-|  | [Forst (Lausitz)](https://hofladenliste.de/brandenburg/spree-neisse/forst-lausitz/) `/brandenburg/spree-neisse/forst-lausitz/` | Landkreis Spree-Neiße | 1 | 1 | 4 |
-|  | [Frankenthal (Pfalz)](https://hofladenliste.de/rheinland-pfalz/frankenthal-pfalz/) `/rheinland-pfalz/frankenthal-pfalz/` | Frankenthal (Pfalz) | 1 | 1 | 4 |
-|  | [Hoyerswerda](https://hofladenliste.de/sachsen/bautzen/hoyerswerda/) `/sachsen/bautzen/hoyerswerda/` | Landkreis Bautzen | 1 | 1 | 4 |
-|  | [Singen (Hohentwiel)](https://hofladenliste.de/baden-wuerttemberg/konstanz/singen-hohentwiel/) `/baden-wuerttemberg/konstanz/singen-hohentwiel/` | Landkreis Konstanz | 0 | 3 | 3 |
-|  | [Moosburg a.d. Isar](https://hofladenliste.de/bayern/freising/moosburg-a-d-isar/) `/bayern/freising/moosburg-a-d-isar/` | Landkreis Freising | 0 | 3 | 3 |
-|  | [Ergolding (Landshut)](https://hofladenliste.de/bayern/landshut-stadt/ergolding/) `/bayern/landshut-stadt/ergolding/` | Landshut | 0 | 3 | 3 |
-|  | [Weiden in der Oberpfalz](https://hofladenliste.de/bayern/weiden-in-der-oberpfalz/) `/bayern/weiden-in-der-oberpfalz/` | Weiden in der Oberpfalz | 0 | 3 | 3 |
-|  | [Lübbenau/Spreewald](https://hofladenliste.de/brandenburg/oberspreewald-lausitz/luebbenau-spreewald/) `/brandenburg/oberspreewald-lausitz/luebbenau-spreewald/` | Landkreis Oberspreewald-Lausitz | 0 | 3 | 3 |
-|  | [Bad Belzig](https://hofladenliste.de/brandenburg/potsdam-mittelmark/bad-belzig/) `/brandenburg/potsdam-mittelmark/bad-belzig/` | Landkreis Potsdam-Mittelmark | 0 | 3 | 3 |
-|  | [Geestland](https://hofladenliste.de/niedersachsen/cuxhaven/geestland/) `/niedersachsen/cuxhaven/geestland/` | Landkreis Cuxhaven | 0 | 3 | 3 |
-|  | [Halle (Westf.)](https://hofladenliste.de/nordrhein-westfalen/guetersloh/halle-westf/) `/nordrhein-westfalen/guetersloh/halle-westf/` | Kreis Gütersloh | 0 | 3 | 3 |
-|  | [Werther (Westf.)](https://hofladenliste.de/nordrhein-westfalen/guetersloh/werther-westf/) `/nordrhein-westfalen/guetersloh/werther-westf/` | Kreis Gütersloh | 0 | 3 | 3 |
-|  | [Menden (Sauerland)](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/menden-sauerland/) `/nordrhein-westfalen/maerkischer-kreis/menden-sauerland/` | Märkischer Kreis | 0 | 3 | 3 |
+| ✓ | [Kranichfeld](https://hofladenliste.de/thueringen/weimarer-land/kranichfeld/) `/thueringen/weimarer-land/kranichfeld/` | Landkreis Weimarer Land | 1 | 3 | 6 |
+| ✓ | [Bad Boll](https://hofladenliste.de/baden-wuerttemberg/goeppingen/bad-boll/) `/baden-wuerttemberg/goeppingen/bad-boll/` | Landkreis Göppingen | 0 | 5 | 5 |
+| ✓ | [Emmerich am Rhein](https://hofladenliste.de/nordrhein-westfalen/kleve/emmerich-am-rhein/) `/nordrhein-westfalen/kleve/emmerich-am-rhein/` | Kreis Kleve | 0 | 5 | 5 |
+| ✓ | [Coburg](https://hofladenliste.de/bayern/coburg-stadt/) `/bayern/coburg-stadt/` | Coburg | 1 | 2 | 5 |
+| ✓ | [Kaufbeuren](https://hofladenliste.de/bayern/kaufbeuren/) `/bayern/kaufbeuren/` | Kaufbeuren | 1 | 2 | 5 |
+| ✓ | [Memmingen](https://hofladenliste.de/bayern/memmingen/) `/bayern/memmingen/` | Memmingen | 1 | 2 | 5 |
+| ✓ | [Speyer](https://hofladenliste.de/rheinland-pfalz/speyer/) `/rheinland-pfalz/speyer/` | Speyer | 1 | 2 | 5 |
+| ✓ | [Zweibrücken](https://hofladenliste.de/rheinland-pfalz/zweibruecken/) `/rheinland-pfalz/zweibruecken/` | Zweibrücken | 1 | 2 | 5 |
+| ✓ | [Dessau-Roßlau](https://hofladenliste.de/sachsen-anhalt/dessau-rosslau/) `/sachsen-anhalt/dessau-rosslau/` | Dessau-Roßlau | 1 | 2 | 5 |
+| ✓ | [Bautzen](https://hofladenliste.de/sachsen/bautzen/bautzen/) `/sachsen/bautzen/bautzen/` | Landkreis Bautzen | 1 | 2 | 5 |
+| ✓ | [Leichlingen (Rheinland)](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen-rheinland/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen-rheinland/` | Rheinisch-Bergischer Kreis | 0 | 4 | 4 |
+| ✓ | [St. Egidien](https://hofladenliste.de/sachsen/zwickau/st-egidien/) `/sachsen/zwickau/st-egidien/` | Landkreis Zwickau | 0 | 4 | 4 |
+| ✓ | [Forst (Lausitz)](https://hofladenliste.de/brandenburg/spree-neisse/forst-lausitz/) `/brandenburg/spree-neisse/forst-lausitz/` | Landkreis Spree-Neiße | 1 | 1 | 4 |
+| ✓ | [Frankenthal (Pfalz)](https://hofladenliste.de/rheinland-pfalz/frankenthal-pfalz/) `/rheinland-pfalz/frankenthal-pfalz/` | Frankenthal (Pfalz) | 1 | 1 | 4 |
+| ✓ | [Hoyerswerda](https://hofladenliste.de/sachsen/bautzen/hoyerswerda/) `/sachsen/bautzen/hoyerswerda/` | Landkreis Bautzen | 1 | 1 | 4 |
+| ✓ | [Singen (Hohentwiel)](https://hofladenliste.de/baden-wuerttemberg/konstanz/singen-hohentwiel/) `/baden-wuerttemberg/konstanz/singen-hohentwiel/` | Landkreis Konstanz | 0 | 3 | 3 |
+| ✓ | [Moosburg a.d. Isar](https://hofladenliste.de/bayern/freising/moosburg-a-d-isar/) `/bayern/freising/moosburg-a-d-isar/` | Landkreis Freising | 0 | 3 | 3 |
+| ✓ | [Ergolding (Landshut)](https://hofladenliste.de/bayern/landshut-stadt/ergolding/) `/bayern/landshut-stadt/ergolding/` | Landshut | 0 | 3 | 3 |
+| ✓ | [Weiden in der Oberpfalz](https://hofladenliste.de/bayern/weiden-in-der-oberpfalz/) `/bayern/weiden-in-der-oberpfalz/` | Weiden in der Oberpfalz | 0 | 3 | 3 |
+| ✓ | [Lübbenau/Spreewald](https://hofladenliste.de/brandenburg/oberspreewald-lausitz/luebbenau-spreewald/) `/brandenburg/oberspreewald-lausitz/luebbenau-spreewald/` | Landkreis Oberspreewald-Lausitz | 0 | 3 | 3 |
+| ✓ | [Bad Belzig](https://hofladenliste.de/brandenburg/potsdam-mittelmark/bad-belzig/) `/brandenburg/potsdam-mittelmark/bad-belzig/` | Landkreis Potsdam-Mittelmark | 0 | 3 | 3 |
+| ✓ | [Geestland](https://hofladenliste.de/niedersachsen/cuxhaven/geestland/) `/niedersachsen/cuxhaven/geestland/` | Landkreis Cuxhaven | 0 | 3 | 3 |
+| ✓ | [Halle (Westf.)](https://hofladenliste.de/nordrhein-westfalen/guetersloh/halle-westf/) `/nordrhein-westfalen/guetersloh/halle-westf/` | Kreis Gütersloh | 0 | 3 | 3 |
+| ✓ | [Werther (Westf.)](https://hofladenliste.de/nordrhein-westfalen/guetersloh/werther-westf/) `/nordrhein-westfalen/guetersloh/werther-westf/` | Kreis Gütersloh | 0 | 3 | 3 |
+| ✓ | [Menden (Sauerland)](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/menden-sauerland/) `/nordrhein-westfalen/maerkischer-kreis/menden-sauerland/` | Märkischer Kreis | 0 | 3 | 3 |
 
 ## Paket 70 (0/6 fertig)
 

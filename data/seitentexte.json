@@ -47876,5 +47876,751 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/thueringen/weimarer-land/kranichfeld/": {
+    "titel": "Hofläden in Kranichfeld: gut zu wissen",
+    "oben": "In Kranichfeld sind die Fischerei Stedtener Mühle, Das Immenheim und ein Bienenhaus eingetragen.",
+    "einleitung": "Fisch gibt es in der Fischerei Stedtener Mühle, Honig im Immenheim und im Bienenhaus.\n\nWeitere Höfe findest du in Stadtilm, Grammetal und in der Stadt Weimar.",
+    "saison": [
+      {
+        "titel": "Fisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stadtilm und Umgebung",
+        "pfad": "/thueringen/ilm-kreis/stadtilm/"
+      },
+      {
+        "text": "Hofläden in Grammetal und Umgebung",
+        "pfad": "/thueringen/weimarer-land/grammetal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/goeppingen/bad-boll/": {
+    "titel": "Hofläden in Bad Boll: gut zu wissen",
+    "oben": "Bad Boll nennt die Imkerei Liebler, den Hofladen Liebler-Latzko, den Bio-Hofladen Sonnenhof und die Gärtnerei Frank mit ihrer kleinen Markthalle.",
+    "einleitung": "Im Sonnenhof Hofladen gibt es Milch, Käse, Fleisch, Gemüse, Obst und Brot aus Bio-Erzeugung.\n\nWeitere Höfe findest du in Zell unter Aichelberg und Uhingen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zell unter Aichelberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/zell-unter-aichelberg/"
+      },
+      {
+        "text": "Hofläden in Uhingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/uhingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/kleve/emmerich-am-rhein/": {
+    "titel": "Hofläden in Emmerich am Rhein: gut zu wissen",
+    "oben": "Emmerich am Rhein hat die Niederrhein Destille Dornick, Spargel vom Eltenberg, die Milchzapfsäule Praest und einen Hofautomaten auf dem Pekelshof.",
+    "einleitung": "Spargel gibt es hier im Frühjahr, Milch an der Zapfsäule. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Rees, Kleve und Bedburg-Hau.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rees und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/rees/"
+      },
+      {
+        "text": "Hofläden in Kleve und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/kleve/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/coburg-stadt/": {
+    "titel": "Hofläden in Coburg: gut zu wissen",
+    "oben": "In Coburg sind eine Imkerei und der Biohof Reißenweber eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei, der Biohof Reißenweber arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Weitramsdorf, Meeder und Lichtenfels.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weitramsdorf und Umgebung",
+        "pfad": "/bayern/landkreis-coburg/weitramsdorf/"
+      },
+      {
+        "text": "Hofläden in Meeder und Umgebung",
+        "pfad": "/bayern/landkreis-coburg/meeder/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/kaufbeuren/": {
+    "titel": "Hofläden in Kaufbeuren: gut zu wissen",
+    "oben": "Kaufbeuren nennt den Hofladen Schneider und den MR Frischestadl.",
+    "einleitung": "Zwei Hofläden decken die Stadt ab.\n\nWeitere Höfe findest du in Ruderatshofen, Marktoberdorf und Fuchstal.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ruderatshofen und Umgebung",
+        "pfad": "/bayern/ostallgaeu/ruderatshofen/"
+      },
+      {
+        "text": "Hofläden in Marktoberdorf und Umgebung",
+        "pfad": "/bayern/ostallgaeu/marktoberdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/memmingen/": {
+    "titel": "Hofläden in Memmingen: gut zu wissen",
+    "oben": "In Memmingen sind die AckerBox und der Bio-Gemüsebau Rabus eingetragen.",
+    "einleitung": "Gemüse gibt es beim Bio-Gemüsebau Rabus in der Saison.\n\nWeitere Höfe findest du in Aichstetten, Markt Rettenbach und Bad Wurzach.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Markt Rettenbach und Umgebung",
+        "pfad": "/bayern/unterallgaeu/markt-rettenbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/speyer/": {
+    "titel": "Hofläden in Speyer: gut zu wissen",
+    "oben": "Speyer hat den Eier-Automaten mEin Automat und den Speierling Hofladen.",
+    "einleitung": "Zu Speyer: Eier gibt es jederzeit am Automaten.\n\nWeitere Höfe findest du in Dudenhofen und Römerberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dudenhofen und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/dudenhofen/"
+      },
+      {
+        "text": "Hofläden in Römerberg und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/zweibruecken/": {
+    "titel": "Hofläden in Zweibrücken: gut zu wissen",
+    "oben": "In Zweibrücken sind der Berghof Einöd mit Bliesgau-Ölshop und der Bannsteinhof mit Bio-Eiern eingetragen.",
+    "einleitung": "Öl gibt es im Bliesgau-Ölshop, Eier auf dem Bannsteinhof.\n\nWeitere Höfe findest du in Gersheim und Sankt Ingbert.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Öl",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gersheim und Umgebung",
+        "pfad": "/saarland/saarpfalz-kreis/gersheim/"
+      },
+      {
+        "text": "Hofläden in Sankt Ingbert und Umgebung",
+        "pfad": "/saarland/saarpfalz-kreis/sankt-ingbert/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen-anhalt/dessau-rosslau/": {
+    "titel": "Hofläden in Dessau-Roßlau: gut zu wissen",
+    "oben": "Dessau-Roßlau nennt den Hofladen der Vollwert-Kochschule und den Imker Andreas.",
+    "einleitung": "Honig gibt es beim Imker Andreas.\n\nWeitere Höfe findest du in Dessau und Bad Belzig.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dessau und Umgebung",
+        "pfad": "/sachsen-anhalt/dessau-rosslau/dessau/"
+      },
+      {
+        "text": "Hofläden in Bad Belzig und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/bad-belzig/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/bautzen/bautzen/": {
+    "titel": "Hofläden in Bautzen: gut zu wissen",
+    "oben": "In Bautzen sind eine Milchtankstelle und ein Frischeautomat mit Fleisch eingetragen.",
+    "einleitung": "Beide Stellen sind Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Doberschau-Gaußig, Sohland an der Spree und Weißenberg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Doberschau-Gaußig und Umgebung",
+        "pfad": "/sachsen/bautzen/doberschau-gaussig/"
+      },
+      {
+        "text": "Hofläden in Weißenberg und Umgebung",
+        "pfad": "/sachsen/bautzen/weissenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen-rheinland/": {
+    "titel": "Hofläden in Leichlingen (Rheinland): gut zu wissen",
+    "oben": "Leichlingen (Rheinland) nennt den Bauernhofladen Meuthen, den Hofladen Gut Paulinenhof und die Leichlinger Champignonzucht.",
+    "einleitung": "Champignons gibt es in der Champignonzucht.\n\nWeitere Höfe findest du in Burscheid und in der Stadt Solingen.",
+    "saison": [
+      {
+        "titel": "Champignons",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Leichlingen und Umgebung",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen/"
+      },
+      {
+        "text": "Hofläden in Solingen",
+        "pfad": "/nordrhein-westfalen/solingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/zwickau/st-egidien/": {
+    "titel": "Hofläden in St. Egidien: gut zu wissen",
+    "oben": "In Sankt Egidien sind der Ziegenhof Winter, die Milchtankstelle Ulbricht, der Hofladen Ulbricht mit Käse und die Imkerei Lange eingetragen.",
+    "einleitung": "Milch, Käse und Honig kommen hier aus der Nachbarschaft. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Callenberg, Niederwürschnitz und Limbach-Oberfrohna.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Callenberg und Umgebung",
+        "pfad": "/sachsen/zwickau/callenberg/"
+      },
+      {
+        "text": "Hofläden in Limbach-Oberfrohna und Umgebung",
+        "pfad": "/sachsen/zwickau/limbach-oberfrohna/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/spree-neisse/forst-lausitz/": {
+    "titel": "Hofläden in Forst (Lausitz): gut zu wissen",
+    "oben": "In Forst (Lausitz) ist der Hofladen Gut Neu Sacro eingetragen.",
+    "einleitung": "Ein einzelner Hofladen bildet das Angebot.\n\nWeitere Höfe findest du in Spremberg, Kolkwitz und in der Stadt Cottbus.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Spremberg und Umgebung",
+        "pfad": "/brandenburg/spree-neisse/spremberg/"
+      },
+      {
+        "text": "Hofläden in Kolkwitz und Umgebung",
+        "pfad": "/brandenburg/spree-neisse/kolkwitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/frankenthal-pfalz/": {
+    "titel": "Hofläden in Frankenthal (Pfalz): gut zu wissen",
+    "oben": "Frankenthal (Pfalz) hat den Pfälzer Frischeboten als Hofladen.",
+    "einleitung": "Ein einzelner Eintrag, die Nachbarorte bieten mehr.\n\nWeitere Höfe findest du in Weisenheim am Sand sowie in Ludwigshafen am Rhein und Worms.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weisenheim am Sand und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/"
+      },
+      {
+        "text": "Hofläden in Worms",
+        "pfad": "/rheinland-pfalz/worms/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/bautzen/hoyerswerda/": {
+    "titel": "Hofläden in Hoyerswerda: gut zu wissen",
+    "oben": "In Hoyerswerda ist Schulzes Hofcafé eingetragen.",
+    "einleitung": "Zu Hoyerswerda: Im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Spremberg, Elstra und Bautzen.",
+    "saison": [
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Elstra und Umgebung",
+        "pfad": "/sachsen/bautzen/elstra/"
+      },
+      {
+        "text": "Hofläden in Bautzen und Umgebung",
+        "pfad": "/sachsen/bautzen/bautzen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/konstanz/singen-hohentwiel/": {
+    "titel": "Hofläden in Singen (Hohentwiel): gut zu wissen",
+    "oben": "Singen (Hohentwiel) nennt den Moosfeld Hofladen mit Gemüse und Brot, Susannes Hofladen und die Singener Stadtimkerin.",
+    "einleitung": "Honig gibt es bei der Stadtimkerin.\n\nWeitere Höfe findest du in Rielasingen-Worblingen, Steißlingen und Moos.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rielasingen-Worblingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/konstanz/rielasingen-worblingen/"
+      },
+      {
+        "text": "Hofläden in Steißlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/konstanz/steisslingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/freising/moosburg-a-d-isar/": {
+    "titel": "Hofläden in Moosburg a.d. Isar: gut zu wissen",
+    "oben": "Moosburg an der Isar hat den Bioland-Hofladen Voit, den Hofladen Senftl und den Imkerverein Moosburg.",
+    "einleitung": "Zu Moosburg A D Isar: Honig gibt es beim Imkerverein.\n\nWeitere Höfe findest du in Buch am Erlbach, Eching und Vilsheim.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Buch am Erlbach und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/buch-am-erlbach/"
+      },
+      {
+        "text": "Hofläden in Vilsheim und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/vilsheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landshut-stadt/ergolding/": {
+    "titel": "Hofläden in Ergolding (Landshut): gut zu wissen",
+    "oben": "In Ergolding sind die Milchtankstelle Pollner, der Biohof Pollner und der Grosserhof eingetragen.",
+    "einleitung": "Eier, Milch und Käse gibt es am Automaten der Pollners. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Altdorf und in der Stadt Landshut.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Altdorf (Landkreis Landshut) und Umgebung",
+        "pfad": "/bayern/landkreis-landshut/altdorf/"
+      },
+      {
+        "text": "Hofläden in Landshut",
+        "pfad": "/bayern/landshut-stadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/weiden-in-der-oberpfalz/": {
+    "titel": "Hofläden in Weiden in der Oberpfalz: gut zu wissen",
+    "oben": "Weiden in der Oberpfalz nennt Dostlers Milchtankstelle, eine weitere Milchtankstelle und den Hofladen Weiden.",
+    "einleitung": "Zwei Zapfstellen für Milch. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Erbendorf, Nabburg und Hahnbach.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Erbendorf und Umgebung",
+        "pfad": "/bayern/tirschenreuth/erbendorf/"
+      },
+      {
+        "text": "Hofläden in Nabburg und Umgebung",
+        "pfad": "/bayern/schwandorf/nabburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/oberspreewald-lausitz/luebbenau-spreewald/": {
+    "titel": "Hofläden in Lübbenau/Spreewald: gut zu wissen",
+    "oben": "In Lübbenau/Spreewald sind Zur Kräuterhexe, Spreewald Müller und der Angerhof Bischdorf eingetragen.",
+    "einleitung": "Kräuter und Spreewälder Produkte stehen im Vordergrund.\n\nWeitere Höfe findest du in Boblitz, Raddusch und Calau.",
+    "saison": [
+      {
+        "titel": "Gurken",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kräuter",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Boblitz und Umgebung",
+        "pfad": "/brandenburg/oberspreewald-lausitz/boblitz/"
+      },
+      {
+        "text": "Hofläden in Calau und Umgebung",
+        "pfad": "/brandenburg/oberspreewald-lausitz/calau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/potsdam-mittelmark/bad-belzig/": {
+    "titel": "Hofläden in Bad Belzig: gut zu wissen",
+    "oben": "Bad Belzig hat die Imkerei Andreas Albe, den Paradiesplatz und den Hofladen Lütte mit Bio-Angebot.",
+    "einleitung": "Im Hofladen Lütte gibt es Eier, Fleisch, Honig und Brot.\n\nWeitere Höfe findest du in Kloster Lehnin und Treuenbrietzen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kloster Lehnin und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/kloster-lehnin/"
+      },
+      {
+        "text": "Hofläden in Treuenbrietzen und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/treuenbrietzen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/cuxhaven/geestland/": {
+    "titel": "Hofläden in Geestland: gut zu wissen",
+    "oben": "In Geestland sind die Milchtankstelle Langen, der Hof Icken Hofladen mit Bio-Angebot und der Hof Bürgerhoff eingetragen.",
+    "einleitung": "Milch, Eier und Kartoffeln gibt es am Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Beverstedt, Butjadingen und in der Stadt Bremerhaven.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Beverstedt und Umgebung",
+        "pfad": "/niedersachsen/cuxhaven/beverstedt/"
+      },
+      {
+        "text": "Hofläden in Bremerhaven",
+        "pfad": "/bremen/bremerhaven/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/guetersloh/halle-westf/": {
+    "titel": "Hofläden in Halle (Westf.): gut zu wissen",
+    "oben": "Halle (Westf.) nennt das Eirad, den Bioland-Hof Ascheloh und den Bioland Hofladen Mühle.",
+    "einleitung": "Eier gibt es beim Eirad, Bio-Produkte auf den Bioland-Höfen.\n\nWeitere Höfe findest du in Werther, Borgholzhausen und in der Stadt Bielefeld.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Werther (Westf.) und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/werther-westf/"
+      },
+      {
+        "text": "Hofläden in Borgholzhausen und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/borgholzhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/guetersloh/werther-westf/": {
+    "titel": "Hofläden in Werther (Westf.): gut zu wissen",
+    "oben": "In Werther (Westf.) sind der Hofladen Bauer Maaß, der Apfelgarten Linhorst und der Biohof Meyer zu Theenhausen eingetragen.",
+    "einleitung": "Äpfel gibt es im Apfelgarten Linhorst, Eier und Kartoffeln bei Bauer Maaß.\n\nWeitere Höfe findest du in Halle, Borgholzhausen und in der Stadt Bielefeld.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Halle (Westf.) und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/halle-westf/"
+      },
+      {
+        "text": "Hofläden in Borgholzhausen und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/borgholzhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/maerkischer-kreis/menden-sauerland/": {
+    "titel": "Hofläden in Menden (Sauerland): gut zu wissen",
+    "oben": "Menden (Sauerland) nennt Der Bienenkorb Droste, den Ziegenhof zum Korbe und den Hofladen Bauer Korte.",
+    "einleitung": "Honig gibt es im Bienenkorb Droste.\n\nWeitere Höfe findest du in Menden, Fröndenberg und Hemer.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Menden und Umgebung",
+        "pfad": "/nordrhein-westfalen/maerkischer-kreis/menden/"
+      },
+      {
+        "text": "Hofläden in Fröndenberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/unna/froendenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
