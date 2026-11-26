@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1321 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1346 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1323,35 +1323,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Brunsbüttel](https://hofladenliste.de/schleswig-holstein/dithmarschen/brunsbuettel/) `/schleswig-holstein/dithmarschen/brunsbuettel/` | Kreis Dithmarschen | 1 | 4 | 7 |
 | ✓ | [Groß Grönau](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/gross-groenau/) `/schleswig-holstein/herzogtum-lauenburg/gross-groenau/` | Kreis Herzogtum Lauenburg | 1 | 4 | 7 |
 
-## Paket 45 (0/25 fertig)
+## Paket 45 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Humptrup](https://hofladenliste.de/schleswig-holstein/nordfriesland/humptrup/) `/schleswig-holstein/nordfriesland/humptrup/` | Kreis Nordfriesland | 1 | 4 | 7 |
-|  | [Bad Schwartau](https://hofladenliste.de/schleswig-holstein/ostholstein/bad-schwartau/) `/schleswig-holstein/ostholstein/bad-schwartau/` | Kreis Ostholstein | 1 | 4 | 7 |
-|  | [Stockelsdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/stockelsdorf/) `/schleswig-holstein/ostholstein/stockelsdorf/` | Kreis Ostholstein | 1 | 4 | 7 |
-|  | [Timmendorfer Strand](https://hofladenliste.de/schleswig-holstein/ostholstein/timmendorfer-strand/) `/schleswig-holstein/ostholstein/timmendorfer-strand/` | Kreis Ostholstein | 1 | 4 | 7 |
-|  | [Rellingen](https://hofladenliste.de/schleswig-holstein/pinneberg/rellingen/) `/schleswig-holstein/pinneberg/rellingen/` | Kreis Pinneberg | 1 | 4 | 7 |
-|  | [Probsteierhagen](https://hofladenliste.de/schleswig-holstein/ploen/probsteierhagen/) `/schleswig-holstein/ploen/probsteierhagen/` | Kreis Plön | 1 | 4 | 7 |
-|  | [Aukrug](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/aukrug/) `/schleswig-holstein/rendsburg-eckernfoerde/aukrug/` | Kreis Rendsburg-Eckernförde | 1 | 4 | 7 |
-|  | [Pommerby](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/pommerby/) `/schleswig-holstein/schleswig-flensburg/pommerby/` | Kreis Schleswig-Flensburg | 1 | 4 | 7 |
-|  | [Henstedt-Ulzburg](https://hofladenliste.de/schleswig-holstein/segeberg/henstedt-ulzburg/) `/schleswig-holstein/segeberg/henstedt-ulzburg/` | Kreis Segeberg | 1 | 4 | 7 |
-|  | [Neuendorf bei Elmshorn](https://hofladenliste.de/schleswig-holstein/steinburg/neuendorf-bei-elmshorn/) `/schleswig-holstein/steinburg/neuendorf-bei-elmshorn/` | Kreis Steinburg | 1 | 4 | 7 |
-|  | [Bargteheide](https://hofladenliste.de/schleswig-holstein/stormarn/bargteheide/) `/schleswig-holstein/stormarn/bargteheide/` | Kreis Stormarn | 1 | 4 | 7 |
-|  | [Voerde (Niederrhein)](https://hofladenliste.de/nordrhein-westfalen/wesel/voerde-niederrhein/) `/nordrhein-westfalen/wesel/voerde-niederrhein/` | Kreis Wesel | 0 | 6 | 6 |
-|  | [Allmendingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/allmendingen/) `/baden-wuerttemberg/alb-donau-kreis/allmendingen/` | Alb-Donau-Kreis | 1 | 3 | 6 |
-|  | [Blaubeuren](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/blaubeuren/) `/baden-wuerttemberg/alb-donau-kreis/blaubeuren/` | Alb-Donau-Kreis | 1 | 3 | 6 |
-|  | [Dietenheim](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/dietenheim/) `/baden-wuerttemberg/alb-donau-kreis/dietenheim/` | Alb-Donau-Kreis | 1 | 3 | 6 |
-|  | [Ehingen an der Donau](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/ehingen-an-der-donau/) `/baden-wuerttemberg/alb-donau-kreis/ehingen-an-der-donau/` | Alb-Donau-Kreis | 1 | 3 | 6 |
-|  | [Heroldstatt](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/heroldstatt/) `/baden-wuerttemberg/alb-donau-kreis/heroldstatt/` | Alb-Donau-Kreis | 1 | 3 | 6 |
-|  | [Illerkirchberg](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/illerkirchberg/) `/baden-wuerttemberg/alb-donau-kreis/illerkirchberg/` | Alb-Donau-Kreis | 1 | 3 | 6 |
-|  | [Dürmentingen](https://hofladenliste.de/baden-wuerttemberg/biberach/duermentingen/) `/baden-wuerttemberg/biberach/duermentingen/` | Landkreis Biberach | 1 | 3 | 6 |
-|  | [Uttenweiler](https://hofladenliste.de/baden-wuerttemberg/biberach/uttenweiler/) `/baden-wuerttemberg/biberach/uttenweiler/` | Landkreis Biberach | 1 | 3 | 6 |
-|  | [Holzgerlingen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/holzgerlingen/) `/baden-wuerttemberg/boeblingen/holzgerlingen/` | Landkreis Böblingen | 1 | 3 | 6 |
-|  | [Schönaich](https://hofladenliste.de/baden-wuerttemberg/boeblingen/schoenaich/) `/baden-wuerttemberg/boeblingen/schoenaich/` | Landkreis Böblingen | 1 | 3 | 6 |
-|  | [Weil im Schönbuch](https://hofladenliste.de/baden-wuerttemberg/boeblingen/weil-im-schoenbuch/) `/baden-wuerttemberg/boeblingen/weil-im-schoenbuch/` | Landkreis Böblingen | 1 | 3 | 6 |
-|  | [Breisach am Rhein](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/) `/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
-|  | [Breitnau](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/) `/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+| ✓ | [Humptrup](https://hofladenliste.de/schleswig-holstein/nordfriesland/humptrup/) `/schleswig-holstein/nordfriesland/humptrup/` | Kreis Nordfriesland | 1 | 4 | 7 |
+| ✓ | [Bad Schwartau](https://hofladenliste.de/schleswig-holstein/ostholstein/bad-schwartau/) `/schleswig-holstein/ostholstein/bad-schwartau/` | Kreis Ostholstein | 1 | 4 | 7 |
+| ✓ | [Stockelsdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/stockelsdorf/) `/schleswig-holstein/ostholstein/stockelsdorf/` | Kreis Ostholstein | 1 | 4 | 7 |
+| ✓ | [Timmendorfer Strand](https://hofladenliste.de/schleswig-holstein/ostholstein/timmendorfer-strand/) `/schleswig-holstein/ostholstein/timmendorfer-strand/` | Kreis Ostholstein | 1 | 4 | 7 |
+| ✓ | [Rellingen](https://hofladenliste.de/schleswig-holstein/pinneberg/rellingen/) `/schleswig-holstein/pinneberg/rellingen/` | Kreis Pinneberg | 1 | 4 | 7 |
+| ✓ | [Probsteierhagen](https://hofladenliste.de/schleswig-holstein/ploen/probsteierhagen/) `/schleswig-holstein/ploen/probsteierhagen/` | Kreis Plön | 1 | 4 | 7 |
+| ✓ | [Aukrug](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/aukrug/) `/schleswig-holstein/rendsburg-eckernfoerde/aukrug/` | Kreis Rendsburg-Eckernförde | 1 | 4 | 7 |
+| ✓ | [Pommerby](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/pommerby/) `/schleswig-holstein/schleswig-flensburg/pommerby/` | Kreis Schleswig-Flensburg | 1 | 4 | 7 |
+| ✓ | [Henstedt-Ulzburg](https://hofladenliste.de/schleswig-holstein/segeberg/henstedt-ulzburg/) `/schleswig-holstein/segeberg/henstedt-ulzburg/` | Kreis Segeberg | 1 | 4 | 7 |
+| ✓ | [Neuendorf bei Elmshorn](https://hofladenliste.de/schleswig-holstein/steinburg/neuendorf-bei-elmshorn/) `/schleswig-holstein/steinburg/neuendorf-bei-elmshorn/` | Kreis Steinburg | 1 | 4 | 7 |
+| ✓ | [Bargteheide](https://hofladenliste.de/schleswig-holstein/stormarn/bargteheide/) `/schleswig-holstein/stormarn/bargteheide/` | Kreis Stormarn | 1 | 4 | 7 |
+| ✓ | [Voerde (Niederrhein)](https://hofladenliste.de/nordrhein-westfalen/wesel/voerde-niederrhein/) `/nordrhein-westfalen/wesel/voerde-niederrhein/` | Kreis Wesel | 0 | 6 | 6 |
+| ✓ | [Allmendingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/allmendingen/) `/baden-wuerttemberg/alb-donau-kreis/allmendingen/` | Alb-Donau-Kreis | 1 | 3 | 6 |
+| ✓ | [Blaubeuren](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/blaubeuren/) `/baden-wuerttemberg/alb-donau-kreis/blaubeuren/` | Alb-Donau-Kreis | 1 | 3 | 6 |
+| ✓ | [Dietenheim](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/dietenheim/) `/baden-wuerttemberg/alb-donau-kreis/dietenheim/` | Alb-Donau-Kreis | 1 | 3 | 6 |
+| ✓ | [Ehingen an der Donau](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/ehingen-an-der-donau/) `/baden-wuerttemberg/alb-donau-kreis/ehingen-an-der-donau/` | Alb-Donau-Kreis | 1 | 3 | 6 |
+| ✓ | [Heroldstatt](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/heroldstatt/) `/baden-wuerttemberg/alb-donau-kreis/heroldstatt/` | Alb-Donau-Kreis | 1 | 3 | 6 |
+| ✓ | [Illerkirchberg](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/illerkirchberg/) `/baden-wuerttemberg/alb-donau-kreis/illerkirchberg/` | Alb-Donau-Kreis | 1 | 3 | 6 |
+| ✓ | [Dürmentingen](https://hofladenliste.de/baden-wuerttemberg/biberach/duermentingen/) `/baden-wuerttemberg/biberach/duermentingen/` | Landkreis Biberach | 1 | 3 | 6 |
+| ✓ | [Uttenweiler](https://hofladenliste.de/baden-wuerttemberg/biberach/uttenweiler/) `/baden-wuerttemberg/biberach/uttenweiler/` | Landkreis Biberach | 1 | 3 | 6 |
+| ✓ | [Holzgerlingen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/holzgerlingen/) `/baden-wuerttemberg/boeblingen/holzgerlingen/` | Landkreis Böblingen | 1 | 3 | 6 |
+| ✓ | [Schönaich](https://hofladenliste.de/baden-wuerttemberg/boeblingen/schoenaich/) `/baden-wuerttemberg/boeblingen/schoenaich/` | Landkreis Böblingen | 1 | 3 | 6 |
+| ✓ | [Weil im Schönbuch](https://hofladenliste.de/baden-wuerttemberg/boeblingen/weil-im-schoenbuch/) `/baden-wuerttemberg/boeblingen/weil-im-schoenbuch/` | Landkreis Böblingen | 1 | 3 | 6 |
+| ✓ | [Breisach am Rhein](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/) `/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+| ✓ | [Breitnau](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/) `/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
 
 ## Paket 46 (0/25 fertig)
 
