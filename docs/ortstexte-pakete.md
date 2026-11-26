@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 818 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 843 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -993,35 +993,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Südbund](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/suedbund/) `/baden-wuerttemberg/rems-murr-kreis/suedbund/` | Rems-Murr-Kreis | 1 | 4 | 7 |
 | ✓ | [Eppelheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/eppelheim/) `/baden-wuerttemberg/rhein-neckar-kreis/eppelheim/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
 
-## Paket 34 (0/25 fertig)
+## Paket 34 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Hirschberg an der Bergstraße](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/hirschberg-an-der-bergstrasse/) `/baden-wuerttemberg/rhein-neckar-kreis/hirschberg-an-der-bergstrasse/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
-|  | [Ilvesheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/ilvesheim/) `/baden-wuerttemberg/rhein-neckar-kreis/ilvesheim/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
-|  | [Nußloch](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/nussloch/) `/baden-wuerttemberg/rhein-neckar-kreis/nussloch/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
-|  | [Mainhardt](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/mainhardt/) `/baden-wuerttemberg/schwaebisch-hall/mainhardt/` | Landkreis Schwäbisch Hall | 1 | 4 | 7 |
-|  | [Michelfeld](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/michelfeld/) `/baden-wuerttemberg/schwaebisch-hall/michelfeld/` | Landkreis Schwäbisch Hall | 1 | 4 | 7 |
-|  | [Vellberg](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/vellberg/) `/baden-wuerttemberg/schwaebisch-hall/vellberg/` | Landkreis Schwäbisch Hall | 1 | 4 | 7 |
-|  | [Brigachtal](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/brigachtal/) `/baden-wuerttemberg/schwarzwald-baar-kreis/brigachtal/` | Schwarzwald-Baar-Kreis | 1 | 4 | 7 |
-|  | [Tuningen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/tuningen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/tuningen/` | Schwarzwald-Baar-Kreis | 1 | 4 | 7 |
-|  | [Inzigkofen](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/inzigkofen/) `/baden-wuerttemberg/sigmaringen/inzigkofen/` | Landkreis Sigmaringen | 1 | 4 | 7 |
-|  | [Mössingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/moessingen/) `/baden-wuerttemberg/tuebingen/moessingen/` | Landkreis Tübingen | 1 | 4 | 7 |
-|  | [Albbruck](https://hofladenliste.de/baden-wuerttemberg/waldshut/albbruck/) `/baden-wuerttemberg/waldshut/albbruck/` | Landkreis Waldshut | 1 | 4 | 7 |
-|  | [Bad Säckingen](https://hofladenliste.de/baden-wuerttemberg/waldshut/bad-saeckingen/) `/baden-wuerttemberg/waldshut/bad-saeckingen/` | Landkreis Waldshut | 1 | 4 | 7 |
-|  | [Murg](https://hofladenliste.de/baden-wuerttemberg/waldshut/murg/) `/baden-wuerttemberg/waldshut/murg/` | Landkreis Waldshut | 1 | 4 | 7 |
-|  | [Waldshut-Tiengen](https://hofladenliste.de/baden-wuerttemberg/waldshut/waldshut-tiengen/) `/baden-wuerttemberg/waldshut/waldshut-tiengen/` | Landkreis Waldshut | 1 | 4 | 7 |
-|  | [Wutöschingen](https://hofladenliste.de/baden-wuerttemberg/waldshut/wutoeschingen/) `/baden-wuerttemberg/waldshut/wutoeschingen/` | Landkreis Waldshut | 1 | 4 | 7 |
-|  | [Bisingen](https://hofladenliste.de/baden-wuerttemberg/zollernalbkreis/bisingen/) `/baden-wuerttemberg/zollernalbkreis/bisingen/` | Zollernalbkreis | 1 | 4 | 7 |
-|  | [Merching](https://hofladenliste.de/bayern/aichach-friedberg/merching/) `/bayern/aichach-friedberg/merching/` | Landkreis Aichach-Friedberg | 1 | 4 | 7 |
-|  | [Ried](https://hofladenliste.de/bayern/aichach-friedberg/ried/) `/bayern/aichach-friedberg/ried/` | Landkreis Aichach-Friedberg | 1 | 4 | 7 |
-|  | [Sielenbach](https://hofladenliste.de/bayern/aichach-friedberg/sielenbach/) `/bayern/aichach-friedberg/sielenbach/` | Landkreis Aichach-Friedberg | 1 | 4 | 7 |
-|  | [Burgkirchen an der Alz](https://hofladenliste.de/bayern/altoetting/burgkirchen-an-der-alz/) `/bayern/altoetting/burgkirchen-an-der-alz/` | Landkreis Altötting | 1 | 4 | 7 |
-|  | [Kümmersbruck](https://hofladenliste.de/bayern/amberg-sulzbach/kuemmersbruck/) `/bayern/amberg-sulzbach/kuemmersbruck/` | Landkreis Amberg-Sulzbach | 1 | 4 | 7 |
-|  | [Benediktbeuern](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/benediktbeuern/) `/bayern/bad-toelz-wolfratshausen/benediktbeuern/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 4 | 7 |
-|  | [Laufen](https://hofladenliste.de/bayern/berchtesgadener-land/laufen/) `/bayern/berchtesgadener-land/laufen/` | Landkreis Berchtesgadener Land | 1 | 4 | 7 |
-|  | [Bergkirchen](https://hofladenliste.de/bayern/dachau/bergkirchen/) `/bayern/dachau/bergkirchen/` | Landkreis Dachau | 1 | 4 | 7 |
-|  | [Hebertshausen](https://hofladenliste.de/bayern/dachau/hebertshausen/) `/bayern/dachau/hebertshausen/` | Landkreis Dachau | 1 | 4 | 7 |
+| ✓ | [Hirschberg an der Bergstraße](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/hirschberg-an-der-bergstrasse/) `/baden-wuerttemberg/rhein-neckar-kreis/hirschberg-an-der-bergstrasse/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
+| ✓ | [Ilvesheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/ilvesheim/) `/baden-wuerttemberg/rhein-neckar-kreis/ilvesheim/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
+| ✓ | [Nußloch](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/nussloch/) `/baden-wuerttemberg/rhein-neckar-kreis/nussloch/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
+| ✓ | [Mainhardt](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/mainhardt/) `/baden-wuerttemberg/schwaebisch-hall/mainhardt/` | Landkreis Schwäbisch Hall | 1 | 4 | 7 |
+| ✓ | [Michelfeld](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/michelfeld/) `/baden-wuerttemberg/schwaebisch-hall/michelfeld/` | Landkreis Schwäbisch Hall | 1 | 4 | 7 |
+| ✓ | [Vellberg](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/vellberg/) `/baden-wuerttemberg/schwaebisch-hall/vellberg/` | Landkreis Schwäbisch Hall | 1 | 4 | 7 |
+| ✓ | [Brigachtal](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/brigachtal/) `/baden-wuerttemberg/schwarzwald-baar-kreis/brigachtal/` | Schwarzwald-Baar-Kreis | 1 | 4 | 7 |
+| ✓ | [Tuningen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/tuningen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/tuningen/` | Schwarzwald-Baar-Kreis | 1 | 4 | 7 |
+| ✓ | [Inzigkofen](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/inzigkofen/) `/baden-wuerttemberg/sigmaringen/inzigkofen/` | Landkreis Sigmaringen | 1 | 4 | 7 |
+| ✓ | [Mössingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/moessingen/) `/baden-wuerttemberg/tuebingen/moessingen/` | Landkreis Tübingen | 1 | 4 | 7 |
+| ✓ | [Albbruck](https://hofladenliste.de/baden-wuerttemberg/waldshut/albbruck/) `/baden-wuerttemberg/waldshut/albbruck/` | Landkreis Waldshut | 1 | 4 | 7 |
+| ✓ | [Bad Säckingen](https://hofladenliste.de/baden-wuerttemberg/waldshut/bad-saeckingen/) `/baden-wuerttemberg/waldshut/bad-saeckingen/` | Landkreis Waldshut | 1 | 4 | 7 |
+| ✓ | [Murg](https://hofladenliste.de/baden-wuerttemberg/waldshut/murg/) `/baden-wuerttemberg/waldshut/murg/` | Landkreis Waldshut | 1 | 4 | 7 |
+| ✓ | [Waldshut-Tiengen](https://hofladenliste.de/baden-wuerttemberg/waldshut/waldshut-tiengen/) `/baden-wuerttemberg/waldshut/waldshut-tiengen/` | Landkreis Waldshut | 1 | 4 | 7 |
+| ✓ | [Wutöschingen](https://hofladenliste.de/baden-wuerttemberg/waldshut/wutoeschingen/) `/baden-wuerttemberg/waldshut/wutoeschingen/` | Landkreis Waldshut | 1 | 4 | 7 |
+| ✓ | [Bisingen](https://hofladenliste.de/baden-wuerttemberg/zollernalbkreis/bisingen/) `/baden-wuerttemberg/zollernalbkreis/bisingen/` | Zollernalbkreis | 1 | 4 | 7 |
+| ✓ | [Merching](https://hofladenliste.de/bayern/aichach-friedberg/merching/) `/bayern/aichach-friedberg/merching/` | Landkreis Aichach-Friedberg | 1 | 4 | 7 |
+| ✓ | [Ried](https://hofladenliste.de/bayern/aichach-friedberg/ried/) `/bayern/aichach-friedberg/ried/` | Landkreis Aichach-Friedberg | 1 | 4 | 7 |
+| ✓ | [Sielenbach](https://hofladenliste.de/bayern/aichach-friedberg/sielenbach/) `/bayern/aichach-friedberg/sielenbach/` | Landkreis Aichach-Friedberg | 1 | 4 | 7 |
+| ✓ | [Burgkirchen an der Alz](https://hofladenliste.de/bayern/altoetting/burgkirchen-an-der-alz/) `/bayern/altoetting/burgkirchen-an-der-alz/` | Landkreis Altötting | 1 | 4 | 7 |
+| ✓ | [Kümmersbruck](https://hofladenliste.de/bayern/amberg-sulzbach/kuemmersbruck/) `/bayern/amberg-sulzbach/kuemmersbruck/` | Landkreis Amberg-Sulzbach | 1 | 4 | 7 |
+| ✓ | [Benediktbeuern](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/benediktbeuern/) `/bayern/bad-toelz-wolfratshausen/benediktbeuern/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 4 | 7 |
+| ✓ | [Laufen](https://hofladenliste.de/bayern/berchtesgadener-land/laufen/) `/bayern/berchtesgadener-land/laufen/` | Landkreis Berchtesgadener Land | 1 | 4 | 7 |
+| ✓ | [Bergkirchen](https://hofladenliste.de/bayern/dachau/bergkirchen/) `/bayern/dachau/bergkirchen/` | Landkreis Dachau | 1 | 4 | 7 |
+| ✓ | [Hebertshausen](https://hofladenliste.de/bayern/dachau/hebertshausen/) `/bayern/dachau/hebertshausen/` | Landkreis Dachau | 1 | 4 | 7 |
 
 ## Paket 35 (0/25 fertig)
 
