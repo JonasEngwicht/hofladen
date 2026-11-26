@@ -10,7 +10,7 @@ import { zeilen, uebersetze, parse } from '../../static/oh.js';
 import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml, produktIcon } from '../../static/karte.js';
 import { HALTE_ART, HEUTE, ROOT, ausstattung, betreiber, cfg, datumDe, eintraege, inDerNaehe, istRund, lizenzLink, osm, quellenHinweis, zeitenKurz } from './daten.mjs';
 import { kartenDaten, kartenPanel, kurz, seite, telHref } from './html.mjs';
-import { zeitenSnippet, PLURAL_ART, STAND_PLATZHALTER, fragenHtml, gross, km, link, naechsteUmgebungsSeite, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortUeberschrift, passend, regionTeaser, schreibe, stand } from './grundlagen.mjs';
+import { zeitenSnippet, entfernt, PLURAL_ART, STAND_PLATZHALTER, fragenHtml, gross, km, link, naechsteUmgebungsSeite, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortUeberschrift, passend, regionTeaser, schreibe, stand } from './grundlagen.mjs';
 import { SAISON_SEITEN, artTyp, monatsSpanne, typKreis } from './startseite.mjs';
 import { umgebungsSeite } from './regionen.mjs';
 
@@ -111,7 +111,7 @@ for (const e of eintraege) {
     `${esc(e.titel)} ist ${artSatz} in ${esc(e.ortAnzeige)}${imKreis.endsWith(e.ortAnzeige) ? '' : ` ${esc(imKreis)}`}.`,
     e.kat.length ? `Im Angebot: ${esc(nennung(e.kat.map((x) => KATEGORIEN[x])))}.` : '',
     ohKurz ? `Geöffnet: ${esc(ohKurz)}.` : '',
-    naechsterHof ? `Der nächste weitere Hofladen ist <a href="${naechsterHof[1].pfad}">${esc(naechsterHof[1].titelSeite)}</a> in ${esc(naechsterHof[1].ortAnzeige)}, etwa ${km(naechsterHof[0])} entfernt.` : '',
+    naechsterHof ? `Der nächste weitere Hofladen ist <a href="${naechsterHof[1].pfad}">${esc(naechsterHof[1].titelSeite)}</a> in ${esc(naechsterHof[1].ortAnzeige)}, ${entfernt(naechsterHof[0])}.` : '',
   ].filter(Boolean).join(' ');
   const titelEnthaeltOrt = e.titel.includes(e.ortAnzeige);
   const mitZeiten = !!(e.oeffnungszeiten || e.oeffnungszeiten_text);
