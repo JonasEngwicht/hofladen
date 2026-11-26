@@ -43028,5 +43028,713 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ravensburg/schlier/": {
+    "titel": "Hofläden in Schlier: gut zu wissen",
+    "oben": "Schlier liegt in Oberschwaben im Landkreis Ravensburg. Eingetragen sind der Geflügelhof Lauratal mit Eiern, Fleisch und Geflügel, ein Regiomat mit Eiern und Nudeln und die Milchtankstelle Fohrenhof Batzill.",
+    "einleitung": "Geflügel und Eier gibt es beim Geflügelhof Lauratal. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Weingarten und Ravensburg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weingarten (Landkreis Ravensburg) und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/weingarten/"
+      },
+      {
+        "text": "Hofläden in Ravensburg und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/ravensburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ravensburg/vogt/": {
+    "titel": "Hofläden in Vogt: gut zu wissen",
+    "oben": "Vogt liegt im Altdorfer Wald in Oberschwaben im Landkreis Ravensburg. Eingetragen sind der Hof Marktanner mit Bio-Angebot, die Goldstück Imkerei und Detzels Hofladen.",
+    "einleitung": "Honig gibt es bei der Goldstück Imkerei. Der Hof Marktanner arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Schlier und Bodnegg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schlier und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/schlier/"
+      },
+      {
+        "text": "Hofläden in Bodnegg und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/bodnegg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ravensburg/weingarten/": {
+    "titel": "Hofläden in Weingarten (Landkreis Ravensburg): gut zu wissen",
+    "oben": "Weingarten liegt bei Ravensburg in Oberschwaben, bekannt ist die Basilika. Eingetragen sind der Rungshof, eine Milchtankstelle und das Eierhäusle mit Eiern, Honig, Nudeln und Getränken.",
+    "einleitung": "Eier, Honig und Nudeln gibt es im Eierhäusle. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Baienfurt und Berg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Baienfurt und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/baienfurt/"
+      },
+      {
+        "text": "Hofläden in Berg (Landkreis Ravensburg) und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/berg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rems-murr-kreis/auenwald/": {
+    "titel": "Hofläden in Auenwald: gut zu wissen",
+    "oben": "Auenwald liegt im Schwäbischen Wald im Rems-Murr-Kreis. Eingetragen sind ein Regiomat mit Eiern und Milch, die Imkerei Bäßler und der Landwirtschaftliche Betrieb Meister.",
+    "einleitung": "Honig gibt es bei der Imkerei Bäßler. Die Milch aus dem Regiomaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Backnang und Rudersberg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Backnang und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/backnang/"
+      },
+      {
+        "text": "Hofläden in Rudersberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/rudersberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rems-murr-kreis/burgstetten/": {
+    "titel": "Hofläden in Burgstetten: gut zu wissen",
+    "oben": "Burgstetten liegt im Rems-Murr-Kreis bei Backnang. Eingetragen sind Ottos Hausmacher, ein Eier-Frischeautomat vom Obst- und Eierhof Bollinger und der Hofladen Häußermann.",
+    "einleitung": "Eier und Obst gibt es beim Obst- und Eierhof Bollinger. Der Frischeautomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Backnang.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Backnang und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/backnang/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rems-murr-kreis/pluederhausen/": {
+    "titel": "Hofläden in Plüderhausen: gut zu wissen",
+    "oben": "Plüderhausen liegt im Remstal im Rems-Murr-Kreis. Eingetragen sind der Hofladen Ziegenhof Kohl mit Bio-Angebot, das SB-Lädle des Ziegenhofs und ein Regiomat mit Eiern.",
+    "einleitung": "Der Ziegenhof Kohl arbeitet nach Bio-Richtlinien und hat auch ein SB-Lädle. Eier gibt es am Regiomaten.\n\nWeitere Höfe findest du in Lorch und Wangen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lorch und Umgebung",
+        "pfad": "/baden-wuerttemberg/ostalbkreis/lorch/"
+      },
+      {
+        "text": "Hofläden in Wangen und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/wangen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/reutlingen/metzingen/": {
+    "titel": "Hofläden in Metzingen: gut zu wissen",
+    "oben": "Metzingen liegt am Neckar im Landkreis Reutlingen und ist als Weinort und Outlet-Stadt bekannt. Eingetragen sind Annes Haus und Garten mit Bio-Angebot, der Städtische Obstbaubetrieb mit Bio-Obst und Getränken und Henzler Früchte mit Gemüse und Kartoffeln.",
+    "einleitung": "Obst gibt es beim Städtischen Obstbaubetrieb nach Bio-Richtlinien. Gemüse und Kartoffeln gibt es bei Henzler Früchte.\n\nWeitere Höfe findest du in Altdorf und Reutlingen.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Altdorf (Landkreis Esslingen) und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/altdorf/"
+      },
+      {
+        "text": "Hofläden in Reutlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/reutlingen/reutlingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/reutlingen/walddorfhaeslach/": {
+    "titel": "Hofläden in Walddorfhäslach: gut zu wissen",
+    "oben": "Walddorfhäslach liegt am Rand des Schönbuchs im Landkreis Reutlingen. Eingetragen sind die Milchtankstelle und der Warenautomat Schönbuchhof mit Eiern, Milch und Fleisch, der Sulzeichenhof mit Bio-Angebot und die Bioland-Gärtnerei Gaiser & Fischer.",
+    "einleitung": "Gemüse gibt es in der Bioland-Gärtnerei, Milch, Eier und Fleisch am Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Altdorf und Waldenbuch.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Altdorf (Landkreis Esslingen) und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/altdorf/"
+      },
+      {
+        "text": "Hofläden in Waldenbuch und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/waldenbuch/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rhein-neckar-kreis/altlussheim/": {
+    "titel": "Hofläden in Altlußheim: gut zu wissen",
+    "oben": "Altlußheim liegt am Rhein im Rhein-Neckar-Kreis bei Speyer. Eingetragen sind der Obsthof Schmidt, der Spargelhof Kolmar und Michaels Scheunenladen.",
+    "einleitung": "Spargel gibt es im Frühjahr, Obst im Sommer und Herbst. Die Rheinebene eignet sich gut für Spargel.\n\nWeitere Höfe findest du in Oberhausen-Rheinhausen und Hockenheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberhausen-Rheinhausen und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/oberhausen-rheinhausen/"
+      },
+      {
+        "text": "Hofläden in Hockenheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/hockenheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rhein-neckar-kreis/dossenheim/": {
+    "titel": "Hofläden in Dossenheim: gut zu wissen",
+    "oben": "Dossenheim liegt an der Bergstraße nördlich von Heidelberg im Rhein-Neckar-Kreis. Eingetragen sind ein Hofladen mit Bio-Honig, der Hofladen Mühlbauer und der Hegehof.",
+    "einleitung": "Honig gibt es im Hofladen nach Bio-Richtlinien. Heidelberg ist in wenigen Minuten erreichbar.\n\nWeitere Höfe findest du in Schriesheim und Heidelberg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schriesheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/schriesheim/"
+      },
+      {
+        "text": "Hofläden in Heidelberg",
+        "pfad": "/baden-wuerttemberg/heidelberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rhein-neckar-kreis/rauenberg/": {
+    "titel": "Hofläden in Rauenberg: gut zu wissen",
+    "oben": "Rauenberg liegt im Kraichgau im Rhein-Neckar-Kreis. Eingetragen sind der Hofverkauf des Weinguts Ihle, die Wanderimkerei Koch und der Hofladen Dres.",
+    "einleitung": "Wein gibt es im Hofverkauf Ihle, Honig bei der Wanderimkerei Koch. Der Kraichgau ist von Weinbergen und Löss geprägt.\n\nWeitere Höfe findest du in Wiesloch und Dielheim.",
+    "saison": [
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wiesloch und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/wiesloch/"
+      },
+      {
+        "text": "Hofläden in Dielheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/dielheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rhein-neckar-kreis/reilingen/": {
+    "titel": "Hofläden in Reilingen: gut zu wissen",
+    "oben": "Reilingen liegt im Rhein-Neckar-Kreis bei Hockenheim. Eingetragen sind der Hofladen Wersauer Hof, der Hofladen Schröder und Spargel Decker.",
+    "einleitung": "Spargel gibt es bei Spargel Decker, in der Saison im Frühjahr. Die Kurpfalz ist ein bekanntes Spargelanbaugebiet.\n\nWeitere Höfe findest du in Hockenheim und Altlußheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hockenheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/hockenheim/"
+      },
+      {
+        "text": "Hofläden in Altlußheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rhein-neckar-kreis/altlussheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rottweil/dunningen/": {
+    "titel": "Hofläden in Dunningen: gut zu wissen",
+    "oben": "Dunningen liegt im Landkreis Rottweil am Rand des Schwarzwalds. Eingetragen sind ein Regiomat, ein Hofladen-Automat und der Hofladen Stern-Fautz.",
+    "einleitung": "Zwei Automaten machen den Einkauf jederzeit möglich. Der Hofladen Stern-Fautz ergänzt sie.\n\nWeitere Höfe findest du in Zimmern ob Rottweil und Königsfeld im Schwarzwald.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zimmern ob Rottweil und Umgebung",
+        "pfad": "/baden-wuerttemberg/rottweil/zimmern-ob-rottweil/"
+      },
+      {
+        "text": "Hofläden in Königsfeld im Schwarzwald und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rottweil/schramberg/": {
+    "titel": "Hofläden in Schramberg: gut zu wissen",
+    "oben": "Schramberg liegt im Schwarzwald im Landkreis Rottweil. Eingetragen sind der Klausmann Hofladenautomat mit Fleisch, der Hofladen der Stiftung St. Franziskus und der Qulibri Hof mit Käsemanufaktur und Hofladen.",
+    "einleitung": "Käse gibt es aus der Käsemanufaktur des Qulibri Hofs, Fleisch am Automaten von Klausmann. Der Schwarzwald prägt die Landschaft.\n\nWeitere Höfe findest du in Dunningen und Königsfeld im Schwarzwald.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dunningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/rottweil/dunningen/"
+      },
+      {
+        "text": "Hofläden in Königsfeld im Schwarzwald und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/schwaebisch-hall/blaufelden/": {
+    "titel": "Hofläden in Blaufelden: gut zu wissen",
+    "oben": "Blaufelden liegt im Landkreis Schwäbisch Hall in Hohenlohe. Eingetragen sind ein Bio-Hofladen, Alles Hohenlohe und der Biohof Gehringer mit Bio-Angebot.",
+    "einleitung": "Zwei der drei Betriebe arbeiten nach Bio-Richtlinien. Bei Alles Hohenlohe gibt es Produkte aus der Region.\n\nWeitere Höfe findest du in Rot am See und Langenburg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rot am See und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/rot-am-see/"
+      },
+      {
+        "text": "Hofläden in Langenburg und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/langenburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/schwaebisch-hall/ilshofen/": {
+    "titel": "Hofläden in Ilshofen: gut zu wissen",
+    "oben": "Ilshofen liegt auf der Haller Ebene im Landkreis Schwäbisch Hall. Eingetragen sind Münchs Hofladen, der Hof Plank mit Eiern und Milch und ein Regiomat mit Eiern und Milch.",
+    "einleitung": "Eier und Milch gibt es an zwei Automaten. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Kirchberg an der Jagst und Vellberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Vellberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/vellberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/schwaebisch-hall/langenburg/": {
+    "titel": "Hofläden in Langenburg: gut zu wissen",
+    "oben": "Langenburg liegt im Jagsttal im Landkreis Schwäbisch Hall, bekannt ist das Schloss. Eingetragen sind der Demeter Hof Stier, die Langenburger Schafkäserei mit Bio-Käse und ein Regiomat.",
+    "einleitung": "Schafkäse gibt es in der Langenburger Schafkäserei nach Bio-Richtlinien. Der Demeter Hof Stier arbeitet nach Demeter-Richtlinien.\n\nWeitere Höfe findest du in Blaufelden und Ilshofen.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Blaufelden und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/blaufelden/"
+      },
+      {
+        "text": "Hofläden in Ilshofen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/ilshofen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/schwaebisch-hall/wallhausen/": {
+    "titel": "Hofläden in Wallhausen: gut zu wissen",
+    "oben": "Wallhausen liegt im Landkreis Schwäbisch Hall in Hohenlohe. Eingetragen sind Hecks Bauernbrot, der Hofladen Beerenbau Blumenstock mit Obst und Blumen und der Hofladen Borg.",
+    "einleitung": "Brot gibt es bei Hecks Bauernbrot, Beeren und Blumen beim Beerenbau Blumenstock. Die Beerensaison ist im Sommer.\n\nWeitere Höfe findest du in Rot am See und Kirchberg an der Jagst.",
+    "saison": [
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Beeren",
+        "zeit": "Juni bis August"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rot am See und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwaebisch-hall/rot-am-see/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/schwarzwald-baar-kreis/dauchingen/": {
+    "titel": "Hofläden in Dauchingen: gut zu wissen",
+    "oben": "Dauchingen liegt im Schwarzwald-Baar-Kreis bei Villingen-Schwenningen. Eingetragen sind ein Regiomat mit Eiern und Fleisch, der Eierautomat Snack ninja und Schleichers Hofladen.",
+    "einleitung": "Eier gibt es an zwei Automaten, dazu Fleisch am Regiomaten. Die Baar ist eine Hochebene am Rand des Schwarzwalds.\n\nWeitere Höfe findest du in Niedereschach und Tuningen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Niedereschach und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/niedereschach/"
+      },
+      {
+        "text": "Hofläden in Tuningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/tuningen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/schwarzwald-baar-kreis/moenchweiler/": {
+    "titel": "Hofläden in Mönchweiler: gut zu wissen",
+    "oben": "Mönchweiler liegt im Schwarzwald-Baar-Kreis bei Villingen-Schwenningen. Eingetragen sind die Metzgerei Dorer als Automat mit Fleisch, Sophies Milchhäusle und ein Hofladen mit Selbstbedienung.",
+    "einleitung": "Milch und Fleisch gibt es hier an Automaten. Die Milch aus dem Milchhäusle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Königsfeld im Schwarzwald und Villingen-Schwenningen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Königsfeld im Schwarzwald und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/"
+      },
+      {
+        "text": "Hofläden in Villingen-Schwenningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/villingen-schwenningen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/schwarzwald-baar-kreis/niedereschach/": {
+    "titel": "Hofläden in Niedereschach: gut zu wissen",
+    "oben": "Niedereschach liegt in der Baar im Schwarzwald-Baar-Kreis. Eingetragen sind der Hofladen Obergfell, der Wildensteiner Hofladen und das Schlenkerhof Lädele, alle mit breitem Sortiment von Eiern bis Fleisch.",
+    "einleitung": "Drei Hofläden bieten ein breites Sortiment, vom Brot über Käse bis zu Eiern und Fleisch. Die Baar ist ein Hochplateau am Rand des Schwarzwalds.\n\nWeitere Höfe findest du in Dauchingen und Zimmern ob Rottweil.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dauchingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/dauchingen/"
+      },
+      {
+        "text": "Hofläden in Zimmern ob Rottweil und Umgebung",
+        "pfad": "/baden-wuerttemberg/rottweil/zimmern-ob-rottweil/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/schwarzwald-baar-kreis/schonach-im-schwarzwald/": {
+    "titel": "Hofläden in Schonach im Schwarzwald: gut zu wissen",
+    "oben": "Schonach liegt im Mittleren Schwarzwald im Schwarzwald-Baar-Kreis. Eingetragen sind zwei Hofläden, einer mit Milch, und der Automat der Metzgerei Hepting mit Fleisch.",
+    "einleitung": "Milch gibt es im Hofladen, Fleisch am Automaten der Metzgerei Hepting. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Königsfeld im Schwarzwald und Hausach.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Königsfeld im Schwarzwald und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/"
+      },
+      {
+        "text": "Hofläden in Hausach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/hausach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/sigmaringen/sigmaringen/": {
+    "titel": "Hofläden in Sigmaringen: gut zu wissen",
+    "oben": "Sigmaringen liegt an der Donau, bekannt ist das Schloss. Eingetragen sind die SoLaWi Sigmaringen mit Bio-Angebot, der Strobelhof und Saums Hofladen mit Café.",
+    "einleitung": "Über die Solidarische Landwirtschaft gibt es Gemüse nach Bio-Richtlinien. Zum Kaffee geht es zu Saums Hofladen.\n\nWeitere Höfe findest du in Inzigkofen und Meßkirch.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Inzigkofen und Umgebung",
+        "pfad": "/baden-wuerttemberg/sigmaringen/inzigkofen/"
+      },
+      {
+        "text": "Hofläden in Meßkirch und Umgebung",
+        "pfad": "/baden-wuerttemberg/sigmaringen/messkirch/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/stuttgart/stuttgart-buesnau/": {
+    "titel": "Hofläden in Stuttgart Büsnau: gut zu wissen",
+    "oben": "Büsnau ist ein Stadtteil im Südwesten von Stuttgart im Stadtbezirk Vaihingen. Eingetragen sind ein Regiomat, die Imkerei Kaltenbach mit Honigautomat und ein Eierautomat.",
+    "einleitung": "Honig und Eier gibt es an Automaten, jederzeit. Büsnau liegt am Rand der Stadt mit Wald in der Nähe.\n\nWeitere Höfe findest du in Vaihingen und Möhringen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stuttgart Vaihingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-vaihingen/"
+      },
+      {
+        "text": "Hofläden in Stuttgart Möhringen und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-moehringen/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
