@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1469 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1493 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1713,35 +1713,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Gersfeld](https://hofladenliste.de/hessen/fulda/gersfeld/) `/hessen/fulda/gersfeld/` | Landkreis Fulda | 1 | 3 | 6 |
 | ✓ | [Neuhof](https://hofladenliste.de/hessen/fulda/neuhof/) `/hessen/fulda/neuhof/` | Landkreis Fulda | 1 | 3 | 6 |
 
-## Paket 58 (0/25 fertig)
+## Paket 58 (24/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Grünberg](https://hofladenliste.de/hessen/giessen/gruenberg/) `/hessen/giessen/gruenberg/` | Landkreis Gießen | 1 | 3 | 6 |
-|  | [Langgöns](https://hofladenliste.de/hessen/giessen/langgoens/) `/hessen/giessen/langgoens/` | Landkreis Gießen | 1 | 3 | 6 |
-|  | [Lollar](https://hofladenliste.de/hessen/giessen/lollar/) `/hessen/giessen/lollar/` | Landkreis Gießen | 1 | 3 | 6 |
-|  | [Groß-Gerau](https://hofladenliste.de/hessen/gross-gerau/gross-gerau/) `/hessen/gross-gerau/gross-gerau/` | Landkreis Groß-Gerau | 1 | 3 | 6 |
-|  | [Nauheim](https://hofladenliste.de/hessen/gross-gerau/nauheim/) `/hessen/gross-gerau/nauheim/` | Landkreis Groß-Gerau | 1 | 3 | 6 |
-|  | [Rüsselsheim](https://hofladenliste.de/hessen/gross-gerau/ruesselsheim/) `/hessen/gross-gerau/ruesselsheim/` | Landkreis Groß-Gerau | 1 | 3 | 6 |
-|  | [Wildeck](https://hofladenliste.de/hessen/hersfeld-rotenburg/wildeck/) `/hessen/hersfeld-rotenburg/wildeck/` | Landkreis Hersfeld-Rotenburg | 1 | 3 | 6 |
-|  | [Königstein im Taunus Schneidhain](https://hofladenliste.de/hessen/hochtaunuskreis/koenigstein-im-taunus-schneidhain/) `/hessen/hochtaunuskreis/koenigstein-im-taunus-schneidhain/` | Hochtaunuskreis | 1 | 3 | 6 |
-|  | [Kronberg im Taunus](https://hofladenliste.de/hessen/hochtaunuskreis/kronberg-im-taunus/) `/hessen/hochtaunuskreis/kronberg-im-taunus/` | Hochtaunuskreis | 1 | 3 | 6 |
-|  | [Oberursel](https://hofladenliste.de/hessen/hochtaunuskreis/oberursel/) `/hessen/hochtaunuskreis/oberursel/` | Hochtaunuskreis | 1 | 3 | 6 |
-|  | [Wehrheim](https://hofladenliste.de/hessen/hochtaunuskreis/wehrheim/) `/hessen/hochtaunuskreis/wehrheim/` | Hochtaunuskreis | 1 | 3 | 6 |
-|  | [Calden](https://hofladenliste.de/hessen/landkreis-kassel/calden/) `/hessen/landkreis-kassel/calden/` | Landkreis Kassel | 1 | 3 | 6 |
-|  | [Espenau](https://hofladenliste.de/hessen/landkreis-kassel/espenau/) `/hessen/landkreis-kassel/espenau/` | Landkreis Kassel | 1 | 3 | 6 |
-|  | [Habichtswald](https://hofladenliste.de/hessen/landkreis-kassel/habichtswald/) `/hessen/landkreis-kassel/habichtswald/` | Landkreis Kassel | 1 | 3 | 6 |
-|  | [Kaufungen](https://hofladenliste.de/hessen/landkreis-kassel/kaufungen/) `/hessen/landkreis-kassel/kaufungen/` | Landkreis Kassel | 1 | 3 | 6 |
-|  | [Schauenburg](https://hofladenliste.de/hessen/landkreis-kassel/schauenburg/) `/hessen/landkreis-kassel/schauenburg/` | Landkreis Kassel | 1 | 3 | 6 |
-|  | [Brechen](https://hofladenliste.de/hessen/limburg-weilburg/brechen/) `/hessen/limburg-weilburg/brechen/` | Landkreis Limburg-Weilburg | 1 | 3 | 6 |
-|  | [Bad Soden-Salmünster](https://hofladenliste.de/hessen/main-kinzig-kreis/bad-soden-salmuenster/) `/hessen/main-kinzig-kreis/bad-soden-salmuenster/` | Main-Kinzig-Kreis | 1 | 3 | 6 |
-|  | [Gründau](https://hofladenliste.de/hessen/main-kinzig-kreis/gruendau/) `/hessen/main-kinzig-kreis/gruendau/` | Main-Kinzig-Kreis | 1 | 3 | 6 |
-|  | [Liederbach am Taunus](https://hofladenliste.de/hessen/main-taunus-kreis/liederbach-am-taunus/) `/hessen/main-taunus-kreis/liederbach-am-taunus/` | Main-Taunus-Kreis | 1 | 3 | 6 |
+| ✓ | [Grünberg](https://hofladenliste.de/hessen/giessen/gruenberg/) `/hessen/giessen/gruenberg/` | Landkreis Gießen | 1 | 3 | 6 |
+| ✓ | [Langgöns](https://hofladenliste.de/hessen/giessen/langgoens/) `/hessen/giessen/langgoens/` | Landkreis Gießen | 1 | 3 | 6 |
+| ✓ | [Lollar](https://hofladenliste.de/hessen/giessen/lollar/) `/hessen/giessen/lollar/` | Landkreis Gießen | 1 | 3 | 6 |
+| ✓ | [Groß-Gerau](https://hofladenliste.de/hessen/gross-gerau/gross-gerau/) `/hessen/gross-gerau/gross-gerau/` | Landkreis Groß-Gerau | 1 | 3 | 6 |
+| ✓ | [Nauheim](https://hofladenliste.de/hessen/gross-gerau/nauheim/) `/hessen/gross-gerau/nauheim/` | Landkreis Groß-Gerau | 1 | 3 | 6 |
+| ✓ | [Rüsselsheim](https://hofladenliste.de/hessen/gross-gerau/ruesselsheim/) `/hessen/gross-gerau/ruesselsheim/` | Landkreis Groß-Gerau | 1 | 3 | 6 |
+| ✓ | [Wildeck](https://hofladenliste.de/hessen/hersfeld-rotenburg/wildeck/) `/hessen/hersfeld-rotenburg/wildeck/` | Landkreis Hersfeld-Rotenburg | 1 | 3 | 6 |
+| ✓ | [Königstein im Taunus Schneidhain](https://hofladenliste.de/hessen/hochtaunuskreis/koenigstein-im-taunus-schneidhain/) `/hessen/hochtaunuskreis/koenigstein-im-taunus-schneidhain/` | Hochtaunuskreis | 1 | 3 | 6 |
+| ✓ | [Kronberg im Taunus](https://hofladenliste.de/hessen/hochtaunuskreis/kronberg-im-taunus/) `/hessen/hochtaunuskreis/kronberg-im-taunus/` | Hochtaunuskreis | 1 | 3 | 6 |
+| ✓ | [Oberursel](https://hofladenliste.de/hessen/hochtaunuskreis/oberursel/) `/hessen/hochtaunuskreis/oberursel/` | Hochtaunuskreis | 1 | 3 | 6 |
+| ✓ | [Wehrheim](https://hofladenliste.de/hessen/hochtaunuskreis/wehrheim/) `/hessen/hochtaunuskreis/wehrheim/` | Hochtaunuskreis | 1 | 3 | 6 |
+| ✓ | [Calden](https://hofladenliste.de/hessen/landkreis-kassel/calden/) `/hessen/landkreis-kassel/calden/` | Landkreis Kassel | 1 | 3 | 6 |
+| ✓ | [Espenau](https://hofladenliste.de/hessen/landkreis-kassel/espenau/) `/hessen/landkreis-kassel/espenau/` | Landkreis Kassel | 1 | 3 | 6 |
+| ✓ | [Habichtswald](https://hofladenliste.de/hessen/landkreis-kassel/habichtswald/) `/hessen/landkreis-kassel/habichtswald/` | Landkreis Kassel | 1 | 3 | 6 |
+| ✓ | [Kaufungen](https://hofladenliste.de/hessen/landkreis-kassel/kaufungen/) `/hessen/landkreis-kassel/kaufungen/` | Landkreis Kassel | 1 | 3 | 6 |
+| ✓ | [Schauenburg](https://hofladenliste.de/hessen/landkreis-kassel/schauenburg/) `/hessen/landkreis-kassel/schauenburg/` | Landkreis Kassel | 1 | 3 | 6 |
+| ✓ | [Brechen](https://hofladenliste.de/hessen/limburg-weilburg/brechen/) `/hessen/limburg-weilburg/brechen/` | Landkreis Limburg-Weilburg | 1 | 3 | 6 |
+| ✓ | [Bad Soden-Salmünster](https://hofladenliste.de/hessen/main-kinzig-kreis/bad-soden-salmuenster/) `/hessen/main-kinzig-kreis/bad-soden-salmuenster/` | Main-Kinzig-Kreis | 1 | 3 | 6 |
+| ✓ | [Gründau](https://hofladenliste.de/hessen/main-kinzig-kreis/gruendau/) `/hessen/main-kinzig-kreis/gruendau/` | Main-Kinzig-Kreis | 1 | 3 | 6 |
+| ✓ | [Liederbach am Taunus](https://hofladenliste.de/hessen/main-taunus-kreis/liederbach-am-taunus/) `/hessen/main-taunus-kreis/liederbach-am-taunus/` | Main-Taunus-Kreis | 1 | 3 | 6 |
 |  | [Neustadt (Hessen)](https://hofladenliste.de/hessen/marburg-biedenkopf/neustadt-hessen/) `/hessen/marburg-biedenkopf/neustadt-hessen/` | Landkreis Marburg-Biedenkopf | 1 | 3 | 6 |
-|  | [Bad König](https://hofladenliste.de/hessen/odenwaldkreis/bad-koenig/) `/hessen/odenwaldkreis/bad-koenig/` | Odenwaldkreis | 1 | 3 | 6 |
-|  | [Brensbach](https://hofladenliste.de/hessen/odenwaldkreis/brensbach/) `/hessen/odenwaldkreis/brensbach/` | Odenwaldkreis | 1 | 3 | 6 |
-|  | [Dreieich](https://hofladenliste.de/hessen/offenbach/dreieich/) `/hessen/offenbach/dreieich/` | Landkreis Offenbach | 1 | 3 | 6 |
-|  | [Heusenstamm](https://hofladenliste.de/hessen/offenbach/heusenstamm/) `/hessen/offenbach/heusenstamm/` | Landkreis Offenbach | 1 | 3 | 6 |
+| ✓ | [Bad König](https://hofladenliste.de/hessen/odenwaldkreis/bad-koenig/) `/hessen/odenwaldkreis/bad-koenig/` | Odenwaldkreis | 1 | 3 | 6 |
+| ✓ | [Brensbach](https://hofladenliste.de/hessen/odenwaldkreis/brensbach/) `/hessen/odenwaldkreis/brensbach/` | Odenwaldkreis | 1 | 3 | 6 |
+| ✓ | [Dreieich](https://hofladenliste.de/hessen/offenbach/dreieich/) `/hessen/offenbach/dreieich/` | Landkreis Offenbach | 1 | 3 | 6 |
+| ✓ | [Heusenstamm](https://hofladenliste.de/hessen/offenbach/heusenstamm/) `/hessen/offenbach/heusenstamm/` | Landkreis Offenbach | 1 | 3 | 6 |
 
 ## Paket 59 (24/25 fertig)
 
