@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 984 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1006 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -2013,35 +2013,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Haseldorf](https://hofladenliste.de/schleswig-holstein/pinneberg/haseldorf/) `/schleswig-holstein/pinneberg/haseldorf/` | Kreis Pinneberg | 1 | 3 | 6 |
 |  | [Hemdingen](https://hofladenliste.de/schleswig-holstein/pinneberg/hemdingen/) `/schleswig-holstein/pinneberg/hemdingen/` | Kreis Pinneberg | 1 | 3 | 6 |
 
-## Paket 68 (0/25 fertig)
+## Paket 68 (22/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Schenefeld](https://hofladenliste.de/schleswig-holstein/pinneberg/schenefeld/) `/schleswig-holstein/pinneberg/schenefeld/` | Kreis Pinneberg | 1 | 3 | 6 |
-|  | [Pohnsdorf](https://hofladenliste.de/schleswig-holstein/ploen/pohnsdorf/) `/schleswig-holstein/ploen/pohnsdorf/` | Kreis Plön | 1 | 3 | 6 |
-|  | [Altenholz](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/altenholz/) `/schleswig-holstein/rendsburg-eckernfoerde/altenholz/` | Kreis Rendsburg-Eckernförde | 1 | 3 | 6 |
-|  | [Brodersby](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/brodersby/) `/schleswig-holstein/rendsburg-eckernfoerde/brodersby/` | Kreis Rendsburg-Eckernförde | 1 | 3 | 6 |
-|  | [Holzbunge](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/holzbunge/) `/schleswig-holstein/rendsburg-eckernfoerde/holzbunge/` | Kreis Rendsburg-Eckernförde | 1 | 3 | 6 |
-|  | [Busdorf](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/busdorf/) `/schleswig-holstein/schleswig-flensburg/busdorf/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
-|  | [Harrislee](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/harrislee/) `/schleswig-holstein/schleswig-flensburg/harrislee/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
-|  | [Ulsnis](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/ulsnis/) `/schleswig-holstein/schleswig-flensburg/ulsnis/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
-|  | [Wees](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/wees/) `/schleswig-holstein/schleswig-flensburg/wees/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
-|  | [Alveslohe](https://hofladenliste.de/schleswig-holstein/segeberg/alveslohe/) `/schleswig-holstein/segeberg/alveslohe/` | Kreis Segeberg | 1 | 3 | 6 |
-|  | [Bark](https://hofladenliste.de/schleswig-holstein/segeberg/bark/) `/schleswig-holstein/segeberg/bark/` | Kreis Segeberg | 1 | 3 | 6 |
-|  | [Rickling](https://hofladenliste.de/schleswig-holstein/segeberg/rickling/) `/schleswig-holstein/segeberg/rickling/` | Kreis Segeberg | 1 | 3 | 6 |
+| ✓ | [Schenefeld](https://hofladenliste.de/schleswig-holstein/pinneberg/schenefeld/) `/schleswig-holstein/pinneberg/schenefeld/` | Kreis Pinneberg | 1 | 3 | 6 |
+| ✓ | [Pohnsdorf](https://hofladenliste.de/schleswig-holstein/ploen/pohnsdorf/) `/schleswig-holstein/ploen/pohnsdorf/` | Kreis Plön | 1 | 3 | 6 |
+| ✓ | [Altenholz](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/altenholz/) `/schleswig-holstein/rendsburg-eckernfoerde/altenholz/` | Kreis Rendsburg-Eckernförde | 1 | 3 | 6 |
+| ✓ | [Brodersby](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/brodersby/) `/schleswig-holstein/rendsburg-eckernfoerde/brodersby/` | Kreis Rendsburg-Eckernförde | 1 | 3 | 6 |
+| ✓ | [Holzbunge](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/holzbunge/) `/schleswig-holstein/rendsburg-eckernfoerde/holzbunge/` | Kreis Rendsburg-Eckernförde | 1 | 3 | 6 |
+| ✓ | [Busdorf](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/busdorf/) `/schleswig-holstein/schleswig-flensburg/busdorf/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
+| ✓ | [Harrislee](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/harrislee/) `/schleswig-holstein/schleswig-flensburg/harrislee/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
+| ✓ | [Ulsnis](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/ulsnis/) `/schleswig-holstein/schleswig-flensburg/ulsnis/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
+| ✓ | [Wees](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/wees/) `/schleswig-holstein/schleswig-flensburg/wees/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
+| ✓ | [Alveslohe](https://hofladenliste.de/schleswig-holstein/segeberg/alveslohe/) `/schleswig-holstein/segeberg/alveslohe/` | Kreis Segeberg | 1 | 3 | 6 |
+| ✓ | [Bark](https://hofladenliste.de/schleswig-holstein/segeberg/bark/) `/schleswig-holstein/segeberg/bark/` | Kreis Segeberg | 1 | 3 | 6 |
+| ✓ | [Rickling](https://hofladenliste.de/schleswig-holstein/segeberg/rickling/) `/schleswig-holstein/segeberg/rickling/` | Kreis Segeberg | 1 | 3 | 6 |
 |  | [Itzehoe](https://hofladenliste.de/schleswig-holstein/steinburg/itzehoe/) `/schleswig-holstein/steinburg/itzehoe/` | Kreis Steinburg | 1 | 3 | 6 |
 |  | [Kollmar](https://hofladenliste.de/schleswig-holstein/steinburg/kollmar/) `/schleswig-holstein/steinburg/kollmar/` | Kreis Steinburg | 1 | 3 | 6 |
-|  | [Wewelsfleth](https://hofladenliste.de/schleswig-holstein/steinburg/wewelsfleth/) `/schleswig-holstein/steinburg/wewelsfleth/` | Kreis Steinburg | 1 | 3 | 6 |
-|  | [Bad Oldesloe](https://hofladenliste.de/schleswig-holstein/stormarn/bad-oldesloe/) `/schleswig-holstein/stormarn/bad-oldesloe/` | Kreis Stormarn | 1 | 3 | 6 |
+| ✓ | [Wewelsfleth](https://hofladenliste.de/schleswig-holstein/steinburg/wewelsfleth/) `/schleswig-holstein/steinburg/wewelsfleth/` | Kreis Steinburg | 1 | 3 | 6 |
+| ✓ | [Bad Oldesloe](https://hofladenliste.de/schleswig-holstein/stormarn/bad-oldesloe/) `/schleswig-holstein/stormarn/bad-oldesloe/` | Kreis Stormarn | 1 | 3 | 6 |
 |  | [Tangstedt](https://hofladenliste.de/schleswig-holstein/stormarn/tangstedt/) `/schleswig-holstein/stormarn/tangstedt/` | Kreis Stormarn | 1 | 3 | 6 |
-|  | [Schmölln](https://hofladenliste.de/thueringen/altenburger-land/schmoelln/) `/thueringen/altenburger-land/schmoelln/` | Landkreis Altenburger Land | 1 | 3 | 6 |
-|  | [Steinbach](https://hofladenliste.de/thueringen/eichsfeld/steinbach/) `/thueringen/eichsfeld/steinbach/` | Landkreis Eichsfeld | 1 | 3 | 6 |
-|  | [Arnstadt](https://hofladenliste.de/thueringen/ilm-kreis/arnstadt/) `/thueringen/ilm-kreis/arnstadt/` | Ilm-Kreis | 1 | 3 | 6 |
-|  | [Ilmenau](https://hofladenliste.de/thueringen/ilm-kreis/ilmenau/) `/thueringen/ilm-kreis/ilmenau/` | Ilm-Kreis | 1 | 3 | 6 |
-|  | [Stadtilm](https://hofladenliste.de/thueringen/ilm-kreis/stadtilm/) `/thueringen/ilm-kreis/stadtilm/` | Ilm-Kreis | 1 | 3 | 6 |
-|  | [Königsee](https://hofladenliste.de/thueringen/saalfeld-rudolstadt/koenigsee/) `/thueringen/saalfeld-rudolstadt/koenigsee/` | Landkreis Saalfeld-Rudolstadt | 1 | 3 | 6 |
-|  | [Rohr (Landkreis Schmalkalden-Meiningen)](https://hofladenliste.de/thueringen/schmalkalden-meiningen/rohr/) `/thueringen/schmalkalden-meiningen/rohr/` | Landkreis Schmalkalden-Meiningen | 1 | 3 | 6 |
-|  | [Bad Sulza](https://hofladenliste.de/thueringen/weimarer-land/bad-sulza/) `/thueringen/weimarer-land/bad-sulza/` | Landkreis Weimarer Land | 1 | 3 | 6 |
+| ✓ | [Schmölln](https://hofladenliste.de/thueringen/altenburger-land/schmoelln/) `/thueringen/altenburger-land/schmoelln/` | Landkreis Altenburger Land | 1 | 3 | 6 |
+| ✓ | [Steinbach](https://hofladenliste.de/thueringen/eichsfeld/steinbach/) `/thueringen/eichsfeld/steinbach/` | Landkreis Eichsfeld | 1 | 3 | 6 |
+| ✓ | [Arnstadt](https://hofladenliste.de/thueringen/ilm-kreis/arnstadt/) `/thueringen/ilm-kreis/arnstadt/` | Ilm-Kreis | 1 | 3 | 6 |
+| ✓ | [Ilmenau](https://hofladenliste.de/thueringen/ilm-kreis/ilmenau/) `/thueringen/ilm-kreis/ilmenau/` | Ilm-Kreis | 1 | 3 | 6 |
+| ✓ | [Stadtilm](https://hofladenliste.de/thueringen/ilm-kreis/stadtilm/) `/thueringen/ilm-kreis/stadtilm/` | Ilm-Kreis | 1 | 3 | 6 |
+| ✓ | [Königsee](https://hofladenliste.de/thueringen/saalfeld-rudolstadt/koenigsee/) `/thueringen/saalfeld-rudolstadt/koenigsee/` | Landkreis Saalfeld-Rudolstadt | 1 | 3 | 6 |
+| ✓ | [Rohr (Landkreis Schmalkalden-Meiningen)](https://hofladenliste.de/thueringen/schmalkalden-meiningen/rohr/) `/thueringen/schmalkalden-meiningen/rohr/` | Landkreis Schmalkalden-Meiningen | 1 | 3 | 6 |
+| ✓ | [Bad Sulza](https://hofladenliste.de/thueringen/weimarer-land/bad-sulza/) `/thueringen/weimarer-land/bad-sulza/` | Landkreis Weimarer Land | 1 | 3 | 6 |
 
 ## Paket 69 (0/25 fertig)
 
