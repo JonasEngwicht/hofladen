@@ -31358,5 +31358,725 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/sachsen/nordsachsen/schkeuditz/": {
+    "titel": "Hofläden in Schkeuditz: gut zu wissen",
+    "oben": "In Schkeuditz sind Strörtzel mit Honig, NLB-Quellmalz mit Bio-Eiern und der Dölziger Hofladen eingetragen.",
+    "einleitung": "Honig gibt es bei Strörtzel, Eier bei NLB-Quellmalz.\n\nWeitere Höfe findest du in Taucha, Schkopau und in der Stadt Leipzig.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Taucha und Umgebung",
+        "pfad": "/sachsen/nordsachsen/taucha/"
+      },
+      {
+        "text": "Hofläden in Schkopau und Umgebung",
+        "pfad": "/sachsen-anhalt/saalekreis/schkopau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/saechsische-schweiz/dippoldiswalde/": {
+    "titel": "Hofläden in Dippoldiswalde: gut zu wissen",
+    "oben": "Dippoldiswalde nennt die Schäferei Drutschmann mit Bio-Angebot und zwei Imkereien, darunter die Imkerin Lotze.",
+    "einleitung": "Honig gibt es an zwei Stellen, Produkte vom Schaf in der Schäferei.\n\nWeitere Höfe findest du in Freital, Dohna und Altenberg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Freital und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/freital/"
+      },
+      {
+        "text": "Hofläden in Dohna und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/dohna/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/saechsische-schweiz/stadt-wehlen/": {
+    "titel": "Hofläden in Stadt Wehlen: gut zu wissen",
+    "oben": "In Stadt Wehlen sind eine Milchtankstelle, der Milchhof Fiedler und ein Regiomat mit Milch eingetragen.",
+    "einleitung": "Milch gibt es an der Tankstelle und am Regiomaten, jederzeit. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Struppen, Stolpen und Dohna.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Struppen und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/struppen/"
+      },
+      {
+        "text": "Hofläden in Stolpen und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/stolpen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/saechsische-schweiz/struppen/": {
+    "titel": "Hofläden in Struppen: gut zu wissen",
+    "oben": "Struppen hat die Solawi Schellehof mit Bio-Angebot, einen Regiomaten und den Geflügelhof Struppen.",
+    "einleitung": "Geflügel und Eier gibt es auf dem Geflügelhof, Bio-Gemüse über die Solawi.\n\nWeitere Höfe findest du in Stadt Wehlen, Dohna und Stolpen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stadt Wehlen und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/stadt-wehlen/"
+      },
+      {
+        "text": "Hofläden in Dohna und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/dohna/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/vogtlandkreis/weischlitz/": {
+    "titel": "Hofläden in Weischlitz: gut zu wissen",
+    "oben": "In Weischlitz sind der Hofladen Großzöbern, der Hofladen Weischlitz mit Fisch und die Luftmühle mit Bio-Angebot eingetragen.",
+    "einleitung": "Fisch gibt es im Hofladen Weischlitz.\n\nWeitere Höfe findest du in Plauen, Regnitzlosau und in der Stadt Hof.",
+    "saison": [
+      {
+        "titel": "Fisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Plauen und Umgebung",
+        "pfad": "/sachsen/vogtlandkreis/plauen/"
+      },
+      {
+        "text": "Hofläden in Regnitzlosau und Umgebung",
+        "pfad": "/bayern/landkreis-hof/regnitzlosau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/zwickau/callenberg/": {
+    "titel": "Hofläden in Callenberg: gut zu wissen",
+    "oben": "Callenberg nennt Heinig's Direktvermarktung, C' Mohn mit Callenberger Mohnspezialitäten und Frisches vom Bauernhof.",
+    "einleitung": "Mohnprodukte gibt es bei C' Mohn.\n\nWeitere Höfe findest du in Sankt Egidien, Niederfrohna und Limbach-Oberfrohna.",
+    "saison": [
+      {
+        "titel": "Mohn",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Niederfrohna und Umgebung",
+        "pfad": "/sachsen/zwickau/niederfrohna/"
+      },
+      {
+        "text": "Hofläden in Limbach-Oberfrohna und Umgebung",
+        "pfad": "/sachsen/zwickau/limbach-oberfrohna/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/zwickau/hartenstein/": {
+    "titel": "Hofläden in Hartenstein: gut zu wissen",
+    "oben": "In Hartenstein sind der Geflügelhof Ochsenkopp mit Eiern, Fleisch und Geflügel und ein Hofladen eingetragen.",
+    "einleitung": "Geflügel und Eier gibt es auf dem Geflügelhof Ochsenkopp.\n\nWeitere Höfe findest du in Wildenfels, Lößnitz und Niederwürschnitz.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wildenfels und Umgebung",
+        "pfad": "/sachsen/zwickau/wildenfels/"
+      },
+      {
+        "text": "Hofläden in Niederwürschnitz und Umgebung",
+        "pfad": "/sachsen/erzgebirgskreis/niederwuerschnitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/zwickau/niederfrohna/": {
+    "titel": "Hofläden in Niederfrohna: gut zu wissen",
+    "oben": "Niederfrohna hat den Hofladen Peretzki, den Friedemann Hofladen mit Bio-Angebot und einen Regiomaten.",
+    "einleitung": "Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Penig, Limbach-Oberfrohna und Callenberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Penig und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/penig/"
+      },
+      {
+        "text": "Hofläden in Callenberg und Umgebung",
+        "pfad": "/sachsen/zwickau/callenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/dithmarschen/albersdorf/": {
+    "titel": "Hofläden in Albersdorf: gut zu wissen",
+    "oben": "In Albersdorf sind Werner Hoffmann mit Honig, der Hornbrooker Hof und ein Regiomat mit Obst und Kartoffeln eingetragen.",
+    "einleitung": "Honig gibt es bei Werner Hoffmann, Obst und Kartoffeln jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Burg (Dithmarschen) und Friedrichskoog.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Burg (Dithmarschen) und Umgebung",
+        "pfad": "/schleswig-holstein/dithmarschen/burg-dithmarschen/"
+      },
+      {
+        "text": "Hofläden in Friedrichskoog und Umgebung",
+        "pfad": "/schleswig-holstein/dithmarschen/friedrichskoog/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/dithmarschen/burg-dithmarschen/": {
+    "titel": "Hofläden in Burg (Dithmarschen): gut zu wissen",
+    "oben": "Burg in Dithmarschen nennt einen Regiomaten mit Obst und Kartoffeln, Schröder's Milchtankstelle und den Hofladen Gottschalk.",
+    "einleitung": "Milch gibt es an der Tankstelle, jederzeit. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Brunsbüttel, Albersdorf und Wewelsfleth.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Brunsbüttel und Umgebung",
+        "pfad": "/schleswig-holstein/dithmarschen/brunsbuettel/"
+      },
+      {
+        "text": "Hofläden in Albersdorf und Umgebung",
+        "pfad": "/schleswig-holstein/dithmarschen/albersdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/dithmarschen/friedrichskoog/": {
+    "titel": "Hofläden in Friedrichskoog: gut zu wissen",
+    "oben": "In Friedrichskoog an der Nordsee sind der Altfelder Hofladen, der Hofladen Schoof und der Kartoffelhof Mohr eingetragen.",
+    "einleitung": "Kartoffeln gibt es beim Kartoffelhof Mohr.\n\nWeitere Höfe findest du in Brunsbüttel, Otterndorf und Burg.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Brunsbüttel und Umgebung",
+        "pfad": "/schleswig-holstein/dithmarschen/brunsbuettel/"
+      },
+      {
+        "text": "Hofläden in Burg (Dithmarschen) und Umgebung",
+        "pfad": "/schleswig-holstein/dithmarschen/burg-dithmarschen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/herzogtum-lauenburg/hamwarde/": {
+    "titel": "Hofläden in Hamwarde: gut zu wissen",
+    "oben": "Hamwarde hat die Imkerei Mahn mit Honig, den Hofladen Wöhl und einen Regiomaten mit Eiern und Kartoffeln.",
+    "einleitung": "Honig gibt es bei der Imkerei Mahn, Eier und Kartoffeln jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Worth und Krukow.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Worth und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/worth/"
+      },
+      {
+        "text": "Hofläden in Krukow und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/krukow/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/herzogtum-lauenburg/hornbek/": {
+    "titel": "Hofläden in Hornbek: gut zu wissen",
+    "oben": "In Hornbek sind zwei Hofläden und der Moorweidenhof mit Bio-Milch eingetragen.",
+    "einleitung": "Milch gibt es am Regiomaten des Moorweidenhofs. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Worth und Krukow.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Worth und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/worth/"
+      },
+      {
+        "text": "Hofläden in Krukow und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/krukow/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/herzogtum-lauenburg/krukow/": {
+    "titel": "Hofläden in Krukow: gut zu wissen",
+    "oben": "Krukow nennt den Erdmannshof mit Bio-Milch, einen Hofladen mit Milch und die Hofhütte.",
+    "einleitung": "Milch gibt es an zwei Stellen. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Schnakenbek, Hamwarde und Worth.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schnakenbek und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/schnakenbek/"
+      },
+      {
+        "text": "Hofläden in Hamwarde und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/hamwarde/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/herzogtum-lauenburg/worth/": {
+    "titel": "Hofläden in Worth: gut zu wissen",
+    "oben": "In Worth sind der Kartoffelhof Steffens, die Kürbis-Scheune und der Hofladen Schultz mit Eiern, Milch, Gemüse, Kartoffeln und Honig eingetragen.",
+    "einleitung": "Kartoffeln gibt es beim Kartoffelhof Steffens, Kürbisse in der Kürbis-Scheune im Herbst.\n\nWeitere Höfe findest du in Hamwarde und Krukow.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kürbisse",
+        "zeit": "September bis November"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hamwarde und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/hamwarde/"
+      },
+      {
+        "text": "Hofläden in Krukow und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/krukow/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/nordfriesland/husum/": {
+    "titel": "Hofläden in Husum: gut zu wissen",
+    "oben": "Husum nennt den Hofladen Lammkontor mit Fleisch, einen Regiomaten mit Gemüse und einen Eierautomaten.",
+    "einleitung": "Lammfleisch gibt es im Lammkontor, Gemüse und Eier jederzeit an den Automaten.\n\nWeitere Höfe findest du in Nordstrand und Osterhever.",
+    "saison": [
+      {
+        "titel": "Lamm",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nordstrand und Umgebung",
+        "pfad": "/schleswig-holstein/nordfriesland/nordstrand/"
+      },
+      {
+        "text": "Hofläden in Osterhever und Umgebung",
+        "pfad": "/schleswig-holstein/nordfriesland/osterhever/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/nordfriesland/nordstrand/": {
+    "titel": "Hofläden in Nordstrand: gut zu wissen",
+    "oben": "Auf Nordstrand sind die Schäferei Baumbach mit Schaf- und Galloway-Produkten, der Eierhof von Uwe Hansen und Grööntüch vunne Insel mit Bio-Angebot eingetragen.",
+    "einleitung": "Fleisch von Schaf und Galloway gibt es bei der Schäferei Baumbach, Eier auf dem Eierhof.\n\nWeitere Höfe findest du in Husum und Osterhever.",
+    "saison": [
+      {
+        "titel": "Lamm",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Husum und Umgebung",
+        "pfad": "/schleswig-holstein/nordfriesland/husum/"
+      },
+      {
+        "text": "Hofläden in Osterhever und Umgebung",
+        "pfad": "/schleswig-holstein/nordfriesland/osterhever/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/nordfriesland/osterhever/": {
+    "titel": "Hofläden in Osterhever: gut zu wissen",
+    "oben": "In Osterhever sind das RegioHus mit Regiomat mit Eiern, Milch, Käse und Marmelade, die Imkerei Simon und ein Hofladen eingetragen.",
+    "einleitung": "Der Regiomat ist jederzeit zugänglich, Honig gibt es bei der Imkerei Simon. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Nordstrand und Husum.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nordstrand und Umgebung",
+        "pfad": "/schleswig-holstein/nordfriesland/nordstrand/"
+      },
+      {
+        "text": "Hofläden in Husum und Umgebung",
+        "pfad": "/schleswig-holstein/nordfriesland/husum/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ostholstein/ahrensboek/": {
+    "titel": "Hofläden in Ahrensbök: gut zu wissen",
+    "oben": "Ahrensbök nennt Steffens, Hans Peter's Hofladen und Bauer Schramm.",
+    "einleitung": "Drei Hofläden bieten regionale Produkte.\n\nWeitere Höfe findest du in Scharbeutz, Bad Schwartau und Stockelsdorf.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Scharbeutz und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/scharbeutz/"
+      },
+      {
+        "text": "Hofläden in Bad Schwartau und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/bad-schwartau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ostholstein/gremersdorf/": {
+    "titel": "Hofläden in Gremersdorf: gut zu wissen",
+    "oben": "In Gremersdorf sind ein Eierautomat, der Obsthof Lafrenz und der Spargelhof Hay eingetragen.",
+    "einleitung": "Spargel gibt es auf dem Spargelhof Hay in der Saison, Eier jederzeit am Automaten.\n\nWeitere Höfe findest du in Heringsdorf, Harmsdorf und Grömitz.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heringsdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/heringsdorf/"
+      },
+      {
+        "text": "Hofläden in Harmsdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/harmsdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ostholstein/harmsdorf/": {
+    "titel": "Hofläden in Harmsdorf: gut zu wissen",
+    "oben": "Harmsdorf hat zwei Einträge des Kayhofs mit Honig und die Räucherkate Braasch.",
+    "einleitung": "Honig gibt es auf dem Kayhof, der Bio-Honig anbietet.\n\nWeitere Höfe findest du in Gremersdorf, Blekendorf und Grömitz.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Räucherwaren",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gremersdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/gremersdorf/"
+      },
+      {
+        "text": "Hofläden in Blekendorf und Umgebung",
+        "pfad": "/schleswig-holstein/ploen/blekendorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ostholstein/heringsdorf/": {
+    "titel": "Hofläden in Heringsdorf: gut zu wissen",
+    "oben": "In Heringsdorf an der Ostsee sind Gut Görtz, die Hofgemeinschaft Fargemiel und der Hof Schritt eingetragen, die beiden Letzteren mit Bio-Angebot.",
+    "einleitung": "Zwei Betriebe arbeiten nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Gremersdorf und Harmsdorf.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gremersdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/gremersdorf/"
+      },
+      {
+        "text": "Hofläden in Harmsdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/harmsdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ostholstein/malente/": {
+    "titel": "Hofläden in Malente: gut zu wissen",
+    "oben": "Malente nennt den Ziegenhof im Wiesengrund und zwei Hofläden.",
+    "einleitung": "Produkte von der Ziege gibt es auf dem Ziegenhof im Wiesengrund.\n\nWeitere Höfe findest du in Blekendorf, Ahrensbök und Scharbeutz.",
+    "saison": [
+      {
+        "titel": "Ziegenprodukte",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Blekendorf und Umgebung",
+        "pfad": "/schleswig-holstein/ploen/blekendorf/"
+      },
+      {
+        "text": "Hofläden in Ahrensbök und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/ahrensboek/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/pinneberg/hemdingen/": {
+    "titel": "Hofläden in Hemdingen: gut zu wissen",
+    "oben": "In Hemdingen sind der Erdbeerhof Kaack mit Stand und Selbstpflückfeld, der Hofladen Hemdingen und Tante Thea mit Bio-Gemüse eingetragen.",
+    "einleitung": "Erdbeeren kannst du auf dem Erdbeerhof Kaack selbst pflücken, in der Saison im Frühsommer.\n\nWeitere Höfe findest du in Alveslohe, Henstedt-Ulzburg und Elmshorn.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Alveslohe und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/alveslohe/"
+      },
+      {
+        "text": "Hofläden in Elmshorn und Umgebung",
+        "pfad": "/schleswig-holstein/pinneberg/elmshorn/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }

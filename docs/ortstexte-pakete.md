@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1031 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1055 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1983,35 +1983,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Seelitz](https://hofladenliste.de/sachsen/mittelsachsen/seelitz/) `/sachsen/mittelsachsen/seelitz/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
 |  | [Striegistal](https://hofladenliste.de/sachsen/mittelsachsen/striegistal/) `/sachsen/mittelsachsen/striegistal/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
 
-## Paket 67 (0/25 fertig)
+## Paket 67 (24/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Schkeuditz](https://hofladenliste.de/sachsen/nordsachsen/schkeuditz/) `/sachsen/nordsachsen/schkeuditz/` | Landkreis Nordsachsen | 1 | 3 | 6 |
-|  | [Dippoldiswalde](https://hofladenliste.de/sachsen/saechsische-schweiz/dippoldiswalde/) `/sachsen/saechsische-schweiz/dippoldiswalde/` | Landkreis Sächsische Schweiz | 1 | 3 | 6 |
-|  | [Stadt Wehlen](https://hofladenliste.de/sachsen/saechsische-schweiz/stadt-wehlen/) `/sachsen/saechsische-schweiz/stadt-wehlen/` | Landkreis Sächsische Schweiz | 1 | 3 | 6 |
-|  | [Struppen](https://hofladenliste.de/sachsen/saechsische-schweiz/struppen/) `/sachsen/saechsische-schweiz/struppen/` | Landkreis Sächsische Schweiz | 1 | 3 | 6 |
-|  | [Weischlitz](https://hofladenliste.de/sachsen/vogtlandkreis/weischlitz/) `/sachsen/vogtlandkreis/weischlitz/` | Vogtlandkreis | 1 | 3 | 6 |
-|  | [Callenberg](https://hofladenliste.de/sachsen/zwickau/callenberg/) `/sachsen/zwickau/callenberg/` | Landkreis Zwickau | 1 | 3 | 6 |
-|  | [Hartenstein](https://hofladenliste.de/sachsen/zwickau/hartenstein/) `/sachsen/zwickau/hartenstein/` | Landkreis Zwickau | 1 | 3 | 6 |
-|  | [Niederfrohna](https://hofladenliste.de/sachsen/zwickau/niederfrohna/) `/sachsen/zwickau/niederfrohna/` | Landkreis Zwickau | 1 | 3 | 6 |
-|  | [Albersdorf](https://hofladenliste.de/schleswig-holstein/dithmarschen/albersdorf/) `/schleswig-holstein/dithmarschen/albersdorf/` | Kreis Dithmarschen | 1 | 3 | 6 |
-|  | [Burg (Dithmarschen)](https://hofladenliste.de/schleswig-holstein/dithmarschen/burg-dithmarschen/) `/schleswig-holstein/dithmarschen/burg-dithmarschen/` | Kreis Dithmarschen | 1 | 3 | 6 |
-|  | [Friedrichskoog](https://hofladenliste.de/schleswig-holstein/dithmarschen/friedrichskoog/) `/schleswig-holstein/dithmarschen/friedrichskoog/` | Kreis Dithmarschen | 1 | 3 | 6 |
-|  | [Hamwarde](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/hamwarde/) `/schleswig-holstein/herzogtum-lauenburg/hamwarde/` | Kreis Herzogtum Lauenburg | 1 | 3 | 6 |
-|  | [Hornbek](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/hornbek/) `/schleswig-holstein/herzogtum-lauenburg/hornbek/` | Kreis Herzogtum Lauenburg | 1 | 3 | 6 |
-|  | [Krukow](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/krukow/) `/schleswig-holstein/herzogtum-lauenburg/krukow/` | Kreis Herzogtum Lauenburg | 1 | 3 | 6 |
-|  | [Worth](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/worth/) `/schleswig-holstein/herzogtum-lauenburg/worth/` | Kreis Herzogtum Lauenburg | 1 | 3 | 6 |
-|  | [Husum](https://hofladenliste.de/schleswig-holstein/nordfriesland/husum/) `/schleswig-holstein/nordfriesland/husum/` | Kreis Nordfriesland | 1 | 3 | 6 |
-|  | [Nordstrand](https://hofladenliste.de/schleswig-holstein/nordfriesland/nordstrand/) `/schleswig-holstein/nordfriesland/nordstrand/` | Kreis Nordfriesland | 1 | 3 | 6 |
-|  | [Osterhever](https://hofladenliste.de/schleswig-holstein/nordfriesland/osterhever/) `/schleswig-holstein/nordfriesland/osterhever/` | Kreis Nordfriesland | 1 | 3 | 6 |
-|  | [Ahrensbök](https://hofladenliste.de/schleswig-holstein/ostholstein/ahrensboek/) `/schleswig-holstein/ostholstein/ahrensboek/` | Kreis Ostholstein | 1 | 3 | 6 |
-|  | [Gremersdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/gremersdorf/) `/schleswig-holstein/ostholstein/gremersdorf/` | Kreis Ostholstein | 1 | 3 | 6 |
-|  | [Harmsdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/harmsdorf/) `/schleswig-holstein/ostholstein/harmsdorf/` | Kreis Ostholstein | 1 | 3 | 6 |
-|  | [Heringsdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/heringsdorf/) `/schleswig-holstein/ostholstein/heringsdorf/` | Kreis Ostholstein | 1 | 3 | 6 |
-|  | [Malente](https://hofladenliste.de/schleswig-holstein/ostholstein/malente/) `/schleswig-holstein/ostholstein/malente/` | Kreis Ostholstein | 1 | 3 | 6 |
+| ✓ | [Schkeuditz](https://hofladenliste.de/sachsen/nordsachsen/schkeuditz/) `/sachsen/nordsachsen/schkeuditz/` | Landkreis Nordsachsen | 1 | 3 | 6 |
+| ✓ | [Dippoldiswalde](https://hofladenliste.de/sachsen/saechsische-schweiz/dippoldiswalde/) `/sachsen/saechsische-schweiz/dippoldiswalde/` | Landkreis Sächsische Schweiz | 1 | 3 | 6 |
+| ✓ | [Stadt Wehlen](https://hofladenliste.de/sachsen/saechsische-schweiz/stadt-wehlen/) `/sachsen/saechsische-schweiz/stadt-wehlen/` | Landkreis Sächsische Schweiz | 1 | 3 | 6 |
+| ✓ | [Struppen](https://hofladenliste.de/sachsen/saechsische-schweiz/struppen/) `/sachsen/saechsische-schweiz/struppen/` | Landkreis Sächsische Schweiz | 1 | 3 | 6 |
+| ✓ | [Weischlitz](https://hofladenliste.de/sachsen/vogtlandkreis/weischlitz/) `/sachsen/vogtlandkreis/weischlitz/` | Vogtlandkreis | 1 | 3 | 6 |
+| ✓ | [Callenberg](https://hofladenliste.de/sachsen/zwickau/callenberg/) `/sachsen/zwickau/callenberg/` | Landkreis Zwickau | 1 | 3 | 6 |
+| ✓ | [Hartenstein](https://hofladenliste.de/sachsen/zwickau/hartenstein/) `/sachsen/zwickau/hartenstein/` | Landkreis Zwickau | 1 | 3 | 6 |
+| ✓ | [Niederfrohna](https://hofladenliste.de/sachsen/zwickau/niederfrohna/) `/sachsen/zwickau/niederfrohna/` | Landkreis Zwickau | 1 | 3 | 6 |
+| ✓ | [Albersdorf](https://hofladenliste.de/schleswig-holstein/dithmarschen/albersdorf/) `/schleswig-holstein/dithmarschen/albersdorf/` | Kreis Dithmarschen | 1 | 3 | 6 |
+| ✓ | [Burg (Dithmarschen)](https://hofladenliste.de/schleswig-holstein/dithmarschen/burg-dithmarschen/) `/schleswig-holstein/dithmarschen/burg-dithmarschen/` | Kreis Dithmarschen | 1 | 3 | 6 |
+| ✓ | [Friedrichskoog](https://hofladenliste.de/schleswig-holstein/dithmarschen/friedrichskoog/) `/schleswig-holstein/dithmarschen/friedrichskoog/` | Kreis Dithmarschen | 1 | 3 | 6 |
+| ✓ | [Hamwarde](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/hamwarde/) `/schleswig-holstein/herzogtum-lauenburg/hamwarde/` | Kreis Herzogtum Lauenburg | 1 | 3 | 6 |
+| ✓ | [Hornbek](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/hornbek/) `/schleswig-holstein/herzogtum-lauenburg/hornbek/` | Kreis Herzogtum Lauenburg | 1 | 3 | 6 |
+| ✓ | [Krukow](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/krukow/) `/schleswig-holstein/herzogtum-lauenburg/krukow/` | Kreis Herzogtum Lauenburg | 1 | 3 | 6 |
+| ✓ | [Worth](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/worth/) `/schleswig-holstein/herzogtum-lauenburg/worth/` | Kreis Herzogtum Lauenburg | 1 | 3 | 6 |
+| ✓ | [Husum](https://hofladenliste.de/schleswig-holstein/nordfriesland/husum/) `/schleswig-holstein/nordfriesland/husum/` | Kreis Nordfriesland | 1 | 3 | 6 |
+| ✓ | [Nordstrand](https://hofladenliste.de/schleswig-holstein/nordfriesland/nordstrand/) `/schleswig-holstein/nordfriesland/nordstrand/` | Kreis Nordfriesland | 1 | 3 | 6 |
+| ✓ | [Osterhever](https://hofladenliste.de/schleswig-holstein/nordfriesland/osterhever/) `/schleswig-holstein/nordfriesland/osterhever/` | Kreis Nordfriesland | 1 | 3 | 6 |
+| ✓ | [Ahrensbök](https://hofladenliste.de/schleswig-holstein/ostholstein/ahrensboek/) `/schleswig-holstein/ostholstein/ahrensboek/` | Kreis Ostholstein | 1 | 3 | 6 |
+| ✓ | [Gremersdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/gremersdorf/) `/schleswig-holstein/ostholstein/gremersdorf/` | Kreis Ostholstein | 1 | 3 | 6 |
+| ✓ | [Harmsdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/harmsdorf/) `/schleswig-holstein/ostholstein/harmsdorf/` | Kreis Ostholstein | 1 | 3 | 6 |
+| ✓ | [Heringsdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/heringsdorf/) `/schleswig-holstein/ostholstein/heringsdorf/` | Kreis Ostholstein | 1 | 3 | 6 |
+| ✓ | [Malente](https://hofladenliste.de/schleswig-holstein/ostholstein/malente/) `/schleswig-holstein/ostholstein/malente/` | Kreis Ostholstein | 1 | 3 | 6 |
 |  | [Haseldorf](https://hofladenliste.de/schleswig-holstein/pinneberg/haseldorf/) `/schleswig-holstein/pinneberg/haseldorf/` | Kreis Pinneberg | 1 | 3 | 6 |
-|  | [Hemdingen](https://hofladenliste.de/schleswig-holstein/pinneberg/hemdingen/) `/schleswig-holstein/pinneberg/hemdingen/` | Kreis Pinneberg | 1 | 3 | 6 |
+| ✓ | [Hemdingen](https://hofladenliste.de/schleswig-holstein/pinneberg/hemdingen/) `/schleswig-holstein/pinneberg/hemdingen/` | Kreis Pinneberg | 1 | 3 | 6 |
 
 ## Paket 68 (22/25 fertig)
 
