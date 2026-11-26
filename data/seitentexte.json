@@ -42308,5 +42308,725 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ludwigsburg/oberstenfeld/": {
+    "titel": "Hofläden in Oberstenfeld: gut zu wissen",
+    "oben": "Oberstenfeld liegt im Bottwartal im Landkreis Ludwigsburg. Eingetragen sind der Hofladen Kori mit Eiern, Gemüse und Nudeln, der Hofladen Geflügelhof Heß mit Bio-Angebot und ein Regiomat mit Eiern, Fleisch und Geflügel.",
+    "einleitung": "Geflügel und Eier sind die Spezialität, beim Geflügelhof Heß nach Bio-Richtlinien. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Marbach am Neckar und Ilsfeld.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Marbach am Neckar und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/marbach-am-neckar/"
+      },
+      {
+        "text": "Hofläden in Ilsfeld und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-heilbronn/ilsfeld/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ludwigsburg/schwieberdingen/": {
+    "titel": "Hofläden in Schwieberdingen: gut zu wissen",
+    "oben": "Schwieberdingen liegt im Landkreis Ludwigsburg nordwestlich von Stuttgart. Eingetragen sind der Hofladen Gutscher mit Bio-Eiern, -Fleisch, -Gemüse, -Obst, Nudeln und Getränken, der Mühlenladen und der Hofladen Hönes mit Bio-Angebot.",
+    "einleitung": "Der Hofladen Gutscher hat ein sehr breites Bio-Sortiment. Stuttgart ist gut erreichbar.\n\nWeitere Höfe findest du in Hemmingen und Markgröningen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hemmingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/hemmingen/"
+      },
+      {
+        "text": "Hofläden in Markgröningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/ludwigsburg/markgroeningen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/main-tauber-kreis/ahorn/": {
+    "titel": "Hofläden in Ahorn: gut zu wissen",
+    "oben": "Ahorn liegt im Main-Tauber-Kreis im Taubertal. Eingetragen sind der Regiomat Dorfengel, ein Hofladen mit Eiern und der Biohof Ruck mit Bio-Angebot.",
+    "einleitung": "Eier gibt es im Hofladen, der Biohof Ruck arbeitet nach Bio-Richtlinien. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Rosenberg und Boxberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rosenberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/neckar-odenwald-kreis/rosenberg/"
+      },
+      {
+        "text": "Hofläden in Boxberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/main-tauber-kreis/boxberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/main-tauber-kreis/boxberg/": {
+    "titel": "Hofläden in Boxberg: gut zu wissen",
+    "oben": "Boxberg liegt im Main-Tauber-Kreis im Bauland. Eingetragen sind Beates Hofladen, Böres und der Hof Ernst mit Selbstbedienungs-Hofladen.",
+    "einleitung": "Beim Hof Ernst bedienst du dich selbst. Die Gegend ist ländlich, mit weiten Feldern.\n\nWeitere Höfe findest du in Ahorn und Krautheim.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ahorn und Umgebung",
+        "pfad": "/baden-wuerttemberg/main-tauber-kreis/ahorn/"
+      },
+      {
+        "text": "Hofläden in Krautheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/hohenlohekreis/krautheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/main-tauber-kreis/creglingen/": {
+    "titel": "Hofläden in Creglingen: gut zu wissen",
+    "oben": "Creglingen liegt im Taubertal im Main-Tauber-Kreis nahe der bayerischen Grenze. Eingetragen sind der Rupp Hofladen, Honig aus eigener Bio-Imkerei und Pfeuffers Hofladen.",
+    "einleitung": "Bio-Honig kommt aus eigener Imkerei. Rothenburg ob der Tauber liegt gleich jenseits der Grenze.\n\nWeitere Höfe findest du in Adelshofen und Rothenburg ob der Tauber.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Adelshofen und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/adelshofen/"
+      },
+      {
+        "text": "Hofläden in Rothenburg ob der Tauber und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/neckar-odenwald-kreis/mudau/": {
+    "titel": "Hofläden in Mudau: gut zu wissen",
+    "oben": "Mudau liegt im Odenwald im Neckar-Odenwald-Kreis. Eingetragen sind ein Eierautomat, der Kartoffelhof Geier und der Geflügelhof Dambach mit Eiern, Fleisch und Geflügel.",
+    "einleitung": "Kartoffeln gibt es beim Kartoffelhof Geier, Geflügel und Eier beim Geflügelhof Dambach. Der Eierautomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Limbach und Buchen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Limbach und Umgebung",
+        "pfad": "/baden-wuerttemberg/neckar-odenwald-kreis/limbach/"
+      },
+      {
+        "text": "Hofläden in Buchen (Odenwald) und Umgebung",
+        "pfad": "/baden-wuerttemberg/neckar-odenwald-kreis/buchen-odenwald/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/neckar-odenwald-kreis/rosenberg/": {
+    "titel": "Hofläden in Rosenberg: gut zu wissen",
+    "oben": "Rosenberg liegt im Neckar-Odenwald-Kreis im Bauland. Eingetragen sind ein Hofladen mit Eiern, die Imkerei Herrmann und die Talmühle Haas.",
+    "einleitung": "Honig gibt es bei der Imkerei Herrmann, Eier im Hofladen. Die Gegend ist ländlich mit Feldern und Wald.\n\nWeitere Höfe findest du in Osterburken und Ahorn.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Osterburken und Umgebung",
+        "pfad": "/baden-wuerttemberg/neckar-odenwald-kreis/osterburken/"
+      },
+      {
+        "text": "Hofläden in Ahorn und Umgebung",
+        "pfad": "/baden-wuerttemberg/main-tauber-kreis/ahorn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/neckar-odenwald-kreis/wallduern/": {
+    "titel": "Hofläden in Walldürn: gut zu wissen",
+    "oben": "Walldürn liegt im Neckar-Odenwald-Kreis im Odenwald, bekannt ist die Wallfahrt. Eingetragen sind ein Hofladen, das Milchhäusle mit Eiern und Milch und Brenneis & Eierlothar mit Eiern.",
+    "einleitung": "Eier gibt es hier an gleich zwei Stellen. Die Milch aus dem Milchhäusle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Höpfingen und Buchen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Höpfingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/neckar-odenwald-kreis/hoepfingen/"
+      },
+      {
+        "text": "Hofläden in Buchen (Odenwald) und Umgebung",
+        "pfad": "/baden-wuerttemberg/neckar-odenwald-kreis/buchen-odenwald/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ortenaukreis/haslach-im-kinzigtal/": {
+    "titel": "Hofläden in Haslach im Kinzigtal: gut zu wissen",
+    "oben": "Haslach im Kinzigtal liegt im mittleren Schwarzwald im Ortenaukreis. Eingetragen sind der Obsthof Maier, der Hofladen Schlossberghof und der Obsthof Schätzle.",
+    "einleitung": "Obst gibt es auf zwei Höfen. Das Kinzigtal ist von Obstwiesen und Schwarzwaldhängen geprägt.\n\nWeitere Höfe findest du in Hausach und Zell am Harmersbach.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hausach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/hausach/"
+      },
+      {
+        "text": "Hofläden in Zell am Harmersbach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ortenaukreis/hausach/": {
+    "titel": "Hofläden in Hausach: gut zu wissen",
+    "oben": "Hausach liegt im Kinzigtal im Ortenaukreis. Eingetragen sind ein Regiomat, das Landhaus Hechtsberg und ein Bienenfreiständer.",
+    "einleitung": "Honig vom Bienenfreiständer ist die Besonderheit. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Haslach im Kinzigtal und Zell am Harmersbach.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Haslach im Kinzigtal und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/haslach-im-kinzigtal/"
+      },
+      {
+        "text": "Hofläden in Zell am Harmersbach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ortenaukreis/kappelrodeck/": {
+    "titel": "Hofläden in Kappelrodeck: gut zu wissen",
+    "oben": "Kappelrodeck liegt in der Ortenau am Fuß des Schwarzwalds und ist für Weinbau bekannt. Eingetragen sind ein Regiomat mit Obst, Kartoffeln, Marmelade und Getränken, ein Hofladen und der Hofladen Benz mit Bio-Angebot.",
+    "einleitung": "Am Regiomaten gibt es Obst, Kartoffeln und Marmelade. Der Hofladen Benz arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Sasbachwalden und Seebach.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sasbachwalden und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/sasbachwalden/"
+      },
+      {
+        "text": "Hofläden in Seebach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/seebach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ortenaukreis/kehl/": {
+    "titel": "Hofläden in Kehl: gut zu wissen",
+    "oben": "Kehl liegt am Rhein direkt gegenüber von Straßburg im Ortenaukreis. Eingetragen sind ein Regiomat mit Eiern, Kartoffeln und Nudeln, ein Eierautomat und der Imker Mueller.",
+    "einleitung": "Eier gibt es an zwei Automaten, Honig beim Imker Mueller. Frankreich liegt direkt auf der anderen Rheinseite.\n\nWeitere Höfe findest du in Appenweier und Rheinau.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Appenweier und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/appenweier/"
+      },
+      {
+        "text": "Hofläden in Rheinau und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/rheinau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ortenaukreis/seebach/": {
+    "titel": "Hofläden in Seebach: gut zu wissen",
+    "oben": "Seebach liegt im Achertal im nördlichen Schwarzwald im Ortenaukreis. Eingetragen sind Panters Honig Lädele mit Bio-Honig, S'alte Lifthisli als Automat und der Hofladen Schnurrenhof.",
+    "einleitung": "Honig ist die Spezialität, Panters Lädele arbeitet nach Bio-Richtlinien. Das Lifthisli ist ein Automat und damit jederzeit zugänglich.\n\nWeitere Höfe findest du in Kappelrodeck und Sasbachwalden.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kappelrodeck und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/kappelrodeck/"
+      },
+      {
+        "text": "Hofläden in Sasbachwalden und Umgebung",
+        "pfad": "/baden-wuerttemberg/ortenaukreis/sasbachwalden/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ostalbkreis/bartholomae/": {
+    "titel": "Hofläden in Bartholomä: gut zu wissen",
+    "oben": "Bartholomä liegt auf der Ostalb im Ostalbkreis. Eingetragen sind zwei Regiomaten, einer mit Honig, einer mit Eiern, Brot und Nudeln, und der Hofladen Rötenbach mit Bio-Angebot.",
+    "einleitung": "Brot, Nudeln, Eier und Honig gibt es an den Automaten, jederzeit. Der Hofladen Rötenbach arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Heubach und Essingen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heubach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ostalbkreis/heubach/"
+      },
+      {
+        "text": "Hofläden in Essingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/ostalbkreis/essingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ostalbkreis/heubach/": {
+    "titel": "Hofläden in Heubach: gut zu wissen",
+    "oben": "Heubach liegt am Fuß des Rosensteins im Ostalbkreis. Eingetragen sind zwei Regiomaten, einer mit Fleisch, einer mit Eiern, Milch, Obst und Getränken, und der Hofladen Leute mit Gemüse, Obst und Blumen.",
+    "einleitung": "Gemüse, Obst und Blumen gibt es im Hofladen Leute. Die Milch aus dem Regiomaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bartholomä und Essingen.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bartholomä und Umgebung",
+        "pfad": "/baden-wuerttemberg/ostalbkreis/bartholomae/"
+      },
+      {
+        "text": "Hofläden in Essingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/ostalbkreis/essingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ostalbkreis/heuchlingen/": {
+    "titel": "Hofläden in Heuchlingen: gut zu wissen",
+    "oben": "Heuchlingen liegt im Ostalbkreis im Raum Aalen. Eingetragen sind zwei Eierautomaten und ein Regiomat mit Eiern, Milch, Fleisch und Honig.",
+    "einleitung": "Zu Heuchlingen: Alle drei Einträge sind Automaten, du kannst also jederzeit einkaufen. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Heubach und Essingen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heubach und Umgebung",
+        "pfad": "/baden-wuerttemberg/ostalbkreis/heubach/"
+      },
+      {
+        "text": "Hofläden in Essingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/ostalbkreis/essingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ostalbkreis/lorch/": {
+    "titel": "Hofläden in Lorch: gut zu wissen",
+    "oben": "Lorch liegt im Remstal im Ostalbkreis, bekannt ist das Kloster Lorch. Eingetragen sind Kirnecks Hoflädle, das Waldhäuser Hoflädle und der Forstbetrieb Grieb.",
+    "einleitung": "Der Forstbetrieb Grieb hat zusätzlich einen Hofverkauf. Das Remstal ist von Wald und Obstwiesen geprägt.\n\nWeitere Höfe findest du in Alfdorf und Plüderhausen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Alfdorf und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/alfdorf/"
+      },
+      {
+        "text": "Hofläden in Plüderhausen und Umgebung",
+        "pfad": "/baden-wuerttemberg/rems-murr-kreis/pluederhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ostalbkreis/neresheim/": {
+    "titel": "Hofläden in Neresheim: gut zu wissen",
+    "oben": "Neresheim liegt auf der Ostalb im Ostalbkreis, bekannt ist die Abtei. Eingetragen sind ein Hofladen mit Eiern, ein Fleischautomat und das Klostergut Neresheim.",
+    "einleitung": "Fleisch gibt es am Automaten, jederzeit. Das Klostergut ergänzt das Angebot.\n\nWeitere Höfe findest du in Forheim und Nattheim.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Forheim und Umgebung",
+        "pfad": "/bayern/donau-ries/forheim/"
+      },
+      {
+        "text": "Hofläden in Nattheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/heidenheim/nattheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rastatt/iffezheim/": {
+    "titel": "Hofläden in Iffezheim: gut zu wissen",
+    "oben": "Iffezheim liegt am Rhein im Landkreis Rastatt, bekannt ist die Galopprennbahn. Eingetragen sind ein Regiomat mit Eiern und Gemüse, der Hofladen Huber-Hof und der Schneider Spargelhof.",
+    "einleitung": "Spargel gibt es im Schneider Spargelhof, in der Saison im Frühjahr. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Sinzheim und Baden-Baden.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sinzheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rastatt/sinzheim/"
+      },
+      {
+        "text": "Hofläden in Baden-Baden",
+        "pfad": "/baden-wuerttemberg/baden-baden/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/rastatt/oetigheim/": {
+    "titel": "Hofläden in Ötigheim: gut zu wissen",
+    "oben": "Ötigheim liegt in der Rheinebene im Landkreis Rastatt. Eingetragen sind der Spargel-Erdbeerhof Zander, ein Hofladen und ein Regiomat mit Eiern und Honig.",
+    "einleitung": "Spargel gibt es im Frühjahr, Erdbeeren im Frühsommer beim Hof Zander. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Durmersheim und Malsch.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Durmersheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/rastatt/durmersheim/"
+      },
+      {
+        "text": "Hofläden in Malsch und Umgebung",
+        "pfad": "/baden-wuerttemberg/landkreis-karlsruhe/malsch/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ravensburg/argenbuehl/": {
+    "titel": "Hofläden in Argenbühl: gut zu wissen",
+    "oben": "Argenbühl liegt im Westallgäu im Landkreis Ravensburg. Eingetragen sind ein Regiomat, ein Hofladen-Automat und der Biohof am Argenfeld von Frank Nägele.",
+    "einleitung": "Zwei Automaten machen den Einkauf zu jeder Zeit möglich. Der Biohof am Argenfeld arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Hergatz und Wangen im Allgäu.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hergatz und Umgebung",
+        "pfad": "/bayern/lindau/hergatz/"
+      },
+      {
+        "text": "Hofläden in Wangen im Allgäu und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/wangen-im-allgaeu/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ravensburg/berg/": {
+    "titel": "Hofläden in Berg (Landkreis Ravensburg): gut zu wissen",
+    "oben": "Berg liegt bei Ravensburg in Oberschwaben. Eingetragen sind der Hofladen Schloss Benzenhofen, die Bodenseetanne mit Christbaummarkt in Atzenhofen und eine Milchtankstelle.",
+    "einleitung": "Weihnachtsbäume gibt es bei der Bodenseetanne im Dezember. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Weingarten und Baienfurt.",
+    "saison": [
+      {
+        "titel": "Weihnachtsbäume",
+        "zeit": "Dezember"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weingarten (Landkreis Ravensburg) und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/weingarten/"
+      },
+      {
+        "text": "Hofläden in Baienfurt und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/baienfurt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ravensburg/fronreute/": {
+    "titel": "Hofläden in Fronreute: gut zu wissen",
+    "oben": "Fronreute liegt in Oberschwaben im Landkreis Ravensburg. Eingetragen sind ein Regiomat mit Eiern, Honig und Nudeln, Rimmeles Hühnerhof und das Hofcafé Backstüble.",
+    "einleitung": "Eier gibt es am Regiomaten und bei Rimmele, zum Kaffee geht es ins Hofcafé. Oberschwaben ist hügelig, mit Wiesen und Mooren.\n\nWeitere Höfe findest du in Berg und Baienfurt.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Berg (Landkreis Ravensburg) und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/berg/"
+      },
+      {
+        "text": "Hofläden in Baienfurt und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/baienfurt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/ravensburg/isny-im-allgaeu/": {
+    "titel": "Hofläden in Isny im Allgäu: gut zu wissen",
+    "oben": "Isny im Allgäu liegt im Westallgäu im Landkreis Ravensburg. Eingetragen sind das Milchhäusle, ein Regiomat mit Milch und Käse, ein Eierautomat und der Biohof Schad mit Bio-Angebot.",
+    "einleitung": "Milch, Käse und Eier gibt es an Automaten, jederzeit. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Argenbühl und Stiefenhofen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Argenbühl und Umgebung",
+        "pfad": "/baden-wuerttemberg/ravensburg/argenbuehl/"
+      },
+      {
+        "text": "Hofläden in Stiefenhofen und Umgebung",
+        "pfad": "/bayern/lindau/stiefenhofen/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }

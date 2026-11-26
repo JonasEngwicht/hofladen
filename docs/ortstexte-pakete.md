@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1396 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1420 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1413,34 +1413,34 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Möglingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/moeglingen/) `/baden-wuerttemberg/ludwigsburg/moeglingen/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
 | ✓ | [Murr](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/murr/) `/baden-wuerttemberg/ludwigsburg/murr/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
 
-## Paket 48 (0/25 fertig)
+## Paket 48 (24/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Oberstenfeld](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/oberstenfeld/) `/baden-wuerttemberg/ludwigsburg/oberstenfeld/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
-|  | [Schwieberdingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/schwieberdingen/) `/baden-wuerttemberg/ludwigsburg/schwieberdingen/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
-|  | [Ahorn](https://hofladenliste.de/baden-wuerttemberg/main-tauber-kreis/ahorn/) `/baden-wuerttemberg/main-tauber-kreis/ahorn/` | Main-Tauber-Kreis | 1 | 3 | 6 |
-|  | [Boxberg](https://hofladenliste.de/baden-wuerttemberg/main-tauber-kreis/boxberg/) `/baden-wuerttemberg/main-tauber-kreis/boxberg/` | Main-Tauber-Kreis | 1 | 3 | 6 |
-|  | [Creglingen](https://hofladenliste.de/baden-wuerttemberg/main-tauber-kreis/creglingen/) `/baden-wuerttemberg/main-tauber-kreis/creglingen/` | Main-Tauber-Kreis | 1 | 3 | 6 |
-|  | [Mudau](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/mudau/) `/baden-wuerttemberg/neckar-odenwald-kreis/mudau/` | Neckar-Odenwald-Kreis | 1 | 3 | 6 |
-|  | [Rosenberg](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/rosenberg/) `/baden-wuerttemberg/neckar-odenwald-kreis/rosenberg/` | Neckar-Odenwald-Kreis | 1 | 3 | 6 |
-|  | [Walldürn](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/wallduern/) `/baden-wuerttemberg/neckar-odenwald-kreis/wallduern/` | Neckar-Odenwald-Kreis | 1 | 3 | 6 |
-|  | [Haslach im Kinzigtal](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/haslach-im-kinzigtal/) `/baden-wuerttemberg/ortenaukreis/haslach-im-kinzigtal/` | Ortenaukreis | 1 | 3 | 6 |
-|  | [Hausach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/hausach/) `/baden-wuerttemberg/ortenaukreis/hausach/` | Ortenaukreis | 1 | 3 | 6 |
-|  | [Kappelrodeck](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/kappelrodeck/) `/baden-wuerttemberg/ortenaukreis/kappelrodeck/` | Ortenaukreis | 1 | 3 | 6 |
-|  | [Kehl](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/kehl/) `/baden-wuerttemberg/ortenaukreis/kehl/` | Ortenaukreis | 1 | 3 | 6 |
-|  | [Seebach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/seebach/) `/baden-wuerttemberg/ortenaukreis/seebach/` | Ortenaukreis | 1 | 3 | 6 |
-|  | [Bartholomä](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/bartholomae/) `/baden-wuerttemberg/ostalbkreis/bartholomae/` | Ostalbkreis | 1 | 3 | 6 |
-|  | [Heubach](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/heubach/) `/baden-wuerttemberg/ostalbkreis/heubach/` | Ostalbkreis | 1 | 3 | 6 |
-|  | [Heuchlingen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/heuchlingen/) `/baden-wuerttemberg/ostalbkreis/heuchlingen/` | Ostalbkreis | 1 | 3 | 6 |
-|  | [Lorch](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/lorch/) `/baden-wuerttemberg/ostalbkreis/lorch/` | Ostalbkreis | 1 | 3 | 6 |
-|  | [Neresheim](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/neresheim/) `/baden-wuerttemberg/ostalbkreis/neresheim/` | Ostalbkreis | 1 | 3 | 6 |
-|  | [Iffezheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/iffezheim/) `/baden-wuerttemberg/rastatt/iffezheim/` | Landkreis Rastatt | 1 | 3 | 6 |
-|  | [Ötigheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/oetigheim/) `/baden-wuerttemberg/rastatt/oetigheim/` | Landkreis Rastatt | 1 | 3 | 6 |
-|  | [Argenbühl](https://hofladenliste.de/baden-wuerttemberg/ravensburg/argenbuehl/) `/baden-wuerttemberg/ravensburg/argenbuehl/` | Landkreis Ravensburg | 1 | 3 | 6 |
-|  | [Berg (Landkreis Ravensburg)](https://hofladenliste.de/baden-wuerttemberg/ravensburg/berg/) `/baden-wuerttemberg/ravensburg/berg/` | Landkreis Ravensburg | 1 | 3 | 6 |
-|  | [Fronreute](https://hofladenliste.de/baden-wuerttemberg/ravensburg/fronreute/) `/baden-wuerttemberg/ravensburg/fronreute/` | Landkreis Ravensburg | 1 | 3 | 6 |
-|  | [Isny im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/isny-im-allgaeu/) `/baden-wuerttemberg/ravensburg/isny-im-allgaeu/` | Landkreis Ravensburg | 1 | 3 | 6 |
+| ✓ | [Oberstenfeld](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/oberstenfeld/) `/baden-wuerttemberg/ludwigsburg/oberstenfeld/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
+| ✓ | [Schwieberdingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/schwieberdingen/) `/baden-wuerttemberg/ludwigsburg/schwieberdingen/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
+| ✓ | [Ahorn](https://hofladenliste.de/baden-wuerttemberg/main-tauber-kreis/ahorn/) `/baden-wuerttemberg/main-tauber-kreis/ahorn/` | Main-Tauber-Kreis | 1 | 3 | 6 |
+| ✓ | [Boxberg](https://hofladenliste.de/baden-wuerttemberg/main-tauber-kreis/boxberg/) `/baden-wuerttemberg/main-tauber-kreis/boxberg/` | Main-Tauber-Kreis | 1 | 3 | 6 |
+| ✓ | [Creglingen](https://hofladenliste.de/baden-wuerttemberg/main-tauber-kreis/creglingen/) `/baden-wuerttemberg/main-tauber-kreis/creglingen/` | Main-Tauber-Kreis | 1 | 3 | 6 |
+| ✓ | [Mudau](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/mudau/) `/baden-wuerttemberg/neckar-odenwald-kreis/mudau/` | Neckar-Odenwald-Kreis | 1 | 3 | 6 |
+| ✓ | [Rosenberg](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/rosenberg/) `/baden-wuerttemberg/neckar-odenwald-kreis/rosenberg/` | Neckar-Odenwald-Kreis | 1 | 3 | 6 |
+| ✓ | [Walldürn](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/wallduern/) `/baden-wuerttemberg/neckar-odenwald-kreis/wallduern/` | Neckar-Odenwald-Kreis | 1 | 3 | 6 |
+| ✓ | [Haslach im Kinzigtal](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/haslach-im-kinzigtal/) `/baden-wuerttemberg/ortenaukreis/haslach-im-kinzigtal/` | Ortenaukreis | 1 | 3 | 6 |
+| ✓ | [Hausach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/hausach/) `/baden-wuerttemberg/ortenaukreis/hausach/` | Ortenaukreis | 1 | 3 | 6 |
+| ✓ | [Kappelrodeck](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/kappelrodeck/) `/baden-wuerttemberg/ortenaukreis/kappelrodeck/` | Ortenaukreis | 1 | 3 | 6 |
+| ✓ | [Kehl](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/kehl/) `/baden-wuerttemberg/ortenaukreis/kehl/` | Ortenaukreis | 1 | 3 | 6 |
+| ✓ | [Seebach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/seebach/) `/baden-wuerttemberg/ortenaukreis/seebach/` | Ortenaukreis | 1 | 3 | 6 |
+| ✓ | [Bartholomä](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/bartholomae/) `/baden-wuerttemberg/ostalbkreis/bartholomae/` | Ostalbkreis | 1 | 3 | 6 |
+| ✓ | [Heubach](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/heubach/) `/baden-wuerttemberg/ostalbkreis/heubach/` | Ostalbkreis | 1 | 3 | 6 |
+| ✓ | [Heuchlingen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/heuchlingen/) `/baden-wuerttemberg/ostalbkreis/heuchlingen/` | Ostalbkreis | 1 | 3 | 6 |
+| ✓ | [Lorch](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/lorch/) `/baden-wuerttemberg/ostalbkreis/lorch/` | Ostalbkreis | 1 | 3 | 6 |
+| ✓ | [Neresheim](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/neresheim/) `/baden-wuerttemberg/ostalbkreis/neresheim/` | Ostalbkreis | 1 | 3 | 6 |
+| ✓ | [Iffezheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/iffezheim/) `/baden-wuerttemberg/rastatt/iffezheim/` | Landkreis Rastatt | 1 | 3 | 6 |
+| ✓ | [Ötigheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/oetigheim/) `/baden-wuerttemberg/rastatt/oetigheim/` | Landkreis Rastatt | 1 | 3 | 6 |
+| ✓ | [Argenbühl](https://hofladenliste.de/baden-wuerttemberg/ravensburg/argenbuehl/) `/baden-wuerttemberg/ravensburg/argenbuehl/` | Landkreis Ravensburg | 1 | 3 | 6 |
+| ✓ | [Berg (Landkreis Ravensburg)](https://hofladenliste.de/baden-wuerttemberg/ravensburg/berg/) `/baden-wuerttemberg/ravensburg/berg/` | Landkreis Ravensburg | 1 | 3 | 6 |
+| ✓ | [Fronreute](https://hofladenliste.de/baden-wuerttemberg/ravensburg/fronreute/) `/baden-wuerttemberg/ravensburg/fronreute/` | Landkreis Ravensburg | 1 | 3 | 6 |
+| ✓ | [Isny im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/isny-im-allgaeu/) `/baden-wuerttemberg/ravensburg/isny-im-allgaeu/` | Landkreis Ravensburg | 1 | 3 | 6 |
 |  | [Leutkirch im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/leutkirch-im-allgaeu/) `/baden-wuerttemberg/ravensburg/leutkirch-im-allgaeu/` | Landkreis Ravensburg | 1 | 3 | 6 |
 
 ## Paket 49 (0/25 fertig)
