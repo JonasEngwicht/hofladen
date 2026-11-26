@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1297 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1321 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1293,35 +1293,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Ingelheim am Rhein](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/ingelheim-am-rhein/) `/rheinland-pfalz/mainz-bingen/ingelheim-am-rhein/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
 | ✓ | [Nieder-Olm](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/nieder-olm/) `/rheinland-pfalz/mainz-bingen/nieder-olm/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
 
-## Paket 44 (0/25 fertig)
+## Paket 44 (24/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
 |  | [Ober-Olm](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/ober-olm/) `/rheinland-pfalz/mainz-bingen/ober-olm/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
-|  | [Zornheim](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/zornheim/) `/rheinland-pfalz/mainz-bingen/zornheim/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
-|  | [Andernach](https://hofladenliste.de/rheinland-pfalz/mayen-koblenz/andernach/) `/rheinland-pfalz/mayen-koblenz/andernach/` | Landkreis Mayen-Koblenz | 1 | 4 | 7 |
-|  | [Böhl-Iggelheim](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/boehl-iggelheim/) `/rheinland-pfalz/rhein-pfalz-kreis/boehl-iggelheim/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
-|  | [Dannstadt-Schauernheim](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/dannstadt-schauernheim/) `/rheinland-pfalz/rhein-pfalz-kreis/dannstadt-schauernheim/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
-|  | [Dudenhofen](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/dudenhofen/) `/rheinland-pfalz/rhein-pfalz-kreis/dudenhofen/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
-|  | [Schifferstadt](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/schifferstadt/) `/rheinland-pfalz/rhein-pfalz-kreis/schifferstadt/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
-|  | [Losheim am See](https://hofladenliste.de/saarland/merzig-wadern/losheim-am-see/) `/saarland/merzig-wadern/losheim-am-see/` | Landkreis Merzig-Wadern | 1 | 4 | 7 |
-|  | [Wadern](https://hofladenliste.de/saarland/merzig-wadern/wadern/) `/saarland/merzig-wadern/wadern/` | Landkreis Merzig-Wadern | 1 | 4 | 7 |
-|  | [Kleinblittersdorf](https://hofladenliste.de/saarland/regionalverband-saarbruecken/kleinblittersdorf/) `/saarland/regionalverband-saarbruecken/kleinblittersdorf/` | Regionalverband Saarbrücken | 1 | 4 | 7 |
-|  | [Rehlingen-Siersburg](https://hofladenliste.de/saarland/saarlouis/rehlingen-siersburg/) `/saarland/saarlouis/rehlingen-siersburg/` | Landkreis Saarlouis | 1 | 4 | 7 |
-|  | [Gersheim](https://hofladenliste.de/saarland/saarpfalz-kreis/gersheim/) `/saarland/saarpfalz-kreis/gersheim/` | Saarpfalz-Kreis | 1 | 4 | 7 |
-|  | [Nohfelden](https://hofladenliste.de/saarland/st-wendel/nohfelden/) `/saarland/st-wendel/nohfelden/` | Landkreis St. Wendel | 1 | 4 | 7 |
-|  | [Tangerhütte](https://hofladenliste.de/sachsen-anhalt/stendal/tangerhuette/) `/sachsen-anhalt/stendal/tangerhuette/` | Landkreis Stendal | 1 | 4 | 7 |
-|  | [Lößnitz](https://hofladenliste.de/sachsen/erzgebirgskreis/loessnitz/) `/sachsen/erzgebirgskreis/loessnitz/` | Erzgebirgskreis | 1 | 4 | 7 |
-|  | [Herrnhut](https://hofladenliste.de/sachsen/goerlitz/herrnhut/) `/sachsen/goerlitz/herrnhut/` | Landkreis Görlitz | 1 | 4 | 7 |
-|  | [Radeburg](https://hofladenliste.de/sachsen/meissen/radeburg/) `/sachsen/meissen/radeburg/` | Landkreis Meißen | 1 | 4 | 7 |
-|  | [Eppendorf](https://hofladenliste.de/sachsen/mittelsachsen/eppendorf/) `/sachsen/mittelsachsen/eppendorf/` | Landkreis Mittelsachsen | 1 | 4 | 7 |
-|  | [Flöha](https://hofladenliste.de/sachsen/mittelsachsen/floeha/) `/sachsen/mittelsachsen/floeha/` | Landkreis Mittelsachsen | 1 | 4 | 7 |
-|  | [Taucha](https://hofladenliste.de/sachsen/nordsachsen/taucha/) `/sachsen/nordsachsen/taucha/` | Landkreis Nordsachsen | 1 | 4 | 7 |
-|  | [Altenberg](https://hofladenliste.de/sachsen/saechsische-schweiz/altenberg/) `/sachsen/saechsische-schweiz/altenberg/` | Landkreis Sächsische Schweiz | 1 | 4 | 7 |
-|  | [Dohna](https://hofladenliste.de/sachsen/saechsische-schweiz/dohna/) `/sachsen/saechsische-schweiz/dohna/` | Landkreis Sächsische Schweiz | 1 | 4 | 7 |
-|  | [Reinhardtsdorf-Schöna](https://hofladenliste.de/sachsen/saechsische-schweiz/reinhardtsdorf-schoena/) `/sachsen/saechsische-schweiz/reinhardtsdorf-schoena/` | Landkreis Sächsische Schweiz | 1 | 4 | 7 |
-|  | [Brunsbüttel](https://hofladenliste.de/schleswig-holstein/dithmarschen/brunsbuettel/) `/schleswig-holstein/dithmarschen/brunsbuettel/` | Kreis Dithmarschen | 1 | 4 | 7 |
-|  | [Groß Grönau](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/gross-groenau/) `/schleswig-holstein/herzogtum-lauenburg/gross-groenau/` | Kreis Herzogtum Lauenburg | 1 | 4 | 7 |
+| ✓ | [Zornheim](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/zornheim/) `/rheinland-pfalz/mainz-bingen/zornheim/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
+| ✓ | [Andernach](https://hofladenliste.de/rheinland-pfalz/mayen-koblenz/andernach/) `/rheinland-pfalz/mayen-koblenz/andernach/` | Landkreis Mayen-Koblenz | 1 | 4 | 7 |
+| ✓ | [Böhl-Iggelheim](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/boehl-iggelheim/) `/rheinland-pfalz/rhein-pfalz-kreis/boehl-iggelheim/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
+| ✓ | [Dannstadt-Schauernheim](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/dannstadt-schauernheim/) `/rheinland-pfalz/rhein-pfalz-kreis/dannstadt-schauernheim/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
+| ✓ | [Dudenhofen](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/dudenhofen/) `/rheinland-pfalz/rhein-pfalz-kreis/dudenhofen/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
+| ✓ | [Schifferstadt](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/schifferstadt/) `/rheinland-pfalz/rhein-pfalz-kreis/schifferstadt/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
+| ✓ | [Losheim am See](https://hofladenliste.de/saarland/merzig-wadern/losheim-am-see/) `/saarland/merzig-wadern/losheim-am-see/` | Landkreis Merzig-Wadern | 1 | 4 | 7 |
+| ✓ | [Wadern](https://hofladenliste.de/saarland/merzig-wadern/wadern/) `/saarland/merzig-wadern/wadern/` | Landkreis Merzig-Wadern | 1 | 4 | 7 |
+| ✓ | [Kleinblittersdorf](https://hofladenliste.de/saarland/regionalverband-saarbruecken/kleinblittersdorf/) `/saarland/regionalverband-saarbruecken/kleinblittersdorf/` | Regionalverband Saarbrücken | 1 | 4 | 7 |
+| ✓ | [Rehlingen-Siersburg](https://hofladenliste.de/saarland/saarlouis/rehlingen-siersburg/) `/saarland/saarlouis/rehlingen-siersburg/` | Landkreis Saarlouis | 1 | 4 | 7 |
+| ✓ | [Gersheim](https://hofladenliste.de/saarland/saarpfalz-kreis/gersheim/) `/saarland/saarpfalz-kreis/gersheim/` | Saarpfalz-Kreis | 1 | 4 | 7 |
+| ✓ | [Nohfelden](https://hofladenliste.de/saarland/st-wendel/nohfelden/) `/saarland/st-wendel/nohfelden/` | Landkreis St. Wendel | 1 | 4 | 7 |
+| ✓ | [Tangerhütte](https://hofladenliste.de/sachsen-anhalt/stendal/tangerhuette/) `/sachsen-anhalt/stendal/tangerhuette/` | Landkreis Stendal | 1 | 4 | 7 |
+| ✓ | [Lößnitz](https://hofladenliste.de/sachsen/erzgebirgskreis/loessnitz/) `/sachsen/erzgebirgskreis/loessnitz/` | Erzgebirgskreis | 1 | 4 | 7 |
+| ✓ | [Herrnhut](https://hofladenliste.de/sachsen/goerlitz/herrnhut/) `/sachsen/goerlitz/herrnhut/` | Landkreis Görlitz | 1 | 4 | 7 |
+| ✓ | [Radeburg](https://hofladenliste.de/sachsen/meissen/radeburg/) `/sachsen/meissen/radeburg/` | Landkreis Meißen | 1 | 4 | 7 |
+| ✓ | [Eppendorf](https://hofladenliste.de/sachsen/mittelsachsen/eppendorf/) `/sachsen/mittelsachsen/eppendorf/` | Landkreis Mittelsachsen | 1 | 4 | 7 |
+| ✓ | [Flöha](https://hofladenliste.de/sachsen/mittelsachsen/floeha/) `/sachsen/mittelsachsen/floeha/` | Landkreis Mittelsachsen | 1 | 4 | 7 |
+| ✓ | [Taucha](https://hofladenliste.de/sachsen/nordsachsen/taucha/) `/sachsen/nordsachsen/taucha/` | Landkreis Nordsachsen | 1 | 4 | 7 |
+| ✓ | [Altenberg](https://hofladenliste.de/sachsen/saechsische-schweiz/altenberg/) `/sachsen/saechsische-schweiz/altenberg/` | Landkreis Sächsische Schweiz | 1 | 4 | 7 |
+| ✓ | [Dohna](https://hofladenliste.de/sachsen/saechsische-schweiz/dohna/) `/sachsen/saechsische-schweiz/dohna/` | Landkreis Sächsische Schweiz | 1 | 4 | 7 |
+| ✓ | [Reinhardtsdorf-Schöna](https://hofladenliste.de/sachsen/saechsische-schweiz/reinhardtsdorf-schoena/) `/sachsen/saechsische-schweiz/reinhardtsdorf-schoena/` | Landkreis Sächsische Schweiz | 1 | 4 | 7 |
+| ✓ | [Brunsbüttel](https://hofladenliste.de/schleswig-holstein/dithmarschen/brunsbuettel/) `/schleswig-holstein/dithmarschen/brunsbuettel/` | Kreis Dithmarschen | 1 | 4 | 7 |
+| ✓ | [Groß Grönau](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/gross-groenau/) `/schleswig-holstein/herzogtum-lauenburg/gross-groenau/` | Kreis Herzogtum Lauenburg | 1 | 4 | 7 |
 
 ## Paket 45 (0/25 fertig)
 

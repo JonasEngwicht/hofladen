@@ -39338,5 +39338,725 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/mainz-bingen/zornheim/": {
+    "titel": "Hofläden in Zornheim: gut zu wissen",
+    "oben": "Zornheim liegt in Rheinhessen südlich von Mainz. Eingetragen sind der Obsthof Zimmermann, ein Regiomat mit Eiern und Obst, der Jakobshof Kneib mit Bioland-Obst und der Kastanienhof als Wein- und Obstgut.",
+    "einleitung": "Obst ist hier das Hauptthema, mehrere Höfe verkaufen es. Der Jakobshof Kneib arbeitet nach Bioland-Richtlinien.\n\nWeitere Höfe findest du in Nieder-Olm und Klein-Winternheim.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nieder-Olm und Umgebung",
+        "pfad": "/rheinland-pfalz/mainz-bingen/nieder-olm/"
+      },
+      {
+        "text": "Hofläden in Klein-Winternheim und Umgebung",
+        "pfad": "/rheinland-pfalz/mainz-bingen/klein-winternheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/mayen-koblenz/andernach/": {
+    "titel": "Hofläden in Andernach: gut zu wissen",
+    "oben": "Andernach liegt am Mittelrhein im Landkreis Mayen-Koblenz. Eingetragen sind ein Regiomat, Margarethes Hofladen, der Neuborner-Hof mit Bio-Angebot und die Rhein-Nette Imkerei.",
+    "einleitung": "Honig gibt es von der Rhein-Nette Imkerei. Der Neuborner-Hof arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Neuwied und Brohl-Lützing.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neuwied und Umgebung",
+        "pfad": "/rheinland-pfalz/neuwied/neuwied/"
+      },
+      {
+        "text": "Hofläden in Brohl-Lützing und Umgebung",
+        "pfad": "/rheinland-pfalz/ahrweiler/brohl-luetzing/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/rhein-pfalz-kreis/boehl-iggelheim/": {
+    "titel": "Hofläden in Böhl-Iggelheim: gut zu wissen",
+    "oben": "Böhl-Iggelheim liegt in der Vorderpfalz im Rhein-Pfalz-Kreis. Eingetragen sind der Bauernhof der Familie Engel, zwei Hofläden und der Obsthof Hass.",
+    "einleitung": "Obst gibt es beim Obsthof Hass. Die Vorderpfalz ist eine Gemüse- und Obstlandschaft.\n\nWeitere Höfe findest du in Haßloch und Schifferstadt.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Haßloch und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/hassloch/"
+      },
+      {
+        "text": "Hofläden in Schifferstadt und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/schifferstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/rhein-pfalz-kreis/dannstadt-schauernheim/": {
+    "titel": "Hofläden in Dannstadt-Schauernheim: gut zu wissen",
+    "oben": "Dannstadt-Schauernheim liegt in der Vorderpfalz im Rhein-Pfalz-Kreis. Eingetragen sind drei Hofläden und Tonys Pfälzer Hofmarkt II.",
+    "einleitung": "Gleich vier Einträge zeigen, wie gut die Direktvermarktung hier vertreten ist. Ludwigshafen und Frankenthal sind nahe.\n\nWeitere Höfe findest du in Mutterstadt und Meckenheim.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mutterstadt und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/mutterstadt/"
+      },
+      {
+        "text": "Hofläden in Meckenheim (Landkreis Bad Dürkheim) und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/meckenheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/rhein-pfalz-kreis/dudenhofen/": {
+    "titel": "Hofläden in Dudenhofen: gut zu wissen",
+    "oben": "Dudenhofen liegt bei Speyer im Rhein-Pfalz-Kreis. Eingetragen sind Zürkers Hofladen mit Hofschänke, der Martinshof Ballreich, der Spargelhof Thomas Beck und ein Imker-Verein.",
+    "einleitung": "Spargel gibt es beim Spargelhof Beck, in der Saison im Frühjahr. Honig kommt vom Imker-Verein.\n\nWeitere Höfe findest du in Römerberg und Speyer.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Römerberg und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/"
+      },
+      {
+        "text": "Hofläden in Speyer",
+        "pfad": "/rheinland-pfalz/speyer/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/rhein-pfalz-kreis/schifferstadt/": {
+    "titel": "Hofläden in Schifferstadt: gut zu wissen",
+    "oben": "Schifferstadt liegt in der Vorderpfalz im Rhein-Pfalz-Kreis. Eingetragen sind Heikes Hoflädel, zwei Regiomaten mit Fleisch, Gemüse und Eiern und die Solawi Große Erde.",
+    "einleitung": "Gemüse gibt es über die Solidarische Landwirtschaft und am Regiomaten. Die Automaten sind jederzeit zugänglich.\n\nWeitere Höfe findest du in Böhl-Iggelheim und Neuhofen.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Böhl-Iggelheim und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/boehl-iggelheim/"
+      },
+      {
+        "text": "Hofläden in Neuhofen und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/neuhofen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/merzig-wadern/losheim-am-see/": {
+    "titel": "Hofläden in Losheim am See: gut zu wissen",
+    "oben": "Losheim am See liegt im Landkreis Merzig-Wadern im nördlichen Saarland. Eingetragen sind der Hof im Winkel, ein Regiomat und der Biolandhof Meiers.",
+    "einleitung": "Der Biolandhof Meiers arbeitet nach Bioland-Richtlinien. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Merzig und Wadern.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Merzig und Umgebung",
+        "pfad": "/saarland/merzig-wadern/merzig/"
+      },
+      {
+        "text": "Hofläden in Wadern und Umgebung",
+        "pfad": "/saarland/merzig-wadern/wadern/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/merzig-wadern/wadern/": {
+    "titel": "Hofläden in Wadern: gut zu wissen",
+    "oben": "Wadern liegt im Landkreis Merzig-Wadern im nördlichen Saarland. Eingetragen sind Annes Hofcafé, der Gemüsehof Buntes Grün mit Bio-Angebot, das Hofcafé Nunkirchen und ein Regiomat mit Eiern.",
+    "einleitung": "Zwei Hofcafés laden zum Kaffee ein. Gemüse gibt es auf dem Bio-Gemüsehof Buntes Grün.\n\nWeitere Höfe findest du in Losheim am See und Schmelz.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Losheim am See und Umgebung",
+        "pfad": "/saarland/merzig-wadern/losheim-am-see/"
+      },
+      {
+        "text": "Hofläden in Schmelz und Umgebung",
+        "pfad": "/saarland/saarlouis/schmelz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/regionalverband-saarbruecken/kleinblittersdorf/": {
+    "titel": "Hofläden in Kleinblittersdorf: gut zu wissen",
+    "oben": "Kleinblittersdorf liegt an der Saar an der Grenze zu Frankreich im Regionalverband Saarbrücken. Eingetragen sind der Wintringer Hofladen mit Bio-Angebot, das Erdbeerland, die Götzenmühle und der Gut Hartungshof Hofladen.",
+    "einleitung": "Erdbeeren sind im Erdbeerland die Spezialität, die Saison ist im Frühsommer. Frankreich ist nur wenige Kilometer entfernt.\n\nWeitere Höfe findest du in Saarbrücken und Gersheim.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Saarbrücken und Umgebung",
+        "pfad": "/saarland/regionalverband-saarbruecken/saarbruecken/"
+      },
+      {
+        "text": "Hofläden in Gersheim und Umgebung",
+        "pfad": "/saarland/saarpfalz-kreis/gersheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/saarlouis/rehlingen-siersburg/": {
+    "titel": "Hofläden in Rehlingen-Siersburg: gut zu wissen",
+    "oben": "Rehlingen-Siersburg liegt im Landkreis Saarlouis an der Saar. Eingetragen sind der Pehlinger Hof mit Eiern, Fleisch, Nudeln und Marmelade, der Marienhof Gerlfangen mit Milch, Obst, Brot, Marmelade und Getränken und ein Eierautomat.",
+    "einleitung": "Beide Höfe haben ein breites Sortiment. Der Eierautomat bietet auch Fleisch und Geflügel.\n\nWeitere Höfe findest du in Merzig und Saarwellingen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Merzig und Umgebung",
+        "pfad": "/saarland/merzig-wadern/merzig/"
+      },
+      {
+        "text": "Hofläden in Saarwellingen und Umgebung",
+        "pfad": "/saarland/saarlouis/saarwellingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/saarpfalz-kreis/gersheim/": {
+    "titel": "Hofläden in Gersheim: gut zu wissen",
+    "oben": "Gersheim liegt im Bliesgau im Saarpfalz-Kreis an der Grenze zu Frankreich. Eingetragen sind ein Eierautomat, ein Hofladen und zwei Einträge des Bauernhofs Sandmeier.",
+    "einleitung": "Der Bliesgau ist eine Streuobst- und Wiesenlandschaft, hier gibt es Eier am Automaten. Frankreich ist wenige Kilometer entfernt.\n\nWeitere Höfe findest du in Kleinblittersdorf und Sankt Ingbert.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kleinblittersdorf und Umgebung",
+        "pfad": "/saarland/regionalverband-saarbruecken/kleinblittersdorf/"
+      },
+      {
+        "text": "Hofläden in Sankt Ingbert und Umgebung",
+        "pfad": "/saarland/saarpfalz-kreis/sankt-ingbert/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/st-wendel/nohfelden/": {
+    "titel": "Hofläden in Nohfelden: gut zu wissen",
+    "oben": "Nohfelden liegt im Landkreis St. Wendel im Nordsaarland. Eingetragen sind ein Eierautomat, ein Hofladen, der Hofladen von Carlowitz und der Bioladen Huf-Hof.",
+    "einleitung": "Eier gibt es am Automaten, Bio-Produkte im Huf-Hof. Der Bostalsee ist in der Nähe.\n\nWeitere Höfe findest du in St. Wendel und Wadern.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sankt Wendel und Umgebung",
+        "pfad": "/saarland/st-wendel/sankt-wendel/"
+      },
+      {
+        "text": "Hofläden in Wadern und Umgebung",
+        "pfad": "/saarland/merzig-wadern/wadern/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen-anhalt/stendal/tangerhuette/": {
+    "titel": "Hofläden in Tangerhütte: gut zu wissen",
+    "oben": "Tangerhütte liegt in der Altmark im Landkreis Stendal. Eingetragen sind der Griebener Hof, ein Honigverkauf, die Fleischmanufaktur mit Hofladen Biohof 7 und der Spargelhof Kalkofen.",
+    "einleitung": "Spargel gibt es beim Spargelhof Kalkofen, in der Saison im Frühjahr. Die Altmark ist eine dünn besiedelte, weite Landschaft.\n\nWeitere Höfe findest du in Tangermünde und Stendal.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Tangermünde und Umgebung",
+        "pfad": "/sachsen-anhalt/stendal/tangermuende/"
+      },
+      {
+        "text": "Hofläden in Stendal und Umgebung",
+        "pfad": "/sachsen-anhalt/stendal/stendal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/erzgebirgskreis/loessnitz/": {
+    "titel": "Hofläden in Lößnitz: gut zu wissen",
+    "oben": "Lößnitz liegt im Erzgebirgskreis. Eingetragen sind zwei Milchtankstellen und zwei Einträge rund um Honig, eine Imkerei und der Honig vom Imker Haase.",
+    "einleitung": "Milch und Honig sind hier die Spezialitäten. Die Milch aus den Tankstellen ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Hartenstein und Wildenfels.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hartenstein und Umgebung",
+        "pfad": "/sachsen/zwickau/hartenstein/"
+      },
+      {
+        "text": "Hofläden in Wildenfels und Umgebung",
+        "pfad": "/sachsen/zwickau/wildenfels/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/goerlitz/herrnhut/": {
+    "titel": "Hofläden in Herrnhut: gut zu wissen",
+    "oben": "Herrnhut liegt in der Oberlausitz im Landkreis Görlitz, bekannt ist der Herrnhuter Stern. Eingetragen sind der Gartenbau Dienel, zwei Einträge des Hofladens Clemens Göbel und Hartmanns Hofladen.",
+    "einleitung": "Gemüse gibt es vom Gartenbau Dienel. Die Oberlausitz ist hügelig und von Feldern und Wald geprägt.\n\nWeitere Höfe findest du in Markersdorf und Görlitz.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Markersdorf und Umgebung",
+        "pfad": "/sachsen/goerlitz/markersdorf/"
+      },
+      {
+        "text": "Hofläden in Görlitz und Umgebung",
+        "pfad": "/sachsen/goerlitz/goerlitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/meissen/radeburg/": {
+    "titel": "Hofläden in Radeburg: gut zu wissen",
+    "oben": "Radeburg liegt im Landkreis Meißen nördlich von Dresden. Eingetragen sind der Hofladen Günther, der Milchautomat Volkersdorf, Nickis Biohofladen und der Wareli-Hofladen.",
+    "einleitung": "Die Radeburger Heide und die Felder liegen vor der Tür. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Ebersbach und Radebeul.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ebersbach und Umgebung",
+        "pfad": "/sachsen/meissen/ebersbach/"
+      },
+      {
+        "text": "Hofläden in Radebeul und Umgebung",
+        "pfad": "/sachsen/meissen/radebeul/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/eppendorf/": {
+    "titel": "Hofläden in Eppendorf: gut zu wissen",
+    "oben": "Eppendorf liegt in Mittelsachsen am Rand des Erzgebirges. Eingetragen sind zwei Imkereien, das Land-Ei Eppendorf und ein Lebensmittelautomat mit Eiern und Fleisch.",
+    "einleitung": "Honig gibt es bei gleich zwei Imkereien, Eier beim Land-Ei und am Automaten. Der Lebensmittelautomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Oederan und Augustusburg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oederan und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/oederan/"
+      },
+      {
+        "text": "Hofläden in Augustusburg und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/augustusburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/floeha/": {
+    "titel": "Hofläden in Flöha: gut zu wissen",
+    "oben": "Flöha liegt in Mittelsachsen im Tal der Zschopau bei Chemnitz. Eingetragen sind Bienes Hofladen, zwei Einträge rund um den Imker Meyer und ein Regiomat.",
+    "einleitung": "Honig ist die Spezialität. Chemnitz ist nicht weit.\n\nWeitere Höfe findest du in Augustusburg und Oederan.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Augustusburg und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/augustusburg/"
+      },
+      {
+        "text": "Hofläden in Oederan und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/oederan/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/nordsachsen/taucha/": {
+    "titel": "Hofläden in Taucha: gut zu wissen",
+    "oben": "Taucha liegt im Landkreis Nordsachsen nordöstlich von Leipzig. Eingetragen sind die Gemüsekooperative Rote Beete als Solawi, der Hofladen am Arnoldplatz mit Bio-Angebot, ein Regiomat und der Bio-Gemüsebau Maria Bienert mit Hofladen.",
+    "einleitung": "Bio-Gemüse ist hier die Spezialität, über die Solawi und den Hofladen. Leipzig ist nahe.\n\nWeitere Höfe findest du in Schkeuditz und Belgershain.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schkeuditz und Umgebung",
+        "pfad": "/sachsen/nordsachsen/schkeuditz/"
+      },
+      {
+        "text": "Hofläden in Belgershain und Umgebung",
+        "pfad": "/sachsen/landkreis-leipzig/belgershain/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/saechsische-schweiz/altenberg/": {
+    "titel": "Hofläden in Altenberg: gut zu wissen",
+    "oben": "Altenberg liegt im Osterzgebirge im Landkreis Sächsische Schweiz. Eingetragen sind der Milchschafhof, eine Milchtankstelle, der Biohof Seifert und eine Imkerei.",
+    "einleitung": "Der Milchschafhof verkauft Milch von Schafen. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Dippoldiswalde und Dohna.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dippoldiswalde und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/dippoldiswalde/"
+      },
+      {
+        "text": "Hofläden in Dohna und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/dohna/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/saechsische-schweiz/dohna/": {
+    "titel": "Hofläden in Dohna: gut zu wissen",
+    "oben": "Dohna liegt im Landkreis Sächsische Schweiz südlich von Dresden. Eingetragen sind der Ökoladen Lindenmüller, ein Hofladen, der Hofladen Gut Gamig und ein Regiomat mit Eiern.",
+    "einleitung": "Dresden ist in wenigen Minuten erreichbar. Eier gibt es am Regiomaten.\n\nWeitere Höfe findest du in Struppen und Stadt Wehlen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Struppen und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/struppen/"
+      },
+      {
+        "text": "Hofläden in Stadt Wehlen und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/stadt-wehlen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/saechsische-schweiz/reinhardtsdorf-schoena/": {
+    "titel": "Hofläden in Reinhardtsdorf-Schöna: gut zu wissen",
+    "oben": "Reinhardtsdorf-Schöna liegt in der Sächsischen Schweiz an der Elbe nahe der tschechischen Grenze. Eingetragen sind zwei Milchtankstellen, ein Regiomat und der Proviantomat.",
+    "einleitung": "Alle vier Einträge sind Automaten, du kannst also jederzeit einkaufen. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Struppen und Stolpen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Struppen und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/struppen/"
+      },
+      {
+        "text": "Hofläden in Stolpen und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/stolpen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/dithmarschen/brunsbuettel/": {
+    "titel": "Hofläden in Brunsbüttel: gut zu wissen",
+    "oben": "Brunsbüttel liegt in Dithmarschen an der Elbmündung am Nord-Ostsee-Kanal. Eingetragen sind Denkers Landcafé, die Gourmetkartoffeln von der Küste, ein Regiomat mit Obst und Kartoffeln und Honig vom Schwarm.",
+    "einleitung": "Die Kartoffeln von der Küste sind die Spezialität des Orts. Das Land an der Elbe ist flach und weit.\n\nWeitere Höfe findest du in Burg (Dithmarschen) und Otterndorf.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Burg (Dithmarschen) und Umgebung",
+        "pfad": "/schleswig-holstein/dithmarschen/burg-dithmarschen/"
+      },
+      {
+        "text": "Hofläden in Otterndorf und Umgebung",
+        "pfad": "/niedersachsen/cuxhaven/otterndorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/herzogtum-lauenburg/gross-groenau/": {
+    "titel": "Hofläden in Groß Grönau: gut zu wissen",
+    "oben": "Groß Grönau liegt im Kreis Herzogtum Lauenburg direkt südlich von Lübeck. Eingetragen sind Ahrholz, der Hof Falkenhusen, Karls und der Schattiner Bienenhof.",
+    "einleitung": "Honig gibt es vom Schattiner Bienenhof. Lübeck ist in wenigen Minuten erreichbar.\n\nWeitere Höfe findest du in Stockelsdorf und Bad Schwartau.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stockelsdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/stockelsdorf/"
+      },
+      {
+        "text": "Hofläden in Bad Schwartau und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/bad-schwartau/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
