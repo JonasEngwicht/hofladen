@@ -43736,5 +43736,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/stuttgart/stuttgart-hoffeld/": {
+    "titel": "Hofläden in Stuttgart Hoffeld: gut zu wissen",
+    "oben": "Hoffeld ist ein Stadtteil im Süden von Stuttgart auf den Fildern. Eingetragen sind der Spargelhof Wendel, Fritz Wassmer und der Hofladen Straif mit Obst, Kartoffeln und Getränken.",
+    "einleitung": "Spargel gibt es beim Spargelhof Wendel, in der Saison im Frühjahr. Die Filder sind für Gemüse bekannt.\n\nWeitere Höfe findest du in Möhringen und Riedenberg.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stuttgart Möhringen und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-moehringen/"
+      },
+      {
+        "text": "Hofläden in Stuttgart Riedenberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-riedenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/stuttgart/stuttgart-moenchfeld/": {
+    "titel": "Hofläden in Stuttgart Mönchfeld: gut zu wissen",
+    "oben": "Mönchfeld liegt im Norden von Stuttgart im Stadtbezirk Stammheim. Eingetragen sind drei Regiomaten, zwei mit Blumen und einer mit Eiern und Gemüse.",
+    "einleitung": "Alle drei Einträge sind Automaten, du kannst also jederzeit einkaufen. Blumen gibt es gleich an zwei Automaten.\n\nWeitere Höfe findest du in Zuffenhausen und Stammheim.",
+    "saison": [
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stuttgart Zuffenhausen und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-zuffenhausen/"
+      },
+      {
+        "text": "Hofläden in Stuttgart Stammheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-stammheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/stuttgart/stuttgart-riedenberg/": {
+    "titel": "Hofläden in Stuttgart Riedenberg: gut zu wissen",
+    "oben": "Riedenberg liegt im Süden von Stuttgart im Stadtbezirk Degerloch. Eingetragen sind ein Hofladen, eine Milchtankstelle und der Berghof Deizisau.",
+    "einleitung": "Die Filder liegen direkt vor der Tür. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Ostfildern und Hoffeld.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ostfildern und Umgebung",
+        "pfad": "/baden-wuerttemberg/esslingen/ostfildern/"
+      },
+      {
+        "text": "Hofläden in Stuttgart Hoffeld und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-hoffeld/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/stuttgart/stuttgart-stammheim/": {
+    "titel": "Hofläden in Stuttgart Stammheim: gut zu wissen",
+    "oben": "Stammheim liegt im Norden von Stuttgart. Eingetragen sind zwei Regiomaten, einer mit Eiern und einer mit Fleisch, und der Groll Hofmarkt.",
+    "einleitung": "Eier und Fleisch gibt es an den Automaten, jederzeit. Das Umland ist Ackerland.\n\nWeitere Höfe findest du in Zuffenhausen und Mönchfeld.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stuttgart Zuffenhausen und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-zuffenhausen/"
+      },
+      {
+        "text": "Hofläden in Stuttgart Mönchfeld und Umgebung",
+        "pfad": "/baden-wuerttemberg/stuttgart/stuttgart-moenchfeld/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/tuebingen/rottenburg-am-neckar/": {
+    "titel": "Hofläden in Rottenburg am Neckar: gut zu wissen",
+    "oben": "Rottenburg am Neckar liegt im Landkreis Tübingen am Neckar. Eingetragen sind die Honig-Box, ein Regiomat mit Milch und der Hofmarkt Jungviehweide.",
+    "einleitung": "Honig gibt es an der Honig-Box, Milch am Regiomaten. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Ammerbuch und Tübingen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ammerbuch und Umgebung",
+        "pfad": "/baden-wuerttemberg/tuebingen/ammerbuch/"
+      },
+      {
+        "text": "Hofläden in Tübingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/tuebingen/tuebingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/tuttlingen/neuhausen-ob-eck/": {
+    "titel": "Hofläden in Neuhausen ob Eck: gut zu wissen",
+    "oben": "Neuhausen ob Eck liegt auf der Hochfläche des Heubergs im Landkreis Tuttlingen. Eingetragen sind ein Hofladen, die Naturkost Breite Wies' mit Bio-Angebot und ein Regiomat mit Eiern, Milch und Brot.",
+    "einleitung": "Eier, Milch und Brot gibt es am Regiomaten, jederzeit. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Eigeltingen und Sauldorf.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eigeltingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/konstanz/eigeltingen/"
+      },
+      {
+        "text": "Hofläden in Sauldorf und Umgebung",
+        "pfad": "/baden-wuerttemberg/sigmaringen/sauldorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/waldshut/dachsberg/": {
+    "titel": "Hofläden in Dachsberg: gut zu wissen",
+    "oben": "Dachsberg liegt im Hochschwarzwald im Landkreis Waldshut. Eingetragen sind Bärs Hofladen, die Imkerei Böhler und Kaiserhofs Bauernladen.",
+    "einleitung": "Honig gibt es bei der Imkerei Böhler. Der Südschwarzwald ist hügelig und von Weiden und Wald geprägt.\n\nWeitere Höfe findest du in Schluchsee und Dogern.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schluchsee und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/schluchsee/"
+      },
+      {
+        "text": "Hofläden in Dogern und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/dogern/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/waldshut/dogern/": {
+    "titel": "Hofläden in Dogern: gut zu wissen",
+    "oben": "Dogern liegt am Hochrhein im Landkreis Waldshut an der Grenze zur Schweiz. Eingetragen sind das Hoflädele, die Eulenhof Gemüsegärtnerei mit Hofladen und ein Hofladen mit Gemüse.",
+    "einleitung": "Gemüse ist hier die Spezialität, die Eulenhof Gemüsegärtnerei verkauft es direkt. Die Schweiz ist nur wenige Kilometer entfernt.\n\nWeitere Höfe findest du in Albbruck und Waldshut-Tiengen.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Albbruck und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/albbruck/"
+      },
+      {
+        "text": "Hofläden in Waldshut-Tiengen und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/waldshut-tiengen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/waldshut/kuessaberg/": {
+    "titel": "Hofläden in Küssaberg: gut zu wissen",
+    "oben": "Küssaberg liegt am Hochrhein im Landkreis Waldshut an der Grenze zur Schweiz. Eingetragen sind ein Regiomat mit Blumen, der Hofladen Würtenberger und stoll's bauernladen.",
+    "einleitung": "Blumen gibt es am Regiomaten, jederzeit. Die Schweiz liegt auf der anderen Rheinseite.\n\nWeitere Höfe findest du in Wutöschingen und Waldshut-Tiengen.",
+    "saison": [
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wutöschingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/wutoeschingen/"
+      },
+      {
+        "text": "Hofläden in Waldshut-Tiengen und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/waldshut-tiengen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/waldshut/laufenburg/": {
+    "titel": "Hofläden in Laufenburg: gut zu wissen",
+    "oben": "Laufenburg liegt am Hochrhein im Landkreis Waldshut an der Grenze zur Schweiz. Eingetragen sind ein Frischmilchautomat, Hofzeit Obsthof Bächle und der Obsthof Matt.",
+    "einleitung": "Obst gibt es auf zwei Obsthöfen. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Murg und Albbruck.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Murg und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/murg/"
+      },
+      {
+        "text": "Hofläden in Albbruck und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/albbruck/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/waldshut/uehlingen-birkendorf/": {
+    "titel": "Hofläden in Ühlingen-Birkendorf: gut zu wissen",
+    "oben": "Ühlingen-Birkendorf liegt im Südschwarzwald im Landkreis Waldshut. Eingetragen sind der Hofladen Breitwiesenhof mit Bio-Angebot, ein Hofladen mit Eiern und ein Regiomat mit Eiern und Kartoffeln.",
+    "einleitung": "Eier gibt es an mehreren Stellen, Kartoffeln am Regiomaten. Der Breitwiesenhof arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Wutöschingen und Waldshut-Tiengen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wutöschingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/wutoeschingen/"
+      },
+      {
+        "text": "Hofläden in Waldshut-Tiengen und Umgebung",
+        "pfad": "/baden-wuerttemberg/waldshut/waldshut-tiengen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/waldshut/wutach/": {
+    "titel": "Hofläden in Wutach: gut zu wissen",
+    "oben": "Wutach liegt im Landkreis Waldshut am Rand der Baar. Eingetragen sind zwei Eierautomaten und das Milchhisli.",
+    "einleitung": "Eier gibt es an zwei Automaten, Milch im Milchhisli. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bräunlingen und Donaueschingen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bräunlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/braeunlingen/"
+      },
+      {
+        "text": "Hofläden in Donaueschingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/schwarzwald-baar-kreis/donaueschingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/zollernalbkreis/rosenfeld/": {
+    "titel": "Hofläden in Rosenfeld: gut zu wissen",
+    "oben": "Rosenfeld liegt im Zollernalbkreis am Rand der Schwäbischen Alb. Eingetragen sind die Lehr- und Versuchsimkerei Fischermühle, ein Regiomat mit Milch und ein Hofladen.",
+    "einleitung": "Honig gibt es bei der Lehr- und Versuchsimkerei, Milch am Regiomaten. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bisingen und Rottweil.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bisingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/zollernalbkreis/bisingen/"
+      },
+      {
+        "text": "Hofläden in Rottweil und Umgebung",
+        "pfad": "/baden-wuerttemberg/rottweil/rottweil/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/zollernalbkreis/winterlingen/": {
+    "titel": "Hofläden in Winterlingen: gut zu wissen",
+    "oben": "Winterlingen liegt auf der Schwäbischen Alb im Zollernalbkreis. Eingetragen sind die Ziegenhütte mit Bio-Käse und Brot, der Biohof Rapp mit Eiern, Fleisch und Brot und ein Regiomat mit Käse.",
+    "einleitung": "Ziegenkäse und Brot gibt es in der Ziegenhütte, beide Höfe arbeiten nach Bio-Richtlinien. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Albstadt und Inzigkofen.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Albstadt und Umgebung",
+        "pfad": "/baden-wuerttemberg/zollernalbkreis/albstadt/"
+      },
+      {
+        "text": "Hofläden in Inzigkofen und Umgebung",
+        "pfad": "/baden-wuerttemberg/sigmaringen/inzigkofen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/aichach-friedberg/adelzhausen/": {
+    "titel": "Hofläden in Adelzhausen: gut zu wissen",
+    "oben": "Adelzhausen liegt im Landkreis Aichach-Friedberg im Wittelsbacher Land. Eingetragen sind Mahls Hofladen mit Obst, der Heitmeier Spargelhof und eine Milchtankstelle.",
+    "einleitung": "Spargel gibt es im Frühjahr, Obst im Sommer und Herbst. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Eurasburg und Sielenbach.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eurasburg und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/eurasburg/"
+      },
+      {
+        "text": "Hofläden in Sielenbach und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/sielenbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/aichach-friedberg/hollenbach/": {
+    "titel": "Hofläden in Hollenbach: gut zu wissen",
+    "oben": "Hollenbach liegt im Landkreis Aichach-Friedberg im Wittelsbacher Land. Eingetragen sind eine Milchtankstelle, der Geflügelhof Weiss mit Eiern, Fleisch und Geflügel und der Hofreiter.",
+    "einleitung": "Geflügel und Eier gibt es beim Geflügelhof Weiss. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Aichach und Affing.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Aichach und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/aichach/"
+      },
+      {
+        "text": "Hofläden in Affing und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/affing/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/aichach-friedberg/kuehbach/": {
+    "titel": "Hofläden in Kühbach: gut zu wissen",
+    "oben": "Kühbach liegt im Landkreis Aichach-Friedberg im Wittelsbacher Land. Eingetragen sind der Hofladen Siegl, der Hofladen Tyroller mit Eiern und Rinauer.",
+    "einleitung": "Eier gibt es im Hofladen Tyroller. Die Gegend ist ländlich mit Feldern und kleinen Wäldern.\n\nWeitere Höfe findest du in Gachenbach und Aichach.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gachenbach und Umgebung",
+        "pfad": "/bayern/neuburg-schrobenhausen/gachenbach/"
+      },
+      {
+        "text": "Hofläden in Aichach und Umgebung",
+        "pfad": "/bayern/aichach-friedberg/aichach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/altoetting/unterneukirchen/": {
+    "titel": "Hofläden in Unterneukirchen: gut zu wissen",
+    "oben": "Unterneukirchen liegt im Landkreis Altötting in Oberbayern. Eingetragen sind eine Milchtankstelle, das Hofcafé Untergünzl und ein Regiomat.",
+    "einleitung": "Zum Kaffee geht es ins Hofcafé Untergünzl. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Garching an der Alz und Burgkirchen an der Alz.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Garching an der Alz und Umgebung",
+        "pfad": "/bayern/altoetting/garching-an-der-alz/"
+      },
+      {
+        "text": "Hofläden in Burgkirchen an der Alz und Umgebung",
+        "pfad": "/bayern/altoetting/burgkirchen-an-der-alz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/amberg-sulzbach/hahnbach/": {
+    "titel": "Hofläden in Hahnbach: gut zu wissen",
+    "oben": "Hahnbach liegt im Landkreis Amberg-Sulzbach in der Oberpfalz. Eingetragen sind das Weiß'n Hof Direktvermarktung, die Geilersdörfer Direktvermarktung und die Milchtankstelle Kötzersricht.",
+    "einleitung": "Beide Höfe vermarkten ihre Erzeugnisse direkt. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Sulzbach-Rosenberg und der Stadt Amberg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sulzbach-Rosenberg und Umgebung",
+        "pfad": "/bayern/amberg-sulzbach/sulzbach-rosenberg/"
+      },
+      {
+        "text": "Hofläden in Amberg",
+        "pfad": "/bayern/amberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/amberg-sulzbach/sulzbach-rosenberg/": {
+    "titel": "Hofläden in Sulzbach-Rosenberg: gut zu wissen",
+    "oben": "Sulzbach-Rosenberg liegt im Landkreis Amberg-Sulzbach in der Oberpfalz. Eingetragen sind die Solidarische Landwirtschaft AmbergSulzbacherLand, die Solawi AS mit Gemüse und ein Milchautomat.",
+    "einleitung": "Gleich zwei Solidarische Landwirtschaften sind eingetragen. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Hahnbach und der Stadt Amberg.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hahnbach und Umgebung",
+        "pfad": "/bayern/amberg-sulzbach/hahnbach/"
+      },
+      {
+        "text": "Hofläden in Amberg",
+        "pfad": "/bayern/amberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/amberg/": {
+    "titel": "Hofläden in Amberg: gut zu wissen",
+    "oben": "Amberg liegt in der Oberpfalz und ist eine kreisfreie Stadt. Eingetragen sind der Demeter Biohof Walz, das Milchhäusl mit Bio-Milch und der Hofladen Hüttner-Hof.",
+    "einleitung": "Zwei Betriebe arbeiten nach Bio- und Demeter-Richtlinien. Die Milch aus dem Milchhäusl ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Kümmersbruck und Sulzbach-Rosenberg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kümmersbruck und Umgebung",
+        "pfad": "/bayern/amberg-sulzbach/kuemmersbruck/"
+      },
+      {
+        "text": "Hofläden in Sulzbach-Rosenberg und Umgebung",
+        "pfad": "/bayern/amberg-sulzbach/sulzbach-rosenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/bad-kissingen/burkardroth/": {
+    "titel": "Hofläden in Burkardroth: gut zu wissen",
+    "oben": "Burkardroth liegt in der Rhön im Landkreis Bad Kissingen. Eingetragen sind ein Regiomat mit Fleisch, der Biohof Metz mit Blumen und der Hofladen von Lukas und Michaela Mahlmeister.",
+    "einleitung": "Fleisch gibt es am Regiomaten, Blumen beim Biohof Metz. Die Rhön ist eine offene Mittelgebirgslandschaft.\n\nWeitere Höfe findest du in Oberleichtersbach und Münnerstadt.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberleichtersbach und Umgebung",
+        "pfad": "/bayern/bad-kissingen/oberleichtersbach/"
+      },
+      {
+        "text": "Hofläden in Münnerstadt und Umgebung",
+        "pfad": "/bayern/bad-kissingen/muennerstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/bad-kissingen/muennerstadt/": {
+    "titel": "Hofläden in Münnerstadt: gut zu wissen",
+    "oben": "Münnerstadt liegt im Landkreis Bad Kissingen in Unterfranken. Eingetragen sind der Steinmühlhof der Familie Petsch, Schmitts Bauernladen und der Hofladen des Landwirtschaftsbetriebs Schlembach.",
+    "einleitung": "Drei Hofläden bieten regionale Produkte direkt vom Hof. Die Rhön liegt in der Nähe.\n\nWeitere Höfe findest du in Heustreu und Hollstadt.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heustreu und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/heustreu/"
+      },
+      {
+        "text": "Hofläden in Hollstadt und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/hollstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/bad-kissingen/oberleichtersbach/": {
+    "titel": "Hofläden in Oberleichtersbach: gut zu wissen",
+    "oben": "Oberleichtersbach liegt in der Rhön im Landkreis Bad Kissingen. Eingetragen sind der Steffeshof mit Bio-Angebot, ein Bio-Regiomat mit Eiern, Kartoffeln und Nudeln und der Obsthof Müller.",
+    "einleitung": "Obst gibt es beim Obsthof Müller, Eier und Kartoffeln am Bio-Regiomaten. Der Steffeshof arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Wartmannsroth und Burkardroth.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wartmannsroth und Umgebung",
+        "pfad": "/bayern/bad-kissingen/wartmannsroth/"
+      },
+      {
+        "text": "Hofläden in Burkardroth und Umgebung",
+        "pfad": "/bayern/bad-kissingen/burkardroth/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/bad-kissingen/wartmannsroth/": {
+    "titel": "Hofläden in Wartmannsroth: gut zu wissen",
+    "oben": "Wartmannsroth liegt im Landkreis Bad Kissingen in der Rhön. Eingetragen sind die Metzgerei Häusler mit Fleisch, die Hofkäserei Zeitz mit Käse und Voglers Hofprodukte.",
+    "einleitung": "Käse gibt es direkt aus der Hofkäserei, Fleisch bei der Metzgerei Häusler. Hammelburg ist nicht weit.\n\nWeitere Höfe findest du in Hammelburg und Oberleichtersbach.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hammelburg und Umgebung",
+        "pfad": "/bayern/bad-kissingen/hammelburg/"
+      },
+      {
+        "text": "Hofläden in Oberleichtersbach und Umgebung",
+        "pfad": "/bayern/bad-kissingen/oberleichtersbach/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
