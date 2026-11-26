@@ -9,7 +9,7 @@ export const PUB = join(ROOT, 'public');
 export const DOMAIN = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8')).domain;
 
 const TYPEN = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml',
-  '.json': 'application/json', '.xml': 'application/xml', '.txt': 'text/plain', '.png': 'image/png', '.woff': 'font/woff' };
+  '.json': 'application/json', '.xml': 'application/xml', '.txt': 'text/plain', '.png': 'image/png', '.woff': 'font/woff', '.woff2': 'font/woff2' };
 
 // Wie Cloudflare mit html_handling "none": nur exakt passende Dateien
 export const ASSETS = {

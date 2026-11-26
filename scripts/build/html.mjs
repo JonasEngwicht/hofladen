@@ -136,8 +136,8 @@ ${bild ? `<meta property="og:image" content="${esc(cfg.domain + bild)}">` : `<me
 <meta property="og:site_name" content="Hofladenliste">
 <meta name="twitter:card" content="summary_large_image">
 ${pfad === '/' ? VERIFIZIERUNG : ''}
-<link rel="preload" href="/fonts/zilla-slab-bold.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="/fonts/atkinson-next.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/fonts/zilla-slab-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/atkinson-next.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css?v=${VERSION}">
 ${[...bc, ...jsonld].map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, '\\u003c')}</script>`).join('\n')}
 </head>
