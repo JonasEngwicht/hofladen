@@ -81,6 +81,25 @@ export function adresseTrennen(e) {
   return true;
 }
 
+// Straßenangaben mit Kommas (meist aus offenen Quellen): „An der, An d. B6 10“, „Barg, Kappelner Straße 55“, „3a, Ödenpullach“.
+// Sicher ist nur: genau ein Teil sieht wie Straße mit Hausnummer aus und kein anderer Teil enthält Ziffern – dann bleibt
+// dieser Teil (Vorsilben wie „Am,“ oder „An der,“ und Ortsteil- oder Gebäudenamen fallen weg). Eine nackte Hausnummer
+// plus ein Straßenname werden zusammengesetzt. Alles andere bleibt unverändert und gilt als unsicher (Qualitätsbericht).
+const NUR_NUMMER = /^\d+\s?[a-z]?$/i;
+const MIT_NUMMER = /[a-zäöüß]{2}.*\s\d+\s?[a-z]?(?:-\d+[a-z]?)?$/i;
+export function strasseZerlegen(s) {
+  const roh = String(s || '');
+  if (!roh.includes(',')) return { strasse: roh, sicher: true };
+  const teile = roh.split(/\s*,\s*/).map((t) => t.replace(/:$/, '').trim()).filter(Boolean);
+  const kurz = (t) => t.replace(/\bAn d\. /, 'An der ').replace(/\bA\. d\. /, 'An der ');
+  if (teile.length === 1) return { strasse: kurz(teile[0]), sicher: true };
+  const mit = teile.filter((t) => MIT_NUMMER.test(t)), nur = teile.filter((t) => NUR_NUMMER.test(t));
+  const rest = teile.filter((t) => !mit.includes(t) && !nur.includes(t));
+  if (mit.length === 1 && !nur.length && rest.every((t) => !/\d/.test(t))) return { strasse: kurz(mit[0]), sicher: true };
+  if (!mit.length && nur.length === 1 && rest.length === 1 && !/\d/.test(rest[0])) return { strasse: `${kurz(rest[0])} ${nur[0].replace(/\s/g, '')}`, sicher: true };
+  return { strasse: roh, sicher: false };
+}
+
 // Name sagt, dass der Betrieb dauerhaft geschlossen ist („… geschlossen“, „ehemaliger Hofladen“, „(closed)“)
 export const nameGeschlossen = (n) => /\b(dauerhaft\s+)?geschlossen\b|\behemalige[rs]?\b|\bpermanently closed\b|\(closed\)|\baufgegeben\b/i.test(String(n || ''))
   && !/vorübergehend|winterpause|saison|urlaub|bis\s+\d|ab\s+\d|heute|montags|sonntags|feiertags/i.test(String(n || ''));
@@ -89,6 +108,7 @@ export const nameGeschlossen = (n) => /\b(dauerhaft\s+)?geschlossen\b|\behemalig
 export function felderBereinigen(e) {
   const vorher = { website: e.website, facebook: e.facebook, instagram: e.instagram, email: e.email, telefon: e.telefon, oeffnungszeiten: e.oeffnungszeiten, strasse: e.strasse, plz: e.plz };
   if (e.strasse) adresseTrennen(e);
+  if (e.strasse?.includes(',')) { const z = strasseZerlegen(e.strasse); if (z.sicher) e.strasse = z.strasse; }
   if (e.website) {
     const h = hostVon(/^https?:/i.test(e.website) ? e.website : `https://${e.website}`) || '';
     if (/(^|\.)(facebook\.com|fb\.com)$/.test(h)) { e.facebook ||= e.website; e.website = null; }

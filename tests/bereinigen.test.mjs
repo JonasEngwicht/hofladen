@@ -113,3 +113,18 @@ test('automatArtAusName: Obst-, Hof- und Warenautomaten sind Regiomaten', () => 
   assert.equal(art('Hofladen mit Automat'), null);
   assert.equal(art('Gärtnerei Automatenweg'), null);
 });
+
+import { strasseZerlegen } from '../scripts/bereinigen.mjs';
+test('strasseZerlegen: abgebrochene Vorsilben und Ortsteilnamen fallen weg, unsichere Fälle bleiben', () => {
+  const s = (x) => strasseZerlegen(x);
+  assert.deepEqual(s('An der, An d. B6 10'), { strasse: 'An der B6 10', sicher: true });
+  assert.deepEqual(s('Am, Am Dreilingsberg 2'), { strasse: 'Am Dreilingsberg 2', sicher: true });
+  assert.deepEqual(s('Barg, Kappelner Straße 55'), { strasse: 'Kappelner Straße 55', sicher: true });
+  assert.deepEqual(s('Eilenriede City Forest, In der, Wilhelm-Busch-Weg 10'), { strasse: 'Wilhelm-Busch-Weg 10', sicher: true });
+  assert.deepEqual(s('3a, Ödenpullach'), { strasse: 'Ödenpullach 3a', sicher: true });
+  assert.deepEqual(s('Müssingen 25, Ponyhof Georgenbruch'), { strasse: 'Müssingen 25', sicher: true });
+  assert.equal(s('Hauptstr. 3').strasse, 'Hauptstr. 3');
+  // zwei Hausnummern: unklar, nichts ändern
+  assert.deepEqual(s('Pilmersreuth a. d. Str. 7, Pilmersreuth a. d. Str. 19'), { strasse: 'Pilmersreuth a. d. Str. 7, Pilmersreuth a. d. Str. 19', sicher: false });
+  assert.equal(s('Dachelhofer Str. 145, Spargelverkauf:, Hans-Kraus-Allee 3').sicher, false);
+});
