@@ -1,7 +1,7 @@
 name: Kontrolllauf Datenqualität
 
 # Prüft alle Einträge auf Dopplungen, Feldfehler und Widersprüche (scripts/qualitaet-bericht.mjs)
-# und legt den Bericht unter docs/berichte/qualitaet.csv ab. Sichere Fälle behebt schon der Build.
+# und legt den Bericht unter docs/berichte/qualitaet.csv ab, dazu die Liste dünner Hofseiten (docs/duenne-hofseiten.csv). Sichere Fälle behebt schon der Build.
 on:
   workflow_dispatch:
   schedule:
@@ -26,8 +26,10 @@ jobs:
         run: LISTE_EXPORT=/tmp/liste.json node scripts/build.mjs | grep -E "Bereinigung|Build fertig"
       - name: Bericht
         run: node scripts/qualitaet-bericht.mjs /tmp/liste.json | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Liste dünne Hofseiten (noindex)
+        run: node scripts/duenne-liste.mjs /tmp/liste.json | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Commit
         uses: ./.github/actions/committen
         with:
-          dateien: docs/berichte/qualitaet.csv
+          dateien: docs/berichte/qualitaet.csv docs/duenne-hofseiten.csv
           nachricht: "Kontrolllauf Datenqualität: Bericht aktualisiert"
