@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1607 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1613 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -2073,13 +2073,13 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Werther (Westf.)](https://hofladenliste.de/nordrhein-westfalen/guetersloh/werther-westf/) `/nordrhein-westfalen/guetersloh/werther-westf/` | Kreis Gütersloh | 0 | 3 | 3 |
 | ✓ | [Menden (Sauerland)](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/menden-sauerland/) `/nordrhein-westfalen/maerkischer-kreis/menden-sauerland/` | Märkischer Kreis | 0 | 3 | 3 |
 
-## Paket 70 (0/6 fertig)
+## Paket 70 (6/6 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Hennef (Sieg)](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/hennef-sieg/) `/nordrhein-westfalen/rhein-sieg-kreis/hennef-sieg/` | Rhein-Sieg-Kreis | 0 | 3 | 3 |
-|  | [Jahnatal](https://hofladenliste.de/sachsen/mittelsachsen/jahnatal/) `/sachsen/mittelsachsen/jahnatal/` | Landkreis Mittelsachsen | 0 | 3 | 3 |
-|  | [Nesse-Apfelstädt](https://hofladenliste.de/thueringen/gotha/nesse-apfelstaedt/) `/thueringen/gotha/nesse-apfelstaedt/` | Landkreis Gotha | 0 | 3 | 3 |
-|  | [Amt Creuzburg](https://hofladenliste.de/thueringen/wartburgkreis/amt-creuzburg/) `/thueringen/wartburgkreis/amt-creuzburg/` | Wartburgkreis | 0 | 3 | 3 |
-|  | [Grammetal](https://hofladenliste.de/thueringen/weimarer-land/grammetal/) `/thueringen/weimarer-land/grammetal/` | Landkreis Weimarer Land | 0 | 3 | 3 |
-|  | [Offenbach am Main](https://hofladenliste.de/hessen/offenbach-am-main/) `/hessen/offenbach-am-main/` | Offenbach am Main | 0 | 1 | 1 |
+| ✓ | [Hennef (Sieg)](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/hennef-sieg/) `/nordrhein-westfalen/rhein-sieg-kreis/hennef-sieg/` | Rhein-Sieg-Kreis | 0 | 3 | 3 |
+| ✓ | [Jahnatal](https://hofladenliste.de/sachsen/mittelsachsen/jahnatal/) `/sachsen/mittelsachsen/jahnatal/` | Landkreis Mittelsachsen | 0 | 3 | 3 |
+| ✓ | [Nesse-Apfelstädt](https://hofladenliste.de/thueringen/gotha/nesse-apfelstaedt/) `/thueringen/gotha/nesse-apfelstaedt/` | Landkreis Gotha | 0 | 3 | 3 |
+| ✓ | [Amt Creuzburg](https://hofladenliste.de/thueringen/wartburgkreis/amt-creuzburg/) `/thueringen/wartburgkreis/amt-creuzburg/` | Wartburgkreis | 0 | 3 | 3 |
+| ✓ | [Grammetal](https://hofladenliste.de/thueringen/weimarer-land/grammetal/) `/thueringen/weimarer-land/grammetal/` | Landkreis Weimarer Land | 0 | 3 | 3 |
+| ✓ | [Offenbach am Main](https://hofladenliste.de/hessen/offenbach-am-main/) `/hessen/offenbach-am-main/` | Offenbach am Main | 0 | 1 | 1 |

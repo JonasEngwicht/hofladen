@@ -48622,5 +48622,185 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rhein-sieg-kreis/hennef-sieg/": {
+    "titel": "Hofläden in Hennef (Sieg): gut zu wissen",
+    "oben": "In Hennef (Sieg) sind der Hanfer Hof mit Bio-Milch und Gemüse, der Imker Mario Jüde und Waltraudis eingetragen.",
+    "einleitung": "Honig gibt es beim Imker Jüde am Automaten und bei Waltraudis.\n\nWeitere Höfe findest du in Hennef, Königswinter und in der Stadt Bonn.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hennef und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/hennef/"
+      },
+      {
+        "text": "Hofläden in Königswinter und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/koenigswinter/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/jahnatal/": {
+    "titel": "Hofläden in Jahnatal: gut zu wissen",
+    "oben": "Jahnatal nennt den Hofladen Hofgut Pulsitz, den Spargelhof Schertenleib und die Theaterimkerei.",
+    "einleitung": "Spargel gibt es beim Spargelhof Schertenleib in der Saison.\n\nWeitere Höfe findest du in Lommatzsch, Liebschützberg und Riesa.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lommatzsch und Umgebung",
+        "pfad": "/sachsen/meissen/lommatzsch/"
+      },
+      {
+        "text": "Hofläden in Riesa und Umgebung",
+        "pfad": "/sachsen/meissen/riesa/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/gotha/nesse-apfelstaedt/": {
+    "titel": "Hofläden in Nesse-Apfelstädt: gut zu wissen",
+    "oben": "In Nesse-Apfelstädt sind der Hofladen Zitzmannmühle und zwei weitere Hofläden eingetragen.",
+    "einleitung": "Drei Hofläden gehören zur Gemeinde.\n\nWeitere Höfe findest du in Arnstadt, Stadtilm und in der Stadt Erfurt.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Arnstadt und Umgebung",
+        "pfad": "/thueringen/ilm-kreis/arnstadt/"
+      },
+      {
+        "text": "Hofläden in Stadtilm und Umgebung",
+        "pfad": "/thueringen/ilm-kreis/stadtilm/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/wartburgkreis/amt-creuzburg/": {
+    "titel": "Hofläden in Amt Creuzburg: gut zu wissen",
+    "oben": "Amt Creuzburg hat den Hofladen Wilhelmsglücksbrunn mit Bio-Käse, das Bienenhäuschen und BIOluna.",
+    "einleitung": "Käse gibt es im Hofladen Wilhelmsglücksbrunn, alle drei Einträge sind Bio-Betriebe.\n\nWeitere Höfe findest du in Wanfried, Eschwege und Sontra.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wanfried und Umgebung",
+        "pfad": "/hessen/werra-meissner-kreis/wanfried/"
+      },
+      {
+        "text": "Hofläden in Eschwege und Umgebung",
+        "pfad": "/hessen/werra-meissner-kreis/eschwege/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/weimarer-land/grammetal/": {
+    "titel": "Hofläden in Grammetal: gut zu wissen",
+    "oben": "In Grammetal sind die Vieselbacher Pflanzenbau GmbH, die Imkerei Honigbrötchen und die Direktvermarktung Gillsch eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei Honigbrötchen.\n\nWeitere Höfe findest du in Kranichfeld sowie in Weimar und Erfurt.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kranichfeld und Umgebung",
+        "pfad": "/thueringen/weimarer-land/kranichfeld/"
+      },
+      {
+        "text": "Hofläden in Weimar",
+        "pfad": "/thueringen/weimar/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/offenbach-am-main/": {
+    "titel": "Hofläden in Offenbach am Main: gut zu wissen",
+    "oben": "In Offenbach am Main ist der Basisgarten als Hofladen eingetragen.",
+    "einleitung": "Ein einzelner Eintrag, in der Umgebung gibt es mehr.\n\nWeitere Höfe findest du in Heusenstamm, Maintal und in der Stadt Frankfurt am Main.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heusenstamm und Umgebung",
+        "pfad": "/hessen/offenbach/heusenstamm/"
+      },
+      {
+        "text": "Hofläden in Maintal und Umgebung",
+        "pfad": "/hessen/main-kinzig-kreis/maintal/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
