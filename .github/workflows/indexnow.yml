@@ -13,6 +13,9 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: write
+
 concurrency:
   group: indexnow
   cancel-in-progress: false
@@ -28,8 +31,17 @@ jobs:
           node-version: 22
       - name: Build (Sitemaps)
         run: node scripts/build.mjs > /dev/null
-      # Meldestand (welche URL mit welchem lastmod schon gemeldet ist) zwischen den Läufen merken
-      - name: Meldestand laden
+      # Meldestand (welche URL mit welchem lastmod schon gemeldet ist) zwischen den Läufen merken.
+      # Liegt als einzelner Commit ohne Verlauf auf dem Branch „indexnow-stand“ (der Actions-Cache ließ sich aus
+      # workflow_run-Läufen meist nicht schreiben: „cache write denied“ → jeder Lauf meldete dieselben URLs neu).
+      - name: Meldestand laden (Branch)
+        id: stand
+        run: |
+          if git fetch -q --depth=1 origin indexnow-stand 2>/dev/null && git show FETCH_HEAD:indexnow-gemeldet.json > indexnow-gemeldet.json; then
+            echo "quelle=branch" >> "$GITHUB_OUTPUT"; echo "Meldestand vom Branch: $(wc -c < indexnow-gemeldet.json) Bytes"
+          else rm -f indexnow-gemeldet.json; echo "quelle=keine" >> "$GITHUB_OUTPUT"; fi
+      - name: Meldestand laden (Cache, nur beim ersten Mal)
+        if: steps.stand.outputs.quelle == 'keine'
         uses: actions/cache/restore@v4
         with:
           path: indexnow-gemeldet.json
@@ -37,9 +49,13 @@ jobs:
           restore-keys: indexnow-gemeldet-
       - name: An IndexNow melden (nur Neues und Geändertes)
         run: node scripts/indexnow.mjs --gemeldet indexnow-gemeldet.json ${{ inputs.alle && '--alle' || '' }}
-      - name: Meldestand sichern
+      - name: Meldestand sichern (Branch, ein Commit ohne Verlauf)
         if: always()
-        uses: actions/cache/save@v4
-        with:
-          path: indexnow-gemeldet.json
-          key: indexnow-gemeldet-${{ github.run_id }}
+        run: |
+          [ -f indexnow-gemeldet.json ] || exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          blob=$(git hash-object -w indexnow-gemeldet.json)
+          tree=$(printf '100644 blob %s\tindexnow-gemeldet.json\n' "$blob" | git mktree)
+          commit=$(git commit-tree "$tree" -m "IndexNow-Meldestand ${{ github.run_id }}")
+          git push -q -f origin "$commit:refs/heads/indexnow-stand" && echo "Meldestand gesichert."
