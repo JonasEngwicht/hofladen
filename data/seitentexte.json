@@ -20528,5 +20528,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/hessen/main-kinzig-kreis/maintal/": {
+    "titel": "Hofläden in Maintal: gut zu wissen",
+    "oben": "Maintal liegt am Main zwischen Frankfurt und Hanau. Eingetragen sind das Hofgut Hanstein, der Hof Steup, der Weinberghof mit Partyservice, die Imkerei Huhn und ein Regiomat mit Getränken.",
+    "einleitung": "Zwischen den Stadtteilen und dem Main liegen Felder und Streuobstwiesen. Auch in der Nähe der Großstadt gibt es hier Höfe, die direkt verkaufen.\n\nWeitere Höfe findest du in Hanau und Bruchköbel.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hanau und Umgebung",
+        "pfad": "/hessen/main-kinzig-kreis/hanau/"
+      },
+      {
+        "text": "Hofläden in Bruchköbel und Umgebung",
+        "pfad": "/hessen/main-kinzig-kreis/bruchkoebel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/marburg-biedenkopf/ebsdorfergrund/": {
+    "titel": "Hofläden in Ebsdorfergrund: gut zu wissen",
+    "oben": "Ebsdorfergrund liegt östlich von Marburg. Eingetragen sind Scherers Direktvermarktung mit Wild und Geflügel, der Biohof Claar, das Bauernhofcafé Storchennest und ein Regiomat mit Milch.",
+    "einleitung": "Die Gemeinde besteht aus Dörfern, Feldern und kleinen Wäldern. Wild und Geflügel gibt es direkt ab Hof. Frische Milch aus Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Marburg und Kirchhain.",
+    "saison": [
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Marburg und Umgebung",
+        "pfad": "/hessen/marburg-biedenkopf/marburg/"
+      },
+      {
+        "text": "Hofläden in Kirchhain und Umgebung",
+        "pfad": "/hessen/marburg-biedenkopf/kirchhain/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/marburg-biedenkopf/kirchhain/": {
+    "titel": "Hofläden in Kirchhain: gut zu wissen",
+    "oben": "Kirchhain liegt im Amöneburger Becken östlich von Marburg. Eingetragen sind zwei Geflügelhöfe, Klingelhöfer und Reinkemeier, die SB-Bio-Scheune und zwei Regiomaten, einer davon mit Fleisch.",
+    "einleitung": "Die fruchtbare Beckenlandschaft ist Ackerland mit Getreide und Rüben. Beide Geflügelhöfe verkaufen Eier, Fleisch und Geflügel.\n\nWeitere Höfe findest du in Cölbe und Marburg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Getreide",
+        "zeit": "Ernte im Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Cölbe und Umgebung",
+        "pfad": "/hessen/marburg-biedenkopf/coelbe/"
+      },
+      {
+        "text": "Hofläden in Marburg und Umgebung",
+        "pfad": "/hessen/marburg-biedenkopf/marburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/marburg-biedenkopf/lahntal/": {
+    "titel": "Hofläden in Lahntal: gut zu wissen",
+    "oben": "Lahntal liegt im Tal der Lahn nördlich von Marburg. Eingetragen sind Scheels Hof mit Eiern, Fleisch, Kartoffeln und Brot, Feldfrisch & Fein, ein weiterer Hofladen und zwei Eierautomaten.",
+    "einleitung": "Der Lahnradweg führt durch die Gemeinde, entlang des Flusses liegen Wiesen und Felder. Eier bekommst du hier gleich an zwei Automaten.\n\nWeitere Höfe findest du in Cölbe und Kirchhain.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Cölbe und Umgebung",
+        "pfad": "/hessen/marburg-biedenkopf/coelbe/"
+      },
+      {
+        "text": "Hofläden in Kirchhain und Umgebung",
+        "pfad": "/hessen/marburg-biedenkopf/kirchhain/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/rheingau-taunus-kreis/idstein/": {
+    "titel": "Hofläden in Idstein: gut zu wissen",
+    "oben": "Idstein liegt im Taunus, die Altstadt mit Fachwerkhäusern und dem Hexenturm ist bekannt. Eingetragen sind der Taunushof Volz und vier Regiomaten, zwei mit Eiern und zwei mit Milch, darunter Eschenhahner Landeier.",
+    "einleitung": "Rund um die Stadt liegen Wiesen und Felder auf den Höhen des Taunus. Frische Milch aus Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Hünstetten und Niedernhausen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hünstetten und Umgebung",
+        "pfad": "/hessen/rheingau-taunus-kreis/huenstetten/"
+      },
+      {
+        "text": "Hofläden in Niedernhausen und Umgebung",
+        "pfad": "/hessen/rheingau-taunus-kreis/niedernhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/werra-meissner-kreis/eschwege/": {
+    "titel": "Hofläden in Eschwege: gut zu wissen",
+    "oben": "Eschwege liegt an der Werra in Nordhessen. Eingetragen sind der Hofladen mit Kelterei Degenhardt, die Regio-Box, Thiele's Milchtankstelle mit Eiern, Milch, Kartoffeln und Honig, ein weiterer Regiomat und Haase-Honig.",
+    "einleitung": "Das Werratal ist Obst- und Ackerland, die Kelterei verarbeitet Obst aus der Gegend. Die Milch aus der Milchtankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Wanfried und Bad Sooden-Allendorf.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wanfried und Umgebung",
+        "pfad": "/hessen/werra-meissner-kreis/wanfried/"
+      },
+      {
+        "text": "Hofläden in Bad Sooden-Allendorf und Umgebung",
+        "pfad": "/hessen/werra-meissner-kreis/bad-sooden-allendorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/wetteraukreis/reichelsheim/": {
+    "titel": "Hofläden in Reichelsheim (Wetteraukreis): gut zu wissen",
+    "oben": "Reichelsheim liegt in der Wetterau nordöstlich von Frankfurt. Eingetragen sind der Hof Heinzmann, der Hofladen Elsterhof, ein weiterer Hofladen, ein Regiomat mit Fleisch und der Leidhecker Dorfautomat.",
+    "einleitung": "Die Wetterau ist eine sehr fruchtbare Lössebene mit Getreide, Zuckerrüben und Gemüse. Der Dorfautomat ergänzt die Hofläden außerhalb der Öffnungszeiten.\n\nWeitere Höfe findest du in Wölfersheim und Friedberg.",
+    "saison": [
+      {
+        "titel": "Getreide",
+        "zeit": "Ernte im Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wölfersheim und Umgebung",
+        "pfad": "/hessen/wetteraukreis/woelfersheim/"
+      },
+      {
+        "text": "Hofläden in Friedberg (Wetteraukreis) und Umgebung",
+        "pfad": "/hessen/wetteraukreis/friedberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/": {
+    "titel": "Hofläden in Kratzeburg: gut zu wissen",
+    "oben": "Kratzeburg liegt in der Mecklenburgischen Seenplatte, nahe den Havelquellseen und am Rand des Müritz-Nationalparks. Eingetragen sind die Havelquellseen-Fischerei Berkholz mit Hofladen, die Lütte Meierie, zwei Imkereien und ein Regiomat mit Milch und Fleisch.",
+    "einleitung": "Seen, Wälder und Wiesen prägen die Gegend, Fisch aus den Seen gibt es direkt bei der Fischerei. Frische Milch aus dem Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Neustrelitz und Rechlin.",
+    "saison": [
+      {
+        "titel": "Fisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Beeren",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neustrelitz und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/neustrelitz/"
+      },
+      {
+        "text": "Hofläden in Rechlin und Umgebung",
+        "pfad": "/mecklenburg-vorpommern/mecklenburgische-seenplatte/rechlin/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/aurich/krummhoern/": {
+    "titel": "Hofläden in Krummhörn: gut zu wissen",
+    "oben": "Die Krummhörn liegt an der Nordseeküste in Ostfriesland, bekannt ist der Hafen von Greetsiel. Eingetragen sind der Biolandhof Agena-Dreyer, PetersPlaats, der Käse-Hof-Laden, das Schatthaus und das Hofcafé Kluntjestuv auf dem Nienhof.",
+    "einleitung": "Flaches Marschland mit Weiden und Feldern prägt die Landschaft, Tee gehört in Ostfriesland zum Alltag, passend dazu das Hofcafé Kluntjestuv. Der Käse-Hof-Laden führt Käse aus der Gegend.\n\nWeitere Höfe findest du in Norden und Aurich.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Norden und Umgebung",
+        "pfad": "/niedersachsen/aurich/norden/"
+      },
+      {
+        "text": "Hofläden in Aurich und Umgebung",
+        "pfad": "/niedersachsen/aurich/aurich/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/cloppenburg/garrel/": {
+    "titel": "Hofläden in Garrel: gut zu wissen",
+    "oben": "Garrel liegt im Oldenburger Münsterland. Eingetragen sind der Hofladen Preuth, der Hofladen Wagyu Auetal mit Tastings, ein Regiomat mit Eiern, Fleisch, Kartoffeln und Honig sowie ein Honig- und ein Fleischautomat.",
+    "einleitung": "Im Münsterland wird viel Vieh gehalten, auf sandigen Feldern wachsen Kartoffeln. Honig und Fleisch gibt es auch außerhalb der Ladenzeiten am Automaten.\n\nWeitere Höfe findest du in Molbergen und Cloppenburg.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Molbergen und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/molbergen/"
+      },
+      {
+        "text": "Hofläden in Cloppenburg und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/cloppenburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/cloppenburg/lastrup/": {
+    "titel": "Hofläden in Lastrup: gut zu wissen",
+    "oben": "Lastrup liegt im Oldenburger Münsterland. Eingetragen sind der Hoffloaden mit Eiern und Gemüse, die Imkerei Marianne und Franz Thobe, Königs-Bienen, ein Honigautomat und ein Eierautomat.",
+    "einleitung": "Gleich drei Honigangebote machen die Gemeinde für Imkerei-Fans interessant. Eier gibt es zusätzlich am Automaten.\n\nWeitere Höfe findest du in Molbergen und Löningen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Molbergen und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/molbergen/"
+      },
+      {
+        "text": "Hofläden in Löningen und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/loeningen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/cloppenburg/molbergen/": {
+    "titel": "Hofläden in Molbergen: gut zu wissen",
+    "oben": "Molbergen liegt im Oldenburger Münsterland auf sandigem Boden. Eingetragen sind Bahlmann Spargelkulturen, der Biohof Högemann, Debbeler's Hofcafé und zwei Regiomaten mit Kartoffeln, Honig und Eiern.",
+    "einleitung": "Auf den leichten Böden gedeihen Spargel und Kartoffeln besonders gut. Bei Bahlmann gibt es Spargel im Frühjahr.\n\nWeitere Höfe findest du in Cloppenburg und Lastrup.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Cloppenburg und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/cloppenburg/"
+      },
+      {
+        "text": "Hofläden in Lastrup und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/lastrup/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/emsland/haseluenne/": {
+    "titel": "Hofläden in Haselünne: gut zu wissen",
+    "oben": "Haselünne liegt im Emsland an der Hase und ist für seine Kornbrennerei bekannt. Eingetragen sind der Hofladen Kulinarisches Hasetal, ein Bio-Hofladen, ein Kartoffelautomat und zwei Eierautomaten, einer davon mit Bio-Eiern.",
+    "einleitung": "Auf den sandigen Böden des Emslands wachsen vor allem Kartoffeln und Getreide. Kartoffeln und Eier gibt es hier auch am Automaten.\n\nWeitere Höfe findest du in Meppen und Berge.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Getreide",
+        "zeit": "Ernte im Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Meppen und Umgebung",
+        "pfad": "/niedersachsen/emsland/meppen/"
+      },
+      {
+        "text": "Hofläden in Berge und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/berge/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/emsland/papenburg/": {
+    "titel": "Hofläden in Papenburg: gut zu wissen",
+    "oben": "Papenburg liegt im nördlichen Emsland und ist durch die Meyer Werft bekannt. Eingetragen sind der Bio-Engelnhof mit Käse, der Kürbishof Sprengel, der Hofladen Anneken, die Naturwerkstatt und ein Regiomat mit Käse.",
+    "einleitung": "Die Stadt wurde als Fehnkolonie mit Kanälen angelegt, ringsum liegen Wiesen und Moorböden. Im Herbst lohnt der Kürbishof Sprengel.\n\nWeitere Höfe findest du in Lehe und Westoverledingen.",
+    "saison": [
+      {
+        "titel": "Kürbis",
+        "zeit": "September bis November"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lehe und Umgebung",
+        "pfad": "/niedersachsen/emsland/lehe/"
+      },
+      {
+        "text": "Hofläden in Westoverledingen und Umgebung",
+        "pfad": "/niedersachsen/leer/westoverledingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/gifhorn/barwedel/": {
+    "titel": "Hofläden in Barwedel: gut zu wissen",
+    "oben": "Barwedel liegt nördlich von Wolfsburg im Landkreis Gifhorn. Gleich mehrere Höfe verkaufen Kartoffeln: Kartoffelhaus, Hof Gruhs und weitere Kartoffelverkäufer, dazu Heidelbeeren und ein Hofladen mit Obst, Gemüse, Eiern und Wild.",
+    "einleitung": "Sandige Böden und viel Platz machen die Gegend zu einem guten Kartoffelland. Kartoffeln gibt es hier in großer Auswahl direkt vom Bauern.\n\nWeitere Höfe findest du in Sassenburg und Gifhorn.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Heidelbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sassenburg und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/sassenburg/"
+      },
+      {
+        "text": "Hofläden in Gifhorn und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/gifhorn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/goettingen/bovenden/": {
+    "titel": "Hofläden in Bovenden: gut zu wissen",
+    "oben": "Bovenden liegt nördlich von Göttingen im Leinetal. Eingetragen sind Erdbeeren Mecke, das Landcafé im Küsterhaus, der Hofladen Bodenburg mit Eiern, Wild, Gemüse und Kartoffeln, ein Imkereibedarf-Laden und eine Milchtankstelle.",
+    "einleitung": "Die Erdbeeren von Mecke sind im Frühsommer ein Ziel für viele aus der Umgebung. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Nörten-Hardenberg und Göttingen.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nörten-Hardenberg und Umgebung",
+        "pfad": "/niedersachsen/northeim/noerten-hardenberg/"
+      },
+      {
+        "text": "Hofläden in Göttingen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/goettingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/harburg/drage/": {
+    "titel": "Hofläden in Drage: gut zu wissen",
+    "oben": "Drage liegt in der Elbmarsch am Südufer der Elbe, unweit von Hamburg. Eingetragen sind Günther Kloodt Obst- und Gemüsebau, Gartenbau Heerens, Meinkes Hofladen und die Hofcafés Marschendeel und Eggers.",
+    "einleitung": "Das fruchtbare Marschland und das milde Klima an der Elbe eignen sich für Obst und Gemüse. Gleich zwei Hofcafés laden zum Einkehren ein.\n\nWeitere Höfe findest du in Winsen (Luhe) und Radbruch.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Winsen (Luhe) und Umgebung",
+        "pfad": "/niedersachsen/harburg/winsen-luhe/"
+      },
+      {
+        "text": "Hofläden in Radbruch und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/radbruch/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/harburg/heidenau/": {
+    "titel": "Hofläden in Heidenau: gut zu wissen",
+    "oben": "Heidenau liegt in der Nordheide im Landkreis Harburg. Eingetragen sind der Biohof Kirchmaries Hofladen, das Hofcafe Wilkenshoff, zwei Regiomaten mit Eiern und Kartoffeln und zwei Kartoffel-Verkaufsstellen vom Bauernhof.",
+    "einleitung": "Auf den leichten Heideböden gedeihen Kartoffeln besonders gut. Eier und Kartoffeln gibt es hier auch am Automaten.\n\nWeitere Höfe findest du in Tostedt und Wistedt.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Tostedt und Umgebung",
+        "pfad": "/niedersachsen/harburg/tostedt/"
+      },
+      {
+        "text": "Hofläden in Wistedt und Umgebung",
+        "pfad": "/niedersachsen/harburg/wistedt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/harburg/jesteburg/": {
+    "titel": "Hofläden in Jesteburg: gut zu wissen",
+    "oben": "Jesteburg liegt in der Nordheide südlich von Hamburg, bekannt ist die Kunststätte Bossard. Eingetragen sind der Hofladen Lohof, ein Regiomat und zwei Kartoffel- und Eierangebote direkt vom Bauernhof.",
+    "einleitung": "Zwischen Heide, Wald und Feldern liegen die Höfe. Kartoffeln und Eier gibt es auch am Automaten.\n\nWeitere Höfe findest du in Buchholz in der Nordheide und Hanstedt.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Buchholz in der Nordheide und Umgebung",
+        "pfad": "/niedersachsen/harburg/buchholz-in-der-nordheide/"
+      },
+      {
+        "text": "Hofläden in Hanstedt und Umgebung",
+        "pfad": "/niedersachsen/harburg/hanstedt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/harburg/wulfsen/": {
+    "titel": "Hofläden in Wulfsen: gut zu wissen",
+    "oben": "Wulfsen liegt in der Nordheide im Landkreis Harburg. Eingetragen sind Kruses Hofbox, der Hof Homes, zwei Hofläden und ein Regiomat mit Eiern, Käse, Kartoffeln, Honig und Nudeln.",
+    "einleitung": "Der Regiomat hat eine breite Auswahl und ist rund um die Uhr zugänglich. Rundum liegen Felder und Wald der Heide.\n\nWeitere Höfe findest du in Winsen (Luhe) und Stelle.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Spätsommer bis Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Winsen (Luhe) und Umgebung",
+        "pfad": "/niedersachsen/harburg/winsen-luhe/"
+      },
+      {
+        "text": "Hofläden in Stelle und Umgebung",
+        "pfad": "/niedersachsen/harburg/stelle/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/heidekreis/bispingen/": {
+    "titel": "Hofläden in Bispingen: gut zu wissen",
+    "oben": "Bispingen liegt mitten in der Lüneburger Heide. Eingetragen sind das Hofcafé Bockelmann, die Milchtankstelle Alvern, eine Imkerei, ein Kartoffelverkauf vom Bauernhof und ein Rewe-Ready-Automat.",
+    "einleitung": "Zur Heideblüte im Spätsommer kommen viele Besucher, Heidehonig ist die Spezialität der Region. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Egestorf und Schneverdingen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Egestorf und Umgebung",
+        "pfad": "/niedersachsen/harburg/egestorf/"
+      },
+      {
+        "text": "Hofläden in Schneverdingen und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/schneverdingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/hildesheim/harsum/": {
+    "titel": "Hofläden in Harsum: gut zu wissen",
+    "oben": "Harsum liegt in der Hildesheimer Börde. Eingetragen sind die HazelsFarm als solidarische Landwirtschaft, das Hofcafé Börde, ein Hofladen, ein Hofladen-Automat und ein Imkereitechnik-Betrieb.",
+    "einleitung": "Die Börde hat sehr gute Lössböden, hier wachsen Zuckerrüben und Getreide. Bei einer Solawi teilen sich mehrere Haushalte die Ernte eines Hofs.\n\nWeitere Höfe findest du in Hildesheim und Pattensen.",
+    "saison": [
+      {
+        "titel": "Getreide",
+        "zeit": "Ernte im Sommer"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hildesheim und Umgebung",
+        "pfad": "/niedersachsen/hildesheim/hildesheim/"
+      },
+      {
+        "text": "Hofläden in Pattensen und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/pattensen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/landkreis-oldenburg/grossenkneten/": {
+    "titel": "Hofläden in Großenkneten: gut zu wissen",
+    "oben": "Großenkneten liegt südlich von Oldenburg auf der Geest. Eingetragen sind der Eierladen, der Hofladen Sannum, der Hofladen Hagel Alpakas, der Bio-Hof Bakenhus und ein Regiomat mit Eiern.",
+    "einleitung": "Weite Felder und Wald prägen die Geest. Der Hofladen Hagel Alpakas führt unter anderem Produkte rund um die Tiere.\n\nWeitere Höfe findest du in Dötlingen und Hatten.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dötlingen und Umgebung",
+        "pfad": "/niedersachsen/landkreis-oldenburg/doetlingen/"
+      },
+      {
+        "text": "Hofläden in Hatten und Umgebung",
+        "pfad": "/niedersachsen/landkreis-oldenburg/hatten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/landkreis-oldenburg/wardenburg/": {
+    "titel": "Hofläden in Wardenburg: gut zu wissen",
+    "oben": "Wardenburg liegt an der Hunte südlich von Oldenburg. Eingetragen sind Hof Stolle, Thees Obst- und Gemüsebau, der Kartoffelhof Mester, der Hofladen Schmidt und die Milchtankstelle der Familie Freese.",
+    "einleitung": "Obst, Gemüse und Kartoffeln aus der Nachbarschaft sind hier die Stärke. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Edewecht und Hatten.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Edewecht und Umgebung",
+        "pfad": "/niedersachsen/ammerland/edewecht/"
+      },
+      {
+        "text": "Hofläden in Hatten und Umgebung",
+        "pfad": "/niedersachsen/landkreis-oldenburg/hatten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/landkreis-osnabrueck/badbergen/": {
+    "titel": "Hofläden in Badbergen: gut zu wissen",
+    "oben": "Badbergen liegt im Artland nördlich von Osnabrück. Eingetragen sind die Artland Mosterei, Eltings Hofladen, der Demeter-Hofladen Brunsangle und die Imkerei Sachteleben.",
+    "einleitung": "Obstbäume und Felder prägen das Artland, die Mosterei verarbeitet Obst aus der Region. Der Hof Brunsangle arbeitet nach Demeter-Richtlinien.\n\nWeitere Höfe findest du in Menslage und Berge.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Menslage und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/menslage/"
+      },
+      {
+        "text": "Hofläden in Berge und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/berge/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
