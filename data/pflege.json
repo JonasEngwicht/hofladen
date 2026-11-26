@@ -6197,6 +6197,13 @@
    },
    "stand": "2026-11-19"
   },
+  "o-38b0a185-63b9-45dd-a40d-7885fd7922c4": {
+   "felder": {
+    "name": "Hofladen im Quartier Christ"
+   },
+   "notiz": "Saisonhinweis aus dem Namen entfernt",
+   "stand": "2026-11-26"
+  },
   "w100288382": {
    "felder": {
     "plz": "31535"
@@ -7340,5 +7347,74 @@
    "quelle": "https://www.lausitzerseenland.de/en/discover/food-and-drink/regional-products/article-hofladen-gut-neu-sacro-1.html"
   }
  },
- "geschlossen": {}
+ "geschlossen": {
+  "k-73a8ff9bff1e48fc998c096bbb572235": {
+   "stand": "2026-11-26",
+   "grund": "Verweis auf ein Verzeichnis, kein Hof"
+  },
+  "k-926119351b0a446295d74161b8ee4277": {
+   "stand": "2026-11-26",
+   "grund": "Magazin-Artikel, kein Hof"
+  },
+  "k-ea7218c0634448f984769386dd65cc22": {
+   "stand": "2026-11-26",
+   "grund": "Verein, kein Hof"
+  },
+  "n11266220190": {
+   "stand": "2026-11-26",
+   "grund": "Getränkestation, kein Hof"
+  },
+  "n11712166571": {
+   "stand": "2026-11-26",
+   "grund": "Automatenkiosk ohne Hofbezug"
+  },
+  "n11861772991": {
+   "stand": "2026-11-26",
+   "grund": "Architekturbüro, kein Hof"
+  },
+  "n13514632991": {
+   "stand": "2026-11-26",
+   "grund": "Feinkostladen, kein Hof"
+  },
+  "n1744810587": {
+   "stand": "2026-11-26",
+   "grund": "Raiffeisen-Markt (Landhandel), kein Hofladen"
+  },
+  "n1844208675": {
+   "stand": "2026-11-26",
+   "grund": "Raiffeisen-Markt (Landhandel), kein Hofladen"
+  },
+  "n2331904176": {
+   "stand": "2026-11-26",
+   "grund": "Snackautomat, kein Hofbezug"
+  },
+  "n308942808": {
+   "stand": "2026-11-26",
+   "grund": "24/7-Automatenshop ohne Hofbezug"
+  },
+  "n4842361307": {
+   "stand": "2026-11-26",
+   "grund": "Immobilienbüro, keine Imkerei erkennbar"
+  },
+  "n5492050015": {
+   "stand": "2026-11-26",
+   "grund": "Düngerhandel, kein Hof"
+  },
+  "n7041331238": {
+   "stand": "2026-11-26",
+   "grund": "Handel mit Importware, kein Hofladen"
+  },
+  "n8339433829": {
+   "stand": "2026-11-26",
+   "grund": "Fehleintrag ohne Angaben"
+  },
+  "n9358881212": {
+   "stand": "2026-11-26",
+   "grund": "Pizzaautomat, kein Hofbezug"
+  },
+  "o-9c77a7f1-1975-4e8f-b682-f45cd923d352": {
+   "stand": "2026-11-26",
+   "grund": "Kiosk/Lebensmittelmarkt, kein Hof"
+  }
+ }
 }

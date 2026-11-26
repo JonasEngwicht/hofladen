@@ -40,7 +40,7 @@ const ORG = new RegExp([
   'Partner', 'Labor', '[Bb]etrieb\\b', 'management', 'wirtschaft', 'Bezirksstelle', 'Förderkreis', 'Center', 'Infrastruktur',
   'Rechnungswesen', 'Koordination', 'Kreditanstalt', 'Überwachung', 'Kunden', 'Solar', '[Ss]taatsanwalt',
   '[Gg]erichtshof', 'Mineralöl', 'Rehabilitation', 'Fachinformation', 'Motor', 'Taxis', 'Staatsbibliothek',
-  'Kreisausschu', 'Landrat', '[Mm]inister', 'Staatskanzlei', 'Justizvollzug', 'Senate', 'Verrechnung', 'Buchhandlung', 'Dipl\\.',
+  'Kreisausschu', 'Justizbeh', '[Gg]esellschaft\\b', 'Landrat', '[Mm]inister', 'Staatskanzlei', 'Justizvollzug', 'Senate', 'Verrechnung', 'Buchhandlung', 'Dipl\\.',
   'Ltd\\.', 'Senioren', 'Dienst\\b', '^Haus ', '^Gemeinde ', 'Club\\b', 'Vorstand', 'Fachhochschule', 'Bauaktien', 'Volksbank',
   '[Zz]eitung', 'Hospital', 'Feldpost', 'Gourmet', 'SpreeBo', 'Diven', 'mhplus', '\\bBKK\\b', '/', 'Arbeitsgemeinschaft', 'bekämpfung', 'Layout', 'Produktion',
   '[Ff]örderung', 'Bürgermeister', 'e\\.\\s?G\\.', '^Licht im Osten$', '\\b(BKK|IKK|AOK|BARMER|DAK|HUK|BVG|GEMA|SWR|ZDF|ARD|RBB|DRK|VIT|AVM|AVG|OVAG|KSA|MDC|IMS|HDE|EDW|AKAD|LLP|ABB|EMBL)\\b',
