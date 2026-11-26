@@ -153,13 +153,15 @@ test('Hofseiten: Angebot, Bezahlen und Beschreibung im JSON-LD nur, wenn sichtba
   for (const [p, h] of alle.filter(([x]) => x.startsWith('/hof/')).slice(0, 3000)) {
     const hof = ldAus(h).find((j) => j['@type'] === 'Store' || j['@type'] === 'LocalBusiness');
     const text = h.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ').replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
-    for (const o of hof.hasOfferCatalog?.itemListElement || []) { assert.equal(typeof o, 'string', `${p}: Angebot nur als Text`); assert.ok(text.includes(o), `${p}: ${o}`); mitAngebot++; }
+    // keine Produkt-Snippets: weder Product/Offer noch OfferCatalog (Google verlangt sonst Preis oder Bewertung)
+    assert.ok(!/"@type":"(Product|Offer|OfferCatalog|AggregateOffer)"/.test(h), `${p}: Produkt-Markup im JSON-LD`);
+    if (/class="angebot|Angebot<\/h2>/.test(h)) mitAngebot++;
     if (hof.paymentAccepted) { assert.ok(/<th>Bezahlen<\/th>|Bezahlen/.test(h), p); mitZahlung++; }
     if (hof.description) assert.ok(text.includes(hof.description.slice(0, 40)), `${p}: Beschreibung nicht sichtbar`);
     for (const s of hof.sameAs || []) assert.ok(h.includes(`href="${s.replace(/&/g, '&amp;')}"`), `${p}: ${s} nicht verlinkt`);
     if (hof.image) assert.ok(h.includes(`<meta property="og:image" content="https://hofladenliste.de${hof.image[0].replace('https://hofladenliste.de', '')}"`), `${p}: Foto nicht als og:image`);
   }
-  assert.ok(mitAngebot > 100 && mitZahlung > 10, `${mitAngebot} / ${mitZahlung}`);
+  assert.ok(mitZahlung > 10, `${mitAngebot} / ${mitZahlung}`);
 });
 
 test('Seitentexte: Absätze, FAQ und Links werden sicher gerendert; FAQ landet im FAQPage-JSON-LD', () => {
