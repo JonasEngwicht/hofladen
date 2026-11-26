@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1150 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1174 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1113,35 +1113,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Marktoberdorf](https://hofladenliste.de/bayern/ostallgaeu/marktoberdorf/) `/bayern/ostallgaeu/marktoberdorf/` | Landkreis Ostallgäu | 1 | 4 | 7 |
 | ✓ | [Rückholz](https://hofladenliste.de/bayern/ostallgaeu/rueckholz/) `/bayern/ostallgaeu/rueckholz/` | Landkreis Ostallgäu | 1 | 4 | 7 |
 
-## Paket 38 (0/25 fertig)
+## Paket 38 (24/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Vohburg an der Donau](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/vohburg-an-der-donau/) `/bayern/pfaffenhofen-an-der-ilm/vohburg-an-der-donau/` | Landkreis Pfaffenhofen an der Ilm | 1 | 4 | 7 |
-|  | [Wolnzach](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/wolnzach/) `/bayern/pfaffenhofen-an-der-ilm/wolnzach/` | Landkreis Pfaffenhofen an der Ilm | 1 | 4 | 7 |
-|  | [Rinchnach](https://hofladenliste.de/bayern/regen/rinchnach/) `/bayern/regen/rinchnach/` | Landkreis Regen | 1 | 4 | 7 |
-|  | [Fladungen](https://hofladenliste.de/bayern/rhoen-grabfeld/fladungen/) `/bayern/rhoen-grabfeld/fladungen/` | Landkreis Rhön-Grabfeld | 1 | 4 | 7 |
-|  | [Heustreu](https://hofladenliste.de/bayern/rhoen-grabfeld/heustreu/) `/bayern/rhoen-grabfeld/heustreu/` | Landkreis Rhön-Grabfeld | 1 | 4 | 7 |
-|  | [Hollstadt](https://hofladenliste.de/bayern/rhoen-grabfeld/hollstadt/) `/bayern/rhoen-grabfeld/hollstadt/` | Landkreis Rhön-Grabfeld | 1 | 4 | 7 |
-|  | [Oberelsbach](https://hofladenliste.de/bayern/rhoen-grabfeld/oberelsbach/) `/bayern/rhoen-grabfeld/oberelsbach/` | Landkreis Rhön-Grabfeld | 1 | 4 | 7 |
-|  | [Spalt](https://hofladenliste.de/bayern/roth/spalt/) `/bayern/roth/spalt/` | Landkreis Roth | 1 | 4 | 7 |
-|  | [Gauting](https://hofladenliste.de/bayern/starnberg/gauting/) `/bayern/starnberg/gauting/` | Landkreis Starnberg | 1 | 4 | 7 |
-|  | [Seefeld](https://hofladenliste.de/bayern/starnberg/seefeld/) `/bayern/starnberg/seefeld/` | Landkreis Starnberg | 1 | 4 | 7 |
-|  | [Straubing](https://hofladenliste.de/bayern/straubing/) `/bayern/straubing/` | Straubing | 1 | 4 | 7 |
-|  | [Bernried](https://hofladenliste.de/bayern/weilheim-schongau/bernried/) `/bayern/weilheim-schongau/bernried/` | Landkreis Weilheim-Schongau | 1 | 4 | 7 |
+| ✓ | [Vohburg an der Donau](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/vohburg-an-der-donau/) `/bayern/pfaffenhofen-an-der-ilm/vohburg-an-der-donau/` | Landkreis Pfaffenhofen an der Ilm | 1 | 4 | 7 |
+| ✓ | [Wolnzach](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/wolnzach/) `/bayern/pfaffenhofen-an-der-ilm/wolnzach/` | Landkreis Pfaffenhofen an der Ilm | 1 | 4 | 7 |
+| ✓ | [Rinchnach](https://hofladenliste.de/bayern/regen/rinchnach/) `/bayern/regen/rinchnach/` | Landkreis Regen | 1 | 4 | 7 |
+| ✓ | [Fladungen](https://hofladenliste.de/bayern/rhoen-grabfeld/fladungen/) `/bayern/rhoen-grabfeld/fladungen/` | Landkreis Rhön-Grabfeld | 1 | 4 | 7 |
+| ✓ | [Heustreu](https://hofladenliste.de/bayern/rhoen-grabfeld/heustreu/) `/bayern/rhoen-grabfeld/heustreu/` | Landkreis Rhön-Grabfeld | 1 | 4 | 7 |
+| ✓ | [Hollstadt](https://hofladenliste.de/bayern/rhoen-grabfeld/hollstadt/) `/bayern/rhoen-grabfeld/hollstadt/` | Landkreis Rhön-Grabfeld | 1 | 4 | 7 |
+| ✓ | [Oberelsbach](https://hofladenliste.de/bayern/rhoen-grabfeld/oberelsbach/) `/bayern/rhoen-grabfeld/oberelsbach/` | Landkreis Rhön-Grabfeld | 1 | 4 | 7 |
+| ✓ | [Spalt](https://hofladenliste.de/bayern/roth/spalt/) `/bayern/roth/spalt/` | Landkreis Roth | 1 | 4 | 7 |
+| ✓ | [Gauting](https://hofladenliste.de/bayern/starnberg/gauting/) `/bayern/starnberg/gauting/` | Landkreis Starnberg | 1 | 4 | 7 |
+| ✓ | [Seefeld](https://hofladenliste.de/bayern/starnberg/seefeld/) `/bayern/starnberg/seefeld/` | Landkreis Starnberg | 1 | 4 | 7 |
+| ✓ | [Straubing](https://hofladenliste.de/bayern/straubing/) `/bayern/straubing/` | Straubing | 1 | 4 | 7 |
+| ✓ | [Bernried](https://hofladenliste.de/bayern/weilheim-schongau/bernried/) `/bayern/weilheim-schongau/bernried/` | Landkreis Weilheim-Schongau | 1 | 4 | 7 |
 |  | [Weißenburg in Bayern](https://hofladenliste.de/bayern/weissenburg-gunzenhausen/weissenburg-in-bayern/) `/bayern/weissenburg-gunzenhausen/weissenburg-in-bayern/` | Landkreis Weißenburg-Gunzenhausen | 1 | 4 | 7 |
-|  | [Chorin](https://hofladenliste.de/brandenburg/barnim/chorin/) `/brandenburg/barnim/chorin/` | Landkreis Barnim | 1 | 4 | 7 |
-|  | [Wustermark](https://hofladenliste.de/brandenburg/havelland/wustermark/) `/brandenburg/havelland/wustermark/` | Landkreis Havelland | 1 | 4 | 7 |
-|  | [Gransee](https://hofladenliste.de/brandenburg/oberhavel/gransee/) `/brandenburg/oberhavel/gransee/` | Landkreis Oberhavel | 1 | 4 | 7 |
-|  | [Löwenberger Land](https://hofladenliste.de/brandenburg/oberhavel/loewenberger-land/) `/brandenburg/oberhavel/loewenberger-land/` | Landkreis Oberhavel | 1 | 4 | 7 |
-|  | [Boblitz](https://hofladenliste.de/brandenburg/oberspreewald-lausitz/boblitz/) `/brandenburg/oberspreewald-lausitz/boblitz/` | Landkreis Oberspreewald-Lausitz | 1 | 4 | 7 |
-|  | [Steinhöfel](https://hofladenliste.de/brandenburg/oder-spree/steinhoefel/) `/brandenburg/oder-spree/steinhoefel/` | Landkreis Oder-Spree | 1 | 4 | 7 |
-|  | [Treuenbrietzen](https://hofladenliste.de/brandenburg/potsdam-mittelmark/treuenbrietzen/) `/brandenburg/potsdam-mittelmark/treuenbrietzen/` | Landkreis Potsdam-Mittelmark | 1 | 4 | 7 |
-|  | [Neu Fahrland](https://hofladenliste.de/brandenburg/potsdam/neu-fahrland/) `/brandenburg/potsdam/neu-fahrland/` | Potsdam | 1 | 4 | 7 |
-|  | [Kolkwitz](https://hofladenliste.de/brandenburg/spree-neisse/kolkwitz/) `/brandenburg/spree-neisse/kolkwitz/` | Landkreis Spree-Neiße | 1 | 4 | 7 |
-|  | [Angermünde](https://hofladenliste.de/brandenburg/uckermark/angermuende/) `/brandenburg/uckermark/angermuende/` | Landkreis Uckermark | 1 | 4 | 7 |
-|  | [Bensheim](https://hofladenliste.de/hessen/bergstrasse/bensheim/) `/hessen/bergstrasse/bensheim/` | Landkreis Bergstraße | 1 | 4 | 7 |
-|  | [Biblis](https://hofladenliste.de/hessen/bergstrasse/biblis/) `/hessen/bergstrasse/biblis/` | Landkreis Bergstraße | 1 | 4 | 7 |
+| ✓ | [Chorin](https://hofladenliste.de/brandenburg/barnim/chorin/) `/brandenburg/barnim/chorin/` | Landkreis Barnim | 1 | 4 | 7 |
+| ✓ | [Wustermark](https://hofladenliste.de/brandenburg/havelland/wustermark/) `/brandenburg/havelland/wustermark/` | Landkreis Havelland | 1 | 4 | 7 |
+| ✓ | [Gransee](https://hofladenliste.de/brandenburg/oberhavel/gransee/) `/brandenburg/oberhavel/gransee/` | Landkreis Oberhavel | 1 | 4 | 7 |
+| ✓ | [Löwenberger Land](https://hofladenliste.de/brandenburg/oberhavel/loewenberger-land/) `/brandenburg/oberhavel/loewenberger-land/` | Landkreis Oberhavel | 1 | 4 | 7 |
+| ✓ | [Boblitz](https://hofladenliste.de/brandenburg/oberspreewald-lausitz/boblitz/) `/brandenburg/oberspreewald-lausitz/boblitz/` | Landkreis Oberspreewald-Lausitz | 1 | 4 | 7 |
+| ✓ | [Steinhöfel](https://hofladenliste.de/brandenburg/oder-spree/steinhoefel/) `/brandenburg/oder-spree/steinhoefel/` | Landkreis Oder-Spree | 1 | 4 | 7 |
+| ✓ | [Treuenbrietzen](https://hofladenliste.de/brandenburg/potsdam-mittelmark/treuenbrietzen/) `/brandenburg/potsdam-mittelmark/treuenbrietzen/` | Landkreis Potsdam-Mittelmark | 1 | 4 | 7 |
+| ✓ | [Neu Fahrland](https://hofladenliste.de/brandenburg/potsdam/neu-fahrland/) `/brandenburg/potsdam/neu-fahrland/` | Potsdam | 1 | 4 | 7 |
+| ✓ | [Kolkwitz](https://hofladenliste.de/brandenburg/spree-neisse/kolkwitz/) `/brandenburg/spree-neisse/kolkwitz/` | Landkreis Spree-Neiße | 1 | 4 | 7 |
+| ✓ | [Angermünde](https://hofladenliste.de/brandenburg/uckermark/angermuende/) `/brandenburg/uckermark/angermuende/` | Landkreis Uckermark | 1 | 4 | 7 |
+| ✓ | [Bensheim](https://hofladenliste.de/hessen/bergstrasse/bensheim/) `/hessen/bergstrasse/bensheim/` | Landkreis Bergstraße | 1 | 4 | 7 |
+| ✓ | [Biblis](https://hofladenliste.de/hessen/bergstrasse/biblis/) `/hessen/bergstrasse/biblis/` | Landkreis Bergstraße | 1 | 4 | 7 |
 
 ## Paket 39 (0/25 fertig)
 

@@ -34928,5 +34928,725 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/bayern/pfaffenhofen-an-der-ilm/vohburg-an-der-donau/": {
+    "titel": "Hofläden in Vohburg an der Donau: gut zu wissen",
+    "oben": "Vohburg an der Donau liegt im Landkreis Pfaffenhofen an der Ilm. Eingetragen sind eine Bienenzucht, ein Regiomat mit Eiern und Nudeln, der Hofladen Seemeier und der Biohof Rettermayer.",
+    "einleitung": "Die Donau und weite Felder prägen die Umgebung. Der Biohof Rettermayer arbeitet nach Bio-Richtlinien, Honig kommt aus der Bienenzucht.\n\nWeitere Höfe findest du in Großmehring und Manching.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Großmehring und Umgebung",
+        "pfad": "/bayern/eichstaett/grossmehring/"
+      },
+      {
+        "text": "Hofläden in Manching und Umgebung",
+        "pfad": "/bayern/pfaffenhofen-an-der-ilm/manching/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/pfaffenhofen-an-der-ilm/wolnzach/": {
+    "titel": "Hofläden in Wolnzach: gut zu wissen",
+    "oben": "Wolnzach liegt in der Hallertau im Landkreis Pfaffenhofen an der Ilm. Eingetragen sind der Spargelhof Huber, der Biohof Amberger mit Eiern, Gemüse, Kartoffeln, Honig und Nudeln, Theresas Hofladen und der Biohof Grabmaier.",
+    "einleitung": "Die Hallertau ist ein bekanntes Hopfenanbaugebiet. Spargel gibt es beim Spargelhof Huber, in der Saison im Frühjahr.\n\nWeitere Höfe findest du in Pfaffenhofen an der Ilm und Mainburg.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Pfaffenhofen an der Ilm und Umgebung",
+        "pfad": "/bayern/pfaffenhofen-an-der-ilm/pfaffenhofen-an-der-ilm/"
+      },
+      {
+        "text": "Hofläden in Mainburg und Umgebung",
+        "pfad": "/bayern/kelheim/mainburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/regen/rinchnach/": {
+    "titel": "Hofläden in Rinchnach: gut zu wissen",
+    "oben": "Rinchnach liegt im Bayerischen Wald im Landkreis Regen. Eingetragen sind eine Bio-Milchtankstelle mit Milch, Eiern und Nudeln, der Schafhof Perl mit Schafwoll-Laden, das Waldgut Kohlstatt und die Imkerei Kroner.",
+    "einleitung": "Der Bayerische Wald bietet Wiesen und Wald. Beim Schafhof Perl gibt es Schafwolle. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Frauenau und Lalling.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Frauenau und Umgebung",
+        "pfad": "/bayern/regen/frauenau/"
+      },
+      {
+        "text": "Hofläden in Lalling und Umgebung",
+        "pfad": "/bayern/deggendorf/lalling/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/rhoen-grabfeld/fladungen/": {
+    "titel": "Hofläden in Fladungen: gut zu wissen",
+    "oben": "Fladungen liegt in der Rhön im Landkreis Rhön-Grabfeld, direkt an der Grenze zu Thüringen. Eingetragen sind der Mühlenladen, ein Regiomat, ein Hofladen und der Rhöner Bauernladen.",
+    "einleitung": "Die Rhön ist eine offene Mittelgebirgslandschaft mit Wiesen und Weiden. Im Rhöner Bauernladen gibt es regionale Produkte.\n\nWeitere Höfe findest du in Oberelsbach und Gersfeld.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oberelsbach und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/oberelsbach/"
+      },
+      {
+        "text": "Hofläden in Gersfeld und Umgebung",
+        "pfad": "/hessen/fulda/gersfeld/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/rhoen-grabfeld/heustreu/": {
+    "titel": "Hofläden in Heustreu: gut zu wissen",
+    "oben": "Heustreu liegt im Landkreis Rhön-Grabfeld. Eingetragen sind das Eierhäuschen, Höschters Bauernlädle 24/7 und die Kartoffelhöfe Zwierlein und Otto.",
+    "einleitung": "Kartoffeln sind hier das große Thema, gleich zwei Höfe verkaufen sie. Das Eierhäuschen und das Bauernlädle sind zu jeder Zeit offen.\n\nWeitere Höfe findest du in Hollstadt und Münnerstadt.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Tierfutter",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hollstadt und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/hollstadt/"
+      },
+      {
+        "text": "Hofläden in Münnerstadt und Umgebung",
+        "pfad": "/bayern/bad-kissingen/muennerstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/rhoen-grabfeld/hollstadt/": {
+    "titel": "Hofläden in Hollstadt: gut zu wissen",
+    "oben": "Hollstadt liegt im Landkreis Rhön-Grabfeld in Unterfranken. Eingetragen sind der Hofladen Herrnmühle, der Biohof May, Warmuth Gemüse und der Kartoffelhof Menninger.",
+    "einleitung": "Gemüse und Kartoffeln kommen direkt vom Hof. Die Gegend ist ländlich geprägt.\n\nWeitere Höfe findest du in Heustreu und Höchheim.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heustreu und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/heustreu/"
+      },
+      {
+        "text": "Hofläden in Höchheim und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/hoechheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/rhoen-grabfeld/oberelsbach/": {
+    "titel": "Hofläden in Oberelsbach: gut zu wissen",
+    "oben": "Oberelsbach liegt in der Rhön im Landkreis Rhön-Grabfeld. Eingetragen sind der Rhönschaf-Laden, Wärtlichs Biohof mit Stallcafé, Mangers Bauernladen und Heimgärtners Biohof.",
+    "einleitung": "Das Rhönschaf ist eine Rasse der Region, im Rhönschaf-Laden gibt es Produkte davon. Zwei der Höfe arbeiten nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Fladungen und Heustreu.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Fladungen und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/fladungen/"
+      },
+      {
+        "text": "Hofläden in Heustreu und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/heustreu/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/roth/spalt/": {
+    "titel": "Hofläden in Spalt: gut zu wissen",
+    "oben": "Spalt liegt im Fränkischen Seenland im Landkreis Roth und ist für den Hopfenanbau bekannt. Eingetragen sind der Milchautomat des Biohofs Scheuerlein, ein Hofladen, der Landgasthof Zum Schnapsbrenner und Renates Bauernladen.",
+    "einleitung": "Der Hopfen der Gegend gab dem Ort einen Namen. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Kammerstein und Heideck.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kammerstein und Umgebung",
+        "pfad": "/bayern/roth/kammerstein/"
+      },
+      {
+        "text": "Hofläden in Heideck und Umgebung",
+        "pfad": "/bayern/roth/heideck/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/starnberg/gauting/": {
+    "titel": "Hofläden in Gauting: gut zu wissen",
+    "oben": "Gauting liegt im Würmtal südwestlich von München im Landkreis Starnberg. Eingetragen sind der Obstkorb, eine Imkerei, ein Regiomat mit Eiern und Nudeln und der Bauernladen UG.",
+    "einleitung": "Obst gibt es im Obstkorb, Honig von der Imkerei. Die Landeshauptstadt München ist in wenigen Minuten erreichbar.\n\nWeitere Höfe findest du in Gräfelfing und Gilching.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gräfelfing und Umgebung",
+        "pfad": "/bayern/landkreis-muenchen/graefelfing/"
+      },
+      {
+        "text": "Hofläden in Gilching und Umgebung",
+        "pfad": "/bayern/starnberg/gilching/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/starnberg/seefeld/": {
+    "titel": "Hofläden in Seefeld: gut zu wissen",
+    "oben": "Seefeld liegt im Fünfseenland im Landkreis Starnberg. Eingetragen sind der Hofladen Haas, ein Regiomat und Heidis Hofhütte.",
+    "einleitung": "Die Landschaft zwischen Ammersee und Starnberger See ist hügelig und grün. Neben den Hofläden gibt es einen Regiomaten.\n\nWeitere Höfe findest du in Weßling und Inning am Ammersee.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weßling und Umgebung",
+        "pfad": "/bayern/starnberg/wessling/"
+      },
+      {
+        "text": "Hofläden in Inning am Ammersee und Umgebung",
+        "pfad": "/bayern/starnberg/inning-am-ammersee/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/straubing/": {
+    "titel": "Hofläden in Straubing: gut zu wissen",
+    "oben": "Straubing liegt an der Donau im Gäuboden, einer der fruchtbarsten Ackerlandschaften Bayerns. Eingetragen sind die Milchtankstelle Kagers, Schreyers Hofladen mit Eiern, Käse, Kartoffeln, Honig und Marmelade, das Eierhaus und der Bienenzuchtverein Straubing.",
+    "einleitung": "Der Gäuboden eignet sich gut für Kartoffeln. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Pfatter und Wallersdorf.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Pfatter und Umgebung",
+        "pfad": "/bayern/landkreis-regensburg/pfatter/"
+      },
+      {
+        "text": "Hofläden in Wallersdorf und Umgebung",
+        "pfad": "/bayern/dingolfing-landau/wallersdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/weilheim-schongau/bernried/": {
+    "titel": "Hofläden in Bernried: gut zu wissen",
+    "oben": "Bernried liegt am Westufer des Starnberger Sees im Landkreis Weilheim-Schongau. Eingetragen sind eine Imkerei, ein Eierautomat, der Bernrieder Hofladen und ein weiterer Hofladen.",
+    "einleitung": "Am Starnberger See gibt es Honig und Eier direkt vom Hof. Der Eierautomat ist auch außerhalb der Ladenzeiten nutzbar.\n\nWeitere Höfe findest du in Pähl und Weilheim in Oberbayern.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Pähl und Umgebung",
+        "pfad": "/bayern/weilheim-schongau/paehl/"
+      },
+      {
+        "text": "Hofläden in Weilheim in Oberbayern und Umgebung",
+        "pfad": "/bayern/weilheim-schongau/weilheim-in-oberbayern/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/barnim/chorin/": {
+    "titel": "Hofläden in Chorin: gut zu wissen",
+    "oben": "Chorin liegt im Biosphärenreservat Schorfheide-Chorin im Landkreis Barnim. Eingetragen sind der Hofladen Brodowin, der Hof Schwalbennest und der Ziegenhof Pörschke, alle mit Bio-Angebot, und der Bahn-Hofladen.",
+    "einleitung": "Das Biosphärenreservat ist eine Landschaft aus Wäldern, Seen und Feldern. Drei der vier Betriebe arbeiten nach Bio-Richtlinien, der Ziegenhof Pörschke hält Ziegen.\n\nWeitere Höfe findest du in Angermünde und Templin.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Angermünde und Umgebung",
+        "pfad": "/brandenburg/uckermark/angermuende/"
+      },
+      {
+        "text": "Hofläden in Templin und Umgebung",
+        "pfad": "/brandenburg/uckermark/templin/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/havelland/wustermark/": {
+    "titel": "Hofläden in Wustermark: gut zu wissen",
+    "oben": "Wustermark liegt im Havelland westlich von Berlin. Eingetragen sind Spargelland Hoppenrade, eine Imkerei, ein Eierautomat und der Hofladen Lienert.",
+    "einleitung": "Spargel ist hier die Spezialität, in der Saison von April bis Juni. Eier gibt es rund um die Uhr am Automaten.\n\nWeitere Höfe findest du in Dallgow-Döberitz und Falkensee.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dallgow-Döberitz und Umgebung",
+        "pfad": "/brandenburg/havelland/dallgow-doeberitz/"
+      },
+      {
+        "text": "Hofläden in Falkensee und Umgebung",
+        "pfad": "/brandenburg/havelland/falkensee/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/oberhavel/gransee/": {
+    "titel": "Hofläden in Gransee: gut zu wissen",
+    "oben": "Gransee liegt im Norden von Oberhavel an der Grenze zum Ruppiner Land. Eingetragen sind die Kraatzer Frischmilchbar, Traudels Hofladen mit Obst und Gemüse, der Grawe Geflügelhof und der Hofladen Richard's Wild.",
+    "einleitung": "Wild und Geflügel gibt es direkt aus der Region. Die Milch aus der Frischmilchbar ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Löwenberger Land und Lychen.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Löwenberger Land und Umgebung",
+        "pfad": "/brandenburg/oberhavel/loewenberger-land/"
+      },
+      {
+        "text": "Hofläden in Lychen und Umgebung",
+        "pfad": "/brandenburg/uckermark/lychen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/oberhavel/loewenberger-land/": {
+    "titel": "Hofläden in Löwenberger Land: gut zu wissen",
+    "oben": "Löwenberger Land liegt nördlich von Berlin im Landkreis Oberhavel. Eingetragen sind Elas Hofladen, ein Bio-Hofladen, der Apfelhof Wähnert und der Gutshofladen von Schloss und Gut Liebenberg.",
+    "einleitung": "Der Apfelhof Wähnert verkauft Äpfel, die Saison ist im Herbst. Im Gutshofladen gibt es Produkte vom Gut.\n\nWeitere Höfe findest du in Gransee und Liebenwalde.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gransee und Umgebung",
+        "pfad": "/brandenburg/oberhavel/gransee/"
+      },
+      {
+        "text": "Hofläden in Liebenwalde und Umgebung",
+        "pfad": "/brandenburg/oberhavel/liebenwalde/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/oberspreewald-lausitz/boblitz/": {
+    "titel": "Hofläden in Boblitz: gut zu wissen",
+    "oben": "Boblitz liegt im Spreewald bei Lübbenau im Landkreis Oberspreewald-Lausitz. Eingetragen sind der Hofladen Kullick, ein Imker, ein Regiomat mit Fleisch und ein Hofladen mit Café.",
+    "einleitung": "Der Spreewald ist durch seine Wasserläufe bekannt. Fleisch gibt es auch am Regiomaten, zum Kaffee geht es in den Hofladen mit Café.\n\nWeitere Höfe findest du in Lübbenau und Calau.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lübbenau/Spreewald und Umgebung",
+        "pfad": "/brandenburg/oberspreewald-lausitz/luebbenau-spreewald/"
+      },
+      {
+        "text": "Hofläden in Calau und Umgebung",
+        "pfad": "/brandenburg/oberspreewald-lausitz/calau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/oder-spree/steinhoefel/": {
+    "titel": "Hofläden in Steinhöfel: gut zu wissen",
+    "oben": "Steinhöfel liegt im Landkreis Oder-Spree zwischen Fürstenwalde und Frankfurt (Oder). Eingetragen sind die Milchquelle, der Landschlachthof Lehmann, der Biohof am Jakobsweg und ein Kräuterhof.",
+    "einleitung": "Milch, Fleisch und Kräuter kommen aus der Umgebung. Der Biohof am Jakobsweg arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Rietz-Neuendorf und Grünheide (Mark).",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kräuter",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rietz-Neuendorf und Umgebung",
+        "pfad": "/brandenburg/oder-spree/rietz-neuendorf/"
+      },
+      {
+        "text": "Hofläden in Grünheide (Mark) und Umgebung",
+        "pfad": "/brandenburg/oder-spree/gruenheide-mark/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/potsdam-mittelmark/treuenbrietzen/": {
+    "titel": "Hofläden in Treuenbrietzen: gut zu wissen",
+    "oben": "Treuenbrietzen liegt im Fläming im Landkreis Potsdam-Mittelmark. Eingetragen sind der Fläming Wildhandel, ein Hofladen, der Spargelhof Bardenitz und der Bardenitzer Hofladen mit Bio-Angebot.",
+    "einleitung": "Der Fläming ist für Spargel und Wild bekannt. Die Spargelsaison läuft im Frühjahr.\n\nWeitere Höfe findest du in Beelitz und Bad Belzig.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Beelitz und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/beelitz/"
+      },
+      {
+        "text": "Hofläden in Bad Belzig und Umgebung",
+        "pfad": "/brandenburg/potsdam-mittelmark/bad-belzig/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/potsdam/neu-fahrland/": {
+    "titel": "Hofläden in Neu Fahrland: gut zu wissen",
+    "oben": "Neu Fahrland liegt am Rand von Potsdam am Fahrlander See. Eingetragen sind Bienen, KirchbergHonig und zwei Hofläden mit Gemüse und Kartoffeln.",
+    "einleitung": "Honig ist die Spezialität, zwei Anbieter sind eingetragen. Gemüse und Kartoffeln gibt es in den beiden Hofläden.\n\nWeitere Höfe findest du in Golm und Dallgow-Döberitz.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Golm und Umgebung",
+        "pfad": "/brandenburg/potsdam/golm/"
+      },
+      {
+        "text": "Hofläden in Dallgow-Döberitz und Umgebung",
+        "pfad": "/brandenburg/havelland/dallgow-doeberitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/spree-neisse/kolkwitz/": {
+    "titel": "Hofläden in Kolkwitz: gut zu wissen",
+    "oben": "Kolkwitz liegt bei Cottbus im Landkreis Spree-Neiße. Eingetragen sind der Váradi Hofladen, der Biohof Auguste, das Zahsower Hoflädchen und der Geflügelhof Streich.",
+    "einleitung": "Von Cottbus aus ist Kolkwitz schnell erreichbar. Eier und Geflügel gibt es beim Geflügelhof Streich.\n\nWeitere Höfe findest du in Cottbus und Burg (Spreewald).",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Cottbus",
+        "pfad": "/brandenburg/cottbus/"
+      },
+      {
+        "text": "Hofläden in Burg (Spreewald) und Umgebung",
+        "pfad": "/brandenburg/spree-neisse/burg-spreewald/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/brandenburg/uckermark/angermuende/": {
+    "titel": "Hofläden in Angermünde: gut zu wissen",
+    "oben": "Angermünde liegt in der Uckermark am Rand des Biosphärenreservats Schorfheide-Chorin. Eingetragen sind der Hemme Milch Hofladen mit Bio-Milch und Käse, der Hofladen der Grumsiner Brennerei, Grumsiner Honig und der Hofladen Seenfischerei.",
+    "einleitung": "Die Uckermark ist von Seen und Feldern geprägt. Fisch kommt aus der Seenfischerei, Käse und Milch von Hemme Milch.\n\nWeitere Höfe findest du in Chorin und Templin.",
+    "saison": [
+      {
+        "titel": "Fisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Chorin und Umgebung",
+        "pfad": "/brandenburg/barnim/chorin/"
+      },
+      {
+        "text": "Hofläden in Templin und Umgebung",
+        "pfad": "/brandenburg/uckermark/templin/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/bergstrasse/bensheim/": {
+    "titel": "Hofläden in Bensheim: gut zu wissen",
+    "oben": "Bensheim liegt an der Bergstraße zwischen Darmstadt und Worms. Eingetragen sind ein Regiomat und ein Eierautomat mit Eiern, der Hof der Familie Friedrich und Maaß und ein Regiomat mit Fleisch von Karl Mehl.",
+    "einleitung": "Die Bergstraße ist eine Region mit mildem Klima. Eier gibt es hier gleich an zwei Automaten.\n\nWeitere Höfe findest du in Heppenheim und Einhausen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heppenheim (Bergstraße) und Umgebung",
+        "pfad": "/hessen/bergstrasse/heppenheim-bergstrasse/"
+      },
+      {
+        "text": "Hofläden in Einhausen und Umgebung",
+        "pfad": "/hessen/bergstrasse/einhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/bergstrasse/biblis/": {
+    "titel": "Hofläden in Biblis: gut zu wissen",
+    "oben": "Biblis liegt im hessischen Ried im Landkreis Bergstraße am Rhein. Eingetragen sind der Hofladen Biebesheimer, das Hoflädchen Ochsenschläger, Embachs Hofladen und der Obsthof Schneider.",
+    "einleitung": "Das Ried ist eine flache Landschaft mit Feldern. Obst gibt es im Obsthof Schneider.\n\nWeitere Höfe findest du in Bürstadt und Lampertheim.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bürstadt und Umgebung",
+        "pfad": "/hessen/bergstrasse/buerstadt/"
+      },
+      {
+        "text": "Hofläden in Lampertheim und Umgebung",
+        "pfad": "/hessen/bergstrasse/lampertheim/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
