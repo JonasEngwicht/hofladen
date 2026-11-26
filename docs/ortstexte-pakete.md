@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1371 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1396 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1383,35 +1383,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Kuchen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/kuchen/) `/baden-wuerttemberg/goeppingen/kuchen/` | Landkreis Göppingen | 1 | 3 | 6 |
 | ✓ | [Wangen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/wangen/) `/baden-wuerttemberg/goeppingen/wangen/` | Landkreis Göppingen | 1 | 3 | 6 |
 
-## Paket 47 (0/25 fertig)
+## Paket 47 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Zell unter Aichelberg](https://hofladenliste.de/baden-wuerttemberg/goeppingen/zell-unter-aichelberg/) `/baden-wuerttemberg/goeppingen/zell-unter-aichelberg/` | Landkreis Göppingen | 1 | 3 | 6 |
-|  | [Herbrechtingen](https://hofladenliste.de/baden-wuerttemberg/heidenheim/herbrechtingen/) `/baden-wuerttemberg/heidenheim/herbrechtingen/` | Landkreis Heidenheim | 1 | 3 | 6 |
-|  | [Hermaringen](https://hofladenliste.de/baden-wuerttemberg/heidenheim/hermaringen/) `/baden-wuerttemberg/heidenheim/hermaringen/` | Landkreis Heidenheim | 1 | 3 | 6 |
-|  | [Nattheim](https://hofladenliste.de/baden-wuerttemberg/heidenheim/nattheim/) `/baden-wuerttemberg/heidenheim/nattheim/` | Landkreis Heidenheim | 1 | 3 | 6 |
-|  | [Dörzbach](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/doerzbach/) `/baden-wuerttemberg/hohenlohekreis/doerzbach/` | Hohenlohekreis | 1 | 3 | 6 |
-|  | [Krautheim](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/krautheim/) `/baden-wuerttemberg/hohenlohekreis/krautheim/` | Hohenlohekreis | 1 | 3 | 6 |
-|  | [Pfedelbach](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/pfedelbach/) `/baden-wuerttemberg/hohenlohekreis/pfedelbach/` | Hohenlohekreis | 1 | 3 | 6 |
-|  | [Eigeltingen](https://hofladenliste.de/baden-wuerttemberg/konstanz/eigeltingen/) `/baden-wuerttemberg/konstanz/eigeltingen/` | Landkreis Konstanz | 1 | 3 | 6 |
-|  | [Moos](https://hofladenliste.de/baden-wuerttemberg/konstanz/moos/) `/baden-wuerttemberg/konstanz/moos/` | Landkreis Konstanz | 1 | 3 | 6 |
-|  | [Eberstadt](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/eberstadt/) `/baden-wuerttemberg/landkreis-heilbronn/eberstadt/` | Landkreis Heilbronn | 1 | 3 | 6 |
-|  | [Ellhofen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/ellhofen/) `/baden-wuerttemberg/landkreis-heilbronn/ellhofen/` | Landkreis Heilbronn | 1 | 3 | 6 |
-|  | [Erlenbach](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/erlenbach/) `/baden-wuerttemberg/landkreis-heilbronn/erlenbach/` | Landkreis Heilbronn | 1 | 3 | 6 |
-|  | [Jagsthausen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/jagsthausen/) `/baden-wuerttemberg/landkreis-heilbronn/jagsthausen/` | Landkreis Heilbronn | 1 | 3 | 6 |
-|  | [Lehrensteinsfeld](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/lehrensteinsfeld/) `/baden-wuerttemberg/landkreis-heilbronn/lehrensteinsfeld/` | Landkreis Heilbronn | 1 | 3 | 6 |
-|  | [Nordheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/nordheim/) `/baden-wuerttemberg/landkreis-heilbronn/nordheim/` | Landkreis Heilbronn | 1 | 3 | 6 |
-|  | [Roigheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/roigheim/) `/baden-wuerttemberg/landkreis-heilbronn/roigheim/` | Landkreis Heilbronn | 1 | 3 | 6 |
-|  | [Widdern](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/widdern/) `/baden-wuerttemberg/landkreis-heilbronn/widdern/` | Landkreis Heilbronn | 1 | 3 | 6 |
-|  | [Eggenstein-Leopoldshafen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/eggenstein-leopoldshafen/) `/baden-wuerttemberg/landkreis-karlsruhe/eggenstein-leopoldshafen/` | Landkreis Karlsruhe | 1 | 3 | 6 |
-|  | [Weingarten (Landkreis Karlsruhe)](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/weingarten/) `/baden-wuerttemberg/landkreis-karlsruhe/weingarten/` | Landkreis Karlsruhe | 1 | 3 | 6 |
-|  | [Fischingen](https://hofladenliste.de/baden-wuerttemberg/loerrach/fischingen/) `/baden-wuerttemberg/loerrach/fischingen/` | Landkreis Lörrach | 1 | 3 | 6 |
-|  | [Gerlingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/gerlingen/) `/baden-wuerttemberg/ludwigsburg/gerlingen/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
-|  | [Hessigheim](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/hessigheim/) `/baden-wuerttemberg/ludwigsburg/hessigheim/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
-|  | [Löchgau](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/loechgau/) `/baden-wuerttemberg/ludwigsburg/loechgau/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
-|  | [Möglingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/moeglingen/) `/baden-wuerttemberg/ludwigsburg/moeglingen/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
-|  | [Murr](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/murr/) `/baden-wuerttemberg/ludwigsburg/murr/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
+| ✓ | [Zell unter Aichelberg](https://hofladenliste.de/baden-wuerttemberg/goeppingen/zell-unter-aichelberg/) `/baden-wuerttemberg/goeppingen/zell-unter-aichelberg/` | Landkreis Göppingen | 1 | 3 | 6 |
+| ✓ | [Herbrechtingen](https://hofladenliste.de/baden-wuerttemberg/heidenheim/herbrechtingen/) `/baden-wuerttemberg/heidenheim/herbrechtingen/` | Landkreis Heidenheim | 1 | 3 | 6 |
+| ✓ | [Hermaringen](https://hofladenliste.de/baden-wuerttemberg/heidenheim/hermaringen/) `/baden-wuerttemberg/heidenheim/hermaringen/` | Landkreis Heidenheim | 1 | 3 | 6 |
+| ✓ | [Nattheim](https://hofladenliste.de/baden-wuerttemberg/heidenheim/nattheim/) `/baden-wuerttemberg/heidenheim/nattheim/` | Landkreis Heidenheim | 1 | 3 | 6 |
+| ✓ | [Dörzbach](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/doerzbach/) `/baden-wuerttemberg/hohenlohekreis/doerzbach/` | Hohenlohekreis | 1 | 3 | 6 |
+| ✓ | [Krautheim](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/krautheim/) `/baden-wuerttemberg/hohenlohekreis/krautheim/` | Hohenlohekreis | 1 | 3 | 6 |
+| ✓ | [Pfedelbach](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/pfedelbach/) `/baden-wuerttemberg/hohenlohekreis/pfedelbach/` | Hohenlohekreis | 1 | 3 | 6 |
+| ✓ | [Eigeltingen](https://hofladenliste.de/baden-wuerttemberg/konstanz/eigeltingen/) `/baden-wuerttemberg/konstanz/eigeltingen/` | Landkreis Konstanz | 1 | 3 | 6 |
+| ✓ | [Moos](https://hofladenliste.de/baden-wuerttemberg/konstanz/moos/) `/baden-wuerttemberg/konstanz/moos/` | Landkreis Konstanz | 1 | 3 | 6 |
+| ✓ | [Eberstadt](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/eberstadt/) `/baden-wuerttemberg/landkreis-heilbronn/eberstadt/` | Landkreis Heilbronn | 1 | 3 | 6 |
+| ✓ | [Ellhofen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/ellhofen/) `/baden-wuerttemberg/landkreis-heilbronn/ellhofen/` | Landkreis Heilbronn | 1 | 3 | 6 |
+| ✓ | [Erlenbach](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/erlenbach/) `/baden-wuerttemberg/landkreis-heilbronn/erlenbach/` | Landkreis Heilbronn | 1 | 3 | 6 |
+| ✓ | [Jagsthausen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/jagsthausen/) `/baden-wuerttemberg/landkreis-heilbronn/jagsthausen/` | Landkreis Heilbronn | 1 | 3 | 6 |
+| ✓ | [Lehrensteinsfeld](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/lehrensteinsfeld/) `/baden-wuerttemberg/landkreis-heilbronn/lehrensteinsfeld/` | Landkreis Heilbronn | 1 | 3 | 6 |
+| ✓ | [Nordheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/nordheim/) `/baden-wuerttemberg/landkreis-heilbronn/nordheim/` | Landkreis Heilbronn | 1 | 3 | 6 |
+| ✓ | [Roigheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/roigheim/) `/baden-wuerttemberg/landkreis-heilbronn/roigheim/` | Landkreis Heilbronn | 1 | 3 | 6 |
+| ✓ | [Widdern](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/widdern/) `/baden-wuerttemberg/landkreis-heilbronn/widdern/` | Landkreis Heilbronn | 1 | 3 | 6 |
+| ✓ | [Eggenstein-Leopoldshafen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/eggenstein-leopoldshafen/) `/baden-wuerttemberg/landkreis-karlsruhe/eggenstein-leopoldshafen/` | Landkreis Karlsruhe | 1 | 3 | 6 |
+| ✓ | [Weingarten (Landkreis Karlsruhe)](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/weingarten/) `/baden-wuerttemberg/landkreis-karlsruhe/weingarten/` | Landkreis Karlsruhe | 1 | 3 | 6 |
+| ✓ | [Fischingen](https://hofladenliste.de/baden-wuerttemberg/loerrach/fischingen/) `/baden-wuerttemberg/loerrach/fischingen/` | Landkreis Lörrach | 1 | 3 | 6 |
+| ✓ | [Gerlingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/gerlingen/) `/baden-wuerttemberg/ludwigsburg/gerlingen/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
+| ✓ | [Hessigheim](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/hessigheim/) `/baden-wuerttemberg/ludwigsburg/hessigheim/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
+| ✓ | [Löchgau](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/loechgau/) `/baden-wuerttemberg/ludwigsburg/loechgau/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
+| ✓ | [Möglingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/moeglingen/) `/baden-wuerttemberg/ludwigsburg/moeglingen/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
+| ✓ | [Murr](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/murr/) `/baden-wuerttemberg/ludwigsburg/murr/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
 
 ## Paket 48 (0/25 fertig)
 
