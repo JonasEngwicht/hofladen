@@ -19958,5 +19958,575 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/bayern/berchtesgadener-land/teisendorf/": {
+    "titel": "Hofläden in Teisendorf: gut zu wissen",
+    "oben": "Teisendorf liegt im Berchtesgadener Land im Alpenvorland. Eingetragen sind der Hofladen Hofhammer, der Bio-Hofladen Hoißeis Hoflanden mit Käse, Fleisch, Honig und Marmelade sowie zwei Imkereien, darunter der Imkerverein Teisendorf/Anger.",
+    "einleitung": "Wiesen und Weiden bestimmen das Bild, im Hintergrund stehen die Berge. Gleich zwei Imker-Angebote machen Honig aus der Umgebung leicht zugänglich.\n\nWeitere Höfe findest du in Saaldorf-Surheim und Laufen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Marmelade",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Saaldorf-Surheim und Umgebung",
+        "pfad": "/bayern/berchtesgadener-land/saaldorf-surheim/"
+      },
+      {
+        "text": "Hofläden in Laufen und Umgebung",
+        "pfad": "/bayern/berchtesgadener-land/laufen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/": {
+    "titel": "Hofläden in Rothenburg ob der Tauber: gut zu wissen",
+    "oben": "Rothenburg ob der Tauber ist wegen seiner Altstadt ein viel besuchtes Ziel in Mittelfranken. Eingetragen sind die Metzgerei mit Bauernladen Jacob, ein Fleischautomat, der Biohof von Rudolf Schilling und ein weiterer Bio-Hofladen.",
+    "einleitung": "Rund um die Stadt liegen Felder und Wiesen im Tal der Tauber. Der Fleischautomat ist eine Möglichkeit, regionales Fleisch auch außerhalb der Ladenzeiten zu bekommen.\n\nWeitere Höfe findest du in Adelshofen und Wettringen.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Adelshofen und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/adelshofen/"
+      },
+      {
+        "text": "Hofläden in Wettringen (Landkreis Ansbach) und Umgebung",
+        "pfad": "/bayern/landkreis-ansbach/wettringen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/miltenberg/eichenbuehl/": {
+    "titel": "Hofläden in Eichenbühl: gut zu wissen",
+    "oben": "Eichenbühl liegt im Landkreis Miltenberg am Rand des Odenwalds, nahe der Grenze zu Baden-Württemberg. Eingetragen sind der Bienenhof auf der Höhe, der Hofladen der Familie Ott mit Kartoffeln, Honig und Getränken sowie drei Regiomaten mit Obst, Fleisch und Eiern.",
+    "einleitung": "Hügel, Wiesen und Streuobst prägen die Landschaft. Die Regiomaten sind Automaten für regionale Lebensmittel und rund um die Uhr nutzbar.\n\nWeitere Höfe findest du in Miltenberg und Neunkirchen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Miltenberg und Umgebung",
+        "pfad": "/bayern/miltenberg/miltenberg/"
+      },
+      {
+        "text": "Hofläden in Neunkirchen und Umgebung",
+        "pfad": "/bayern/miltenberg/neunkirchen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/miltenberg/obernburg-am-main/": {
+    "titel": "Hofläden in Obernburg am Main: gut zu wissen",
+    "oben": "Obernburg am Main war schon zur Römerzeit ein Standort, heute erinnert ein Museum daran. Eingetragen sind Marie's Hofladen, der Mühlenladen mit Bio-Angebot, ein Honigautomat und zwei Regiomaten, einer davon mit Fleisch.",
+    "einleitung": "Die Stadt liegt am Main zwischen Aschaffenburg und Miltenberg. Den Honig vom Automaten kannst du jederzeit mitnehmen.\n\nWeitere Höfe findest du in Eschau und Mömlingen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eschau und Umgebung",
+        "pfad": "/bayern/miltenberg/eschau/"
+      },
+      {
+        "text": "Hofläden in Mömlingen und Umgebung",
+        "pfad": "/bayern/miltenberg/moemlingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/oberallgaeu/oberstaufen/": {
+    "titel": "Hofläden in Oberstaufen: gut zu wissen",
+    "oben": "Oberstaufen liegt im Allgäu und ist als Kneippkurort und für die Schrothkur bekannt. Eingetragen sind drei Regiomaten mit Käse, der Allgäuer Honigladen und der Bioland-Hof Herz mit Hofladen.",
+    "einleitung": "Grüne Wiesen, Berge und Kühe prägen die Gegend, entsprechend gibt es Käse aus der Region. Die Automaten sind rund um die Uhr zugänglich.\n\nWeitere Höfe findest du in Stiefenhofen und Missen-Wilhams.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Bio-Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stiefenhofen und Umgebung",
+        "pfad": "/bayern/lindau/stiefenhofen/"
+      },
+      {
+        "text": "Hofläden in Missen-Wilhams und Umgebung",
+        "pfad": "/bayern/oberallgaeu/missen-wilhams/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/ostallgaeu/nesselwang/": {
+    "titel": "Hofläden in Nesselwang: gut zu wissen",
+    "oben": "Nesselwang liegt im Ostallgäu, hier fährt die Alpspitzbahn auf den Hausberg. Eingetragen sind Steiners Hofladen, eine Milchtankstelle, ein Honigautomat und zwei Regiomaten, einer davon mit Käse und Fleisch.",
+    "einleitung": "Almwiesen und Berge prägen die Gegend, Milchwirtschaft hat hier Tradition. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Rückholz und Hopferau.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rückholz und Umgebung",
+        "pfad": "/bayern/ostallgaeu/rueckholz/"
+      },
+      {
+        "text": "Hofläden in Hopferau und Umgebung",
+        "pfad": "/bayern/ostallgaeu/hopferau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/roth/kammerstein/": {
+    "titel": "Hofläden in Kammerstein: gut zu wissen",
+    "oben": "Kammerstein liegt südlich von Schwabach im Landkreis Roth in Mittelfranken. Eingetragen ist eine solidarische Landwirtschaft mit Bio-Anbau, außerdem Schnell's Hofladen, der Haager Hofladen, eine Imkerei und ein Regiomat.",
+    "einleitung": "Bei einer Solawi teilen sich mehrere Haushalte die Ernte eines Hofs und tragen gemeinsam die Kosten des Anbaus.\n\nWeitere Höfe findest du in Schwabach und Büchenbach.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schwabach",
+        "pfad": "/bayern/schwabach/"
+      },
+      {
+        "text": "Hofläden in Büchenbach und Umgebung",
+        "pfad": "/bayern/roth/buechenbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/roth/rohr/": {
+    "titel": "Hofläden in Rohr (Landkreis Roth): gut zu wissen",
+    "oben": "Rohr liegt im Landkreis Roth in Mittelfranken. Eingetragen sind die Hofkäserei Burger mit Milch und Käse, eine Milchtankstelle, Sturmer's Hofladla, der Hof Kraft und ein weiterer Hofladen.",
+    "einleitung": "Felder und Wiesen mit Milchvieh prägen die Gemeinde. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Roßtal und Kammerstein.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Roßtal und Umgebung",
+        "pfad": "/bayern/landkreis-fuerth/rosstal/"
+      },
+      {
+        "text": "Hofläden in Kammerstein und Umgebung",
+        "pfad": "/bayern/roth/kammerstein/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/bayern/roth/roth/": {
+    "titel": "Hofläden in Roth: gut zu wissen",
+    "oben": "Roth ist die Kreisstadt des gleichnamigen Landkreises in Mittelfranken, bekannt ist das Schloss Ratibor. Eingetragen sind der Seebühler Bauernladen, der Bärenhof, Schröters Hof mit Eiern, Käse, Kartoffeln und Honig, der Biohof von Gerhard Zimmermann und der HofundLaden mit rund um die Uhr geöffnetem Verkauf.",
+    "einleitung": "Rund um die Stadt gibt es Ackerland und Wald, mehrere Höfe verkaufen direkt. Der HofundLaden bietet Eier und Fleisch jederzeit an.\n\nWeitere Höfe findest du in Hilpoltstein und Büchenbach.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hilpoltstein und Umgebung",
+        "pfad": "/bayern/roth/hilpoltstein/"
+      },
+      {
+        "text": "Hofläden in Büchenbach und Umgebung",
+        "pfad": "/bayern/roth/buechenbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/bergstrasse/buerstadt/": {
+    "titel": "Hofläden in Bürstadt: gut zu wissen",
+    "oben": "Bürstadt liegt in der Rheinebene im Hessischen Ried, dem Spargelland Südhessens. Eingetragen sind die Spargelhöfe Bärli und List, der Bauernladen Kühn, der Hofladen Valentinhof und eine Milchtankstelle.",
+    "einleitung": "Der sandige Boden des Rieds eignet sich für Spargel und Gemüse. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Lampertheim und Biblis.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lampertheim und Umgebung",
+        "pfad": "/hessen/bergstrasse/lampertheim/"
+      },
+      {
+        "text": "Hofläden in Biblis und Umgebung",
+        "pfad": "/hessen/bergstrasse/biblis/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/bergstrasse/lampertheim/": {
+    "titel": "Hofläden in Lampertheim: gut zu wissen",
+    "oben": "Lampertheim liegt am Rhein im Südwesten Hessens, gegenüber von Worms. Eingetragen sind Zum Kreuzhofbauer, das Alte Wehrzollhaus, der Hofladen Billau, der Bauernladen Steinmetz und ein Regiomat mit Eiern.",
+    "einleitung": "Die Rheinebene mit ihrem warmen Klima ist gutes Gemüse- und Spargelland. Auch hier gibt es Eier rund um die Uhr am Automaten.\n\nWeitere Höfe findest du in Bürstadt und Viernheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bürstadt und Umgebung",
+        "pfad": "/hessen/bergstrasse/buerstadt/"
+      },
+      {
+        "text": "Hofläden in Viernheim und Umgebung",
+        "pfad": "/hessen/bergstrasse/viernheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/darmstadt-dieburg/alsbach-haehnlein/": {
+    "titel": "Hofläden in Alsbach-Hähnlein: gut zu wissen",
+    "oben": "Alsbach-Hähnlein liegt am Fuß der Bergstraße südlich von Darmstadt, über Alsbach steht ein Schloss. Eingetragen sind fünf Hofläden: Hübner, Kehr, Rechel, Wenz und ein weiterer Hofladen im Ort.",
+    "einleitung": "Zwischen Odenwaldrand und Rheinebene wachsen Obst und Gemüse in milden Lagen. Mit fünf Hofläden ist die Auswahl für die Größe der Gemeinde hoch.\n\nWeitere Höfe findest du in Bickenbach und Bensheim.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bickenbach und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/bickenbach/"
+      },
+      {
+        "text": "Hofläden in Bensheim und Umgebung",
+        "pfad": "/hessen/bergstrasse/bensheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/darmstadt-dieburg/griesheim/": {
+    "titel": "Hofläden in Griesheim: gut zu wissen",
+    "oben": "Griesheim liegt westlich von Darmstadt auf sandigem Boden, bei der Griesheimer Düne. Eingetragen sind der Bio-Hofladen Eichwaldhof, der Verkaufsstand Moorhof, der Hofladen Die Zwiebel, ein Regiomat mit Eiern und ein weiterer Hofladen.",
+    "einleitung": "Die Sandböden eignen sich für Gemüse und Kartoffeln. Das Naturschutzgebiet Griesheimer Düne ist für Spaziergänge beliebt.\n\nWeitere Höfe findest du in Weiterstadt und Darmstadt.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weiterstadt und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/weiterstadt/"
+      },
+      {
+        "text": "Hofläden in Darmstadt",
+        "pfad": "/hessen/darmstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/darmstadt-dieburg/gross-umstadt/": {
+    "titel": "Hofläden in Groß-Umstadt: gut zu wissen",
+    "oben": "Groß-Umstadt liegt am Rand des Odenwalds und ist ein Weinort. Eingetragen sind der Erdbeerhof Münch, die Hofläden Lützelforstmühle und Hultsch, das Auenhof-Lädchen und der Bauernhof Selzer.",
+    "einleitung": "Zwischen Weinbergen und Streuobstwiesen gedeihen Obst und Wein. Beim Erdbeerhof Münch gibt es im Sommer Erdbeeren.\n\nWeitere Höfe findest du in Otzberg und Dieburg.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Otzberg und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/otzberg/"
+      },
+      {
+        "text": "Hofläden in Dieburg und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/dieburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/fulda/grossenlueder/": {
+    "titel": "Hofläden in Großenlüder: gut zu wissen",
+    "oben": "Großenlüder liegt im Lüdertal im Landkreis Fulda. Eingetragen sind das Lädle am Stormehof, der Mühlenladen mit Bio-Angebot, der Stockehof, der Landhof Kömpel und ein weiterer Hofladen.",
+    "einleitung": "Das Tal ist von Wiesen und Feldern geprägt, am Rand beginnen Rhön und Vogelsberg. Mit fünf Hofläden gibt es hier viel Auswahl.\n\nWeitere Höfe findest du in Fulda und Künzell.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Fulda und Umgebung",
+        "pfad": "/hessen/fulda/fulda/"
+      },
+      {
+        "text": "Hofläden in Künzell und Umgebung",
+        "pfad": "/hessen/fulda/kuenzell/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/giessen/lich/": {
+    "titel": "Hofläden in Lich: gut zu wissen",
+    "oben": "Lich liegt am Rand der Wetterau bei Gießen, bekannt ist die Stadt durch ihr Bier. Eingetragen sind der Sonnenhof, der Obersteinberger Hofladen, ein Hofladen mit Eiern, ein Fleischautomat und ein Kartoffelautomat.",
+    "einleitung": "Zwei Automaten, einer für Fleisch, einer für Kartoffeln, machen Einkaufen rund um die Uhr möglich. Die Gegend ist Ackerland mit Getreide und Kartoffeln.\n\nWeitere Höfe findest du in Pohlheim und Münzenberg.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Pohlheim und Umgebung",
+        "pfad": "/hessen/giessen/pohlheim/"
+      },
+      {
+        "text": "Hofläden in Münzenberg und Umgebung",
+        "pfad": "/hessen/wetteraukreis/muenzenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/giessen/pohlheim/": {
+    "titel": "Hofläden in Pohlheim: gut zu wissen",
+    "oben": "Pohlheim liegt bei Gießen. Eingetragen sind der Obersteinberger Hofladen mit Eiern, Kartoffeln und Marmelade, zwei Imker, Werner Schneider und Dieter Erker, eine Milchtankstelle und ein Regiomat.",
+    "einleitung": "Honig bekommst du hier von zwei Imkern vor Ort. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Langgöns und Gießen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Langgöns und Umgebung",
+        "pfad": "/hessen/giessen/langgoens/"
+      },
+      {
+        "text": "Hofläden in Gießen und Umgebung",
+        "pfad": "/hessen/giessen/giessen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/gross-gerau/buettelborn/": {
+    "titel": "Hofläden in Büttelborn: gut zu wissen",
+    "oben": "Büttelborn liegt im Hessischen Ried bei Groß-Gerau. Eingetragen sind Wasserschmidts Hof- und Bauernlädchen mit Bio-Angebot, die Graf-Noll Erdbeerkulturen, der Spargelhof Senßfelder, Stahl's Gemüsetheke und der Birkenhof.",
+    "einleitung": "Der leichte Boden des Rieds ist gutes Land für Spargel, Erdbeeren und Gemüse. Bei Wasserschmidt gibt es zusätzlich Blumen.\n\nWeitere Höfe findest du in Groß-Gerau und Weiterstadt.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Groß-Gerau und Umgebung",
+        "pfad": "/hessen/gross-gerau/gross-gerau/"
+      },
+      {
+        "text": "Hofläden in Weiterstadt und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/weiterstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/landkreis-kassel/baunatal/": {
+    "titel": "Hofläden in Baunatal: gut zu wissen",
+    "oben": "Baunatal liegt südlich von Kassel, hier steht ein großes Volkswagen-Werk. Eingetragen sind der Hofladen Eisenach mit Eiern und Gemüse, der Biolandhof Krug, die Imkerei Beyer, eine weitere Imkerei und ein Hofladen.",
+    "einleitung": "Um die Stadt liegen Felder und Streuobstwiesen, die Höfe verkaufen vor allem direkt ab Hof. Gleich zwei Imkereien sind hier eingetragen.\n\nWeitere Höfe findest du in Edermünde und Gudensberg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Edermünde und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/edermuende/"
+      },
+      {
+        "text": "Hofläden in Gudensberg und Umgebung",
+        "pfad": "/hessen/schwalm-eder-kreis/gudensberg/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
