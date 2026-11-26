@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 743 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 768 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -933,35 +933,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Steinenbronn](https://hofladenliste.de/baden-wuerttemberg/boeblingen/steinenbronn/) `/baden-wuerttemberg/boeblingen/steinenbronn/` | Landkreis Böblingen | 1 | 4 | 7 |
 |  | [Auggen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/auggen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/auggen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
 
-## Paket 32 (0/25 fertig)
+## Paket 32 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Bollschweil](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/bollschweil/) `/baden-wuerttemberg/breisgau-hochschwarzwald/bollschweil/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
-|  | [Gundelfingen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/gundelfingen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/gundelfingen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
-|  | [Heitersheim](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/heitersheim/) `/baden-wuerttemberg/breisgau-hochschwarzwald/heitersheim/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
-|  | [Heuweiler](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/heuweiler/) `/baden-wuerttemberg/breisgau-hochschwarzwald/heuweiler/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
-|  | [Bahlingen am Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/emmendingen/bahlingen-am-kaiserstuhl/) `/baden-wuerttemberg/emmendingen/bahlingen-am-kaiserstuhl/` | Landkreis Emmendingen | 1 | 4 | 7 |
-|  | [Freiamt](https://hofladenliste.de/baden-wuerttemberg/emmendingen/freiamt/) `/baden-wuerttemberg/emmendingen/freiamt/` | Landkreis Emmendingen | 1 | 4 | 7 |
-|  | [Sasbach am Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/emmendingen/sasbach-am-kaiserstuhl/) `/baden-wuerttemberg/emmendingen/sasbach-am-kaiserstuhl/` | Landkreis Emmendingen | 1 | 4 | 7 |
-|  | [Tiefenbronn](https://hofladenliste.de/baden-wuerttemberg/enzkreis/tiefenbronn/) `/baden-wuerttemberg/enzkreis/tiefenbronn/` | Enzkreis | 1 | 4 | 7 |
-|  | [Nürtingen](https://hofladenliste.de/baden-wuerttemberg/esslingen/nuertingen/) `/baden-wuerttemberg/esslingen/nuertingen/` | Landkreis Esslingen | 1 | 4 | 7 |
-|  | [Owen](https://hofladenliste.de/baden-wuerttemberg/esslingen/owen/) `/baden-wuerttemberg/esslingen/owen/` | Landkreis Esslingen | 1 | 4 | 7 |
-|  | [Horb am Neckar](https://hofladenliste.de/baden-wuerttemberg/freudenstadt/horb-am-neckar/) `/baden-wuerttemberg/freudenstadt/horb-am-neckar/` | Landkreis Freudenstadt | 1 | 4 | 7 |
-|  | [Gingen an der Fils](https://hofladenliste.de/baden-wuerttemberg/goeppingen/gingen-an-der-fils/) `/baden-wuerttemberg/goeppingen/gingen-an-der-fils/` | Landkreis Göppingen | 1 | 4 | 7 |
-|  | [Lauterstein](https://hofladenliste.de/baden-wuerttemberg/goeppingen/lauterstein/) `/baden-wuerttemberg/goeppingen/lauterstein/` | Landkreis Göppingen | 1 | 4 | 7 |
-|  | [Schlat](https://hofladenliste.de/baden-wuerttemberg/goeppingen/schlat/) `/baden-wuerttemberg/goeppingen/schlat/` | Landkreis Göppingen | 1 | 4 | 7 |
-|  | [Gerstetten](https://hofladenliste.de/baden-wuerttemberg/heidenheim/gerstetten/) `/baden-wuerttemberg/heidenheim/gerstetten/` | Landkreis Heidenheim | 1 | 4 | 7 |
-|  | [Künzelsau](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/kuenzelsau/) `/baden-wuerttemberg/hohenlohekreis/kuenzelsau/` | Hohenlohekreis | 1 | 4 | 7 |
-|  | [Neuenstein](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/neuenstein/) `/baden-wuerttemberg/hohenlohekreis/neuenstein/` | Hohenlohekreis | 1 | 4 | 7 |
-|  | [Allensbach](https://hofladenliste.de/baden-wuerttemberg/konstanz/allensbach/) `/baden-wuerttemberg/konstanz/allensbach/` | Landkreis Konstanz | 1 | 4 | 7 |
-|  | [Radolfzell am Bodensee](https://hofladenliste.de/baden-wuerttemberg/konstanz/radolfzell-am-bodensee/) `/baden-wuerttemberg/konstanz/radolfzell-am-bodensee/` | Landkreis Konstanz | 1 | 4 | 7 |
-|  | [Rielasingen-Worblingen](https://hofladenliste.de/baden-wuerttemberg/konstanz/rielasingen-worblingen/) `/baden-wuerttemberg/konstanz/rielasingen-worblingen/` | Landkreis Konstanz | 1 | 4 | 7 |
-|  | [Leingarten](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/leingarten/) `/baden-wuerttemberg/landkreis-heilbronn/leingarten/` | Landkreis Heilbronn | 1 | 4 | 7 |
-|  | [Neuenstadt am Kocher](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/neuenstadt-am-kocher/) `/baden-wuerttemberg/landkreis-heilbronn/neuenstadt-am-kocher/` | Landkreis Heilbronn | 1 | 4 | 7 |
-|  | [Schwaigern](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/schwaigern/) `/baden-wuerttemberg/landkreis-heilbronn/schwaigern/` | Landkreis Heilbronn | 1 | 4 | 7 |
-|  | [Siegelsbach](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/siegelsbach/) `/baden-wuerttemberg/landkreis-heilbronn/siegelsbach/` | Landkreis Heilbronn | 1 | 4 | 7 |
-|  | [Malsch](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/malsch/) `/baden-wuerttemberg/landkreis-karlsruhe/malsch/` | Landkreis Karlsruhe | 1 | 4 | 7 |
+| ✓ | [Bollschweil](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/bollschweil/) `/baden-wuerttemberg/breisgau-hochschwarzwald/bollschweil/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
+| ✓ | [Gundelfingen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/gundelfingen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/gundelfingen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
+| ✓ | [Heitersheim](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/heitersheim/) `/baden-wuerttemberg/breisgau-hochschwarzwald/heitersheim/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
+| ✓ | [Heuweiler](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/heuweiler/) `/baden-wuerttemberg/breisgau-hochschwarzwald/heuweiler/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
+| ✓ | [Bahlingen am Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/emmendingen/bahlingen-am-kaiserstuhl/) `/baden-wuerttemberg/emmendingen/bahlingen-am-kaiserstuhl/` | Landkreis Emmendingen | 1 | 4 | 7 |
+| ✓ | [Freiamt](https://hofladenliste.de/baden-wuerttemberg/emmendingen/freiamt/) `/baden-wuerttemberg/emmendingen/freiamt/` | Landkreis Emmendingen | 1 | 4 | 7 |
+| ✓ | [Sasbach am Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/emmendingen/sasbach-am-kaiserstuhl/) `/baden-wuerttemberg/emmendingen/sasbach-am-kaiserstuhl/` | Landkreis Emmendingen | 1 | 4 | 7 |
+| ✓ | [Tiefenbronn](https://hofladenliste.de/baden-wuerttemberg/enzkreis/tiefenbronn/) `/baden-wuerttemberg/enzkreis/tiefenbronn/` | Enzkreis | 1 | 4 | 7 |
+| ✓ | [Nürtingen](https://hofladenliste.de/baden-wuerttemberg/esslingen/nuertingen/) `/baden-wuerttemberg/esslingen/nuertingen/` | Landkreis Esslingen | 1 | 4 | 7 |
+| ✓ | [Owen](https://hofladenliste.de/baden-wuerttemberg/esslingen/owen/) `/baden-wuerttemberg/esslingen/owen/` | Landkreis Esslingen | 1 | 4 | 7 |
+| ✓ | [Horb am Neckar](https://hofladenliste.de/baden-wuerttemberg/freudenstadt/horb-am-neckar/) `/baden-wuerttemberg/freudenstadt/horb-am-neckar/` | Landkreis Freudenstadt | 1 | 4 | 7 |
+| ✓ | [Gingen an der Fils](https://hofladenliste.de/baden-wuerttemberg/goeppingen/gingen-an-der-fils/) `/baden-wuerttemberg/goeppingen/gingen-an-der-fils/` | Landkreis Göppingen | 1 | 4 | 7 |
+| ✓ | [Lauterstein](https://hofladenliste.de/baden-wuerttemberg/goeppingen/lauterstein/) `/baden-wuerttemberg/goeppingen/lauterstein/` | Landkreis Göppingen | 1 | 4 | 7 |
+| ✓ | [Schlat](https://hofladenliste.de/baden-wuerttemberg/goeppingen/schlat/) `/baden-wuerttemberg/goeppingen/schlat/` | Landkreis Göppingen | 1 | 4 | 7 |
+| ✓ | [Gerstetten](https://hofladenliste.de/baden-wuerttemberg/heidenheim/gerstetten/) `/baden-wuerttemberg/heidenheim/gerstetten/` | Landkreis Heidenheim | 1 | 4 | 7 |
+| ✓ | [Künzelsau](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/kuenzelsau/) `/baden-wuerttemberg/hohenlohekreis/kuenzelsau/` | Hohenlohekreis | 1 | 4 | 7 |
+| ✓ | [Neuenstein](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/neuenstein/) `/baden-wuerttemberg/hohenlohekreis/neuenstein/` | Hohenlohekreis | 1 | 4 | 7 |
+| ✓ | [Allensbach](https://hofladenliste.de/baden-wuerttemberg/konstanz/allensbach/) `/baden-wuerttemberg/konstanz/allensbach/` | Landkreis Konstanz | 1 | 4 | 7 |
+| ✓ | [Radolfzell am Bodensee](https://hofladenliste.de/baden-wuerttemberg/konstanz/radolfzell-am-bodensee/) `/baden-wuerttemberg/konstanz/radolfzell-am-bodensee/` | Landkreis Konstanz | 1 | 4 | 7 |
+| ✓ | [Rielasingen-Worblingen](https://hofladenliste.de/baden-wuerttemberg/konstanz/rielasingen-worblingen/) `/baden-wuerttemberg/konstanz/rielasingen-worblingen/` | Landkreis Konstanz | 1 | 4 | 7 |
+| ✓ | [Leingarten](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/leingarten/) `/baden-wuerttemberg/landkreis-heilbronn/leingarten/` | Landkreis Heilbronn | 1 | 4 | 7 |
+| ✓ | [Neuenstadt am Kocher](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/neuenstadt-am-kocher/) `/baden-wuerttemberg/landkreis-heilbronn/neuenstadt-am-kocher/` | Landkreis Heilbronn | 1 | 4 | 7 |
+| ✓ | [Schwaigern](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/schwaigern/) `/baden-wuerttemberg/landkreis-heilbronn/schwaigern/` | Landkreis Heilbronn | 1 | 4 | 7 |
+| ✓ | [Siegelsbach](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/siegelsbach/) `/baden-wuerttemberg/landkreis-heilbronn/siegelsbach/` | Landkreis Heilbronn | 1 | 4 | 7 |
+| ✓ | [Malsch](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/malsch/) `/baden-wuerttemberg/landkreis-karlsruhe/malsch/` | Landkreis Karlsruhe | 1 | 4 | 7 |
 
 ## Paket 33 (0/25 fertig)
 
