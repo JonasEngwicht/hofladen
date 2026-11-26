@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1249 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1272 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1233,35 +1233,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Pattensen](https://hofladenliste.de/niedersachsen/region-hannover/pattensen/) `/niedersachsen/region-hannover/pattensen/` | Region Hannover | 1 | 4 | 7 |
 | ✓ | [Seelze](https://hofladenliste.de/niedersachsen/region-hannover/seelze/) `/niedersachsen/region-hannover/seelze/` | Region Hannover | 1 | 4 | 7 |
 
-## Paket 42 (0/25 fertig)
+## Paket 42 (23/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
 |  | [Hellwege](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/hellwege/) `/niedersachsen/rotenburg-wuemme/hellwege/` | Landkreis Rotenburg (Wümme) | 1 | 4 | 7 |
 |  | [Tarmstedt](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/tarmstedt/) `/niedersachsen/rotenburg-wuemme/tarmstedt/` | Landkreis Rotenburg (Wümme) | 1 | 4 | 7 |
-|  | [Wilstedt](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/wilstedt/) `/niedersachsen/rotenburg-wuemme/wilstedt/` | Landkreis Rotenburg (Wümme) | 1 | 4 | 7 |
-|  | [Auetal](https://hofladenliste.de/niedersachsen/schaumburg/auetal/) `/niedersachsen/schaumburg/auetal/` | Landkreis Schaumburg | 1 | 4 | 7 |
-|  | [Bückeburg](https://hofladenliste.de/niedersachsen/schaumburg/bueckeburg/) `/niedersachsen/schaumburg/bueckeburg/` | Landkreis Schaumburg | 1 | 4 | 7 |
-|  | [Harsefeld](https://hofladenliste.de/niedersachsen/stade/harsefeld/) `/niedersachsen/stade/harsefeld/` | Landkreis Stade | 1 | 4 | 7 |
-|  | [Goldenstedt](https://hofladenliste.de/niedersachsen/vechta/goldenstedt/) `/niedersachsen/vechta/goldenstedt/` | Landkreis Vechta | 1 | 4 | 7 |
-|  | [Langwedel](https://hofladenliste.de/niedersachsen/verden/langwedel/) `/niedersachsen/verden/langwedel/` | Landkreis Verden | 1 | 4 | 7 |
-|  | [Jade](https://hofladenliste.de/niedersachsen/wesermarsch/jade/) `/niedersachsen/wesermarsch/jade/` | Landkreis Wesermarsch | 1 | 4 | 7 |
-|  | [Friedeburg](https://hofladenliste.de/niedersachsen/wittmund/friedeburg/) `/niedersachsen/wittmund/friedeburg/` | Landkreis Wittmund | 1 | 4 | 7 |
-|  | [Evessen](https://hofladenliste.de/niedersachsen/wolfenbuettel/evessen/) `/niedersachsen/wolfenbuettel/evessen/` | Landkreis Wolfenbüttel | 1 | 4 | 7 |
-|  | [Gescher](https://hofladenliste.de/nordrhein-westfalen/borken/gescher/) `/nordrhein-westfalen/borken/gescher/` | Kreis Borken | 1 | 4 | 7 |
-|  | [Mechernich](https://hofladenliste.de/nordrhein-westfalen/euskirchen/mechernich/) `/nordrhein-westfalen/euskirchen/mechernich/` | Kreis Euskirchen | 1 | 4 | 7 |
-|  | [Nettersheim](https://hofladenliste.de/nordrhein-westfalen/euskirchen/nettersheim/) `/nordrhein-westfalen/euskirchen/nettersheim/` | Kreis Euskirchen | 1 | 4 | 7 |
-|  | [Harsewinkel](https://hofladenliste.de/nordrhein-westfalen/guetersloh/harsewinkel/) `/nordrhein-westfalen/guetersloh/harsewinkel/` | Kreis Gütersloh | 1 | 4 | 7 |
-|  | [Herzebrock-Clarholz](https://hofladenliste.de/nordrhein-westfalen/guetersloh/herzebrock-clarholz/) `/nordrhein-westfalen/guetersloh/herzebrock-clarholz/` | Kreis Gütersloh | 1 | 4 | 7 |
-|  | [Wassenberg](https://hofladenliste.de/nordrhein-westfalen/heinsberg/wassenberg/) `/nordrhein-westfalen/heinsberg/wassenberg/` | Kreis Heinsberg | 1 | 4 | 7 |
-|  | [Rödinghausen](https://hofladenliste.de/nordrhein-westfalen/herford/roedinghausen/) `/nordrhein-westfalen/herford/roedinghausen/` | Kreis Herford | 1 | 4 | 7 |
-|  | [Marsberg](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/marsberg/) `/nordrhein-westfalen/hochsauerlandkreis/marsberg/` | Hochsauerlandkreis | 1 | 4 | 7 |
-|  | [Beverungen](https://hofladenliste.de/nordrhein-westfalen/hoexter/beverungen/) `/nordrhein-westfalen/hoexter/beverungen/` | Kreis Höxter | 1 | 4 | 7 |
-|  | [Uedem](https://hofladenliste.de/nordrhein-westfalen/kleve/uedem/) `/nordrhein-westfalen/kleve/uedem/` | Kreis Kleve | 1 | 4 | 7 |
-|  | [Dörentrup](https://hofladenliste.de/nordrhein-westfalen/lippe/doerentrup/) `/nordrhein-westfalen/lippe/doerentrup/` | Kreis Lippe | 1 | 4 | 7 |
-|  | [Horn-Bad Meinberg](https://hofladenliste.de/nordrhein-westfalen/lippe/horn-bad-meinberg/) `/nordrhein-westfalen/lippe/horn-bad-meinberg/` | Kreis Lippe | 1 | 4 | 7 |
-|  | [Halver](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/halver/) `/nordrhein-westfalen/maerkischer-kreis/halver/` | Märkischer Kreis | 1 | 4 | 7 |
-|  | [Herscheid](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/herscheid/) `/nordrhein-westfalen/maerkischer-kreis/herscheid/` | Märkischer Kreis | 1 | 4 | 7 |
+| ✓ | [Wilstedt](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/wilstedt/) `/niedersachsen/rotenburg-wuemme/wilstedt/` | Landkreis Rotenburg (Wümme) | 1 | 4 | 7 |
+| ✓ | [Auetal](https://hofladenliste.de/niedersachsen/schaumburg/auetal/) `/niedersachsen/schaumburg/auetal/` | Landkreis Schaumburg | 1 | 4 | 7 |
+| ✓ | [Bückeburg](https://hofladenliste.de/niedersachsen/schaumburg/bueckeburg/) `/niedersachsen/schaumburg/bueckeburg/` | Landkreis Schaumburg | 1 | 4 | 7 |
+| ✓ | [Harsefeld](https://hofladenliste.de/niedersachsen/stade/harsefeld/) `/niedersachsen/stade/harsefeld/` | Landkreis Stade | 1 | 4 | 7 |
+| ✓ | [Goldenstedt](https://hofladenliste.de/niedersachsen/vechta/goldenstedt/) `/niedersachsen/vechta/goldenstedt/` | Landkreis Vechta | 1 | 4 | 7 |
+| ✓ | [Langwedel](https://hofladenliste.de/niedersachsen/verden/langwedel/) `/niedersachsen/verden/langwedel/` | Landkreis Verden | 1 | 4 | 7 |
+| ✓ | [Jade](https://hofladenliste.de/niedersachsen/wesermarsch/jade/) `/niedersachsen/wesermarsch/jade/` | Landkreis Wesermarsch | 1 | 4 | 7 |
+| ✓ | [Friedeburg](https://hofladenliste.de/niedersachsen/wittmund/friedeburg/) `/niedersachsen/wittmund/friedeburg/` | Landkreis Wittmund | 1 | 4 | 7 |
+| ✓ | [Evessen](https://hofladenliste.de/niedersachsen/wolfenbuettel/evessen/) `/niedersachsen/wolfenbuettel/evessen/` | Landkreis Wolfenbüttel | 1 | 4 | 7 |
+| ✓ | [Gescher](https://hofladenliste.de/nordrhein-westfalen/borken/gescher/) `/nordrhein-westfalen/borken/gescher/` | Kreis Borken | 1 | 4 | 7 |
+| ✓ | [Mechernich](https://hofladenliste.de/nordrhein-westfalen/euskirchen/mechernich/) `/nordrhein-westfalen/euskirchen/mechernich/` | Kreis Euskirchen | 1 | 4 | 7 |
+| ✓ | [Nettersheim](https://hofladenliste.de/nordrhein-westfalen/euskirchen/nettersheim/) `/nordrhein-westfalen/euskirchen/nettersheim/` | Kreis Euskirchen | 1 | 4 | 7 |
+| ✓ | [Harsewinkel](https://hofladenliste.de/nordrhein-westfalen/guetersloh/harsewinkel/) `/nordrhein-westfalen/guetersloh/harsewinkel/` | Kreis Gütersloh | 1 | 4 | 7 |
+| ✓ | [Herzebrock-Clarholz](https://hofladenliste.de/nordrhein-westfalen/guetersloh/herzebrock-clarholz/) `/nordrhein-westfalen/guetersloh/herzebrock-clarholz/` | Kreis Gütersloh | 1 | 4 | 7 |
+| ✓ | [Wassenberg](https://hofladenliste.de/nordrhein-westfalen/heinsberg/wassenberg/) `/nordrhein-westfalen/heinsberg/wassenberg/` | Kreis Heinsberg | 1 | 4 | 7 |
+| ✓ | [Rödinghausen](https://hofladenliste.de/nordrhein-westfalen/herford/roedinghausen/) `/nordrhein-westfalen/herford/roedinghausen/` | Kreis Herford | 1 | 4 | 7 |
+| ✓ | [Marsberg](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/marsberg/) `/nordrhein-westfalen/hochsauerlandkreis/marsberg/` | Hochsauerlandkreis | 1 | 4 | 7 |
+| ✓ | [Beverungen](https://hofladenliste.de/nordrhein-westfalen/hoexter/beverungen/) `/nordrhein-westfalen/hoexter/beverungen/` | Kreis Höxter | 1 | 4 | 7 |
+| ✓ | [Uedem](https://hofladenliste.de/nordrhein-westfalen/kleve/uedem/) `/nordrhein-westfalen/kleve/uedem/` | Kreis Kleve | 1 | 4 | 7 |
+| ✓ | [Dörentrup](https://hofladenliste.de/nordrhein-westfalen/lippe/doerentrup/) `/nordrhein-westfalen/lippe/doerentrup/` | Kreis Lippe | 1 | 4 | 7 |
+| ✓ | [Horn-Bad Meinberg](https://hofladenliste.de/nordrhein-westfalen/lippe/horn-bad-meinberg/) `/nordrhein-westfalen/lippe/horn-bad-meinberg/` | Kreis Lippe | 1 | 4 | 7 |
+| ✓ | [Halver](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/halver/) `/nordrhein-westfalen/maerkischer-kreis/halver/` | Märkischer Kreis | 1 | 4 | 7 |
+| ✓ | [Herscheid](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/herscheid/) `/nordrhein-westfalen/maerkischer-kreis/herscheid/` | Märkischer Kreis | 1 | 4 | 7 |
 
 ## Paket 43 (0/25 fertig)
 
