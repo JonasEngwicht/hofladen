@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 843 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 868 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1023,35 +1023,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Bergkirchen](https://hofladenliste.de/bayern/dachau/bergkirchen/) `/bayern/dachau/bergkirchen/` | Landkreis Dachau | 1 | 4 | 7 |
 | ✓ | [Hebertshausen](https://hofladenliste.de/bayern/dachau/hebertshausen/) `/bayern/dachau/hebertshausen/` | Landkreis Dachau | 1 | 4 | 7 |
 
-## Paket 35 (0/25 fertig)
+## Paket 35 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Karlsfeld](https://hofladenliste.de/bayern/dachau/karlsfeld/) `/bayern/dachau/karlsfeld/` | Landkreis Dachau | 1 | 4 | 7 |
-|  | [Lalling](https://hofladenliste.de/bayern/deggendorf/lalling/) `/bayern/deggendorf/lalling/` | Landkreis Deggendorf | 1 | 4 | 7 |
-|  | [Metten](https://hofladenliste.de/bayern/deggendorf/metten/) `/bayern/deggendorf/metten/` | Landkreis Deggendorf | 1 | 4 | 7 |
-|  | [Schöllnach](https://hofladenliste.de/bayern/deggendorf/schoellnach/) `/bayern/deggendorf/schoellnach/` | Landkreis Deggendorf | 1 | 4 | 7 |
-|  | [Dingolfing](https://hofladenliste.de/bayern/dingolfing-landau/dingolfing/) `/bayern/dingolfing-landau/dingolfing/` | Landkreis Dingolfing-Landau | 1 | 4 | 7 |
-|  | [Landau an der Isar](https://hofladenliste.de/bayern/dingolfing-landau/landau-an-der-isar/) `/bayern/dingolfing-landau/landau-an-der-isar/` | Landkreis Dingolfing-Landau | 1 | 4 | 7 |
-|  | [Reisbach](https://hofladenliste.de/bayern/dingolfing-landau/reisbach/) `/bayern/dingolfing-landau/reisbach/` | Landkreis Dingolfing-Landau | 1 | 4 | 7 |
-|  | [Donauwörth](https://hofladenliste.de/bayern/donau-ries/donauwoerth/) `/bayern/donau-ries/donauwoerth/` | Landkreis Donau-Ries | 1 | 4 | 7 |
-|  | [Forheim](https://hofladenliste.de/bayern/donau-ries/forheim/) `/bayern/donau-ries/forheim/` | Landkreis Donau-Ries | 1 | 4 | 7 |
-|  | [Nördlingen](https://hofladenliste.de/bayern/donau-ries/noerdlingen/) `/bayern/donau-ries/noerdlingen/` | Landkreis Donau-Ries | 1 | 4 | 7 |
-|  | [Bruck](https://hofladenliste.de/bayern/ebersberg/bruck/) `/bayern/ebersberg/bruck/` | Landkreis Ebersberg | 1 | 4 | 7 |
-|  | [Steinhöring](https://hofladenliste.de/bayern/ebersberg/steinhoering/) `/bayern/ebersberg/steinhoering/` | Landkreis Ebersberg | 1 | 4 | 7 |
-|  | [Vaterstetten](https://hofladenliste.de/bayern/ebersberg/vaterstetten/) `/bayern/ebersberg/vaterstetten/` | Landkreis Ebersberg | 1 | 4 | 7 |
-|  | [Buxheim](https://hofladenliste.de/bayern/eichstaett/buxheim/) `/bayern/eichstaett/buxheim/` | Landkreis Eichstätt | 1 | 4 | 7 |
-|  | [Kipfenberg](https://hofladenliste.de/bayern/eichstaett/kipfenberg/) `/bayern/eichstaett/kipfenberg/` | Landkreis Eichstätt | 1 | 4 | 7 |
-|  | [Finsing](https://hofladenliste.de/bayern/erding/finsing/) `/bayern/erding/finsing/` | Landkreis Erding | 1 | 4 | 7 |
-|  | [Heßdorf](https://hofladenliste.de/bayern/erlangen-hoechstadt/hessdorf/) `/bayern/erlangen-hoechstadt/hessdorf/` | Landkreis Erlangen-Höchstadt | 1 | 4 | 7 |
-|  | [Stadt Herzogenaurach](https://hofladenliste.de/bayern/erlangen-hoechstadt/stadt-herzogenaurach/) `/bayern/erlangen-hoechstadt/stadt-herzogenaurach/` | Landkreis Erlangen-Höchstadt | 1 | 4 | 7 |
-|  | [Ebermannstadt](https://hofladenliste.de/bayern/forchheim/ebermannstadt/) `/bayern/forchheim/ebermannstadt/` | Landkreis Forchheim | 1 | 4 | 7 |
-|  | [Forchheim (Landkreis Forchheim)](https://hofladenliste.de/bayern/forchheim/forchheim/) `/bayern/forchheim/forchheim/` | Landkreis Forchheim | 1 | 4 | 7 |
-|  | [Hetzles](https://hofladenliste.de/bayern/forchheim/hetzles/) `/bayern/forchheim/hetzles/` | Landkreis Forchheim | 1 | 4 | 7 |
-|  | [Kunreuth](https://hofladenliste.de/bayern/forchheim/kunreuth/) `/bayern/forchheim/kunreuth/` | Landkreis Forchheim | 1 | 4 | 7 |
-|  | [Weißenohe](https://hofladenliste.de/bayern/forchheim/weissenohe/) `/bayern/forchheim/weissenohe/` | Landkreis Forchheim | 1 | 4 | 7 |
-|  | [Eching (Landkreis Freising)](https://hofladenliste.de/bayern/freising/eching/) `/bayern/freising/eching/` | Landkreis Freising | 1 | 4 | 7 |
-|  | [Marzling](https://hofladenliste.de/bayern/freising/marzling/) `/bayern/freising/marzling/` | Landkreis Freising | 1 | 4 | 7 |
+| ✓ | [Karlsfeld](https://hofladenliste.de/bayern/dachau/karlsfeld/) `/bayern/dachau/karlsfeld/` | Landkreis Dachau | 1 | 4 | 7 |
+| ✓ | [Lalling](https://hofladenliste.de/bayern/deggendorf/lalling/) `/bayern/deggendorf/lalling/` | Landkreis Deggendorf | 1 | 4 | 7 |
+| ✓ | [Metten](https://hofladenliste.de/bayern/deggendorf/metten/) `/bayern/deggendorf/metten/` | Landkreis Deggendorf | 1 | 4 | 7 |
+| ✓ | [Schöllnach](https://hofladenliste.de/bayern/deggendorf/schoellnach/) `/bayern/deggendorf/schoellnach/` | Landkreis Deggendorf | 1 | 4 | 7 |
+| ✓ | [Dingolfing](https://hofladenliste.de/bayern/dingolfing-landau/dingolfing/) `/bayern/dingolfing-landau/dingolfing/` | Landkreis Dingolfing-Landau | 1 | 4 | 7 |
+| ✓ | [Landau an der Isar](https://hofladenliste.de/bayern/dingolfing-landau/landau-an-der-isar/) `/bayern/dingolfing-landau/landau-an-der-isar/` | Landkreis Dingolfing-Landau | 1 | 4 | 7 |
+| ✓ | [Reisbach](https://hofladenliste.de/bayern/dingolfing-landau/reisbach/) `/bayern/dingolfing-landau/reisbach/` | Landkreis Dingolfing-Landau | 1 | 4 | 7 |
+| ✓ | [Donauwörth](https://hofladenliste.de/bayern/donau-ries/donauwoerth/) `/bayern/donau-ries/donauwoerth/` | Landkreis Donau-Ries | 1 | 4 | 7 |
+| ✓ | [Forheim](https://hofladenliste.de/bayern/donau-ries/forheim/) `/bayern/donau-ries/forheim/` | Landkreis Donau-Ries | 1 | 4 | 7 |
+| ✓ | [Nördlingen](https://hofladenliste.de/bayern/donau-ries/noerdlingen/) `/bayern/donau-ries/noerdlingen/` | Landkreis Donau-Ries | 1 | 4 | 7 |
+| ✓ | [Bruck](https://hofladenliste.de/bayern/ebersberg/bruck/) `/bayern/ebersberg/bruck/` | Landkreis Ebersberg | 1 | 4 | 7 |
+| ✓ | [Steinhöring](https://hofladenliste.de/bayern/ebersberg/steinhoering/) `/bayern/ebersberg/steinhoering/` | Landkreis Ebersberg | 1 | 4 | 7 |
+| ✓ | [Vaterstetten](https://hofladenliste.de/bayern/ebersberg/vaterstetten/) `/bayern/ebersberg/vaterstetten/` | Landkreis Ebersberg | 1 | 4 | 7 |
+| ✓ | [Buxheim](https://hofladenliste.de/bayern/eichstaett/buxheim/) `/bayern/eichstaett/buxheim/` | Landkreis Eichstätt | 1 | 4 | 7 |
+| ✓ | [Kipfenberg](https://hofladenliste.de/bayern/eichstaett/kipfenberg/) `/bayern/eichstaett/kipfenberg/` | Landkreis Eichstätt | 1 | 4 | 7 |
+| ✓ | [Finsing](https://hofladenliste.de/bayern/erding/finsing/) `/bayern/erding/finsing/` | Landkreis Erding | 1 | 4 | 7 |
+| ✓ | [Heßdorf](https://hofladenliste.de/bayern/erlangen-hoechstadt/hessdorf/) `/bayern/erlangen-hoechstadt/hessdorf/` | Landkreis Erlangen-Höchstadt | 1 | 4 | 7 |
+| ✓ | [Stadt Herzogenaurach](https://hofladenliste.de/bayern/erlangen-hoechstadt/stadt-herzogenaurach/) `/bayern/erlangen-hoechstadt/stadt-herzogenaurach/` | Landkreis Erlangen-Höchstadt | 1 | 4 | 7 |
+| ✓ | [Ebermannstadt](https://hofladenliste.de/bayern/forchheim/ebermannstadt/) `/bayern/forchheim/ebermannstadt/` | Landkreis Forchheim | 1 | 4 | 7 |
+| ✓ | [Forchheim (Landkreis Forchheim)](https://hofladenliste.de/bayern/forchheim/forchheim/) `/bayern/forchheim/forchheim/` | Landkreis Forchheim | 1 | 4 | 7 |
+| ✓ | [Hetzles](https://hofladenliste.de/bayern/forchheim/hetzles/) `/bayern/forchheim/hetzles/` | Landkreis Forchheim | 1 | 4 | 7 |
+| ✓ | [Kunreuth](https://hofladenliste.de/bayern/forchheim/kunreuth/) `/bayern/forchheim/kunreuth/` | Landkreis Forchheim | 1 | 4 | 7 |
+| ✓ | [Weißenohe](https://hofladenliste.de/bayern/forchheim/weissenohe/) `/bayern/forchheim/weissenohe/` | Landkreis Forchheim | 1 | 4 | 7 |
+| ✓ | [Eching (Landkreis Freising)](https://hofladenliste.de/bayern/freising/eching/) `/bayern/freising/eching/` | Landkreis Freising | 1 | 4 | 7 |
+| ✓ | [Marzling](https://hofladenliste.de/bayern/freising/marzling/) `/bayern/freising/marzling/` | Landkreis Freising | 1 | 4 | 7 |
 
 ## Paket 36 (0/25 fertig)
 
