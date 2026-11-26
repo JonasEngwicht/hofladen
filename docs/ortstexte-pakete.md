@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1174 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1199 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1143,35 +1143,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Bensheim](https://hofladenliste.de/hessen/bergstrasse/bensheim/) `/hessen/bergstrasse/bensheim/` | Landkreis Bergstraße | 1 | 4 | 7 |
 | ✓ | [Biblis](https://hofladenliste.de/hessen/bergstrasse/biblis/) `/hessen/bergstrasse/biblis/` | Landkreis Bergstraße | 1 | 4 | 7 |
 
-## Paket 39 (0/25 fertig)
+## Paket 39 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Einhausen](https://hofladenliste.de/hessen/bergstrasse/einhausen/) `/hessen/bergstrasse/einhausen/` | Landkreis Bergstraße | 1 | 4 | 7 |
-|  | [Fürth](https://hofladenliste.de/hessen/bergstrasse/fuerth/) `/hessen/bergstrasse/fuerth/` | Landkreis Bergstraße | 1 | 4 | 7 |
-|  | [Mörlenbach](https://hofladenliste.de/hessen/bergstrasse/moerlenbach/) `/hessen/bergstrasse/moerlenbach/` | Landkreis Bergstraße | 1 | 4 | 7 |
-|  | [Babenhausen](https://hofladenliste.de/hessen/darmstadt-dieburg/babenhausen/) `/hessen/darmstadt-dieburg/babenhausen/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Bickenbach](https://hofladenliste.de/hessen/darmstadt-dieburg/bickenbach/) `/hessen/darmstadt-dieburg/bickenbach/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Groß-Zimmern](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-zimmern/) `/hessen/darmstadt-dieburg/gross-zimmern/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Modautal](https://hofladenliste.de/hessen/darmstadt-dieburg/modautal/) `/hessen/darmstadt-dieburg/modautal/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Otzberg](https://hofladenliste.de/hessen/darmstadt-dieburg/otzberg/) `/hessen/darmstadt-dieburg/otzberg/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Reinheim](https://hofladenliste.de/hessen/darmstadt-dieburg/reinheim/) `/hessen/darmstadt-dieburg/reinheim/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Schaafheim](https://hofladenliste.de/hessen/darmstadt-dieburg/schaafheim/) `/hessen/darmstadt-dieburg/schaafheim/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Künzell](https://hofladenliste.de/hessen/fulda/kuenzell/) `/hessen/fulda/kuenzell/` | Landkreis Fulda | 1 | 4 | 7 |
-|  | [Wettenberg](https://hofladenliste.de/hessen/giessen/wettenberg/) `/hessen/giessen/wettenberg/` | Landkreis Gießen | 1 | 4 | 7 |
-|  | [Ginsheim-Gustavsburg](https://hofladenliste.de/hessen/gross-gerau/ginsheim-gustavsburg/) `/hessen/gross-gerau/ginsheim-gustavsburg/` | Landkreis Groß-Gerau | 1 | 4 | 7 |
-|  | [Riedstadt](https://hofladenliste.de/hessen/gross-gerau/riedstadt/) `/hessen/gross-gerau/riedstadt/` | Landkreis Groß-Gerau | 1 | 4 | 7 |
-|  | [Alheim](https://hofladenliste.de/hessen/hersfeld-rotenburg/alheim/) `/hessen/hersfeld-rotenburg/alheim/` | Landkreis Hersfeld-Rotenburg | 1 | 4 | 7 |
-|  | [Breitenbach am Herzberg](https://hofladenliste.de/hessen/hersfeld-rotenburg/breitenbach-am-herzberg/) `/hessen/hersfeld-rotenburg/breitenbach-am-herzberg/` | Landkreis Hersfeld-Rotenburg | 1 | 4 | 7 |
-|  | [Friedrichsdorf](https://hofladenliste.de/hessen/hochtaunuskreis/friedrichsdorf/) `/hessen/hochtaunuskreis/friedrichsdorf/` | Hochtaunuskreis | 1 | 4 | 7 |
-|  | [Solms](https://hofladenliste.de/hessen/lahn-dill-kreis/solms/) `/hessen/lahn-dill-kreis/solms/` | Lahn-Dill-Kreis | 1 | 4 | 7 |
-|  | [Waldsolms](https://hofladenliste.de/hessen/lahn-dill-kreis/waldsolms/) `/hessen/lahn-dill-kreis/waldsolms/` | Lahn-Dill-Kreis | 1 | 4 | 7 |
-|  | [Birstein](https://hofladenliste.de/hessen/main-kinzig-kreis/birstein/) `/hessen/main-kinzig-kreis/birstein/` | Main-Kinzig-Kreis | 1 | 4 | 7 |
-|  | [Bruchköbel](https://hofladenliste.de/hessen/main-kinzig-kreis/bruchkoebel/) `/hessen/main-kinzig-kreis/bruchkoebel/` | Main-Kinzig-Kreis | 1 | 4 | 7 |
-|  | [Kriftel](https://hofladenliste.de/hessen/main-taunus-kreis/kriftel/) `/hessen/main-taunus-kreis/kriftel/` | Main-Taunus-Kreis | 1 | 4 | 7 |
-|  | [Sulzbach](https://hofladenliste.de/hessen/main-taunus-kreis/sulzbach/) `/hessen/main-taunus-kreis/sulzbach/` | Main-Taunus-Kreis | 1 | 4 | 7 |
-|  | [Beerfelden](https://hofladenliste.de/hessen/odenwaldkreis/beerfelden/) `/hessen/odenwaldkreis/beerfelden/` | Odenwaldkreis | 1 | 4 | 7 |
-|  | [Mossautal](https://hofladenliste.de/hessen/odenwaldkreis/mossautal/) `/hessen/odenwaldkreis/mossautal/` | Odenwaldkreis | 1 | 4 | 7 |
+| ✓ | [Einhausen](https://hofladenliste.de/hessen/bergstrasse/einhausen/) `/hessen/bergstrasse/einhausen/` | Landkreis Bergstraße | 1 | 4 | 7 |
+| ✓ | [Fürth](https://hofladenliste.de/hessen/bergstrasse/fuerth/) `/hessen/bergstrasse/fuerth/` | Landkreis Bergstraße | 1 | 4 | 7 |
+| ✓ | [Mörlenbach](https://hofladenliste.de/hessen/bergstrasse/moerlenbach/) `/hessen/bergstrasse/moerlenbach/` | Landkreis Bergstraße | 1 | 4 | 7 |
+| ✓ | [Babenhausen](https://hofladenliste.de/hessen/darmstadt-dieburg/babenhausen/) `/hessen/darmstadt-dieburg/babenhausen/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+| ✓ | [Bickenbach](https://hofladenliste.de/hessen/darmstadt-dieburg/bickenbach/) `/hessen/darmstadt-dieburg/bickenbach/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+| ✓ | [Groß-Zimmern](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-zimmern/) `/hessen/darmstadt-dieburg/gross-zimmern/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+| ✓ | [Modautal](https://hofladenliste.de/hessen/darmstadt-dieburg/modautal/) `/hessen/darmstadt-dieburg/modautal/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+| ✓ | [Otzberg](https://hofladenliste.de/hessen/darmstadt-dieburg/otzberg/) `/hessen/darmstadt-dieburg/otzberg/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+| ✓ | [Reinheim](https://hofladenliste.de/hessen/darmstadt-dieburg/reinheim/) `/hessen/darmstadt-dieburg/reinheim/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+| ✓ | [Schaafheim](https://hofladenliste.de/hessen/darmstadt-dieburg/schaafheim/) `/hessen/darmstadt-dieburg/schaafheim/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+| ✓ | [Künzell](https://hofladenliste.de/hessen/fulda/kuenzell/) `/hessen/fulda/kuenzell/` | Landkreis Fulda | 1 | 4 | 7 |
+| ✓ | [Wettenberg](https://hofladenliste.de/hessen/giessen/wettenberg/) `/hessen/giessen/wettenberg/` | Landkreis Gießen | 1 | 4 | 7 |
+| ✓ | [Ginsheim-Gustavsburg](https://hofladenliste.de/hessen/gross-gerau/ginsheim-gustavsburg/) `/hessen/gross-gerau/ginsheim-gustavsburg/` | Landkreis Groß-Gerau | 1 | 4 | 7 |
+| ✓ | [Riedstadt](https://hofladenliste.de/hessen/gross-gerau/riedstadt/) `/hessen/gross-gerau/riedstadt/` | Landkreis Groß-Gerau | 1 | 4 | 7 |
+| ✓ | [Alheim](https://hofladenliste.de/hessen/hersfeld-rotenburg/alheim/) `/hessen/hersfeld-rotenburg/alheim/` | Landkreis Hersfeld-Rotenburg | 1 | 4 | 7 |
+| ✓ | [Breitenbach am Herzberg](https://hofladenliste.de/hessen/hersfeld-rotenburg/breitenbach-am-herzberg/) `/hessen/hersfeld-rotenburg/breitenbach-am-herzberg/` | Landkreis Hersfeld-Rotenburg | 1 | 4 | 7 |
+| ✓ | [Friedrichsdorf](https://hofladenliste.de/hessen/hochtaunuskreis/friedrichsdorf/) `/hessen/hochtaunuskreis/friedrichsdorf/` | Hochtaunuskreis | 1 | 4 | 7 |
+| ✓ | [Solms](https://hofladenliste.de/hessen/lahn-dill-kreis/solms/) `/hessen/lahn-dill-kreis/solms/` | Lahn-Dill-Kreis | 1 | 4 | 7 |
+| ✓ | [Waldsolms](https://hofladenliste.de/hessen/lahn-dill-kreis/waldsolms/) `/hessen/lahn-dill-kreis/waldsolms/` | Lahn-Dill-Kreis | 1 | 4 | 7 |
+| ✓ | [Birstein](https://hofladenliste.de/hessen/main-kinzig-kreis/birstein/) `/hessen/main-kinzig-kreis/birstein/` | Main-Kinzig-Kreis | 1 | 4 | 7 |
+| ✓ | [Bruchköbel](https://hofladenliste.de/hessen/main-kinzig-kreis/bruchkoebel/) `/hessen/main-kinzig-kreis/bruchkoebel/` | Main-Kinzig-Kreis | 1 | 4 | 7 |
+| ✓ | [Kriftel](https://hofladenliste.de/hessen/main-taunus-kreis/kriftel/) `/hessen/main-taunus-kreis/kriftel/` | Main-Taunus-Kreis | 1 | 4 | 7 |
+| ✓ | [Sulzbach](https://hofladenliste.de/hessen/main-taunus-kreis/sulzbach/) `/hessen/main-taunus-kreis/sulzbach/` | Main-Taunus-Kreis | 1 | 4 | 7 |
+| ✓ | [Beerfelden](https://hofladenliste.de/hessen/odenwaldkreis/beerfelden/) `/hessen/odenwaldkreis/beerfelden/` | Odenwaldkreis | 1 | 4 | 7 |
+| ✓ | [Mossautal](https://hofladenliste.de/hessen/odenwaldkreis/mossautal/) `/hessen/odenwaldkreis/mossautal/` | Odenwaldkreis | 1 | 4 | 7 |
 
 ## Paket 40 (0/25 fertig)
 
