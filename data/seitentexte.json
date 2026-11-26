@@ -38588,5 +38588,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/minden-luebbecke/stemwede/": {
+    "titel": "Hofläden in Stemwede: gut zu wissen",
+    "oben": "Stemwede liegt im Kreis Minden-Lübbecke am Fuß des Wiehengebirges nahe der niedersächsischen Grenze. Eingetragen sind Dreyers Hof, der Bauernladen Rennegarbe, der Obst- und Spargelfachbetrieb Buschmann und der Hofladen Wehdebrock.",
+    "einleitung": "Obst und Spargel gibt es direkt beim Fachbetrieb Buschmann, die Spargelsaison läuft im Frühjahr. Die Gegend ist ländlich und flach.\n\nWeitere Höfe findest du in Bad Essen und Ostercappeln.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Essen und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/bad-essen/"
+      },
+      {
+        "text": "Hofläden in Ostercappeln und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/ostercappeln/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/oberbergischer-kreis/hueckeswagen/": {
+    "titel": "Hofläden in Hückeswagen: gut zu wissen",
+    "oben": "Hückeswagen liegt im Bergischen Land im Oberbergischen Kreis. Eingetragen sind ein Eierautomat, der Hofladen Flüß mit Bio-Angebot, ein Hofladen und der Hof Felbeck.",
+    "einleitung": "Eier gibt es am Automaten, jederzeit. Das Bergische Land ist hügelig mit Wiesen und Wald.\n\nWeitere Höfe findest du in Wipperfürth und Radevormwald.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wipperfürth und Umgebung",
+        "pfad": "/nordrhein-westfalen/oberbergischer-kreis/wipperfuerth/"
+      },
+      {
+        "text": "Hofläden in Radevormwald und Umgebung",
+        "pfad": "/nordrhein-westfalen/oberbergischer-kreis/radevormwald/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/oberbergischer-kreis/lindlar/": {
+    "titel": "Hofläden in Lindlar: gut zu wissen",
+    "oben": "Lindlar liegt im Bergischen Land im Oberbergischen Kreis. Eingetragen sind eine Imkerei, ein Regiomat mit Eiern und Kartoffeln, Altenlinderstall und der Hofladen Ziegler.",
+    "einleitung": "Honig von der Imkerei, Eier und Kartoffeln vom Automaten. Köln ist von hier gut erreichbar.\n\nWeitere Höfe findest du in Wipperfürth und Overath.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wipperfürth und Umgebung",
+        "pfad": "/nordrhein-westfalen/oberbergischer-kreis/wipperfuerth/"
+      },
+      {
+        "text": "Hofläden in Overath und Umgebung",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/oberbergischer-kreis/radevormwald/": {
+    "titel": "Hofläden in Radevormwald: gut zu wissen",
+    "oben": "Radevormwald liegt im Bergischen Land im Oberbergischen Kreis. Eingetragen sind das Milchhäuschen Ülfetal vom Hof Brüser-Pieper, der Bergerhof-Shop, Feldermanns Hofcafé und ein Eierautomat.",
+    "einleitung": "Milch gibt es im Milchhäuschen, sie ist Rohmilch: vor dem Trinken abkochen. Eier gibt es am Automaten.\n\nWeitere Höfe findest du in Hückeswagen und Halver.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hückeswagen und Umgebung",
+        "pfad": "/nordrhein-westfalen/oberbergischer-kreis/hueckeswagen/"
+      },
+      {
+        "text": "Hofläden in Halver und Umgebung",
+        "pfad": "/nordrhein-westfalen/maerkischer-kreis/halver/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/olpe/lennestadt/": {
+    "titel": "Hofläden in Lennestadt: gut zu wissen",
+    "oben": "Lennestadt liegt im Sauerland im Kreis Olpe. Eingetragen sind das Hofcafé Heinemann, zwei Regiomaten, einer mit Honig und einer mit Gemüse, und der Hofladen Laki Ranch.",
+    "einleitung": "Honig und Gemüse gibt es am Regiomaten. Das Sauerland ist waldreich und hügelig.\n\nWeitere Höfe findest du in Schmallenberg und Kreuztal.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schmallenberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/hochsauerlandkreis/schmallenberg/"
+      },
+      {
+        "text": "Hofläden in Kreuztal und Umgebung",
+        "pfad": "/nordrhein-westfalen/siegen-wittgenstein/kreuztal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen/": {
+    "titel": "Hofläden in Leichlingen: gut zu wissen",
+    "oben": "Leichlingen liegt im Rheinisch-Bergischen Kreis an der Wupper. Eingetragen sind ein Feld mit Erdbeeren zum Selberpflücken, der Hofladen Nesselrath, der Hielscher Hof und ein Regiomat mit Eiern und Nudeln.",
+    "einleitung": "Erdbeeren kannst du hier selbst pflücken, die Saison ist im Frühsommer. Leichlingen ist als Blütenstadt bekannt.\n\nWeitere Höfe findest du in Leichlingen (Rheinland) und Langenfeld.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Leichlingen (Rheinland) und Umgebung",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen-rheinland/"
+      },
+      {
+        "text": "Hofläden in Langenfeld und Umgebung",
+        "pfad": "/nordrhein-westfalen/mettmann/langenfeld/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/soest/anroechte/": {
+    "titel": "Hofläden in Anröchte: gut zu wissen",
+    "oben": "Anröchte liegt auf der Haar im Kreis Soest. Eingetragen sind eine Milchtankstelle, Gut Eggeringhausen mit Bio-Angebot, der Hof Jaeger mit Hofladen am Pöppelschetal und ein Regiomat mit Eiern und Honig.",
+    "einleitung": "Die Haar ist eine weite, offene Landschaft. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Lippstadt und Geseke.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lippstadt und Umgebung",
+        "pfad": "/nordrhein-westfalen/soest/lippstadt/"
+      },
+      {
+        "text": "Hofläden in Geseke und Umgebung",
+        "pfad": "/nordrhein-westfalen/soest/geseke/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/soest/welver/": {
+    "titel": "Hofläden in Welver: gut zu wissen",
+    "oben": "Welver liegt in der Soester Börde im Kreis Soest. Eingetragen sind die Mosterei Gerhards, der Obsthof Korn, Jürgen Vedder mit Nudeln und Eier Fischer.",
+    "einleitung": "Die Börde hat fruchtbare Böden. Obst gibt es beim Obsthof Korn, Saft aus der Mosterei.\n\nWeitere Höfe findest du in Werl und Lippetal.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Werl und Umgebung",
+        "pfad": "/nordrhein-westfalen/soest/werl/"
+      },
+      {
+        "text": "Hofläden in Lippetal und Umgebung",
+        "pfad": "/nordrhein-westfalen/soest/lippetal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/staedteregion-aachen/wuerselen/": {
+    "titel": "Hofläden in Würselen: gut zu wissen",
+    "oben": "Würselen grenzt direkt an Aachen. Eingetragen sind die Imkerei Bernhard Neuser, die Milchtankstelle Schümmer mit Milch, Fleisch, Gemüse und Obst, der Hofladen Mertens und Boevens Hofladen.",
+    "einleitung": "Die Milchtankstelle Schümmer hat auch Fleisch, Gemüse und Obst. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Aachen und Eschweiler.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Aachen und Umgebung",
+        "pfad": "/nordrhein-westfalen/staedteregion-aachen/aachen/"
+      },
+      {
+        "text": "Hofläden in Eschweiler und Umgebung",
+        "pfad": "/nordrhein-westfalen/staedteregion-aachen/eschweiler/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/steinfurt/emsdetten/": {
+    "titel": "Hofläden in Emsdetten: gut zu wissen",
+    "oben": "Emsdetten liegt an der Ems im Kreis Steinfurt im Münsterland. Eingetragen sind das Hofcafé Ziegenscheune, Tante Emmas Knabberkiste mit Eiern, Milch und Brot, ein Lehrimkerstand und der Eierautomat Kötter.",
+    "einleitung": "Eier gibt es an zwei Automaten, Honig vom Lehrimkerstand. Die Milch aus dem Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Saerbeck und Greven.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Saerbeck und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/saerbeck/"
+      },
+      {
+        "text": "Hofläden in Greven und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/greven/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/steinfurt/greven/": {
+    "titel": "Hofläden in Greven: gut zu wissen",
+    "oben": "Greven liegt an der Ems im Kreis Steinfurt bei Münster. Eingetragen sind der Hofladen Barf Bedarf, das Bauernhofcafé Bönstrup und zwei weitere Hofläden.",
+    "einleitung": "Zum Hofladen gibt es das Bauernhofcafé. Münster ist in wenigen Minuten erreichbar.\n\nWeitere Höfe findest du in Saerbeck und Emsdetten.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Saerbeck und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/saerbeck/"
+      },
+      {
+        "text": "Hofläden in Emsdetten und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/emsdetten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/steinfurt/laer/": {
+    "titel": "Hofläden in Laer: gut zu wissen",
+    "oben": "Laer liegt im Kreis Steinfurt im Münsterland. Eingetragen sind der Arche- und Naturlandhof Büning mit Bio-Fleisch, ein Regiomat mit Milch, der Hofladen Oskamp mit Milch und ein weiterer Hofladen.",
+    "einleitung": "Bio-Fleisch gibt es beim Naturlandhof Büning, Milch am Regiomaten. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Billerbeck und Schöppingen.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Billerbeck und Umgebung",
+        "pfad": "/nordrhein-westfalen/coesfeld/billerbeck/"
+      },
+      {
+        "text": "Hofläden in Schöppingen und Umgebung",
+        "pfad": "/nordrhein-westfalen/borken/schoeppingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/steinfurt/wettringen/": {
+    "titel": "Hofläden in Wettringen (Kreis Steinfurt): gut zu wissen",
+    "oben": "Wettringen liegt im Kreis Steinfurt im nordwestlichen Münsterland. Eingetragen sind das Honiglädchen, das Rothenberger Hofcafé, ein Hofladen und der Spargelhof Lastering.",
+    "einleitung": "Spargel gibt es beim Spargelhof Lastering, in der Saison im Frühjahr. Honig gibt es im Honiglädchen.\n\nWeitere Höfe findest du in Steinfurt und Rheine.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Steinfurt und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/steinfurt/"
+      },
+      {
+        "text": "Hofläden in Rheine und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/rheine/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/unna/werne/": {
+    "titel": "Hofläden in Werne: gut zu wissen",
+    "oben": "Werne liegt im Kreis Unna an der Lippe am Rand des Münsterlands. Eingetragen sind Hönnemann Spargel, Eckmanns Kartoffelkiste, ein Regiomat und ein Hofladen.",
+    "einleitung": "Spargel und Kartoffeln sind die Spezialitäten, Spargel im Frühjahr und Kartoffeln im Herbst. Dortmund und Hamm sind nicht weit.\n\nWeitere Höfe findest du in Bergkamen und Lünen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bergkamen und Umgebung",
+        "pfad": "/nordrhein-westfalen/unna/bergkamen/"
+      },
+      {
+        "text": "Hofläden in Lünen und Umgebung",
+        "pfad": "/nordrhein-westfalen/unna/luenen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/warendorf/ennigerloh/": {
+    "titel": "Hofläden in Ennigerloh: gut zu wissen",
+    "oben": "Ennigerloh liegt im Kreis Warendorf im Münsterland. Eingetragen sind der Hofladen Laakenhof, ein Hofcafé, ein Bio-Regiomat und der Spargelhof Friggemann.",
+    "einleitung": "Spargel gibt es beim Spargelhof Friggemann, in der Saison im Frühjahr. Der Regiomat hat Bio-Produkte.\n\nWeitere Höfe findest du in Oelde und Beckum.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Oelde und Umgebung",
+        "pfad": "/nordrhein-westfalen/warendorf/oelde/"
+      },
+      {
+        "text": "Hofläden in Beckum und Umgebung",
+        "pfad": "/nordrhein-westfalen/warendorf/beckum/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/warendorf/wadersloh/": {
+    "titel": "Hofläden in Wadersloh: gut zu wissen",
+    "oben": "Wadersloh liegt im Kreis Warendorf im Münsterland. Eingetragen sind Beltie Bio Beef, eine Milchtankstelle, der Gemüsehof Brüggenthies und Floreana.",
+    "einleitung": "Bio-Fleisch gibt es bei Beltie Bio Beef, Gemüse beim Gemüsehof Brüggenthies. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Lippstadt und Lippetal.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lippstadt und Umgebung",
+        "pfad": "/nordrhein-westfalen/soest/lippstadt/"
+      },
+      {
+        "text": "Hofläden in Lippetal und Umgebung",
+        "pfad": "/nordrhein-westfalen/soest/lippetal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/bad-duerkheim/erpolzheim/": {
+    "titel": "Hofläden in Erpolzheim: gut zu wissen",
+    "oben": "Erpolzheim liegt in der Pfalz im Landkreis Bad Dürkheim. Eingetragen sind der Spargelhof Zein, das Landhaus-Hilberth mit Obst, Kartoffeln und Getränken, der Obsthof und das Gästehaus Brust und der Ziegelhof.",
+    "einleitung": "Spargel, Obst und Kartoffeln kommen von den Höfen vor Ort. Die Vorderpfalz ist für Gemüseanbau bekannt.\n\nWeitere Höfe findest du in Weisenheim am Sand und Meckenheim.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weisenheim am Sand und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/"
+      },
+      {
+        "text": "Hofläden in Meckenheim (Landkreis Bad Dürkheim) und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/meckenheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/bad-duerkheim/hassloch/": {
+    "titel": "Hofläden in Haßloch: gut zu wissen",
+    "oben": "Haßloch liegt in der Pfalz im Landkreis Bad Dürkheim. Eingetragen sind Klings Lehmgrubenhof, das Weingut Nett mit Getränken, ein Regiomat und Kästel Gemüsebau.",
+    "einleitung": "Gemüse gibt es beim Gemüsebau Kästel, Wein beim Weingut Nett. Die Pfalz ist eine Wein- und Gemüsegegend.\n\nWeitere Höfe findest du in Böhl-Iggelheim und Meckenheim.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Böhl-Iggelheim und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/boehl-iggelheim/"
+      },
+      {
+        "text": "Hofläden in Meckenheim (Landkreis Bad Dürkheim) und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/meckenheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/": {
+    "titel": "Hofläden in Weisenheim am Sand: gut zu wissen",
+    "oben": "Weisenheim am Sand liegt in der Vorderpfalz im Landkreis Bad Dürkheim. Eingetragen sind ein Grillfleischautomat, zwei Hofläden und der Spargel- und Erdbeerhof Andreas Eberhardt.",
+    "einleitung": "Spargel und Erdbeeren sind die Saisonprodukte des Orts, Spargel im Frühjahr, Erdbeeren im Frühsommer. Fleisch zum Grillen gibt es am Automaten.\n\nWeitere Höfe findest du in Erpolzheim und Frankenthal.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Erpolzheim und Umgebung",
+        "pfad": "/rheinland-pfalz/bad-duerkheim/erpolzheim/"
+      },
+      {
+        "text": "Hofläden in Frankenthal (Pfalz)",
+        "pfad": "/rheinland-pfalz/frankenthal-pfalz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/germersheim/bellheim/": {
+    "titel": "Hofläden in Bellheim: gut zu wissen",
+    "oben": "Bellheim liegt in der Südpfalz im Landkreis Germersheim. Eingetragen sind der Kartoffelhof Böhm, der Bauernhof Mildenberger, der Birkenhof Bellheim und ein Regiomat mit Fleisch.",
+    "einleitung": "Kartoffeln gibt es beim Kartoffelhof Böhm, Fleisch am Regiomaten. Die Südpfalz ist eine flache Gemüse- und Ackerlandschaft.\n\nWeitere Höfe findest du in Offenbach an der Queich und Weingarten.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Offenbach an der Queich und Umgebung",
+        "pfad": "/rheinland-pfalz/suedliche-weinstrasse/offenbach-an-der-queich/"
+      },
+      {
+        "text": "Hofläden in Weingarten (Landkreis Germersheim) und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/weingarten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/germersheim/schwegenheim/": {
+    "titel": "Hofläden in Schwegenheim: gut zu wissen",
+    "oben": "Schwegenheim liegt im Landkreis Germersheim in der Vorderpfalz. Eingetragen sind der Merkelhof, Ackermanns Landlädchen, der Hof Hellmann und ein Regiomat mit Eiern.",
+    "einleitung": "Drei Hofläden und ein Regiomat bieten Eier und mehr direkt vom Hof. Speyer ist nicht weit.\n\nWeitere Höfe findest du in Weingarten und Römerberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weingarten (Landkreis Germersheim) und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/weingarten/"
+      },
+      {
+        "text": "Hofläden in Römerberg und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/landau-in-der-pfalz/": {
+    "titel": "Hofläden in Landau in der Pfalz: gut zu wissen",
+    "oben": "Landau in der Pfalz liegt an der Südlichen Weinstraße. Eingetragen sind zwei Regiomaten, einer davon mit Fleisch, und Die Meckerei mit Käse.",
+    "einleitung": "Käse gibt es im Käseladen Die Meckerei, Fleisch am Automaten. Die Weinberge der Pfalz beginnen vor der Stadt.\n\nWeitere Höfe findest du in Offenbach an der Queich und Edenkoben.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Offenbach an der Queich und Umgebung",
+        "pfad": "/rheinland-pfalz/suedliche-weinstrasse/offenbach-an-der-queich/"
+      },
+      {
+        "text": "Hofläden in Edenkoben und Umgebung",
+        "pfad": "/rheinland-pfalz/suedliche-weinstrasse/edenkoben/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/mainz-bingen/bodenheim/": {
+    "titel": "Hofläden in Bodenheim: gut zu wissen",
+    "oben": "Bodenheim liegt am Rhein südlich von Mainz in Rheinhessen. Eingetragen sind eine Milchtankstelle, zwei Regiomaten, einer mit Eiern, und ein Hofladen.",
+    "einleitung": "Milch und Eier gibt es am Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Ginsheim-Gustavsburg und Trebur.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ginsheim-Gustavsburg und Umgebung",
+        "pfad": "/hessen/gross-gerau/ginsheim-gustavsburg/"
+      },
+      {
+        "text": "Hofläden in Trebur und Umgebung",
+        "pfad": "/hessen/gross-gerau/trebur/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/mainz-bingen/ingelheim-am-rhein/": {
+    "titel": "Hofläden in Ingelheim am Rhein: gut zu wissen",
+    "oben": "Ingelheim am Rhein liegt in Rheinhessen zwischen Mainz und Bingen. Eingetragen sind ein Hofladen mit Gemüse und Obst, der Obsthof Werner, der Hofladen-Michel in Wackernheim und das Hofgut Drei Linden mit Bio-Angebot.",
+    "einleitung": "Ingelheim ist für Spargel und Rotwein bekannt, Obst gibt es im Obsthof Werner. Das Hofgut Drei Linden arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Eltville am Rhein und Nieder-Olm.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Eltville am Rhein und Umgebung",
+        "pfad": "/hessen/rheingau-taunus-kreis/eltville-am-rhein/"
+      },
+      {
+        "text": "Hofläden in Nieder-Olm und Umgebung",
+        "pfad": "/rheinland-pfalz/mainz-bingen/nieder-olm/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/mainz-bingen/nieder-olm/": {
+    "titel": "Hofläden in Nieder-Olm: gut zu wissen",
+    "oben": "Nieder-Olm liegt in Rheinhessen südwestlich von Mainz. Eingetragen sind zwei Imkereien, der Kartoffelhof Engmann und der Obsthof Hochhaus.",
+    "einleitung": "Honig bieten zwei Imkereien an. Kartoffeln kommen vom Kartoffelhof Engmann.\n\nWeitere Höfe findest du in Zornheim und Bodenheim.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zornheim und Umgebung",
+        "pfad": "/rheinland-pfalz/mainz-bingen/zornheim/"
+      },
+      {
+        "text": "Hofläden in Bodenheim und Umgebung",
+        "pfad": "/rheinland-pfalz/mainz-bingen/bodenheim/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }

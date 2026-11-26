@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1272 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1297 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1263,35 +1263,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Halver](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/halver/) `/nordrhein-westfalen/maerkischer-kreis/halver/` | Märkischer Kreis | 1 | 4 | 7 |
 | ✓ | [Herscheid](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/herscheid/) `/nordrhein-westfalen/maerkischer-kreis/herscheid/` | Märkischer Kreis | 1 | 4 | 7 |
 
-## Paket 43 (0/25 fertig)
+## Paket 43 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Stemwede](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/stemwede/) `/nordrhein-westfalen/minden-luebbecke/stemwede/` | Kreis Minden-Lübbecke | 1 | 4 | 7 |
-|  | [Hückeswagen](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/hueckeswagen/) `/nordrhein-westfalen/oberbergischer-kreis/hueckeswagen/` | Oberbergischer Kreis | 1 | 4 | 7 |
-|  | [Lindlar](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/lindlar/) `/nordrhein-westfalen/oberbergischer-kreis/lindlar/` | Oberbergischer Kreis | 1 | 4 | 7 |
-|  | [Radevormwald](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/radevormwald/) `/nordrhein-westfalen/oberbergischer-kreis/radevormwald/` | Oberbergischer Kreis | 1 | 4 | 7 |
-|  | [Lennestadt](https://hofladenliste.de/nordrhein-westfalen/olpe/lennestadt/) `/nordrhein-westfalen/olpe/lennestadt/` | Kreis Olpe | 1 | 4 | 7 |
-|  | [Leichlingen](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen/` | Rheinisch-Bergischer Kreis | 1 | 4 | 7 |
-|  | [Anröchte](https://hofladenliste.de/nordrhein-westfalen/soest/anroechte/) `/nordrhein-westfalen/soest/anroechte/` | Kreis Soest | 1 | 4 | 7 |
-|  | [Welver](https://hofladenliste.de/nordrhein-westfalen/soest/welver/) `/nordrhein-westfalen/soest/welver/` | Kreis Soest | 1 | 4 | 7 |
-|  | [Würselen](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/wuerselen/) `/nordrhein-westfalen/staedteregion-aachen/wuerselen/` | Städteregion Aachen | 1 | 4 | 7 |
-|  | [Emsdetten](https://hofladenliste.de/nordrhein-westfalen/steinfurt/emsdetten/) `/nordrhein-westfalen/steinfurt/emsdetten/` | Kreis Steinfurt | 1 | 4 | 7 |
-|  | [Greven](https://hofladenliste.de/nordrhein-westfalen/steinfurt/greven/) `/nordrhein-westfalen/steinfurt/greven/` | Kreis Steinfurt | 1 | 4 | 7 |
-|  | [Laer](https://hofladenliste.de/nordrhein-westfalen/steinfurt/laer/) `/nordrhein-westfalen/steinfurt/laer/` | Kreis Steinfurt | 1 | 4 | 7 |
-|  | [Wettringen (Kreis Steinfurt)](https://hofladenliste.de/nordrhein-westfalen/steinfurt/wettringen/) `/nordrhein-westfalen/steinfurt/wettringen/` | Kreis Steinfurt | 1 | 4 | 7 |
-|  | [Werne](https://hofladenliste.de/nordrhein-westfalen/unna/werne/) `/nordrhein-westfalen/unna/werne/` | Kreis Unna | 1 | 4 | 7 |
-|  | [Ennigerloh](https://hofladenliste.de/nordrhein-westfalen/warendorf/ennigerloh/) `/nordrhein-westfalen/warendorf/ennigerloh/` | Kreis Warendorf | 1 | 4 | 7 |
-|  | [Wadersloh](https://hofladenliste.de/nordrhein-westfalen/warendorf/wadersloh/) `/nordrhein-westfalen/warendorf/wadersloh/` | Kreis Warendorf | 1 | 4 | 7 |
-|  | [Erpolzheim](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/erpolzheim/) `/rheinland-pfalz/bad-duerkheim/erpolzheim/` | Landkreis Bad Dürkheim | 1 | 4 | 7 |
-|  | [Haßloch](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/hassloch/) `/rheinland-pfalz/bad-duerkheim/hassloch/` | Landkreis Bad Dürkheim | 1 | 4 | 7 |
-|  | [Weisenheim am Sand](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/) `/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/` | Landkreis Bad Dürkheim | 1 | 4 | 7 |
-|  | [Bellheim](https://hofladenliste.de/rheinland-pfalz/germersheim/bellheim/) `/rheinland-pfalz/germersheim/bellheim/` | Landkreis Germersheim | 1 | 4 | 7 |
-|  | [Schwegenheim](https://hofladenliste.de/rheinland-pfalz/germersheim/schwegenheim/) `/rheinland-pfalz/germersheim/schwegenheim/` | Landkreis Germersheim | 1 | 4 | 7 |
-|  | [Landau in der Pfalz](https://hofladenliste.de/rheinland-pfalz/landau-in-der-pfalz/) `/rheinland-pfalz/landau-in-der-pfalz/` | Landau in der Pfalz | 1 | 4 | 7 |
-|  | [Bodenheim](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/bodenheim/) `/rheinland-pfalz/mainz-bingen/bodenheim/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
-|  | [Ingelheim am Rhein](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/ingelheim-am-rhein/) `/rheinland-pfalz/mainz-bingen/ingelheim-am-rhein/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
-|  | [Nieder-Olm](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/nieder-olm/) `/rheinland-pfalz/mainz-bingen/nieder-olm/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
+| ✓ | [Stemwede](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/stemwede/) `/nordrhein-westfalen/minden-luebbecke/stemwede/` | Kreis Minden-Lübbecke | 1 | 4 | 7 |
+| ✓ | [Hückeswagen](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/hueckeswagen/) `/nordrhein-westfalen/oberbergischer-kreis/hueckeswagen/` | Oberbergischer Kreis | 1 | 4 | 7 |
+| ✓ | [Lindlar](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/lindlar/) `/nordrhein-westfalen/oberbergischer-kreis/lindlar/` | Oberbergischer Kreis | 1 | 4 | 7 |
+| ✓ | [Radevormwald](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/radevormwald/) `/nordrhein-westfalen/oberbergischer-kreis/radevormwald/` | Oberbergischer Kreis | 1 | 4 | 7 |
+| ✓ | [Lennestadt](https://hofladenliste.de/nordrhein-westfalen/olpe/lennestadt/) `/nordrhein-westfalen/olpe/lennestadt/` | Kreis Olpe | 1 | 4 | 7 |
+| ✓ | [Leichlingen](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen/` | Rheinisch-Bergischer Kreis | 1 | 4 | 7 |
+| ✓ | [Anröchte](https://hofladenliste.de/nordrhein-westfalen/soest/anroechte/) `/nordrhein-westfalen/soest/anroechte/` | Kreis Soest | 1 | 4 | 7 |
+| ✓ | [Welver](https://hofladenliste.de/nordrhein-westfalen/soest/welver/) `/nordrhein-westfalen/soest/welver/` | Kreis Soest | 1 | 4 | 7 |
+| ✓ | [Würselen](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/wuerselen/) `/nordrhein-westfalen/staedteregion-aachen/wuerselen/` | Städteregion Aachen | 1 | 4 | 7 |
+| ✓ | [Emsdetten](https://hofladenliste.de/nordrhein-westfalen/steinfurt/emsdetten/) `/nordrhein-westfalen/steinfurt/emsdetten/` | Kreis Steinfurt | 1 | 4 | 7 |
+| ✓ | [Greven](https://hofladenliste.de/nordrhein-westfalen/steinfurt/greven/) `/nordrhein-westfalen/steinfurt/greven/` | Kreis Steinfurt | 1 | 4 | 7 |
+| ✓ | [Laer](https://hofladenliste.de/nordrhein-westfalen/steinfurt/laer/) `/nordrhein-westfalen/steinfurt/laer/` | Kreis Steinfurt | 1 | 4 | 7 |
+| ✓ | [Wettringen (Kreis Steinfurt)](https://hofladenliste.de/nordrhein-westfalen/steinfurt/wettringen/) `/nordrhein-westfalen/steinfurt/wettringen/` | Kreis Steinfurt | 1 | 4 | 7 |
+| ✓ | [Werne](https://hofladenliste.de/nordrhein-westfalen/unna/werne/) `/nordrhein-westfalen/unna/werne/` | Kreis Unna | 1 | 4 | 7 |
+| ✓ | [Ennigerloh](https://hofladenliste.de/nordrhein-westfalen/warendorf/ennigerloh/) `/nordrhein-westfalen/warendorf/ennigerloh/` | Kreis Warendorf | 1 | 4 | 7 |
+| ✓ | [Wadersloh](https://hofladenliste.de/nordrhein-westfalen/warendorf/wadersloh/) `/nordrhein-westfalen/warendorf/wadersloh/` | Kreis Warendorf | 1 | 4 | 7 |
+| ✓ | [Erpolzheim](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/erpolzheim/) `/rheinland-pfalz/bad-duerkheim/erpolzheim/` | Landkreis Bad Dürkheim | 1 | 4 | 7 |
+| ✓ | [Haßloch](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/hassloch/) `/rheinland-pfalz/bad-duerkheim/hassloch/` | Landkreis Bad Dürkheim | 1 | 4 | 7 |
+| ✓ | [Weisenheim am Sand](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/) `/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/` | Landkreis Bad Dürkheim | 1 | 4 | 7 |
+| ✓ | [Bellheim](https://hofladenliste.de/rheinland-pfalz/germersheim/bellheim/) `/rheinland-pfalz/germersheim/bellheim/` | Landkreis Germersheim | 1 | 4 | 7 |
+| ✓ | [Schwegenheim](https://hofladenliste.de/rheinland-pfalz/germersheim/schwegenheim/) `/rheinland-pfalz/germersheim/schwegenheim/` | Landkreis Germersheim | 1 | 4 | 7 |
+| ✓ | [Landau in der Pfalz](https://hofladenliste.de/rheinland-pfalz/landau-in-der-pfalz/) `/rheinland-pfalz/landau-in-der-pfalz/` | Landau in der Pfalz | 1 | 4 | 7 |
+| ✓ | [Bodenheim](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/bodenheim/) `/rheinland-pfalz/mainz-bingen/bodenheim/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
+| ✓ | [Ingelheim am Rhein](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/ingelheim-am-rhein/) `/rheinland-pfalz/mainz-bingen/ingelheim-am-rhein/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
+| ✓ | [Nieder-Olm](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/nieder-olm/) `/rheinland-pfalz/mainz-bingen/nieder-olm/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
 
 ## Paket 44 (0/25 fertig)
 
