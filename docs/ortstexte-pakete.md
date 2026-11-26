@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 651 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 670 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -753,12 +753,12 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Kissing](https://hofladenliste.de/bayern/aichach-friedberg/kissing/) `/bayern/aichach-friedberg/kissing/` | Landkreis Aichach-Friedberg | 1 | 5 | 8 |
 | ✓ | [Obergriesbach](https://hofladenliste.de/bayern/aichach-friedberg/obergriesbach/) `/bayern/aichach-friedberg/obergriesbach/` | Landkreis Aichach-Friedberg | 1 | 5 | 8 |
 
-## Paket 26 (23/25 fertig)
+## Paket 26 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
 | ✓ | [Hammelburg](https://hofladenliste.de/bayern/bad-kissingen/hammelburg/) `/bayern/bad-kissingen/hammelburg/` | Landkreis Bad Kissingen | 1 | 5 | 8 |
-|  | [Teisendorf](https://hofladenliste.de/bayern/berchtesgadener-land/teisendorf/) `/bayern/berchtesgadener-land/teisendorf/` | Landkreis Berchtesgadener Land | 1 | 5 | 8 |
+| ✓ | [Teisendorf](https://hofladenliste.de/bayern/berchtesgadener-land/teisendorf/) `/bayern/berchtesgadener-land/teisendorf/` | Landkreis Berchtesgadener Land | 1 | 5 | 8 |
 | ✓ | [Haimhausen](https://hofladenliste.de/bayern/dachau/haimhausen/) `/bayern/dachau/haimhausen/` | Landkreis Dachau | 1 | 5 | 8 |
 | ✓ | [Markt Indersdorf](https://hofladenliste.de/bayern/dachau/markt-indersdorf/) `/bayern/dachau/markt-indersdorf/` | Landkreis Dachau | 1 | 5 | 8 |
 | ✓ | [Pilsting](https://hofladenliste.de/bayern/dingolfing-landau/pilsting/) `/bayern/dingolfing-landau/pilsting/` | Landkreis Dingolfing-Landau | 1 | 5 | 8 |
@@ -774,7 +774,7 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Alling](https://hofladenliste.de/bayern/fuerstenfeldbruck/alling/) `/bayern/fuerstenfeldbruck/alling/` | Landkreis Fürstenfeldbruck | 1 | 5 | 8 |
 | ✓ | [Fürstenfeldbruck](https://hofladenliste.de/bayern/fuerstenfeldbruck/fuerstenfeldbruck/) `/bayern/fuerstenfeldbruck/fuerstenfeldbruck/` | Landkreis Fürstenfeldbruck | 1 | 5 | 8 |
 | ✓ | [Volkach](https://hofladenliste.de/bayern/kitzingen/volkach/) `/bayern/kitzingen/volkach/` | Landkreis Kitzingen | 1 | 5 | 8 |
-|  | [Rothenburg ob der Tauber](https://hofladenliste.de/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/) `/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/` | Landkreis Ansbach | 1 | 5 | 8 |
+| ✓ | [Rothenburg ob der Tauber](https://hofladenliste.de/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/) `/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/` | Landkreis Ansbach | 1 | 5 | 8 |
 | ✓ | [Großostheim](https://hofladenliste.de/bayern/landkreis-aschaffenburg/grossostheim/) `/bayern/landkreis-aschaffenburg/grossostheim/` | Landkreis Aschaffenburg | 1 | 5 | 8 |
 | ✓ | [Großaitingen](https://hofladenliste.de/bayern/landkreis-augsburg/grossaitingen/) `/bayern/landkreis-augsburg/grossaitingen/` | Landkreis Augsburg | 1 | 5 | 8 |
 | ✓ | [Weitramsdorf](https://hofladenliste.de/bayern/landkreis-coburg/weitramsdorf/) `/bayern/landkreis-coburg/weitramsdorf/` | Landkreis Coburg | 1 | 5 | 8 |
@@ -783,7 +783,7 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Kirchheim bei München](https://hofladenliste.de/bayern/landkreis-muenchen/kirchheim-bei-muenchen/) `/bayern/landkreis-muenchen/kirchheim-bei-muenchen/` | Landkreis München | 1 | 5 | 8 |
 | ✓ | [Kolbermoor](https://hofladenliste.de/bayern/landkreis-rosenheim/kolbermoor/) `/bayern/landkreis-rosenheim/kolbermoor/` | Landkreis Rosenheim | 1 | 5 | 8 |
 
-## Paket 27 (8/25 fertig)
+## Paket 27 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
@@ -794,24 +794,24 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Kaufering](https://hofladenliste.de/bayern/landsberg-am-lech/kaufering/) `/bayern/landsberg-am-lech/kaufering/` | Landkreis Landsberg am Lech | 1 | 5 | 8 |
 | ✓ | [Karlstadt](https://hofladenliste.de/bayern/main-spessart/karlstadt/) `/bayern/main-spessart/karlstadt/` | Landkreis Main-Spessart | 1 | 5 | 8 |
 | ✓ | [Holzkirchen](https://hofladenliste.de/bayern/miesbach/holzkirchen/) `/bayern/miesbach/holzkirchen/` | Landkreis Miesbach | 1 | 5 | 8 |
-|  | [Eichenbühl](https://hofladenliste.de/bayern/miltenberg/eichenbuehl/) `/bayern/miltenberg/eichenbuehl/` | Landkreis Miltenberg | 1 | 5 | 8 |
-|  | [Obernburg am Main](https://hofladenliste.de/bayern/miltenberg/obernburg-am-main/) `/bayern/miltenberg/obernburg-am-main/` | Landkreis Miltenberg | 1 | 5 | 8 |
-|  | [Oberstaufen](https://hofladenliste.de/bayern/oberallgaeu/oberstaufen/) `/bayern/oberallgaeu/oberstaufen/` | Landkreis Oberallgäu | 1 | 5 | 8 |
-|  | [Nesselwang](https://hofladenliste.de/bayern/ostallgaeu/nesselwang/) `/bayern/ostallgaeu/nesselwang/` | Landkreis Ostallgäu | 1 | 5 | 8 |
-|  | [Kammerstein](https://hofladenliste.de/bayern/roth/kammerstein/) `/bayern/roth/kammerstein/` | Landkreis Roth | 1 | 5 | 8 |
-|  | [Rohr (Landkreis Roth)](https://hofladenliste.de/bayern/roth/rohr/) `/bayern/roth/rohr/` | Landkreis Roth | 1 | 5 | 8 |
-|  | [Roth](https://hofladenliste.de/bayern/roth/roth/) `/bayern/roth/roth/` | Landkreis Roth | 1 | 5 | 8 |
+| ✓ | [Eichenbühl](https://hofladenliste.de/bayern/miltenberg/eichenbuehl/) `/bayern/miltenberg/eichenbuehl/` | Landkreis Miltenberg | 1 | 5 | 8 |
+| ✓ | [Obernburg am Main](https://hofladenliste.de/bayern/miltenberg/obernburg-am-main/) `/bayern/miltenberg/obernburg-am-main/` | Landkreis Miltenberg | 1 | 5 | 8 |
+| ✓ | [Oberstaufen](https://hofladenliste.de/bayern/oberallgaeu/oberstaufen/) `/bayern/oberallgaeu/oberstaufen/` | Landkreis Oberallgäu | 1 | 5 | 8 |
+| ✓ | [Nesselwang](https://hofladenliste.de/bayern/ostallgaeu/nesselwang/) `/bayern/ostallgaeu/nesselwang/` | Landkreis Ostallgäu | 1 | 5 | 8 |
+| ✓ | [Kammerstein](https://hofladenliste.de/bayern/roth/kammerstein/) `/bayern/roth/kammerstein/` | Landkreis Roth | 1 | 5 | 8 |
+| ✓ | [Rohr (Landkreis Roth)](https://hofladenliste.de/bayern/roth/rohr/) `/bayern/roth/rohr/` | Landkreis Roth | 1 | 5 | 8 |
+| ✓ | [Roth](https://hofladenliste.de/bayern/roth/roth/) `/bayern/roth/roth/` | Landkreis Roth | 1 | 5 | 8 |
 | ✓ | [Inning am Ammersee](https://hofladenliste.de/bayern/starnberg/inning-am-ammersee/) `/bayern/starnberg/inning-am-ammersee/` | Landkreis Starnberg | 1 | 5 | 8 |
-|  | [Bürstadt](https://hofladenliste.de/hessen/bergstrasse/buerstadt/) `/hessen/bergstrasse/buerstadt/` | Landkreis Bergstraße | 1 | 5 | 8 |
-|  | [Lampertheim](https://hofladenliste.de/hessen/bergstrasse/lampertheim/) `/hessen/bergstrasse/lampertheim/` | Landkreis Bergstraße | 1 | 5 | 8 |
-|  | [Alsbach-Hähnlein](https://hofladenliste.de/hessen/darmstadt-dieburg/alsbach-haehnlein/) `/hessen/darmstadt-dieburg/alsbach-haehnlein/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
-|  | [Griesheim](https://hofladenliste.de/hessen/darmstadt-dieburg/griesheim/) `/hessen/darmstadt-dieburg/griesheim/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
-|  | [Groß-Umstadt](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-umstadt/) `/hessen/darmstadt-dieburg/gross-umstadt/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
-|  | [Großenlüder](https://hofladenliste.de/hessen/fulda/grossenlueder/) `/hessen/fulda/grossenlueder/` | Landkreis Fulda | 1 | 5 | 8 |
-|  | [Lich](https://hofladenliste.de/hessen/giessen/lich/) `/hessen/giessen/lich/` | Landkreis Gießen | 1 | 5 | 8 |
-|  | [Pohlheim](https://hofladenliste.de/hessen/giessen/pohlheim/) `/hessen/giessen/pohlheim/` | Landkreis Gießen | 1 | 5 | 8 |
-|  | [Büttelborn](https://hofladenliste.de/hessen/gross-gerau/buettelborn/) `/hessen/gross-gerau/buettelborn/` | Landkreis Groß-Gerau | 1 | 5 | 8 |
-|  | [Baunatal](https://hofladenliste.de/hessen/landkreis-kassel/baunatal/) `/hessen/landkreis-kassel/baunatal/` | Landkreis Kassel | 1 | 5 | 8 |
+| ✓ | [Bürstadt](https://hofladenliste.de/hessen/bergstrasse/buerstadt/) `/hessen/bergstrasse/buerstadt/` | Landkreis Bergstraße | 1 | 5 | 8 |
+| ✓ | [Lampertheim](https://hofladenliste.de/hessen/bergstrasse/lampertheim/) `/hessen/bergstrasse/lampertheim/` | Landkreis Bergstraße | 1 | 5 | 8 |
+| ✓ | [Alsbach-Hähnlein](https://hofladenliste.de/hessen/darmstadt-dieburg/alsbach-haehnlein/) `/hessen/darmstadt-dieburg/alsbach-haehnlein/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
+| ✓ | [Griesheim](https://hofladenliste.de/hessen/darmstadt-dieburg/griesheim/) `/hessen/darmstadt-dieburg/griesheim/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
+| ✓ | [Groß-Umstadt](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-umstadt/) `/hessen/darmstadt-dieburg/gross-umstadt/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
+| ✓ | [Großenlüder](https://hofladenliste.de/hessen/fulda/grossenlueder/) `/hessen/fulda/grossenlueder/` | Landkreis Fulda | 1 | 5 | 8 |
+| ✓ | [Lich](https://hofladenliste.de/hessen/giessen/lich/) `/hessen/giessen/lich/` | Landkreis Gießen | 1 | 5 | 8 |
+| ✓ | [Pohlheim](https://hofladenliste.de/hessen/giessen/pohlheim/) `/hessen/giessen/pohlheim/` | Landkreis Gießen | 1 | 5 | 8 |
+| ✓ | [Büttelborn](https://hofladenliste.de/hessen/gross-gerau/buettelborn/) `/hessen/gross-gerau/buettelborn/` | Landkreis Groß-Gerau | 1 | 5 | 8 |
+| ✓ | [Baunatal](https://hofladenliste.de/hessen/landkreis-kassel/baunatal/) `/hessen/landkreis-kassel/baunatal/` | Landkreis Kassel | 1 | 5 | 8 |
 
 ## Paket 28 (0/25 fertig)
 
