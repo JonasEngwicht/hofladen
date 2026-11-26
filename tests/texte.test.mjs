@@ -51,3 +51,25 @@ test('jede indexierbare Hofseite wird von mindestens einer indexierbaren Listen-
   const ohne = [...idx].filter((p) => p.startsWith('/hof/') && !verlinkt.has(p));
   assert.deepEqual(ohne.slice(0, 10), [], `${ohne.length} Hofseiten ohne Link`);
 });
+
+import { readFileSync } from 'node:fs';
+import { GATTUNG_ALS_ORT, ORT_KORREKTUREN, ladePlz, slugify } from '../scripts/lib.mjs';
+
+test('Ortsnamen: keine Gattungswörter („Stadt“, „Gemeinde“ …) als Ort, Korrekturen greifen', () => {
+  const sperre = [...seiten()].map(([p]) => p.match(/^\/[^/]+\/[^/]+\/([^/]+)\/$/)?.[1]).filter((s) => s && GATTUNG_ALS_ORT.test(s));
+  assert.deepEqual(sperre, []);
+  const { plz } = ladePlz(new URL('../data/quellen/plz-de.csv', import.meta.url));
+  for (const k of ORT_KORREKTUREN) {
+    const orte = (plz.get(k.plz) || []).map((o) => o.ort);
+    assert.ok(orte.includes(k.neu) && !orte.includes(k.alt), `${k.plz}: ${orte.join(', ')}`);
+  }
+});
+
+test('Ortsnamen-Korrektur: alte Seiten leiten per Seitenarchiv auf den richtigen Ort weiter', () => {
+  const { umleitungen } = JSON.parse(readFileSync(new URL('../src/generated/routen.json', import.meta.url), 'utf8'));
+  const stand = JSON.parse(readFileSync(new URL('../data/seiten-stand.json', import.meta.url), 'utf8'));
+  for (const alt of Object.keys(stand.seiten).filter((p) => /^\/[^/]+\/[^/]+\/stadt\/$/.test(p))) {
+    const ziel = umleitungen[alt];
+    assert.ok(ziel && ORT_KORREKTUREN.some((k) => ziel.endsWith(`/${slugify(k.neu)}/`)), `${alt} → ${ziel}`);
+  }
+});

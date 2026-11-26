@@ -2,7 +2,7 @@
 // Wird von scripts/build.mjs in fester Reihenfolge geladen; nutzt die Ergebnisse der vorherigen Teile.
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { slugify } from '../lib.mjs';
+import { ortKorrigiert, slugify } from '../lib.mjs';
 import { esc } from '../../static/helfer.js';
 import { KATEGORIEN, ICON, statusHtml, produktIcon } from '../../static/karte.js';
 import { ROOT, SAISON, cfg, eintraege, kreise, laender, osm, plz, proKreis } from './daten.mjs';
@@ -135,7 +135,7 @@ const MAERKTE = (existsSync(join(ROOT, 'data', 'osm-maerkte.json')) ? JSON.parse
   .filter((m) => kreise.has(m.kreis));
 const maerkteProKreis = new Map();
 for (const m of MAERKTE) {
-  m.ortAnzeige = m.ort || m.ortNah;
+  m.ortNah = ortKorrigiert(m.plzNah, m.ortNah); m.ortAnzeige = m.ort || m.ortNah;
   // Namen wie „Wochenmarkt“ allein bekommen den Ort dazu, damit Karte und Listen unterscheidbar bleiben
   m.titel = !m.name ? `Wochenmarkt in ${m.ortAnzeige}` : /^(wochen|bauern|frische|grün|gruen)?markt(platz)?$/i.test(m.name.trim()) ? `${m.name.trim()} ${m.ortAnzeige}` : m.name;
   m.adresse = [m.strasse, [m.plz, m.ort].filter(Boolean).join(' ')].filter(Boolean).join(', ') || `${m.ortNah} (${m.plzNah})`;

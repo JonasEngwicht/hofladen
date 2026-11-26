@@ -49,6 +49,19 @@ const ORG = new RegExp([
 const KEINE_ORG = /^(Freiamt|Hohenkammer|Kammerstein|Kammerforst|Maikammer|Freigericht|Linsengericht|Landesbergen)$/;
 export const istOrganisation = (name) => ORG.test(name) && !KEINE_ORG.test(name);
 
+// Ortsnamen-Korrekturen für Fehler in den GeoNames-PLZ-Daten (data/quellen/plz-de.csv), geprüft an Koordinaten und
+// Gemeindeschlüssel. Alte Seiten leitet das Seitenarchiv auf die Seite des korrigierten Orts weiter (abschluss.mjs).
+export const ORT_KORREKTUREN = [
+  { plz: '27709', alt: 'Stadt', neu: 'Osterholz-Scharmbeck' }, // 53.2269, 8.7947 · Landkreis Osterholz
+  { plz: '49609', alt: 'Stadt', neu: 'Quakenbrück' }, // 52.6755, 7.957 · Landkreis Osnabrück
+  { plz: '49659', alt: 'Stadt', neu: 'Cloppenburg' }, // 52.8448, 8.043 · Landkreis Cloppenburg
+];
+const ORT_KORREKTUR = new Map(ORT_KORREKTUREN.map((k) => [`${k.plz}|${k.alt}`, k.neu]));
+// Gattungswörter, die nie ein Ortsname sind: ohne Korrektur zählen solche Zeilen wie Organisationen (kein eigener Ort)
+export const GATTUNG_ALS_ORT = /^(Stadt|Gemeinde|Markt|Flecken|Kreis|Landkreis|Amt|Samtgemeinde|Verbandsgemeinde|Ortsteil)$/i;
+// Korrigierter Ortsname für eine PLZ (oder der Name selbst); auch für Ortsnamen, die in importierten Daten schon stehen
+export const ortKorrigiert = (plz, ort) => ORT_KORREKTUR.get(`${plz}|${ort}`) || ort;
+
 // Minimaler CSV-Parser (Felder ohne Zeilenumbrüche, mit Anführungszeichen).
 function parseCsvLine(line) {
   const out = []; let cur = ''; let q = false;
@@ -98,7 +111,8 @@ export function ladePlz(pfad) {
       plz: f[idx.zipcode], ort: f[idx.place], land, kreis: code,
       lat: +f[idx.latitude], lon: +f[idx.longitude],
     };
-    o.org = istOrganisation(o.ort);
+    o.ort = ortKorrigiert(o.plz, o.ort);
+    o.org = istOrganisation(o.ort) || GATTUNG_ALS_ORT.test(o.ort);
     orte.push(o);
     if (!kreisVarianten.has(code)) kreisVarianten.set(code, { land, v: new Map() });
     const kv = kreisVarianten.get(code).v;

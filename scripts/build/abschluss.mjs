@@ -2,7 +2,7 @@
 // Wird von scripts/build.mjs in fester Reihenfolge geladen; nutzt die Ergebnisse der vorherigen Teile.
 import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { distanzKm } from '../lib.mjs';
+import { ORT_KORREKTUREN, distanzKm, slugify } from '../lib.mjs';
 import { stabileIdAus } from '../pflege.mjs';
 import { zeilen } from '../../static/oh.js';
 import { KATEGORIEN } from '../../static/karte.js';
@@ -41,6 +41,7 @@ for (const [alt, neu] of ersetztDurch) stand.ersetzt[alt] = neu;
 // Nur in CI schreiben (die Workflows committen die Datei); lokale Builds lassen das Repo sauber
 if (process.env.CI || process.env.SEITEN_STAND_SCHREIBEN) writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe), ersetzt: sortiert(stand.ersetzt) }));
 const umleitungen = {}, entfernt = [];
+const KORR_SLUGS = new Set(ORT_KORREKTUREN.map((k) => slugify(k.alt)));
 for (const pfad of Object.keys(stand.seiten)) {
   if (ALLE_SEITEN.has(pfad)) continue;
   const hof = pfad.match(/^\/hof\/([^/]+)\/$/);
@@ -49,6 +50,10 @@ for (const pfad of Object.keys(stand.seiten)) {
     if (neu && neu !== hof[1]) umleitungen[pfad] = `/hof/${neu}/`; else entfernt.push(pfad);
     continue;
   }
+  // korrigierter Ortsname (ORT_KORREKTUREN): auf die Seite des richtigen Orts im selben Kreis
+  const korr = pfad.match(/^(\/[^/]+\/[^/]+\/)([^/]+)\/(.*)$/);
+  const neuOrt = korr && ORT_KORREKTUREN.map((k) => `${korr[1]}${slugify(k.neu)}/${korr[3]}`).find((p) => KORR_SLUGS.has(korr[2]) && ALLE_SEITEN.has(p));
+  if (neuOrt) { umleitungen[pfad] = neuOrt; continue; }
   // nächste übergeordnete Seite, z. B. aufgelöste Ortsseite → Kreisseite
   let ziel = pfad;
   do ziel = ziel.replace(/[^/]+\/$/, ''); while (ziel !== '/' && !ALLE_SEITEN.has(ziel));

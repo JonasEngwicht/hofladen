@@ -4,7 +4,7 @@ import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation } from '../lib.mjs';
+import { ladePlz, naechsterOrt, slugify, distanzKm, BUNDESLAENDER, istOrganisation, GATTUNG_ALS_ORT, ortKorrigiert } from '../lib.mjs';
 import { rasterIndex, gleicherHof, QUELLEN, solawiOk } from '../quellen.mjs';
 import { esc } from '../../static/helfer.js';
 import { stabileIdAus, felderAnwenden } from '../pflege.mjs';
@@ -60,7 +60,8 @@ for (const [id, n] of Object.entries(pflege.neu || {})) {
 
 // Ortsnamen, die sich als Firma/Behörde herausstellen (Filter in lib.mjs), durch den nächsten echten Ort ersetzen
 for (const e of osm) {
-  if (e.ort || !istOrganisation(e.ortNah)) continue;
+  if (!e.ort && e.ortNah) e.ortNah = ortKorrigiert(e.plzNah, e.ortNah);
+  if (e.ort || !(istOrganisation(e.ortNah) || GATTUNG_ALS_ORT.test(e.ortNah))) continue;
   const t = naechsterOrt(raster, e.lat, e.lon);
   if (t) { e.ortNah = t.ort.ort; e.plzNah = t.ort.plz; }
 }
