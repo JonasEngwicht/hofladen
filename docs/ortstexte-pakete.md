@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1224 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1249 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1203,35 +1203,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Haren](https://hofladenliste.de/niedersachsen/emsland/haren/) `/niedersachsen/emsland/haren/` | Landkreis Emsland | 1 | 4 | 7 |
 | ✓ | [Meppen](https://hofladenliste.de/niedersachsen/emsland/meppen/) `/niedersachsen/emsland/meppen/` | Landkreis Emsland | 1 | 4 | 7 |
 
-## Paket 41 (0/25 fertig)
+## Paket 41 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Bockhorn](https://hofladenliste.de/niedersachsen/friesland/bockhorn/) `/niedersachsen/friesland/bockhorn/` | Landkreis Friesland | 1 | 4 | 7 |
-|  | [Meine](https://hofladenliste.de/niedersachsen/gifhorn/meine/) `/niedersachsen/gifhorn/meine/` | Landkreis Gifhorn | 1 | 4 | 7 |
-|  | [Meinersen](https://hofladenliste.de/niedersachsen/gifhorn/meinersen/) `/niedersachsen/gifhorn/meinersen/` | Landkreis Gifhorn | 1 | 4 | 7 |
-|  | [Müden (Aller)](https://hofladenliste.de/niedersachsen/gifhorn/mueden-aller/) `/niedersachsen/gifhorn/mueden-aller/` | Landkreis Gifhorn | 1 | 4 | 7 |
-|  | [Adelebsen](https://hofladenliste.de/niedersachsen/goettingen/adelebsen/) `/niedersachsen/goettingen/adelebsen/` | Landkreis Göttingen | 1 | 4 | 7 |
-|  | [Niemetal](https://hofladenliste.de/niedersachsen/goettingen/niemetal/) `/niedersachsen/goettingen/niemetal/` | Landkreis Göttingen | 1 | 4 | 7 |
-|  | [Bad Harzburg Bettingerode](https://hofladenliste.de/niedersachsen/goslar/bad-harzburg-bettingerode/) `/niedersachsen/goslar/bad-harzburg-bettingerode/` | Landkreis Goslar | 1 | 4 | 7 |
-|  | [Coppenbrügge](https://hofladenliste.de/niedersachsen/hameln-pyrmont/coppenbruegge/) `/niedersachsen/hameln-pyrmont/coppenbruegge/` | Landkreis Hameln-Pyrmont | 1 | 4 | 7 |
-|  | [Bomlitz](https://hofladenliste.de/niedersachsen/heidekreis/bomlitz/) `/niedersachsen/heidekreis/bomlitz/` | Heidekreis | 1 | 4 | 7 |
-|  | [Schwarmstedt](https://hofladenliste.de/niedersachsen/heidekreis/schwarmstedt/) `/niedersachsen/heidekreis/schwarmstedt/` | Heidekreis | 1 | 4 | 7 |
-|  | [Lehre](https://hofladenliste.de/niedersachsen/helmstedt/lehre/) `/niedersachsen/helmstedt/lehre/` | Landkreis Helmstedt | 1 | 4 | 7 |
-|  | [Bockenem](https://hofladenliste.de/niedersachsen/hildesheim/bockenem/) `/niedersachsen/hildesheim/bockenem/` | Landkreis Hildesheim | 1 | 4 | 7 |
-|  | [Wildeshausen](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/wildeshausen/) `/niedersachsen/landkreis-oldenburg/wildeshausen/` | Landkreis Oldenburg | 1 | 4 | 7 |
-|  | [Bramsche](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bramsche/) `/niedersachsen/landkreis-osnabrueck/bramsche/` | Landkreis Osnabrück | 1 | 4 | 7 |
-|  | [Wallenhorst](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/wallenhorst/) `/niedersachsen/landkreis-osnabrueck/wallenhorst/` | Landkreis Osnabrück | 1 | 4 | 7 |
-|  | [Leer (Ostfriesland)](https://hofladenliste.de/niedersachsen/leer/leer-ostfriesland/) `/niedersachsen/leer/leer-ostfriesland/` | Landkreis Leer | 1 | 4 | 7 |
-|  | [Neetze](https://hofladenliste.de/niedersachsen/lueneburg/neetze/) `/niedersachsen/lueneburg/neetze/` | Landkreis Lüneburg | 1 | 4 | 7 |
-|  | [Steyerberg](https://hofladenliste.de/niedersachsen/nienburg-weser/steyerberg/) `/niedersachsen/nienburg-weser/steyerberg/` | Landkreis Nienburg/Weser | 1 | 4 | 7 |
-|  | [Bad Gandersheim](https://hofladenliste.de/niedersachsen/northeim/bad-gandersheim/) `/niedersachsen/northeim/bad-gandersheim/` | Landkreis Northeim | 1 | 4 | 7 |
-|  | [Hardegsen](https://hofladenliste.de/niedersachsen/northeim/hardegsen/) `/niedersachsen/northeim/hardegsen/` | Landkreis Northeim | 1 | 4 | 7 |
-|  | [Moringen](https://hofladenliste.de/niedersachsen/northeim/moringen/) `/niedersachsen/northeim/moringen/` | Landkreis Northeim | 1 | 4 | 7 |
-|  | [Burgdorf](https://hofladenliste.de/niedersachsen/region-hannover/burgdorf/) `/niedersachsen/region-hannover/burgdorf/` | Region Hannover | 1 | 4 | 7 |
-|  | [Burgwedel](https://hofladenliste.de/niedersachsen/region-hannover/burgwedel/) `/niedersachsen/region-hannover/burgwedel/` | Region Hannover | 1 | 4 | 7 |
-|  | [Pattensen](https://hofladenliste.de/niedersachsen/region-hannover/pattensen/) `/niedersachsen/region-hannover/pattensen/` | Region Hannover | 1 | 4 | 7 |
-|  | [Seelze](https://hofladenliste.de/niedersachsen/region-hannover/seelze/) `/niedersachsen/region-hannover/seelze/` | Region Hannover | 1 | 4 | 7 |
+| ✓ | [Bockhorn](https://hofladenliste.de/niedersachsen/friesland/bockhorn/) `/niedersachsen/friesland/bockhorn/` | Landkreis Friesland | 1 | 4 | 7 |
+| ✓ | [Meine](https://hofladenliste.de/niedersachsen/gifhorn/meine/) `/niedersachsen/gifhorn/meine/` | Landkreis Gifhorn | 1 | 4 | 7 |
+| ✓ | [Meinersen](https://hofladenliste.de/niedersachsen/gifhorn/meinersen/) `/niedersachsen/gifhorn/meinersen/` | Landkreis Gifhorn | 1 | 4 | 7 |
+| ✓ | [Müden (Aller)](https://hofladenliste.de/niedersachsen/gifhorn/mueden-aller/) `/niedersachsen/gifhorn/mueden-aller/` | Landkreis Gifhorn | 1 | 4 | 7 |
+| ✓ | [Adelebsen](https://hofladenliste.de/niedersachsen/goettingen/adelebsen/) `/niedersachsen/goettingen/adelebsen/` | Landkreis Göttingen | 1 | 4 | 7 |
+| ✓ | [Niemetal](https://hofladenliste.de/niedersachsen/goettingen/niemetal/) `/niedersachsen/goettingen/niemetal/` | Landkreis Göttingen | 1 | 4 | 7 |
+| ✓ | [Bad Harzburg Bettingerode](https://hofladenliste.de/niedersachsen/goslar/bad-harzburg-bettingerode/) `/niedersachsen/goslar/bad-harzburg-bettingerode/` | Landkreis Goslar | 1 | 4 | 7 |
+| ✓ | [Coppenbrügge](https://hofladenliste.de/niedersachsen/hameln-pyrmont/coppenbruegge/) `/niedersachsen/hameln-pyrmont/coppenbruegge/` | Landkreis Hameln-Pyrmont | 1 | 4 | 7 |
+| ✓ | [Bomlitz](https://hofladenliste.de/niedersachsen/heidekreis/bomlitz/) `/niedersachsen/heidekreis/bomlitz/` | Heidekreis | 1 | 4 | 7 |
+| ✓ | [Schwarmstedt](https://hofladenliste.de/niedersachsen/heidekreis/schwarmstedt/) `/niedersachsen/heidekreis/schwarmstedt/` | Heidekreis | 1 | 4 | 7 |
+| ✓ | [Lehre](https://hofladenliste.de/niedersachsen/helmstedt/lehre/) `/niedersachsen/helmstedt/lehre/` | Landkreis Helmstedt | 1 | 4 | 7 |
+| ✓ | [Bockenem](https://hofladenliste.de/niedersachsen/hildesheim/bockenem/) `/niedersachsen/hildesheim/bockenem/` | Landkreis Hildesheim | 1 | 4 | 7 |
+| ✓ | [Wildeshausen](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/wildeshausen/) `/niedersachsen/landkreis-oldenburg/wildeshausen/` | Landkreis Oldenburg | 1 | 4 | 7 |
+| ✓ | [Bramsche](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bramsche/) `/niedersachsen/landkreis-osnabrueck/bramsche/` | Landkreis Osnabrück | 1 | 4 | 7 |
+| ✓ | [Wallenhorst](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/wallenhorst/) `/niedersachsen/landkreis-osnabrueck/wallenhorst/` | Landkreis Osnabrück | 1 | 4 | 7 |
+| ✓ | [Leer (Ostfriesland)](https://hofladenliste.de/niedersachsen/leer/leer-ostfriesland/) `/niedersachsen/leer/leer-ostfriesland/` | Landkreis Leer | 1 | 4 | 7 |
+| ✓ | [Neetze](https://hofladenliste.de/niedersachsen/lueneburg/neetze/) `/niedersachsen/lueneburg/neetze/` | Landkreis Lüneburg | 1 | 4 | 7 |
+| ✓ | [Steyerberg](https://hofladenliste.de/niedersachsen/nienburg-weser/steyerberg/) `/niedersachsen/nienburg-weser/steyerberg/` | Landkreis Nienburg/Weser | 1 | 4 | 7 |
+| ✓ | [Bad Gandersheim](https://hofladenliste.de/niedersachsen/northeim/bad-gandersheim/) `/niedersachsen/northeim/bad-gandersheim/` | Landkreis Northeim | 1 | 4 | 7 |
+| ✓ | [Hardegsen](https://hofladenliste.de/niedersachsen/northeim/hardegsen/) `/niedersachsen/northeim/hardegsen/` | Landkreis Northeim | 1 | 4 | 7 |
+| ✓ | [Moringen](https://hofladenliste.de/niedersachsen/northeim/moringen/) `/niedersachsen/northeim/moringen/` | Landkreis Northeim | 1 | 4 | 7 |
+| ✓ | [Burgdorf](https://hofladenliste.de/niedersachsen/region-hannover/burgdorf/) `/niedersachsen/region-hannover/burgdorf/` | Region Hannover | 1 | 4 | 7 |
+| ✓ | [Burgwedel](https://hofladenliste.de/niedersachsen/region-hannover/burgwedel/) `/niedersachsen/region-hannover/burgwedel/` | Region Hannover | 1 | 4 | 7 |
+| ✓ | [Pattensen](https://hofladenliste.de/niedersachsen/region-hannover/pattensen/) `/niedersachsen/region-hannover/pattensen/` | Region Hannover | 1 | 4 | 7 |
+| ✓ | [Seelze](https://hofladenliste.de/niedersachsen/region-hannover/seelze/) `/niedersachsen/region-hannover/seelze/` | Region Hannover | 1 | 4 | 7 |
 
 ## Paket 42 (0/25 fertig)
 

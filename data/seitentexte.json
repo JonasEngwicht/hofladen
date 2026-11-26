@@ -37148,5 +37148,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/niedersachsen/friesland/bockhorn/": {
+    "titel": "Hofläden in Bockhorn: gut zu wissen",
+    "oben": "Bockhorn liegt im Landkreis Friesland am Jadebusen. Eingetragen sind das Landcafé Lüttje Ankerplatz, die Milchtankstelle Meinen, De Jungs Gemüse & Spargelhof und der Geflügelhof Onken.",
+    "einleitung": "Spargel und Gemüse gibt es bei De Jungs, in der Saison im Frühjahr. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Zetel und Varel.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zetel und Umgebung",
+        "pfad": "/niedersachsen/friesland/zetel/"
+      },
+      {
+        "text": "Hofläden in Varel Grünenkamp und Umgebung",
+        "pfad": "/niedersachsen/friesland/varel-gruenenkamp/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/gifhorn/meine/": {
+    "titel": "Hofläden in Meine: gut zu wissen",
+    "oben": "Meine liegt im Landkreis Gifhorn zwischen Braunschweig und Gifhorn. Eingetragen sind zwei Kartoffelautomaten, Gittis Garten mit Gemüse und ein Eierautomat.",
+    "einleitung": "Kartoffeln gibt es hier gleich an zwei Automaten, die Ernte ist im Herbst. Gemüse bekommst du bei Gittis Garten.\n\nWeitere Höfe findest du in Rötgesbüttel und Wasbüttel.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rötgesbüttel und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/roetgesbuettel/"
+      },
+      {
+        "text": "Hofläden in Wasbüttel und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/wasbuettel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/gifhorn/meinersen/": {
+    "titel": "Hofläden in Meinersen: gut zu wissen",
+    "oben": "Meinersen liegt im Landkreis Gifhorn an der Oker. Eingetragen sind Hörnings Hofladen, das Bauernhofcafé Buchholz und der Spargelhof Brand.",
+    "einleitung": "Spargel gibt es beim Spargelhof Brand, in der Saison im Frühjahr. Zum Kaffee geht es ins Bauernhofcafé.\n\nWeitere Höfe findest du in Müden (Aller) und Edemissen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Müden (Aller) und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/mueden-aller/"
+      },
+      {
+        "text": "Hofläden in Edemissen und Umgebung",
+        "pfad": "/niedersachsen/peine/edemissen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/gifhorn/mueden-aller/": {
+    "titel": "Hofläden in Müden (Aller): gut zu wissen",
+    "oben": "Müden (Aller) liegt im Landkreis Gifhorn am Zusammenfluss von Aller und Oker. Eingetragen sind ein Regiomat, der Hof Rautenberg mit der Solawi Alleroker, der Hof Heuer und Krügers Hofladen.",
+    "einleitung": "Gemüse kommt über die Solidarische Landwirtschaft, Eier gibt es bei Krüger. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Meinersen und Gifhorn.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Meinersen und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/meinersen/"
+      },
+      {
+        "text": "Hofläden in Gifhorn und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/gifhorn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/goettingen/adelebsen/": {
+    "titel": "Hofläden in Adelebsen: gut zu wissen",
+    "oben": "Adelebsen liegt im Landkreis Göttingen am Rand des Sollings. Eingetragen sind die Timmermann Milchtankstelle, ein Kleiner Hofladen und zwei Honigautomaten.",
+    "einleitung": "Honig gibt es gleich an zwei Automaten. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Hardegsen und Niemetal.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hardegsen und Umgebung",
+        "pfad": "/niedersachsen/northeim/hardegsen/"
+      },
+      {
+        "text": "Hofläden in Niemetal und Umgebung",
+        "pfad": "/niedersachsen/goettingen/niemetal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/goettingen/niemetal/": {
+    "titel": "Hofläden in Niemetal: gut zu wissen",
+    "oben": "Niemetal liegt im Landkreis Göttingen im Weser-Leine-Bergland. Eingetragen sind das Landcafé zum Niemetal, ein Eierautomat, Angus vom Backenberg mit Fleisch und ein Honigverkauf.",
+    "einleitung": "Angus-Fleisch und Honig kommen direkt vom Hof. Der Eierautomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Adelebsen und Göttingen.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Adelebsen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/adelebsen/"
+      },
+      {
+        "text": "Hofläden in Göttingen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/goettingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/goslar/bad-harzburg-bettingerode/": {
+    "titel": "Hofläden in Bad Harzburg Bettingerode: gut zu wissen",
+    "oben": "Bettingerode gehört zu Bad Harzburg am Nordrand des Harzes im Landkreis Goslar. Eingetragen sind vier Hofläden mit Kartoffeln, Honig und Eiern.",
+    "einleitung": "Vier Hofläden in einem kleinen Ortsteil sind viel. Der Harz liegt direkt dahinter.\n\nWeitere Höfe findest du in Goslar und Seesen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Goslar und Umgebung",
+        "pfad": "/niedersachsen/goslar/goslar/"
+      },
+      {
+        "text": "Hofläden in Seesen und Umgebung",
+        "pfad": "/niedersachsen/goslar/seesen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/hameln-pyrmont/coppenbruegge/": {
+    "titel": "Hofläden in Coppenbrügge: gut zu wissen",
+    "oben": "Coppenbrügge liegt im Landkreis Hameln-Pyrmont im Weserbergland. Eingetragen sind Munzel-Piepenbrink, ein Regiomat mit Eiern, Daggis Hofladen mit Bio-Angebot und der Hofladen Holweg.",
+    "einleitung": "Der Ith und der Osterwald prägen die Landschaft. Eier gibt es am Regiomaten.\n\nWeitere Höfe findest du in Springe und Bad Münder am Deister.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Springe und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/springe/"
+      },
+      {
+        "text": "Hofläden in Bad Münder am Deister und Umgebung",
+        "pfad": "/niedersachsen/hameln-pyrmont/bad-muender-am-deister/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/heidekreis/bomlitz/": {
+    "titel": "Hofläden in Bomlitz: gut zu wissen",
+    "oben": "Bomlitz liegt im Heidekreis bei Walsrode. Eingetragen sind ein Hofladen, ein Selbsterntefeld mit Bio-Gemüse und Blumen, ein Regiomat mit Eiern und Kartoffeln und De lütte Laden.",
+    "einleitung": "Auf dem Selbsterntefeld erntest du Gemüse und Blumen selbst. Der Regiomat hat Eier und Kartoffeln.\n\nWeitere Höfe findest du in Walsrode und Neuenkirchen.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Walsrode und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/walsrode/"
+      },
+      {
+        "text": "Hofläden in Neuenkirchen und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/neuenkirchen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/heidekreis/schwarmstedt/": {
+    "titel": "Hofläden in Schwarmstedt: gut zu wissen",
+    "oben": "Schwarmstedt liegt im Heidekreis an der Leine nahe der Aller. Eingetragen sind der Aronia Hofladen mit Bio-Angebot, ein Fleischautomat, ein Hofladen und ein Eierautomat.",
+    "einleitung": "Aronia ist die Spezialität, die Beeren werden im Spätsommer geerntet. Fleisch und Eier gibt es auch am Automaten.\n\nWeitere Höfe findest du in Gilten und Grethem.",
+    "saison": [
+      {
+        "titel": "Aronia",
+        "zeit": "August und September"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gilten und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/gilten/"
+      },
+      {
+        "text": "Hofläden in Grethem und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/grethem/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/helmstedt/lehre/": {
+    "titel": "Hofläden in Lehre: gut zu wissen",
+    "oben": "Lehre liegt im Landkreis Helmstedt östlich von Braunschweig. Eingetragen sind die Kartoffel-Kiste, ein Eierautomat, eine Milchtankstelle und Papes Gemüsegarten mit dem Regiomaten in Wendhausen.",
+    "einleitung": "Kartoffeln, Eier, Milch und Gemüse gibt es hier an Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Wasbüttel und Meine.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wasbüttel und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/wasbuettel/"
+      },
+      {
+        "text": "Hofläden in Meine und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/meine/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/hildesheim/bockenem/": {
+    "titel": "Hofläden in Bockenem: gut zu wissen",
+    "oben": "Bockenem liegt im Landkreis Hildesheim am Nordrand des Harzvorlands. Eingetragen sind Eikes Hofladen, das Hofcafé zum Alten Gustav, Niehoffs Hofmolkerei mit Bio-Milch und Bormanns Hof.",
+    "einleitung": "Die Hofmolkerei verarbeitet Bio-Milch. Zum Kaffee geht es ins Hofcafé.\n\nWeitere Höfe findest du in Seesen und Bad Gandersheim.",
+    "saison": [
+      {
+        "titel": "Milchprodukte",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Seesen und Umgebung",
+        "pfad": "/niedersachsen/goslar/seesen/"
+      },
+      {
+        "text": "Hofläden in Bad Gandersheim und Umgebung",
+        "pfad": "/niedersachsen/northeim/bad-gandersheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/landkreis-oldenburg/wildeshausen/": {
+    "titel": "Hofläden in Wildeshausen: gut zu wissen",
+    "oben": "Wildeshausen liegt an der Hunte im Landkreis Oldenburg. Eingetragen sind ein Regiomat mit Fleisch, zwei Einträge des Hofladens Helms und der Spargelhof Mahlstedt mit Gemüse und Weihnachtsbäumen.",
+    "einleitung": "Neben Spargel gibt es beim Spargelhof Mahlstedt im Winter auch Weihnachtsbäume. Das Fleisch kommt aus dem Regiomaten.\n\nWeitere Höfe findest du in Dötlingen und Visbek.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Weihnachtsbäume",
+        "zeit": "Dezember"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dötlingen und Umgebung",
+        "pfad": "/niedersachsen/landkreis-oldenburg/doetlingen/"
+      },
+      {
+        "text": "Hofläden in Visbek und Umgebung",
+        "pfad": "/niedersachsen/vechta/visbek/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/landkreis-osnabrueck/bramsche/": {
+    "titel": "Hofläden in Bramsche: gut zu wissen",
+    "oben": "Bramsche liegt nördlich von Osnabrück im Landkreis Osnabrück. Eingetragen sind der Biolandhof Kruse, Eier aus Pente, der Hofladen Hoppe und die Wackumer Landkiste mit Bio-Angebot.",
+    "einleitung": "Zwei Höfe arbeiten nach Bio-Richtlinien. Eier gibt es aus Pente.\n\nWeitere Höfe findest du in Wallenhorst und Westerkappeln.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wallenhorst und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/wallenhorst/"
+      },
+      {
+        "text": "Hofläden in Westerkappeln und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/westerkappeln/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/landkreis-osnabrueck/wallenhorst/": {
+    "titel": "Hofläden in Wallenhorst: gut zu wissen",
+    "oben": "Wallenhorst liegt nördlich von Osnabrück im Landkreis Osnabrück. Eingetragen sind der CSA Hof Pente als Bio-Solawi, ein Hofladen mit Eiern und Kartoffeln, der Hofladen Hawighorst und der Hofladen an der Wabe.",
+    "einleitung": "Die Solidarische Landwirtschaft Hof Pente arbeitet nach Bio-Richtlinien. Eier und Kartoffeln gibt es im Hofladen.\n\nWeitere Höfe findest du in Bramsche und Westerkappeln.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bramsche und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/bramsche/"
+      },
+      {
+        "text": "Hofläden in Westerkappeln und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/westerkappeln/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/leer/leer-ostfriesland/": {
+    "titel": "Hofläden in Leer (Ostfriesland): gut zu wissen",
+    "oben": "Leer liegt in Ostfriesland an der Leda und Ems. Eingetragen sind die Milchtankstelle Baumann mit Eiern und Milch, der Bioland Hofladen Freese, die Milchtankstelle Hilbrands und Brouwers Hofladen.",
+    "einleitung": "Milch gibt es gleich an zwei Tankstellen, sie ist Rohmilch: vor dem Trinken abkochen. Der Hofladen Freese arbeitet nach Bioland-Richtlinien.\n\nWeitere Höfe findest du in Westoverledingen und Rhauderfehn.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Westoverledingen und Umgebung",
+        "pfad": "/niedersachsen/leer/westoverledingen/"
+      },
+      {
+        "text": "Hofläden in Rhauderfehn und Umgebung",
+        "pfad": "/niedersachsen/leer/rhauderfehn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/lueneburg/neetze/": {
+    "titel": "Hofläden in Neetze: gut zu wissen",
+    "oben": "Neetze liegt im Landkreis Lüneburg südlich der Elbe. Eingetragen sind der Spargelhof Strampe mit Hofcafé und Hofladen, der Spargelhof König und Bostelmanns Hof mit Bio-Angebot.",
+    "einleitung": "Spargel ist hier das Hauptthema, die Saison läuft im Frühjahr. Der Spargelhof Strampe hat außerdem ein Hofcafé.\n\nWeitere Höfe findest du in Hohnstorf (Elbe) und Lüneburg.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hohnstorf (Elbe) und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/hohnstorf-elbe/"
+      },
+      {
+        "text": "Hofläden in Lüneburg und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/lueneburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/nienburg-weser/steyerberg/": {
+    "titel": "Hofläden in Steyerberg: gut zu wissen",
+    "oben": "Steyerberg liegt im Landkreis Nienburg an der Weser. Eingetragen sind der Nuttelmann Spargelhof, der Auehof Reese mit Bio-Gemüse, Kartoffeln und Brot, der Duxener Hofladen und der Spargelhof Oldenburg.",
+    "einleitung": "Mit dem Nuttelmann Spargelhof und dem Spargelhof Oldenburg ist Spargel die Spezialität. Die Saison geht von April bis Juni.\n\nWeitere Höfe findest du in Stolzenau und Landesbergen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stolzenau und Umgebung",
+        "pfad": "/niedersachsen/nienburg-weser/stolzenau/"
+      },
+      {
+        "text": "Hofläden in Landesbergen und Umgebung",
+        "pfad": "/niedersachsen/nienburg-weser/landesbergen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/northeim/bad-gandersheim/": {
+    "titel": "Hofläden in Bad Gandersheim: gut zu wissen",
+    "oben": "Bad Gandersheim liegt im Landkreis Northeim im Leinebergland. Eingetragen sind ein Bauerncafé, ein Haus- und Hofladen und ein Regiomat.",
+    "einleitung": "Das Angebot ist klein, aber vielseitig: Café, Hofladen und Automat. Der Regiomat ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Seesen und Einbeck.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Seesen und Umgebung",
+        "pfad": "/niedersachsen/goslar/seesen/"
+      },
+      {
+        "text": "Hofläden in Einbeck und Umgebung",
+        "pfad": "/niedersachsen/northeim/einbeck/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/northeim/hardegsen/": {
+    "titel": "Hofläden in Hardegsen: gut zu wissen",
+    "oben": "Hardegsen liegt im Landkreis Northeim am Rand des Sollings. Eingetragen sind der Hofladen Korengel mit Bio-Angebot, der Hofladen Marzett, der Eichelberghof mit Bio-Angebot und der Ladentreff Alte Schule.",
+    "einleitung": "Zwei Höfe arbeiten nach Bio-Richtlinien. Der Hofladen Korengel ist einer davon.\n\nWeitere Höfe findest du in Moringen und Adelebsen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Moringen und Umgebung",
+        "pfad": "/niedersachsen/northeim/moringen/"
+      },
+      {
+        "text": "Hofläden in Adelebsen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/adelebsen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/northeim/moringen/": {
+    "titel": "Hofläden in Moringen: gut zu wissen",
+    "oben": "Moringen liegt im Landkreis Northeim im Leinetal. Eingetragen sind der Bauernhof Bünger mit Eiern, Fleisch, Geflügel, Obst und Marmelade, Keeses Bauernhof mit Bio-Angebot, ein Regiomat und die Milchtankstelle Lutterbeck.",
+    "einleitung": "Der Hof Bünger hat ein breites Sortiment von Fleisch bis Marmelade. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Hardegsen und Nörten-Hardenberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hardegsen und Umgebung",
+        "pfad": "/niedersachsen/northeim/hardegsen/"
+      },
+      {
+        "text": "Hofläden in Nörten-Hardenberg und Umgebung",
+        "pfad": "/niedersachsen/northeim/noerten-hardenberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/region-hannover/burgdorf/": {
+    "titel": "Hofläden in Burgdorf: gut zu wissen",
+    "oben": "Burgdorf liegt östlich von Hannover in der Region Hannover. Eingetragen sind der Biohof Harke, Mellers Bioland-Hof, der Kartoffelhof Schweer und der Spargelhof Lübbe in Ahrbeck.",
+    "einleitung": "Kartoffeln gibt es beim Kartoffelhof Schweer, Spargel in der Saison im Frühjahr. Zwei Höfe arbeiten nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Lehrte und Uetze.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lehrte und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/lehrte/"
+      },
+      {
+        "text": "Hofläden in Uetze und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/uetze/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/region-hannover/burgwedel/": {
+    "titel": "Hofläden in Burgwedel: gut zu wissen",
+    "oben": "Burgwedel liegt nördlich von Hannover in der Region Hannover. Eingetragen sind der Biohof Wöhlers, der Hofladen Nr. 1, der Regiomat mit Milchtankstelle Büchtmann und der Spargelhof Heuer.",
+    "einleitung": "Spargel gibt es beim Spargelhof Heuer, Gemüse und Kartoffeln beim Biohof Wöhlers. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Isernhagen und Wedemark.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Isernhagen und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/isernhagen/"
+      },
+      {
+        "text": "Hofläden in Wedemark und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/wedemark/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/region-hannover/pattensen/": {
+    "titel": "Hofläden in Pattensen: gut zu wissen",
+    "oben": "Pattensen liegt südlich von Hannover in der Region Hannover. Eingetragen sind Lütgeharms Hofladen mit Bio-Angebot, die Obstplantage Zabel, Hisches Hof mit Eiern, Fleisch und Kartoffeln und ein Regiomat.",
+    "einleitung": "Obst gibt es bei der Obstplantage Zabel, Eier und Fleisch bei Hisches Hof. Hannover ist gut erreichbar.\n\nWeitere Höfe findest du in Ronnenberg und Gehrden.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ronnenberg und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/ronnenberg/"
+      },
+      {
+        "text": "Hofläden in Gehrden und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/gehrden/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/region-hannover/seelze/": {
+    "titel": "Hofläden in Seelze: gut zu wissen",
+    "oben": "Seelze liegt westlich von Hannover in der Region Hannover. Eingetragen sind die Kartoffelkiste, ein Hofladen, eine Imkerei und der Hof Kauke mit Eiern, Fleisch, Honig und Nudeln.",
+    "einleitung": "Kartoffeln gibt es an der Kartoffelkiste, Honig bei der Imkerei und beim Hof Kauke. Die Landeshauptstadt ist nah.\n\nWeitere Höfe findest du in Garbsen und Gehrden.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Garbsen und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/garbsen/"
+      },
+      {
+        "text": "Hofläden in Gehrden und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/gehrden/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
