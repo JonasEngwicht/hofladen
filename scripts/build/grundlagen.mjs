@@ -377,6 +377,13 @@ const ortNamenZahl = new Map();
 for (const o of ortSeiten) ortNamenZahl.set(o.ort, (ortNamenZahl.get(o.ort) || 0) + 1);
 for (const o of ortSeiten) o.ortTitel = ortNamenZahl.get(o.ort) > 1 ? `${o.ort} (${o.k.titel})` : o.ort;
 for (const o of ortSeiten) if (o.umgebung) o.umgebung.titelName = o.ortTitel;
+// Auch Umgebungsseiten von Kreisen (kreisfreie Städte) und Ortsseiten mit gleichem Namen unterscheiden (Fürth-Stadt / Fürth im Odenwald):
+// die Kreisseite behält den Namen, die Ortsseite bekommt den Kreis dazu
+{
+  const nachName = new Map();
+  for (const z of UMGEBUNG) { const n = z.titelName || z.name; (nachName.get(n) || nachName.set(n, []).get(n)).push(z); }
+  for (const [n, zs] of nachName) if (zs.length > 1 && zs.some((z) => z.kreisSeite)) for (const z of zs) if (!z.kreisSeite) z.titelName = `${n} (${z.k.titel.replace(/^(?:Land)?[Kk]reis /, "")})`;
+}
 function ortUeberschrift(o) {
   if (o.umgebung) return `Hofläden in ${o.ort} und Umgebung`;
   const nHof = o.liste.filter((e) => e.typ === 'hofladen').length;
