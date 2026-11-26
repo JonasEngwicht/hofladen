@@ -6,6 +6,7 @@ import { KATEGORIEN, ICON, karteHtml } from '../../static/karte.js';
 import { eintraege, istRund, kreisMitte, kreise, laender, offen, plz, proKreis, wocheVon } from './daten.mjs';
 import { KATEGORIE_PFADE, SEITENTEXTE, SUCHFELD, filterLeiste, kartenDaten, kartenPanel, plural, seite, zahl } from './html.mjs';
 import { angebotHaeufig, eingetragen, entfernt, vomZentrum, MIN_SEITE, ORTE, REGIONEN, UEBERDECKT, UMGEBUNG_PFAD, umgebungIndexiert, UMKREISE, fragen, fragenHtml, gebietsText, gross, hofItems, itemList, km, link, naheOrte, nennung, ortListe, ortSeiten, ortUeberschrift, passend, quellenHtml, regionHtml, regionTeaser, schreibe, umkreis, zaehlung, zaehlungKurz } from './grundlagen.mjs';
+import { ANGEBOT_WISSEN } from './angebot-wissen.mjs';
 import { ANGEBOT, ANGEBOT_SEITEN, AUTOMATEN, BIO, KAT_TYPEN, LAND_KAT, MONATSNAMEN, MONAT_JETZT, SAISON_SEITEN, TYPEN, TYP_KREIS, akkusativ, landKat, marktAbschnitt, typKreis, typKreisLinks, typLinks } from './startseite.mjs';
 
 // Lokale Seiten ohne gepflegten Text (data/seitentexte.json) – für docs/seitentexte-offen.md (abschluss.mjs)
@@ -33,6 +34,20 @@ function saisonLokal(liste, wo, pfad) {
   ${eigene.length ? `<h3>Typisch für die Gegend</h3><ul class="region-highlights">${eigene.map((h) => `<li><b>${esc(h.titel)}</b><span>${esc(h.zeit)}</span></li>`).join('')}</ul>` : ''}
   <p class="leise">Ob es eine Sorte gerade gibt, hängt von Wetter und Ernte ab – im Zweifel vorher anrufen. Alle Sorten nach Monat: <a href="/saisonkalender/">Saisonkalender</a>.</p>
 </section>`;
+}
+
+// Produkt-Land-Seiten (/angebot/eier/brandenburg/): nur mit mindestens MIN_SEITE Einträgen
+const ANGEBOT_LAND = new Map();
+for (const kat of ANGEBOT_SEITEN) for (const l of laender) {
+  const liste = l.kreise.flatMap((k) => (proKreis.get(k.code) || []).filter((e) => e.kat.includes(kat)));
+  if (liste.length >= MIN_SEITE) ANGEBOT_LAND.set(`${kat}|${l.code}`, { kat, l, liste });
+}
+// Links von Bundesland- und Kreisseiten auf die Produkt-Land-Seiten: Die hingen bisher nur an der jeweiligen Produktseite
+// und wurden von Suchmaschinen kaum gefunden. Auf Kreisseiten nur Produkte, die es im Kreis auch gibt.
+function angebotLandAbschnitt(l, liste = null) {
+  const x = [...ANGEBOT_LAND.values()].filter((a) => a.l === l && (!liste || liste.some((e) => e.kat.includes(a.kat))));
+  if (!x.length) return '';
+  return `<section class="abschnitt angebot-land"><h2>Nach Angebot in ${esc(l.name)}</h2><p class="typ-chips">${x.map((a) => `<a href="/angebot/${a.kat}/${l.slug}/">${esc(KATEGORIEN[a.kat])} <span>${zahl(a.liste.length)}</span></a>`).join('')}</p></section>`;
 }
 
 // ---------- Bundesland- und Kreisseiten ----------
@@ -63,6 +78,7 @@ ${topOrte.length ? `<section class="abschnitt">
   <ul class="kreis-liste">${topOrte.map((o) => `<li><a href="${o.pfad}"><span>${esc(ortUeberschrift(o).replace(/ in .*/, ''))} in ${esc(o.ort)}</span><span class="zahl">${zahl(o.liste.length)}</span></a></li>`).join('')}</ul>
 </section>` : ''}
 ${KAT_TYPEN.some((t) => landKat(t, l)) ? `<section class="abschnitt"><h2>Nach Kategorie in ${esc(l.name)}</h2><p class="typ-chips">${KAT_TYPEN.map((t) => landKat(t, l)).filter(Boolean).map((x) => `<a href="${x.pfad}">${x.t.icon}${x.t.plural} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p></section>` : ''}
+${angebotLandAbschnitt(l)}
 <section class="abschnitt seo-text">
   <h2>Hofladen in ${esc(l.name)}: Überblick</h2>
   ${gebietsText(alle, `in ${l.name}`, { orteNennen: false })}
@@ -91,7 +107,7 @@ ${KAT_TYPEN.some((t) => landKat(t, l)) ? `<section class="abschnitt"><h2>Nach Ka
       schreibe(k.pfad, umgebungsSeite(z, {
         krumen: [[l.name, `/${l.slug}/`], [k.titel, k.pfad]],
         regionProfil: REGIONEN.get(k.code) || null,
-        extraUnten: `${ortListeHtml}${marktAbschnitt(k)}<section class="abschnitt nachbarn"><h2>Hofläden in benachbarten Kreisen</h2><ul class="kreis-liste">${nachbarn.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.titel)}</span><span class="zahl">${zahl(proKreis.get(x.code)?.length || 0)}</span></a></li>`).join('')}</ul></section>`,
+        extraUnten: `${ortListeHtml}${marktAbschnitt(k)}${angebotLandAbschnitt(l, liste)}<section class="abschnitt nachbarn"><h2>Hofläden in benachbarten Kreisen</h2><ul class="kreis-liste">${nachbarn.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.titel)}</span><span class="zahl">${zahl(proKreis.get(x.code)?.length || 0)}</span></a></li>`).join('')}</ul></section>`,
       }), umgebungIndexiert(z));
       continue;
     }
@@ -134,6 +150,7 @@ ${ortLinks.length > 1 ? `<section class="abschnitt">
 ${marktAbschnitt(k)}
 ${liste.length ? `<section class="abschnitt seo-text"><h2>Hofladen ${esc(im)}: Überblick</h2>${gebietsText(liste, im, { anker: l.slug })}${typLinks(liste, l.slug, k)}<p>Mehr aus der Region: <a href="/${l.slug}/">alle Hofläden in ${esc(l.name)}</a>.</p></section>` : ''}
 ${f.html}
+${liste.length >= MIN_SEITE ? angebotLandAbschnitt(l, liste) : ''}
 <section class="abschnitt nachbarn">
   <h2>Hofläden in der Umgebung</h2>
   <ul class="kreis-liste">${nachbarn.map((x) => `<li><a href="${x.pfad}"><span>${esc(x.titel)}</span><span class="zahl">${zahl(proKreis.get(x.code)?.length || 0)}</span></a></li>`).join('')}</ul>
@@ -274,12 +291,6 @@ ${kreisListe.map(([k, es]) => { const tk = typKreis(t, k); return `<section clas
 }
 
 // ---------- Angebot: Produkte vom Hof (bundesweit nach Bundesland und Kreis) ----------
-// Produkt-Land-Seiten (/angebot/eier/brandenburg/): nur mit mindestens MIN_SEITE Einträgen
-const ANGEBOT_LAND = new Map();
-for (const kat of ANGEBOT_SEITEN) for (const l of laender) {
-  const liste = l.kreise.flatMap((k) => (proKreis.get(k.code) || []).filter((e) => e.kat.includes(kat)));
-  if (liste.length >= MIN_SEITE) ANGEBOT_LAND.set(`${kat}|${l.code}`, { kat, l, liste });
-}
 for (const { kat, l, liste } of ANGEBOT_LAND.values()) {
   const [titelKurz, mit] = ANGEBOT[kat];
   const pfad = `/angebot/${kat}/${l.slug}/`;
@@ -326,6 +337,7 @@ for (const kat of ANGEBOT_SEITEN) {
 </section>
 <section class="abschnitt seo-text"><p>Welche Höfe ${esc(mit)} anbieten, leiten wir aus den Angaben in OpenStreetMap und aus dem Namen des Hofs ab – das Sortiment kann je nach Saison abweichen.${['obst', 'gemuese', 'kartoffeln'].includes(kat) ? ' Was gerade Saison hat, zeigt der <a href="/saisonkalender/">Saisonkalender</a>.' : ''}</p></section>
 <nav class="abschnitt sprung-liste" aria-label="Bundesländer"><h2>Nach Bundesland</h2><ul class="kreis-liste">${proLand.map(({ l, ks }) => `<li><a href="#${l.slug}"><span>${esc(l.name)}</span><span class="zahl">${zahl(ks.reduce((x, [, n]) => x + n, 0))}</span></a></li>`).join('')}</ul></nav>
+${ANGEBOT_WISSEN[kat] ? `<section class="abschnitt seo-text angebot-wissen">${ANGEBOT_WISSEN[kat]}</section>` : ''}
 ${proLand.map(({ l, ks }) => `<section class="abschnitt" id="${l.slug}"><h2>${ANGEBOT_LAND.has(`${kat}|${l.code}`) ? `<a href="/angebot/${kat}/${l.slug}/">${esc(titelKurz)} in ${esc(l.name)}</a>` : `${esc(titelKurz)} in ${esc(l.name)}`}</h2><ul class="kreis-liste">${ks.sort((a, b) => b[1] - a[1] || a[0].titel.localeCompare(b[0].titel, 'de')).map(([k, n]) => `<li><a href="${k.pfad}#produkt=${kat}"><span>${esc(k.titel)}</span><span class="zahl">${zahl(n)}</span></a></li>`).join('')}</ul></section>`).join('\n')}`,
   }));
 }
