@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 964 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 984 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1773,35 +1773,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Cappeln (Oldenburg)](https://hofladenliste.de/niedersachsen/cloppenburg/cappeln-oldenburg/) `/niedersachsen/cloppenburg/cappeln-oldenburg/` | Landkreis Cloppenburg | 1 | 3 | 6 |
 |  | [Essen (Oldenburg)](https://hofladenliste.de/niedersachsen/cloppenburg/essen-oldenburg/) `/niedersachsen/cloppenburg/essen-oldenburg/` | Landkreis Cloppenburg | 1 | 3 | 6 |
 
-## Paket 60 (0/25 fertig)
+## Paket 60 (20/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Beverstedt](https://hofladenliste.de/niedersachsen/cuxhaven/beverstedt/) `/niedersachsen/cuxhaven/beverstedt/` | Landkreis Cuxhaven | 1 | 3 | 6 |
+| ✓ | [Beverstedt](https://hofladenliste.de/niedersachsen/cuxhaven/beverstedt/) `/niedersachsen/cuxhaven/beverstedt/` | Landkreis Cuxhaven | 1 | 3 | 6 |
 |  | [Hemmoor](https://hofladenliste.de/niedersachsen/cuxhaven/hemmoor/) `/niedersachsen/cuxhaven/hemmoor/` | Landkreis Cuxhaven | 1 | 3 | 6 |
 |  | [Nordleda](https://hofladenliste.de/niedersachsen/cuxhaven/nordleda/) `/niedersachsen/cuxhaven/nordleda/` | Landkreis Cuxhaven | 1 | 3 | 6 |
-|  | [Asendorf](https://hofladenliste.de/niedersachsen/diepholz/asendorf/) `/niedersachsen/diepholz/asendorf/` | Landkreis Diepholz | 1 | 3 | 6 |
-|  | [Bahrenborstel](https://hofladenliste.de/niedersachsen/diepholz/bahrenborstel/) `/niedersachsen/diepholz/bahrenborstel/` | Landkreis Diepholz | 1 | 3 | 6 |
-|  | [Martfeld](https://hofladenliste.de/niedersachsen/diepholz/martfeld/) `/niedersachsen/diepholz/martfeld/` | Landkreis Diepholz | 1 | 3 | 6 |
-|  | [Twistringen](https://hofladenliste.de/niedersachsen/diepholz/twistringen/) `/niedersachsen/diepholz/twistringen/` | Landkreis Diepholz | 1 | 3 | 6 |
+| ✓ | [Asendorf](https://hofladenliste.de/niedersachsen/diepholz/asendorf/) `/niedersachsen/diepholz/asendorf/` | Landkreis Diepholz | 1 | 3 | 6 |
+| ✓ | [Bahrenborstel](https://hofladenliste.de/niedersachsen/diepholz/bahrenborstel/) `/niedersachsen/diepholz/bahrenborstel/` | Landkreis Diepholz | 1 | 3 | 6 |
+| ✓ | [Martfeld](https://hofladenliste.de/niedersachsen/diepholz/martfeld/) `/niedersachsen/diepholz/martfeld/` | Landkreis Diepholz | 1 | 3 | 6 |
+| ✓ | [Twistringen](https://hofladenliste.de/niedersachsen/diepholz/twistringen/) `/niedersachsen/diepholz/twistringen/` | Landkreis Diepholz | 1 | 3 | 6 |
 |  | [Geeste](https://hofladenliste.de/niedersachsen/emsland/geeste/) `/niedersachsen/emsland/geeste/` | Landkreis Emsland | 1 | 3 | 6 |
-|  | [Spelle](https://hofladenliste.de/niedersachsen/emsland/spelle/) `/niedersachsen/emsland/spelle/` | Landkreis Emsland | 1 | 3 | 6 |
-|  | [Twist](https://hofladenliste.de/niedersachsen/emsland/twist/) `/niedersachsen/emsland/twist/` | Landkreis Emsland | 1 | 3 | 6 |
-|  | [Sande Neustadtgödens](https://hofladenliste.de/niedersachsen/friesland/sande-neustadtgoedens/) `/niedersachsen/friesland/sande-neustadtgoedens/` | Landkreis Friesland | 1 | 3 | 6 |
-|  | [Varel Grünenkamp](https://hofladenliste.de/niedersachsen/friesland/varel-gruenenkamp/) `/niedersachsen/friesland/varel-gruenenkamp/` | Landkreis Friesland | 1 | 3 | 6 |
-|  | [Wangerland](https://hofladenliste.de/niedersachsen/friesland/wangerland/) `/niedersachsen/friesland/wangerland/` | Landkreis Friesland | 1 | 3 | 6 |
-|  | [Zetel](https://hofladenliste.de/niedersachsen/friesland/zetel/) `/niedersachsen/friesland/zetel/` | Landkreis Friesland | 1 | 3 | 6 |
+| ✓ | [Spelle](https://hofladenliste.de/niedersachsen/emsland/spelle/) `/niedersachsen/emsland/spelle/` | Landkreis Emsland | 1 | 3 | 6 |
+| ✓ | [Twist](https://hofladenliste.de/niedersachsen/emsland/twist/) `/niedersachsen/emsland/twist/` | Landkreis Emsland | 1 | 3 | 6 |
+| ✓ | [Sande Neustadtgödens](https://hofladenliste.de/niedersachsen/friesland/sande-neustadtgoedens/) `/niedersachsen/friesland/sande-neustadtgoedens/` | Landkreis Friesland | 1 | 3 | 6 |
+| ✓ | [Varel Grünenkamp](https://hofladenliste.de/niedersachsen/friesland/varel-gruenenkamp/) `/niedersachsen/friesland/varel-gruenenkamp/` | Landkreis Friesland | 1 | 3 | 6 |
+| ✓ | [Wangerland](https://hofladenliste.de/niedersachsen/friesland/wangerland/) `/niedersachsen/friesland/wangerland/` | Landkreis Friesland | 1 | 3 | 6 |
+| ✓ | [Zetel](https://hofladenliste.de/niedersachsen/friesland/zetel/) `/niedersachsen/friesland/zetel/` | Landkreis Friesland | 1 | 3 | 6 |
 |  | [Isenbüttel](https://hofladenliste.de/niedersachsen/gifhorn/isenbuettel/) `/niedersachsen/gifhorn/isenbuettel/` | Landkreis Gifhorn | 1 | 3 | 6 |
 |  | [Leiferde](https://hofladenliste.de/niedersachsen/gifhorn/leiferde/) `/niedersachsen/gifhorn/leiferde/` | Landkreis Gifhorn | 1 | 3 | 6 |
-|  | [Rötgesbüttel](https://hofladenliste.de/niedersachsen/gifhorn/roetgesbuettel/) `/niedersachsen/gifhorn/roetgesbuettel/` | Landkreis Gifhorn | 1 | 3 | 6 |
-|  | [Wasbüttel](https://hofladenliste.de/niedersachsen/gifhorn/wasbuettel/) `/niedersachsen/gifhorn/wasbuettel/` | Landkreis Gifhorn | 1 | 3 | 6 |
-|  | [Gieboldehausen](https://hofladenliste.de/niedersachsen/goettingen/gieboldehausen/) `/niedersachsen/goettingen/gieboldehausen/` | Landkreis Göttingen | 1 | 3 | 6 |
-|  | [Gleichen](https://hofladenliste.de/niedersachsen/goettingen/gleichen/) `/niedersachsen/goettingen/gleichen/` | Landkreis Göttingen | 1 | 3 | 6 |
-|  | [Seeburg](https://hofladenliste.de/niedersachsen/goettingen/seeburg/) `/niedersachsen/goettingen/seeburg/` | Landkreis Göttingen | 1 | 3 | 6 |
-|  | [Seulingen](https://hofladenliste.de/niedersachsen/goettingen/seulingen/) `/niedersachsen/goettingen/seulingen/` | Landkreis Göttingen | 1 | 3 | 6 |
-|  | [Seesen](https://hofladenliste.de/niedersachsen/goslar/seesen/) `/niedersachsen/goslar/seesen/` | Landkreis Goslar | 1 | 3 | 6 |
-|  | [Emmerthal](https://hofladenliste.de/niedersachsen/hameln-pyrmont/emmerthal/) `/niedersachsen/hameln-pyrmont/emmerthal/` | Landkreis Hameln-Pyrmont | 1 | 3 | 6 |
-|  | [Egestorf](https://hofladenliste.de/niedersachsen/harburg/egestorf/) `/niedersachsen/harburg/egestorf/` | Landkreis Harburg | 1 | 3 | 6 |
+| ✓ | [Rötgesbüttel](https://hofladenliste.de/niedersachsen/gifhorn/roetgesbuettel/) `/niedersachsen/gifhorn/roetgesbuettel/` | Landkreis Gifhorn | 1 | 3 | 6 |
+| ✓ | [Wasbüttel](https://hofladenliste.de/niedersachsen/gifhorn/wasbuettel/) `/niedersachsen/gifhorn/wasbuettel/` | Landkreis Gifhorn | 1 | 3 | 6 |
+| ✓ | [Gieboldehausen](https://hofladenliste.de/niedersachsen/goettingen/gieboldehausen/) `/niedersachsen/goettingen/gieboldehausen/` | Landkreis Göttingen | 1 | 3 | 6 |
+| ✓ | [Gleichen](https://hofladenliste.de/niedersachsen/goettingen/gleichen/) `/niedersachsen/goettingen/gleichen/` | Landkreis Göttingen | 1 | 3 | 6 |
+| ✓ | [Seeburg](https://hofladenliste.de/niedersachsen/goettingen/seeburg/) `/niedersachsen/goettingen/seeburg/` | Landkreis Göttingen | 1 | 3 | 6 |
+| ✓ | [Seulingen](https://hofladenliste.de/niedersachsen/goettingen/seulingen/) `/niedersachsen/goettingen/seulingen/` | Landkreis Göttingen | 1 | 3 | 6 |
+| ✓ | [Seesen](https://hofladenliste.de/niedersachsen/goslar/seesen/) `/niedersachsen/goslar/seesen/` | Landkreis Goslar | 1 | 3 | 6 |
+| ✓ | [Emmerthal](https://hofladenliste.de/niedersachsen/hameln-pyrmont/emmerthal/) `/niedersachsen/hameln-pyrmont/emmerthal/` | Landkreis Hameln-Pyrmont | 1 | 3 | 6 |
+| ✓ | [Egestorf](https://hofladenliste.de/niedersachsen/harburg/egestorf/) `/niedersachsen/harburg/egestorf/` | Landkreis Harburg | 1 | 3 | 6 |
 
 ## Paket 61 (0/25 fertig)
 

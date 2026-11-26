@@ -29348,5 +29348,605 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/niedersachsen/cuxhaven/beverstedt/": {
+    "titel": "Hofläden in Beverstedt: gut zu wissen",
+    "oben": "In Beverstedt sind das Hofcafé Gut Frelsdorfermühlen, der Biolandhof \"Die Quertreiber\" und der Biohof Wrede eingetragen.",
+    "einleitung": "Zwei Biohöfe arbeiten nach Bio-Richtlinien. Im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Geestland, Bremerhaven und im Landkreis Osterholz.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Geestland und Umgebung",
+        "pfad": "/niedersachsen/cuxhaven/geestland/"
+      },
+      {
+        "text": "Hofläden in Bremerhaven",
+        "pfad": "/bremen/bremerhaven/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/diepholz/asendorf/": {
+    "titel": "Hofläden in Asendorf: gut zu wissen",
+    "oben": "Asendorf nennt Brinker's Pilzdiele mit Bio-Angebot, die Ziegerei mit Bio-Angebot und Meyer's Spargelhof.",
+    "einleitung": "Spargel gibt es auf Meyer's Spargelhof in der Saison, Pilze in der Pilzdiele.\n\nWeitere Höfe findest du in Martfeld, Dörverden und Syke.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Pilze",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Ziegenprodukte",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Martfeld und Umgebung",
+        "pfad": "/niedersachsen/diepholz/martfeld/"
+      },
+      {
+        "text": "Hofläden in Syke und Umgebung",
+        "pfad": "/niedersachsen/diepholz/syke/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/diepholz/bahrenborstel/": {
+    "titel": "Hofläden in Bahrenborstel: gut zu wissen",
+    "oben": "In Bahrenborstel sind Ela's Hofcafé, ein Hofladen mit Gemüse und das Hofcafé Landlust eingetragen.",
+    "einleitung": "Zwei Hofcafés laden zum Einkehren ein, Gemüse gibt es im Hofladen.\n\nWeitere Höfe findest du in Kirchdorf, Steyerberg und Stolzenau.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kirchdorf und Umgebung",
+        "pfad": "/niedersachsen/diepholz/kirchdorf/"
+      },
+      {
+        "text": "Hofläden in Steyerberg und Umgebung",
+        "pfad": "/niedersachsen/nienburg-weser/steyerberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/diepholz/martfeld/": {
+    "titel": "Hofläden in Martfeld: gut zu wissen",
+    "oben": "Martfeld hat den Hof Holste mit Hofladen und Hofcafé, den Biolandhof Stubbemann und einen Regiomaten mit Fleisch.",
+    "einleitung": "Fleisch gibt es jederzeit am Regiomaten. Der Biolandhof Stubbemann arbeitet nach Bioland-Richtlinien.\n\nWeitere Höfe findest du in Thedinghausen, Asendorf und Dörverden.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Thedinghausen und Umgebung",
+        "pfad": "/niedersachsen/verden/thedinghausen/"
+      },
+      {
+        "text": "Hofläden in Asendorf und Umgebung",
+        "pfad": "/niedersachsen/diepholz/asendorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/diepholz/twistringen/": {
+    "titel": "Hofläden in Twistringen: gut zu wissen",
+    "oben": "Twistringen hat vier Einträge: Meyer's Hofladen, den Hof Beuke, Wieses Bauernladen und eine Milchtankstelle.",
+    "einleitung": "Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bassum, Goldenstedt und Syke.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bassum und Umgebung",
+        "pfad": "/niedersachsen/diepholz/bassum/"
+      },
+      {
+        "text": "Hofläden in Syke und Umgebung",
+        "pfad": "/niedersachsen/diepholz/syke/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/emsland/spelle/": {
+    "titel": "Hofläden in Spelle: gut zu wissen",
+    "oben": "In Spelle sind ein Hofladen mit Honig und Marmelade, eine Milchtankstelle und ein Regiomat mit Eiern eingetragen.",
+    "einleitung": "Milch und Eier gibt es jederzeit an den Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Salzbergen, Hopsten und Rheine.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Salzbergen und Umgebung",
+        "pfad": "/niedersachsen/emsland/salzbergen/"
+      },
+      {
+        "text": "Hofläden in Rheine und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/rheine/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/emsland/twist/": {
+    "titel": "Hofläden in Twist: gut zu wissen",
+    "oben": "Twist nennt Honig aus eigener Imkerei, den Hofladen Robben und Nottbergs Milchtankstelle.",
+    "einleitung": "Honig gibt es direkt bei der Imkerei. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Meppen, Haren und Lingen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Meppen und Umgebung",
+        "pfad": "/niedersachsen/emsland/meppen/"
+      },
+      {
+        "text": "Hofläden in Lingen und Umgebung",
+        "pfad": "/niedersachsen/emsland/lingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/friesland/sande-neustadtgoedens/": {
+    "titel": "Hofläden in Sande Neustadtgödens: gut zu wissen",
+    "oben": "In Sande-Neustadtgödens sind ein SB-Rohmilch-Automat und zwei Regiomaten eingetragen, einer mit Eiern und Milch, einer mit Eiern, Kartoffeln und Honig.",
+    "einleitung": "Alle Einträge sind Automaten. Die Rohmilch ist vor dem Trinken abzukochen.\n\nWeitere Höfe findest du in Zetel, Bockhorn und Friedeburg.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zetel und Umgebung",
+        "pfad": "/niedersachsen/friesland/zetel/"
+      },
+      {
+        "text": "Hofläden in Bockhorn und Umgebung",
+        "pfad": "/niedersachsen/friesland/bockhorn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/friesland/varel-gruenenkamp/": {
+    "titel": "Hofläden in Varel Grünenkamp: gut zu wissen",
+    "oben": "Varel-Grünenkamp hat einen Eierautomaten, ein Blumenfeld zum Selberpflücken und Dit un Dat mit Bio-Angebot.",
+    "einleitung": "Blumen kannst du selbst pflücken, Eier gibt es jederzeit am Automaten.\n\nWeitere Höfe findest du in Bockhorn, Zetel und Wiefelstede.",
+    "saison": [
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bockhorn und Umgebung",
+        "pfad": "/niedersachsen/friesland/bockhorn/"
+      },
+      {
+        "text": "Hofläden in Zetel und Umgebung",
+        "pfad": "/niedersachsen/friesland/zetel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/friesland/wangerland/": {
+    "titel": "Hofläden in Wangerland: gut zu wissen",
+    "oben": "Im Wangerland sind Schild's Bauernhof-Café, Schild's Hofladen und der Christianshof Middoge eingetragen.",
+    "einleitung": "Im Bauernhof-Café kannst du einkehren, im Hofladen einkaufen.\n\nWeitere Höfe findest du in Wilhelmshaven, Sande und Friedeburg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sande Neustadtgödens und Umgebung",
+        "pfad": "/niedersachsen/friesland/sande-neustadtgoedens/"
+      },
+      {
+        "text": "Hofläden in Friedeburg und Umgebung",
+        "pfad": "/niedersachsen/wittmund/friedeburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/friesland/zetel/": {
+    "titel": "Hofläden in Zetel: gut zu wissen",
+    "oben": "Zetel nennt den Hofladen Rutteler Mühle, das Landcafé Astederfeld und den Hofladen Husmann.",
+    "einleitung": "Im Landcafé Astederfeld gibt es Kaffee und Getränke.\n\nWeitere Höfe findest du in Bockhorn, Sande und Varel-Grünenkamp.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bockhorn und Umgebung",
+        "pfad": "/niedersachsen/friesland/bockhorn/"
+      },
+      {
+        "text": "Hofläden in Varel Grünenkamp und Umgebung",
+        "pfad": "/niedersachsen/friesland/varel-gruenenkamp/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/gifhorn/roetgesbuettel/": {
+    "titel": "Hofläden in Rötgesbüttel: gut zu wissen",
+    "oben": "In Rötgesbüttel sind ein Fleischautomat, der Hofladen Gaus und der Verkaufsstand Kaufmann mit Gemüse und Obst eingetragen.",
+    "einleitung": "Fleisch gibt es jederzeit am Automaten, Gemüse und Obst am Stand Kaufmann.\n\nWeitere Höfe findest du in Meine, Wasbüttel und Gifhorn.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Meine und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/meine/"
+      },
+      {
+        "text": "Hofläden in Wasbüttel und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/wasbuettel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/gifhorn/wasbuettel/": {
+    "titel": "Hofläden in Wasbüttel: gut zu wissen",
+    "oben": "Wasbüttel hat eine Kartoffelkiste, einen Kartoffelautomaten und den Hof Hoffmann mit Milchtankstelle, Freilandeiern und Rindfleisch.",
+    "einleitung": "Kartoffeln gibt es jederzeit an den Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Rötgesbüttel, Meine und Gifhorn.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Rindfleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rötgesbüttel und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/roetgesbuettel/"
+      },
+      {
+        "text": "Hofläden in Gifhorn und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/gifhorn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/goettingen/gieboldehausen/": {
+    "titel": "Hofläden in Gieboldehausen: gut zu wissen",
+    "oben": "In Gieboldehausen sind der Hofladen der Familie Wandt, ein Hofcafé und Keufner's Hofladen eingetragen.",
+    "einleitung": "Im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Seeburg, Seulingen und Duderstadt.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Seeburg und Umgebung",
+        "pfad": "/niedersachsen/goettingen/seeburg/"
+      },
+      {
+        "text": "Hofläden in Duderstadt und Umgebung",
+        "pfad": "/niedersachsen/goettingen/duderstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/goettingen/gleichen/": {
+    "titel": "Hofläden in Gleichen: gut zu wissen",
+    "oben": "Gleichen nennt ein Hofcafé, den Naturmilchhof Gartetal mit Bio-Milch und einen Regiomaten mit Milch und Käse.",
+    "einleitung": "Die Milch ist oft Rohmilch: vor dem Trinken abkochen. Der Naturmilchhof arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Friedland, Göttingen und Seulingen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Friedland und Umgebung",
+        "pfad": "/niedersachsen/goettingen/friedland/"
+      },
+      {
+        "text": "Hofläden in Göttingen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/goettingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/goettingen/seeburg/": {
+    "titel": "Hofläden in Seeburg: gut zu wissen",
+    "oben": "In Seeburg sind der Hofladen Kracht, Wüstefeld's Hofladen und Freckmanns Landleben Hofladen eingetragen.",
+    "einleitung": "Drei Hofläden liegen im Ort.\n\nWeitere Höfe findest du in Seulingen, Gieboldehausen und Duderstadt.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Seulingen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/seulingen/"
+      },
+      {
+        "text": "Hofläden in Gieboldehausen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/gieboldehausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/goettingen/seulingen/": {
+    "titel": "Hofläden in Seulingen: gut zu wissen",
+    "oben": "Seulingen hat den Hofladen Jung, den Hofladen Zapfe und Wedekind (GlüXsei).",
+    "einleitung": "Drei Höfe verkaufen direkt.\n\nWeitere Höfe findest du in Seeburg, Duderstadt und Gieboldehausen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Seeburg und Umgebung",
+        "pfad": "/niedersachsen/goettingen/seeburg/"
+      },
+      {
+        "text": "Hofläden in Duderstadt und Umgebung",
+        "pfad": "/niedersachsen/goettingen/duderstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/goslar/seesen/": {
+    "titel": "Hofläden in Seesen: gut zu wissen",
+    "oben": "In Seesen sind die Fleischerei mit Hofladen Schubert, Thudts Hof mit Bio-Angebot und ein Regiomat mit Eiern und Honig eingetragen.",
+    "einleitung": "Fleisch gibt es bei Schubert, Eier und Honig jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Bad Gandersheim, Bockenem und Goslar.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Gandersheim und Umgebung",
+        "pfad": "/niedersachsen/northeim/bad-gandersheim/"
+      },
+      {
+        "text": "Hofläden in Goslar und Umgebung",
+        "pfad": "/niedersachsen/goslar/goslar/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/hameln-pyrmont/emmerthal/": {
+    "titel": "Hofläden in Emmerthal: gut zu wissen",
+    "oben": "Emmerthal nennt den Marienhof Esperde mit Bio-Angebot, einen Regiomaten mit Eiern, Kartoffeln und Honig und den Obsthof Flöter.",
+    "einleitung": "Obst gibt es auf dem Obsthof Flöter, Eier und Kartoffeln am Regiomaten.\n\nWeitere Höfe findest du in Hameln, Coppenbrügge und Bad Münder am Deister.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hameln und Umgebung",
+        "pfad": "/niedersachsen/hameln-pyrmont/hameln/"
+      },
+      {
+        "text": "Hofläden in Coppenbrügge und Umgebung",
+        "pfad": "/niedersachsen/hameln-pyrmont/coppenbruegge/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/harburg/egestorf/": {
+    "titel": "Hofläden in Egestorf: gut zu wissen",
+    "oben": "In Egestorf in der Nordheide sind Kartoffeln vom Bauernhof, natur verliebt und eine Milchtankstelle eingetragen.",
+    "einleitung": "Kartoffeln und Milch gibt es an den Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Hanstedt, Oldendorf (Luhe) und Bispingen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hanstedt und Umgebung",
+        "pfad": "/niedersachsen/harburg/hanstedt/"
+      },
+      {
+        "text": "Hofläden in Bispingen und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/bispingen/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
