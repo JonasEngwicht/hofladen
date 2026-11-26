@@ -73,3 +73,13 @@ test('Ortsnamen-Korrektur: alte Seiten leiten per Seitenarchiv auf den richtigen
     assert.ok(ziel && ORT_KORREKTUREN.some((k) => ziel.endsWith(`/${slugify(k.neu)}/`)), `${alt} → ${ziel}`);
   }
 });
+
+test('Schriften: woff2 vorgeladen, woff nur als Rückfall', () => {
+  const start = [...seiten()].find(([p]) => p === '/')[1];
+  const preload = [...start.matchAll(/<link rel="preload" href="(\/fonts\/[^"]+)" as="font" type="([^"]+)"/g)];
+  assert.ok(preload.length >= 2);
+  for (const [, href, typ] of preload) { assert.match(href, /\.woff2$/); assert.equal(typ, 'font/woff2'); }
+  const css = readFileSync(new URL('../static/style.css', import.meta.url), 'utf8');
+  for (const m of css.matchAll(/@font-face \{[^}]*\}/g)) assert.match(m[0], /\.woff2"\) format\("woff2"\), url\("[^"]+\.woff"\) format\("woff"\)/);
+  for (const f of ['zilla-slab-bold', 'zilla-slab-semibold', 'atkinson-next']) assert.equal(readFileSync(new URL(`../static/fonts/${f}.woff2`, import.meta.url)).subarray(0, 4).toString(), 'wOF2');
+});
