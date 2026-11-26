@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1104 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1128 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1743,35 +1743,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Dreieich](https://hofladenliste.de/hessen/offenbach/dreieich/) `/hessen/offenbach/dreieich/` | Landkreis Offenbach | 1 | 3 | 6 |
 |  | [Heusenstamm](https://hofladenliste.de/hessen/offenbach/heusenstamm/) `/hessen/offenbach/heusenstamm/` | Landkreis Offenbach | 1 | 3 | 6 |
 
-## Paket 59 (0/25 fertig)
+## Paket 59 (24/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Niedernhausen](https://hofladenliste.de/hessen/rheingau-taunus-kreis/niedernhausen/) `/hessen/rheingau-taunus-kreis/niedernhausen/` | Rheingau-Taunus-Kreis | 1 | 3 | 6 |
-|  | [Bad Zwesten](https://hofladenliste.de/hessen/schwalm-eder-kreis/bad-zwesten/) `/hessen/schwalm-eder-kreis/bad-zwesten/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
-|  | [Edermünde](https://hofladenliste.de/hessen/schwalm-eder-kreis/edermuende/) `/hessen/schwalm-eder-kreis/edermuende/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
-|  | [Felsberg](https://hofladenliste.de/hessen/schwalm-eder-kreis/felsberg/) `/hessen/schwalm-eder-kreis/felsberg/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
-|  | [Fritzlar](https://hofladenliste.de/hessen/schwalm-eder-kreis/fritzlar/) `/hessen/schwalm-eder-kreis/fritzlar/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
-|  | [Mücke](https://hofladenliste.de/hessen/vogelsbergkreis/muecke/) `/hessen/vogelsbergkreis/muecke/` | Vogelsbergkreis | 1 | 3 | 6 |
-|  | [Bad Arolsen](https://hofladenliste.de/hessen/waldeck-frankenberg/bad-arolsen/) `/hessen/waldeck-frankenberg/bad-arolsen/` | Landkreis Waldeck-Frankenberg | 1 | 3 | 6 |
-|  | [Gemünden (Wohra)](https://hofladenliste.de/hessen/waldeck-frankenberg/gemuenden-wohra/) `/hessen/waldeck-frankenberg/gemuenden-wohra/` | Landkreis Waldeck-Frankenberg | 1 | 3 | 6 |
-|  | [Waldeck](https://hofladenliste.de/hessen/waldeck-frankenberg/waldeck/) `/hessen/waldeck-frankenberg/waldeck/` | Landkreis Waldeck-Frankenberg | 1 | 3 | 6 |
-|  | [Hessisch Lichtenau](https://hofladenliste.de/hessen/werra-meissner-kreis/hessisch-lichtenau/) `/hessen/werra-meissner-kreis/hessisch-lichtenau/` | Werra-Meißner-Kreis | 1 | 3 | 6 |
-|  | [Sontra](https://hofladenliste.de/hessen/werra-meissner-kreis/sontra/) `/hessen/werra-meissner-kreis/sontra/` | Werra-Meißner-Kreis | 1 | 3 | 6 |
-|  | [Friedberg (Wetteraukreis)](https://hofladenliste.de/hessen/wetteraukreis/friedberg/) `/hessen/wetteraukreis/friedberg/` | Wetteraukreis | 1 | 3 | 6 |
-|  | [Bastorf](https://hofladenliste.de/mecklenburg-vorpommern/landkreis-rostock/bastorf/) `/mecklenburg-vorpommern/landkreis-rostock/bastorf/` | Landkreis Rostock | 1 | 3 | 6 |
-|  | [Kritzmow](https://hofladenliste.de/mecklenburg-vorpommern/landkreis-rostock/kritzmow/) `/mecklenburg-vorpommern/landkreis-rostock/kritzmow/` | Landkreis Rostock | 1 | 3 | 6 |
-|  | [Plau am See](https://hofladenliste.de/mecklenburg-vorpommern/ludwigslust-parchim/plau-am-see/) `/mecklenburg-vorpommern/ludwigslust-parchim/plau-am-see/` | Landkreis Ludwigslust-Parchim | 1 | 3 | 6 |
-|  | [Neustrelitz](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/neustrelitz/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/neustrelitz/` | Landkreis Mecklenburgische Seenplatte | 1 | 3 | 6 |
-|  | [Rechlin](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/rechlin/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/rechlin/` | Landkreis Mecklenburgische Seenplatte | 1 | 3 | 6 |
-|  | [Sponholz](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/sponholz/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/sponholz/` | Landkreis Mecklenburgische Seenplatte | 1 | 3 | 6 |
-|  | [Boltenhagen](https://hofladenliste.de/mecklenburg-vorpommern/nordwestmecklenburg/boltenhagen/) `/mecklenburg-vorpommern/nordwestmecklenburg/boltenhagen/` | Landkreis Nordwestmecklenburg | 1 | 3 | 6 |
+| ✓ | [Niedernhausen](https://hofladenliste.de/hessen/rheingau-taunus-kreis/niedernhausen/) `/hessen/rheingau-taunus-kreis/niedernhausen/` | Rheingau-Taunus-Kreis | 1 | 3 | 6 |
+| ✓ | [Bad Zwesten](https://hofladenliste.de/hessen/schwalm-eder-kreis/bad-zwesten/) `/hessen/schwalm-eder-kreis/bad-zwesten/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
+| ✓ | [Edermünde](https://hofladenliste.de/hessen/schwalm-eder-kreis/edermuende/) `/hessen/schwalm-eder-kreis/edermuende/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
+| ✓ | [Felsberg](https://hofladenliste.de/hessen/schwalm-eder-kreis/felsberg/) `/hessen/schwalm-eder-kreis/felsberg/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
+| ✓ | [Fritzlar](https://hofladenliste.de/hessen/schwalm-eder-kreis/fritzlar/) `/hessen/schwalm-eder-kreis/fritzlar/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
+| ✓ | [Mücke](https://hofladenliste.de/hessen/vogelsbergkreis/muecke/) `/hessen/vogelsbergkreis/muecke/` | Vogelsbergkreis | 1 | 3 | 6 |
+| ✓ | [Bad Arolsen](https://hofladenliste.de/hessen/waldeck-frankenberg/bad-arolsen/) `/hessen/waldeck-frankenberg/bad-arolsen/` | Landkreis Waldeck-Frankenberg | 1 | 3 | 6 |
+| ✓ | [Gemünden (Wohra)](https://hofladenliste.de/hessen/waldeck-frankenberg/gemuenden-wohra/) `/hessen/waldeck-frankenberg/gemuenden-wohra/` | Landkreis Waldeck-Frankenberg | 1 | 3 | 6 |
+| ✓ | [Waldeck](https://hofladenliste.de/hessen/waldeck-frankenberg/waldeck/) `/hessen/waldeck-frankenberg/waldeck/` | Landkreis Waldeck-Frankenberg | 1 | 3 | 6 |
+| ✓ | [Hessisch Lichtenau](https://hofladenliste.de/hessen/werra-meissner-kreis/hessisch-lichtenau/) `/hessen/werra-meissner-kreis/hessisch-lichtenau/` | Werra-Meißner-Kreis | 1 | 3 | 6 |
+| ✓ | [Sontra](https://hofladenliste.de/hessen/werra-meissner-kreis/sontra/) `/hessen/werra-meissner-kreis/sontra/` | Werra-Meißner-Kreis | 1 | 3 | 6 |
+| ✓ | [Friedberg (Wetteraukreis)](https://hofladenliste.de/hessen/wetteraukreis/friedberg/) `/hessen/wetteraukreis/friedberg/` | Wetteraukreis | 1 | 3 | 6 |
+| ✓ | [Bastorf](https://hofladenliste.de/mecklenburg-vorpommern/landkreis-rostock/bastorf/) `/mecklenburg-vorpommern/landkreis-rostock/bastorf/` | Landkreis Rostock | 1 | 3 | 6 |
+| ✓ | [Kritzmow](https://hofladenliste.de/mecklenburg-vorpommern/landkreis-rostock/kritzmow/) `/mecklenburg-vorpommern/landkreis-rostock/kritzmow/` | Landkreis Rostock | 1 | 3 | 6 |
+| ✓ | [Plau am See](https://hofladenliste.de/mecklenburg-vorpommern/ludwigslust-parchim/plau-am-see/) `/mecklenburg-vorpommern/ludwigslust-parchim/plau-am-see/` | Landkreis Ludwigslust-Parchim | 1 | 3 | 6 |
+| ✓ | [Neustrelitz](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/neustrelitz/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/neustrelitz/` | Landkreis Mecklenburgische Seenplatte | 1 | 3 | 6 |
+| ✓ | [Rechlin](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/rechlin/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/rechlin/` | Landkreis Mecklenburgische Seenplatte | 1 | 3 | 6 |
+| ✓ | [Sponholz](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/sponholz/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/sponholz/` | Landkreis Mecklenburgische Seenplatte | 1 | 3 | 6 |
+| ✓ | [Boltenhagen](https://hofladenliste.de/mecklenburg-vorpommern/nordwestmecklenburg/boltenhagen/) `/mecklenburg-vorpommern/nordwestmecklenburg/boltenhagen/` | Landkreis Nordwestmecklenburg | 1 | 3 | 6 |
 |  | [Rubenow](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-greifswald/rubenow/) `/mecklenburg-vorpommern/vorpommern-greifswald/rubenow/` | Landkreis Vorpommern-Greifswald | 1 | 3 | 6 |
-|  | [Zempin](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-greifswald/zempin/) `/mecklenburg-vorpommern/vorpommern-greifswald/zempin/` | Landkreis Vorpommern-Greifswald | 1 | 3 | 6 |
-|  | [Zingst](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-ruegen/zingst/) `/mecklenburg-vorpommern/vorpommern-ruegen/zingst/` | Landkreis Vorpommern-Rügen | 1 | 3 | 6 |
-|  | [Edewecht](https://hofladenliste.de/niedersachsen/ammerland/edewecht/) `/niedersachsen/ammerland/edewecht/` | Landkreis Ammerland | 1 | 3 | 6 |
-|  | [Cappeln (Oldenburg)](https://hofladenliste.de/niedersachsen/cloppenburg/cappeln-oldenburg/) `/niedersachsen/cloppenburg/cappeln-oldenburg/` | Landkreis Cloppenburg | 1 | 3 | 6 |
-|  | [Essen (Oldenburg)](https://hofladenliste.de/niedersachsen/cloppenburg/essen-oldenburg/) `/niedersachsen/cloppenburg/essen-oldenburg/` | Landkreis Cloppenburg | 1 | 3 | 6 |
+| ✓ | [Zempin](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-greifswald/zempin/) `/mecklenburg-vorpommern/vorpommern-greifswald/zempin/` | Landkreis Vorpommern-Greifswald | 1 | 3 | 6 |
+| ✓ | [Zingst](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-ruegen/zingst/) `/mecklenburg-vorpommern/vorpommern-ruegen/zingst/` | Landkreis Vorpommern-Rügen | 1 | 3 | 6 |
+| ✓ | [Edewecht](https://hofladenliste.de/niedersachsen/ammerland/edewecht/) `/niedersachsen/ammerland/edewecht/` | Landkreis Ammerland | 1 | 3 | 6 |
+| ✓ | [Cappeln (Oldenburg)](https://hofladenliste.de/niedersachsen/cloppenburg/cappeln-oldenburg/) `/niedersachsen/cloppenburg/cappeln-oldenburg/` | Landkreis Cloppenburg | 1 | 3 | 6 |
+| ✓ | [Essen (Oldenburg)](https://hofladenliste.de/niedersachsen/cloppenburg/essen-oldenburg/) `/niedersachsen/cloppenburg/essen-oldenburg/` | Landkreis Cloppenburg | 1 | 3 | 6 |
 
 ## Paket 60 (20/25 fertig)
 
