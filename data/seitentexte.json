@@ -22028,5 +22028,695 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rhein-sieg-kreis/koenigswinter/": {
+    "titel": "Hofläden in Königswinter: gut zu wissen",
+    "oben": "Königswinter liegt am Rhein unterhalb des Siebengebirges, bekannt ist der Drachenfels. Eingetragen sind der Obsthof Siebengebirge, der Obst- und Kartoffelhof Mohr, der EiScienceShop, ein weiterer Hofladen und das Milchhäuschen.",
+    "einleitung": "Am Hang und im Vorland wachsen Obst und Kartoffeln. Die Milch im Milchhäuschen ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Hennef und Bonn.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hennef und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/hennef/"
+      },
+      {
+        "text": "Hofläden in Bonn",
+        "pfad": "/nordrhein-westfalen/bonn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rhein-sieg-kreis/much/": {
+    "titel": "Hofläden in Much: gut zu wissen",
+    "oben": "Much liegt im Bergischen Land im Rhein-Sieg-Kreis. Eingetragen sind Gippenstein das Weideei, der Rathshof Henn, Calentina Kräuter & Duftpflanzen, der Hofladen von Norbert und Marita Kaltenbach und ein Regiomat mit Eiern und Kartoffeln.",
+    "einleitung": "Hügel, Weiden und Wälder prägen die Gemeinde. Drei der Höfe arbeiten nach Bio-Richtlinien, Calentina setzt auf Kräuter und Duftpflanzen.\n\nWeitere Höfe findest du in Neunkirchen-Seelscheid und Overath.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kräuter",
+        "zeit": "Frühjahr bis Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neunkirchen-Seelscheid und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/neunkirchen-seelscheid/"
+      },
+      {
+        "text": "Hofläden in Overath und Umgebung",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/": {
+    "titel": "Hofläden in Overath: gut zu wissen",
+    "oben": "Overath liegt an der Agger im Bergischen Land. Eingetragen sind zwei Milchtankstellen, darunter das Milchhäuschen, zwei Eierautomaten und Overather Honig.",
+    "einleitung": "Das Angebot ist rund um die Uhr per Automat erreichbar. Die Milch aus den Tankstellen ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Much und Rösrath.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Much und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-sieg-kreis/much/"
+      },
+      {
+        "text": "Hofläden in Rösrath und Umgebung",
+        "pfad": "/nordrhein-westfalen/rheinisch-bergischer-kreis/roesrath/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/steinfurt/saerbeck/": {
+    "titel": "Hofläden in Saerbeck: gut zu wissen",
+    "oben": "Saerbeck liegt im Münsterland, bekannt ist der Bioenergiepark. Eingetragen sind die Middendorfer Milchtankstelle, die Regiobox Linderskamp's Hof, ein Eierautomat und die Elfrich GbR mit Bio-Angebot.",
+    "einleitung": "Die Regiobox bietet Eier, Milch, Fleisch, Kartoffeln und Nudeln an. Frische Milch aus Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Emsdetten und Greven.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Emsdetten und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/emsdetten/"
+      },
+      {
+        "text": "Hofläden in Greven und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/greven/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/unna/schwerte/": {
+    "titel": "Hofläden in Schwerte: gut zu wissen",
+    "oben": "Schwerte liegt im Ruhrtal im Kreis Unna. Eingetragen sind das Hofcafé und der Hofladen Böckelühr, der Obsthof Küpper, ein Hofladen und ein Regiomat mit Eiern.",
+    "einleitung": "Obst gedeiht hier an den Hängen über dem Fluss. Der Obsthof Küpper führt Obst aus eigenem Anbau.\n\nWeitere Höfe findest du in Hagen und Iserlohn.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hagen",
+        "pfad": "/nordrhein-westfalen/hagen/"
+      },
+      {
+        "text": "Hofläden in Iserlohn und Umgebung",
+        "pfad": "/nordrhein-westfalen/maerkischer-kreis/iserlohn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/warendorf/oelde/": {
+    "titel": "Hofläden in Oelde: gut zu wissen",
+    "oben": "Oelde liegt im Münsterland im Kreis Warendorf, hier fand 2001 die Landesgartenschau statt. Eingetragen sind Kampmanns Hofladen, der Spargelhof Steinhoff, der Biohof Gerwin und zwei Imker, der Imkerverein Oelde und Imker Blume.",
+    "einleitung": "Münsterländer Felder, Wiesen und Hecken bestimmen die Gegend. Spargel wird hier im Frühjahr auf dem Hof Steinhoff verkauft.\n\nWeitere Höfe findest du in Ennigerloh und Herzebrock-Clarholz.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ennigerloh und Umgebung",
+        "pfad": "/nordrhein-westfalen/warendorf/ennigerloh/"
+      },
+      {
+        "text": "Hofläden in Herzebrock-Clarholz und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/herzebrock-clarholz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/warendorf/sendenhorst/": {
+    "titel": "Hofläden in Sendenhorst: gut zu wissen",
+    "oben": "Sendenhorst liegt im Münsterland im Kreis Warendorf. Eingetragen sind die Erlebnisbrennereien Sendenhorst, Krümels Hofstübchen, Gerdas-Eier-Nest, Die Geflossenschaft und ein Regiomat mit Eiern, Käse, Fleisch und Geflügel.",
+    "einleitung": "Die Brennerei verbindet Hofladen und Erlebnis. Eier gibt es im Eier-Nest und am Regiomat.\n\nWeitere Höfe findest du in Drensteinfurt und Everswinkel.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Drensteinfurt und Umgebung",
+        "pfad": "/nordrhein-westfalen/warendorf/drensteinfurt/"
+      },
+      {
+        "text": "Hofläden in Everswinkel und Umgebung",
+        "pfad": "/nordrhein-westfalen/warendorf/everswinkel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/wesel/rheinberg/": {
+    "titel": "Hofläden in Rheinberg: gut zu wissen",
+    "oben": "Rheinberg liegt am Niederrhein im Kreis Wesel. Eingetragen sind die Familie Fonk mit Bauernladen und Rollrasen, das Hofcafé Elverich, Hücklekemkes mit Eiern, Fleisch und Geflügel, der Gärtnerhof Drießen und die Kriemhild Mühle.",
+    "einleitung": "Das flache Land am Rhein ist von Feldern und Wiesen geprägt. Der Gärtnerhof Drießen hat Bio-Eier, -Gemüse und -Obst.\n\nWeitere Höfe findest du in Kamp-Lintfort und Alpen.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kamp-Lintfort und Umgebung",
+        "pfad": "/nordrhein-westfalen/wesel/kamp-lintfort/"
+      },
+      {
+        "text": "Hofläden in Alpen und Umgebung",
+        "pfad": "/nordrhein-westfalen/wesel/alpen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/bernkastel-wittlich/wittlich/": {
+    "titel": "Hofläden in Wittlich: gut zu wissen",
+    "oben": "Wittlich liegt in der Wittlicher Senke zwischen Eifel und Mosel. Eingetragen sind der Demeterhof Breit, der Scheuerhof Permadies mit Eiern und Fleisch und ein weiterer Hofladen.",
+    "einleitung": "Die Senke ist eine geschützte, fruchtbare Landschaft mit Feldern und Obstwiesen. Beide benannten Höfe arbeiten biologisch.\n\nWeitere Höfe findest du in Alflen und Trier.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Alflen und Umgebung",
+        "pfad": "/rheinland-pfalz/cochem-zell/alflen/"
+      },
+      {
+        "text": "Hofläden in Trier",
+        "pfad": "/rheinland-pfalz/trier/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/cochem-zell/alflen/": {
+    "titel": "Hofläden in Alflen: gut zu wissen",
+    "oben": "Alflen liegt in der Eifel im Landkreis Cochem-Zell. Eingetragen sind der Waldhof, die Kartoffelkiste, das Alfler Wiesen-Ei, Natürchlich Ehlen und der Litzbachhof.",
+    "einleitung": "Wiesen, Wald und Felder prägen die Eifel. Kartoffeln und Eier kommen hier direkt aus dem Dorf.\n\nWeitere Höfe findest du in Wittlich und Glees.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wittlich und Umgebung",
+        "pfad": "/rheinland-pfalz/bernkastel-wittlich/wittlich/"
+      },
+      {
+        "text": "Hofläden in Glees und Umgebung",
+        "pfad": "/rheinland-pfalz/ahrweiler/glees/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/rhein-pfalz-kreis/mutterstadt/": {
+    "titel": "Hofläden in Mutterstadt: gut zu wissen",
+    "oben": "Mutterstadt liegt in der Vorderpfalz bei Ludwigshafen. Eingetragen sind der Hofladen Magin, die Imkerei Gayer, der Hofladen von Bernd und Bärbel Treiter, Obst und Gemüse Wolf und ein Fleischautomat.",
+    "einleitung": "Die Vorderpfalz ist eine der wichtigsten Gemüseregionen Deutschlands, das warme Klima hilft beim Anbau. Fleisch gibt es auch am Automaten.\n\nWeitere Höfe findest du in Dannstadt-Schauernheim und Neuhofen.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dannstadt-Schauernheim und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/dannstadt-schauernheim/"
+      },
+      {
+        "text": "Hofläden in Neuhofen und Umgebung",
+        "pfad": "/rheinland-pfalz/rhein-pfalz-kreis/neuhofen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/rheinland-pfalz/suedliche-weinstrasse/offenbach-an-der-queich/": {
+    "titel": "Hofläden in Offenbach an der Queich: gut zu wissen",
+    "oben": "Offenbach an der Queich liegt in der Südpfalz bei Landau. Eingetragen sind der Hofladen Starck, der Bio-Hofladen Gensheimer, der Buschhof, der Kaiser Bauernhof und ein Regiomat mit Eiern.",
+    "einleitung": "Die Südpfalz ist Wein- und Gemüseland, das milde Klima hilft beim Anbau. Eier gibt es hier auch am Automaten.\n\nWeitere Höfe findest du in Bellheim und Weingarten.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bellheim und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/bellheim/"
+      },
+      {
+        "text": "Hofläden in Weingarten (Landkreis Germersheim) und Umgebung",
+        "pfad": "/rheinland-pfalz/germersheim/weingarten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/merzig-wadern/merzig/": {
+    "titel": "Hofläden in Merzig: gut zu wissen",
+    "oben": "Merzig liegt an der Saar im Saarland, bekannt ist der Wolfspark. Eingetragen sind Maries Ziegen- & Schafhof und drei Imkereien: Ziegler, Zenner und Gallenkamp.",
+    "einleitung": "Die Stadt liegt im Saartal, ringsum sind Wiesen und Obstbäume. Bei Zenner gibt es auch Imkereibedarf.\n\nWeitere Höfe findest du in Rehlingen-Siersburg und Losheim am See.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Schafprodukte",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rehlingen-Siersburg und Umgebung",
+        "pfad": "/saarland/saarlouis/rehlingen-siersburg/"
+      },
+      {
+        "text": "Hofläden in Losheim am See und Umgebung",
+        "pfad": "/saarland/merzig-wadern/losheim-am-see/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/saarlouis/lebach/": {
+    "titel": "Hofläden in Lebach: gut zu wissen",
+    "oben": "Lebach liegt im Landkreis Saarlouis im Saarland. Eingetragen sind der Geflügelhof Feld mit Eiern, Fleisch und Geflügel, ein Regiomat mit Eiern, Käse, Fleisch und Geflügel sowie eine Zoohandlung mit Hofladen.",
+    "einleitung": "Die Gegend ist hügelig, Wald und Wiesen wechseln sich ab. Geflügel und Eier sind hier die Spezialität.\n\nWeitere Höfe findest du in Schmelz und Saarwellingen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schmelz und Umgebung",
+        "pfad": "/saarland/saarlouis/schmelz/"
+      },
+      {
+        "text": "Hofläden in Saarwellingen und Umgebung",
+        "pfad": "/saarland/saarlouis/saarwellingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/saarlouis/schmelz/": {
+    "titel": "Hofläden in Schmelz: gut zu wissen",
+    "oben": "Schmelz liegt im Primstal im Landkreis Saarlouis. Eingetragen sind der Geflügelhof Wittmer, ein Hofladen und ein Regiomat.",
+    "einleitung": "Wiesen, Felder und Wald prägen das Tal der Prims. Beim Geflügelhof Wittmer gibt es Eier, Fleisch und Geflügel.\n\nWeitere Höfe findest du in Lebach und Saarwellingen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lebach und Umgebung",
+        "pfad": "/saarland/saarlouis/lebach/"
+      },
+      {
+        "text": "Hofläden in Saarwellingen und Umgebung",
+        "pfad": "/saarland/saarlouis/saarwellingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/saarland/saarpfalz-kreis/sankt-ingbert/": {
+    "titel": "Hofläden in Sankt Ingbert: gut zu wissen",
+    "oben": "Sankt Ingbert liegt im Saarpfalz-Kreis östlich von Saarbrücken. Eingetragen sind Milich Heisje als Hofladen und Regiomat mit Eiern und Milch, der Eichelberger Hof, der Geistkircher Hofladen und ein Regiomat mit Fleisch.",
+    "einleitung": "Rings um die Stadt liegen Wiesen, Felder und Wald. Frische Milch aus Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Saarbrücken und Kleinblittersdorf.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Saarbrücken und Umgebung",
+        "pfad": "/saarland/regionalverband-saarbruecken/saarbruecken/"
+      },
+      {
+        "text": "Hofläden in Kleinblittersdorf und Umgebung",
+        "pfad": "/saarland/regionalverband-saarbruecken/kleinblittersdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/landkreis-leipzig/grimma/": {
+    "titel": "Hofläden in Grimma: gut zu wissen",
+    "oben": "Grimma liegt an der Mulde südöstlich von Leipzig. Eingetragen sind der Biohof Grossbardau, der Hofladen Viehweg, ein weiterer Hofladen und die Fleischerei Schicketanz mit Direktvermarktung im Norma-Markt.",
+    "einleitung": "Das Muldental ist eine Landschaft mit Feldern und Wiesen. Fleisch von Schicketanz gibt es direkt im Markt.\n\nWeitere Höfe findest du in Belgershain und Wermsdorf.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Belgershain und Umgebung",
+        "pfad": "/sachsen/landkreis-leipzig/belgershain/"
+      },
+      {
+        "text": "Hofläden in Wermsdorf und Umgebung",
+        "pfad": "/sachsen/nordsachsen/wermsdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/landkreis-leipzig/kitzen/": {
+    "titel": "Hofläden in Kitzen: gut zu wissen",
+    "oben": "Kitzen liegt südlich von Leipzig im Landkreis Leipzig. Eingetragen sind zwei Milchtankstellen, die Bienenfarm Kern, die Direktvermarktung von R. Kabisch und ein Hofladen.",
+    "einleitung": "Flaches Land mit Feldern und Wiesen prägt die Gegend. Die Milch aus den Tankstellen ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Groitzsch und Zeitz.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Groitzsch und Umgebung",
+        "pfad": "/sachsen/landkreis-leipzig/groitzsch/"
+      },
+      {
+        "text": "Hofläden in Zeitz und Umgebung",
+        "pfad": "/sachsen-anhalt/burgenlandkreis/zeitz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/meissen/grossenhain/": {
+    "titel": "Hofläden in Großenhain: gut zu wissen",
+    "oben": "Großenhain liegt nördlich von Dresden im Landkreis Meißen. Eingetragen sind der Großenhainer Geflügelhof, Grokar mit Bio-Gemüse, -Obst und -Kartoffeln, Angelas Teehoflädchen und zwei Imkereien, Naumann und Schenker.",
+    "einleitung": "Die Großenhainer Pflege ist eine flache Ackerlandschaft mit weiten Feldern. Beim Geflügelhof bekommst du Eier, Fleisch und Geflügel.\n\nWeitere Höfe findest du in Priestewitz und Meißen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Priestewitz und Umgebung",
+        "pfad": "/sachsen/meissen/priestewitz/"
+      },
+      {
+        "text": "Hofläden in Meißen und Umgebung",
+        "pfad": "/sachsen/meissen/meissen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/meissen/klipphausen/": {
+    "titel": "Hofläden in Klipphausen: gut zu wissen",
+    "oben": "Klipphausen liegt zwischen Dresden und Meißen, bekannt ist das Schloss Scharfenberg. Eingetragen sind der Mühlenladen, der Bauernhof Weise, der Milchziegenhof Schuhmann, der Meissner Obstgarten Geisler und ein Regiomat mit Eiern.",
+    "einleitung": "Die Gegend ist hügelig mit Obstwiesen und Feldern, nicht weit vom Elbtal. Der Milchziegenhof führt Ziegenmilch.\n\nWeitere Höfe findest du in Wilsdruff und Coswig.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Ziegenmilch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wilsdruff und Umgebung",
+        "pfad": "/sachsen/saechsische-schweiz/wilsdruff/"
+      },
+      {
+        "text": "Hofläden in Coswig und Umgebung",
+        "pfad": "/sachsen/meissen/coswig/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/mittelsachsen/halsbruecke/": {
+    "titel": "Hofläden in Halsbrücke: gut zu wissen",
+    "oben": "Halsbrücke liegt bei Freiberg im Erzgebirgsvorland, die Hohe Esse erinnert an die Bergbau- und Hüttenzeit. Eingetragen sind vier Imkereien, Schlemminger, Ramaker, Aurich und Bürger, sowie ein Regiomat mit Eiern und Honig.",
+    "einleitung": "Die Dichte an Imkereien ist für die kleine Gemeinde auffällig. Honig bekommst du hier von mehreren Anbietern.\n\nWeitere Höfe findest du in Bobritzsch-Hilbersdorf und Striegistal.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bobritzsch und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/bobritzsch/"
+      },
+      {
+        "text": "Hofläden in Striegistal und Umgebung",
+        "pfad": "/sachsen/mittelsachsen/striegistal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/sachsen/nordsachsen/liebschuetzberg/": {
+    "titel": "Hofläden in Liebschützberg: gut zu wissen",
+    "oben": "Liebschützberg liegt in Nordsachsen bei Oschatz. Eingetragen sind der Hofladen Bornitz, der Bornaer Hofladen mit Fleisch, die Imkerei Winde, das Laaser Einkaufscenter und eine Milchzapfstelle.",
+    "einleitung": "Weite Felder prägen das Land. Die Milch an der Zapfstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Riesa und Wermsdorf.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Riesa und Umgebung",
+        "pfad": "/sachsen/meissen/riesa/"
+      },
+      {
+        "text": "Hofläden in Wermsdorf und Umgebung",
+        "pfad": "/sachsen/nordsachsen/wermsdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/herzogtum-lauenburg/schnakenbek/": {
+    "titel": "Hofläden in Schnakenbek: gut zu wissen",
+    "oben": "Schnakenbek liegt an der Elbe im Kreis Herzogtum Lauenburg. Eingetragen sind der Heidelbeerhof Pehmöller, die Milchtankstelle Buhk, zwei Hofläden mit Eiern, Obst, Kartoffeln und Honig und ein Regiomat.",
+    "einleitung": "Heidelbeeren gibt es im Hochsommer direkt beim Heidelbeerhof. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Krukow und Hamwarde.",
+    "saison": [
+      {
+        "titel": "Heidelbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Krukow und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/krukow/"
+      },
+      {
+        "text": "Hofläden in Hamwarde und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/hamwarde/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
