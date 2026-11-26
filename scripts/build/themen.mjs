@@ -6,10 +6,10 @@ import { RATGEBER } from '../ratgeber.mjs';
 import { esc } from '../../static/helfer.js';
 import { SAISON_PRODUKTE } from '../../src/betrieb.js';
 import { KATEGORIEN, ICON, karteHtml, produktIcon } from '../../static/karte.js';
-import { HEUTE, KACHELN, OUT, ROOT, SAISON, betreiber, cfg, datumDe, eintraege, impressum, kreise, laender, manuell, offen, offenDatensaetze, offenNeu, offenNeuSumme, osm, plz, proKreis, verwaltungsDatensaetze } from './daten.mjs';
+import { wocheVon, HEUTE, KACHELN, OUT, ROOT, SAISON, betreiber, cfg, datumDe, eintraege, impressum, kreise, laender, manuell, offen, offenDatensaetze, offenNeu, offenNeuSumme, osm, plz, proKreis, verwaltungsDatensaetze } from './daten.mjs';
 import { ADSENSE_ID, GA_ID, GTM_ID, STATISTIK_AKTIV, KARTENZAHLUNG, KATEGORIE_PFADE, KAT_CODES_KARTE, LOGO, SUCHFELD, kartenDaten, kartenPanel, plural, seite, zahl } from './html.mjs';
 import { MIN_SEITE, PLURAL_ART, anzHof, hoefeZahl, gross, hofItems, itemList, km, link, passend, schreibe } from './grundlagen.mjs';
-import { MAERKTE, MARKT_SEITE_AB, MONATSNAMEN, MONAT_JETZT, SAISON_NACH_NAME, SAISON_SEITEN, TYPEN, WEIHNACHT, maerkteProKreis, marktKarte, marktPfad, monatsSpanne, saisonMonatHtml } from './startseite.mjs';
+import { ANGEBOT_SEITEN, MAERKTE, MARKT_SEITE_AB, MONATSNAMEN, MONAT_JETZT, SAISON_NACH_NAME, SAISON_SEITEN, TYPEN, WEIHNACHT, maerkteProKreis, marktKarte, marktPfad, monatsSpanne, saisonMonatHtml } from './startseite.mjs';
 import { naeheSuche } from './regionen.mjs';
 import { TERMINE, ZAHLUNG_TEXT, bearbeiten, terminHtml, terminLd } from './hoefe.mjs';
 
@@ -115,7 +115,67 @@ schreibe('/saisonkalender/', seite({
 }));
 
 // ---------- Saisonprodukte: Höfe mit Spargel, Erdbeeren, Äpfeln … ----------
-for (const sp of SAISON_SEITEN) {
+// Sorten, die auch eine Angebotsseite (/angebot/<sorte>/) haben, beantworten auf der Saisonseite die Saisonfrage
+// (wann, Lagerung, Sorten) und zeigen nur eine kurze Auswahl; die vollständige Liste steht auf der Angebotsseite.
+// So konkurrieren die beiden Seiten nicht um dieselbe Suche („Kartoffeln vom Hof“).
+const SAISON_AUSWAHL = 20;
+const SAISON_WISSEN = {
+  kartoffeln: {
+    wort: 'Kartoffel',
+    text: `<h2>Wann haben Kartoffeln Saison?</h2>
+<p>Die ersten Frühkartoffeln kommen je nach Region und Wetter ab Ende Mai oder im Juni vom Feld. Ihre Schale ist dünn und lässt sich fast abreiben – sie halten sich aber nur ein bis zwei Wochen. Ab August werden die Lagerkartoffeln geerntet. Gut eingelagert verkaufen viele Höfe sie bis ins Frühjahr, oft bis April oder Mai.</p>
+<h2>Kartoffeln richtig lagern</h2>
+<p>Kartoffeln mögen es dunkel, kühl und luftig – ideal sind etwa 4 bis 8 °C, zum Beispiel im Keller oder in der kühlen Speisekammer. Im Kühlschrank wandelt sich Stärke in Zucker um, die Knollen schmecken dann süßlich. Licht lässt sie grün werden; grüne Stellen und Keime großzügig wegschneiden. Nicht neben Äpfeln lagern: Deren Reifegas lässt Kartoffeln schneller keimen. Am besten hält sich ungewaschene Ware im Papiersack oder in einer Holzkiste.</p>
+<h2>Welche Kartoffelsorte wofür?</h2>
+<ul>
+<li><b>Festkochend</b> (z. B. Linda, Annabelle, Nicola): bleiben beim Kochen fest – für Salat, Bratkartoffeln und Gratin.</li>
+<li><b>Vorwiegend festkochend</b> (z. B. Gala, Laura, Agria): die Allrounder für Salz- und Pellkartoffeln, Ofenkartoffeln und Pommes.</li>
+<li><b>Mehligkochend</b> (z. B. Adretta, Afra, Bintje): zerfallen leicht – für Püree, Suppen, Klöße und Reibekuchen.</li>
+</ul>
+<p>Am Hofladen lohnt die Frage, welche Sorten gerade aus eigenem Anbau kommen. Viele Betriebe verkaufen auch größere Gebinde zum Einlagern, im Herbst oft günstiger.</p>`,
+  },
+};
+function saisonAuswahl(liste, n) {
+  // gestreut über die Bundesländer, zuerst Einträge mit Öffnungszeiten, dünne Hofseiten zuletzt
+  const gut = (e) => (e.duenn ? 2 : 0) + (wocheVon(e) ? 0 : 1);
+  const proLand = new Map();
+  for (const e of [...liste].sort((a, b) => gut(a) - gut(b) || a.titelSeite.localeCompare(b.titelSeite, 'de') || a.pfad.localeCompare(b.pfad))) (proLand.get(e.k.land) || proLand.set(e.k.land, []).get(e.k.land)).push(e);
+  const reihen = [...proLand.values()], aus = [];
+  for (let i = 0; aus.length < n && reihen.some((r) => r[i]); i++) for (const r of reihen) if (r[i] && aus.length < n) aus.push(r[i]);
+  return aus.sort((a, b) => a.k.land.localeCompare(b.k.land) || a.ortAnzeige.localeCompare(b.ortAnzeige, 'de'));
+}
+for (const sp of SAISON_SEITEN.filter((x) => ANGEBOT_SEITEN.includes(x.slug))) {
+  const kat = sp.slug, w = SAISON_WISSEN[kat] || {};
+  const nAngebot = eintraege.filter((e) => e.kat.includes(kat)).length;
+  const saison = monatsSpanne(sp.frisch), lager = monatsSpanne(sp.lager);
+  const auswahl = saisonAuswahl(sp.liste, SAISON_AUSWAHL);
+  const andere = SAISON_SEITEN.filter((x) => x !== sp);
+  const wort = w.wort ? `${w.wort}-Saison` : `Saison für ${sp.name}`;
+  const alle = `<a class="knopf" href="/angebot/${kat}/">Alle ${zahl(nAngebot)} Höfe mit ${esc(KATEGORIEN[kat])}</a>`;
+  schreibe(sp.pfad, seite({
+    titel: passend(`${wort}: Wann gibt es frische ${sp.name} vom Hof?`, `${wort}: Wann gibt es ${sp.name} vom Hof?`, `${wort}: frische ${sp.name} vom Hof`, wort),
+    beschreibung: `Wann haben ${sp.name} Saison?${saison ? ` Frisch von ${saison}${lager ? `, gelagert von ${lager}` : ''}.` : ''} Dazu Lagerung, Sorten und Höfe mit ${sp.name}.`,
+    pfad: sp.pfad,
+    klasse: 'kompakt',
+    noindex: !sp.indexiert,
+    krumen: [['Saisonkalender', '/saisonkalender/'], [sp.name, sp.pfad]],
+    jsonld: auswahl.length ? [itemList(`Auswahl: ${sp.plural}`, hofItems(auswahl))] : [],
+    inhalt: `
+<section class="seitenkopf">
+  <h1>${esc(wort)}: Wann gibt es frische ${esc(sp.name)}?</h1>
+  <p>${saison ? `Frisch vom Feld gibt es ${esc(sp.name)} von ${esc(saison)}${lager ? `, aus dem Lager ${esc(lager)}` : ''}.` : ''} Hier findest du, wann welche Ware kommt, wie du sie lagerst und welche Sorte wofür passt. Höfe in deiner Nähe zeigt die Liste aller <a href="/angebot/${kat}/">Höfe mit ${esc(KATEGORIEN[kat])}</a>.</p>
+  <h2 class="naehe-titel">Hier gibt’s ${esc(sp.name)} in deiner Nähe</h2>
+  ${naeheSuche({ produkt: sp.gruppe }, `Höfe mit ${KATEGORIEN[sp.gruppe]} in meiner Nähe`)}
+  ${(() => { const p = SAISON_PRODUKTE.find((x) => x.replace(/^Neue /, '').toLowerCase().startsWith(sp.name.toLowerCase().slice(0, 5))); return p ? `<p class="saison-abo-link"><a href="/saison-benachrichtigung/#produkt=${encodeURIComponent(p)}">🔔 Sag mir Bescheid, wenn es ${esc(sp.name)} in meiner Nähe gibt</a></p>` : ''; })()}
+</section>
+${w.text ? `<section class="abschnitt seo-text">${w.text}</section>` : ''}
+${auswahl.length ? `<section class="abschnitt"><h2>Einige Höfe mit ${esc(sp.name)}</h2><ul class="eintrag-liste">${auswahl.map((e) => `<li><a href="${e.pfad}">${esc(e.titelSeite)}</a> <span class="zahl">${esc(e.ortAnzeige)} · ${esc(e.k.titel)}</span></li>`).join('')}</ul>
+<p>${alle}</p></section>` : `<section class="abschnitt"><p>${alle}</p></section>`}
+<section class="abschnitt"><h2>Weitere Saisonprodukte</h2><p class="typ-chips">${andere.map((x) => `<a href="${x.pfad}">${esc(x.name)} <span>${zahl(x.liste.length)}</span></a>`).join('')}</p></section>`,
+  }), sp.indexiert);
+  if (sp.indexiert) KATEGORIE_PFADE.add(sp.pfad);
+}
+for (const sp of SAISON_SEITEN.filter((x) => !ANGEBOT_SEITEN.includes(x.slug))) {
   const proLand = laender.map((l) => ({ l, liste: sp.liste.filter((e) => e.k.land === l.code).sort((a, b) => a.k.titel.localeCompare(b.k.titel, 'de') || a.ortAnzeige.localeCompare(b.ortAnzeige, 'de')) })).filter((x) => x.liste.length);
   const geordnet = proLand.flatMap(({ liste }) => liste);
   const nHof = sp.liste.filter((e) => e.typ === 'hofladen').length;
