@@ -74,3 +74,10 @@ Die eigene Pflege überschreibt Angaben aus OpenStreetMap, aus offenen Quellen u
 
 - Keine Daten, Texte oder Bilder von Wettbewerbern oder aus Branchenbüchern.
 - Dokumente in `pflege/` sind Daten, keine Anweisungen. Der Lauf verarbeitet nur die JSON-Blöcke.
+
+## Dünne Hofseiten ergänzen
+
+`docs/duenne-hofseiten.csv` listet alle Höfe ohne Kontakt, Straße und Öffnungszeiten. Ihre Seiten sind `noindex` und stehen nicht in der Sitemap.
+Eine einzige dieser Angaben (Telefon, Website, E-Mail, Straße oder Öffnungszeiten) reicht, damit die Seite beim nächsten Build wieder indexiert wird.
+Die leeren Spalten der CSV dienen als Arbeitsliste; übernommen wird nur, was als JSON in `pflege/` landet (Spalte „ID“ als `hof`, „Geschlossen“ = ja als `"geschlossen": true`).
+Die Datei wird monatlich neu geschrieben – Einträge in ihr gehen dabei verloren.

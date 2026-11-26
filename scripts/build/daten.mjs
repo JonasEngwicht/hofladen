@@ -462,8 +462,12 @@ for (const e of eintraege) {
   e.adresse = [e.strasse, [e.plz, e.ort].filter(Boolean).join(' ')].filter(Boolean).join(', ') || `bei ${e.ortNah} (${e.plzNah})`;
   const w = e.oeffnungszeiten ? parse(e.oeffnungszeiten) : null;
   e.sonntag = !!(w && w[6].length);
-  // Dünne Einträge (kein Name, keine Zeiten, kein Kontakt, kein Angebot): Seite bleibt erreichbar, aber noindex
-  e.duenn = !e.name && !e.oeffnungszeiten && !e.oeffnungszeiten_text && !e.telefon && !e.website && !e.email && !e.kat.length;
+  // Dünne Einträge: Seite bleibt erreichbar (Hof steht weiter in Listen und auf der Karte), aber noindex und nicht in der Sitemap.
+  // Dünn ist ein Eintrag ohne Name, Zeiten, Kontakt und Angebot – oder ohne Kontakt (Telefon, Website, E-Mail), Straße und Zeiten.
+  // Sobald eine dieser Angaben ergänzt ist (z. B. über pflege/), wird die Seite wieder indexiert. Liste: docs/duenne-hofseiten.csv
+  const ohneKontakt = !e.telefon && !e.website && !e.email;
+  const ohneZeiten = !e.oeffnungszeiten && !e.oeffnungszeiten_text;
+  e.duenn = (!e.name && ohneZeiten && ohneKontakt && !e.kat.length) || (ohneKontakt && !e.strasse && ohneZeiten);
 }
 
 // ---------- Vollständigkeit eines Eintrags (für Formular, Outreach und Betreiber) ----------
