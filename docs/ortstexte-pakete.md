@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1561 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1582 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1923,35 +1923,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Berg (Landkreis Ahrweiler)](https://hofladenliste.de/rheinland-pfalz/ahrweiler/berg/) `/rheinland-pfalz/ahrweiler/berg/` | Landkreis Ahrweiler | 1 | 3 | 6 |
 | ✓ | [Brohl-Lützing](https://hofladenliste.de/rheinland-pfalz/ahrweiler/brohl-luetzing/) `/rheinland-pfalz/ahrweiler/brohl-luetzing/` | Landkreis Ahrweiler | 1 | 3 | 6 |
 
-## Paket 65 (0/25 fertig)
+## Paket 65 (21/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Glees](https://hofladenliste.de/rheinland-pfalz/ahrweiler/glees/) `/rheinland-pfalz/ahrweiler/glees/` | Landkreis Ahrweiler | 1 | 3 | 6 |
-|  | [Mudersbach](https://hofladenliste.de/rheinland-pfalz/altenkirchen/mudersbach/) `/rheinland-pfalz/altenkirchen/mudersbach/` | Landkreis Altenkirchen | 1 | 3 | 6 |
-|  | [Monsheim](https://hofladenliste.de/rheinland-pfalz/alzey-worms/monsheim/) `/rheinland-pfalz/alzey-worms/monsheim/` | Landkreis Alzey-Worms | 1 | 3 | 6 |
-|  | [Altleiningen](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/altleiningen/) `/rheinland-pfalz/bad-duerkheim/altleiningen/` | Landkreis Bad Dürkheim | 1 | 3 | 6 |
-|  | [Kandel](https://hofladenliste.de/rheinland-pfalz/germersheim/kandel/) `/rheinland-pfalz/germersheim/kandel/` | Landkreis Germersheim | 1 | 3 | 6 |
-|  | [Neupotz](https://hofladenliste.de/rheinland-pfalz/germersheim/neupotz/) `/rheinland-pfalz/germersheim/neupotz/` | Landkreis Germersheim | 1 | 3 | 6 |
-|  | [Weingarten (Landkreis Germersheim)](https://hofladenliste.de/rheinland-pfalz/germersheim/weingarten/) `/rheinland-pfalz/germersheim/weingarten/` | Landkreis Germersheim | 1 | 3 | 6 |
-|  | [Altenglan](https://hofladenliste.de/rheinland-pfalz/kusel/altenglan/) `/rheinland-pfalz/kusel/altenglan/` | Landkreis Kusel | 1 | 3 | 6 |
-|  | [Klein-Winternheim](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/klein-winternheim/) `/rheinland-pfalz/mainz-bingen/klein-winternheim/` | Landkreis Mainz-Bingen | 1 | 3 | 6 |
-|  | [Winningen](https://hofladenliste.de/rheinland-pfalz/mayen-koblenz/winningen/) `/rheinland-pfalz/mayen-koblenz/winningen/` | Landkreis Mayen-Koblenz | 1 | 3 | 6 |
-|  | [Neuhofen](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/neuhofen/) `/rheinland-pfalz/rhein-pfalz-kreis/neuhofen/` | Rhein-Pfalz-Kreis | 1 | 3 | 6 |
-|  | [Römerberg](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/) `/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/` | Rhein-Pfalz-Kreis | 1 | 3 | 6 |
-|  | [Edenkoben](https://hofladenliste.de/rheinland-pfalz/suedliche-weinstrasse/edenkoben/) `/rheinland-pfalz/suedliche-weinstrasse/edenkoben/` | Landkreis Südliche Weinstraße | 1 | 3 | 6 |
-|  | [Schweighofen](https://hofladenliste.de/rheinland-pfalz/suedliche-weinstrasse/schweighofen/) `/rheinland-pfalz/suedliche-weinstrasse/schweighofen/` | Landkreis Südliche Weinstraße | 1 | 3 | 6 |
+| ✓ | [Glees](https://hofladenliste.de/rheinland-pfalz/ahrweiler/glees/) `/rheinland-pfalz/ahrweiler/glees/` | Landkreis Ahrweiler | 1 | 3 | 6 |
+| ✓ | [Mudersbach](https://hofladenliste.de/rheinland-pfalz/altenkirchen/mudersbach/) `/rheinland-pfalz/altenkirchen/mudersbach/` | Landkreis Altenkirchen | 1 | 3 | 6 |
+| ✓ | [Monsheim](https://hofladenliste.de/rheinland-pfalz/alzey-worms/monsheim/) `/rheinland-pfalz/alzey-worms/monsheim/` | Landkreis Alzey-Worms | 1 | 3 | 6 |
+| ✓ | [Altleiningen](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/altleiningen/) `/rheinland-pfalz/bad-duerkheim/altleiningen/` | Landkreis Bad Dürkheim | 1 | 3 | 6 |
+| ✓ | [Kandel](https://hofladenliste.de/rheinland-pfalz/germersheim/kandel/) `/rheinland-pfalz/germersheim/kandel/` | Landkreis Germersheim | 1 | 3 | 6 |
+| ✓ | [Neupotz](https://hofladenliste.de/rheinland-pfalz/germersheim/neupotz/) `/rheinland-pfalz/germersheim/neupotz/` | Landkreis Germersheim | 1 | 3 | 6 |
+| ✓ | [Weingarten (Landkreis Germersheim)](https://hofladenliste.de/rheinland-pfalz/germersheim/weingarten/) `/rheinland-pfalz/germersheim/weingarten/` | Landkreis Germersheim | 1 | 3 | 6 |
+| ✓ | [Altenglan](https://hofladenliste.de/rheinland-pfalz/kusel/altenglan/) `/rheinland-pfalz/kusel/altenglan/` | Landkreis Kusel | 1 | 3 | 6 |
+| ✓ | [Klein-Winternheim](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/klein-winternheim/) `/rheinland-pfalz/mainz-bingen/klein-winternheim/` | Landkreis Mainz-Bingen | 1 | 3 | 6 |
+| ✓ | [Winningen](https://hofladenliste.de/rheinland-pfalz/mayen-koblenz/winningen/) `/rheinland-pfalz/mayen-koblenz/winningen/` | Landkreis Mayen-Koblenz | 1 | 3 | 6 |
+| ✓ | [Neuhofen](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/neuhofen/) `/rheinland-pfalz/rhein-pfalz-kreis/neuhofen/` | Rhein-Pfalz-Kreis | 1 | 3 | 6 |
+| ✓ | [Römerberg](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/) `/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/` | Rhein-Pfalz-Kreis | 1 | 3 | 6 |
+| ✓ | [Edenkoben](https://hofladenliste.de/rheinland-pfalz/suedliche-weinstrasse/edenkoben/) `/rheinland-pfalz/suedliche-weinstrasse/edenkoben/` | Landkreis Südliche Weinstraße | 1 | 3 | 6 |
+| ✓ | [Schweighofen](https://hofladenliste.de/rheinland-pfalz/suedliche-weinstrasse/schweighofen/) `/rheinland-pfalz/suedliche-weinstrasse/schweighofen/` | Landkreis Südliche Weinstraße | 1 | 3 | 6 |
 |  | [Mettlach](https://hofladenliste.de/saarland/merzig-wadern/mettlach/) `/saarland/merzig-wadern/mettlach/` | Landkreis Merzig-Wadern | 1 | 3 | 6 |
-|  | [Perl](https://hofladenliste.de/saarland/merzig-wadern/perl/) `/saarland/merzig-wadern/perl/` | Landkreis Merzig-Wadern | 1 | 3 | 6 |
+| ✓ | [Perl](https://hofladenliste.de/saarland/merzig-wadern/perl/) `/saarland/merzig-wadern/perl/` | Landkreis Merzig-Wadern | 1 | 3 | 6 |
 |  | [Weiskirchen](https://hofladenliste.de/saarland/merzig-wadern/weiskirchen/) `/saarland/merzig-wadern/weiskirchen/` | Landkreis Merzig-Wadern | 1 | 3 | 6 |
-|  | [Wadgassen](https://hofladenliste.de/saarland/saarlouis/wadgassen/) `/saarland/saarlouis/wadgassen/` | Landkreis Saarlouis | 1 | 3 | 6 |
+| ✓ | [Wadgassen](https://hofladenliste.de/saarland/saarlouis/wadgassen/) `/saarland/saarlouis/wadgassen/` | Landkreis Saarlouis | 1 | 3 | 6 |
 |  | [Wallerfangen](https://hofladenliste.de/saarland/saarlouis/wallerfangen/) `/saarland/saarlouis/wallerfangen/` | Landkreis Saarlouis | 1 | 3 | 6 |
 |  | [Homburg](https://hofladenliste.de/saarland/saarpfalz-kreis/homburg/) `/saarland/saarpfalz-kreis/homburg/` | Saarpfalz-Kreis | 1 | 3 | 6 |
-|  | [Sankt Wendel](https://hofladenliste.de/saarland/st-wendel/sankt-wendel/) `/saarland/st-wendel/sankt-wendel/` | Landkreis St. Wendel | 1 | 3 | 6 |
-|  | [Sülzetal](https://hofladenliste.de/sachsen-anhalt/boerde/suelzetal/) `/sachsen-anhalt/boerde/suelzetal/` | Landkreis Börde | 1 | 3 | 6 |
-|  | [Wetterzeube](https://hofladenliste.de/sachsen-anhalt/burgenlandkreis/wetterzeube/) `/sachsen-anhalt/burgenlandkreis/wetterzeube/` | Burgenlandkreis | 1 | 3 | 6 |
-|  | [Bornstedt](https://hofladenliste.de/sachsen-anhalt/mansfeld-suedharz/bornstedt/) `/sachsen-anhalt/mansfeld-suedharz/bornstedt/` | Landkreis Mansfeld-Südharz | 1 | 3 | 6 |
-|  | [Tangermünde](https://hofladenliste.de/sachsen-anhalt/stendal/tangermuende/) `/sachsen-anhalt/stendal/tangermuende/` | Landkreis Stendal | 1 | 3 | 6 |
+| ✓ | [Sankt Wendel](https://hofladenliste.de/saarland/st-wendel/sankt-wendel/) `/saarland/st-wendel/sankt-wendel/` | Landkreis St. Wendel | 1 | 3 | 6 |
+| ✓ | [Sülzetal](https://hofladenliste.de/sachsen-anhalt/boerde/suelzetal/) `/sachsen-anhalt/boerde/suelzetal/` | Landkreis Börde | 1 | 3 | 6 |
+| ✓ | [Wetterzeube](https://hofladenliste.de/sachsen-anhalt/burgenlandkreis/wetterzeube/) `/sachsen-anhalt/burgenlandkreis/wetterzeube/` | Burgenlandkreis | 1 | 3 | 6 |
+| ✓ | [Bornstedt](https://hofladenliste.de/sachsen-anhalt/mansfeld-suedharz/bornstedt/) `/sachsen-anhalt/mansfeld-suedharz/bornstedt/` | Landkreis Mansfeld-Südharz | 1 | 3 | 6 |
+| ✓ | [Tangermünde](https://hofladenliste.de/sachsen-anhalt/stendal/tangermuende/) `/sachsen-anhalt/stendal/tangermuende/` | Landkreis Stendal | 1 | 3 | 6 |
 
 ## Paket 66 (25/25 fertig)
 
