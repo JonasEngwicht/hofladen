@@ -22718,5 +22718,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/nordfriesland/wyk-auf-foehr/": {
+    "titel": "Hofläden in Wyk auf Föhr: gut zu wissen",
+    "oben": "Wyk auf Föhr ist der Hauptort der Nordseeinsel Föhr in Nordfriesland. Eingetragen sind das Wyker Hafenkontor, ein Eierautomat und ein Regiomat.",
+    "einleitung": "Auf der Insel sind die Wege kurz, Marsch und Geest bestimmen die Landschaft. Eier gibst du dir am Automaten rund um die Uhr.\n\nWeitere Höfe findest du auf Pellworm und in Nordstrand.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Pellworm und Umgebung",
+        "pfad": "/schleswig-holstein/nordfriesland/pellworm/"
+      },
+      {
+        "text": "Hofläden in Nordstrand und Umgebung",
+        "pfad": "/schleswig-holstein/nordfriesland/nordstrand/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ploen/blekendorf/": {
+    "titel": "Hofläden in Blekendorf: gut zu wissen",
+    "oben": "Blekendorf liegt an der Ostseeküste, nahe der Hohwachter Bucht. Eingetragen sind der Bauernhof der Familie Maßmann, die Baltica Saft & Weinmanufaktur mit Bio-Angebot und ein Regiomat mit Blumen.",
+    "einleitung": "Hügeliges Land mit Feldern, Obstwiesen und Knicks reicht bis an die Küste. Die Manufaktur macht Säfte und Wein aus Früchten.\n\nWeitere Höfe findest du in Harmsdorf und Malente.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Harmsdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/harmsdorf/"
+      },
+      {
+        "text": "Hofläden in Malente und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/malente/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ploen/raisdorf/": {
+    "titel": "Hofläden in Raisdorf: gut zu wissen",
+    "oben": "Raisdorf gehört zur Stadt Schwentinental bei Kiel. Eingetragen sind gleich fünf Regiomaten im Ort, einer davon mit Blumen.",
+    "einleitung": "Ein Regiomat ist ein Automat für regionale Produkte, rund um die Uhr nutzbar. Die Nähe zu Kiel macht die Automaten für Pendler interessant.\n\nWeitere Höfe findest du in Pohnsdorf und Probsteierhagen.",
+    "saison": [
+      {
+        "titel": "Blumen",
+        "zeit": "Frühjahr bis Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Pohnsdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ploen/pohnsdorf/"
+      },
+      {
+        "text": "Hofläden in Probsteierhagen und Umgebung",
+        "pfad": "/schleswig-holstein/ploen/probsteierhagen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/rendsburg-eckernfoerde/neudorf-bornstein/": {
+    "titel": "Hofläden in Neudorf-Bornstein: gut zu wissen",
+    "oben": "Neudorf-Bornstein liegt im Kreis Rendsburg-Eckernförde in Schleswig-Holstein. Eingetragen sind der Hof Schrödersbek, der Hof Dibbern mit Milch, Fleisch, Gemüse, Kartoffeln und Honig, die Bornsteiner Eierbude, der Bornsteiner Landmarkt und ein Regiomat.",
+    "einleitung": "Eier und weitere Produkte gibt es an mehreren Automaten rund um die Uhr. Das Land ist hügelig mit Feldern, Knicks und Wiesen.\n\nWeitere Höfe findest du in Altenholz und Kiel.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Altenholz und Umgebung",
+        "pfad": "/schleswig-holstein/rendsburg-eckernfoerde/altenholz/"
+      },
+      {
+        "text": "Hofläden in Kiel",
+        "pfad": "/schleswig-holstein/kiel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/schleswig-flensburg/kappeln/": {
+    "titel": "Hofläden in Kappeln: gut zu wissen",
+    "oben": "Kappeln liegt an der Schlei in Angeln, bekannt ist der Heringszaun. Eingetragen sind Hof Ahmen, der Bio-Hof Neuheim mit Käse, SchleiBeete, ein Fleischautomat und ein Regiomat.",
+    "einleitung": "Die Schlei ist ein langer Ostseearm, ringsum liegen Weiden und Felder. Der Hof Neuheim bietet Käse nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Brodersby und Pommerby.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Brodersby und Umgebung",
+        "pfad": "/schleswig-holstein/rendsburg-eckernfoerde/brodersby/"
+      },
+      {
+        "text": "Hofläden in Pommerby und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/pommerby/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/schleswig-flensburg/soerup/": {
+    "titel": "Hofläden in Sörup: gut zu wissen",
+    "oben": "Sörup liegt in Angeln im Kreis Schleswig-Flensburg. Eingetragen sind der Erdbeerhof Jensen, der Mühlenladen, Jahnkes Ziegenkäse und ein Bio-Hofladen.",
+    "einleitung": "Die Landschaft ist flach-hügelig mit Feldern und Knicks. Auf dem Erdbeerhof Jensen gibt es im Frühsommer Erdbeeren.\n\nWeitere Höfe findest du in Wees und Ulsnis.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Ziegenkäse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wees und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/wees/"
+      },
+      {
+        "text": "Hofläden in Ulsnis und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/ulsnis/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/nordhausen/werther/": {
+    "titel": "Hofläden in Werther: gut zu wissen",
+    "oben": "Werther liegt im Landkreis Nordhausen im Norden Thüringens, in der Nähe des Harzes. Eingetragen sind zwei Imkereien, Landhandel Mund's Mühle, das Land-Waren-Haus Flarichsmühle und der Hof Pietzer.",
+    "einleitung": "Die Landschaft ist hügelig mit Feldern und Wiesen. Beide Mühlenläden arbeiten nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Duderstadt und Gieboldehausen.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Getreide",
+        "zeit": "Ernte im Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Duderstadt und Umgebung",
+        "pfad": "/niedersachsen/goettingen/duderstadt/"
+      },
+      {
+        "text": "Hofläden in Gieboldehausen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/gieboldehausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/amstetten/": {
+    "titel": "Hofläden in Amstetten: gut zu wissen",
+    "oben": "Amstetten liegt auf der Schwäbischen Alb im Alb-Donau-Kreis. Eingetragen sind drei Regiomaten mit Eiern, Honig, Fleisch und Nudeln sowie ein Eierautomat.",
+    "einleitung": "Auf der Albhochfläche gibt es Felder, Wiesen und Wacholderheiden. Alle Angebote hier sind Automaten, rund um die Uhr geöffnet.\n\nWeitere Höfe findest du in Kuchen und Gingen an der Fils.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kuchen und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/kuchen/"
+      },
+      {
+        "text": "Hofläden in Gingen an der Fils und Umgebung",
+        "pfad": "/baden-wuerttemberg/goeppingen/gingen-an-der-fils/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/erbach/": {
+    "titel": "Hofläden in Erbach: gut zu wissen",
+    "oben": "Erbach liegt an der Donau bei Ulm, ein Schloss prägt den Ort. Eingetragen sind Buchele Fruchtsäfte, Härle's Milchhäusle, der Eisautomat und Regiomat in Ringingen sowie die Getreidemühle von Anton Braun.",
+    "einleitung": "Die Donauebene und die Hänge der Alb sind Obst- und Ackerland. Die Milch im Milchhäusle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Illerkirchberg und Griesingen.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Illerkirchberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/illerkirchberg/"
+      },
+      {
+        "text": "Hofläden in Griesingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/griesingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/laichingen/": {
+    "titel": "Hofläden in Laichingen: gut zu wissen",
+    "oben": "Laichingen liegt auf der Schwäbischen Alb, bekannt ist die Tiefenhöhle. Eingetragen sind das Apfelhäusle, der Bauernhofladen Länge, ein Fleischautomat namens Hans Wurst und eine Milchtankstelle.",
+    "einleitung": "Auf der Albhochfläche wachsen Äpfel und Getreide. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Heroldstatt und Blaubeuren.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heroldstatt und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/heroldstatt/"
+      },
+      {
+        "text": "Hofläden in Blaubeuren und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/blaubeuren/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/langenau/": {
+    "titel": "Hofläden in Langenau: gut zu wissen",
+    "oben": "Langenau liegt im Donauried bei Ulm. Eingetragen sind der Hof Wasserbüffel Riedheim, der Häge Bio-Hof, das Milchhäusle Wurz und ein Regiomat mit Eiern.",
+    "einleitung": "Das Ried ist flaches Land mit Wiesen und Feldern. Eine Besonderheit sind die Wasserbüffel, die hier gehalten werden. Die Milch aus dem Milchhäusle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Setzingen und Nersingen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Setzingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/setzingen/"
+      },
+      {
+        "text": "Hofläden in Nersingen und Umgebung",
+        "pfad": "/bayern/neu-ulm/nersingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/setzingen/": {
+    "titel": "Hofläden in Setzingen: gut zu wissen",
+    "oben": "Setzingen liegt im Alb-Donau-Kreis bei Langenau. Eingetragen sind ein Kartoffelhof, ein Honigautomat, eine Milchtankstelle und ein Regiomat mit Eiern und Honig.",
+    "einleitung": "Hier gibt es vor allem Automaten für Eier, Honig und Milch. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Langenau und Herbrechtingen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Langenau und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/langenau/"
+      },
+      {
+        "text": "Hofläden in Herbrechtingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/heidenheim/herbrechtingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/biberach/biberach-an-der-riss-bergerhausen/": {
+    "titel": "Hofläden in Biberach an der Riß Bergerhausen: gut zu wissen",
+    "oben": "Bergerhausen gehört zu Biberach an der Riss in Oberschwaben. Eingetragen sind Montviso mit Abhof-Automaten und Bio-Gemüse, das Bio-Angebot Artenvielfalt und zwei Imker, Richter und Kohler.",
+    "einleitung": "Oberschwaben ist hügeliges Land mit Wiesen, Feldern und Obstgärten. Bio-Gemüse gibt es hier auch am Automaten.\n\nWeitere Höfe findest du in Ummendorf und Laupheim.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ummendorf und Umgebung",
+        "pfad": "/baden-wuerttemberg/biberach/ummendorf/"
+      },
+      {
+        "text": "Hofläden in Laupheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/biberach/laupheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/biberach/laupheim/": {
+    "titel": "Hofläden in Laupheim: gut zu wissen",
+    "oben": "Laupheim liegt in Oberschwaben im Landkreis Biberach. Eingetragen sind der Hof Henle, der Hofladen Botzenhard, der Schmeck-O-Mat mit Eiern und Gemüse und ein Regiomat.",
+    "einleitung": "Felder und Obstwiesen prägen das Umland. Eier und Gemüse gibt es auch am Automaten.\n\nWeitere Höfe findest du in Griesingen und Erbach.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Griesingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/griesingen/"
+      },
+      {
+        "text": "Hofläden in Erbach und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/erbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/biberach/riedlingen/": {
+    "titel": "Hofläden in Riedlingen: gut zu wissen",
+    "oben": "Riedlingen liegt an der Donau im Landkreis Biberach. Eingetragen sind der Biohof Bauschatz, eine Milchtankstelle und zwei Regiomaten, einer davon mit Eiern, Fleisch und Geflügel.",
+    "einleitung": "Das Donautal ist breit mit Wiesen und Feldern. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Dürmentingen und Uttenweiler.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dürmentingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/biberach/duermentingen/"
+      },
+      {
+        "text": "Hofläden in Uttenweiler und Umgebung",
+        "pfad": "/baden-wuerttemberg/biberach/uttenweiler/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/bodenseekreis/heiligenberg/": {
+    "titel": "Hofläden in Heiligenberg: gut zu wissen",
+    "oben": "Heiligenberg liegt im Hinterland des Bodensees, über dem Ort steht ein Schloss. Eingetragen sind die Solawi Heiligenberg, der Steinsbrunner Hof, der Hofladen am Homa-Hof und der Eierautomat Eier aus der Halde.",
+    "einleitung": "Das Hügelland im Linzgau bietet freie Sicht in die Alpen. Bei der Solawi teilen sich mehrere Haushalte die Gemüseernte.\n\nWeitere Höfe findest du in Salem und Deggenhausertal.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Salem und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/salem/"
+      },
+      {
+        "text": "Hofläden in Deggenhausertal und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/deggenhausertal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/bodenseekreis/uhldingen-muehlhofen/": {
+    "titel": "Hofläden in Uhldingen-Mühlhofen: gut zu wissen",
+    "oben": "Uhldingen-Mühlhofen liegt am Bodensee, bekannt sind die Pfahlbauten. Eingetragen sind die Hofläden Möking und Egelsee, ein weiterer Hofladen und der 24h Uhldinger Frische Automat mit Milch, Fleisch, Fisch und Brot.",
+    "einleitung": "Zwischen See und Hügeln wachsen Äpfel und anderes Obst. Frische Milch aus dem Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Meersburg und Überlingen.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Fisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Meersburg und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/meersburg/"
+      },
+      {
+        "text": "Hofläden in Überlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/bodenseekreis/ueberlingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/altdorf/": {
+    "titel": "Hofläden in Altdorf (Landkreis Böblingen): gut zu wissen",
+    "oben": "Altdorf liegt am Rand des Schönbuchs im Landkreis Böblingen. Eingetragen sind der Hofladen Maier, eine Milchtankstelle und zwei Regiomaten, einer mit Eiern, einer mit Milch.",
+    "einleitung": "Der Schönbuch ist ein großes Waldgebiet, davor liegen Felder und Wiesen. Die Milch aus Tankstelle und Automat ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Holzgerlingen und Weil im Schönbuch.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Holzgerlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/holzgerlingen/"
+      },
+      {
+        "text": "Hofläden in Weil im Schönbuch und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/weil-im-schoenbuch/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/deckenpfronn/": {
+    "titel": "Hofläden in Deckenpfronn: gut zu wissen",
+    "oben": "Deckenpfronn liegt im Gäu am Rand des Nordschwarzwalds. Eingetragen sind das Bauernhof-Eis der Familie Müller, der Hühnerhof Schneider, ein Regiomat mit Eiern und Nudeln und ein Blumenfeld zum Selberschneiden.",
+    "einleitung": "Das Gäu ist offenes Ackerland mit sanften Hügeln. Blumen kannst du hier selbst schneiden, Eis gibt es vor allem im Sommer.\n\nWeitere Höfe findest du in Gärtringen und Nufringen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eis",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gärtringen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/gaertringen/"
+      },
+      {
+        "text": "Hofläden in Nufringen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/nufringen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/gaeufelden/": {
+    "titel": "Hofläden in Gäufelden: gut zu wissen",
+    "oben": "Gäufelden liegt im Gäu im Landkreis Böblingen. Eingetragen sind der Egelerhof Tailfingen, ein Hofladen, ein Eierautomat und das Milch Drive-In.",
+    "einleitung": "Offene Felder prägen die Gegend. Die Milch beim Drive-In ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Jettingen und Bondorf.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Jettingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/jettingen/"
+      },
+      {
+        "text": "Hofläden in Bondorf und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/bondorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/grafenau/": {
+    "titel": "Hofläden in Grafenau: gut zu wissen",
+    "oben": "Grafenau liegt im Landkreis Böblingen bei Sindelfingen. Eingetragen sind Beuttlers Bauernlädle, der Hofverkauf der Familie Kaufmann, Blumen vom Feld und ein Eierautomat.",
+    "einleitung": "Gemüse und Blumen kommen direkt von den Feldern der Gemeinde. Eier gibt es am Automaten.\n\nWeitere Höfe findest du in Ehningen und Sindelfingen.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ehningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/ehningen/"
+      },
+      {
+        "text": "Hofläden in Sindelfingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/sindelfingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/renningen/": {
+    "titel": "Hofläden in Renningen: gut zu wissen",
+    "oben": "Renningen liegt im Heckengäu westlich von Stuttgart. Eingetragen sind das Eierlädle, eine Milchtankstelle und zwei Regiomaten, einer mit Fleisch, einer mit Blumen.",
+    "einleitung": "Das Heckengäu ist ein Mix aus Feldern, Hecken und Streuobst. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Rutesheim und Leonberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rutesheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/rutesheim/"
+      },
+      {
+        "text": "Hofläden in Leonberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/leonberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/rutesheim/": {
+    "titel": "Hofläden in Rutesheim: gut zu wissen",
+    "oben": "Rutesheim liegt im Heckengäu westlich von Stuttgart. Eingetragen sind die Solawi Heckengäu, ein Bio-Hofladen mit Kartoffeln und Äpfeln, ein Bio-Angebot mit Honig, Pilzen und Eiern und der Hofladen in der Pinadelle.",
+    "einleitung": "Bei der Solawi teilen sich mehrere Haushalte die Ernte eines Hofs. Äpfel kommen aus den Streuobstwiesen der Umgebung.\n\nWeitere Höfe findest du in Renningen und Leonberg.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Renningen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/renningen/"
+      },
+      {
+        "text": "Hofläden in Leonberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/leonberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/steinenbronn/": {
+    "titel": "Hofläden in Steinenbronn: gut zu wissen",
+    "oben": "Steinenbronn liegt am Rand des Schönbuchs südlich von Stuttgart. Eingetragen sind der Eselsmühle Kaufladen mit Bio-Angebot, der Hofladen Hof Allmend, die Honigtankstelle und ein Regiomat mit Eiern und Fleisch.",
+    "einleitung": "Die Eselsmühle hat ein breites Sortiment mit Milch, Käse, Fleisch, Gemüse, Obst und Brot. Die Honigtankstelle bietet Honig aus der Region.\n\nWeitere Höfe findest du in Waldenbuch und Schönaich.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Waldenbuch und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/waldenbuch/"
+      },
+      {
+        "text": "Hofläden in Schönaich und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/schoenaich/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/auggen/": {
+    "titel": "Hofläden in Auggen: gut zu wissen",
+    "oben": "Auggen liegt im Markgräflerland am Fuß des Schwarzwalds und ist ein Weinort. Eingetragen sind Rüdlins Hofladen, Sehringer Feines vom Hof mit breitem Sortiment und zwei weitere Hofläden mit Eiern, Obst und Gemüse.",
+    "einleitung": "Die Hänge sind mit Reben bewachsen, im Vorland wachsen Obst und Gemüse. Das Klima im Markgräflerland ist mild.\n\nWeitere Höfe findest du in Heitersheim und Fischingen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kirschen",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Wein",
+        "zeit": "Lese im Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heitersheim und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/heitersheim/"
+      },
+      {
+        "text": "Hofläden in Fischingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/loerrach/fischingen/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
