@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1536 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1561 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1863,35 +1863,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Ottersberg](https://hofladenliste.de/niedersachsen/verden/ottersberg/) `/niedersachsen/verden/ottersberg/` | Landkreis Verden | 1 | 3 | 6 |
 | ✓ | [Butjadingen](https://hofladenliste.de/niedersachsen/wesermarsch/butjadingen/) `/niedersachsen/wesermarsch/butjadingen/` | Landkreis Wesermarsch | 1 | 3 | 6 |
 
-## Paket 63 (0/25 fertig)
+## Paket 63 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Raesfeld](https://hofladenliste.de/nordrhein-westfalen/borken/raesfeld/) `/nordrhein-westfalen/borken/raesfeld/` | Kreis Borken | 1 | 3 | 6 |
-|  | [Reken](https://hofladenliste.de/nordrhein-westfalen/borken/reken/) `/nordrhein-westfalen/borken/reken/` | Kreis Borken | 1 | 3 | 6 |
-|  | [Schöppingen](https://hofladenliste.de/nordrhein-westfalen/borken/schoeppingen/) `/nordrhein-westfalen/borken/schoeppingen/` | Kreis Borken | 1 | 3 | 6 |
-|  | [Velen](https://hofladenliste.de/nordrhein-westfalen/borken/velen/) `/nordrhein-westfalen/borken/velen/` | Kreis Borken | 1 | 3 | 6 |
-|  | [Billerbeck](https://hofladenliste.de/nordrhein-westfalen/coesfeld/billerbeck/) `/nordrhein-westfalen/coesfeld/billerbeck/` | Kreis Coesfeld | 1 | 3 | 6 |
-|  | [Aldenhoven](https://hofladenliste.de/nordrhein-westfalen/dueren/aldenhoven/) `/nordrhein-westfalen/dueren/aldenhoven/` | Kreis Düren | 1 | 3 | 6 |
-|  | [Nideggen](https://hofladenliste.de/nordrhein-westfalen/dueren/nideggen/) `/nordrhein-westfalen/dueren/nideggen/` | Kreis Düren | 1 | 3 | 6 |
-|  | [Nörvenich](https://hofladenliste.de/nordrhein-westfalen/dueren/noervenich/) `/nordrhein-westfalen/dueren/noervenich/` | Kreis Düren | 1 | 3 | 6 |
-|  | [Titz](https://hofladenliste.de/nordrhein-westfalen/dueren/titz/) `/nordrhein-westfalen/dueren/titz/` | Kreis Düren | 1 | 3 | 6 |
-|  | [Vettweiß](https://hofladenliste.de/nordrhein-westfalen/dueren/vettweiss/) `/nordrhein-westfalen/dueren/vettweiss/` | Kreis Düren | 1 | 3 | 6 |
-|  | [Blankenheim](https://hofladenliste.de/nordrhein-westfalen/euskirchen/blankenheim/) `/nordrhein-westfalen/euskirchen/blankenheim/` | Kreis Euskirchen | 1 | 3 | 6 |
-|  | [Schleiden](https://hofladenliste.de/nordrhein-westfalen/euskirchen/schleiden/) `/nordrhein-westfalen/euskirchen/schleiden/` | Kreis Euskirchen | 1 | 3 | 6 |
-|  | [Borgholzhausen](https://hofladenliste.de/nordrhein-westfalen/guetersloh/borgholzhausen/) `/nordrhein-westfalen/guetersloh/borgholzhausen/` | Kreis Gütersloh | 1 | 3 | 6 |
-|  | [Garant-Möbel](https://hofladenliste.de/nordrhein-westfalen/guetersloh/garant-moebel/) `/nordrhein-westfalen/guetersloh/garant-moebel/` | Kreis Gütersloh | 1 | 3 | 6 |
-|  | [Gangelt](https://hofladenliste.de/nordrhein-westfalen/heinsberg/gangelt/) `/nordrhein-westfalen/heinsberg/gangelt/` | Kreis Heinsberg | 1 | 3 | 6 |
-|  | [Heinsberg](https://hofladenliste.de/nordrhein-westfalen/heinsberg/heinsberg/) `/nordrhein-westfalen/heinsberg/heinsberg/` | Kreis Heinsberg | 1 | 3 | 6 |
-|  | [Selfkant](https://hofladenliste.de/nordrhein-westfalen/heinsberg/selfkant/) `/nordrhein-westfalen/heinsberg/selfkant/` | Kreis Heinsberg | 1 | 3 | 6 |
-|  | [Brilon](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/brilon/) `/nordrhein-westfalen/hochsauerlandkreis/brilon/` | Hochsauerlandkreis | 1 | 3 | 6 |
-|  | [Borgentreich](https://hofladenliste.de/nordrhein-westfalen/hoexter/borgentreich/) `/nordrhein-westfalen/hoexter/borgentreich/` | Kreis Höxter | 1 | 3 | 6 |
-|  | [Brakel](https://hofladenliste.de/nordrhein-westfalen/hoexter/brakel/) `/nordrhein-westfalen/hoexter/brakel/` | Kreis Höxter | 1 | 3 | 6 |
-|  | [Höxter](https://hofladenliste.de/nordrhein-westfalen/hoexter/hoexter/) `/nordrhein-westfalen/hoexter/hoexter/` | Kreis Höxter | 1 | 3 | 6 |
-|  | [Bedburg-Hau](https://hofladenliste.de/nordrhein-westfalen/kleve/bedburg-hau/) `/nordrhein-westfalen/kleve/bedburg-hau/` | Kreis Kleve | 1 | 3 | 6 |
-|  | [Kleve](https://hofladenliste.de/nordrhein-westfalen/kleve/kleve/) `/nordrhein-westfalen/kleve/kleve/` | Kreis Kleve | 1 | 3 | 6 |
-|  | [Rheurdt](https://hofladenliste.de/nordrhein-westfalen/kleve/rheurdt/) `/nordrhein-westfalen/kleve/rheurdt/` | Kreis Kleve | 1 | 3 | 6 |
-|  | [Blomberg](https://hofladenliste.de/nordrhein-westfalen/lippe/blomberg/) `/nordrhein-westfalen/lippe/blomberg/` | Kreis Lippe | 1 | 3 | 6 |
+| ✓ | [Raesfeld](https://hofladenliste.de/nordrhein-westfalen/borken/raesfeld/) `/nordrhein-westfalen/borken/raesfeld/` | Kreis Borken | 1 | 3 | 6 |
+| ✓ | [Reken](https://hofladenliste.de/nordrhein-westfalen/borken/reken/) `/nordrhein-westfalen/borken/reken/` | Kreis Borken | 1 | 3 | 6 |
+| ✓ | [Schöppingen](https://hofladenliste.de/nordrhein-westfalen/borken/schoeppingen/) `/nordrhein-westfalen/borken/schoeppingen/` | Kreis Borken | 1 | 3 | 6 |
+| ✓ | [Velen](https://hofladenliste.de/nordrhein-westfalen/borken/velen/) `/nordrhein-westfalen/borken/velen/` | Kreis Borken | 1 | 3 | 6 |
+| ✓ | [Billerbeck](https://hofladenliste.de/nordrhein-westfalen/coesfeld/billerbeck/) `/nordrhein-westfalen/coesfeld/billerbeck/` | Kreis Coesfeld | 1 | 3 | 6 |
+| ✓ | [Aldenhoven](https://hofladenliste.de/nordrhein-westfalen/dueren/aldenhoven/) `/nordrhein-westfalen/dueren/aldenhoven/` | Kreis Düren | 1 | 3 | 6 |
+| ✓ | [Nideggen](https://hofladenliste.de/nordrhein-westfalen/dueren/nideggen/) `/nordrhein-westfalen/dueren/nideggen/` | Kreis Düren | 1 | 3 | 6 |
+| ✓ | [Nörvenich](https://hofladenliste.de/nordrhein-westfalen/dueren/noervenich/) `/nordrhein-westfalen/dueren/noervenich/` | Kreis Düren | 1 | 3 | 6 |
+| ✓ | [Titz](https://hofladenliste.de/nordrhein-westfalen/dueren/titz/) `/nordrhein-westfalen/dueren/titz/` | Kreis Düren | 1 | 3 | 6 |
+| ✓ | [Vettweiß](https://hofladenliste.de/nordrhein-westfalen/dueren/vettweiss/) `/nordrhein-westfalen/dueren/vettweiss/` | Kreis Düren | 1 | 3 | 6 |
+| ✓ | [Blankenheim](https://hofladenliste.de/nordrhein-westfalen/euskirchen/blankenheim/) `/nordrhein-westfalen/euskirchen/blankenheim/` | Kreis Euskirchen | 1 | 3 | 6 |
+| ✓ | [Schleiden](https://hofladenliste.de/nordrhein-westfalen/euskirchen/schleiden/) `/nordrhein-westfalen/euskirchen/schleiden/` | Kreis Euskirchen | 1 | 3 | 6 |
+| ✓ | [Borgholzhausen](https://hofladenliste.de/nordrhein-westfalen/guetersloh/borgholzhausen/) `/nordrhein-westfalen/guetersloh/borgholzhausen/` | Kreis Gütersloh | 1 | 3 | 6 |
+| ✓ | [Garant-Möbel](https://hofladenliste.de/nordrhein-westfalen/guetersloh/garant-moebel/) `/nordrhein-westfalen/guetersloh/garant-moebel/` | Kreis Gütersloh | 1 | 3 | 6 |
+| ✓ | [Gangelt](https://hofladenliste.de/nordrhein-westfalen/heinsberg/gangelt/) `/nordrhein-westfalen/heinsberg/gangelt/` | Kreis Heinsberg | 1 | 3 | 6 |
+| ✓ | [Heinsberg](https://hofladenliste.de/nordrhein-westfalen/heinsberg/heinsberg/) `/nordrhein-westfalen/heinsberg/heinsberg/` | Kreis Heinsberg | 1 | 3 | 6 |
+| ✓ | [Selfkant](https://hofladenliste.de/nordrhein-westfalen/heinsberg/selfkant/) `/nordrhein-westfalen/heinsberg/selfkant/` | Kreis Heinsberg | 1 | 3 | 6 |
+| ✓ | [Brilon](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/brilon/) `/nordrhein-westfalen/hochsauerlandkreis/brilon/` | Hochsauerlandkreis | 1 | 3 | 6 |
+| ✓ | [Borgentreich](https://hofladenliste.de/nordrhein-westfalen/hoexter/borgentreich/) `/nordrhein-westfalen/hoexter/borgentreich/` | Kreis Höxter | 1 | 3 | 6 |
+| ✓ | [Brakel](https://hofladenliste.de/nordrhein-westfalen/hoexter/brakel/) `/nordrhein-westfalen/hoexter/brakel/` | Kreis Höxter | 1 | 3 | 6 |
+| ✓ | [Höxter](https://hofladenliste.de/nordrhein-westfalen/hoexter/hoexter/) `/nordrhein-westfalen/hoexter/hoexter/` | Kreis Höxter | 1 | 3 | 6 |
+| ✓ | [Bedburg-Hau](https://hofladenliste.de/nordrhein-westfalen/kleve/bedburg-hau/) `/nordrhein-westfalen/kleve/bedburg-hau/` | Kreis Kleve | 1 | 3 | 6 |
+| ✓ | [Kleve](https://hofladenliste.de/nordrhein-westfalen/kleve/kleve/) `/nordrhein-westfalen/kleve/kleve/` | Kreis Kleve | 1 | 3 | 6 |
+| ✓ | [Rheurdt](https://hofladenliste.de/nordrhein-westfalen/kleve/rheurdt/) `/nordrhein-westfalen/kleve/rheurdt/` | Kreis Kleve | 1 | 3 | 6 |
+| ✓ | [Blomberg](https://hofladenliste.de/nordrhein-westfalen/lippe/blomberg/) `/nordrhein-westfalen/lippe/blomberg/` | Kreis Lippe | 1 | 3 | 6 |
 
 ## Paket 64 (25/25 fertig)
 

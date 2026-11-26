@@ -46496,5 +46496,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/borken/raesfeld/": {
+    "titel": "Hofläden in Raesfeld: gut zu wissen",
+    "oben": "In Raesfeld sind ein Regiomat mit Fleisch, eine Milchtankstelle und der Hof Stegerhoff eingetragen.",
+    "einleitung": "Fleisch und Milch gibt es jederzeit an den Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Borken, Schermbeck und Heiden.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Borken und Umgebung",
+        "pfad": "/nordrhein-westfalen/borken/borken/"
+      },
+      {
+        "text": "Hofläden in Schermbeck und Umgebung",
+        "pfad": "/nordrhein-westfalen/wesel/schermbeck/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/borken/reken/": {
+    "titel": "Hofläden in Reken: gut zu wissen",
+    "oben": "Reken nennt Knolli mit Eiern und Kartoffeln, den Hofladen Punsmann und Fier's Hof.",
+    "einleitung": "Eier und Kartoffeln gibt es bei Knolli.\n\nWeitere Höfe findest du in Heiden, Velen und Borken.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heiden und Umgebung",
+        "pfad": "/nordrhein-westfalen/borken/heiden/"
+      },
+      {
+        "text": "Hofläden in Velen und Umgebung",
+        "pfad": "/nordrhein-westfalen/borken/velen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/borken/schoeppingen/": {
+    "titel": "Hofläden in Schöppingen: gut zu wissen",
+    "oben": "In Schöppingen sind der Kinderhofladen, die Milchtankstelle Brinkmann und der Biohof Johannes Hillmann eingetragen.",
+    "einleitung": "Die Milch ist Rohmilch: vor dem Trinken abkochen. Der Biohof Hillmann arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Steinfurt, Rosendahl und Laer.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Steinfurt und Umgebung",
+        "pfad": "/nordrhein-westfalen/steinfurt/steinfurt/"
+      },
+      {
+        "text": "Hofläden in Rosendahl und Umgebung",
+        "pfad": "/nordrhein-westfalen/coesfeld/rosendahl/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/borken/velen/": {
+    "titel": "Hofläden in Velen: gut zu wissen",
+    "oben": "Velen hat Drönings Landcafé, den Spargelhof von Karl-Heinz Mussenbrock und den SB Hofladen Hof Schulze Hilbt.",
+    "einleitung": "Spargel gibt es auf dem Spargelhof Mussenbrock in der Saison, im Landcafé kannst du einkehren.\n\nWeitere Höfe findest du in Gescher, Reken und Heiden.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gescher und Umgebung",
+        "pfad": "/nordrhein-westfalen/borken/gescher/"
+      },
+      {
+        "text": "Hofläden in Reken und Umgebung",
+        "pfad": "/nordrhein-westfalen/borken/reken/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/coesfeld/billerbeck/": {
+    "titel": "Hofläden in Billerbeck: gut zu wissen",
+    "oben": "In Billerbeck sind die Eizelle mit Eiern und Nudeln, der Spargel- und Erdbeerhof Heilers-Lülf und Reinerts Milchtankstelle eingetragen.",
+    "einleitung": "Spargel und Erdbeeren gibt es auf dem Hof Heilers-Lülf in der Saison, Eier jederzeit am Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Rosendahl, Coesfeld und Laer.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rosendahl und Umgebung",
+        "pfad": "/nordrhein-westfalen/coesfeld/rosendahl/"
+      },
+      {
+        "text": "Hofläden in Coesfeld und Umgebung",
+        "pfad": "/nordrhein-westfalen/coesfeld/coesfeld/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/dueren/aldenhoven/": {
+    "titel": "Hofläden in Aldenhoven: gut zu wissen",
+    "oben": "Aldenhoven nennt Dein Landhof mit Eiern und Fleisch, den Verkaufsstand vom Spargelhof Hensgens und den Kuckertz Hofladen.",
+    "einleitung": "Spargel gibt es am Stand des Spargelhofs Hensgens in der Saison.\n\nWeitere Höfe findest du in Jülich, Baesweiler und Eschweiler.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Jülich und Umgebung",
+        "pfad": "/nordrhein-westfalen/dueren/juelich/"
+      },
+      {
+        "text": "Hofläden in Baesweiler und Umgebung",
+        "pfad": "/nordrhein-westfalen/staedteregion-aachen/baesweiler/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/dueren/nideggen/": {
+    "titel": "Hofläden in Nideggen: gut zu wissen",
+    "oben": "In Nideggen sind der Hof Lenzen, Milch/Coffee2go und der Hofladen Knein mit Bio-Obst und Getränken eingetragen.",
+    "einleitung": "Milch und Kaffee gibt es bei Milch/Coffee2go, Obst im Hofladen Knein.\n\nWeitere Höfe findest du in Vettweiß, Zülpich und Düren.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Vettweiß und Umgebung",
+        "pfad": "/nordrhein-westfalen/dueren/vettweiss/"
+      },
+      {
+        "text": "Hofläden in Zülpich und Umgebung",
+        "pfad": "/nordrhein-westfalen/euskirchen/zuelpich/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/dueren/noervenich/": {
+    "titel": "Hofläden in Nörvenich: gut zu wissen",
+    "oben": "Nörvenich hat den Heidefelder Bio SB-Hofladen, den Obsthof Froitzheim und Püllen's Hofladen.",
+    "einleitung": "Obst gibt es auf dem Obsthof Froitzheim, der Heidefelder Hofladen arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Vettweiß, Kerpen und Erftstadt.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Vettweiß und Umgebung",
+        "pfad": "/nordrhein-westfalen/dueren/vettweiss/"
+      },
+      {
+        "text": "Hofläden in Kerpen und Umgebung",
+        "pfad": "/nordrhein-westfalen/rhein-erft-kreis/kerpen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/dueren/titz/": {
+    "titel": "Hofläden in Titz: gut zu wissen",
+    "oben": "In Titz sind ein Regiomat mit Eiern, Kartoffelpower der Familie Albersmeier und der Kartoffelhof Kradepohl eingetragen.",
+    "einleitung": "Kartoffeln gibt es hier an gleich zwei Stellen, Eier jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Jülich, Bedburg und Erkelenz.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Zuckerrüben",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Jülich und Umgebung",
+        "pfad": "/nordrhein-westfalen/dueren/juelich/"
+      },
+      {
+        "text": "Hofläden in Erkelenz und Umgebung",
+        "pfad": "/nordrhein-westfalen/heinsberg/erkelenz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/dueren/vettweiss/": {
+    "titel": "Hofläden in Vettweiß: gut zu wissen",
+    "oben": "Vettweiß nennt Rheinland Kräuter Graaff, den Hofladen Grüggel mit Eiern, Fleisch und Geflügel und Erasmis Eierautomat.",
+    "einleitung": "Kräuter gibt es bei Graaff, Geflügel im Hofladen Grüggel, Eier jederzeit am Automaten.\n\nWeitere Höfe findest du in Zülpich, Nörvenich und Nideggen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kräuter",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Zülpich und Umgebung",
+        "pfad": "/nordrhein-westfalen/euskirchen/zuelpich/"
+      },
+      {
+        "text": "Hofläden in Nörvenich und Umgebung",
+        "pfad": "/nordrhein-westfalen/dueren/noervenich/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/euskirchen/blankenheim/": {
+    "titel": "Hofläden in Blankenheim: gut zu wissen",
+    "oben": "In Blankenheim in der Eifel sind eine Milchtankstelle, die Imkerei Eifel-Gold und der Hofladen Caspers eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei Eifel-Gold. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Nettersheim, Schleiden und Mechernich.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nettersheim und Umgebung",
+        "pfad": "/nordrhein-westfalen/euskirchen/nettersheim/"
+      },
+      {
+        "text": "Hofläden in Schleiden und Umgebung",
+        "pfad": "/nordrhein-westfalen/euskirchen/schleiden/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/euskirchen/schleiden/": {
+    "titel": "Hofläden in Schleiden: gut zu wissen",
+    "oben": "Schleiden hat das Bauerncafé Morsbacher Hof, einen Hofladen mit Eiern und Kartoffeln und den Imker Gerd Goerke.",
+    "einleitung": "Im Bauerncafé kannst du einkehren, Honig gibt es beim Imker Goerke.\n\nWeitere Höfe findest du in Nettersheim, Simmerath und Blankenheim.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nettersheim und Umgebung",
+        "pfad": "/nordrhein-westfalen/euskirchen/nettersheim/"
+      },
+      {
+        "text": "Hofläden in Blankenheim und Umgebung",
+        "pfad": "/nordrhein-westfalen/euskirchen/blankenheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/guetersloh/borgholzhausen/": {
+    "titel": "Hofläden in Borgholzhausen: gut zu wissen",
+    "oben": "In Borgholzhausen sind zwei Regiomaten, einer mit Blumen, einer mit Fleisch, und ein Eierautomat eingetragen.",
+    "einleitung": "Alle drei Einträge sind Automaten und jederzeit zugänglich.\n\nWeitere Höfe findest du in Halle (Westfalen), Werther und Bad Rothenfelde.",
+    "saison": [
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Halle (Westf.) und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/halle-westf/"
+      },
+      {
+        "text": "Hofläden in Bad Rothenfelde und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/bad-rothenfelde/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/guetersloh/garant-moebel/": {
+    "titel": "Hofläden in Garant-Möbel: gut zu wissen",
+    "oben": "Garant-Möbel in Gütersloh nennt einen Regiomaten mit Eiern und Kartoffeln, den Hofladen Cilker und den Pflaumenhof Stemich mit Obst.",
+    "einleitung": "Pflaumen gibt es auf dem Pflaumenhof Stemich in der Saison.\n\nWeitere Höfe findest du in Rheda-Wiedenbrück, Herzebrock-Clarholz und Rietberg.",
+    "saison": [
+      {
+        "titel": "Pflaumen",
+        "zeit": "August und September"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rheda-Wiedenbrück und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/rheda-wiedenbrueck/"
+      },
+      {
+        "text": "Hofläden in Rietberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/rietberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/heinsberg/gangelt/": {
+    "titel": "Hofläden in Gangelt: gut zu wissen",
+    "oben": "Gangelt nennt Et Stohe'r Büdche mit Eiern, den Eierhof Jansen und den Spargelhof Dahlmanns.",
+    "einleitung": "Spargel gibt es auf dem Spargelhof Dahlmanns in der Saison, Eier an zwei Stellen.\n\nWeitere Höfe findest du in Selfkant, Heinsberg und Wassenberg.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Selfkant und Umgebung",
+        "pfad": "/nordrhein-westfalen/heinsberg/selfkant/"
+      },
+      {
+        "text": "Hofläden in Heinsberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/heinsberg/heinsberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/heinsberg/heinsberg/": {
+    "titel": "Hofläden in Heinsberg: gut zu wissen",
+    "oben": "In Heinsberg sind der Kapellchenhof mit Fleisch, der Hofladen Gut Schenkelieck und der Kranzeshof Hofladen eingetragen.",
+    "einleitung": "Fleisch gibt es auf dem Kapellchenhof.\n\nWeitere Höfe findest du in Wassenberg, Hückelhoven und Gangelt.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wassenberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/heinsberg/wassenberg/"
+      },
+      {
+        "text": "Hofläden in Gangelt und Umgebung",
+        "pfad": "/nordrhein-westfalen/heinsberg/gangelt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/heinsberg/selfkant/": {
+    "titel": "Hofläden in Selfkant: gut zu wissen",
+    "oben": "Selfkant hat einen Frischeautomaten mit Obst, den Obsthof Dreissen und den Bio-Hofladen Selfkant.",
+    "einleitung": "Obst gibt es auf dem Obsthof Dreissen und jederzeit am Automaten.\n\nWeitere Höfe findest du in Gangelt, Heinsberg und Wassenberg.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gangelt und Umgebung",
+        "pfad": "/nordrhein-westfalen/heinsberg/gangelt/"
+      },
+      {
+        "text": "Hofläden in Heinsberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/heinsberg/heinsberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/hochsauerlandkreis/brilon/": {
+    "titel": "Hofläden in Brilon: gut zu wissen",
+    "oben": "In Brilon sind das Geflügelhof und der Bauernladen von Monika und Uwe Brandenburg (Hillebrand), ein Hoflädchen und die Imkerei Andreas Göbel eingetragen.",
+    "einleitung": "Geflügel und Eier gibt es auf dem Geflügelhof, Honig bei der Imkerei Göbel.\n\nWeitere Höfe findest du in Bad Wünnenberg und Meschede.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Wünnenberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/paderborn/bad-wuennenberg/"
+      },
+      {
+        "text": "Hofläden in Meschede und Umgebung",
+        "pfad": "/nordrhein-westfalen/hochsauerlandkreis/meschede/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/hoexter/borgentreich/": {
+    "titel": "Hofläden in Borgentreich: gut zu wissen",
+    "oben": "Borgentreich nennt den Biohof Jacobi mit Bio-Milch und Käse, einen Regiomaten mit Fleisch und den Biohof Arendes.",
+    "einleitung": "Käse gibt es auf dem Biohof Jacobi. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Hofgeismar, Beverungen und Brakel.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hofgeismar und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/hofgeismar/"
+      },
+      {
+        "text": "Hofläden in Brakel und Umgebung",
+        "pfad": "/nordrhein-westfalen/hoexter/brakel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/hoexter/brakel/": {
+    "titel": "Hofläden in Brakel: gut zu wissen",
+    "oben": "In Brakel sind der Wildhäuser Hof mit Bio-Eiern, ein Regiomat mit Eiern und Honig und die Imkerei Hensel eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei Hensel und am Regiomaten.\n\nWeitere Höfe findest du in Beverungen, Höxter und Borgentreich.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Höxter und Umgebung",
+        "pfad": "/nordrhein-westfalen/hoexter/hoexter/"
+      },
+      {
+        "text": "Hofläden in Borgentreich und Umgebung",
+        "pfad": "/nordrhein-westfalen/hoexter/borgentreich/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/hoexter/hoexter/": {
+    "titel": "Hofläden in Höxter: gut zu wissen",
+    "oben": "Höxter hat den Hofladen Helle Bauer mit Bio-Angebot und zwei Regiomaten, einen mit Fleisch, einen mit Eiern und Marmelade.",
+    "einleitung": "Die Regiomaten sind jederzeit zugänglich.\n\nWeitere Höfe findest du in Beverungen, Brakel und Borgentreich.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Marmelade",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Brakel und Umgebung",
+        "pfad": "/nordrhein-westfalen/hoexter/brakel/"
+      },
+      {
+        "text": "Hofläden in Borgentreich und Umgebung",
+        "pfad": "/nordrhein-westfalen/hoexter/borgentreich/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/kleve/bedburg-hau/": {
+    "titel": "Hofläden in Bedburg-Hau: gut zu wissen",
+    "oben": "In Bedburg-Hau sind Villemont mit Obst und Kartoffeln, eine Milchtankstelle und Die Schwärmerei im Berkhöfel mit breitem Bio-Sortiment eingetragen.",
+    "einleitung": "Die Schwärmerei führt Eier, Milch, Käse, Fleisch, Gemüse, Obst, Honig und Brot. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Kleve, Kalkar und Goch.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kleve und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/kleve/"
+      },
+      {
+        "text": "Hofläden in Kalkar und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/kalkar/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/kleve/kleve/": {
+    "titel": "Hofläden in Kleve: gut zu wissen",
+    "oben": "Kleve nennt DAD die am Deich mit Bio-Angebot, den Biohof Aldenhof und die Milchtankstelle Düffelward.",
+    "einleitung": "Rund um Kleve gibt es Milch direkt vom Hof. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bedburg-Hau, Kranenburg und Emmerich am Rhein.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bedburg-Hau und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/bedburg-hau/"
+      },
+      {
+        "text": "Hofläden in Kranenburg und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/kranenburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/kleve/rheurdt/": {
+    "titel": "Hofläden in Rheurdt: gut zu wissen",
+    "oben": "In Rheurdt sind der Hofladen Herveshof, Die Kartoffelkiste und das Regional-Lädchen Schwanenhof eingetragen.",
+    "einleitung": "Kartoffeln gibt es jederzeit an der Kartoffelkiste.\n\nWeitere Höfe findest du in Neukirchen-Vluyn, Kamp-Lintfort und Kerken.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Neukirchen-Vluyn und Umgebung",
+        "pfad": "/nordrhein-westfalen/wesel/neukirchen-vluyn/"
+      },
+      {
+        "text": "Hofläden in Kerken und Umgebung",
+        "pfad": "/nordrhein-westfalen/kleve/kerken/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/lippe/blomberg/": {
+    "titel": "Hofläden in Blomberg: gut zu wissen",
+    "oben": "Blomberg hat die Solidarische Landwirtschaft Dalborn, den Obsthof Brunsiek und einen Bio-Hofladen.",
+    "einleitung": "Obst gibt es auf dem Obsthof Brunsiek, Bio-Gemüse über die Solawi.\n\nWeitere Höfe findest du in Dörentrup, Horn-Bad Meinberg und Extertal.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dörentrup und Umgebung",
+        "pfad": "/nordrhein-westfalen/lippe/doerentrup/"
+      },
+      {
+        "text": "Hofläden in Horn-Bad Meinberg und Umgebung",
+        "pfad": "/nordrhein-westfalen/lippe/horn-bad-meinberg/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
