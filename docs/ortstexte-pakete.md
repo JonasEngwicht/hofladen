@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 670 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 695 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -813,35 +813,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Büttelborn](https://hofladenliste.de/hessen/gross-gerau/buettelborn/) `/hessen/gross-gerau/buettelborn/` | Landkreis Groß-Gerau | 1 | 5 | 8 |
 | ✓ | [Baunatal](https://hofladenliste.de/hessen/landkreis-kassel/baunatal/) `/hessen/landkreis-kassel/baunatal/` | Landkreis Kassel | 1 | 5 | 8 |
 
-## Paket 28 (0/25 fertig)
+## Paket 28 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Maintal](https://hofladenliste.de/hessen/main-kinzig-kreis/maintal/) `/hessen/main-kinzig-kreis/maintal/` | Main-Kinzig-Kreis | 1 | 5 | 8 |
-|  | [Ebsdorfergrund](https://hofladenliste.de/hessen/marburg-biedenkopf/ebsdorfergrund/) `/hessen/marburg-biedenkopf/ebsdorfergrund/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
-|  | [Kirchhain](https://hofladenliste.de/hessen/marburg-biedenkopf/kirchhain/) `/hessen/marburg-biedenkopf/kirchhain/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
-|  | [Lahntal](https://hofladenliste.de/hessen/marburg-biedenkopf/lahntal/) `/hessen/marburg-biedenkopf/lahntal/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
-|  | [Idstein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/idstein/) `/hessen/rheingau-taunus-kreis/idstein/` | Rheingau-Taunus-Kreis | 1 | 5 | 8 |
-|  | [Eschwege](https://hofladenliste.de/hessen/werra-meissner-kreis/eschwege/) `/hessen/werra-meissner-kreis/eschwege/` | Werra-Meißner-Kreis | 1 | 5 | 8 |
-|  | [Reichelsheim (Wetteraukreis)](https://hofladenliste.de/hessen/wetteraukreis/reichelsheim/) `/hessen/wetteraukreis/reichelsheim/` | Wetteraukreis | 1 | 5 | 8 |
-|  | [Kratzeburg](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/` | Landkreis Mecklenburgische Seenplatte | 1 | 5 | 8 |
-|  | [Krummhörn](https://hofladenliste.de/niedersachsen/aurich/krummhoern/) `/niedersachsen/aurich/krummhoern/` | Landkreis Aurich | 1 | 5 | 8 |
-|  | [Garrel](https://hofladenliste.de/niedersachsen/cloppenburg/garrel/) `/niedersachsen/cloppenburg/garrel/` | Landkreis Cloppenburg | 1 | 5 | 8 |
-|  | [Lastrup](https://hofladenliste.de/niedersachsen/cloppenburg/lastrup/) `/niedersachsen/cloppenburg/lastrup/` | Landkreis Cloppenburg | 1 | 5 | 8 |
-|  | [Molbergen](https://hofladenliste.de/niedersachsen/cloppenburg/molbergen/) `/niedersachsen/cloppenburg/molbergen/` | Landkreis Cloppenburg | 1 | 5 | 8 |
-|  | [Haselünne](https://hofladenliste.de/niedersachsen/emsland/haseluenne/) `/niedersachsen/emsland/haseluenne/` | Landkreis Emsland | 1 | 5 | 8 |
-|  | [Papenburg](https://hofladenliste.de/niedersachsen/emsland/papenburg/) `/niedersachsen/emsland/papenburg/` | Landkreis Emsland | 1 | 5 | 8 |
-|  | [Barwedel](https://hofladenliste.de/niedersachsen/gifhorn/barwedel/) `/niedersachsen/gifhorn/barwedel/` | Landkreis Gifhorn | 1 | 5 | 8 |
-|  | [Bovenden](https://hofladenliste.de/niedersachsen/goettingen/bovenden/) `/niedersachsen/goettingen/bovenden/` | Landkreis Göttingen | 1 | 5 | 8 |
-|  | [Drage](https://hofladenliste.de/niedersachsen/harburg/drage/) `/niedersachsen/harburg/drage/` | Landkreis Harburg | 1 | 5 | 8 |
-|  | [Heidenau](https://hofladenliste.de/niedersachsen/harburg/heidenau/) `/niedersachsen/harburg/heidenau/` | Landkreis Harburg | 1 | 5 | 8 |
-|  | [Jesteburg](https://hofladenliste.de/niedersachsen/harburg/jesteburg/) `/niedersachsen/harburg/jesteburg/` | Landkreis Harburg | 1 | 5 | 8 |
-|  | [Wulfsen](https://hofladenliste.de/niedersachsen/harburg/wulfsen/) `/niedersachsen/harburg/wulfsen/` | Landkreis Harburg | 1 | 5 | 8 |
-|  | [Bispingen](https://hofladenliste.de/niedersachsen/heidekreis/bispingen/) `/niedersachsen/heidekreis/bispingen/` | Heidekreis | 1 | 5 | 8 |
-|  | [Harsum](https://hofladenliste.de/niedersachsen/hildesheim/harsum/) `/niedersachsen/hildesheim/harsum/` | Landkreis Hildesheim | 1 | 5 | 8 |
-|  | [Großenkneten](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/grossenkneten/) `/niedersachsen/landkreis-oldenburg/grossenkneten/` | Landkreis Oldenburg | 1 | 5 | 8 |
-|  | [Wardenburg](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/wardenburg/) `/niedersachsen/landkreis-oldenburg/wardenburg/` | Landkreis Oldenburg | 1 | 5 | 8 |
-|  | [Badbergen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/badbergen/) `/niedersachsen/landkreis-osnabrueck/badbergen/` | Landkreis Osnabrück | 1 | 5 | 8 |
+| ✓ | [Maintal](https://hofladenliste.de/hessen/main-kinzig-kreis/maintal/) `/hessen/main-kinzig-kreis/maintal/` | Main-Kinzig-Kreis | 1 | 5 | 8 |
+| ✓ | [Ebsdorfergrund](https://hofladenliste.de/hessen/marburg-biedenkopf/ebsdorfergrund/) `/hessen/marburg-biedenkopf/ebsdorfergrund/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
+| ✓ | [Kirchhain](https://hofladenliste.de/hessen/marburg-biedenkopf/kirchhain/) `/hessen/marburg-biedenkopf/kirchhain/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
+| ✓ | [Lahntal](https://hofladenliste.de/hessen/marburg-biedenkopf/lahntal/) `/hessen/marburg-biedenkopf/lahntal/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
+| ✓ | [Idstein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/idstein/) `/hessen/rheingau-taunus-kreis/idstein/` | Rheingau-Taunus-Kreis | 1 | 5 | 8 |
+| ✓ | [Eschwege](https://hofladenliste.de/hessen/werra-meissner-kreis/eschwege/) `/hessen/werra-meissner-kreis/eschwege/` | Werra-Meißner-Kreis | 1 | 5 | 8 |
+| ✓ | [Reichelsheim (Wetteraukreis)](https://hofladenliste.de/hessen/wetteraukreis/reichelsheim/) `/hessen/wetteraukreis/reichelsheim/` | Wetteraukreis | 1 | 5 | 8 |
+| ✓ | [Kratzeburg](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/` | Landkreis Mecklenburgische Seenplatte | 1 | 5 | 8 |
+| ✓ | [Krummhörn](https://hofladenliste.de/niedersachsen/aurich/krummhoern/) `/niedersachsen/aurich/krummhoern/` | Landkreis Aurich | 1 | 5 | 8 |
+| ✓ | [Garrel](https://hofladenliste.de/niedersachsen/cloppenburg/garrel/) `/niedersachsen/cloppenburg/garrel/` | Landkreis Cloppenburg | 1 | 5 | 8 |
+| ✓ | [Lastrup](https://hofladenliste.de/niedersachsen/cloppenburg/lastrup/) `/niedersachsen/cloppenburg/lastrup/` | Landkreis Cloppenburg | 1 | 5 | 8 |
+| ✓ | [Molbergen](https://hofladenliste.de/niedersachsen/cloppenburg/molbergen/) `/niedersachsen/cloppenburg/molbergen/` | Landkreis Cloppenburg | 1 | 5 | 8 |
+| ✓ | [Haselünne](https://hofladenliste.de/niedersachsen/emsland/haseluenne/) `/niedersachsen/emsland/haseluenne/` | Landkreis Emsland | 1 | 5 | 8 |
+| ✓ | [Papenburg](https://hofladenliste.de/niedersachsen/emsland/papenburg/) `/niedersachsen/emsland/papenburg/` | Landkreis Emsland | 1 | 5 | 8 |
+| ✓ | [Barwedel](https://hofladenliste.de/niedersachsen/gifhorn/barwedel/) `/niedersachsen/gifhorn/barwedel/` | Landkreis Gifhorn | 1 | 5 | 8 |
+| ✓ | [Bovenden](https://hofladenliste.de/niedersachsen/goettingen/bovenden/) `/niedersachsen/goettingen/bovenden/` | Landkreis Göttingen | 1 | 5 | 8 |
+| ✓ | [Drage](https://hofladenliste.de/niedersachsen/harburg/drage/) `/niedersachsen/harburg/drage/` | Landkreis Harburg | 1 | 5 | 8 |
+| ✓ | [Heidenau](https://hofladenliste.de/niedersachsen/harburg/heidenau/) `/niedersachsen/harburg/heidenau/` | Landkreis Harburg | 1 | 5 | 8 |
+| ✓ | [Jesteburg](https://hofladenliste.de/niedersachsen/harburg/jesteburg/) `/niedersachsen/harburg/jesteburg/` | Landkreis Harburg | 1 | 5 | 8 |
+| ✓ | [Wulfsen](https://hofladenliste.de/niedersachsen/harburg/wulfsen/) `/niedersachsen/harburg/wulfsen/` | Landkreis Harburg | 1 | 5 | 8 |
+| ✓ | [Bispingen](https://hofladenliste.de/niedersachsen/heidekreis/bispingen/) `/niedersachsen/heidekreis/bispingen/` | Heidekreis | 1 | 5 | 8 |
+| ✓ | [Harsum](https://hofladenliste.de/niedersachsen/hildesheim/harsum/) `/niedersachsen/hildesheim/harsum/` | Landkreis Hildesheim | 1 | 5 | 8 |
+| ✓ | [Großenkneten](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/grossenkneten/) `/niedersachsen/landkreis-oldenburg/grossenkneten/` | Landkreis Oldenburg | 1 | 5 | 8 |
+| ✓ | [Wardenburg](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/wardenburg/) `/niedersachsen/landkreis-oldenburg/wardenburg/` | Landkreis Oldenburg | 1 | 5 | 8 |
+| ✓ | [Badbergen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/badbergen/) `/niedersachsen/landkreis-osnabrueck/badbergen/` | Landkreis Osnabrück | 1 | 5 | 8 |
 
 ## Paket 29 (0/25 fertig)
 
