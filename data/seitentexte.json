@@ -44486,5 +44486,725 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/hessen/giessen/gruenberg/": {
+    "titel": "Hofläden in Grünberg: gut zu wissen",
+    "oben": "In Grünberg sind die Klein-Eichener Hofkäserei, der SB Hofladen Bauer Hensel und der Biohof Theiss eingetragen.",
+    "einleitung": "Käse gibt es direkt aus der Hofkäserei. Der Biohof Theiss arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Mücke, Lich und Ebsdorfergrund.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Mücke und Umgebung",
+        "pfad": "/hessen/vogelsbergkreis/muecke/"
+      },
+      {
+        "text": "Hofläden in Lich und Umgebung",
+        "pfad": "/hessen/giessen/lich/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/giessen/langgoens/": {
+    "titel": "Hofläden in Langgöns: gut zu wissen",
+    "oben": "Langgöns nennt die Direktvermarktung Engel, den Hofladen Dern und den Kürbishof Müller.",
+    "einleitung": "Kürbisse gibt es im Kürbishof Müller im Herbst.\n\nWeitere Höfe findest du in Pohlheim, Münzenberg und Butzbach.",
+    "saison": [
+      {
+        "titel": "Kürbisse",
+        "zeit": "September bis November"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Pohlheim und Umgebung",
+        "pfad": "/hessen/giessen/pohlheim/"
+      },
+      {
+        "text": "Hofläden in Butzbach und Umgebung",
+        "pfad": "/hessen/wetteraukreis/butzbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/giessen/lollar/": {
+    "titel": "Hofläden in Lollar: gut zu wissen",
+    "oben": "In Lollar sind der Hofladen Friedelhausen, der Kronauer Hof und der Dorfladen Ruttershausen eingetragen, alle mit Bio-Angebot.",
+    "einleitung": "Alle drei Betriebe arbeiten nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Wettenberg, Gießen und Ebsdorfergrund.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wettenberg und Umgebung",
+        "pfad": "/hessen/giessen/wettenberg/"
+      },
+      {
+        "text": "Hofläden in Gießen und Umgebung",
+        "pfad": "/hessen/giessen/giessen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/gross-gerau/gross-gerau/": {
+    "titel": "Hofläden in Groß-Gerau: gut zu wissen",
+    "oben": "Groß-Gerau hat drei Hofläden: Bauernhof Goerlich, Hofladen Funk und Hofladen Thomas.",
+    "einleitung": "Drei Höfe verkaufen direkt ab Hof.\n\nWeitere Höfe findest du in Nauheim, Büttelborn und Trebur.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nauheim und Umgebung",
+        "pfad": "/hessen/gross-gerau/nauheim/"
+      },
+      {
+        "text": "Hofläden in Trebur und Umgebung",
+        "pfad": "/hessen/gross-gerau/trebur/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/gross-gerau/nauheim/": {
+    "titel": "Hofläden in Nauheim: gut zu wissen",
+    "oben": "In Nauheim sind E. und R. Müller mit Gemüse, der Verkaufsstand von Bauer Lipp und der Hofladen Kuhlmann eingetragen.",
+    "einleitung": "Gemüse gibt es bei Müller.\n\nWeitere Höfe findest du in Groß-Gerau, Trebur und Rüsselsheim.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Groß-Gerau und Umgebung",
+        "pfad": "/hessen/gross-gerau/gross-gerau/"
+      },
+      {
+        "text": "Hofläden in Rüsselsheim und Umgebung",
+        "pfad": "/hessen/gross-gerau/ruesselsheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/gross-gerau/ruesselsheim/": {
+    "titel": "Hofläden in Rüsselsheim: gut zu wissen",
+    "oben": "Rüsselsheim nennt den Hofladen Schneider, die Bio-Solawi Auf dem Acker e.V. und den Spargel- und Gemüsehof Schneider.",
+    "einleitung": "Spargel und Gemüse gibt es auf dem Hof Schneider, Bio-Gemüse über die Solawi.\n\nWeitere Höfe findest du in Nauheim, Ginsheim-Gustavsburg und Trebur.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nauheim und Umgebung",
+        "pfad": "/hessen/gross-gerau/nauheim/"
+      },
+      {
+        "text": "Hofläden in Ginsheim-Gustavsburg und Umgebung",
+        "pfad": "/hessen/gross-gerau/ginsheim-gustavsburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/hersfeld-rotenburg/wildeck/": {
+    "titel": "Hofläden in Wildeck: gut zu wissen",
+    "oben": "In Wildeck sind der Biohof Eimer, ein Eierautomat und ein Bio-Hofladen eingetragen.",
+    "einleitung": "Eier gibt es jederzeit am Automaten. Der Biohof Eimer arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Sontra, Creuzburg und Alheim.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sontra und Umgebung",
+        "pfad": "/hessen/werra-meissner-kreis/sontra/"
+      },
+      {
+        "text": "Hofläden in Alheim und Umgebung",
+        "pfad": "/hessen/hersfeld-rotenburg/alheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/hochtaunuskreis/koenigstein-im-taunus-schneidhain/": {
+    "titel": "Hofläden in Königstein im Taunus Schneidhain: gut zu wissen",
+    "oben": "Schneidhain, ein Stadtteil von Königstein im Taunus, hat einen Regiomaten, den Obst- und Gartenbauverein Fischbach 1906 mit Bio-Obst und einen Bio-Hofladen.",
+    "einleitung": "Obst gibt es beim Obst- und Gartenbauverein.\n\nWeitere Höfe findest du in Kronberg, Liederbach und Sulzbach.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kronberg im Taunus und Umgebung",
+        "pfad": "/hessen/hochtaunuskreis/kronberg-im-taunus/"
+      },
+      {
+        "text": "Hofläden in Liederbach am Taunus und Umgebung",
+        "pfad": "/hessen/main-taunus-kreis/liederbach-am-taunus/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/hochtaunuskreis/kronberg-im-taunus/": {
+    "titel": "Hofläden in Kronberg im Taunus: gut zu wissen",
+    "oben": "In Kronberg im Taunus sind der Obsthof Krieger, Hildmanns Hofladen und der Hofladen Hofgut Hohenwald mit Bio-Angebot eingetragen.",
+    "einleitung": "Obst gibt es auf dem Obsthof Krieger.\n\nWeitere Höfe findest du in Königstein-Schneidhain, Sulzbach und Oberursel.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Königstein im Taunus Schneidhain und Umgebung",
+        "pfad": "/hessen/hochtaunuskreis/koenigstein-im-taunus-schneidhain/"
+      },
+      {
+        "text": "Hofläden in Oberursel und Umgebung",
+        "pfad": "/hessen/hochtaunuskreis/oberursel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/hochtaunuskreis/oberursel/": {
+    "titel": "Hofläden in Oberursel: gut zu wissen",
+    "oben": "Oberursel hat einen Regiomaten mit Milch und zwei Honigautomaten.",
+    "einleitung": "Zu Oberursel: Alle drei Einträge sind Automaten und jederzeit zugänglich. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bad Homburg, Kronberg und Friedrichsdorf.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Homburg vor der Höhe und Umgebung",
+        "pfad": "/hessen/hochtaunuskreis/bad-homburg-vor-der-hoehe/"
+      },
+      {
+        "text": "Hofläden in Kronberg im Taunus und Umgebung",
+        "pfad": "/hessen/hochtaunuskreis/kronberg-im-taunus/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/hochtaunuskreis/wehrheim/": {
+    "titel": "Hofläden in Wehrheim: gut zu wissen",
+    "oben": "In Wehrheim sind ein Milchautomat, ein Hofladen mit Eiern und Fleisch und der Imker Velte eingetragen.",
+    "einleitung": "Honig gibt es beim Imker Velte. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Friedrichsdorf, Bad Homburg und Oberursel.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Friedrichsdorf und Umgebung",
+        "pfad": "/hessen/hochtaunuskreis/friedrichsdorf/"
+      },
+      {
+        "text": "Hofläden in Oberursel und Umgebung",
+        "pfad": "/hessen/hochtaunuskreis/oberursel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/landkreis-kassel/calden/": {
+    "titel": "Hofläden in Calden: gut zu wissen",
+    "oben": "Calden nennt einen Regiomaten mit Fleisch, den Biohof Berndt und Wallo's Hofladen.",
+    "einleitung": "Fleisch gibt es jederzeit am Regiomaten. Der Biohof Berndt arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Grebenstein, Espenau und Hofgeismar.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Grebenstein und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/grebenstein/"
+      },
+      {
+        "text": "Hofläden in Espenau und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/espenau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/landkreis-kassel/espenau/": {
+    "titel": "Hofläden in Espenau: gut zu wissen",
+    "oben": "In Espenau sind Schweitzers Hofcafé & Lädchen und zwei Regiomaten eingetragen, einer mit Eiern, Fleisch und Kartoffeln, einer mit Fleisch und Wild.",
+    "einleitung": "Im Hofcafé kannst du einkehren, die Regiomaten sind jederzeit zugänglich.\n\nWeitere Höfe findest du in Calden, Grebenstein und Kassel.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Wild",
+        "zeit": "Herbst und Winter"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Calden und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/calden/"
+      },
+      {
+        "text": "Hofläden in Grebenstein und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/grebenstein/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/landkreis-kassel/habichtswald/": {
+    "titel": "Hofläden in Habichtswald: gut zu wissen",
+    "oben": "Habichtswald hat zwei Regiomaten mit Eiern, einen davon auch mit Fleisch und Nudeln, und den Hofladen von Marlena und Sascha Schmidt mit Bio-Angebot.",
+    "einleitung": "Eier gibt es an beiden Regiomaten, jederzeit.\n\nWeitere Höfe findest du in Schauenburg, Baunatal und Kassel.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schauenburg und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/schauenburg/"
+      },
+      {
+        "text": "Hofläden in Baunatal und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/baunatal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/landkreis-kassel/kaufungen/": {
+    "titel": "Hofläden in Kaufungen: gut zu wissen",
+    "oben": "In Kaufungen sind Stiens Beef, das Hofcafé und die Rote Rübe eingetragen.",
+    "einleitung": "Im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Hessisch Lichtenau, Baunatal und Kassel.",
+    "saison": [
+      {
+        "titel": "Rindfleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hessisch Lichtenau und Umgebung",
+        "pfad": "/hessen/werra-meissner-kreis/hessisch-lichtenau/"
+      },
+      {
+        "text": "Hofläden in Baunatal und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/baunatal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/landkreis-kassel/schauenburg/": {
+    "titel": "Hofläden in Schauenburg: gut zu wissen",
+    "oben": "Schauenburg nennt einen Hofladen für Obst und Gemüse, einen Regiomaten mit Eiern, Honig und Nudeln und Gutes vom Land mit Eiern und Fleisch.",
+    "einleitung": "Obst und Gemüse gibt es im Hofladen, Eier an beiden Automaten.\n\nWeitere Höfe findest du in Habichtswald, Wolfhagen und Baunatal.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Habichtswald und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/habichtswald/"
+      },
+      {
+        "text": "Hofläden in Wolfhagen und Umgebung",
+        "pfad": "/hessen/landkreis-kassel/wolfhagen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/limburg-weilburg/brechen/": {
+    "titel": "Hofläden in Brechen: gut zu wissen",
+    "oben": "In Brechen sind der Hofladen Thomas Rompel, Melli's Hoflädchen und ein Eierautomat eingetragen.",
+    "einleitung": "Eier gibt es jederzeit am Automaten.\n\nWeitere Höfe findest du in Limburg an der Lahn, Hünstetten und Idstein.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Limburg an der Lahn und Umgebung",
+        "pfad": "/hessen/limburg-weilburg/limburg-an-der-lahn/"
+      },
+      {
+        "text": "Hofläden in Idstein und Umgebung",
+        "pfad": "/hessen/rheingau-taunus-kreis/idstein/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/main-kinzig-kreis/bad-soden-salmuenster/": {
+    "titel": "Hofläden in Bad Soden-Salmünster: gut zu wissen",
+    "oben": "Bad Soden-Salmünster hat einen Regiomaten mit Milch, Hanna's Hoflädchen und den Biohof Gebhardt.",
+    "einleitung": "Die Milch ist oft Rohmilch: vor dem Trinken abkochen. Der Biohof Gebhardt arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Birstein, Gründau und Schlüchtern.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Birstein und Umgebung",
+        "pfad": "/hessen/main-kinzig-kreis/birstein/"
+      },
+      {
+        "text": "Hofläden in Schlüchtern und Umgebung",
+        "pfad": "/hessen/main-kinzig-kreis/schluechtern/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/main-kinzig-kreis/gruendau/": {
+    "titel": "Hofläden in Gründau: gut zu wissen",
+    "oben": "In Gründau sind der Hofladen Kliem mit Bio-Angebot, Bauer Würfl mit Gemüse und Obst und ein Regiomat eingetragen.",
+    "einleitung": "Gemüse und Obst gibt es bei Bauer Würfl.\n\nWeitere Höfe findest du in Bruchköbel, Ortenberg und Bad Soden-Salmünster.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bruchköbel und Umgebung",
+        "pfad": "/hessen/main-kinzig-kreis/bruchkoebel/"
+      },
+      {
+        "text": "Hofläden in Bad Soden-Salmünster und Umgebung",
+        "pfad": "/hessen/main-kinzig-kreis/bad-soden-salmuenster/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/main-taunus-kreis/liederbach-am-taunus/": {
+    "titel": "Hofläden in Liederbach am Taunus: gut zu wissen",
+    "oben": "Liederbach am Taunus nennt die Pusteblume, den Regiomaten Hof Wilhelmshöhe und den Imkerverein Bad Soden am Taunus und Umgebung.",
+    "einleitung": "Honig gibt es beim Imkerverein.\n\nWeitere Höfe findest du in Sulzbach, Kriftel und Hofheim am Taunus.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Sulzbach und Umgebung",
+        "pfad": "/hessen/main-taunus-kreis/sulzbach/"
+      },
+      {
+        "text": "Hofläden in Kriftel und Umgebung",
+        "pfad": "/hessen/main-taunus-kreis/kriftel/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/odenwaldkreis/bad-koenig/": {
+    "titel": "Hofläden in Bad König: gut zu wissen",
+    "oben": "Bad König im Odenwald hat die Weiße Hube Hofkäserei, den Momarter Hofladen und einen Regiomaten mit Fleisch.",
+    "einleitung": "Käse gibt es direkt aus der Hofkäserei, Fleisch am Regiomaten.\n\nWeitere Höfe findest du in Brensbach, Otzberg und Mossautal.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Brensbach und Umgebung",
+        "pfad": "/hessen/odenwaldkreis/brensbach/"
+      },
+      {
+        "text": "Hofläden in Mossautal und Umgebung",
+        "pfad": "/hessen/odenwaldkreis/mossautal/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/odenwaldkreis/brensbach/": {
+    "titel": "Hofläden in Brensbach: gut zu wissen",
+    "oben": "In Brensbach sind der Angus & Miscanthus Hof mit Fleisch, die Kelterei Meyer und ein Streuobstwiesen Automat eingetragen.",
+    "einleitung": "Fleisch gibt es auf dem Angus-Hof, Saft bei der Kelterei Meyer.\n\nWeitere Höfe findest du in Groß-Bieberau, Otzberg und Reinheim.",
+    "saison": [
+      {
+        "titel": "Rindfleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Saft",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Groß-Bieberau und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/gross-bieberau/"
+      },
+      {
+        "text": "Hofläden in Reinheim und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/reinheim/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/offenbach/dreieich/": {
+    "titel": "Hofläden in Dreieich: gut zu wissen",
+    "oben": "Dreieich nennt Sehring's Landlädchen (zweimal eingetragen) und den Hofladen der Familie Lenhardt.",
+    "einleitung": "Drei Einträge für zwei Hofläden.\n\nWeitere Höfe findest du in Egelsbach, Erzhausen und Heusenstamm.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Egelsbach und Umgebung",
+        "pfad": "/hessen/offenbach/egelsbach/"
+      },
+      {
+        "text": "Hofläden in Erzhausen und Umgebung",
+        "pfad": "/hessen/darmstadt-dieburg/erzhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/hessen/offenbach/heusenstamm/": {
+    "titel": "Hofläden in Heusenstamm: gut zu wissen",
+    "oben": "In Heusenstamm sind das Hofgut Patershausen, Rücker's Hofladen mit Bio-Fleisch, Gemüse und Obst und ein Regiomat mit Eiern eingetragen.",
+    "einleitung": "Bio-Fleisch, Gemüse und Obst gibt es bei Rücker's Hofladen, Eier jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Rodgau und in der Stadt Offenbach.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rodgau und Umgebung",
+        "pfad": "/hessen/offenbach/rodgau/"
+      },
+      {
+        "text": "Hofläden in Offenbach und Umgebung",
+        "pfad": "/hessen/offenbach-am-main/offenbach/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
