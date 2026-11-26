@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1515 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1536 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1833,35 +1833,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Marklohe](https://hofladenliste.de/niedersachsen/nienburg-weser/marklohe/) `/niedersachsen/nienburg-weser/marklohe/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
 | ✓ | [Stolzenau](https://hofladenliste.de/niedersachsen/nienburg-weser/stolzenau/) `/niedersachsen/nienburg-weser/stolzenau/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
 
-## Paket 62 (0/25 fertig)
+## Paket 62 (21/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Einbeck](https://hofladenliste.de/niedersachsen/northeim/einbeck/) `/niedersachsen/northeim/einbeck/` | Landkreis Northeim | 1 | 3 | 6 |
+| ✓ | [Einbeck](https://hofladenliste.de/niedersachsen/northeim/einbeck/) `/niedersachsen/northeim/einbeck/` | Landkreis Northeim | 1 | 3 | 6 |
 |  | [Uslar](https://hofladenliste.de/niedersachsen/northeim/uslar/) `/niedersachsen/northeim/uslar/` | Landkreis Northeim | 1 | 3 | 6 |
 |  | [Osterholz-Scharmbeck](https://hofladenliste.de/niedersachsen/osterholz/osterholz-scharmbeck/) `/niedersachsen/osterholz/osterholz-scharmbeck/` | Landkreis Osterholz | 1 | 3 | 6 |
-|  | [Stadt](https://hofladenliste.de/niedersachsen/osterholz/stadt/) `/niedersachsen/osterholz/stadt/` | Landkreis Osterholz | 1 | 3 | 6 |
-|  | [Ilsede](https://hofladenliste.de/niedersachsen/peine/ilsede/) `/niedersachsen/peine/ilsede/` | Landkreis Peine | 1 | 3 | 6 |
-|  | [Wennigsen](https://hofladenliste.de/niedersachsen/region-hannover/wennigsen/) `/niedersachsen/region-hannover/wennigsen/` | Region Hannover | 1 | 3 | 6 |
-|  | [Bremervörde](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/bremervoerde/) `/niedersachsen/rotenburg-wuemme/bremervoerde/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
+| ✓ | [Stadt](https://hofladenliste.de/niedersachsen/osterholz/stadt/) `/niedersachsen/osterholz/stadt/` | Landkreis Osterholz | 1 | 3 | 6 |
+| ✓ | [Ilsede](https://hofladenliste.de/niedersachsen/peine/ilsede/) `/niedersachsen/peine/ilsede/` | Landkreis Peine | 1 | 3 | 6 |
+| ✓ | [Wennigsen](https://hofladenliste.de/niedersachsen/region-hannover/wennigsen/) `/niedersachsen/region-hannover/wennigsen/` | Region Hannover | 1 | 3 | 6 |
+| ✓ | [Bremervörde](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/bremervoerde/) `/niedersachsen/rotenburg-wuemme/bremervoerde/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
 |  | [Elsdorf (Landkreis Rotenburg (Wümme))](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/elsdorf/) `/niedersachsen/rotenburg-wuemme/elsdorf/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
-|  | [Helvesiek](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/helvesiek/) `/niedersachsen/rotenburg-wuemme/helvesiek/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
+| ✓ | [Helvesiek](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/helvesiek/) `/niedersachsen/rotenburg-wuemme/helvesiek/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
 |  | [Kirchtimke](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/kirchtimke/) `/niedersachsen/rotenburg-wuemme/kirchtimke/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
-|  | [Vahlde](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/vahlde/) `/niedersachsen/rotenburg-wuemme/vahlde/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
-|  | [Hagenburg](https://hofladenliste.de/niedersachsen/schaumburg/hagenburg/) `/niedersachsen/schaumburg/hagenburg/` | Landkreis Schaumburg | 1 | 3 | 6 |
-|  | [Pollhagen](https://hofladenliste.de/niedersachsen/schaumburg/pollhagen/) `/niedersachsen/schaumburg/pollhagen/` | Landkreis Schaumburg | 1 | 3 | 6 |
-|  | [Rinteln](https://hofladenliste.de/niedersachsen/schaumburg/rinteln/) `/niedersachsen/schaumburg/rinteln/` | Landkreis Schaumburg | 1 | 3 | 6 |
-|  | [Bliedersdorf](https://hofladenliste.de/niedersachsen/stade/bliedersdorf/) `/niedersachsen/stade/bliedersdorf/` | Landkreis Stade | 1 | 3 | 6 |
-|  | [Buxtehude](https://hofladenliste.de/niedersachsen/stade/buxtehude/) `/niedersachsen/stade/buxtehude/` | Landkreis Stade | 1 | 3 | 6 |
-|  | [Nottensdorf](https://hofladenliste.de/niedersachsen/stade/nottensdorf/) `/niedersachsen/stade/nottensdorf/` | Landkreis Stade | 1 | 3 | 6 |
-|  | [Oetzen](https://hofladenliste.de/niedersachsen/uelzen/oetzen/) `/niedersachsen/uelzen/oetzen/` | Landkreis Uelzen | 1 | 3 | 6 |
-|  | [Rosche](https://hofladenliste.de/niedersachsen/uelzen/rosche/) `/niedersachsen/uelzen/rosche/` | Landkreis Uelzen | 1 | 3 | 6 |
-|  | [Uelzen](https://hofladenliste.de/niedersachsen/uelzen/uelzen/) `/niedersachsen/uelzen/uelzen/` | Landkreis Uelzen | 1 | 3 | 6 |
-|  | [Lohne (Oldenburg)](https://hofladenliste.de/niedersachsen/vechta/lohne-oldenburg/) `/niedersachsen/vechta/lohne-oldenburg/` | Landkreis Vechta | 1 | 3 | 6 |
-|  | [Vechta](https://hofladenliste.de/niedersachsen/vechta/vechta/) `/niedersachsen/vechta/vechta/` | Landkreis Vechta | 1 | 3 | 6 |
-|  | [Landkreis Verden](https://hofladenliste.de/niedersachsen/verden/landkreis-verden/) `/niedersachsen/verden/landkreis-verden/` | Landkreis Verden | 1 | 3 | 6 |
-|  | [Ottersberg](https://hofladenliste.de/niedersachsen/verden/ottersberg/) `/niedersachsen/verden/ottersberg/` | Landkreis Verden | 1 | 3 | 6 |
-|  | [Butjadingen](https://hofladenliste.de/niedersachsen/wesermarsch/butjadingen/) `/niedersachsen/wesermarsch/butjadingen/` | Landkreis Wesermarsch | 1 | 3 | 6 |
+| ✓ | [Vahlde](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/vahlde/) `/niedersachsen/rotenburg-wuemme/vahlde/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
+| ✓ | [Hagenburg](https://hofladenliste.de/niedersachsen/schaumburg/hagenburg/) `/niedersachsen/schaumburg/hagenburg/` | Landkreis Schaumburg | 1 | 3 | 6 |
+| ✓ | [Pollhagen](https://hofladenliste.de/niedersachsen/schaumburg/pollhagen/) `/niedersachsen/schaumburg/pollhagen/` | Landkreis Schaumburg | 1 | 3 | 6 |
+| ✓ | [Rinteln](https://hofladenliste.de/niedersachsen/schaumburg/rinteln/) `/niedersachsen/schaumburg/rinteln/` | Landkreis Schaumburg | 1 | 3 | 6 |
+| ✓ | [Bliedersdorf](https://hofladenliste.de/niedersachsen/stade/bliedersdorf/) `/niedersachsen/stade/bliedersdorf/` | Landkreis Stade | 1 | 3 | 6 |
+| ✓ | [Buxtehude](https://hofladenliste.de/niedersachsen/stade/buxtehude/) `/niedersachsen/stade/buxtehude/` | Landkreis Stade | 1 | 3 | 6 |
+| ✓ | [Nottensdorf](https://hofladenliste.de/niedersachsen/stade/nottensdorf/) `/niedersachsen/stade/nottensdorf/` | Landkreis Stade | 1 | 3 | 6 |
+| ✓ | [Oetzen](https://hofladenliste.de/niedersachsen/uelzen/oetzen/) `/niedersachsen/uelzen/oetzen/` | Landkreis Uelzen | 1 | 3 | 6 |
+| ✓ | [Rosche](https://hofladenliste.de/niedersachsen/uelzen/rosche/) `/niedersachsen/uelzen/rosche/` | Landkreis Uelzen | 1 | 3 | 6 |
+| ✓ | [Uelzen](https://hofladenliste.de/niedersachsen/uelzen/uelzen/) `/niedersachsen/uelzen/uelzen/` | Landkreis Uelzen | 1 | 3 | 6 |
+| ✓ | [Lohne (Oldenburg)](https://hofladenliste.de/niedersachsen/vechta/lohne-oldenburg/) `/niedersachsen/vechta/lohne-oldenburg/` | Landkreis Vechta | 1 | 3 | 6 |
+| ✓ | [Vechta](https://hofladenliste.de/niedersachsen/vechta/vechta/) `/niedersachsen/vechta/vechta/` | Landkreis Vechta | 1 | 3 | 6 |
+| ✓ | [Landkreis Verden](https://hofladenliste.de/niedersachsen/verden/landkreis-verden/) `/niedersachsen/verden/landkreis-verden/` | Landkreis Verden | 1 | 3 | 6 |
+| ✓ | [Ottersberg](https://hofladenliste.de/niedersachsen/verden/ottersberg/) `/niedersachsen/verden/ottersberg/` | Landkreis Verden | 1 | 3 | 6 |
+| ✓ | [Butjadingen](https://hofladenliste.de/niedersachsen/wesermarsch/butjadingen/) `/niedersachsen/wesermarsch/butjadingen/` | Landkreis Wesermarsch | 1 | 3 | 6 |
 
 ## Paket 63 (0/25 fertig)
 
