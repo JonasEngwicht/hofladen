@@ -188,12 +188,14 @@ test('Verifizierung für die Search Console nur bei Konfiguration und nur auf de
   assert.doesNotMatch(seiteHtml('/bayern/'), /google-site-verification|msvalidate/);
 });
 
-test('robots.txt: Sitemap verlinkt, interne Suche, API, Verwaltung und Merkliste gesperrt; Formular- und Login-Seiten noindex', () => {
+test('robots.txt: Sitemap verlinkt, interne Suche, API, Verwaltung, Merkliste und Kartenkacheln gesperrt; Formular- und Login-Seiten noindex', () => {
   const r = readFileSync(new URL('../public/robots.txt', import.meta.url), 'utf8');
   assert.match(r, /^Sitemap: https:\/\/hofladenliste\.de\/sitemap\.xml$/m);
-  for (const p of ['/suche', '/api/', '/verwaltung/', '/merkliste/']) assert.match(r, new RegExp(`^Disallow: ${p.replace(/\//g, '\\/')}$`, 'm'));
+  for (const p of ['/suche', '/api/', '/verwaltung/', '/merkliste/', '/kacheln/']) assert.match(r, new RegExp(`^Disallow: ${p.replace(/\//g, '\\/')}$`, 'm'));
   for (const p of ['/verwaltung/', '/betrieb/', '/mitmachen/danke/', '/hofsuche/', '/merkliste/']) assert.match(seiteHtml(p), /<meta name="robots" content="noindex/, p);
   for (const p of ['/', '/milchtankstelle/', '/bayern/']) assert.doesNotMatch(seiteHtml(p), /<meta name="robots" content="noindex/, p);
+  // Skripte, Stile und Schriften braucht Google zum Rendern – nie sperren
+  assert.doesNotMatch(r, /^Disallow: \/(app\.js|style\.css|vendor|fonts|sitemaps)/m);
 });
 
 test('kein Product- oder Offer-Markup (Google verlangt dafür Preis oder Bewertungen)', () => {
