@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 695 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 720 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -843,35 +843,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Wardenburg](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/wardenburg/) `/niedersachsen/landkreis-oldenburg/wardenburg/` | Landkreis Oldenburg | 1 | 5 | 8 |
 | ✓ | [Badbergen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/badbergen/) `/niedersachsen/landkreis-osnabrueck/badbergen/` | Landkreis Osnabrück | 1 | 5 | 8 |
 
-## Paket 29 (0/25 fertig)
+## Paket 29 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Ostercappeln](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/ostercappeln/) `/niedersachsen/landkreis-osnabrueck/ostercappeln/` | Landkreis Osnabrück | 1 | 5 | 8 |
-|  | [Lilienthal](https://hofladenliste.de/niedersachsen/osterholz/lilienthal/) `/niedersachsen/osterholz/lilienthal/` | Landkreis Osterholz | 1 | 5 | 8 |
-|  | [Schwanewede](https://hofladenliste.de/niedersachsen/osterholz/schwanewede/) `/niedersachsen/osterholz/schwanewede/` | Landkreis Osterholz | 1 | 5 | 8 |
-|  | [Barsinghausen](https://hofladenliste.de/niedersachsen/region-hannover/barsinghausen/) `/niedersachsen/region-hannover/barsinghausen/` | Region Hannover | 1 | 5 | 8 |
-|  | [Gehrden](https://hofladenliste.de/niedersachsen/region-hannover/gehrden/) `/niedersachsen/region-hannover/gehrden/` | Region Hannover | 1 | 5 | 8 |
-|  | [Ronnenberg](https://hofladenliste.de/niedersachsen/region-hannover/ronnenberg/) `/niedersachsen/region-hannover/ronnenberg/` | Region Hannover | 1 | 5 | 8 |
-|  | [Wunstorf](https://hofladenliste.de/niedersachsen/region-hannover/wunstorf/) `/niedersachsen/region-hannover/wunstorf/` | Region Hannover | 1 | 5 | 8 |
-|  | [Brockel](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/brockel/) `/niedersachsen/rotenburg-wuemme/brockel/` | Landkreis Rotenburg (Wümme) | 1 | 5 | 8 |
-|  | [Bakum](https://hofladenliste.de/niedersachsen/vechta/bakum/) `/niedersachsen/vechta/bakum/` | Landkreis Vechta | 1 | 5 | 8 |
-|  | [Kirchlinteln](https://hofladenliste.de/niedersachsen/verden/kirchlinteln/) `/niedersachsen/verden/kirchlinteln/` | Landkreis Verden | 1 | 5 | 8 |
-|  | [Lemwerder](https://hofladenliste.de/niedersachsen/wesermarsch/lemwerder/) `/niedersachsen/wesermarsch/lemwerder/` | Landkreis Wesermarsch | 1 | 5 | 8 |
-|  | [Isselburg](https://hofladenliste.de/nordrhein-westfalen/borken/isselburg/) `/nordrhein-westfalen/borken/isselburg/` | Kreis Borken | 1 | 5 | 8 |
-|  | [Rosendahl](https://hofladenliste.de/nordrhein-westfalen/coesfeld/rosendahl/) `/nordrhein-westfalen/coesfeld/rosendahl/` | Kreis Coesfeld | 1 | 5 | 8 |
-|  | [Wetter (Ruhr)](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/wetter-ruhr/) `/nordrhein-westfalen/ennepe-ruhr-kreis/wetter-ruhr/` | Ennepe-Ruhr-Kreis | 1 | 5 | 8 |
-|  | [Schloß Holte-Stukenbrock](https://hofladenliste.de/nordrhein-westfalen/guetersloh/schloss-holte-stukenbrock/) `/nordrhein-westfalen/guetersloh/schloss-holte-stukenbrock/` | Kreis Gütersloh | 1 | 5 | 8 |
-|  | [Versmold](https://hofladenliste.de/nordrhein-westfalen/guetersloh/versmold/) `/nordrhein-westfalen/guetersloh/versmold/` | Kreis Gütersloh | 1 | 5 | 8 |
-|  | [Enger](https://hofladenliste.de/nordrhein-westfalen/herford/enger/) `/nordrhein-westfalen/herford/enger/` | Kreis Herford | 1 | 5 | 8 |
-|  | [Vlotho](https://hofladenliste.de/nordrhein-westfalen/herford/vlotho/) `/nordrhein-westfalen/herford/vlotho/` | Kreis Herford | 1 | 5 | 8 |
-|  | [Meschede](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/meschede/) `/nordrhein-westfalen/hochsauerlandkreis/meschede/` | Hochsauerlandkreis | 1 | 5 | 8 |
-|  | [Langenfeld](https://hofladenliste.de/nordrhein-westfalen/mettmann/langenfeld/) `/nordrhein-westfalen/mettmann/langenfeld/` | Kreis Mettmann | 1 | 5 | 8 |
-|  | [Reichshof](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/reichshof/) `/nordrhein-westfalen/oberbergischer-kreis/reichshof/` | Oberbergischer Kreis | 1 | 5 | 8 |
-|  | [Wipperfürth](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/wipperfuerth/) `/nordrhein-westfalen/oberbergischer-kreis/wipperfuerth/` | Oberbergischer Kreis | 1 | 5 | 8 |
-|  | [Hövelhof](https://hofladenliste.de/nordrhein-westfalen/paderborn/hoevelhof/) `/nordrhein-westfalen/paderborn/hoevelhof/` | Kreis Paderborn | 1 | 5 | 8 |
-|  | [Bedburg](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/bedburg/) `/nordrhein-westfalen/rhein-erft-kreis/bedburg/` | Rhein-Erft-Kreis | 1 | 5 | 8 |
-|  | [Alfter](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/alfter/) `/nordrhein-westfalen/rhein-sieg-kreis/alfter/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
+| ✓ | [Ostercappeln](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/ostercappeln/) `/niedersachsen/landkreis-osnabrueck/ostercappeln/` | Landkreis Osnabrück | 1 | 5 | 8 |
+| ✓ | [Lilienthal](https://hofladenliste.de/niedersachsen/osterholz/lilienthal/) `/niedersachsen/osterholz/lilienthal/` | Landkreis Osterholz | 1 | 5 | 8 |
+| ✓ | [Schwanewede](https://hofladenliste.de/niedersachsen/osterholz/schwanewede/) `/niedersachsen/osterholz/schwanewede/` | Landkreis Osterholz | 1 | 5 | 8 |
+| ✓ | [Barsinghausen](https://hofladenliste.de/niedersachsen/region-hannover/barsinghausen/) `/niedersachsen/region-hannover/barsinghausen/` | Region Hannover | 1 | 5 | 8 |
+| ✓ | [Gehrden](https://hofladenliste.de/niedersachsen/region-hannover/gehrden/) `/niedersachsen/region-hannover/gehrden/` | Region Hannover | 1 | 5 | 8 |
+| ✓ | [Ronnenberg](https://hofladenliste.de/niedersachsen/region-hannover/ronnenberg/) `/niedersachsen/region-hannover/ronnenberg/` | Region Hannover | 1 | 5 | 8 |
+| ✓ | [Wunstorf](https://hofladenliste.de/niedersachsen/region-hannover/wunstorf/) `/niedersachsen/region-hannover/wunstorf/` | Region Hannover | 1 | 5 | 8 |
+| ✓ | [Brockel](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/brockel/) `/niedersachsen/rotenburg-wuemme/brockel/` | Landkreis Rotenburg (Wümme) | 1 | 5 | 8 |
+| ✓ | [Bakum](https://hofladenliste.de/niedersachsen/vechta/bakum/) `/niedersachsen/vechta/bakum/` | Landkreis Vechta | 1 | 5 | 8 |
+| ✓ | [Kirchlinteln](https://hofladenliste.de/niedersachsen/verden/kirchlinteln/) `/niedersachsen/verden/kirchlinteln/` | Landkreis Verden | 1 | 5 | 8 |
+| ✓ | [Lemwerder](https://hofladenliste.de/niedersachsen/wesermarsch/lemwerder/) `/niedersachsen/wesermarsch/lemwerder/` | Landkreis Wesermarsch | 1 | 5 | 8 |
+| ✓ | [Isselburg](https://hofladenliste.de/nordrhein-westfalen/borken/isselburg/) `/nordrhein-westfalen/borken/isselburg/` | Kreis Borken | 1 | 5 | 8 |
+| ✓ | [Rosendahl](https://hofladenliste.de/nordrhein-westfalen/coesfeld/rosendahl/) `/nordrhein-westfalen/coesfeld/rosendahl/` | Kreis Coesfeld | 1 | 5 | 8 |
+| ✓ | [Wetter (Ruhr)](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/wetter-ruhr/) `/nordrhein-westfalen/ennepe-ruhr-kreis/wetter-ruhr/` | Ennepe-Ruhr-Kreis | 1 | 5 | 8 |
+| ✓ | [Schloß Holte-Stukenbrock](https://hofladenliste.de/nordrhein-westfalen/guetersloh/schloss-holte-stukenbrock/) `/nordrhein-westfalen/guetersloh/schloss-holte-stukenbrock/` | Kreis Gütersloh | 1 | 5 | 8 |
+| ✓ | [Versmold](https://hofladenliste.de/nordrhein-westfalen/guetersloh/versmold/) `/nordrhein-westfalen/guetersloh/versmold/` | Kreis Gütersloh | 1 | 5 | 8 |
+| ✓ | [Enger](https://hofladenliste.de/nordrhein-westfalen/herford/enger/) `/nordrhein-westfalen/herford/enger/` | Kreis Herford | 1 | 5 | 8 |
+| ✓ | [Vlotho](https://hofladenliste.de/nordrhein-westfalen/herford/vlotho/) `/nordrhein-westfalen/herford/vlotho/` | Kreis Herford | 1 | 5 | 8 |
+| ✓ | [Meschede](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/meschede/) `/nordrhein-westfalen/hochsauerlandkreis/meschede/` | Hochsauerlandkreis | 1 | 5 | 8 |
+| ✓ | [Langenfeld](https://hofladenliste.de/nordrhein-westfalen/mettmann/langenfeld/) `/nordrhein-westfalen/mettmann/langenfeld/` | Kreis Mettmann | 1 | 5 | 8 |
+| ✓ | [Reichshof](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/reichshof/) `/nordrhein-westfalen/oberbergischer-kreis/reichshof/` | Oberbergischer Kreis | 1 | 5 | 8 |
+| ✓ | [Wipperfürth](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/wipperfuerth/) `/nordrhein-westfalen/oberbergischer-kreis/wipperfuerth/` | Oberbergischer Kreis | 1 | 5 | 8 |
+| ✓ | [Hövelhof](https://hofladenliste.de/nordrhein-westfalen/paderborn/hoevelhof/) `/nordrhein-westfalen/paderborn/hoevelhof/` | Kreis Paderborn | 1 | 5 | 8 |
+| ✓ | [Bedburg](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/bedburg/) `/nordrhein-westfalen/rhein-erft-kreis/bedburg/` | Rhein-Erft-Kreis | 1 | 5 | 8 |
+| ✓ | [Alfter](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/alfter/) `/nordrhein-westfalen/rhein-sieg-kreis/alfter/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
 
 ## Paket 30 (2/25 fertig)
 
