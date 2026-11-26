@@ -45206,5 +45206,665 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/niedersachsen/harburg/hanstedt/": {
+    "titel": "Hofläden in Hanstedt: gut zu wissen",
+    "oben": "In Hanstedt in der Nordheide sind Kartoffeln vom Bauernhof, der Degenhof und der Bauernhof Menke eingetragen.",
+    "einleitung": "Kartoffeln gibt es direkt ab Hof am Automaten.\n\nWeitere Höfe findest du in Jesteburg, Egestorf und Wulfsen.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Jesteburg und Umgebung",
+        "pfad": "/niedersachsen/harburg/jesteburg/"
+      },
+      {
+        "text": "Hofläden in Egestorf und Umgebung",
+        "pfad": "/niedersachsen/harburg/egestorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/harburg/hollenstedt/": {
+    "titel": "Hofläden in Hollenstedt: gut zu wissen",
+    "oben": "Hollenstedt nennt den Hofladen von Bernd und Rita Oelkers, den Wilkenshoff mit Bio-Angebot und einen Regiomaten mit Eiern und Kartoffeln.",
+    "einleitung": "Eier und Kartoffeln gibt es jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Heidenau, Neu Wulmstorf und Tostedt.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heidenau und Umgebung",
+        "pfad": "/niedersachsen/harburg/heidenau/"
+      },
+      {
+        "text": "Hofläden in Tostedt und Umgebung",
+        "pfad": "/niedersachsen/harburg/tostedt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/harburg/koenigsmoor/": {
+    "titel": "Hofläden in Königsmoor: gut zu wissen",
+    "oben": "In Königsmoor sind zwei Kartoffelautomaten und ein Eierautomat vom Bauernhof eingetragen.",
+    "einleitung": "Zu Königsmoor: Alle drei Einträge sind Automaten, du kannst also jederzeit einkaufen.\n\nWeitere Höfe findest du in Wistedt, Otter und Vahlde.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wistedt und Umgebung",
+        "pfad": "/niedersachsen/harburg/wistedt/"
+      },
+      {
+        "text": "Hofläden in Otter und Umgebung",
+        "pfad": "/niedersachsen/harburg/otter/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/harburg/rosengarten/": {
+    "titel": "Hofläden in Rosengarten: gut zu wissen",
+    "oben": "Rosengarten bei Hamburg hat Wilken's Hoflädle mit Bio-Angebot, den SB-Hofladen Renck mit Milch, Obst, Kartoffeln, Honig und Marmelade und den Hof Hinners.",
+    "einleitung": "Der SB-Hofladen Renck führt ein breites Sortiment. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Seevetal und in Hamburg-Eißendorf.",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Seevetal und Umgebung",
+        "pfad": "/niedersachsen/harburg/seevetal/"
+      },
+      {
+        "text": "Hofläden in Hamburg Eißendorf und Umgebung",
+        "pfad": "/hamburg/hamburg/hamburg-eissendorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/heidekreis/gilten/": {
+    "titel": "Hofläden in Gilten: gut zu wissen",
+    "oben": "In Gilten sind der Hofladen und das Hofcafé Landleben und Siemer's Hof mit Käse eingetragen.",
+    "einleitung": "Käse gibt es auf Siemer's Hof, im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Grethem, Schwarmstedt und Lindwedel.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Grethem und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/grethem/"
+      },
+      {
+        "text": "Hofläden in Schwarmstedt und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/schwarmstedt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/heidekreis/grethem/": {
+    "titel": "Hofläden in Grethem: gut zu wissen",
+    "oben": "Grethem nennt die Moosbeerhütte mit Cranberry-Hofladen, das Blaubeerland Café und die Landwurst Rose.",
+    "einleitung": "Cranberrys gibt es in der Moosbeerhütte, Wurst und Fleisch bei Landwurst Rose.\n\nWeitere Höfe findest du in Gilten, Schwarmstedt und Walsrode.",
+    "saison": [
+      {
+        "titel": "Heidelbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Cranberrys",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Wurst",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Gilten und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/gilten/"
+      },
+      {
+        "text": "Hofläden in Walsrode und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/walsrode/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/heidekreis/lindwedel/": {
+    "titel": "Hofläden in Lindwedel: gut zu wissen",
+    "oben": "In Lindwedel sind der Honig Shop der Imkerei Jörns Hof, ein Regiomat mit Eiern, Kartoffeln und Blumen und der Hoper Hof eingetragen.",
+    "einleitung": "Honig gibt es am Honigautomaten, Eier, Kartoffeln und Blumen am Regiomaten, jederzeit.\n\nWeitere Höfe findest du in der Wedemark, Schwarmstedt und Gilten.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wedemark und Umgebung",
+        "pfad": "/niedersachsen/region-hannover/wedemark/"
+      },
+      {
+        "text": "Hofläden in Gilten und Umgebung",
+        "pfad": "/niedersachsen/heidekreis/gilten/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/helmstedt/velpke/": {
+    "titel": "Hofläden in Velpke: gut zu wissen",
+    "oben": "Velpke hat das Velpker Landcafé und zwei Regiomaten, darunter den Regiomaten Gut Büstedt.",
+    "einleitung": "Die Regiomaten sind jederzeit zugänglich, im Landcafé kannst du einkehren.\n\nWeitere Höfe findest du in Wolfsburg, Barwedel und Lehre.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Barwedel und Umgebung",
+        "pfad": "/niedersachsen/gifhorn/barwedel/"
+      },
+      {
+        "text": "Hofläden in Lehre und Umgebung",
+        "pfad": "/niedersachsen/helmstedt/lehre/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/hildesheim/sibbesse/": {
+    "titel": "Hofläden in Sibbesse: gut zu wissen",
+    "oben": "In Sibbesse sind ein Milchautomat, der Hofladen Ossenkop und Erdbeer Jacobs eingetragen.",
+    "einleitung": "Erdbeeren gibt es bei Erdbeer Jacobs im Frühsommer. Die Milch aus dem Automaten ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Hildesheim, Bockenem und Harsum.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Hildesheim und Umgebung",
+        "pfad": "/niedersachsen/hildesheim/hildesheim/"
+      },
+      {
+        "text": "Hofläden in Bockenem und Umgebung",
+        "pfad": "/niedersachsen/hildesheim/bockenem/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/landkreis-osnabrueck/bad-rothenfelde/": {
+    "titel": "Hofläden in Bad Rothenfelde: gut zu wissen",
+    "oben": "Bad Rothenfelde nennt den Hofladen Menzel und zwei Regiomaten mit Blumen.",
+    "einleitung": "Blumen gibt es jederzeit an beiden Automaten.\n\nWeitere Höfe findest du in Versmold, Borgholzhausen und Halle (Westfalen).",
+    "saison": [
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Versmold und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/versmold/"
+      },
+      {
+        "text": "Hofläden in Borgholzhausen und Umgebung",
+        "pfad": "/nordrhein-westfalen/guetersloh/borgholzhausen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/landkreis-osnabrueck/berge/": {
+    "titel": "Hofläden in Berge: gut zu wissen",
+    "oben": "In Berge sind der Bioladen Stiftschänke, ein Honigautomat und ein Kartoffelautomat eingetragen.",
+    "einleitung": "Honig und Kartoffeln gibt es jederzeit an den Automaten. Die Stiftschänke arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Menslage, Löningen und Essen (Oldenburg).",
+    "saison": [
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Menslage und Umgebung",
+        "pfad": "/niedersachsen/landkreis-osnabrueck/menslage/"
+      },
+      {
+        "text": "Hofläden in Essen (Oldenburg) und Umgebung",
+        "pfad": "/niedersachsen/cloppenburg/essen-oldenburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/leer/rhauderfehn/": {
+    "titel": "Hofläden in Rhauderfehn: gut zu wissen",
+    "oben": "Rhauderfehn hat das Melkhuus Schatteburg, den Biolandhof Freese mit Gemüse und Obst und Dat Hofcafé.",
+    "einleitung": "Gemüse und Obst gibt es auf dem Biolandhof Freese, im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Saterland, Westoverledingen und Leer.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Westoverledingen und Umgebung",
+        "pfad": "/niedersachsen/leer/westoverledingen/"
+      },
+      {
+        "text": "Hofläden in Leer (Ostfriesland) und Umgebung",
+        "pfad": "/niedersachsen/leer/leer-ostfriesland/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/leer/uplengen/": {
+    "titel": "Hofläden in Uplengen: gut zu wissen",
+    "oben": "In Uplengen sind der Biohof Franzen, der Gärtnerhof ter Veen und das Bauernhofcafé Ostendorf eingetragen.",
+    "einleitung": "Der Biohof Franzen arbeitet nach Bio-Richtlinien, im Bauernhofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Westerstede, Großefehn und Barßel.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Westerstede und Umgebung",
+        "pfad": "/niedersachsen/ammerland/westerstede/"
+      },
+      {
+        "text": "Hofläden in Großefehn und Umgebung",
+        "pfad": "/niedersachsen/aurich/grossefehn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/leer/westoverledingen/": {
+    "titel": "Hofläden in Westoverledingen: gut zu wissen",
+    "oben": "Westoverledingen nennt den Hofladen Albert Schmid, einen Eierautomaten und eine Milchtankstelle.",
+    "einleitung": "Zu Westoverledingen: Eier und Milch gibt es jederzeit an den Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Leer, Rhauderfehn und Papenburg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Leer (Ostfriesland) und Umgebung",
+        "pfad": "/niedersachsen/leer/leer-ostfriesland/"
+      },
+      {
+        "text": "Hofläden in Rhauderfehn und Umgebung",
+        "pfad": "/niedersachsen/leer/rhauderfehn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/luechow-dannenberg/luechow/": {
+    "titel": "Hofläden in Lüchow: gut zu wissen",
+    "oben": "In Lüchow sind zwei Eierautomaten, einer davon mit Fleisch, und der Hof Kuhnle mit Spargel und Heidelbeeren eingetragen.",
+    "einleitung": "Spargel und Heidelbeeren gibt es auf dem Hof Kuhnle in der Saison, Eier jederzeit am Automaten.\n\nWeitere Höfe findest du in Rosche, Oetzen und Wittingen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Heidelbeeren",
+        "zeit": "Juli und August"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rosche und Umgebung",
+        "pfad": "/niedersachsen/uelzen/rosche/"
+      },
+      {
+        "text": "Hofläden in Oetzen und Umgebung",
+        "pfad": "/niedersachsen/uelzen/oetzen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/lueneburg/bardowick/": {
+    "titel": "Hofläden in Bardowick: gut zu wissen",
+    "oben": "Bardowick bei Lüneburg hat den Gemüsebau Gade, einen Hofladen und Meyer's Hofladen.",
+    "einleitung": "Gemüse gibt es beim Gemüsebau Gade.\n\nWeitere Höfe findest du in Lüneburg, Radbruch und Heiligenthal.",
+    "saison": [
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lüneburg und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/lueneburg/"
+      },
+      {
+        "text": "Hofläden in Radbruch und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/radbruch/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/lueneburg/heiligenthal/": {
+    "titel": "Hofläden in Heiligenthal: gut zu wissen",
+    "oben": "In Heiligenthal sind zwei Regiomaten mit Eiern und das Tangsehl Depot mit Bio-Angebot eingetragen.",
+    "einleitung": "Eier und Kartoffeln gibt es jederzeit an den Regiomaten.\n\nWeitere Höfe findest du in Lüneburg, Bardowick und Radbruch.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Lüneburg und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/lueneburg/"
+      },
+      {
+        "text": "Hofläden in Bardowick und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/bardowick/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/lueneburg/hohnstorf-elbe/": {
+    "titel": "Hofläden in Hohnstorf (Elbe): gut zu wissen",
+    "oben": "Hohnstorf an der Elbe nennt den 24/7 Hofladen am Wiesenhof mit Angus-Rindfleisch, das Friedhofsbüro und Zwergenhonig, beide mit Honig.",
+    "einleitung": "Rindfleisch gibt es rund um die Uhr im Hofladen am Wiesenhof, Honig an zwei Stellen.\n\nWeitere Höfe findest du in Schnakenbek, Krukow und Neetze.",
+    "saison": [
+      {
+        "titel": "Rindfleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schnakenbek und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/schnakenbek/"
+      },
+      {
+        "text": "Hofläden in Neetze und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/neetze/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/lueneburg/oldendorf-luhe/": {
+    "titel": "Hofläden in Oldendorf (Luhe): gut zu wissen",
+    "oben": "In Oldendorf (Luhe) sind der Spargelhof Böther (zweimal) und der Hof Koch mit Hofladen und Direktvermarktung eingetragen.",
+    "einleitung": "Spargel gibt es auf dem Spargelhof Böther in der Saison.\n\nWeitere Höfe findest du in Heiligenthal, Egestorf und Wulfsen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heiligenthal und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/heiligenthal/"
+      },
+      {
+        "text": "Hofläden in Egestorf und Umgebung",
+        "pfad": "/niedersachsen/harburg/egestorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/lueneburg/radbruch/": {
+    "titel": "Hofläden in Radbruch: gut zu wissen",
+    "oben": "Radbruch hat zwei Einträge des Hofs Bertram, als Regiomat mit Eiern, Milch, Käse und Honig und als Hofladen mit Fleisch, und die Hofmolkerei Kruse mit Milch.",
+    "einleitung": "Milch und Käse gibt es am Regiomaten und in der Hofmolkerei. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Winsen (Luhe), Bardowick und Wulfsen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Winsen (Luhe) und Umgebung",
+        "pfad": "/niedersachsen/harburg/winsen-luhe/"
+      },
+      {
+        "text": "Hofläden in Bardowick und Umgebung",
+        "pfad": "/niedersachsen/lueneburg/bardowick/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/nienburg-weser/landesbergen/": {
+    "titel": "Hofläden in Landesbergen: gut zu wissen",
+    "oben": "In Landesbergen sind der Bickbeernhof, das Hofcafé Backhaus und der Hof Backhaus mit Eiern, Gemüse, Obst, Kartoffeln und Brot eingetragen.",
+    "einleitung": "Im Hofcafé Backhaus kannst du einkehren, auf dem Hof Backhaus einkaufen.\n\nWeitere Höfe findest du in Stolzenau, Steyerberg und Pollhagen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Brot",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stolzenau und Umgebung",
+        "pfad": "/niedersachsen/nienburg-weser/stolzenau/"
+      },
+      {
+        "text": "Hofläden in Steyerberg und Umgebung",
+        "pfad": "/niedersachsen/nienburg-weser/steyerberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/niedersachsen/nienburg-weser/stolzenau/": {
+    "titel": "Hofläden in Stolzenau: gut zu wissen",
+    "oben": "Stolzenau nennt den Geflügelhof Holzhausen, den Spargelhof Meyer mit Bio-Angebot und den Früchtehof Graue.",
+    "einleitung": "Geflügel gibt es auf dem Geflügelhof Holzhausen, Spargel auf dem Spargelhof Meyer.\n\nWeitere Höfe findest du in Landesbergen, Steyerberg und Pollhagen.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Landesbergen und Umgebung",
+        "pfad": "/niedersachsen/nienburg-weser/landesbergen/"
+      },
+      {
+        "text": "Hofläden in Steyerberg und Umgebung",
+        "pfad": "/niedersachsen/nienburg-weser/steyerberg/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }

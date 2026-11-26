@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1493 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1515 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1803,35 +1803,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Emmerthal](https://hofladenliste.de/niedersachsen/hameln-pyrmont/emmerthal/) `/niedersachsen/hameln-pyrmont/emmerthal/` | Landkreis Hameln-Pyrmont | 1 | 3 | 6 |
 | ✓ | [Egestorf](https://hofladenliste.de/niedersachsen/harburg/egestorf/) `/niedersachsen/harburg/egestorf/` | Landkreis Harburg | 1 | 3 | 6 |
 
-## Paket 61 (0/25 fertig)
+## Paket 61 (22/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Hanstedt](https://hofladenliste.de/niedersachsen/harburg/hanstedt/) `/niedersachsen/harburg/hanstedt/` | Landkreis Harburg | 1 | 3 | 6 |
-|  | [Hollenstedt](https://hofladenliste.de/niedersachsen/harburg/hollenstedt/) `/niedersachsen/harburg/hollenstedt/` | Landkreis Harburg | 1 | 3 | 6 |
-|  | [Königsmoor](https://hofladenliste.de/niedersachsen/harburg/koenigsmoor/) `/niedersachsen/harburg/koenigsmoor/` | Landkreis Harburg | 1 | 3 | 6 |
-|  | [Rosengarten](https://hofladenliste.de/niedersachsen/harburg/rosengarten/) `/niedersachsen/harburg/rosengarten/` | Landkreis Harburg | 1 | 3 | 6 |
-|  | [Gilten](https://hofladenliste.de/niedersachsen/heidekreis/gilten/) `/niedersachsen/heidekreis/gilten/` | Heidekreis | 1 | 3 | 6 |
-|  | [Grethem](https://hofladenliste.de/niedersachsen/heidekreis/grethem/) `/niedersachsen/heidekreis/grethem/` | Heidekreis | 1 | 3 | 6 |
-|  | [Lindwedel](https://hofladenliste.de/niedersachsen/heidekreis/lindwedel/) `/niedersachsen/heidekreis/lindwedel/` | Heidekreis | 1 | 3 | 6 |
-|  | [Velpke](https://hofladenliste.de/niedersachsen/helmstedt/velpke/) `/niedersachsen/helmstedt/velpke/` | Landkreis Helmstedt | 1 | 3 | 6 |
+| ✓ | [Hanstedt](https://hofladenliste.de/niedersachsen/harburg/hanstedt/) `/niedersachsen/harburg/hanstedt/` | Landkreis Harburg | 1 | 3 | 6 |
+| ✓ | [Hollenstedt](https://hofladenliste.de/niedersachsen/harburg/hollenstedt/) `/niedersachsen/harburg/hollenstedt/` | Landkreis Harburg | 1 | 3 | 6 |
+| ✓ | [Königsmoor](https://hofladenliste.de/niedersachsen/harburg/koenigsmoor/) `/niedersachsen/harburg/koenigsmoor/` | Landkreis Harburg | 1 | 3 | 6 |
+| ✓ | [Rosengarten](https://hofladenliste.de/niedersachsen/harburg/rosengarten/) `/niedersachsen/harburg/rosengarten/` | Landkreis Harburg | 1 | 3 | 6 |
+| ✓ | [Gilten](https://hofladenliste.de/niedersachsen/heidekreis/gilten/) `/niedersachsen/heidekreis/gilten/` | Heidekreis | 1 | 3 | 6 |
+| ✓ | [Grethem](https://hofladenliste.de/niedersachsen/heidekreis/grethem/) `/niedersachsen/heidekreis/grethem/` | Heidekreis | 1 | 3 | 6 |
+| ✓ | [Lindwedel](https://hofladenliste.de/niedersachsen/heidekreis/lindwedel/) `/niedersachsen/heidekreis/lindwedel/` | Heidekreis | 1 | 3 | 6 |
+| ✓ | [Velpke](https://hofladenliste.de/niedersachsen/helmstedt/velpke/) `/niedersachsen/helmstedt/velpke/` | Landkreis Helmstedt | 1 | 3 | 6 |
 |  | [Elze](https://hofladenliste.de/niedersachsen/hildesheim/elze/) `/niedersachsen/hildesheim/elze/` | Landkreis Hildesheim | 1 | 3 | 6 |
-|  | [Sibbesse](https://hofladenliste.de/niedersachsen/hildesheim/sibbesse/) `/niedersachsen/hildesheim/sibbesse/` | Landkreis Hildesheim | 1 | 3 | 6 |
+| ✓ | [Sibbesse](https://hofladenliste.de/niedersachsen/hildesheim/sibbesse/) `/niedersachsen/hildesheim/sibbesse/` | Landkreis Hildesheim | 1 | 3 | 6 |
 |  | [Bad Iburg](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-iburg/) `/niedersachsen/landkreis-osnabrueck/bad-iburg/` | Landkreis Osnabrück | 1 | 3 | 6 |
-|  | [Bad Rothenfelde](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-rothenfelde/) `/niedersachsen/landkreis-osnabrueck/bad-rothenfelde/` | Landkreis Osnabrück | 1 | 3 | 6 |
-|  | [Berge](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/berge/) `/niedersachsen/landkreis-osnabrueck/berge/` | Landkreis Osnabrück | 1 | 3 | 6 |
-|  | [Rhauderfehn](https://hofladenliste.de/niedersachsen/leer/rhauderfehn/) `/niedersachsen/leer/rhauderfehn/` | Landkreis Leer | 1 | 3 | 6 |
-|  | [Uplengen](https://hofladenliste.de/niedersachsen/leer/uplengen/) `/niedersachsen/leer/uplengen/` | Landkreis Leer | 1 | 3 | 6 |
-|  | [Westoverledingen](https://hofladenliste.de/niedersachsen/leer/westoverledingen/) `/niedersachsen/leer/westoverledingen/` | Landkreis Leer | 1 | 3 | 6 |
-|  | [Lüchow](https://hofladenliste.de/niedersachsen/luechow-dannenberg/luechow/) `/niedersachsen/luechow-dannenberg/luechow/` | Landkreis Lüchow-Dannenberg | 1 | 3 | 6 |
-|  | [Bardowick](https://hofladenliste.de/niedersachsen/lueneburg/bardowick/) `/niedersachsen/lueneburg/bardowick/` | Landkreis Lüneburg | 1 | 3 | 6 |
-|  | [Heiligenthal](https://hofladenliste.de/niedersachsen/lueneburg/heiligenthal/) `/niedersachsen/lueneburg/heiligenthal/` | Landkreis Lüneburg | 1 | 3 | 6 |
-|  | [Hohnstorf (Elbe)](https://hofladenliste.de/niedersachsen/lueneburg/hohnstorf-elbe/) `/niedersachsen/lueneburg/hohnstorf-elbe/` | Landkreis Lüneburg | 1 | 3 | 6 |
-|  | [Oldendorf (Luhe)](https://hofladenliste.de/niedersachsen/lueneburg/oldendorf-luhe/) `/niedersachsen/lueneburg/oldendorf-luhe/` | Landkreis Lüneburg | 1 | 3 | 6 |
-|  | [Radbruch](https://hofladenliste.de/niedersachsen/lueneburg/radbruch/) `/niedersachsen/lueneburg/radbruch/` | Landkreis Lüneburg | 1 | 3 | 6 |
-|  | [Landesbergen](https://hofladenliste.de/niedersachsen/nienburg-weser/landesbergen/) `/niedersachsen/nienburg-weser/landesbergen/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
+| ✓ | [Bad Rothenfelde](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-rothenfelde/) `/niedersachsen/landkreis-osnabrueck/bad-rothenfelde/` | Landkreis Osnabrück | 1 | 3 | 6 |
+| ✓ | [Berge](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/berge/) `/niedersachsen/landkreis-osnabrueck/berge/` | Landkreis Osnabrück | 1 | 3 | 6 |
+| ✓ | [Rhauderfehn](https://hofladenliste.de/niedersachsen/leer/rhauderfehn/) `/niedersachsen/leer/rhauderfehn/` | Landkreis Leer | 1 | 3 | 6 |
+| ✓ | [Uplengen](https://hofladenliste.de/niedersachsen/leer/uplengen/) `/niedersachsen/leer/uplengen/` | Landkreis Leer | 1 | 3 | 6 |
+| ✓ | [Westoverledingen](https://hofladenliste.de/niedersachsen/leer/westoverledingen/) `/niedersachsen/leer/westoverledingen/` | Landkreis Leer | 1 | 3 | 6 |
+| ✓ | [Lüchow](https://hofladenliste.de/niedersachsen/luechow-dannenberg/luechow/) `/niedersachsen/luechow-dannenberg/luechow/` | Landkreis Lüchow-Dannenberg | 1 | 3 | 6 |
+| ✓ | [Bardowick](https://hofladenliste.de/niedersachsen/lueneburg/bardowick/) `/niedersachsen/lueneburg/bardowick/` | Landkreis Lüneburg | 1 | 3 | 6 |
+| ✓ | [Heiligenthal](https://hofladenliste.de/niedersachsen/lueneburg/heiligenthal/) `/niedersachsen/lueneburg/heiligenthal/` | Landkreis Lüneburg | 1 | 3 | 6 |
+| ✓ | [Hohnstorf (Elbe)](https://hofladenliste.de/niedersachsen/lueneburg/hohnstorf-elbe/) `/niedersachsen/lueneburg/hohnstorf-elbe/` | Landkreis Lüneburg | 1 | 3 | 6 |
+| ✓ | [Oldendorf (Luhe)](https://hofladenliste.de/niedersachsen/lueneburg/oldendorf-luhe/) `/niedersachsen/lueneburg/oldendorf-luhe/` | Landkreis Lüneburg | 1 | 3 | 6 |
+| ✓ | [Radbruch](https://hofladenliste.de/niedersachsen/lueneburg/radbruch/) `/niedersachsen/lueneburg/radbruch/` | Landkreis Lüneburg | 1 | 3 | 6 |
+| ✓ | [Landesbergen](https://hofladenliste.de/niedersachsen/nienburg-weser/landesbergen/) `/niedersachsen/nienburg-weser/landesbergen/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
 |  | [Marklohe](https://hofladenliste.de/niedersachsen/nienburg-weser/marklohe/) `/niedersachsen/nienburg-weser/marklohe/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
-|  | [Stolzenau](https://hofladenliste.de/niedersachsen/nienburg-weser/stolzenau/) `/niedersachsen/nienburg-weser/stolzenau/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
+| ✓ | [Stolzenau](https://hofladenliste.de/niedersachsen/nienburg-weser/stolzenau/) `/niedersachsen/nienburg-weser/stolzenau/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
 
 ## Paket 62 (0/25 fertig)
 
