@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1128 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1150 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1653,35 +1653,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Manching](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/manching/) `/bayern/pfaffenhofen-an-der-ilm/manching/` | Landkreis Pfaffenhofen an der Ilm | 1 | 3 | 6 |
 |  | [Frauenau](https://hofladenliste.de/bayern/regen/frauenau/) `/bayern/regen/frauenau/` | Landkreis Regen | 1 | 3 | 6 |
 
-## Paket 56 (0/25 fertig)
+## Paket 56 (22/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Höchheim](https://hofladenliste.de/bayern/rhoen-grabfeld/hoechheim/) `/bayern/rhoen-grabfeld/hoechheim/` | Landkreis Rhön-Grabfeld | 1 | 3 | 6 |
-|  | [Sulzfeld](https://hofladenliste.de/bayern/rhoen-grabfeld/sulzfeld/) `/bayern/rhoen-grabfeld/sulzfeld/` | Landkreis Rhön-Grabfeld | 1 | 3 | 6 |
-|  | [Greding](https://hofladenliste.de/bayern/roth/greding/) `/bayern/roth/greding/` | Landkreis Roth | 1 | 3 | 6 |
-|  | [Heideck](https://hofladenliste.de/bayern/roth/heideck/) `/bayern/roth/heideck/` | Landkreis Roth | 1 | 3 | 6 |
-|  | [Hilpoltstein](https://hofladenliste.de/bayern/roth/hilpoltstein/) `/bayern/roth/hilpoltstein/` | Landkreis Roth | 1 | 3 | 6 |
-|  | [Wendelstein](https://hofladenliste.de/bayern/roth/wendelstein/) `/bayern/roth/wendelstein/` | Landkreis Roth | 1 | 3 | 6 |
-|  | [Bad Birnbach](https://hofladenliste.de/bayern/rottal-inn/bad-birnbach/) `/bayern/rottal-inn/bad-birnbach/` | Landkreis Rottal-Inn | 1 | 3 | 6 |
-|  | [Gangkofen](https://hofladenliste.de/bayern/rottal-inn/gangkofen/) `/bayern/rottal-inn/gangkofen/` | Landkreis Rottal-Inn | 1 | 3 | 6 |
-|  | [Simbach am Inn](https://hofladenliste.de/bayern/rottal-inn/simbach-am-inn/) `/bayern/rottal-inn/simbach-am-inn/` | Landkreis Rottal-Inn | 1 | 3 | 6 |
-|  | [Nabburg](https://hofladenliste.de/bayern/schwandorf/nabburg/) `/bayern/schwandorf/nabburg/` | Landkreis Schwandorf | 1 | 3 | 6 |
-|  | [Erbendorf](https://hofladenliste.de/bayern/tirschenreuth/erbendorf/) `/bayern/tirschenreuth/erbendorf/` | Landkreis Tirschenreuth | 1 | 3 | 6 |
-|  | [Chieming](https://hofladenliste.de/bayern/traunstein/chieming/) `/bayern/traunstein/chieming/` | Landkreis Traunstein | 1 | 3 | 6 |
+| ✓ | [Höchheim](https://hofladenliste.de/bayern/rhoen-grabfeld/hoechheim/) `/bayern/rhoen-grabfeld/hoechheim/` | Landkreis Rhön-Grabfeld | 1 | 3 | 6 |
+| ✓ | [Sulzfeld](https://hofladenliste.de/bayern/rhoen-grabfeld/sulzfeld/) `/bayern/rhoen-grabfeld/sulzfeld/` | Landkreis Rhön-Grabfeld | 1 | 3 | 6 |
+| ✓ | [Greding](https://hofladenliste.de/bayern/roth/greding/) `/bayern/roth/greding/` | Landkreis Roth | 1 | 3 | 6 |
+| ✓ | [Heideck](https://hofladenliste.de/bayern/roth/heideck/) `/bayern/roth/heideck/` | Landkreis Roth | 1 | 3 | 6 |
+| ✓ | [Hilpoltstein](https://hofladenliste.de/bayern/roth/hilpoltstein/) `/bayern/roth/hilpoltstein/` | Landkreis Roth | 1 | 3 | 6 |
+| ✓ | [Wendelstein](https://hofladenliste.de/bayern/roth/wendelstein/) `/bayern/roth/wendelstein/` | Landkreis Roth | 1 | 3 | 6 |
+| ✓ | [Bad Birnbach](https://hofladenliste.de/bayern/rottal-inn/bad-birnbach/) `/bayern/rottal-inn/bad-birnbach/` | Landkreis Rottal-Inn | 1 | 3 | 6 |
+| ✓ | [Gangkofen](https://hofladenliste.de/bayern/rottal-inn/gangkofen/) `/bayern/rottal-inn/gangkofen/` | Landkreis Rottal-Inn | 1 | 3 | 6 |
+| ✓ | [Simbach am Inn](https://hofladenliste.de/bayern/rottal-inn/simbach-am-inn/) `/bayern/rottal-inn/simbach-am-inn/` | Landkreis Rottal-Inn | 1 | 3 | 6 |
+| ✓ | [Nabburg](https://hofladenliste.de/bayern/schwandorf/nabburg/) `/bayern/schwandorf/nabburg/` | Landkreis Schwandorf | 1 | 3 | 6 |
+| ✓ | [Erbendorf](https://hofladenliste.de/bayern/tirschenreuth/erbendorf/) `/bayern/tirschenreuth/erbendorf/` | Landkreis Tirschenreuth | 1 | 3 | 6 |
+| ✓ | [Chieming](https://hofladenliste.de/bayern/traunstein/chieming/) `/bayern/traunstein/chieming/` | Landkreis Traunstein | 1 | 3 | 6 |
 |  | [Fridolfing](https://hofladenliste.de/bayern/traunstein/fridolfing/) `/bayern/traunstein/fridolfing/` | Landkreis Traunstein | 1 | 3 | 6 |
 |  | [Taching am See](https://hofladenliste.de/bayern/traunstein/taching-am-see/) `/bayern/traunstein/taching-am-see/` | Landkreis Traunstein | 1 | 3 | 6 |
-|  | [Tittmoning](https://hofladenliste.de/bayern/traunstein/tittmoning/) `/bayern/traunstein/tittmoning/` | Landkreis Traunstein | 1 | 3 | 6 |
-|  | [Trostberg](https://hofladenliste.de/bayern/traunstein/trostberg/) `/bayern/traunstein/trostberg/` | Landkreis Traunstein | 1 | 3 | 6 |
-|  | [Übersee](https://hofladenliste.de/bayern/traunstein/uebersee/) `/bayern/traunstein/uebersee/` | Landkreis Traunstein | 1 | 3 | 6 |
-|  | [Kirchheim in Schwaben](https://hofladenliste.de/bayern/unterallgaeu/kirchheim-in-schwaben/) `/bayern/unterallgaeu/kirchheim-in-schwaben/` | Landkreis Unterallgäu | 1 | 3 | 6 |
-|  | [Markt Rettenbach](https://hofladenliste.de/bayern/unterallgaeu/markt-rettenbach/) `/bayern/unterallgaeu/markt-rettenbach/` | Landkreis Unterallgäu | 1 | 3 | 6 |
-|  | [Mindelheim](https://hofladenliste.de/bayern/unterallgaeu/mindelheim/) `/bayern/unterallgaeu/mindelheim/` | Landkreis Unterallgäu | 1 | 3 | 6 |
-|  | [Habach](https://hofladenliste.de/bayern/weilheim-schongau/habach/) `/bayern/weilheim-schongau/habach/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
-|  | [Hohenpeißenberg](https://hofladenliste.de/bayern/weilheim-schongau/hohenpeissenberg/) `/bayern/weilheim-schongau/hohenpeissenberg/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
-|  | [Pähl](https://hofladenliste.de/bayern/weilheim-schongau/paehl/) `/bayern/weilheim-schongau/paehl/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
+| ✓ | [Tittmoning](https://hofladenliste.de/bayern/traunstein/tittmoning/) `/bayern/traunstein/tittmoning/` | Landkreis Traunstein | 1 | 3 | 6 |
+| ✓ | [Trostberg](https://hofladenliste.de/bayern/traunstein/trostberg/) `/bayern/traunstein/trostberg/` | Landkreis Traunstein | 1 | 3 | 6 |
+| ✓ | [Übersee](https://hofladenliste.de/bayern/traunstein/uebersee/) `/bayern/traunstein/uebersee/` | Landkreis Traunstein | 1 | 3 | 6 |
+| ✓ | [Kirchheim in Schwaben](https://hofladenliste.de/bayern/unterallgaeu/kirchheim-in-schwaben/) `/bayern/unterallgaeu/kirchheim-in-schwaben/` | Landkreis Unterallgäu | 1 | 3 | 6 |
+| ✓ | [Markt Rettenbach](https://hofladenliste.de/bayern/unterallgaeu/markt-rettenbach/) `/bayern/unterallgaeu/markt-rettenbach/` | Landkreis Unterallgäu | 1 | 3 | 6 |
+| ✓ | [Mindelheim](https://hofladenliste.de/bayern/unterallgaeu/mindelheim/) `/bayern/unterallgaeu/mindelheim/` | Landkreis Unterallgäu | 1 | 3 | 6 |
+| ✓ | [Habach](https://hofladenliste.de/bayern/weilheim-schongau/habach/) `/bayern/weilheim-schongau/habach/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
+| ✓ | [Hohenpeißenberg](https://hofladenliste.de/bayern/weilheim-schongau/hohenpeissenberg/) `/bayern/weilheim-schongau/hohenpeissenberg/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
+| ✓ | [Pähl](https://hofladenliste.de/bayern/weilheim-schongau/paehl/) `/bayern/weilheim-schongau/paehl/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
 |  | [Pappenheim](https://hofladenliste.de/bayern/weissenburg-gunzenhausen/pappenheim/) `/bayern/weissenburg-gunzenhausen/pappenheim/` | Landkreis Weißenburg-Gunzenhausen | 1 | 3 | 6 |
-|  | [Strausberg](https://hofladenliste.de/brandenburg/maerkisch-oderland/strausberg/) `/brandenburg/maerkisch-oderland/strausberg/` | Landkreis Märkisch-Oderland | 1 | 3 | 6 |
+| ✓ | [Strausberg](https://hofladenliste.de/brandenburg/maerkisch-oderland/strausberg/) `/brandenburg/maerkisch-oderland/strausberg/` | Landkreis Märkisch-Oderland | 1 | 3 | 6 |
 
 ## Paket 57 (25/25 fertig)
 
