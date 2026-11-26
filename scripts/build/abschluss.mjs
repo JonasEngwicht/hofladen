@@ -8,6 +8,7 @@ import { zeilen } from '../../static/oh.js';
 import { KATEGORIEN } from '../../static/karte.js';
 import { BUILD_DATUM, GEN, OUT, ROOT, VOLLSTAENDIGKEIT, betreiber, cfg, eintraege, ergaenztAnzahl, ersetzt, geschlossenAnzahl, impressumAnzahl, kreise, laender, manuell, mitKindern, offenErgaenzt, offenErgaenztSumme, offenErsetzt, offenNeu, offenNeuSumme, pflegeAnzahl, plz, proKreis, rechercheAnzahl } from './daten.mjs';
 import { HASH_VERSION } from '../seitenhash.mjs';
+import { DATEI_LIMIT, DATEI_WARNUNG, dateienZaehlen } from '../dateien.mjs';
 import { ADSENSE_KONTO, KATEGORIE_PFADE, SEITENTEXTE, SEITENTEXT_GENUTZT, seite } from './html.mjs';
 import { pruefeSeitentexte } from '../seitentexte.mjs';
 import { SEITENTEXT_KANDIDATEN } from './regionen.mjs';
@@ -209,6 +210,11 @@ if (process.env.SEITENTEXTE_OFFEN) {
 }
 console.log(`Seitentexte: ${SEITENTEXT_GENUTZT.size} angezeigt,${SEITENTEXT_KANDIDATEN.length} lokale Seiten noch ohne gepflegten Text`);
 console.log(`Build fertig: ${eintraege.length} Einträge (${ergaenztAnzahl} mit Website-Ergänzungen, ${rechercheAnzahl} mit Recherche-Funden, ${impressumAnzahl} mit Kontakt aus dem Impressum, ${pflegeAnzahl} gepflegt, ${offenNeuSumme} neu aus offenen Quellen ${JSON.stringify(offenNeu)}, ${offenErgaenztSumme} Ergänzungen ${JSON.stringify(offenErgaenzt)}, ${geschlossenAnzahl} als geschlossen entfernt, ${anzHof} Hofläden, ${eintraege.length - anzHof} Automaten, ${mitKat} mit Angebot), ${kreise.size} Kreise (${leereKreise} ohne Einträge), ${sitemap.length} Seiten in der Sitemap.`);
+{
+  const { gesamt, proTyp } = dateienZaehlen(OUT);
+  console.log(`Dateien in public/: ${gesamt.toLocaleString('de-DE')} von ${DATEI_LIMIT.toLocaleString('de-DE')} (Cloudflare Workers Free), am meisten: ${proTyp.slice(0, 4).map(([t, n]) => `${t} ${n}`).join(', ')}`);
+  if (gesamt > DATEI_WARNUNG) console.warn(`WARNUNG: ${gesamt} Dateien – nahe am Limit von ${DATEI_LIMIT} statischen Dateien je Worker-Version (Workers Free).`);
+}
 if (impFehlt) console.warn('WARNUNG: Impressum in site.config.json ist unvollständig.');
 
 export { KAT_CODES, KAT_WOERTER, alteSlugs, entfernt, ersetztDurch, gruppen, indexEintraege, leereKreise, mitKat, plzIndex, sitemapTyp, slugNachId, sortiert, umleitungen };
