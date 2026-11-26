@@ -7,6 +7,7 @@ import { stabileIdAus } from '../pflege.mjs';
 import { zeilen } from '../../static/oh.js';
 import { KATEGORIEN } from '../../static/karte.js';
 import { BUILD_DATUM, GEN, OUT, ROOT, VOLLSTAENDIGKEIT, betreiber, cfg, eintraege, ergaenztAnzahl, ersetzt, geschlossenAnzahl, impressumAnzahl, kreise, laender, manuell, mitKindern, offenErgaenzt, offenErgaenztSumme, offenErsetzt, offenNeu, offenNeuSumme, pflegeAnzahl, plz, proKreis, rechercheAnzahl } from './daten.mjs';
+import { HASH_VERSION } from '../seitenhash.mjs';
 import { ADSENSE_KONTO, KATEGORIE_PFADE, SEITENTEXTE, SEITENTEXT_GENUTZT, seite } from './html.mjs';
 import { pruefeSeitentexte } from '../seitentexte.mjs';
 import { SEITENTEXT_KANDIDATEN } from './regionen.mjs';
@@ -39,7 +40,7 @@ for (const [alt, neu] of Object.entries(stand.ersetzt)) {
 }
 for (const [alt, neu] of ersetztDurch) stand.ersetzt[alt] = neu;
 // Nur in CI schreiben (die Workflows committen die Datei); lokale Builds lassen das Repo sauber
-if (process.env.CI || process.env.SEITEN_STAND_SCHREIBEN) writeFileSync(STAND_DATEI, JSON.stringify({ seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe), ersetzt: sortiert(stand.ersetzt) }));
+if (process.env.CI || process.env.SEITEN_STAND_SCHREIBEN) writeFileSync(STAND_DATEI, JSON.stringify({ version: HASH_VERSION, seiten: sortiert(stand.seiten), hoefe: sortiert(stand.hoefe), ersetzt: sortiert(stand.ersetzt) }));
 const umleitungen = {}, entfernt = [];
 const KORR_SLUGS = new Set(ORT_KORREKTUREN.map((k) => slugify(k.alt)));
 for (const pfad of Object.keys(stand.seiten)) {
