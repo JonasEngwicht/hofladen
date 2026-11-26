@@ -40058,5 +40058,755 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/nordfriesland/humptrup/": {
+    "titel": "Hofläden in Humptrup: gut zu wissen",
+    "oben": "Humptrup liegt in Nordfriesland nahe der dänischen Grenze. Eingetragen sind die Imkerei Rasmussen, zwei Eierautomaten und ein Regiomat mit Eiern und Honig.",
+    "einleitung": "Eier gibt es hier gleich an drei Automaten, Honig bei der Imkerei Rasmussen. Alle Automaten sind jederzeit zugänglich.\n\nWeitere Höfe findest du in Handewitt und Harrislee.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Handewitt und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/handewitt/"
+      },
+      {
+        "text": "Hofläden in Harrislee und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/harrislee/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ostholstein/bad-schwartau/": {
+    "titel": "Hofläden in Bad Schwartau: gut zu wissen",
+    "oben": "Bad Schwartau liegt direkt nördlich von Lübeck in Ostholstein. Eingetragen sind Karls Erdbeer-Hof, ein Eierautomat, ein Kartoffelautomat und das Erdbeerangebot Karlsruhe Erdbeeren.",
+    "einleitung": "Erdbeeren sind hier die große Spezialität, die Saison ist im Frühsommer. Eier und Kartoffeln gibt es am Automaten.\n\nWeitere Höfe findest du in Stockelsdorf und Timmendorfer Strand.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stockelsdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/stockelsdorf/"
+      },
+      {
+        "text": "Hofläden in Timmendorfer Strand und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/timmendorfer-strand/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ostholstein/stockelsdorf/": {
+    "titel": "Hofläden in Stockelsdorf: gut zu wissen",
+    "oben": "Stockelsdorf liegt nördlich von Lübeck in Ostholstein. Eingetragen sind der Bauernladen Dölger, ein Hofladen, die Meierei der Vorwerker Diakonie und der Eckhorster Hofladen.",
+    "einleitung": "In der Meierei der Vorwerker Diakonie gibt es Produkte aus eigener Herstellung. Lübeck ist in wenigen Minuten erreichbar.\n\nWeitere Höfe findest du in Bad Schwartau und Groß Grönau.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Schwartau und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/bad-schwartau/"
+      },
+      {
+        "text": "Hofläden in Groß Grönau und Umgebung",
+        "pfad": "/schleswig-holstein/herzogtum-lauenburg/gross-groenau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ostholstein/timmendorfer-strand/": {
+    "titel": "Hofläden in Timmendorfer Strand: gut zu wissen",
+    "oben": "Timmendorfer Strand liegt an der Lübecker Bucht in Ostholstein. Eingetragen sind der Obsthof Knoop, der Erdbeerhof Warnsdorf, der Hof Kaiser und Lödings Land-Bote.",
+    "einleitung": "Obst und Erdbeeren sind hier die Spezialität, die Erdbeersaison ist im Frühsommer. Die Ostsee ist nicht weit.\n\nWeitere Höfe findest du in Scharbeutz und Ahrensbök.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni und Juli"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Scharbeutz und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/scharbeutz/"
+      },
+      {
+        "text": "Hofläden in Ahrensbök und Umgebung",
+        "pfad": "/schleswig-holstein/ostholstein/ahrensboek/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/pinneberg/rellingen/": {
+    "titel": "Hofläden in Rellingen: gut zu wissen",
+    "oben": "Rellingen liegt im Kreis Pinneberg am nordwestlichen Rand von Hamburg. Eingetragen sind Annas Hof Hofladen, der Rellinger Hofladen als Lebensmittelautomat mit breitem Sortiment, ein Regiomat mit Eiern und Milch und der Rellinger Hofladen mit Bio-Angebot.",
+    "einleitung": "Am Lebensmittelautomaten gibt es von Eiern bis Gemüse viel. Die Milch aus den Automaten ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Schenefeld und Appen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schenefeld und Umgebung",
+        "pfad": "/schleswig-holstein/pinneberg/schenefeld/"
+      },
+      {
+        "text": "Hofläden in Appen und Umgebung",
+        "pfad": "/schleswig-holstein/pinneberg/appen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ploen/probsteierhagen/": {
+    "titel": "Hofläden in Probsteierhagen: gut zu wissen",
+    "oben": "Probsteierhagen liegt in der Probstei an der Ostsee im Kreis Plön. Eingetragen sind der Hof Steffen, die Schrevendorfer Milchkanne mit Milch, Fleisch und Gemüse, ein Regiomat mit Fleisch und Pfeifer Wurstwaren.",
+    "einleitung": "Fleisch und Wurst gibt es an zwei Automaten, Milch und Gemüse in der Milchkanne. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Raisdorf und Altenholz.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Raisdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ploen/raisdorf/"
+      },
+      {
+        "text": "Hofläden in Altenholz und Umgebung",
+        "pfad": "/schleswig-holstein/rendsburg-eckernfoerde/altenholz/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/rendsburg-eckernfoerde/aukrug/": {
+    "titel": "Hofläden in Aukrug: gut zu wissen",
+    "oben": "Aukrug liegt im Naturpark Aukrug im Kreis Rendsburg-Eckernförde. Eingetragen sind die Imkerei Dieter Wörpel, Muh2go, ein Hofladen und die Gärtnerei Erlenhof mit Gemüse.",
+    "einleitung": "Honig gibt es bei der Imkerei Wörpel, Gemüse vom Erlenhof. Neumünster ist nicht weit.\n\nWeitere Höfe findest du in Rickling und Henstedt-Ulzburg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rickling und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/rickling/"
+      },
+      {
+        "text": "Hofläden in Henstedt-Ulzburg und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/henstedt-ulzburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/schleswig-flensburg/pommerby/": {
+    "titel": "Hofläden in Pommerby: gut zu wissen",
+    "oben": "Pommerby liegt in Angeln an der Flensburger Förde im Kreis Schleswig-Flensburg. Eingetragen sind der Hofladen Hüsfeld, ein Honigautomat, das Hofcafé Börsby und der Hofladen Börsby.",
+    "einleitung": "Honig gibt es am Automaten, zum Kaffee geht es ins Hofcafé. Die Ostsee liegt nur wenige Kilometer entfernt.\n\nWeitere Höfe findest du in Kappeln und Sörup.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kappeln und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/kappeln/"
+      },
+      {
+        "text": "Hofläden in Sörup und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/soerup/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/segeberg/henstedt-ulzburg/": {
+    "titel": "Hofläden in Henstedt-Ulzburg: gut zu wissen",
+    "oben": "Henstedt-Ulzburg liegt im Kreis Segeberg nördlich von Hamburg. Eingetragen sind Ulzburger Ei als Automat, der Hofverkauf Pump, die Götzberger Eierei und der Hofladen Reiherstieg.",
+    "einleitung": "Eier sind hier die Spezialität, drei Einträge drehen sich darum. Hamburg ist gut erreichbar.\n\nWeitere Höfe findest du in Alveslohe und Norderstedt.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Alveslohe und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/alveslohe/"
+      },
+      {
+        "text": "Hofläden in Norderstedt und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/norderstedt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/steinburg/neuendorf-bei-elmshorn/": {
+    "titel": "Hofläden in Neuendorf bei Elmshorn: gut zu wissen",
+    "oben": "Neuendorf bei Elmshorn liegt in der Wilstermarsch im Kreis Steinburg. Eingetragen sind die Schäferei Kröger mit Eiern und Gemüse, der Hofladen Stajohann mit Eiern und Fleisch, der Obsthof und die Mosterei Hell und ein weiterer Hofladen.",
+    "einleitung": "Obst und Saft gibt es beim Obsthof Hell mit Mosterei. Eier gibt es gleich bei zwei Höfen.\n\nWeitere Höfe findest du in Elmshorn und der Blomeschen Wildnis.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Elmshorn und Umgebung",
+        "pfad": "/schleswig-holstein/pinneberg/elmshorn/"
+      },
+      {
+        "text": "Hofläden in Blomesche Wildnis und Umgebung",
+        "pfad": "/schleswig-holstein/steinburg/blomesche-wildnis/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/stormarn/bargteheide/": {
+    "titel": "Hofläden in Bargteheide: gut zu wissen",
+    "oben": "Bargteheide liegt im Kreis Stormarn nordöstlich von Hamburg. Eingetragen sind die Bio-Milchtankstelle Ruge mit Eiern, Milch, Gemüse, Kartoffeln und Nudeln, Toms Longhorn Ranch und zwei Eierautomaten.",
+    "einleitung": "Die Milchtankstelle Ruge hat ein breites Sortiment. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Bad Oldesloe und Norderstedt.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bad Oldesloe und Umgebung",
+        "pfad": "/schleswig-holstein/stormarn/bad-oldesloe/"
+      },
+      {
+        "text": "Hofläden in Norderstedt und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/norderstedt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/nordrhein-westfalen/wesel/voerde-niederrhein/": {
+    "titel": "Hofläden in Voerde (Niederrhein): gut zu wissen",
+    "oben": "Voerde liegt am Niederrhein im Kreis Wesel. Eingetragen sind sechs Betriebe, darunter der Hof Scheperjan mit Weihnachtsbäumen, der Baumeistershof, der Wollverkauf Sprock mit Bio-Fleisch, der Hof Fengels und der Tinthof mit Bio-Angebot.",
+    "einleitung": "Der Hof Scheperjan verkauft im Winter Weihnachtsbäume, daneben Eier, Gemüse, Obst und Kartoffeln. Der Niederrhein ist flach und landwirtschaftlich geprägt.\n\nWeitere Höfe findest du in Wesel und Dinslaken.",
+    "saison": [
+      {
+        "titel": "Weihnachtsbäume",
+        "zeit": "Dezember"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Wesel und Umgebung",
+        "pfad": "/nordrhein-westfalen/wesel/wesel/"
+      },
+      {
+        "text": "Hofläden in Dinslaken und Umgebung",
+        "pfad": "/nordrhein-westfalen/wesel/dinslaken/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/allmendingen/": {
+    "titel": "Hofläden in Allmendingen: gut zu wissen",
+    "oben": "Allmendingen liegt im Alb-Donau-Kreis bei Ehingen an der Donau. Eingetragen sind ein Regiomat mit Eiern und Fleisch, Malls Hofladen mit Obst und Wolfes Hofladen mit Bio-Angebot.",
+    "einleitung": "Obst gibt es bei Malls Hofladen, Eier und Fleisch am Regiomaten. Ulm ist nicht weit.\n\nWeitere Höfe findest du in Ehingen an der Donau und Blaubeuren.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Ehingen an der Donau und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/ehingen-an-der-donau/"
+      },
+      {
+        "text": "Hofläden in Blaubeuren und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/blaubeuren/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/blaubeuren/": {
+    "titel": "Hofläden in Blaubeuren: gut zu wissen",
+    "oben": "Blaubeuren liegt auf der Schwäbischen Alb im Alb-Donau-Kreis, bekannt ist der Blautopf. Eingetragen sind Casa Betty mit Bio-Angebot, die Schimmelmühle Blaubeuren und der Biohof Schneider mit Bio-Angebot.",
+    "einleitung": "Zwei der drei Betriebe arbeiten nach Bio-Richtlinien. Ulm ist gut erreichbar.\n\nWeitere Höfe findest du in Heroldstatt und Allmendingen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Heroldstatt und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/heroldstatt/"
+      },
+      {
+        "text": "Hofläden in Allmendingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/allmendingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/dietenheim/": {
+    "titel": "Hofläden in Dietenheim: gut zu wissen",
+    "oben": "Dietenheim liegt im Alb-Donau-Kreis an der Iller bei Ulm. Eingetragen sind zwei Eierautomaten mit Eiern und Nudeln und das Biogeflügel Unterweger mit Eiern, Fleisch und Geflügel.",
+    "einleitung": "Eier und Nudeln gibt es an zwei Automaten, Bio-Geflügel direkt vom Hof. Die Automaten sind jederzeit zugänglich.\n\nWeitere Höfe findest du in Illertissen und Illerkirchberg.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Illertissen und Umgebung",
+        "pfad": "/bayern/neu-ulm/illertissen/"
+      },
+      {
+        "text": "Hofläden in Illerkirchberg und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/illerkirchberg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/ehingen-an-der-donau/": {
+    "titel": "Hofläden in Ehingen an der Donau: gut zu wissen",
+    "oben": "Ehingen an der Donau liegt im Alb-Donau-Kreis an der Donau. Eingetragen sind ein Lehrbienenstand, eine Milchtankstelle und Braigs Freilandeier.",
+    "einleitung": "Freilandeier gibt es bei Braig, Honig vom Lehrbienenstand. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Allmendingen und Griesingen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Allmendingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/allmendingen/"
+      },
+      {
+        "text": "Hofläden in Griesingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/griesingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/heroldstatt/": {
+    "titel": "Hofläden in Heroldstatt: gut zu wissen",
+    "oben": "Heroldstatt liegt auf der Schwäbischen Alb im Alb-Donau-Kreis. Eingetragen sind zwei Regiomaten, einer mit Gemüse, und Fülles Milchhäuschen mit Milch, Käse und Honig.",
+    "einleitung": "Milch, Käse und Honig gibt es im Milchhäuschen. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Laichingen und Blaubeuren.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Laichingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/laichingen/"
+      },
+      {
+        "text": "Hofläden in Blaubeuren und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/blaubeuren/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/alb-donau-kreis/illerkirchberg/": {
+    "titel": "Hofläden in Illerkirchberg: gut zu wissen",
+    "oben": "Illerkirchberg liegt im Alb-Donau-Kreis an der Iller nahe Ulm. Eingetragen sind ein Regiomat mit Eiern, die Hampp-Mühle und eine Milchtankstelle.",
+    "einleitung": "Eier gibt es am Regiomaten, Milch an der Tankstelle. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Senden und Erbach.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Senden (Landkreis Neu-Ulm) und Umgebung",
+        "pfad": "/bayern/neu-ulm/senden/"
+      },
+      {
+        "text": "Hofläden in Erbach und Umgebung",
+        "pfad": "/baden-wuerttemberg/alb-donau-kreis/erbach/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/biberach/duermentingen/": {
+    "titel": "Hofläden in Dürmentingen: gut zu wissen",
+    "oben": "Dürmentingen liegt im Landkreis Biberach in Oberschwaben. Eingetragen sind ein Regiomat, eine Milchtankstelle und Igels Leinöl mit Bio-Angebot.",
+    "einleitung": "Leinöl ist die Besonderheit, Igels Leinöl arbeitet nach Bio-Richtlinien. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Riedlingen und Uttenweiler.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Riedlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/biberach/riedlingen/"
+      },
+      {
+        "text": "Hofläden in Uttenweiler und Umgebung",
+        "pfad": "/baden-wuerttemberg/biberach/uttenweiler/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/biberach/uttenweiler/": {
+    "titel": "Hofläden in Uttenweiler: gut zu wissen",
+    "oben": "Uttenweiler liegt im Landkreis Biberach in Oberschwaben. Eingetragen sind zwei Regiomaten und der Geflügelhof Rettich mit Eiern, Fleisch und Geflügel.",
+    "einleitung": "Geflügel und Eier gibt es beim Geflügelhof Rettich. Die Regiomaten sind jederzeit zugänglich.\n\nWeitere Höfe findest du in Dürmentingen und Riedlingen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Geflügel",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Dürmentingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/biberach/duermentingen/"
+      },
+      {
+        "text": "Hofläden in Riedlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/biberach/riedlingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/holzgerlingen/": {
+    "titel": "Hofläden in Holzgerlingen: gut zu wissen",
+    "oben": "Holzgerlingen liegt am Rand des Schönbuchs im Landkreis Böblingen. Eingetragen sind ein Regiomat mit Milch, das SB-Märktle und das Milchhäusle.",
+    "einleitung": "Milch gibt es an Regiomat und Milchhäusle, sie ist Rohmilch: vor dem Trinken abkochen. Stuttgart ist gut erreichbar.\n\nWeitere Höfe findest du in Altdorf und Schönaich.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Altdorf (Landkreis Böblingen) und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/altdorf/"
+      },
+      {
+        "text": "Hofläden in Schönaich und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/schoenaich/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/schoenaich/": {
+    "titel": "Hofläden in Schönaich: gut zu wissen",
+    "oben": "Schönaich liegt am Rand des Schönbuchs im Landkreis Böblingen. Eingetragen sind ein Regiomat mit Eiern und Milch, Schönhaar und der Hofladen Holzapfel mit Bio-Obst.",
+    "einleitung": "Bio-Obst gibt es im Hofladen Holzapfel, Eier und Milch am Regiomaten. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Weil im Schönbuch und Holzgerlingen.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Weil im Schönbuch und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/weil-im-schoenbuch/"
+      },
+      {
+        "text": "Hofläden in Holzgerlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/holzgerlingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/boeblingen/weil-im-schoenbuch/": {
+    "titel": "Hofläden in Weil im Schönbuch: gut zu wissen",
+    "oben": "Weil im Schönbuch liegt im Naturpark Schönbuch im Landkreis Böblingen. Eingetragen sind Die Käsmacher mit Hofladen Binder, eine Milchtankstelle und ein Regiomat mit Gemüse, Kartoffeln und Honig.",
+    "einleitung": "Käse gibt es bei den Käsmachern, Gemüse und Honig am Regiomaten. Die Milch aus der Tankstelle ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Schönaich und Holzgerlingen.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Schönaich und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/schoenaich/"
+      },
+      {
+        "text": "Hofläden in Holzgerlingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/boeblingen/holzgerlingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/": {
+    "titel": "Hofläden in Breisach am Rhein: gut zu wissen",
+    "oben": "Breisach am Rhein liegt am Kaiserstuhl am Rhein an der Grenze zu Frankreich. Eingetragen sind der Griesmattenhof SB-Hofladen, der Obsthof Neumühle SB-Hofladen und die Imkerei Kaiserblüte.",
+    "einleitung": "Das Klima am Kaiserstuhl ist mild, Obst und Gemüse gedeihen gut. Der Griesmattenhof hat auch Blumen und Honig.\n\nWeitere Höfe findest du in Vogtsburg im Kaiserstuhl und Merdingen.",
+    "saison": [
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Vogtsburg im Kaiserstuhl und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/vogtsburg-im-kaiserstuhl/"
+      },
+      {
+        "text": "Hofläden in Merdingen und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/merdingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/": {
+    "titel": "Hofläden in Breitnau: gut zu wissen",
+    "oben": "Breitnau liegt im Hochschwarzwald im Landkreis Breisgau-Hochschwarzwald. Eingetragen sind eine Milchtankstelle, ein Regiomat und Hohwardis Verschnauf Schränkle.",
+    "einleitung": "Zu Breitnau: Alle drei Einträge sind Automaten, du kannst also jederzeit einkaufen. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Titisee-Neustadt und St. Peter.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Titisee-Neustadt und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/titisee-neustadt/"
+      },
+      {
+        "text": "Hofläden in Sankt Peter und Umgebung",
+        "pfad": "/baden-wuerttemberg/breisgau-hochschwarzwald/sankt-peter/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
