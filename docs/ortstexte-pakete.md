@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1420 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 1444 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -1443,35 +1443,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Isny im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/isny-im-allgaeu/) `/baden-wuerttemberg/ravensburg/isny-im-allgaeu/` | Landkreis Ravensburg | 1 | 3 | 6 |
 |  | [Leutkirch im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/leutkirch-im-allgaeu/) `/baden-wuerttemberg/ravensburg/leutkirch-im-allgaeu/` | Landkreis Ravensburg | 1 | 3 | 6 |
 
-## Paket 49 (0/25 fertig)
+## Paket 49 (24/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Schlier](https://hofladenliste.de/baden-wuerttemberg/ravensburg/schlier/) `/baden-wuerttemberg/ravensburg/schlier/` | Landkreis Ravensburg | 1 | 3 | 6 |
-|  | [Vogt](https://hofladenliste.de/baden-wuerttemberg/ravensburg/vogt/) `/baden-wuerttemberg/ravensburg/vogt/` | Landkreis Ravensburg | 1 | 3 | 6 |
-|  | [Weingarten (Landkreis Ravensburg)](https://hofladenliste.de/baden-wuerttemberg/ravensburg/weingarten/) `/baden-wuerttemberg/ravensburg/weingarten/` | Landkreis Ravensburg | 1 | 3 | 6 |
-|  | [Auenwald](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/auenwald/) `/baden-wuerttemberg/rems-murr-kreis/auenwald/` | Rems-Murr-Kreis | 1 | 3 | 6 |
-|  | [Burgstetten](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/burgstetten/) `/baden-wuerttemberg/rems-murr-kreis/burgstetten/` | Rems-Murr-Kreis | 1 | 3 | 6 |
-|  | [Plüderhausen](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/pluederhausen/) `/baden-wuerttemberg/rems-murr-kreis/pluederhausen/` | Rems-Murr-Kreis | 1 | 3 | 6 |
-|  | [Metzingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/metzingen/) `/baden-wuerttemberg/reutlingen/metzingen/` | Landkreis Reutlingen | 1 | 3 | 6 |
-|  | [Walddorfhäslach](https://hofladenliste.de/baden-wuerttemberg/reutlingen/walddorfhaeslach/) `/baden-wuerttemberg/reutlingen/walddorfhaeslach/` | Landkreis Reutlingen | 1 | 3 | 6 |
-|  | [Altlußheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/altlussheim/) `/baden-wuerttemberg/rhein-neckar-kreis/altlussheim/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
-|  | [Dossenheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/dossenheim/) `/baden-wuerttemberg/rhein-neckar-kreis/dossenheim/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
+| ✓ | [Schlier](https://hofladenliste.de/baden-wuerttemberg/ravensburg/schlier/) `/baden-wuerttemberg/ravensburg/schlier/` | Landkreis Ravensburg | 1 | 3 | 6 |
+| ✓ | [Vogt](https://hofladenliste.de/baden-wuerttemberg/ravensburg/vogt/) `/baden-wuerttemberg/ravensburg/vogt/` | Landkreis Ravensburg | 1 | 3 | 6 |
+| ✓ | [Weingarten (Landkreis Ravensburg)](https://hofladenliste.de/baden-wuerttemberg/ravensburg/weingarten/) `/baden-wuerttemberg/ravensburg/weingarten/` | Landkreis Ravensburg | 1 | 3 | 6 |
+| ✓ | [Auenwald](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/auenwald/) `/baden-wuerttemberg/rems-murr-kreis/auenwald/` | Rems-Murr-Kreis | 1 | 3 | 6 |
+| ✓ | [Burgstetten](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/burgstetten/) `/baden-wuerttemberg/rems-murr-kreis/burgstetten/` | Rems-Murr-Kreis | 1 | 3 | 6 |
+| ✓ | [Plüderhausen](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/pluederhausen/) `/baden-wuerttemberg/rems-murr-kreis/pluederhausen/` | Rems-Murr-Kreis | 1 | 3 | 6 |
+| ✓ | [Metzingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/metzingen/) `/baden-wuerttemberg/reutlingen/metzingen/` | Landkreis Reutlingen | 1 | 3 | 6 |
+| ✓ | [Walddorfhäslach](https://hofladenliste.de/baden-wuerttemberg/reutlingen/walddorfhaeslach/) `/baden-wuerttemberg/reutlingen/walddorfhaeslach/` | Landkreis Reutlingen | 1 | 3 | 6 |
+| ✓ | [Altlußheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/altlussheim/) `/baden-wuerttemberg/rhein-neckar-kreis/altlussheim/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
+| ✓ | [Dossenheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/dossenheim/) `/baden-wuerttemberg/rhein-neckar-kreis/dossenheim/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
 |  | [Leimen](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/leimen/) `/baden-wuerttemberg/rhein-neckar-kreis/leimen/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
-|  | [Rauenberg](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/rauenberg/) `/baden-wuerttemberg/rhein-neckar-kreis/rauenberg/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
-|  | [Reilingen](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/reilingen/) `/baden-wuerttemberg/rhein-neckar-kreis/reilingen/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
-|  | [Dunningen](https://hofladenliste.de/baden-wuerttemberg/rottweil/dunningen/) `/baden-wuerttemberg/rottweil/dunningen/` | Landkreis Rottweil | 1 | 3 | 6 |
-|  | [Schramberg](https://hofladenliste.de/baden-wuerttemberg/rottweil/schramberg/) `/baden-wuerttemberg/rottweil/schramberg/` | Landkreis Rottweil | 1 | 3 | 6 |
-|  | [Blaufelden](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/blaufelden/) `/baden-wuerttemberg/schwaebisch-hall/blaufelden/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
-|  | [Ilshofen](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/ilshofen/) `/baden-wuerttemberg/schwaebisch-hall/ilshofen/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
-|  | [Langenburg](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/langenburg/) `/baden-wuerttemberg/schwaebisch-hall/langenburg/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
-|  | [Wallhausen](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/wallhausen/) `/baden-wuerttemberg/schwaebisch-hall/wallhausen/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
-|  | [Dauchingen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/dauchingen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/dauchingen/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
-|  | [Mönchweiler](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/moenchweiler/) `/baden-wuerttemberg/schwarzwald-baar-kreis/moenchweiler/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
-|  | [Niedereschach](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/niedereschach/) `/baden-wuerttemberg/schwarzwald-baar-kreis/niedereschach/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
-|  | [Schonach im Schwarzwald](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/schonach-im-schwarzwald/) `/baden-wuerttemberg/schwarzwald-baar-kreis/schonach-im-schwarzwald/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
-|  | [Sigmaringen](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/sigmaringen/) `/baden-wuerttemberg/sigmaringen/sigmaringen/` | Landkreis Sigmaringen | 1 | 3 | 6 |
-|  | [Stuttgart Büsnau](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-buesnau/) `/baden-wuerttemberg/stuttgart/stuttgart-buesnau/` | Stuttgart | 1 | 3 | 6 |
+| ✓ | [Rauenberg](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/rauenberg/) `/baden-wuerttemberg/rhein-neckar-kreis/rauenberg/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
+| ✓ | [Reilingen](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/reilingen/) `/baden-wuerttemberg/rhein-neckar-kreis/reilingen/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
+| ✓ | [Dunningen](https://hofladenliste.de/baden-wuerttemberg/rottweil/dunningen/) `/baden-wuerttemberg/rottweil/dunningen/` | Landkreis Rottweil | 1 | 3 | 6 |
+| ✓ | [Schramberg](https://hofladenliste.de/baden-wuerttemberg/rottweil/schramberg/) `/baden-wuerttemberg/rottweil/schramberg/` | Landkreis Rottweil | 1 | 3 | 6 |
+| ✓ | [Blaufelden](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/blaufelden/) `/baden-wuerttemberg/schwaebisch-hall/blaufelden/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
+| ✓ | [Ilshofen](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/ilshofen/) `/baden-wuerttemberg/schwaebisch-hall/ilshofen/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
+| ✓ | [Langenburg](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/langenburg/) `/baden-wuerttemberg/schwaebisch-hall/langenburg/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
+| ✓ | [Wallhausen](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/wallhausen/) `/baden-wuerttemberg/schwaebisch-hall/wallhausen/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
+| ✓ | [Dauchingen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/dauchingen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/dauchingen/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
+| ✓ | [Mönchweiler](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/moenchweiler/) `/baden-wuerttemberg/schwarzwald-baar-kreis/moenchweiler/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
+| ✓ | [Niedereschach](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/niedereschach/) `/baden-wuerttemberg/schwarzwald-baar-kreis/niedereschach/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
+| ✓ | [Schonach im Schwarzwald](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/schonach-im-schwarzwald/) `/baden-wuerttemberg/schwarzwald-baar-kreis/schonach-im-schwarzwald/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
+| ✓ | [Sigmaringen](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/sigmaringen/) `/baden-wuerttemberg/sigmaringen/sigmaringen/` | Landkreis Sigmaringen | 1 | 3 | 6 |
+| ✓ | [Stuttgart Büsnau](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-buesnau/) `/baden-wuerttemberg/stuttgart/stuttgart-buesnau/` | Stuttgart | 1 | 3 | 6 |
 
 ## Paket 50 (0/25 fertig)
 
