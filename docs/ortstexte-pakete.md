@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 768 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 793 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -903,35 +903,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Liebschützberg](https://hofladenliste.de/sachsen/nordsachsen/liebschuetzberg/) `/sachsen/nordsachsen/liebschuetzberg/` | Landkreis Nordsachsen | 1 | 5 | 8 |
 | ✓ | [Schnakenbek](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/schnakenbek/) `/schleswig-holstein/herzogtum-lauenburg/schnakenbek/` | Kreis Herzogtum Lauenburg | 1 | 5 | 8 |
 
-## Paket 31 (0/25 fertig)
+## Paket 31 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Wyk auf Föhr](https://hofladenliste.de/schleswig-holstein/nordfriesland/wyk-auf-foehr/) `/schleswig-holstein/nordfriesland/wyk-auf-foehr/` | Kreis Nordfriesland | 1 | 5 | 8 |
-|  | [Blekendorf](https://hofladenliste.de/schleswig-holstein/ploen/blekendorf/) `/schleswig-holstein/ploen/blekendorf/` | Kreis Plön | 1 | 5 | 8 |
-|  | [Raisdorf](https://hofladenliste.de/schleswig-holstein/ploen/raisdorf/) `/schleswig-holstein/ploen/raisdorf/` | Kreis Plön | 1 | 5 | 8 |
-|  | [Neudorf-Bornstein](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/neudorf-bornstein/) `/schleswig-holstein/rendsburg-eckernfoerde/neudorf-bornstein/` | Kreis Rendsburg-Eckernförde | 1 | 5 | 8 |
-|  | [Kappeln](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/kappeln/) `/schleswig-holstein/schleswig-flensburg/kappeln/` | Kreis Schleswig-Flensburg | 1 | 5 | 8 |
-|  | [Sörup](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/soerup/) `/schleswig-holstein/schleswig-flensburg/soerup/` | Kreis Schleswig-Flensburg | 1 | 5 | 8 |
-|  | [Werther](https://hofladenliste.de/thueringen/nordhausen/werther/) `/thueringen/nordhausen/werther/` | Landkreis Nordhausen | 1 | 5 | 8 |
-|  | [Amstetten](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/amstetten/) `/baden-wuerttemberg/alb-donau-kreis/amstetten/` | Alb-Donau-Kreis | 1 | 4 | 7 |
-|  | [Erbach](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/erbach/) `/baden-wuerttemberg/alb-donau-kreis/erbach/` | Alb-Donau-Kreis | 1 | 4 | 7 |
-|  | [Laichingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/laichingen/) `/baden-wuerttemberg/alb-donau-kreis/laichingen/` | Alb-Donau-Kreis | 1 | 4 | 7 |
-|  | [Langenau](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/langenau/) `/baden-wuerttemberg/alb-donau-kreis/langenau/` | Alb-Donau-Kreis | 1 | 4 | 7 |
-|  | [Setzingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/setzingen/) `/baden-wuerttemberg/alb-donau-kreis/setzingen/` | Alb-Donau-Kreis | 1 | 4 | 7 |
-|  | [Biberach an der Riß Bergerhausen](https://hofladenliste.de/baden-wuerttemberg/biberach/biberach-an-der-riss-bergerhausen/) `/baden-wuerttemberg/biberach/biberach-an-der-riss-bergerhausen/` | Landkreis Biberach | 1 | 4 | 7 |
-|  | [Laupheim](https://hofladenliste.de/baden-wuerttemberg/biberach/laupheim/) `/baden-wuerttemberg/biberach/laupheim/` | Landkreis Biberach | 1 | 4 | 7 |
-|  | [Riedlingen](https://hofladenliste.de/baden-wuerttemberg/biberach/riedlingen/) `/baden-wuerttemberg/biberach/riedlingen/` | Landkreis Biberach | 1 | 4 | 7 |
-|  | [Heiligenberg](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/heiligenberg/) `/baden-wuerttemberg/bodenseekreis/heiligenberg/` | Bodenseekreis | 1 | 4 | 7 |
-|  | [Uhldingen-Mühlhofen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/uhldingen-muehlhofen/) `/baden-wuerttemberg/bodenseekreis/uhldingen-muehlhofen/` | Bodenseekreis | 1 | 4 | 7 |
-|  | [Altdorf (Landkreis Böblingen)](https://hofladenliste.de/baden-wuerttemberg/boeblingen/altdorf/) `/baden-wuerttemberg/boeblingen/altdorf/` | Landkreis Böblingen | 1 | 4 | 7 |
-|  | [Deckenpfronn](https://hofladenliste.de/baden-wuerttemberg/boeblingen/deckenpfronn/) `/baden-wuerttemberg/boeblingen/deckenpfronn/` | Landkreis Böblingen | 1 | 4 | 7 |
-|  | [Gäufelden](https://hofladenliste.de/baden-wuerttemberg/boeblingen/gaeufelden/) `/baden-wuerttemberg/boeblingen/gaeufelden/` | Landkreis Böblingen | 1 | 4 | 7 |
-|  | [Grafenau](https://hofladenliste.de/baden-wuerttemberg/boeblingen/grafenau/) `/baden-wuerttemberg/boeblingen/grafenau/` | Landkreis Böblingen | 1 | 4 | 7 |
-|  | [Renningen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/renningen/) `/baden-wuerttemberg/boeblingen/renningen/` | Landkreis Böblingen | 1 | 4 | 7 |
-|  | [Rutesheim](https://hofladenliste.de/baden-wuerttemberg/boeblingen/rutesheim/) `/baden-wuerttemberg/boeblingen/rutesheim/` | Landkreis Böblingen | 1 | 4 | 7 |
-|  | [Steinenbronn](https://hofladenliste.de/baden-wuerttemberg/boeblingen/steinenbronn/) `/baden-wuerttemberg/boeblingen/steinenbronn/` | Landkreis Böblingen | 1 | 4 | 7 |
-|  | [Auggen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/auggen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/auggen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
+| ✓ | [Wyk auf Föhr](https://hofladenliste.de/schleswig-holstein/nordfriesland/wyk-auf-foehr/) `/schleswig-holstein/nordfriesland/wyk-auf-foehr/` | Kreis Nordfriesland | 1 | 5 | 8 |
+| ✓ | [Blekendorf](https://hofladenliste.de/schleswig-holstein/ploen/blekendorf/) `/schleswig-holstein/ploen/blekendorf/` | Kreis Plön | 1 | 5 | 8 |
+| ✓ | [Raisdorf](https://hofladenliste.de/schleswig-holstein/ploen/raisdorf/) `/schleswig-holstein/ploen/raisdorf/` | Kreis Plön | 1 | 5 | 8 |
+| ✓ | [Neudorf-Bornstein](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/neudorf-bornstein/) `/schleswig-holstein/rendsburg-eckernfoerde/neudorf-bornstein/` | Kreis Rendsburg-Eckernförde | 1 | 5 | 8 |
+| ✓ | [Kappeln](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/kappeln/) `/schleswig-holstein/schleswig-flensburg/kappeln/` | Kreis Schleswig-Flensburg | 1 | 5 | 8 |
+| ✓ | [Sörup](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/soerup/) `/schleswig-holstein/schleswig-flensburg/soerup/` | Kreis Schleswig-Flensburg | 1 | 5 | 8 |
+| ✓ | [Werther](https://hofladenliste.de/thueringen/nordhausen/werther/) `/thueringen/nordhausen/werther/` | Landkreis Nordhausen | 1 | 5 | 8 |
+| ✓ | [Amstetten](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/amstetten/) `/baden-wuerttemberg/alb-donau-kreis/amstetten/` | Alb-Donau-Kreis | 1 | 4 | 7 |
+| ✓ | [Erbach](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/erbach/) `/baden-wuerttemberg/alb-donau-kreis/erbach/` | Alb-Donau-Kreis | 1 | 4 | 7 |
+| ✓ | [Laichingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/laichingen/) `/baden-wuerttemberg/alb-donau-kreis/laichingen/` | Alb-Donau-Kreis | 1 | 4 | 7 |
+| ✓ | [Langenau](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/langenau/) `/baden-wuerttemberg/alb-donau-kreis/langenau/` | Alb-Donau-Kreis | 1 | 4 | 7 |
+| ✓ | [Setzingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/setzingen/) `/baden-wuerttemberg/alb-donau-kreis/setzingen/` | Alb-Donau-Kreis | 1 | 4 | 7 |
+| ✓ | [Biberach an der Riß Bergerhausen](https://hofladenliste.de/baden-wuerttemberg/biberach/biberach-an-der-riss-bergerhausen/) `/baden-wuerttemberg/biberach/biberach-an-der-riss-bergerhausen/` | Landkreis Biberach | 1 | 4 | 7 |
+| ✓ | [Laupheim](https://hofladenliste.de/baden-wuerttemberg/biberach/laupheim/) `/baden-wuerttemberg/biberach/laupheim/` | Landkreis Biberach | 1 | 4 | 7 |
+| ✓ | [Riedlingen](https://hofladenliste.de/baden-wuerttemberg/biberach/riedlingen/) `/baden-wuerttemberg/biberach/riedlingen/` | Landkreis Biberach | 1 | 4 | 7 |
+| ✓ | [Heiligenberg](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/heiligenberg/) `/baden-wuerttemberg/bodenseekreis/heiligenberg/` | Bodenseekreis | 1 | 4 | 7 |
+| ✓ | [Uhldingen-Mühlhofen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/uhldingen-muehlhofen/) `/baden-wuerttemberg/bodenseekreis/uhldingen-muehlhofen/` | Bodenseekreis | 1 | 4 | 7 |
+| ✓ | [Altdorf (Landkreis Böblingen)](https://hofladenliste.de/baden-wuerttemberg/boeblingen/altdorf/) `/baden-wuerttemberg/boeblingen/altdorf/` | Landkreis Böblingen | 1 | 4 | 7 |
+| ✓ | [Deckenpfronn](https://hofladenliste.de/baden-wuerttemberg/boeblingen/deckenpfronn/) `/baden-wuerttemberg/boeblingen/deckenpfronn/` | Landkreis Böblingen | 1 | 4 | 7 |
+| ✓ | [Gäufelden](https://hofladenliste.de/baden-wuerttemberg/boeblingen/gaeufelden/) `/baden-wuerttemberg/boeblingen/gaeufelden/` | Landkreis Böblingen | 1 | 4 | 7 |
+| ✓ | [Grafenau](https://hofladenliste.de/baden-wuerttemberg/boeblingen/grafenau/) `/baden-wuerttemberg/boeblingen/grafenau/` | Landkreis Böblingen | 1 | 4 | 7 |
+| ✓ | [Renningen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/renningen/) `/baden-wuerttemberg/boeblingen/renningen/` | Landkreis Böblingen | 1 | 4 | 7 |
+| ✓ | [Rutesheim](https://hofladenliste.de/baden-wuerttemberg/boeblingen/rutesheim/) `/baden-wuerttemberg/boeblingen/rutesheim/` | Landkreis Böblingen | 1 | 4 | 7 |
+| ✓ | [Steinenbronn](https://hofladenliste.de/baden-wuerttemberg/boeblingen/steinenbronn/) `/baden-wuerttemberg/boeblingen/steinenbronn/` | Landkreis Böblingen | 1 | 4 | 7 |
+| ✓ | [Auggen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/auggen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/auggen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
 
 ## Paket 32 (25/25 fertig)
 
