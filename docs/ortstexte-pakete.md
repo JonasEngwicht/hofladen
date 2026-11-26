@@ -1,6 +1,6 @@
 # Ortstexte: Pakete à 25 nach Relevanz
 
-Stand 2026-11-21. Alle 1696 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 626 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
+Stand 2026-11-26. Alle 1731 indexierbaren Orts- und Stadtseiten („Hofläden in X und Umgebung“), absteigend nach Relevanz: 3 × Zahl der Postleitzahlen (Größe des Orts) + eigene Einträge im Ort. 651 haben schon einen gepflegten Text in `data/seitentexte.json` (✓).
 Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout data/seiten-stand.json`).
 
 ## Paket 1 (25/25 fertig)
@@ -20,7 +20,7 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Essen](https://hofladenliste.de/nordrhein-westfalen/essen/) `/nordrhein-westfalen/essen/` | Essen | 32 | 17 | 113 |
 | ✓ | [Leipzig](https://hofladenliste.de/sachsen/leipzig-stadt/) `/sachsen/leipzig-stadt/` | Leipzig | 31 | 18 | 111 |
 | ✓ | [Dortmund](https://hofladenliste.de/nordrhein-westfalen/dortmund/) `/nordrhein-westfalen/dortmund/` | Dortmund | 27 | 27 | 108 |
-| ✓ | [Hannover](https://hofladenliste.de/niedersachsen/region-hannover/hannover/) `/niedersachsen/region-hannover/hannover/` | Region Hannover | 29 | 15 | 102 |
+| ✓ | [Hannover](https://hofladenliste.de/niedersachsen/region-hannover/hannover/) `/niedersachsen/region-hannover/hannover/` | Region Hannover | 29 | 16 | 103 |
 | ✓ | [Wuppertal](https://hofladenliste.de/nordrhein-westfalen/wuppertal/) `/nordrhein-westfalen/wuppertal/` | Wuppertal | 23 | 19 | 88 |
 | ✓ | [Münster](https://hofladenliste.de/nordrhein-westfalen/muenster/) `/nordrhein-westfalen/muenster/` | Münster | 14 | 45 | 87 |
 | ✓ | [Duisburg](https://hofladenliste.de/nordrhein-westfalen/duisburg/) `/nordrhein-westfalen/duisburg/` | Duisburg | 25 | 12 | 87 |
@@ -38,11 +38,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
 | ✓ | [Braunschweig](https://hofladenliste.de/niedersachsen/braunschweig/) `/niedersachsen/braunschweig/` | Braunschweig | 15 | 21 | 66 |
+| ✓ | [Saarbrücken](https://hofladenliste.de/saarland/regionalverband-saarbruecken/saarbruecken/) `/saarland/regionalverband-saarbruecken/saarbruecken/` | Regionalverband Saarbrücken | 16 | 17 | 65 |
 | ✓ | [Wiesbaden](https://hofladenliste.de/hessen/wiesbaden/) `/hessen/wiesbaden/` | Wiesbaden | 13 | 24 | 63 |
 | ✓ | [Aachen](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/aachen/) `/nordrhein-westfalen/staedteregion-aachen/aachen/` | Städteregion Aachen | 10 | 32 | 62 |
 | ✓ | [Freiburg im Breisgau](https://hofladenliste.de/baden-wuerttemberg/freiburg-im-breisgau/) `/baden-wuerttemberg/freiburg-im-breisgau/` | Freiburg im Breisgau | 12 | 25 | 61 |
-| ✓ | [Saarbrücken](https://hofladenliste.de/saarland/regionalverband-saarbruecken/saarbruecken/) `/saarland/regionalverband-saarbruecken/saarbruecken/` | Regionalverband Saarbrücken | 16 | 13 | 61 |
-| ✓ | [Mannheim](https://hofladenliste.de/baden-wuerttemberg/mannheim/) `/baden-wuerttemberg/mannheim/` | Mannheim | 14 | 17 | 59 |
+| ✓ | [Mannheim](https://hofladenliste.de/baden-wuerttemberg/mannheim/) `/baden-wuerttemberg/mannheim/` | Mannheim | 14 | 19 | 61 |
 | ✓ | [Heidelberg](https://hofladenliste.de/baden-wuerttemberg/heidelberg/) `/baden-wuerttemberg/heidelberg/` | Heidelberg | 8 | 31 | 55 |
 | ✓ | [Magdeburg](https://hofladenliste.de/sachsen-anhalt/magdeburg/) `/sachsen-anhalt/magdeburg/` | Magdeburg | 15 | 8 | 53 |
 | ✓ | [Neuss](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/neuss/) `/nordrhein-westfalen/rhein-kreis-neuss/neuss/` | Rhein-Kreis Neuss | 8 | 28 | 52 |
@@ -55,21 +55,21 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Oldenburg](https://hofladenliste.de/niedersachsen/oldenburg-stadt/) `/niedersachsen/oldenburg-stadt/` | Oldenburg | 9 | 18 | 45 |
 | ✓ | [Gelsenkirchen](https://hofladenliste.de/nordrhein-westfalen/gelsenkirchen/) `/nordrhein-westfalen/gelsenkirchen/` | Gelsenkirchen | 13 | 6 | 45 |
 | ✓ | [Halle](https://hofladenliste.de/sachsen-anhalt/halle/) `/sachsen-anhalt/halle/` | Halle | 13 | 5 | 44 |
-| ✓ | [Potsdam](https://hofladenliste.de/brandenburg/potsdam/) `/brandenburg/potsdam/` | Potsdam | 8 | 18 | 42 |
+| ✓ | [Potsdam](https://hofladenliste.de/brandenburg/potsdam/) `/brandenburg/potsdam/` | Potsdam | 8 | 19 | 43 |
 | ✓ | [Hamm](https://hofladenliste.de/nordrhein-westfalen/hamm/) `/nordrhein-westfalen/hamm/` | Hamm | 8 | 18 | 42 |
 | ✓ | [Mülheim an der Ruhr](https://hofladenliste.de/nordrhein-westfalen/muelheim-an-der-ruhr/) `/nordrhein-westfalen/muelheim-an-der-ruhr/` | Mülheim an der Ruhr | 10 | 12 | 42 |
+| ✓ | [Ingolstadt](https://hofladenliste.de/bayern/ingolstadt/) `/bayern/ingolstadt/` | Ingolstadt | 5 | 26 | 41 |
 | ✓ | [Rostock](https://hofladenliste.de/mecklenburg-vorpommern/rostock-stadt/) `/mecklenburg-vorpommern/rostock-stadt/` | Rostock | 10 | 11 | 41 |
 | ✓ | [Kassel](https://hofladenliste.de/hessen/kassel-stadt/) `/hessen/kassel-stadt/` | Kassel | 11 | 8 | 41 |
 | ✓ | [Euskirchen](https://hofladenliste.de/nordrhein-westfalen/euskirchen/euskirchen/) `/nordrhein-westfalen/euskirchen/euskirchen/` | Kreis Euskirchen | 2 | 34 | 40 |
-| ✓ | [Ingolstadt](https://hofladenliste.de/bayern/ingolstadt/) `/bayern/ingolstadt/` | Ingolstadt | 5 | 25 | 40 |
 
 ## Paket 3 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Tübingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/tuebingen/) `/baden-wuerttemberg/tuebingen/tuebingen/` | Landkreis Tübingen | 4 | 27 | 39 |
 | ✓ | [Erlangen](https://hofladenliste.de/bayern/erlangen/) `/bayern/erlangen/` | Erlangen | 4 | 27 | 39 |
 | ✓ | [Reutlingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/reutlingen/) `/baden-wuerttemberg/reutlingen/reutlingen/` | Landkreis Reutlingen | 6 | 21 | 39 |
-| ✓ | [Tübingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/tuebingen/) `/baden-wuerttemberg/tuebingen/tuebingen/` | Landkreis Tübingen | 4 | 26 | 38 |
 | ✓ | [Darmstadt](https://hofladenliste.de/hessen/darmstadt/) `/hessen/darmstadt/` | Darmstadt | 8 | 14 | 38 |
 | ✓ | [Osnabrück](https://hofladenliste.de/niedersachsen/osnabrueck-stadt/) `/niedersachsen/osnabrueck-stadt/` | Osnabrück | 9 | 10 | 37 |
 | ✓ | [Würzburg](https://hofladenliste.de/bayern/wuerzburg-stadt/) `/bayern/wuerzburg-stadt/` | Würzburg | 8 | 12 | 36 |
@@ -109,18 +109,18 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Limburg an der Lahn](https://hofladenliste.de/hessen/limburg-weilburg/limburg-an-der-lahn/) `/hessen/limburg-weilburg/limburg-an-der-lahn/` | Landkreis Limburg-Weilburg | 8 | 2 | 26 |
 | ✓ | [Oberhausen](https://hofladenliste.de/nordrhein-westfalen/oberhausen/) `/nordrhein-westfalen/oberhausen/` | Oberhausen | 8 | 2 | 26 |
 | ✓ | [Delbrück](https://hofladenliste.de/nordrhein-westfalen/paderborn/delbrueck/) `/nordrhein-westfalen/paderborn/delbrueck/` | Kreis Paderborn | 1 | 22 | 25 |
+| ✓ | [Willich](https://hofladenliste.de/nordrhein-westfalen/viersen/willich/) `/nordrhein-westfalen/viersen/willich/` | Kreis Viersen | 1 | 22 | 25 |
 | ✓ | [Hamminkeln](https://hofladenliste.de/nordrhein-westfalen/wesel/hamminkeln/) `/nordrhein-westfalen/wesel/hamminkeln/` | Kreis Wesel | 1 | 22 | 25 |
 | ✓ | [Ravensburg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/ravensburg/) `/baden-wuerttemberg/ravensburg/ravensburg/` | Landkreis Ravensburg | 3 | 16 | 25 |
-| ✓ | [Unna](https://hofladenliste.de/nordrhein-westfalen/unna/unna/) `/nordrhein-westfalen/unna/unna/` | Kreis Unna | 3 | 16 | 25 |
+| ✓ | [Jork](https://hofladenliste.de/niedersachsen/stade/jork/) `/niedersachsen/stade/jork/` | Landkreis Stade | 1 | 21 | 24 |
 | ✓ | [Straelen](https://hofladenliste.de/nordrhein-westfalen/kleve/straelen/) `/nordrhein-westfalen/kleve/straelen/` | Kreis Kleve | 1 | 21 | 24 |
-| ✓ | [Willich](https://hofladenliste.de/nordrhein-westfalen/viersen/willich/) `/nordrhein-westfalen/viersen/willich/` | Kreis Viersen | 1 | 21 | 24 |
+| ✓ | [Unna](https://hofladenliste.de/nordrhein-westfalen/unna/unna/) `/nordrhein-westfalen/unna/unna/` | Kreis Unna | 3 | 15 | 24 |
 | ✓ | [Bamberg](https://hofladenliste.de/bayern/bamberg-stadt/) `/bayern/bamberg-stadt/` | Bamberg | 4 | 12 | 24 |
 | ✓ | [Minden](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/minden/) `/nordrhein-westfalen/minden-luebbecke/minden/` | Kreis Minden-Lübbecke | 4 | 12 | 24 |
 | ✓ | [Berlin Kreuzberg](https://hofladenliste.de/berlin/berlin/berlin-kreuzberg/) `/berlin/berlin/berlin-kreuzberg/` | Berlin | 7 | 3 | 24 |
 | ✓ | [Bergisch Gladbach](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/bergisch-gladbach/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/bergisch-gladbach/` | Rheinisch-Bergischer Kreis | 5 | 8 | 23 |
 | ✓ | [Trier](https://hofladenliste.de/rheinland-pfalz/trier/) `/rheinland-pfalz/trier/` | Trier | 6 | 5 | 23 |
 | ✓ | [Zwickau](https://hofladenliste.de/sachsen/zwickau/zwickau/) `/sachsen/zwickau/zwickau/` | Landkreis Zwickau | 6 | 5 | 23 |
-| ✓ | [Jork](https://hofladenliste.de/niedersachsen/stade/jork/) `/niedersachsen/stade/jork/` | Landkreis Stade | 1 | 19 | 22 |
 | ✓ | [Lüdinghausen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/luedinghausen/) `/nordrhein-westfalen/coesfeld/luedinghausen/` | Kreis Coesfeld | 1 | 19 | 22 |
 
 ## Paket 5 (25/25 fertig)
@@ -140,6 +140,7 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Bergheim](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/bergheim/) `/nordrhein-westfalen/rhein-erft-kreis/bergheim/` | Rhein-Erft-Kreis | 3 | 12 | 21 |
 | ✓ | [Konstanz](https://hofladenliste.de/baden-wuerttemberg/konstanz/konstanz/) `/baden-wuerttemberg/konstanz/konstanz/` | Landkreis Konstanz | 4 | 9 | 21 |
 | ✓ | [Delmenhorst](https://hofladenliste.de/niedersachsen/delmenhorst/) `/niedersachsen/delmenhorst/` | Delmenhorst | 4 | 9 | 21 |
+| ✓ | [Salzgitter](https://hofladenliste.de/niedersachsen/salzgitter/) `/niedersachsen/salzgitter/` | Salzgitter | 5 | 6 | 21 |
 | ✓ | [Wolfsburg](https://hofladenliste.de/niedersachsen/wolfsburg/) `/niedersachsen/wolfsburg/` | Wolfsburg | 5 | 6 | 21 |
 | ✓ | [Gera](https://hofladenliste.de/thueringen/gera/) `/thueringen/gera/` | Gera | 6 | 3 | 21 |
 | ✓ | [Überlingen](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/ueberlingen/) `/baden-wuerttemberg/bodenseekreis/ueberlingen/` | Bodenseekreis | 1 | 17 | 20 |
@@ -149,14 +150,14 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Fulda](https://hofladenliste.de/hessen/fulda/fulda/) `/hessen/fulda/fulda/` | Landkreis Fulda | 4 | 8 | 20 |
 | ✓ | [Marburg](https://hofladenliste.de/hessen/marburg-biedenkopf/marburg/) `/hessen/marburg-biedenkopf/marburg/` | Landkreis Marburg-Biedenkopf | 4 | 8 | 20 |
 | ✓ | [Cuxhaven](https://hofladenliste.de/niedersachsen/cuxhaven/cuxhaven/) `/niedersachsen/cuxhaven/cuxhaven/` | Landkreis Cuxhaven | 4 | 8 | 20 |
+| ✓ | [Wolfenbüttel](https://hofladenliste.de/niedersachsen/wolfenbuettel/wolfenbuettel/) `/niedersachsen/wolfenbuettel/wolfenbuettel/` | Landkreis Wolfenbüttel | 4 | 8 | 20 |
 | ✓ | [Düren](https://hofladenliste.de/nordrhein-westfalen/dueren/dueren/) `/nordrhein-westfalen/dueren/dueren/` | Kreis Düren | 4 | 8 | 20 |
-| ✓ | [Aalen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/aalen/) `/baden-wuerttemberg/ostalbkreis/aalen/` | Ostalbkreis | 5 | 5 | 20 |
-| ✓ | [Salzgitter](https://hofladenliste.de/niedersachsen/salzgitter/) `/niedersachsen/salzgitter/` | Salzgitter | 5 | 5 | 20 |
 
 ## Paket 6 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Aalen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/aalen/) `/baden-wuerttemberg/ostalbkreis/aalen/` | Ostalbkreis | 5 | 5 | 20 |
 | ✓ | [Gütersloh](https://hofladenliste.de/nordrhein-westfalen/guetersloh/guetersloh/) `/nordrhein-westfalen/guetersloh/guetersloh/` | Kreis Gütersloh | 5 | 5 | 20 |
 | ✓ | [Arnsberg](https://hofladenliste.de/nordrhein-westfalen/hochsauerlandkreis/arnsberg/) `/nordrhein-westfalen/hochsauerlandkreis/arnsberg/` | Hochsauerlandkreis | 5 | 5 | 20 |
 | ✓ | [Remscheid](https://hofladenliste.de/nordrhein-westfalen/remscheid/) `/nordrhein-westfalen/remscheid/` | Remscheid | 6 | 2 | 20 |
@@ -164,10 +165,12 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Markdorf](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/markdorf/) `/baden-wuerttemberg/bodenseekreis/markdorf/` | Bodenseekreis | 1 | 16 | 19 |
 | ✓ | [Wegberg](https://hofladenliste.de/nordrhein-westfalen/heinsberg/wegberg/) `/nordrhein-westfalen/heinsberg/wegberg/` | Kreis Heinsberg | 1 | 16 | 19 |
 | ✓ | [Göppingen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/goeppingen/) `/baden-wuerttemberg/goeppingen/goeppingen/` | Landkreis Göppingen | 3 | 10 | 19 |
+| ✓ | [Waiblingen](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/waiblingen/) `/baden-wuerttemberg/rems-murr-kreis/waiblingen/` | Rems-Murr-Kreis | 3 | 10 | 19 |
 | ✓ | [Melle](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/melle/) `/niedersachsen/landkreis-osnabrueck/melle/` | Landkreis Osnabrück | 3 | 10 | 19 |
 | ✓ | [Castrop-Rauxel](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/castrop-rauxel/) `/nordrhein-westfalen/recklinghausen/castrop-rauxel/` | Kreis Recklinghausen | 4 | 7 | 19 |
 | ✓ | [Ludwigsburg](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/ludwigsburg/) `/baden-wuerttemberg/ludwigsburg/ludwigsburg/` | Landkreis Ludwigsburg | 5 | 4 | 19 |
 | ✓ | [Villingen-Schwenningen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/villingen-schwenningen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/villingen-schwenningen/` | Schwarzwald-Baar-Kreis | 5 | 4 | 19 |
+| ✓ | [Eltville am Rhein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/eltville-am-rhein/) `/hessen/rheingau-taunus-kreis/eltville-am-rhein/` | Rheingau-Taunus-Kreis | 5 | 4 | 19 |
 | ✓ | [Hildesheim](https://hofladenliste.de/niedersachsen/hildesheim/hildesheim/) `/niedersachsen/hildesheim/hildesheim/` | Landkreis Hildesheim | 5 | 4 | 19 |
 | ✓ | [Siegen](https://hofladenliste.de/nordrhein-westfalen/siegen-wittgenstein/siegen/) `/nordrhein-westfalen/siegen-wittgenstein/siegen/` | Kreis Siegen-Wittgenstein | 5 | 4 | 19 |
 | ✓ | [Hamburg Rotherbaum](https://hofladenliste.de/hamburg/hamburg/hamburg-rotherbaum/) `/hamburg/hamburg/hamburg-rotherbaum/` | Hamburg | 6 | 1 | 19 |
@@ -177,21 +180,18 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Uetze](https://hofladenliste.de/niedersachsen/region-hannover/uetze/) `/niedersachsen/region-hannover/uetze/` | Region Hannover | 1 | 15 | 18 |
 | ✓ | [Dülmen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/duelmen/) `/nordrhein-westfalen/coesfeld/duelmen/` | Kreis Coesfeld | 1 | 15 | 18 |
 | ✓ | [Korschenbroich](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/korschenbroich/) `/nordrhein-westfalen/rhein-kreis-neuss/korschenbroich/` | Rhein-Kreis Neuss | 1 | 15 | 18 |
-| ✓ | [Waiblingen](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/waiblingen/) `/baden-wuerttemberg/rems-murr-kreis/waiblingen/` | Rems-Murr-Kreis | 3 | 9 | 18 |
 | ✓ | [Nordhorn](https://hofladenliste.de/niedersachsen/grafschaft-bentheim/nordhorn/) `/niedersachsen/grafschaft-bentheim/nordhorn/` | Landkreis Grafschaft Bentheim | 3 | 9 | 18 |
 | ✓ | [Dorsten](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/dorsten/) `/nordrhein-westfalen/recklinghausen/dorsten/` | Kreis Recklinghausen | 3 | 9 | 18 |
-| ✓ | [Wesel](https://hofladenliste.de/nordrhein-westfalen/wesel/wesel/) `/nordrhein-westfalen/wesel/wesel/` | Kreis Wesel | 3 | 9 | 18 |
-| ✓ | [Bayreuth](https://hofladenliste.de/bayern/bayreuth-stadt/) `/bayern/bayreuth-stadt/` | Bayreuth | 4 | 6 | 18 |
 
 ## Paket 7 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Wesel](https://hofladenliste.de/nordrhein-westfalen/wesel/wesel/) `/nordrhein-westfalen/wesel/wesel/` | Kreis Wesel | 3 | 9 | 18 |
+| ✓ | [Bayreuth](https://hofladenliste.de/bayern/bayreuth-stadt/) `/bayern/bayreuth-stadt/` | Bayreuth | 4 | 6 | 18 |
 | ✓ | [Brandenburg an der Havel](https://hofladenliste.de/brandenburg/brandenburg-an-der-havel/) `/brandenburg/brandenburg-an-der-havel/` | Brandenburg an der Havel | 4 | 6 | 18 |
-| ✓ | [Wolfenbüttel](https://hofladenliste.de/niedersachsen/wolfenbuettel/wolfenbuettel/) `/niedersachsen/wolfenbuettel/wolfenbuettel/` | Landkreis Wolfenbüttel | 4 | 6 | 18 |
 | ✓ | [Plauen](https://hofladenliste.de/sachsen/vogtlandkreis/plauen/) `/sachsen/vogtlandkreis/plauen/` | Vogtlandkreis | 4 | 6 | 18 |
 | ✓ | [Gießen](https://hofladenliste.de/hessen/giessen/giessen/) `/hessen/giessen/giessen/` | Landkreis Gießen | 5 | 3 | 18 |
-| ✓ | [Eltville am Rhein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/eltville-am-rhein/) `/hessen/rheingau-taunus-kreis/eltville-am-rhein/` | Rheingau-Taunus-Kreis | 5 | 3 | 18 |
 | ✓ | [Flensburg](https://hofladenliste.de/schleswig-holstein/flensburg/) `/schleswig-holstein/flensburg/` | Flensburg | 5 | 3 | 18 |
 | ✓ | [Norderstedt](https://hofladenliste.de/schleswig-holstein/segeberg/norderstedt/) `/schleswig-holstein/segeberg/norderstedt/` | Kreis Segeberg | 5 | 3 | 18 |
 | ✓ | [Deggendorf](https://hofladenliste.de/bayern/deggendorf/deggendorf/) `/bayern/deggendorf/deggendorf/` | Landkreis Deggendorf | 1 | 14 | 17 |
@@ -228,6 +228,7 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Wilhelmshaven](https://hofladenliste.de/niedersachsen/wilhelmshaven/) `/niedersachsen/wilhelmshaven/` | Wilhelmshaven | 5 | 1 | 16 |
 | ✓ | [Kaiserslautern](https://hofladenliste.de/rheinland-pfalz/kaiserslautern-stadt/) `/rheinland-pfalz/kaiserslautern-stadt/` | Kaiserslautern | 5 | 1 | 16 |
 | ✓ | [Dessau](https://hofladenliste.de/sachsen-anhalt/dessau-rosslau/dessau/) `/sachsen-anhalt/dessau-rosslau/dessau/` | Dessau-Roßlau | 5 | 1 | 16 |
+| ✓ | [Emmendingen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/emmendingen/) `/baden-wuerttemberg/emmendingen/emmendingen/` | Landkreis Emmendingen | 1 | 12 | 15 |
 | ✓ | [Stutensee](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/stutensee/) `/baden-wuerttemberg/landkreis-karlsruhe/stutensee/` | Landkreis Karlsruhe | 1 | 12 | 15 |
 | ✓ | [Wiefelstede](https://hofladenliste.de/niedersachsen/ammerland/wiefelstede/) `/niedersachsen/ammerland/wiefelstede/` | Landkreis Ammerland | 1 | 12 | 15 |
 | ✓ | [Barßel](https://hofladenliste.de/niedersachsen/cloppenburg/barssel/) `/niedersachsen/cloppenburg/barssel/` | Landkreis Cloppenburg | 1 | 12 | 15 |
@@ -236,22 +237,23 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Olfen](https://hofladenliste.de/nordrhein-westfalen/coesfeld/olfen/) `/nordrhein-westfalen/coesfeld/olfen/` | Kreis Coesfeld | 1 | 12 | 15 |
 | ✓ | [Petershagen](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/petershagen/) `/nordrhein-westfalen/minden-luebbecke/petershagen/` | Kreis Minden-Lübbecke | 1 | 12 | 15 |
 | ✓ | [Kaarst](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/kaarst/) `/nordrhein-westfalen/rhein-kreis-neuss/kaarst/` | Rhein-Kreis Neuss | 1 | 12 | 15 |
+| ✓ | [Kempen](https://hofladenliste.de/nordrhein-westfalen/viersen/kempen/) `/nordrhein-westfalen/viersen/kempen/` | Kreis Viersen | 1 | 12 | 15 |
 | ✓ | [Oederan](https://hofladenliste.de/sachsen/mittelsachsen/oederan/) `/sachsen/mittelsachsen/oederan/` | Landkreis Mittelsachsen | 1 | 12 | 15 |
+| ✓ | [Grömitz](https://hofladenliste.de/schleswig-holstein/ostholstein/groemitz/) `/schleswig-holstein/ostholstein/groemitz/` | Kreis Ostholstein | 1 | 12 | 15 |
 | ✓ | [Ibbenbüren](https://hofladenliste.de/nordrhein-westfalen/steinfurt/ibbenbueren/) `/nordrhein-westfalen/steinfurt/ibbenbueren/` | Kreis Steinfurt | 2 | 9 | 15 |
 | ✓ | [Ahlen](https://hofladenliste.de/nordrhein-westfalen/warendorf/ahlen/) `/nordrhein-westfalen/warendorf/ahlen/` | Kreis Warendorf | 2 | 9 | 15 |
-| ✓ | [Baden-Baden](https://hofladenliste.de/baden-wuerttemberg/baden-baden/) `/baden-wuerttemberg/baden-baden/` | Baden-Baden | 3 | 6 | 15 |
-| ✓ | [Emden](https://hofladenliste.de/niedersachsen/emden/) `/niedersachsen/emden/` | Emden | 3 | 6 | 15 |
-| ✓ | [Hattingen](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/) `/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/` | Ennepe-Ruhr-Kreis | 3 | 6 | 15 |
 
 ## Paket 9 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Baden-Baden](https://hofladenliste.de/baden-wuerttemberg/baden-baden/) `/baden-wuerttemberg/baden-baden/` | Baden-Baden | 3 | 6 | 15 |
+| ✓ | [Emden](https://hofladenliste.de/niedersachsen/emden/) `/niedersachsen/emden/` | Emden | 3 | 6 | 15 |
+| ✓ | [Hattingen](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/) `/nordrhein-westfalen/ennepe-ruhr-kreis/hattingen/` | Ennepe-Ruhr-Kreis | 3 | 6 | 15 |
 | ✓ | [Hilden](https://hofladenliste.de/nordrhein-westfalen/mettmann/hilden/) `/nordrhein-westfalen/mettmann/hilden/` | Kreis Mettmann | 3 | 6 | 15 |
 | ✓ | [Rheine](https://hofladenliste.de/nordrhein-westfalen/steinfurt/rheine/) `/nordrhein-westfalen/steinfurt/rheine/` | Kreis Steinfurt | 3 | 6 | 15 |
 | ✓ | [Frankfurt (Oder)](https://hofladenliste.de/brandenburg/frankfurt-oder/) `/brandenburg/frankfurt-oder/` | Frankfurt (Oder) | 4 | 3 | 15 |
 | ✓ | [Neumünster](https://hofladenliste.de/schleswig-holstein/neumuenster/) `/schleswig-holstein/neumuenster/` | Neumünster | 4 | 3 | 15 |
-| ✓ | [Emmendingen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/emmendingen/) `/baden-wuerttemberg/emmendingen/emmendingen/` | Landkreis Emmendingen | 1 | 11 | 14 |
 | ✓ | [Ketsch](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/ketsch/) `/baden-wuerttemberg/rhein-neckar-kreis/ketsch/` | Rhein-Neckar-Kreis | 1 | 11 | 14 |
 | ✓ | [Nersingen](https://hofladenliste.de/bayern/neu-ulm/nersingen/) `/bayern/neu-ulm/nersingen/` | Landkreis Neu-Ulm | 1 | 11 | 14 |
 | ✓ | [Soltau](https://hofladenliste.de/niedersachsen/heidekreis/soltau/) `/niedersachsen/heidekreis/soltau/` | Heidekreis | 1 | 11 | 14 |
@@ -262,8 +264,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Bad Lippspringe](https://hofladenliste.de/nordrhein-westfalen/paderborn/bad-lippspringe/) `/nordrhein-westfalen/paderborn/bad-lippspringe/` | Kreis Paderborn | 1 | 11 | 14 |
 | ✓ | [Hennef](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/hennef/) `/nordrhein-westfalen/rhein-sieg-kreis/hennef/` | Rhein-Sieg-Kreis | 1 | 11 | 14 |
 | ✓ | [Brüggen](https://hofladenliste.de/nordrhein-westfalen/viersen/brueggen/) `/nordrhein-westfalen/viersen/brueggen/` | Kreis Viersen | 1 | 11 | 14 |
-| ✓ | [Kempen](https://hofladenliste.de/nordrhein-westfalen/viersen/kempen/) `/nordrhein-westfalen/viersen/kempen/` | Kreis Viersen | 1 | 11 | 14 |
-| ✓ | [Grömitz](https://hofladenliste.de/schleswig-holstein/ostholstein/groemitz/) `/schleswig-holstein/ostholstein/groemitz/` | Kreis Ostholstein | 1 | 11 | 14 |
 | ✓ | [Schwäbisch Gmünd](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/schwaebisch-gmuend/) `/baden-wuerttemberg/ostalbkreis/schwaebisch-gmuend/` | Ostalbkreis | 3 | 5 | 14 |
 | ✓ | [Aschaffenburg](https://hofladenliste.de/bayern/aschaffenburg-stadt/) `/bayern/aschaffenburg-stadt/` | Aschaffenburg | 3 | 5 | 14 |
 | ✓ | [Peine](https://hofladenliste.de/niedersachsen/peine/peine/) `/niedersachsen/peine/peine/` | Landkreis Peine | 3 | 5 | 14 |
@@ -298,18 +298,20 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Walsrode](https://hofladenliste.de/niedersachsen/heidekreis/walsrode/) `/niedersachsen/heidekreis/walsrode/` | Heidekreis | 1 | 10 | 13 |
 | ✓ | [Ganderkesee](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/ganderkesee/) `/niedersachsen/landkreis-oldenburg/ganderkesee/` | Landkreis Oldenburg | 1 | 10 | 13 |
 | ✓ | [Scheeßel](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/scheessel/) `/niedersachsen/rotenburg-wuemme/scheessel/` | Landkreis Rotenburg (Wümme) | 1 | 10 | 13 |
+| ✓ | [Hollern-Twielenfleth](https://hofladenliste.de/niedersachsen/stade/hollern-twielenfleth/) `/niedersachsen/stade/hollern-twielenfleth/` | Landkreis Stade | 1 | 10 | 13 |
 | ✓ | [Thedinghausen](https://hofladenliste.de/niedersachsen/verden/thedinghausen/) `/niedersachsen/verden/thedinghausen/` | Landkreis Verden | 1 | 10 | 13 |
 | ✓ | [Lemgo](https://hofladenliste.de/nordrhein-westfalen/lippe/lemgo/) `/nordrhein-westfalen/lippe/lemgo/` | Kreis Lippe | 1 | 10 | 13 |
 | ✓ | [Borchen](https://hofladenliste.de/nordrhein-westfalen/paderborn/borchen/) `/nordrhein-westfalen/paderborn/borchen/` | Kreis Paderborn | 1 | 10 | 13 |
-| ✓ | [Datteln](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/datteln/) `/nordrhein-westfalen/recklinghausen/datteln/` | Kreis Recklinghausen | 1 | 10 | 13 |
 
 ## Paket 11 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Datteln](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/datteln/) `/nordrhein-westfalen/recklinghausen/datteln/` | Kreis Recklinghausen | 1 | 10 | 13 |
 | ✓ | [Rommerskirchen](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/rommerskirchen/) `/nordrhein-westfalen/rhein-kreis-neuss/rommerskirchen/` | Rhein-Kreis Neuss | 1 | 10 | 13 |
 | ✓ | [Alpen](https://hofladenliste.de/nordrhein-westfalen/wesel/alpen/) `/nordrhein-westfalen/wesel/alpen/` | Kreis Wesel | 1 | 10 | 13 |
 | ✓ | [Fehmarn](https://hofladenliste.de/schleswig-holstein/ostholstein/fehmarn/) `/schleswig-holstein/ostholstein/fehmarn/` | Kreis Ostholstein | 1 | 10 | 13 |
+| ✓ | [Wittingen](https://hofladenliste.de/niedersachsen/gifhorn/wittingen/) `/niedersachsen/gifhorn/wittingen/` | Landkreis Gifhorn | 2 | 7 | 13 |
 | ✓ | [Albstadt](https://hofladenliste.de/baden-wuerttemberg/zollernalbkreis/albstadt/) `/baden-wuerttemberg/zollernalbkreis/albstadt/` | Zollernalbkreis | 3 | 4 | 13 |
 | ✓ | [Kloster Lehnin](https://hofladenliste.de/brandenburg/potsdam-mittelmark/kloster-lehnin/) `/brandenburg/potsdam-mittelmark/kloster-lehnin/` | Landkreis Potsdam-Mittelmark | 3 | 4 | 13 |
 | ✓ | [Hameln](https://hofladenliste.de/niedersachsen/hameln-pyrmont/hameln/) `/niedersachsen/hameln-pyrmont/hameln/` | Landkreis Hameln-Pyrmont | 3 | 4 | 13 |
@@ -323,20 +325,22 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Kirchzarten](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/kirchzarten/) `/baden-wuerttemberg/breisgau-hochschwarzwald/kirchzarten/` | Landkreis Breisgau-Hochschwarzwald | 1 | 9 | 12 |
 | ✓ | [Böhmenkirch](https://hofladenliste.de/baden-wuerttemberg/goeppingen/boehmenkirch/) `/baden-wuerttemberg/goeppingen/boehmenkirch/` | Landkreis Göppingen | 1 | 9 | 12 |
 | ✓ | [Bretzfeld](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/bretzfeld/) `/baden-wuerttemberg/hohenlohekreis/bretzfeld/` | Hohenlohekreis | 1 | 9 | 12 |
+| ✓ | [Stockach](https://hofladenliste.de/baden-wuerttemberg/konstanz/stockach/) `/baden-wuerttemberg/konstanz/stockach/` | Landkreis Konstanz | 1 | 9 | 12 |
 | ✓ | [Ilsfeld](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/ilsfeld/) `/baden-wuerttemberg/landkreis-heilbronn/ilsfeld/` | Landkreis Heilbronn | 1 | 9 | 12 |
 | ✓ | [Lauffen am Neckar](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/lauffen-am-neckar/) `/baden-wuerttemberg/landkreis-heilbronn/lauffen-am-neckar/` | Landkreis Heilbronn | 1 | 9 | 12 |
 | ✓ | [Bretten](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/bretten/) `/baden-wuerttemberg/landkreis-karlsruhe/bretten/` | Landkreis Karlsruhe | 1 | 9 | 12 |
 | ✓ | [Neuried](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/neuried/) `/baden-wuerttemberg/ortenaukreis/neuried/` | Ortenaukreis | 1 | 9 | 12 |
 | ✓ | [Ottersweier](https://hofladenliste.de/baden-wuerttemberg/rastatt/ottersweier/) `/baden-wuerttemberg/rastatt/ottersweier/` | Landkreis Rastatt | 1 | 9 | 12 |
 | ✓ | [Welzheim](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/welzheim/) `/baden-wuerttemberg/rems-murr-kreis/welzheim/` | Rems-Murr-Kreis | 1 | 9 | 12 |
-| ✓ | [Hemsbach](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/hemsbach/) `/baden-wuerttemberg/rhein-neckar-kreis/hemsbach/` | Rhein-Neckar-Kreis | 1 | 9 | 12 |
-| ✓ | [Friedberg (Landkreis Aichach-Friedberg)](https://hofladenliste.de/bayern/aichach-friedberg/friedberg/) `/bayern/aichach-friedberg/friedberg/` | Landkreis Aichach-Friedberg | 1 | 9 | 12 |
-| ✓ | [Garching an der Alz](https://hofladenliste.de/bayern/altoetting/garching-an-der-alz/) `/bayern/altoetting/garching-an-der-alz/` | Landkreis Altötting | 1 | 9 | 12 |
 
 ## Paket 12 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Hemsbach](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/hemsbach/) `/baden-wuerttemberg/rhein-neckar-kreis/hemsbach/` | Rhein-Neckar-Kreis | 1 | 9 | 12 |
+| ✓ | [Friedberg (Landkreis Aichach-Friedberg)](https://hofladenliste.de/bayern/aichach-friedberg/friedberg/) `/bayern/aichach-friedberg/friedberg/` | Landkreis Aichach-Friedberg | 1 | 9 | 12 |
+| ✓ | [Garching an der Alz](https://hofladenliste.de/bayern/altoetting/garching-an-der-alz/) `/bayern/altoetting/garching-an-der-alz/` | Landkreis Altötting | 1 | 9 | 12 |
+| ✓ | [Beilngries](https://hofladenliste.de/bayern/eichstaett/beilngries/) `/bayern/eichstaett/beilngries/` | Landkreis Eichstätt | 1 | 9 | 12 |
 | ✓ | [Puchheim](https://hofladenliste.de/bayern/fuerstenfeldbruck/puchheim/) `/bayern/fuerstenfeldbruck/puchheim/` | Landkreis Fürstenfeldbruck | 1 | 9 | 12 |
 | ✓ | [Abensberg](https://hofladenliste.de/bayern/kelheim/abensberg/) `/bayern/kelheim/abensberg/` | Landkreis Kelheim | 1 | 9 | 12 |
 | ✓ | [Gersthofen](https://hofladenliste.de/bayern/landkreis-augsburg/gersthofen/) `/bayern/landkreis-augsburg/gersthofen/` | Landkreis Augsburg | 1 | 9 | 12 |
@@ -347,7 +351,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Friesoythe](https://hofladenliste.de/niedersachsen/cloppenburg/friesoythe/) `/niedersachsen/cloppenburg/friesoythe/` | Landkreis Cloppenburg | 1 | 9 | 12 |
 | ✓ | [Hatten](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/hatten/) `/niedersachsen/landkreis-oldenburg/hatten/` | Landkreis Oldenburg | 1 | 9 | 12 |
 | ✓ | [Isernhagen](https://hofladenliste.de/niedersachsen/region-hannover/isernhagen/) `/niedersachsen/region-hannover/isernhagen/` | Region Hannover | 1 | 9 | 12 |
-| ✓ | [Hollern-Twielenfleth](https://hofladenliste.de/niedersachsen/stade/hollern-twielenfleth/) `/niedersachsen/stade/hollern-twielenfleth/` | Landkreis Stade | 1 | 9 | 12 |
 | ✓ | [Zülpich](https://hofladenliste.de/nordrhein-westfalen/euskirchen/zuelpich/) `/nordrhein-westfalen/euskirchen/zuelpich/` | Kreis Euskirchen | 1 | 9 | 12 |
 | ✓ | [Verl](https://hofladenliste.de/nordrhein-westfalen/guetersloh/verl/) `/nordrhein-westfalen/guetersloh/verl/` | Kreis Gütersloh | 1 | 9 | 12 |
 | ✓ | [Lohmar](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/lohmar/) `/nordrhein-westfalen/rhein-sieg-kreis/lohmar/` | Rhein-Sieg-Kreis | 1 | 9 | 12 |
@@ -359,14 +362,14 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Lingen](https://hofladenliste.de/niedersachsen/emsland/lingen/) `/niedersachsen/emsland/lingen/` | Landkreis Emsland | 3 | 3 | 12 |
 | ✓ | [Seevetal](https://hofladenliste.de/niedersachsen/harburg/seevetal/) `/niedersachsen/harburg/seevetal/` | Landkreis Harburg | 3 | 3 | 12 |
 | ✓ | [Detmold](https://hofladenliste.de/nordrhein-westfalen/lippe/detmold/) `/nordrhein-westfalen/lippe/detmold/` | Kreis Lippe | 3 | 3 | 12 |
-| ✓ | [Marl](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/marl/) `/nordrhein-westfalen/recklinghausen/marl/` | Kreis Recklinghausen | 3 | 3 | 12 |
-| ✓ | [Stolberg (Rheinland)](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/) `/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/` | Städteregion Aachen | 3 | 3 | 12 |
-| ✓ | [Dinslaken](https://hofladenliste.de/nordrhein-westfalen/wesel/dinslaken/) `/nordrhein-westfalen/wesel/dinslaken/` | Kreis Wesel | 3 | 3 | 12 |
 
 ## Paket 13 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Marl](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/marl/) `/nordrhein-westfalen/recklinghausen/marl/` | Kreis Recklinghausen | 3 | 3 | 12 |
+| ✓ | [Stolberg (Rheinland)](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/) `/nordrhein-westfalen/staedteregion-aachen/stolberg-rheinland/` | Städteregion Aachen | 3 | 3 | 12 |
+| ✓ | [Dinslaken](https://hofladenliste.de/nordrhein-westfalen/wesel/dinslaken/) `/nordrhein-westfalen/wesel/dinslaken/` | Kreis Wesel | 3 | 3 | 12 |
 | ✓ | [Weimar](https://hofladenliste.de/thueringen/weimar/) `/thueringen/weimar/` | Weimar | 3 | 3 | 12 |
 | ✓ | [Deggenhausertal](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/deggenhausertal/) `/baden-wuerttemberg/bodenseekreis/deggenhausertal/` | Bodenseekreis | 1 | 8 | 11 |
 | ✓ | [Meckenbeuren](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/meckenbeuren/) `/baden-wuerttemberg/bodenseekreis/meckenbeuren/` | Bodenseekreis | 1 | 8 | 11 |
@@ -385,22 +388,24 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Aichach](https://hofladenliste.de/bayern/aichach-friedberg/aichach/) `/bayern/aichach-friedberg/aichach/` | Landkreis Aichach-Friedberg | 1 | 8 | 11 |
 | ✓ | [Dasing](https://hofladenliste.de/bayern/aichach-friedberg/dasing/) `/bayern/aichach-friedberg/dasing/` | Landkreis Aichach-Friedberg | 1 | 8 | 11 |
 | ✓ | [Dachau](https://hofladenliste.de/bayern/dachau/dachau/) `/bayern/dachau/dachau/` | Landkreis Dachau | 1 | 8 | 11 |
-| ✓ | [Beilngries](https://hofladenliste.de/bayern/eichstaett/beilngries/) `/bayern/eichstaett/beilngries/` | Landkreis Eichstätt | 1 | 8 | 11 |
 | ✓ | [Egloffstein](https://hofladenliste.de/bayern/forchheim/egloffstein/) `/bayern/forchheim/egloffstein/` | Landkreis Forchheim | 1 | 8 | 11 |
 | ✓ | [Germering](https://hofladenliste.de/bayern/fuerstenfeldbruck/germering/) `/bayern/fuerstenfeldbruck/germering/` | Landkreis Fürstenfeldbruck | 1 | 8 | 11 |
+| ✓ | [Bad Endorf](https://hofladenliste.de/bayern/landkreis-rosenheim/bad-endorf/) `/bayern/landkreis-rosenheim/bad-endorf/` | Landkreis Rosenheim | 1 | 8 | 11 |
 | ✓ | [Pfaffenhofen an der Ilm](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/pfaffenhofen-an-der-ilm/) `/bayern/pfaffenhofen-an-der-ilm/pfaffenhofen-an-der-ilm/` | Landkreis Pfaffenhofen an der Ilm | 1 | 8 | 11 |
-| ✓ | [Trebur](https://hofladenliste.de/hessen/gross-gerau/trebur/) `/hessen/gross-gerau/trebur/` | Landkreis Groß-Gerau | 1 | 8 | 11 |
-| ✓ | [Grebenstein](https://hofladenliste.de/hessen/landkreis-kassel/grebenstein/) `/hessen/landkreis-kassel/grebenstein/` | Landkreis Kassel | 1 | 8 | 11 |
-| ✓ | [Bad Vilbel](https://hofladenliste.de/hessen/wetteraukreis/bad-vilbel/) `/hessen/wetteraukreis/bad-vilbel/` | Wetteraukreis | 1 | 8 | 11 |
 
 ## Paket 14 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Trebur](https://hofladenliste.de/hessen/gross-gerau/trebur/) `/hessen/gross-gerau/trebur/` | Landkreis Groß-Gerau | 1 | 8 | 11 |
+| ✓ | [Grebenstein](https://hofladenliste.de/hessen/landkreis-kassel/grebenstein/) `/hessen/landkreis-kassel/grebenstein/` | Landkreis Kassel | 1 | 8 | 11 |
+| ✓ | [Bad Vilbel](https://hofladenliste.de/hessen/wetteraukreis/bad-vilbel/) `/hessen/wetteraukreis/bad-vilbel/` | Wetteraukreis | 1 | 8 | 11 |
 | ✓ | [Westerstede](https://hofladenliste.de/niedersachsen/ammerland/westerstede/) `/niedersachsen/ammerland/westerstede/` | Landkreis Ammerland | 1 | 8 | 11 |
+| ✓ | [Otterndorf](https://hofladenliste.de/niedersachsen/cuxhaven/otterndorf/) `/niedersachsen/cuxhaven/otterndorf/` | Landkreis Cuxhaven | 1 | 8 | 11 |
 | ✓ | [Sassenburg](https://hofladenliste.de/niedersachsen/gifhorn/sassenburg/) `/niedersachsen/gifhorn/sassenburg/` | Landkreis Gifhorn | 1 | 8 | 11 |
 | ✓ | [Friedland](https://hofladenliste.de/niedersachsen/goettingen/friedland/) `/niedersachsen/goettingen/friedland/` | Landkreis Göttingen | 1 | 8 | 11 |
 | ✓ | [Wistedt](https://hofladenliste.de/niedersachsen/harburg/wistedt/) `/niedersachsen/harburg/wistedt/` | Landkreis Harburg | 1 | 8 | 11 |
+| ✓ | [Bad Essen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-essen/) `/niedersachsen/landkreis-osnabrueck/bad-essen/` | Landkreis Osnabrück | 1 | 8 | 11 |
 | ✓ | [Nörten-Hardenberg](https://hofladenliste.de/niedersachsen/northeim/noerten-hardenberg/) `/niedersachsen/northeim/noerten-hardenberg/` | Landkreis Northeim | 1 | 8 | 11 |
 | ✓ | [Heiden](https://hofladenliste.de/nordrhein-westfalen/borken/heiden/) `/nordrhein-westfalen/borken/heiden/` | Kreis Borken | 1 | 8 | 11 |
 | ✓ | [Senden (Kreis Coesfeld)](https://hofladenliste.de/nordrhein-westfalen/coesfeld/senden/) `/nordrhein-westfalen/coesfeld/senden/` | Kreis Coesfeld | 1 | 8 | 11 |
@@ -416,17 +421,17 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Telgte](https://hofladenliste.de/nordrhein-westfalen/warendorf/telgte/) `/nordrhein-westfalen/warendorf/telgte/` | Kreis Warendorf | 1 | 8 | 11 |
 | ✓ | [Schermbeck](https://hofladenliste.de/nordrhein-westfalen/wesel/schermbeck/) `/nordrhein-westfalen/wesel/schermbeck/` | Kreis Wesel | 1 | 8 | 11 |
 | ✓ | [Xanten](https://hofladenliste.de/nordrhein-westfalen/wesel/xanten/) `/nordrhein-westfalen/wesel/xanten/` | Kreis Wesel | 1 | 8 | 11 |
-| ✓ | [Immenstaad am Bodensee](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/immenstaad-am-bodensee/) `/baden-wuerttemberg/bodenseekreis/immenstaad-am-bodensee/` | Bodenseekreis | 2 | 5 | 11 |
-| ✓ | [Freising](https://hofladenliste.de/bayern/freising/freising/) `/bayern/freising/freising/` | Landkreis Freising | 2 | 5 | 11 |
-| ✓ | [Wittingen](https://hofladenliste.de/niedersachsen/gifhorn/wittingen/) `/niedersachsen/gifhorn/wittingen/` | Landkreis Gifhorn | 2 | 5 | 11 |
-| ✓ | [Herten](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/herten/) `/nordrhein-westfalen/recklinghausen/herten/` | Kreis Recklinghausen | 2 | 5 | 11 |
-| ✓ | [Zschopau](https://hofladenliste.de/sachsen/erzgebirgskreis/zschopau/) `/sachsen/erzgebirgskreis/zschopau/` | Erzgebirgskreis | 2 | 5 | 11 |
-| ✓ | [Heidenheim an der Brenz](https://hofladenliste.de/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/) `/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/` | Landkreis Heidenheim | 3 | 2 | 11 |
+| ✓ | [Barsbüttel](https://hofladenliste.de/schleswig-holstein/stormarn/barsbuettel/) `/schleswig-holstein/stormarn/barsbuettel/` | Kreis Stormarn | 1 | 8 | 11 |
 
 ## Paket 15 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Immenstaad am Bodensee](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/immenstaad-am-bodensee/) `/baden-wuerttemberg/bodenseekreis/immenstaad-am-bodensee/` | Bodenseekreis | 2 | 5 | 11 |
+| ✓ | [Freising](https://hofladenliste.de/bayern/freising/freising/) `/bayern/freising/freising/` | Landkreis Freising | 2 | 5 | 11 |
+| ✓ | [Herten](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/herten/) `/nordrhein-westfalen/recklinghausen/herten/` | Kreis Recklinghausen | 2 | 5 | 11 |
+| ✓ | [Zschopau](https://hofladenliste.de/sachsen/erzgebirgskreis/zschopau/) `/sachsen/erzgebirgskreis/zschopau/` | Erzgebirgskreis | 2 | 5 | 11 |
+| ✓ | [Heidenheim an der Brenz](https://hofladenliste.de/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/) `/baden-wuerttemberg/heidenheim/heidenheim-an-der-brenz/` | Landkreis Heidenheim | 3 | 2 | 11 |
 | ✓ | [Hof](https://hofladenliste.de/bayern/hof-stadt/) `/bayern/hof-stadt/` | Hof | 3 | 2 | 11 |
 | ✓ | [Kempten](https://hofladenliste.de/bayern/kempten/) `/bayern/kempten/` | Kempten | 3 | 2 | 11 |
 | ✓ | [Hamburg Eißendorf](https://hofladenliste.de/hamburg/hamburg/hamburg-eissendorf/) `/hamburg/hamburg/hamburg-eissendorf/` | Hamburg | 3 | 2 | 11 |
@@ -447,16 +452,17 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Alfdorf](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/alfdorf/) `/baden-wuerttemberg/rems-murr-kreis/alfdorf/` | Rems-Murr-Kreis | 1 | 7 | 10 |
 | ✓ | [Kusterdingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/kusterdingen/) `/baden-wuerttemberg/tuebingen/kusterdingen/` | Landkreis Tübingen | 1 | 7 | 10 |
 | ✓ | [Eurasburg](https://hofladenliste.de/bayern/aichach-friedberg/eurasburg/) `/bayern/aichach-friedberg/eurasburg/` | Landkreis Aichach-Friedberg | 1 | 7 | 10 |
-| ✓ | [Mering](https://hofladenliste.de/bayern/aichach-friedberg/mering/) `/bayern/aichach-friedberg/mering/` | Landkreis Aichach-Friedberg | 1 | 7 | 10 |
-| ✓ | [Ansbach](https://hofladenliste.de/bayern/ansbach-stadt/) `/bayern/ansbach-stadt/` | Ansbach | 1 | 7 | 10 |
-| ✓ | [Lenggries](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/lenggries/) `/bayern/bad-toelz-wolfratshausen/lenggries/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 7 | 10 |
-| ✓ | [Erding](https://hofladenliste.de/bayern/erding/erding/) `/bayern/erding/erding/` | Landkreis Erding | 1 | 7 | 10 |
-| ✓ | [Moosinning](https://hofladenliste.de/bayern/erding/moosinning/) `/bayern/erding/moosinning/` | Landkreis Erding | 1 | 7 | 10 |
 
-## Paket 16 (25/25 fertig)
+## Paket 16 (23/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Mering](https://hofladenliste.de/bayern/aichach-friedberg/mering/) `/bayern/aichach-friedberg/mering/` | Landkreis Aichach-Friedberg | 1 | 7 | 10 |
+| ✓ | [Ansbach](https://hofladenliste.de/bayern/ansbach-stadt/) `/bayern/ansbach-stadt/` | Ansbach | 1 | 7 | 10 |
+| ✓ | [Lenggries](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/lenggries/) `/bayern/bad-toelz-wolfratshausen/lenggries/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 7 | 10 |
+| ✓ | [Pollenfeld](https://hofladenliste.de/bayern/eichstaett/pollenfeld/) `/bayern/eichstaett/pollenfeld/` | Landkreis Eichstätt | 1 | 7 | 10 |
+| ✓ | [Erding](https://hofladenliste.de/bayern/erding/erding/) `/bayern/erding/erding/` | Landkreis Erding | 1 | 7 | 10 |
+| ✓ | [Moosinning](https://hofladenliste.de/bayern/erding/moosinning/) `/bayern/erding/moosinning/` | Landkreis Erding | 1 | 7 | 10 |
 | ✓ | [Oberding](https://hofladenliste.de/bayern/erding/oberding/) `/bayern/erding/oberding/` | Landkreis Erding | 1 | 7 | 10 |
 | ✓ | [Gräfenberg](https://hofladenliste.de/bayern/forchheim/graefenberg/) `/bayern/forchheim/graefenberg/` | Landkreis Forchheim | 1 | 7 | 10 |
 | ✓ | [Fahrenzhausen](https://hofladenliste.de/bayern/freising/fahrenzhausen/) `/bayern/freising/fahrenzhausen/` | Landkreis Freising | 1 | 7 | 10 |
@@ -465,29 +471,33 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Cadolzburg](https://hofladenliste.de/bayern/landkreis-fuerth/cadolzburg/) `/bayern/landkreis-fuerth/cadolzburg/` | Landkreis Fürth | 1 | 7 | 10 |
 | ✓ | [Kumhausen](https://hofladenliste.de/bayern/landkreis-landshut/kumhausen/) `/bayern/landkreis-landshut/kumhausen/` | Landkreis Landshut | 1 | 7 | 10 |
 | ✓ | [Vilsbiburg](https://hofladenliste.de/bayern/landkreis-landshut/vilsbiburg/) `/bayern/landkreis-landshut/vilsbiburg/` | Landkreis Landshut | 1 | 7 | 10 |
-| ✓ | [Bad Endorf](https://hofladenliste.de/bayern/landkreis-rosenheim/bad-endorf/) `/bayern/landkreis-rosenheim/bad-endorf/` | Landkreis Rosenheim | 1 | 7 | 10 |
 | ✓ | [Bodolz](https://hofladenliste.de/bayern/lindau/bodolz/) `/bayern/lindau/bodolz/` | Landkreis Lindau | 1 | 7 | 10 |
 | ✓ | [Lindau (Bodensee)](https://hofladenliste.de/bayern/lindau/lindau-bodensee/) `/bayern/lindau/lindau-bodensee/` | Landkreis Lindau | 1 | 7 | 10 |
+| ✓ | [Fischbachau](https://hofladenliste.de/bayern/miesbach/fischbachau/) `/bayern/miesbach/fischbachau/` | Landkreis Miesbach | 1 | 7 | 10 |
+|  | [Gmund am Tegernsee](https://hofladenliste.de/bayern/miesbach/gmund-am-tegernsee/) `/bayern/miesbach/gmund-am-tegernsee/` | Landkreis Miesbach | 1 | 7 | 10 |
 | ✓ | [Miltenberg](https://hofladenliste.de/bayern/miltenberg/miltenberg/) `/bayern/miltenberg/miltenberg/` | Landkreis Miltenberg | 1 | 7 | 10 |
 | ✓ | [Schrobenhausen](https://hofladenliste.de/bayern/neuburg-schrobenhausen/schrobenhausen/) `/bayern/neuburg-schrobenhausen/schrobenhausen/` | Landkreis Neuburg-Schrobenhausen | 1 | 7 | 10 |
 | ✓ | [Thalmässing](https://hofladenliste.de/bayern/roth/thalmaessing/) `/bayern/roth/thalmaessing/` | Landkreis Roth | 1 | 7 | 10 |
 | ✓ | [Schwabach](https://hofladenliste.de/bayern/schwabach/) `/bayern/schwabach/` | Schwabach | 1 | 7 | 10 |
 | ✓ | [Hofgeismar](https://hofladenliste.de/hessen/landkreis-kassel/hofgeismar/) `/hessen/landkreis-kassel/hofgeismar/` | Landkreis Kassel | 1 | 7 | 10 |
+|  | [Wolfhagen](https://hofladenliste.de/hessen/landkreis-kassel/wolfhagen/) `/hessen/landkreis-kassel/wolfhagen/` | Landkreis Kassel | 1 | 7 | 10 |
 | ✓ | [Hofheim am Taunus](https://hofladenliste.de/hessen/main-taunus-kreis/hofheim-am-taunus/) `/hessen/main-taunus-kreis/hofheim-am-taunus/` | Main-Taunus-Kreis | 1 | 7 | 10 |
-| ✓ | [Karben](https://hofladenliste.de/hessen/wetteraukreis/karben/) `/hessen/wetteraukreis/karben/` | Wetteraukreis | 1 | 7 | 10 |
-| ✓ | [Münzenberg](https://hofladenliste.de/hessen/wetteraukreis/muenzenberg/) `/hessen/wetteraukreis/muenzenberg/` | Wetteraukreis | 1 | 7 | 10 |
-| ✓ | [Emstek](https://hofladenliste.de/niedersachsen/cloppenburg/emstek/) `/niedersachsen/cloppenburg/emstek/` | Landkreis Cloppenburg | 1 | 7 | 10 |
-| ✓ | [Otterndorf](https://hofladenliste.de/niedersachsen/cuxhaven/otterndorf/) `/niedersachsen/cuxhaven/otterndorf/` | Landkreis Cuxhaven | 1 | 7 | 10 |
-| ✓ | [Gifhorn](https://hofladenliste.de/niedersachsen/gifhorn/gifhorn/) `/niedersachsen/gifhorn/gifhorn/` | Landkreis Gifhorn | 1 | 7 | 10 |
-| ✓ | [Otter](https://hofladenliste.de/niedersachsen/harburg/otter/) `/niedersachsen/harburg/otter/` | Landkreis Harburg | 1 | 7 | 10 |
-| ✓ | [Stelle](https://hofladenliste.de/niedersachsen/harburg/stelle/) `/niedersachsen/harburg/stelle/` | Landkreis Harburg | 1 | 7 | 10 |
-| ✓ | [Bad Essen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-essen/) `/niedersachsen/landkreis-osnabrueck/bad-essen/` | Landkreis Osnabrück | 1 | 7 | 10 |
 
 ## Paket 17 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Gudensberg](https://hofladenliste.de/hessen/schwalm-eder-kreis/gudensberg/) `/hessen/schwalm-eder-kreis/gudensberg/` | Schwalm-Eder-Kreis | 1 | 7 | 10 |
+| ✓ | [Karben](https://hofladenliste.de/hessen/wetteraukreis/karben/) `/hessen/wetteraukreis/karben/` | Wetteraukreis | 1 | 7 | 10 |
+| ✓ | [Münzenberg](https://hofladenliste.de/hessen/wetteraukreis/muenzenberg/) `/hessen/wetteraukreis/muenzenberg/` | Wetteraukreis | 1 | 7 | 10 |
+| ✓ | [Rastede](https://hofladenliste.de/niedersachsen/ammerland/rastede/) `/niedersachsen/ammerland/rastede/` | Landkreis Ammerland | 1 | 7 | 10 |
+| ✓ | [Emstek](https://hofladenliste.de/niedersachsen/cloppenburg/emstek/) `/niedersachsen/cloppenburg/emstek/` | Landkreis Cloppenburg | 1 | 7 | 10 |
+| ✓ | [Gifhorn](https://hofladenliste.de/niedersachsen/gifhorn/gifhorn/) `/niedersachsen/gifhorn/gifhorn/` | Landkreis Gifhorn | 1 | 7 | 10 |
+| ✓ | [Otter](https://hofladenliste.de/niedersachsen/harburg/otter/) `/niedersachsen/harburg/otter/` | Landkreis Harburg | 1 | 7 | 10 |
+| ✓ | [Stelle](https://hofladenliste.de/niedersachsen/harburg/stelle/) `/niedersachsen/harburg/stelle/` | Landkreis Harburg | 1 | 7 | 10 |
+| ✓ | [Edemissen](https://hofladenliste.de/niedersachsen/peine/edemissen/) `/niedersachsen/peine/edemissen/` | Landkreis Peine | 1 | 7 | 10 |
 | ✓ | [Wedemark](https://hofladenliste.de/niedersachsen/region-hannover/wedemark/) `/niedersachsen/region-hannover/wedemark/` | Region Hannover | 1 | 7 | 10 |
+| ✓ | [Rotenburg (Wümme)](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/rotenburg-wuemme/) `/niedersachsen/rotenburg-wuemme/rotenburg-wuemme/` | Landkreis Rotenburg (Wümme) | 1 | 7 | 10 |
 | ✓ | [Dörverden](https://hofladenliste.de/niedersachsen/verden/doerverden/) `/niedersachsen/verden/doerverden/` | Landkreis Verden | 1 | 7 | 10 |
 | ✓ | [Rhede](https://hofladenliste.de/nordrhein-westfalen/borken/rhede/) `/nordrhein-westfalen/borken/rhede/` | Kreis Borken | 1 | 7 | 10 |
 | ✓ | [Ascheberg](https://hofladenliste.de/nordrhein-westfalen/coesfeld/ascheberg/) `/nordrhein-westfalen/coesfeld/ascheberg/` | Kreis Coesfeld | 1 | 7 | 10 |
@@ -502,21 +512,21 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Mettmann](https://hofladenliste.de/nordrhein-westfalen/mettmann/mettmann/) `/nordrhein-westfalen/mettmann/mettmann/` | Kreis Mettmann | 1 | 7 | 10 |
 | ✓ | [Waltrop](https://hofladenliste.de/nordrhein-westfalen/recklinghausen/waltrop/) `/nordrhein-westfalen/recklinghausen/waltrop/` | Kreis Recklinghausen | 1 | 7 | 10 |
 | ✓ | [Hürth](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/huerth/) `/nordrhein-westfalen/rhein-erft-kreis/huerth/` | Rhein-Erft-Kreis | 1 | 7 | 10 |
-| ✓ | [Pulheim](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/pulheim/) `/nordrhein-westfalen/rhein-erft-kreis/pulheim/` | Rhein-Erft-Kreis | 1 | 7 | 10 |
-| ✓ | [Niederkassel](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/niederkassel/) `/nordrhein-westfalen/rhein-sieg-kreis/niederkassel/` | Rhein-Sieg-Kreis | 1 | 7 | 10 |
-| ✓ | [Rheinbach](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/rheinbach/) `/nordrhein-westfalen/rhein-sieg-kreis/rheinbach/` | Rhein-Sieg-Kreis | 1 | 7 | 10 |
-| ✓ | [Lippetal](https://hofladenliste.de/nordrhein-westfalen/soest/lippetal/) `/nordrhein-westfalen/soest/lippetal/` | Kreis Soest | 1 | 7 | 10 |
-| ✓ | [Hünxe](https://hofladenliste.de/nordrhein-westfalen/wesel/huenxe/) `/nordrhein-westfalen/wesel/huenxe/` | Kreis Wesel | 1 | 7 | 10 |
-| ✓ | [Neukirchen-Vluyn](https://hofladenliste.de/nordrhein-westfalen/wesel/neukirchen-vluyn/) `/nordrhein-westfalen/wesel/neukirchen-vluyn/` | Kreis Wesel | 1 | 7 | 10 |
-| ✓ | [Limbach-Oberfrohna](https://hofladenliste.de/sachsen/zwickau/limbach-oberfrohna/) `/sachsen/zwickau/limbach-oberfrohna/` | Landkreis Zwickau | 1 | 7 | 10 |
-| ✓ | [Wildenfels](https://hofladenliste.de/sachsen/zwickau/wildenfels/) `/sachsen/zwickau/wildenfels/` | Landkreis Zwickau | 1 | 7 | 10 |
-| ✓ | [Barsbüttel](https://hofladenliste.de/schleswig-holstein/stormarn/barsbuettel/) `/schleswig-holstein/stormarn/barsbuettel/` | Kreis Stormarn | 1 | 7 | 10 |
-| ✓ | [Feldberger Seenlandschaft](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/` | Landkreis Mecklenburgische Seenplatte | 2 | 4 | 10 |
 
 ## Paket 18 (25/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+| ✓ | [Pulheim](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/pulheim/) `/nordrhein-westfalen/rhein-erft-kreis/pulheim/` | Rhein-Erft-Kreis | 1 | 7 | 10 |
+| ✓ | [Niederkassel](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/niederkassel/) `/nordrhein-westfalen/rhein-sieg-kreis/niederkassel/` | Rhein-Sieg-Kreis | 1 | 7 | 10 |
+| ✓ | [Rheinbach](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/rheinbach/) `/nordrhein-westfalen/rhein-sieg-kreis/rheinbach/` | Rhein-Sieg-Kreis | 1 | 7 | 10 |
+| ✓ | [Lippetal](https://hofladenliste.de/nordrhein-westfalen/soest/lippetal/) `/nordrhein-westfalen/soest/lippetal/` | Kreis Soest | 1 | 7 | 10 |
+| ✓ | [Everswinkel](https://hofladenliste.de/nordrhein-westfalen/warendorf/everswinkel/) `/nordrhein-westfalen/warendorf/everswinkel/` | Kreis Warendorf | 1 | 7 | 10 |
+| ✓ | [Hünxe](https://hofladenliste.de/nordrhein-westfalen/wesel/huenxe/) `/nordrhein-westfalen/wesel/huenxe/` | Kreis Wesel | 1 | 7 | 10 |
+| ✓ | [Neukirchen-Vluyn](https://hofladenliste.de/nordrhein-westfalen/wesel/neukirchen-vluyn/) `/nordrhein-westfalen/wesel/neukirchen-vluyn/` | Kreis Wesel | 1 | 7 | 10 |
+| ✓ | [Limbach-Oberfrohna](https://hofladenliste.de/sachsen/zwickau/limbach-oberfrohna/) `/sachsen/zwickau/limbach-oberfrohna/` | Landkreis Zwickau | 1 | 7 | 10 |
+| ✓ | [Wildenfels](https://hofladenliste.de/sachsen/zwickau/wildenfels/) `/sachsen/zwickau/wildenfels/` | Landkreis Zwickau | 1 | 7 | 10 |
+| ✓ | [Feldberger Seenlandschaft](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/feldberger-seenlandschaft/` | Landkreis Mecklenburgische Seenplatte | 2 | 4 | 10 |
 | ✓ | [Scharbeutz](https://hofladenliste.de/schleswig-holstein/ostholstein/scharbeutz/) `/schleswig-holstein/ostholstein/scharbeutz/` | Kreis Ostholstein | 2 | 4 | 10 |
 | ✓ | [Lörrach](https://hofladenliste.de/baden-wuerttemberg/loerrach/loerrach/) `/baden-wuerttemberg/loerrach/loerrach/` | Landkreis Lörrach | 3 | 1 | 10 |
 | ✓ | [Stuttgart Vaihingen](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-vaihingen/) `/baden-wuerttemberg/stuttgart/stuttgart-vaihingen/` | Stuttgart | 3 | 1 | 10 |
@@ -532,6 +542,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Görlitz](https://hofladenliste.de/sachsen/goerlitz/goerlitz/) `/sachsen/goerlitz/goerlitz/` | Landkreis Görlitz | 3 | 1 | 10 |
 | ✓ | [Elmshorn](https://hofladenliste.de/schleswig-holstein/pinneberg/elmshorn/) `/schleswig-holstein/pinneberg/elmshorn/` | Kreis Pinneberg | 3 | 1 | 10 |
 | ✓ | [Griesingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/griesingen/) `/baden-wuerttemberg/alb-donau-kreis/griesingen/` | Alb-Donau-Kreis | 1 | 6 | 9 |
+
+## Paket 19 (25/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 | ✓ | [Ummendorf](https://hofladenliste.de/baden-wuerttemberg/biberach/ummendorf/) `/baden-wuerttemberg/biberach/ummendorf/` | Landkreis Biberach | 1 | 6 | 9 |
 | ✓ | [Kressbronn am Bodensee](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/kressbronn-am-bodensee/) `/baden-wuerttemberg/bodenseekreis/kressbronn-am-bodensee/` | Bodenseekreis | 1 | 6 | 9 |
 | ✓ | [Salem](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/salem/) `/baden-wuerttemberg/bodenseekreis/salem/` | Bodenseekreis | 1 | 6 | 9 |
@@ -542,15 +557,9 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Schallstadt](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/schallstadt/) `/baden-wuerttemberg/breisgau-hochschwarzwald/schallstadt/` | Landkreis Breisgau-Hochschwarzwald | 1 | 6 | 9 |
 | ✓ | [Teningen](https://hofladenliste.de/baden-wuerttemberg/emmendingen/teningen/) `/baden-wuerttemberg/emmendingen/teningen/` | Landkreis Emmendingen | 1 | 6 | 9 |
 | ✓ | [Oberboihingen](https://hofladenliste.de/baden-wuerttemberg/esslingen/oberboihingen/) `/baden-wuerttemberg/esslingen/oberboihingen/` | Landkreis Esslingen | 1 | 6 | 9 |
-
-## Paket 19 (25/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 | ✓ | [Ebersbach an der Fils](https://hofladenliste.de/baden-wuerttemberg/goeppingen/ebersbach-an-der-fils/) `/baden-wuerttemberg/goeppingen/ebersbach-an-der-fils/` | Landkreis Göppingen | 1 | 6 | 9 |
 | ✓ | [Steinheim am Albuch](https://hofladenliste.de/baden-wuerttemberg/heidenheim/steinheim-am-albuch/) `/baden-wuerttemberg/heidenheim/steinheim-am-albuch/` | Landkreis Heidenheim | 1 | 6 | 9 |
 | ✓ | [Steißlingen](https://hofladenliste.de/baden-wuerttemberg/konstanz/steisslingen/) `/baden-wuerttemberg/konstanz/steisslingen/` | Landkreis Konstanz | 1 | 6 | 9 |
-| ✓ | [Stockach](https://hofladenliste.de/baden-wuerttemberg/konstanz/stockach/) `/baden-wuerttemberg/konstanz/stockach/` | Landkreis Konstanz | 1 | 6 | 9 |
 | ✓ | [Eppingen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/eppingen/) `/baden-wuerttemberg/landkreis-heilbronn/eppingen/` | Landkreis Heilbronn | 1 | 6 | 9 |
 | ✓ | [Bruchsal](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/bruchsal/) `/baden-wuerttemberg/landkreis-karlsruhe/bruchsal/` | Landkreis Karlsruhe | 1 | 6 | 9 |
 | ✓ | [Ettlingen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/ettlingen/) `/baden-wuerttemberg/landkreis-karlsruhe/ettlingen/` | Landkreis Karlsruhe | 1 | 6 | 9 |
@@ -561,9 +570,13 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Sinzheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/sinzheim/) `/baden-wuerttemberg/rastatt/sinzheim/` | Landkreis Rastatt | 1 | 6 | 9 |
 | ✓ | [Bad Wurzach](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bad-wurzach/) `/baden-wuerttemberg/ravensburg/bad-wurzach/` | Landkreis Ravensburg | 1 | 6 | 9 |
 | ✓ | [Kernen im Remstal](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/kernen-im-remstal/) `/baden-wuerttemberg/rems-murr-kreis/kernen-im-remstal/` | Rems-Murr-Kreis | 1 | 6 | 9 |
-| ✓ | [Schwaikheim](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/schwaikheim/) `/baden-wuerttemberg/rems-murr-kreis/schwaikheim/` | Rems-Murr-Kreis | 1 | 6 | 9 |
 | ✓ | [Münsingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/muensingen/) `/baden-wuerttemberg/reutlingen/muensingen/` | Landkreis Reutlingen | 1 | 6 | 9 |
 | ✓ | [Ladenburg](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/ladenburg/) `/baden-wuerttemberg/rhein-neckar-kreis/ladenburg/` | Rhein-Neckar-Kreis | 1 | 6 | 9 |
+
+## Paket 20 (24/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 | ✓ | [Schriesheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/schriesheim/) `/baden-wuerttemberg/rhein-neckar-kreis/schriesheim/` | Rhein-Neckar-Kreis | 1 | 6 | 9 |
 | ✓ | [Wiesloch](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/wiesloch/) `/baden-wuerttemberg/rhein-neckar-kreis/wiesloch/` | Rhein-Neckar-Kreis | 1 | 6 | 9 |
 | ✓ | [Rottweil](https://hofladenliste.de/baden-wuerttemberg/rottweil/rottweil/) `/baden-wuerttemberg/rottweil/rottweil/` | Landkreis Rottweil | 1 | 6 | 9 |
@@ -572,12 +585,8 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Königsfeld im Schwarzwald](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/) `/baden-wuerttemberg/schwarzwald-baar-kreis/koenigsfeld-im-schwarzwald/` | Schwarzwald-Baar-Kreis | 1 | 6 | 9 |
 | ✓ | [Immendingen](https://hofladenliste.de/baden-wuerttemberg/tuttlingen/immendingen/) `/baden-wuerttemberg/tuttlingen/immendingen/` | Landkreis Tuttlingen | 1 | 6 | 9 |
 | ✓ | [Lottstetten](https://hofladenliste.de/baden-wuerttemberg/waldshut/lottstetten/) `/baden-wuerttemberg/waldshut/lottstetten/` | Landkreis Waldshut | 1 | 6 | 9 |
-
-## Paket 20 (25/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 | ✓ | [Sachsenkam](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/sachsenkam/) `/bayern/bad-toelz-wolfratshausen/sachsenkam/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 6 | 9 |
+| ✓ | [Saaldorf-Surheim](https://hofladenliste.de/bayern/berchtesgadener-land/saaldorf-surheim/) `/bayern/berchtesgadener-land/saaldorf-surheim/` | Landkreis Berchtesgadener Land | 1 | 6 | 9 |
 | ✓ | [Röhrmoos](https://hofladenliste.de/bayern/dachau/roehrmoos/) `/bayern/dachau/roehrmoos/` | Landkreis Dachau | 1 | 6 | 9 |
 | ✓ | [Garmisch-Partenkirchen](https://hofladenliste.de/bayern/garmisch-partenkirchen/garmisch-partenkirchen/) `/bayern/garmisch-partenkirchen/garmisch-partenkirchen/` | Landkreis Garmisch-Partenkirchen | 1 | 6 | 9 |
 | ✓ | [Mainleus](https://hofladenliste.de/bayern/kulmbach/mainleus/) `/bayern/kulmbach/mainleus/` | Landkreis Kulmbach | 1 | 6 | 9 |
@@ -585,16 +594,23 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Münchberg](https://hofladenliste.de/bayern/landkreis-hof/muenchberg/) `/bayern/landkreis-hof/muenchberg/` | Landkreis Hof | 1 | 6 | 9 |
 | ✓ | [Adlkofen](https://hofladenliste.de/bayern/landkreis-landshut/adlkofen/) `/bayern/landkreis-landshut/adlkofen/` | Landkreis Landshut | 1 | 6 | 9 |
 | ✓ | [Garching bei München](https://hofladenliste.de/bayern/landkreis-muenchen/garching-bei-muenchen/) `/bayern/landkreis-muenchen/garching-bei-muenchen/` | Landkreis München | 1 | 6 | 9 |
+| ✓ | [Oberhaching](https://hofladenliste.de/bayern/landkreis-muenchen/oberhaching/) `/bayern/landkreis-muenchen/oberhaching/` | Landkreis München | 1 | 6 | 9 |
 | ✓ | [Bad Aibling](https://hofladenliste.de/bayern/landkreis-rosenheim/bad-aibling/) `/bayern/landkreis-rosenheim/bad-aibling/` | Landkreis Rosenheim | 1 | 6 | 9 |
 | ✓ | [Bruckmühl](https://hofladenliste.de/bayern/landkreis-rosenheim/bruckmuehl/) `/bayern/landkreis-rosenheim/bruckmuehl/` | Landkreis Rosenheim | 1 | 6 | 9 |
 | ✓ | [Penzing](https://hofladenliste.de/bayern/landsberg-am-lech/penzing/) `/bayern/landsberg-am-lech/penzing/` | Landkreis Landsberg am Lech | 1 | 6 | 9 |
 | ✓ | [Nonnenhorn](https://hofladenliste.de/bayern/lindau/nonnenhorn/) `/bayern/lindau/nonnenhorn/` | Landkreis Lindau | 1 | 6 | 9 |
+|  | [Warngau](https://hofladenliste.de/bayern/miesbach/warngau/) `/bayern/miesbach/warngau/` | Landkreis Miesbach | 1 | 6 | 9 |
 | ✓ | [Neunkirchen](https://hofladenliste.de/bayern/miltenberg/neunkirchen/) `/bayern/miltenberg/neunkirchen/` | Landkreis Miltenberg | 1 | 6 | 9 |
 | ✓ | [Balderschwang](https://hofladenliste.de/bayern/oberallgaeu/balderschwang/) `/bayern/oberallgaeu/balderschwang/` | Landkreis Oberallgäu | 1 | 6 | 9 |
+
+## Paket 21 (24/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 | ✓ | [Fischen im Allgäu](https://hofladenliste.de/bayern/oberallgaeu/fischen-im-allgaeu/) `/bayern/oberallgaeu/fischen-im-allgaeu/` | Landkreis Oberallgäu | 1 | 6 | 9 |
 | ✓ | [Büchenbach](https://hofladenliste.de/bayern/roth/buechenbach/) `/bayern/roth/buechenbach/` | Landkreis Roth | 1 | 6 | 9 |
+|  | [Pfarrkirchen](https://hofladenliste.de/bayern/rottal-inn/pfarrkirchen/) `/bayern/rottal-inn/pfarrkirchen/` | Landkreis Rottal-Inn | 1 | 6 | 9 |
 | ✓ | [Gilching](https://hofladenliste.de/bayern/starnberg/gilching/) `/bayern/starnberg/gilching/` | Landkreis Starnberg | 1 | 6 | 9 |
-| ✓ | [Inning am Ammersee](https://hofladenliste.de/bayern/starnberg/inning-am-ammersee/) `/bayern/starnberg/inning-am-ammersee/` | Landkreis Starnberg | 1 | 6 | 9 |
 | ✓ | [Weßling](https://hofladenliste.de/bayern/starnberg/wessling/) `/bayern/starnberg/wessling/` | Landkreis Starnberg | 1 | 6 | 9 |
 | ✓ | [Weilheim in Oberbayern](https://hofladenliste.de/bayern/weilheim-schongau/weilheim-in-oberbayern/) `/bayern/weilheim-schongau/weilheim-in-oberbayern/` | Landkreis Weilheim-Schongau | 1 | 6 | 9 |
 | ✓ | [Falkensee](https://hofladenliste.de/brandenburg/havelland/falkensee/) `/brandenburg/havelland/falkensee/` | Landkreis Havelland | 1 | 6 | 9 |
@@ -602,16 +618,9 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Schlüchtern](https://hofladenliste.de/hessen/main-kinzig-kreis/schluechtern/) `/hessen/main-kinzig-kreis/schluechtern/` | Main-Kinzig-Kreis | 1 | 6 | 9 |
 | ✓ | [Cölbe](https://hofladenliste.de/hessen/marburg-biedenkopf/coelbe/) `/hessen/marburg-biedenkopf/coelbe/` | Landkreis Marburg-Biedenkopf | 1 | 6 | 9 |
 | ✓ | [Seligenstadt](https://hofladenliste.de/hessen/offenbach/seligenstadt/) `/hessen/offenbach/seligenstadt/` | Landkreis Offenbach | 1 | 6 | 9 |
-
-## Paket 21 (25/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
-| ✓ | [Gudensberg](https://hofladenliste.de/hessen/schwalm-eder-kreis/gudensberg/) `/hessen/schwalm-eder-kreis/gudensberg/` | Schwalm-Eder-Kreis | 1 | 6 | 9 |
 | ✓ | [Wanfried](https://hofladenliste.de/hessen/werra-meissner-kreis/wanfried/) `/hessen/werra-meissner-kreis/wanfried/` | Werra-Meißner-Kreis | 1 | 6 | 9 |
 | ✓ | [Rockenberg](https://hofladenliste.de/hessen/wetteraukreis/rockenberg/) `/hessen/wetteraukreis/rockenberg/` | Wetteraukreis | 1 | 6 | 9 |
 | ✓ | [Wölfersheim](https://hofladenliste.de/hessen/wetteraukreis/woelfersheim/) `/hessen/wetteraukreis/woelfersheim/` | Wetteraukreis | 1 | 6 | 9 |
-| ✓ | [Rastede](https://hofladenliste.de/niedersachsen/ammerland/rastede/) `/niedersachsen/ammerland/rastede/` | Landkreis Ammerland | 1 | 6 | 9 |
 | ✓ | [Syke](https://hofladenliste.de/niedersachsen/diepholz/syke/) `/niedersachsen/diepholz/syke/` | Landkreis Diepholz | 1 | 6 | 9 |
 | ✓ | [Lehe](https://hofladenliste.de/niedersachsen/emsland/lehe/) `/niedersachsen/emsland/lehe/` | Landkreis Emsland | 1 | 6 | 9 |
 | ✓ | [Salzbergen](https://hofladenliste.de/niedersachsen/emsland/salzbergen/) `/niedersachsen/emsland/salzbergen/` | Landkreis Emsland | 1 | 6 | 9 |
@@ -621,10 +630,14 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Neuenkirchen](https://hofladenliste.de/niedersachsen/heidekreis/neuenkirchen/) `/niedersachsen/heidekreis/neuenkirchen/` | Heidekreis | 1 | 6 | 9 |
 | ✓ | [Dötlingen](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/doetlingen/) `/niedersachsen/landkreis-oldenburg/doetlingen/` | Landkreis Oldenburg | 1 | 6 | 9 |
 | ✓ | [Menslage](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/menslage/) `/niedersachsen/landkreis-osnabrueck/menslage/` | Landkreis Osnabrück | 1 | 6 | 9 |
-| ✓ | [Edemissen](https://hofladenliste.de/niedersachsen/peine/edemissen/) `/niedersachsen/peine/edemissen/` | Landkreis Peine | 1 | 6 | 9 |
 | ✓ | [Vechelde](https://hofladenliste.de/niedersachsen/peine/vechelde/) `/niedersachsen/peine/vechelde/` | Landkreis Peine | 1 | 6 | 9 |
 | ✓ | [Springe](https://hofladenliste.de/niedersachsen/region-hannover/springe/) `/niedersachsen/region-hannover/springe/` | Region Hannover | 1 | 6 | 9 |
-| ✓ | [Rotenburg (Wümme)](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/rotenburg-wuemme/) `/niedersachsen/rotenburg-wuemme/rotenburg-wuemme/` | Landkreis Rotenburg (Wümme) | 1 | 6 | 9 |
+
+## Paket 22 (23/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
+|  | [Visselhövede](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/visselhoevede/) `/niedersachsen/rotenburg-wuemme/visselhoevede/` | Landkreis Rotenburg (Wümme) | 1 | 6 | 9 |
 | ✓ | [Visbek](https://hofladenliste.de/niedersachsen/vechta/visbek/) `/niedersachsen/vechta/visbek/` | Landkreis Vechta | 1 | 6 | 9 |
 | ✓ | [Ahaus](https://hofladenliste.de/nordrhein-westfalen/borken/ahaus/) `/nordrhein-westfalen/borken/ahaus/` | Kreis Borken | 1 | 6 | 9 |
 | ✓ | [Borken](https://hofladenliste.de/nordrhein-westfalen/borken/borken/) `/nordrhein-westfalen/borken/borken/` | Kreis Borken | 1 | 6 | 9 |
@@ -632,18 +645,13 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Coesfeld](https://hofladenliste.de/nordrhein-westfalen/coesfeld/coesfeld/) `/nordrhein-westfalen/coesfeld/coesfeld/` | Kreis Coesfeld | 1 | 6 | 9 |
 | ✓ | [Sprockhövel](https://hofladenliste.de/nordrhein-westfalen/ennepe-ruhr-kreis/sprockhoevel/) `/nordrhein-westfalen/ennepe-ruhr-kreis/sprockhoevel/` | Ennepe-Ruhr-Kreis | 1 | 6 | 9 |
 | ✓ | [Rheda-Wiedenbrück](https://hofladenliste.de/nordrhein-westfalen/guetersloh/rheda-wiedenbrueck/) `/nordrhein-westfalen/guetersloh/rheda-wiedenbrueck/` | Kreis Gütersloh | 1 | 6 | 9 |
-
-## Paket 22 (25/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 | ✓ | [Issum](https://hofladenliste.de/nordrhein-westfalen/kleve/issum/) `/nordrhein-westfalen/kleve/issum/` | Kreis Kleve | 1 | 6 | 9 |
 | ✓ | [Kranenburg](https://hofladenliste.de/nordrhein-westfalen/kleve/kranenburg/) `/nordrhein-westfalen/kleve/kranenburg/` | Kreis Kleve | 1 | 6 | 9 |
 | ✓ | [Kalletal](https://hofladenliste.de/nordrhein-westfalen/lippe/kalletal/) `/nordrhein-westfalen/lippe/kalletal/` | Kreis Lippe | 1 | 6 | 9 |
 | ✓ | [Lage](https://hofladenliste.de/nordrhein-westfalen/lippe/lage/) `/nordrhein-westfalen/lippe/lage/` | Kreis Lippe | 1 | 6 | 9 |
 | ✓ | [Bad Wünnenberg](https://hofladenliste.de/nordrhein-westfalen/paderborn/bad-wuennenberg/) `/nordrhein-westfalen/paderborn/bad-wuennenberg/` | Kreis Paderborn | 1 | 6 | 9 |
 | ✓ | [Lichtenau (Kreis Paderborn)](https://hofladenliste.de/nordrhein-westfalen/paderborn/lichtenau/) `/nordrhein-westfalen/paderborn/lichtenau/` | Kreis Paderborn | 1 | 6 | 9 |
-| ✓ | [Elsdorf](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/elsdorf/) `/nordrhein-westfalen/rhein-erft-kreis/elsdorf/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
+| ✓ | [Elsdorf (Rhein-Erft-Kreis)](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/elsdorf/) `/nordrhein-westfalen/rhein-erft-kreis/elsdorf/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
 | ✓ | [Erftstadt](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/erftstadt/) `/nordrhein-westfalen/rhein-erft-kreis/erftstadt/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
 | ✓ | [Wesseling](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/wesseling/) `/nordrhein-westfalen/rhein-erft-kreis/wesseling/` | Rhein-Erft-Kreis | 1 | 6 | 9 |
 | ✓ | [Jüchen](https://hofladenliste.de/nordrhein-westfalen/rhein-kreis-neuss/juechen/) `/nordrhein-westfalen/rhein-kreis-neuss/juechen/` | Rhein-Kreis Neuss | 1 | 6 | 9 |
@@ -652,21 +660,20 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Simmerath](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/simmerath/) `/nordrhein-westfalen/staedteregion-aachen/simmerath/` | Städteregion Aachen | 1 | 6 | 9 |
 | ✓ | [Tecklenburg](https://hofladenliste.de/nordrhein-westfalen/steinfurt/tecklenburg/) `/nordrhein-westfalen/steinfurt/tecklenburg/` | Kreis Steinfurt | 1 | 6 | 9 |
 | ✓ | [Westerkappeln](https://hofladenliste.de/nordrhein-westfalen/steinfurt/westerkappeln/) `/nordrhein-westfalen/steinfurt/westerkappeln/` | Kreis Steinfurt | 1 | 6 | 9 |
-| ✓ | [Grefrath](https://hofladenliste.de/nordrhein-westfalen/viersen/grefrath/) `/nordrhein-westfalen/viersen/grefrath/` | Kreis Viersen | 1 | 6 | 9 |
+|  | [Fröndenberg](https://hofladenliste.de/nordrhein-westfalen/unna/froendenberg/) `/nordrhein-westfalen/unna/froendenberg/` | Kreis Unna | 1 | 6 | 9 |
 | ✓ | [Niederkrüchten](https://hofladenliste.de/nordrhein-westfalen/viersen/niederkruechten/) `/nordrhein-westfalen/viersen/niederkruechten/` | Kreis Viersen | 1 | 6 | 9 |
+
+## Paket 23 (23/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 | ✓ | [Drensteinfurt](https://hofladenliste.de/nordrhein-westfalen/warendorf/drensteinfurt/) `/nordrhein-westfalen/warendorf/drensteinfurt/` | Kreis Warendorf | 1 | 6 | 9 |
-| ✓ | [Everswinkel](https://hofladenliste.de/nordrhein-westfalen/warendorf/everswinkel/) `/nordrhein-westfalen/warendorf/everswinkel/` | Kreis Warendorf | 1 | 6 | 9 |
-| ✓ | [Warendorf](https://hofladenliste.de/nordrhein-westfalen/warendorf/warendorf/) `/nordrhein-westfalen/warendorf/warendorf/` | Kreis Warendorf | 1 | 6 | 9 |
 | ✓ | [Kamp-Lintfort](https://hofladenliste.de/nordrhein-westfalen/wesel/kamp-lintfort/) `/nordrhein-westfalen/wesel/kamp-lintfort/` | Kreis Wesel | 1 | 6 | 9 |
 | ✓ | [Sonsbeck](https://hofladenliste.de/nordrhein-westfalen/wesel/sonsbeck/) `/nordrhein-westfalen/wesel/sonsbeck/` | Kreis Wesel | 1 | 6 | 9 |
 | ✓ | [Meckenheim (Landkreis Bad Dürkheim)](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/meckenheim/) `/rheinland-pfalz/bad-duerkheim/meckenheim/` | Landkreis Bad Dürkheim | 1 | 6 | 9 |
 | ✓ | [Rheinzabern](https://hofladenliste.de/rheinland-pfalz/germersheim/rheinzabern/) `/rheinland-pfalz/germersheim/rheinzabern/` | Landkreis Germersheim | 1 | 6 | 9 |
+|  | [Saarwellingen](https://hofladenliste.de/saarland/saarlouis/saarwellingen/) `/saarland/saarlouis/saarwellingen/` | Landkreis Saarlouis | 1 | 6 | 9 |
 | ✓ | [Genthin](https://hofladenliste.de/sachsen-anhalt/jerichower-land/genthin/) `/sachsen-anhalt/jerichower-land/genthin/` | Landkreis Jerichower Land | 1 | 6 | 9 |
-
-## Paket 23 (25/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 | ✓ | [Stendal](https://hofladenliste.de/sachsen-anhalt/stendal/stendal/) `/sachsen-anhalt/stendal/stendal/` | Landkreis Stendal | 1 | 6 | 9 |
 | ✓ | [Elstra](https://hofladenliste.de/sachsen/bautzen/elstra/) `/sachsen/bautzen/elstra/` | Landkreis Bautzen | 1 | 6 | 9 |
 | ✓ | [Meißen](https://hofladenliste.de/sachsen/meissen/meissen/) `/sachsen/meissen/meissen/` | Landkreis Meißen | 1 | 6 | 9 |
@@ -684,6 +691,12 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Jettingen](https://hofladenliste.de/baden-wuerttemberg/boeblingen/jettingen/) `/baden-wuerttemberg/boeblingen/jettingen/` | Landkreis Böblingen | 1 | 5 | 8 |
 | ✓ | [Bad Krozingen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/bad-krozingen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/bad-krozingen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
 | ✓ | [Eichstetten am Kaiserstuhl](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/eichstetten-am-kaiserstuhl/) `/baden-wuerttemberg/breisgau-hochschwarzwald/eichstetten-am-kaiserstuhl/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
+|  | [Müllheim](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/muellheim/) `/baden-wuerttemberg/breisgau-hochschwarzwald/muellheim/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
+
+## Paket 24 (24/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 | ✓ | [Sankt Peter](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/sankt-peter/) `/baden-wuerttemberg/breisgau-hochschwarzwald/sankt-peter/` | Landkreis Breisgau-Hochschwarzwald | 1 | 5 | 8 |
 | ✓ | [Mühlacker](https://hofladenliste.de/baden-wuerttemberg/enzkreis/muehlacker/) `/baden-wuerttemberg/enzkreis/muehlacker/` | Enzkreis | 1 | 5 | 8 |
 | ✓ | [Kirchheim unter Teck](https://hofladenliste.de/baden-wuerttemberg/esslingen/kirchheim-unter-teck/) `/baden-wuerttemberg/esslingen/kirchheim-unter-teck/` | Landkreis Esslingen | 1 | 5 | 8 |
@@ -692,11 +705,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Uhingen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/uhingen/) `/baden-wuerttemberg/goeppingen/uhingen/` | Landkreis Göppingen | 1 | 5 | 8 |
 | ✓ | [Bodman-Ludwigshafen](https://hofladenliste.de/baden-wuerttemberg/konstanz/bodman-ludwigshafen/) `/baden-wuerttemberg/konstanz/bodman-ludwigshafen/` | Landkreis Konstanz | 1 | 5 | 8 |
 | ✓ | [Reichenau](https://hofladenliste.de/baden-wuerttemberg/konstanz/reichenau/) `/baden-wuerttemberg/konstanz/reichenau/` | Landkreis Konstanz | 1 | 5 | 8 |
-
-## Paket 24 (25/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 | ✓ | [Bad Friedrichshall](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/bad-friedrichshall/) `/baden-wuerttemberg/landkreis-heilbronn/bad-friedrichshall/` | Landkreis Heilbronn | 1 | 5 | 8 |
 | ✓ | [Bad Wimpfen](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/bad-wimpfen/) `/baden-wuerttemberg/landkreis-heilbronn/bad-wimpfen/` | Landkreis Heilbronn | 1 | 5 | 8 |
 | ✓ | [Gondelsheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/gondelsheim/) `/baden-wuerttemberg/landkreis-karlsruhe/gondelsheim/` | Landkreis Karlsruhe | 1 | 5 | 8 |
@@ -710,9 +718,15 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Sersheim](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/sersheim/) `/baden-wuerttemberg/ludwigsburg/sersheim/` | Landkreis Ludwigsburg | 1 | 5 | 8 |
 | ✓ | [Höpfingen](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/hoepfingen/) `/baden-wuerttemberg/neckar-odenwald-kreis/hoepfingen/` | Neckar-Odenwald-Kreis | 1 | 5 | 8 |
 | ✓ | [Ravenstein](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/ravenstein/) `/baden-wuerttemberg/neckar-odenwald-kreis/ravenstein/` | Neckar-Odenwald-Kreis | 1 | 5 | 8 |
+|  | [Ettenheim](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/ettenheim/) `/baden-wuerttemberg/ortenaukreis/ettenheim/` | Ortenaukreis | 1 | 5 | 8 |
 | ✓ | [Oberharmersbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/oberharmersbach/) `/baden-wuerttemberg/ortenaukreis/oberharmersbach/` | Ortenaukreis | 1 | 5 | 8 |
 | ✓ | [Zell am Harmersbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/) `/baden-wuerttemberg/ortenaukreis/zell-am-harmersbach/` | Ortenaukreis | 1 | 5 | 8 |
 | ✓ | [Durmersheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/durmersheim/) `/baden-wuerttemberg/rastatt/durmersheim/` | Landkreis Rastatt | 1 | 5 | 8 |
+
+## Paket 25 (25/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 | ✓ | [Achberg](https://hofladenliste.de/baden-wuerttemberg/ravensburg/achberg/) `/baden-wuerttemberg/ravensburg/achberg/` | Landkreis Ravensburg | 1 | 5 | 8 |
 | ✓ | [Aulendorf](https://hofladenliste.de/baden-wuerttemberg/ravensburg/aulendorf/) `/baden-wuerttemberg/ravensburg/aulendorf/` | Landkreis Ravensburg | 1 | 5 | 8 |
 | ✓ | [Baienfurt](https://hofladenliste.de/baden-wuerttemberg/ravensburg/baienfurt/) `/baden-wuerttemberg/ravensburg/baienfurt/` | Landkreis Ravensburg | 1 | 5 | 8 |
@@ -721,12 +735,8 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Wilhelmsdorf](https://hofladenliste.de/baden-wuerttemberg/ravensburg/wilhelmsdorf/) `/baden-wuerttemberg/ravensburg/wilhelmsdorf/` | Landkreis Ravensburg | 1 | 5 | 8 |
 | ✓ | [Backnang](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/backnang/) `/baden-wuerttemberg/rems-murr-kreis/backnang/` | Rems-Murr-Kreis | 1 | 5 | 8 |
 | ✓ | [Rudersberg](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/rudersberg/) `/baden-wuerttemberg/rems-murr-kreis/rudersberg/` | Rems-Murr-Kreis | 1 | 5 | 8 |
+| ✓ | [Schwaikheim](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/schwaikheim/) `/baden-wuerttemberg/rems-murr-kreis/schwaikheim/` | Rems-Murr-Kreis | 1 | 5 | 8 |
 | ✓ | [Pfullingen](https://hofladenliste.de/baden-wuerttemberg/reutlingen/pfullingen/) `/baden-wuerttemberg/reutlingen/pfullingen/` | Landkreis Reutlingen | 1 | 5 | 8 |
-
-## Paket 25 (25/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 | ✓ | [Dielheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/dielheim/) `/baden-wuerttemberg/rhein-neckar-kreis/dielheim/` | Rhein-Neckar-Kreis | 1 | 5 | 8 |
 | ✓ | [Heddesheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/heddesheim/) `/baden-wuerttemberg/rhein-neckar-kreis/heddesheim/` | Rhein-Neckar-Kreis | 1 | 5 | 8 |
 | ✓ | [Sinsheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/sinsheim/) `/baden-wuerttemberg/rhein-neckar-kreis/sinsheim/` | Rhein-Neckar-Kreis | 1 | 5 | 8 |
@@ -742,8 +752,13 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Starzach](https://hofladenliste.de/baden-wuerttemberg/tuebingen/starzach/) `/baden-wuerttemberg/tuebingen/starzach/` | Landkreis Tübingen | 1 | 5 | 8 |
 | ✓ | [Kissing](https://hofladenliste.de/bayern/aichach-friedberg/kissing/) `/bayern/aichach-friedberg/kissing/` | Landkreis Aichach-Friedberg | 1 | 5 | 8 |
 | ✓ | [Obergriesbach](https://hofladenliste.de/bayern/aichach-friedberg/obergriesbach/) `/bayern/aichach-friedberg/obergriesbach/` | Landkreis Aichach-Friedberg | 1 | 5 | 8 |
+
+## Paket 26 (23/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 | ✓ | [Hammelburg](https://hofladenliste.de/bayern/bad-kissingen/hammelburg/) `/bayern/bad-kissingen/hammelburg/` | Landkreis Bad Kissingen | 1 | 5 | 8 |
-| ✓ | [Saaldorf-Surheim](https://hofladenliste.de/bayern/berchtesgadener-land/saaldorf-surheim/) `/bayern/berchtesgadener-land/saaldorf-surheim/` | Landkreis Berchtesgadener Land | 1 | 5 | 8 |
+|  | [Teisendorf](https://hofladenliste.de/bayern/berchtesgadener-land/teisendorf/) `/bayern/berchtesgadener-land/teisendorf/` | Landkreis Berchtesgadener Land | 1 | 5 | 8 |
 | ✓ | [Haimhausen](https://hofladenliste.de/bayern/dachau/haimhausen/) `/bayern/dachau/haimhausen/` | Landkreis Dachau | 1 | 5 | 8 |
 | ✓ | [Markt Indersdorf](https://hofladenliste.de/bayern/dachau/markt-indersdorf/) `/bayern/dachau/markt-indersdorf/` | Landkreis Dachau | 1 | 5 | 8 |
 | ✓ | [Pilsting](https://hofladenliste.de/bayern/dingolfing-landau/pilsting/) `/bayern/dingolfing-landau/pilsting/` | Landkreis Dingolfing-Landau | 1 | 5 | 8 |
@@ -751,43 +766,34 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 | ✓ | [Pliening](https://hofladenliste.de/bayern/ebersberg/pliening/) `/bayern/ebersberg/pliening/` | Landkreis Ebersberg | 1 | 5 | 8 |
 | ✓ | [Poing](https://hofladenliste.de/bayern/ebersberg/poing/) `/bayern/ebersberg/poing/` | Landkreis Ebersberg | 1 | 5 | 8 |
 | ✓ | [Denkendorf](https://hofladenliste.de/bayern/eichstaett/denkendorf/) `/bayern/eichstaett/denkendorf/` | Landkreis Eichstätt | 1 | 5 | 8 |
-| ✓ | [Pollenfeld](https://hofladenliste.de/bayern/eichstaett/pollenfeld/) `/bayern/eichstaett/pollenfeld/` | Landkreis Eichstätt | 1 | 5 | 8 |
+| ✓ | [Aurachtal](https://hofladenliste.de/bayern/erlangen-hoechstadt/aurachtal/) `/bayern/erlangen-hoechstadt/aurachtal/` | Landkreis Erlangen-Höchstadt | 1 | 5 | 8 |
+| ✓ | [Möhrendorf](https://hofladenliste.de/bayern/erlangen-hoechstadt/moehrendorf/) `/bayern/erlangen-hoechstadt/moehrendorf/` | Landkreis Erlangen-Höchstadt | 1 | 5 | 8 |
+| ✓ | [Hallerndorf](https://hofladenliste.de/bayern/forchheim/hallerndorf/) `/bayern/forchheim/hallerndorf/` | Landkreis Forchheim | 1 | 5 | 8 |
+| ✓ | [Igensdorf](https://hofladenliste.de/bayern/forchheim/igensdorf/) `/bayern/forchheim/igensdorf/` | Landkreis Forchheim | 1 | 5 | 8 |
+| ✓ | [Kranzberg](https://hofladenliste.de/bayern/freising/kranzberg/) `/bayern/freising/kranzberg/` | Landkreis Freising | 1 | 5 | 8 |
+| ✓ | [Alling](https://hofladenliste.de/bayern/fuerstenfeldbruck/alling/) `/bayern/fuerstenfeldbruck/alling/` | Landkreis Fürstenfeldbruck | 1 | 5 | 8 |
+| ✓ | [Fürstenfeldbruck](https://hofladenliste.de/bayern/fuerstenfeldbruck/fuerstenfeldbruck/) `/bayern/fuerstenfeldbruck/fuerstenfeldbruck/` | Landkreis Fürstenfeldbruck | 1 | 5 | 8 |
+| ✓ | [Volkach](https://hofladenliste.de/bayern/kitzingen/volkach/) `/bayern/kitzingen/volkach/` | Landkreis Kitzingen | 1 | 5 | 8 |
+|  | [Rothenburg ob der Tauber](https://hofladenliste.de/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/) `/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/` | Landkreis Ansbach | 1 | 5 | 8 |
+| ✓ | [Großostheim](https://hofladenliste.de/bayern/landkreis-aschaffenburg/grossostheim/) `/bayern/landkreis-aschaffenburg/grossostheim/` | Landkreis Aschaffenburg | 1 | 5 | 8 |
+| ✓ | [Großaitingen](https://hofladenliste.de/bayern/landkreis-augsburg/grossaitingen/) `/bayern/landkreis-augsburg/grossaitingen/` | Landkreis Augsburg | 1 | 5 | 8 |
+| ✓ | [Weitramsdorf](https://hofladenliste.de/bayern/landkreis-coburg/weitramsdorf/) `/bayern/landkreis-coburg/weitramsdorf/` | Landkreis Coburg | 1 | 5 | 8 |
+| ✓ | [Rehau](https://hofladenliste.de/bayern/landkreis-hof/rehau/) `/bayern/landkreis-hof/rehau/` | Landkreis Hof | 1 | 5 | 8 |
+| ✓ | [Pfeffenhausen](https://hofladenliste.de/bayern/landkreis-landshut/pfeffenhausen/) `/bayern/landkreis-landshut/pfeffenhausen/` | Landkreis Landshut | 1 | 5 | 8 |
+| ✓ | [Kirchheim bei München](https://hofladenliste.de/bayern/landkreis-muenchen/kirchheim-bei-muenchen/) `/bayern/landkreis-muenchen/kirchheim-bei-muenchen/` | Landkreis München | 1 | 5 | 8 |
+| ✓ | [Kolbermoor](https://hofladenliste.de/bayern/landkreis-rosenheim/kolbermoor/) `/bayern/landkreis-rosenheim/kolbermoor/` | Landkreis Rosenheim | 1 | 5 | 8 |
 
-## Paket 26 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
-|  | [Aurachtal](https://hofladenliste.de/bayern/erlangen-hoechstadt/aurachtal/) `/bayern/erlangen-hoechstadt/aurachtal/` | Landkreis Erlangen-Höchstadt | 1 | 5 | 8 |
-|  | [Möhrendorf](https://hofladenliste.de/bayern/erlangen-hoechstadt/moehrendorf/) `/bayern/erlangen-hoechstadt/moehrendorf/` | Landkreis Erlangen-Höchstadt | 1 | 5 | 8 |
-|  | [Hallerndorf](https://hofladenliste.de/bayern/forchheim/hallerndorf/) `/bayern/forchheim/hallerndorf/` | Landkreis Forchheim | 1 | 5 | 8 |
-|  | [Igensdorf](https://hofladenliste.de/bayern/forchheim/igensdorf/) `/bayern/forchheim/igensdorf/` | Landkreis Forchheim | 1 | 5 | 8 |
-|  | [Kranzberg](https://hofladenliste.de/bayern/freising/kranzberg/) `/bayern/freising/kranzberg/` | Landkreis Freising | 1 | 5 | 8 |
-|  | [Alling](https://hofladenliste.de/bayern/fuerstenfeldbruck/alling/) `/bayern/fuerstenfeldbruck/alling/` | Landkreis Fürstenfeldbruck | 1 | 5 | 8 |
-|  | [Fürstenfeldbruck](https://hofladenliste.de/bayern/fuerstenfeldbruck/fuerstenfeldbruck/) `/bayern/fuerstenfeldbruck/fuerstenfeldbruck/` | Landkreis Fürstenfeldbruck | 1 | 5 | 8 |
-|  | [Volkach](https://hofladenliste.de/bayern/kitzingen/volkach/) `/bayern/kitzingen/volkach/` | Landkreis Kitzingen | 1 | 5 | 8 |
-|  | [Großostheim](https://hofladenliste.de/bayern/landkreis-aschaffenburg/grossostheim/) `/bayern/landkreis-aschaffenburg/grossostheim/` | Landkreis Aschaffenburg | 1 | 5 | 8 |
-|  | [Großaitingen](https://hofladenliste.de/bayern/landkreis-augsburg/grossaitingen/) `/bayern/landkreis-augsburg/grossaitingen/` | Landkreis Augsburg | 1 | 5 | 8 |
-|  | [Weitramsdorf](https://hofladenliste.de/bayern/landkreis-coburg/weitramsdorf/) `/bayern/landkreis-coburg/weitramsdorf/` | Landkreis Coburg | 1 | 5 | 8 |
-|  | [Rehau](https://hofladenliste.de/bayern/landkreis-hof/rehau/) `/bayern/landkreis-hof/rehau/` | Landkreis Hof | 1 | 5 | 8 |
-|  | [Pfeffenhausen](https://hofladenliste.de/bayern/landkreis-landshut/pfeffenhausen/) `/bayern/landkreis-landshut/pfeffenhausen/` | Landkreis Landshut | 1 | 5 | 8 |
-|  | [Kirchheim bei München](https://hofladenliste.de/bayern/landkreis-muenchen/kirchheim-bei-muenchen/) `/bayern/landkreis-muenchen/kirchheim-bei-muenchen/` | Landkreis München | 1 | 5 | 8 |
-|  | [Oberhaching](https://hofladenliste.de/bayern/landkreis-muenchen/oberhaching/) `/bayern/landkreis-muenchen/oberhaching/` | Landkreis München | 1 | 5 | 8 |
-|  | [Kolbermoor](https://hofladenliste.de/bayern/landkreis-rosenheim/kolbermoor/) `/bayern/landkreis-rosenheim/kolbermoor/` | Landkreis Rosenheim | 1 | 5 | 8 |
-|  | [Samerberg](https://hofladenliste.de/bayern/landkreis-rosenheim/samerberg/) `/bayern/landkreis-rosenheim/samerberg/` | Landkreis Rosenheim | 1 | 5 | 8 |
-|  | [Kolitzheim](https://hofladenliste.de/bayern/landkreis-schweinfurt/kolitzheim/) `/bayern/landkreis-schweinfurt/kolitzheim/` | Landkreis Schweinfurt | 1 | 5 | 8 |
-|  | [Rimpar](https://hofladenliste.de/bayern/landkreis-wuerzburg/rimpar/) `/bayern/landkreis-wuerzburg/rimpar/` | Landkreis Würzburg | 1 | 5 | 8 |
-|  | [Igling](https://hofladenliste.de/bayern/landsberg-am-lech/igling/) `/bayern/landsberg-am-lech/igling/` | Landkreis Landsberg am Lech | 1 | 5 | 8 |
-|  | [Kaufering](https://hofladenliste.de/bayern/landsberg-am-lech/kaufering/) `/bayern/landsberg-am-lech/kaufering/` | Landkreis Landsberg am Lech | 1 | 5 | 8 |
-|  | [Karlstadt](https://hofladenliste.de/bayern/main-spessart/karlstadt/) `/bayern/main-spessart/karlstadt/` | Landkreis Main-Spessart | 1 | 5 | 8 |
-|  | [Fischbachau](https://hofladenliste.de/bayern/miesbach/fischbachau/) `/bayern/miesbach/fischbachau/` | Landkreis Miesbach | 1 | 5 | 8 |
-|  | [Holzkirchen](https://hofladenliste.de/bayern/miesbach/holzkirchen/) `/bayern/miesbach/holzkirchen/` | Landkreis Miesbach | 1 | 5 | 8 |
-|  | [Schliersee](https://hofladenliste.de/bayern/miesbach/schliersee/) `/bayern/miesbach/schliersee/` | Landkreis Miesbach | 1 | 5 | 8 |
-
-## Paket 27 (0/25 fertig)
+## Paket 27 (8/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Warngau](https://hofladenliste.de/bayern/miesbach/warngau/) `/bayern/miesbach/warngau/` | Landkreis Miesbach | 1 | 5 | 8 |
+| ✓ | [Samerberg](https://hofladenliste.de/bayern/landkreis-rosenheim/samerberg/) `/bayern/landkreis-rosenheim/samerberg/` | Landkreis Rosenheim | 1 | 5 | 8 |
+| ✓ | [Kolitzheim](https://hofladenliste.de/bayern/landkreis-schweinfurt/kolitzheim/) `/bayern/landkreis-schweinfurt/kolitzheim/` | Landkreis Schweinfurt | 1 | 5 | 8 |
+| ✓ | [Rimpar](https://hofladenliste.de/bayern/landkreis-wuerzburg/rimpar/) `/bayern/landkreis-wuerzburg/rimpar/` | Landkreis Würzburg | 1 | 5 | 8 |
+| ✓ | [Igling](https://hofladenliste.de/bayern/landsberg-am-lech/igling/) `/bayern/landsberg-am-lech/igling/` | Landkreis Landsberg am Lech | 1 | 5 | 8 |
+| ✓ | [Kaufering](https://hofladenliste.de/bayern/landsberg-am-lech/kaufering/) `/bayern/landsberg-am-lech/kaufering/` | Landkreis Landsberg am Lech | 1 | 5 | 8 |
+| ✓ | [Karlstadt](https://hofladenliste.de/bayern/main-spessart/karlstadt/) `/bayern/main-spessart/karlstadt/` | Landkreis Main-Spessart | 1 | 5 | 8 |
+| ✓ | [Holzkirchen](https://hofladenliste.de/bayern/miesbach/holzkirchen/) `/bayern/miesbach/holzkirchen/` | Landkreis Miesbach | 1 | 5 | 8 |
 |  | [Eichenbühl](https://hofladenliste.de/bayern/miltenberg/eichenbuehl/) `/bayern/miltenberg/eichenbuehl/` | Landkreis Miltenberg | 1 | 5 | 8 |
 |  | [Obernburg am Main](https://hofladenliste.de/bayern/miltenberg/obernburg-am-main/) `/bayern/miltenberg/obernburg-am-main/` | Landkreis Miltenberg | 1 | 5 | 8 |
 |  | [Oberstaufen](https://hofladenliste.de/bayern/oberallgaeu/oberstaufen/) `/bayern/oberallgaeu/oberstaufen/` | Landkreis Oberallgäu | 1 | 5 | 8 |
@@ -795,11 +801,10 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Kammerstein](https://hofladenliste.de/bayern/roth/kammerstein/) `/bayern/roth/kammerstein/` | Landkreis Roth | 1 | 5 | 8 |
 |  | [Rohr (Landkreis Roth)](https://hofladenliste.de/bayern/roth/rohr/) `/bayern/roth/rohr/` | Landkreis Roth | 1 | 5 | 8 |
 |  | [Roth](https://hofladenliste.de/bayern/roth/roth/) `/bayern/roth/roth/` | Landkreis Roth | 1 | 5 | 8 |
-|  | [Pfarrkirchen](https://hofladenliste.de/bayern/rottal-inn/pfarrkirchen/) `/bayern/rottal-inn/pfarrkirchen/` | Landkreis Rottal-Inn | 1 | 5 | 8 |
+| ✓ | [Inning am Ammersee](https://hofladenliste.de/bayern/starnberg/inning-am-ammersee/) `/bayern/starnberg/inning-am-ammersee/` | Landkreis Starnberg | 1 | 5 | 8 |
 |  | [Bürstadt](https://hofladenliste.de/hessen/bergstrasse/buerstadt/) `/hessen/bergstrasse/buerstadt/` | Landkreis Bergstraße | 1 | 5 | 8 |
 |  | [Lampertheim](https://hofladenliste.de/hessen/bergstrasse/lampertheim/) `/hessen/bergstrasse/lampertheim/` | Landkreis Bergstraße | 1 | 5 | 8 |
 |  | [Alsbach-Hähnlein](https://hofladenliste.de/hessen/darmstadt-dieburg/alsbach-haehnlein/) `/hessen/darmstadt-dieburg/alsbach-haehnlein/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
-|  | [Babenhausen](https://hofladenliste.de/hessen/darmstadt-dieburg/babenhausen/) `/hessen/darmstadt-dieburg/babenhausen/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
 |  | [Griesheim](https://hofladenliste.de/hessen/darmstadt-dieburg/griesheim/) `/hessen/darmstadt-dieburg/griesheim/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
 |  | [Groß-Umstadt](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-umstadt/) `/hessen/darmstadt-dieburg/gross-umstadt/` | Landkreis Darmstadt-Dieburg | 1 | 5 | 8 |
 |  | [Großenlüder](https://hofladenliste.de/hessen/fulda/grossenlueder/) `/hessen/fulda/grossenlueder/` | Landkreis Fulda | 1 | 5 | 8 |
@@ -807,16 +812,16 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Pohlheim](https://hofladenliste.de/hessen/giessen/pohlheim/) `/hessen/giessen/pohlheim/` | Landkreis Gießen | 1 | 5 | 8 |
 |  | [Büttelborn](https://hofladenliste.de/hessen/gross-gerau/buettelborn/) `/hessen/gross-gerau/buettelborn/` | Landkreis Groß-Gerau | 1 | 5 | 8 |
 |  | [Baunatal](https://hofladenliste.de/hessen/landkreis-kassel/baunatal/) `/hessen/landkreis-kassel/baunatal/` | Landkreis Kassel | 1 | 5 | 8 |
-|  | [Wolfhagen](https://hofladenliste.de/hessen/landkreis-kassel/wolfhagen/) `/hessen/landkreis-kassel/wolfhagen/` | Landkreis Kassel | 1 | 5 | 8 |
-|  | [Maintal](https://hofladenliste.de/hessen/main-kinzig-kreis/maintal/) `/hessen/main-kinzig-kreis/maintal/` | Main-Kinzig-Kreis | 1 | 5 | 8 |
-|  | [Kirchhain](https://hofladenliste.de/hessen/marburg-biedenkopf/kirchhain/) `/hessen/marburg-biedenkopf/kirchhain/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
-|  | [Lahntal](https://hofladenliste.de/hessen/marburg-biedenkopf/lahntal/) `/hessen/marburg-biedenkopf/lahntal/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
-|  | [Idstein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/idstein/) `/hessen/rheingau-taunus-kreis/idstein/` | Rheingau-Taunus-Kreis | 1 | 5 | 8 |
 
 ## Paket 28 (0/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+|  | [Maintal](https://hofladenliste.de/hessen/main-kinzig-kreis/maintal/) `/hessen/main-kinzig-kreis/maintal/` | Main-Kinzig-Kreis | 1 | 5 | 8 |
+|  | [Ebsdorfergrund](https://hofladenliste.de/hessen/marburg-biedenkopf/ebsdorfergrund/) `/hessen/marburg-biedenkopf/ebsdorfergrund/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
+|  | [Kirchhain](https://hofladenliste.de/hessen/marburg-biedenkopf/kirchhain/) `/hessen/marburg-biedenkopf/kirchhain/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
+|  | [Lahntal](https://hofladenliste.de/hessen/marburg-biedenkopf/lahntal/) `/hessen/marburg-biedenkopf/lahntal/` | Landkreis Marburg-Biedenkopf | 1 | 5 | 8 |
+|  | [Idstein](https://hofladenliste.de/hessen/rheingau-taunus-kreis/idstein/) `/hessen/rheingau-taunus-kreis/idstein/` | Rheingau-Taunus-Kreis | 1 | 5 | 8 |
 |  | [Eschwege](https://hofladenliste.de/hessen/werra-meissner-kreis/eschwege/) `/hessen/werra-meissner-kreis/eschwege/` | Werra-Meißner-Kreis | 1 | 5 | 8 |
 |  | [Reichelsheim (Wetteraukreis)](https://hofladenliste.de/hessen/wetteraukreis/reichelsheim/) `/hessen/wetteraukreis/reichelsheim/` | Wetteraukreis | 1 | 5 | 8 |
 |  | [Kratzeburg](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/kratzeburg/` | Landkreis Mecklenburgische Seenplatte | 1 | 5 | 8 |
@@ -830,23 +835,24 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Bovenden](https://hofladenliste.de/niedersachsen/goettingen/bovenden/) `/niedersachsen/goettingen/bovenden/` | Landkreis Göttingen | 1 | 5 | 8 |
 |  | [Drage](https://hofladenliste.de/niedersachsen/harburg/drage/) `/niedersachsen/harburg/drage/` | Landkreis Harburg | 1 | 5 | 8 |
 |  | [Heidenau](https://hofladenliste.de/niedersachsen/harburg/heidenau/) `/niedersachsen/harburg/heidenau/` | Landkreis Harburg | 1 | 5 | 8 |
+|  | [Jesteburg](https://hofladenliste.de/niedersachsen/harburg/jesteburg/) `/niedersachsen/harburg/jesteburg/` | Landkreis Harburg | 1 | 5 | 8 |
 |  | [Wulfsen](https://hofladenliste.de/niedersachsen/harburg/wulfsen/) `/niedersachsen/harburg/wulfsen/` | Landkreis Harburg | 1 | 5 | 8 |
 |  | [Bispingen](https://hofladenliste.de/niedersachsen/heidekreis/bispingen/) `/niedersachsen/heidekreis/bispingen/` | Heidekreis | 1 | 5 | 8 |
 |  | [Harsum](https://hofladenliste.de/niedersachsen/hildesheim/harsum/) `/niedersachsen/hildesheim/harsum/` | Landkreis Hildesheim | 1 | 5 | 8 |
 |  | [Großenkneten](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/grossenkneten/) `/niedersachsen/landkreis-oldenburg/grossenkneten/` | Landkreis Oldenburg | 1 | 5 | 8 |
 |  | [Wardenburg](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/wardenburg/) `/niedersachsen/landkreis-oldenburg/wardenburg/` | Landkreis Oldenburg | 1 | 5 | 8 |
-|  | [Ostercappeln](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/ostercappeln/) `/niedersachsen/landkreis-osnabrueck/ostercappeln/` | Landkreis Osnabrück | 1 | 5 | 8 |
-|  | [Lilienthal](https://hofladenliste.de/niedersachsen/osterholz/lilienthal/) `/niedersachsen/osterholz/lilienthal/` | Landkreis Osterholz | 1 | 5 | 8 |
-|  | [Schwanewede](https://hofladenliste.de/niedersachsen/osterholz/schwanewede/) `/niedersachsen/osterholz/schwanewede/` | Landkreis Osterholz | 1 | 5 | 8 |
-|  | [Stadt](https://hofladenliste.de/niedersachsen/osterholz/stadt/) `/niedersachsen/osterholz/stadt/` | Landkreis Osterholz | 1 | 5 | 8 |
-|  | [Barsinghausen](https://hofladenliste.de/niedersachsen/region-hannover/barsinghausen/) `/niedersachsen/region-hannover/barsinghausen/` | Region Hannover | 1 | 5 | 8 |
-|  | [Gehrden](https://hofladenliste.de/niedersachsen/region-hannover/gehrden/) `/niedersachsen/region-hannover/gehrden/` | Region Hannover | 1 | 5 | 8 |
-|  | [Ronnenberg](https://hofladenliste.de/niedersachsen/region-hannover/ronnenberg/) `/niedersachsen/region-hannover/ronnenberg/` | Region Hannover | 1 | 5 | 8 |
+|  | [Badbergen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/badbergen/) `/niedersachsen/landkreis-osnabrueck/badbergen/` | Landkreis Osnabrück | 1 | 5 | 8 |
 
 ## Paket 29 (0/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+|  | [Ostercappeln](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/ostercappeln/) `/niedersachsen/landkreis-osnabrueck/ostercappeln/` | Landkreis Osnabrück | 1 | 5 | 8 |
+|  | [Lilienthal](https://hofladenliste.de/niedersachsen/osterholz/lilienthal/) `/niedersachsen/osterholz/lilienthal/` | Landkreis Osterholz | 1 | 5 | 8 |
+|  | [Schwanewede](https://hofladenliste.de/niedersachsen/osterholz/schwanewede/) `/niedersachsen/osterholz/schwanewede/` | Landkreis Osterholz | 1 | 5 | 8 |
+|  | [Barsinghausen](https://hofladenliste.de/niedersachsen/region-hannover/barsinghausen/) `/niedersachsen/region-hannover/barsinghausen/` | Region Hannover | 1 | 5 | 8 |
+|  | [Gehrden](https://hofladenliste.de/niedersachsen/region-hannover/gehrden/) `/niedersachsen/region-hannover/gehrden/` | Region Hannover | 1 | 5 | 8 |
+|  | [Ronnenberg](https://hofladenliste.de/niedersachsen/region-hannover/ronnenberg/) `/niedersachsen/region-hannover/ronnenberg/` | Region Hannover | 1 | 5 | 8 |
 |  | [Wunstorf](https://hofladenliste.de/niedersachsen/region-hannover/wunstorf/) `/niedersachsen/region-hannover/wunstorf/` | Region Hannover | 1 | 5 | 8 |
 |  | [Brockel](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/brockel/) `/niedersachsen/rotenburg-wuemme/brockel/` | Landkreis Rotenburg (Wümme) | 1 | 5 | 8 |
 |  | [Bakum](https://hofladenliste.de/niedersachsen/vechta/bakum/) `/niedersachsen/vechta/bakum/` | Landkreis Vechta | 1 | 5 | 8 |
@@ -866,31 +872,43 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Hövelhof](https://hofladenliste.de/nordrhein-westfalen/paderborn/hoevelhof/) `/nordrhein-westfalen/paderborn/hoevelhof/` | Kreis Paderborn | 1 | 5 | 8 |
 |  | [Bedburg](https://hofladenliste.de/nordrhein-westfalen/rhein-erft-kreis/bedburg/) `/nordrhein-westfalen/rhein-erft-kreis/bedburg/` | Rhein-Erft-Kreis | 1 | 5 | 8 |
 |  | [Alfter](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/alfter/) `/nordrhein-westfalen/rhein-sieg-kreis/alfter/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
+
+## Paket 30 (2/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Königswinter](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/koenigswinter/) `/nordrhein-westfalen/rhein-sieg-kreis/koenigswinter/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
 |  | [Much](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/much/) `/nordrhein-westfalen/rhein-sieg-kreis/much/` | Rhein-Sieg-Kreis | 1 | 5 | 8 |
 |  | [Overath](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/overath/` | Rheinisch-Bergischer Kreis | 1 | 5 | 8 |
 |  | [Saerbeck](https://hofladenliste.de/nordrhein-westfalen/steinfurt/saerbeck/) `/nordrhein-westfalen/steinfurt/saerbeck/` | Kreis Steinfurt | 1 | 5 | 8 |
-|  | [Fröndenberg](https://hofladenliste.de/nordrhein-westfalen/unna/froendenberg/) `/nordrhein-westfalen/unna/froendenberg/` | Kreis Unna | 1 | 5 | 8 |
 |  | [Schwerte](https://hofladenliste.de/nordrhein-westfalen/unna/schwerte/) `/nordrhein-westfalen/unna/schwerte/` | Kreis Unna | 1 | 5 | 8 |
-
-## Paket 30 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
+| ✓ | [Grefrath](https://hofladenliste.de/nordrhein-westfalen/viersen/grefrath/) `/nordrhein-westfalen/viersen/grefrath/` | Kreis Viersen | 1 | 5 | 8 |
 |  | [Oelde](https://hofladenliste.de/nordrhein-westfalen/warendorf/oelde/) `/nordrhein-westfalen/warendorf/oelde/` | Kreis Warendorf | 1 | 5 | 8 |
 |  | [Sendenhorst](https://hofladenliste.de/nordrhein-westfalen/warendorf/sendenhorst/) `/nordrhein-westfalen/warendorf/sendenhorst/` | Kreis Warendorf | 1 | 5 | 8 |
+| ✓ | [Warendorf](https://hofladenliste.de/nordrhein-westfalen/warendorf/warendorf/) `/nordrhein-westfalen/warendorf/warendorf/` | Kreis Warendorf | 1 | 5 | 8 |
 |  | [Rheinberg](https://hofladenliste.de/nordrhein-westfalen/wesel/rheinberg/) `/nordrhein-westfalen/wesel/rheinberg/` | Kreis Wesel | 1 | 5 | 8 |
+|  | [Wittlich](https://hofladenliste.de/rheinland-pfalz/bernkastel-wittlich/wittlich/) `/rheinland-pfalz/bernkastel-wittlich/wittlich/` | Landkreis Bernkastel-Wittlich | 1 | 5 | 8 |
 |  | [Alflen](https://hofladenliste.de/rheinland-pfalz/cochem-zell/alflen/) `/rheinland-pfalz/cochem-zell/alflen/` | Landkreis Cochem-Zell | 1 | 5 | 8 |
 |  | [Mutterstadt](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/mutterstadt/) `/rheinland-pfalz/rhein-pfalz-kreis/mutterstadt/` | Rhein-Pfalz-Kreis | 1 | 5 | 8 |
 |  | [Offenbach an der Queich](https://hofladenliste.de/rheinland-pfalz/suedliche-weinstrasse/offenbach-an-der-queich/) `/rheinland-pfalz/suedliche-weinstrasse/offenbach-an-der-queich/` | Landkreis Südliche Weinstraße | 1 | 5 | 8 |
-|  | [Saarwellingen](https://hofladenliste.de/saarland/saarlouis/saarwellingen/) `/saarland/saarlouis/saarwellingen/` | Landkreis Saarlouis | 1 | 5 | 8 |
+|  | [Merzig](https://hofladenliste.de/saarland/merzig-wadern/merzig/) `/saarland/merzig-wadern/merzig/` | Landkreis Merzig-Wadern | 1 | 5 | 8 |
+|  | [Lebach](https://hofladenliste.de/saarland/saarlouis/lebach/) `/saarland/saarlouis/lebach/` | Landkreis Saarlouis | 1 | 5 | 8 |
+|  | [Schmelz](https://hofladenliste.de/saarland/saarlouis/schmelz/) `/saarland/saarlouis/schmelz/` | Landkreis Saarlouis | 1 | 5 | 8 |
 |  | [Sankt Ingbert](https://hofladenliste.de/saarland/saarpfalz-kreis/sankt-ingbert/) `/saarland/saarpfalz-kreis/sankt-ingbert/` | Saarpfalz-Kreis | 1 | 5 | 8 |
+|  | [Grimma](https://hofladenliste.de/sachsen/landkreis-leipzig/grimma/) `/sachsen/landkreis-leipzig/grimma/` | Landkreis Leipzig | 1 | 5 | 8 |
 |  | [Kitzen](https://hofladenliste.de/sachsen/landkreis-leipzig/kitzen/) `/sachsen/landkreis-leipzig/kitzen/` | Landkreis Leipzig | 1 | 5 | 8 |
 |  | [Großenhain](https://hofladenliste.de/sachsen/meissen/grossenhain/) `/sachsen/meissen/grossenhain/` | Landkreis Meißen | 1 | 5 | 8 |
 |  | [Klipphausen](https://hofladenliste.de/sachsen/meissen/klipphausen/) `/sachsen/meissen/klipphausen/` | Landkreis Meißen | 1 | 5 | 8 |
 |  | [Halsbrücke](https://hofladenliste.de/sachsen/mittelsachsen/halsbruecke/) `/sachsen/mittelsachsen/halsbruecke/` | Landkreis Mittelsachsen | 1 | 5 | 8 |
 |  | [Liebschützberg](https://hofladenliste.de/sachsen/nordsachsen/liebschuetzberg/) `/sachsen/nordsachsen/liebschuetzberg/` | Landkreis Nordsachsen | 1 | 5 | 8 |
 |  | [Schnakenbek](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/schnakenbek/) `/schleswig-holstein/herzogtum-lauenburg/schnakenbek/` | Kreis Herzogtum Lauenburg | 1 | 5 | 8 |
+
+## Paket 31 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
+|  | [Wyk auf Föhr](https://hofladenliste.de/schleswig-holstein/nordfriesland/wyk-auf-foehr/) `/schleswig-holstein/nordfriesland/wyk-auf-foehr/` | Kreis Nordfriesland | 1 | 5 | 8 |
+|  | [Blekendorf](https://hofladenliste.de/schleswig-holstein/ploen/blekendorf/) `/schleswig-holstein/ploen/blekendorf/` | Kreis Plön | 1 | 5 | 8 |
 |  | [Raisdorf](https://hofladenliste.de/schleswig-holstein/ploen/raisdorf/) `/schleswig-holstein/ploen/raisdorf/` | Kreis Plön | 1 | 5 | 8 |
 |  | [Neudorf-Bornstein](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/neudorf-bornstein/) `/schleswig-holstein/rendsburg-eckernfoerde/neudorf-bornstein/` | Kreis Rendsburg-Eckernförde | 1 | 5 | 8 |
 |  | [Kappeln](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/kappeln/) `/schleswig-holstein/schleswig-flensburg/kappeln/` | Kreis Schleswig-Flensburg | 1 | 5 | 8 |
@@ -902,11 +920,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Langenau](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/langenau/) `/baden-wuerttemberg/alb-donau-kreis/langenau/` | Alb-Donau-Kreis | 1 | 4 | 7 |
 |  | [Setzingen](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/setzingen/) `/baden-wuerttemberg/alb-donau-kreis/setzingen/` | Alb-Donau-Kreis | 1 | 4 | 7 |
 |  | [Biberach an der Riß Bergerhausen](https://hofladenliste.de/baden-wuerttemberg/biberach/biberach-an-der-riss-bergerhausen/) `/baden-wuerttemberg/biberach/biberach-an-der-riss-bergerhausen/` | Landkreis Biberach | 1 | 4 | 7 |
-
-## Paket 31 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Laupheim](https://hofladenliste.de/baden-wuerttemberg/biberach/laupheim/) `/baden-wuerttemberg/biberach/laupheim/` | Landkreis Biberach | 1 | 4 | 7 |
 |  | [Riedlingen](https://hofladenliste.de/baden-wuerttemberg/biberach/riedlingen/) `/baden-wuerttemberg/biberach/riedlingen/` | Landkreis Biberach | 1 | 4 | 7 |
 |  | [Heiligenberg](https://hofladenliste.de/baden-wuerttemberg/bodenseekreis/heiligenberg/) `/baden-wuerttemberg/bodenseekreis/heiligenberg/` | Bodenseekreis | 1 | 4 | 7 |
@@ -919,6 +932,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Rutesheim](https://hofladenliste.de/baden-wuerttemberg/boeblingen/rutesheim/) `/baden-wuerttemberg/boeblingen/rutesheim/` | Landkreis Böblingen | 1 | 4 | 7 |
 |  | [Steinenbronn](https://hofladenliste.de/baden-wuerttemberg/boeblingen/steinenbronn/) `/baden-wuerttemberg/boeblingen/steinenbronn/` | Landkreis Böblingen | 1 | 4 | 7 |
 |  | [Auggen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/auggen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/auggen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
+
+## Paket 32 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Bollschweil](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/bollschweil/) `/baden-wuerttemberg/breisgau-hochschwarzwald/bollschweil/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
 |  | [Gundelfingen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/gundelfingen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/gundelfingen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
 |  | [Heitersheim](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/heitersheim/) `/baden-wuerttemberg/breisgau-hochschwarzwald/heitersheim/` | Landkreis Breisgau-Hochschwarzwald | 1 | 4 | 7 |
@@ -932,11 +950,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Horb am Neckar](https://hofladenliste.de/baden-wuerttemberg/freudenstadt/horb-am-neckar/) `/baden-wuerttemberg/freudenstadt/horb-am-neckar/` | Landkreis Freudenstadt | 1 | 4 | 7 |
 |  | [Gingen an der Fils](https://hofladenliste.de/baden-wuerttemberg/goeppingen/gingen-an-der-fils/) `/baden-wuerttemberg/goeppingen/gingen-an-der-fils/` | Landkreis Göppingen | 1 | 4 | 7 |
 |  | [Lauterstein](https://hofladenliste.de/baden-wuerttemberg/goeppingen/lauterstein/) `/baden-wuerttemberg/goeppingen/lauterstein/` | Landkreis Göppingen | 1 | 4 | 7 |
-
-## Paket 32 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Schlat](https://hofladenliste.de/baden-wuerttemberg/goeppingen/schlat/) `/baden-wuerttemberg/goeppingen/schlat/` | Landkreis Göppingen | 1 | 4 | 7 |
 |  | [Gerstetten](https://hofladenliste.de/baden-wuerttemberg/heidenheim/gerstetten/) `/baden-wuerttemberg/heidenheim/gerstetten/` | Landkreis Heidenheim | 1 | 4 | 7 |
 |  | [Künzelsau](https://hofladenliste.de/baden-wuerttemberg/hohenlohekreis/kuenzelsau/) `/baden-wuerttemberg/hohenlohekreis/kuenzelsau/` | Hohenlohekreis | 1 | 4 | 7 |
@@ -949,6 +962,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Schwaigern](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/schwaigern/) `/baden-wuerttemberg/landkreis-heilbronn/schwaigern/` | Landkreis Heilbronn | 1 | 4 | 7 |
 |  | [Siegelsbach](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/siegelsbach/) `/baden-wuerttemberg/landkreis-heilbronn/siegelsbach/` | Landkreis Heilbronn | 1 | 4 | 7 |
 |  | [Malsch](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/malsch/) `/baden-wuerttemberg/landkreis-karlsruhe/malsch/` | Landkreis Karlsruhe | 1 | 4 | 7 |
+
+## Paket 33 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Rheinstetten](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/rheinstetten/) `/baden-wuerttemberg/landkreis-karlsruhe/rheinstetten/` | Landkreis Karlsruhe | 1 | 4 | 7 |
 |  | [Waldbronn](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/waldbronn/) `/baden-wuerttemberg/landkreis-karlsruhe/waldbronn/` | Landkreis Karlsruhe | 1 | 4 | 7 |
 |  | [Maulburg](https://hofladenliste.de/baden-wuerttemberg/loerrach/maulburg/) `/baden-wuerttemberg/loerrach/maulburg/` | Landkreis Lörrach | 1 | 4 | 7 |
@@ -960,13 +978,7 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Limbach](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/limbach/) `/baden-wuerttemberg/neckar-odenwald-kreis/limbach/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
 |  | [Osterburken](https://hofladenliste.de/baden-wuerttemberg/neckar-odenwald-kreis/osterburken/) `/baden-wuerttemberg/neckar-odenwald-kreis/osterburken/` | Neckar-Odenwald-Kreis | 1 | 4 | 7 |
 |  | [Appenweier](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/appenweier/) `/baden-wuerttemberg/ortenaukreis/appenweier/` | Ortenaukreis | 1 | 4 | 7 |
-|  | [Ettenheim](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/ettenheim/) `/baden-wuerttemberg/ortenaukreis/ettenheim/` | Ortenaukreis | 1 | 4 | 7 |
 |  | [Sasbach](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/sasbach/) `/baden-wuerttemberg/ortenaukreis/sasbach/` | Ortenaukreis | 1 | 4 | 7 |
-
-## Paket 33 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Sasbachwalden](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/sasbachwalden/) `/baden-wuerttemberg/ortenaukreis/sasbachwalden/` | Ortenaukreis | 1 | 4 | 7 |
 |  | [Schwanau](https://hofladenliste.de/baden-wuerttemberg/ortenaukreis/schwanau/) `/baden-wuerttemberg/ortenaukreis/schwanau/` | Ortenaukreis | 1 | 4 | 7 |
 |  | [Waldstetten (Ostalbkreis)](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/waldstetten/) `/baden-wuerttemberg/ostalbkreis/waldstetten/` | Ostalbkreis | 1 | 4 | 7 |
@@ -976,11 +988,15 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Bad Waldsee](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bad-waldsee/) `/baden-wuerttemberg/ravensburg/bad-waldsee/` | Landkreis Ravensburg | 1 | 4 | 7 |
 |  | [Bergatreute](https://hofladenliste.de/baden-wuerttemberg/ravensburg/bergatreute/) `/baden-wuerttemberg/ravensburg/bergatreute/` | Landkreis Ravensburg | 1 | 4 | 7 |
 |  | [Horgenzell](https://hofladenliste.de/baden-wuerttemberg/ravensburg/horgenzell/) `/baden-wuerttemberg/ravensburg/horgenzell/` | Landkreis Ravensburg | 1 | 4 | 7 |
-|  | [Isny im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/isny-im-allgaeu/) `/baden-wuerttemberg/ravensburg/isny-im-allgaeu/` | Landkreis Ravensburg | 1 | 4 | 7 |
 |  | [Wangen im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/wangen-im-allgaeu/) `/baden-wuerttemberg/ravensburg/wangen-im-allgaeu/` | Landkreis Ravensburg | 1 | 4 | 7 |
 |  | [Berglen](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/berglen/) `/baden-wuerttemberg/rems-murr-kreis/berglen/` | Rems-Murr-Kreis | 1 | 4 | 7 |
 |  | [Südbund](https://hofladenliste.de/baden-wuerttemberg/rems-murr-kreis/suedbund/) `/baden-wuerttemberg/rems-murr-kreis/suedbund/` | Rems-Murr-Kreis | 1 | 4 | 7 |
 |  | [Eppelheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/eppelheim/) `/baden-wuerttemberg/rhein-neckar-kreis/eppelheim/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
+
+## Paket 34 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Hirschberg an der Bergstraße](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/hirschberg-an-der-bergstrasse/) `/baden-wuerttemberg/rhein-neckar-kreis/hirschberg-an-der-bergstrasse/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
 |  | [Ilvesheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/ilvesheim/) `/baden-wuerttemberg/rhein-neckar-kreis/ilvesheim/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
 |  | [Nußloch](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/nussloch/) `/baden-wuerttemberg/rhein-neckar-kreis/nussloch/` | Rhein-Neckar-Kreis | 1 | 4 | 7 |
@@ -992,11 +1008,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Inzigkofen](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/inzigkofen/) `/baden-wuerttemberg/sigmaringen/inzigkofen/` | Landkreis Sigmaringen | 1 | 4 | 7 |
 |  | [Mössingen](https://hofladenliste.de/baden-wuerttemberg/tuebingen/moessingen/) `/baden-wuerttemberg/tuebingen/moessingen/` | Landkreis Tübingen | 1 | 4 | 7 |
 |  | [Albbruck](https://hofladenliste.de/baden-wuerttemberg/waldshut/albbruck/) `/baden-wuerttemberg/waldshut/albbruck/` | Landkreis Waldshut | 1 | 4 | 7 |
-
-## Paket 34 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Bad Säckingen](https://hofladenliste.de/baden-wuerttemberg/waldshut/bad-saeckingen/) `/baden-wuerttemberg/waldshut/bad-saeckingen/` | Landkreis Waldshut | 1 | 4 | 7 |
 |  | [Murg](https://hofladenliste.de/baden-wuerttemberg/waldshut/murg/) `/baden-wuerttemberg/waldshut/murg/` | Landkreis Waldshut | 1 | 4 | 7 |
 |  | [Waldshut-Tiengen](https://hofladenliste.de/baden-wuerttemberg/waldshut/waldshut-tiengen/) `/baden-wuerttemberg/waldshut/waldshut-tiengen/` | Landkreis Waldshut | 1 | 4 | 7 |
@@ -1008,10 +1019,14 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Burgkirchen an der Alz](https://hofladenliste.de/bayern/altoetting/burgkirchen-an-der-alz/) `/bayern/altoetting/burgkirchen-an-der-alz/` | Landkreis Altötting | 1 | 4 | 7 |
 |  | [Kümmersbruck](https://hofladenliste.de/bayern/amberg-sulzbach/kuemmersbruck/) `/bayern/amberg-sulzbach/kuemmersbruck/` | Landkreis Amberg-Sulzbach | 1 | 4 | 7 |
 |  | [Benediktbeuern](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/benediktbeuern/) `/bayern/bad-toelz-wolfratshausen/benediktbeuern/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 4 | 7 |
-|  | [Dietramszell](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/dietramszell/) `/bayern/bad-toelz-wolfratshausen/dietramszell/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 4 | 7 |
-|  | [Teisendorf](https://hofladenliste.de/bayern/berchtesgadener-land/teisendorf/) `/bayern/berchtesgadener-land/teisendorf/` | Landkreis Berchtesgadener Land | 1 | 4 | 7 |
+|  | [Laufen](https://hofladenliste.de/bayern/berchtesgadener-land/laufen/) `/bayern/berchtesgadener-land/laufen/` | Landkreis Berchtesgadener Land | 1 | 4 | 7 |
 |  | [Bergkirchen](https://hofladenliste.de/bayern/dachau/bergkirchen/) `/bayern/dachau/bergkirchen/` | Landkreis Dachau | 1 | 4 | 7 |
 |  | [Hebertshausen](https://hofladenliste.de/bayern/dachau/hebertshausen/) `/bayern/dachau/hebertshausen/` | Landkreis Dachau | 1 | 4 | 7 |
+
+## Paket 35 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Karlsfeld](https://hofladenliste.de/bayern/dachau/karlsfeld/) `/bayern/dachau/karlsfeld/` | Landkreis Dachau | 1 | 4 | 7 |
 |  | [Lalling](https://hofladenliste.de/bayern/deggendorf/lalling/) `/bayern/deggendorf/lalling/` | Landkreis Deggendorf | 1 | 4 | 7 |
 |  | [Metten](https://hofladenliste.de/bayern/deggendorf/metten/) `/bayern/deggendorf/metten/` | Landkreis Deggendorf | 1 | 4 | 7 |
@@ -1022,26 +1037,26 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Donauwörth](https://hofladenliste.de/bayern/donau-ries/donauwoerth/) `/bayern/donau-ries/donauwoerth/` | Landkreis Donau-Ries | 1 | 4 | 7 |
 |  | [Forheim](https://hofladenliste.de/bayern/donau-ries/forheim/) `/bayern/donau-ries/forheim/` | Landkreis Donau-Ries | 1 | 4 | 7 |
 |  | [Nördlingen](https://hofladenliste.de/bayern/donau-ries/noerdlingen/) `/bayern/donau-ries/noerdlingen/` | Landkreis Donau-Ries | 1 | 4 | 7 |
-
-## Paket 35 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Bruck](https://hofladenliste.de/bayern/ebersberg/bruck/) `/bayern/ebersberg/bruck/` | Landkreis Ebersberg | 1 | 4 | 7 |
 |  | [Steinhöring](https://hofladenliste.de/bayern/ebersberg/steinhoering/) `/bayern/ebersberg/steinhoering/` | Landkreis Ebersberg | 1 | 4 | 7 |
 |  | [Vaterstetten](https://hofladenliste.de/bayern/ebersberg/vaterstetten/) `/bayern/ebersberg/vaterstetten/` | Landkreis Ebersberg | 1 | 4 | 7 |
+|  | [Buxheim](https://hofladenliste.de/bayern/eichstaett/buxheim/) `/bayern/eichstaett/buxheim/` | Landkreis Eichstätt | 1 | 4 | 7 |
 |  | [Kipfenberg](https://hofladenliste.de/bayern/eichstaett/kipfenberg/) `/bayern/eichstaett/kipfenberg/` | Landkreis Eichstätt | 1 | 4 | 7 |
 |  | [Finsing](https://hofladenliste.de/bayern/erding/finsing/) `/bayern/erding/finsing/` | Landkreis Erding | 1 | 4 | 7 |
 |  | [Heßdorf](https://hofladenliste.de/bayern/erlangen-hoechstadt/hessdorf/) `/bayern/erlangen-hoechstadt/hessdorf/` | Landkreis Erlangen-Höchstadt | 1 | 4 | 7 |
 |  | [Stadt Herzogenaurach](https://hofladenliste.de/bayern/erlangen-hoechstadt/stadt-herzogenaurach/) `/bayern/erlangen-hoechstadt/stadt-herzogenaurach/` | Landkreis Erlangen-Höchstadt | 1 | 4 | 7 |
 |  | [Ebermannstadt](https://hofladenliste.de/bayern/forchheim/ebermannstadt/) `/bayern/forchheim/ebermannstadt/` | Landkreis Forchheim | 1 | 4 | 7 |
 |  | [Forchheim (Landkreis Forchheim)](https://hofladenliste.de/bayern/forchheim/forchheim/) `/bayern/forchheim/forchheim/` | Landkreis Forchheim | 1 | 4 | 7 |
-|  | [Hausen](https://hofladenliste.de/bayern/forchheim/hausen/) `/bayern/forchheim/hausen/` | Landkreis Forchheim | 1 | 4 | 7 |
 |  | [Hetzles](https://hofladenliste.de/bayern/forchheim/hetzles/) `/bayern/forchheim/hetzles/` | Landkreis Forchheim | 1 | 4 | 7 |
 |  | [Kunreuth](https://hofladenliste.de/bayern/forchheim/kunreuth/) `/bayern/forchheim/kunreuth/` | Landkreis Forchheim | 1 | 4 | 7 |
 |  | [Weißenohe](https://hofladenliste.de/bayern/forchheim/weissenohe/) `/bayern/forchheim/weissenohe/` | Landkreis Forchheim | 1 | 4 | 7 |
 |  | [Eching (Landkreis Freising)](https://hofladenliste.de/bayern/freising/eching/) `/bayern/freising/eching/` | Landkreis Freising | 1 | 4 | 7 |
 |  | [Marzling](https://hofladenliste.de/bayern/freising/marzling/) `/bayern/freising/marzling/` | Landkreis Freising | 1 | 4 | 7 |
+
+## Paket 36 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Moorenweis](https://hofladenliste.de/bayern/fuerstenfeldbruck/moorenweis/) `/bayern/fuerstenfeldbruck/moorenweis/` | Landkreis Fürstenfeldbruck | 1 | 4 | 7 |
 |  | [Saulgrub](https://hofladenliste.de/bayern/garmisch-partenkirchen/saulgrub/) `/bayern/garmisch-partenkirchen/saulgrub/` | Landkreis Garmisch-Partenkirchen | 1 | 4 | 7 |
 |  | [Ziemetshausen](https://hofladenliste.de/bayern/guenzburg/ziemetshausen/) `/bayern/guenzburg/ziemetshausen/` | Landkreis Günzburg | 1 | 4 | 7 |
@@ -1051,18 +1066,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Heilsbronn](https://hofladenliste.de/bayern/landkreis-ansbach/heilsbronn/) `/bayern/landkreis-ansbach/heilsbronn/` | Landkreis Ansbach | 1 | 4 | 7 |
 |  | [Neuendettelsau](https://hofladenliste.de/bayern/landkreis-ansbach/neuendettelsau/) `/bayern/landkreis-ansbach/neuendettelsau/` | Landkreis Ansbach | 1 | 4 | 7 |
 |  | [Petersaurach](https://hofladenliste.de/bayern/landkreis-ansbach/petersaurach/) `/bayern/landkreis-ansbach/petersaurach/` | Landkreis Ansbach | 1 | 4 | 7 |
-|  | [Rothenburg ob der Tauber](https://hofladenliste.de/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/) `/bayern/landkreis-ansbach/rothenburg-ob-der-tauber/` | Landkreis Ansbach | 1 | 4 | 7 |
-
-## Paket 36 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Gablingen](https://hofladenliste.de/bayern/landkreis-augsburg/gablingen/) `/bayern/landkreis-augsburg/gablingen/` | Landkreis Augsburg | 1 | 4 | 7 |
 |  | [Graben](https://hofladenliste.de/bayern/landkreis-augsburg/graben/) `/bayern/landkreis-augsburg/graben/` | Landkreis Augsburg | 1 | 4 | 7 |
 |  | [Königsbrunn](https://hofladenliste.de/bayern/landkreis-augsburg/koenigsbrunn/) `/bayern/landkreis-augsburg/koenigsbrunn/` | Landkreis Augsburg | 1 | 4 | 7 |
 |  | [Schwabmünchen](https://hofladenliste.de/bayern/landkreis-augsburg/schwabmuenchen/) `/bayern/landkreis-augsburg/schwabmuenchen/` | Landkreis Augsburg | 1 | 4 | 7 |
 |  | [Pegnitz](https://hofladenliste.de/bayern/landkreis-bayreuth/pegnitz/) `/bayern/landkreis-bayreuth/pegnitz/` | Landkreis Bayreuth | 1 | 4 | 7 |
-|  | [Buch am Erlbach](https://hofladenliste.de/bayern/landkreis-landshut/buch-am-erlbach/) `/bayern/landkreis-landshut/buch-am-erlbach/` | Landkreis Landshut | 1 | 4 | 7 |
 |  | [Ergolding (Landkreis Landshut)](https://hofladenliste.de/bayern/landkreis-landshut/ergolding/) `/bayern/landkreis-landshut/ergolding/` | Landkreis Landshut | 1 | 4 | 7 |
 |  | [Kröning](https://hofladenliste.de/bayern/landkreis-landshut/kroening/) `/bayern/landkreis-landshut/kroening/` | Landkreis Landshut | 1 | 4 | 7 |
 |  | [Velden](https://hofladenliste.de/bayern/landkreis-landshut/velden/) `/bayern/landkreis-landshut/velden/` | Landkreis Landshut | 1 | 4 | 7 |
@@ -1074,6 +1082,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Ismaning](https://hofladenliste.de/bayern/landkreis-muenchen/ismaning/) `/bayern/landkreis-muenchen/ismaning/` | Landkreis München | 1 | 4 | 7 |
 |  | [Putzbrunn](https://hofladenliste.de/bayern/landkreis-muenchen/putzbrunn/) `/bayern/landkreis-muenchen/putzbrunn/` | Landkreis München | 1 | 4 | 7 |
 |  | [Sauerlach](https://hofladenliste.de/bayern/landkreis-muenchen/sauerlach/) `/bayern/landkreis-muenchen/sauerlach/` | Landkreis München | 1 | 4 | 7 |
+
+## Paket 37 (1/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Pfatter](https://hofladenliste.de/bayern/landkreis-regensburg/pfatter/) `/bayern/landkreis-regensburg/pfatter/` | Landkreis Regensburg | 1 | 4 | 7 |
 |  | [Aschau im Chiemgau](https://hofladenliste.de/bayern/landkreis-rosenheim/aschau-im-chiemgau/) `/bayern/landkreis-rosenheim/aschau-im-chiemgau/` | Landkreis Rosenheim | 1 | 4 | 7 |
 |  | [Großkarolinenfeld](https://hofladenliste.de/bayern/landkreis-rosenheim/grosskarolinenfeld/) `/bayern/landkreis-rosenheim/grosskarolinenfeld/` | Landkreis Rosenheim | 1 | 4 | 7 |
@@ -1082,14 +1095,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Schwebheim](https://hofladenliste.de/bayern/landkreis-schweinfurt/schwebheim/) `/bayern/landkreis-schweinfurt/schwebheim/` | Landkreis Schweinfurt | 1 | 4 | 7 |
 |  | [Dießen am Ammersee](https://hofladenliste.de/bayern/landsberg-am-lech/diessen-am-ammersee/) `/bayern/landsberg-am-lech/diessen-am-ammersee/` | Landkreis Landsberg am Lech | 1 | 4 | 7 |
 |  | [Stiefenhofen](https://hofladenliste.de/bayern/lindau/stiefenhofen/) `/bayern/lindau/stiefenhofen/` | Landkreis Lindau | 1 | 4 | 7 |
-
-## Paket 37 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
-|  | [Gmund am Tegernsee](https://hofladenliste.de/bayern/miesbach/gmund-am-tegernsee/) `/bayern/miesbach/gmund-am-tegernsee/` | Landkreis Miesbach | 1 | 4 | 7 |
+|  | [Bad Wiessee](https://hofladenliste.de/bayern/miesbach/bad-wiessee/) `/bayern/miesbach/bad-wiessee/` | Landkreis Miesbach | 1 | 4 | 7 |
 |  | [Miesbach](https://hofladenliste.de/bayern/miesbach/miesbach/) `/bayern/miesbach/miesbach/` | Landkreis Miesbach | 1 | 4 | 7 |
 |  | [Otterfing](https://hofladenliste.de/bayern/miesbach/otterfing/) `/bayern/miesbach/otterfing/` | Landkreis Miesbach | 1 | 4 | 7 |
+| ✓ | [Schliersee](https://hofladenliste.de/bayern/miesbach/schliersee/) `/bayern/miesbach/schliersee/` | Landkreis Miesbach | 1 | 4 | 7 |
+|  | [Waakirchen](https://hofladenliste.de/bayern/miesbach/waakirchen/) `/bayern/miesbach/waakirchen/` | Landkreis Miesbach | 1 | 4 | 7 |
 |  | [Eschau](https://hofladenliste.de/bayern/miltenberg/eschau/) `/bayern/miltenberg/eschau/` | Landkreis Miltenberg | 1 | 4 | 7 |
 |  | [Großheubach](https://hofladenliste.de/bayern/miltenberg/grossheubach/) `/bayern/miltenberg/grossheubach/` | Landkreis Miltenberg | 1 | 4 | 7 |
 |  | [Haag in Oberbayern](https://hofladenliste.de/bayern/muehldorf-am-inn/haag-in-oberbayern/) `/bayern/muehldorf-am-inn/haag-in-oberbayern/` | Landkreis Mühldorf am Inn | 1 | 4 | 7 |
@@ -1102,6 +1112,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Hopferau](https://hofladenliste.de/bayern/ostallgaeu/hopferau/) `/bayern/ostallgaeu/hopferau/` | Landkreis Ostallgäu | 1 | 4 | 7 |
 |  | [Marktoberdorf](https://hofladenliste.de/bayern/ostallgaeu/marktoberdorf/) `/bayern/ostallgaeu/marktoberdorf/` | Landkreis Ostallgäu | 1 | 4 | 7 |
 |  | [Rückholz](https://hofladenliste.de/bayern/ostallgaeu/rueckholz/) `/bayern/ostallgaeu/rueckholz/` | Landkreis Ostallgäu | 1 | 4 | 7 |
+
+## Paket 38 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Vohburg an der Donau](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/vohburg-an-der-donau/) `/bayern/pfaffenhofen-an-der-ilm/vohburg-an-der-donau/` | Landkreis Pfaffenhofen an der Ilm | 1 | 4 | 7 |
 |  | [Wolnzach](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/wolnzach/) `/bayern/pfaffenhofen-an-der-ilm/wolnzach/` | Landkreis Pfaffenhofen an der Ilm | 1 | 4 | 7 |
 |  | [Rinchnach](https://hofladenliste.de/bayern/regen/rinchnach/) `/bayern/regen/rinchnach/` | Landkreis Regen | 1 | 4 | 7 |
@@ -1111,13 +1126,10 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Oberelsbach](https://hofladenliste.de/bayern/rhoen-grabfeld/oberelsbach/) `/bayern/rhoen-grabfeld/oberelsbach/` | Landkreis Rhön-Grabfeld | 1 | 4 | 7 |
 |  | [Spalt](https://hofladenliste.de/bayern/roth/spalt/) `/bayern/roth/spalt/` | Landkreis Roth | 1 | 4 | 7 |
 |  | [Gauting](https://hofladenliste.de/bayern/starnberg/gauting/) `/bayern/starnberg/gauting/` | Landkreis Starnberg | 1 | 4 | 7 |
+|  | [Seefeld](https://hofladenliste.de/bayern/starnberg/seefeld/) `/bayern/starnberg/seefeld/` | Landkreis Starnberg | 1 | 4 | 7 |
 |  | [Straubing](https://hofladenliste.de/bayern/straubing/) `/bayern/straubing/` | Straubing | 1 | 4 | 7 |
-
-## Paket 38 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Bernried](https://hofladenliste.de/bayern/weilheim-schongau/bernried/) `/bayern/weilheim-schongau/bernried/` | Landkreis Weilheim-Schongau | 1 | 4 | 7 |
+|  | [Weißenburg in Bayern](https://hofladenliste.de/bayern/weissenburg-gunzenhausen/weissenburg-in-bayern/) `/bayern/weissenburg-gunzenhausen/weissenburg-in-bayern/` | Landkreis Weißenburg-Gunzenhausen | 1 | 4 | 7 |
 |  | [Chorin](https://hofladenliste.de/brandenburg/barnim/chorin/) `/brandenburg/barnim/chorin/` | Landkreis Barnim | 1 | 4 | 7 |
 |  | [Wustermark](https://hofladenliste.de/brandenburg/havelland/wustermark/) `/brandenburg/havelland/wustermark/` | Landkreis Havelland | 1 | 4 | 7 |
 |  | [Gransee](https://hofladenliste.de/brandenburg/oberhavel/gransee/) `/brandenburg/oberhavel/gransee/` | Landkreis Oberhavel | 1 | 4 | 7 |
@@ -1130,23 +1142,25 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Angermünde](https://hofladenliste.de/brandenburg/uckermark/angermuende/) `/brandenburg/uckermark/angermuende/` | Landkreis Uckermark | 1 | 4 | 7 |
 |  | [Bensheim](https://hofladenliste.de/hessen/bergstrasse/bensheim/) `/hessen/bergstrasse/bensheim/` | Landkreis Bergstraße | 1 | 4 | 7 |
 |  | [Biblis](https://hofladenliste.de/hessen/bergstrasse/biblis/) `/hessen/bergstrasse/biblis/` | Landkreis Bergstraße | 1 | 4 | 7 |
-|  | [Einhausen](https://hofladenliste.de/hessen/bergstrasse/einhausen/) `/hessen/bergstrasse/einhausen/` | Landkreis Bergstraße | 1 | 4 | 7 |
-|  | [Fürth](https://hofladenliste.de/hessen/bergstrasse/fuerth/) `/hessen/bergstrasse/fuerth/` | Landkreis Bergstraße | 1 | 4 | 7 |
-|  | [Mörlenbach](https://hofladenliste.de/hessen/bergstrasse/moerlenbach/) `/hessen/bergstrasse/moerlenbach/` | Landkreis Bergstraße | 1 | 4 | 7 |
-|  | [Bickenbach](https://hofladenliste.de/hessen/darmstadt-dieburg/bickenbach/) `/hessen/darmstadt-dieburg/bickenbach/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Groß-Zimmern](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-zimmern/) `/hessen/darmstadt-dieburg/gross-zimmern/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Modautal](https://hofladenliste.de/hessen/darmstadt-dieburg/modautal/) `/hessen/darmstadt-dieburg/modautal/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Otzberg](https://hofladenliste.de/hessen/darmstadt-dieburg/otzberg/) `/hessen/darmstadt-dieburg/otzberg/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Reinheim](https://hofladenliste.de/hessen/darmstadt-dieburg/reinheim/) `/hessen/darmstadt-dieburg/reinheim/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
-|  | [Künzell](https://hofladenliste.de/hessen/fulda/kuenzell/) `/hessen/fulda/kuenzell/` | Landkreis Fulda | 1 | 4 | 7 |
-|  | [Wettenberg](https://hofladenliste.de/hessen/giessen/wettenberg/) `/hessen/giessen/wettenberg/` | Landkreis Gießen | 1 | 4 | 7 |
-|  | [Ginsheim-Gustavsburg](https://hofladenliste.de/hessen/gross-gerau/ginsheim-gustavsburg/) `/hessen/gross-gerau/ginsheim-gustavsburg/` | Landkreis Groß-Gerau | 1 | 4 | 7 |
-|  | [Riedstadt](https://hofladenliste.de/hessen/gross-gerau/riedstadt/) `/hessen/gross-gerau/riedstadt/` | Landkreis Groß-Gerau | 1 | 4 | 7 |
 
 ## Paket 39 (0/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+|  | [Einhausen](https://hofladenliste.de/hessen/bergstrasse/einhausen/) `/hessen/bergstrasse/einhausen/` | Landkreis Bergstraße | 1 | 4 | 7 |
+|  | [Fürth](https://hofladenliste.de/hessen/bergstrasse/fuerth/) `/hessen/bergstrasse/fuerth/` | Landkreis Bergstraße | 1 | 4 | 7 |
+|  | [Mörlenbach](https://hofladenliste.de/hessen/bergstrasse/moerlenbach/) `/hessen/bergstrasse/moerlenbach/` | Landkreis Bergstraße | 1 | 4 | 7 |
+|  | [Babenhausen](https://hofladenliste.de/hessen/darmstadt-dieburg/babenhausen/) `/hessen/darmstadt-dieburg/babenhausen/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+|  | [Bickenbach](https://hofladenliste.de/hessen/darmstadt-dieburg/bickenbach/) `/hessen/darmstadt-dieburg/bickenbach/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+|  | [Groß-Zimmern](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-zimmern/) `/hessen/darmstadt-dieburg/gross-zimmern/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+|  | [Modautal](https://hofladenliste.de/hessen/darmstadt-dieburg/modautal/) `/hessen/darmstadt-dieburg/modautal/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+|  | [Otzberg](https://hofladenliste.de/hessen/darmstadt-dieburg/otzberg/) `/hessen/darmstadt-dieburg/otzberg/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+|  | [Reinheim](https://hofladenliste.de/hessen/darmstadt-dieburg/reinheim/) `/hessen/darmstadt-dieburg/reinheim/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+|  | [Schaafheim](https://hofladenliste.de/hessen/darmstadt-dieburg/schaafheim/) `/hessen/darmstadt-dieburg/schaafheim/` | Landkreis Darmstadt-Dieburg | 1 | 4 | 7 |
+|  | [Künzell](https://hofladenliste.de/hessen/fulda/kuenzell/) `/hessen/fulda/kuenzell/` | Landkreis Fulda | 1 | 4 | 7 |
+|  | [Wettenberg](https://hofladenliste.de/hessen/giessen/wettenberg/) `/hessen/giessen/wettenberg/` | Landkreis Gießen | 1 | 4 | 7 |
+|  | [Ginsheim-Gustavsburg](https://hofladenliste.de/hessen/gross-gerau/ginsheim-gustavsburg/) `/hessen/gross-gerau/ginsheim-gustavsburg/` | Landkreis Groß-Gerau | 1 | 4 | 7 |
+|  | [Riedstadt](https://hofladenliste.de/hessen/gross-gerau/riedstadt/) `/hessen/gross-gerau/riedstadt/` | Landkreis Groß-Gerau | 1 | 4 | 7 |
 |  | [Alheim](https://hofladenliste.de/hessen/hersfeld-rotenburg/alheim/) `/hessen/hersfeld-rotenburg/alheim/` | Landkreis Hersfeld-Rotenburg | 1 | 4 | 7 |
 |  | [Breitenbach am Herzberg](https://hofladenliste.de/hessen/hersfeld-rotenburg/breitenbach-am-herzberg/) `/hessen/hersfeld-rotenburg/breitenbach-am-herzberg/` | Landkreis Hersfeld-Rotenburg | 1 | 4 | 7 |
 |  | [Friedrichsdorf](https://hofladenliste.de/hessen/hochtaunuskreis/friedrichsdorf/) `/hessen/hochtaunuskreis/friedrichsdorf/` | Hochtaunuskreis | 1 | 4 | 7 |
@@ -1156,9 +1170,13 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Bruchköbel](https://hofladenliste.de/hessen/main-kinzig-kreis/bruchkoebel/) `/hessen/main-kinzig-kreis/bruchkoebel/` | Main-Kinzig-Kreis | 1 | 4 | 7 |
 |  | [Kriftel](https://hofladenliste.de/hessen/main-taunus-kreis/kriftel/) `/hessen/main-taunus-kreis/kriftel/` | Main-Taunus-Kreis | 1 | 4 | 7 |
 |  | [Sulzbach](https://hofladenliste.de/hessen/main-taunus-kreis/sulzbach/) `/hessen/main-taunus-kreis/sulzbach/` | Main-Taunus-Kreis | 1 | 4 | 7 |
-|  | [Ebsdorfergrund](https://hofladenliste.de/hessen/marburg-biedenkopf/ebsdorfergrund/) `/hessen/marburg-biedenkopf/ebsdorfergrund/` | Landkreis Marburg-Biedenkopf | 1 | 4 | 7 |
 |  | [Beerfelden](https://hofladenliste.de/hessen/odenwaldkreis/beerfelden/) `/hessen/odenwaldkreis/beerfelden/` | Odenwaldkreis | 1 | 4 | 7 |
 |  | [Mossautal](https://hofladenliste.de/hessen/odenwaldkreis/mossautal/) `/hessen/odenwaldkreis/mossautal/` | Odenwaldkreis | 1 | 4 | 7 |
+
+## Paket 40 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Reichelsheim (Odenwaldkreis)](https://hofladenliste.de/hessen/odenwaldkreis/reichelsheim/) `/hessen/odenwaldkreis/reichelsheim/` | Odenwaldkreis | 1 | 4 | 7 |
 |  | [Egelsbach](https://hofladenliste.de/hessen/offenbach/egelsbach/) `/hessen/offenbach/egelsbach/` | Landkreis Offenbach | 1 | 4 | 7 |
 |  | [Bad Schwalbach](https://hofladenliste.de/hessen/rheingau-taunus-kreis/bad-schwalbach/) `/hessen/rheingau-taunus-kreis/bad-schwalbach/` | Rheingau-Taunus-Kreis | 1 | 4 | 7 |
@@ -1172,11 +1190,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Altenkirchen](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-ruegen/altenkirchen/) `/mecklenburg-vorpommern/vorpommern-ruegen/altenkirchen/` | Landkreis Vorpommern-Rügen | 1 | 4 | 7 |
 |  | [Großefehn](https://hofladenliste.de/niedersachsen/aurich/grossefehn/) `/niedersachsen/aurich/grossefehn/` | Landkreis Aurich | 1 | 4 | 7 |
 |  | [Norden](https://hofladenliste.de/niedersachsen/aurich/norden/) `/niedersachsen/aurich/norden/` | Landkreis Aurich | 1 | 4 | 7 |
-
-## Paket 40 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Adelheidsdorf](https://hofladenliste.de/niedersachsen/celle/adelheidsdorf/) `/niedersachsen/celle/adelheidsdorf/` | Landkreis Celle | 1 | 4 | 7 |
 |  | [Bergen](https://hofladenliste.de/niedersachsen/celle/bergen/) `/niedersachsen/celle/bergen/` | Landkreis Celle | 1 | 4 | 7 |
 |  | [Faßberg](https://hofladenliste.de/niedersachsen/celle/fassberg/) `/niedersachsen/celle/fassberg/` | Landkreis Celle | 1 | 4 | 7 |
@@ -1185,11 +1198,15 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Saterland](https://hofladenliste.de/niedersachsen/cloppenburg/saterland/) `/niedersachsen/cloppenburg/saterland/` | Landkreis Cloppenburg | 1 | 4 | 7 |
 |  | [Bassum](https://hofladenliste.de/niedersachsen/diepholz/bassum/) `/niedersachsen/diepholz/bassum/` | Landkreis Diepholz | 1 | 4 | 7 |
 |  | [Kirchdorf](https://hofladenliste.de/niedersachsen/diepholz/kirchdorf/) `/niedersachsen/diepholz/kirchdorf/` | Landkreis Diepholz | 1 | 4 | 7 |
-|  | [Twistringen](https://hofladenliste.de/niedersachsen/diepholz/twistringen/) `/niedersachsen/diepholz/twistringen/` | Landkreis Diepholz | 1 | 4 | 7 |
 |  | [Weyhe](https://hofladenliste.de/niedersachsen/diepholz/weyhe/) `/niedersachsen/diepholz/weyhe/` | Landkreis Diepholz | 1 | 4 | 7 |
 |  | [Emsbüren](https://hofladenliste.de/niedersachsen/emsland/emsbueren/) `/niedersachsen/emsland/emsbueren/` | Landkreis Emsland | 1 | 4 | 7 |
 |  | [Haren](https://hofladenliste.de/niedersachsen/emsland/haren/) `/niedersachsen/emsland/haren/` | Landkreis Emsland | 1 | 4 | 7 |
 |  | [Meppen](https://hofladenliste.de/niedersachsen/emsland/meppen/) `/niedersachsen/emsland/meppen/` | Landkreis Emsland | 1 | 4 | 7 |
+
+## Paket 41 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Bockhorn](https://hofladenliste.de/niedersachsen/friesland/bockhorn/) `/niedersachsen/friesland/bockhorn/` | Landkreis Friesland | 1 | 4 | 7 |
 |  | [Meine](https://hofladenliste.de/niedersachsen/gifhorn/meine/) `/niedersachsen/gifhorn/meine/` | Landkreis Gifhorn | 1 | 4 | 7 |
 |  | [Meinersen](https://hofladenliste.de/niedersachsen/gifhorn/meinersen/) `/niedersachsen/gifhorn/meinersen/` | Landkreis Gifhorn | 1 | 4 | 7 |
@@ -1198,29 +1215,31 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Niemetal](https://hofladenliste.de/niedersachsen/goettingen/niemetal/) `/niedersachsen/goettingen/niemetal/` | Landkreis Göttingen | 1 | 4 | 7 |
 |  | [Bad Harzburg Bettingerode](https://hofladenliste.de/niedersachsen/goslar/bad-harzburg-bettingerode/) `/niedersachsen/goslar/bad-harzburg-bettingerode/` | Landkreis Goslar | 1 | 4 | 7 |
 |  | [Coppenbrügge](https://hofladenliste.de/niedersachsen/hameln-pyrmont/coppenbruegge/) `/niedersachsen/hameln-pyrmont/coppenbruegge/` | Landkreis Hameln-Pyrmont | 1 | 4 | 7 |
-|  | [Jesteburg](https://hofladenliste.de/niedersachsen/harburg/jesteburg/) `/niedersachsen/harburg/jesteburg/` | Landkreis Harburg | 1 | 4 | 7 |
 |  | [Bomlitz](https://hofladenliste.de/niedersachsen/heidekreis/bomlitz/) `/niedersachsen/heidekreis/bomlitz/` | Heidekreis | 1 | 4 | 7 |
 |  | [Schwarmstedt](https://hofladenliste.de/niedersachsen/heidekreis/schwarmstedt/) `/niedersachsen/heidekreis/schwarmstedt/` | Heidekreis | 1 | 4 | 7 |
 |  | [Lehre](https://hofladenliste.de/niedersachsen/helmstedt/lehre/) `/niedersachsen/helmstedt/lehre/` | Landkreis Helmstedt | 1 | 4 | 7 |
-
-## Paket 41 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Bockenem](https://hofladenliste.de/niedersachsen/hildesheim/bockenem/) `/niedersachsen/hildesheim/bockenem/` | Landkreis Hildesheim | 1 | 4 | 7 |
 |  | [Wildeshausen](https://hofladenliste.de/niedersachsen/landkreis-oldenburg/wildeshausen/) `/niedersachsen/landkreis-oldenburg/wildeshausen/` | Landkreis Oldenburg | 1 | 4 | 7 |
-|  | [Badbergen](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/badbergen/) `/niedersachsen/landkreis-osnabrueck/badbergen/` | Landkreis Osnabrück | 1 | 4 | 7 |
 |  | [Bramsche](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bramsche/) `/niedersachsen/landkreis-osnabrueck/bramsche/` | Landkreis Osnabrück | 1 | 4 | 7 |
 |  | [Wallenhorst](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/wallenhorst/) `/niedersachsen/landkreis-osnabrueck/wallenhorst/` | Landkreis Osnabrück | 1 | 4 | 7 |
 |  | [Leer (Ostfriesland)](https://hofladenliste.de/niedersachsen/leer/leer-ostfriesland/) `/niedersachsen/leer/leer-ostfriesland/` | Landkreis Leer | 1 | 4 | 7 |
 |  | [Neetze](https://hofladenliste.de/niedersachsen/lueneburg/neetze/) `/niedersachsen/lueneburg/neetze/` | Landkreis Lüneburg | 1 | 4 | 7 |
 |  | [Steyerberg](https://hofladenliste.de/niedersachsen/nienburg-weser/steyerberg/) `/niedersachsen/nienburg-weser/steyerberg/` | Landkreis Nienburg/Weser | 1 | 4 | 7 |
+|  | [Bad Gandersheim](https://hofladenliste.de/niedersachsen/northeim/bad-gandersheim/) `/niedersachsen/northeim/bad-gandersheim/` | Landkreis Northeim | 1 | 4 | 7 |
 |  | [Hardegsen](https://hofladenliste.de/niedersachsen/northeim/hardegsen/) `/niedersachsen/northeim/hardegsen/` | Landkreis Northeim | 1 | 4 | 7 |
 |  | [Moringen](https://hofladenliste.de/niedersachsen/northeim/moringen/) `/niedersachsen/northeim/moringen/` | Landkreis Northeim | 1 | 4 | 7 |
 |  | [Burgdorf](https://hofladenliste.de/niedersachsen/region-hannover/burgdorf/) `/niedersachsen/region-hannover/burgdorf/` | Region Hannover | 1 | 4 | 7 |
 |  | [Burgwedel](https://hofladenliste.de/niedersachsen/region-hannover/burgwedel/) `/niedersachsen/region-hannover/burgwedel/` | Region Hannover | 1 | 4 | 7 |
 |  | [Pattensen](https://hofladenliste.de/niedersachsen/region-hannover/pattensen/) `/niedersachsen/region-hannover/pattensen/` | Region Hannover | 1 | 4 | 7 |
 |  | [Seelze](https://hofladenliste.de/niedersachsen/region-hannover/seelze/) `/niedersachsen/region-hannover/seelze/` | Region Hannover | 1 | 4 | 7 |
+
+## Paket 42 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
+|  | [Hellwege](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/hellwege/) `/niedersachsen/rotenburg-wuemme/hellwege/` | Landkreis Rotenburg (Wümme) | 1 | 4 | 7 |
+|  | [Tarmstedt](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/tarmstedt/) `/niedersachsen/rotenburg-wuemme/tarmstedt/` | Landkreis Rotenburg (Wümme) | 1 | 4 | 7 |
+|  | [Wilstedt](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/wilstedt/) `/niedersachsen/rotenburg-wuemme/wilstedt/` | Landkreis Rotenburg (Wümme) | 1 | 4 | 7 |
 |  | [Auetal](https://hofladenliste.de/niedersachsen/schaumburg/auetal/) `/niedersachsen/schaumburg/auetal/` | Landkreis Schaumburg | 1 | 4 | 7 |
 |  | [Bückeburg](https://hofladenliste.de/niedersachsen/schaumburg/bueckeburg/) `/niedersachsen/schaumburg/bueckeburg/` | Landkreis Schaumburg | 1 | 4 | 7 |
 |  | [Harsefeld](https://hofladenliste.de/niedersachsen/stade/harsefeld/) `/niedersachsen/stade/harsefeld/` | Landkreis Stade | 1 | 4 | 7 |
@@ -1232,11 +1251,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Gescher](https://hofladenliste.de/nordrhein-westfalen/borken/gescher/) `/nordrhein-westfalen/borken/gescher/` | Kreis Borken | 1 | 4 | 7 |
 |  | [Mechernich](https://hofladenliste.de/nordrhein-westfalen/euskirchen/mechernich/) `/nordrhein-westfalen/euskirchen/mechernich/` | Kreis Euskirchen | 1 | 4 | 7 |
 |  | [Nettersheim](https://hofladenliste.de/nordrhein-westfalen/euskirchen/nettersheim/) `/nordrhein-westfalen/euskirchen/nettersheim/` | Kreis Euskirchen | 1 | 4 | 7 |
-
-## Paket 42 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Harsewinkel](https://hofladenliste.de/nordrhein-westfalen/guetersloh/harsewinkel/) `/nordrhein-westfalen/guetersloh/harsewinkel/` | Kreis Gütersloh | 1 | 4 | 7 |
 |  | [Herzebrock-Clarholz](https://hofladenliste.de/nordrhein-westfalen/guetersloh/herzebrock-clarholz/) `/nordrhein-westfalen/guetersloh/herzebrock-clarholz/` | Kreis Gütersloh | 1 | 4 | 7 |
 |  | [Wassenberg](https://hofladenliste.de/nordrhein-westfalen/heinsberg/wassenberg/) `/nordrhein-westfalen/heinsberg/wassenberg/` | Kreis Heinsberg | 1 | 4 | 7 |
@@ -1248,6 +1262,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Horn-Bad Meinberg](https://hofladenliste.de/nordrhein-westfalen/lippe/horn-bad-meinberg/) `/nordrhein-westfalen/lippe/horn-bad-meinberg/` | Kreis Lippe | 1 | 4 | 7 |
 |  | [Halver](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/halver/) `/nordrhein-westfalen/maerkischer-kreis/halver/` | Märkischer Kreis | 1 | 4 | 7 |
 |  | [Herscheid](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/herscheid/) `/nordrhein-westfalen/maerkischer-kreis/herscheid/` | Märkischer Kreis | 1 | 4 | 7 |
+
+## Paket 43 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Stemwede](https://hofladenliste.de/nordrhein-westfalen/minden-luebbecke/stemwede/) `/nordrhein-westfalen/minden-luebbecke/stemwede/` | Kreis Minden-Lübbecke | 1 | 4 | 7 |
 |  | [Hückeswagen](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/hueckeswagen/) `/nordrhein-westfalen/oberbergischer-kreis/hueckeswagen/` | Oberbergischer Kreis | 1 | 4 | 7 |
 |  | [Lindlar](https://hofladenliste.de/nordrhein-westfalen/oberbergischer-kreis/lindlar/) `/nordrhein-westfalen/oberbergischer-kreis/lindlar/` | Oberbergischer Kreis | 1 | 4 | 7 |
@@ -1262,11 +1281,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Laer](https://hofladenliste.de/nordrhein-westfalen/steinfurt/laer/) `/nordrhein-westfalen/steinfurt/laer/` | Kreis Steinfurt | 1 | 4 | 7 |
 |  | [Wettringen (Kreis Steinfurt)](https://hofladenliste.de/nordrhein-westfalen/steinfurt/wettringen/) `/nordrhein-westfalen/steinfurt/wettringen/` | Kreis Steinfurt | 1 | 4 | 7 |
 |  | [Werne](https://hofladenliste.de/nordrhein-westfalen/unna/werne/) `/nordrhein-westfalen/unna/werne/` | Kreis Unna | 1 | 4 | 7 |
-
-## Paket 43 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Ennigerloh](https://hofladenliste.de/nordrhein-westfalen/warendorf/ennigerloh/) `/nordrhein-westfalen/warendorf/ennigerloh/` | Kreis Warendorf | 1 | 4 | 7 |
 |  | [Wadersloh](https://hofladenliste.de/nordrhein-westfalen/warendorf/wadersloh/) `/nordrhein-westfalen/warendorf/wadersloh/` | Kreis Warendorf | 1 | 4 | 7 |
 |  | [Erpolzheim](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/erpolzheim/) `/rheinland-pfalz/bad-duerkheim/erpolzheim/` | Landkreis Bad Dürkheim | 1 | 4 | 7 |
@@ -1274,29 +1288,31 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Weisenheim am Sand](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/) `/rheinland-pfalz/bad-duerkheim/weisenheim-am-sand/` | Landkreis Bad Dürkheim | 1 | 4 | 7 |
 |  | [Bellheim](https://hofladenliste.de/rheinland-pfalz/germersheim/bellheim/) `/rheinland-pfalz/germersheim/bellheim/` | Landkreis Germersheim | 1 | 4 | 7 |
 |  | [Schwegenheim](https://hofladenliste.de/rheinland-pfalz/germersheim/schwegenheim/) `/rheinland-pfalz/germersheim/schwegenheim/` | Landkreis Germersheim | 1 | 4 | 7 |
+|  | [Landau in der Pfalz](https://hofladenliste.de/rheinland-pfalz/landau-in-der-pfalz/) `/rheinland-pfalz/landau-in-der-pfalz/` | Landau in der Pfalz | 1 | 4 | 7 |
 |  | [Bodenheim](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/bodenheim/) `/rheinland-pfalz/mainz-bingen/bodenheim/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
 |  | [Ingelheim am Rhein](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/ingelheim-am-rhein/) `/rheinland-pfalz/mainz-bingen/ingelheim-am-rhein/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
 |  | [Nieder-Olm](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/nieder-olm/) `/rheinland-pfalz/mainz-bingen/nieder-olm/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
+
+## Paket 44 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
+|  | [Ober-Olm](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/ober-olm/) `/rheinland-pfalz/mainz-bingen/ober-olm/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
 |  | [Zornheim](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/zornheim/) `/rheinland-pfalz/mainz-bingen/zornheim/` | Landkreis Mainz-Bingen | 1 | 4 | 7 |
 |  | [Andernach](https://hofladenliste.de/rheinland-pfalz/mayen-koblenz/andernach/) `/rheinland-pfalz/mayen-koblenz/andernach/` | Landkreis Mayen-Koblenz | 1 | 4 | 7 |
 |  | [Böhl-Iggelheim](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/boehl-iggelheim/) `/rheinland-pfalz/rhein-pfalz-kreis/boehl-iggelheim/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
 |  | [Dannstadt-Schauernheim](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/dannstadt-schauernheim/) `/rheinland-pfalz/rhein-pfalz-kreis/dannstadt-schauernheim/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
 |  | [Dudenhofen](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/dudenhofen/) `/rheinland-pfalz/rhein-pfalz-kreis/dudenhofen/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
 |  | [Schifferstadt](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/schifferstadt/) `/rheinland-pfalz/rhein-pfalz-kreis/schifferstadt/` | Rhein-Pfalz-Kreis | 1 | 4 | 7 |
-|  | [Merzig](https://hofladenliste.de/saarland/merzig-wadern/merzig/) `/saarland/merzig-wadern/merzig/` | Landkreis Merzig-Wadern | 1 | 4 | 7 |
+|  | [Losheim am See](https://hofladenliste.de/saarland/merzig-wadern/losheim-am-see/) `/saarland/merzig-wadern/losheim-am-see/` | Landkreis Merzig-Wadern | 1 | 4 | 7 |
 |  | [Wadern](https://hofladenliste.de/saarland/merzig-wadern/wadern/) `/saarland/merzig-wadern/wadern/` | Landkreis Merzig-Wadern | 1 | 4 | 7 |
 |  | [Kleinblittersdorf](https://hofladenliste.de/saarland/regionalverband-saarbruecken/kleinblittersdorf/) `/saarland/regionalverband-saarbruecken/kleinblittersdorf/` | Regionalverband Saarbrücken | 1 | 4 | 7 |
+|  | [Rehlingen-Siersburg](https://hofladenliste.de/saarland/saarlouis/rehlingen-siersburg/) `/saarland/saarlouis/rehlingen-siersburg/` | Landkreis Saarlouis | 1 | 4 | 7 |
 |  | [Gersheim](https://hofladenliste.de/saarland/saarpfalz-kreis/gersheim/) `/saarland/saarpfalz-kreis/gersheim/` | Saarpfalz-Kreis | 1 | 4 | 7 |
 |  | [Nohfelden](https://hofladenliste.de/saarland/st-wendel/nohfelden/) `/saarland/st-wendel/nohfelden/` | Landkreis St. Wendel | 1 | 4 | 7 |
 |  | [Tangerhütte](https://hofladenliste.de/sachsen-anhalt/stendal/tangerhuette/) `/sachsen-anhalt/stendal/tangerhuette/` | Landkreis Stendal | 1 | 4 | 7 |
 |  | [Lößnitz](https://hofladenliste.de/sachsen/erzgebirgskreis/loessnitz/) `/sachsen/erzgebirgskreis/loessnitz/` | Erzgebirgskreis | 1 | 4 | 7 |
 |  | [Herrnhut](https://hofladenliste.de/sachsen/goerlitz/herrnhut/) `/sachsen/goerlitz/herrnhut/` | Landkreis Görlitz | 1 | 4 | 7 |
-|  | [Grimma](https://hofladenliste.de/sachsen/landkreis-leipzig/grimma/) `/sachsen/landkreis-leipzig/grimma/` | Landkreis Leipzig | 1 | 4 | 7 |
-
-## Paket 44 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Radeburg](https://hofladenliste.de/sachsen/meissen/radeburg/) `/sachsen/meissen/radeburg/` | Landkreis Meißen | 1 | 4 | 7 |
 |  | [Eppendorf](https://hofladenliste.de/sachsen/mittelsachsen/eppendorf/) `/sachsen/mittelsachsen/eppendorf/` | Landkreis Mittelsachsen | 1 | 4 | 7 |
 |  | [Flöha](https://hofladenliste.de/sachsen/mittelsachsen/floeha/) `/sachsen/mittelsachsen/floeha/` | Landkreis Mittelsachsen | 1 | 4 | 7 |
@@ -1306,6 +1322,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Reinhardtsdorf-Schöna](https://hofladenliste.de/sachsen/saechsische-schweiz/reinhardtsdorf-schoena/) `/sachsen/saechsische-schweiz/reinhardtsdorf-schoena/` | Landkreis Sächsische Schweiz | 1 | 4 | 7 |
 |  | [Brunsbüttel](https://hofladenliste.de/schleswig-holstein/dithmarschen/brunsbuettel/) `/schleswig-holstein/dithmarschen/brunsbuettel/` | Kreis Dithmarschen | 1 | 4 | 7 |
 |  | [Groß Grönau](https://hofladenliste.de/schleswig-holstein/herzogtum-lauenburg/gross-groenau/) `/schleswig-holstein/herzogtum-lauenburg/gross-groenau/` | Kreis Herzogtum Lauenburg | 1 | 4 | 7 |
+
+## Paket 45 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Humptrup](https://hofladenliste.de/schleswig-holstein/nordfriesland/humptrup/) `/schleswig-holstein/nordfriesland/humptrup/` | Kreis Nordfriesland | 1 | 4 | 7 |
 |  | [Bad Schwartau](https://hofladenliste.de/schleswig-holstein/ostholstein/bad-schwartau/) `/schleswig-holstein/ostholstein/bad-schwartau/` | Kreis Ostholstein | 1 | 4 | 7 |
 |  | [Stockelsdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/stockelsdorf/) `/schleswig-holstein/ostholstein/stockelsdorf/` | Kreis Ostholstein | 1 | 4 | 7 |
@@ -1322,11 +1343,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Blaubeuren](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/blaubeuren/) `/baden-wuerttemberg/alb-donau-kreis/blaubeuren/` | Alb-Donau-Kreis | 1 | 3 | 6 |
 |  | [Dietenheim](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/dietenheim/) `/baden-wuerttemberg/alb-donau-kreis/dietenheim/` | Alb-Donau-Kreis | 1 | 3 | 6 |
 |  | [Ehingen an der Donau](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/ehingen-an-der-donau/) `/baden-wuerttemberg/alb-donau-kreis/ehingen-an-der-donau/` | Alb-Donau-Kreis | 1 | 3 | 6 |
-
-## Paket 45 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Heroldstatt](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/heroldstatt/) `/baden-wuerttemberg/alb-donau-kreis/heroldstatt/` | Alb-Donau-Kreis | 1 | 3 | 6 |
 |  | [Illerkirchberg](https://hofladenliste.de/baden-wuerttemberg/alb-donau-kreis/illerkirchberg/) `/baden-wuerttemberg/alb-donau-kreis/illerkirchberg/` | Alb-Donau-Kreis | 1 | 3 | 6 |
 |  | [Dürmentingen](https://hofladenliste.de/baden-wuerttemberg/biberach/duermentingen/) `/baden-wuerttemberg/biberach/duermentingen/` | Landkreis Biberach | 1 | 3 | 6 |
@@ -1336,6 +1352,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Weil im Schönbuch](https://hofladenliste.de/baden-wuerttemberg/boeblingen/weil-im-schoenbuch/) `/baden-wuerttemberg/boeblingen/weil-im-schoenbuch/` | Landkreis Böblingen | 1 | 3 | 6 |
 |  | [Breisach am Rhein](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/) `/baden-wuerttemberg/breisgau-hochschwarzwald/breisach-am-rhein/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
 |  | [Breitnau](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/) `/baden-wuerttemberg/breisgau-hochschwarzwald/breitnau/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
+
+## Paket 46 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Gottenheim](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/gottenheim/) `/baden-wuerttemberg/breisgau-hochschwarzwald/gottenheim/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
 |  | [Merdingen](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/merdingen/) `/baden-wuerttemberg/breisgau-hochschwarzwald/merdingen/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
 |  | [Münstertal](https://hofladenliste.de/baden-wuerttemberg/breisgau-hochschwarzwald/muenstertal/) `/baden-wuerttemberg/breisgau-hochschwarzwald/muenstertal/` | Landkreis Breisgau-Hochschwarzwald | 1 | 3 | 6 |
@@ -1352,11 +1373,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Forchheim (Landkreis Emmendingen)](https://hofladenliste.de/baden-wuerttemberg/emmendingen/forchheim/) `/baden-wuerttemberg/emmendingen/forchheim/` | Landkreis Emmendingen | 1 | 3 | 6 |
 |  | [Waldkirch](https://hofladenliste.de/baden-wuerttemberg/emmendingen/waldkirch/) `/baden-wuerttemberg/emmendingen/waldkirch/` | Landkreis Emmendingen | 1 | 3 | 6 |
 |  | [Keltern](https://hofladenliste.de/baden-wuerttemberg/enzkreis/keltern/) `/baden-wuerttemberg/enzkreis/keltern/` | Enzkreis | 1 | 3 | 6 |
-
-## Paket 46 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Kieselbronn](https://hofladenliste.de/baden-wuerttemberg/enzkreis/kieselbronn/) `/baden-wuerttemberg/enzkreis/kieselbronn/` | Enzkreis | 1 | 3 | 6 |
 |  | [Straubenhardt](https://hofladenliste.de/baden-wuerttemberg/enzkreis/straubenhardt/) `/baden-wuerttemberg/enzkreis/straubenhardt/` | Enzkreis | 1 | 3 | 6 |
 |  | [Altdorf (Landkreis Esslingen)](https://hofladenliste.de/baden-wuerttemberg/esslingen/altdorf/) `/baden-wuerttemberg/esslingen/altdorf/` | Landkreis Esslingen | 1 | 3 | 6 |
@@ -1366,6 +1382,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Wernau](https://hofladenliste.de/baden-wuerttemberg/esslingen/wernau/) `/baden-wuerttemberg/esslingen/wernau/` | Landkreis Esslingen | 1 | 3 | 6 |
 |  | [Kuchen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/kuchen/) `/baden-wuerttemberg/goeppingen/kuchen/` | Landkreis Göppingen | 1 | 3 | 6 |
 |  | [Wangen](https://hofladenliste.de/baden-wuerttemberg/goeppingen/wangen/) `/baden-wuerttemberg/goeppingen/wangen/` | Landkreis Göppingen | 1 | 3 | 6 |
+
+## Paket 47 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Zell unter Aichelberg](https://hofladenliste.de/baden-wuerttemberg/goeppingen/zell-unter-aichelberg/) `/baden-wuerttemberg/goeppingen/zell-unter-aichelberg/` | Landkreis Göppingen | 1 | 3 | 6 |
 |  | [Herbrechtingen](https://hofladenliste.de/baden-wuerttemberg/heidenheim/herbrechtingen/) `/baden-wuerttemberg/heidenheim/herbrechtingen/` | Landkreis Heidenheim | 1 | 3 | 6 |
 |  | [Hermaringen](https://hofladenliste.de/baden-wuerttemberg/heidenheim/hermaringen/) `/baden-wuerttemberg/heidenheim/hermaringen/` | Landkreis Heidenheim | 1 | 3 | 6 |
@@ -1382,11 +1403,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Lehrensteinsfeld](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/lehrensteinsfeld/) `/baden-wuerttemberg/landkreis-heilbronn/lehrensteinsfeld/` | Landkreis Heilbronn | 1 | 3 | 6 |
 |  | [Nordheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/nordheim/) `/baden-wuerttemberg/landkreis-heilbronn/nordheim/` | Landkreis Heilbronn | 1 | 3 | 6 |
 |  | [Roigheim](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/roigheim/) `/baden-wuerttemberg/landkreis-heilbronn/roigheim/` | Landkreis Heilbronn | 1 | 3 | 6 |
-
-## Paket 47 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Widdern](https://hofladenliste.de/baden-wuerttemberg/landkreis-heilbronn/widdern/) `/baden-wuerttemberg/landkreis-heilbronn/widdern/` | Landkreis Heilbronn | 1 | 3 | 6 |
 |  | [Eggenstein-Leopoldshafen](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/eggenstein-leopoldshafen/) `/baden-wuerttemberg/landkreis-karlsruhe/eggenstein-leopoldshafen/` | Landkreis Karlsruhe | 1 | 3 | 6 |
 |  | [Weingarten (Landkreis Karlsruhe)](https://hofladenliste.de/baden-wuerttemberg/landkreis-karlsruhe/weingarten/) `/baden-wuerttemberg/landkreis-karlsruhe/weingarten/` | Landkreis Karlsruhe | 1 | 3 | 6 |
@@ -1396,6 +1412,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Löchgau](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/loechgau/) `/baden-wuerttemberg/ludwigsburg/loechgau/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
 |  | [Möglingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/moeglingen/) `/baden-wuerttemberg/ludwigsburg/moeglingen/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
 |  | [Murr](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/murr/) `/baden-wuerttemberg/ludwigsburg/murr/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
+
+## Paket 48 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Oberstenfeld](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/oberstenfeld/) `/baden-wuerttemberg/ludwigsburg/oberstenfeld/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
 |  | [Schwieberdingen](https://hofladenliste.de/baden-wuerttemberg/ludwigsburg/schwieberdingen/) `/baden-wuerttemberg/ludwigsburg/schwieberdingen/` | Landkreis Ludwigsburg | 1 | 3 | 6 |
 |  | [Ahorn](https://hofladenliste.de/baden-wuerttemberg/main-tauber-kreis/ahorn/) `/baden-wuerttemberg/main-tauber-kreis/ahorn/` | Main-Tauber-Kreis | 1 | 3 | 6 |
@@ -1412,19 +1433,20 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Bartholomä](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/bartholomae/) `/baden-wuerttemberg/ostalbkreis/bartholomae/` | Ostalbkreis | 1 | 3 | 6 |
 |  | [Heubach](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/heubach/) `/baden-wuerttemberg/ostalbkreis/heubach/` | Ostalbkreis | 1 | 3 | 6 |
 |  | [Heuchlingen](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/heuchlingen/) `/baden-wuerttemberg/ostalbkreis/heuchlingen/` | Ostalbkreis | 1 | 3 | 6 |
-
-## Paket 48 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Lorch](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/lorch/) `/baden-wuerttemberg/ostalbkreis/lorch/` | Ostalbkreis | 1 | 3 | 6 |
 |  | [Neresheim](https://hofladenliste.de/baden-wuerttemberg/ostalbkreis/neresheim/) `/baden-wuerttemberg/ostalbkreis/neresheim/` | Ostalbkreis | 1 | 3 | 6 |
 |  | [Iffezheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/iffezheim/) `/baden-wuerttemberg/rastatt/iffezheim/` | Landkreis Rastatt | 1 | 3 | 6 |
 |  | [Ötigheim](https://hofladenliste.de/baden-wuerttemberg/rastatt/oetigheim/) `/baden-wuerttemberg/rastatt/oetigheim/` | Landkreis Rastatt | 1 | 3 | 6 |
-|  | [Aichstetten](https://hofladenliste.de/baden-wuerttemberg/ravensburg/aichstetten/) `/baden-wuerttemberg/ravensburg/aichstetten/` | Landkreis Ravensburg | 1 | 3 | 6 |
 |  | [Argenbühl](https://hofladenliste.de/baden-wuerttemberg/ravensburg/argenbuehl/) `/baden-wuerttemberg/ravensburg/argenbuehl/` | Landkreis Ravensburg | 1 | 3 | 6 |
 |  | [Berg (Landkreis Ravensburg)](https://hofladenliste.de/baden-wuerttemberg/ravensburg/berg/) `/baden-wuerttemberg/ravensburg/berg/` | Landkreis Ravensburg | 1 | 3 | 6 |
 |  | [Fronreute](https://hofladenliste.de/baden-wuerttemberg/ravensburg/fronreute/) `/baden-wuerttemberg/ravensburg/fronreute/` | Landkreis Ravensburg | 1 | 3 | 6 |
+|  | [Isny im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/isny-im-allgaeu/) `/baden-wuerttemberg/ravensburg/isny-im-allgaeu/` | Landkreis Ravensburg | 1 | 3 | 6 |
+|  | [Leutkirch im Allgäu](https://hofladenliste.de/baden-wuerttemberg/ravensburg/leutkirch-im-allgaeu/) `/baden-wuerttemberg/ravensburg/leutkirch-im-allgaeu/` | Landkreis Ravensburg | 1 | 3 | 6 |
+
+## Paket 49 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Schlier](https://hofladenliste.de/baden-wuerttemberg/ravensburg/schlier/) `/baden-wuerttemberg/ravensburg/schlier/` | Landkreis Ravensburg | 1 | 3 | 6 |
 |  | [Vogt](https://hofladenliste.de/baden-wuerttemberg/ravensburg/vogt/) `/baden-wuerttemberg/ravensburg/vogt/` | Landkreis Ravensburg | 1 | 3 | 6 |
 |  | [Weingarten (Landkreis Ravensburg)](https://hofladenliste.de/baden-wuerttemberg/ravensburg/weingarten/) `/baden-wuerttemberg/ravensburg/weingarten/` | Landkreis Ravensburg | 1 | 3 | 6 |
@@ -1435,18 +1457,13 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Walddorfhäslach](https://hofladenliste.de/baden-wuerttemberg/reutlingen/walddorfhaeslach/) `/baden-wuerttemberg/reutlingen/walddorfhaeslach/` | Landkreis Reutlingen | 1 | 3 | 6 |
 |  | [Altlußheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/altlussheim/) `/baden-wuerttemberg/rhein-neckar-kreis/altlussheim/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
 |  | [Dossenheim](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/dossenheim/) `/baden-wuerttemberg/rhein-neckar-kreis/dossenheim/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
+|  | [Leimen](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/leimen/) `/baden-wuerttemberg/rhein-neckar-kreis/leimen/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
 |  | [Rauenberg](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/rauenberg/) `/baden-wuerttemberg/rhein-neckar-kreis/rauenberg/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
 |  | [Reilingen](https://hofladenliste.de/baden-wuerttemberg/rhein-neckar-kreis/reilingen/) `/baden-wuerttemberg/rhein-neckar-kreis/reilingen/` | Rhein-Neckar-Kreis | 1 | 3 | 6 |
 |  | [Dunningen](https://hofladenliste.de/baden-wuerttemberg/rottweil/dunningen/) `/baden-wuerttemberg/rottweil/dunningen/` | Landkreis Rottweil | 1 | 3 | 6 |
 |  | [Schramberg](https://hofladenliste.de/baden-wuerttemberg/rottweil/schramberg/) `/baden-wuerttemberg/rottweil/schramberg/` | Landkreis Rottweil | 1 | 3 | 6 |
 |  | [Blaufelden](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/blaufelden/) `/baden-wuerttemberg/schwaebisch-hall/blaufelden/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
 |  | [Ilshofen](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/ilshofen/) `/baden-wuerttemberg/schwaebisch-hall/ilshofen/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
-|  | [Kirchberg an der Jagst](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/kirchberg-an-der-jagst/) `/baden-wuerttemberg/schwaebisch-hall/kirchberg-an-der-jagst/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
-
-## Paket 49 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Langenburg](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/langenburg/) `/baden-wuerttemberg/schwaebisch-hall/langenburg/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
 |  | [Wallhausen](https://hofladenliste.de/baden-wuerttemberg/schwaebisch-hall/wallhausen/) `/baden-wuerttemberg/schwaebisch-hall/wallhausen/` | Landkreis Schwäbisch Hall | 1 | 3 | 6 |
 |  | [Dauchingen](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/dauchingen/) `/baden-wuerttemberg/schwarzwald-baar-kreis/dauchingen/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
@@ -1455,6 +1472,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Schonach im Schwarzwald](https://hofladenliste.de/baden-wuerttemberg/schwarzwald-baar-kreis/schonach-im-schwarzwald/) `/baden-wuerttemberg/schwarzwald-baar-kreis/schonach-im-schwarzwald/` | Schwarzwald-Baar-Kreis | 1 | 3 | 6 |
 |  | [Sigmaringen](https://hofladenliste.de/baden-wuerttemberg/sigmaringen/sigmaringen/) `/baden-wuerttemberg/sigmaringen/sigmaringen/` | Landkreis Sigmaringen | 1 | 3 | 6 |
 |  | [Stuttgart Büsnau](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-buesnau/) `/baden-wuerttemberg/stuttgart/stuttgart-buesnau/` | Stuttgart | 1 | 3 | 6 |
+
+## Paket 50 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Stuttgart Hoffeld](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-hoffeld/) `/baden-wuerttemberg/stuttgart/stuttgart-hoffeld/` | Stuttgart | 1 | 3 | 6 |
 |  | [Stuttgart Mönchfeld](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-moenchfeld/) `/baden-wuerttemberg/stuttgart/stuttgart-moenchfeld/` | Stuttgart | 1 | 3 | 6 |
 |  | [Stuttgart Riedenberg](https://hofladenliste.de/baden-wuerttemberg/stuttgart/stuttgart-riedenberg/) `/baden-wuerttemberg/stuttgart/stuttgart-riedenberg/` | Stuttgart | 1 | 3 | 6 |
@@ -1472,11 +1494,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Adelzhausen](https://hofladenliste.de/bayern/aichach-friedberg/adelzhausen/) `/bayern/aichach-friedberg/adelzhausen/` | Landkreis Aichach-Friedberg | 1 | 3 | 6 |
 |  | [Hollenbach](https://hofladenliste.de/bayern/aichach-friedberg/hollenbach/) `/bayern/aichach-friedberg/hollenbach/` | Landkreis Aichach-Friedberg | 1 | 3 | 6 |
 |  | [Kühbach](https://hofladenliste.de/bayern/aichach-friedberg/kuehbach/) `/bayern/aichach-friedberg/kuehbach/` | Landkreis Aichach-Friedberg | 1 | 3 | 6 |
-
-## Paket 50 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Unterneukirchen](https://hofladenliste.de/bayern/altoetting/unterneukirchen/) `/bayern/altoetting/unterneukirchen/` | Landkreis Altötting | 1 | 3 | 6 |
 |  | [Hahnbach](https://hofladenliste.de/bayern/amberg-sulzbach/hahnbach/) `/bayern/amberg-sulzbach/hahnbach/` | Landkreis Amberg-Sulzbach | 1 | 3 | 6 |
 |  | [Sulzbach-Rosenberg](https://hofladenliste.de/bayern/amberg-sulzbach/sulzbach-rosenberg/) `/bayern/amberg-sulzbach/sulzbach-rosenberg/` | Landkreis Amberg-Sulzbach | 1 | 3 | 6 |
@@ -1485,13 +1502,18 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Münnerstadt](https://hofladenliste.de/bayern/bad-kissingen/muennerstadt/) `/bayern/bad-kissingen/muennerstadt/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
 |  | [Oberleichtersbach](https://hofladenliste.de/bayern/bad-kissingen/oberleichtersbach/) `/bayern/bad-kissingen/oberleichtersbach/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
 |  | [Wartmannsroth](https://hofladenliste.de/bayern/bad-kissingen/wartmannsroth/) `/bayern/bad-kissingen/wartmannsroth/` | Landkreis Bad Kissingen | 1 | 3 | 6 |
+
+## Paket 51 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
+|  | [Dietramszell](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/dietramszell/) `/bayern/bad-toelz-wolfratshausen/dietramszell/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 3 | 6 |
 |  | [Egling](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/egling/) `/bayern/bad-toelz-wolfratshausen/egling/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 3 | 6 |
 |  | [Geretsried](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/geretsried/) `/bayern/bad-toelz-wolfratshausen/geretsried/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 3 | 6 |
 |  | [Königsdorf](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/koenigsdorf/) `/bayern/bad-toelz-wolfratshausen/koenigsdorf/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 3 | 6 |
 |  | [Schlehdorf](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/schlehdorf/) `/bayern/bad-toelz-wolfratshausen/schlehdorf/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 3 | 6 |
 |  | [Wackersberg](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/wackersberg/) `/bayern/bad-toelz-wolfratshausen/wackersberg/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 3 | 6 |
 |  | [Wolfratshausen](https://hofladenliste.de/bayern/bad-toelz-wolfratshausen/wolfratshausen/) `/bayern/bad-toelz-wolfratshausen/wolfratshausen/` | Landkreis Bad Tölz-Wolfratshausen | 1 | 3 | 6 |
-|  | [Laufen](https://hofladenliste.de/bayern/berchtesgadener-land/laufen/) `/bayern/berchtesgadener-land/laufen/` | Landkreis Berchtesgadener Land | 1 | 3 | 6 |
 |  | [Schwabhausen](https://hofladenliste.de/bayern/dachau/schwabhausen/) `/bayern/dachau/schwabhausen/` | Landkreis Dachau | 1 | 3 | 6 |
 |  | [Hengersberg](https://hofladenliste.de/bayern/deggendorf/hengersberg/) `/bayern/deggendorf/hengersberg/` | Landkreis Deggendorf | 1 | 3 | 6 |
 |  | [Künzing](https://hofladenliste.de/bayern/deggendorf/kuenzing/) `/bayern/deggendorf/kuenzing/` | Landkreis Deggendorf | 1 | 3 | 6 |
@@ -1502,23 +1524,24 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Gottfrieding](https://hofladenliste.de/bayern/dingolfing-landau/gottfrieding/) `/bayern/dingolfing-landau/gottfrieding/` | Landkreis Dingolfing-Landau | 1 | 3 | 6 |
 |  | [Mengkofen](https://hofladenliste.de/bayern/dingolfing-landau/mengkofen/) `/bayern/dingolfing-landau/mengkofen/` | Landkreis Dingolfing-Landau | 1 | 3 | 6 |
 |  | [Wallersdorf](https://hofladenliste.de/bayern/dingolfing-landau/wallersdorf/) `/bayern/dingolfing-landau/wallersdorf/` | Landkreis Dingolfing-Landau | 1 | 3 | 6 |
-
-## Paket 51 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Glonn](https://hofladenliste.de/bayern/ebersberg/glonn/) `/bayern/ebersberg/glonn/` | Landkreis Ebersberg | 1 | 3 | 6 |
 |  | [Kirchseeon](https://hofladenliste.de/bayern/ebersberg/kirchseeon/) `/bayern/ebersberg/kirchseeon/` | Landkreis Ebersberg | 1 | 3 | 6 |
 |  | [Zorneding](https://hofladenliste.de/bayern/ebersberg/zorneding/) `/bayern/ebersberg/zorneding/` | Landkreis Ebersberg | 1 | 3 | 6 |
-|  | [Buxheim](https://hofladenliste.de/bayern/eichstaett/buxheim/) `/bayern/eichstaett/buxheim/` | Landkreis Eichstätt | 1 | 3 | 6 |
 |  | [Großmehring](https://hofladenliste.de/bayern/eichstaett/grossmehring/) `/bayern/eichstaett/grossmehring/` | Landkreis Eichstätt | 1 | 3 | 6 |
+|  | [Nassenfels](https://hofladenliste.de/bayern/eichstaett/nassenfels/) `/bayern/eichstaett/nassenfels/` | Landkreis Eichstätt | 1 | 3 | 6 |
 |  | [Schernfeld](https://hofladenliste.de/bayern/eichstaett/schernfeld/) `/bayern/eichstaett/schernfeld/` | Landkreis Eichstätt | 1 | 3 | 6 |
 |  | [Isen](https://hofladenliste.de/bayern/erding/isen/) `/bayern/erding/isen/` | Landkreis Erding | 1 | 3 | 6 |
 |  | [Neuching](https://hofladenliste.de/bayern/erding/neuching/) `/bayern/erding/neuching/` | Landkreis Erding | 1 | 3 | 6 |
+
+## Paket 52 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Wörth](https://hofladenliste.de/bayern/erding/woerth/) `/bayern/erding/woerth/` | Landkreis Erding | 1 | 3 | 6 |
 |  | [Eckental](https://hofladenliste.de/bayern/erlangen-hoechstadt/eckental/) `/bayern/erlangen-hoechstadt/eckental/` | Landkreis Erlangen-Höchstadt | 1 | 3 | 6 |
 |  | [Kalchreuth](https://hofladenliste.de/bayern/erlangen-hoechstadt/kalchreuth/) `/bayern/erlangen-hoechstadt/kalchreuth/` | Landkreis Erlangen-Höchstadt | 1 | 3 | 6 |
 |  | [Vestenbergsgreuth](https://hofladenliste.de/bayern/erlangen-hoechstadt/vestenbergsgreuth/) `/bayern/erlangen-hoechstadt/vestenbergsgreuth/` | Landkreis Erlangen-Höchstadt | 1 | 3 | 6 |
+|  | [Hausen](https://hofladenliste.de/bayern/forchheim/hausen/) `/bayern/forchheim/hausen/` | Landkreis Forchheim | 1 | 3 | 6 |
 |  | [Hiltpoltstein](https://hofladenliste.de/bayern/forchheim/hiltpoltstein/) `/bayern/forchheim/hiltpoltstein/` | Landkreis Forchheim | 1 | 3 | 6 |
 |  | [Leutenbach](https://hofladenliste.de/bayern/forchheim/leutenbach/) `/bayern/forchheim/leutenbach/` | Landkreis Forchheim | 1 | 3 | 6 |
 |  | [Neunkirchen am Brand](https://hofladenliste.de/bayern/forchheim/neunkirchen-am-brand/) `/bayern/forchheim/neunkirchen-am-brand/` | Landkreis Forchheim | 1 | 3 | 6 |
@@ -1532,17 +1555,18 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Leipheim](https://hofladenliste.de/bayern/guenzburg/leipheim/) `/bayern/guenzburg/leipheim/` | Landkreis Günzburg | 1 | 3 | 6 |
 |  | [Waldstetten (Landkreis Günzburg)](https://hofladenliste.de/bayern/guenzburg/waldstetten/) `/bayern/guenzburg/waldstetten/` | Landkreis Günzburg | 1 | 3 | 6 |
 |  | [Knetzgau](https://hofladenliste.de/bayern/hassberge/knetzgau/) `/bayern/hassberge/knetzgau/` | Landkreis Haßberge | 1 | 3 | 6 |
-
-## Paket 52 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Pfarrweisach](https://hofladenliste.de/bayern/hassberge/pfarrweisach/) `/bayern/hassberge/pfarrweisach/` | Landkreis Haßberge | 1 | 3 | 6 |
 |  | [Mainburg](https://hofladenliste.de/bayern/kelheim/mainburg/) `/bayern/kelheim/mainburg/` | Landkreis Kelheim | 1 | 3 | 6 |
+|  | [Riedenburg](https://hofladenliste.de/bayern/kelheim/riedenburg/) `/bayern/kelheim/riedenburg/` | Landkreis Kelheim | 1 | 3 | 6 |
 |  | [Willanzheim](https://hofladenliste.de/bayern/kitzingen/willanzheim/) `/bayern/kitzingen/willanzheim/` | Landkreis Kitzingen | 1 | 3 | 6 |
 |  | [Kulmbach](https://hofladenliste.de/bayern/kulmbach/kulmbach/) `/bayern/kulmbach/kulmbach/` | Landkreis Kulmbach | 1 | 3 | 6 |
 |  | [Wettringen (Landkreis Ansbach)](https://hofladenliste.de/bayern/landkreis-ansbach/wettringen/) `/bayern/landkreis-ansbach/wettringen/` | Landkreis Ansbach | 1 | 3 | 6 |
 |  | [Hösbach](https://hofladenliste.de/bayern/landkreis-aschaffenburg/hoesbach/) `/bayern/landkreis-aschaffenburg/hoesbach/` | Landkreis Aschaffenburg | 1 | 3 | 6 |
+
+## Paket 53 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Karlstein am Main](https://hofladenliste.de/bayern/landkreis-aschaffenburg/karlstein-am-main/) `/bayern/landkreis-aschaffenburg/karlstein-am-main/` | Landkreis Aschaffenburg | 1 | 3 | 6 |
 |  | [Laufach](https://hofladenliste.de/bayern/landkreis-aschaffenburg/laufach/) `/bayern/landkreis-aschaffenburg/laufach/` | Landkreis Aschaffenburg | 1 | 3 | 6 |
 |  | [Stockstadt am Main](https://hofladenliste.de/bayern/landkreis-aschaffenburg/stockstadt-am-main/) `/bayern/landkreis-aschaffenburg/stockstadt-am-main/` | Landkreis Aschaffenburg | 1 | 3 | 6 |
@@ -1559,19 +1583,20 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Konradsreuth](https://hofladenliste.de/bayern/landkreis-hof/konradsreuth/) `/bayern/landkreis-hof/konradsreuth/` | Landkreis Hof | 1 | 3 | 6 |
 |  | [Regnitzlosau](https://hofladenliste.de/bayern/landkreis-hof/regnitzlosau/) `/bayern/landkreis-hof/regnitzlosau/` | Landkreis Hof | 1 | 3 | 6 |
 |  | [Altdorf (Landkreis Landshut)](https://hofladenliste.de/bayern/landkreis-landshut/altdorf/) `/bayern/landkreis-landshut/altdorf/` | Landkreis Landshut | 1 | 3 | 6 |
+|  | [Buch am Erlbach](https://hofladenliste.de/bayern/landkreis-landshut/buch-am-erlbach/) `/bayern/landkreis-landshut/buch-am-erlbach/` | Landkreis Landshut | 1 | 3 | 6 |
 |  | [Eching (Landkreis Landshut)](https://hofladenliste.de/bayern/landkreis-landshut/eching/) `/bayern/landkreis-landshut/eching/` | Landkreis Landshut | 1 | 3 | 6 |
 |  | [Essenbach](https://hofladenliste.de/bayern/landkreis-landshut/essenbach/) `/bayern/landkreis-landshut/essenbach/` | Landkreis Landshut | 1 | 3 | 6 |
 |  | [Neufraunhofen](https://hofladenliste.de/bayern/landkreis-landshut/neufraunhofen/) `/bayern/landkreis-landshut/neufraunhofen/` | Landkreis Landshut | 1 | 3 | 6 |
-
-## Paket 53 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Schalkham](https://hofladenliste.de/bayern/landkreis-landshut/schalkham/) `/bayern/landkreis-landshut/schalkham/` | Landkreis Landshut | 1 | 3 | 6 |
 |  | [Wurmsham](https://hofladenliste.de/bayern/landkreis-landshut/wurmsham/) `/bayern/landkreis-landshut/wurmsham/` | Landkreis Landshut | 1 | 3 | 6 |
 |  | [Aschheim](https://hofladenliste.de/bayern/landkreis-muenchen/aschheim/) `/bayern/landkreis-muenchen/aschheim/` | Landkreis München | 1 | 3 | 6 |
 |  | [Feldkirchen](https://hofladenliste.de/bayern/landkreis-muenchen/feldkirchen/) `/bayern/landkreis-muenchen/feldkirchen/` | Landkreis München | 1 | 3 | 6 |
 |  | [Oberschleißheim](https://hofladenliste.de/bayern/landkreis-muenchen/oberschleissheim/) `/bayern/landkreis-muenchen/oberschleissheim/` | Landkreis München | 1 | 3 | 6 |
+
+## Paket 54 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Stadt Unterschleißheim](https://hofladenliste.de/bayern/landkreis-muenchen/stadt-unterschleissheim/) `/bayern/landkreis-muenchen/stadt-unterschleissheim/` | Landkreis München | 1 | 3 | 6 |
 |  | [Hofkirchen](https://hofladenliste.de/bayern/landkreis-passau/hofkirchen/) `/bayern/landkreis-passau/hofkirchen/` | Landkreis Passau | 1 | 3 | 6 |
 |  | [Wegscheid](https://hofladenliste.de/bayern/landkreis-passau/wegscheid/) `/bayern/landkreis-passau/wegscheid/` | Landkreis Passau | 1 | 3 | 6 |
@@ -1581,36 +1606,37 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Regenstauf](https://hofladenliste.de/bayern/landkreis-regensburg/regenstauf/) `/bayern/landkreis-regensburg/regenstauf/` | Landkreis Regensburg | 1 | 3 | 6 |
 |  | [Amerang](https://hofladenliste.de/bayern/landkreis-rosenheim/amerang/) `/bayern/landkreis-rosenheim/amerang/` | Landkreis Rosenheim | 1 | 3 | 6 |
 |  | [Bernau am Chiemsee](https://hofladenliste.de/bayern/landkreis-rosenheim/bernau-am-chiemsee/) `/bayern/landkreis-rosenheim/bernau-am-chiemsee/` | Landkreis Rosenheim | 1 | 3 | 6 |
+|  | [Eiselfing](https://hofladenliste.de/bayern/landkreis-rosenheim/eiselfing/) `/bayern/landkreis-rosenheim/eiselfing/` | Landkreis Rosenheim | 1 | 3 | 6 |
 |  | [Frasdorf](https://hofladenliste.de/bayern/landkreis-rosenheim/frasdorf/) `/bayern/landkreis-rosenheim/frasdorf/` | Landkreis Rosenheim | 1 | 3 | 6 |
 |  | [Oberaudorf](https://hofladenliste.de/bayern/landkreis-rosenheim/oberaudorf/) `/bayern/landkreis-rosenheim/oberaudorf/` | Landkreis Rosenheim | 1 | 3 | 6 |
 |  | [Prutting](https://hofladenliste.de/bayern/landkreis-rosenheim/prutting/) `/bayern/landkreis-rosenheim/prutting/` | Landkreis Rosenheim | 1 | 3 | 6 |
 |  | [Riedering](https://hofladenliste.de/bayern/landkreis-rosenheim/riedering/) `/bayern/landkreis-rosenheim/riedering/` | Landkreis Rosenheim | 1 | 3 | 6 |
 |  | [Rimsting](https://hofladenliste.de/bayern/landkreis-rosenheim/rimsting/) `/bayern/landkreis-rosenheim/rimsting/` | Landkreis Rosenheim | 1 | 3 | 6 |
+|  | [Tuntenhausen](https://hofladenliste.de/bayern/landkreis-rosenheim/tuntenhausen/) `/bayern/landkreis-rosenheim/tuntenhausen/` | Landkreis Rosenheim | 1 | 3 | 6 |
 |  | [Euerbach](https://hofladenliste.de/bayern/landkreis-schweinfurt/euerbach/) `/bayern/landkreis-schweinfurt/euerbach/` | Landkreis Schweinfurt | 1 | 3 | 6 |
 |  | [Niederwerrn](https://hofladenliste.de/bayern/landkreis-schweinfurt/niederwerrn/) `/bayern/landkreis-schweinfurt/niederwerrn/` | Landkreis Schweinfurt | 1 | 3 | 6 |
 |  | [Röthlein](https://hofladenliste.de/bayern/landkreis-schweinfurt/roethlein/) `/bayern/landkreis-schweinfurt/roethlein/` | Landkreis Schweinfurt | 1 | 3 | 6 |
 |  | [Margetshöchheim](https://hofladenliste.de/bayern/landkreis-wuerzburg/margetshoechheim/) `/bayern/landkreis-wuerzburg/margetshoechheim/` | Landkreis Würzburg | 1 | 3 | 6 |
 |  | [Unterpleichfeld](https://hofladenliste.de/bayern/landkreis-wuerzburg/unterpleichfeld/) `/bayern/landkreis-wuerzburg/unterpleichfeld/` | Landkreis Würzburg | 1 | 3 | 6 |
 |  | [Waldbüttelbrunn](https://hofladenliste.de/bayern/landkreis-wuerzburg/waldbuettelbrunn/) `/bayern/landkreis-wuerzburg/waldbuettelbrunn/` | Landkreis Würzburg | 1 | 3 | 6 |
-
-## Paket 54 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Fuchstal](https://hofladenliste.de/bayern/landsberg-am-lech/fuchstal/) `/bayern/landsberg-am-lech/fuchstal/` | Landkreis Landsberg am Lech | 1 | 3 | 6 |
 |  | [Obermeitingen](https://hofladenliste.de/bayern/landsberg-am-lech/obermeitingen/) `/bayern/landsberg-am-lech/obermeitingen/` | Landkreis Landsberg am Lech | 1 | 3 | 6 |
 |  | [Sankt Ottilien](https://hofladenliste.de/bayern/landsberg-am-lech/sankt-ottilien/) `/bayern/landsberg-am-lech/sankt-ottilien/` | Landkreis Landsberg am Lech | 1 | 3 | 6 |
+
+## Paket 55 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Scheuring](https://hofladenliste.de/bayern/landsberg-am-lech/scheuring/) `/bayern/landsberg-am-lech/scheuring/` | Landkreis Landsberg am Lech | 1 | 3 | 6 |
 |  | [Utting am Ammersee](https://hofladenliste.de/bayern/landsberg-am-lech/utting-am-ammersee/) `/bayern/landsberg-am-lech/utting-am-ammersee/` | Landkreis Landsberg am Lech | 1 | 3 | 6 |
 |  | [Weil](https://hofladenliste.de/bayern/landsberg-am-lech/weil/) `/bayern/landsberg-am-lech/weil/` | Landkreis Landsberg am Lech | 1 | 3 | 6 |
-|  | [Lichtenfels](https://hofladenliste.de/bayern/lichtenfels/lichtenfels/) `/bayern/lichtenfels/lichtenfels/` | Landkreis Lichtenfels | 1 | 3 | 6 |
 |  | [Hergatz](https://hofladenliste.de/bayern/lindau/hergatz/) `/bayern/lindau/hergatz/` | Landkreis Lindau | 1 | 3 | 6 |
 |  | [Oberreute](https://hofladenliste.de/bayern/lindau/oberreute/) `/bayern/lindau/oberreute/` | Landkreis Lindau | 1 | 3 | 6 |
 |  | [Opfenbach](https://hofladenliste.de/bayern/lindau/opfenbach/) `/bayern/lindau/opfenbach/` | Landkreis Lindau | 1 | 3 | 6 |
 |  | [Arnstein](https://hofladenliste.de/bayern/main-spessart/arnstein/) `/bayern/main-spessart/arnstein/` | Landkreis Main-Spessart | 1 | 3 | 6 |
 |  | [Eußenheim](https://hofladenliste.de/bayern/main-spessart/eussenheim/) `/bayern/main-spessart/eussenheim/` | Landkreis Main-Spessart | 1 | 3 | 6 |
-|  | [Bad Wiessee](https://hofladenliste.de/bayern/miesbach/bad-wiessee/) `/bayern/miesbach/bad-wiessee/` | Landkreis Miesbach | 1 | 3 | 6 |
 |  | [Irschenberg](https://hofladenliste.de/bayern/miesbach/irschenberg/) `/bayern/miesbach/irschenberg/` | Landkreis Miesbach | 1 | 3 | 6 |
+|  | [Kirchzell](https://hofladenliste.de/bayern/miltenberg/kirchzell/) `/bayern/miltenberg/kirchzell/` | Landkreis Miltenberg | 1 | 3 | 6 |
 |  | [Mömlingen](https://hofladenliste.de/bayern/miltenberg/moemlingen/) `/bayern/miltenberg/moemlingen/` | Landkreis Miltenberg | 1 | 3 | 6 |
 |  | [Weilbach](https://hofladenliste.de/bayern/miltenberg/weilbach/) `/bayern/miltenberg/weilbach/` | Landkreis Miltenberg | 1 | 3 | 6 |
 |  | [Ampfing](https://hofladenliste.de/bayern/muehldorf-am-inn/ampfing/) `/bayern/muehldorf-am-inn/ampfing/` | Landkreis Mühldorf am Inn | 1 | 3 | 6 |
@@ -1622,15 +1648,15 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Burgthann](https://hofladenliste.de/bayern/nuernberger-land/burgthann/) `/bayern/nuernberger-land/burgthann/` | Landkreis Nürnberger Land | 1 | 3 | 6 |
 |  | [Happurg](https://hofladenliste.de/bayern/nuernberger-land/happurg/) `/bayern/nuernberger-land/happurg/` | Landkreis Nürnberger Land | 1 | 3 | 6 |
 |  | [Ruderatshofen](https://hofladenliste.de/bayern/ostallgaeu/ruderatshofen/) `/bayern/ostallgaeu/ruderatshofen/` | Landkreis Ostallgäu | 1 | 3 | 6 |
-
-## Paket 55 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Schwangau](https://hofladenliste.de/bayern/ostallgaeu/schwangau/) `/bayern/ostallgaeu/schwangau/` | Landkreis Ostallgäu | 1 | 3 | 6 |
 |  | [Jetzendorf](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/jetzendorf/) `/bayern/pfaffenhofen-an-der-ilm/jetzendorf/` | Landkreis Pfaffenhofen an der Ilm | 1 | 3 | 6 |
 |  | [Manching](https://hofladenliste.de/bayern/pfaffenhofen-an-der-ilm/manching/) `/bayern/pfaffenhofen-an-der-ilm/manching/` | Landkreis Pfaffenhofen an der Ilm | 1 | 3 | 6 |
 |  | [Frauenau](https://hofladenliste.de/bayern/regen/frauenau/) `/bayern/regen/frauenau/` | Landkreis Regen | 1 | 3 | 6 |
+
+## Paket 56 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Höchheim](https://hofladenliste.de/bayern/rhoen-grabfeld/hoechheim/) `/bayern/rhoen-grabfeld/hoechheim/` | Landkreis Rhön-Grabfeld | 1 | 3 | 6 |
 |  | [Sulzfeld](https://hofladenliste.de/bayern/rhoen-grabfeld/sulzfeld/) `/bayern/rhoen-grabfeld/sulzfeld/` | Landkreis Rhön-Grabfeld | 1 | 3 | 6 |
 |  | [Greding](https://hofladenliste.de/bayern/roth/greding/) `/bayern/roth/greding/` | Landkreis Roth | 1 | 3 | 6 |
@@ -1641,9 +1667,10 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Gangkofen](https://hofladenliste.de/bayern/rottal-inn/gangkofen/) `/bayern/rottal-inn/gangkofen/` | Landkreis Rottal-Inn | 1 | 3 | 6 |
 |  | [Simbach am Inn](https://hofladenliste.de/bayern/rottal-inn/simbach-am-inn/) `/bayern/rottal-inn/simbach-am-inn/` | Landkreis Rottal-Inn | 1 | 3 | 6 |
 |  | [Nabburg](https://hofladenliste.de/bayern/schwandorf/nabburg/) `/bayern/schwandorf/nabburg/` | Landkreis Schwandorf | 1 | 3 | 6 |
-|  | [Seefeld](https://hofladenliste.de/bayern/starnberg/seefeld/) `/bayern/starnberg/seefeld/` | Landkreis Starnberg | 1 | 3 | 6 |
 |  | [Erbendorf](https://hofladenliste.de/bayern/tirschenreuth/erbendorf/) `/bayern/tirschenreuth/erbendorf/` | Landkreis Tirschenreuth | 1 | 3 | 6 |
 |  | [Chieming](https://hofladenliste.de/bayern/traunstein/chieming/) `/bayern/traunstein/chieming/` | Landkreis Traunstein | 1 | 3 | 6 |
+|  | [Fridolfing](https://hofladenliste.de/bayern/traunstein/fridolfing/) `/bayern/traunstein/fridolfing/` | Landkreis Traunstein | 1 | 3 | 6 |
+|  | [Taching am See](https://hofladenliste.de/bayern/traunstein/taching-am-see/) `/bayern/traunstein/taching-am-see/` | Landkreis Traunstein | 1 | 3 | 6 |
 |  | [Tittmoning](https://hofladenliste.de/bayern/traunstein/tittmoning/) `/bayern/traunstein/tittmoning/` | Landkreis Traunstein | 1 | 3 | 6 |
 |  | [Trostberg](https://hofladenliste.de/bayern/traunstein/trostberg/) `/bayern/traunstein/trostberg/` | Landkreis Traunstein | 1 | 3 | 6 |
 |  | [Übersee](https://hofladenliste.de/bayern/traunstein/uebersee/) `/bayern/traunstein/uebersee/` | Landkreis Traunstein | 1 | 3 | 6 |
@@ -1652,13 +1679,14 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Mindelheim](https://hofladenliste.de/bayern/unterallgaeu/mindelheim/) `/bayern/unterallgaeu/mindelheim/` | Landkreis Unterallgäu | 1 | 3 | 6 |
 |  | [Habach](https://hofladenliste.de/bayern/weilheim-schongau/habach/) `/bayern/weilheim-schongau/habach/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
 |  | [Hohenpeißenberg](https://hofladenliste.de/bayern/weilheim-schongau/hohenpeissenberg/) `/bayern/weilheim-schongau/hohenpeissenberg/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
+|  | [Pähl](https://hofladenliste.de/bayern/weilheim-schongau/paehl/) `/bayern/weilheim-schongau/paehl/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
+|  | [Pappenheim](https://hofladenliste.de/bayern/weissenburg-gunzenhausen/pappenheim/) `/bayern/weissenburg-gunzenhausen/pappenheim/` | Landkreis Weißenburg-Gunzenhausen | 1 | 3 | 6 |
+|  | [Strausberg](https://hofladenliste.de/brandenburg/maerkisch-oderland/strausberg/) `/brandenburg/maerkisch-oderland/strausberg/` | Landkreis Märkisch-Oderland | 1 | 3 | 6 |
 
-## Paket 56 (1/25 fertig)
+## Paket 57 (1/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Pähl](https://hofladenliste.de/bayern/weilheim-schongau/paehl/) `/bayern/weilheim-schongau/paehl/` | Landkreis Weilheim-Schongau | 1 | 3 | 6 |
-|  | [Strausberg](https://hofladenliste.de/brandenburg/maerkisch-oderland/strausberg/) `/brandenburg/maerkisch-oderland/strausberg/` | Landkreis Märkisch-Oderland | 1 | 3 | 6 |
 |  | [Kremmen](https://hofladenliste.de/brandenburg/oberhavel/kremmen/) `/brandenburg/oberhavel/kremmen/` | Landkreis Oberhavel | 1 | 3 | 6 |
 |  | [Liebenwalde](https://hofladenliste.de/brandenburg/oberhavel/liebenwalde/) `/brandenburg/oberhavel/liebenwalde/` | Landkreis Oberhavel | 1 | 3 | 6 |
 |  | [Mühlenbeck](https://hofladenliste.de/brandenburg/oberhavel/muehlenbeck/) `/brandenburg/oberhavel/muehlenbeck/` | Landkreis Oberhavel | 1 | 3 | 6 |
@@ -1681,15 +1709,14 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Dieburg](https://hofladenliste.de/hessen/darmstadt-dieburg/dieburg/) `/hessen/darmstadt-dieburg/dieburg/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
 |  | [Erzhausen](https://hofladenliste.de/hessen/darmstadt-dieburg/erzhausen/) `/hessen/darmstadt-dieburg/erzhausen/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
 |  | [Groß-Bieberau](https://hofladenliste.de/hessen/darmstadt-dieburg/gross-bieberau/) `/hessen/darmstadt-dieburg/gross-bieberau/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
-|  | [Schaafheim](https://hofladenliste.de/hessen/darmstadt-dieburg/schaafheim/) `/hessen/darmstadt-dieburg/schaafheim/` | Landkreis Darmstadt-Dieburg | 1 | 3 | 6 |
-
-## Paket 57 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Flieden](https://hofladenliste.de/hessen/fulda/flieden/) `/hessen/fulda/flieden/` | Landkreis Fulda | 1 | 3 | 6 |
 |  | [Gersfeld](https://hofladenliste.de/hessen/fulda/gersfeld/) `/hessen/fulda/gersfeld/` | Landkreis Fulda | 1 | 3 | 6 |
 |  | [Neuhof](https://hofladenliste.de/hessen/fulda/neuhof/) `/hessen/fulda/neuhof/` | Landkreis Fulda | 1 | 3 | 6 |
+
+## Paket 58 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Grünberg](https://hofladenliste.de/hessen/giessen/gruenberg/) `/hessen/giessen/gruenberg/` | Landkreis Gießen | 1 | 3 | 6 |
 |  | [Langgöns](https://hofladenliste.de/hessen/giessen/langgoens/) `/hessen/giessen/langgoens/` | Landkreis Gießen | 1 | 3 | 6 |
 |  | [Lollar](https://hofladenliste.de/hessen/giessen/lollar/) `/hessen/giessen/lollar/` | Landkreis Gießen | 1 | 3 | 6 |
@@ -1710,15 +1737,16 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Bad Soden-Salmünster](https://hofladenliste.de/hessen/main-kinzig-kreis/bad-soden-salmuenster/) `/hessen/main-kinzig-kreis/bad-soden-salmuenster/` | Main-Kinzig-Kreis | 1 | 3 | 6 |
 |  | [Gründau](https://hofladenliste.de/hessen/main-kinzig-kreis/gruendau/) `/hessen/main-kinzig-kreis/gruendau/` | Main-Kinzig-Kreis | 1 | 3 | 6 |
 |  | [Liederbach am Taunus](https://hofladenliste.de/hessen/main-taunus-kreis/liederbach-am-taunus/) `/hessen/main-taunus-kreis/liederbach-am-taunus/` | Main-Taunus-Kreis | 1 | 3 | 6 |
+|  | [Neustadt (Hessen)](https://hofladenliste.de/hessen/marburg-biedenkopf/neustadt-hessen/) `/hessen/marburg-biedenkopf/neustadt-hessen/` | Landkreis Marburg-Biedenkopf | 1 | 3 | 6 |
 |  | [Bad König](https://hofladenliste.de/hessen/odenwaldkreis/bad-koenig/) `/hessen/odenwaldkreis/bad-koenig/` | Odenwaldkreis | 1 | 3 | 6 |
 |  | [Brensbach](https://hofladenliste.de/hessen/odenwaldkreis/brensbach/) `/hessen/odenwaldkreis/brensbach/` | Odenwaldkreis | 1 | 3 | 6 |
+|  | [Dreieich](https://hofladenliste.de/hessen/offenbach/dreieich/) `/hessen/offenbach/dreieich/` | Landkreis Offenbach | 1 | 3 | 6 |
+|  | [Heusenstamm](https://hofladenliste.de/hessen/offenbach/heusenstamm/) `/hessen/offenbach/heusenstamm/` | Landkreis Offenbach | 1 | 3 | 6 |
 
-## Paket 58 (0/25 fertig)
+## Paket 59 (0/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Dreieich](https://hofladenliste.de/hessen/offenbach/dreieich/) `/hessen/offenbach/dreieich/` | Landkreis Offenbach | 1 | 3 | 6 |
-|  | [Heusenstamm](https://hofladenliste.de/hessen/offenbach/heusenstamm/) `/hessen/offenbach/heusenstamm/` | Landkreis Offenbach | 1 | 3 | 6 |
 |  | [Niedernhausen](https://hofladenliste.de/hessen/rheingau-taunus-kreis/niedernhausen/) `/hessen/rheingau-taunus-kreis/niedernhausen/` | Rheingau-Taunus-Kreis | 1 | 3 | 6 |
 |  | [Bad Zwesten](https://hofladenliste.de/hessen/schwalm-eder-kreis/bad-zwesten/) `/hessen/schwalm-eder-kreis/bad-zwesten/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
 |  | [Edermünde](https://hofladenliste.de/hessen/schwalm-eder-kreis/edermuende/) `/hessen/schwalm-eder-kreis/edermuende/` | Schwalm-Eder-Kreis | 1 | 3 | 6 |
@@ -1738,26 +1766,33 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Rechlin](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/rechlin/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/rechlin/` | Landkreis Mecklenburgische Seenplatte | 1 | 3 | 6 |
 |  | [Sponholz](https://hofladenliste.de/mecklenburg-vorpommern/mecklenburgische-seenplatte/sponholz/) `/mecklenburg-vorpommern/mecklenburgische-seenplatte/sponholz/` | Landkreis Mecklenburgische Seenplatte | 1 | 3 | 6 |
 |  | [Boltenhagen](https://hofladenliste.de/mecklenburg-vorpommern/nordwestmecklenburg/boltenhagen/) `/mecklenburg-vorpommern/nordwestmecklenburg/boltenhagen/` | Landkreis Nordwestmecklenburg | 1 | 3 | 6 |
+|  | [Rubenow](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-greifswald/rubenow/) `/mecklenburg-vorpommern/vorpommern-greifswald/rubenow/` | Landkreis Vorpommern-Greifswald | 1 | 3 | 6 |
 |  | [Zempin](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-greifswald/zempin/) `/mecklenburg-vorpommern/vorpommern-greifswald/zempin/` | Landkreis Vorpommern-Greifswald | 1 | 3 | 6 |
 |  | [Zingst](https://hofladenliste.de/mecklenburg-vorpommern/vorpommern-ruegen/zingst/) `/mecklenburg-vorpommern/vorpommern-ruegen/zingst/` | Landkreis Vorpommern-Rügen | 1 | 3 | 6 |
 |  | [Edewecht](https://hofladenliste.de/niedersachsen/ammerland/edewecht/) `/niedersachsen/ammerland/edewecht/` | Landkreis Ammerland | 1 | 3 | 6 |
 |  | [Cappeln (Oldenburg)](https://hofladenliste.de/niedersachsen/cloppenburg/cappeln-oldenburg/) `/niedersachsen/cloppenburg/cappeln-oldenburg/` | Landkreis Cloppenburg | 1 | 3 | 6 |
+|  | [Essen (Oldenburg)](https://hofladenliste.de/niedersachsen/cloppenburg/essen-oldenburg/) `/niedersachsen/cloppenburg/essen-oldenburg/` | Landkreis Cloppenburg | 1 | 3 | 6 |
 
-## Paket 59 (0/25 fertig)
+## Paket 60 (0/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
-|  | [Essen (Oldenburg)](https://hofladenliste.de/niedersachsen/cloppenburg/essen-oldenburg/) `/niedersachsen/cloppenburg/essen-oldenburg/` | Landkreis Cloppenburg | 1 | 3 | 6 |
 |  | [Beverstedt](https://hofladenliste.de/niedersachsen/cuxhaven/beverstedt/) `/niedersachsen/cuxhaven/beverstedt/` | Landkreis Cuxhaven | 1 | 3 | 6 |
+|  | [Hemmoor](https://hofladenliste.de/niedersachsen/cuxhaven/hemmoor/) `/niedersachsen/cuxhaven/hemmoor/` | Landkreis Cuxhaven | 1 | 3 | 6 |
+|  | [Nordleda](https://hofladenliste.de/niedersachsen/cuxhaven/nordleda/) `/niedersachsen/cuxhaven/nordleda/` | Landkreis Cuxhaven | 1 | 3 | 6 |
 |  | [Asendorf](https://hofladenliste.de/niedersachsen/diepholz/asendorf/) `/niedersachsen/diepholz/asendorf/` | Landkreis Diepholz | 1 | 3 | 6 |
 |  | [Bahrenborstel](https://hofladenliste.de/niedersachsen/diepholz/bahrenborstel/) `/niedersachsen/diepholz/bahrenborstel/` | Landkreis Diepholz | 1 | 3 | 6 |
 |  | [Martfeld](https://hofladenliste.de/niedersachsen/diepholz/martfeld/) `/niedersachsen/diepholz/martfeld/` | Landkreis Diepholz | 1 | 3 | 6 |
+|  | [Twistringen](https://hofladenliste.de/niedersachsen/diepholz/twistringen/) `/niedersachsen/diepholz/twistringen/` | Landkreis Diepholz | 1 | 3 | 6 |
+|  | [Geeste](https://hofladenliste.de/niedersachsen/emsland/geeste/) `/niedersachsen/emsland/geeste/` | Landkreis Emsland | 1 | 3 | 6 |
 |  | [Spelle](https://hofladenliste.de/niedersachsen/emsland/spelle/) `/niedersachsen/emsland/spelle/` | Landkreis Emsland | 1 | 3 | 6 |
 |  | [Twist](https://hofladenliste.de/niedersachsen/emsland/twist/) `/niedersachsen/emsland/twist/` | Landkreis Emsland | 1 | 3 | 6 |
 |  | [Sande Neustadtgödens](https://hofladenliste.de/niedersachsen/friesland/sande-neustadtgoedens/) `/niedersachsen/friesland/sande-neustadtgoedens/` | Landkreis Friesland | 1 | 3 | 6 |
 |  | [Varel Grünenkamp](https://hofladenliste.de/niedersachsen/friesland/varel-gruenenkamp/) `/niedersachsen/friesland/varel-gruenenkamp/` | Landkreis Friesland | 1 | 3 | 6 |
 |  | [Wangerland](https://hofladenliste.de/niedersachsen/friesland/wangerland/) `/niedersachsen/friesland/wangerland/` | Landkreis Friesland | 1 | 3 | 6 |
 |  | [Zetel](https://hofladenliste.de/niedersachsen/friesland/zetel/) `/niedersachsen/friesland/zetel/` | Landkreis Friesland | 1 | 3 | 6 |
+|  | [Isenbüttel](https://hofladenliste.de/niedersachsen/gifhorn/isenbuettel/) `/niedersachsen/gifhorn/isenbuettel/` | Landkreis Gifhorn | 1 | 3 | 6 |
+|  | [Leiferde](https://hofladenliste.de/niedersachsen/gifhorn/leiferde/) `/niedersachsen/gifhorn/leiferde/` | Landkreis Gifhorn | 1 | 3 | 6 |
 |  | [Rötgesbüttel](https://hofladenliste.de/niedersachsen/gifhorn/roetgesbuettel/) `/niedersachsen/gifhorn/roetgesbuettel/` | Landkreis Gifhorn | 1 | 3 | 6 |
 |  | [Wasbüttel](https://hofladenliste.de/niedersachsen/gifhorn/wasbuettel/) `/niedersachsen/gifhorn/wasbuettel/` | Landkreis Gifhorn | 1 | 3 | 6 |
 |  | [Gieboldehausen](https://hofladenliste.de/niedersachsen/goettingen/gieboldehausen/) `/niedersachsen/goettingen/gieboldehausen/` | Landkreis Göttingen | 1 | 3 | 6 |
@@ -1767,20 +1802,22 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Seesen](https://hofladenliste.de/niedersachsen/goslar/seesen/) `/niedersachsen/goslar/seesen/` | Landkreis Goslar | 1 | 3 | 6 |
 |  | [Emmerthal](https://hofladenliste.de/niedersachsen/hameln-pyrmont/emmerthal/) `/niedersachsen/hameln-pyrmont/emmerthal/` | Landkreis Hameln-Pyrmont | 1 | 3 | 6 |
 |  | [Egestorf](https://hofladenliste.de/niedersachsen/harburg/egestorf/) `/niedersachsen/harburg/egestorf/` | Landkreis Harburg | 1 | 3 | 6 |
+
+## Paket 61 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Hanstedt](https://hofladenliste.de/niedersachsen/harburg/hanstedt/) `/niedersachsen/harburg/hanstedt/` | Landkreis Harburg | 1 | 3 | 6 |
 |  | [Hollenstedt](https://hofladenliste.de/niedersachsen/harburg/hollenstedt/) `/niedersachsen/harburg/hollenstedt/` | Landkreis Harburg | 1 | 3 | 6 |
 |  | [Königsmoor](https://hofladenliste.de/niedersachsen/harburg/koenigsmoor/) `/niedersachsen/harburg/koenigsmoor/` | Landkreis Harburg | 1 | 3 | 6 |
 |  | [Rosengarten](https://hofladenliste.de/niedersachsen/harburg/rosengarten/) `/niedersachsen/harburg/rosengarten/` | Landkreis Harburg | 1 | 3 | 6 |
 |  | [Gilten](https://hofladenliste.de/niedersachsen/heidekreis/gilten/) `/niedersachsen/heidekreis/gilten/` | Heidekreis | 1 | 3 | 6 |
-
-## Paket 60 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Grethem](https://hofladenliste.de/niedersachsen/heidekreis/grethem/) `/niedersachsen/heidekreis/grethem/` | Heidekreis | 1 | 3 | 6 |
 |  | [Lindwedel](https://hofladenliste.de/niedersachsen/heidekreis/lindwedel/) `/niedersachsen/heidekreis/lindwedel/` | Heidekreis | 1 | 3 | 6 |
 |  | [Velpke](https://hofladenliste.de/niedersachsen/helmstedt/velpke/) `/niedersachsen/helmstedt/velpke/` | Landkreis Helmstedt | 1 | 3 | 6 |
+|  | [Elze](https://hofladenliste.de/niedersachsen/hildesheim/elze/) `/niedersachsen/hildesheim/elze/` | Landkreis Hildesheim | 1 | 3 | 6 |
 |  | [Sibbesse](https://hofladenliste.de/niedersachsen/hildesheim/sibbesse/) `/niedersachsen/hildesheim/sibbesse/` | Landkreis Hildesheim | 1 | 3 | 6 |
+|  | [Bad Iburg](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-iburg/) `/niedersachsen/landkreis-osnabrueck/bad-iburg/` | Landkreis Osnabrück | 1 | 3 | 6 |
 |  | [Bad Rothenfelde](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/bad-rothenfelde/) `/niedersachsen/landkreis-osnabrueck/bad-rothenfelde/` | Landkreis Osnabrück | 1 | 3 | 6 |
 |  | [Berge](https://hofladenliste.de/niedersachsen/landkreis-osnabrueck/berge/) `/niedersachsen/landkreis-osnabrueck/berge/` | Landkreis Osnabrück | 1 | 3 | 6 |
 |  | [Rhauderfehn](https://hofladenliste.de/niedersachsen/leer/rhauderfehn/) `/niedersachsen/leer/rhauderfehn/` | Landkreis Leer | 1 | 3 | 6 |
@@ -1793,20 +1830,24 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Oldendorf (Luhe)](https://hofladenliste.de/niedersachsen/lueneburg/oldendorf-luhe/) `/niedersachsen/lueneburg/oldendorf-luhe/` | Landkreis Lüneburg | 1 | 3 | 6 |
 |  | [Radbruch](https://hofladenliste.de/niedersachsen/lueneburg/radbruch/) `/niedersachsen/lueneburg/radbruch/` | Landkreis Lüneburg | 1 | 3 | 6 |
 |  | [Landesbergen](https://hofladenliste.de/niedersachsen/nienburg-weser/landesbergen/) `/niedersachsen/nienburg-weser/landesbergen/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
+|  | [Marklohe](https://hofladenliste.de/niedersachsen/nienburg-weser/marklohe/) `/niedersachsen/nienburg-weser/marklohe/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
 |  | [Stolzenau](https://hofladenliste.de/niedersachsen/nienburg-weser/stolzenau/) `/niedersachsen/nienburg-weser/stolzenau/` | Landkreis Nienburg/Weser | 1 | 3 | 6 |
-|  | [Bad Gandersheim](https://hofladenliste.de/niedersachsen/northeim/bad-gandersheim/) `/niedersachsen/northeim/bad-gandersheim/` | Landkreis Northeim | 1 | 3 | 6 |
-|  | [Einbeck](https://hofladenliste.de/niedersachsen/northeim/einbeck/) `/niedersachsen/northeim/einbeck/` | Landkreis Northeim | 1 | 3 | 6 |
-|  | [Ilsede](https://hofladenliste.de/niedersachsen/peine/ilsede/) `/niedersachsen/peine/ilsede/` | Landkreis Peine | 1 | 3 | 6 |
-|  | [Wennigsen](https://hofladenliste.de/niedersachsen/region-hannover/wennigsen/) `/niedersachsen/region-hannover/wennigsen/` | Region Hannover | 1 | 3 | 6 |
-|  | [Bremervörde](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/bremervoerde/) `/niedersachsen/rotenburg-wuemme/bremervoerde/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
-|  | [Helvesiek](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/helvesiek/) `/niedersachsen/rotenburg-wuemme/helvesiek/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
-|  | [Vahlde](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/vahlde/) `/niedersachsen/rotenburg-wuemme/vahlde/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
-|  | [Wilstedt](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/wilstedt/) `/niedersachsen/rotenburg-wuemme/wilstedt/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
 
-## Paket 61 (0/25 fertig)
+## Paket 62 (0/25 fertig)
 
 | | Seite | Kreis | PLZ | eigene | Relevanz |
 |---|---|---|---:|---:|---:|
+|  | [Einbeck](https://hofladenliste.de/niedersachsen/northeim/einbeck/) `/niedersachsen/northeim/einbeck/` | Landkreis Northeim | 1 | 3 | 6 |
+|  | [Uslar](https://hofladenliste.de/niedersachsen/northeim/uslar/) `/niedersachsen/northeim/uslar/` | Landkreis Northeim | 1 | 3 | 6 |
+|  | [Osterholz-Scharmbeck](https://hofladenliste.de/niedersachsen/osterholz/osterholz-scharmbeck/) `/niedersachsen/osterholz/osterholz-scharmbeck/` | Landkreis Osterholz | 1 | 3 | 6 |
+|  | [Stadt](https://hofladenliste.de/niedersachsen/osterholz/stadt/) `/niedersachsen/osterholz/stadt/` | Landkreis Osterholz | 1 | 3 | 6 |
+|  | [Ilsede](https://hofladenliste.de/niedersachsen/peine/ilsede/) `/niedersachsen/peine/ilsede/` | Landkreis Peine | 1 | 3 | 6 |
+|  | [Wennigsen](https://hofladenliste.de/niedersachsen/region-hannover/wennigsen/) `/niedersachsen/region-hannover/wennigsen/` | Region Hannover | 1 | 3 | 6 |
+|  | [Bremervörde](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/bremervoerde/) `/niedersachsen/rotenburg-wuemme/bremervoerde/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
+|  | [Elsdorf (Landkreis Rotenburg (Wümme))](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/elsdorf/) `/niedersachsen/rotenburg-wuemme/elsdorf/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
+|  | [Helvesiek](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/helvesiek/) `/niedersachsen/rotenburg-wuemme/helvesiek/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
+|  | [Kirchtimke](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/kirchtimke/) `/niedersachsen/rotenburg-wuemme/kirchtimke/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
+|  | [Vahlde](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/vahlde/) `/niedersachsen/rotenburg-wuemme/vahlde/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
 |  | [Hagenburg](https://hofladenliste.de/niedersachsen/schaumburg/hagenburg/) `/niedersachsen/schaumburg/hagenburg/` | Landkreis Schaumburg | 1 | 3 | 6 |
 |  | [Pollhagen](https://hofladenliste.de/niedersachsen/schaumburg/pollhagen/) `/niedersachsen/schaumburg/pollhagen/` | Landkreis Schaumburg | 1 | 3 | 6 |
 |  | [Rinteln](https://hofladenliste.de/niedersachsen/schaumburg/rinteln/) `/niedersachsen/schaumburg/rinteln/` | Landkreis Schaumburg | 1 | 3 | 6 |
@@ -1821,6 +1862,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Landkreis Verden](https://hofladenliste.de/niedersachsen/verden/landkreis-verden/) `/niedersachsen/verden/landkreis-verden/` | Landkreis Verden | 1 | 3 | 6 |
 |  | [Ottersberg](https://hofladenliste.de/niedersachsen/verden/ottersberg/) `/niedersachsen/verden/ottersberg/` | Landkreis Verden | 1 | 3 | 6 |
 |  | [Butjadingen](https://hofladenliste.de/niedersachsen/wesermarsch/butjadingen/) `/niedersachsen/wesermarsch/butjadingen/` | Landkreis Wesermarsch | 1 | 3 | 6 |
+
+## Paket 63 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Raesfeld](https://hofladenliste.de/nordrhein-westfalen/borken/raesfeld/) `/nordrhein-westfalen/borken/raesfeld/` | Kreis Borken | 1 | 3 | 6 |
 |  | [Reken](https://hofladenliste.de/nordrhein-westfalen/borken/reken/) `/nordrhein-westfalen/borken/reken/` | Kreis Borken | 1 | 3 | 6 |
 |  | [Schöppingen](https://hofladenliste.de/nordrhein-westfalen/borken/schoeppingen/) `/nordrhein-westfalen/borken/schoeppingen/` | Kreis Borken | 1 | 3 | 6 |
@@ -1832,11 +1878,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Titz](https://hofladenliste.de/nordrhein-westfalen/dueren/titz/) `/nordrhein-westfalen/dueren/titz/` | Kreis Düren | 1 | 3 | 6 |
 |  | [Vettweiß](https://hofladenliste.de/nordrhein-westfalen/dueren/vettweiss/) `/nordrhein-westfalen/dueren/vettweiss/` | Kreis Düren | 1 | 3 | 6 |
 |  | [Blankenheim](https://hofladenliste.de/nordrhein-westfalen/euskirchen/blankenheim/) `/nordrhein-westfalen/euskirchen/blankenheim/` | Kreis Euskirchen | 1 | 3 | 6 |
-
-## Paket 62 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Schleiden](https://hofladenliste.de/nordrhein-westfalen/euskirchen/schleiden/) `/nordrhein-westfalen/euskirchen/schleiden/` | Kreis Euskirchen | 1 | 3 | 6 |
 |  | [Borgholzhausen](https://hofladenliste.de/nordrhein-westfalen/guetersloh/borgholzhausen/) `/nordrhein-westfalen/guetersloh/borgholzhausen/` | Kreis Gütersloh | 1 | 3 | 6 |
 |  | [Garant-Möbel](https://hofladenliste.de/nordrhein-westfalen/guetersloh/garant-moebel/) `/nordrhein-westfalen/guetersloh/garant-moebel/` | Kreis Gütersloh | 1 | 3 | 6 |
@@ -1851,6 +1892,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Kleve](https://hofladenliste.de/nordrhein-westfalen/kleve/kleve/) `/nordrhein-westfalen/kleve/kleve/` | Kreis Kleve | 1 | 3 | 6 |
 |  | [Rheurdt](https://hofladenliste.de/nordrhein-westfalen/kleve/rheurdt/) `/nordrhein-westfalen/kleve/rheurdt/` | Kreis Kleve | 1 | 3 | 6 |
 |  | [Blomberg](https://hofladenliste.de/nordrhein-westfalen/lippe/blomberg/) `/nordrhein-westfalen/lippe/blomberg/` | Kreis Lippe | 1 | 3 | 6 |
+
+## Paket 64 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Extertal](https://hofladenliste.de/nordrhein-westfalen/lippe/extertal/) `/nordrhein-westfalen/lippe/extertal/` | Kreis Lippe | 1 | 3 | 6 |
 |  | [Hemer](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/hemer/) `/nordrhein-westfalen/maerkischer-kreis/hemer/` | Märkischer Kreis | 1 | 3 | 6 |
 |  | [Meinerzhagen](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/meinerzhagen/) `/nordrhein-westfalen/maerkischer-kreis/meinerzhagen/` | Märkischer Kreis | 1 | 3 | 6 |
@@ -1862,11 +1908,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Rösrath](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/roesrath/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/roesrath/` | Rheinisch-Bergischer Kreis | 1 | 3 | 6 |
 |  | [Kreuztal](https://hofladenliste.de/nordrhein-westfalen/siegen-wittgenstein/kreuztal/) `/nordrhein-westfalen/siegen-wittgenstein/kreuztal/` | Kreis Siegen-Wittgenstein | 1 | 3 | 6 |
 |  | [Wilnsdorf](https://hofladenliste.de/nordrhein-westfalen/siegen-wittgenstein/wilnsdorf/) `/nordrhein-westfalen/siegen-wittgenstein/wilnsdorf/` | Kreis Siegen-Wittgenstein | 1 | 3 | 6 |
-
-## Paket 63 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Baesweiler](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/baesweiler/) `/nordrhein-westfalen/staedteregion-aachen/baesweiler/` | Städteregion Aachen | 1 | 3 | 6 |
 |  | [Eschweiler](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/eschweiler/) `/nordrhein-westfalen/staedteregion-aachen/eschweiler/` | Städteregion Aachen | 1 | 3 | 6 |
 |  | [Monschau](https://hofladenliste.de/nordrhein-westfalen/staedteregion-aachen/monschau/) `/nordrhein-westfalen/staedteregion-aachen/monschau/` | Städteregion Aachen | 1 | 3 | 6 |
@@ -1876,44 +1917,46 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Lengerich](https://hofladenliste.de/nordrhein-westfalen/steinfurt/lengerich/) `/nordrhein-westfalen/steinfurt/lengerich/` | Kreis Steinfurt | 1 | 3 | 6 |
 |  | [Bergkamen](https://hofladenliste.de/nordrhein-westfalen/unna/bergkamen/) `/nordrhein-westfalen/unna/bergkamen/` | Kreis Unna | 1 | 3 | 6 |
 |  | [Bönen](https://hofladenliste.de/nordrhein-westfalen/unna/boenen/) `/nordrhein-westfalen/unna/boenen/` | Kreis Unna | 1 | 3 | 6 |
-|  | [Stadt Willich](https://hofladenliste.de/nordrhein-westfalen/viersen/stadt-willich/) `/nordrhein-westfalen/viersen/stadt-willich/` | Kreis Viersen | 1 | 3 | 6 |
 |  | [Beckum](https://hofladenliste.de/nordrhein-westfalen/warendorf/beckum/) `/nordrhein-westfalen/warendorf/beckum/` | Kreis Warendorf | 1 | 3 | 6 |
 |  | [Sassenberg](https://hofladenliste.de/nordrhein-westfalen/warendorf/sassenberg/) `/nordrhein-westfalen/warendorf/sassenberg/` | Kreis Warendorf | 1 | 3 | 6 |
 |  | [Bad Neuenahr-Ahrweiler](https://hofladenliste.de/rheinland-pfalz/ahrweiler/bad-neuenahr-ahrweiler/) `/rheinland-pfalz/ahrweiler/bad-neuenahr-ahrweiler/` | Landkreis Ahrweiler | 1 | 3 | 6 |
 |  | [Berg (Landkreis Ahrweiler)](https://hofladenliste.de/rheinland-pfalz/ahrweiler/berg/) `/rheinland-pfalz/ahrweiler/berg/` | Landkreis Ahrweiler | 1 | 3 | 6 |
 |  | [Brohl-Lützing](https://hofladenliste.de/rheinland-pfalz/ahrweiler/brohl-luetzing/) `/rheinland-pfalz/ahrweiler/brohl-luetzing/` | Landkreis Ahrweiler | 1 | 3 | 6 |
+
+## Paket 65 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Glees](https://hofladenliste.de/rheinland-pfalz/ahrweiler/glees/) `/rheinland-pfalz/ahrweiler/glees/` | Landkreis Ahrweiler | 1 | 3 | 6 |
 |  | [Mudersbach](https://hofladenliste.de/rheinland-pfalz/altenkirchen/mudersbach/) `/rheinland-pfalz/altenkirchen/mudersbach/` | Landkreis Altenkirchen | 1 | 3 | 6 |
 |  | [Monsheim](https://hofladenliste.de/rheinland-pfalz/alzey-worms/monsheim/) `/rheinland-pfalz/alzey-worms/monsheim/` | Landkreis Alzey-Worms | 1 | 3 | 6 |
 |  | [Altleiningen](https://hofladenliste.de/rheinland-pfalz/bad-duerkheim/altleiningen/) `/rheinland-pfalz/bad-duerkheim/altleiningen/` | Landkreis Bad Dürkheim | 1 | 3 | 6 |
-|  | [Wittlich](https://hofladenliste.de/rheinland-pfalz/bernkastel-wittlich/wittlich/) `/rheinland-pfalz/bernkastel-wittlich/wittlich/` | Landkreis Bernkastel-Wittlich | 1 | 3 | 6 |
 |  | [Kandel](https://hofladenliste.de/rheinland-pfalz/germersheim/kandel/) `/rheinland-pfalz/germersheim/kandel/` | Landkreis Germersheim | 1 | 3 | 6 |
 |  | [Neupotz](https://hofladenliste.de/rheinland-pfalz/germersheim/neupotz/) `/rheinland-pfalz/germersheim/neupotz/` | Landkreis Germersheim | 1 | 3 | 6 |
 |  | [Weingarten (Landkreis Germersheim)](https://hofladenliste.de/rheinland-pfalz/germersheim/weingarten/) `/rheinland-pfalz/germersheim/weingarten/` | Landkreis Germersheim | 1 | 3 | 6 |
 |  | [Altenglan](https://hofladenliste.de/rheinland-pfalz/kusel/altenglan/) `/rheinland-pfalz/kusel/altenglan/` | Landkreis Kusel | 1 | 3 | 6 |
-|  | [Landau in der Pfalz](https://hofladenliste.de/rheinland-pfalz/landau-in-der-pfalz/) `/rheinland-pfalz/landau-in-der-pfalz/` | Landau in der Pfalz | 1 | 3 | 6 |
-
-## Paket 64 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Klein-Winternheim](https://hofladenliste.de/rheinland-pfalz/mainz-bingen/klein-winternheim/) `/rheinland-pfalz/mainz-bingen/klein-winternheim/` | Landkreis Mainz-Bingen | 1 | 3 | 6 |
 |  | [Winningen](https://hofladenliste.de/rheinland-pfalz/mayen-koblenz/winningen/) `/rheinland-pfalz/mayen-koblenz/winningen/` | Landkreis Mayen-Koblenz | 1 | 3 | 6 |
 |  | [Neuhofen](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/neuhofen/) `/rheinland-pfalz/rhein-pfalz-kreis/neuhofen/` | Rhein-Pfalz-Kreis | 1 | 3 | 6 |
 |  | [Römerberg](https://hofladenliste.de/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/) `/rheinland-pfalz/rhein-pfalz-kreis/roemerberg/` | Rhein-Pfalz-Kreis | 1 | 3 | 6 |
 |  | [Edenkoben](https://hofladenliste.de/rheinland-pfalz/suedliche-weinstrasse/edenkoben/) `/rheinland-pfalz/suedliche-weinstrasse/edenkoben/` | Landkreis Südliche Weinstraße | 1 | 3 | 6 |
 |  | [Schweighofen](https://hofladenliste.de/rheinland-pfalz/suedliche-weinstrasse/schweighofen/) `/rheinland-pfalz/suedliche-weinstrasse/schweighofen/` | Landkreis Südliche Weinstraße | 1 | 3 | 6 |
-|  | [Losheim am See](https://hofladenliste.de/saarland/merzig-wadern/losheim-am-see/) `/saarland/merzig-wadern/losheim-am-see/` | Landkreis Merzig-Wadern | 1 | 3 | 6 |
+|  | [Mettlach](https://hofladenliste.de/saarland/merzig-wadern/mettlach/) `/saarland/merzig-wadern/mettlach/` | Landkreis Merzig-Wadern | 1 | 3 | 6 |
 |  | [Perl](https://hofladenliste.de/saarland/merzig-wadern/perl/) `/saarland/merzig-wadern/perl/` | Landkreis Merzig-Wadern | 1 | 3 | 6 |
-|  | [Lebach](https://hofladenliste.de/saarland/saarlouis/lebach/) `/saarland/saarlouis/lebach/` | Landkreis Saarlouis | 1 | 3 | 6 |
-|  | [Rehlingen-Siersburg](https://hofladenliste.de/saarland/saarlouis/rehlingen-siersburg/) `/saarland/saarlouis/rehlingen-siersburg/` | Landkreis Saarlouis | 1 | 3 | 6 |
-|  | [Schmelz](https://hofladenliste.de/saarland/saarlouis/schmelz/) `/saarland/saarlouis/schmelz/` | Landkreis Saarlouis | 1 | 3 | 6 |
+|  | [Weiskirchen](https://hofladenliste.de/saarland/merzig-wadern/weiskirchen/) `/saarland/merzig-wadern/weiskirchen/` | Landkreis Merzig-Wadern | 1 | 3 | 6 |
 |  | [Wadgassen](https://hofladenliste.de/saarland/saarlouis/wadgassen/) `/saarland/saarlouis/wadgassen/` | Landkreis Saarlouis | 1 | 3 | 6 |
+|  | [Wallerfangen](https://hofladenliste.de/saarland/saarlouis/wallerfangen/) `/saarland/saarlouis/wallerfangen/` | Landkreis Saarlouis | 1 | 3 | 6 |
+|  | [Homburg](https://hofladenliste.de/saarland/saarpfalz-kreis/homburg/) `/saarland/saarpfalz-kreis/homburg/` | Saarpfalz-Kreis | 1 | 3 | 6 |
 |  | [Sankt Wendel](https://hofladenliste.de/saarland/st-wendel/sankt-wendel/) `/saarland/st-wendel/sankt-wendel/` | Landkreis St. Wendel | 1 | 3 | 6 |
 |  | [Sülzetal](https://hofladenliste.de/sachsen-anhalt/boerde/suelzetal/) `/sachsen-anhalt/boerde/suelzetal/` | Landkreis Börde | 1 | 3 | 6 |
 |  | [Wetterzeube](https://hofladenliste.de/sachsen-anhalt/burgenlandkreis/wetterzeube/) `/sachsen-anhalt/burgenlandkreis/wetterzeube/` | Burgenlandkreis | 1 | 3 | 6 |
 |  | [Bornstedt](https://hofladenliste.de/sachsen-anhalt/mansfeld-suedharz/bornstedt/) `/sachsen-anhalt/mansfeld-suedharz/bornstedt/` | Landkreis Mansfeld-Südharz | 1 | 3 | 6 |
 |  | [Tangermünde](https://hofladenliste.de/sachsen-anhalt/stendal/tangermuende/) `/sachsen-anhalt/stendal/tangermuende/` | Landkreis Stendal | 1 | 3 | 6 |
+
+## Paket 66 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Sohland an der Spree](https://hofladenliste.de/sachsen/bautzen/sohland-an-der-spree/) `/sachsen/bautzen/sohland-an-der-spree/` | Landkreis Bautzen | 1 | 3 | 6 |
 |  | [Wachau](https://hofladenliste.de/sachsen/bautzen/wachau/) `/sachsen/bautzen/wachau/` | Landkreis Bautzen | 1 | 3 | 6 |
 |  | [Weißenberg](https://hofladenliste.de/sachsen/bautzen/weissenberg/) `/sachsen/bautzen/weissenberg/` | Landkreis Bautzen | 1 | 3 | 6 |
@@ -1922,11 +1965,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Crottendorf](https://hofladenliste.de/sachsen/erzgebirgskreis/crottendorf/) `/sachsen/erzgebirgskreis/crottendorf/` | Erzgebirgskreis | 1 | 3 | 6 |
 |  | [Drebach](https://hofladenliste.de/sachsen/erzgebirgskreis/drebach/) `/sachsen/erzgebirgskreis/drebach/` | Erzgebirgskreis | 1 | 3 | 6 |
 |  | [Gornsdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/gornsdorf/) `/sachsen/erzgebirgskreis/gornsdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
-
-## Paket 65 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Großolbersdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/grossolbersdorf/) `/sachsen/erzgebirgskreis/grossolbersdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
 |  | [Heidersdorf](https://hofladenliste.de/sachsen/erzgebirgskreis/heidersdorf/) `/sachsen/erzgebirgskreis/heidersdorf/` | Erzgebirgskreis | 1 | 3 | 6 |
 |  | [Niederwürschnitz](https://hofladenliste.de/sachsen/erzgebirgskreis/niederwuerschnitz/) `/sachsen/erzgebirgskreis/niederwuerschnitz/` | Erzgebirgskreis | 1 | 3 | 6 |
@@ -1944,6 +1982,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Penig](https://hofladenliste.de/sachsen/mittelsachsen/penig/) `/sachsen/mittelsachsen/penig/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
 |  | [Seelitz](https://hofladenliste.de/sachsen/mittelsachsen/seelitz/) `/sachsen/mittelsachsen/seelitz/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
 |  | [Striegistal](https://hofladenliste.de/sachsen/mittelsachsen/striegistal/) `/sachsen/mittelsachsen/striegistal/` | Landkreis Mittelsachsen | 1 | 3 | 6 |
+
+## Paket 67 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Schkeuditz](https://hofladenliste.de/sachsen/nordsachsen/schkeuditz/) `/sachsen/nordsachsen/schkeuditz/` | Landkreis Nordsachsen | 1 | 3 | 6 |
 |  | [Dippoldiswalde](https://hofladenliste.de/sachsen/saechsische-schweiz/dippoldiswalde/) `/sachsen/saechsische-schweiz/dippoldiswalde/` | Landkreis Sächsische Schweiz | 1 | 3 | 6 |
 |  | [Stadt Wehlen](https://hofladenliste.de/sachsen/saechsische-schweiz/stadt-wehlen/) `/sachsen/saechsische-schweiz/stadt-wehlen/` | Landkreis Sächsische Schweiz | 1 | 3 | 6 |
@@ -1952,11 +1995,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Callenberg](https://hofladenliste.de/sachsen/zwickau/callenberg/) `/sachsen/zwickau/callenberg/` | Landkreis Zwickau | 1 | 3 | 6 |
 |  | [Hartenstein](https://hofladenliste.de/sachsen/zwickau/hartenstein/) `/sachsen/zwickau/hartenstein/` | Landkreis Zwickau | 1 | 3 | 6 |
 |  | [Niederfrohna](https://hofladenliste.de/sachsen/zwickau/niederfrohna/) `/sachsen/zwickau/niederfrohna/` | Landkreis Zwickau | 1 | 3 | 6 |
-
-## Paket 66 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Albersdorf](https://hofladenliste.de/schleswig-holstein/dithmarschen/albersdorf/) `/schleswig-holstein/dithmarschen/albersdorf/` | Kreis Dithmarschen | 1 | 3 | 6 |
 |  | [Burg (Dithmarschen)](https://hofladenliste.de/schleswig-holstein/dithmarschen/burg-dithmarschen/) `/schleswig-holstein/dithmarschen/burg-dithmarschen/` | Kreis Dithmarschen | 1 | 3 | 6 |
 |  | [Friedrichskoog](https://hofladenliste.de/schleswig-holstein/dithmarschen/friedrichskoog/) `/schleswig-holstein/dithmarschen/friedrichskoog/` | Kreis Dithmarschen | 1 | 3 | 6 |
@@ -1967,33 +2005,35 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Husum](https://hofladenliste.de/schleswig-holstein/nordfriesland/husum/) `/schleswig-holstein/nordfriesland/husum/` | Kreis Nordfriesland | 1 | 3 | 6 |
 |  | [Nordstrand](https://hofladenliste.de/schleswig-holstein/nordfriesland/nordstrand/) `/schleswig-holstein/nordfriesland/nordstrand/` | Kreis Nordfriesland | 1 | 3 | 6 |
 |  | [Osterhever](https://hofladenliste.de/schleswig-holstein/nordfriesland/osterhever/) `/schleswig-holstein/nordfriesland/osterhever/` | Kreis Nordfriesland | 1 | 3 | 6 |
-|  | [Wyk auf Föhr](https://hofladenliste.de/schleswig-holstein/nordfriesland/wyk-auf-foehr/) `/schleswig-holstein/nordfriesland/wyk-auf-foehr/` | Kreis Nordfriesland | 1 | 3 | 6 |
 |  | [Ahrensbök](https://hofladenliste.de/schleswig-holstein/ostholstein/ahrensboek/) `/schleswig-holstein/ostholstein/ahrensboek/` | Kreis Ostholstein | 1 | 3 | 6 |
 |  | [Gremersdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/gremersdorf/) `/schleswig-holstein/ostholstein/gremersdorf/` | Kreis Ostholstein | 1 | 3 | 6 |
 |  | [Harmsdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/harmsdorf/) `/schleswig-holstein/ostholstein/harmsdorf/` | Kreis Ostholstein | 1 | 3 | 6 |
 |  | [Heringsdorf](https://hofladenliste.de/schleswig-holstein/ostholstein/heringsdorf/) `/schleswig-holstein/ostholstein/heringsdorf/` | Kreis Ostholstein | 1 | 3 | 6 |
 |  | [Malente](https://hofladenliste.de/schleswig-holstein/ostholstein/malente/) `/schleswig-holstein/ostholstein/malente/` | Kreis Ostholstein | 1 | 3 | 6 |
+|  | [Haseldorf](https://hofladenliste.de/schleswig-holstein/pinneberg/haseldorf/) `/schleswig-holstein/pinneberg/haseldorf/` | Kreis Pinneberg | 1 | 3 | 6 |
 |  | [Hemdingen](https://hofladenliste.de/schleswig-holstein/pinneberg/hemdingen/) `/schleswig-holstein/pinneberg/hemdingen/` | Kreis Pinneberg | 1 | 3 | 6 |
+
+## Paket 68 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Schenefeld](https://hofladenliste.de/schleswig-holstein/pinneberg/schenefeld/) `/schleswig-holstein/pinneberg/schenefeld/` | Kreis Pinneberg | 1 | 3 | 6 |
-|  | [Blekendorf](https://hofladenliste.de/schleswig-holstein/ploen/blekendorf/) `/schleswig-holstein/ploen/blekendorf/` | Kreis Plön | 1 | 3 | 6 |
 |  | [Pohnsdorf](https://hofladenliste.de/schleswig-holstein/ploen/pohnsdorf/) `/schleswig-holstein/ploen/pohnsdorf/` | Kreis Plön | 1 | 3 | 6 |
 |  | [Altenholz](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/altenholz/) `/schleswig-holstein/rendsburg-eckernfoerde/altenholz/` | Kreis Rendsburg-Eckernförde | 1 | 3 | 6 |
 |  | [Brodersby](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/brodersby/) `/schleswig-holstein/rendsburg-eckernfoerde/brodersby/` | Kreis Rendsburg-Eckernförde | 1 | 3 | 6 |
 |  | [Holzbunge](https://hofladenliste.de/schleswig-holstein/rendsburg-eckernfoerde/holzbunge/) `/schleswig-holstein/rendsburg-eckernfoerde/holzbunge/` | Kreis Rendsburg-Eckernförde | 1 | 3 | 6 |
 |  | [Busdorf](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/busdorf/) `/schleswig-holstein/schleswig-flensburg/busdorf/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
 |  | [Harrislee](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/harrislee/) `/schleswig-holstein/schleswig-flensburg/harrislee/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
-
-## Paket 67 (0/25 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Ulsnis](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/ulsnis/) `/schleswig-holstein/schleswig-flensburg/ulsnis/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
 |  | [Wees](https://hofladenliste.de/schleswig-holstein/schleswig-flensburg/wees/) `/schleswig-holstein/schleswig-flensburg/wees/` | Kreis Schleswig-Flensburg | 1 | 3 | 6 |
 |  | [Alveslohe](https://hofladenliste.de/schleswig-holstein/segeberg/alveslohe/) `/schleswig-holstein/segeberg/alveslohe/` | Kreis Segeberg | 1 | 3 | 6 |
 |  | [Bark](https://hofladenliste.de/schleswig-holstein/segeberg/bark/) `/schleswig-holstein/segeberg/bark/` | Kreis Segeberg | 1 | 3 | 6 |
 |  | [Rickling](https://hofladenliste.de/schleswig-holstein/segeberg/rickling/) `/schleswig-holstein/segeberg/rickling/` | Kreis Segeberg | 1 | 3 | 6 |
+|  | [Itzehoe](https://hofladenliste.de/schleswig-holstein/steinburg/itzehoe/) `/schleswig-holstein/steinburg/itzehoe/` | Kreis Steinburg | 1 | 3 | 6 |
+|  | [Kollmar](https://hofladenliste.de/schleswig-holstein/steinburg/kollmar/) `/schleswig-holstein/steinburg/kollmar/` | Kreis Steinburg | 1 | 3 | 6 |
 |  | [Wewelsfleth](https://hofladenliste.de/schleswig-holstein/steinburg/wewelsfleth/) `/schleswig-holstein/steinburg/wewelsfleth/` | Kreis Steinburg | 1 | 3 | 6 |
 |  | [Bad Oldesloe](https://hofladenliste.de/schleswig-holstein/stormarn/bad-oldesloe/) `/schleswig-holstein/stormarn/bad-oldesloe/` | Kreis Stormarn | 1 | 3 | 6 |
+|  | [Tangstedt](https://hofladenliste.de/schleswig-holstein/stormarn/tangstedt/) `/schleswig-holstein/stormarn/tangstedt/` | Kreis Stormarn | 1 | 3 | 6 |
 |  | [Schmölln](https://hofladenliste.de/thueringen/altenburger-land/schmoelln/) `/thueringen/altenburger-land/schmoelln/` | Landkreis Altenburger Land | 1 | 3 | 6 |
 |  | [Steinbach](https://hofladenliste.de/thueringen/eichsfeld/steinbach/) `/thueringen/eichsfeld/steinbach/` | Landkreis Eichsfeld | 1 | 3 | 6 |
 |  | [Arnstadt](https://hofladenliste.de/thueringen/ilm-kreis/arnstadt/) `/thueringen/ilm-kreis/arnstadt/` | Ilm-Kreis | 1 | 3 | 6 |
@@ -2002,6 +2042,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Königsee](https://hofladenliste.de/thueringen/saalfeld-rudolstadt/koenigsee/) `/thueringen/saalfeld-rudolstadt/koenigsee/` | Landkreis Saalfeld-Rudolstadt | 1 | 3 | 6 |
 |  | [Rohr (Landkreis Schmalkalden-Meiningen)](https://hofladenliste.de/thueringen/schmalkalden-meiningen/rohr/) `/thueringen/schmalkalden-meiningen/rohr/` | Landkreis Schmalkalden-Meiningen | 1 | 3 | 6 |
 |  | [Bad Sulza](https://hofladenliste.de/thueringen/weimarer-land/bad-sulza/) `/thueringen/weimarer-land/bad-sulza/` | Landkreis Weimarer Land | 1 | 3 | 6 |
+
+## Paket 69 (0/25 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Kranichfeld](https://hofladenliste.de/thueringen/weimarer-land/kranichfeld/) `/thueringen/weimarer-land/kranichfeld/` | Landkreis Weimarer Land | 1 | 3 | 6 |
 |  | [Bad Boll](https://hofladenliste.de/baden-wuerttemberg/goeppingen/bad-boll/) `/baden-wuerttemberg/goeppingen/bad-boll/` | Landkreis Göppingen | 0 | 5 | 5 |
 |  | [Emmerich am Rhein](https://hofladenliste.de/nordrhein-westfalen/kleve/emmerich-am-rhein/) `/nordrhein-westfalen/kleve/emmerich-am-rhein/` | Kreis Kleve | 0 | 5 | 5 |
@@ -2012,11 +2057,6 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Zweibrücken](https://hofladenliste.de/rheinland-pfalz/zweibruecken/) `/rheinland-pfalz/zweibruecken/` | Zweibrücken | 1 | 2 | 5 |
 |  | [Dessau-Roßlau](https://hofladenliste.de/sachsen-anhalt/dessau-rosslau/) `/sachsen-anhalt/dessau-rosslau/` | Dessau-Roßlau | 1 | 2 | 5 |
 |  | [Bautzen](https://hofladenliste.de/sachsen/bautzen/bautzen/) `/sachsen/bautzen/bautzen/` | Landkreis Bautzen | 1 | 2 | 5 |
-
-## Paket 68 (0/21 fertig)
-
-| | Seite | Kreis | PLZ | eigene | Relevanz |
-|---|---|---|---:|---:|---:|
 |  | [Leichlingen (Rheinland)](https://hofladenliste.de/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen-rheinland/) `/nordrhein-westfalen/rheinisch-bergischer-kreis/leichlingen-rheinland/` | Rheinisch-Bergischer Kreis | 0 | 4 | 4 |
 |  | [St. Egidien](https://hofladenliste.de/sachsen/zwickau/st-egidien/) `/sachsen/zwickau/st-egidien/` | Landkreis Zwickau | 0 | 4 | 4 |
 |  | [Forst (Lausitz)](https://hofladenliste.de/brandenburg/spree-neisse/forst-lausitz/) `/brandenburg/spree-neisse/forst-lausitz/` | Landkreis Spree-Neiße | 1 | 1 | 4 |
@@ -2032,6 +2072,11 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |  | [Halle (Westf.)](https://hofladenliste.de/nordrhein-westfalen/guetersloh/halle-westf/) `/nordrhein-westfalen/guetersloh/halle-westf/` | Kreis Gütersloh | 0 | 3 | 3 |
 |  | [Werther (Westf.)](https://hofladenliste.de/nordrhein-westfalen/guetersloh/werther-westf/) `/nordrhein-westfalen/guetersloh/werther-westf/` | Kreis Gütersloh | 0 | 3 | 3 |
 |  | [Menden (Sauerland)](https://hofladenliste.de/nordrhein-westfalen/maerkischer-kreis/menden-sauerland/) `/nordrhein-westfalen/maerkischer-kreis/menden-sauerland/` | Märkischer Kreis | 0 | 3 | 3 |
+
+## Paket 70 (0/6 fertig)
+
+| | Seite | Kreis | PLZ | eigene | Relevanz |
+|---|---|---|---:|---:|---:|
 |  | [Hennef (Sieg)](https://hofladenliste.de/nordrhein-westfalen/rhein-sieg-kreis/hennef-sieg/) `/nordrhein-westfalen/rhein-sieg-kreis/hennef-sieg/` | Rhein-Sieg-Kreis | 0 | 3 | 3 |
 |  | [Jahnatal](https://hofladenliste.de/sachsen/mittelsachsen/jahnatal/) `/sachsen/mittelsachsen/jahnatal/` | Landkreis Mittelsachsen | 0 | 3 | 3 |
 |  | [Nesse-Apfelstädt](https://hofladenliste.de/thueringen/gotha/nesse-apfelstaedt/) `/thueringen/gotha/nesse-apfelstaedt/` | Landkreis Gotha | 0 | 3 | 3 |
