@@ -1839,8 +1839,7 @@ Neu erzeugen: `SEITENTEXTE_OFFEN=1 node scripts/build.mjs` (danach `git checkout
 |---|---|---|---:|---:|---:|
 | ✓ | [Einbeck](https://hofladenliste.de/niedersachsen/northeim/einbeck/) `/niedersachsen/northeim/einbeck/` | Landkreis Northeim | 1 | 3 | 6 |
 |  | [Uslar](https://hofladenliste.de/niedersachsen/northeim/uslar/) `/niedersachsen/northeim/uslar/` | Landkreis Northeim | 1 | 3 | 6 |
-|  | [Osterholz-Scharmbeck](https://hofladenliste.de/niedersachsen/osterholz/osterholz-scharmbeck/) `/niedersachsen/osterholz/osterholz-scharmbeck/` | Landkreis Osterholz | 1 | 3 | 6 |
-| ✓ | [Stadt](https://hofladenliste.de/niedersachsen/osterholz/stadt/) `/niedersachsen/osterholz/stadt/` | Landkreis Osterholz | 1 | 3 | 6 |
+| ✓ | [Osterholz-Scharmbeck](https://hofladenliste.de/niedersachsen/osterholz/osterholz-scharmbeck/) `/niedersachsen/osterholz/osterholz-scharmbeck/` | Landkreis Osterholz | 1 | 3 | 6 |
 | ✓ | [Ilsede](https://hofladenliste.de/niedersachsen/peine/ilsede/) `/niedersachsen/peine/ilsede/` | Landkreis Peine | 1 | 3 | 6 |
 | ✓ | [Wennigsen](https://hofladenliste.de/niedersachsen/region-hannover/wennigsen/) `/niedersachsen/region-hannover/wennigsen/` | Region Hannover | 1 | 3 | 6 |
 | ✓ | [Bremervörde](https://hofladenliste.de/niedersachsen/rotenburg-wuemme/bremervoerde/) `/niedersachsen/rotenburg-wuemme/bremervoerde/` | Landkreis Rotenburg (Wümme) | 1 | 3 | 6 |
