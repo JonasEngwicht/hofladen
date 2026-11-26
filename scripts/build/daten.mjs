@@ -463,11 +463,14 @@ for (const e of eintraege) {
   const w = e.oeffnungszeiten ? parse(e.oeffnungszeiten) : null;
   e.sonntag = !!(w && w[6].length);
   // Dünne Einträge: Seite bleibt erreichbar (Hof steht weiter in Listen und auf der Karte), aber noindex und nicht in der Sitemap.
-  // Dünn ist ein Eintrag ohne Name, Zeiten, Kontakt und Angebot – oder ohne Kontakt (Telefon, Website, E-Mail), Straße und Zeiten.
+  // Dünn ist ein Hofladen (kein Automat) ohne Name, Zeiten, Kontakt und Angebot – oder ohne Kontakt (Telefon, Website, E-Mail), Straße und Zeiten.
   // Sobald eine dieser Angaben ergänzt ist (z. B. über pflege/), wird die Seite wieder indexiert. Liste: docs/duenne-hofseiten.csv
+  // Automaten haben meist keine Kontaktdaten, Straße oder Zeiten (oft rund um die Uhr): sie zählen nie als dünn
+  // und stehen nicht in der Liste (e.kontaktlos).
+  e.kontaktlos = e.typ === 'automat';
   const ohneKontakt = !e.telefon && !e.website && !e.email;
   const ohneZeiten = !e.oeffnungszeiten && !e.oeffnungszeiten_text;
-  e.duenn = (!e.name && ohneZeiten && ohneKontakt && !e.kat.length) || (ohneKontakt && !e.strasse && ohneZeiten);
+  e.duenn = !e.kontaktlos && ((!e.name && ohneZeiten && ohneKontakt && !e.kat.length) || (ohneKontakt && !e.strasse && ohneZeiten));
 }
 
 // ---------- Vollständigkeit eines Eintrags (für Formular, Outreach und Betreiber) ----------

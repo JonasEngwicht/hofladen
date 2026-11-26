@@ -7,7 +7,7 @@ import { ROOT, PUB, sitemapUrls, DOMAIN } from './hilfen.mjs';
 import { duenneZeilen, csv, SPALTEN } from '../scripts/duenne-liste.mjs';
 
 const EINTRAEGE = JSON.parse(readFileSync(join(ROOT, 'src', 'generated', 'eintraege.json'), 'utf8'));
-const ohneAlles = (e) => !e[9] && !e[10] && !e[20] && !e[17] && !e[6] && !e[13];
+const ohneAlles = (e) => e[7] && !e[9] && !e[10] && !e[20] && !e[17] && !e[6] && !e[13]; // e[7]: Hofladen (1), Automat (0)
 const noindex = (slug) => /<meta name="robots" content="noindex/.test(readFileSync(join(PUB, 'hof', slug, 'index.html'), 'utf8'));
 
 test('Hofseiten ohne Kontakt, Straße und Öffnungszeiten sind noindex und fehlen in der Sitemap', () => {
@@ -30,6 +30,16 @@ test('Eine einzige Angabe (Telefon, Website, E-Mail, Straße oder Zeiten) reicht
     if (!e) continue; // nicht jede Kombination kommt in den Daten vor
     assert.ok(!noindex(e[2]), `/hof/${e[2]}/ mit nur ${name} sollte indexiert sein`);
     assert.ok(karte.has(`${DOMAIN}/hof/${e[2]}/`), `/hof/${e[2]}/ mit nur ${name} fehlt in der Sitemap`);
+  }
+});
+
+test('Automaten ohne Kontakt, Straße und Zeiten bleiben indexiert (kontaktlos)', () => {
+  const karte = new Set(sitemapUrls().map((u) => u.loc));
+  const automaten = EINTRAEGE.filter((e) => !e[7] && !e[9] && !e[10] && !e[20] && !e[17] && !e[6] && !e[13]);
+  assert.ok(automaten.length > 100, `zu wenige Automaten ohne Angaben: ${automaten.length}`);
+  for (const e of automaten) {
+    assert.ok(!noindex(e[2]), `/hof/${e[2]}/ (Automat) sollte indexiert sein`);
+    assert.ok(karte.has(`${DOMAIN}/hof/${e[2]}/`), `/hof/${e[2]}/ (Automat) fehlt in der Sitemap`);
   }
 });
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Liste der dünnen Hofseiten (noindex, nicht in der Sitemap), zum Befüllen durch Jonas oder Agenten.
-// Dünn = ohne Kontakt (Telefon, Website, E-Mail), ohne Straße und ohne Öffnungszeiten (Regel in scripts/build/daten.mjs).
+// Dünn = Hofladen (Automaten nie, e.kontaktlos) ohne Kontakt (Telefon, Website, E-Mail), ohne Straße und ohne Öffnungszeiten (Regel in scripts/build/daten.mjs).
 // Sobald eine dieser Angaben über pflege/ ergänzt ist, wird die Seite beim nächsten Build wieder indexiert
 // und verschwindet beim nächsten Lauf dieses Skripts aus der Liste.
 //
