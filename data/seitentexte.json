@@ -29948,5 +29948,665 @@
       }
     ],
     "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/pinneberg/schenefeld/": {
+    "titel": "Hofläden in Schenefeld: gut zu wissen",
+    "oben": "Schenefeld grenzt an Hamburg. Eingetragen sind der Halstenbeker Hofladen, ein Regiomat mit Eiern und Honig und das Hofcafé Ellerbrock Holtkamp.",
+    "einleitung": "Eier und Honig gibt es jederzeit am Regiomaten, im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Rellingen, Eidelstedt und Ottensen.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rellingen und Umgebung",
+        "pfad": "/schleswig-holstein/pinneberg/rellingen/"
+      },
+      {
+        "text": "Hofläden in Hamburg Eidelstedt und Umgebung",
+        "pfad": "/hamburg/hamburg/hamburg-eidelstedt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/ploen/pohnsdorf/": {
+    "titel": "Hofläden in Pohnsdorf: gut zu wissen",
+    "oben": "In Pohnsdorf sind ein Hofladen, eine Milchtankstelle und der Hof Krohn eingetragen.",
+    "einleitung": "Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Raisdorf, Probsteierhagen und in der Stadt Kiel.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Raisdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ploen/raisdorf/"
+      },
+      {
+        "text": "Hofläden in Probsteierhagen und Umgebung",
+        "pfad": "/schleswig-holstein/ploen/probsteierhagen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/rendsburg-eckernfoerde/altenholz/": {
+    "titel": "Hofläden in Altenholz: gut zu wissen",
+    "oben": "Altenholz nennt den Hühnerhof Postkamp mit Eiern, den Hofladen Friedrichshof und den Kubitzberg.",
+    "einleitung": "Eier gibt es auf dem Hühnerhof Postkamp.\n\nWeitere Höfe findest du in Probsteierhagen, Neudorf-Bornstein und in der Stadt Kiel.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Probsteierhagen und Umgebung",
+        "pfad": "/schleswig-holstein/ploen/probsteierhagen/"
+      },
+      {
+        "text": "Hofläden in Neudorf-Bornstein und Umgebung",
+        "pfad": "/schleswig-holstein/rendsburg-eckernfoerde/neudorf-bornstein/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/rendsburg-eckernfoerde/brodersby/": {
+    "titel": "Hofläden in Brodersby: gut zu wissen",
+    "oben": "In Brodersby sind ein Bio-Hofladen und zwei Regiomaten eingetragen, einer mit Eiern und Milch, einer mit Eiern und Honig.",
+    "einleitung": "Die Regiomaten sind jederzeit zugänglich. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Kappeln und Pommerby.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Kappeln und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/kappeln/"
+      },
+      {
+        "text": "Hofläden in Pommerby und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/pommerby/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/rendsburg-eckernfoerde/holzbunge/": {
+    "titel": "Hofläden in Holzbunge: gut zu wissen",
+    "oben": "Holzbunge hat einen Hofladen, den Hofladen Bannick und einen Regiomaten mit Milch.",
+    "einleitung": "Milch gibt es jederzeit am Regiomaten. Die Milch ist oft Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Busdorf und Neudorf-Bornstein.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Busdorf und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/busdorf/"
+      },
+      {
+        "text": "Hofläden in Neudorf-Bornstein und Umgebung",
+        "pfad": "/schleswig-holstein/rendsburg-eckernfoerde/neudorf-bornstein/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/schleswig-flensburg/busdorf/": {
+    "titel": "Hofläden in Busdorf: gut zu wissen",
+    "oben": "In Busdorf bei Haithabu sind ein Regiomat mit Blumen, Odins Hofladen und der Biohof Haithabu eingetragen.",
+    "einleitung": "Blumen gibt es jederzeit am Regiomaten. Der Biohof arbeitet nach Bio-Richtlinien.\n\nWeitere Höfe findest du in Holzbunge und Ulsnis.",
+    "saison": [
+      {
+        "titel": "Blumen",
+        "zeit": "Sommer"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Holzbunge und Umgebung",
+        "pfad": "/schleswig-holstein/rendsburg-eckernfoerde/holzbunge/"
+      },
+      {
+        "text": "Hofläden in Ulsnis und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/ulsnis/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/schleswig-flensburg/harrislee/": {
+    "titel": "Hofläden in Harrislee: gut zu wissen",
+    "oben": "Harrislee grenzt an Flensburg. Eingetragen sind eine Milchtankstelle, die Niehuuser Knolle mit Hofladen Jordt und der Erdbeerhof Jensen.",
+    "einleitung": "Erdbeeren gibt es auf dem Erdbeerhof Jensen im Frühsommer. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Handewitt und in der Stadt Flensburg.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Handewitt und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/handewitt/"
+      },
+      {
+        "text": "Hofläden in Flensburg",
+        "pfad": "/schleswig-holstein/flensburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/schleswig-flensburg/ulsnis/": {
+    "titel": "Hofläden in Ulsnis: gut zu wissen",
+    "oben": "In Ulsnis sind der Hofladen Hof Delz mit Bio-Angebot, Das Landei und eine RegioBox eingetragen.",
+    "einleitung": "Die RegioBox ist jederzeit zugänglich.\n\nWeitere Höfe findest du in Busdorf und Kappeln.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Busdorf und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/busdorf/"
+      },
+      {
+        "text": "Hofläden in Kappeln und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/kappeln/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/schleswig-flensburg/wees/": {
+    "titel": "Hofläden in Wees: gut zu wissen",
+    "oben": "Wees nennt Jessen-Oxbüll Der Hofladen, den Biohof Himmershoi und den Erdbeerhof Jensen.",
+    "einleitung": "Erdbeeren gibt es auf dem Erdbeerhof Jensen in der Saison.\n\nWeitere Höfe findest du in Harrislee und in der Stadt Flensburg.",
+    "saison": [
+      {
+        "titel": "Erdbeeren",
+        "zeit": "Juni"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Harrislee und Umgebung",
+        "pfad": "/schleswig-holstein/schleswig-flensburg/harrislee/"
+      },
+      {
+        "text": "Hofläden in Flensburg",
+        "pfad": "/schleswig-holstein/flensburg/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/segeberg/alveslohe/": {
+    "titel": "Hofläden in Alveslohe: gut zu wissen",
+    "oben": "In Alveslohe sind zwei Regiomaten und der Obsthof und die Mosterei Alvesloherhof eingetragen.",
+    "einleitung": "Obst und Saft gibt es auf dem Alvesloherhof, die Regiomaten sind jederzeit zugänglich.\n\nWeitere Höfe findest du in Henstedt-Ulzburg, Hemdingen und Norderstedt.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Saft",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Henstedt-Ulzburg und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/henstedt-ulzburg/"
+      },
+      {
+        "text": "Hofläden in Hemdingen und Umgebung",
+        "pfad": "/schleswig-holstein/pinneberg/hemdingen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/segeberg/bark/": {
+    "titel": "Hofläden in Bark: gut zu wissen",
+    "oben": "Bark hat den Fleckviehhof Hahn, die Imkerei Gerdes und Anna's Hofladen.",
+    "einleitung": "Honig gibt es bei der Imkerei Gerdes.\n\nWeitere Höfe findest du in Rickling, Bad Oldesloe und Henstedt-Ulzburg.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Rickling und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/rickling/"
+      },
+      {
+        "text": "Hofläden in Bad Oldesloe und Umgebung",
+        "pfad": "/schleswig-holstein/stormarn/bad-oldesloe/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/segeberg/rickling/": {
+    "titel": "Hofläden in Rickling: gut zu wissen",
+    "oben": "In Rickling sind der Lindenhof-Laden der Segeberger Wohn- und Werkstätten, ein Regiomat mit Eiern und die Gutding GbR eingetragen.",
+    "einleitung": "Eier gibt es jederzeit am Regiomaten.\n\nWeitere Höfe findest du in Bark, Pohnsdorf und in der Stadt Neumünster.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bark und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/bark/"
+      },
+      {
+        "text": "Hofläden in Pohnsdorf und Umgebung",
+        "pfad": "/schleswig-holstein/ploen/pohnsdorf/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/steinburg/wewelsfleth/": {
+    "titel": "Hofläden in Wewelsfleth: gut zu wissen",
+    "oben": "Wewelsfleth an der Stör nennt Kreys Milchtankstelle, Marcels Hofladen und den Obsthof J. Wille.",
+    "einleitung": "Obst gibt es auf dem Obsthof Wille, Milch an der Tankstelle. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in der Blomeschen Wildnis, Neuendorf bei Elmshorn und Burg.",
+    "saison": [
+      {
+        "titel": "Äpfel",
+        "zeit": "September und Oktober"
+      },
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Obst",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Blomesche Wildnis und Umgebung",
+        "pfad": "/schleswig-holstein/steinburg/blomesche-wildnis/"
+      },
+      {
+        "text": "Hofläden in Neuendorf bei Elmshorn und Umgebung",
+        "pfad": "/schleswig-holstein/steinburg/neuendorf-bei-elmshorn/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/schleswig-holstein/stormarn/bad-oldesloe/": {
+    "titel": "Hofläden in Bad Oldesloe: gut zu wissen",
+    "oben": "In Bad Oldesloe sind der Hof Wilken, Biene am Zug mit Honig und der Kattendorfer Hofladen Gut Neverstaven eingetragen.",
+    "einleitung": "Honig gibt es bei Biene am Zug.\n\nWeitere Höfe findest du in Bargteheide, Bark und Stockelsdorf.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Bargteheide und Umgebung",
+        "pfad": "/schleswig-holstein/stormarn/bargteheide/"
+      },
+      {
+        "text": "Hofläden in Bark und Umgebung",
+        "pfad": "/schleswig-holstein/segeberg/bark/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/altenburger-land/schmoelln/": {
+    "titel": "Hofläden in Schmölln: gut zu wissen",
+    "oben": "Schmölln nennt die Straußenfarm Burkardt, den Imker Landgraf und den Spargelhof Sießmeier.",
+    "einleitung": "Spargel gibt es auf dem Spargelhof Sießmeier in der Saison, Honig beim Imker Landgraf.\n\nWeitere Höfe findest du in Callenberg, Sankt Egidien und in der Stadt Gera.",
+    "saison": [
+      {
+        "titel": "Spargel",
+        "zeit": "April bis Juni"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Callenberg und Umgebung",
+        "pfad": "/sachsen/zwickau/callenberg/"
+      },
+      {
+        "text": "Hofläden in Gera",
+        "pfad": "/thueringen/gera/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/eichsfeld/steinbach/": {
+    "titel": "Hofläden in Steinbach: gut zu wissen",
+    "oben": "In Steinbach im Eichsfeld sind Weber Milch, die Weber Milchtankstelle und die Milchtankstelle Steinbach eingetragen.",
+    "einleitung": "Milch ist hier das Thema, an drei Zapfstellen. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Duderstadt, Seulingen und Gleichen.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Duderstadt und Umgebung",
+        "pfad": "/niedersachsen/goettingen/duderstadt/"
+      },
+      {
+        "text": "Hofläden in Gleichen und Umgebung",
+        "pfad": "/niedersachsen/goettingen/gleichen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/ilm-kreis/arnstadt/": {
+    "titel": "Hofläden in Arnstadt: gut zu wissen",
+    "oben": "Arnstadt hat ein Hofcafé, das Klostergut mit Bio-Angebot und die Schafkäserei Ziegenried mit Bio-Käse.",
+    "einleitung": "Käse gibt es in der Schafkäserei Ziegenried, im Hofcafé kannst du einkehren.\n\nWeitere Höfe findest du in Nesse-Apfelstädt, Stadtilm und Ilmenau.",
+    "saison": [
+      {
+        "titel": "Käse",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kaffee und Kuchen",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Nesse-Apfelstädt und Umgebung",
+        "pfad": "/thueringen/gotha/nesse-apfelstaedt/"
+      },
+      {
+        "text": "Hofläden in Stadtilm und Umgebung",
+        "pfad": "/thueringen/ilm-kreis/stadtilm/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/ilm-kreis/ilmenau/": {
+    "titel": "Hofläden in Ilmenau: gut zu wissen",
+    "oben": "In Ilmenau sind die Foodbox24 als Grill-Gut-Automat mit Fleisch, ein Lehrbienenstand und Ross & Rettich eingetragen.",
+    "einleitung": "Fleisch gibt es jederzeit am Automaten, Honig am Lehrbienenstand.\n\nWeitere Höfe findest du in Königsee, Stadtilm und Arnstadt.",
+    "saison": [
+      {
+        "titel": "Fleisch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Königsee und Umgebung",
+        "pfad": "/thueringen/saalfeld-rudolstadt/koenigsee/"
+      },
+      {
+        "text": "Hofläden in Arnstadt und Umgebung",
+        "pfad": "/thueringen/ilm-kreis/arnstadt/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/ilm-kreis/stadtilm/": {
+    "titel": "Hofläden in Stadtilm: gut zu wissen",
+    "oben": "Stadtilm nennt die Imkerei der Familie Heyder, die Direktvermarktung von M. Völker und den Hofladen von Rita Baumbach.",
+    "einleitung": "Honig gibt es bei der Imkerei Heyder.\n\nWeitere Höfe findest du in Arnstadt, Kranichfeld und Königsee.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Arnstadt und Umgebung",
+        "pfad": "/thueringen/ilm-kreis/arnstadt/"
+      },
+      {
+        "text": "Hofläden in Kranichfeld und Umgebung",
+        "pfad": "/thueringen/weimarer-land/kranichfeld/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/saalfeld-rudolstadt/koenigsee/": {
+    "titel": "Hofläden in Königsee: gut zu wissen",
+    "oben": "In Königsee sind die Imkerei Götze (zweimal) und der Bahn-Hofladen eingetragen.",
+    "einleitung": "Honig gibt es bei der Imkerei Götze.\n\nWeitere Höfe findest du in Stadtilm, Ilmenau und Arnstadt.",
+    "saison": [
+      {
+        "titel": "Honig",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Stadtilm und Umgebung",
+        "pfad": "/thueringen/ilm-kreis/stadtilm/"
+      },
+      {
+        "text": "Hofläden in Ilmenau und Umgebung",
+        "pfad": "/thueringen/ilm-kreis/ilmenau/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/schmalkalden-meiningen/rohr/": {
+    "titel": "Hofläden in Rohr (Landkreis Schmalkalden-Meiningen): gut zu wissen",
+    "oben": "Rohr in Thüringen hat die Milchtankstelle der Agrargenossenschaft Rohr-Kühndorf, einen Verkaufsautomaten für Eier und Nudeln und ein Hofcafé.",
+    "einleitung": "Milch, Eier und Nudeln gibt es jederzeit an den Automaten. Die Milch ist Rohmilch: vor dem Trinken abkochen.\n\nWeitere Höfe findest du in Höchheim, Fladungen und Hollstadt.",
+    "saison": [
+      {
+        "titel": "Frische Milch",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Nudeln",
+        "zeit": "ganzjährig"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Höchheim und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/hoechheim/"
+      },
+      {
+        "text": "Hofläden in Fladungen und Umgebung",
+        "pfad": "/bayern/rhoen-grabfeld/fladungen/"
+      }
+    ],
+    "stand": "2026-11-26"
+  },
+  "/thueringen/weimarer-land/bad-sulza/": {
+    "titel": "Hofläden in Bad Sulza: gut zu wissen",
+    "oben": "In Bad Sulza sind Lippachs Hofladen, die Hofstelle Nr. 5 und der Hofladen Lippach in Flurstedt eingetragen.",
+    "einleitung": "Drei Einträge gehören zu den Hofläden der Gegend.\n\nWeitere Höfe findest du in Jena, Weimar und Wetterzeube.",
+    "saison": [
+      {
+        "titel": "Eier",
+        "zeit": "ganzjährig"
+      },
+      {
+        "titel": "Kartoffeln",
+        "zeit": "Herbst"
+      },
+      {
+        "titel": "Gemüse",
+        "zeit": "Sommer und Herbst"
+      }
+    ],
+    "links": [
+      {
+        "text": "Hofläden in Jena",
+        "pfad": "/thueringen/jena/"
+      },
+      {
+        "text": "Hofläden in Weimar",
+        "pfad": "/thueringen/weimar/"
+      }
+    ],
+    "stand": "2026-11-26"
   }
 }
