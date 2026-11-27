@@ -5,7 +5,7 @@ import { esc } from '../../static/helfer.js';
 import { KATEGORIEN, ICON, karteHtml } from '../../static/karte.js';
 import { eintraege, istRund, kreisMitte, kreise, laender, offen, plz, proKreis, wocheVon } from './daten.mjs';
 import { KATEGORIE_PFADE, SEITENTEXTE, SUCHFELD, filterLeiste, kartenDaten, kartenPanel, plural, seite, zahl } from './html.mjs';
-import { angebotHaeufig, eingetragen, entfernt, vomZentrum, MIN_SEITE, ORTE, REGIONEN, UEBERDECKT, UMGEBUNG_PFAD, umgebungIndexiert, UMKREISE, fragen, fragenHtml, gebietsText, gross, hofItems, itemList, km, link, naheOrte, nennung, ortListe, ortSeiten, ortUeberschrift, passend, quellenHtml, regionHtml, regionTeaser, schreibe, umkreis, zaehlung, zaehlungKurz } from './grundlagen.mjs';
+import { angebotHaeufig, eingetragen, entfernt, vomZentrum, MIN_SEITE, ORTE, REGIONEN, UEBERDECKT, UMGEBUNG_PFAD, umgebungIndexiert, UMKREISE, umkreisWahl, fragen, fragenHtml, gebietsText, gross, hofItems, itemList, km, link, naheOrte, nennung, ortListe, ortSeiten, ortUeberschrift, passend, quellenHtml, regionHtml, regionTeaser, schreibe, umkreis, zaehlung, zaehlungKurz } from './grundlagen.mjs';
 import { ANGEBOT_WISSEN } from './angebot-wissen.mjs';
 import { ANGEBOT, ANGEBOT_SEITEN, AUTOMATEN, BIO, KAT_TYPEN, LAND_KAT, MONATSNAMEN, MONAT_JETZT, SAISON_SEITEN, TYPEN, TYP_KREIS, akkusativ, landKat, marktAbschnitt, typKreis, typKreisLinks, typLinks } from './startseite.mjs';
 
@@ -398,22 +398,25 @@ ${proLand.map(({ l, ks }) => { const lk = u.filter === 'bio' && landKat(BIO, l);
 }
 
 // ---------- Seiten "Hofläden in <Ort> und Umgebung" (Ortsseiten und kreisfreie Städte) ----------
-// Eine Zählung für alle Angaben auf Orts- und Umgebungsseiten: Liste = alle Einträge im Umkreis R (25 km, bei
-// wenigen Treffern 50 km), höchstens 150, eigene Einträge des Orts immer dabei. Titel, Intro, Filter und Überblick nutzen sie.
-// höchstens 150 Einträge in der Liste
+// Eine Zählung für alle Angaben auf Orts- und Umgebungsseiten: Liste = die nächsten Einträge im Umkreis R (umkreisWahl in
+// grundlagen.mjs: kleinster Umkreis mit genug Einträgen, höchstens 40, eigene Einträge des Orts immer dabei).
+// Titel, Intro, Filter und Überblick nutzen sie.
 function umkreisZahlen(z) {
   const n = (r) => z.umkreis.filter(([d]) => d <= r).length;
   const [n10, n25, n50] = UMKREISE.map(n);
-  const R = n25 >= 10 ? 25 : 50;
-  const eigen = new Set(z.eigene);
-  const imR = z.umkreis.filter(([d, e]) => d <= R || eigen.has(e));
-  const auswahl = imR.filter(([, e]) => eigen.has(e)).concat(imR.filter(([, e]) => !eigen.has(e)).slice(0, Math.max(0, 150 - z.eigene.length)))
-    .sort((a, b) => a[0] - b[0]);
+  const { R, imR, auswahl } = umkreisWahl(z);
   const liste = auswahl.map(([, e]) => e);
   const hof = liste.filter((e) => e.typ === 'hofladen').length, aut = liste.length - hof;
   const gekappt = auswahl.length < imR.length;
   const satz = `${gekappt ? `Die ${zahl(liste.length)} nächsten von ${zahl(imR.length)} Einträgen` : `${zahl(liste.length)} ${liste.length === 1 ? 'Eintrag' : 'Einträge'}`} im Umkreis von ${R} km${hof && aut ? `, davon ${plural(hof, 'Hofladen', 'Hofläden')} und ${zahl(aut)} ${aut === 1 ? 'Automat' : 'Automaten'}` : ''}.`;
   return { auswahl, liste, R, n10, n25, n50, hof, aut, satz, gekappt, gesamt: imR.length };
+}
+
+// Umkreis-Schalter über der Liste: kleinere Stufen plus der Umkreis der Seite – nur Stufen, die die Liste wirklich verkleinern
+function umkreisStufen(R, auswahl) {
+  const stufen = [...new Set([5, ...UMKREISE].filter((r) => r < R)), R].map((r) => [r, auswahl.filter(([d]) => d <= r).length]);
+  const sinnvoll = stufen.filter(([, n], i) => n >= 2 && (i === stufen.length - 1 || n < stufen.at(-1)[1]) && (i === 0 || n > stufen[i - 1][1]));
+  return sinnvoll.length > 1 ? sinnvoll : null;
 }
 
 function umgebungsSeite(z, { extraOben = '', extraUnten = '', krumen, regionProfil = null }) {
@@ -459,13 +462,14 @@ function umgebungsSeite(z, { extraOben = '', extraUnten = '', krumen, regionProf
   <p class="plz-hinweis" data-plz-hinweis hidden></p>
 </section>
 ${extraOben}
-${filterLeiste(liste, { umkreis: UMKREISE.filter((r) => r <= R).map((r) => [r, auswahl.filter(([d]) => d <= r).length]) })}
+${filterLeiste(liste, { umkreis: umkreisStufen(R, auswahl) })}
 <div class="geteilt">
   <div class="liste" data-liste>
     <h2 class="sr">Einträge</h2>
     ${auswahl.map(([d, e]) => karteHtml(kartenDaten(e, Math.round(d * 10) / 10))).join('\n    ')}
     <p class="leer-filter" data-leer-filter hidden>Keine Einträge passen zu deinem Filter. <button type="button" class="link" data-filter-zuruecksetzen>Filter zurücksetzen</button></p>
     <section class="umgebung" data-umgebung hidden><h2>Ganz in der Nähe</h2><div data-umgebung-liste></div></section>
+    <p class="liste-mehr">${zl.gekappt ? `Das sind die ${zahl(liste.length)} nächsten Höfe. ` : ''}Weiter weg suchen: ${z.kreisSeite ? '' : `<a href="${k.pfad}">alle Hofläden ${esc(k.im)}</a> · `}<a href="/karte/">Karte aller Hofläden</a></p>
   </div>
   <aside class="karten-spalte">${kartenPanel({ titel: `Karte: ${h1}` })}</aside>
 </div>

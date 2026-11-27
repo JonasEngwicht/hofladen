@@ -11,7 +11,7 @@ import { KATEGORIEN, ICON, typIcon, karteHtml, statusHtml, produktIcon } from '.
 import { HALTE_ART, HEUTE, ROOT, ausstattung, betreiber, cfg, datumDe, eintraege, inDerNaehe, istRund, lizenzLink, osm, quellenHinweis, zeitenKurz } from './daten.mjs';
 import { kartenDaten, kartenPanel, kurz, seite, telHref } from './html.mjs';
 import { hofKern } from '../seitenhash.mjs';
-import { zeitenSnippet, entfernt, PLURAL_ART, STAND_PLATZHALTER, fragenHtml, gross, km, link, naechsteUmgebungsSeite, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortUeberschrift, passend, regionTeaser, schreibe, stand } from './grundlagen.mjs';
+import { zeitenSnippet, entfernt, PLURAL_ART, STAND_PLATZHALTER, gross, naechsteUmgebungsSeite, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortUeberschrift, passend, regionTeaser, schreibe, stand } from './grundlagen.mjs';
 import { SAISON_SEITEN, artTyp, monatsSpanne, typKreis } from './startseite.mjs';
 import { umgebungsSeite } from './regionen.mjs';
 
@@ -129,17 +129,8 @@ for (const e of eintraege) {
     e.haltestelle && ['Bus & Bahn', `${HALTE_ART[e.haltestelle.art]}: Haltestelle „${esc(e.haltestelle.name)}“, etwa ${e.haltestelle.m < 100 ? 'unter 100' : e.haltestelle.m} m Luftlinie. Fahrplan und Fußweg bitte vorher prüfen.`],
   ].filter(Boolean);
   const saisonProdukte = SAISON_SEITEN.filter((sp) => sp.liste.includes(e));
-  // FAQ nur aus Angaben, die auf der Seite stehen
-  const naechsteDrei = naehe.slice(0, 3);
-  const hofFragen = [
-    woche && ohKurz && [`Wann hat ${e.titel} geöffnet?`, `Laut den hinterlegten Öffnungszeiten: ${esc(ohKurz)}. Gerade in der Saison können sich die Zeiten ändern – im Zweifel vorher anrufen.`],
-    woche && !rund && [`Hat ${e.titel} sonntags geöffnet?`, e.sonntag ? `Ja, sonntags ${(woche[6] || []).map(([a, b]) => `${uhr(a)}–${uhr(b)}`).join(' und ')} Uhr.` : 'Nein, laut den hinterlegten Öffnungszeiten ist sonntags geschlossen.'],
-    [`Wo befindet sich ${e.titel}?`, `${e.strasse ? `Die Adresse ist ${esc(e.adresse)}` : `${esc(e.titel)} liegt ${esc(e.adresse)}`} (${esc(k.titel)}). Über „Route planen“ startest du die Navigation.`],
-    e.kat.length && [`Was gibt es bei ${e.titel}?`, `Im Angebot: ${esc(nennung(e.kat.map((x) => KATEGORIEN[x])))}. Das Sortiment kann je nach Saison abweichen.`],
-    e.zahlung && [`Wie kann man bei ${e.titel} bezahlen?`, `Laut Eintrag: ${esc(nennung(e.zahlung.map((z) => ZAHLUNG_TEXT[z])))}.`],
-    naechsteDrei.length && [`Welche Hofläden gibt es in der Nähe von ${e.titel}?`, `${nennung(naechsteDrei.map(([d, x]) => `${link(x)}${x.titel.includes(x.ortAnzeige) ? '' : ` in ${esc(x.ortAnzeige)}`} (${km(d)})`))}.`],
-  ].filter(Boolean);
-  const hofFaq = hofFragen.length >= 3 ? fragenHtml(hofFragen, `Häufige Fragen zu ${e.titel}`) : { html: '', ld: [] };
+  // Keine FAQ auf Hofseiten (SEO-Plan B5): Alle Antworten wiederholten nur, was direkt darüber steht (Zeiten, Adresse, Angebot,
+  // Höfe in der Nähe) – auf über 10.000 Seiten derselbe Baustein. FAQ gibt es auf Orts-, Kreis- und Themenseiten.
   const umgebungsSeite = naechsteUmgebungsSeite(e);
   // Sehr lange Namen (OSM-Freitext) im Title kürzen, die H1 bleibt vollständig
   // Rechtsformen (GmbH, GbR, KG …) braucht im Title niemand – der Platz geht an Ort und „Öffnungszeiten“
@@ -158,7 +149,7 @@ for (const e of eintraege) {
     // Snippet: Ort und Angebot zuerst (das sucht man), dann kompakte Zeiten; der Name steht schon im Titel
     beschreibung: (() => {
       const art = e.bio && !/bio/i.test(e.art) ? `Bio-${e.art}` : e.art;
-      const kreis = e.ortAnzeige.includes(k.titel) || k.titel.includes(e.ortAnzeige) ? '' : ` (${k.titel})`;
+      const kreis = e.ortAnzeige.includes(k.titel) || k.titel.includes(e.ortAnzeige) ? '' : e.ortAnzeige.endsWith(')') ? `, ${k.titel}` : ` (${k.titel})`;
       const kat = e.kat.map((x) => KATEGORIEN[x]);
       const angebot = kat.length ? `: ${nennung(kat.length > 4 ? [...kat.slice(0, 4), 'mehr'] : kat)}` : '';
       const zeiten = rund ? 'Rund um die Uhr geöffnet.' : woche && e.oeffnungszeiten ? (() => { const z = zeitenSnippet(zeilen(e.oeffnungszeiten), 75); return z ? `Geöffnet ${z}.` : ''; })() : '';
@@ -166,7 +157,11 @@ for (const e of eintraege) {
       const schluss = `${e.titelSeite}: Adresse, ${e.telefon ? 'Telefon, ' : ''}Karte und Route${naechsterHof ? ` – plus Hofläden in der Nähe von ${e.ortAnzeige}` : ''}.`;
       const teile = [`${art} in ${e.ortAnzeige}${kreis}${angebot}.`, zeiten, extra, schluss].filter(Boolean);
       // Einträge ohne Angebot mit einem allgemeinen Satz auffüllen (steht als letzter Mittelsatz, fällt beim Kürzen zuerst weg)
-      if (!angebot) teile.splice(-1, 0, 'Regional einkaufen in deiner Nähe.');
+      // … oder besser mit der eigenen Kurzbeschreibung des Hofs, wenn es eine gibt
+      const eigen = (e.beschreibung || '').replace(/\s+/g, ' ').trim();
+      const eigenPasst = eigen.length >= 25 && teile.join(' ').length + eigen.length + 2 <= 150; // sonst fiele der Satz beim Kürzen weg
+      if (!angebot && eigenPasst) teile.splice(-1, 0, /[.!?]$/.test(eigen) ? eigen : `${eigen}.`);
+      if (!angebot && (!eigenPasst || teile.join(' ').length < 110)) teile.splice(-1, 0, 'Regional einkaufen in deiner Nähe.');
       return teile.join(' ');
     })(),
     pfad: e.pfad,
@@ -174,7 +169,7 @@ for (const e of eintraege) {
     noindex: e.duenn,
     klasse: 'hof',
     hashKern: hofKern(e, { ausstattung: ausstattung(e), konto: MIT_KONTO.has(e.sid), tipps: tippsHtml(e) }),
-    jsonld: [ld, ...hofFaq.ld, ...(e.termine || []).map(terminLd)],
+    jsonld: [ld, ...(e.termine || []).map(terminLd)],
     krumen: [[k.landName, `/${k.landSlug}/`], [k.titel, k.pfad], ...(o?.eigen ? [[o.ort, o.pfad]] : []), [e.titel, e.pfad]],
     inhalt: `
 <section class="hof-kopf laden-${e.typ}" data-land="${k.land}"${e.urlaub?.length ? ` data-urlaub="${esc(e.urlaub.map((u) => `${u.von}/${u.bis}`).join(' '))}"` : ''} data-lat="${e.lat}" data-lon="${e.lon}" data-titel="${esc(e.titel)}" data-typ="${e.typ}">
@@ -262,7 +257,6 @@ for (const e of eintraege) {
   </div>
 </div>
 ${naehe.length ? `<section class="abschnitt"><h2>Weitere Hofläden in der Nähe</h2><div class="karten-reihe">${naehe.map(([d, x]) => karteHtml(kartenDaten(x, Math.round(d * 10) / 10))).join('')}</div></section>` : ''}
-${hofFaq.html}
 ${ortListe(naheOrte(e.lat, e.lon, 6, new Set(o?.eigen ? [o] : [])), `Hofläden in Orten in der Nähe`)}
 <p class="abschnitt mehr-links">${umgebungsSeite && umgebungsSeite.pfad !== o?.pfad ? `<a class="mehr" href="${umgebungsSeite.pfad}">Hofläden in ${esc(umgebungsSeite.name)} und Umgebung${ICON.pfeil}</a>` : ''}${artTyp(e) ? (() => { const tk = typKreis(artTyp(e), k); return tk ? `<a class="mehr" href="${tk.pfad}">${tk.t.plural} ${esc(imKreis)}${ICON.pfeil}</a>` : `<a class="mehr" href="/${artTyp(e).slug}/#${k.landSlug}">${esc(PLURAL_ART[e.art] || e.art)} in ${esc(k.landName)}${ICON.pfeil}</a>`; })() : ''}${o?.eigen ? `<a class="mehr" href="${o.pfad}">${esc(ortUeberschrift(o))}${ICON.pfeil}</a>` : ''}<a class="mehr" href="${k.pfad}">Alle Hofläden ${esc(imKreis)}${ICON.pfeil}</a></p>`,
   }), !e.duenn);

@@ -52,10 +52,17 @@ for (const url of urls) {
   const module = anfragen.filter((u) => /hofladenliste\.de\/[a-z-]+\.js/.test(u)).map((u) => u.replace(/^.*\.de\//, '').replace(/\?.*/, ''));
   const banner = (await cdp('Runtime.evaluate', { expression: "!!document.querySelector('.einwilligung')", returnByValue: true })).result?.result?.value;
   const mitStatistik = (await cdp('Runtime.evaluate', { expression: "!!(document.documentElement.dataset.gtm || document.documentElement.dataset.ga)", returnByValue: true })).result?.result?.value;
-  // Erwartet: keine JS-Fehler; Einwilligungs-Hinweis für neue Besucher, wenn Statistik eingerichtet ist; Zähler-Anfrage auf Hofseiten
-  const ok = !ex.length && besuch && (!mitStatistik || banner) && (!/\/hof\//.test(url) || zaehler);
+  // Handy-Breite: nichts darf breiter als der Bildschirm sein (sonst lässt sich die Seite seitlich verschieben)
+  await cdp('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
+  await warte(400);
+  const breite = (await cdp('Runtime.evaluate', { expression: 'document.documentElement.scrollWidth - document.documentElement.clientWidth', returnByValue: true })).result?.result?.value;
+  await cdp('Emulation.clearDeviceMetricsOverride');
+  const zuBreit = typeof breite === 'number' && breite > 1;
+  // Erwartet: keine JS-Fehler; keine Überbreite auf dem Handy; Einwilligungs-Hinweis für neue Besucher, wenn Statistik eingerichtet ist; Zähler-Anfrage auf Hofseiten
+  const ok = !ex.length && !zuBreit && besuch && (!mitStatistik || banner) && (!/\/hof\//.test(url) || zaehler);
   if (!ok) fehler++;
   console.log(`${ok ? 'OK  ' : 'FEHL'} ${url}\n     Module: ${module.join(', ') || '–'} · Tag Manager: ${gtm ? 'ja' : 'nein'} · Besuch gemeldet: ${besuch ? 'ja' : 'nein'} · Hof-Zähler: ${zaehler ? 'ja' : 'nein'} · Einwilligungs-Hinweis: ${banner ? 'ja' : 'nein'}`);
+  if (zuBreit) console.log(`     Handy (390 px): Seite ist ${breite} px zu breit`);
   for (const x of ex) console.log(`     JS-Fehler: ${x.split('\n').slice(0, 3).join(' | ')}`);
   for (const x of kons.slice(0, 5)) console.log(`     Konsole: ${String(x).slice(0, 200)}`);
 }

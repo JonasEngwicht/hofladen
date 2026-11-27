@@ -337,14 +337,27 @@ const UMGEBUNG_PFAD = new Map(UMGEBUNG.map((z) => [z.pfad, z]));
 // ("Schwabach" / "Stadt Schwabach", "Kreis Paderborn" / "Paderborn", Ortsteil) oder hat der schwächere Ort selbst
 // kaum Einträge, bleibt nur die stärkere indexiert (kreisfreie Stadt vor Ort, dann mehr Postleitzahlen, mehr eigene
 // Einträge, kürzerer Pfad). Die andere bleibt erreichbar, verweist auf die stärkere und ist noindex.
+// Welche Höfe eine Orts- oder Stadtseite zeigt: der kleinste Umkreis mit genug Einträgen (5, 10, 15, 25, sonst 50 km),
+// höchstens LISTE_MAX Einträge, die eigenen des Orts immer. So zeigt jede Seite ihre Umgebung statt des halben Kreises –
+// Nachbarorte unterscheiden sich, die Seiten bleiben kurz (vorher: immer 25 km, bis 150 Einträge, im Mittel 310 KB HTML).
+const UMKREIS_STUFEN = [5, 10, 15, 25, 50], UMKREIS_ZIEL = 12, UMGEBUNG_MIN = 5, LISTE_MAX = 40;
+function umkreisWahl(z) {
+  const eigen = new Set(z.eigene), pflicht = new Set(z.pflicht || []);
+  // genug Einträge insgesamt und – weil die Seite „und Umgebung“ heißt – auch ein paar von außerhalb des Orts
+  const R = UMKREIS_STUFEN.find((r) => { const drin = z.umkreis.filter(([d]) => d <= r); return drin.length >= UMKREIS_ZIEL && drin.filter(([, e]) => !eigen.has(e)).length >= UMGEBUNG_MIN; }) || UMKREIS_MAX;
+  const fest = (e) => eigen.has(e) || pflicht.has(e);
+  const imR = z.umkreis.filter(([d, e]) => d <= R || fest(e));
+  const auswahl = imR.filter(([, e]) => fest(e)).concat(imR.filter(([, e]) => !fest(e)).slice(0, Math.max(2 * UMGEBUNG_MIN, LISTE_MAX - z.eigene.length)))
+    .sort((x, y) => x[0] - y[0]);
+  return { R, imR, auswahl };
+}
 const UEBERDECKT = new Map(); // schwächere Umgebungsseite → stärkere
 // Ortsname ohne Zusätze wie "Stadt", "Kreis", "(Westf.)", ", Sachsen" – erkennt Schreibvarianten desselben Orts
 const ortKern = (n) => slugify(n).replace(/^(stadt|kreis|landkreis|gemeinde|markt)-/, '').replace(/-(sachsen|westf|westfalen|ruhr|sieg|main|oder)$/, '');
 {
   const DOPPELT_AB = 0.9;
-  // Höfe im Umkreis wie auf der Seite (25 km, bei wenigen Treffern 50 km; eigene Einträge immer)
-  const hofSet = (z) => { const R = z.umkreis.filter(([d]) => d <= 25).length >= 10 ? 25 : 50; const eig = new Set(z.eigene);
-    return new Set(z.umkreis.filter(([d, e]) => d <= R || eig.has(e)).map(([, e]) => e)); };
+  // Höfe wie auf der Seite (umkreisWahl)
+  const hofSet = (z) => new Set(umkreisWahl(z).auswahl.map(([, e]) => e));
   const kandidaten = UMGEBUNG.filter((z) => z.eigene.length > 0)
     .map((z) => ({ z, plzZahl: ORTSMITTE.get(z.name + '|' + z.k.code)?.plz.size || 0, set: hofSet(z) }))
     .sort((a, b) => b.z.kreisSeite - a.z.kreisSeite || b.plzZahl - a.plzZahl || b.z.eigene.length - a.z.eigene.length || a.z.pfad.length - b.z.pfad.length || a.z.pfad.localeCompare(b.z.pfad));
@@ -360,6 +373,16 @@ const ortKern = (n) => slugify(n).replace(/^(stadt|kreis|landkreis|gemeinde|mark
 // Indexiert werden Umgebungsseiten nur, wenn im Ort selbst mindestens ein Eintrag liegt (sonst wäre die Seite nur eine
 // Weiterleitung auf Nachbarorte – Doorway-Muster) und keine fast gleiche Seite stärker ist
 const umgebungIndexiert = (z) => z.eigene.length > 0 && !UEBERDECKT.has(z);
+// Höfe in Kreisen ohne indexierbare Kreisseite (unter MIN_SEITE Einträgen) hätten sonst keine Liste, die auf sie verlinkt:
+// Die nächste indexierte Orts- oder Stadtseite (bis 50 km) nimmt sie fest in ihre Liste auf.
+for (const [code, liste] of proKreis) {
+  if (liste.length >= MIN_SEITE) continue;
+  for (const e of liste) {
+    let best = null, bd = Infinity;
+    for (const z of UMGEBUNG) { if (!umgebungIndexiert(z)) continue; const t = z.umkreis.find(([, x]) => x === e); if (t && t[0] < bd) { bd = t[0]; best = z; } }
+    if (best) (best.pflicht ||= []).push(e);
+  }
+}
 function naechsteUmgebungsSeite(e) {
   let best = null, bd = 25;
   for (const z of UMGEBUNG) {
@@ -450,4 +473,4 @@ const GROSSSTAEDTE = (() => {
   }).filter(Boolean).filter((x, i, a) => a.findIndex((y) => y.pfad === x.pfad) === i).slice(0, 20);
 })();
 
-export { angebotHaeufig, eingetragen, entfernt, hoefeZahl, vomZentrum, zeitenSnippet, ALLE_SEITEN, ARCHIV_AUSNAHMEN, ART_TYP, UEBERDECKT, umgebungIndexiert, GROSSSTAEDTE, LAUSITZ, MIN_SEITE, ORTE, ORTSMITTE, PLURAL_ART, REGIONEN, SCHEMA_TAGE, STAND_DATEI, STAND_PLATZHALTER, UMGEBUNG, UMGEBUNG_PFAD, UMKREISE, UMKREIS_MAX, analyse, anzArt, anzHof, fragen, fragenHtml, gebietsText, gross, hhmm, hofItems, itemList, km, link, naechsteUmgebungsSeite, naechster, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortNamenZahl, ortSeiten, ortUeberschrift, passend, quellenHtml, regionDir, regionHtml, regionTeaser, schreibe, sitemap, stand, titelZahl, umkreis, zaehlung, zaehlungKurz, zaehlungLinks };
+export { angebotHaeufig, eingetragen, entfernt, hoefeZahl, vomZentrum, zeitenSnippet, ALLE_SEITEN, ARCHIV_AUSNAHMEN, ART_TYP, UEBERDECKT, umgebungIndexiert, GROSSSTAEDTE, LAUSITZ, MIN_SEITE, ORTE, ORTSMITTE, PLURAL_ART, REGIONEN, SCHEMA_TAGE, STAND_DATEI, STAND_PLATZHALTER, UMGEBUNG, UMGEBUNG_PFAD, UMKREISE, UMKREIS_MAX, umkreisWahl, analyse, anzArt, anzHof, fragen, fragenHtml, gebietsText, gross, hhmm, hofItems, itemList, km, link, naechsteUmgebungsSeite, naechster, naheOrte, nennung, oeffnungsSpezifikation, ortListe, ortNamenZahl, ortSeiten, ortUeberschrift, passend, quellenHtml, regionDir, regionHtml, regionTeaser, schreibe, sitemap, stand, titelZahl, umkreis, zaehlung, zaehlungKurz, zaehlungLinks };

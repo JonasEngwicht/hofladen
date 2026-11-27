@@ -28,4 +28,4 @@ jobs:
         if: always()
         run: >-
           node scripts/browser-pruefung.mjs https://hofladenliste.de/ https://hofladenliste.de/hof/hofladen-gut-clarenhof-frechen/
-          https://hofladenliste.de/bayern/ https://hofladenliste.de/milchtankstelle/ https://hofladenliste.de/saisonkalender/ https://hofladenliste.de/karte/
+          https://hofladenliste.de/bayern/ https://hofladenliste.de/brandenburg/spree-neisse/ https://hofladenliste.de/milchtankstelle/ https://hofladenliste.de/saisonkalender/ https://hofladenliste.de/karte/

@@ -149,6 +149,7 @@ main { display: block; }
 .karten-spalte { position: sticky; top: calc(var(--wz, 4.6rem) + .9rem); }
 .karten-spalte .kartenpanel { height: calc(100vh - var(--wz, 4.6rem) - 1.8rem); }
 .leer-filter { background: var(--weiss); border: 1px dashed var(--linie); border-radius: var(--r); padding: 1.2rem; }
+.liste-mehr { margin: .4rem 0 0; padding: .9rem 1.1rem; border: 1px dashed var(--linie); border-radius: var(--r); color: var(--grau); font-size: .95rem; }
 .umgebung { margin-top: 1.5rem; display: grid; gap: .8rem; }
 .umgebung h2 { font-size: 1.3rem; margin: 0; }
 .umgebung > div { display: grid; gap: .8rem; }
@@ -642,10 +643,32 @@ html { overflow-x: clip; }
 .route-haupt .kartenpanel { height: 520px; }
 .route-liste { max-height: 520px; overflow: auto; list-style: none; padding: 0; margin: 0; }
 @media (max-width: 860px) { .route-haupt { display: block; } .route-haupt .kartenpanel { height: 360px; margin-bottom: 1rem; } .route-liste { max-height: none; } }
-.ratgeber-liste { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: .8rem; }
-.ratgeber-liste a { display: grid; gap: .3rem; padding: 1rem 1.1rem; border: 1px solid var(--linie); border-radius: var(--r-klein); background: var(--weiss); color: var(--tinte); text-decoration: none; height: 100%; }
-.ratgeber-liste a:hover { border-color: var(--fichte); }
-.ratgeber-liste span { color: var(--grau); font-size: .95rem; }
+.ratgeber-liste { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: .8rem; }
+.ratgeber-liste a { display: flex; gap: .9rem; align-items: flex-start; padding: 1rem 1.1rem; border: 1px solid var(--linie); border-radius: var(--r); background: var(--weiss); color: var(--tinte); text-decoration: none; height: 100%; transition: border-color .15s, transform .15s; }
+.ratgeber-liste a:hover { border-color: var(--fichte); transform: translateY(-1px); }
+.ratgeber-liste .rk-icon { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--raps); color: var(--fichte); }
+.ratgeber-liste .rk-icon svg { width: 24px; height: 24px; }
+.ratgeber-liste .rk-text { display: grid; gap: .25rem; }
+.ratgeber-liste .rk-text b { font-family: var(--titel); font-size: 1.12rem; line-height: 1.2; color: var(--fichte); }
+.ratgeber-liste .rk-text > span { color: var(--grau); font-size: .95rem; }
+.ratgeber-liste em { justify-self: start; font-style: normal; font-size: .78rem; font-weight: 700; letter-spacing: .02em; padding: .1rem .5rem; border-radius: 999px; background: var(--kohl-hell); color: var(--fichte); }
+.ratgeber-start > p { margin-top: 1rem; }
+.artikel-kopf { margin-top: 1rem; padding-bottom: calc(var(--feldrand) + 1.4rem); }
+.artikel-kopf > * { max-width: 41.5rem; margin-left: auto; margin-right: auto; }
+.artikel-kopf h1 { max-width: 41.5rem; font-size: clamp(1.9rem, 4vw, 2.8rem); }
+.artikel-lead { font-size: 1.15rem; color: #E6EFE9; margin-top: .9rem; }
+.artikel-meta { font-size: .9rem; color: #CFE0D5; margin-bottom: 0; }
+.artikel-kopf + .text { margin-top: 1.6rem; }
+.kurzgesagt { background: var(--weiss); border: 1px solid var(--linie); border-left: 4px solid var(--raps); border-radius: 0 var(--r) var(--r) 0; padding: 1rem 1.2rem .6rem; margin-bottom: 1.4rem; }
+.kurzgesagt h2 { font-size: 1.1rem; margin: 0 0 .5rem; }
+.kurzgesagt ul { margin: 0; padding-left: 1.1rem; }
+.kurzgesagt li { margin-bottom: .4rem; }
+.ratgeber p, .ratgeber li { font-size: 1.04rem; line-height: 1.65; }
+.ratgeber li { margin-bottom: .3rem; }
+.ratgeber .passend { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--linie); }
+.ratgeber .typ-chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+.ratgeber table { width: 100%; }
+@media (max-width: 560px) { .ratgeber table { font-size: .93rem; } .ratgeber th, .ratgeber td { padding: .35rem .4rem; } }
 .ratgeber table { border-collapse: collapse; margin: .6rem 0 1rem; }
 .ratgeber th, .ratgeber td { border-bottom: 1px solid var(--linie); padding: .35rem .7rem; text-align: left; }
 .passend ul { padding-left: 1.2rem; }
@@ -686,7 +709,7 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
 /* Mobil: Filterleiste als feste, waagerecht scrollbare Zeile; Umschalter Liste/Karte unten */
 .liste-karte-schalter { display: none; }
 @media (max-width: 700px) {
-  .werkzeug { position: sticky; top: 0; z-index: 600; background: var(--kalk); flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; padding: .55rem 1.25rem; margin-left: -1.25rem; margin-right: -1.25rem; box-shadow: 0 6px 10px -10px rgba(23,59,44,.5); align-items: center; }
+  .werkzeug { position: sticky; top: 0; z-index: 600; background: var(--kalk); flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; padding: .55rem 1.25rem; margin-left: 0; margin-right: 0; box-shadow: 0 6px 10px -10px rgba(23,59,44,.5); align-items: center; }
   .werkzeug::-webkit-scrollbar { display: none; }
   .werkzeug > *, .werkzeug .kat-filter, .werkzeug .segment { flex: none; }
   .werkzeug .kat-filter { flex-wrap: nowrap; }
@@ -886,3 +909,9 @@ fieldset.breit { border: 0; padding: 0; margin: 0; }
 .b-liste { margin: .4rem 0 0; padding-left: 1.4rem; display: grid; gap: .3rem; font-size: .9rem; }
 .b-liste li span { display: inline-block; max-width: calc(100% - 4rem); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
 .b-liste li b { float: right; font-variant-numeric: tabular-nums; }
+@media (prefers-color-scheme: dark) {
+  .ratgeber-liste .rk-text b, .kurzgesagt h2 { color: var(--hell-text); }
+  .ratgeber-liste .rk-icon { color: #173B2C; }
+  .ratgeber-liste em { background: #1F3D2A; color: #CDEBD6; }
+  .artikel-kopf .hof-art a { color: var(--raps); }
+}
