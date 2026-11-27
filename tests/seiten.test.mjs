@@ -260,3 +260,14 @@ test('Datenqualität im Build: neue PLZ aus Adressen suchbar, keine „geschloss
   assert.ok(!E.some((e) => /Gate Gourmet|Feldpostleitstelle|St\.?-? ?\w+-Hospital/.test(e[5])), 'Firma/Klinik als Ortsname');
   assert.ok(!E.some((e) => /—>|-->/.test(e[3])), 'Pfeile im Namen');
 });
+
+test('Hofseiten ohne FAQ-Baustein: keine Wiederholung der Angaben, kein FAQPage-JSON-LD (SEO-Plan B5)', () => {
+  const fehler = [];
+  for (const [p, s] of info) {
+    if (!p.startsWith('/hof/')) continue;
+    if (s.ld.some((x) => x['@type'] === 'FAQPage') || /<h2>Häufige Fragen zu /.test(s.html)) fehler.push(p);
+  }
+  assert.deepEqual(fehler.slice(0, 10), []);
+  // auf Kreisseiten bleibt die FAQ
+  assert.ok(info.get('/brandenburg/spree-neisse/').ld.some((x) => x['@type'] === 'FAQPage'));
+});
