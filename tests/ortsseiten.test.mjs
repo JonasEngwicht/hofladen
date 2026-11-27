@@ -107,3 +107,30 @@ test('Kategorieseiten im Kreis: FAQ nur mit sichtbaren Fragen', () => {
   assert.ok(faq && faq.mainEntity.length >= 2);
   for (const q of faq.mainEntity) assert.ok(html.includes(`<h3>${q.name}</h3>`), q.name);
 });
+
+test('Orts- und Stadtseiten zeigen ihre Umgebung, nicht den halben Kreis (SEO-Plan B1)', async () => {
+  const { messen } = await import('../scripts/ueberschneidung.mjs');
+  const m = messen(join(ROOT, 'public'));
+  assert.ok(m.seiten > 1500, `${m.seiten} Seiten gemessen`);
+  // vor dem Umbau (27.11.2026): 1.076 Paare ab 70 %, 406 ab 80 %, im Mittel 118 Höfe und 310 KB je Seite
+  assert.ok(m.paare80 < 80, `${m.paare80} Seitenpaare im selben Kreis zeigen zu mindestens 80 % dieselben Höfe`);
+  assert.ok(m.paare70 < 200, `${m.paare70} Seitenpaare ab 70 %`);
+  assert.ok(m.hoefeMedian >= 12 && m.hoefeMedian <= 40, `Median ${m.hoefeMedian} Höfe je Seite`);
+  assert.ok(m.bytesMedian < 130 * 1024, `Median ${Math.round(m.bytesMedian / 1024)} KB HTML`);
+});
+
+test('Orts- und Stadtseiten: Umkreis steht im Text, eigene Höfe sind immer dabei, Hinweis auf Kreis und Karte', () => {
+  for (const p of ['/baden-wuerttemberg/breisgau-hochschwarzwald/stegen/', '/sachsen/dresden/', '/brandenburg/spree-neisse/forst-lausitz/']) {
+    const html = alle.get(p);
+    assert.ok(html, p);
+    const R = +html.match(/im Umkreis von (\d+) km/)?.[1];
+    assert.ok([5, 10, 15, 25, 50].includes(R), `${p}: Umkreis ${R}`);
+    assert.match(html, /class="liste-mehr">[^<]*Weiter weg suchen/, `${p}: Hinweis unter der Liste`);
+    const karten = (html.match(/<article class="laden /g) || []).length;
+    assert.ok(karten >= 3 && karten <= 90, `${p}: ${karten} Einträge`);
+  }
+  // Großstadt: alle eigenen Höfe plus einige aus dem Umland
+  const dresden = alle.get('/sachsen/dresden/');
+  const eigene = +dresden.match(/(\d+) direkt im Ort/)?.[1];
+  assert.ok((dresden.match(/<article class="laden /g) || []).length >= eigene + 5, 'Dresden: Umland fehlt');
+});

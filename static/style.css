@@ -149,6 +149,7 @@ main { display: block; }
 .karten-spalte { position: sticky; top: calc(var(--wz, 4.6rem) + .9rem); }
 .karten-spalte .kartenpanel { height: calc(100vh - var(--wz, 4.6rem) - 1.8rem); }
 .leer-filter { background: var(--weiss); border: 1px dashed var(--linie); border-radius: var(--r); padding: 1.2rem; }
+.liste-mehr { margin: .4rem 0 0; padding: .9rem 1.1rem; border: 1px dashed var(--linie); border-radius: var(--r); color: var(--grau); font-size: .95rem; }
 .umgebung { margin-top: 1.5rem; display: grid; gap: .8rem; }
 .umgebung h2 { font-size: 1.3rem; margin: 0; }
 .umgebung > div { display: grid; gap: .8rem; }
