@@ -4,6 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { ortKorrigiert, slugify } from '../lib.mjs';
 import { esc } from '../../static/helfer.js';
+import { ratgeberKarte, ratgeberSortiert } from '../ratgeber.mjs';
 import { KATEGORIEN, ICON, statusHtml, produktIcon } from '../../static/karte.js';
 import { ROOT, SAISON, cfg, eintraege, kreise, laender, osm, plz, proKreis } from './daten.mjs';
 import { KATEGORIE_PFADE, SUCHFELD, kurz, plural, seite, zahl } from './html.mjs';
@@ -258,6 +259,11 @@ schreibe('/', seite({
   <div data-saison-inhalt>${saisonMonatHtml(MONAT_JETZT)}</div>
   <p class="saison-suche-links">Höfe in deiner Nähe finden: <a href="#plz" data-wunsch="gemuese">mit Gemüse</a> · <a href="#plz" data-wunsch="obst">mit Obst</a> · <a href="#plz" data-wunsch="kartoffeln">mit Kartoffeln</a></p>
   <p><a href="/saisonkalender/">Ganzen Saisonkalender ansehen</a></p>
+</section>
+<section class="abschnitt ratgeber-start">
+  <h2>Aus dem Ratgeber</h2>
+  <ul class="ratgeber-liste">${ratgeberSortiert(MONAT_JETZT).slice(0, 3).map((a) => ratgeberKarte(a, MONAT_JETZT)).join('')}</ul>
+  <p><a href="/ratgeber/">Alle Ratgeber-Artikel lesen</a></p>
 </section>
 <section class="abschnitt laender">
   <h2>Hofläden nach Bundesland</h2>

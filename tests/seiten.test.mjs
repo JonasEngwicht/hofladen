@@ -271,3 +271,29 @@ test('Hofseiten ohne FAQ-Baustein: keine Wiederholung der Angaben, kein FAQPage-
   // auf Kreisseiten bleibt die FAQ
   assert.ok(info.get('/brandenburg/spree-neisse/').ld.some((x) => x['@type'] === 'FAQPage'));
 });
+
+test('Ratgeber: Saison-Artikel stehen vorn („Jetzt aktuell“), Startseite zeigt drei, Artikel mit Kopf und Kurzfassung', async () => {
+  const { RATGEBER, istAktuell, ratgeberSortiert, lesezeit, ARTIKEL_ICON } = await import('../scripts/ratgeber.mjs');
+  const dez = ratgeberSortiert(12);
+  assert.equal(dez.length, RATGEBER.length);
+  assert.ok(istAktuell(dez[0], 12) && dez.findIndex((a) => !istAktuell(a, 12)) === dez.filter((a) => istAktuell(a, 12)).length, 'aktuelle Artikel zuerst');
+  assert.equal(ratgeberSortiert(5)[0].slug, 'spargelzeit');
+  assert.ok(ratgeberSortiert(7).every((a, i) => a === RATGEBER[i]), 'ohne Saison-Artikel bleibt die Reihenfolge der Datei');
+  for (const a of RATGEBER) {
+    assert.ok(!a.icon || ARTIKEL_ICON[a.icon], `${a.slug}: Icon ${a.icon} unbekannt`);
+    assert.ok(!a.monate || a.monate.every((m) => m >= 1 && m <= 12), `${a.slug}: Monate`);
+    assert.ok(lesezeit(a) >= 2 && lesezeit(a) <= 15, `${a.slug}: Lesezeit`);
+    for (const x of a.kurzgesagt || []) assert.ok(x.length <= 160, `${a.slug}: Kurzfassung zu lang`);
+    const s = info.get(`/ratgeber/${a.slug}/`);
+    assert.match(s.html, /<header class="hof-kopf artikel-kopf">/, a.slug);
+    assert.match(s.html, /Minuten Lesezeit/, a.slug);
+    if (a.kurzgesagt) assert.match(s.html, /<aside class="kurzgesagt"/, a.slug);
+  }
+  const start = info.get('/').html;
+  const teaser = start.slice(start.indexOf('class="abschnitt ratgeber-start"'));
+  assert.equal((teaser.slice(0, teaser.indexOf('</section>')).match(/href="\/ratgeber\/[a-z-]+\/"/g) || []).length, 3);
+  // die neuen Winter-Artikel sind von ihren Themenseiten aus verlinkt
+  assert.match(info.get('/angebot/gefluegel/').html, /href="\/ratgeber\/weihnachtsgans-vom-hof\/"/);
+  assert.match(info.get('/angebot/gemuese/').html, /href="\/ratgeber\/wintergemuese-vom-hof\/"/);
+  assert.match(info.get('/angebot/honig/').html, /href="\/ratgeber\/geschenke-aus-dem-hofladen\/"/);
+});

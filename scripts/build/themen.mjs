@@ -2,7 +2,7 @@
 // Wird von scripts/build.mjs in fester Reihenfolge geladen; nutzt die Ergebnisse der vorherigen Teile.
 import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { RATGEBER } from '../ratgeber.mjs';
+import { RATGEBER, artikelIcon, istAktuell, lesezeit, ratgeberKarte, ratgeberSortiert } from '../ratgeber.mjs';
 import { esc } from '../../static/helfer.js';
 import { SAISON_PRODUKTE } from '../../src/betrieb.js';
 import { KATEGORIEN, ICON, karteHtml, produktIcon } from '../../static/karte.js';
@@ -334,26 +334,33 @@ schreibe('/route/', seite({
     author: { '@type': 'Organization', name: 'Hofladenliste', url: cfg.domain }, publisher: { '@type': 'Organization', name: 'Hofladenliste', url: cfg.domain, logo: { '@type': 'ImageObject', url: `${cfg.domain}/icon-512.png` } } });
   for (const a of RATGEBER) {
     const pfad = `/ratgeber/${a.slug}/`;
-    const andere = RATGEBER.filter((x) => x !== a).slice(0, 4);
+    // Weiterlesen: erst die gerade aktuellen Artikel, dann die übrigen
+    const andere = ratgeberSortiert(MONAT_JETZT).filter((x) => x !== a).slice(0, 4);
+    const stand = a.geaendert || a.datum;
     schreibe(pfad, seite({
       titel: a.seitentitel || a.titel, beschreibung: a.beschreibung, pfad, klasse: 'textseite', jsonld: [ldArtikel(a)],
       krumen: [['Ratgeber', '/ratgeber/'], [a.kurz, pfad]],
-      inhalt: `<article class="text ratgeber">
-<h1>${esc(a.titel)}</h1>
-<p class="leise">Ratgeber · Stand <time datetime="${a.geaendert || a.datum}">${esc(datumDe(a.geaendert || a.datum))}</time></p>
+      inhalt: `<header class="hof-kopf artikel-kopf">
+  <p class="hof-art">${artikelIcon(a)}<span><a href="/ratgeber/">Ratgeber</a>${istAktuell(a, MONAT_JETZT) ? ' · Jetzt aktuell' : ''}</span></p>
+  <h1>${esc(a.titel)}</h1>
+  <p class="artikel-lead">${esc(a.beschreibung)}</p>
+  <p class="artikel-meta">Stand <time datetime="${stand}">${esc(datumDe(stand))}</time> · ${lesezeit(a)} Minuten Lesezeit · von Hofladenliste</p>
+</header>
+<article class="text ratgeber">
+${a.kurzgesagt?.length ? `<aside class="kurzgesagt" aria-label="Das Wichtigste in Kürze"><h2>Das Wichtigste in Kürze</h2><ul>${a.kurzgesagt.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></aside>` : ''}
 ${a.html}
-<section class="passend"><h2>Passend dazu</h2><ul>${a.links.map(([p, t]) => `<li><a href="${p}">${esc(t)}</a></li>`).join('')}</ul></section>
-<section class="passend"><h2>Mehr aus dem Ratgeber</h2><ul>${andere.map((x) => `<li><a href="/ratgeber/${x.slug}/">${esc(x.titel)}</a></li>`).join('')}</ul></section>
-</article>`,
+<section class="passend"><h2>Passend dazu</h2><p class="typ-chips">${a.links.map(([p, t]) => `<a href="${p}">${ICON.pfeil}${esc(t)}</a>`).join('')}</p></section>
+</article>
+<section class="abschnitt"><h2>Mehr aus dem Ratgeber</h2><ul class="ratgeber-liste">${andere.map((x) => ratgeberKarte(x, MONAT_JETZT)).join('')}</ul></section>`,
     }));
   }
   schreibe('/ratgeber/', seite({
     titel: 'Ratgeber: Einkaufen direkt vom Hof | Hofladenliste',
-    beschreibung: 'Ratgeber rund um Hofladen, Milchtankstelle und Eierautomat: Rohmilch abkochen, Eier-Kennzeichnung, Bio-Siegel, Solawi, Spargelzeit und mehr.',
+    beschreibung: 'Ratgeber rund um Hofladen, Milchtankstelle und Eierautomat: Rohmilch abkochen, Eier-Kennzeichnung, Bio-Siegel, Wintergemüse, Weihnachtsgans und mehr.',
     pfad: '/ratgeber/', klasse: 'textseite', krumen: [['Ratgeber', '/ratgeber/']],
-    jsonld: [itemList('Ratgeber', RATGEBER.map((a) => [a.titel, `/ratgeber/${a.slug}/`]))],
+    jsonld: [itemList('Ratgeber', ratgeberSortiert(MONAT_JETZT).map((a) => [a.titel, `/ratgeber/${a.slug}/`]))],
     inhalt: `<section class="seitenkopf"><h1>Ratgeber: Einkaufen direkt vom Hof</h1><p>Praktisches Wissen für den Einkauf im Hofladen, an der Milchtankstelle und am Eierautomaten – von uns geschrieben, ohne bezahlte Beiträge.</p></section>
-<section class="abschnitt"><ul class="ratgeber-liste">${RATGEBER.map((a) => `<li><a href="/ratgeber/${a.slug}/"><b>${esc(a.titel)}</b><span>${esc(a.beschreibung)}</span></a></li>`).join('')}</ul></section>`,
+<section class="abschnitt"><ul class="ratgeber-liste">${ratgeberSortiert(MONAT_JETZT).map((a) => ratgeberKarte(a, MONAT_JETZT)).join('')}</ul></section>`,
   }));
 }
 
